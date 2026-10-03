@@ -1,0 +1,890 @@
+bodhi: skipped-Pali review batch 012
+Read the full English above, each original Pali line, and the next English. Sujato is context only.
+covered = this line's own content is explicitly rendered by the English above, including complete lists.
+skipped = abbreviated or compressed repetition, even if mentioned, or omitted. When in doubt, skipped.
+Judge each key independently; a run may be mixed. An ellipsis alone does not decide.
+Only runs of two or more empty prose lines in the same paragraph are reviewed; lone lines join automatically.
+Write <key> covered|skipped|unsure for every RUN key, then # done. Do not mark context keys.
+
+=== RUN 551: sn44.3:4.10 sn44.3:4.11 sn44.3:4.12 ===
+File: data/bodhi/sutta/sn/sn44/sn44.3_translation-en-bodhi.json
+ABOVE sn44.3:4.9
+Pali: Hoti tathāgato paraṁ maraṇāti kho, āvuso, saññāgatametaṁ. 
+Sujato: perception … 
+Translator: an involvement with perception … 
+JUDGE sn44.3:4.10
+Pali: Na hoti tathāgato paraṁ maraṇāti, saññāgatametaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.3:4.11
+Pali: Hoti ca na ca hoti tathāgato paraṁ maraṇāti, saññāgatametaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.3:4.12
+Pali: Neva hoti na na hoti tathāgato paraṁ maraṇāti, saññāgatametaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn44.3:4.13
+Pali: Hoti tathāgato paraṁ maraṇāti kho, āvuso, saṅkhāragatametaṁ. 
+Sujato: choices … 
+Translator: an involvement with volitional formations … 
+
+=== RUN 552: sn44.3:4.14 sn44.3:4.15 sn44.3:4.16 ===
+File: data/bodhi/sutta/sn/sn44/sn44.3_translation-en-bodhi.json
+ABOVE sn44.3:4.13
+Pali: Hoti tathāgato paraṁ maraṇāti kho, āvuso, saṅkhāragatametaṁ. 
+Sujato: choices … 
+Translator: an involvement with volitional formations … 
+JUDGE sn44.3:4.14
+Pali: Na hoti tathāgato paraṁ maraṇāti, saṅkhāragatametaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.3:4.15
+Pali: Hoti ca na ca hoti tathāgato paraṁ maraṇāti, saṅkhāragatametaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.3:4.16
+Pali: Neva hoti na na hoti tathāgato paraṁ maraṇāti, saṅkhāragatametaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn44.3:4.17
+Pali: Hoti tathāgato paraṁ maraṇāti kho, āvuso, viññāṇagatametaṁ. 
+Sujato: consciousness. 
+Translator: an involvement with consciousness. 
+
+=== RUN 553: sn44.4:1.12 sn44.4:1.13 ===
+File: data/bodhi/sutta/sn/sn44/sn44.4_translation-en-bodhi.json
+ABOVE sn44.4:1.11
+Pali: viññāṇaṁ ajānato apassato yathābhūtaṁ, viññāṇasamudayaṁ ajānato apassato yathābhūtaṁ, viññāṇanirodhaṁ ajānato apassato yathābhūtaṁ, viññāṇanirodhagāminiṁ paṭipadaṁ ajānato apassato yathābhūtaṁ, ‘hoti tathāgato paraṁ maraṇā’tipissa hoti; 
+Sujato: consciousness, its origin, its cessation, and the practice that leads to its cessation, one thinks ‘a realized one still exists after death’ or 
+Translator: who does not know and see consciousness as it really is, who does not know and see its origin, its cessation, and the way leading to its cessation, that thinks: ‘The Tathagata exists after death’ … … or 
+JUDGE sn44.4:1.12
+Pali: ‘na hoti tathāgato paraṁ maraṇā’tipissa hoti; 
+Sujato: ‘a realized one no longer exists after death’ or 
+Translator: (empty)
+JUDGE sn44.4:1.13
+Pali: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipissa hoti; 
+Sujato: ‘a realized one both still exists and no longer exists after death’ or 
+Translator: (empty)
+BELOW sn44.4:1.14
+Pali: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”tipissa hoti. 
+Sujato: ‘a realized one neither still exists nor no longer exists after death.’ 
+Translator: ‘The Tathagata neither exists nor does not exist after death.’ 
+
+=== RUN 554: sn44.4:2.7 sn44.4:2.8 ===
+File: data/bodhi/sutta/sn/sn44/sn44.4_translation-en-bodhi.json
+ABOVE sn44.4:2.6
+Pali: viññāṇaṁ jānato passato yathābhūtaṁ, viññāṇasamudayaṁ jānato passato yathābhūtaṁ, viññāṇanirodhaṁ jānato passato yathābhūtaṁ, viññāṇanirodhagāminiṁ paṭipadaṁ jānato passato yathābhūtaṁ, ‘hoti tathāgato paraṁ maraṇā’tipissa na hoti; 
+Sujato: consciousness, its origin, its cessation, and the practice that leads to its cessation, one doesn’t think ‘a realized one still exists after death’ or 
+Translator: consciousness as it really is, who knows and sees its origin, its cessation, and the way leading to its cessation, does not think: ‘The Tathagata exists after death’ … or 
+JUDGE sn44.4:2.7
+Pali: ‘na hoti tathāgato paraṁ maraṇā’tipissa na hoti; 
+Sujato: ‘a realized one no longer exists after death’ or 
+Translator: (empty)
+JUDGE sn44.4:2.8
+Pali: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipissa na hoti; 
+Sujato: ‘a realized one both still exists and no longer exists after death’ or 
+Translator: (empty)
+BELOW sn44.4:2.9
+Pali: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipissa na hoti. 
+Sujato: ‘a realized one neither still exists nor no longer exists after death.’ 
+Translator: ‘The Tathagata neither exists nor does not exist after death.’ 
+
+=== RUN 555: sn44.6:2.2 sn44.6:2.3 ===
+File: data/bodhi/sutta/sn/sn44/sn44.6_translation-en-bodhi.json
+ABOVE sn44.6:2.1
+Pali: “Rūpārāmassa kho, āvuso, rūparatassa rūpasammuditassa rūpanirodhaṁ ajānato apassato yathābhūtaṁ, ‘hoti tathāgato paraṁ maraṇā’tipissa hoti; 
+Sujato: “Reverend, if you like, love, and enjoy form, and don’t truly see the cessation of form, you think ‘a realized one still exists after death’ or 
+Translator: i. Delight in the aggregates “Friend, it is one who delights in form, who takes delight in form, who rejoices in form, and who does not know and see the cessation of form as it really is, that thinks: ‘The Tathagata exists after death’ … or 
+JUDGE sn44.6:2.2
+Pali: ‘na hoti tathāgato paraṁ maraṇā’tipissa hoti; 
+Sujato: ‘a realized one no longer exists after death’ or 
+Translator: (empty)
+JUDGE sn44.6:2.3
+Pali: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipissa hoti; 
+Sujato: ‘a realized one both still exists and no longer exists after death’ or 
+Translator: (empty)
+BELOW sn44.6:2.4
+Pali: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipissa hoti. 
+Sujato: ‘a realized one neither still exists nor no longer exists after death.’ 
+Translator: ‘The Tathagata neither exists nor does not exist after death.’ 
+
+=== RUN 556: sn44.7:4.11 sn44.7:4.12 ===
+File: data/bodhi/sutta/sn/sn44/sn44.7_translation-en-bodhi.json
+ABOVE sn44.7:4.10
+Pali: Tasmā tathāgatassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti—
+Sujato: That’s why, when asked, he does not declare one of those answers to be true.” 
+Translator: Therefore, when the Tathagata is asked such questions, he does not give such answers.” 
+JUDGE sn44.7:4.11
+Pali: sassato lokotipi …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.7:4.12
+Pali: neva hoti na na hoti tathāgato paraṁ maraṇātipī”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn44.7:5.1
+Pali: Atha kho vacchagotto paribbājako uṭṭhāyāsanā yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavatā saddhiṁ sammodi. 
+Sujato: Then the wanderer Vacchagotta rose from his seat and went to the Buddha and exchanged greetings with him. 
+Translator: Then the wanderer Vacchagotta rose from his seat and approached the Blessed One. He exchanged greetings with the Blessed One …and said to him: 
+
+=== RUN 557: sn44.7:6.5 sn44.7:6.6 ===
+File: data/bodhi/sutta/sn/sn44/sn44.7_translation-en-bodhi.json
+ABOVE sn44.7:6.4
+Pali: Ko pana, bho gotama, hetu ko paccayo, yena bhoto gotamassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti: 
+Sujato: (empty)
+Translator: And what is the cause and reason why, when the ascetic Gotama is asked such questions, he does not give such answers?” 
+JUDGE sn44.7:6.5
+Pali: ‘sassato loko’tipi …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.7:6.6
+Pali: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti? 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn44.7:7.1
+Pali: “Aññatitthiyā kho, vaccha, paribbājakā cakkhuṁ ‘etaṁ mama, esohamasmi, eso me attā’ti samanupassanti …pe… 
+Sujato: (empty)
+Translator: “Vaccha, wanderers of other sects regard the eye … 
+
+=== RUN 558: sn44.8:2.5 sn44.8:2.6 ===
+File: data/bodhi/sutta/sn/sn44/sn44.8_translation-en-bodhi.json
+ABOVE sn44.8:2.4
+Pali: Ko pana, bho gotama, hetu, ko paccayo, yena bhoto gotamassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti: 
+Sujato: And what’s the reason why, when the worthy Gotama is asked these questions, he does not declare one of these to be true?” 
+Translator: And what is the cause and reason why, when Master Gotama is asked such questions, he does not give such answers?” 
+JUDGE sn44.8:2.5
+Pali: ‘sassato loko’tipi …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.8:2.6
+Pali: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti? 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn44.8:3.1
+Pali: “Aññatitthiyā kho, vaccha, paribbājakā rūpaṁ attato samanupassanti, rūpavantaṁ vā attānaṁ, attani vā rūpaṁ, rūpasmiṁ vā attānaṁ. 
+Sujato: “Vaccha, the wanderers of other religions regard form as self, self as having form, form in self, or self in form. 
+Translator: “Vaccha, wanderers of other sects regard form as self, or self as possessing form, or form as in self, or self as in form. 
+
+=== RUN 559: sn44.8:3.10 sn44.8:3.11 sn44.8:3.12 ===
+File: data/bodhi/sutta/sn/sn44/sn44.8_translation-en-bodhi.json
+ABOVE sn44.8:3.9
+Pali: Tathāgato ca kho, vaccha, arahaṁ sammāsambuddho na rūpaṁ attato samanupassati, na rūpavantaṁ vā attānaṁ, na attani vā rūpaṁ, na rūpasmiṁ vā attānaṁ. 
+Sujato: The Realized One doesn’t regard form as self, self as having form, form in self, or self in form. 
+Translator: But, Vaccha, the Tathagata, the Arahant, the Perfectly Enlightened One, does not regard form as self … 
+JUDGE sn44.8:3.10
+Pali: Na vedanaṁ attato samanupassati …pe… 
+Sujato: He doesn’t regard feeling … 
+Translator: (empty)
+JUDGE sn44.8:3.11
+Pali: na saññaṁ …pe… 
+Sujato: perception … 
+Translator: (empty)
+JUDGE sn44.8:3.12
+Pali: na saṅkhāre …pe… 
+Sujato: choices … 
+Translator: (empty)
+BELOW sn44.8:3.13
+Pali: na viññāṇaṁ attato samanupassati, na viññāṇavantaṁ vā attānaṁ, na attani vā viññāṇaṁ, na viññāṇasmiṁ vā attānaṁ. 
+Sujato: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. 
+Translator: or self as in consciousness. 
+
+=== RUN 560: sn44.8:3.15 sn44.8:3.16 ===
+File: data/bodhi/sutta/sn/sn44/sn44.8_translation-en-bodhi.json
+ABOVE sn44.8:3.14
+Pali: Tasmā tathāgatassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti: 
+Sujato: That’s why, when asked, he does not declare one of those answers to be true.” 
+Translator: Therefore, when the Tathagata is asked such questions, he does not give such answers.” 
+JUDGE sn44.8:3.15
+Pali: ‘sassato loko’tipi …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.8:3.16
+Pali: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn44.8:4.1
+Pali: Atha kho vacchagotto paribbājako uṭṭhāyāsanā yenāyasmā mahāmoggallāno tenupasaṅkami; upasaṅkamitvā āyasmatā mahāmoggallānena saddhiṁ sammodi. 
+Sujato: Then the wanderer Vacchagotta rose from his seat and went to Venerable Mahāmoggallāna, and exchanged greetings with him. 
+Translator: Then the wanderer Vacchagotta rose from his seat and approached the Venerable Mahamoggallana. He exchanged greetings with the Venerable Mahamoggallana … 
+
+=== RUN 561: sn44.8:5.5 sn44.8:5.6 ===
+File: data/bodhi/sutta/sn/sn44/sn44.8_translation-en-bodhi.json
+ABOVE sn44.8:5.4
+Pali: Ko pana, bho moggallāna, hetu, ko paccayo yena samaṇassa gotamassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti: 
+Sujato: (empty)
+Translator: And what is the cause and reason why when the ascetic Gotama is asked such questions, he does not give such answers?” 
+JUDGE sn44.8:5.5
+Pali: ‘sassato loko’tipi …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.8:5.6
+Pali: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti? 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn44.8:6.1
+Pali: “Aññatitthiyā kho, vaccha, paribbājakā rūpaṁ attato samanupassanti, rūpavantaṁ vā attānaṁ, attani vā rūpaṁ, rūpasmiṁ vā attānaṁ. 
+Sujato: (empty)
+Translator: “Vaccha, wanderers of other sects regard form as self … 
+
+=== RUN 562: sn44.8:6.2 sn44.8:6.3 sn44.8:6.4 ===
+File: data/bodhi/sutta/sn/sn44/sn44.8_translation-en-bodhi.json
+ABOVE sn44.8:6.1
+Pali: “Aññatitthiyā kho, vaccha, paribbājakā rūpaṁ attato samanupassanti, rūpavantaṁ vā attānaṁ, attani vā rūpaṁ, rūpasmiṁ vā attānaṁ. 
+Sujato: (empty)
+Translator: “Vaccha, wanderers of other sects regard form as self … 
+JUDGE sn44.8:6.2
+Pali: Vedanaṁ attato samanupassanti …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.8:6.3
+Pali: saññaṁ …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.8:6.4
+Pali: saṅkhāre …pe… 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn44.8:6.5
+Pali: viññāṇaṁ attato samanupassanti, viññāṇavantaṁ vā attānaṁ, attani vā viññāṇaṁ, viññāṇasmiṁ vā attānaṁ. 
+Sujato: (empty)
+Translator: or self as in consciousness. 
+
+=== RUN 563: sn44.8:6.10 sn44.8:6.11 sn44.8:6.12 ===
+File: data/bodhi/sutta/sn/sn44/sn44.8_translation-en-bodhi.json
+ABOVE sn44.8:6.9
+Pali: Tathāgato ca kho, vaccha, arahaṁ sammāsambuddho na rūpaṁ attato samanupassati, na rūpavantaṁ vā attānaṁ, na attani vā rūpaṁ, na rūpasmiṁ vā attānaṁ. 
+Sujato: (empty)
+Translator: But, Vaccha, the Tathagata, the Arahant, the Perfectly Enlightened One, does not regard form as self … 
+JUDGE sn44.8:6.10
+Pali: Na vedanaṁ attato samanupassati …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.8:6.11
+Pali: na saññaṁ …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.8:6.12
+Pali: na saṅkhāre …pe… 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn44.8:6.13
+Pali: na viññāṇaṁ attato samanupassati, na viññāṇavantaṁ vā attānaṁ, na attani vā viññāṇaṁ, na viññāṇasmiṁ vā attānaṁ. 
+Sujato: (empty)
+Translator: or self as in consciousness. 
+
+=== RUN 564: sn44.9:3.6 sn44.9:3.7 ===
+File: data/bodhi/sutta/sn/sn44/sn44.9_translation-en-bodhi.json
+ABOVE sn44.9:3.5
+Pali: ayampi kho ajito kesakambalo saṅghī ceva gaṇī ca gaṇācariyo ca ñāto yasassī titthakaro sādhusammato bahujanassa. 
+Sujato: Ajita of the hair blanket leads an order and a community, and tutors a community. He’s a well-known and famous religious founder, deemed holy by many people. 
+Translator: This Ajita Kesakambalī … 
+JUDGE sn44.9:3.6
+Pali: Sopi sāvakaṁ abbhatītaṁ kālaṅkataṁ upapattīsu byākaroti: 
+Sujato: When a disciple passes away, he declares that 
+Translator: (empty)
+JUDGE sn44.9:3.7
+Pali: “asu amutra upapanno, asu amutra upapanno”ti. 
+Sujato: this one is reborn here, while that one is reborn there. 
+Translator: (empty)
+BELOW sn44.9:3.8
+Pali: Yopissa sāvako uttamapuriso paramapuriso paramapattipatto tampi sāvakaṁ abbhatītaṁ kālaṅkataṁ upapattīsu byākaroti: 
+Sujato: And as for a disciple who is a supreme person, highest of people, having reached the highest point, when they pass away he also declares that 
+Translator: when that disciple has passed away and died he also declares his rebirth thus: 
+
+=== RUN 565: sn46.3:2.2 sn46.3:2.3 ===
+File: data/bodhi/sutta/sn/sn46/sn46.3_translation-en-bodhi.json
+ABOVE sn46.3:2.1
+Pali: Yasmiṁ samaye, bhikkhave, bhikkhu tathā vūpakaṭṭho viharanto taṁ dhammaṁ anussarati anuvitakketi, satisambojjhaṅgo tasmiṁ samaye bhikkhuno āraddho hoti; 
+Sujato: At such a time, a mendicant has initiated the awakening factor of mindfulness; 
+Translator: Whenever, bhikkhus, a bhikkhu dwelling thus withdrawn recollects that Dhamma and thinks it over, on that occasion the enlightenment factor of mindfulness is aroused by the bhikkhu; on that occasion the bhikkhu develops the enlightenment factor of mindfulness; on that occasion the enlightenment factor of mindfulness comes to fulfilment by development in the bhikkhu. 
+JUDGE sn46.3:2.2
+Pali: satisambojjhaṅgaṁ tasmiṁ samaye bhikkhu bhāveti; 
+Sujato: they develop it 
+Translator: (empty)
+JUDGE sn46.3:2.3
+Pali: satisambojjhaṅgo tasmiṁ samaye bhikkhuno bhāvanāpāripūriṁ gacchati. 
+Sujato: and perfect it. 
+Translator: (empty)
+BELOW sn46.3:2.4
+Pali: So tathā sato viharanto taṁ dhammaṁ paññāya pavicinati pavicarati parivīmaṁsamāpajjati. 
+Sujato: As they live mindfully in this way they investigate, explore, and inquire into that teaching with wisdom. 
+Translator: “Dwelling thus mindfully, he discriminates that Dhamma with wisdom, examines it, makes an investigation of it. 
+
+=== RUN 566: sn46.3:3.2 sn46.3:3.3 ===
+File: data/bodhi/sutta/sn/sn46/sn46.3_translation-en-bodhi.json
+ABOVE sn46.3:3.1
+Pali: Yasmiṁ samaye, bhikkhave, bhikkhu tathā sato viharanto taṁ dhammaṁ paññāya pavicinati pavicarati parivīmaṁsamāpajjati, dhammavicayasambojjhaṅgo tasmiṁ samaye bhikkhuno āraddho hoti; 
+Sujato: At such a time, a mendicant has initiated the awakening factor of investigation of principles; 
+Translator: Whenever, bhikkhus, a bhikkhu dwelling thus mindfully discriminates that Dhamma with wisdom, examines it, makes an investigation of it, on that occasion the enlightenment factor of discrimination of states is aroused by the bhikkhu; on that occasion the bhikkhu develops the enlightenment factor of discrimination of states; on that occasion the enlightenment factor of discrimination of states comes to fulfilment by development in the bhikkhu. 
+JUDGE sn46.3:3.2
+Pali: dhammavicayasambojjhaṅgaṁ tasmiṁ samaye bhikkhu bhāveti; 
+Sujato: they develop it 
+Translator: (empty)
+JUDGE sn46.3:3.3
+Pali: dhammavicayasambojjhaṅgo tasmiṁ samaye bhikkhuno bhāvanāpāripūriṁ gacchati. 
+Sujato: and perfect it. 
+Translator: (empty)
+BELOW sn46.3:3.4
+Pali: Tassa taṁ dhammaṁ paññāya pavicinato pavicarato parivīmaṁsamāpajjato āraddhaṁ hoti vīriyaṁ asallīnaṁ. 
+Sujato: As they investigate principles with wisdom in this way their energy is roused up and unflagging. 
+Translator: “While he discriminates that Dhamma with wisdom, examines it, makes an investigation of it, his energy is aroused without slackening. 
+
+=== RUN 567: sn46.4:3.9 sn46.4:3.10 ===
+File: data/bodhi/sutta/sn/sn46/sn46.4_translation-en-bodhi.json
+ABOVE sn46.4:3.8
+Pali: Satisambojjhaṅgo iti ce me, āvuso, hoti, ‘appamāṇo’ti me hoti, ‘susamāraddho’ti me hoti, tiṭṭhantañca naṁ ‘tiṭṭhatī’ti pajānāmi. 
+Sujato: If it’s the awakening factor of mindfulness, I know that it’s limitless and that it’s properly implemented. While it remains I understand that it remains. 
+Translator: “If, friends, it occurs to me, ‘Let it be the enlightenment factor of mindfulness’ … all as above … 
+JUDGE sn46.4:3.9
+Pali: Sacepi me cavati, ‘idappaccayā me cavatī’ti pajānāmi …pe… 
+Sujato: And if it subsides I understand the specific reason it subsides. … 
+Translator: (empty)
+JUDGE sn46.4:3.10
+Pali: upekkhāsambojjhaṅgo iti ce me, āvuso, hoti, ‘appamāṇo’ti me hoti, ‘susamāraddho’ti me hoti, tiṭṭhantañca naṁ ‘tiṭṭhatī’ti pajānāmi. 
+Sujato: If it’s the awakening factor of equanimity, I know that it’s limitless and that it’s properly implemented. While it remains I understand that it remains. 
+Translator: (empty)
+BELOW sn46.4:3.11
+Pali: Sacepi me cavati, ‘idappaccayā me cavatī’ti pajānāmī”ti. 
+Sujato: And if it subsides I understand the specific reason it subsides.” 
+Translator: I understand, ‘It has abated in me for a particular reason.’” 
+
+=== RUN 568: sn46.32:2.2 sn46.32:2.3 sn46.32:2.4 ===
+File: data/bodhi/sutta/sn/sn46/sn46.32_translation-en-bodhi.json
+ABOVE sn46.32:2.1
+Pali: Kathañca, bhikkhave, bhikkhu yonisomanasikārasampanno satta bojjhaṅge bhāveti, satta bojjhaṅge bahulīkaroti? 
+Sujato: And how does a mendicant with rational application of mind develop and cultivate the seven awakening factors? 
+Translator: “And how, bhikkhus, does a bhikkhu who is accomplished in careful attention develop and cultivate the seven factors of enlightenment?…” All as above. 
+JUDGE sn46.32:2.2
+Pali: Idha, bhikkhave, bhikkhu satisambojjhaṅgaṁ bhāveti vivekanissitaṁ …pe… 
+Sujato: It’s when a mendicant develops the awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, 
+Translator: (empty)
+JUDGE sn46.32:2.3
+Pali: upekkhāsambojjhaṅgaṁ bhāveti vivekanissitaṁ virāganissitaṁ nirodhanissitaṁ vossaggapariṇāmiṁ. 
+Sujato: and equanimity, which rely on seclusion, fading away, and cessation, and ripen as letting go. 
+Translator: (empty)
+JUDGE sn46.32:2.4
+Pali: Evaṁ kho, bhikkhave, bhikkhu yonisomanasikārasampanno satta bojjhaṅge bhāveti, satta bojjhaṅge bahulīkarotī”ti. 
+Sujato: That’s how a mendicant with rational application of mind develops and cultivates the seven awakening factors.” 
+Translator: (empty)
+BELOW (outside this paragraph): (none)
+
+=== RUN 569: sn46.45:1.5 sn46.45:1.6 ===
+File: data/bodhi/sutta/sn/sn46/sn46.45_translation-en-bodhi.json
+ABOVE sn46.45:1.4
+Pali: Katamesaṁ sattannaṁ? 
+Sujato: What seven? 
+Translator: What seven?” As above. 
+JUDGE sn46.45:1.5
+Pali: Satisambojjhaṅgassa …pe… upekkhāsambojjhaṅgassa—
+Sujato: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. 
+Translator: (empty)
+JUDGE sn46.45:1.6
+Pali: imesaṁ kho, bhikkhu, sattannaṁ bojjhaṅgānaṁ bhāvitattā bahulīkatattā ‘paññavā aneḷamūgo’ti vuccatī”ti. 
+Sujato: They’re called wise and clever because they’ve developed and cultivated these seven awakening factors.” 
+Translator: (empty)
+BELOW (outside this paragraph): (none)
+
+=== RUN 570: sn46.46:1.5 sn46.46:1.6 ===
+File: data/bodhi/sutta/sn/sn46/sn46.46_translation-en-bodhi.json
+ABOVE sn46.46:1.4
+Pali: Katamesaṁ sattannaṁ? 
+Sujato: What seven? 
+Translator: What seven?” As above. 
+JUDGE sn46.46:1.5
+Pali: Satisambojjhaṅgassa …pe… upekkhāsambojjhaṅgassa—
+Sujato: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. 
+Translator: (empty)
+JUDGE sn46.46:1.6
+Pali: imesaṁ kho, bhikkhu, sattannaṁ bojjhaṅgānaṁ abhāvitattā abahulīkatattā ‘daliddo’ti vuccatī”ti. 
+Sujato: They’re called poor because they haven’t developed and cultivated these seven awakening factors.” 
+Translator: (empty)
+BELOW (outside this paragraph): (none)
+
+=== RUN 571: sn46.47:1.5 sn46.47:1.6 ===
+File: data/bodhi/sutta/sn/sn46/sn46.47_translation-en-bodhi.json
+ABOVE sn46.47:1.4
+Pali: Katamesaṁ sattannaṁ? 
+Sujato: What seven? 
+Translator: What seven?” As above. 
+JUDGE sn46.47:1.5
+Pali: Satisambojjhaṅgassa …pe… upekkhāsambojjhaṅgassa—
+Sujato: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. 
+Translator: (empty)
+JUDGE sn46.47:1.6
+Pali: imesaṁ kho, bhikkhu, sattannaṁ bojjhaṅgānaṁ bhāvitattā bahulīkatattā ‘adaliddo’ti vuccatī”ti. 
+Sujato: They’re called prosperous because they’ve developed and cultivated these seven awakening factors.” 
+Translator: (empty)
+BELOW (outside this paragraph): (none)
+
+=== RUN 572: sn46.54:15.5 sn46.54:15.6 sn46.54:15.7 ===
+File: data/bodhi/sutta/sn/sn46/sn46.54_translation-en-bodhi.json
+ABOVE sn46.54:15.4
+Pali: So sace ākaṅkhati ‘appaṭikūle paṭikūlasaññī vihareyyan’ti, paṭikūlasaññī tattha viharati. 
+Sujato: If they wish: ‘May I meditate perceiving the repulsive in the unrepulsive,’ that’s what they do. 
+Translator: If he wishes: ‘May I dwell perceiving the repulsive in the unrepulsive,’ he dwells perceiving the repulsive therein…. 
+JUDGE sn46.54:15.5
+Pali: Sace ākaṅkhati ‘paṭikūle appaṭikūlasaññī vihareyyan’ti, appaṭikūlasaññī tattha viharati. 
+Sujato: If they wish: ‘May I meditate perceiving the unrepulsive in the repulsive,’ that’s what they do. 
+Translator: (empty)
+JUDGE sn46.54:15.6
+Pali: Sace ākaṅkhati ‘appaṭikūle ca paṭikūle ca paṭikūlasaññī vihareyyan’ti, paṭikūlasaññī tattha viharati. 
+Sujato: If they wish: ‘May I meditate perceiving the repulsive in the unrepulsive and the repulsive,’ that’s what they do. 
+Translator: (empty)
+JUDGE sn46.54:15.7
+Pali: Sace ākaṅkhati ‘paṭikūle ca appaṭikūle ca appaṭikūlasaññī vihareyyan’ti, appaṭikūlasaññī tattha viharati. 
+Sujato: If they wish: ‘May I meditate perceiving the unrepulsive in the repulsive and the unrepulsive,’ that’s what they do. 
+Translator: (empty)
+BELOW sn46.54:15.8
+Pali: Sace ākaṅkhati ‘appaṭikūlañca paṭikūlañca tadubhayaṁ abhinivajjetvā upekkhako vihareyyaṁ sato sampajāno’ti, upekkhako tattha viharati sato sampajāno. 
+Sujato: If they wish: ‘May I meditate staying equanimous, mindful and aware, shunning both the repulsive and the unrepulsive,’ that’s what they do. 
+Translator: If he wishes: ‘Avoiding both the unrepulsive and the repulsive, may I dwell equanimously, mindful and clearly comprehending,’ then he dwells therein equanimously, mindful and clearly comprehending. 
+
+=== RUN 573: sn47.7:3.7 sn47.7:3.8 sn47.7:3.9 sn47.7:3.10 sn47.7:3.11 ===
+File: data/bodhi/sutta/sn/sn47/sn47.7_translation-en-bodhi.json
+ABOVE sn47.7:3.6
+Pali: Katame pañca? 
+Sujato: What five? 
+Translator: as above … 
+JUDGE sn47.7:3.7
+Pali: Cakkhuviññeyyā rūpā iṭṭhā kantā manāpā piyarūpā kāmūpasaṁhitā rajanīyā, 
+Sujato: Sights known by the eye, which are likable, desirable, agreeable, pleasant, sensual, and arousing. 
+Translator: (empty)
+JUDGE sn47.7:3.8
+Pali: sotaviññeyyā saddā …pe… 
+Sujato: Sounds known by the ear … 
+Translator: (empty)
+JUDGE sn47.7:3.9
+Pali: ghānaviññeyyā gandhā …pe… 
+Sujato: Smells known by the nose … 
+Translator: (empty)
+JUDGE sn47.7:3.10
+Pali: jivhāviññeyyā rasā …pe… 
+Sujato: Tastes known by the tongue … 
+Translator: (empty)
+JUDGE sn47.7:3.11
+Pali: kāyaviññeyyā phoṭṭhabbā iṭṭhā kantā manāpā piyarūpā kāmūpasaṁhitā rajanīyā. 
+Sujato: Touches known by the body, which are likable, desirable, agreeable, pleasant, sensual, and arousing. 
+Translator: (empty)
+BELOW sn47.7:3.12
+Pali: Ayaṁ, bhikkhave, bhikkhuno agocaro paravisayo. 
+Sujato: This is not a mendicant’s own territory but the domain of others. 
+Translator: This is what is not a bhikkhu’s own resort but the domain of others. 
+
+=== RUN 574: sn47.9:3.4 sn47.9:3.5 ===
+File: data/bodhi/sutta/sn/sn47/sn47.9_translation-en-bodhi.json
+ABOVE sn47.9:3.3
+Pali: “diṭṭho me, bhante, bhagavato phāsu; 
+Sujato: “Sir, it’s fantastic that the Buddha is comfortable, 
+Translator: “It’s splendid, venerable sir, that the Blessed One is bearing up, splendid that he has recovered! 
+JUDGE sn47.9:3.4
+Pali: diṭṭhaṁ, bhante, bhagavato khamanīyaṁ; 
+Sujato: that he’s keeping well, 
+Translator: (empty)
+JUDGE sn47.9:3.5
+Pali: diṭṭhaṁ, bhante, bhagavato yāpanīyaṁ. 
+Sujato: and that he’s getting by. 
+Translator: (empty)
+BELOW sn47.9:3.6
+Pali: Api ca me, bhante, madhurakajāto viya kāyo, disāpi me na pakkhāyanti, dhammāpi maṁ nappaṭibhanti bhagavato gelaññena. 
+Sujato: Because when the Buddha was sick, my body felt like it was drugged. I was disorientated, and the teachings didn’t spring to mind. 
+Translator: But, venerable sir, when the Blessed One was ill my body seemed as if it were drugged, I had become disoriented, the teachings were not clear to me. 
+
+=== RUN 575: sn47.10:7.7 sn47.10:7.8 sn47.10:7.9 sn47.10:7.10 sn47.10:7.11 sn47.10:7.12 sn47.10:7.13 sn47.10:7.14 ===
+File: data/bodhi/sutta/sn/sn47/sn47.10_translation-en-bodhi.json
+ABOVE sn47.10:7.6
+Pali: Tassa kismiñcideva pasādanīye nimitte cittaṁ paṇidahato pāmojjaṁ jāyati. 
+Sujato: As they do so, joy springs up. 
+Translator: When he directs his mind towards some inspiring sign … 
+JUDGE sn47.10:7.7
+Pali: Pamuditassa pīti jāyati. 
+Sujato: Being joyful, rapture springs up. 
+Translator: (empty)
+JUDGE sn47.10:7.8
+Pali: Pītimanassa kāyo passambhati. 
+Sujato: When the mind is full of rapture, the body becomes tranquil. 
+Translator: (empty)
+JUDGE sn47.10:7.9
+Pali: Passaddhakāyo sukhaṁ vedayati. 
+Sujato: When the body is tranquil, one feels bliss. 
+Translator: (empty)
+JUDGE sn47.10:7.10
+Pali: Sukhino cittaṁ samādhiyati. 
+Sujato: And when blissful, the mind becomes immersed in samādhi. 
+Translator: (empty)
+JUDGE sn47.10:7.11
+Pali: So iti paṭisañcikkhati: 
+Sujato: Then they reflect: 
+Translator: (empty)
+JUDGE sn47.10:7.12
+Pali: ‘yassa khvāhaṁ atthāya cittaṁ paṇidahiṁ, so me attho abhinipphanno. 
+Sujato: ‘I have accomplished the goal for which I directed my mind. 
+Translator: (empty)
+JUDGE sn47.10:7.13
+Pali: Handa dāni paṭisaṁharāmī’ti. 
+Sujato: Let me now relax.’ 
+Translator: (empty)
+JUDGE sn47.10:7.14
+Pali: So paṭisaṁharati ceva na ca vitakketi na ca vicāreti. 
+Sujato: They relax, and neither place the mind nor keep it connected. 
+Translator: (empty)
+BELOW sn47.10:7.15
+Pali: ‘Avitakkomhi avicāro, ajjhattaṁ satimā sukhamasmī’ti pajānāti. 
+Sujato: They understand: ‘I’m neither placing the mind nor keeping it connected. Mindful within myself, I’m happy.’ 
+Translator: He understands: ‘Without thought and examination, internally mindful, I am happy.’ 
+
+=== RUN 576: sn47.13:5.3 sn47.13:5.4 sn47.13:5.5 ===
+File: data/bodhi/sutta/sn/sn47/sn47.13_translation-en-bodhi.json
+ABOVE sn47.13:5.2
+Pali: “Na ca kho me, bhante, āyasmā sāriputto sīlakkhandhaṁ vā ādāya parinibbuto, samādhikkhandhaṁ vā …pe… 
+Sujato: “No, sir, he did not. 
+Translator: “No, he did not, venerable sir. 
+JUDGE sn47.13:5.3
+Pali: paññākkhandhaṁ vā …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn47.13:5.4
+Pali: vimuttikkhandhaṁ vā …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn47.13:5.5
+Pali: vimuttiñāṇadassanakkhandhaṁ vā ādāya parinibbuto. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn47.13:5.6
+Pali: Api ca me, bhante, āyasmā sāriputto ovādako ahosi otiṇṇo viññāpako sandassako samādapako samuttejako sampahaṁsako, akilāsu dhammadesanāya, anuggāhako sabrahmacārīnaṁ. 
+Sujato: But Venerable Sāriputta was my adviser and counselor. He educated, encouraged, fired up, and inspired me. He never tired of teaching the Dhamma, and he supported his spiritual companions. 
+Translator: But for me the Venerable Sāriputta was an advisor and counsellor, one who instructed, exhorted, inspired, and gladdened me. He was unwearying in teaching the Dhamma; he was helpful to his brothers in the holy life. 
+
+=== RUN 577: sn47.18:4.2 sn47.18:4.3 sn47.18:4.4 sn47.18:4.5 ===
+File: data/bodhi/sutta/sn/sn47/sn47.18_translation-en-bodhi.json
+ABOVE sn47.18:4.1
+Pali: Katame cattāro? 
+Sujato: What four? 
+Translator: all as above … 
+JUDGE sn47.18:4.2
+Pali: Kāye vā, bhante, bhikkhu kāyānupassī vihareyya ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ; 
+Sujato: A mendicant would meditate observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
+Translator: (empty)
+JUDGE sn47.18:4.3
+Pali: vedanāsu vā, bhante, bhikkhu …pe… 
+Sujato: Or they’d meditate observing an aspect of feelings … 
+Translator: (empty)
+JUDGE sn47.18:4.4
+Pali: citte vā, bhante, bhikkhu …pe… 
+Sujato: or mind … 
+Translator: (empty)
+JUDGE sn47.18:4.5
+Pali: dhammesu vā, bhante, bhikkhu dhammānupassī vihareyya ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+Sujato: or principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
+Translator: (empty)
+BELOW sn47.18:4.6
+Pali: Ekāyanvāyaṁ, bhante, maggo sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya, yadidaṁ—cattāro satipaṭṭhānā”ti. 
+Sujato: The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.” 
+Translator: that is, the four establishments of mindfulness.” 
+
+=== RUN 578: sn47.25:3.3 sn47.25:3.4 sn47.25:3.5 ===
+File: data/bodhi/sutta/sn/sn47/sn47.25_translation-en-bodhi.json
+ABOVE sn47.25:3.2
+Pali: Idha, brāhmaṇa, bhikkhu kāye kāyānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ; 
+Sujato: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
+Translator: … as in §22 … 
+JUDGE sn47.25:3.3
+Pali: vedanāsu …pe… 
+Sujato: They meditate observing an aspect of feelings … 
+Translator: (empty)
+JUDGE sn47.25:3.4
+Pali: citte …pe… 
+Sujato: mind … 
+Translator: (empty)
+JUDGE sn47.25:3.5
+Pali: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+Sujato: principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
+Translator: (empty)
+BELOW sn47.25:3.6
+Pali: Imesaṁ kho, brāhmaṇa, catunnaṁ satipaṭṭhānānaṁ abhāvitattā abahulīkatattā tathāgate parinibbute saddhammo na ciraṭṭhitiko hoti. 
+Sujato: It’s because of not developing and cultivating these four kinds of mindfulness meditation that the true teaching doesn’t last long after the final quenching of the Realized One. 
+Translator: It is because these four establishments of mindfulness are not developed and cultivated … 
+
+=== RUN 579: sn47.27:2.2 sn47.27:2.3 ===
+File: data/bodhi/sutta/sn/sn47/sn47.27_translation-en-bodhi.json
+ABOVE sn47.27:2.1
+Pali: Katamesaṁ catunnaṁ? 
+Sujato: What four? 
+Translator: What four?… 
+JUDGE sn47.27:2.2
+Pali: Idhāvuso, bhikkhu kāye kāyānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ; 
+Sujato: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
+Translator: (empty)
+JUDGE sn47.27:2.3
+Pali: vedanāsu …pe… 
+Sujato: They meditate observing an aspect of feelings … 
+Translator: (empty)
+BELOW sn47.27:2.4
+Pali: citte …pe… 
+Sujato: mind … 
+Translator: as above … 
+
+=== RUN 580: sn47.29:1.10 sn47.29:1.11 sn47.29:1.12 ===
+File: data/bodhi/sutta/sn/sn47/sn47.29_translation-en-bodhi.json
+ABOVE sn47.29:1.9
+Pali: “Evaṁ, bhante”ti kho so puriso sirivaḍḍhassa gahapatissa paṭissutvā yenāyasmā ānando tenupasaṅkami; upasaṅkamitvā āyasmantaṁ ānandaṁ abhivādetvā ekamantaṁ nisīdi. Ekamantaṁ nisinno kho so puriso āyasmantaṁ ānandaṁ etadavoca: 
+Sujato: “Yes, sir,” that man replied. He did as Sirivaḍḍha asked. 
+Translator: “Yes, master,” that man replied, and he approached the Venerable Ānanda, paid homage to him, sat down to one side, and delivered his message. 
+JUDGE sn47.29:1.10
+Pali: “sirivaḍḍho, bhante, gahapati ābādhiko dukkhito bāḷhagilāno, so āyasmato ānandassa pāde sirasā vandati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn47.29:1.11
+Pali: Evañca vadeti: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn47.29:1.12
+Pali: ‘sādhu kira, bhante, āyasmā ānando yena sirivaḍḍhassa gahapatissa nivesanaṁ tenupasaṅkamatu anukampaṁ upādāyā’”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn47.29:1.13
+Pali: Adhivāsesi kho āyasmā ānando tuṇhībhāvena. 
+Sujato: Ānanda consented with silence. 
+Translator: The Venerable Ānanda consented by silence. 
+
+=== RUN 581: sn47.31:2.2 sn47.31:2.3 ===
+File: data/bodhi/sutta/sn/sn47/sn47.31_translation-en-bodhi.json
+ABOVE sn47.31:2.1
+Pali: ‘Ayaṁ vedanāsu vedanānupassanā’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi. 
+Sujato: ‘This is the observation of an aspect of feelings.’ … 
+Translator: “‘This is the contemplation of feelings in feelings’ … 
+JUDGE sn47.31:2.2
+Pali: ‘Sā kho panāyaṁ vedanāsu vedanānupassanā bhāvetabbā’ti me, bhikkhave …pe… 
+Sujato: ‘This observation of an aspect of feelings should be developed.’ … 
+Translator: (empty)
+JUDGE sn47.31:2.3
+Pali: bhāvitā’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi. 
+Sujato: ‘This observation of an aspect of feelings has been developed.’ … 
+Translator: (empty)
+BELOW (outside this paragraph) sn47.31:3.1
+Pali: ‘Ayaṁ citte cittānupassanā’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi. 
+Sujato: ‘This is the observation of an aspect of the mind.’ … 
+Translator: “‘This is the contemplation of mind in mind’ … 
+
+=== RUN 582: sn47.31:3.2 sn47.31:3.3 ===
+File: data/bodhi/sutta/sn/sn47/sn47.31_translation-en-bodhi.json
+ABOVE sn47.31:3.1
+Pali: ‘Ayaṁ citte cittānupassanā’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi. 
+Sujato: ‘This is the observation of an aspect of the mind.’ … 
+Translator: “‘This is the contemplation of mind in mind’ … 
+JUDGE sn47.31:3.2
+Pali: ‘Sā kho panāyaṁ citte cittānupassanā bhāvetabbā’ti me, bhikkhave …pe… 
+Sujato: ‘This observation of an aspect of the mind should be developed.’ … 
+Translator: (empty)
+JUDGE sn47.31:3.3
+Pali: bhāvitā’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi. 
+Sujato: ‘This observation of an aspect of the mind has been developed.’ … 
+Translator: (empty)
+BELOW (outside this paragraph) sn47.31:4.1
+Pali: ‘Ayaṁ dhammesu dhammānupassanā’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi. 
+Sujato: ‘This is the observation of an aspect of principles.’ … 
+Translator: “‘This is the contemplation of phenomena in phenomena’—thus, bhikkhus, in regard to things unheard before, there arose in me vision, knowledge, wisdom, true knowledge, and light. 
+
+=== RUN 583: sn47.33:2.2 sn47.33:2.3 ===
+File: data/bodhi/sutta/sn/sn47/sn47.33_translation-en-bodhi.json
+ABOVE sn47.33:2.1
+Pali: Katame cattāro? 
+Sujato: What four? 
+Translator: “What four?… 
+JUDGE sn47.33:2.2
+Pali: Idha, bhikkhave, bhikkhu kāye kāyānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ; 
+Sujato: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
+Translator: (empty)
+JUDGE sn47.33:2.3
+Pali: vedanāsu …pe… 
+Sujato: They meditate observing an aspect of feelings … 
+Translator: (empty)
+BELOW sn47.33:2.4
+Pali: citte …pe… 
+Sujato: mind … 
+Translator: as above … 
+
+=== RUN 584: sn47.37:3.2 sn47.37:3.3 ===
+File: data/bodhi/sutta/sn/sn47/sn47.37_translation-en-bodhi.json
+ABOVE sn47.37:3.1
+Pali: Citte cittānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+Sujato: They meditate observing an aspect of the mind—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
+Translator: mind in mind … 
+JUDGE sn47.37:3.2
+Pali: Tassa citte cittānupassino viharato yo cittamhi chando so pahīyati. 
+Sujato: As they do so they give up desire for the mind. 
+Translator: (empty)
+JUDGE sn47.37:3.3
+Pali: Chandassa pahānā amataṁ sacchikataṁ hoti. 
+Sujato: When desire is given up they realize freedom from death. 
+Translator: (empty)
+BELOW (outside this paragraph) sn47.37:4.1
+Pali: Dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+Sujato: They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
+Translator: phenomena in phenomena … having removed covetousness and displeasure in regard to the world. 
+
+=== RUN 585: sn47.38:2.2 sn47.38:2.3 ===
+File: data/bodhi/sutta/sn/sn47/sn47.38_translation-en-bodhi.json
+ABOVE sn47.38:2.1
+Pali: Vedanāsu vedanānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+Sujato: They meditate observing an aspect of feelings—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
+Translator: “He dwells contemplating feelings in feelings … 
+JUDGE sn47.38:2.2
+Pali: Tassa vedanāsu vedanānupassino viharato vedanā pariññātā honti. 
+Sujato: As they do so they completely understand feelings. 
+Translator: (empty)
+JUDGE sn47.38:2.3
+Pali: Vedanānaṁ pariññātattā amataṁ sacchikataṁ hoti. 
+Sujato: When feelings are completely understood they realize freedom from death. 
+Translator: (empty)
+BELOW (outside this paragraph) sn47.38:3.1
+Pali: Citte cittānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+Sujato: They meditate observing an aspect of the mind—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
+Translator: mind in mind … 
+
+=== RUN 586: sn47.38:3.2 sn47.38:3.3 ===
+File: data/bodhi/sutta/sn/sn47/sn47.38_translation-en-bodhi.json
+ABOVE sn47.38:3.1
+Pali: Citte cittānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+Sujato: They meditate observing an aspect of the mind—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
+Translator: mind in mind … 
+JUDGE sn47.38:3.2
+Pali: Tassa citte cittānupassino viharato cittaṁ pariññātaṁ hoti. 
+Sujato: As they do so they completely understand the mind. 
+Translator: (empty)
+JUDGE sn47.38:3.3
+Pali: Cittassa pariññātattā amataṁ sacchikataṁ hoti. 
+Sujato: When the mind is completely understood they realize freedom from death. 
+Translator: (empty)
+BELOW (outside this paragraph) sn47.38:4.1
+Pali: Dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+Sujato: They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
+Translator: phenomena in phenomena … having removed covetousness and displeasure in regard to the world. 
+
+=== RUN 587: sn56.16:3.5 sn56.16:3.6 ===
+File: data/bodhi/sutta/sn/sn56/sn56.16_translation-en-bodhi.json
+ABOVE sn56.16:3.4
+Pali: Yo hi koci, bhikkhu, samaṇo vā brāhmaṇo vā evaṁ vadeyya: 
+Sujato: For if any ascetic or brahmin should say this: 
+Translator: For if any ascetic or brahmin should speak thus … 
+JUDGE sn56.16:3.5
+Pali: ‘netaṁ dukkhaṁ paṭhamaṁ ariyasaccaṁ yaṁ samaṇena gotamena desitaṁ. 
+Sujato: ‘What the ascetic Gotama teaches is not the first noble truth of suffering. 
+Translator: (empty)
+JUDGE sn56.16:3.6
+Pali: Ahametaṁ dukkhaṁ paṭhamaṁ ariyasaccaṁ paccakkhāya aññaṁ dukkhaṁ paṭhamaṁ ariyasaccaṁ paññapessāmī’ti—
+Sujato: I’ll deny this first noble truth of suffering and describe another first noble truth of suffering.’ 
+Translator: (empty)
+BELOW sn56.16:3.7
+Pali: netaṁ ṭhānaṁ vijjati. 
+Sujato: That is not possible. 
+Translator: as above … 
+
+=== RUN 588: sn56.16:3.8 sn56.16:3.9 sn56.16:3.10 sn56.16:3.11 ===
+File: data/bodhi/sutta/sn/sn56/sn56.16_translation-en-bodhi.json
+ABOVE sn56.16:3.7
+Pali: netaṁ ṭhānaṁ vijjati. 
+Sujato: That is not possible. 
+Translator: as above … 
+JUDGE sn56.16:3.8
+Pali: Dukkhasamudayaṁ kho, bhikkhu …pe… 
+Sujato: The origin of suffering … 
+Translator: (empty)
+JUDGE sn56.16:3.9
+Pali: dukkhanirodhaṁ kho, bhikkhu …pe… 
+Sujato: The cessation of suffering … 
+Translator: (empty)
+JUDGE sn56.16:3.10
+Pali: dukkhanirodhagāminī paṭipadā kho, bhikkhu, mayā catutthaṁ ariyasaccaṁ desitaṁ, tathā naṁ dhārehi. 
+Sujato: The practice that leads to the cessation of suffering is the fourth noble truth I’ve taught, and that’s how you should remember it. 
+Translator: (empty)
+JUDGE sn56.16:3.11
+Pali: Yo hi koci, bhikkhu, samaṇo vā brāhmaṇo vā evaṁ vadeyya: 
+Sujato: For if any ascetic or brahmin should say this: 
+Translator: (empty)
+BELOW sn56.16:3.12
+Pali: ‘netaṁ dukkhanirodhagāminī paṭipadā catutthaṁ ariyasaccaṁ yaṁ samaṇena gotamena desitaṁ. 
+Sujato: ‘What the ascetic Gotama teaches is not the fourth noble truth of the practice that leads to the cessation of suffering. 
+Translator: ‘This is not the fourth noble truth of the way leading to the cessation of suffering taught by the ascetic Gotama; 
+
+=== RUN 589: sn56.40:1.4 sn56.40:1.5 sn56.40:1.6 sn56.40:1.7 ===
+File: data/bodhi/sutta/sn/sn56/sn56.40_translation-en-bodhi.json
+ABOVE sn56.40:1.3
+Pali: ‘vādamassa āropessāmī’ti, taṁ vata sahadhammena saṅkampessati vā sampakampessati vā sampacālessati vāti—netaṁ ṭhānaṁ vijjati. 
+Sujato: ‘I’ll refute their doctrine!’ It’s simply impossible for them to legitimately make that mendicant shake or rock or tremble. 
+Translator: ‘I will refute his thesis,’ it is impossible that he could make that bhikkhu shake, quake, or tremble. 
+JUDGE sn56.40:1.4
+Pali: Pacchimāya cepi disāya …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn56.40:1.5
+Pali: uttarāya cepi disāya …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn56.40:1.6
+Pali: dakkhiṇāya cepi disāya āgaccheyya samaṇo vā brāhmaṇo vā vādatthiko vādagavesī: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn56.40:1.7
+Pali: ‘vādamassa āropessāmī’ti, taṁ vata sahadhammena saṅkampessati vā sampakampessati vā sampacālessati vāti—netaṁ ṭhānaṁ vijjati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn56.40:2.1
+Pali: Seyyathāpi, bhikkhave, silāyūpo soḷasa kukkuko. 
+Sujato: Suppose there was a stone post, sixteen feet long. 
+Translator: “Suppose, bhikkhus, there was a stone column sixteen yards long: 
+
+=== RUN 590: sn56.40:2.8 sn56.40:2.9 sn56.40:2.10 ===
+File: data/bodhi/sutta/sn/sn56/sn56.40_translation-en-bodhi.json
+ABOVE sn56.40:2.7
+Pali: puratthimāya cepi disāya āgaccheyya samaṇo vā brāhmaṇo vā vādatthiko vādagavesī ‘vādamassa āropessāmī’ti, taṁ vata sahadhammena saṅkampessati vā sampakampessati vā sampacālessati vāti—netaṁ ṭhānaṁ vijjati. 
+Sujato: An ascetic or brahmin might come from the east, west, north, or south wanting to debate, seeking a debate, thinking: ‘I’ll refute their doctrine!’ It’s simply impossible for them to legitimately make that mendicant shake or rock or tremble. 
+Translator: and then an ascetic or a brahmin comes along … it is impossible that he could make that bhikkhu shake, quake, or tremble. 
+JUDGE sn56.40:2.8
+Pali: Pacchimāya cepi disāya …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn56.40:2.9
+Pali: uttarāya cepi disāya …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn56.40:2.10
+Pali: dakkhiṇāya cepi disāya āgaccheyya samaṇo vā brāhmaṇo vā vādatthiko vādagavesī: ‘vādamassa āropessāmī’ti, taṁ vata sahadhammena saṅkampessati vā sampakampessati vā sampacālessati vāti—netaṁ ṭhānaṁ vijjati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn56.40:2.11
+Pali: Taṁ kissa hetu? 
+Sujato: Why is that? 
+Translator: For what reason? 
+
+=== RUN 591: sn56.45:2.2 sn56.45:2.3 sn56.45:2.4 sn56.45:2.5 sn56.45:2.6 ===
+File: data/bodhi/sutta/sn/sn56/sn56.45_translation-en-bodhi.json
+ABOVE sn56.45:2.1
+Pali: Atha kho āyasmā ānando vesāliṁ piṇḍāya caritvā pacchābhattaṁ piṇḍapātapaṭikkanto yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ nisīdi. Ekamantaṁ nisinno kho āyasmā ānando bhagavantaṁ etadavoca: 
+Sujato: Then Ānanda wandered for alms in Vesālī. After the meal, on his return from almsround, he went to the Buddha, bowed, sat down to one side, and told him what had happened. 
+Translator: Then, when the Venerable Ānanda had walked for alms in Vesali and had returned from his alms round, after his meal he approached the Blessed One, paid homage to him, sat down to one side, and reported what he had seen. 
+JUDGE sn56.45:2.2
+Pali: “idhāhaṁ, bhante, pubbaṇhasamayaṁ nivāsetvā pattacīvaramādāya vesāliṁ piṇḍāya pāvisiṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn56.45:2.3
+Pali: Addasaṁ khvāhaṁ, bhante, sambahule licchavikumārake santhāgāre upāsanaṁ karonte dūratova sukhumena tāḷacchiggaḷena asanaṁ atipātente poṅkhānupoṅkhaṁ avirādhitaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn56.45:2.4
+Pali: Disvāna me etadahosi: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn56.45:2.5
+Pali: ‘sikkhitā vatime licchavikumārakā, susikkhitā vatime licchavikumārakā; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn56.45:2.6
+Pali: yatra hi nāma dūratova sukhumena tāḷacchiggaḷena asanaṁ atipātessanti poṅkhānupoṅkhaṁ avirādhitan’”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn56.45:3.1
+Pali: “Taṁ kiṁ maññasi, ānanda, 
+Sujato: “What do you think, Ānanda? 
+Translator: The Blessed One said: “What do you think, Ānanda, 

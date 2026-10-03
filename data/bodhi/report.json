@@ -13614,32 +13614,18 @@
   "ratio": 0.95
  },
  {
-  "file": "sutta/sn/sn45/sn45.42-47.html",
-  "uids": "sn45.42-47",
-  "lines": 9,
-  "segments": 8,
+  "file": "sutta/sn/sn45/sn45.42-48.html",
+  "uids": "sn45.42-47 sn45.48",
+  "lines": 28,
+  "segments": 17,
   "unsure": 0,
   "unsureKeys": [],
-  "joined": 0,
+  "joined": 3,
   "merged": 0,
-  "elided": 0,
-  "long": 0,
+  "elided": 3,
+  "long": 1,
   "unmatched": 0,
-  "ratio": 2.47
- },
- {
-  "file": "sutta/sn/sn45/sn45.48.html",
-  "uids": "sn45.48",
-  "lines": 19,
-  "segments": 11,
-  "unsure": 0,
-  "unsureKeys": [],
-  "joined": 1,
-  "merged": 1,
-  "elided": 0,
-  "long": 0,
-  "unmatched": 0,
-  "ratio": 1.1
+  "ratio": 0.76
  },
  {
   "file": "sutta/sn/sn45/sn45.49.html",
@@ -13670,32 +13656,18 @@
   "ratio": 1.22
  },
  {
-  "file": "sutta/sn/sn45/sn45.50-54.html",
-  "uids": "sn45.50-54",
-  "lines": 8,
-  "segments": 3,
+  "file": "sutta/sn/sn45/sn45.50-55.html",
+  "uids": "sn45.50-54 sn45.55",
+  "lines": 15,
+  "segments": 11,
   "unsure": 0,
   "unsureKeys": [],
-  "joined": 4,
+  "joined": 2,
   "merged": 0,
-  "elided": 4,
-  "long": 1,
-  "unmatched": 0,
-  "ratio": 3
- },
- {
-  "file": "sutta/sn/sn45/sn45.55.html",
-  "uids": "sn45.55",
-  "lines": 7,
-  "segments": 6,
-  "unsure": 0,
-  "unsureKeys": [],
-  "joined": 0,
-  "merged": 0,
-  "elided": 0,
+  "elided": 2,
   "long": 0,
   "unmatched": 0,
-  "ratio": 1.26
+  "ratio": 0.81
  },
  {
   "file": "sutta/sn/sn45/sn45.56.html",
@@ -13712,18 +13684,18 @@
   "ratio": 1.24
  },
  {
-  "file": "sutta/sn/sn45/sn45.57-61.html",
-  "uids": "sn45.57-61",
-  "lines": 7,
-  "segments": 2,
+  "file": "sutta/sn/sn45/sn45.57-62.html",
+  "uids": "sn45.57-61 sn45.62",
+  "lines": 19,
+  "segments": 11,
   "unsure": 0,
   "unsureKeys": [],
-  "joined": 4,
+  "joined": 0,
   "merged": 0,
-  "elided": 4,
-  "long": 1,
+  "elided": 0,
+  "long": 0,
   "unmatched": 0,
-  "ratio": 3
+  "ratio": 1.02
  },
  {
   "file": "sutta/sn/sn45/sn45.6.html",
@@ -13740,20 +13712,6 @@
   "ratio": 0.97
  },
  {
-  "file": "sutta/sn/sn45/sn45.62.html",
-  "uids": "sn45.62",
-  "lines": 12,
-  "segments": 5,
-  "unsure": 0,
-  "unsureKeys": [],
-  "joined": 0,
-  "merged": 0,
-  "elided": 0,
-  "long": 0,
-  "unmatched": 0,
-  "ratio": 1.51
- },
- {
   "file": "sutta/sn/sn45/sn45.63.html",
   "uids": "sn45.63",
   "lines": 9,
@@ -13768,24 +13726,10 @@
   "ratio": 1.1
  },
  {
-  "file": "sutta/sn/sn45/sn45.64-68.html",
-  "uids": "sn45.64-68",
-  "lines": 8,
-  "segments": 7,
-  "unsure": 0,
-  "unsureKeys": [],
-  "joined": 0,
-  "merged": 0,
-  "elided": 0,
-  "long": 0,
-  "unmatched": 0,
-  "ratio": 2.11
- },
- {
-  "file": "sutta/sn/sn45/sn45.69.html",
-  "uids": "sn45.69",
-  "lines": 6,
-  "segments": 3,
+  "file": "sutta/sn/sn45/sn45.64-69.html",
+  "uids": "sn45.64-68 sn45.69",
+  "lines": 14,
+  "segments": 10,
   "unsure": 0,
   "unsureKeys": [],
   "joined": 2,
@@ -13793,7 +13737,7 @@
   "elided": 2,
   "long": 1,
   "unmatched": 0,
-  "ratio": 1.33
+  "ratio": 0.82
  },
  {
   "file": "sutta/sn/sn45/sn45.7.html",
@@ -13824,32 +13768,18 @@
   "ratio": 1.19
  },
  {
-  "file": "sutta/sn/sn45/sn45.71-75.html",
-  "uids": "sn45.71-75",
-  "lines": 9,
-  "segments": 7,
+  "file": "sutta/sn/sn45/sn45.71-76.html",
+  "uids": "sn45.71-75 sn45.76",
+  "lines": 21,
+  "segments": 10,
   "unsure": 0,
   "unsureKeys": [],
-  "joined": 1,
+  "joined": 3,
   "merged": 1,
-  "elided": 0,
-  "long": 0,
+  "elided": 2,
+  "long": 1,
   "unmatched": 0,
-  "ratio": 2.08
- },
- {
-  "file": "sutta/sn/sn45/sn45.76.html",
-  "uids": "sn45.76",
-  "lines": 12,
-  "segments": 4,
-  "unsure": 0,
-  "unsureKeys": [],
-  "joined": 1,
-  "merged": 1,
-  "elided": 0,
-  "long": 0,
-  "unmatched": 1,
-  "ratio": 0.97
+  "ratio": 0.73
  },
  {
   "file": "sutta/sn/sn45/sn45.77.html",
@@ -13866,18 +13796,18 @@
   "ratio": 1.16
  },
  {
-  "file": "sutta/sn/sn45/sn45.78-82.html",
-  "uids": "sn45.78-82",
-  "lines": 6,
-  "segments": 1,
+  "file": "sutta/sn/sn45/sn45.78-83.html",
+  "uids": "sn45.78-82 sn45.83",
+  "lines": 12,
+  "segments": 8,
   "unsure": 0,
   "unsureKeys": [],
-  "joined": 4,
+  "joined": 2,
   "merged": 0,
-  "elided": 4,
+  "elided": 2,
   "long": 1,
   "unmatched": 0,
-  "ratio": 3
+  "ratio": 0.91
  },
  {
   "file": "sutta/sn/sn45/sn45.8.html",
@@ -13894,20 +13824,6 @@
   "ratio": 1.1
  },
  {
-  "file": "sutta/sn/sn45/sn45.83.html",
-  "uids": "sn45.83",
-  "lines": 6,
-  "segments": 3,
-  "unsure": 0,
-  "unsureKeys": [],
-  "joined": 2,
-  "merged": 1,
-  "elided": 1,
-  "long": 1,
-  "unmatched": 1,
-  "ratio": 1.36
- },
- {
   "file": "sutta/sn/sn45/sn45.84.html",
   "uids": "sn45.84",
   "lines": 6,
@@ -13922,18 +13838,18 @@
   "ratio": 1.26
  },
  {
-  "file": "sutta/sn/sn45/sn45.85-89.html",
-  "uids": "sn45.85-89",
-  "lines": 6,
-  "segments": 1,
+  "file": "sutta/sn/sn45/sn45.85-90.html",
+  "uids": "sn45.85-89 sn45.90",
+  "lines": 18,
+  "segments": 8,
   "unsure": 0,
   "unsureKeys": [],
-  "joined": 4,
+  "joined": 2,
   "merged": 0,
-  "elided": 4,
+  "elided": 2,
   "long": 1,
   "unmatched": 0,
-  "ratio": 3
+  "ratio": 0.82
  },
  {
   "file": "sutta/sn/sn45/sn45.9.html",
@@ -13950,20 +13866,6 @@
   "ratio": 1.03
  },
  {
-  "file": "sutta/sn/sn45/sn45.90.html",
-  "uids": "sn45.90",
-  "lines": 12,
-  "segments": 3,
-  "unsure": 0,
-  "unsureKeys": [],
-  "joined": 2,
-  "merged": 1,
-  "elided": 1,
-  "long": 1,
-  "unmatched": 1,
-  "ratio": 1.15
- },
- {
   "file": "sutta/sn/sn45/sn45.91.html",
   "uids": "sn45.91",
   "lines": 7,
@@ -13978,32 +13880,18 @@
   "ratio": 1.08
  },
  {
-  "file": "sutta/sn/sn45/sn45.92-95.html",
-  "uids": "sn45.92-95",
-  "lines": 8,
-  "segments": 4,
-  "unsure": 0,
-  "unsureKeys": [],
-  "joined": 0,
-  "merged": 0,
-  "elided": 0,
-  "long": 0,
-  "unmatched": 0,
-  "ratio": 2.61
- },
- {
-  "file": "sutta/sn/sn45/sn45.96.html",
-  "uids": "sn45.96",
-  "lines": 7,
-  "segments": 4,
+  "file": "sutta/sn/sn45/sn45.92-96.html",
+  "uids": "sn45.92-95 sn45.96",
+  "lines": 15,
+  "segments": 9,
   "unsure": 0,
   "unsureKeys": [],
   "joined": 2,
   "merged": 0,
   "elided": 2,
   "long": 0,
-  "unmatched": 1,
-  "ratio": 0.77
+  "unmatched": 0,
+  "ratio": 0.59
  },
  {
   "file": "sutta/sn/sn45/sn45.97.html",

@@ -1,0 +1,25 @@
+{
+  "status": "complete: clarified coverage rule checked and covered.json written",
+  "counts": {
+    "runs": 591,
+    "lines": 2510
+  },
+  "batches": 12,
+  "completed_batches": 12,
+  "judged": {
+    "covered": 32,
+    "skipped": 2478,
+    "unsure": 0
+  },
+  "covered_candidates_checked": 68,
+  "marks_changed_to_skipped": 36,
+  "remaining": 0,
+  "skipped_sampling": "retired by user; no further skipped marks checked",
+  "covered_output_written": true,
+  "structural_checks_passed": true,
+  "exclusions": [
+    "SN 45"
+  ],
+  "active_check": "rule-check.json",
+  "previous_audit": "audit.json is historical; its stop and MN72:13.5 recommendation were superseded by the user."
+}

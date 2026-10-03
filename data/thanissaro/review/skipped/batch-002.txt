@@ -1,0 +1,1533 @@
+thanissaro: skipped-Pali review batch 002
+Read the full English above, each original Pali line, and the next English. Sujato is context only.
+covered = this line's own content is explicitly rendered by the English above, including complete lists.
+skipped = abbreviated or compressed repetition, even if mentioned, or omitted. When in doubt, skipped.
+Judge each key independently; a run may be mixed. An ellipsis alone does not decide.
+Only runs of two or more empty prose lines in the same paragraph are reviewed; lone lines join automatically.
+Write <key> covered|skipped|unsure for every RUN key, then # done. Do not mark context keys.
+
+=== RUN 51: an9.34:7.3 an9.34:7.4 an9.34:7.5 an9.34:7.6 ===
+File: data/thanissaro/sutta/an/an9/an9.34_translation-en-thanissaro.json
+ABOVE an9.34:7.2
+Pali: Tassa ce, āvuso, bhikkhuno iminā vihārena viharato ākāsānañcāyatanasahagatā saññāmanasikārā samudācaranti, svassa hoti ābādho. 
+Sujato: While a mendicant is practicing such a meditation, if perception and focus accompanied by the dimension of infinite space beset them, that’s an affliction for them. 
+Translator: If, as he remains there, he is beset with attention to perceptions dealing with the dimension of the infinitude of space, that is an affliction for him.… 
+JUDGE an9.34:7.3
+Pali: Seyyathāpi, āvuso, sukhino dukkhaṁ uppajjeyya yāvadeva ābādhāya; 
+Sujato: Suppose a happy person were to experience pain; that would be an affliction for them. 
+Translator: (empty)
+JUDGE an9.34:7.4
+Pali: evamevassa te ākāsānañcāyatanasahagatā saññāmanasikārā samudācaranti. Svassa hoti ābādho. 
+Sujato: In the same way, should perception and focus accompanied by the dimension of infinite space beset them, that’s an affliction for them. 
+Translator: (empty)
+JUDGE an9.34:7.5
+Pali: Yo kho panāvuso, ābādho dukkhametaṁ vuttaṁ bhagavatā. 
+Sujato: And affliction has been called suffering by the Buddha. 
+Translator: (empty)
+JUDGE an9.34:7.6
+Pali: Imināpi kho etaṁ, āvuso, pariyāyena veditabbaṁ yathā sukhaṁ nibbānaṁ. 
+Sujato: That too is a way to understand how extinguishment is bliss. 
+Translator: (empty)
+BELOW (outside this paragraph) an9.34:8.1
+Pali: Puna caparaṁ, āvuso, bhikkhu sabbaso viññāṇañcāyatanaṁ samatikkamma, natthi kiñcīti ākiñcaññāyatanaṁ upasampajja viharati. 
+Sujato: Furthermore, take a mendicant who, going totally beyond the dimension of infinite consciousness, aware that ‘there is nothing at all’, enters and remains in the dimension of nothingness. 
+Translator: “Then there is the case where a monk, with the complete transcending of the dimension of the infinitude of consciousness, (perceiving,) ‘There is nothing,’ enters & remains in the dimension of nothingness. 
+
+=== RUN 52: an9.34:8.3 an9.34:8.4 an9.34:8.5 an9.34:8.6 ===
+File: data/thanissaro/sutta/an/an9/an9.34_translation-en-thanissaro.json
+ABOVE an9.34:8.2
+Pali: Tassa ce, āvuso, bhikkhuno iminā vihārena viharato viññāṇañcāyatanasahagatā saññāmanasikārā samudācaranti, svassa hoti ābādho. 
+Sujato: While a mendicant is practicing such a meditation, if perception and focus accompanied by the dimension of infinite consciousness beset them, that’s an affliction for them. 
+Translator: If, as he remains there, he is beset with attention to perceptions dealing with the dimension of the infinitude of consciousness, that is an affliction for him.… 
+JUDGE an9.34:8.3
+Pali: Seyyathāpi, āvuso, sukhino dukkhaṁ uppajjeyya yāvadeva ābādhāya; 
+Sujato: Suppose a happy person were to experience pain; that would be an affliction for them. 
+Translator: (empty)
+JUDGE an9.34:8.4
+Pali: evamevassa te viññāṇañcāyatanasahagatā saññāmanasikārā samudācaranti. Svassa hoti ābādho. 
+Sujato: In the same way, should perception and focus accompanied by the dimension of infinite consciousness beset them, that’s an affliction for them. 
+Translator: (empty)
+JUDGE an9.34:8.5
+Pali: Yo kho panāvuso, ābādho dukkhametaṁ vuttaṁ bhagavatā. 
+Sujato: And affliction has been called suffering by the Buddha. 
+Translator: (empty)
+JUDGE an9.34:8.6
+Pali: Imināpi kho etaṁ, āvuso, pariyāyena veditabbaṁ yathā sukhaṁ nibbānaṁ. 
+Sujato: That too is a way to understand how extinguishment is bliss. 
+Translator: (empty)
+BELOW (outside this paragraph) an9.34:9.1
+Pali: Puna caparaṁ, āvuso, bhikkhu sabbaso ākiñcaññāyatanaṁ samatikkamma nevasaññānāsaññāyatanaṁ upasampajja viharati. 
+Sujato: Furthermore, take a mendicant who, going totally beyond the dimension of nothingness, enters and remains in the dimension of neither perception nor non-perception. 
+Translator: “Then there is the case where a monk, with the complete transcending of the dimension of nothingness, enters & remains in the dimension of neither perception nor non-perception. 
+
+=== RUN 53: an9.34:9.3 an9.34:9.4 ===
+File: data/thanissaro/sutta/an/an9/an9.34_translation-en-thanissaro.json
+ABOVE an9.34:9.2
+Pali: Tassa ce, āvuso, bhikkhuno iminā vihārena viharato ākiñcaññāyatanasahagatā saññāmanasikārā samudācaranti, svassa hoti ābādho. 
+Sujato: While a mendicant is practicing such a meditation, if perception and focus accompanied by the dimension of nothingness beset them, that’s an affliction for them. 
+Translator: If, as he remains there, he is beset with attention to perceptions dealing with the dimension of nothingness, that is an affliction for him. 
+JUDGE an9.34:9.3
+Pali: Seyyathāpi, āvuso, sukhino dukkhaṁ uppajjeyya yāvadeva ābādhāya; 
+Sujato: Suppose a happy person were to experience pain; that would be an affliction for them. 
+Translator: (empty)
+JUDGE an9.34:9.4
+Pali: evamevassa te ākiñcaññāyatanasahagatā saññāmanasikārā samudācaranti. Svassa hoti ābādho. 
+Sujato: In the same way, should perception and focus accompanied by the dimension of nothingness beset them, that’s an affliction for them. 
+Translator: (empty)
+BELOW an9.34:9.5
+Pali: Yo kho panāvuso, ābādho dukkhametaṁ vuttaṁ bhagavatā. 
+Sujato: And affliction has been called suffering by the Buddha. 
+Translator: Now, the Blessed One has said that whatever is an affliction is stress. 
+
+=== RUN 54: an9.36:2.8 an9.36:2.9 ===
+File: data/thanissaro/sutta/an/an9/an9.36_translation-en-thanissaro.json
+ABOVE an9.36:2.7
+Pali: ‘etaṁ santaṁ etaṁ paṇītaṁ yadidaṁ sabbasaṅkhārasamatho sabbūpadhipaṭinissaggo taṇhākkhayo virāgo nirodho nibbānan’ti. 
+Sujato: ‘This is peaceful; this is sublime—that is, the stilling of all activities, the letting go of all attachments, the ending of craving, fading away, cessation, extinguishment.’ 
+Translator: ‘This is peace, this is exquisite—the pacification of all fabrications; the relinquishing of all acquisitions; the ending of craving; dispassion; cessation; unbinding.’ 
+JUDGE an9.36:2.8
+Pali: So tattha ṭhito āsavānaṁ khayaṁ pāpuṇāti. 
+Sujato: Abiding in that they attain the ending of defilements. 
+Translator: (empty)
+JUDGE an9.36:2.9
+Pali: No ce āsavānaṁ khayaṁ pāpuṇāti, teneva dhammarāgena tāya dhammanandiyā pañcannaṁ orambhāgiyānaṁ saṁyojanānaṁ parikkhayā opapātiko hoti tattha parinibbāyī anāvattidhammo tasmā lokā. 
+Sujato: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. 
+Translator: (empty)
+BELOW (outside this paragraph) an9.36:3.1
+Pali: Seyyathāpi, bhikkhave, issāso vā issāsantevāsī vā tiṇapurisarūpake vā mattikāpuñje vā yoggaṁ karitvā, so aparena samayena dūrepātī ca hoti akkhaṇavedhī ca mahato ca kāyassa padāletā; 
+Sujato: It’s like an archer or their apprentice who first practices on a straw man or a clay model. At a later time they become a long-distance shooter, a marksman, who shatters large objects. 
+Translator: “Suppose that an archer or archer’s apprentice were to practice on a straw man or mound of clay, so that after a while he would become able to shoot long distances, to fire accurate shots in rapid succession, and to pierce great masses. 
+
+=== RUN 55: an9.36:4.4 an9.36:4.5 an9.36:4.6 an9.36:4.7 an9.36:4.8 an9.36:4.9 an9.36:4.10 an9.36:4.11 ===
+File: data/thanissaro/sutta/an/an9/an9.36_translation-en-thanissaro.json
+ABOVE an9.36:4.3
+Pali: ‘catutthampāhaṁ, bhikkhave, jhānaṁ nissāya āsavānaṁ khayaṁ vadāmī’ti, iti kho panetaṁ vuttaṁ. 
+Sujato: ‘The fourth absorption is also a basis for ending the defilements.’ … 
+Translator: and fourth jhāna.] 
+JUDGE an9.36:4.4
+Pali: Kiñcetaṁ paṭicca vuttaṁ? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an9.36:4.5
+Pali: Idha, bhikkhave, bhikkhu sukhassa ca pahānā dukkhassa ca pahānā pubbeva somanassadomanassānaṁ atthaṅgamā adukkhamasukhaṁ upekkhāsatipārisuddhiṁ catutthaṁ jhānaṁ upasampajja viharati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an9.36:4.6
+Pali: So yadeva tattha hoti rūpagataṁ vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ, te dhamme aniccato dukkhato rogato gaṇḍato sallato aghato ābādhato parato palokato suññato anattato samanupassati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an9.36:4.7
+Pali: So tehi dhammehi cittaṁ paṭivāpeti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an9.36:4.8
+Pali: So tehi dhammehi cittaṁ paṭivāpetvā amatāya dhātuyā cittaṁ upasaṁharati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an9.36:4.9
+Pali: ‘etaṁ santaṁ etaṁ paṇītaṁ yadidaṁ sabbasaṅkhārasamatho sabbūpadhipaṭinissaggo taṇhākkhayo virāgo nirodho nibbānan’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an9.36:4.10
+Pali: So tattha ṭhito āsavānaṁ khayaṁ pāpuṇāti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an9.36:4.11
+Pali: No ce āsavānaṁ khayaṁ pāpuṇāti, teneva dhammarāgena tāya dhammanandiyā pañcannaṁ orambhāgiyānaṁ saṁyojanānaṁ parikkhayā opapātiko hoti tattha parinibbāyī anāvattidhammo tasmā lokā. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) an9.36:6.1
+Pali: ‘Ākāsānañcāyatanampāhaṁ, bhikkhave, jhānaṁ nissāya āsavānaṁ khayaṁ vadāmī’ti, iti kho panetaṁ vuttaṁ. 
+Sujato: ‘The dimension of infinite space is also a basis for ending the defilements.’ 
+Translator: “‘I tell you, the ending of the effluents depends on the dimension of the infinitude of space.’ 
+
+=== RUN 56: an9.36:6.8 an9.36:6.9 ===
+File: data/thanissaro/sutta/an/an9/an9.36_translation-en-thanissaro.json
+ABOVE an9.36:6.7
+Pali: ‘etaṁ santaṁ etaṁ paṇītaṁ yadidaṁ sabbasaṅkhārasamatho sabbūpadhipaṭinissaggo taṇhākkhayo virāgo nirodho nibbānan’ti. 
+Sujato: ‘This is peaceful; this is sublime—that is, the stilling of all activities, the letting go of all attachments, the ending of craving, fading away, cessation, extinguishment.’ 
+Translator: ‘This is peace, this is exquisite—the pacification of all fabrications; the relinquishing of all acquisitions; the ending of craving; dispassion; cessation; unbinding.’ 
+JUDGE an9.36:6.8
+Pali: So tattha ṭhito āsavānaṁ khayaṁ pāpuṇāti. 
+Sujato: Abiding in that they attain the ending of defilements. 
+Translator: (empty)
+JUDGE an9.36:6.9
+Pali: No ce āsavānaṁ khayaṁ pāpuṇāti, teneva dhammarāgena tāya dhammanandiyā pañcannaṁ orambhāgiyānaṁ saṁyojanānaṁ parikkhayā opapātiko hoti tattha parinibbāyī anāvattidhammo tasmā lokā. 
+Sujato: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. 
+Translator: (empty)
+BELOW (outside this paragraph) an9.36:7.1
+Pali: Seyyathāpi, bhikkhave, issāso vā issāsantevāsī vā tiṇapurisarūpake vā mattikāpuñje vā yoggaṁ karitvā, so aparena samayena dūrepātī ca hoti akkhaṇavedhī ca mahato ca kāyassa padāletā; 
+Sujato: It’s like an archer or their apprentice who first practices on a straw man or a clay model. At a later time they become a long-distance shooter, a marksman, who shatters large objects. 
+Translator: “Suppose that an archer or archer's apprentice were to practice on a straw man or mound of clay, so that after a while he would become able to shoot long distances, to fire accurate shots in rapid succession, and to pierce great masses. 
+
+=== RUN 57: an9.38:4.9 an9.38:4.10 an9.38:4.11 ===
+File: data/thanissaro/sutta/an/an9/an9.38_translation-en-thanissaro.json
+ABOVE an9.38:4.8
+Pali: atha uttarāya disāya … 
+Sujato: Then the man standing in the north … 
+Translator: & northern directions.] 
+JUDGE an9.38:4.9
+Pali: atha dakkhiṇāya disāya ṭhito puriso evaṁ vadeyya: 
+Sujato: Then the man standing in the south would say: 
+Translator: (empty)
+JUDGE an9.38:4.10
+Pali: ‘ahaṁ gamanena lokassa antaṁ pāpuṇissāmī’ti. 
+Sujato: ‘I will reach the end of the world by traveling.’ 
+Translator: (empty)
+JUDGE an9.38:4.11
+Pali: So aññatreva asitapītakhāyitasāyitā aññatra uccārapassāvakammā aññatra niddākilamathapaṭivinodanā vassasatāyuko vassasatajīvī vassasataṁ gantvā appatvāva lokassa antaṁ antarā kālaṁ kareyya. 
+Sujato: Though he’d travel for his whole lifespan of a hundred years—pausing only to eat and drink, go to the toilet, and sleep to dispel weariness—he’d die along the way, never reaching the end of the world. 
+Translator: (empty)
+BELOW an9.38:4.12
+Pali: Taṁ kissa hetu? 
+Sujato: Why is that? 
+Translator: Why is that? 
+
+=== RUN 58: an9.38:7.4 an9.38:7.5 an9.38:7.6 an9.38:7.7 an9.38:7.8 ===
+File: data/thanissaro/sutta/an/an9/an9.38_translation-en-thanissaro.json
+ABOVE an9.38:7.3
+Pali: catutthaṁ jhānaṁ upasampajja viharati. 
+Sujato: fourth absorption. 
+Translator: & fourth jhānas, 
+JUDGE an9.38:7.4
+Pali: Ayaṁ vuccati, brāhmaṇā, ‘bhikkhu lokassa antamāgamma lokassa ante viharati’. 
+Sujato: This is called a mendicant who, having gone to the end of the world, meditates at the end of the world. 
+Translator: (empty)
+JUDGE an9.38:7.5
+Pali: Tamaññe evamāhaṁsu: 
+Sujato: Others say of them: 
+Translator: (empty)
+JUDGE an9.38:7.6
+Pali: ‘ayampi lokapariyāpanno, ayampi anissaṭo lokamhā’ti. 
+Sujato: ‘They’re included in the world, and haven’t yet left the world.’ 
+Translator: (empty)
+JUDGE an9.38:7.7
+Pali: Ahampi hi, brāhmaṇā, evaṁ vadāmi: 
+Sujato: And I also say this: 
+Translator: (empty)
+JUDGE an9.38:7.8
+Pali: ‘ayampi lokapariyāpanno, ayampi anissaṭo lokamhā’ti. 
+Sujato: ‘They’re included in the world, and haven’t yet left the world.’ 
+Translator: (empty)
+BELOW (outside this paragraph) an9.38:8.1
+Pali: Puna caparaṁ, brāhmaṇā, bhikkhu sabbaso rūpasaññānaṁ samatikkamā paṭighasaññānaṁ atthaṅgamā nānattasaññānaṁ amanasikārā ‘ananto ākāso’ti ākāsānañcāyatanaṁ upasampajja viharati. 
+Sujato: Furthermore, take a mendicant who, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, enters and remains in the dimension of infinite space. 
+Translator: and with the attainment of the dimensions of the infinitude of space, 
+
+=== RUN 59: an9.38:8.2 an9.38:8.3 an9.38:8.4 an9.38:8.5 an9.38:8.6 ===
+File: data/thanissaro/sutta/an/an9/an9.38_translation-en-thanissaro.json
+ABOVE an9.38:8.1
+Pali: Puna caparaṁ, brāhmaṇā, bhikkhu sabbaso rūpasaññānaṁ samatikkamā paṭighasaññānaṁ atthaṅgamā nānattasaññānaṁ amanasikārā ‘ananto ākāso’ti ākāsānañcāyatanaṁ upasampajja viharati. 
+Sujato: Furthermore, take a mendicant who, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, enters and remains in the dimension of infinite space. 
+Translator: and with the attainment of the dimensions of the infinitude of space, 
+JUDGE an9.38:8.2
+Pali: Ayaṁ vuccati, brāhmaṇā, ‘bhikkhu lokassa antamāgamma lokassa ante viharati’. 
+Sujato: This is called a mendicant who, having gone to the end of the world, meditates at the end of the world. 
+Translator: (empty)
+JUDGE an9.38:8.3
+Pali: Tamaññe evamāhaṁsu: 
+Sujato: Others say of them: 
+Translator: (empty)
+JUDGE an9.38:8.4
+Pali: ‘ayampi lokapariyāpanno, ayampi anissaṭo lokamhā’ti. 
+Sujato: ‘They’re included in the world, and haven’t yet left the world.’ 
+Translator: (empty)
+JUDGE an9.38:8.5
+Pali: Ahampi hi, brāhmaṇā, evaṁ vadāmi: 
+Sujato: And I also say this: 
+Translator: (empty)
+JUDGE an9.38:8.6
+Pali: ‘ayampi lokapariyāpanno, ayampi anissaṭo lokamhā’ti. 
+Sujato: ‘They’re included in the world, and haven’t yet left the world.’ 
+Translator: (empty)
+BELOW (outside this paragraph) an9.38:9.1
+Pali: Puna caparaṁ, brāhmaṇā, bhikkhu sabbaso ākāsānañcāyatanaṁ samatikkamma ‘anantaṁ viññāṇan’ti viññāṇañcāyatanaṁ upasampajja viharati …pe… 
+Sujato: Furthermore, take a mendicant who enters and remains in the dimension of infinite consciousness. … 
+Translator: the infinitude of consciousness, 
+
+=== RUN 60: an9.38:9.4 an9.38:9.5 an9.38:9.6 an9.38:9.7 an9.38:9.8 ===
+File: data/thanissaro/sutta/an/an9/an9.38_translation-en-thanissaro.json
+ABOVE an9.38:9.3
+Pali: sabbaso ākiñcaññāyatanaṁ samatikkamma nevasaññānāsaññāyatanaṁ upasampajja viharati. 
+Sujato: the dimension of neither perception nor non-perception. 
+Translator: and neither perception nor non-perception.] 
+JUDGE an9.38:9.4
+Pali: Ayaṁ vuccati, brāhmaṇā, ‘bhikkhu lokassa antamāgamma lokassa ante viharati’. 
+Sujato: This is called a mendicant who, having gone to the end of the world, meditates at the end of the world. 
+Translator: (empty)
+JUDGE an9.38:9.5
+Pali: Tamaññe evamāhaṁsu: 
+Sujato: Others say of them: 
+Translator: (empty)
+JUDGE an9.38:9.6
+Pali: ‘ayampi lokapariyāpanno, ayampi anissaṭo lokamhā’ti. 
+Sujato: ‘They’re included in the world, and haven’t yet left the world.’ 
+Translator: (empty)
+JUDGE an9.38:9.7
+Pali: Ahampi hi, brāhmaṇā, evaṁ vadāmi: 
+Sujato: And I also say this: 
+Translator: (empty)
+JUDGE an9.38:9.8
+Pali: ‘ayampi lokapariyāpanno, ayampi anissaṭo lokamhā’ti. 
+Sujato: ‘They’re included in the world, and haven’t yet left the world.’ 
+Translator: (empty)
+BELOW (outside this paragraph) an9.38:10.1
+Pali: Puna caparaṁ, brāhmaṇā, bhikkhu sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja viharati, paññāya cassa disvā āsavā parikkhīṇā honti. 
+Sujato: Furthermore, take a mendicant who, going totally beyond the dimension of neither perception nor non-perception, enters and remains in the cessation of perception and feeling. And, having seen with wisdom, their defilements come to an end. 
+Translator: “And further, with the complete transcending of the dimension of neither perception nor non-perception, he enters & remains in the cessation of perception & feeling. And as he sees (that) with discernment, effluents are completely ended. 
+
+=== RUN 61: an9.39:6.4 an9.39:6.5 an9.39:6.6 an9.39:6.7 ===
+File: data/thanissaro/sutta/an/an9/an9.39_translation-en-thanissaro.json
+ABOVE an9.39:6.3
+Pali: catutthaṁ jhānaṁ upasampajja viharati, 
+Sujato: fourth absorption. 
+Translator: & fourth jhānas.] 
+JUDGE an9.39:6.4
+Pali: tasmiṁ, bhikkhave, samaye bhikkhussa evaṁ hoti: 
+Sujato: At that time the mendicant thinks, 
+Translator: (empty)
+JUDGE an9.39:6.5
+Pali: ‘bhīruttānagatena kho dānāhaṁ etarahi attanā viharāmi akaraṇīyo mārassā’ti. 
+Sujato: ‘Now I’m in a secure location and Māra can’t do anything to me.’ 
+Translator: (empty)
+JUDGE an9.39:6.6
+Pali: Mārassāpi, bhikkhave, pāpimato evaṁ hoti: 
+Sujato: And Māra the Wicked also thinks, 
+Translator: (empty)
+JUDGE an9.39:6.7
+Pali: ‘bhīruttānagatena kho dāni bhikkhu etarahi attanā viharati, akaraṇīyo mayhan’ti. 
+Sujato: ‘Now the mendicant is in a secure location and we can’t do anything to them.’ 
+Translator: (empty)
+BELOW (outside this paragraph) an9.39:7.1
+Pali: Yasmiṁ, bhikkhave, samaye bhikkhu sabbaso rūpasaññānaṁ samatikkamā paṭighasaññānaṁ atthaṅgamā nānattasaññānaṁ amanasikārā ‘ananto ākāso’ti ākāsānañcāyatanaṁ upasampajja viharati. 
+Sujato: There’s a time when a mendicant, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, enters and remains in the dimension of infinite space. 
+Translator: “On whatever occasion a monk, with the complete transcending of perceptions of (physical) form, with the disappearance of perceptions of resistance, and not attending to perceptions of multiplicity, (perceiving,) ‘Infinite space,’ enters the dimension of the infinitude of space: 
+
+=== RUN 62: an9.41:9.4 an9.41:9.5 an9.41:9.6 an9.41:9.7 an9.41:9.8 an9.41:9.9 an9.41:9.10 ===
+File: data/thanissaro/sutta/an/an9/an9.41_translation-en-thanissaro.json
+ABOVE an9.41:9.3
+Pali: Tassa mayhaṁ, ānanda, nippītike cittaṁ na pakkhandati nappasīdati na santiṭṭhati na vimuccati etaṁ santanti passato. 
+Sujato: But my mind did not leap forth, gain confidence, settle down, and become decided in freedom from rapture. I didn’t see it as peaceful. 
+Translator: But my heart didn’t leap up at being without rapture, didn’t grow confident, steadfast, or released, (though) seeing it as peace.… 
+JUDGE an9.41:9.4
+Pali: Tassa mayhaṁ, ānanda, etadahosi: 
+Sujato: Then I thought, 
+Translator: (empty)
+JUDGE an9.41:9.5
+Pali: ‘ko nu kho hetu ko paccayo, yena me nippītike cittaṁ na pakkhandati nappasīdati na santiṭṭhati na vimuccati etaṁ santanti passato’? 
+Sujato: ‘What is the cause, what is the reason why my mind does not leap forth, gain confidence, settle down, and become decided in freedom from rapture? Why don’t I see it as peaceful?’ 
+Translator: (empty)
+JUDGE an9.41:9.6
+Pali: Tassa mayhaṁ, ānanda, etadahosi: 
+Sujato: Then I thought, 
+Translator: (empty)
+JUDGE an9.41:9.7
+Pali: ‘pītiyā kho me ādīnavo adiṭṭho, so ca me abahulīkato, nippītike ca ānisaṁso anadhigato, so ca me anāsevito. 
+Sujato: ‘I haven’t seen the drawbacks of rapture, and so I haven’t cultivated that. I haven’t realized the benefits of freedom from rapture, and so I haven’t developed that. 
+Translator: (empty)
+JUDGE an9.41:9.8
+Pali: Tasmā me nippītike cittaṁ na pakkhandati nappasīdati na santiṭṭhati na vimuccati etaṁ santanti passato’. 
+Sujato: That’s why my mind does not leap forth, gain confidence, settle down, and become decided in freedom from rapture. And it’s why I don’t see it as peaceful.’ 
+Translator: (empty)
+JUDGE an9.41:9.9
+Pali: Tassa mayhaṁ, ānanda, etadahosi: 
+Sujato: Then I thought, 
+Translator: (empty)
+JUDGE an9.41:9.10
+Pali: ‘sace kho ahaṁ pītiyā ādīnavaṁ disvā taṁ bahulaṁ kareyyaṁ, nippītike ānisaṁsaṁ adhigamma tamāseveyyaṁ, ṭhānaṁ kho panetaṁ vijjati yaṁ me nippītike cittaṁ pakkhandeyya pasīdeyya santiṭṭheyya vimucceyya etaṁ santanti passato’. 
+Sujato: ‘Suppose that, seeing the drawbacks of rapture, I were to cultivate that. And suppose that, realizing the benefits of freedom from rapture, I were to develop that. It’s possible that my mind would leap forth, gain confidence, settle down, and become decided in being free from rapture. And I would see it as peaceful.’ 
+Translator: (empty)
+BELOW an9.41:9.11
+Pali: So kho ahaṁ, ānanda, aparena samayena pītiyā ādīnavaṁ disvā taṁ bahulamakāsiṁ, nippītike ānisaṁsaṁ adhigamma tamāseviṁ. 
+Sujato: And so, after some time, I saw the drawbacks of rapture and cultivated that, and I realized the benefits of freedom from rapture and developed that. 
+Translator: So at a later time, having seen the drawback of rapture, I pursued that theme; having understood the reward of being without rapture, I familiarized myself with it. 
+
+=== RUN 63: an9.41:10.4 an9.41:10.5 an9.41:10.6 an9.41:10.7 an9.41:10.8 an9.41:10.9 an9.41:10.10 ===
+File: data/thanissaro/sutta/an/an9/an9.41_translation-en-thanissaro.json
+ABOVE an9.41:10.3
+Pali: Tassa mayhaṁ, ānanda, adukkhamasukhe cittaṁ na pakkhandati nappasīdati na santiṭṭhati na vimuccati etaṁ santanti passato. 
+Sujato: But my mind did not leap forth, gain confidence, settle down, and become decided in being without pleasure and pain. I didn’t see it as peaceful. 
+Translator: But my heart didn’t leap up at being without the pleasure of equanimity, didn’t grow confident, steadfast, or released, (though) seeing it as peace.… 
+JUDGE an9.41:10.4
+Pali: Tassa mayhaṁ, ānanda, etadahosi: 
+Sujato: Then I thought, 
+Translator: (empty)
+JUDGE an9.41:10.5
+Pali: ‘ko nu kho hetu ko paccayo, yena me adukkhamasukhe cittaṁ na pakkhandati nappasīdati na santiṭṭhati na vimuccati etaṁ santanti passato’? 
+Sujato: ‘What is the cause, what is the reason why my mind does not leap forth, gain confidence, settle down, and become decided in being without pleasure and pain? Why don’t I see it as peaceful?’ 
+Translator: (empty)
+JUDGE an9.41:10.6
+Pali: Tassa mayhaṁ, ānanda, etadahosi: 
+Sujato: Then I thought, 
+Translator: (empty)
+JUDGE an9.41:10.7
+Pali: ‘upekkhāsukhe kho me ādīnavo adiṭṭho, so ca me abahulīkato, adukkhamasukhe ca ānisaṁso anadhigato, so ca me anāsevito. 
+Sujato: ‘I haven’t seen the drawbacks of bliss with equanimity, and so I haven’t cultivated that. I haven’t realized the benefits of being without pleasure and pain, and so I haven’t developed that. 
+Translator: (empty)
+JUDGE an9.41:10.8
+Pali: Tasmā me adukkhamasukhe cittaṁ na pakkhandati nappasīdati na santiṭṭhati na vimuccati etaṁ santanti passato’. 
+Sujato: That’s why my mind does not leap forth, gain confidence, settle down, and become decided in being without pleasure and pain. And it’s why I don’t see it as peaceful.’ 
+Translator: (empty)
+JUDGE an9.41:10.9
+Pali: Tassa mayhaṁ, ānanda, etadahosi: 
+Sujato: Then I thought, 
+Translator: (empty)
+JUDGE an9.41:10.10
+Pali: ‘sace kho ahaṁ upekkhāsukhe ādīnavaṁ disvā taṁ bahulaṁ kareyyaṁ, adukkhamasukhe ānisaṁsaṁ adhigamma tamāseveyyaṁ, ṭhānaṁ kho panetaṁ vijjati yaṁ me adukkhamasukhe cittaṁ pakkhandeyya pasīdeyya santiṭṭheyya vimucceyya etaṁ santanti passato’. 
+Sujato: ‘Suppose that, seeing the drawbacks of bliss with equanimity, I were to cultivate that. And suppose that, realizing the benefits of being without pleasure and pain, I were to develop that. It’s possible that my mind would leap forth, gain confidence, settle down, and become decided in being without pleasure and pain. And I would see it as peaceful.’ 
+Translator: (empty)
+BELOW an9.41:10.11
+Pali: So kho ahaṁ, ānanda, aparena samayena upekkhāsukhe ādīnavaṁ disvā taṁ bahulamakāsiṁ adukkhamasukhe ānisaṁsaṁ adhigamma tamāseviṁ. 
+Sujato: And so, after some time, I saw the drawbacks of bliss with equanimity and cultivated that, and I realized the benefits of being without pleasure and pain and developed that. 
+Translator: So at a later time, having seen the drawback of the pleasure of equanimity, I pursued that theme; having understood the reward of neither-pleasure-nor-pain, I familiarized myself with it. 
+
+=== RUN 64: an9.41:11.4 an9.41:11.5 an9.41:11.6 an9.41:11.7 an9.41:11.8 an9.41:11.9 an9.41:11.10 ===
+File: data/thanissaro/sutta/an/an9/an9.41_translation-en-thanissaro.json
+ABOVE an9.41:11.3
+Pali: Tassa mayhaṁ, ānanda, ākāsānañcāyatane cittaṁ na pakkhandati nappasīdati na santiṭṭhati na vimuccati etaṁ santanti passato. 
+Sujato: But my mind did not leap forth, gain confidence, settle down, and become decided in the dimension of infinite space. I didn’t see it as peaceful. 
+Translator: But my heart didn’t leap up at the dimension of the infinitude of space, didn’t grow confident, steadfast, or released, (though) seeing it as peace.… 
+JUDGE an9.41:11.4
+Pali: Tassa mayhaṁ, ānanda, etadahosi: 
+Sujato: Then I thought, 
+Translator: (empty)
+JUDGE an9.41:11.5
+Pali: ‘ko nu kho hetu ko paccayo, yena me ākāsānañcāyatane cittaṁ na pakkhandati nappasīdati na santiṭṭhati na vimuccati etaṁ santanti passato’? 
+Sujato: ‘What is the cause, what is the reason why my mind does not leap forth, gain confidence, settle down, and become decided in the dimension of infinite space? Why don’t I see it as peaceful?’ 
+Translator: (empty)
+JUDGE an9.41:11.6
+Pali: Tassa mayhaṁ, ānanda, etadahosi: 
+Sujato: Then I thought, 
+Translator: (empty)
+JUDGE an9.41:11.7
+Pali: ‘rūpesu kho me ādīnavo adiṭṭho, so ca abahulīkato, ākāsānañcāyatane ca ānisaṁso anadhigato, so ca me anāsevito. 
+Sujato: ‘I haven’t seen the drawbacks of forms, and so I haven’t cultivated that. I haven’t realized the benefits of the dimension of infinite space, and so I haven’t developed that. 
+Translator: (empty)
+JUDGE an9.41:11.8
+Pali: Tasmā me ākāsānañcāyatane cittaṁ na pakkhandati nappasīdati na santiṭṭhati na vimuccati etaṁ santanti passato’. 
+Sujato: That’s why my mind does not leap forth, gain confidence, settle down, and become decided in the dimension of infinite space. And it’s why I don’t see it as peaceful.’ 
+Translator: (empty)
+JUDGE an9.41:11.9
+Pali: Tassa mayhaṁ, ānanda, etadahosi: 
+Sujato: Then I thought, 
+Translator: (empty)
+JUDGE an9.41:11.10
+Pali: ‘sace kho ahaṁ rūpesu ādīnavaṁ disvā taṁ bahulaṁ kareyyaṁ, ākāsānañcāyatane ānisaṁsaṁ adhigamma tamāseveyyaṁ, ṭhānaṁ kho panetaṁ vijjati yaṁ me ākāsānañcāyatane cittaṁ pakkhandeyya pasīdeyya santiṭṭheyya vimucceyya etaṁ santanti passato’. 
+Sujato: ‘Suppose that, seeing the drawbacks of forms, I were to cultivate that. And suppose that, realizing the benefits of the dimension of infinite space, I were to develop that. It’s possible that my mind would leap forth, gain confidence, settle down, and become decided in the dimension of infinite space. And I would see it as peaceful.’ 
+Translator: (empty)
+BELOW an9.41:11.11
+Pali: So kho ahaṁ, ānanda, aparena samayena rūpesu ādīnavaṁ disvā taṁ bahulamakāsiṁ, ākāsānañcāyatane ānisaṁsaṁ adhigamma tamāseviṁ. 
+Sujato: And so, after some time, I saw the drawbacks of forms and cultivated that, and I realized the benefits of the dimension of infinite space and developed that. 
+Translator: So at a later time, having seen the drawback of forms, I pursued that theme; having understood the reward of the dimension of the infinitude of space, I familiarized myself with it. 
+
+=== RUN 65: an9.41:12.4 an9.41:12.5 an9.41:12.6 an9.41:12.7 an9.41:12.8 an9.41:12.9 an9.41:12.10 ===
+File: data/thanissaro/sutta/an/an9/an9.41_translation-en-thanissaro.json
+ABOVE an9.41:12.3
+Pali: Tassa mayhaṁ, ānanda, viññāṇañcāyatane cittaṁ na pakkhandati nappasīdati na santiṭṭhati na vimuccati etaṁ santanti passato. 
+Sujato: But my mind did not leap forth, gain confidence, settle down, and become decided in the dimension of infinite consciousness. I didn’t see it as peaceful. 
+Translator: But my heart didn’t leap up at the dimension of the infinitude of consciousness, didn’t grow confident, steadfast, or released, (though) seeing it as peace.… 
+JUDGE an9.41:12.4
+Pali: Tassa mayhaṁ, ānanda, etadahosi: 
+Sujato: Then I thought, 
+Translator: (empty)
+JUDGE an9.41:12.5
+Pali: ‘ko nu kho hetu ko paccayo, yena me viññāṇañcāyatane cittaṁ na pakkhandati nappasīdati na santiṭṭhati na vimuccati etaṁ santanti passato’? 
+Sujato: ‘What is the cause, what is the reason why my mind does not leap forth, gain confidence, settle down, and become decided in the dimension of infinite consciousness? Why don’t I see it as peaceful?’ 
+Translator: (empty)
+JUDGE an9.41:12.6
+Pali: Tassa mayhaṁ, ānanda, etadahosi: 
+Sujato: Then I thought, 
+Translator: (empty)
+JUDGE an9.41:12.7
+Pali: ‘ākāsānañcāyatane kho me ādīnavo adiṭṭho, so ca abahulīkato, viññāṇañcāyatane ca ānisaṁso anadhigato, so ca me anāsevito. 
+Sujato: ‘I haven’t seen the drawbacks of the dimension of infinite space, and so I haven’t cultivated that. I haven’t realized the benefits of the dimension of infinite consciousness, and so I haven’t developed that. 
+Translator: (empty)
+JUDGE an9.41:12.8
+Pali: Tasmā me viññāṇañcāyatane cittaṁ na pakkhandati nappasīdati na santiṭṭhati na vimuccati etaṁ santanti passato’. 
+Sujato: That’s why my mind does not leap forth, gain confidence, settle down, and become decided in the dimension of infinite consciousness. And it’s why I don’t see it as peaceful.’ 
+Translator: (empty)
+JUDGE an9.41:12.9
+Pali: Tassa mayhaṁ, ānanda, etadahosi: 
+Sujato: Then I thought, 
+Translator: (empty)
+JUDGE an9.41:12.10
+Pali: ‘sace kho ahaṁ ākāsānañcāyatane ādīnavaṁ disvā taṁ bahulaṁ kareyyaṁ, viññāṇañcāyatane ānisaṁsaṁ adhigamma tamāseveyyaṁ, ṭhānaṁ kho panetaṁ vijjati yaṁ me viññāṇañcāyatane cittaṁ pakkhandeyya pasīdeyya santiṭṭheyya vimucceyya etaṁ santanti passato’. 
+Sujato: ‘Suppose that, seeing the drawbacks of the dimension of infinite space, I were to cultivate that. And suppose that, realizing the benefits of the dimension of infinite consciousness, I were to develop that. It’s possible that my mind would leap forth, gain confidence, settle down, and become decided in the dimension of infinite consciousness. And I would see it as peaceful.’ 
+Translator: (empty)
+BELOW an9.41:12.11
+Pali: So kho ahaṁ, ānanda, aparena samayena ākāsānañcāyatane ādīnavaṁ disvā taṁ bahulamakāsiṁ, viññāṇañcāyatane ānisaṁsaṁ adhigamma tamāseviṁ. 
+Sujato: And so, after some time, I saw the drawbacks of the dimension of infinite space and cultivated that, and I realized the benefits of the dimension of infinite consciousness and developed that. 
+Translator: So at a later time, having seen the drawback of the dimension of the infinitude of space, I pursued that theme; having understood the reward of the dimension of the infinitude of consciousness, I familiarized myself with it. 
+
+=== RUN 66: an9.41:13.4 an9.41:13.5 an9.41:13.6 an9.41:13.7 an9.41:13.8 an9.41:13.9 an9.41:13.10 ===
+File: data/thanissaro/sutta/an/an9/an9.41_translation-en-thanissaro.json
+ABOVE an9.41:13.3
+Pali: Tassa mayhaṁ, ānanda, ākiñcaññāyatane cittaṁ na pakkhandati nappasīdati na santiṭṭhati na vimuccati etaṁ santanti passato. 
+Sujato: But my mind did not leap forth, gain confidence, settle down, and become decided in the dimension of nothingness. I didn’t see it as peaceful. 
+Translator: But my heart didn’t leap up at the dimension of nothingness, didn’t grow confident, steadfast, or released, (though) seeing it as peace.… 
+JUDGE an9.41:13.4
+Pali: Tassa mayhaṁ, ānanda, etadahosi: 
+Sujato: Then I thought, 
+Translator: (empty)
+JUDGE an9.41:13.5
+Pali: ‘ko nu kho hetu ko paccayo, yena me ākiñcaññāyatane cittaṁ na pakkhandati nappasīdati na santiṭṭhati na vimuccati etaṁ santanti passato’? 
+Sujato: ‘What is the cause, what is the reason why my mind does not leap forth, gain confidence, settle down, and become decided in the dimension of nothingness? Why don’t I see it as peaceful?’ 
+Translator: (empty)
+JUDGE an9.41:13.6
+Pali: Tassa mayhaṁ, ānanda, etadahosi: 
+Sujato: Then I thought, 
+Translator: (empty)
+JUDGE an9.41:13.7
+Pali: ‘viññāṇañcāyatane kho me ādīnavo adiṭṭho, so ca me abahulīkato, ākiñcaññāyatane ca ānisaṁso anadhigato, so ca me anāsevito. 
+Sujato: ‘I haven’t seen the drawbacks of the dimension of infinite consciousness, and so I haven’t cultivated that. I haven’t realized the benefits of the dimension of nothingness, and so I haven’t developed that. 
+Translator: (empty)
+JUDGE an9.41:13.8
+Pali: Tasmā me ākiñcaññāyatane cittaṁ na pakkhandati nappasīdati na santiṭṭhati na vimuccati etaṁ santanti passato’. 
+Sujato: That’s why my mind does not leap forth, gain confidence, settle down, and become decided in the dimension of nothingness. And it’s why I don’t see it as peaceful.’ 
+Translator: (empty)
+JUDGE an9.41:13.9
+Pali: Tassa mayhaṁ, ānanda, etadahosi: 
+Sujato: Then I thought, 
+Translator: (empty)
+JUDGE an9.41:13.10
+Pali: ‘sace kho ahaṁ viññāṇañcāyatane ādīnavaṁ disvā taṁ bahulaṁ kareyyaṁ, ākiñcaññāyatane ānisaṁsaṁ adhigamma tamāseveyyaṁ, ṭhānaṁ kho panetaṁ vijjati yaṁ me ākiñcaññāyatane cittaṁ pakkhandeyya pasīdeyya santiṭṭheyya vimucceyya etaṁ santanti passato’. 
+Sujato: ‘Suppose that, seeing the drawbacks of the dimension of infinite consciousness, I were to cultivate that. And suppose that, realizing the benefits of the dimension of nothingness, I were to develop that. It’s possible that my mind would leap forth, gain confidence, settle down, and become decided in the dimension of nothingness. And I would see it as peaceful.’ 
+Translator: (empty)
+BELOW an9.41:13.11
+Pali: So kho ahaṁ, ānanda, aparena samayena viññāṇañcāyatane ādīnavaṁ disvā taṁ bahulamakāsiṁ, ākiñcaññāyatane ānisaṁsaṁ adhigamma tamāseviṁ. 
+Sujato: And so, after some time, I saw the drawbacks of the dimension of infinite consciousness and cultivated that, and I realized the benefits of the dimension of nothingness and developed that. 
+Translator: So at a later time, having seen the drawback of the dimension of the infinitude of consciousness, I pursued that theme; having understood the reward of the dimension of nothingness, I familiarized myself with it. 
+
+=== RUN 67: an9.41:14.4 an9.41:14.5 an9.41:14.6 an9.41:14.7 an9.41:14.8 an9.41:14.9 an9.41:14.10 ===
+File: data/thanissaro/sutta/an/an9/an9.41_translation-en-thanissaro.json
+ABOVE an9.41:14.3
+Pali: Tassa mayhaṁ, ānanda, nevasaññānāsaññāyatane cittaṁ na pakkhandati nappasīdati na santiṭṭhati na vimuccati etaṁ santanti passato. 
+Sujato: But my mind did not leap forth, gain confidence, settle down, and become decided in the dimension of neither perception nor non-perception. I didn’t see it as peaceful. 
+Translator: But my heart didn’t leap up at the dimension of neither perception nor non-perception, didn’t grow confident, steadfast, or released, (though) seeing it as peace.… 
+JUDGE an9.41:14.4
+Pali: Tassa mayhaṁ, ānanda, etadahosi: 
+Sujato: Then I thought, 
+Translator: (empty)
+JUDGE an9.41:14.5
+Pali: ‘ko nu kho hetu ko paccayo, yena me nevasaññānāsaññāyatane cittaṁ na pakkhandati nappasīdati na santiṭṭhati na vimuccati etaṁ santanti passato’? 
+Sujato: ‘What is the cause, what is the reason why my mind does not leap forth, gain confidence, settle down, and become decided in the dimension of neither perception nor non-perception? Why don’t I see it as peaceful?’ 
+Translator: (empty)
+JUDGE an9.41:14.6
+Pali: Tassa mayhaṁ, ānanda, etadahosi: 
+Sujato: Then I thought, 
+Translator: (empty)
+JUDGE an9.41:14.7
+Pali: ‘ākiñcaññāyatane kho me ādīnavo adiṭṭho, so ca me abahulīkato, nevasaññānāsaññāyatane ca ānisaṁso anadhigato, so ca me anāsevito. 
+Sujato: ‘I haven’t seen the drawbacks of the dimension of nothingness, and so I haven’t cultivated that. I haven’t realized the benefits of the dimension of neither perception nor non-perception, and so I haven’t developed that. 
+Translator: (empty)
+JUDGE an9.41:14.8
+Pali: Tasmā me nevasaññānāsaññāyatane cittaṁ na pakkhandati nappasīdati na santiṭṭhati na vimuccati etaṁ santanti passato’. 
+Sujato: That’s why my mind does not leap forth, gain confidence, settle down, and become decided in the dimension of neither perception nor non-perception. And it’s why I don’t see it as peaceful.’ 
+Translator: (empty)
+JUDGE an9.41:14.9
+Pali: Tassa mayhaṁ, ānanda, etadahosi: 
+Sujato: Then I thought, 
+Translator: (empty)
+JUDGE an9.41:14.10
+Pali: ‘sace kho ahaṁ ākiñcaññāyatane ādīnavaṁ disvā taṁ bahulaṁ kareyyaṁ, nevasaññānāsaññāyatane ānisaṁsaṁ adhigamma tamāseveyyaṁ, ṭhānaṁ kho panetaṁ vijjati yaṁ me nevasaññānāsaññāyatane cittaṁ pakkhandeyya pasīdeyya santiṭṭheyya vimucceyya etaṁ santanti passato’. 
+Sujato: ‘Suppose that, seeing the drawbacks of the dimension of nothingness, I were to cultivate that. And suppose that, realizing the benefits of the dimension of neither perception nor non-perception, I were to develop that. It’s possible that my mind would leap forth, gain confidence, settle down, and become decided in the dimension of neither perception nor non-perception. And I would see it as peaceful.’ 
+Translator: (empty)
+BELOW an9.41:14.11
+Pali: So kho ahaṁ, ānanda, aparena samayena ākiñcaññāyatane ādīnavaṁ disvā taṁ bahulamakāsiṁ, nevasaññānāsaññāyatane ānisaṁsaṁ adhigamma tamāseviṁ. 
+Sujato: And so, after some time, I saw the drawbacks of the dimension of nothingness and cultivated that, and I realized the benefits of the dimension of neither perception nor non-perception and developed that. 
+Translator: So at a later time, having seen the drawback of the dimension of nothingness, I pursued that theme; having understood the reward of the dimension of neither perception nor non-perception, I familiarized myself with it. 
+
+=== RUN 68: an9.43:3.4 an9.43:3.5 ===
+File: data/thanissaro/sutta/an/an9/an9.43_translation-en-thanissaro.json
+ABOVE an9.43:3.3
+Pali: catutthaṁ jhānaṁ upasampajja viharati. 
+Sujato: fourth absorption. 
+Translator: the fourth jhāna… 
+JUDGE an9.43:3.4
+Pali: Yathā yathā ca tadāyatanaṁ tathā tathā naṁ kāyena phusitvā viharati. 
+Sujato: They meditate directly experiencing that dimension in every way. 
+Translator: (empty)
+JUDGE an9.43:3.5
+Pali: Ettāvatāpi kho, āvuso, kāyasakkhī vutto bhagavatā pariyāyena. 
+Sujato: To this extent the Buddha spoke of the direct witness in a qualified sense. 
+Translator: (empty)
+BELOW (outside this paragraph) an9.43:4.1
+Pali: Puna caparaṁ, āvuso, bhikkhu sabbaso rūpasaññānaṁ samatikkamā paṭighasaññānaṁ atthaṅgamā nānattasaññānaṁ amanasikārā ‘ananto ākāso’ti ākāsānañcāyatanaṁ upasampajja viharati. 
+Sujato: Furthermore, take a mendicant who, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, enters and remains in the dimension of infinite space. 
+Translator: the dimension of the infinitude of space… 
+
+=== RUN 69: an10.54:9.2 an10.54:9.3 ===
+File: data/thanissaro/sutta/an/an10/an10.54_translation-en-thanissaro.json
+ABOVE an10.54:9.1
+Pali: ‘Piṇḍapātampāhaṁ, bhikkhave, duvidhena vadāmi—
+Sujato: ‘I say that there are two kinds of almsfood: 
+Translator: “‘Monks, I also speak of alms food in two ways…’ 
+JUDGE an10.54:9.2
+Pali: sevitabbampi asevitabbampī’ti, 
+Sujato: that which you should eat, and that which you shouldn’t eat.’ 
+Translator: (empty)
+JUDGE an10.54:9.3
+Pali: iti kho panetaṁ vuttaṁ. Kiñcetaṁ paṭicca vuttaṁ? 
+Sujato: That’s what I said, but why did I say it? 
+Translator: (empty)
+BELOW an10.54:9.4
+Pali: Tattha yaṁ jaññā piṇḍapātaṁ: 
+Sujato: Well, should you know of almsfood: 
+Translator: … 
+
+=== RUN 70: an10.54:9.5 an10.54:9.6 an10.54:9.7 an10.54:9.8 an10.54:9.9 an10.54:9.10 ===
+File: data/thanissaro/sutta/an/an10/an10.54_translation-en-thanissaro.json
+ABOVE an10.54:9.4
+Pali: Tattha yaṁ jaññā piṇḍapātaṁ: 
+Sujato: Well, should you know of almsfood: 
+Translator: … 
+JUDGE an10.54:9.5
+Pali: ‘imaṁ kho me piṇḍapātaṁ sevato akusalā dhammā abhivaḍḍhanti, kusalā dhammā parihāyantī’ti, evarūpo piṇḍapāto na sevitabbo. 
+Sujato: ‘When I eat this almsfood, unskillful qualities grow, and skillful qualities decline.’ You should not eat that kind of almsfood. 
+Translator: (empty)
+JUDGE an10.54:9.6
+Pali: Tattha yaṁ jaññā piṇḍapātaṁ: 
+Sujato: Whereas, should you know of almsfood: 
+Translator: (empty)
+JUDGE an10.54:9.7
+Pali: ‘imaṁ kho me piṇḍapātaṁ sevato akusalā dhammā parihāyanti, kusalā dhammā abhivaḍḍhantī’ti, evarūpo piṇḍapāto sevitabbo. 
+Sujato: ‘When I eat this almsfood, unskillful qualities decline, and skillful qualities grow.’ You should eat that kind of almsfood. 
+Translator: (empty)
+JUDGE an10.54:9.8
+Pali: ‘Piṇḍapātampāhaṁ, bhikkhave, duvidhena vadāmi—
+Sujato: ‘I say that there are two kinds of almsfood: 
+Translator: (empty)
+JUDGE an10.54:9.9
+Pali: sevitabbampi asevitabbampī’ti, 
+Sujato: that which you should eat, and that which you shouldn’t eat.’ 
+Translator: (empty)
+JUDGE an10.54:9.10
+Pali: iti yaṁ taṁ vuttaṁ, idametaṁ paṭicca vuttaṁ. 
+Sujato: That’s what I said, and this is why I said it. 
+Translator: (empty)
+BELOW (outside this paragraph) an10.54:10.1
+Pali: ‘Senāsanampāhaṁ, bhikkhave, duvidhena vadāmi—
+Sujato: ‘I say that there are two kinds of lodging: 
+Translator: “‘Monks, I also speak of lodgings in two ways…’ … 
+
+=== RUN 71: an10.54:10.2 an10.54:10.3 an10.54:10.4 an10.54:10.5 an10.54:10.6 an10.54:10.7 an10.54:10.8 an10.54:10.9 an10.54:10.10 ===
+File: data/thanissaro/sutta/an/an10/an10.54_translation-en-thanissaro.json
+ABOVE an10.54:10.1
+Pali: ‘Senāsanampāhaṁ, bhikkhave, duvidhena vadāmi—
+Sujato: ‘I say that there are two kinds of lodging: 
+Translator: “‘Monks, I also speak of lodgings in two ways…’ … 
+JUDGE an10.54:10.2
+Pali: sevitabbampi asevitabbampī’ti, 
+Sujato: those you should frequent, and those you shouldn’t frequent.’ 
+Translator: (empty)
+JUDGE an10.54:10.3
+Pali: iti kho panetaṁ vuttaṁ. Kiñcetaṁ paṭicca vuttaṁ? 
+Sujato: That’s what I said, but why did I say it? 
+Translator: (empty)
+JUDGE an10.54:10.4
+Pali: Tattha yaṁ jaññā senāsanaṁ: 
+Sujato: Well, should you know of a lodging: 
+Translator: (empty)
+JUDGE an10.54:10.5
+Pali: ‘idaṁ kho me senāsanaṁ sevato akusalā dhammā abhivaḍḍhanti, kusalā dhammā parihāyantī’ti, evarūpaṁ senāsanaṁ na sevitabbaṁ. 
+Sujato: ‘When I frequent this lodging, unskillful qualities grow, and skillful qualities decline.’ You should not frequent that kind of lodging. 
+Translator: (empty)
+JUDGE an10.54:10.6
+Pali: Tattha yaṁ jaññā senāsanaṁ: 
+Sujato: Whereas, should you know of a lodging: 
+Translator: (empty)
+JUDGE an10.54:10.7
+Pali: ‘idaṁ kho me senāsanaṁ sevato akusalā dhammā parihāyanti, kusalā dhammā abhivaḍḍhantī’ti, evarūpaṁ senāsanaṁ sevitabbaṁ. 
+Sujato: ‘When I frequent this lodging, unskillful qualities decline, and skillful qualities grow.’ You should frequent that kind of lodging. 
+Translator: (empty)
+JUDGE an10.54:10.8
+Pali: ‘Senāsanampāhaṁ, bhikkhave, duvidhena vadāmi—
+Sujato: ‘I say that there are two kinds of lodging: 
+Translator: (empty)
+JUDGE an10.54:10.9
+Pali: sevitabbampi asevitabbampī’ti, 
+Sujato: those you should frequent, and those you shouldn’t frequent.’ 
+Translator: (empty)
+JUDGE an10.54:10.10
+Pali: iti yaṁ taṁ vuttaṁ, idametaṁ paṭicca vuttaṁ. 
+Sujato: That’s what I said, and this is why I said it. 
+Translator: (empty)
+BELOW (outside this paragraph) an10.54:11.1
+Pali: ‘Gāmanigamampāhaṁ, bhikkhave, duvidhena vadāmi—
+Sujato: ‘I say that there are two kinds of village or town: 
+Translator: “‘Monks, I also speak of villages & towns in two ways…’ 
+
+=== RUN 72: an10.54:11.2 an10.54:11.3 an10.54:11.4 an10.54:11.5 an10.54:11.6 an10.54:11.7 an10.54:11.8 an10.54:11.9 ===
+File: data/thanissaro/sutta/an/an10/an10.54_translation-en-thanissaro.json
+ABOVE an10.54:11.1
+Pali: ‘Gāmanigamampāhaṁ, bhikkhave, duvidhena vadāmi—
+Sujato: ‘I say that there are two kinds of village or town: 
+Translator: “‘Monks, I also speak of villages & towns in two ways…’ 
+JUDGE an10.54:11.2
+Pali: sevitabbampi asevitabbampī’ti, 
+Sujato: those you should frequent, and those you shouldn’t frequent.’ 
+Translator: (empty)
+JUDGE an10.54:11.3
+Pali: iti kho panetaṁ vuttaṁ. Kiñcetaṁ paṭicca vuttaṁ? 
+Sujato: That’s what I said, but why did I say it? 
+Translator: (empty)
+JUDGE an10.54:11.4
+Pali: Tattha yaṁ jaññā gāmanigamaṁ: 
+Sujato: Well, should you know of a village or town: 
+Translator: (empty)
+JUDGE an10.54:11.5
+Pali: ‘imaṁ kho me gāmanigamaṁ sevato akusalā dhammā abhivaḍḍhanti, kusalā dhammā parihāyantī’ti, evarūpo gāmanigamo na sevitabbo. 
+Sujato: ‘When I frequent this village or town, unskillful qualities grow, and skillful qualities decline.’ You should not frequent that kind of village or town. 
+Translator: (empty)
+JUDGE an10.54:11.6
+Pali: Tattha yaṁ jaññā gāmanigamaṁ: 
+Sujato: Whereas, should you know of a village or town: 
+Translator: (empty)
+JUDGE an10.54:11.7
+Pali: ‘imaṁ kho me gāmanigamaṁ sevato akusalā dhammā parihāyanti, kusalā dhammā abhivaḍḍhantī’ti, evarūpo gāmanigamo sevitabbo. 
+Sujato: ‘When I frequent this village or town, unskillful qualities decline, and skillful qualities grow.’ You should frequent that kind of village or town. 
+Translator: (empty)
+JUDGE an10.54:11.8
+Pali: ‘Gāmanigamampāhaṁ, bhikkhave, duvidhena vadāmi—
+Sujato: ‘I say that there are two kinds of village or town: 
+Translator: (empty)
+JUDGE an10.54:11.9
+Pali: sevitabbampi asevitabbampī’ti, 
+Sujato: those you should frequent, and those you shouldn’t frequent.’ 
+Translator: (empty)
+BELOW an10.54:11.10
+Pali: iti yaṁ taṁ vuttaṁ, idametaṁ paṭicca vuttaṁ. 
+Sujato: That’s what I said, and this is why I said it. 
+Translator: … 
+
+=== RUN 73: an10.54:12.2 an10.54:12.3 an10.54:12.4 an10.54:12.5 an10.54:12.6 an10.54:12.7 an10.54:12.8 an10.54:12.9 ===
+File: data/thanissaro/sutta/an/an10/an10.54_translation-en-thanissaro.json
+ABOVE an10.54:12.1
+Pali: ‘Janapadapadesampāhaṁ, bhikkhave, duvidhena vadāmi—
+Sujato: ‘I say that there are two kinds of country: 
+Translator: “‘Monks, I also speak of countrysides in two ways…’ 
+JUDGE an10.54:12.2
+Pali: sevitabbampi asevitabbampī’ti, 
+Sujato: those you should frequent, and those you shouldn’t frequent.’ 
+Translator: (empty)
+JUDGE an10.54:12.3
+Pali: iti kho panetaṁ vuttaṁ. Kiñcetaṁ paṭicca vuttaṁ? 
+Sujato: That’s what I said, but why did I say it? 
+Translator: (empty)
+JUDGE an10.54:12.4
+Pali: Tattha yaṁ jaññā janapadapadesaṁ: 
+Sujato: Well, should you know of a country: 
+Translator: (empty)
+JUDGE an10.54:12.5
+Pali: ‘imaṁ kho me janapadapadesaṁ sevato akusalā dhammā abhivaḍḍhanti, kusalā dhammā parihāyantī’ti, evarūpo janapadapadeso na sevitabbo. 
+Sujato: ‘When I frequent this country, unskillful qualities grow, and skillful qualities decline.’ You should not frequent that kind of country. 
+Translator: (empty)
+JUDGE an10.54:12.6
+Pali: Tattha yaṁ jaññā janapadapadesaṁ: 
+Sujato: Whereas, should you know of a country: 
+Translator: (empty)
+JUDGE an10.54:12.7
+Pali: ‘imaṁ kho me janapadapadesaṁ sevato akusalā dhammā parihāyanti, kusalā dhammā abhivaḍḍhantī’ti, evarūpo janapadapadeso sevitabbo. 
+Sujato: ‘When I frequent this country, unskillful qualities decline, and skillful qualities grow.’ You should frequent that kind of country. 
+Translator: (empty)
+JUDGE an10.54:12.8
+Pali: ‘Janapadapadesampāhaṁ, bhikkhave, duvidhena vadāmi—
+Sujato: ‘I say that there are two kinds of country: 
+Translator: (empty)
+JUDGE an10.54:12.9
+Pali: sevitabbampi asevitabbampī’ti, 
+Sujato: those you should frequent, and those you shouldn’t frequent.’ 
+Translator: (empty)
+BELOW an10.54:12.10
+Pali: iti yaṁ taṁ vuttaṁ, idametaṁ paṭicca vuttaṁ. 
+Sujato: That’s what I said, and this is why I said it. 
+Translator: … 
+
+=== RUN 74: an10.96:9.2 an10.96:9.3 an10.96:9.4 ===
+File: data/thanissaro/sutta/an/an10/an10.96_translation-en-thanissaro.json
+ABOVE an10.96:9.1
+Pali: “‘Kiṁ nu kho, bho, sassato loko, idameva saccaṁ moghamaññanti—
+Sujato: “When asked about all these points, you say that’s not your view. 
+Translator: “But on being asked, ‘How is it, my friend: “The cosmos is eternal. Only this is true; anything otherwise is worthless.” Is this the sort of view you have?’ you inform me, ‘No, my friend, I don’t have that sort of view.’ On being asked, ‘Very well then: “The cosmos is not eternal … ” … 
+JUDGE an10.96:9.2
+Pali: evaṁdiṭṭhi bhavan’ti, iti puṭṭho samāno: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an10.96:9.3
+Pali: ‘na kho ahaṁ, āvuso, evaṁdiṭṭhi—
+Sujato: (empty)
+Translator: (empty)
+JUDGE an10.96:9.4
+Pali: sassato loko, idameva saccaṁ moghamaññan’ti vadesi. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) an10.96:11.1
+Pali: Kiṁ nu kho, bho, antavā loko …pe… 
+Sujato: (empty)
+Translator: “The cosmos is finite … ” … 
+
+=== RUN 75: an11.16:5.4 an11.16:5.5 an11.16:5.6 an11.16:5.7 an11.16:5.8 an11.16:5.9 ===
+File: data/thanissaro/sutta/an/an11/an11.16_translation-en-thanissaro.json
+ABOVE an11.16:5.3
+Pali: catutthaṁ jhānaṁ upasampajja viharati. 
+Sujato: fourth absorption. 
+Translator: and fourth jhanas.) 
+JUDGE an11.16:5.4
+Pali: So iti paṭisañcikkhati: 
+Sujato: Then they reflect: 
+Translator: (empty)
+JUDGE an11.16:5.5
+Pali: ‘idampi kho catutthaṁ jhānaṁ abhisaṅkhataṁ abhisañcetayitaṁ’. 
+Sujato: ‘Even this fourth absorption is produced by choices and intentions.’ 
+Translator: (empty)
+JUDGE an11.16:5.6
+Pali: ‘Yaṁ kho pana kiñci abhisaṅkhataṁ abhisañcetayitaṁ tadaniccaṁ nirodhadhamman’ti pajānāti. 
+Sujato: They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ 
+Translator: (empty)
+JUDGE an11.16:5.7
+Pali: So tattha ṭhito āsavānaṁ khayaṁ pāpuṇāti; 
+Sujato: Abiding in that they attain the ending of defilements. 
+Translator: (empty)
+JUDGE an11.16:5.8
+Pali: no ce āsavānaṁ khayaṁ pāpuṇāti, teneva dhammarāgena tāya dhammanandiyā pañcannaṁ orambhāgiyānaṁ saṁyojanānaṁ parikkhayā opapātiko hoti tattha parinibbāyī anāvattidhammo tasmā lokā. 
+Sujato: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. 
+Translator: (empty)
+JUDGE an11.16:5.9
+Pali: Ayampi kho, gahapati, tena bhagavatā jānatā passatā arahatā sammāsambuddhena ekadhammo sammadakkhāto, yattha bhikkhuno appamattassa ātāpino pahitattassa viharato avimuttaṁ vā cittaṁ vimuccati aparikkhīṇā vā āsavā parikkhayaṁ gacchanti, ananuppattaṁ vā anuttaraṁ yogakkhemaṁ anupāpuṇāti. 
+Sujato: This too is one thing that has been rightly explained by the Blessed One—who knows and sees, the perfected one, the fully awakened Buddha—practicing which a diligent, keen, and resolute mendicant’s mind is freed, their defilements are ended, and they arrive at the supreme sanctuary from the yoke. 
+Translator: (empty)
+BELOW (outside this paragraph) an11.16:6.1
+Pali: Puna caparaṁ, gahapati, bhikkhu mettāsahagatena cetasā ekaṁ disaṁ pharitvā viharati tathā dutiyaṁ tathā tatiyaṁ tathā catutthaṁ. Iti uddhamadho tiriyaṁ sabbadhi sabbattatāya sabbāvantaṁ lokaṁ mettāsahagatena cetasā ekaṁ disaṁ pharitvā viharati vipulena mahaggatena appamāṇena averena abyāpajjena pharitvā viharati. 
+Sujato: Furthermore, a mendicant meditates spreading a heart full of love to one direction, and to the second, and to the third, and to the fourth. In the same way above, below, across, everywhere, all around, they spread a heart full of love to the whole world—abundant, expansive, limitless, free of enmity and ill will. 
+Translator: “Then again, a monk keeps pervading the first direction with an awareness imbued with good will, likewise the second, likewise the third, likewise the fourth. Thus above, below, & all around, everywhere, in its entirety, he keeps pervading the all-encompassing cosmos with an awareness imbued with good will—abundant, expansive, immeasurable, without hostility, without ill will. 
+
+=== RUN 76: an11.16:7.4 an11.16:7.5 an11.16:7.6 an11.16:7.7 an11.16:7.8 an11.16:7.9 an11.16:7.10 ===
+File: data/thanissaro/sutta/an/an11/an11.16_translation-en-thanissaro.json
+ABOVE an11.16:7.3
+Pali: upekkhāsahagatena cetasā ekaṁ disaṁ pharitvā viharati tathā dutiyaṁ tathā tatiyaṁ tathā catutthaṁ. 
+Sujato: They meditate spreading a heart full of equanimity to one direction, and to the second, and to the third, and to the fourth. 
+Translator: & through equanimity.) 
+JUDGE an11.16:7.4
+Pali: Iti uddhamadho tiriyaṁ sabbadhi sabbattatāya sabbāvantaṁ lokaṁ upekkhāsahagatena cetasā vipulena mahaggatena appamāṇena averena abyāpajjena pharitvā viharati. 
+Sujato: In the same way above, below, across, everywhere, all around, they spread a heart full of equanimity to the whole world—abundant, expansive, limitless, free of enmity and ill will. 
+Translator: (empty)
+JUDGE an11.16:7.5
+Pali: So iti paṭisañcikkhati: 
+Sujato: Then they reflect: 
+Translator: (empty)
+JUDGE an11.16:7.6
+Pali: ‘ayampi kho upekkhācetovimutti abhisaṅkhatā abhisañcetayitā’. 
+Sujato: ‘Even this heart’s release by equanimity is produced by choices and intentions.’ 
+Translator: (empty)
+JUDGE an11.16:7.7
+Pali: ‘Yaṁ kho pana kiñci abhisaṅkhataṁ abhisañcetayitaṁ tadaniccaṁ nirodhadhamman’ti pajānāti. 
+Sujato: They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ 
+Translator: (empty)
+JUDGE an11.16:7.8
+Pali: So tattha ṭhito āsavānaṁ khayaṁ pāpuṇāti; 
+Sujato: Abiding in that they attain the ending of defilements. 
+Translator: (empty)
+JUDGE an11.16:7.9
+Pali: no ce āsavānaṁ khayaṁ pāpuṇāti, teneva dhammarāgena tāya dhammanandiyā pañcannaṁ orambhāgiyānaṁ saṁyojanānaṁ parikkhayā opapātiko hoti tattha parinibbāyī anāvattidhammo tasmā lokā. 
+Sujato: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. 
+Translator: (empty)
+JUDGE an11.16:7.10
+Pali: Ayampi kho, gahapati, tena bhagavatā jānatā …pe… ananuppattaṁ vā anuttaraṁ yogakkhemaṁ anupāpuṇāti. 
+Sujato: This too is one thing that has been rightly explained by the Blessed One … 
+Translator: (empty)
+BELOW (outside this paragraph) an11.16:8.1
+Pali: Puna caparaṁ, gahapati, bhikkhu sabbaso rūpasaññānaṁ samatikkamā paṭighasaññānaṁ atthaṅgamā nānattasaññānaṁ amanasikārā ‘ananto ākāso’ti ākāsānañcāyatanaṁ upasampajja viharati. 
+Sujato: Furthermore, a mendicant, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, enters and remains in the dimension of infinite space. 
+Translator: “Then again, a monk—with the complete transcending of perceptions of [physical] form, with the disappearance of perceptions of resistance, and not heeding perceptions of diversity, [perceiving,] ‘Infinite space’—enters & remains in the dimension of the infinitude of space. 
+
+=== RUN 77: an11.16:9.2 an11.16:9.3 an11.16:9.4 an11.16:9.5 an11.16:9.6 an11.16:9.7 an11.16:9.8 ===
+File: data/thanissaro/sutta/an/an11/an11.16_translation-en-thanissaro.json
+ABOVE an11.16:9.1
+Pali: Puna caparaṁ, gahapati, bhikkhu sabbaso ākāsānañcāyatanaṁ samatikkamma ‘anantaṁ viññāṇan’ti viññāṇañcāyatanaṁ upasampajja viharati …pe… 
+Sujato: Furthermore, a mendicant, going totally beyond the dimension of infinite space, aware that ‘consciousness is infinite’, enters and remains in the dimension of infinite consciousness. … 
+Translator: (Similarly with the dimension of the infinitude of consciousness and the dimension of nothingness.) 
+JUDGE an11.16:9.2
+Pali: sabbaso viññāṇañcāyatanaṁ samatikkamma ‘natthi kiñcī’ti ākiñcaññāyatanaṁ upasampajja viharati. 
+Sujato: Going totally beyond the dimension of infinite consciousness, aware that ‘there is nothing at all’, they enter and remain in the dimension of nothingness. … 
+Translator: (empty)
+JUDGE an11.16:9.3
+Pali: So iti paṭisañcikkhati: 
+Sujato: Then they reflect: 
+Translator: (empty)
+JUDGE an11.16:9.4
+Pali: ‘ayampi kho ākiñcaññāyatanasamāpatti abhisaṅkhatā abhisañcetayitā’. 
+Sujato: ‘Even this attainment of the dimension of nothingness is produced by choices and intentions.’ 
+Translator: (empty)
+JUDGE an11.16:9.5
+Pali: ‘Yaṁ kho pana kiñci abhisaṅkhataṁ abhisañcetayitaṁ tadaniccaṁ nirodhadhamman’ti pajānāti. 
+Sujato: They understand: ‘But whatever is produced by choices and intentions is impermanent and liable to cessation.’ 
+Translator: (empty)
+JUDGE an11.16:9.6
+Pali: So tattha ṭhito āsavānaṁ khayaṁ pāpuṇāti; 
+Sujato: Abiding in that they attain the ending of defilements. 
+Translator: (empty)
+JUDGE an11.16:9.7
+Pali: no ce āsavānaṁ khayaṁ pāpuṇāti, teneva dhammarāgena tāya dhammanandiyā pañcannaṁ orambhāgiyānaṁ saṁyojanānaṁ parikkhayā opapātiko hoti tattha parinibbāyī anāvattidhammo tasmā lokā. 
+Sujato: If they don’t attain the ending of defilements, with the ending of the five lower fetters they’re reborn spontaneously, because of their passion and love for that meditation. They are extinguished there, and are not liable to return from that world. 
+Translator: (empty)
+JUDGE an11.16:9.8
+Pali: Ayampi kho, gahapati, tena bhagavatā jānatā …pe… ananuppattaṁ vā anuttaraṁ yogakkhemaṁ anupāpuṇātī”ti. 
+Sujato: This too is one thing that has been rightly explained by the Blessed One—who knows and sees, the perfected one, the fully awakened Buddha—practicing which a diligent, keen, and resolute mendicant’s mind is freed, their defilements are ended, and they reach the supreme sanctuary from the yoke.” 
+Translator: (empty)
+BELOW (outside this paragraph) an11.16:10.1
+Pali: Evaṁ vutte dasamo gahapati aṭṭhakanāgaro āyasmantaṁ ānandaṁ etadavoca: 
+Sujato: When he said this, the householder Dasama said to Venerable Ānanda: 
+Translator: When this was said, Dasama the householder from Atthakanagara said to Ven. Ananda, 
+
+=== RUN 78: dn1:2.27.13 dn1:2.27.14 dn1:2.27.15 dn1:2.27.16 ===
+File: data/thanissaro/sutta/dn/dn1_translation-en-thanissaro.json
+ABOVE dn1:2.27.12
+Pali: ‘nevatthi na natthi sattā opapātikā …pe… 
+Sujato: whether there neither are nor are not beings who are reborn spontaneously … 
+Translator: neither are nor aren’t… 
+JUDGE dn1:2.27.13
+Pali: ‘atthi sukatadukkaṭānaṁ kammānaṁ phalaṁ vipāko …pe… 
+Sujato: whether there is fruit and result of good and bad deeds … 
+Translator: (empty)
+JUDGE dn1:2.27.14
+Pali: ‘natthi sukatadukkaṭānaṁ kammānaṁ phalaṁ vipāko …pe… 
+Sujato: whether there is no fruit and result of good and bad deeds … 
+Translator: (empty)
+JUDGE dn1:2.27.15
+Pali: ‘atthi ca natthi ca sukatadukkaṭānaṁ kammānaṁ phalaṁ vipāko …pe… 
+Sujato: whether there both is and is not fruit and result of good and bad deeds … 
+Translator: (empty)
+JUDGE dn1:2.27.16
+Pali: ‘nevatthi na natthi sukatadukkaṭānaṁ kammānaṁ phalaṁ vipāko …pe… 
+Sujato: whether there neither is nor is not fruit and result of good and bad deeds … 
+Translator: (empty)
+BELOW dn1:2.27.17
+Pali: ‘hoti tathāgato paraṁ maraṇā …pe… 
+Sujato: whether a realized one still exists after death … 
+Translator: if the Tathāgata exists after death… 
+
+=== RUN 79: dn2:3.3 dn2:3.4 dn2:3.5 ===
+File: data/thanissaro/sutta/dn/dn2_translation-en-thanissaro.json
+ABOVE dn2:3.2
+Pali: “ayaṁ, deva, makkhali gosālo saṅghī ceva gaṇī ca gaṇācariyo ca ñāto yasassī titthakaro sādhusammato bahujanassa rattaññū cirapabbajito addhagato vayoanuppatto. 
+Sujato: “Your Majesty, this bamboo-staffed ascetic Gosāla leads an order and a community, and tutors a community. He’s a well-known and famous religious founder, deemed holy by many people. He is of long standing, long gone forth; he is advanced in years and has reached the final stage of life. 
+Translator: “Your majesty, there is Makkhali Gosāla… ” … 
+JUDGE dn2:3.3
+Pali: Taṁ devo makkhaliṁ gosālaṁ payirupāsatu. 
+Sujato: Let Your Majesty pay homage to him. 
+Translator: (empty)
+JUDGE dn2:3.4
+Pali: Appeva nāma devassa makkhaliṁ gosālaṁ payirupāsato cittaṁ pasīdeyyā”ti. 
+Sujato: Hopefully in so doing your mind will find peace.” 
+Translator: (empty)
+JUDGE dn2:3.5
+Pali: Evaṁ vutte, rājā māgadho ajātasattu vedehiputto tuṇhī ahosi. 
+Sujato: But when he had spoken, the king kept silent. 
+Translator: (empty)
+BELOW (outside this paragraph) dn2:4.2
+Pali: “ayaṁ, deva, ajito kesakambalo saṅghī ceva gaṇī ca gaṇācariyo ca ñāto yasassī titthakaro sādhusammato bahujanassa rattaññū cirapabbajito addhagato vayoanuppatto. 
+Sujato: “Your Majesty, this Ajita of the hair blanket leads an order and a community, and tutors a community. He’s a well-known and famous religious founder, deemed holy by many people. He is of long standing, long gone forth; he is advanced in years and has reached the final stage of life. 
+Translator: “Your majesty, there is Ajita Kesakambalin… ” … 
+
+=== RUN 80: dn2:4.3 dn2:4.4 dn2:4.5 ===
+File: data/thanissaro/sutta/dn/dn2_translation-en-thanissaro.json
+ABOVE dn2:4.2
+Pali: “ayaṁ, deva, ajito kesakambalo saṅghī ceva gaṇī ca gaṇācariyo ca ñāto yasassī titthakaro sādhusammato bahujanassa rattaññū cirapabbajito addhagato vayoanuppatto. 
+Sujato: “Your Majesty, this Ajita of the hair blanket leads an order and a community, and tutors a community. He’s a well-known and famous religious founder, deemed holy by many people. He is of long standing, long gone forth; he is advanced in years and has reached the final stage of life. 
+Translator: “Your majesty, there is Ajita Kesakambalin… ” … 
+JUDGE dn2:4.3
+Pali: Taṁ devo ajitaṁ kesakambalaṁ payirupāsatu. 
+Sujato: Let Your Majesty pay homage to him. 
+Translator: (empty)
+JUDGE dn2:4.4
+Pali: Appeva nāma devassa ajitaṁ kesakambalaṁ payirupāsato cittaṁ pasīdeyyā”ti. 
+Sujato: Hopefully in so doing your mind will find peace.” 
+Translator: (empty)
+JUDGE dn2:4.5
+Pali: Evaṁ vutte, rājā māgadho ajātasattu vedehiputto tuṇhī ahosi. 
+Sujato: But when he had spoken, the king kept silent. 
+Translator: (empty)
+BELOW (outside this paragraph) dn2:5.2
+Pali: “ayaṁ, deva, pakudho kaccāyano saṅghī ceva gaṇī ca gaṇācariyo ca ñāto yasassī titthakaro sādhusammato bahujanassa rattaññū cirapabbajito addhagato vayoanuppatto. 
+Sujato: “Your Majesty, this Pakudha Kaccāyana leads an order and a community, and tutors a community. He’s a well-known and famous religious founder, deemed holy by many people. He is of long standing, long gone forth; he is advanced in years and has reached the final stage of life. 
+Translator: “Your majesty, there is Pakudha Kaccāyana… ” … 
+
+=== RUN 81: dn2:5.3 dn2:5.4 dn2:5.5 ===
+File: data/thanissaro/sutta/dn/dn2_translation-en-thanissaro.json
+ABOVE dn2:5.2
+Pali: “ayaṁ, deva, pakudho kaccāyano saṅghī ceva gaṇī ca gaṇācariyo ca ñāto yasassī titthakaro sādhusammato bahujanassa rattaññū cirapabbajito addhagato vayoanuppatto. 
+Sujato: “Your Majesty, this Pakudha Kaccāyana leads an order and a community, and tutors a community. He’s a well-known and famous religious founder, deemed holy by many people. He is of long standing, long gone forth; he is advanced in years and has reached the final stage of life. 
+Translator: “Your majesty, there is Pakudha Kaccāyana… ” … 
+JUDGE dn2:5.3
+Pali: Taṁ devo pakudhaṁ kaccāyanaṁ payirupāsatu. 
+Sujato: Let Your Majesty pay homage to him. 
+Translator: (empty)
+JUDGE dn2:5.4
+Pali: Appeva nāma devassa pakudhaṁ kaccāyanaṁ payirupāsato cittaṁ pasīdeyyā”ti. 
+Sujato: Hopefully in so doing your mind will find peace.” 
+Translator: (empty)
+JUDGE dn2:5.5
+Pali: Evaṁ vutte, rājā māgadho ajātasattu vedehiputto tuṇhī ahosi. 
+Sujato: But when he had spoken, the king kept silent. 
+Translator: (empty)
+BELOW (outside this paragraph) dn2:6.2
+Pali: “ayaṁ, deva, sañcayo belaṭṭhaputto saṅghī ceva gaṇī ca gaṇācariyo ca ñāto yasassī titthakaro sādhusammato bahujanassa rattaññū cirapabbajito addhagato vayoanuppatto. 
+Sujato: “Your Majesty, this Sañjaya Belaṭṭhiputta leads an order and a community, and tutors a community. He’s a well-known and famous religious founder, deemed holy by many people. He is of long standing, long gone forth; he is advanced in years and has reached the final stage of life. 
+Translator: “Your majesty, there is Sañjaya Velaṭṭhaputta… ” … 
+
+=== RUN 82: dn2:6.3 dn2:6.4 dn2:6.5 ===
+File: data/thanissaro/sutta/dn/dn2_translation-en-thanissaro.json
+ABOVE dn2:6.2
+Pali: “ayaṁ, deva, sañcayo belaṭṭhaputto saṅghī ceva gaṇī ca gaṇācariyo ca ñāto yasassī titthakaro sādhusammato bahujanassa rattaññū cirapabbajito addhagato vayoanuppatto. 
+Sujato: “Your Majesty, this Sañjaya Belaṭṭhiputta leads an order and a community, and tutors a community. He’s a well-known and famous religious founder, deemed holy by many people. He is of long standing, long gone forth; he is advanced in years and has reached the final stage of life. 
+Translator: “Your majesty, there is Sañjaya Velaṭṭhaputta… ” … 
+JUDGE dn2:6.3
+Pali: Taṁ devo sañcayaṁ belaṭṭhaputtaṁ payirupāsatu. 
+Sujato: Let Your Majesty pay homage to him. 
+Translator: (empty)
+JUDGE dn2:6.4
+Pali: Appeva nāma devassa sañcayaṁ belaṭṭhaputtaṁ payirupāsato cittaṁ pasīdeyyā”ti. 
+Sujato: Hopefully in so doing your mind will find peace.” 
+Translator: (empty)
+JUDGE dn2:6.5
+Pali: Evaṁ vutte, rājā māgadho ajātasattu vedehiputto tuṇhī ahosi. 
+Sujato: But when he had spoken, the king kept silent. 
+Translator: (empty)
+BELOW (outside this paragraph) dn2:7.2
+Pali: “ayaṁ, deva, nigaṇṭho nāṭaputto saṅghī ceva gaṇī ca gaṇācariyo ca ñāto yasassī titthakaro sādhusammato bahujanassa rattaññū cirapabbajito addhagato vayoanuppatto. 
+Sujato: “Your Majesty, this Jain ascetic of the Ñātika clan leads an order and a community, and tutors a community. He’s a well-known and famous religious founder, deemed holy by many people. He is of long standing, long gone forth; he is advanced in years and has reached the final stage of life. 
+Translator: “Your majesty, there is Nigaṇṭha Nāṭaputta, the leader of a community, the leader of a group, the teacher of a group, honored and famous, esteemed as holy by the mass of people. He is aged, long gone forth, advanced in years, in the last phase of life. 
+
+=== RUN 83: dn2:10.10 dn2:10.11 ===
+File: data/thanissaro/sutta/dn/dn2_translation-en-thanissaro.json
+ABOVE dn2:10.9
+Pali: Na taṁ, deva, vañcemi; 
+Sujato: I am not deceiving you, 
+Translator: I’m not deceiving you or betraying you or turning you over to your enemies. 
+JUDGE dn2:10.10
+Pali: na taṁ, deva, palambhāmi; 
+Sujato: or betraying you, 
+Translator: (empty)
+JUDGE dn2:10.11
+Pali: na taṁ, deva, paccatthikānaṁ demi. 
+Sujato: or turning you over to your enemies. 
+Translator: (empty)
+BELOW dn2:10.12
+Pali: Abhikkama, mahārāja, abhikkama, mahārāja, ete maṇḍalamāḷe dīpā jhāyantī”ti. 
+Sujato: Go forward, Great King, go forward! Those are lamps shining in the pavilion.” 
+Translator: Go forward, great king, go forward! Those are lamps burning in the pavilion hall.” 
+
+=== RUN 84: dn2:32.11 dn2:32.12 dn2:32.13 dn2:32.14 ===
+File: data/thanissaro/sutta/dn/dn2_translation-en-thanissaro.json
+ABOVE dn2:32.10
+Pali: nevatthi na natthi sattā opapātikā …pe… 
+Sujato: whether there neither are nor are not beings who are reborn spontaneously … 
+Translator: neither are nor aren’t… 
+JUDGE dn2:32.11
+Pali: atthi sukatadukkaṭānaṁ kammānaṁ phalaṁ vipāko …pe… 
+Sujato: whether there is fruit and result of good and bad deeds … 
+Translator: (empty)
+JUDGE dn2:32.12
+Pali: natthi sukatadukkaṭānaṁ kammānaṁ phalaṁ vipāko …pe… 
+Sujato: whether there is no fruit and result of good and bad deeds … 
+Translator: (empty)
+JUDGE dn2:32.13
+Pali: atthi ca natthi ca sukatadukkaṭānaṁ kammānaṁ phalaṁ vipāko …pe… 
+Sujato: whether there both is and is not fruit and result of good and bad deeds … 
+Translator: (empty)
+JUDGE dn2:32.14
+Pali: nevatthi na natthi sukatadukkaṭānaṁ kammānaṁ phalaṁ vipāko …pe… 
+Sujato: whether there neither is nor is not fruit and result of good and bad deeds … 
+Translator: (empty)
+BELOW dn2:32.15
+Pali: hoti tathāgato paraṁ maraṇā …pe… 
+Sujato: whether a realized one still exists after death … 
+Translator: if the Tathāgata exists after death… 
+
+=== RUN 85: dn2:92.6 dn2:92.7 dn2:92.8 dn2:92.9 dn2:92.10 dn2:92.11 dn2:92.12 dn2:92.13 dn2:92.14 dn2:92.15 dn2:92.16 dn2:92.17 ===
+File: data/thanissaro/sutta/dn/dn2_translation-en-thanissaro.json
+ABOVE dn2:92.5
+Pali: vītarāgaṁ vā cittaṁ ‘vītarāgaṁ cittan’ti pajānāti, 
+Sujato: (empty)
+Translator: and a mind without passion as ‘a mind without passion’ … 
+JUDGE dn2:92.6
+Pali: sadosaṁ vā cittaṁ ‘sadosaṁ cittan’ti pajānāti, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn2:92.7
+Pali: vītadosaṁ vā cittaṁ ‘vītadosaṁ cittan’ti pajānāti, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn2:92.8
+Pali: samohaṁ vā cittaṁ ‘samohaṁ cittan’ti pajānāti, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn2:92.9
+Pali: vītamohaṁ vā cittaṁ ‘vītamohaṁ cittan’ti pajānāti, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn2:92.10
+Pali: saṅkhittaṁ vā cittaṁ ‘saṅkhittaṁ cittan’ti pajānāti, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn2:92.11
+Pali: vikkhittaṁ vā cittaṁ ‘vikkhittaṁ cittan’ti pajānāti, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn2:92.12
+Pali: mahaggataṁ vā cittaṁ ‘mahaggataṁ cittan’ti pajānāti, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn2:92.13
+Pali: amahaggataṁ vā cittaṁ ‘amahaggataṁ cittan’ti pajānāti, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn2:92.14
+Pali: sauttaraṁ vā cittaṁ ‘sauttaraṁ cittan’ti pajānāti, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn2:92.15
+Pali: anuttaraṁ vā cittaṁ ‘anuttaraṁ cittan’ti pajānāti, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn2:92.16
+Pali: samāhitaṁ vā cittaṁ ‘samāhitaṁ cittan’ti pajānāti, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn2:92.17
+Pali: asamāhitaṁ vā cittaṁ ‘asamāhitaṁ cittan’ti pajānāti, 
+Sujato: (empty)
+Translator: (empty)
+BELOW dn2:92.18
+Pali: vimuttaṁ vā cittaṁ ‘vimuttaṁ cittan’ti pajānāti, 
+Sujato: (empty)
+Translator: a released mind as ‘a released mind,’ 
+
+=== RUN 86: dn9:36.3 dn9:36.4 dn9:36.5 dn9:36.6 ===
+File: data/thanissaro/sutta/dn/dn9_translation-en-thanissaro.json
+ABOVE dn9:36.2
+Pali: ‘ekantasukhī attā hoti arogo paraṁ maraṇā’ti. 
+Sujato: (empty)
+Translator: ‘After death, the self is exclusively happy and free from disease.’ 
+JUDGE dn9:36.3
+Pali: Tyāhaṁ upasaṅkamitvā evaṁ vadāmi: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn9:36.4
+Pali: ‘saccaṁ kira tumhe āyasmanto evaṁvādino evaṁdiṭṭhino: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn9:36.5
+Pali: “ekantasukhī attā hoti arogo paraṁ maraṇā”’ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn9:36.6
+Pali: Te ce me evaṁ puṭṭhā ‘āmā’ti paṭijānanti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW dn9:36.7
+Pali: Tyāhaṁ evaṁ vadāmi: 
+Sujato: (empty)
+Translator: … 
+
+=== RUN 87: dn9:36.8 dn9:36.9 ===
+File: data/thanissaro/sutta/dn/dn9_translation-en-thanissaro.json
+ABOVE dn9:36.7
+Pali: Tyāhaṁ evaṁ vadāmi: 
+Sujato: (empty)
+Translator: … 
+JUDGE dn9:36.8
+Pali: ‘api pana tumhe āyasmanto ekantasukhaṁ lokaṁ jānaṁ passaṁ viharathā’ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn9:36.9
+Pali: Iti puṭṭhā ‘no’ti vadanti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) dn9:36.22
+Pali: Taṁ kiṁ maññasi, poṭṭhapāda, nanu evaṁ sante tesaṁ samaṇabrāhmaṇānaṁ appāṭihīrakataṁ bhāsitaṁ sampajjatī”ti? 
+Sujato: Doesn’t what they say turn out to have no demonstrable basis?” 
+Translator: Don’t the words of those contemplatives & brahmans turn out to be unconvincing?” 
+
+=== RUN 88: dn9:38.3 dn9:38.4 dn9:38.5 dn9:38.6 ===
+File: data/thanissaro/sutta/dn/dn9_translation-en-thanissaro.json
+ABOVE dn9:38.2
+Pali: ‘ekantasukhī attā hoti arogo paraṁ maraṇā’ti. 
+Sujato: (empty)
+Translator: ‘After death, the self is exclusively happy and free from disease.’ 
+JUDGE dn9:38.3
+Pali: Tyāhaṁ upasaṅkamitvā evaṁ vadāmi: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn9:38.4
+Pali: ‘saccaṁ kira tumhe āyasmanto evaṁvādino evaṁdiṭṭhino: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn9:38.5
+Pali: “ekantasukhī attā hoti arogo paraṁ maraṇā”’ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn9:38.6
+Pali: Te ce me evaṁ puṭṭhā ‘āmā’ti paṭijānanti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW dn9:38.7
+Pali: Tyāhaṁ evaṁ vadāmi: 
+Sujato: (empty)
+Translator: … 
+
+=== RUN 89: dn9:38.8 dn9:38.9 ===
+File: data/thanissaro/sutta/dn/dn9_translation-en-thanissaro.json
+ABOVE dn9:38.7
+Pali: Tyāhaṁ evaṁ vadāmi: 
+Sujato: (empty)
+Translator: … 
+JUDGE dn9:38.8
+Pali: ‘api pana tumhe āyasmanto ekantasukhaṁ lokaṁ jānaṁ passaṁ viharathā’ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn9:38.9
+Pali: Iti puṭṭhā ‘no’ti vadanti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) dn9:38.21
+Pali: Taṁ kiṁ maññasi, poṭṭhapāda, nanu evaṁ sante tesaṁ samaṇabrāhmaṇānaṁ appāṭihīrakataṁ bhāsitaṁ sampajjatī”ti? 
+Sujato: Doesn’t what they say turn out to have no demonstrable basis?” 
+Translator: Don’t the words of those contemplatives & brahmans turn out to be unconvincing?” 
+
+=== RUN 90: dn9:41.2 dn9:41.3 dn9:41.4 dn9:41.5 dn9:41.6 ===
+File: data/thanissaro/sutta/dn/dn9_translation-en-thanissaro.json
+ABOVE dn9:41.1
+Pali: Manomayassapi kho ahaṁ, poṭṭhapāda, attapaṭilābhassa pahānāya dhammaṁ desemi: 
+Sujato: (empty)
+Translator: “I also teach the Dhamma for the abandoning of the mind-made appropriation of a self… 
+JUDGE dn9:41.2
+Pali: ‘yathāpaṭipannānaṁ vo saṅkilesikā dhammā pahīyissanti, vodāniyā dhammā abhivaḍḍhissanti, paññāpāripūriṁ vepullattañca diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharissathā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn9:41.3
+Pali: Siyā kho pana te, poṭṭhapāda, evamassa: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn9:41.4
+Pali: ‘saṅkilesikā dhammā pahīyissanti, vodāniyā dhammā abhivaḍḍhissanti, paññāpāripūriṁ vepullattañca diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharissati, dukkho ca kho vihāro’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn9:41.5
+Pali: Na kho panetaṁ, poṭṭhapāda, evaṁ daṭṭhabbaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn9:41.6
+Pali: Saṅkilesikā ceva dhammā pahīyissanti, vodāniyā ca dhammā abhivaḍḍhissanti, paññāpāripūriṁ vepullattañca diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharissati, pāmujjañceva bhavissati pīti ca passaddhi ca sati ca sampajaññañca sukho ca vihāro. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) dn9:42.1
+Pali: Arūpassapi kho ahaṁ, poṭṭhapāda, attapaṭilābhassa pahānāya dhammaṁ desemi: 
+Sujato: (empty)
+Translator: for the abandoning of the formless appropriation of a self, 
+
+=== RUN 91: dn9:42.3 dn9:42.4 dn9:42.5 ===
+File: data/thanissaro/sutta/dn/dn9_translation-en-thanissaro.json
+ABOVE dn9:42.2
+Pali: ‘yathāpaṭipannānaṁ vo saṅkilesikā dhammā pahīyissanti, vodāniyā dhammā abhivaḍḍhissanti, paññāpāripūriṁ vepullattañca diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharissathā’ti. 
+Sujato: (empty)
+Translator: such that, when you practice it, defiling mental qualities will be abandoned, bright mental qualities will grow, and you will enter & remain in the culmination & abundance of discernment, having known & realized it for yourself in the here & now.… 
+JUDGE dn9:42.3
+Pali: Siyā kho pana te, poṭṭhapāda, evamassa: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn9:42.4
+Pali: ‘saṅkilesikā dhammā pahīyissanti, vodāniyā dhammā abhivaḍḍhissanti, paññāpāripūriṁ vepullattañca diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharissati, dukkho ca kho vihāro’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn9:42.5
+Pali: Na kho panetaṁ, poṭṭhapāda, evaṁ daṭṭhabbaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW dn9:42.6
+Pali: Saṅkilesikā ceva dhammā pahīyissanti, vodāniyā ca dhammā abhivaḍḍhissanti, paññāpāripūriṁ vepullattañca diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharissati, pāmujjañceva bhavissati pīti ca passaddhi ca sati ca sampajaññañca sukho ca vihāro. 
+Sujato: (empty)
+Translator: When defiling mental qualities are abandoned and bright mental qualities have grown, and one enters & remains in the culmination & abundance of discernment, having known & realized it for oneself in the here & now, there is joy, rapture, calm, mindfulness, alertness, and a pleasant/happy abiding. 
+
+=== RUN 92: dn9:44.3 dn9:44.4 ===
+File: data/thanissaro/sutta/dn/dn9_translation-en-thanissaro.json
+ABOVE dn9:44.2
+Pali: ‘katamo pana so, āvuso, manomayo attapaṭilābho, yassa tumhe pahānāya dhammaṁ desetha, yathāpaṭipannānaṁ vo saṅkilesikā dhammā pahīyissanti, vodāniyā dhammā abhivaḍḍhissanti, paññāpāripūriṁ vepullattañca diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharissathā’ti? 
+Sujato: ‘But reverends, what is that mind-made incarnation?’ We’d answer like this, 
+Translator: ‘What, friend, is the mind-made appropriation of a self… 
+JUDGE dn9:44.3
+Pali: Tesaṁ mayaṁ evaṁ puṭṭhā evaṁ byākareyyāma: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn9:44.4
+Pali: ‘ayaṁ vā so, āvuso, manomayo attapaṭilābho yassa mayaṁ pahānāya dhammaṁ desema, yathāpaṭipannānaṁ vo saṅkilesikā dhammā pahīyissanti, vodāniyā dhammā abhivaḍḍhissanti, paññāpāripūriṁ vepullattañca diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharissathā’ti. 
+Sujato: ‘<em>This</em> is that mind-made incarnation.’ 
+Translator: (empty)
+BELOW (outside this paragraph) dn9:45.2
+Pali: ‘katamo pana so, āvuso, arūpo attapaṭilābho, yassa tumhe pahānāya dhammaṁ desetha, yathāpaṭipannānaṁ vo saṅkilesikā dhammā pahīyissanti, vodāniyā dhammā abhivaḍḍhissanti, paññāpāripūriṁ vepullattañca diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharissathā’ti? 
+Sujato: ‘But reverends, what is that formless incarnation?’ We’d answer like this, 
+Translator: the formless appropriation of a self for whose abandoning you teach the Dhamma…?’ When asked this, I would answer, 
+
+=== RUN 93: dn9:49.13 dn9:49.14 dn9:49.15 ===
+File: data/thanissaro/sutta/dn/dn9_translation-en-thanissaro.json
+ABOVE dn9:49.12
+Pali: “Sace maṁ, bhante, evaṁ puccheyyuṁ: 
+Sujato: “Sir, if they were to ask me this, 
+Translator: “… Thus asked, lord, 
+JUDGE dn9:49.13
+Pali: ‘ahosi tvaṁ atītamaddhānaṁ, na tvaṁ na ahosi; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn9:49.14
+Pali: bhavissasi tvaṁ anāgatamaddhānaṁ, na tvaṁ na bhavissasi; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn9:49.15
+Pali: atthi tvaṁ etarahi, na tvaṁ natthī’ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW dn9:49.16
+Pali: Evaṁ puṭṭho ahaṁ, bhante, evaṁ byākareyyaṁ: 
+Sujato: I’d answer like this, 
+Translator: I would answer: 
+
+=== RUN 94: dn9:50.7 dn9:50.8 dn9:50.9 ===
+File: data/thanissaro/sutta/dn/dn9_translation-en-thanissaro.json
+ABOVE dn9:50.6
+Pali: “Sace pana maṁ, bhante, evaṁ puccheyyuṁ: 
+Sujato: “Sir, if they were to ask me this, 
+Translator: “…Thus asked, lord, 
+JUDGE dn9:50.7
+Pali: ‘yo te ahosi atīto attapaṭilābho, sova te attapaṭilābho sacco, mogho anāgato, mogho paccuppanno. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn9:50.8
+Pali: Yo te bhavissati anāgato attapaṭilābho, sova te attapaṭilābho sacco, mogho atīto, mogho paccuppanno. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn9:50.9
+Pali: Yo te etarahi paccuppanno attapaṭilābho, sova te attapaṭilābho sacco, mogho atīto, mogho anāgato’ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW dn9:50.10
+Pali: Evaṁ puṭṭho ahaṁ, bhante, evaṁ byākareyyaṁ: 
+Sujato: I’d answer like this, 
+Translator: I would answer: 
+
+=== RUN 95: dn11:2.2 dn11:2.3 dn11:2.4 dn11:2.5 dn11:2.6 dn11:2.7 dn11:2.8 dn11:2.9 ===
+File: data/thanissaro/sutta/dn/dn11_translation-en-thanissaro.json
+ABOVE dn11:2.1
+Pali: Dutiyampi kho kevaṭṭo gahapatiputto bhagavantaṁ etadavoca: 
+Sujato: For a second time, Kevaḍḍha made the same request, 
+Translator: A second time.… 
+JUDGE dn11:2.2
+Pali: “nāhaṁ, bhante, bhagavantaṁ dhaṁsemi; 
+Sujato: “Sir, I am not teaching you the Dhamma, 
+Translator: (empty)
+JUDGE dn11:2.3
+Pali: api ca evaṁ vadāmi: 
+Sujato: but nonetheless I say: 
+Translator: (empty)
+JUDGE dn11:2.4
+Pali: ‘ayaṁ, bhante, nāḷandā iddhā ceva phītā ca bahujanā ākiṇṇamanussā bhagavati abhippasannā. 
+Sujato: ‘Sir, this Nāḷandā is successful and prosperous, populous and full of people. 
+Translator: (empty)
+JUDGE dn11:2.5
+Pali: Sādhu, bhante, bhagavā ekaṁ bhikkhuṁ samādisatu, yo uttari manussadhammā iddhipāṭihāriyaṁ karissati; 
+Sujato: Please direct a mendicant to perform a superhuman demonstration of psychic power. 
+Translator: (empty)
+JUDGE dn11:2.6
+Pali: evāyaṁ nāḷandā bhiyyoso mattāya bhagavati abhippasīdissatī’”ti. 
+Sujato: Then Nāḷandā will become even more devoted to the Buddha!’” 
+Translator: (empty)
+JUDGE dn11:2.7
+Pali: Dutiyampi kho bhagavā kevaṭṭaṁ gahapatiputtaṁ etadavoca: 
+Sujato: But for a second time, the Buddha gave the same answer. 
+Translator: (empty)
+JUDGE dn11:2.8
+Pali: “na kho ahaṁ, kevaṭṭa, bhikkhūnaṁ evaṁ dhammaṁ desemi: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn11:2.9
+Pali: ‘etha tumhe, bhikkhave, gihīnaṁ odātavasanānaṁ uttari manussadhammā iddhipāṭihāriyaṁ karothā’”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) dn11:3.1
+Pali: Tatiyampi kho kevaṭṭo gahapatiputto bhagavantaṁ etadavoca: 
+Sujato: For a third time, Kevaḍḍha made the same request, 
+Translator: A third time, Kevaṭṭa the householder said to the Blessed One: 
+
+=== RUN 96: dn16:3.45.2 dn16:3.45.3 dn16:3.45.4 dn16:3.45.5 dn16:3.45.6 dn16:3.45.7 dn16:3.45.8 ===
+File: data/thanissaro/sutta/dn/dn16_translation-en-thanissaro.json
+ABOVE dn16:3.45.1
+Pali: Ekamidāhaṁ, ānanda, samayaṁ idheva vesāliyaṁ viharāmi udene cetiye. 
+Sujato: Ānanda, this one time I was staying right here near Vesālī, at the Udena Shrine … 
+Translator: “On one occasion, Ānanda, I was staying right here in Vesālī at the Udena shrine… 
+JUDGE dn16:3.45.2
+Pali: Tatrāpi kho tāhaṁ, ānanda, āmantesiṁ: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn16:3.45.3
+Pali: ‘ramaṇīyā, ānanda, vesālī, ramaṇīyaṁ udenaṁ cetiyaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn16:3.45.4
+Pali: Yassa kassaci, ānanda, cattāro iddhipādā bhāvitā bahulīkatā yānīkatā vatthukatā anuṭṭhitā paricitā susamāraddhā, so ākaṅkhamāno kappaṁ vā tiṭṭheyya kappāvasesaṁ vā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn16:3.45.5
+Pali: Tathāgatassa kho, ānanda, cattāro iddhipādā bhāvitā bahulīkatā yānīkatā vatthukatā anuṭṭhitā paricitā susamāraddhā, so ākaṅkhamāno, ānanda, tathāgato kappaṁ vā tiṭṭheyya kappāvasesaṁ vā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn16:3.45.6
+Pali: Evampi kho tvaṁ, ānanda, tathāgatena oḷārike nimitte kayiramāne oḷārike obhāse kayiramāne nāsakkhi paṭivijjhituṁ, na tathāgataṁ yāci: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn16:3.45.7
+Pali: ‘tiṭṭhatu, bhante, bhagavā kappaṁ, tiṭṭhatu sugato kappaṁ bahujanahitāya bahujanasukhāya lokānukampāya atthāya hitāya sukhāya devamanussānan’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn16:3.45.8
+Pali: Sace tvaṁ, ānanda, tathāgataṁ yāceyyāsi, dveva te vācā tathāgato paṭikkhipeyya, atha tatiyakaṁ adhivāseyya, tasmātihānanda, tuyhevetaṁ dukkaṭaṁ, tuyhevetaṁ aparaddhaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW dn16:3.46.1
+Pali: Ekamidāhaṁ, ānanda, samayaṁ idheva vesāliyaṁ viharāmi gotamake cetiye …pe… 
+Sujato: at the Gotamaka Shrine … 
+Translator: the Gotamaka shrine… 
+
+=== RUN 97: dn16:4.9.5 dn16:4.9.6 dn16:4.9.7 dn16:4.9.8 dn16:4.9.9 dn16:4.9.10 dn16:4.9.11 dn16:4.9.12 dn16:4.9.13 ===
+File: data/thanissaro/sutta/dn/dn16_translation-en-thanissaro.json
+ABOVE dn16:4.9.4
+Pali: ayaṁ dhammo ayaṁ vinayo idaṁ satthusāsanan’ti. 
+Sujato: this is the teaching, this is the training, this is the Teacher’s instruction.’ 
+Translator: This is the Dhamma, this is the Vinaya, this is the Teacher’s instruction.’ 
+JUDGE dn16:4.9.5
+Pali: Tassa, bhikkhave, bhikkhuno bhāsitaṁ neva abhinanditabbaṁ nappaṭikkositabbaṁ. 
+Sujato: You should neither approve nor reject that mendicant’s statement. 
+Translator: (empty)
+JUDGE dn16:4.9.6
+Pali: Anabhinanditvā appaṭikkositvā tāni padabyañjanāni sādhukaṁ uggahetvā sutte osāretabbāni, vinaye sandassetabbāni. 
+Sujato: Instead, having carefully memorized those words and phrases, you should make sure they fit in the discourse and are exhibited in the training. 
+Translator: (empty)
+JUDGE dn16:4.9.7
+Pali: Tāni ce sutte osāriyamānāni vinaye sandassiyamānāni na ceva sutte osaranti, na ca vinaye sandissanti, niṭṭhamettha gantabbaṁ: 
+Sujato: If they do not fit in the discourse and are not exhibited in the training, you should draw the conclusion: 
+Translator: (empty)
+JUDGE dn16:4.9.8
+Pali: ‘addhā idaṁ na ceva tassa bhagavato vacanaṁ; 
+Sujato: ‘Clearly this is not the word of the Buddha. 
+Translator: (empty)
+JUDGE dn16:4.9.9
+Pali: tassa ca saṅghassa duggahitan’ti. 
+Sujato: It has been incorrectly memorized by that Saṅgha.’ 
+Translator: (empty)
+JUDGE dn16:4.9.10
+Pali: Itihetaṁ, bhikkhave, chaḍḍeyyātha. 
+Sujato: And so you should discard it. 
+Translator: (empty)
+JUDGE dn16:4.9.11
+Pali: Tāni ce sutte osāriyamānāni vinaye sandassiyamānāni sutte ceva osaranti, vinaye ca sandissanti, niṭṭhamettha gantabbaṁ: 
+Sujato: If they do fit in the discourse and are exhibited in the training, you should draw the conclusion: 
+Translator: (empty)
+JUDGE dn16:4.9.12
+Pali: ‘addhā idaṁ tassa bhagavato vacanaṁ; 
+Sujato: ‘Clearly this is the word of the Buddha. 
+Translator: (empty)
+JUDGE dn16:4.9.13
+Pali: tassa ca saṅghassa suggahitan’ti. 
+Sujato: It has been correctly memorized by that Saṅgha.’ 
+Translator: (empty)
+BELOW dn16:4.9.14
+Pali: Idaṁ, bhikkhave, dutiyaṁ mahāpadesaṁ dhāreyyātha. 
+Sujato: You should remember it. This is the second great reference. 
+Translator: … 
+
+=== RUN 98: dn16:4.10.5 dn16:4.10.6 dn16:4.10.7 dn16:4.10.8 dn16:4.10.9 dn16:4.10.10 dn16:4.10.11 dn16:4.10.12 dn16:4.10.13 dn16:4.10.14 ===
+File: data/thanissaro/sutta/dn/dn16_translation-en-thanissaro.json
+ABOVE dn16:4.10.4
+Pali: ayaṁ dhammo ayaṁ vinayo idaṁ satthusāsanan’ti. 
+Sujato: this is the teaching, this is the training, this is the Teacher’s instruction.’ 
+Translator: This is the Dhamma, this is the Vinaya, this is the Teacher’s instruction.’ 
+JUDGE dn16:4.10.5
+Pali: Tassa, bhikkhave, bhikkhuno bhāsitaṁ neva abhinanditabbaṁ … 
+Sujato: You should neither approve nor reject that mendicant’s statement. 
+Translator: (empty)
+JUDGE dn16:4.10.6
+Pali: pe… 
+Sujato: Instead, having carefully memorized those words and phrases, you should make sure they fit in the discourse and are exhibited in the training. 
+Translator: (empty)
+JUDGE dn16:4.10.7
+Pali: na ca vinaye sandissanti, niṭṭhamettha gantabbaṁ: 
+Sujato: If they do not fit in the discourse and are not exhibited in the training, you should draw the conclusion: 
+Translator: (empty)
+JUDGE dn16:4.10.8
+Pali: ‘addhā idaṁ na ceva tassa bhagavato vacanaṁ; 
+Sujato: ‘Clearly this is not the word of the Buddha. 
+Translator: (empty)
+JUDGE dn16:4.10.9
+Pali: tesañca therānaṁ duggahitan’ti. 
+Sujato: It has not been correctly memorized by those senior mendicants.’ 
+Translator: (empty)
+JUDGE dn16:4.10.10
+Pali: Itihetaṁ, bhikkhave, chaḍḍeyyātha. 
+Sujato: And so you should discard it. 
+Translator: (empty)
+JUDGE dn16:4.10.11
+Pali: Tāni ce sutte osāriyamānāni …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn16:4.10.12
+Pali: vinaye ca sandissanti, niṭṭhamettha gantabbaṁ: 
+Sujato: If they do fit in the discourse and are exhibited in the training, you should draw the conclusion: 
+Translator: (empty)
+JUDGE dn16:4.10.13
+Pali: ‘addhā idaṁ tassa bhagavato vacanaṁ; 
+Sujato: ‘Clearly this is the word of the Buddha. 
+Translator: (empty)
+JUDGE dn16:4.10.14
+Pali: tesañca therānaṁ suggahitan’ti. 
+Sujato: It has been correctly memorized by those senior mendicants.’ 
+Translator: (empty)
+BELOW dn16:4.10.15
+Pali: Idaṁ, bhikkhave, tatiyaṁ mahāpadesaṁ dhāreyyātha. 
+Sujato: You should remember it. This is the third great reference. 
+Translator: … 
+
+=== RUN 99: dn16:5.16.7 dn16:5.16.8 ===
+File: data/thanissaro/sutta/dn/dn16_translation-en-thanissaro.json
+ABOVE dn16:5.16.6
+Pali: Sace, bhikkhave, bhikkhunīparisā ānandaṁ dassanāya upasaṅkamati, dassanena sā attamanā hoti. 
+Sujato: If an assembly of nuns … 
+Translator: If a group of nuns approaches to see Ānanda… 
+JUDGE dn16:5.16.7
+Pali: Tatra ce ānando dhammaṁ bhāsati, bhāsitenapi sā attamanā hoti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn16:5.16.8
+Pali: Atittāva, bhikkhave, bhikkhunīparisā hoti, atha kho ānando tuṇhī hoti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW dn16:5.16.9
+Pali: Sace, bhikkhave, upāsakaparisā ānandaṁ dassanāya upasaṅkamati, dassanena sā attamanā hoti. 
+Sujato: laymen … 
+Translator: If a group of male lay followers approaches to see Ānanda… 
+
+=== RUN 100: dn16:5.16.10 dn16:5.16.11 ===
+File: data/thanissaro/sutta/dn/dn16_translation-en-thanissaro.json
+ABOVE dn16:5.16.9
+Pali: Sace, bhikkhave, upāsakaparisā ānandaṁ dassanāya upasaṅkamati, dassanena sā attamanā hoti. 
+Sujato: laymen … 
+Translator: If a group of male lay followers approaches to see Ānanda… 
+JUDGE dn16:5.16.10
+Pali: Tatra ce ānando dhammaṁ bhāsati, bhāsitenapi sā attamanā hoti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn16:5.16.11
+Pali: Atittāva, bhikkhave, upāsakaparisā hoti, atha kho ānando tuṇhī hoti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW dn16:5.16.12
+Pali: Sace, bhikkhave, upāsikāparisā ānandaṁ dassanāya upasaṅkamati, dassanena sā attamanā hoti. 
+Sujato: or laywomen goes to see Ānanda, they’re uplifted by seeing him 
+Translator: If a group of female lay followers approaches to see Ānanda, they are gratified at the sight of him. 

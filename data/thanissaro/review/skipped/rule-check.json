@@ -1,0 +1,521 @@
+{
+  "translator": "thanissaro",
+  "rule": "Own content explicitly rendered; abbreviated or compressed repetitions and doubtful lines stay skipped.",
+  "records": [
+    {
+      "key": "an5.56:2.2",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English substitutes a bracketed report that the student spoke for the repeated quoted speech. This introduction is part of that compressed report, not an independently rendered speech introduction; the conservative repetition rule excludes it."
+    },
+    {
+      "key": "an5.56:5.4",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English substitutes a bracketed report that the student spoke for the repeated quoted speech. This introduction is part of that compressed report, not an independently rendered speech introduction; the conservative repetition rule excludes it."
+    },
+    {
+      "key": "an7.12:1.4",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English lists the obsession by name but replaces the repeated claim that the holy life is lived for abandoning and cutting off that obsession. Naming it does not translate that repetition, and the shared claim appears on other English lines."
+    },
+    {
+      "key": "an7.12:1.5",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English lists the obsession by name but replaces the repeated claim that the holy life is lived for abandoning and cutting off that obsession. Naming it does not translate that repetition, and the shared claim appears on other English lines."
+    },
+    {
+      "key": "an7.12:1.6",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English lists the obsession by name but replaces the repeated claim that the holy life is lived for abandoning and cutting off that obsession. Naming it does not translate that repetition, and the shared claim appears on other English lines."
+    },
+    {
+      "key": "an7.12:1.7",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English lists the obsession by name but replaces the repeated claim that the holy life is lived for abandoning and cutting off that obsession. Naming it does not translate that repetition, and the shared claim appears on other English lines."
+    },
+    {
+      "key": "an7.15:3.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The full list explicitly says that compunction is good. This renders sādhu ottappaṁ, rather than only naming it or referring to an earlier claim."
+    },
+    {
+      "key": "an7.15:3.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The full list explicitly says that persistence is good, rendering sādhu vīriyaṁ."
+    },
+    {
+      "key": "an7.15:3.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The full list explicitly says that discernment with regard to skillful qualities is good, rendering the entire final sādhu paññā kusalesu dhammesūti clause."
+    },
+    {
+      "key": "an7.15:3.7",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English combines the separate repeated claims about shame, compunction, persistence and discernment under one shared waning predicate. This is doubtful between a full list and compressed repetition; the clarified conservative rule excludes the repeated clauses."
+    },
+    {
+      "key": "an7.15:3.8",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English combines the separate repeated claims about shame, compunction, persistence and discernment under one shared waning predicate. This is doubtful between a full list and compressed repetition; the clarified conservative rule excludes the repeated clauses."
+    },
+    {
+      "key": "an7.15:3.9",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English combines the separate repeated claims about shame, compunction, persistence and discernment under one shared waning predicate. This is doubtful between a full list and compressed repetition; the clarified conservative rule excludes the repeated clauses."
+    },
+    {
+      "key": "an7.15:4.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The full list explicitly says that compunction is good. This renders sādhu ottappaṁ, rather than only naming it or referring to an earlier claim."
+    },
+    {
+      "key": "an7.15:4.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The full list explicitly says that persistence is good, rendering sādhu vīriyaṁ."
+    },
+    {
+      "key": "an7.15:4.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The full list explicitly says that discernment with regard to skillful qualities is good, rendering the entire final sādhu paññā kusalesu dhammesūti clause."
+    },
+    {
+      "key": "an7.15:5.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The full list explicitly says that compunction is good. This renders sādhu ottappaṁ, rather than only naming it or referring to an earlier claim."
+    },
+    {
+      "key": "an7.15:5.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The full list explicitly says that persistence is good, rendering sādhu vīriyaṁ."
+    },
+    {
+      "key": "an7.15:5.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The full list explicitly says that discernment with regard to skillful qualities is good, rendering the entire final sādhu paññā kusalesu dhammesūti clause."
+    },
+    {
+      "key": "an7.15:6.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The full list explicitly says that compunction is good. This renders sādhu ottappaṁ, rather than only naming it or referring to an earlier claim."
+    },
+    {
+      "key": "an7.15:6.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The full list explicitly says that persistence is good, rendering sādhu vīriyaṁ."
+    },
+    {
+      "key": "an7.15:6.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The full list explicitly says that discernment with regard to skillful qualities is good, rendering the entire final sādhu paññā kusalesu dhammesūti clause."
+    },
+    {
+      "key": "an7.15:7.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The full list explicitly says that compunction is good. This renders sādhu ottappaṁ, rather than only naming it or referring to an earlier claim."
+    },
+    {
+      "key": "an7.15:7.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The full list explicitly says that persistence is good, rendering sādhu vīriyaṁ."
+    },
+    {
+      "key": "an7.15:7.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The full list explicitly says that discernment with regard to skillful qualities is good, rendering the entire final sādhu paññā kusalesu dhammesūti clause."
+    },
+    {
+      "key": "an7.15:8.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The full list explicitly says that compunction is good. This renders sādhu ottappaṁ, rather than only naming it or referring to an earlier claim."
+    },
+    {
+      "key": "an7.15:8.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The full list explicitly says that persistence is good, rendering sādhu vīriyaṁ."
+    },
+    {
+      "key": "an7.15:8.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The full list explicitly says that discernment with regard to skillful qualities is good, rendering the entire final sādhu paññā kusalesu dhammesūti clause."
+    },
+    {
+      "key": "an8.7:5.3",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The bracketed Similarly list names this arisen condition but abbreviates its repeated consequences by referring back. Mentioning the condition does not make that repetition covered."
+    },
+    {
+      "key": "an8.7:5.4",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The bracketed Similarly list names this arisen condition but abbreviates its repeated consequences by referring back. Mentioning the condition does not make that repetition covered."
+    },
+    {
+      "key": "an8.7:5.5",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The bracketed Similarly list names this arisen condition but abbreviates its repeated consequences by referring back. Mentioning the condition does not make that repetition covered."
+    },
+    {
+      "key": "an8.7:5.6",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The bracketed Similarly list names this arisen condition but abbreviates its repeated consequences by referring back. Mentioning the condition does not make that repetition covered."
+    },
+    {
+      "key": "an8.7:5.7",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The bracketed Similarly list names this arisen condition but abbreviates its repeated consequences by referring back. Mentioning the condition does not make that repetition covered."
+    },
+    {
+      "key": "an8.8:13.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly gives all four companies: monks, nuns, lay men and lay women. The complete Pali list is rendered."
+    },
+    {
+      "key": "an8.8:13.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly says that this Dhamma discourse has not been established among human beings, rendering the complete negative establishment clause."
+    },
+    {
+      "key": "an10.96:9.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The first question is explicitly rendered as Is this the sort of view you have? The ellipsis begins in a subsequent question, not in this complete clause."
+    },
+    {
+      "key": "an10.96:9.3",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English gives I do not have that sort of view but drops the repeated eternal-world/only-true proposition from the quoted reply. This line is the introduction to that compressed repeated reply; under the conservative rule, mentioning the negative introduction is insufficient."
+    },
+    {
+      "key": "dn2:10.10",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly says not betraying you, rendering na taṁ ... palambhāmi as one complete member of the reassurance."
+    },
+    {
+      "key": "dn2:10.11",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly says not turning you over to your enemies, rendering the whole paccatthikānaṁ demi clause."
+    },
+    {
+      "key": "mn7:5.30",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The endpoint following the ellipsis explicitly states that heedlessness is a defilement of the mind; this line is fully rendered rather than included only by reference."
+    },
+    {
+      "key": "mn7:5.31",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The endpoint following the ellipsis explicitly says that knowing heedlessness to be a defilement, the monk has abandoned it. This full endpoint clause is rendered."
+    },
+    {
+      "key": "mn31:7.14",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English gives the opening gain words of a repeated speech and then abbreviates the speech by ellipsis. Under the conservative rule, mentioning the opening does not make the abbreviated repetition covered."
+    },
+    {
+      "key": "mn35:12.8",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly gives the examples Vajjians and Mallans; the complete examples list is rendered."
+    },
+    {
+      "key": "mn35:12.9",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly says they wield power in their own domains, rendering the complete sovereignty clause."
+    },
+    {
+      "key": "mn72:13.2",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English compresses the repeated view questions and replies into an endpoint series and says no in each case. The shared report does not cover an individual repeated question or reply under the clarified rule, even where an endpoint view is mentioned."
+    },
+    {
+      "key": "mn72:13.28",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English compresses the repeated view questions and replies into an endpoint series and says no in each case. The shared report does not cover an individual repeated question or reply under the clarified rule, even where an endpoint view is mentioned."
+    },
+    {
+      "key": "mn72:13.29",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English compresses the repeated view questions and replies into an endpoint series and says no in each case. The shared report does not cover an individual repeated question or reply under the clarified rule, even where an endpoint view is mentioned."
+    },
+    {
+      "key": "mn72:17.2",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English compresses the separate repeated questions and their replies into a list with one does-not-apply answer in each case. Mentioning the case does not cover its repeated question and answer."
+    },
+    {
+      "key": "mn72:17.3",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English compresses the separate repeated questions and their replies into a list with one does-not-apply answer in each case. Mentioning the case does not cover its repeated question and answer."
+    },
+    {
+      "key": "mn72:17.4",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English compresses the separate repeated questions and their replies into a list with one does-not-apply answer in each case. Mentioning the case does not cover its repeated question and answer."
+    },
+    {
+      "key": "mn75:23.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "Within this single Pali list, the English explicitly gives every color, even and uneven places, stars, sun and moon, together with inability to see them. The ellipses separate translated list members; no member is omitted or supplied by a prior repetition."
+    },
+    {
+      "key": "mn85:17.2",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English combines the separate positive and negative painful-feeling conditionals into whether or not, sharing one capacity/incapacity conclusion. This compresses the repetition; the clarified conservative rule excludes each repeated conditional even though its sense is mentioned."
+    },
+    {
+      "key": "mn85:17.3",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English combines the separate positive and negative painful-feeling conditionals into whether or not, sharing one capacity/incapacity conclusion. This compresses the repetition; the clarified conservative rule excludes each repeated conditional even though its sense is mentioned."
+    },
+    {
+      "key": "mn85:18.12",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English combines the separate positive and negative painful-feeling conditionals into whether or not, sharing one capacity/incapacity conclusion. This compresses the repetition; the clarified conservative rule excludes each repeated conditional even though its sense is mentioned."
+    },
+    {
+      "key": "mn85:18.13",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English combines the separate positive and negative painful-feeling conditionals into whether or not, sharing one capacity/incapacity conclusion. This compresses the repetition; the clarified conservative rule excludes each repeated conditional even though its sense is mentioned."
+    },
+    {
+      "key": "mn85:19.11",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English combines the separate positive and negative painful-feeling conditionals into whether or not, sharing one capacity/incapacity conclusion. This compresses the repetition; the clarified conservative rule excludes each repeated conditional even though its sense is mentioned."
+    },
+    {
+      "key": "mn85:19.12",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English combines the separate positive and negative painful-feeling conditionals into whether or not, sharing one capacity/incapacity conclusion. This compresses the repetition; the clarified conservative rule excludes each repeated conditional even though its sense is mentioned."
+    },
+    {
+      "key": "mn90:11.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly states if these four castes were endowed with the five exertion factors, rendering the complete condition."
+    },
+    {
+      "key": "mn97:17.2",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English moves Which is the better to the beginning of a question whose repeated alternatives are then abbreviated by ellipsis. The short question is part of that abbreviated repeated comparison; the conservative rule excludes it."
+    },
+    {
+      "key": "mn101:26.9",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly says that the stress coming from this cause is exhausted through dispassion from developing equanimity, including this complete stress-exhaustion conclusion."
+    },
+    {
+      "key": "sn16.5:5.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English expressly says they were almsgoers and extolled being almsgoers. It renders this practice and its praise, rather than merely mentioning the practice."
+    },
+    {
+      "key": "sn16.5:5.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English expressly says they wore cast-off rags and extolled wearing them, rendering this practice and its praise."
+    },
+    {
+      "key": "sn16.5:5.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English expressly says they wore one set of the triple robe and extolled wearing it, rendering this practice and its praise."
+    },
+    {
+      "key": "sn16.5:5.7",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English expressly says they were modest and extolled being modest, rendering this practice and its praise."
+    },
+    {
+      "key": "sn16.5:5.8",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English expressly says they were content and extolled being content, rendering this practice and its praise."
+    },
+    {
+      "key": "sn22.2:4.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly enumerates wise nobles, brahmans, householders and contemplatives. All members of this line are given in full; the later ellipsis concerns the following material, not this list."
+    },
+    {
+      "key": "sn22.2:4.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly says the people there are wise and discriminating, rendering the complete paṇḍitā ... vīmaṁsakā clause."
+    },
+    {
+      "key": "sn22.2:6.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly enumerates wise nobles, brahmans, householders and contemplatives. All members of this line are given in full; the later ellipsis concerns the following material, not this list."
+    },
+    {
+      "key": "sn22.2:6.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly says the people there are wise and discriminating, rendering the complete paṇḍitā ... vīmaṁsakā clause."
+    },
+    {
+      "key": "sn22.2:7.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly enumerates wise nobles, brahmans, householders and contemplatives. All members of this line are given in full; the later ellipsis concerns the following material, not this list."
+    },
+    {
+      "key": "sn22.2:8.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly enumerates wise nobles, brahmans, householders and contemplatives. All members of this line are given in full; the later ellipsis concerns the following material, not this list."
+    },
+    {
+      "key": "sn22.2:9.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly enumerates wise nobles, brahmans, householders and contemplatives. All members of this line are given in full; the later ellipsis concerns the following material, not this list."
+    },
+    {
+      "key": "sn22.89:8.8",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The final consciousness question explicitly includes both I am consciousness and I am something other than consciousness. This complete endpoint is rendered; the earlier feeling/perception/fabrication questions are abbreviated separately."
+    },
+    {
+      "key": "sn22.90:7.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly says May Ven. Ānanda teach me, rendering the complete instruction request."
+    },
+    {
+      "key": "sn22.90:7.7",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly requests a Dhamma talk so that I might see the Dhamma, rendering the complete final request."
+    },
+    {
+      "key": "sn35.69:1.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly says to carry the body outside before it is scattered, rendering this complete warning clause."
+    },
+    {
+      "key": "sn35.69:1.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly renders like a fistful of chaff, which is the complete simile line."
+    },
+    {
+      "key": "sn35.69:2.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly says to carry the body outside before it is scattered, rendering this complete warning clause."
+    },
+    {
+      "key": "sn35.69:2.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The English explicitly renders like a fistful of chaff, which is the complete simile line."
+    },
+    {
+      "key": "sn35.101:2.2",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English names the tongue and includes Let go of it before abbreviating the rest of its repeated formula. Under the conservative rule, this opening mention does not cover the abbreviated tongue repetition."
+    },
+    {
+      "key": "sn44.3:3.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The first reply explicitly states that the Tathāgata exists after death has not been declared; this line completes that first reply. Other intervening cases are abbreviated separately."
+    },
+    {
+      "key": "sn44.3:3.3",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English combines the subsequent no-existence, both and neither questions under one when asked introduction. The neither case is mentioned inside that compressed repeated-question series; in doubt, the clarified rule excludes it."
+    },
+    {
+      "key": "sn44.3:3.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The final reply explicitly says That too has not been declared by the Blessed One. The complete reply introduction is rendered, not supplied by a generic in-each-case summary."
+    },
+    {
+      "key": "sn44.3:3.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The final reply explicitly repeats the neither-exists-nor-does-not-exist after-death proposition. This complete endpoint answer is rendered despite omission of intervening answers."
+    },
+    {
+      "key": "sn44.6:1.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The final reply explicitly says That too has not been declared by the Blessed One. The complete reply introduction is rendered, not supplied by a generic in-each-case summary."
+    },
+    {
+      "key": "sn44.6:1.7",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The final reply explicitly repeats the neither-exists-nor-does-not-exist after-death proposition. This complete endpoint answer is rendered despite omission of intervening answers."
+    }
+  ],
+  "covered_checked": 85,
+  "changed": 31,
+  "complete": true,
+  "rule_detail": "The English above must explicitly render the line's own content. An abbreviated or compressed repetition is never covered, even when mentioned; doubtful lines stay skipped. Fully rendered lists and explicit complete clauses may be covered. No skipped sample is reopened; MN72:13.5 remains skipped by the user's instruction.",
+  "input_marks_sha256": "0c8164763b64b6e9c0c42c165067c4a7a4007384ba4169009444802c33c8e95c"
+}

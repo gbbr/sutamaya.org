@@ -1,0 +1,1293 @@
+thanissaro: skipped-Pali review batch 008
+Read the full English above, each original Pali line, and the next English. Sujato is context only.
+covered = this line's own content is explicitly rendered by the English above, including complete lists.
+skipped = abbreviated or compressed repetition, even if mentioned, or omitted. When in doubt, skipped.
+Judge each key independently; a run may be mixed. An ellipsis alone does not decide.
+Only runs of two or more empty prose lines in the same paragraph are reviewed; lone lines join automatically.
+Write <key> covered|skipped|unsure for every RUN key, then # done. Do not mark context keys.
+
+=== RUN 351: sn12.23:2.7 sn12.23:2.8 ===
+File: data/thanissaro/sutta/sn/sn12/sn12.23_translation-en-thanissaro.json
+ABOVE sn12.23:2.6
+Pali: ‘Virāgo’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Dispassion.’ 
+Translator: Dispassion.… 
+JUDGE sn12.23:2.7
+Pali: Virāgampāhaṁ, bhikkhave, saupanisaṁ vadāmi, no anupanisaṁ. 
+Sujato: I say that dispassion has a vital condition. 
+Translator: (empty)
+JUDGE sn12.23:2.8
+Pali: Kā ca, bhikkhave, virāgassa upanisā? 
+Sujato: And what is it? 
+Translator: (empty)
+BELOW sn12.23:2.9
+Pali: ‘Nibbidā’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Disillusionment.’ 
+Translator: Disenchantment.… 
+
+=== RUN 352: sn12.23:2.10 sn12.23:2.11 ===
+File: data/thanissaro/sutta/sn/sn12/sn12.23_translation-en-thanissaro.json
+ABOVE sn12.23:2.9
+Pali: ‘Nibbidā’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Disillusionment.’ 
+Translator: Disenchantment.… 
+JUDGE sn12.23:2.10
+Pali: Nibbidampāhaṁ, bhikkhave, saupanisaṁ vadāmi, no anupanisaṁ. 
+Sujato: I say that disillusionment has a vital condition. 
+Translator: (empty)
+JUDGE sn12.23:2.11
+Pali: Kā ca, bhikkhave, nibbidāya upanisā? 
+Sujato: And what is it? 
+Translator: (empty)
+BELOW sn12.23:2.12
+Pali: ‘Yathābhūtañāṇadassanan’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Truly knowing and seeing.’ 
+Translator: Knowledge & vision of things as they have come to be.… 
+
+=== RUN 353: sn12.23:2.13 sn12.23:2.14 ===
+File: data/thanissaro/sutta/sn/sn12/sn12.23_translation-en-thanissaro.json
+ABOVE sn12.23:2.12
+Pali: ‘Yathābhūtañāṇadassanan’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Truly knowing and seeing.’ 
+Translator: Knowledge & vision of things as they have come to be.… 
+JUDGE sn12.23:2.13
+Pali: Yathābhūtañāṇadassanampāhaṁ, bhikkhave, saupanisaṁ vadāmi, no anupanisaṁ. 
+Sujato: I say that truly knowing and seeing has a vital condition. 
+Translator: (empty)
+JUDGE sn12.23:2.14
+Pali: Kā ca, bhikkhave, yathābhūtañāṇadassanassa upanisā? 
+Sujato: And what is it? 
+Translator: (empty)
+BELOW sn12.23:2.15
+Pali: ‘Samādhī’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Immersion.’ 
+Translator: Concentration.… 
+
+=== RUN 354: sn12.23:3.3 sn12.23:3.4 ===
+File: data/thanissaro/sutta/sn/sn12/sn12.23_translation-en-thanissaro.json
+ABOVE sn12.23:3.2
+Pali: ‘Sukhan’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Bliss.’ 
+Translator: Pleasure.… 
+JUDGE sn12.23:3.3
+Pali: Sukhampāhaṁ, bhikkhave, saupanisaṁ vadāmi, no anupanisaṁ. 
+Sujato: I say that bliss has a vital condition. 
+Translator: (empty)
+JUDGE sn12.23:3.4
+Pali: Kā ca, bhikkhave, sukhassa upanisā? 
+Sujato: And what is it? 
+Translator: (empty)
+BELOW sn12.23:3.5
+Pali: ‘Passaddhī’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Tranquility.’ 
+Translator: Serenity.… 
+
+=== RUN 355: sn12.23:3.6 sn12.23:3.7 ===
+File: data/thanissaro/sutta/sn/sn12/sn12.23_translation-en-thanissaro.json
+ABOVE sn12.23:3.5
+Pali: ‘Passaddhī’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Tranquility.’ 
+Translator: Serenity.… 
+JUDGE sn12.23:3.6
+Pali: Passaddhimpāhaṁ, bhikkhave, saupanisaṁ vadāmi, no anupanisaṁ. 
+Sujato: I say that tranquility has a vital condition. 
+Translator: (empty)
+JUDGE sn12.23:3.7
+Pali: Kā ca, bhikkhave, passaddhiyā upanisā? 
+Sujato: And what is it? 
+Translator: (empty)
+BELOW sn12.23:3.8
+Pali: ‘Pītī’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Rapture.’ 
+Translator: Rapture.… 
+
+=== RUN 356: sn12.23:3.9 sn12.23:3.10 ===
+File: data/thanissaro/sutta/sn/sn12/sn12.23_translation-en-thanissaro.json
+ABOVE sn12.23:3.8
+Pali: ‘Pītī’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Rapture.’ 
+Translator: Rapture.… 
+JUDGE sn12.23:3.9
+Pali: Pītimpāhaṁ, bhikkhave, saupanisaṁ vadāmi, no anupanisaṁ. 
+Sujato: I say that rapture has a vital condition. 
+Translator: (empty)
+JUDGE sn12.23:3.10
+Pali: Kā ca, bhikkhave, pītiyā upanisā? 
+Sujato: And what is it? 
+Translator: (empty)
+BELOW sn12.23:3.11
+Pali: ‘Pāmojjan’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Joy.’ 
+Translator: Joy.… 
+
+=== RUN 357: sn12.23:3.12 sn12.23:3.13 ===
+File: data/thanissaro/sutta/sn/sn12/sn12.23_translation-en-thanissaro.json
+ABOVE sn12.23:3.11
+Pali: ‘Pāmojjan’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Joy.’ 
+Translator: Joy.… 
+JUDGE sn12.23:3.12
+Pali: Pāmojjampāhaṁ, bhikkhave, saupanisaṁ vadāmi, no anupanisaṁ. 
+Sujato: I say that joy has a vital condition. 
+Translator: (empty)
+JUDGE sn12.23:3.13
+Pali: Kā ca, bhikkhave, pāmojjassa upanisā? 
+Sujato: And what is it? 
+Translator: (empty)
+BELOW sn12.23:3.14
+Pali: ‘Saddhā’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Faith.’ 
+Translator: Conviction.… 
+
+=== RUN 358: sn12.23:4.3 sn12.23:4.4 ===
+File: data/thanissaro/sutta/sn/sn12/sn12.23_translation-en-thanissaro.json
+ABOVE sn12.23:4.2
+Pali: ‘Dukkhan’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Suffering.’ 
+Translator: Stress.… 
+JUDGE sn12.23:4.3
+Pali: Dukkhampāhaṁ, bhikkhave, saupanisaṁ vadāmi, no anupanisaṁ. 
+Sujato: I say that suffering has a vital condition. 
+Translator: (empty)
+JUDGE sn12.23:4.4
+Pali: Kā ca, bhikkhave, dukkhassa upanisā? 
+Sujato: And what is it? 
+Translator: (empty)
+BELOW sn12.23:4.5
+Pali: ‘Jātī’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Rebirth.’ 
+Translator: Birth.… 
+
+=== RUN 359: sn12.23:4.6 sn12.23:4.7 ===
+File: data/thanissaro/sutta/sn/sn12/sn12.23_translation-en-thanissaro.json
+ABOVE sn12.23:4.5
+Pali: ‘Jātī’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Rebirth.’ 
+Translator: Birth.… 
+JUDGE sn12.23:4.6
+Pali: Jātimpāhaṁ, bhikkhave, saupanisaṁ vadāmi, no anupanisaṁ. 
+Sujato: I say that rebirth has a vital condition. 
+Translator: (empty)
+JUDGE sn12.23:4.7
+Pali: Kā ca, bhikkhave, jātiyā upanisā? 
+Sujato: And what is it? 
+Translator: (empty)
+BELOW sn12.23:4.8
+Pali: ‘Bhavo’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Continued existence.’ 
+Translator: Becoming.… 
+
+=== RUN 360: sn12.23:4.9 sn12.23:4.10 ===
+File: data/thanissaro/sutta/sn/sn12/sn12.23_translation-en-thanissaro.json
+ABOVE sn12.23:4.8
+Pali: ‘Bhavo’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Continued existence.’ 
+Translator: Becoming.… 
+JUDGE sn12.23:4.9
+Pali: Bhavampāhaṁ, bhikkhave, saupanisaṁ vadāmi, no anupanisaṁ. 
+Sujato: I say that continued existence has a vital condition. 
+Translator: (empty)
+JUDGE sn12.23:4.10
+Pali: Kā ca, bhikkhave, bhavassa upanisā? 
+Sujato: And what is it? 
+Translator: (empty)
+BELOW sn12.23:4.11
+Pali: ‘Upādānan’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Grasping.’ 
+Translator: Clinging.… 
+
+=== RUN 361: sn12.23:4.12 sn12.23:4.13 ===
+File: data/thanissaro/sutta/sn/sn12/sn12.23_translation-en-thanissaro.json
+ABOVE sn12.23:4.11
+Pali: ‘Upādānan’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Grasping.’ 
+Translator: Clinging.… 
+JUDGE sn12.23:4.12
+Pali: Upādānampāhaṁ, bhikkhave, saupanisaṁ vadāmi, no anupanisaṁ. 
+Sujato: I say that grasping has a vital condition. 
+Translator: (empty)
+JUDGE sn12.23:4.13
+Pali: Kā ca, bhikkhave, upādānassa upanisā? 
+Sujato: And what is it? 
+Translator: (empty)
+BELOW sn12.23:4.14
+Pali: ‘Taṇhā’tissa vacanīyaṁ. 
+Sujato: You should say: ‘Craving.’ 
+Translator: Craving.… 
+
+=== RUN 362: sn12.25:12.2 sn12.25:12.3 sn12.25:12.4 ===
+File: data/thanissaro/sutta/sn/sn12/sn12.25_translation-en-thanissaro.json
+ABOVE sn12.25:12.1
+Pali: Sāmaṁ vā taṁ, ānanda, vacīsaṅkhāraṁ abhisaṅkharoti yaṁpaccayāssa taṁ uppajjati ajjhattaṁ sukhadukkhaṁ. 
+Sujato: (empty)
+Translator: [Similarly with verbal & intellectual fabrications.] 
+JUDGE sn12.25:12.2
+Pali: Pare vā taṁ, ānanda, vacīsaṅkhāraṁ abhisaṅkharonti yaṁpaccayāssa taṁ uppajjati ajjhattaṁ sukhadukkhaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn12.25:12.3
+Pali: Sampajāno vā taṁ, ānanda …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn12.25:12.4
+Pali: asampajāno vā taṁ, ānanda, vacīsaṅkhāraṁ abhisaṅkharoti yaṁpaccayāssa taṁ uppajjati ajjhattaṁ sukhadukkhaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn12.25:14.1
+Pali: Imesu, ānanda, dhammesu avijjā anupatitā. 
+Sujato: Ignorance is included in all these things. 
+Translator: “Now, ignorance is bound up in these things. 
+
+=== RUN 363: sn12.35:2.3 sn12.35:2.4 sn12.35:2.5 ===
+File: data/thanissaro/sutta/sn/sn12/sn12.35_translation-en-thanissaro.json
+ABOVE sn12.35:2.2
+Pali: “No kallo pañho”ti bhagavā avoca, “‘katamā jāti, kassa ca panāyaṁ jātī’ti iti vā, bhikkhu, yo vadeyya, ‘aññā jāti aññassa ca panāyaṁ jātī’ti iti vā, bhikkhu, yo vadeyya, ubhayametaṁ ekatthaṁ byañjanameva nānaṁ. 
+Sujato: “That’s not a cogent question,” said the Buddha. “You might say, ‘What is rebirth, and who does it belong to?’ Or you might say, ‘Rebirth is one thing, who it belongs to is another.’ But both of these mean the same thing, only the phrasing differs. 
+Translator: “Not a valid question,” the Blessed One said.… 
+JUDGE sn12.35:2.3
+Pali: Taṁ jīvaṁ taṁ sarīranti vā, bhikkhu, diṭṭhiyā sati brahmacariyavāso na hoti. 
+Sujato: Mendicant, if you have the view that the soul and the body are one and the same, there is no living of the spiritual life. 
+Translator: (empty)
+JUDGE sn12.35:2.4
+Pali: Aññaṁ jīvaṁ aññaṁ sarīranti vā, bhikkhu, diṭṭhiyā sati brahmacariyavāso na hoti. 
+Sujato: If you have the view that the soul is one thing, the body another, there is no living of the spiritual life. 
+Translator: (empty)
+JUDGE sn12.35:2.5
+Pali: Ete te, bhikkhu, ubho ante anupagamma majjhena tathāgato dhammaṁ deseti: 
+Sujato: Avoiding these two extremes, the Realized One teaches by the middle way: 
+Translator: (empty)
+BELOW sn12.35:2.6
+Pali: ‘bhavapaccayā jātī’”ti. 
+Sujato: ‘Continued existence is a requirement for rebirth.’” 
+Translator: “From becoming as a requisite condition comes birth.” 
+
+=== RUN 364: sn12.35:3.3 sn12.35:3.4 sn12.35:3.5 ===
+File: data/thanissaro/sutta/sn/sn12/sn12.35_translation-en-thanissaro.json
+ABOVE sn12.35:3.2
+Pali: “No kallo pañho”ti bhagavā avoca, “‘katamo bhavo, kassa ca panāyaṁ bhavo’ti iti vā, bhikkhu, yo vadeyya, ‘añño bhavo aññassa ca panāyaṁ bhavo’ti iti vā, bhikkhu, yo vadeyya, ubhayametaṁ ekatthaṁ byañjanameva nānaṁ. 
+Sujato: “That’s not a cogent question,” said the Buddha. “You might say, ‘What is continued existence, and who does it belong to?’ Or you might say, ‘Continued existence is one thing, who it belongs to is another.’ But both of these mean the same thing, only the phrasing differs. 
+Translator: “Not a valid question,” the Blessed One said.… 
+JUDGE sn12.35:3.3
+Pali: Taṁ jīvaṁ taṁ sarīranti vā, bhikkhu, diṭṭhiyā sati brahmacariyavāso na hoti; 
+Sujato: Mendicant, if you have the view that the soul and the body are one and the same, there is no living of the spiritual life. 
+Translator: (empty)
+JUDGE sn12.35:3.4
+Pali: aññaṁ jīvaṁ aññaṁ sarīranti vā, bhikkhu, diṭṭhiyā sati brahmacariyavāso na hoti. 
+Sujato: If you have the view that the soul is one thing, the body another, there is no living of the spiritual life. 
+Translator: (empty)
+JUDGE sn12.35:3.5
+Pali: Ete te, bhikkhu, ubho ante anupagamma majjhena tathāgato dhammaṁ deseti: 
+Sujato: Avoiding these two extremes, the Realized One teaches by the middle way: 
+Translator: (empty)
+BELOW sn12.35:3.6
+Pali: ‘upādānapaccayā bhavo’ti …pe… 
+Sujato: ‘Grasping is a requirement for continued existence.’ … 
+Translator: “From clinging as a requisite condition comes becoming.” “Which is the clinging, lord, and whose is the clinging?” “Not a valid question,” the Blessed One said.… 
+
+=== RUN 365: sn12.64:4.3 sn12.64:4.4 sn12.64:4.5 sn12.64:4.6 sn12.64:4.7 ===
+File: data/thanissaro/sutta/sn/sn12/sn12.64_translation-en-thanissaro.json
+ABOVE sn12.64:4.2
+Pali: evameva kho, bhikkhave, kabaḷīkāre ce āhāre atthi rāgo atthi nandī atthi taṇhā, patiṭṭhitaṁ tattha viññāṇaṁ virūḷhaṁ. 
+Sujato: In the same way, if there is desire, relishing, and craving for edible food, consciousness becomes established there and grows. 
+Translator: in the same way, where there is passion, delight, & craving for the nutriment of physical food… 
+JUDGE sn12.64:4.3
+Pali: Yattha patiṭṭhitaṁ viññāṇaṁ virūḷhaṁ, atthi tattha nāmarūpassa avakkanti. 
+Sujato: Where consciousness is established and grows, name and form are conceived. 
+Translator: (empty)
+JUDGE sn12.64:4.4
+Pali: Yattha atthi nāmarūpassa avakkanti, atthi tattha saṅkhārānaṁ vuddhi. 
+Sujato: Where name and form are conceived, there is the growth of choices. 
+Translator: (empty)
+JUDGE sn12.64:4.5
+Pali: Yattha atthi saṅkhārānaṁ vuddhi, atthi tattha āyatiṁ punabbhavābhinibbatti. 
+Sujato: Where choices grow, there is regeneration into a new state of existence in the future. 
+Translator: (empty)
+JUDGE sn12.64:4.6
+Pali: Yattha atthi āyatiṁ punabbhavābhinibbatti, atthi tattha āyatiṁ jātijarāmaraṇaṁ. 
+Sujato: Where there is regeneration into a new state of existence in the future, there is rebirth, old age, and death in the future. 
+Translator: (empty)
+JUDGE sn12.64:4.7
+Pali: Yattha atthi āyatiṁ jātijarāmaraṇaṁ, sasokaṁ taṁ, bhikkhave, sadaraṁ saupāyāsanti vadāmi. 
+Sujato: Where there is rebirth, old age, and death in the future, I say this is full of sorrow, anguish, and distress. 
+Translator: (empty)
+BELOW (outside this paragraph) sn12.64:5.1
+Pali: Phasse ce, bhikkhave, āhāre …pe… 
+Sujato: If there is desire, relishing, and craving for contact as fuel … 
+Translator: contact… 
+
+=== RUN 366: sn12.65:2.3 sn12.65:2.4 sn12.65:2.5 sn12.65:2.6 sn12.65:2.7 sn12.65:2.8 ===
+File: data/thanissaro/sutta/sn/sn12/sn12.65_translation-en-thanissaro.json
+ABOVE sn12.65:2.2
+Pali: ‘kimhi nu kho sati jāti hoti …pe… 
+Sujato: ‘When what exists is there rebirth? … 
+Translator: ‘Birth exists when what exists? From what as a requisite condition comes birth?’ From my appropriate attention there came the breakthrough of discernment: ‘Birth exists when becoming exists. From becoming as a requisite condition comes birth… 
+JUDGE sn12.65:2.3
+Pali: bhavo hoti … 
+Sujato: continued existence … 
+Translator: (empty)
+JUDGE sn12.65:2.4
+Pali: upādānaṁ hoti … 
+Sujato: grasping … 
+Translator: (empty)
+JUDGE sn12.65:2.5
+Pali: taṇhā hoti … 
+Sujato: craving … 
+Translator: (empty)
+JUDGE sn12.65:2.6
+Pali: vedanā hoti … 
+Sujato: feeling … 
+Translator: (empty)
+JUDGE sn12.65:2.7
+Pali: phasso hoti … 
+Sujato: contact … 
+Translator: (empty)
+JUDGE sn12.65:2.8
+Pali: saḷāyatanaṁ hoti … 
+Sujato: the six sense fields … 
+Translator: (empty)
+BELOW sn12.65:2.9
+Pali: nāmarūpaṁ hoti … 
+Sujato: name and form … 
+Translator: ‘Name-&-form exists when what exists? 
+
+=== RUN 367: sn12.65:4.7 sn12.65:4.8 sn12.65:4.9 sn12.65:4.10 sn12.65:4.11 sn12.65:4.12 sn12.65:4.13 sn12.65:4.14 ===
+File: data/thanissaro/sutta/sn/sn12/sn12.65_translation-en-thanissaro.json
+ABOVE sn12.65:4.6
+Pali: jātinirodhā jarāmaraṇanirodho’ti. 
+Sujato: When rebirth ceases old age and death cease.’ 
+Translator: From the cessation of birth comes the cessation of aging-&-death’ .… 
+JUDGE sn12.65:4.7
+Pali: Tassa mayhaṁ, bhikkhave, etadahosi: 
+Sujato: Then it occurred to me: 
+Translator: (empty)
+JUDGE sn12.65:4.8
+Pali: ‘kimhi nu kho asati jāti na hoti …pe… 
+Sujato: ‘When what doesn’t exist is there no rebirth … 
+Translator: (empty)
+JUDGE sn12.65:4.9
+Pali: bhavo na hoti … 
+Sujato: continued existence … 
+Translator: (empty)
+JUDGE sn12.65:4.10
+Pali: upādānaṁ na hoti … 
+Sujato: grasping … 
+Translator: (empty)
+JUDGE sn12.65:4.11
+Pali: taṇhā na hoti … 
+Sujato: craving … 
+Translator: (empty)
+JUDGE sn12.65:4.12
+Pali: vedanā na hoti … 
+Sujato: feeling … 
+Translator: (empty)
+JUDGE sn12.65:4.13
+Pali: phasso na hoti … 
+Sujato: contact … 
+Translator: (empty)
+JUDGE sn12.65:4.14
+Pali: saḷāyatanaṁ na hoti … 
+Sujato: six sense fields … 
+Translator: (empty)
+BELOW sn12.65:4.15
+Pali: nāmarūpaṁ na hoti. 
+Sujato: name and form? 
+Translator: ‘Name-&-form doesn’t exist when what doesn’t exist? 
+
+=== RUN 368: sn12.66:13.14 sn12.66:13.15 sn12.66:13.16 sn12.66:13.17 ===
+File: data/thanissaro/sutta/sn/sn12/sn12.66_translation-en-thanissaro.json
+ABOVE sn12.66:13.13
+Pali: Evameva kho, bhikkhave, ye hi keci atītamaddhānaṁ samaṇā vā brāhmaṇā vā yaṁ loke piyarūpaṁ sātarūpaṁ taṁ aniccato addakkhuṁ dukkhato addakkhuṁ anattato addakkhuṁ rogato addakkhuṁ bhayato addakkhuṁ, 
+Sujato: In the same way, there were ascetics and brahmins of the past who saw the things that seem nice and pleasant in the world as impermanent, as suffering, as not-self, as diseased, and as dangerous. 
+Translator: “In the same way, monks, any contemplatives & brahmans in the past… 
+JUDGE sn12.66:13.14
+Pali: te taṇhaṁ pajahiṁsu. 
+Sujato: They gave up craving. 
+Translator: (empty)
+JUDGE sn12.66:13.15
+Pali: Ye taṇhaṁ pajahiṁsu te upadhiṁ pajahiṁsu. 
+Sujato: Giving up craving, they gave up attachments. 
+Translator: (empty)
+JUDGE sn12.66:13.16
+Pali: Ye upadhiṁ pajahiṁsu te dukkhaṁ pajahiṁsu. 
+Sujato: Giving up attachments, they gave up suffering. 
+Translator: (empty)
+JUDGE sn12.66:13.17
+Pali: Ye dukkhaṁ pajahiṁsu te parimucciṁsu jātiyā jarāya maraṇena sokehi paridevehi dukkhehi domanassehi upāyāsehi, ‘parimucciṁsu dukkhasmā’ti vadāmi. 
+Sujato: Giving up suffering, they were freed from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They were freed from suffering, I say. 
+Translator: (empty)
+BELOW (outside this paragraph) sn12.66:14.1
+Pali: Yepi hi keci, bhikkhave, anāgatamaddhānaṁ …pe… 
+Sujato: There will be ascetics and brahmins in the future … 
+Translator: future… 
+
+=== RUN 369: sn12.68:8.2 sn12.68:8.3 sn12.68:8.4 ===
+File: data/thanissaro/sutta/sn/sn12/sn12.68_translation-en-thanissaro.json
+ABOVE sn12.68:8.1
+Pali: Aññatreva, āvuso nārada, saddhāya aññatra ruciyā aññatra anussavā aññatra ākāraparivitakkā aññatra diṭṭhinijjhānakkhantiyā atthāyasmato nāradassa paccattameva ñāṇaṁ: 
+Sujato: (Saviṭṭha repeats exactly the same series of questions, and Nārada answers just as Musīla did.) 
+Translator: [Ven. Paviṭṭha asks the same questions of Ven. Nārada, who gives the same answers as Ven. Musila.] 
+JUDGE sn12.68:8.2
+Pali: ‘jātipaccayā jarāmaraṇan’”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn12.68:8.3
+Pali: “Aññatreva, āvuso paviṭṭha, saddhāya aññatra ruciyā aññatra anussavā aññatra ākāraparivitakkā aññatra diṭṭhinijjhānakkhantiyā ahametaṁ jānāmi ahametaṁ passāmi: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn12.68:8.4
+Pali: ‘jātipaccayā jarāmaraṇan’”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn12.68:13.1
+Pali: “Tenahāyasmā nārado arahaṁ khīṇāsavo”ti? 
+Sujato: “Then Venerable Nārada is a perfected one, with defilements ended.” 
+Translator: “Then, Ven. Nārada, you are an arahant whose effluents are ended.” 
+
+=== RUN 370: sn16.5:3.2 sn16.5:3.3 sn16.5:3.4 sn16.5:3.5 sn16.5:3.6 sn16.5:3.7 ===
+File: data/thanissaro/sutta/sn/sn16/sn16.5_translation-en-thanissaro.json
+ABOVE sn16.5:3.1
+Pali: “Kiṁ pana tvaṁ, kassapa, atthavasaṁ sampassamāno dīgharattaṁ āraññiko ceva āraññikattassa ca vaṇṇavādī, piṇḍapātiko ceva …pe… 
+Sujato: “But seeing what benefit, Kassapa, have you long practiced these things?” 
+Translator: “But, Kassapa, what compelling reason do you see that you for a long time have lived in the wilderness and have extolled living in the wilderness… 
+JUDGE sn16.5:3.2
+Pali: paṁsukūliko ceva … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn16.5:3.3
+Pali: tecīvariko ceva … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn16.5:3.4
+Pali: appiccho ceva … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn16.5:3.5
+Pali: santuṭṭho ceva … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn16.5:3.6
+Pali: pavivitto ceva … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn16.5:3.7
+Pali: asaṁsaṭṭho ceva … 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn16.5:3.8
+Pali: āraddhavīriyo ceva vīriyārambhassa ca vaṇṇavādī”ti? 
+Sujato: (empty)
+Translator: that you have kept your persistence aroused and have extolled having persistence aroused?” 
+
+=== RUN 371: sn16.5:4.2 sn16.5:4.3 sn16.5:4.4 sn16.5:4.5 sn16.5:4.6 sn16.5:4.7 ===
+File: data/thanissaro/sutta/sn/sn16/sn16.5_translation-en-thanissaro.json
+ABOVE sn16.5:4.1
+Pali: “Dve khvāhaṁ, bhante, atthavase sampassamāno dīgharattaṁ āraññiko ceva āraññikattassa ca vaṇṇavādī, piṇḍapātiko ceva …pe… 
+Sujato: “Sir, seeing two benefits I have long practiced these things. 
+Translator: “Lord, I see two compelling reasons that for a long time I have lived in the wilderness and have extolled living in the wilderness… 
+JUDGE sn16.5:4.2
+Pali: paṁsukūliko ceva … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn16.5:4.3
+Pali: tecīvariko ceva … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn16.5:4.4
+Pali: appiccho ceva … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn16.5:4.5
+Pali: santuṭṭho ceva … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn16.5:4.6
+Pali: pavivitto ceva … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn16.5:4.7
+Pali: asaṁsaṭṭho ceva … 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn16.5:4.8
+Pali: āraddhavīriyo ceva vīriyārambhassa ca vaṇṇavādī. 
+Sujato: (empty)
+Translator: that I have kept my persistence aroused and have extolled having persistence aroused: 
+
+=== RUN 372: sn16.5:5.4 sn16.5:5.5 sn16.5:5.6 sn16.5:5.7 sn16.5:5.8 ===
+File: data/thanissaro/sutta/sn/sn16/sn16.5_translation-en-thanissaro.json
+ABOVE sn16.5:5.3
+Pali: Ye kira te ahesuṁ buddhānubuddhasāvakā te dīgharattaṁ āraññikā ceva ahesuṁ āraññikattassa ca vaṇṇavādino …pe… 
+Sujato: For they may think: ‘It seems that the disciples awakened after the Buddha for a long time lived in the wilderness, ate only almsfood, wore rag robes, and owned just three robes; and they praised these things. They were of few wishes, content, secluded, aloof, and energetic; and they praised these things.’ 
+Translator: “It seems that the disciples of the Awakened One and those who awakened after him lived for a long time in the wilderness and extolled living in the wilderness; were almsgoers and extolled being almsgoers; wore cast-off rags and extolled wearing cast-off rags; wore only one set of the triple robe and extolled wearing only one set of the triple robe; were modest and extolled being modest; were content and extolled being content; 
+JUDGE sn16.5:5.4
+Pali: piṇḍapātikā ceva ahesuṁ …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn16.5:5.5
+Pali: paṁsukūlikā ceva ahesuṁ … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn16.5:5.6
+Pali: tecīvarikā ceva ahesuṁ … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn16.5:5.7
+Pali: appicchā ceva ahesuṁ … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn16.5:5.8
+Pali: santuṭṭhā ceva ahesuṁ … 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn16.5:5.9
+Pali: pavivittā ceva ahesuṁ … 
+Sujato: (empty)
+Translator: were reclusive and extolled being reclusive; 
+
+=== RUN 373: sn22.1:15.2 sn22.1:15.3 sn22.1:15.4 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.1_translation-en-thanissaro.json
+ABOVE sn22.1:15.1
+Pali: Na vedanaṁ attato samanupassati, na vedanāvantaṁ vā attānaṁ; na attani vā vedanaṁ, na vedanāya vā attānaṁ. 
+Sujato: They don’t regard feeling as self, self as having feeling, feeling in self, or self in feeling. 
+Translator: “He doesn’t assume feeling to be the self.… 
+JUDGE sn22.1:15.2
+Pali: ‘Ahaṁ vedanā, mama vedanā’ti na pariyuṭṭhaṭṭhāyī hoti. 
+Sujato: They’re not obsessed with the thought: ‘I am feeling, feeling is mine!’ 
+Translator: (empty)
+JUDGE sn22.1:15.3
+Pali: Tassa ‘ahaṁ vedanā, mama vedanā’ti apariyuṭṭhaṭṭhāyino, sā vedanā vipariṇamati aññathā hoti. 
+Sujato: So when that feeling of theirs decays and perishes, 
+Translator: (empty)
+JUDGE sn22.1:15.4
+Pali: Tassa vedanāvipariṇāmaññathābhāvā nuppajjanti sokaparidevadukkhadomanassupāyāsā. 
+Sujato: it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. 
+Translator: (empty)
+BELOW (outside this paragraph) sn22.1:16.1
+Pali: Na saññaṁ attato samanupassati, na saññāvantaṁ vā attānaṁ; na attani vā saññaṁ, na saññāya vā attānaṁ. 
+Sujato: They don’t regard perception as self, self as having perception, perception in self, or self in perception. 
+Translator: “He doesn’t assume perception to be the self.… 
+
+=== RUN 374: sn22.1:16.2 sn22.1:16.3 sn22.1:16.4 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.1_translation-en-thanissaro.json
+ABOVE sn22.1:16.1
+Pali: Na saññaṁ attato samanupassati, na saññāvantaṁ vā attānaṁ; na attani vā saññaṁ, na saññāya vā attānaṁ. 
+Sujato: They don’t regard perception as self, self as having perception, perception in self, or self in perception. 
+Translator: “He doesn’t assume perception to be the self.… 
+JUDGE sn22.1:16.2
+Pali: ‘Ahaṁ saññā, mama saññā’ti na pariyuṭṭhaṭṭhāyī hoti. 
+Sujato: They’re not obsessed with the thought: ‘I am perception, perception is mine!’ 
+Translator: (empty)
+JUDGE sn22.1:16.3
+Pali: Tassa ‘ahaṁ saññā, mama saññā’ti apariyuṭṭhaṭṭhāyino, sā saññā vipariṇamati aññathā hoti. 
+Sujato: So when that perception of theirs decays and perishes, 
+Translator: (empty)
+JUDGE sn22.1:16.4
+Pali: Tassa saññāvipariṇāmaññathābhāvā nuppajjanti sokaparidevadukkhadomanassupāyāsā. 
+Sujato: it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. 
+Translator: (empty)
+BELOW (outside this paragraph) sn22.1:17.1
+Pali: Na saṅkhāre attato samanupassati, na saṅkhāravantaṁ vā attānaṁ; na attani vā saṅkhāre, na saṅkhāresu vā attānaṁ. 
+Sujato: They don’t regard choices as self, self as having choices, choices in self, or self in choices. 
+Translator: “He doesn’t assume fabrications to be the self.… 
+
+=== RUN 375: sn22.1:17.2 sn22.1:17.3 sn22.1:17.4 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.1_translation-en-thanissaro.json
+ABOVE sn22.1:17.1
+Pali: Na saṅkhāre attato samanupassati, na saṅkhāravantaṁ vā attānaṁ; na attani vā saṅkhāre, na saṅkhāresu vā attānaṁ. 
+Sujato: They don’t regard choices as self, self as having choices, choices in self, or self in choices. 
+Translator: “He doesn’t assume fabrications to be the self.… 
+JUDGE sn22.1:17.2
+Pali: ‘Ahaṁ saṅkhārā, mama saṅkhārā’ti na pariyuṭṭhaṭṭhāyī hoti. 
+Sujato: They’re not obsessed with the thought: ‘I am choices, choices are mine!’ 
+Translator: (empty)
+JUDGE sn22.1:17.3
+Pali: Tassa ‘ahaṁ saṅkhārā, mama saṅkhārā’ti apariyuṭṭhaṭṭhāyino, te saṅkhārā vipariṇamanti aññathā honti. 
+Sujato: So when those choices of theirs decay and perish, 
+Translator: (empty)
+JUDGE sn22.1:17.4
+Pali: Tassa saṅkhāravipariṇāmaññathābhāvā nuppajjanti sokaparidevadukkhadomanassupāyāsā. 
+Sujato: it doesn’t give rise to sorrow, lamentation, pain, sadness, and distress. 
+Translator: (empty)
+BELOW (outside this paragraph) sn22.1:18.1
+Pali: Na viññāṇaṁ attato samanupassati, na viññāṇavantaṁ vā attānaṁ; na attani vā viññāṇaṁ, na viññāṇasmiṁ vā attānaṁ. 
+Sujato: They don’t regard consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. 
+Translator: “He doesn’t assume consciousness to be the self, or the self as possessing consciousness, or consciousness as in the self, or the self as in consciousness. 
+
+=== RUN 376: sn22.2:4.2 sn22.2:4.3 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.2_translation-en-thanissaro.json
+ABOVE sn22.2:4.1
+Pali: “Santi hāvuso, nānāverajjagataṁ bhikkhuṁ pañhaṁ pucchitāro—
+Sujato: “Reverends, there are those who question a mendicant who has gone abroad—
+Translator: “Friends, in foreign lands there are wise nobles & brahmans, householders & contemplatives—for the people there are wise & discriminating—who will question a monk: 
+JUDGE sn22.2:4.2
+Pali: khattiyapaṇḍitāpi brāhmaṇapaṇḍitāpi gahapatipaṇḍitāpi samaṇapaṇḍitāpi. 
+Sujato: astute aristocrats, brahmins, householders, and ascetics—
+Translator: (empty)
+JUDGE sn22.2:4.3
+Pali: Paṇḍitā hāvuso, manussā vīmaṁsakā: 
+Sujato: for astute people are inquisitive: 
+Translator: (empty)
+BELOW sn22.2:4.4
+Pali: ‘kiṁvādī panāyasmantānaṁ satthā kimakkhāyī’ti, kacci vo āyasmantānaṁ dhammā sussutā suggahitā sumanasikatā sūpadhāritā suppaṭividdhā paññāya, yathā byākaramānā āyasmanto vuttavādino ceva bhagavato assatha, na ca bhagavantaṁ abhūtena abbhācikkheyyātha, dhammassa cānudhammaṁ byākareyyātha, na ca koci sahadhammiko vādānuvādo gārayhaṁ ṭhānaṁ āgaccheyyā”ti? 
+Sujato: ‘But what does the venerables’ Teacher teach? What does he explain?’ I trust the venerables have properly heard, learned, applied the mind, and remembered the teachings, and penetrated them with wisdom. That way, when answering you will repeat what the Buddha has said and not misrepresent him with an untruth. You will explain in line with the teaching, with no legitimate grounds for rebuttal and criticism.” 
+Translator: ‘What is your teacher’s doctrine? What does he teach?’ Have you listened well to the teachings—grasped them well, attended to them well, considered them well, penetrated them well by means of discernment—so that in answering you will speak in line with what the Blessed One has said, will not misrepresent the Blessed One with what is unfactual, will answer in line with the Dhamma, and no one whose thinking is in line with the Dhamma will have grounds for criticizing you?” 
+
+=== RUN 377: sn22.2:6.2 sn22.2:6.3 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.2_translation-en-thanissaro.json
+ABOVE sn22.2:6.1
+Pali: “Santi hāvuso, nānāverajjagataṁ bhikkhuṁ pañhaṁ pucchitāro—
+Sujato: “Reverends, there are those who question a mendicant who has gone abroad—
+Translator: “Friends, in foreign lands there are wise nobles & brahmans, householders & contemplatives—for the people there are wise & discriminating—who will question a monk: 
+JUDGE sn22.2:6.2
+Pali: khattiyapaṇḍitāpi …pe… samaṇapaṇḍitāpi. 
+Sujato: astute aristocrats, brahmins, householders, and ascetics—
+Translator: (empty)
+JUDGE sn22.2:6.3
+Pali: Paṇḍitā hāvuso, manussā vīmaṁsakā: 
+Sujato: for astute people are inquisitive: 
+Translator: (empty)
+BELOW sn22.2:6.4
+Pali: ‘kiṁvādī panāyasmantānaṁ satthā kimakkhāyī’ti? 
+Sujato: ‘But what does the venerables’ Teacher teach? What does he explain?’ 
+Translator: ‘What is your teacher’s doctrine? What does he teach?’ 
+
+=== RUN 378: sn22.2:7.2 sn22.2:7.3 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.2_translation-en-thanissaro.json
+ABOVE sn22.2:7.1
+Pali: Evaṁ byākatepi kho, āvuso, assuyeva uttariṁ pañhaṁ pucchitāro—
+Sujato: When you answer like this, such astute people may inquire further: 
+Translator: “Having thus been answered, there may be wise nobles & brahmans, householders & contemplatives… who will question you further, 
+JUDGE sn22.2:7.2
+Pali: khattiyapaṇḍitāpi …pe… samaṇapaṇḍitāpi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.2:7.3
+Pali: Paṇḍitā hāvuso, manussā vīmaṁsakā: 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn22.2:7.4
+Pali: ‘kismiṁ panāyasmantānaṁ chandarāgavinayakkhāyī satthā’ti? 
+Sujato: ‘But regarding what does the venerables’ teacher explain the removal of desire and lust?’ 
+Translator: ‘And your teacher teaches the subduing of passion & desire for what?’ 
+
+=== RUN 379: sn22.2:8.2 sn22.2:8.3 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.2_translation-en-thanissaro.json
+ABOVE sn22.2:8.1
+Pali: Evaṁ byākatepi kho, āvuso, assuyeva uttariṁ pañhaṁ pucchitāro—
+Sujato: When you answer like this, such astute people may inquire further: 
+Translator: “Having thus been answered, there may be wise nobles & brahmans, householders & contemplatives… who will question you further, 
+JUDGE sn22.2:8.2
+Pali: khattiyapaṇḍitāpi …pe… samaṇapaṇḍitāpi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.2:8.3
+Pali: Paṇḍitā hāvuso, manussā vīmaṁsakā: 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn22.2:8.4
+Pali: ‘kiṁ panāyasmantānaṁ ādīnavaṁ disvā rūpe chandarāgavinayakkhāyī satthā, 
+Sujato: ‘But what drawback has he seen that he teaches the removal of desire and lust for form, 
+Translator: ‘And seeing what danger does your teacher teach the subduing of passion & desire for form… 
+
+=== RUN 380: sn22.2:9.2 sn22.2:9.3 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.2_translation-en-thanissaro.json
+ABOVE sn22.2:9.1
+Pali: Evaṁ byākatepi kho, āvuso, assuyeva uttariṁ pañhaṁ pucchitāro—
+Sujato: When you answer like this, such astute people may inquire further: 
+Translator: “Having thus been answered, there may be wise nobles & brahmans, householders & contemplatives… who will question you further, 
+JUDGE sn22.2:9.2
+Pali: khattiyapaṇḍitāpi brāhmaṇapaṇḍitāpi gahapatipaṇḍitāpi samaṇapaṇḍitāpi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.2:9.3
+Pali: Paṇḍitā hāvuso, manussā vīmaṁsakā: 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn22.2:9.4
+Pali: ‘kiṁ panāyasmantānaṁ ānisaṁsaṁ disvā rūpe chandarāgavinayakkhāyī satthā, 
+Sujato: ‘But what benefit has he seen that he teaches the removal of desire and lust for form, 
+Translator: ‘And seeing what benefit does your teacher teach the subduing of passion & desire for form… 
+
+=== RUN 381: sn22.5:9.2 sn22.5:9.3 sn22.5:9.4 sn22.5:9.5 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.5_translation-en-thanissaro.json
+ABOVE sn22.5:9.1
+Pali: Vedanaṁ nābhinandati nābhivadati nājjhosāya tiṭṭhati. 
+Sujato: They don’t approve, welcome, or keep clinging to feeling … 
+Translator: “One doesn’t enjoy, welcome, or remain fastened to feeling… 
+JUDGE sn22.5:9.2
+Pali: Tassa vedanaṁ anabhinandato anabhivadato anajjhosāya tiṭṭhato yā vedanāya nandī sā nirujjhati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.5:9.3
+Pali: Tassa nandīnirodhā upādānanirodho; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.5:9.4
+Pali: upādānanirodhā bhavanirodho …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.5:9.5
+Pali: evametassa kevalassa dukkhakkhandhassa nirodho hoti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn22.5:10.1
+Pali: Saññaṁ nābhinandati …pe… 
+Sujato: perception … 
+Translator: perception… 
+
+=== RUN 382: sn22.5:10.3 sn22.5:10.4 sn22.5:10.5 sn22.5:10.6 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.5_translation-en-thanissaro.json
+ABOVE sn22.5:10.2
+Pali: saṅkhāre nābhinandati nābhivadati nājjhosāya tiṭṭhati. 
+Sujato: choices … 
+Translator: fabrications… 
+JUDGE sn22.5:10.3
+Pali: Tassa saṅkhāre anabhinandato anabhivadato anajjhosāya tiṭṭhato yā saṅkhāresu nandī sā nirujjhati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.5:10.4
+Pali: Tassa nandīnirodhā upādānanirodho; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.5:10.5
+Pali: upādānanirodhā bhavanirodho …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.5:10.6
+Pali: evametassa kevalassa dukkhakkhandhassa nirodho hoti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn22.5:11.1
+Pali: Viññāṇaṁ nābhinandati nābhivadati nājjhosāya tiṭṭhati. 
+Sujato: consciousness. 
+Translator: “One doesn’t enjoy, welcome, or remain fastened to consciousness. 
+
+=== RUN 383: sn22.18:1.6 sn22.18:1.7 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.18_translation-en-thanissaro.json
+ABOVE sn22.18:1.5
+Pali: Vedanā aniccā. 
+Sujato: Feeling is impermanent … 
+Translator: “Feeling is inconstant… 
+JUDGE sn22.18:1.6
+Pali: Yopi hetu, yopi paccayo vedanāya uppādāya, sopi anicco. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.18:1.7
+Pali: Aniccasambhūtā, bhikkhave, vedanā kuto niccā bhavissati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.18:1.8
+Pali: Saññā aniccā … 
+Sujato: Perception is impermanent … 
+Translator: “Perception is inconstant… 
+
+=== RUN 384: sn22.18:1.10 sn22.18:1.11 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.18_translation-en-thanissaro.json
+ABOVE sn22.18:1.9
+Pali: saṅkhārā aniccā. 
+Sujato: Choices are impermanent … 
+Translator: “Fabrications are inconstant… 
+JUDGE sn22.18:1.10
+Pali: Yopi hetu yopi paccayo saṅkhārānaṁ uppādāya, sopi anicco. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.18:1.11
+Pali: Aniccasambhūtā, bhikkhave, saṅkhārā kuto niccā bhavissanti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.18:1.12
+Pali: Viññāṇaṁ aniccaṁ. 
+Sujato: Consciousness is impermanent. 
+Translator: “Consciousness is inconstant. 
+
+=== RUN 385: sn22.26:1.13 sn22.26:1.14 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.26_translation-en-thanissaro.json
+ABOVE sn22.26:1.12
+Pali: Yaṁ vedanaṁ paṭicca uppajjati sukhaṁ somanassaṁ, ayaṁ vedanāya assādo. 
+Sujato: The pleasure and happiness that arise from feeling … 
+Translator: [Similarly with feeling, 
+JUDGE sn22.26:1.13
+Pali: Yaṁ vedanā aniccā dukkhā vipariṇāmadhammā, ayaṁ vedanāya ādīnavo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.26:1.14
+Pali: Yo vedanāya chandarāgavinayo chandarāgappahānaṁ, idaṁ vedanāya nissaraṇaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn22.26:1.15
+Pali: Yaṁ saññaṁ paṭicca uppajjati …pe… 
+Sujato: perception … 
+Translator: perception, 
+
+=== RUN 386: sn22.26:1.17 sn22.26:1.18 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.26_translation-en-thanissaro.json
+ABOVE sn22.26:1.16
+Pali: yaṁ saṅkhāre paṭicca uppajjati sukhaṁ somanassaṁ, ayaṁ saṅkhārānaṁ assādo. 
+Sujato: choices … 
+Translator: fabrications, 
+JUDGE sn22.26:1.17
+Pali: Yaṁ saṅkhārā aniccā dukkhā vipariṇāmadhammā, ayaṁ saṅkhārānaṁ ādīnavo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.26:1.18
+Pali: Yo saṅkhāresu chandarāgavinayo chandarāgappahānaṁ, idaṁ saṅkhārānaṁ nissaraṇaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn22.26:1.19
+Pali: Yaṁ viññāṇaṁ paṭicca uppajjati sukhaṁ somanassaṁ, ayaṁ viññāṇassa assādo. 
+Sujato: consciousness: this is its gratification. 
+Translator: & consciousness.] 
+
+=== RUN 387: sn22.26:1.20 sn22.26:1.21 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.26_translation-en-thanissaro.json
+ABOVE sn22.26:1.19
+Pali: Yaṁ viññāṇaṁ paṭicca uppajjati sukhaṁ somanassaṁ, ayaṁ viññāṇassa assādo. 
+Sujato: consciousness: this is its gratification. 
+Translator: & consciousness.] 
+JUDGE sn22.26:1.20
+Pali: Yaṁ viññāṇaṁ aniccaṁ dukkhaṁ vipariṇāmadhammaṁ, ayaṁ viññāṇassa ādīnavo. 
+Sujato: That consciousness is impermanent, suffering, and perishable: this is its drawback. 
+Translator: (empty)
+JUDGE sn22.26:1.21
+Pali: Yo viññāṇasmiṁ chandarāgavinayo chandarāgappahānaṁ, idaṁ viññāṇassa nissaraṇaṁ’. 
+Sujato: Removing and giving up desire and greed for consciousness: this is its escape.’ 
+Translator: (empty)
+BELOW (outside this paragraph) sn22.26:2.1
+Pali: Yāvakīvañcāhaṁ, bhikkhave, imesaṁ pañcannaṁ upādānakkhandhānaṁ evaṁ assādañca assādato ādīnavañca ādīnavato nissaraṇañca nissaraṇato yathābhūtaṁ nābbhaññāsiṁ, neva tāvāhaṁ, bhikkhave, ‘sadevake loke samārake sabrahmake sassamaṇabrāhmaṇiyā pajāya sadevamanussāya anuttaraṁ sammāsambodhiṁ abhisambuddho’ti paccaññāsiṁ. 
+Sujato: As long as I didn’t truly understand these five grasping aggregates’ gratification, drawback, and escape in this way for what they are, I didn’t announce my supreme perfect awakening in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans. 
+Translator: “Monks, as long as I did not have direct knowledge, as it had come to be, of the allure as allure, of the drawback as drawback, and of the escape as escape, with regard to these five clinging-aggregates, I did not claim to have directly awakened to the right self-awakening unexcelled in the cosmos with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & common people. 
+
+=== RUN 388: sn22.56:9.8 sn22.56:9.9 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.56_translation-en-thanissaro.json
+ABOVE sn22.56:9.7
+Pali: Ayameva ariyo aṭṭhaṅgiko maggo saññānirodhagāminī paṭipadā, seyyathidaṁ—
+Sujato: The practice that leads to the cessation of perceptions is simply this noble eightfold path … 
+Translator: And just this noble eightfold path is the path of practice leading to the cessation of perception.… 
+JUDGE sn22.56:9.8
+Pali: sammādiṭṭhi …pe… sammāsamādhi …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.56:9.9
+Pali: vaṭṭaṁ tesaṁ natthi paññāpanāya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.56:10.1
+Pali: Katame ca, bhikkhave, saṅkhārā? 
+Sujato: And what are choices? 
+Translator: “And what are fabrications? 
+
+=== RUN 389: sn22.59:3.2 sn22.59:3.3 sn22.59:3.4 sn22.59:3.5 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.59_translation-en-thanissaro.json
+ABOVE sn22.59:3.1
+Pali: Vedanā anattā. 
+Sujato: Feeling is not-self … 
+Translator: “Feeling is not self.… 
+JUDGE sn22.59:3.2
+Pali: Vedanā ca hidaṁ, bhikkhave, attā abhavissa, nayidaṁ vedanā ābādhāya saṁvatteyya, labbhetha ca vedanāya: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.59:3.3
+Pali: ‘evaṁ me vedanā hotu, evaṁ me vedanā mā ahosī’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.59:3.4
+Pali: Yasmā ca kho, bhikkhave, vedanā anattā, tasmā vedanā ābādhāya saṁvattati, na ca labbhati vedanāya: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.59:3.5
+Pali: ‘evaṁ me vedanā hotu, evaṁ me vedanā mā ahosī’ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.59:4.1
+Pali: Saññā anattā …pe… 
+Sujato: Perception is not-self … 
+Translator: “Perception is not self.… 
+
+=== RUN 390: sn22.59:4.3 sn22.59:4.4 sn22.59:4.5 sn22.59:4.6 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.59_translation-en-thanissaro.json
+ABOVE sn22.59:4.2
+Pali: saṅkhārā anattā. 
+Sujato: Choices are not-self … 
+Translator: “Fabrications are not self.… 
+JUDGE sn22.59:4.3
+Pali: Saṅkhārā ca hidaṁ, bhikkhave, attā abhavissaṁsu, nayidaṁ saṅkhārā ābādhāya saṁvatteyyuṁ, labbhetha ca saṅkhāresu: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.59:4.4
+Pali: ‘evaṁ me saṅkhārā hontu, evaṁ me saṅkhārā mā ahesun’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.59:4.5
+Pali: Yasmā ca kho, bhikkhave, saṅkhārā anattā, tasmā saṅkhārā ābādhāya saṁvattanti, na ca labbhati saṅkhāresu: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.59:4.6
+Pali: ‘evaṁ me saṅkhārā hontu, evaṁ me saṅkhārā mā ahesun’ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.59:5.1
+Pali: Viññāṇaṁ anattā. 
+Sujato: Consciousness is not-self. 
+Translator: “Consciousness is not self. 
+
+=== RUN 391: sn22.60:6.2 sn22.60:6.3 sn22.60:6.4 sn22.60:6.5 sn22.60:6.6 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.60_translation-en-thanissaro.json
+ABOVE sn22.60:6.1
+Pali: Vedanā ca hidaṁ, mahāli, ekantadukkhā abhavissa dukkhānupatitā dukkhāvakkantā anavakkantā sukhena, nayidaṁ sattā vedanāya sārajjeyyuṁ. 
+Sujato: If feeling … 
+Translator: “If feeling were exclusively stressful.… 
+JUDGE sn22.60:6.2
+Pali: Yasmā ca kho, mahāli, vedanā sukhā sukhānupatitā sukhāvakkantā anavakkantā dukkhena, tasmā sattā vedanāya sārajjanti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.60:6.3
+Pali: sārāgā saṁyujjanti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.60:6.4
+Pali: saṁyogā saṅkilissanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.60:6.5
+Pali: Ayampi kho, mahāli, hetu, ayaṁ paccayo sattānaṁ saṅkilesāya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.60:6.6
+Pali: Evampi sahetū sappaccayā sattā saṅkilissanti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.60:7.1
+Pali: Saññā ca hidaṁ, mahāli …pe… 
+Sujato: perception … 
+Translator: “If perception were exclusively stressful.… 
+
+=== RUN 392: sn22.60:7.3 sn22.60:7.4 sn22.60:7.5 sn22.60:7.6 sn22.60:7.7 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.60_translation-en-thanissaro.json
+ABOVE sn22.60:7.2
+Pali: saṅkhārā ca hidaṁ, mahāli, ekantadukkhā abhavissaṁsu dukkhānupatitā dukkhāvakkantā anavakkantā sukhena, nayidaṁ sattā saṅkhāresu sārajjeyyuṁ. 
+Sujato: choices … 
+Translator: “If fabrications were exclusively stressful.… 
+JUDGE sn22.60:7.3
+Pali: Yasmā ca kho, mahāli, saṅkhārā sukhā sukhānupatitā sukhāvakkantā anavakkantā dukkhena, tasmā sattā saṅkhāresu sārajjanti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.60:7.4
+Pali: sārāgā saṁyujjanti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.60:7.5
+Pali: saṁyogā saṅkilissanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.60:7.6
+Pali: Ayampi kho, mahāli, hetu, ayaṁ paccayo sattānaṁ saṅkilesāya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.60:7.7
+Pali: Evampi sahetū sappaccayā sattā saṅkilissanti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.60:8.1
+Pali: Viññāṇañca hidaṁ, mahāli, ekantadukkhaṁ abhavissa dukkhānupatitaṁ dukkhāvakkantaṁ anavakkantaṁ sukhena, nayidaṁ sattā viññāṇasmiṁ sārajjeyyuṁ. 
+Sujato: consciousness were absolutely painful—soaked and steeped in pain and not steeped in pleasure—sentient beings wouldn’t be aroused by it. 
+Translator: “If consciousness were exclusively stressful—followed by stress, infused with stress and not infused with pleasure—beings would not be infatuated with consciousness. 
+
+=== RUN 393: sn22.79:8.2 sn22.79:8.3 sn22.79:8.4 sn22.79:8.5 sn22.79:8.6 sn22.79:8.7 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.79_translation-en-thanissaro.json
+ABOVE sn22.79:8.1
+Pali: ‘Ahaṁ kho etarahi vedanāya khajjāmi. 
+Sujato: ‘Currently I’m bitten by feeling … 
+Translator: “(He reflects:) ‘I am now being chewed up by feeling… 
+JUDGE sn22.79:8.2
+Pali: Atītampāhaṁ addhānaṁ evameva vedanāya khajjiṁ, seyyathāpi etarahi paccuppannāya vedanāya khajjāmi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.79:8.3
+Pali: Ahañceva kho pana anāgataṁ vedanaṁ abhinandeyyaṁ; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.79:8.4
+Pali: anāgatampāhaṁ addhānaṁ evameva vedanāya khajjeyyaṁ, seyyathāpi etarahi paccuppannāya vedanāya khajjāmī’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.79:8.5
+Pali: So iti paṭisaṅkhāya atītāya vedanāya anapekkho hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.79:8.6
+Pali: anāgataṁ vedanaṁ nābhinandati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.79:8.7
+Pali: paccuppannāya vedanāya nibbidāya virāgāya nirodhāya paṭipanno hoti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.79:9.1
+Pali: ‘Ahaṁ kho etarahi saññāya khajjāmi …pe… 
+Sujato: perception … 
+Translator: perception… 
+
+=== RUN 394: sn22.79:9.3 sn22.79:9.4 sn22.79:9.5 sn22.79:9.6 sn22.79:9.7 sn22.79:9.8 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.79_translation-en-thanissaro.json
+ABOVE sn22.79:9.2
+Pali: ahaṁ kho etarahi saṅkhārehi khajjāmi. 
+Sujato: choices … 
+Translator: fabrications… 
+JUDGE sn22.79:9.3
+Pali: Atītampāhaṁ addhānaṁ evameva saṅkhārehi khajjiṁ, seyyathāpi etarahi paccuppannehi saṅkhārehi khajjāmīti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.79:9.4
+Pali: Ahañceva kho pana anāgate saṅkhāre abhinandeyyaṁ; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.79:9.5
+Pali: anāgatampāhaṁ addhānaṁ evameva saṅkhārehi khajjeyyaṁ, seyyathāpi etarahi paccuppannehi saṅkhārehi khajjāmī’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.79:9.6
+Pali: So iti paṭisaṅkhāya atītesu saṅkhāresu anapekkho hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.79:9.7
+Pali: anāgate saṅkhāre nābhinandati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.79:9.8
+Pali: paccuppannānaṁ saṅkhārānaṁ nibbidāya virāgāya nirodhāya paṭipanno hoti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.79:10.1
+Pali: ‘Ahaṁ kho etarahi viññāṇena khajjāmi. 
+Sujato: consciousness. 
+Translator: consciousness. 
+
+=== RUN 395: sn22.81:6.3 sn22.81:6.4 sn22.81:6.5 sn22.81:6.6 sn22.81:6.7 sn22.81:6.8 sn22.81:6.9 sn22.81:6.10 sn22.81:6.11 sn22.81:6.12 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.81_translation-en-thanissaro.json
+ABOVE sn22.81:6.2
+Pali: api ca kho rūpavantaṁ attānaṁ samanupassati. 
+Sujato: but they still regard self as possessing form. 
+Translator: but he assumes the self as possessing form… 
+JUDGE sn22.81:6.3
+Pali: Yā kho pana sā, bhikkhave, samanupassanā saṅkhāro so. 
+Sujato: But that regarding is just a conditioned phenomenon. … 
+Translator: (empty)
+JUDGE sn22.81:6.4
+Pali: So pana saṅkhāro kiṁnidāno kiṁsamudayo kiṁjātiko kiṁpabhavo? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:6.5
+Pali: Avijjāsamphassajena, bhikkhave, vedayitena phuṭṭhassa assutavato puthujjanassa uppannā taṇhā; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:6.6
+Pali: tatojo so saṅkhāro. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:6.7
+Pali: Iti kho, bhikkhave, sopi saṅkhāro anicco saṅkhato paṭiccasamuppanno. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:6.8
+Pali: Sāpi taṇhā … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:6.9
+Pali: sāpi vedanā … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:6.10
+Pali: sopi phasso … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:6.11
+Pali: sāpi avijjā aniccā saṅkhatā paṭiccasamuppannā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:6.12
+Pali: Evampi kho, bhikkhave, jānato evaṁ passato anantarā āsavānaṁ khayo hoti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.81:7.2
+Pali: api ca kho attani rūpaṁ samanupassati. 
+Sujato: but they still regard form in self. 
+Translator: form as in the self… 
+
+=== RUN 396: sn22.81:7.3 sn22.81:7.4 sn22.81:7.5 sn22.81:7.6 sn22.81:7.7 sn22.81:7.8 sn22.81:7.9 sn22.81:7.10 sn22.81:7.11 sn22.81:7.12 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.81_translation-en-thanissaro.json
+ABOVE sn22.81:7.2
+Pali: api ca kho attani rūpaṁ samanupassati. 
+Sujato: but they still regard form in self. 
+Translator: form as in the self… 
+JUDGE sn22.81:7.3
+Pali: Yā kho pana sā, bhikkhave, samanupassanā saṅkhāro so. 
+Sujato: But that regarding is just a conditioned phenomenon. … 
+Translator: (empty)
+JUDGE sn22.81:7.4
+Pali: So pana saṅkhāro kiṁnidāno kiṁsamudayo kiṁjātiko kiṁpabhavo? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:7.5
+Pali: Avijjāsamphassajena, bhikkhave, vedayitena phuṭṭhassa assutavato puthujjanassa uppannā taṇhā; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:7.6
+Pali: tatojo so saṅkhāro. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:7.7
+Pali: Iti kho, bhikkhave, sopi saṅkhāro anicco saṅkhato paṭiccasamuppanno. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:7.8
+Pali: Sāpi taṇhā … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:7.9
+Pali: sāpi vedanā … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:7.10
+Pali: sopi phasso … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:7.11
+Pali: sāpi avijjā aniccā saṅkhatā paṭiccasamuppannā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:7.12
+Pali: Evampi kho, bhikkhave, jānato evaṁ passato anantarā āsavānaṁ khayo hoti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.81:8.2
+Pali: api ca kho rūpasmiṁ attānaṁ samanupassati. 
+Sujato: but they still regard self in form. 
+Translator: self as in form… 
+
+=== RUN 397: sn22.81:8.3 sn22.81:8.4 sn22.81:8.5 sn22.81:8.6 sn22.81:8.7 sn22.81:8.8 sn22.81:8.9 sn22.81:8.10 sn22.81:8.11 sn22.81:8.12 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.81_translation-en-thanissaro.json
+ABOVE sn22.81:8.2
+Pali: api ca kho rūpasmiṁ attānaṁ samanupassati. 
+Sujato: but they still regard self in form. 
+Translator: self as in form… 
+JUDGE sn22.81:8.3
+Pali: Yā kho pana sā, bhikkhave, samanupassanā saṅkhāro so. 
+Sujato: But that regarding is just a conditioned phenomenon. … 
+Translator: (empty)
+JUDGE sn22.81:8.4
+Pali: So pana saṅkhāro kiṁnidāno kiṁsamudayo kiṁjātiko kiṁpabhavo? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:8.5
+Pali: Avijjāsamphassajena, bhikkhave, vedayitena phuṭṭhassa assutavato puthujjanassa uppannā taṇhā; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:8.6
+Pali: tatojo so saṅkhāro. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:8.7
+Pali: Iti kho, bhikkhave, sopi saṅkhāro anicco saṅkhato paṭiccasamuppanno. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:8.8
+Pali: Sāpi taṇhā … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:8.9
+Pali: sāpi vedanā … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:8.10
+Pali: sopi phasso … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:8.11
+Pali: sāpi avijjā aniccā saṅkhatā paṭiccasamuppannā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:8.12
+Pali: Evampi kho, bhikkhave, jānato …pe… āsavānaṁ khayo hoti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.81:9.2
+Pali: api ca kho vedanaṁ attato samanupassati, api ca kho vedanāvantaṁ attānaṁ samanupassati, api ca kho attani vedanaṁ samanupassati, api ca kho vedanāya attānaṁ samanupassati; 
+Sujato: But they regard feeling as self … 
+Translator: or feeling to be the self… the self as possessing feeling… feeling as in the self… self as in feeling… 
+
+=== RUN 398: sn22.81:10.2 sn22.81:10.3 sn22.81:10.4 sn22.81:10.5 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.81_translation-en-thanissaro.json
+ABOVE sn22.81:10.1
+Pali: Na heva kho rūpaṁ attato samanupassati, 
+Sujato: Perhaps they don’t regard form 
+Translator: “Or he doesn’t assume form to be the self… 
+JUDGE sn22.81:10.2
+Pali: na vedanaṁ attato samanupassati, 
+Sujato: or feeling 
+Translator: (empty)
+JUDGE sn22.81:10.3
+Pali: na saññaṁ … 
+Sujato: or perception 
+Translator: (empty)
+JUDGE sn22.81:10.4
+Pali: na saṅkhāre … 
+Sujato: or choices 
+Translator: (empty)
+JUDGE sn22.81:10.5
+Pali: na viññāṇaṁ attato samanupassati; 
+Sujato: or consciousness as self. 
+Translator: (empty)
+BELOW sn22.81:10.6
+Pali: api ca kho evaṁdiṭṭhi hoti: 
+Sujato: Still, they have such a view: 
+Translator: but he may have a view such as this: 
+
+=== RUN 399: sn22.81:10.9 sn22.81:10.10 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.81_translation-en-thanissaro.json
+ABOVE sn22.81:10.8
+Pali: Yā kho pana sā, bhikkhave, sassatadiṭṭhi saṅkhāro so. 
+Sujato: But that eternalist view is just a conditioned phenomenon. 
+Translator: This eternalist view is a fabrication.… 
+JUDGE sn22.81:10.9
+Pali: So pana saṅkhāro kiṁnidāno …pe… 
+Sujato: And what’s the source of that conditioned phenomenon? … 
+Translator: (empty)
+JUDGE sn22.81:10.10
+Pali: evampi kho, bhikkhave, jānato evaṁ passato anantarā āsavānaṁ khayo hoti. 
+Sujato: That’s how you should know and see in order to end the defilements without delay. 
+Translator: (empty)
+BELOW (outside this paragraph) sn22.81:11.8
+Pali: Api ca kho evaṁdiṭṭhi hoti: 
+Sujato: Still, they have such a view: 
+Translator: Or… he may have a view such as this: 
+
+=== RUN 400: sn22.81:11.11 sn22.81:11.12 sn22.81:11.13 sn22.81:11.14 sn22.81:11.15 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.81_translation-en-thanissaro.json
+ABOVE sn22.81:11.10
+Pali: Yā kho pana sā, bhikkhave, ucchedadiṭṭhi saṅkhāro so. 
+Sujato: But that annihilationist view is just a conditioned phenomenon. 
+Translator: This annihilationist view is a fabrication.… 
+JUDGE sn22.81:11.11
+Pali: So pana saṅkhāro kiṁnidāno kiṁsamudayo kiṁjātiko kiṁpabhavo? 
+Sujato: And what’s the source of that conditioned phenomenon? … 
+Translator: (empty)
+JUDGE sn22.81:11.12
+Pali: Avijjāsamphassajena, bhikkhave, vedayitena phuṭṭhassa assutavato puthujjanassa uppannā taṇhā; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:11.13
+Pali: tatojo so saṅkhāro. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:11.14
+Pali: Iti kho, bhikkhave, sopi saṅkhāro anicco …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:11.15
+Pali: evampi kho, bhikkhave, jānato evaṁ passato anantarā āsavānaṁ khayo hoti. 
+Sujato: That’s how you should know and see in order to end the defilements without delay. 
+Translator: (empty)
+BELOW (outside this paragraph) sn22.81:12.9
+Pali: api ca kho kaṅkhī hoti vicikicchī aniṭṭhaṅgato saddhamme. 
+Sujato: Still, they have doubts and uncertainties. They’re undecided about the true teaching. 
+Translator: Or… he may be doubtful & uncertain, having come to no conclusion with regard to the true Dhamma. 

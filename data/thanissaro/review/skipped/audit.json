@@ -1,0 +1,433 @@
+{
+  "translator": "thanissaro",
+  "input_marks_sha256": "0c8164763b64b6e9c0c42c165067c4a7a4007384ba4169009444802c33c8e95c",
+  "covered_checked": 57,
+  "skipped_checked": 13,
+  "wrong": 1,
+  "passed": false,
+  "complete": false,
+  "records": [
+    {
+      "key": "an5.56:2.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The merged report 'told the Blessed One what his student had said' fully renders this introduction identifying the monk's statement, while the detailed speech body remains omitted."
+    },
+    {
+      "key": "an5.56:5.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The merged report 'told the Blessed One what his student had said' fully renders this introduction identifying the monk's statement, while the detailed speech body remains omitted."
+    },
+    {
+      "key": "an7.12:1.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly names 'the obsession of views', rendering the named diṭṭhānusaya item. The unabridged holy-life predicate on the later final item is not part of this elliptic item."
+    },
+    {
+      "key": "an7.12:1.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly names 'the obsession of uncertainty', rendering the named vicikicchānusaya item."
+    },
+    {
+      "key": "an7.12:1.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly names 'the obsession of conceit', rendering the named mānānusaya item."
+    },
+    {
+      "key": "an7.12:1.7",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly names 'the obsession of passion for becoming', rendering the named bhavarāgānusaya item."
+    },
+    {
+      "key": "an7.15:3.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'a sense of compunction is good', rendering sādhu ottappaṁ in the full merged list."
+    },
+    {
+      "key": "an7.15:3.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'persistence is good', rendering sādhu vīriyaṁ in the full merged list."
+    },
+    {
+      "key": "an7.15:3.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'discernment with regard to skillful qualities is good', rendering the complete final paññā clause."
+    },
+    {
+      "key": "an7.15:3.7",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The merged sentence explicitly says compunction neither remains nor grows, but wanes away."
+    },
+    {
+      "key": "an7.15:3.8",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The merged sentence explicitly says persistence neither remains nor grows, but wanes away."
+    },
+    {
+      "key": "an7.15:3.9",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The merged sentence explicitly says discernment neither remains nor grows, but wanes away, rendering the full final clause."
+    },
+    {
+      "key": "an7.15:4.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'a sense of compunction is good', rendering sādhu ottappaṁ in the full merged list."
+    },
+    {
+      "key": "an7.15:4.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'persistence is good', rendering sādhu vīriyaṁ in the full merged list."
+    },
+    {
+      "key": "an7.15:4.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'discernment with regard to skillful qualities is good', rendering the complete final paññā clause."
+    },
+    {
+      "key": "an7.15:5.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'a sense of compunction is good', rendering sādhu ottappaṁ in the full merged list."
+    },
+    {
+      "key": "an7.15:5.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'persistence is good', rendering sādhu vīriyaṁ in the full merged list."
+    },
+    {
+      "key": "an7.15:5.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'discernment with regard to skillful qualities is good', rendering the complete final paññā clause."
+    },
+    {
+      "key": "an7.15:6.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'a sense of compunction is good', rendering sādhu ottappaṁ in the full merged list."
+    },
+    {
+      "key": "an7.15:6.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'persistence is good', rendering sādhu vīriyaṁ in the full merged list."
+    },
+    {
+      "key": "an7.15:6.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'discernment with regard to skillful qualities is good', rendering the complete final paññā clause."
+    },
+    {
+      "key": "an7.15:7.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'a sense of compunction is good', rendering sādhu ottappaṁ in the full merged list."
+    },
+    {
+      "key": "an7.15:7.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'persistence is good', rendering sādhu vīriyaṁ in the full merged list."
+    },
+    {
+      "key": "an7.15:7.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'discernment with regard to skillful qualities is good', rendering the complete final paññā clause."
+    },
+    {
+      "key": "an7.15:8.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'a sense of compunction is good', rendering sādhu ottappaṁ in the full merged list."
+    },
+    {
+      "key": "an7.15:8.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'persistence is good', rendering sādhu vīriyaṁ in the full merged list."
+    },
+    {
+      "key": "an7.15:8.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'discernment with regard to skillful qualities is good', rendering the complete final paññā clause."
+    },
+    {
+      "key": "an7.57:5.2",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor's ellipsis omits the contrast between the faithless miser and faithful donor; the quoted recipient alternatives are not rendered."
+    },
+    {
+      "key": "an8.7:5.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor's explicit list names 'any arisen status', rendering the uppannaṁ yasaṁ item despite the bracketed 'Similarly'."
+    },
+    {
+      "key": "an8.7:5.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor's explicit list names 'any arisen lack of status', rendering the uppannaṁ ayasaṁ item."
+    },
+    {
+      "key": "an8.7:5.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor's explicit list names 'any arisen offerings', rendering the uppannaṁ sakkāraṁ item."
+    },
+    {
+      "key": "an8.7:5.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor's explicit list names 'any arisen lack of offerings', rendering the uppannaṁ asakkāraṁ item."
+    },
+    {
+      "key": "an8.7:5.7",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor's explicit list names 'any arisen evil ambition', rendering the uppannaṁ pāpicchataṁ item."
+    },
+    {
+      "key": "an8.8:13.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly enumerates monks, nuns, lay men and lay women, rendering the complete four-company list."
+    },
+    {
+      "key": "an8.8:13.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'Have not established this Dhamma-discourse among human beings' renders the complete negative establishment clause."
+    },
+    {
+      "key": "an9.41:13.7",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor ends with an ellipsis; the quoted diagnosis of not seeing the consciousness-infinity drawback or cultivating the nothingness benefit is omitted."
+    },
+    {
+      "key": "an10.96:9.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly asks 'Is this the sort of view you have?', rendering this question introduction."
+    },
+    {
+      "key": "an10.96:9.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly gives the reply 'I don't have that sort of view', rendering this negative-view clause."
+    },
+    {
+      "key": "dn2:10.10",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'Or betraying you' explicitly renders na ... palambhāmi in the merged reassurance."
+    },
+    {
+      "key": "dn2:10.11",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'Or turning you over to your enemies' explicitly renders na ... paccatthikānaṁ demi."
+    },
+    {
+      "key": "iti110:4.2",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "'If, while he is sitting.…' omits enduring rather than abandoning, dispelling and ending the thought."
+    },
+    {
+      "key": "mn7:4.4",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor renders possessiveness/inordinate greed then an ellipsis; anger as a defilement is omitted."
+    },
+    {
+      "key": "mn7:4.8",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor renders possessiveness/inordinate greed then an ellipsis; denigration as a defilement is omitted."
+    },
+    {
+      "key": "mn7:5.22",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor names possessiveness/inordinate greed and heedlessness as endpoints; the intervening aggression item is omitted."
+    },
+    {
+      "key": "mn7:5.30",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "Beyond the ellipsis, the anchor explicitly identifies heedlessness as a defilement of the mind."
+    },
+    {
+      "key": "mn7:5.31",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "Beyond the ellipsis, the anchor explicitly renders knowing and having abandoned heedlessness as a defilement."
+    },
+    {
+      "key": "mn18:6.8",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "'Told the monks what had happened' is a summary reference to the event; it does not render concluding greetings, leaning on a stick, standing aside and Daṇḍapāṇi's address."
+    },
+    {
+      "key": "mn25:10.13",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor ends with an ellipsis after returning to Māra's bait; consuming the food greedily/intoxicated is omitted."
+    },
+    {
+      "key": "mn31:7.14",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly renders the thought 'It's a gain for me, a great gain', which is this complete opening clause; later details are abbreviated."
+    },
+    {
+      "key": "mn35:12.8",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly names the Vajjians and Mallans, rendering the complete examples list."
+    },
+    {
+      "key": "mn35:12.9",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'Wield the power in their own domains' renders the complete sovereignty clause."
+    },
+    {
+      "key": "mn54:10.2",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor is only an ellipsis; the noble disciple's reflection introduction is omitted."
+    },
+    {
+      "key": "mn70:6.11",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor ends in an ellipsis after monks approaching; the quoted instruction about health, vigor and ease through foregoing the night meal is omitted."
+    },
+    {
+      "key": "mn72:13.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly renders 'when ... asked if he holds the view ... he says ... no ... in each case', merging this generic question and negative-answer introduction."
+    },
+    {
+      "key": "mn72:13.5",
+      "first_verdict": "skipped",
+      "verdict": "covered",
+      "reason": "The whole Pali line is the generic 'Do you hold that view? when asked ... I do not hold that view' clause, identical to :13.2/:13.29. English explicitly merges it as 'when ... asked if he holds the view ... he says ... no ... in each case'. The omitted not-eternal proposition is on :13.4/:13.6, not this line; this is a rendered merged clause, not an as-above reference."
+    },
+    {
+      "key": "mn72:13.28",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly renders the neither-exists-nor-does-not-exist after-death proposition and its only-true/others-worthless qualification."
+    },
+    {
+      "key": "mn72:13.29",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly merges the generic asked-if-holding-that-view and negative-answer clause as answering no in each case."
+    },
+    {
+      "key": "mn72:17.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly includes does not reappear and applies the rendered does-not-apply answer to each named case."
+    },
+    {
+      "key": "mn72:17.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly includes both does and does not reappear and applies the rendered does-not-apply answer to each named case."
+    },
+    {
+      "key": "mn72:17.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly includes neither does nor does not reappear and applies the rendered does-not-apply answer to each named case."
+    },
+    {
+      "key": "mn74:7.5",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor only introduces an observant person considering; this quoted all-is-not-pleasing proposition is not rendered there."
+    },
+    {
+      "key": "mn75:23.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly renders all named colors, even/uneven places, stars, sun and moon. Its ellipses separate explicitly translated list members."
+    },
+    {
+      "key": "mn85:17.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor merges whether or not painful striving feelings occur with the complete incapacity for knowledge, vision and unexcelled awakening; this covers the positive-feeling case."
+    },
+    {
+      "key": "mn85:17.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor merges whether or not painful striving feelings occur with the complete incapacity for knowledge, vision and unexcelled awakening; this covers the negative-feeling case."
+    },
+    {
+      "key": "mn85:18.12",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor merges whether or not painful striving feelings occur with the complete incapacity for knowledge, vision and unexcelled awakening; this covers the positive-feeling case."
+    },
+    {
+      "key": "mn85:18.13",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor merges whether or not painful striving feelings occur with the complete incapacity for knowledge, vision and unexcelled awakening; this covers the negative-feeling case."
+    },
+    {
+      "key": "mn85:19.11",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor merges whether or not painful striving feelings occur with the complete capacity for knowledge, vision and unexcelled awakening; this covers the positive-feeling case."
+    },
+    {
+      "key": "mn85:19.12",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor merges whether or not painful striving feelings occur with the complete capacity for knowledge, vision and unexcelled awakening; this covers the negative-feeling case."
+    },
+    {
+      "key": "mn85:24.7",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The butcher simile followed by an ellipsis does not render aroused energy, established mindfulness, bodily tension and distress from striving."
+    },
+    {
+      "key": "mn90:11.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly renders if these four castes were endowed with the five exertion factors, which is the whole line."
+    }
+  ],
+  "global_wrong": 3,
+  "stopped": true
+}

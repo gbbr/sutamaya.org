@@ -1,0 +1,571 @@
+{
+  "translator": "bodhi",
+  "input_marks_sha256": "7b6691b5199e12f7fa735ae97ffbb1346f96132948615b57870e9a19330060e1",
+  "covered_checked": 68,
+  "skipped_checked": 25,
+  "wrong": 2,
+  "passed": true,
+  "complete": true,
+  "records": [
+    {
+      "key": "an3.21:4.5",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English renders the opening tayome assertion, then an ellipsis. This Ime kho concluding assertion after the list is omitted, not merged. The first full occurrence at AN3.21:2.1–2.4 renders opening and conclusion separately."
+    },
+    {
+      "key": "an3.21:6.5",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "The English renders the opening tayome assertion, then an ellipsis. This Ime kho concluding assertion after the list is omitted, not merged. The first full occurrence at AN3.21:2.1–2.4 renders opening and conclusion separately."
+    },
+    {
+      "key": "an3.64:1.10",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor reports hearing 'such a statement'; it does not render the statement that he departed after understanding the Sakyan teaching."
+    },
+    {
+      "key": "an5.28:13.3",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "'May I understand …' omits the specific understanding of mind without lust."
+    },
+    {
+      "key": "an5.56:2.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'Told the Blessed One what his pupil had said' fully merges this introduction identifying the monk as speaker. It does not render the following detailed speech body."
+    },
+    {
+      "key": "an5.56:5.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'Told the Blessed One what his pupil had said' fully merges this introduction identifying the monk as speaker. It does not render the following detailed speech body."
+    },
+    {
+      "key": "an5.57:6.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly includes 'good or bad', rendering kalyāṇaṁ vā pāpakaṁ vā."
+    },
+    {
+      "key": "an5.57:6.7",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor renders both becoming heir to the action and the injunction that woman/man, householder/renunciant should reflect often."
+    },
+    {
+      "key": "an8.17:1.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly renders binding the opposite sex 'by ... smile', the hasitena clause, despite reordering the list."
+    },
+    {
+      "key": "an8.17:1.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly renders binding the opposite sex 'by ... speech', the bhaṇitena clause, despite reordering the list."
+    },
+    {
+      "key": "an8.18:1.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly renders binding the opposite sex 'by ... smile', the hasitena clause, despite reordering the list."
+    },
+    {
+      "key": "an8.18:1.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly renders binding the opposite sex 'by ... speech', the bhaṇitena clause, despite reordering the list."
+    },
+    {
+      "key": "an8.23:3.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'Has a sense of moral shame' renders hirīmā in the merged list."
+    },
+    {
+      "key": "an8.23:3.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'Moral dread' renders ottappī in the merged list."
+    },
+    {
+      "key": "an8.46:1.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'We immediately acquire whatever voice we want' renders the complete sara clause, despite list reordering."
+    },
+    {
+      "key": "an8.46:1.7",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'We immediately acquire whatever pleasure we want' renders the complete sukha clause, despite list reordering."
+    },
+    {
+      "key": "an10.5:1.7",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "'Identical with AN10.3' is a reference to a prior repetition; it does not render the conditional loss of right concentration without pleasure."
+    },
+    {
+      "key": "an10.29:19.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor expressly says one with that view 'will not be unrepelled by existence', rendering this full clause."
+    },
+    {
+      "key": "an10.29:19.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor expressly says one with that view 'will not be repelled by the cessation of existence', rendering this full clause."
+    },
+    {
+      "key": "dn2:16.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly asks whether he can point out a fruit of recluseship visible here and now. This renders the whole question; the parenthetical earlier reference is not needed for its content."
+    },
+    {
+      "key": "dn2:19.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly asks whether he can point out a fruit of recluseship visible here and now. This renders the whole question; the parenthetical earlier reference is not needed for its content."
+    },
+    {
+      "key": "dn2:22.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly asks whether he can point out a fruit of recluseship visible here and now. This renders the whole question; the parenthetical earlier reference is not needed for its content."
+    },
+    {
+      "key": "dn2:25.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly asks whether he can point out a fruit of recluseship visible here and now. This renders the whole question; the parenthetical earlier reference is not needed for its content."
+    },
+    {
+      "key": "dn2:28.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly asks whether he can point out a fruit of recluseship visible here and now. This renders the whole question; the parenthetical earlier reference is not needed for its content."
+    },
+    {
+      "key": "dn2:31.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly asks whether he can point out a fruit of recluseship visible here and now. This renders the whole question; the parenthetical earlier reference is not needed for its content."
+    },
+    {
+      "key": "dn15:34.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor includes understanding origin, passing away, satisfaction, unsatisfactoriness and escape, then asks whether enjoyment is proper. The merged question applies to the explicitly named base and renders the whole clause."
+    },
+    {
+      "key": "dn15:34.7",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly names 'the base of neither perception nor non-perception', rendering the introduction of this base in the merged question."
+    },
+    {
+      "key": "dn15:34.8",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor includes understanding origin, passing away, satisfaction, unsatisfactoriness and escape, then asks whether enjoyment is proper. The merged question applies to the explicitly named base and renders the whole clause."
+    },
+    {
+      "key": "mn4:14.6",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "'I am free from trepidation…' omits the following reflection that seeing this absence in oneself increased confidence for forest dwelling."
+    },
+    {
+      "key": "mn7:4.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The merged sentence explicitly says that knowing ill will as an imperfection, a bhikkhu abandons it."
+    },
+    {
+      "key": "mn7:4.30",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The endpoint 'negligence is an imperfection that defiles the mind' is explicitly rendered beyond the ellipsis."
+    },
+    {
+      "key": "mn7:4.31",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The endpoint negligence shares the explicitly rendered 'Knowing ... a bhikkhu abandons it' predicate."
+    },
+    {
+      "key": "mn7:5.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The merged sentence explicitly says that knowing ill will as an imperfection, the bhikkhu has abandoned it."
+    },
+    {
+      "key": "mn7:5.30",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The endpoint negligence is explicitly identified as an imperfection in the merged sentence."
+    },
+    {
+      "key": "mn7:5.31",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The endpoint negligence shares the explicitly rendered knowing-and-having-abandoned predicate."
+    },
+    {
+      "key": "mn11:11.8",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor renders the entire fourfold contrast: understanding sensual and view clinging, without understanding rule/observance or self-doctrine clinging."
+    },
+    {
+      "key": "mn11:12.8",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor renders understanding sensual, view and rule/observance clinging, without understanding self-doctrine clinging."
+    },
+    {
+      "key": "mn28:23.2",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "'Repeat §§8–10' references a previous passage; the present understanding of painful ear-contact feeling is not translated in the anchor."
+    },
+    {
+      "key": "mn29:4.45",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The ellipsis between going forth and living in suffering omits self-exaltation and disparagement over concentration."
+    },
+    {
+      "key": "mn29:4.46",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The ellipsis does not render the quoted comparison of one's concentration with other scattered monks."
+    },
+    {
+      "key": "mn31:7.12",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'Nandiya and ... Kimbila each spoke likewise, adding' explicitly renders Kimbila's speech introduction, while their omitted detailed speeches remain separate."
+    },
+    {
+      "key": "mn63:3.47",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The second explicitly rendered 'if the Blessed One knows' clause covers this introduction of knowing."
+    },
+    {
+      "key": "mn63:3.48",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly states the neither-exists-nor-does-not-exist after-death proposition and asks that it be declared."
+    },
+    {
+      "key": "mn82:7.14",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The request for permission to go forth from home into homelessness is explicitly rendered after the ellipsis."
+    },
+    {
+      "key": "mn82:7.19",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly asks how the parents could permit going forth while he is alive; the ellipsis omits other material, not this final question."
+    },
+    {
+      "key": "mn82:8.22",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly asks how the parents could permit going forth while he is alive; the ellipsis omits other material, not this final question."
+    },
+    {
+      "key": "mn82:10.18",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly asks how they could permit going forth while he is alive, rendering the friends' final question."
+    },
+    {
+      "key": "mn146:16.9",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "'Repeat verbatim §§4–14' does not translate the present sitting-and-washing-feet clause."
+    },
+    {
+      "key": "mn148:39.3",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor describes mind-contact and feeling then an ellipsis; the absence of the lust tendency is omitted."
+    },
+    {
+      "key": "sn12.13:2.8",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor gives birth then an ellipsis; the six-sense-fields item is omitted."
+    },
+    {
+      "key": "sn12.22:1.7",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor renders form then an ellipsis; consciousness, its origin and passing away are omitted."
+    },
+    {
+      "key": "sn12.31:11.5",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The editorial indication that the Buddha repeats Sāriputta's statement is a reference, not a translation of this cessation-with-food clause."
+    },
+    {
+      "key": "sn12.32:18.9",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor fully renders questioning and answering in varied terms/methods for seven days and nights. This final duration is explicit even though earlier durations are compressed."
+    },
+    {
+      "key": "sn12.34:3.5",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor explicitly gives birth and later formations, but omits the contact-to-feeling knowledge in between."
+    },
+    {
+      "key": "sn12.68:8.3",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "'The same series of questions ... exactly the same way' refers to a prior repetition; it does not translate this independent-knowledge answer."
+    },
+    {
+      "key": "sn16.5:6.6",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor gives forest dwelling then an ellipsis; the seclusion item is omitted."
+    },
+    {
+      "key": "sn16.7:3.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'No sense of shame' explicitly renders hirī natthi in the merged list."
+    },
+    {
+      "key": "sn16.7:3.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'No fear of wrongdoing' explicitly renders ottappaṁ natthi in the merged list."
+    },
+    {
+      "key": "sn16.7:3.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'No energy' explicitly renders vīriyaṁ natthi in the merged list."
+    },
+    {
+      "key": "sn16.7:3.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor includes no wisdom and the full day/night consequence: expected decline in wholesome states, not growth."
+    },
+    {
+      "key": "sn16.7:6.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'A sense of shame' explicitly renders hirī atthi in the merged list."
+    },
+    {
+      "key": "sn16.7:6.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'Fear of wrongdoing' explicitly renders ottappaṁ atthi in the merged list."
+    },
+    {
+      "key": "sn16.7:6.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'Energy' explicitly renders vīriyaṁ atthi in the merged list."
+    },
+    {
+      "key": "sn16.7:6.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor includes wisdom and the full day/night consequence: expected growth in wholesome states, not decline."
+    },
+    {
+      "key": "sn22.1:6.4",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The indication that Nakulapita repeats his entire conversation does not render the quoted claim about maintaining a body and health even briefly."
+    },
+    {
+      "key": "sn22.7:3.3",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor gives regarding feeling as self then an ellipsis; consciousness following feeling's change is omitted."
+    },
+    {
+      "key": "sn22.89:2.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'Reported what the Venerable Khemaka had said' fully renders this introduction identifying Khemaka's speech. It does not render the detailed repeated speech body."
+    },
+    {
+      "key": "sn22.89:4.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'Reported what the Venerable Khemaka had said' fully renders this introduction identifying Khemaka's speech. It does not render the detailed repeated speech body."
+    },
+    {
+      "key": "sn22.89:6.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'Approached the elder bhikkhus and reported' renders telling the elders, which this line introduces."
+    },
+    {
+      "key": "sn22.89:6.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'Reported what the Venerable Khemaka had said' fully renders this introduction identifying Khemaka's speech. It does not render the detailed repeated speech body."
+    },
+    {
+      "key": "sn22.90:7.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'Let him instruct me' explicitly renders anusāsatu maṁ in the merged request."
+    },
+    {
+      "key": "sn22.90:7.7",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'Let him give me a Dhamma talk in such a way that I might see the Dhamma' renders the full final request."
+    },
+    {
+      "key": "sn22.97:6.7",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor is only an ellipsis and dash; it does not render the question whether consciousness is permanent."
+    },
+    {
+      "key": "sn35.9:1.9",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "'Seeing thus … …' omits the concluding 'what more of the present' clause."
+    },
+    {
+      "key": "sn35.26:1.9",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor gives sounds at the ear then an ellipsis; flavors are not rendered."
+    },
+    {
+      "key": "sn35.69:1.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'before it is scattered right here', rendering the complete purāyaṁ clause."
+    },
+    {
+      "key": "sn35.69:1.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'Like a handful of chaff' renders the whole simile clause."
+    },
+    {
+      "key": "sn35.69:2.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly says 'before it is scattered right here', rendering the complete purāyaṁ clause."
+    },
+    {
+      "key": "sn35.69:2.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'Like a handful of chaff' renders the whole simile clause."
+    },
+    {
+      "key": "sn35.93:2.3",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor is only an ellipsis; impermanence and changeability of flavors are omitted."
+    },
+    {
+      "key": "sn35.101:3.11",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "'The mind is not yours …' omits this imperative to abandon it."
+    },
+    {
+      "key": "sn35.114:5.3",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor gives desirable sounds then an ellipsis; the full freedom-from-Māra conclusion is omitted."
+    },
+    {
+      "key": "sn35.232:10.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'The Blessed One hears a sound with the ear' explicitly renders this complete hearing clause."
+    },
+    {
+      "key": "sn36.15:1.17",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "'As in §11' is a reference; cessation of lust, hate and delusion for the taint-free monk is omitted here. The English below renders the following tranquillization clause instead."
+    },
+    {
+      "key": "sn44.1:5.8",
+      "first_verdict": "skipped",
+      "verdict": "skipped",
+      "reason": "The anchor ends in an ellipsis after the first existence question; this intervening undeclared-answer clause is omitted."
+    },
+    {
+      "key": "sn44.3:3.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly renders being asked whether the Tathagata neither exists nor does not exist after death."
+    },
+    {
+      "key": "sn44.3:3.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "'In each case you say ... the Blessed One has not declared this' explicitly merges this final undeclared-answer clause."
+    },
+    {
+      "key": "sn46.3:2.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly renders developing this enlightenment factor on that occasion, in addition to its arousal."
+    },
+    {
+      "key": "sn46.3:2.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly renders this enlightenment factor coming to fulfilment by development on that occasion."
+    },
+    {
+      "key": "sn46.3:3.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly renders developing this enlightenment factor on that occasion, in addition to its arousal."
+    },
+    {
+      "key": "sn46.3:3.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The anchor explicitly renders this enlightenment factor coming to fulfilment by development on that occasion."
+    },
+    {
+      "key": "sn47.9:3.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The two English health greetings 'bearing up' and 'recovered' merge the Pali's overlapping phāsu/khamanīya/yāpanīya health expressions. The physical well-being and ability-to-continue sense is rendered without an ellipsis."
+    },
+    {
+      "key": "sn47.9:3.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The two English health greetings 'bearing up' and 'recovered' merge the Pali's overlapping phāsu/khamanīya/yāpanīya health expressions. The physical well-being and ability-to-continue sense is rendered without an ellipsis."
+    }
+  ],
+  "global_wrong": 3,
+  "stopped": true
+}

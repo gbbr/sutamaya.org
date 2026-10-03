@@ -1,0 +1,16 @@
+{
+  "method": "Independent Python HTMLParser of assembled templates and direct Pali/translation JSON reads",
+  "passed": true,
+  "eligible_empty_lines_checked": 2510,
+  "covered_keys_checked": 32,
+  "documents_checked": 261,
+  "checks": [
+    "Pali key exists",
+    "translation is empty",
+    "not verse/title/heading/colophon/uddana",
+    "paragraph-local run of at least two empty prose lines below nonempty English",
+    "excluded remapping pages absent"
+  ],
+  "covered_output_checked": true,
+  "output_order_matches_file_and_pali_order": true
+}

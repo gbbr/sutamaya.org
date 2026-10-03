@@ -1,0 +1,55 @@
+{
+  "scope": "Initial three batches only: Bodhi 001\u2013002 and Thanissaro 001. Reader token telemetry only; excludes coordinator and other sessions. Includes same-reader next-English context correction.",
+  "interpretation": "Input is cumulative across requests, including cached input; reasoning_output_tokens is part of output_tokens. No billing or subscription-allowance conversion inferred.",
+  "readers": [
+    {
+      "translator": "bodhi",
+      "batch": "001",
+      "agent": "/root/bodhi_skipped_001",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "session_log": "rollout-2026-10-03T13-31-23-01a10151-888d-7833-8fca-010e6dfac02e.jsonl",
+      "started_at": "2026-10-03T10:31:23.051Z",
+      "last_usage_at": "2026-10-03T10:33:19.871Z",
+      "tokens": {
+        "input_tokens": 377814,
+        "cached_input_tokens": 334208,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2402,
+        "reasoning_output_tokens": 733,
+        "total_tokens": 380216
+      },
+      "uncached_input_tokens": 43606,
+      "includes_context_correction": false
+    },
+    {
+      "translator": "bodhi",
+      "batch": "002",
+      "agent": "/root/bodhi_skipped_002",
+      "model": "gpt-6.1-sol",
+      "effort": "high",
+      "session_log": "rollout-2026-10-03T13-31-35-01a10151-ba7a-7990-a4a4-ab389e41ba7e.jsonl",
+      "started_at": "2026-10-03T10:31:35.815Z",
+      "last_usage_at": "2026-10-03T10:34:32.134Z",
+      "tokens": {
+        "input_tokens": 550721,
+        "cached_input_tokens": 504064,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1749,
+        "reasoning_output_tokens": 177,
+        "total_tokens": 552470
+      },
+      "uncached_input_tokens": 46657,
+      "includes_context_correction": true
+    }
+  ],
+  "three_batch_total": {
+    "input_tokens": 1348168,
+    "cached_input_tokens": 1209856,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 6287,
+    "reasoning_output_tokens": 1183,
+    "total_tokens": 1354455,
+    "uncached_input_tokens": 138312
+  }
+}

@@ -1,0 +1,376 @@
+{
+  "groups": [
+    {
+      "text": "an5.254-271",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an5.254:1.4",
+          "starts": "These are the five forms of stinginess.",
+          "settles": {
+            "after": "there are these five forms of stinginess. Which five? Stinginess as to one’s monastery (lodgings), stinginess as to one’s family (of supporters), stinginess as to one’s gains, stinginess as to one’s status, and stinginess as to the Dhamma.",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an5.254:1.3",
+          "sujato": "Stinginess with dwellings, families, material things, praise, and the teachings.",
+          "before": "Stinginess as to one’s monastery (lodgings), stinginess as to one’s family (of supporters), stinginess as to one’s gains,",
+          "after": "Stinginess as to one’s monastery (lodgings), stinginess as to one’s family (of supporters), stinginess as to one’s gains, stinginess as to one’s status, and stinginess as to the Dhamma."
+        },
+        {
+          "key": "an5.254:1.4",
+          "sujato": "These are the five kinds of stinginess.",
+          "before": "stinginess as to one’s status, and stinginess as to the Dhamma. These are the five forms of stinginess.",
+          "after": "These are the five forms of stinginess."
+        },
+        {
+          "key": "an5.254:1.5",
+          "sujato": "The most contemptible of these five kinds of stinginess is stinginess with the teaching.”",
+          "before": "And the meanest of these five is this: stinginess as to the Dhamma.”",
+          "after": "And the meanest of these five is this: stinginess as to the Dhamma.”"
+        }
+      ]
+    },
+    {
+      "text": "an5.254-271",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an5.255:1.2",
+          "starts": "Which five?",
+          "settles": {
+            "after": "ng and eradication of the five forms of stinginess, the holy life is fulfilled.",
+            "placed": true,
+            "own": true
+          }
+        },
+        {
+          "key": "an5.255:1.4",
+          "starts": "With the abandoning and eradication of stinginess as",
+          "settles": {
+            "after": "(lodgings), the holy life is fulfilled.",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an5.255:1.1",
+          "sujato": "“Mendicants, the spiritual life is lived to give up and cut out these five kinds of stinginess.",
+          "before": "“With the abandoning and eradication of the five forms of stinginess, the holy life is fulfilled. Which five?",
+          "after": "“With the abandoning and eradication of the five forms of stinginess, the holy life is fulfilled."
+        },
+        {
+          "key": "an5.255:1.2",
+          "sujato": "What five?",
+          "before": "",
+          "after": "Which five?"
+        },
+        {
+          "key": "an5.255:1.3",
+          "sujato": "Stinginess with dwellings, families, material things, praise, and the teachings.",
+          "before": "“With the abandoning and eradication of stinginess as to one’s monastery (lodgings), the holy life is fulfilled. With the abandoning and eradication of stinginess as to one’s family (of supporters)… stinginess as to one’s gains… stinginess as to one’s status… stinginess as to the Dhamma, the holy life is fulfilled.",
+          "after": "“With the abandoning and eradication of stinginess as to one’s monastery (lodgings), the holy life is fulfilled."
+        },
+        {
+          "key": "an5.255:1.4",
+          "pali": "kulamacchariyassa … lābhamacchariyassa … vaṇṇamacchariyassa … dhammamacchariyassa pahānāya samucchedāya brahmacariyaṁ vussati.",
+          "before": "",
+          "after": "With the abandoning and eradication of stinginess as to one’s family (of supporters)… stinginess as to one’s gains… stinginess as to one’s status… stinginess as to the Dhamma, the holy life is fulfilled."
+        },
+        {
+          "key": "an5.255:1.5",
+          "sujato": "The spiritual life is lived to give up and cut out these five kinds of stinginess.”",
+          "before": "“With the abandoning and eradication of these five forms of stinginess, the holy life is fulfilled.”",
+          "after": "“With the abandoning and eradication of these five forms of stinginess, the holy life is fulfilled.”"
+        }
+      ]
+    },
+    {
+      "text": "an5.254-271",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an5.257-263:1.3",
+          "starts": "Stinginess as to one’s monastery (lodgings)… one’s family",
+          "settles": {
+            "after": " jhāna.”\n“Without abandoning these five qualities, one is incapable of entering & remaining in the second jhāna… the third jhāna… the fourth jhāna; incapable of realizing the fruit of stream-entry… the fruit of once-returning… the fruit of non-returning… arahantship. Which five?",
+            "placed": true
+          }
+        },
+        {
+          "key": "an5.257-263:1.4",
+          "starts": "Without abandoning these five qualities, one is incapable",
+          "settles": {
+            "after": "ourth jhāna; incapable of realizing the fruit of stream-entry… the fruit of once-returning… the fruit of non-returning… arahantship. Which five? Stinginess as to one’s monastery (lodgings)… one’s family (of supporters)… one’s gains… one’s status, and stinginess as to the Dhamma.",
+            "placed": true
+          }
+        },
+        {
+          "key": "an5.257-263:2.1",
+          "starts": "“With the abandoning of these five qualities, one",
+          "settles": {
+            "after": "as to the Dhamma. Without abandoning these five qualities, one is incapable of entering & remaining in the second jhāna… the third jhāna… the fourth jhāna; one is incapable realizing the fruit of stream-entry… the fruit of once-returning… the fruit of non-returning… arahantship.",
+            "placed": true
+          }
+        },
+        {
+          "key": "an5.257-263:2.2",
+          "starts": "Which five?",
+          "settles": {
+            "after": "atus, and stinginess as to the Dhamma. Without abandoning these five qualities, one is incapable of entering & remaining in the second jhāna… the third jhāna… the fourth jhāna; one is incapable realizing the fruit of stream-entry… the fruit of once-returning… the fruit of non-returning… arahantship.\n“With the abandoning of these five qualities, one is capable of entering & remaining in the second jhāna… the third jhāna… the fourth jhāna; capable of realizing the fruit of stream-entry… the fruit of once-returning… the fruit of non-returning… arahantship.",
+            "placed": true,
+            "own": true
+          }
+        },
+        {
+          "key": "an5.257-263:2.3",
+          "starts": "Stinginess as to one’s monastery (lodgings)… one’s family",
+          "settles": {
+            "after": "hird jhāna… the fourth jhāna; capable of realizing the fruit of stream-entry… the fruit of once-returning… the fruit of non-returning… arahantship. Which five?",
+            "placed": true,
+            "own": true
+          }
+        },
+        {
+          "key": "an5.257-263:2.4",
+          "starts": "With the abandoning of these five qualities, one",
+          "settles": {
+            "after": " fourth jhāna; capable of realizing the fruit of stream-entry… the fruit of once-returning… the fruit of non-returning… arahantship. Which five? Stinginess as to one’s monastery (lodgings)… one’s family (of supporters)… one’s gains… one’s status, and stinginess as to the Dhamma.",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an5.257-263:1.2",
+          "sujato": "What five?",
+          "before": "Which five? Stinginess as to one’s monastery (lodgings)… one’s family (of supporters)… one’s gains… one’s status, and stinginess as to the Dhamma. Without abandoning these five qualities, one is incapable of entering & remaining in the second jhāna… the third jhāna… the fourth jhāna; one is incapable realizing the fruit of stream-entry… the fruit of once-returning… the fruit of non-returning… arahantship. “With the abandoning of these five qualities, one is capable of entering & remaining in the second jhāna… the third jhāna… the fourth jhāna; capable of realizing the fruit of stream-entry… the fruit of once-returning… the fruit of non-returning… arahantship. Which five?",
+          "after": "Which five?"
+        },
+        {
+          "key": "an5.257-263:1.3",
+          "sujato": "Stinginess with dwellings, families, material things, praise, and the teachings.",
+          "before": "Stinginess as to one’s monastery (lodgings)… one’s family (of supporters)… one’s gains… one’s status, and stinginess as to the Dhamma.",
+          "after": "Stinginess as to one’s monastery (lodgings)… one’s family (of supporters)… one’s gains… one’s status, and stinginess as to the Dhamma."
+        },
+        {
+          "key": "an5.257-263:1.4",
+          "sujato": "Without giving up these five qualities you can’t realize perfection.",
+          "before": "With the abandoning of these five qualities,",
+          "after": "Without abandoning these five qualities, one is incapable of entering & remaining in the second jhāna… the third jhāna… the fourth jhāna; one is incapable realizing the fruit of stream-entry… the fruit of once-returning… the fruit of non-returning… arahantship."
+        },
+        {
+          "key": "an5.257-263:2.1",
+          "sujato": "But after giving up these five qualities you can enter and remain in the second absorption … third absorption … fourth absorption … and realize the fruit of stream-entry … the fruit of once-return … the fruit of non-return … perfection.",
+          "before": "one is capable of entering & remaining in the second jhāna… the third jhāna… the fourth jhāna; capable realizing the fruit of stream-entry… the fruit of once-returning… the fruit of non-returning…",
+          "after": "“With the abandoning of these five qualities, one is capable of entering & remaining in the second jhāna… the third jhāna… the fourth jhāna; capable of realizing the fruit of stream-entry… the fruit of once-returning… the fruit of non-returning… arahantship."
+        },
+        {
+          "key": "an5.257-263:2.2",
+          "sujato": "What five?",
+          "before": "",
+          "after": "Which five?"
+        },
+        {
+          "key": "an5.257-263:2.3",
+          "sujato": "Stinginess with dwellings, families, material things, praise, and the teachings.",
+          "before": "",
+          "after": "Stinginess as to one’s monastery (lodgings)… one’s family (of supporters)… one’s gains… one’s status, and stinginess as to the Dhamma."
+        },
+        {
+          "key": "an5.257-263:2.4",
+          "sujato": "After giving up these five qualities you can realize perfection.”",
+          "before": "arahantship.”",
+          "after": "With the abandoning of these five qualities, one is capable of entering & remaining in the second jhāna… the third jhāna… the fourth jhāna; capable realizing the fruit of stream-entry… the fruit of once-returning… the fruit of non-returning… arahantship.”"
+        },
+        {
+          "key": "an5.257-263:2.5",
+          "pali": "Terasamaṁ.",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an5.264:1.1",
+          "sujato": "“Mendicants, without giving up these five qualities you can’t enter and remain in the first absorption.",
+          "before": "“Without abandoning these five qualities, one is incapable of entering & remaining in the first jhāna.",
+          "after": "“Without abandoning these five qualities, one is incapable of entering & remaining in the first jhāna."
+        }
+      ]
+    },
+    {
+      "text": "an5.254-271",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an5.264:2.1",
+          "starts": "“With the abandoning of these five qualities, one",
+          "settles": {
+            "after": " and ingratitude. Without abandoning these five qualities, one is incapable of entering & remaining in the first jhāna.",
+            "placed": true,
+            "own": true
+          }
+        },
+        {
+          "key": "an5.264:2.4",
+          "starts": null,
+          "settles": {
+            "empty": "up"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an5.264:1.4",
+          "sujato": "Without giving up these five qualities you can’t enter and remain in the first absorption.",
+          "before": "Without abandoning these five qualities, one is incapable of entering & remaining in the first jhāna.",
+          "after": "Without abandoning these five qualities, one is incapable of entering & remaining in the first jhāna."
+        },
+        {
+          "key": "an5.264:2.1",
+          "sujato": "But after giving up these five qualities you can enter and remain in the first absorption.",
+          "before": "",
+          "after": "“With the abandoning of these five qualities, one is capable of entering & remaining in the first jhāna.…”"
+        },
+        {
+          "key": "an5.264:2.2",
+          "sujato": "What five?",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an5.264:2.3",
+          "sujato": "Stinginess with dwellings, families, material things, praise, and lack of gratitude and thankfulness.",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an5.264:2.4",
+          "sujato": "After giving up these five qualities you can enter and remain in the first absorption.”",
+          "before": "“With the abandoning of these five qualities, one is capable of entering & remaining in the first jhāna.…”",
+          "after": ""
+        },
+        {
+          "key": "an5.264:2.5",
+          "pali": "Cuddasamaṁ.",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an5.265-271:1.1",
+          "sujato": "“Mendicants, without giving up these five qualities you can’t enter and remain in the second absorption … third absorption … fourth absorption … or realize the fruit of stream-entry … the fruit of once-return … the fruit of non-return … perfection.",
+          "before": "“Without abandoning these five qualities, one is incapable of entering & remaining in the second jhāna… the third jhāna… the fourth jhāna; incapable of realizing the fruit of stream-entry… the fruit of once-returning… the fruit of non-returning… arahantship.",
+          "after": "“Without abandoning these five qualities, one is incapable of entering & remaining in the second jhāna… the third jhāna… the fourth jhāna; incapable of realizing the fruit of stream-entry… the fruit of once-returning… the fruit of non-returning… arahantship."
+        }
+      ]
+    },
+    {
+      "text": "an5.254-271",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an5.265-271:2.4",
+          "starts": null,
+          "settles": {
+            "empty": "up"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an5.265-271:2.1",
+          "sujato": "But after giving up these five qualities you can enter and remain in the second absorption … third absorption … fourth absorption … and realize the fruit of stream-entry … the fruit of once-return … the fruit of non-return … perfection.",
+          "before": "“With the abandoning of these five qualities, one is capable of entering & remaining in the second jhāna… the third jhāna… the fourth jhāna; capable of realizing the fruit of stream-entry… the fruit of once-returning… the fruit of non-returning…",
+          "after": "“With the abandoning of these five qualities, one is capable of entering & remaining in the second jhāna… the third jhāna… the fourth jhāna; capable of realizing the fruit of stream-entry… the fruit of once-returning… the fruit of non-returning… arahantship.…”"
+        },
+        {
+          "key": "an5.265-271:2.2",
+          "sujato": "What five?",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an5.265-271:2.3",
+          "sujato": "Stinginess with dwellings, families, material things, praise, and lack of gratitude and thankfulness.",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an5.265-271:2.4",
+          "sujato": "After giving up these five qualities you can realize perfection.”",
+          "before": "arahantship.…”",
+          "after": ""
+        },
+        {
+          "key": "an5.265-271:2.5",
+          "pali": "Ekavīsatimaṁ.",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an5.265-271:2.6",
+          "pali": "Upasampadāvaggo chaṭṭho.",
+          "before": "",
+          "after": ""
+        }
+      ]
+    }
+  ],
+  "disputed": [],
+  "others": [
+    {
+      "key": "an5.254:1.3",
+      "starts": "Stinginess as to one’s monastery (lodgings), stinginess as",
+      "status": "already so"
+    },
+    {
+      "key": "an5.254:1.5",
+      "starts": "And the meanest of these five is this:",
+      "status": "already so"
+    },
+    {
+      "key": "an5.255:1.1",
+      "starts": "“With the abandoning and eradication of the five",
+      "status": "already so"
+    },
+    {
+      "key": "an5.255:1.3",
+      "starts": "“With the abandoning and eradication of stinginess as",
+      "status": "already so"
+    },
+    {
+      "key": "an5.255:1.5",
+      "starts": "“With the abandoning and eradication of these five",
+      "status": "already so"
+    },
+    {
+      "key": "an5.256:2.5",
+      "starts": null,
+      "status": "already so"
+    },
+    {
+      "key": "an5.257-263:1.1",
+      "starts": "“Without abandoning these five qualities, one is incapable",
+      "status": "already so"
+    },
+    {
+      "key": "an5.257-263:1.2",
+      "starts": "Which five?",
+      "status": "already so"
+    },
+    {
+      "key": "an5.265-271:1.4",
+      "starts": "Without abandoning these five qualities, one is incapable",
+      "status": "already so"
+    },
+    {
+      "key": "an5.265-271:2.1",
+      "starts": "“With the abandoning of these five qualities, one",
+      "status": "already so"
+    }
+  ]
+}

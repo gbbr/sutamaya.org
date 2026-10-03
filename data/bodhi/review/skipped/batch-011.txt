@@ -1,0 +1,1204 @@
+bodhi: skipped-Pali review batch 011
+Read the full English above, each original Pali line, and the next English. Sujato is context only.
+covered = this line's own content is explicitly rendered by the English above, including complete lists.
+skipped = abbreviated or compressed repetition, even if mentioned, or omitted. When in doubt, skipped.
+Judge each key independently; a run may be mixed. An ellipsis alone does not decide.
+Only runs of two or more empty prose lines in the same paragraph are reviewed; lone lines join automatically.
+Write <key> covered|skipped|unsure for every RUN key, then # done. Do not mark context keys.
+
+=== RUN 501: sn35.151:5.2 sn35.151:5.3 sn35.151:5.4 ===
+File: data/bodhi/sutta/sn/sn35/sn35.151_translation-en-bodhi.json
+ABOVE sn35.151:5.1
+Pali: Puna caparaṁ, bhikkhave, bhikkhuno jivhāya rasaṁ sāyitvā na uppajjanti pāpakā akusalā dhammā sarasaṅkappā saṁyojaniyā. 
+Sujato: Furthermore, when a mendicant hears … smells … tastes … touches … 
+Translator: “Further, when a bhikkhu has heard a sound with the ear … 
+JUDGE sn35.151:5.2
+Pali: Tyāssa na anto vasanti, nāssa anto vasanti pāpakā akusalā dhammāti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.151:5.3
+Pali: Tasmā anantevāsikoti vuccati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.151:5.4
+Pali: Te naṁ na samudācaranti, na samudācaranti naṁ pāpakā akusalā dhammāti. Tasmā anācariyakoti vuccati …pe…. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.151:6.1
+Pali: Puna caparaṁ, bhikkhave, bhikkhuno manasā dhammaṁ viññāya na uppajjanti pāpakā akusalā dhammā sarasaṅkappā saṁyojaniyā. 
+Sujato: knows an idea with their mind, bad, unskillful phenomena don’t arise: memories and thoughts that tighten the fetters. 
+Translator: cognized a mental phenomenon with the mind … 
+
+=== RUN 502: sn35.151:6.2 sn35.151:6.3 sn35.151:6.4 ===
+File: data/bodhi/sutta/sn/sn35/sn35.151_translation-en-bodhi.json
+ABOVE sn35.151:6.1
+Pali: Puna caparaṁ, bhikkhave, bhikkhuno manasā dhammaṁ viññāya na uppajjanti pāpakā akusalā dhammā sarasaṅkappā saṁyojaniyā. 
+Sujato: knows an idea with their mind, bad, unskillful phenomena don’t arise: memories and thoughts that tighten the fetters. 
+Translator: cognized a mental phenomenon with the mind … 
+JUDGE sn35.151:6.2
+Pali: Tyāssa na anto vasanti, nāssa anto vasanti pāpakā akusalā dhammāti. 
+Sujato: Those qualities don’t reside within. Since they don’t have bad unskillful qualities residing within, 
+Translator: (empty)
+JUDGE sn35.151:6.3
+Pali: Tasmā anantevāsikoti vuccati. 
+Sujato: they’re said to not have a resident pupil. 
+Translator: (empty)
+JUDGE sn35.151:6.4
+Pali: Te naṁ na samudācaranti, na samudācaranti naṁ pāpakā akusalā dhammāti. 
+Sujato: Those qualities don’t master them. Since they’re not mastered by bad unskillful qualities, 
+Translator: (empty)
+BELOW sn35.151:6.5
+Pali: Tasmā anācariyakoti vuccati. 
+Sujato: they’re said to not have a teaching master. 
+Translator: he is called ‘one who has no teacher.’ 
+
+=== RUN 503: sn35.153:3.2 sn35.153:3.3 sn35.153:3.4 ===
+File: data/bodhi/sutta/sn/sn35/sn35.153_translation-en-bodhi.json
+ABOVE sn35.153:3.1
+Pali: Puna caparaṁ, bhikkhave, bhikkhu jivhāya rasaṁ sāyitvā santaṁ vā ajjhattaṁ …pe… rāgadosamohoti pajānāti; asantaṁ vā ajjhattaṁ rāgadosamohaṁ, natthi me ajjhattaṁ rāgadosamohoti pajānāti. 
+Sujato: Furthermore, a mendicant hears a sound … smells an odor … tastes a flavor … encounters a touch … 
+Translator: “Further, bhikkhus, having heard a sound with the ear … 
+JUDGE sn35.153:3.2
+Pali: Yaṁ taṁ, bhikkhave, jivhāya rasaṁ sāyitvā santaṁ vā ajjhattaṁ rāgadosamohaṁ, atthi me ajjhattaṁ rāgadosamohoti pajānāti; asantaṁ vā ajjhattaṁ rāgadosamohaṁ, natthi me ajjhattaṁ rāgadosamohoti pajānāti; api nu me, bhikkhave, dhammā saddhāya vā veditabbā, ruciyā vā veditabbā, anussavena vā veditabbā, ākāraparivitakkena vā veditabbā, diṭṭhinijjhānakkhantiyā vā veditabbā”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.153:3.3
+Pali: “No hetaṁ, bhante”. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.153:3.4
+Pali: “Nanume, bhikkhave, dhammā paññāya disvā veditabbā”ti? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.153:3.5
+Pali: “Evaṁ, bhante”. 
+Sujato: (empty)
+Translator: … 
+
+=== RUN 504: sn35.228:2.4 sn35.228:2.5 sn35.228:2.6 ===
+File: data/bodhi/sutta/sn/sn35/sn35.228_translation-en-bodhi.json
+ABOVE sn35.228:2.3
+Pali: jivhā, bhikkhave, purisassa samuddo; 
+Sujato: For a person, the ear … nose … tongue … body … 
+Translator: “The ear, bhikkhus, is the ocean for a person…. 
+JUDGE sn35.228:2.4
+Pali: tassa rasamayo vego. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.228:2.5
+Pali: Yo taṁ rasamayaṁ vegaṁ sahati, ayaṁ vuccati, bhikkhave, atari jivhāsamuddaṁ saūmiṁ sāvaṭṭaṁ sagāhaṁ sarakkhasaṁ; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.228:2.6
+Pali: tiṇṇo pāraṅgato thale tiṭṭhati brāhmaṇo …pe… 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.228:2.7
+Pali: mano, bhikkhave, purisassa samuddo; 
+Sujato: mind is an ocean, 
+Translator: The mind is the ocean for a person; 
+
+=== RUN 505: sn35.231:3.2 sn35.231:3.3 ===
+File: data/bodhi/sutta/sn/sn35/sn35.231_translation-en-bodhi.json
+ABOVE sn35.231:3.1
+Pali: Yassa kassaci, bhikkhave, bhikkhussa vā bhikkhuniyā vā manoviññeyyesu dhammesu yo rāgo so atthi, yo doso so atthi, yo moho so atthi, yo rāgo so appahīno, yo doso so appahīno, yo moho so appahīno, tassa parittā cepi manoviññeyyā dhammā manassa āpāthaṁ āgacchanti pariyādiyantevassa cittaṁ; ko pana vādo adhimattānaṁ. 
+Sujato: ideas known by the mind, they still have greed, hate, and delusion, and have not given them up. If even trivial thoughts come into the range of the mind they overcome their mind, let alone those that are compelling. 
+Translator: mental phenomena cognizable by the mind. 
+JUDGE sn35.231:3.2
+Pali: Taṁ kissa hetu? 
+Sujato: Why is that? 
+Translator: (empty)
+JUDGE sn35.231:3.3
+Pali: Yo, bhikkhave, rāgo, so atthi, yo doso so atthi, yo moho so atthi, yo rāgo so appahīno, yo doso so appahīno, yo moho so appahīno. 
+Sujato: Because they still have greed, hate, and delusion, and have not given them up. 
+Translator: (empty)
+BELOW (outside this paragraph) sn35.231:4.1
+Pali: Seyyathāpi, bhikkhave, khīrarukkho assattho vā nigrodho vā pilakkho vā udumbaro vā daharo taruṇo komārako. 
+Sujato: Suppose there was a latex-producing tree—such as a peepal, a banyan, a wavy leaf fig, or a cluster fig—that’s a tender young sapling. 
+Translator: “Suppose, bhikkhus, there was a milk-sap tree —an assattha or a banyan or a pilakkha or an udumbara-fresh, young, tender. 
+
+=== RUN 506: sn35.231:7.2 sn35.231:7.3 ===
+File: data/bodhi/sutta/sn/sn35/sn35.231_translation-en-bodhi.json
+ABOVE sn35.231:7.1
+Pali: Yassa kassaci, bhikkhave, bhikkhussa vā bhikkhuniyā vā manoviññeyyesu dhammesu yo rāgo so atthi, yo doso so atthi, yo moho so atthi, yo rāgo so appahīno, yo doso so appahīno, yo moho so appahīno, tassa parittā cepi manoviññeyyā dhammā manassa āpāthaṁ āgacchanti pariyādiyantevassa cittaṁ; ko pana vādo adhimattānaṁ. 
+Sujato: ideas known by the mind, they still have greed, hate, and delusion, and have not given them up. If even trivial thoughts come into the range of the mind they overcome their mind, let alone those that are compelling. 
+Translator: mental phenomena cognizable by the mind. 
+JUDGE sn35.231:7.2
+Pali: Taṁ kissa hetu? 
+Sujato: Why is that? 
+Translator: (empty)
+JUDGE sn35.231:7.3
+Pali: Yo, bhikkhave, rāgo so atthi, yo doso so atthi, yo moho so atthi, yo rāgo so appahīno, yo doso so appahīno, yo moho so appahīno. 
+Sujato: Because they still have greed, hate, and delusion, and have not given them up. 
+Translator: (empty)
+BELOW (outside this paragraph) sn35.231:8.1
+Pali: Yassa kassaci, bhikkhave, bhikkhussa vā bhikkhuniyā vā cakkhuviññeyyesu rūpesu yo rāgo so natthi, yo doso so natthi, yo moho so natthi, yo rāgo so pahīno, yo doso so pahīno, yo moho so pahīno, tassa adhimattā cepi cakkhuviññeyyā rūpā cakkhussa āpāthaṁ āgacchanti nevassa cittaṁ pariyādiyanti; ko pana vādo parittānaṁ. 
+Sujato: Take any monk or nun who, when it comes to sights known by the eye, has no greed, hate, and delusion left, and has given them up. If even compelling sights come into their range of vision they don’t overcome their mind, let alone those that are trivial. 
+Translator: “Bhikkhus, in regard to forms cognizable by the eye, if in any bhikkhu or bhikkhunī lust does not exist and has been abandoned, if hatred does not exist and has been abandoned, if delusion does not exist and has been abandoned, then even prominent forms that enter into range of the eye do not obsess the mind, not to speak of those that are trifling. 
+
+=== RUN 507: sn35.231:9.2 sn35.231:9.3 ===
+File: data/bodhi/sutta/sn/sn35/sn35.231_translation-en-bodhi.json
+ABOVE sn35.231:9.1
+Pali: Yassa kassaci, bhikkhave, bhikkhussa vā bhikkhuniyā vā jivhāviññeyyesu rasesu …pe… manoviññeyyesu dhammesu yo rāgo so natthi, yo doso so natthi, yo moho so natthi, yo rāgo so pahīno, yo doso so pahīno, yo moho so pahīno, tassa adhimattā cepi manoviññeyyā dhammā manassa āpāthaṁ āgacchanti nevassa cittaṁ pariyādiyanti; ko pana vādo parittānaṁ. 
+Sujato: When it comes to sounds … smells … tastes … touches … ideas known by the mind, they have no greed, hate, and delusion left, and have given them up. If even compelling ideas come into the range of the mind they don’t overcome their mind, let alone those that are trivial. 
+Translator: The same in regard to sounds cognizable by the ear … mental phenomena cognizable by the mind. 
+JUDGE sn35.231:9.2
+Pali: Taṁ kissa hetu? 
+Sujato: Why is that? 
+Translator: (empty)
+JUDGE sn35.231:9.3
+Pali: Yo, bhikkhave, rāgo so natthi, yo doso so natthi, yo moho so natthi, yo rāgo so pahīno, yo doso so pahīno, yo moho so pahīno. 
+Sujato: Because they have no greed, hate, and delusion left, and have given them up. 
+Translator: (empty)
+BELOW (outside this paragraph) sn35.231:9.4
+Pali: Seyyathāpi, bhikkhave, khīrarukkho assattho vā nigrodho vā pilakkho vā udumbaro vā sukkho kolāpo terovassiko. 
+Sujato: Suppose there was a latex-producing tree—such as a peepal, a banyan, a wavy leaf fig, or a cluster fig—that’s dried up, withered, and decrepit. 
+Translator: “Suppose, bhikkhus, there was a milk-sap tree—an assattha or a banyan or a pilakkha or an udumbara—dried up, desiccated, past its prime. 
+
+=== RUN 508: sn35.231:12.2 sn35.231:12.3 ===
+File: data/bodhi/sutta/sn/sn35/sn35.231_translation-en-bodhi.json
+ABOVE sn35.231:12.1
+Pali: Yassa kassaci, bhikkhave, bhikkhussa vā bhikkhuniyā vā manoviññeyyesu dhammesu yo rāgo so natthi, yo doso so natthi, yo moho so natthi, yo rāgo so pahīno, yo doso so pahīno, yo moho so pahīno, tassa adhimattā cepi manoviññeyyā dhammā manassa āpāthaṁ āgacchanti, nevassa cittaṁ pariyādiyanti; ko pana vādo parittānaṁ. 
+Sujato: ideas known by the mind, they have no greed, hate, and delusion left, and have given them up. If even compelling thoughts come into the range of the mind they don’t overcome their mind, let alone those that are trivial. 
+Translator: mental phenomena cognizable by the mind.” 
+JUDGE sn35.231:12.2
+Pali: Taṁ kissa hetu? 
+Sujato: Why is that? 
+Translator: (empty)
+JUDGE sn35.231:12.3
+Pali: Yo, bhikkhave, rāgo so natthi, yo doso so natthi, yo moho so natthi, yo rāgo so pahīno, yo doso so pahīno, yo moho so pahīno”ti. 
+Sujato: Because they have no greed, hate, and delusion left, and have given them up.” 
+Translator: (empty)
+BELOW (outside this paragraph): (none)
+
+=== RUN 509: sn35.232:5.2 sn35.232:5.3 ===
+File: data/bodhi/sutta/sn/sn35/sn35.232_translation-en-bodhi.json
+ABOVE sn35.232:5.1
+Pali: Evameva kho, āvuso, na cakkhu rūpānaṁ saṁyojanaṁ, na rūpā cakkhussa saṁyojanaṁ. 
+Sujato: “In the same way, the eye is not the fetter of sights, nor are sights the fetter of the eye. 
+Translator: “So too, friend, the eye is not the fetter of forms … 
+JUDGE sn35.232:5.2
+Pali: Yañca tattha tadubhayaṁ paṭicca uppajjati chandarāgo taṁ tattha saṁyojanaṁ …pe… 
+Sujato: The fetter there is the desire and greed that arises from the pair of them. 
+Translator: (empty)
+JUDGE sn35.232:5.3
+Pali: na jivhā rasānaṁ saṁyojanaṁ …pe… 
+Sujato: The ear … nose … tongue … body … 
+Translator: (empty)
+BELOW sn35.232:5.4
+Pali: na mano dhammānaṁ saṁyojanaṁ, na dhammā manassa saṁyojanaṁ. 
+Sujato: mind is not the fetter of ideas, nor are ideas the fetter of the mind. 
+Translator: nor are mental phenomena the fetter of the mind, 
+
+=== RUN 510: sn35.232:9.2 sn35.232:9.3 sn35.232:9.4 sn35.232:9.5 ===
+File: data/bodhi/sutta/sn/sn35/sn35.232_translation-en-bodhi.json
+ABOVE sn35.232:9.1
+Pali: Imināpetaṁ, āvuso, pariyāyena veditabbaṁ yathā na cakkhu rūpānaṁ saṁyojanaṁ, na rūpā cakkhussa saṁyojanaṁ. 
+Sujato: This too is a way to understand how this is so. 
+Translator: “In this way too, friend, it may be understood how that is so: 
+JUDGE sn35.232:9.2
+Pali: Yañca tattha tadubhayaṁ paṭicca uppajjati chandarāgo, taṁ tattha saṁyojanaṁ …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.232:9.3
+Pali: na jivhā rasānaṁ saṁyojanaṁ …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.232:9.4
+Pali: na mano dhammānaṁ saṁyojanaṁ, na dhammā manassa saṁyojanaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.232:9.5
+Pali: Yañca tattha tadubhayaṁ paṭicca uppajjati chandarāgo, taṁ tattha saṁyojanaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn35.232:10.1
+Pali: Saṁvijjati kho, āvuso, bhagavato cakkhu. 
+Sujato: The Buddha has an eye 
+Translator: There exists in the Blessed One the eye, 
+
+=== RUN 511: sn35.232:10.6 sn35.232:10.7 sn35.232:10.8 ===
+File: data/bodhi/sutta/sn/sn35/sn35.232_translation-en-bodhi.json
+ABOVE sn35.232:10.5
+Pali: Saṁvijjati kho, āvuso, bhagavato sotaṁ. 
+Sujato: The Buddha has an ear … 
+Translator: There exists in the Blessed One the ear, the Blessed One hears a sound with the ear … 
+JUDGE sn35.232:10.6
+Pali: Suṇāti bhagavā sotena saddaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.232:10.7
+Pali: Chandarāgo bhagavato natthi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.232:10.8
+Pali: Suvimuttacitto bhagavā. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.232:10.9
+Pali: Saṁvijjati kho, āvuso, bhagavato ghānaṁ. 
+Sujato: nose … 
+Translator: There exists in the Blessed One the nose, 
+
+=== RUN 512: sn35.232:10.11 sn35.232:10.12 ===
+File: data/bodhi/sutta/sn/sn35/sn35.232_translation-en-bodhi.json
+ABOVE sn35.232:10.10
+Pali: Ghāyati bhagavā ghānena gandhaṁ. 
+Sujato: (empty)
+Translator: the Blessed One smells an odour with the nose … 
+JUDGE sn35.232:10.11
+Pali: Chandarāgo bhagavato natthi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.232:10.12
+Pali: Suvimuttacitto bhagavā. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.232:10.13
+Pali: Saṁvijjati kho, āvuso, bhagavato jivhā. 
+Sujato: tongue … 
+Translator: There exists in the Blessed One the tongue, 
+
+=== RUN 513: sn35.232:10.15 sn35.232:10.16 ===
+File: data/bodhi/sutta/sn/sn35/sn35.232_translation-en-bodhi.json
+ABOVE sn35.232:10.14
+Pali: Sāyati bhagavā jivhāya rasaṁ. 
+Sujato: (empty)
+Translator: the Blessed One savours a taste with the tongue … 
+JUDGE sn35.232:10.15
+Pali: Chandarāgo bhagavato natthi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.232:10.16
+Pali: Suvimuttacitto bhagavā. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.232:10.17
+Pali: Saṁvijjati kho, āvuso, bhagavato kāyo. 
+Sujato: The Buddha has a body 
+Translator: There exists in the Blessed One the body, 
+
+=== RUN 514: sn35.232:10.19 sn35.232:10.20 ===
+File: data/bodhi/sutta/sn/sn35/sn35.232_translation-en-bodhi.json
+ABOVE sn35.232:10.18
+Pali: Phusati bhagavā kāyena phoṭṭhabbaṁ. 
+Sujato: with which he senses touch. 
+Translator: the Blessed One feels a tactile object with the body … 
+JUDGE sn35.232:10.19
+Pali: Chandarāgo bhagavato natthi. 
+Sujato: But he has no desire and greed, 
+Translator: (empty)
+JUDGE sn35.232:10.20
+Pali: Suvimuttacitto bhagavā. 
+Sujato: for his mind is well freed. 
+Translator: (empty)
+BELOW sn35.232:10.21
+Pali: Saṁvijjati kho, āvuso, bhagavato mano. 
+Sujato: The Buddha has a mind 
+Translator: There exists in the Blessed One the mind, 
+
+=== RUN 515: sn35.232:11.4 sn35.232:11.5 sn35.232:11.6 sn35.232:11.7 ===
+File: data/bodhi/sutta/sn/sn35/sn35.232_translation-en-bodhi.json
+ABOVE sn35.232:11.3
+Pali: Na sotaṁ … 
+Sujato: The ear … 
+Translator: how the ear is not the fetter of sounds nor sounds the fetter of the ear…; 
+JUDGE sn35.232:11.4
+Pali: na ghānaṁ … 
+Sujato: nose … 
+Translator: (empty)
+JUDGE sn35.232:11.5
+Pali: na jivhā rasānaṁ saṁyojanaṁ, na rasā jivhāya saṁyojanaṁ; 
+Sujato: tongue … 
+Translator: (empty)
+JUDGE sn35.232:11.6
+Pali: yañca tattha tadubhayaṁ paṭicca uppajjati chandarāgo taṁ tattha saṁyojanaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.232:11.7
+Pali: Na kāyo … 
+Sujato: body … 
+Translator: (empty)
+BELOW sn35.232:11.8
+Pali: na mano dhammānaṁ saṁyojanaṁ, na dhammā manassa saṁyojanaṁ; 
+Sujato: mind is not the fetter of ideas, nor are ideas the fetter of the mind. 
+Translator: how the mind is not the fetter of mental phenomena nor mental phenomena the fetter of the mind, 
+
+=== RUN 516: sn35.233:3.2 sn35.233:3.3 ===
+File: data/bodhi/sutta/sn/sn35/sn35.233_translation-en-bodhi.json
+ABOVE sn35.233:3.1
+Pali: “Na kho, āvuso kāmabhū, cakkhu rūpānaṁ saṁyojanaṁ, na rūpā cakkhussa saṁyojanaṁ. 
+Sujato: “Reverend Kāmabhū, the eye is not the fetter of sights, nor are sights the fetter of the eye. 
+Translator: “Friend Kāmabhū, the eye is not the fetter of forms nor are forms the fetter of the eye … 
+JUDGE sn35.233:3.2
+Pali: Yañca tattha tadubhayaṁ paṭicca uppajjati chandarāgo, taṁ tattha saṁyojanaṁ …pe… 
+Sujato: The fetter there is the desire and greed that arises from the pair of them. 
+Translator: (empty)
+JUDGE sn35.233:3.3
+Pali: na jivhā rasānaṁ saṁyojanaṁ, na rasā jivhāya saṁyojanaṁ …pe… 
+Sujato: The ear … nose … tongue … body … 
+Translator: (empty)
+BELOW sn35.233:3.4
+Pali: na mano dhammānaṁ saṁyojanaṁ, na dhammā manassa saṁyojanaṁ. 
+Sujato: mind is not the fetter of ideas, nor are ideas the fetter of the mind. 
+Translator: The mind is not the fetter of mental phenomena nor are mental phenomena the fetter of the mind, 
+
+=== RUN 517: sn35.234:5.2 sn35.234:5.3 sn35.234:5.4 sn35.234:5.5 ===
+File: data/bodhi/sutta/sn/sn35/sn35.234_translation-en-bodhi.json
+ABOVE sn35.234:5.1
+Pali: “Jivhañcāvuso, paṭicca rase ca uppajjati jivhāviññāṇan”ti? 
+Sujato: Does ear … nose … tongue … body … 
+Translator: “Doesn’t ear-consciousness arise in dependence on the ear and sounds?… 
+JUDGE sn35.234:5.2
+Pali: “Evamāvuso”ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.234:5.3
+Pali: “Yo cāvuso, hetu yo ca paccayo jivhāviññāṇassa uppādāya, so ca hetu, so ca paccayo sabbena sabbaṁ sabbathā sabbaṁ aparisesaṁ nirujjheyya, api nu kho jivhāviññāṇaṁ paññāyethā”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.234:5.4
+Pali: “No hetaṁ, āvuso”. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.234:5.5
+Pali: “Imināpi kho etaṁ, āvuso, pariyāyena bhagavatā akkhātaṁ vivaṭaṁ pakāsitaṁ: ‘itipidaṁ viññāṇaṁ anattā’”ti …pe…. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.234:6.1
+Pali: “Manañcāvuso, paṭicca dhamme ca uppajjati manoviññāṇan”ti? 
+Sujato: mind consciousness arise dependent on the mind and ideas?” 
+Translator: Doesn’t mind-consciousness arise in dependence on the mind and mental phenomena?” 
+
+=== RUN 518: sn35.237:1.2 sn35.237:1.3 sn35.237:1.4 ===
+File: data/bodhi/sutta/sn/sn35/sn35.237_translation-en-bodhi.json
+ABOVE sn35.237:1.1
+Pali: “Hatthesu, bhikkhave, sati ādānanikkhepanaṁ hoti; 
+Sujato: “Mendicants, when there are hands, there’s picking up and putting down. 
+Translator: “Bhikkhus, when there are hands, there is picking up and putting down…. 
+JUDGE sn35.237:1.2
+Pali: pādesu sati abhikkamapaṭikkamo hoti; 
+Sujato: When there are feet, there’s coming and going. 
+Translator: (empty)
+JUDGE sn35.237:1.3
+Pali: pabbesu sati samiñjanapasāraṇaṁ hoti; 
+Sujato: When there are joints, there’s contracting and extending. 
+Translator: (empty)
+JUDGE sn35.237:1.4
+Pali: kucchismiṁ sati jighacchā pipāsā hoti. 
+Sujato: When there’s a belly, there’s hunger and thirst. 
+Translator: (empty)
+BELOW (outside this paragraph) sn35.237:1.5
+Pali: Evameva kho, bhikkhave, cakkhusmiṁ sati cakkhusamphassapaccayā uppajjati ajjhattaṁ sukhaṁ dukkhaṁ …pe… 
+Sujato: In the same way, when there’s an eye, pleasure and pain arise internally conditioned by eye contact. 
+Translator: “So too, bhikkhus, when there is the eye, pleasure and pain arise internally with eye-contact as condition…. 
+
+=== RUN 519: sn35.237:2.2 sn35.237:2.3 sn35.237:2.4 ===
+File: data/bodhi/sutta/sn/sn35/sn35.237_translation-en-bodhi.json
+ABOVE sn35.237:2.1
+Pali: Hatthesu, bhikkhave, asati ādānanikkhepanaṁ na hoti; 
+Sujato: When there are no hands, there’s no picking up and putting down. 
+Translator: “When, bhikkhus, there are no hands, there is no picking up and putting down…. 
+JUDGE sn35.237:2.2
+Pali: pādesu asati abhikkamapaṭikkamo na hoti; 
+Sujato: When there are no feet, there’s no coming and going. 
+Translator: (empty)
+JUDGE sn35.237:2.3
+Pali: pabbesu asati samiñjanapasāraṇaṁ na hoti; 
+Sujato: When there are no joints, there’s no contracting and extending. 
+Translator: (empty)
+JUDGE sn35.237:2.4
+Pali: kucchismiṁ asati jighacchā pipāsā na hoti. 
+Sujato: When there’s no belly, there’s no hunger and thirst. 
+Translator: (empty)
+BELOW (outside this paragraph) sn35.237:2.5
+Pali: Evameva kho, bhikkhave, cakkhusmiṁ asati cakkhusamphassapaccayā nuppajjati ajjhattaṁ sukhaṁ dukkhaṁ …pe… 
+Sujato: In the same way, when there’s no eye, pleasure and pain don’t arise internally conditioned by eye contact. 
+Translator: “So too, bhikkhus, when there is no eye … 
+
+=== RUN 520: sn35.244:9.10 sn35.244:9.11 sn35.244:9.12 ===
+File: data/bodhi/sutta/sn/sn35/sn35.244_translation-en-bodhi.json
+ABOVE sn35.244:9.9
+Pali: “Evameva kho, bhikkhave, tañce bhikkhuṁ evaṁ carantaṁ evaṁ viharantaṁ rājāno vā rājamahāmattā vā mittā vā amaccā vā ñātī vā sālohitā vā bhogehi abhihaṭṭhuṁ pavāreyyuṁ: 
+Sujato: “In the same way, while that mendicant conducts themselves in this way and lives in this way, it may be that rulers or their chief ministers, friends or colleagues, relatives or family should invite them to accept wealth, saying, 
+Translator: “So too, bhikkhus, when a bhikkhu is conducting himself thus and dwelling thus, kings or royal ministers, friends or colleagues, relatives or kinsmen, might invite him to accept wealth … 
+JUDGE sn35.244:9.10
+Pali: ‘ehi, bho purisa, kiṁ te ime kāsāvā anudahanti, 
+Sujato: ‘Please, my man, why let these ocher robes torment you? 
+Translator: (empty)
+JUDGE sn35.244:9.11
+Pali: kiṁ muṇḍo kapālamanucarasi, 
+Sujato: Why follow the practice of shaving your head and carrying an alms bowl? 
+Translator: (empty)
+JUDGE sn35.244:9.12
+Pali: ehi hīnāyāvattitvā bhoge ca bhuñjassu, puññāni ca karohī’ti. 
+Sujato: Come, return to a lesser life, enjoy wealth, and make merit!’ 
+Translator: (empty)
+BELOW sn35.244:9.13
+Pali: So vata, bhikkhave, bhikkhu evaṁ caranto evaṁ viharanto sikkhaṁ paccakkhāya hīnāyāvattissatīti netaṁ ṭhānaṁ vijjati. 
+Sujato: But it is quite impossible for a mendicant who conducts themselves in this way and lives in this way to resign the training and return to a lesser life. 
+Translator: but it is impossible that he will give up the training and return to the lower life. 
+
+=== RUN 521: sn35.245:5.2 sn35.245:5.3 sn35.245:5.4 sn35.245:5.5 sn35.245:5.6 sn35.245:5.7 sn35.245:5.8 sn35.245:5.9 sn35.245:5.10 sn35.245:5.11 ===
+File: data/bodhi/sutta/sn/sn35/sn35.245_translation-en-bodhi.json
+ABOVE sn35.245:5.1
+Pali: Atha kho so bhikkhu asantuṭṭho tassa bhikkhussa pañhaveyyākaraṇena, yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ etadavoca: “idhāhaṁ, bhante, yenaññataro bhikkhu tenupasaṅkamiṁ; upasaṅkamitvā taṁ bhikkhuṁ etadavocaṁ: 
+Sujato: Not content with any of those answers, that mendicant went up to the Buddha and told him what had happened. Then he said to him, 
+Translator: Then the first bhikkhu, dissatisfied with the other’s answer, approached the Blessed One, reported everything that had happened, and asked: 
+JUDGE sn35.245:5.2
+Pali: ‘kittāvatā nu kho, āvuso, bhikkhuno dassanaṁ suvisuddhaṁ hotī’ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:5.3
+Pali: Evaṁ vutte, bhante, so bhikkhu maṁ etadavoca: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:5.4
+Pali: ‘yato kho, āvuso, bhikkhu channaṁ phassāyatanānaṁ samudayañca atthaṅgamañca yathābhūtaṁ pajānāti, ettāvatā kho, āvuso, bhikkhuno dassanaṁ suvisuddhaṁ hotī’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:5.5
+Pali: Atha khvāhaṁ, bhante, asantuṭṭho tassa bhikkhussa pañhaveyyākaraṇena, yenaññataro bhikkhu tenupasaṅkamiṁ; upasaṅkamitvā taṁ bhikkhuṁ etadavocaṁ: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:5.6
+Pali: ‘kittāvatā nu kho, āvuso, bhikkhuno dassanaṁ suvisuddhaṁ hotī’ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:5.7
+Pali: Evaṁ vutte, bhante, so bhikkhu maṁ etadavoca: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:5.8
+Pali: ‘yato kho, āvuso, bhikkhu pañcannaṁ upādānakkhandhānaṁ …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:5.9
+Pali: catunnaṁ mahābhūtānaṁ samudayañca atthaṅgamañca yathābhūtaṁ pajānāti …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:5.10
+Pali: yaṁ kiñci samudayadhammaṁ sabbaṁ taṁ nirodhadhammanti yathābhūtaṁ pajānāti, ettāvatā kho, āvuso, bhikkhuno dassanaṁ suvisuddhaṁ hotī’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:5.11
+Pali: Atha khvāhaṁ, bhante, asantuṭṭho tassa bhikkhussa pañhaveyyākaraṇena yena bhagavā tenupasaṅkamiṁ (…). 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.245:5.12
+Pali: Kittāvatā nu kho, bhante, bhikkhuno dassanaṁ suvisuddhaṁ hotī”ti? 
+Sujato: “Sir, at what point is a mendicant’s vision well purified?” 
+Translator: “In what way, venerable sir, is a bhikkhu’s vision well purified?” 
+
+=== RUN 522: sn35.245:8.11 sn35.245:8.12 sn35.245:8.13 ===
+File: data/bodhi/sutta/sn/sn35/sn35.245_translation-en-bodhi.json
+ABOVE sn35.245:8.10
+Pali: dakkhiṇāya disāya āgantvā sīghaṁ dūtayugaṁ taṁ dovārikaṁ evaṁ vadeyya: 
+Sujato: south … 
+Translator: from the south, 
+JUDGE sn35.245:8.11
+Pali: ‘kahaṁ, bho purisa, imassa nagarassāmī’ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:8.12
+Pali: So evaṁ vadeyya: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:8.13
+Pali: ‘eso, bhante, majjhe siṅghāṭake nisinno’ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.245:8.14
+Pali: Atha kho taṁ sīghaṁ dūtayugaṁ nagarassāmikassa yathābhūtaṁ vacanaṁ niyyātetvā yathāgatamaggaṁ paṭipajjeyya. 
+Sujato: deliver a message of truth to the lord of the city and depart the way they came. 
+Translator: deliver their message, and leave by the route by which they had arrived. 
+
+=== RUN 523: sn35.246:1.8 sn35.246:1.9 sn35.246:1.10 sn35.246:1.11 ===
+File: data/bodhi/sutta/sn/sn35/sn35.246_translation-en-bodhi.json
+ABOVE sn35.246:1.7
+Pali: manoviññeyyesu dhammesu uppajjeyya chando vā rāgo vā doso vā moho vā paṭighaṁ vāpi cetaso tato cittaṁ nivāreyya. 
+Sujato: ideas known by the mind should shield their mind against them: 
+Translator: regarding mental phenomena cognizable by the mind. 
+JUDGE sn35.246:1.8
+Pali: Sabhayo ceso maggo sappaṭibhayo ca sakaṇṭako ca sagahano ca ummaggo ca kummaggo ca duhitiko ca. 
+Sujato: ‘This path is dangerous and perilous, thorny and tangled; it’s a wrong turn, a bad path, a sorry state. 
+Translator: (empty)
+JUDGE sn35.246:1.9
+Pali: Asappurisasevito ceso maggo, na ceso maggo sappurisehi sevito. 
+Sujato: This path is frequented by untrue persons, not by true persons. 
+Translator: (empty)
+JUDGE sn35.246:1.10
+Pali: Na tvaṁ etaṁ arahasīti. 
+Sujato: It’s not worthy of you.’ 
+Translator: (empty)
+JUDGE sn35.246:1.11
+Pali: Tato cittaṁ nivāraye manoviññeyyehi dhammehi. 
+Sujato: The mind should be shielded from this when it comes to ideas known by the mind. 
+Translator: (empty)
+BELOW (outside this paragraph) sn35.246:2.1
+Pali: Seyyathāpi, bhikkhave, kiṭṭhaṁ sampannaṁ. 
+Sujato: Suppose the crops have ripened, 
+Translator: “Suppose, bhikkhus, that the barley has ripened 
+
+=== RUN 524: sn35.246:3.7 sn35.246:3.8 sn35.246:3.9 sn35.246:3.10 sn35.246:3.11 ===
+File: data/bodhi/sutta/sn/sn35/sn35.246_translation-en-bodhi.json
+ABOVE sn35.246:3.6
+Pali: Dutiyampi kho, bhikkhave …pe… 
+Sujato: For a second time, 
+Translator: This might happen a second time and a third time. 
+JUDGE sn35.246:3.7
+Pali: tatiyampi kho, bhikkhave, goṇo kiṭṭhādo aduṁ kiṭṭhaṁ otareyya. 
+Sujato: and even a third time, the same thing might happen. 
+Translator: (empty)
+JUDGE sn35.246:3.8
+Pali: Tamenaṁ kiṭṭhārakkho nāsāyaṁ suggahitaṁ gaṇheyya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.246:3.9
+Pali: Nāsāyaṁ suggahitaṁ gahetvā uparighaṭāyaṁ suniggahitaṁ niggaṇheyya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.246:3.10
+Pali: Uparighaṭāyaṁ suniggahitaṁ niggahetvā daṇḍena sutāḷitaṁ tāḷeyya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.246:3.11
+Pali: Daṇḍena sutāḷitaṁ tāḷetvā osajjeyya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.246:3.12
+Pali: Evañhi so, bhikkhave, goṇo kiṭṭhādo gāmagato vā araññagato vā, ṭhānabahulo vā assa nisajjabahulo vā na taṁ kiṭṭhaṁ puna otareyya—
+Sujato: As a result, no matter how often they might stand or sit in a village or wilderness, that ox fond of crops would never invade that crop again, 
+Translator: Thus that bull fond of barley, whether he has gone to the village or the forest, whether he is accustomed to standing or to sitting, 
+
+=== RUN 525: sn35.246:4.26 sn35.246:4.27 ===
+File: data/bodhi/sutta/sn/sn35/sn35.246_translation-en-bodhi.json
+ABOVE sn35.246:4.25
+Pali: Tassa rūpaṁ samanvesato yāvatā rūpassa gati, vedanaṁ samanvesato …pe… 
+Sujato: As they search in this way, 
+Translator: As he investigates form to the extent that there is a range for form … 
+JUDGE sn35.246:4.26
+Pali: saññaṁ … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.246:4.27
+Pali: saṅkhāre … 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.246:4.28
+Pali: viññāṇaṁ samanvesato yāvatā viññāṇassa gati. 
+Sujato: (empty)
+Translator: consciousness to the extent that there is a range for consciousness, 
+
+=== RUN 526: sn36.8:3.4 sn36.8:3.5 sn36.8:3.6 ===
+File: data/bodhi/sutta/sn/sn36/sn36.8_translation-en-bodhi.json
+ABOVE sn36.8:3.3
+Pali: vedanāsu vedanānupassī viharati … 
+Sujato: They meditate observing an aspect of feelings … 
+Translator: As in preceding sutta down to the second injunction: 
+JUDGE sn36.8:3.4
+Pali: citte cittānupassī viharati … 
+Sujato: They meditate observing an aspect of the mind … 
+Translator: (empty)
+JUDGE sn36.8:3.5
+Pali: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+Sujato: They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
+Translator: (empty)
+JUDGE sn36.8:3.6
+Pali: Evaṁ kho, bhikkhave, bhikkhu sato hoti. 
+Sujato: That’s how a mendicant is mindful. 
+Translator: (empty)
+BELOW (outside this paragraph) sn36.8:4.4
+Pali: Sato, bhikkhave, bhikkhu sampajāno kālaṁ āgameyya. 
+Sujato: A mendicant should await their time mindful and aware. 
+Translator: “A bhikkhu should await his time mindful and clearly comprehending. 
+
+=== RUN 527: sn36.15:1.15 sn36.15:1.16 sn36.15:1.17 ===
+File: data/bodhi/sutta/sn/sn36/sn36.15_translation-en-bodhi.json
+ABOVE sn36.15:1.14
+Pali: Atha kho panānanda, mayā anupubbasaṅkhārānaṁ nirodho akkhāto. 
+Sujato: But I have also explained the progressive cessation of activities. 
+Translator: “Then, Ānanda, I have also taught the successive cessation of formations … as in §11…. 
+JUDGE sn36.15:1.15
+Pali: Paṭhamaṁ jhānaṁ samāpannassa vācā niruddhā hoti …pe… 
+Sujato: For someone who has attained the first absorption, speech has ceased. … 
+Translator: (empty)
+JUDGE sn36.15:1.16
+Pali: saññāvedayitanirodhaṁ samāpannassa saññā ca vedanā ca niruddhā honti. 
+Sujato: For someone who has attained the cessation of perception and feeling, perception and feeling have ceased. 
+Translator: (empty)
+JUDGE sn36.15:1.17
+Pali: Khīṇāsavassa bhikkhuno rāgo niruddho hoti, doso niruddho hoti, moho niruddho hoti. 
+Sujato: For a mendicant who has ended the defilements, greed, hate, and delusion have ceased. 
+Translator: (empty)
+BELOW (outside this paragraph) sn36.15:1.29
+Pali: Khīṇāsavassa bhikkhuno rāgo paṭippassaddho hoti, doso paṭippassaddho hoti, moho paṭippassaddho hotī”ti. 
+Sujato: For a mendicant who has ended the defilements, greed, hate, and delusion have been tranquilized.” 
+Translator: For a bhikkhu whose taints are destroyed, lust has been tranquillized, hatred has been tranquillized, delusion has been tranquillized.” 
+
+=== RUN 528: sn36.17:2.11 sn36.17:2.12 ===
+File: data/bodhi/sutta/sn/sn36/sn36.17_translation-en-bodhi.json
+ABOVE sn36.17:2.10
+Pali: Tatiyaṁ jhānaṁ samāpannassa pīti paṭippassaddhā hoti. 
+Sujato: For someone who has attained the third absorption, rapture has been tranquilized. 
+Translator: [222–23] 
+JUDGE sn36.17:2.11
+Pali: Catutthaṁ jhānaṁ samāpannassa assāsapassāsā paṭippassaddhā honti. 
+Sujato: For someone who has attained the fourth absorption, breathing has been tranquilized. 
+Translator: (empty)
+JUDGE sn36.17:2.12
+Pali: Saññāvedayitanirodhaṁ samāpannassa saññā ca vedanā ca paṭippassaddhā honti. 
+Sujato: For someone who has attained the cessation of perception and feeling, perception and feeling have been tranquilized. 
+Translator: (empty)
+BELOW (outside this paragraph): (none)
+
+=== RUN 529: sn36.19:3.2 sn36.19:3.3 sn36.19:3.4 sn36.19:3.5 ===
+File: data/bodhi/sutta/sn/sn36/sn36.19_translation-en-bodhi.json
+ABOVE sn36.19:3.1
+Pali: Tatiyampi kho āyasmā udāyī pañcakaṅgaṁ thapatiṁ etadavoca: 
+Sujato: And for a third time, Udāyī said to him, 
+Translator: A second time and a third time the Venerable Udayī stated his position, 
+JUDGE sn36.19:3.2
+Pali: “na kho, thapati, dve vedanā vuttā bhagavatā. 
+Sujato: “The Buddha hasn’t spoken of two feelings, 
+Translator: (empty)
+JUDGE sn36.19:3.3
+Pali: Tisso vedanā vuttā bhagavatā. 
+Sujato: he’s spoken of three.” 
+Translator: (empty)
+JUDGE sn36.19:3.4
+Pali: Sukhā vedanā, dukkhā vedanā, adukkhamasukhā vedanā—
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn36.19:3.5
+Pali: imā tisso vedanā vuttā bhagavatā”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn36.19:3.6
+Pali: Tatiyampi kho pañcakaṅgo thapati āyasmantaṁ udāyiṁ etadavoca: 
+Sujato: And for a third time, Pañcakaṅga said to Udāyī, 
+Translator: and a second time and a third time the carpenter Pañcakaṅga stated his, 
+
+=== RUN 530: sn36.19:3.7 sn36.19:3.8 sn36.19:3.9 sn36.19:3.10 ===
+File: data/bodhi/sutta/sn/sn36/sn36.19_translation-en-bodhi.json
+ABOVE sn36.19:3.6
+Pali: Tatiyampi kho pañcakaṅgo thapati āyasmantaṁ udāyiṁ etadavoca: 
+Sujato: And for a third time, Pañcakaṅga said to Udāyī, 
+Translator: and a second time and a third time the carpenter Pañcakaṅga stated his, 
+JUDGE sn36.19:3.7
+Pali: “na kho, bhante udāyi, tisso vedanā vuttā bhagavatā. 
+Sujato: “The Buddha hasn’t spoken of three feelings, 
+Translator: (empty)
+JUDGE sn36.19:3.8
+Pali: Dve vedanā vuttā bhagavatā—
+Sujato: he’s spoken of two.” 
+Translator: (empty)
+JUDGE sn36.19:3.9
+Pali: sukhā vedanā, dukkhā vedanā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn36.19:3.10
+Pali: Yāyaṁ, bhante, adukkhamasukhā vedanā, santasmiṁ esā paṇīte sukhe vuttā bhagavatā”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn36.19:3.11
+Pali: Neva sakkhi āyasmā udāyī pañcakaṅgaṁ thapatiṁ saññāpetuṁ, na panāsakkhi pañcakaṅgo thapati āyasmantaṁ udāyiṁ saññāpetuṁ. 
+Sujato: But neither was able to persuade the other. 
+Translator: but the Venerable Udayī could not convince the carpenter Pañcakaṅga nor could the carpenter Pañcakaṅga convince the Venerable Udayī. 
+
+=== RUN 531: sn36.24:1.6 sn36.24:1.7 sn36.24:1.8 ===
+File: data/bodhi/sutta/sn/sn36/sn36.24_translation-en-bodhi.json
+ABOVE sn36.24:1.5
+Pali: ‘tisso imā vedanā—
+Sujato: ‘There are these three feelings: 
+Translator: ‘There are these three feelings … 
+JUDGE sn36.24:1.6
+Pali: sukhā vedanā, dukkhā vedanā, adukkhamasukhā vedanā. 
+Sujato: pleasant, painful, and neutral. 
+Translator: (empty)
+JUDGE sn36.24:1.7
+Pali: Imā vuccanti vedanā. 
+Sujato: These are called feelings. 
+Translator: (empty)
+JUDGE sn36.24:1.8
+Pali: Phassasamudayā vedanāsamudayo. 
+Sujato: Feeling originates from contact. 
+Translator: (empty)
+BELOW sn36.24:1.9
+Pali: Taṇhā vedanāsamudayagāminī paṭipadā …pe… 
+Sujato: Craving is the practice that leads to the origin of feeling … 
+Translator: all as in preceding sutta … 
+
+=== RUN 532: sn43.12:2.9 sn43.12:2.10 ===
+File: data/bodhi/sutta/sn/sn43/sn43.12_translation-en-bodhi.json
+ABOVE sn43.12:2.8
+Pali: Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo. 
+Sujato: This is called the path that leads to the unconditioned. …” 
+Translator: this is called the path leading to the unconditioned….” 
+JUDGE sn43.12:2.9
+Pali: Iti kho, bhikkhave, desitaṁ vo mayā asaṅkhataṁ …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:2.10
+Pali: ayaṁ vo amhākaṁ anusāsanīti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn43.12:3.1
+Pali: Katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+Sujato: “And what is the path that leads to the unconditioned? 
+Translator: <span class="heading">iii–viii. Concentration</span> iii … “And what, bhikkhus, is the path leading to the unconditioned? 
+
+=== RUN 533: sn43.12:8.6 sn43.12:8.7 ===
+File: data/bodhi/sutta/sn/sn43/sn43.12_translation-en-bodhi.json
+ABOVE sn43.12:8.5
+Pali: Idha, bhikkhave, bhikkhu vīriyindriyaṁ bhāveti vivekanissitaṁ …pe… 
+Sujato: A mendicant develops the faculty of energy … 
+Translator: Here, bhikkhus, a bhikkhu develops the faculty of energy … 
+JUDGE sn43.12:8.6
+Pali: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:8.7
+Pali: katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn43.12:8.8
+Pali: Idha, bhikkhave, bhikkhu satindriyaṁ bhāveti …pe… 
+Sujato: mindfulness … 
+Translator: the faculty of mindfulness … 
+
+=== RUN 534: sn43.12:8.9 sn43.12:8.10 ===
+File: data/bodhi/sutta/sn/sn43/sn43.12_translation-en-bodhi.json
+ABOVE sn43.12:8.8
+Pali: Idha, bhikkhave, bhikkhu satindriyaṁ bhāveti …pe… 
+Sujato: mindfulness … 
+Translator: the faculty of mindfulness … 
+JUDGE sn43.12:8.9
+Pali: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:8.10
+Pali: katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn43.12:8.11
+Pali: Idha, bhikkhave, bhikkhu samādhindriyaṁ bhāveti …pe… 
+Sujato: immersion … 
+Translator: the faculty of concentration … 
+
+=== RUN 535: sn43.12:8.12 sn43.12:8.13 ===
+File: data/bodhi/sutta/sn/sn43/sn43.12_translation-en-bodhi.json
+ABOVE sn43.12:8.11
+Pali: Idha, bhikkhave, bhikkhu samādhindriyaṁ bhāveti …pe… 
+Sujato: immersion … 
+Translator: the faculty of concentration … 
+JUDGE sn43.12:8.12
+Pali: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:8.13
+Pali: katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn43.12:8.14
+Pali: Idha, bhikkhave, bhikkhu paññindriyaṁ bhāveti vivekanissitaṁ virāganissitaṁ nirodhanissitaṁ vossaggapariṇāmiṁ. Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe…. 
+Sujato: wisdom, which relies on seclusion, fading away, and cessation, and ripens as letting go. … 
+Translator: the faculty of wisdom, which is based upon seclusion, dispassion, and cessation, maturing in release: this is called the path leading to the unconditioned….” 
+
+=== RUN 536: sn43.12:9.6 sn43.12:9.7 ===
+File: data/bodhi/sutta/sn/sn43/sn43.12_translation-en-bodhi.json
+ABOVE sn43.12:9.5
+Pali: Idha, bhikkhave, bhikkhu vīriyabalaṁ bhāveti …pe… 
+Sujato: energy … 
+Translator: Here, bhikkhus, a bhikkhu develops the power of energy … 
+JUDGE sn43.12:9.6
+Pali: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:9.7
+Pali: katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn43.12:9.8
+Pali: Idha, bhikkhave, bhikkhu satibalaṁ bhāveti …pe… 
+Sujato: mindfulness … 
+Translator: the power of mindfulness … 
+
+=== RUN 537: sn43.12:9.12 sn43.12:9.13 ===
+File: data/bodhi/sutta/sn/sn43/sn43.12_translation-en-bodhi.json
+ABOVE sn43.12:9.11
+Pali: Idha, bhikkhave, bhikkhu samādhibalaṁ bhāveti …pe… 
+Sujato: immersion … 
+Translator: the power of concentration … 
+JUDGE sn43.12:9.12
+Pali: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:9.13
+Pali: katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn43.12:9.14
+Pali: Idha, bhikkhave, bhikkhu paññābalaṁ bhāveti vivekanissitaṁ virāganissitaṁ nirodhanissitaṁ vossaggapariṇāmiṁ. Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe…. 
+Sujato: wisdom, which relies on seclusion, fading away, and cessation, and ripens as letting go. … 
+Translator: the power of wisdom, which is based upon seclusion, dispassion, and cessation, maturing in release: this is called the path leading to the unconditioned….” 
+
+=== RUN 538: sn43.12:11.11 sn43.12:11.12 sn43.12:11.13 sn43.12:11.14 ===
+File: data/bodhi/sutta/sn/sn43/sn43.12_translation-en-bodhi.json
+ABOVE sn43.12:11.10
+Pali: sammāsatiṁ bhāveti …pe… 
+Sujato: right mindfulness … 
+Translator: right mindfulness … 
+JUDGE sn43.12:11.11
+Pali: asaṅkhatañca vo, bhikkhave, desessāmi asaṅkhatagāmiñca maggaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:11.12
+Pali: Taṁ suṇātha. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:11.13
+Pali: Katamañca, bhikkhave, asaṅkhataṁ …pe…? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:11.14
+Pali: Katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn43.12:11.15
+Pali: Idha, bhikkhave, bhikkhu sammāsamādhiṁ bhāveti vivekanissitaṁ virāganissitaṁ nirodhanissitaṁ vossaggapariṇāmiṁ. 
+Sujato: right immersion, which relies on seclusion, fading away, and cessation, and ripens as letting go. 
+Translator: right concentration, which is based upon seclusion, dispassion, and cessation, maturing in release: 
+
+=== RUN 539: sn43.23:1.2 sn43.23:1.3 ===
+File: data/bodhi/sutta/sn/sn43/sn43.14-43_translation-en-bodhi.json
+ABOVE sn43.23:1.1
+Pali: Nippapañcañca vo, bhikkhave, desessāmi nippapañcagāmiñca maggaṁ. 
+Sujato: “the unproliferated …” 
+Translator: the unproliferated … 
+JUDGE sn43.23:1.2
+Pali: Taṁ suṇātha. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.23:1.3
+Pali: Katamañca, bhikkhave, nippapañcaṁ …pe…? 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn43.24:1.1
+Pali: Santañca vo, bhikkhave, desessāmi santagāmiñca maggaṁ. 
+Sujato: “the peaceful …” 
+Translator: the peaceful … 
+
+=== RUN 540: sn43.29:1.2 sn43.29:1.3 ===
+File: data/bodhi/sutta/sn/sn43/sn43.14-43_translation-en-bodhi.json
+ABOVE sn43.29:1.1
+Pali: Taṇhākkhayañca vo, bhikkhave, desessāmi taṇhākkhayagāmiñca maggaṁ. 
+Sujato: “the ending of craving …” 
+Translator: the destruction of craving … 
+JUDGE sn43.29:1.2
+Pali: Taṁ suṇātha. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.29:1.3
+Pali: Katamañca, bhikkhave, taṇhākkhayaṁ …pe…? 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn43.30:1.1
+Pali: Acchariyañca vo, bhikkhave, desessāmi acchariyagāmiñca maggaṁ. 
+Sujato: “the incredible …” 
+Translator: the wonderful … 
+
+=== RUN 541: sn44.1:5.2 sn44.1:5.3 sn44.1:5.4 sn44.1:5.5 sn44.1:5.6 sn44.1:5.7 sn44.1:5.8 sn44.1:5.9 ===
+File: data/bodhi/sutta/sn/sn44/sn44.1_translation-en-bodhi.json
+ABOVE sn44.1:5.1
+Pali: “‘Kiṁ nu kho, ayye, hoti tathāgato paraṁ maraṇā’ti, iti puṭṭhā samānā: 
+Sujato: “Ma’am, when asked these questions, you say 
+Translator: “How is this, revered lady? When asked, ‘How is it, revered lady, does the Tathagata exist after death?’ … 
+JUDGE sn44.1:5.2
+Pali: ‘abyākataṁ kho etaṁ, mahārāja, bhagavatā—
+Sujato: that this has not been declared by the Buddha. 
+Translator: (empty)
+JUDGE sn44.1:5.3
+Pali: hoti tathāgato paraṁ maraṇā’ti vadesi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:5.4
+Pali: ‘Kiṁ panayye, na hoti tathāgato paraṁ maraṇā’ti iti puṭṭhā samānā: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:5.5
+Pali: ‘etampi kho, mahārāja, abyākataṁ bhagavatā—
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:5.6
+Pali: na hoti tathāgato paraṁ maraṇā’ti vadesi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:5.7
+Pali: ‘Kiṁ nu kho, ayye, hoti ca na ca hoti tathāgato paraṁ maraṇā’ti iti puṭṭhā samānā: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:5.8
+Pali: ‘abyākataṁ kho etaṁ, mahārāja, bhagavatā—
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:5.9
+Pali: hoti ca na ca hoti tathāgato paraṁ maraṇā’ti vadesi. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn44.1:5.10
+Pali: ‘Kiṁ panayye, neva hoti na na hoti tathāgato paraṁ maraṇā’ti iti puṭṭhā samānā: 
+Sujato: (empty)
+Translator: And when asked, ‘Then, revered lady, does the Tathagata neither exist nor not exist after death?’—
+
+=== RUN 542: sn44.1:7.2 sn44.1:7.3 sn44.1:7.4 ===
+File: data/bodhi/sutta/sn/sn44/sn44.1_translation-en-bodhi.json
+ABOVE sn44.1:7.1
+Pali: Yāya vedanāya tathāgataṁ paññāpayamāno paññāpeyya, sā vedanā tathāgatassa pahīnā ucchinnamūlā tālāvatthukatā anabhāvaṅkatā āyatiṁ anuppādadhammā. 
+Sujato: Any feeling … 
+Translator: “That feeling by which one describing the Tathagata might describe him … 
+JUDGE sn44.1:7.2
+Pali: Vedanāsaṅkhāyavimutto, mahārāja, tathāgato gambhīro appameyyo duppariyogāho—
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:7.3
+Pali: seyyathāpi mahāsamuddo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:7.4
+Pali: ‘Hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘na hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipi na upeti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn44.1:8.1
+Pali: Yāya saññāya tathāgataṁ …pe… 
+Sujato: perception … 
+Translator: That perception by which one describing the Tathagata might describe him … 
+
+=== RUN 543: sn44.1:8.3 sn44.1:8.4 sn44.1:8.5 ===
+File: data/bodhi/sutta/sn/sn44/sn44.1_translation-en-bodhi.json
+ABOVE sn44.1:8.2
+Pali: yehi saṅkhārehi tathāgataṁ paññāpayamāno paññāpeyya, te saṅkhārā tathāgatassa pahīnā ucchinnamūlā tālāvatthukatā anabhāvaṅkatā āyatiṁ anuppādadhammā. 
+Sujato: choices … 
+Translator: Those volitional formations by which one describing the Tathagata might describe him … 
+JUDGE sn44.1:8.3
+Pali: Saṅkhārasaṅkhāyavimutto kho, mahārāja, tathāgato gambhīro appameyyo duppariyogāho—
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:8.4
+Pali: seyyathāpi mahāsamuddo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:8.5
+Pali: ‘Hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘na hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipi na upeti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn44.1:9.1
+Pali: Yena viññāṇena tathāgataṁ paññāpayamāno paññāpeyya taṁ viññāṇaṁ tathāgatassa pahīnaṁ ucchinnamūlaṁ tālāvatthukataṁ anabhāvaṅkataṁ āyatiṁ anuppādadhammaṁ. 
+Sujato: consciousness by which a realized one might be described has been cut off at the root, made like a palm stump, obliterated, and unable to arise in the future. 
+Translator: That consciousness by which one describing the Tathagata might describe him has been abandoned by the Tathagata, cut off at the root, made like a palm stump, obliterated so that it is no more subject to future arising. 
+
+=== RUN 544: sn44.1:10.6 sn44.1:10.7 sn44.1:10.8 sn44.1:10.9 sn44.1:10.10 sn44.1:10.11 ===
+File: data/bodhi/sutta/sn/sn44/sn44.1_translation-en-bodhi.json
+ABOVE sn44.1:10.5
+Pali: “Kiṁ pana, bhante, na hoti tathāgato paraṁ maraṇā”ti? 
+Sujato: (empty)
+Translator: All as above down to: 
+JUDGE sn44.1:10.6
+Pali: “Etampi kho, mahārāja, abyākataṁ mayā: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.7
+Pali: ‘na hoti tathāgato paraṁ maraṇā’”ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.8
+Pali: “Kiṁ nu kho, bhante, hoti ca na ca hoti tathāgato paraṁ maraṇā”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.9
+Pali: “Abyākataṁ kho etaṁ, mahārāja, mayā: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.10
+Pali: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’”ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.11
+Pali: “Kiṁ pana, bhante, neva hoti na na hoti tathāgato paraṁ maraṇā”ti? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn44.1:10.12
+Pali: “Etampi kho, mahārāja, abyākataṁ mayā: 
+Sujato: (empty)
+Translator: “Great king, I have not declared this either: 
+
+=== RUN 545: sn44.1:11.3 sn44.1:11.4 sn44.1:11.5 sn44.1:11.6 sn44.1:11.7 sn44.1:11.8 sn44.1:11.9 ===
+File: data/bodhi/sutta/sn/sn44/sn44.1_translation-en-bodhi.json
+ABOVE sn44.1:11.2
+Pali: Taṁ kiṁ maññasi, mahārāja, atthi te koci gaṇako vā muddiko vā saṅkhāyako vā yo pahoti gaṅgāya vālukaṁ gaṇetuṁ—
+Sujato: (empty)
+Translator: What do you think, great king? Do you have an accountant or calculator or mathematician … all as above down to: … 
+JUDGE sn44.1:11.3
+Pali: ettakā vālukā iti vā …pe… ettakāni vālukasatasahassāni iti vā”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:11.4
+Pali: “No hetaṁ, bhante”. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:11.5
+Pali: “Atthi pana te koci gaṇako vā muddiko vā saṅkhāyako vā yo pahoti mahāsamudde udakaṁ gaṇetuṁ—
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:11.6
+Pali: ettakāni udakāḷhakāni iti vā …pe… ettakāni udakāḷhakasatasahassāni iti vā”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:11.7
+Pali: “No hetaṁ, bhante”. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:11.8
+Pali: “Taṁ kissa hetu”? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:11.9
+Pali: “Mahā, bhante, samuddo gambhīro appameyyo duppariyogāho. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn44.1:12.2
+Pali: Viññāṇasaṅkhāyavimutto kho, mahārāja, tathāgato gambhīro appameyyo duppariyogāho—
+Sujato: (empty)
+Translator: The Tathagata, great king, is liberated from reckoning in terms of consciousness: he is deep, immeasurable, hard to fathom like the great ocean. 
+
+=== RUN 546: sn44.2:2.13 sn44.2:2.14 sn44.2:2.15 sn44.2:2.16 sn44.2:2.17 sn44.2:2.18 sn44.2:2.19 ===
+File: data/bodhi/sutta/sn/sn44/sn44.2_translation-en-bodhi.json
+ABOVE sn44.2:2.12
+Pali: ‘yo so, āvuso, tathāgato uttamapuriso paramapuriso paramapattipatto, taṁ tathāgato aññatra imehi catūhi ṭhānehi paññāpayamāno paññāpeti: 
+Sujato: (empty)
+Translator: (Identical with <a href="https://suttacentral.net/sn22.86">SN22.86</a>.) 
+JUDGE sn44.2:2.13
+Pali: “hoti tathāgato paraṁ maraṇā”ti vā …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.2:2.14
+Pali: “neva hoti na na hoti tathāgato paraṁ maraṇā”ti vā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.2:2.15
+Pali: Evaṁ vutte, bhante, te aññatitthiyā paribbājakā maṁ etadavocuṁ: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.2:2.16
+Pali: ‘so cāyaṁ bhikkhu navo bhavissati acirapabbajito thero vā pana bālo abyatto’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.2:2.17
+Pali: Atha kho maṁ, bhante, te aññatitthiyā paribbājakā navavādena ca bālavādena ca apasādetvā uṭṭhāyāsanā pakkamiṁsu. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.2:2.18
+Pali: Tassa mayhaṁ, bhante, acirapakkantesu tesu aññatitthiyesu paribbājakesu etadahosi: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.2:2.19
+Pali: ‘sace kho maṁ te aññatitthiyā paribbājakā uttariṁ puccheyyuṁ, kathaṁ byākaramāno nu khvāhaṁ tesaṁ aññatitthiyānaṁ paribbājakānaṁ vuttavādī ceva bhagavato assaṁ, na ca bhagavantaṁ abhūtena abbhācikkheyyaṁ, dhammassa cānudhammaṁ byākareyyaṁ, na ca koci sahadhammiko vādānuvādo gārayhaṁ ṭhānaṁ āgaccheyyā’”ti? 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn44.2:16.6
+Pali: “Saññaṁ tathāgatoti samanupassasī”ti? 
+Sujato: “… perception?” … 
+Translator: [381–84] 
+
+=== RUN 547: sn44.2:16.7 sn44.2:16.8 sn44.2:16.9 sn44.2:16.10 ===
+File: data/bodhi/sutta/sn/sn44/sn44.2_translation-en-bodhi.json
+ABOVE sn44.2:16.6
+Pali: “Saññaṁ tathāgatoti samanupassasī”ti? 
+Sujato: “… perception?” … 
+Translator: [381–84] 
+JUDGE sn44.2:16.7
+Pali: “No hetaṁ, bhante”. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.2:16.8
+Pali: “Saṅkhāre tathāgatoti samanupassasī”ti? 
+Sujato: “… choices?” … 
+Translator: (empty)
+JUDGE sn44.2:16.9
+Pali: “No hetaṁ, bhante”. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.2:16.10
+Pali: “Viññāṇaṁ tathāgatoti samanupassasī”ti? 
+Sujato: “… consciousness?” 
+Translator: (empty)
+BELOW (outside this paragraph): (none)
+
+=== RUN 548: sn44.3:2.5 sn44.3:2.6 ===
+File: data/bodhi/sutta/sn/sn44/sn44.3_translation-en-bodhi.json
+ABOVE sn44.3:2.4
+Pali: “Kiṁ panāvuso, na hoti tathāgato paraṁ maraṇā”ti? 
+Sujato: “Well then, does a realized one no longer exist after death? … 
+Translator: As in the preceding sutta down to: 
+JUDGE sn44.3:2.5
+Pali: “Etampi kho, āvuso, abyākataṁ bhagavatā: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.3:2.6
+Pali: ‘na hoti tathāgato paraṁ maraṇā’”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn44.3:2.11
+Pali: “Etampi kho, āvuso, abyākataṁ bhagavatā: 
+Sujato: “This too has not been declared by the Buddha.” 
+Translator: “Friend, the Blessed One has not declared this either: 
+
+=== RUN 549: sn44.3:3.2 sn44.3:3.3 sn44.3:3.4 sn44.3:3.5 ===
+File: data/bodhi/sutta/sn/sn44/sn44.3_translation-en-bodhi.json
+ABOVE sn44.3:3.1
+Pali: “‘Kiṁ nu kho, āvuso, hoti tathāgato paraṁ maraṇā’ti iti puṭṭho samāno, ‘abyākataṁ kho etaṁ, āvuso, bhagavatā—
+Sujato: “Reverend, when asked these questions, you say that they have not been declared by the Buddha. 
+Translator: “How is this, friend? When asked, ‘How is it, friend, does the Tathagata exist after death?’ … And when asked, ‘Then, friend, does the Tathagata neither exist nor not exist after death?’—in each case you say: ‘Friend, the Blessed One has not declared this.’ 
+JUDGE sn44.3:3.2
+Pali: hoti tathāgato paraṁ maraṇā’ti vadesi …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.3:3.3
+Pali: ‘kiṁ panāvuso, neva hoti na na hoti tathāgato paraṁ maraṇā’ti iti puṭṭho samāno: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.3:3.4
+Pali: ‘etampi kho, āvuso, abyākataṁ bhagavatā—
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.3:3.5
+Pali: neva hoti na na hoti tathāgato paraṁ maraṇā’ti vadesi. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn44.3:3.6
+Pali: Ko nu kho, āvuso, hetu, ko paccayo yenetaṁ abyākataṁ bhagavatā”ti? 
+Sujato: What’s the cause, what’s the reason why they have not been declared by the Buddha?” 
+Translator: What now, friend, is the cause and reason why this has not been declared by the Blessed One?” 
+
+=== RUN 550: sn44.3:4.6 sn44.3:4.7 sn44.3:4.8 ===
+File: data/bodhi/sutta/sn/sn44/sn44.3_translation-en-bodhi.json
+ABOVE sn44.3:4.5
+Pali: Hoti tathāgato paraṁ maraṇāti kho, āvuso, vedanāgatametaṁ. 
+Sujato: ‘Does a realized one still exist after death?’ is included in feeling … 
+Translator: “‘The Tathagata exists after death’: this, friend, is an involvement with feeling … 
+JUDGE sn44.3:4.6
+Pali: Na hoti tathāgato paraṁ maraṇāti, vedanāgatametaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.3:4.7
+Pali: Hoti ca na ca hoti tathāgato paraṁ maraṇāti, vedanāgatametaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.3:4.8
+Pali: Neva hoti na na hoti tathāgato paraṁ maraṇāti, vedanāgatametaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn44.3:4.9
+Pali: Hoti tathāgato paraṁ maraṇāti kho, āvuso, saññāgatametaṁ. 
+Sujato: perception … 
+Translator: an involvement with perception … 

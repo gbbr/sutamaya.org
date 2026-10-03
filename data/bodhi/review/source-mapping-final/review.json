@@ -1,0 +1,163 @@
+{
+  "translator": "bodhi",
+  "effort": "high",
+  "authority": "Pali on all 190 rows; Sujato is secondary context",
+  "status": "settled; reapplied and verified in a fresh working-tree copy",
+  "sourcePages": [
+    {
+      "old": "data/upstream/bodhi/sutta/sn/sn45/sn45.50-54.html",
+      "duplicate": "data/upstream/bodhi/sutta/sn/sn45/sn45.55.html",
+      "new": "data/upstream/bodhi/sutta/sn/sn45/sn45.50-55.html",
+      "page": "sn45.50-55",
+      "documents": [
+        "sn45.50-54",
+        "sn45.55"
+      ],
+      "sha256": "0b6c19e0cfa418cf94f3fd1098ff5727cccdd64b3a1925750aebd11bf0c9dda3"
+    },
+    {
+      "old": "data/upstream/bodhi/sutta/sn/sn45/sn45.57-61.html",
+      "duplicate": "data/upstream/bodhi/sutta/sn/sn45/sn45.62.html",
+      "new": "data/upstream/bodhi/sutta/sn/sn45/sn45.57-62.html",
+      "page": "sn45.57-62",
+      "documents": [
+        "sn45.57-61",
+        "sn45.62"
+      ],
+      "sha256": "57b679628ade4881f8d817d7e4b82deff8a499dca4a4ec785107d43345965abd"
+    },
+    {
+      "old": "data/upstream/bodhi/sutta/sn/sn45/sn45.42-47.html",
+      "duplicate": "data/upstream/bodhi/sutta/sn/sn45/sn45.48.html",
+      "new": "data/upstream/bodhi/sutta/sn/sn45/sn45.42-48.html",
+      "page": "sn45.42-48",
+      "documents": [
+        "sn45.42-47",
+        "sn45.48"
+      ],
+      "sha256": "60a784f4bd8827013fe65674fbdfdca57a8f3fc1c407f42aced73c0ef7e3010f"
+    },
+    {
+      "old": "data/upstream/bodhi/sutta/sn/sn45/sn45.64-68.html",
+      "duplicate": "data/upstream/bodhi/sutta/sn/sn45/sn45.69.html",
+      "new": "data/upstream/bodhi/sutta/sn/sn45/sn45.64-69.html",
+      "page": "sn45.64-69",
+      "documents": [
+        "sn45.64-68",
+        "sn45.69"
+      ],
+      "sha256": "ae86f8c8e21596955ab447bae2ec86579e54e86767ba1101ffe0bbdfae4c7531"
+    },
+    {
+      "old": "data/upstream/bodhi/sutta/sn/sn45/sn45.71-75.html",
+      "duplicate": "data/upstream/bodhi/sutta/sn/sn45/sn45.76.html",
+      "new": "data/upstream/bodhi/sutta/sn/sn45/sn45.71-76.html",
+      "page": "sn45.71-76",
+      "documents": [
+        "sn45.71-75",
+        "sn45.76"
+      ],
+      "sha256": "865b56f07d1b1d88233c5e79dae30318be865e99765b3534bfdc9e51408fe879"
+    },
+    {
+      "old": "data/upstream/bodhi/sutta/sn/sn45/sn45.78-82.html",
+      "duplicate": "data/upstream/bodhi/sutta/sn/sn45/sn45.83.html",
+      "new": "data/upstream/bodhi/sutta/sn/sn45/sn45.78-83.html",
+      "page": "sn45.78-83",
+      "documents": [
+        "sn45.78-82",
+        "sn45.83"
+      ],
+      "sha256": "1c8e0f5240a697cda9e7214bbcf9b8f19ba5a8eca641e18a77379a16757b0a51"
+    },
+    {
+      "old": "data/upstream/bodhi/sutta/sn/sn45/sn45.85-89.html",
+      "duplicate": "data/upstream/bodhi/sutta/sn/sn45/sn45.90.html",
+      "new": "data/upstream/bodhi/sutta/sn/sn45/sn45.85-90.html",
+      "page": "sn45.85-90",
+      "documents": [
+        "sn45.85-89",
+        "sn45.90"
+      ],
+      "sha256": "3bfcb2384d71f4acedcd715d5cff3f7db084891df64a45f9297e705da3abdfde"
+    },
+    {
+      "old": "data/upstream/bodhi/sutta/sn/sn45/sn45.92-95.html",
+      "duplicate": "data/upstream/bodhi/sutta/sn/sn45/sn45.96.html",
+      "new": "data/upstream/bodhi/sutta/sn/sn45/sn45.92-96.html",
+      "page": "sn45.92-96",
+      "documents": [
+        "sn45.92-95",
+        "sn45.96"
+      ],
+      "sha256": "29c4f11c8d157c8234164bbfb0d969ed2757af11bd9a1369d916e10feef78815"
+    }
+  ],
+  "review": {
+    "cuts": {
+      "items": 3,
+      "independentReaders": 2,
+      "agreed": 3,
+      "moved": 1,
+      "uncertain": 0
+    },
+    "places": 0,
+    "firstRead": {
+      "documents": 16,
+      "rows": 190,
+      "changedRows": [
+        "sn45.50-54:1.7",
+        "sn45.50-54:1.8"
+      ]
+    },
+    "changeCheck": {
+      "groups": 1,
+      "better": 1,
+      "same": 0,
+      "worse": 0
+    },
+    "secondRead": {
+      "documents": 16,
+      "rows": 190,
+      "findings": 0
+    },
+    "cross": [
+      0,
+      0
+    ],
+    "lists": [
+      0,
+      0
+    ],
+    "historicalFindings": "34 findings on affected rows are overridden in review/hand/source-mapping.findings by the complete Pali read: old duplicated-page grouping cannot govern the joint source mapping.",
+    "references": "Existing source references are retained and move with their words."
+  },
+  "checks": {
+    "upstream": {
+      "matchingPages": 1158,
+      "differ": 0
+    },
+    "integrity": {
+      "problems": 0
+    },
+    "segmenter": {
+      "notWritten": 0,
+      "staleCuts": 0
+    },
+    "scope": {
+      "changedAppTexts": 16,
+      "unrelatedAppTextsChanged": 0,
+      "unrelatedReportEntriesChanged": 0,
+      "otherTranslatorChanged": false,
+      "preservedPageBytes": true,
+      "everySavedPageHasURL": true
+    }
+  },
+  "next": "Recheck covered/skipped lines in the 16 changed app texts.",
+  "replay": {
+    "freshWorkingTree": true,
+    "changedAppTextsMatchReviewedResultByteForByte": true,
+    "otherTranslatorPreserved": true,
+    "onlyBodhiReadmeSentencesChanged": true
+  }
+}

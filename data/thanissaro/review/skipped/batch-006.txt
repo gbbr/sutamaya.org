@@ -1,0 +1,1389 @@
+thanissaro: skipped-Pali review batch 006
+Read the full English above, each original Pali line, and the next English. Sujato is context only.
+covered = this line's own content is explicitly rendered by the English above, including complete lists.
+skipped = abbreviated or compressed repetition, even if mentioned, or omitted. When in doubt, skipped.
+Judge each key independently; a run may be mixed. An ellipsis alone does not decide.
+Only runs of two or more empty prose lines in the same paragraph are reviewed; lone lines join automatically.
+Write <key> covered|skipped|unsure for every RUN key, then # done. Do not mark context keys.
+
+=== RUN 251: mn85:59.14 mn85:59.15 mn85:59.16 ===
+File: data/thanissaro/sutta/mn/mn85_translation-en-thanissaro.json
+ABOVE mn85:59.13
+Pali: yassatthāya kulaputtā sammadeva agārasmā anagāriyaṁ pabbajanti, tadanuttaraṁ—brahmacariyapariyosānaṁ diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja vihareyya satta māsāni. 
+Sujato: realize the supreme culmination of the spiritual path in seven months, 
+Translator: seven months… 
+JUDGE mn85:59.14
+Pali: Tiṭṭhantu, rājakumāra, satta māsāni. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn85:59.15
+Pali: Imehi pañcahi padhāniyaṅgehi samannāgato bhikkhu tathāgataṁ vināyakaṁ labhamāno—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn85:59.16
+Pali: yassatthāya kulaputtā sammadeva agārasmā anagāriyaṁ pabbajanti, tadanuttaraṁ—
+Sujato: (empty)
+Translator: (empty)
+BELOW mn85:59.17
+Pali: brahmacariyapariyosānaṁ diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja vihareyya cha māsāni … 
+Sujato: (empty)
+Translator: six months… 
+
+=== RUN 252: mn85:59.24 mn85:59.25 mn85:59.26 ===
+File: data/thanissaro/sutta/mn/mn85_translation-en-thanissaro.json
+ABOVE mn85:59.23
+Pali: aḍḍhamāsaṁ. 
+Sujato: (empty)
+Translator: half a month… 
+JUDGE mn85:59.24
+Pali: Tiṭṭhatu, rājakumāra, aḍḍhamāso. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn85:59.25
+Pali: Imehi pañcahi padhāniyaṅgehi samannāgato bhikkhu tathāgataṁ vināyakaṁ labhamāno—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn85:59.26
+Pali: yassatthāya kulaputtā sammadeva agārasmā anagāriyaṁ pabbajanti, tadanuttaraṁ—
+Sujato: (empty)
+Translator: (empty)
+BELOW mn85:59.27
+Pali: brahmacariyapariyosānaṁ diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja vihareyya satta rattindivāni. 
+Sujato: (empty)
+Translator: seven days… 
+
+=== RUN 253: mn85:59.28 mn85:59.29 mn85:59.30 ===
+File: data/thanissaro/sutta/mn/mn85_translation-en-thanissaro.json
+ABOVE mn85:59.27
+Pali: brahmacariyapariyosānaṁ diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja vihareyya satta rattindivāni. 
+Sujato: (empty)
+Translator: seven days… 
+JUDGE mn85:59.28
+Pali: Tiṭṭhantu, rājakumāra, satta rattindivāni. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn85:59.29
+Pali: Imehi pañcahi padhāniyaṅgehi samannāgato bhikkhu tathāgataṁ vināyakaṁ labhamāno—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn85:59.30
+Pali: yassatthāya kulaputtā sammadeva agārasmā anagāriyaṁ pabbajanti, tadanuttaraṁ—
+Sujato: (empty)
+Translator: (empty)
+BELOW mn85:59.31
+Pali: brahmacariyapariyosānaṁ diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja vihareyya cha rattindivāni … 
+Sujato: (empty)
+Translator: six days… 
+
+=== RUN 254: mn87:25.4 mn87:25.5 mn87:25.6 mn87:25.7 ===
+File: data/thanissaro/sutta/mn/mn87_translation-en-thanissaro.json
+ABOVE mn87:25.3
+Pali: “Evaṁ, mallike, piyā me vāsabhā khattiyā”ti. 
+Sujato: (empty)
+Translator: .… 
+JUDGE mn87:25.4
+Pali: “Taṁ kiṁ maññasi, mahārāja, vāsabhāya te khattiyāya vipariṇāmaññathābhāvā uppajjeyyuṁ sokaparidevadukkhadomanassupāyāsā”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn87:25.5
+Pali: “Vāsabhāya me, mallike, khattiyāya vipariṇāmaññathābhāvā jīvitassapi siyā aññathattaṁ, kiṁ pana me na uppajjissanti sokaparidevadukkhadomanassupāyāsā”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn87:25.6
+Pali: “Idaṁ kho taṁ, mahārāja, tena bhagavatā jānatā passatā arahatā sammāsambuddhena sandhāya bhāsitaṁ: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn87:25.7
+Pali: ‘piyajātikā sokaparidevadukkhadomanassupāyāsā piyappabhavikā’ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn87:26.1
+Pali: Taṁ kiṁ maññasi, mahārāja, piyo te viṭaṭūbho senāpatī”ti? 
+Sujato: Do you love your son, General Viḍūḍabha? … 
+Translator: Is [your son] General Viḍūḍabha dear to you? 
+
+=== RUN 255: mn87:26.3 mn87:26.4 mn87:26.5 mn87:26.6 ===
+File: data/thanissaro/sutta/mn/mn87_translation-en-thanissaro.json
+ABOVE mn87:26.2
+Pali: “Evaṁ, mallike, piyo me viṭaṭūbho senāpatī”ti. 
+Sujato: (empty)
+Translator: .… 
+JUDGE mn87:26.3
+Pali: “Taṁ kiṁ maññasi, mahārāja, viṭaṭūbhassa te senāpatissa vipariṇāmaññathābhāvā uppajjeyyuṁ sokaparidevadukkhadomanassupāyāsā”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn87:26.4
+Pali: “Viṭaṭūbhassa me, mallike, senāpatissa vipariṇāmaññathābhāvā jīvitassapi siyā aññathattaṁ, kiṁ pana me na uppajjissanti sokaparidevadukkhadomanassupāyāsā”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn87:26.5
+Pali: “Idaṁ kho taṁ, mahārāja, tena bhagavatā jānatā passatā arahatā sammāsambuddhena sandhāya bhāsitaṁ: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn87:26.6
+Pali: ‘piyajātikā sokaparidevadukkhadomanassupāyāsā piyappabhavikā’ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn87:27.1
+Pali: Taṁ kiṁ maññasi, mahārāja, piyā te ahan”ti? 
+Sujato: Do you love me?” 
+Translator: Am I dear to you?” 
+
+=== RUN 256: mn90:10.3 mn90:10.4 ===
+File: data/thanissaro/sutta/mn/mn90_translation-en-thanissaro.json
+ABOVE mn90:10.2
+Pali: samparāyikāhaṁ, bhante, bhagavantaṁ pucchāmi. 
+Sujato: but about the life to come.” 
+Translator: I’m asking about the future life. 
+JUDGE mn90:10.3
+Pali: Cattārome, bhante, vaṇṇā—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn90:10.4
+Pali: khattiyā, brāhmaṇā, vessā, suddā. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn90:10.5
+Pali: Imesaṁ nu kho, bhante, catunnaṁ vaṇṇānaṁ siyā viseso siyā nānākaraṇan”ti? 
+Sujato: (empty)
+Translator: Is there any distinction or difference among these four castes?” 
+
+=== RUN 257: mn90:11.2 mn90:11.3 ===
+File: data/thanissaro/sutta/mn/mn90_translation-en-thanissaro.json
+ABOVE mn90:11.1
+Pali: “Cattārome, bhante, vaṇṇā—
+Sujato: “Sir, there are these four classes: 
+Translator: “Lord, if these four castes were endowed with these five factors for exertion, 
+JUDGE mn90:11.2
+Pali: khattiyā, brāhmaṇā, vessā, suddā. 
+Sujato: aristocrats, brahmins, peasants, and menials. 
+Translator: (empty)
+JUDGE mn90:11.3
+Pali: Te cassu imehi pañcahi padhāniyaṅgehi samannāgatā; 
+Sujato: If they had these five factors that support meditation, 
+Translator: (empty)
+BELOW mn90:11.4
+Pali: ettha pana nesaṁ, bhante, siyā viseso siyā nānākaraṇan”ti? 
+Sujato: would there be any difference between them?” 
+Translator: would there be any distinction or difference among them in that respect?” 
+
+=== RUN 258: mn91:8.7 mn91:8.8 ===
+File: data/thanissaro/sutta/mn/mn91_translation-en-thanissaro.json
+ABOVE mn91:8.6
+Pali: Anupubbena cārikaṁ caramāno yena mithilā yena brahmāyu brāhmaṇo tenupasaṅkami; upasaṅkamitvā brahmāyuṁ brāhmaṇaṁ abhivādetvā ekamantaṁ nisīdi. Ekamantaṁ nisinnaṁ kho uttaraṁ māṇavaṁ brahmāyu brāhmaṇo etadavoca: 
+Sujato: There he approached the brahmin Brahmāyu, bowed, and sat down to one side. Brahmāyu said to him, 
+Translator: [The student Uttara is talking to his teacher, the brahman Brahmāyu:] 
+JUDGE mn91:8.7
+Pali: “kacci, tāta uttara, taṁ bhavantaṁ gotamaṁ tathā santaṁyeva saddo abbhuggato, no aññathā? 
+Sujato: “Well, dear Uttara, does the worthy Gotama live up to his reputation or not?” 
+Translator: (empty)
+JUDGE mn91:8.8
+Pali: Kacci pana so bhavaṁ gotamo tādiso, no aññādiso”ti? 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn91:10.1
+Pali: Gacchanto kho pana so bhavaṁ gotamo dakkhiṇeneva pādena paṭhamaṁ pakkamati. 
+Sujato: When he’s walking he takes the first step with the right foot. 
+Translator: “When walking, Master Gotama steps with his right foot first. 
+
+=== RUN 259: mn93:4.9 mn93:4.10 mn93:4.11 mn93:4.12 mn93:4.13 mn93:4.14 mn93:4.15 ===
+File: data/thanissaro/sutta/mn/mn93_translation-en-thanissaro.json
+ABOVE mn93:4.8
+Pali: Dutiyampi kho te brāhmaṇā assalāyanaṁ māṇavaṁ etadavocuṁ: 
+Sujato: For a second time, those brahmins said to him 
+Translator: A second time.… 
+JUDGE mn93:4.9
+Pali: “ayaṁ, bho assalāyana, samaṇo gotamo cātuvaṇṇiṁ suddhiṁ paññapeti. 
+Sujato: “This ascetic Gotama advocates purification for all four classes. 
+Translator: (empty)
+JUDGE mn93:4.10
+Pali: Etu bhavaṁ assalāyano samaṇena gotamena saddhiṁ asmiṁ vacane paṭimantetu. 
+Sujato: Please, worthy Assalāyana, debate with the ascetic Gotama about this. 
+Translator: (empty)
+JUDGE mn93:4.11
+Pali: Caritaṁ kho pana bhotā assalāyanena paribbājakan”ti. 
+Sujato: For you have lived as a wanderer.” 
+Translator: (empty)
+JUDGE mn93:4.12
+Pali: Dutiyampi kho assalāyano māṇavo te brāhmaṇe etadavoca: 
+Sujato: And for a second time, Assalāyana refused. 
+Translator: (empty)
+JUDGE mn93:4.13
+Pali: “samaṇo khalu, bho, gotamo dhammavādī; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn93:4.14
+Pali: dhammavādino ca pana duppaṭimantiyā bhavanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn93:4.15
+Pali: Nāhaṁ sakkomi samaṇena gotamena saddhiṁ asmiṁ vacane paṭimantetun”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn93:4.16
+Pali: Tatiyampi kho te brāhmaṇā assalāyanaṁ māṇavaṁ etadavocuṁ: 
+Sujato: For a third time, those brahmins said to him, 
+Translator: A third time, the brahmans said to the brahman student Assalāyana, 
+
+=== RUN 260: mn93:18.41 mn93:18.42 ===
+File: data/thanissaro/sutta/mn/mn93_translation-en-thanissaro.json
+ABOVE mn93:18.40
+Pali: brāhmaṇova seṭṭho vaṇṇo, hīno añño vaṇṇo; 
+Sujato: “Only brahmins are the best class; other classes are inferior. 
+Translator: “Brahmans are the superior caste; any other caste is inferior.… 
+JUDGE mn93:18.41
+Pali: brāhmaṇova sukko vaṇṇo, kaṇho añño vaṇṇo; 
+Sujato: Only brahmins are the light class; other classes are dark. 
+Translator: (empty)
+JUDGE mn93:18.42
+Pali: brāhmaṇāva sujjhanti, no abrāhmaṇā; 
+Sujato: Only brahmins are purified, not others. 
+Translator: (empty)
+BELOW mn93:18.43
+Pali: brāhmaṇāva brahmuno puttā orasā mukhato jātā brahmajā brahmanimmitā brahmadāyādā’ti. 
+Sujato: Only brahmins are the Divinity’s bosom sons, born from his mouth, born of the Divinity, created by the Divinity, heirs of the Divinity.”’ 
+Translator: Only brahmans are the sons & offspring of Brahmā: born of his mouth, born of Brahmā, created by Brahmā, heirs of Brahmā.”’ 
+
+=== RUN 261: mn95:17.9 mn95:17.10 ===
+File: data/thanissaro/sutta/mn/mn95_translation-en-thanissaro.json
+ABOVE mn95:17.8
+Pali: ‘natthi kho imassāyasmato tathārūpā lobhanīyā dhammā yathārūpehi lobhanīyehi dhammehi pariyādinnacitto ajānaṁ vā vadeyya—
+Sujato: ‘This venerable has no such qualities that arouse greed. 
+Translator: ‘There are in this venerable one no such qualities based on greed.… 
+JUDGE mn95:17.9
+Pali: jānāmīti, apassaṁ vā vadeyya—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn95:17.10
+Pali: passāmīti, paraṁ vā tadatthāya samādapeyya yaṁ paresaṁ assa dīgharattaṁ ahitāya dukkhāya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn95:17.11
+Pali: Tathārūpo kho panimassāyasmato kāyasamācāro tathārūpo vacīsamācāro yathā taṁ aluddhassa. 
+Sujato: Rather, that venerable has bodily and verbal behavior like that of someone without greed. 
+Translator: His bodily behavior & verbal behavior are those of one not greedy. 
+
+=== RUN 262: mn95:18.7 mn95:18.8 ===
+File: data/thanissaro/sutta/mn/mn95_translation-en-thanissaro.json
+ABOVE mn95:18.6
+Pali: ‘natthi kho imassāyasmato tathārūpā dosanīyā dhammā yathārūpehi dosanīyehi dhammehi pariyādinnacitto ajānaṁ vā vadeyya—
+Sujato: ‘This venerable has no such qualities that provoke hate. 
+Translator: ‘There are in this venerable one no such qualities based on aversion.… 
+JUDGE mn95:18.7
+Pali: jānāmīti, apassaṁ vā vadeyya—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn95:18.8
+Pali: passāmīti, paraṁ vā tadatthāya samādapeyya yaṁ paresaṁ assa dīgharattaṁ ahitāya dukkhāya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn95:18.9
+Pali: Tathārūpo kho panimassāyasmato kāyasamācāro tathārūpo vacīsamācāro yathā taṁ aduṭṭhassa. 
+Sujato: Rather, that venerable has bodily and verbal behavior like that of someone without hate. 
+Translator: His bodily behavior & verbal behavior are those of one not aversive. 
+
+=== RUN 263: mn95:19.7 mn95:19.8 ===
+File: data/thanissaro/sutta/mn/mn95_translation-en-thanissaro.json
+ABOVE mn95:19.6
+Pali: ‘natthi kho imassāyasmato tathārūpā mohanīyā dhammā yathārūpehi mohanīyehi dhammehi pariyādinnacitto ajānaṁ vā vadeyya—
+Sujato: ‘This venerable has no such qualities that promote delusion. 
+Translator: ‘There are in this venerable one no such qualities based on delusion.… 
+JUDGE mn95:19.7
+Pali: jānāmīti, apassaṁ vā vadeyya—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn95:19.8
+Pali: passāmīti, paraṁ vā tadatthāya samādapeyya yaṁ paresaṁ assa dīgharattaṁ ahitāya dukkhāya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn95:19.9
+Pali: Tathārūpo kho panimassāyasmato kāyasamācāro tathārūpo vacīsamācāro yathā taṁ amūḷhassa. 
+Sujato: Rather, that venerable has bodily and verbal behavior like that of someone without delusion. 
+Translator: His bodily behavior & verbal behavior are those of one not deluded. 
+
+=== RUN 264: mn95:24.5 mn95:24.6 ===
+File: data/thanissaro/sutta/mn/mn95_translation-en-thanissaro.json
+ABOVE mn95:24.4
+Pali: No cetaṁ ussaheyya, nayidaṁ tuleyya. 
+Sujato: (empty)
+Translator: If one weren’t willing, one wouldn’t contemplate.…” 
+JUDGE mn95:24.5
+Pali: Yasmā ca kho ussahati tasmā tuleti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn95:24.6
+Pali: Tasmā tulanāya ussāho bahukāro”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn95:25.1
+Pali: “Ussāhassa pana, bho gotama, katamo dhammo bahukāro? 
+Sujato: (empty)
+Translator: “But what quality is most helpful for being willing? …” 
+
+=== RUN 265: mn95:25.5 mn95:25.6 ===
+File: data/thanissaro/sutta/mn/mn95_translation-en-thanissaro.json
+ABOVE mn95:25.4
+Pali: No cetaṁ chando jāyetha, nayidaṁ ussaheyya. 
+Sujato: (empty)
+Translator: If desire didn’t arise, one wouldn’t be willing.…” 
+JUDGE mn95:25.5
+Pali: Yasmā ca kho chando jāyati tasmā ussahati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn95:25.6
+Pali: Tasmā ussāhassa chando bahukāro”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn95:26.1
+Pali: “Chandassa pana, bho gotama, katamo dhammo bahukāro? 
+Sujato: (empty)
+Translator: “But what quality is most helpful for desire? …” 
+
+=== RUN 266: mn95:26.5 mn95:26.6 ===
+File: data/thanissaro/sutta/mn/mn95_translation-en-thanissaro.json
+ABOVE mn95:26.4
+Pali: No cete dhammā nijjhānaṁ khameyyuṁ, nayidaṁ chando jāyetha. 
+Sujato: (empty)
+Translator: If one didn’t come to an agreement through pondering dhammas, desire wouldn’t arise.…” 
+JUDGE mn95:26.5
+Pali: Yasmā ca kho dhammā nijjhānaṁ khamanti tasmā chando jāyati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn95:26.6
+Pali: Tasmā chandassa dhammanijjhānakkhanti bahukārā”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn95:27.1
+Pali: “Dhammanijjhānakkhantiyā pana, bho gotama, katamo dhammo bahukāro? 
+Sujato: (empty)
+Translator: “But what quality is most helpful for coming to an agreement through pondering dhammas? …” 
+
+=== RUN 267: mn95:27.5 mn95:27.6 ===
+File: data/thanissaro/sutta/mn/mn95_translation-en-thanissaro.json
+ABOVE mn95:27.4
+Pali: No cetaṁ atthaṁ upaparikkheyya, nayidaṁ dhammā nijjhānaṁ khameyyuṁ. 
+Sujato: (empty)
+Translator: If one didn’t penetrate the meaning, one wouldn’t come to an agreement through pondering dhammas.…” 
+JUDGE mn95:27.5
+Pali: Yasmā ca kho atthaṁ upaparikkhati tasmā dhammā nijjhānaṁ khamanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn95:27.6
+Pali: Tasmā dhammanijjhānakkhantiyā atthūpaparikkhā bahukārā”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn95:28.1
+Pali: “Atthūpaparikkhāya pana, bho gotama, katamo dhammo bahukāro? 
+Sujato: (empty)
+Translator: “But what quality is most helpful for penetrating the meaning?.…” 
+
+=== RUN 268: mn95:28.5 mn95:28.6 ===
+File: data/thanissaro/sutta/mn/mn95_translation-en-thanissaro.json
+ABOVE mn95:28.4
+Pali: No cetaṁ dhammaṁ dhāreyya, nayidaṁ atthaṁ upaparikkheyya. 
+Sujato: (empty)
+Translator: If one didn’t remember the Dhamma, one wouldn’t penetrate the meaning.…” 
+JUDGE mn95:28.5
+Pali: Yasmā ca kho dhammaṁ dhāreti tasmā atthaṁ upaparikkhati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn95:28.6
+Pali: Tasmā atthūpaparikkhāya dhammadhāraṇā bahukārā”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn95:29.1
+Pali: “Dhammadhāraṇāya pana, bho gotama, katamo dhammo bahukāro? 
+Sujato: (empty)
+Translator: “But what quality is most helpful for remembering the Dhamma?… ” 
+
+=== RUN 269: mn95:29.5 mn95:29.6 ===
+File: data/thanissaro/sutta/mn/mn95_translation-en-thanissaro.json
+ABOVE mn95:29.4
+Pali: No cetaṁ dhammaṁ suṇeyya, nayidaṁ dhammaṁ dhāreyya. 
+Sujato: (empty)
+Translator: If one didn’t hear the Dhamma, one wouldn’t remember the Dhamma.…” 
+JUDGE mn95:29.5
+Pali: Yasmā ca kho dhammaṁ suṇāti tasmā dhammaṁ dhāreti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn95:29.6
+Pali: Tasmā dhammadhāraṇāya dhammassavanaṁ bahukāran”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn95:30.1
+Pali: “Dhammassavanassa pana, bho gotama, katamo dhammo bahukāro? 
+Sujato: (empty)
+Translator: “But what quality is most helpful for hearing the Dhamma? … ” 
+
+=== RUN 270: mn95:30.5 mn95:30.6 ===
+File: data/thanissaro/sutta/mn/mn95_translation-en-thanissaro.json
+ABOVE mn95:30.4
+Pali: No cetaṁ sotaṁ odaheyya, nayidaṁ dhammaṁ suṇeyya. 
+Sujato: (empty)
+Translator: If one didn’t lend ear, one wouldn’t hear the Dhamma.…” 
+JUDGE mn95:30.5
+Pali: Yasmā ca kho sotaṁ odahati tasmā dhammaṁ suṇāti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn95:30.6
+Pali: Tasmā dhammassavanassa sotāvadhānaṁ bahukāran”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn95:31.1
+Pali: “Sotāvadhānassa pana, bho gotama, katamo dhammo bahukāro? 
+Sujato: (empty)
+Translator: “But what quality is most helpful for lending ear? … ” 
+
+=== RUN 271: mn95:31.5 mn95:31.6 ===
+File: data/thanissaro/sutta/mn/mn95_translation-en-thanissaro.json
+ABOVE mn95:31.4
+Pali: No cetaṁ payirupāseyya, nayidaṁ sotaṁ odaheyya. 
+Sujato: (empty)
+Translator: If one didn’t grow close, one wouldn’t lend ear.…” 
+JUDGE mn95:31.5
+Pali: Yasmā ca kho payirupāsati tasmā sotaṁ odahati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn95:31.6
+Pali: Tasmā sotāvadhānassa payirupāsanā bahukārā”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn95:32.1
+Pali: “Payirupāsanāya pana, bho gotama, katamo dhammo bahukāro? 
+Sujato: (empty)
+Translator: “But what quality is most helpful for growing close? … ” 
+
+=== RUN 272: mn95:32.5 mn95:32.6 ===
+File: data/thanissaro/sutta/mn/mn95_translation-en-thanissaro.json
+ABOVE mn95:32.4
+Pali: No cetaṁ upasaṅkameyya, nayidaṁ payirupāseyya. 
+Sujato: (empty)
+Translator: If one didn’t visit, one wouldn’t grow close.…” 
+JUDGE mn95:32.5
+Pali: Yasmā ca kho upasaṅkamati tasmā payirupāsati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn95:32.6
+Pali: Tasmā payirupāsanāya upasaṅkamanaṁ bahukāran”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn95:33.1
+Pali: “Upasaṅkamanassa pana, bho gotama, katamo dhammo bahukāro? 
+Sujato: (empty)
+Translator: “But what quality is most helpful for visiting? 
+
+=== RUN 273: mn97:7.3 mn97:7.4 mn97:7.5 ===
+File: data/thanissaro/sutta/mn/mn97_translation-en-thanissaro.json
+ABOVE mn97:7.2
+Pali: idhekacco puttadārassa hetu adhammacārī visamacārī assa, tamenaṁ adhammacariyāvisamacariyāhetu nirayaṁ nirayapālā upakaḍḍheyyuṁ. 
+Sujato: Suppose someone was to behave in an unprincipled and immoral way for the sake of their wives and children … 
+Translator: There is the case where a certain person, for the sake of his wife & children… 
+JUDGE mn97:7.3
+Pali: Labheyya nu kho so ‘ahaṁ kho puttadārassa hetu adhammacārī visamacārī ahosiṁ, mā maṁ nirayaṁ nirayapālā’ti, puttadāro vā panassa labheyya ‘eso kho amhākaṁ hetu adhammacārī visamacārī ahosi mā naṁ nirayaṁ nirayapālā’”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:7.4
+Pali: “No hidaṁ, bho sāriputta. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:7.5
+Pali: Atha kho naṁ vikkandantaṁyeva niraye nirayapālā pakkhipeyyuṁ”. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn97:8.1
+Pali: “Taṁ kiṁ maññasi, dhanañjāni, idhekacco dāsakammakaraporisassa hetu adhammacārī visamacārī assa, tamenaṁ adhammacariyāvisamacariyāhetu nirayaṁ nirayapālā upakaḍḍheyyuṁ. 
+Sujato: bondservants and workers … 
+Translator: his slaves & workers… 
+
+=== RUN 274: mn97:8.2 mn97:8.3 mn97:8.4 ===
+File: data/thanissaro/sutta/mn/mn97_translation-en-thanissaro.json
+ABOVE mn97:8.1
+Pali: “Taṁ kiṁ maññasi, dhanañjāni, idhekacco dāsakammakaraporisassa hetu adhammacārī visamacārī assa, tamenaṁ adhammacariyāvisamacariyāhetu nirayaṁ nirayapālā upakaḍḍheyyuṁ. 
+Sujato: bondservants and workers … 
+Translator: his slaves & workers… 
+JUDGE mn97:8.2
+Pali: Labheyya nu kho so ‘ahaṁ kho dāsakammakaraporisassa hetu adhammacārī visamacārī ahosiṁ, mā maṁ nirayaṁ nirayapālā’ti, dāsakammakaraporisā vā panassa labheyyuṁ ‘eso kho amhākaṁ hetu adhammacārī visamacārī ahosi, mā naṁ nirayaṁ nirayapālā’”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:8.3
+Pali: “No hidaṁ, bho sāriputta. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:8.4
+Pali: Atha kho naṁ vikkandantaṁyeva niraye nirayapālā pakkhipeyyuṁ”. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn97:9.1
+Pali: “Taṁ kiṁ maññasi, dhanañjāni, idhekacco mittāmaccānaṁ hetu adhammacārī visamacārī assa, tamenaṁ adhammacariyāvisamacariyāhetu nirayaṁ nirayapālā upakaḍḍheyyuṁ. 
+Sujato: friends and colleagues … 
+Translator: his friends & companions… 
+
+=== RUN 275: mn97:9.2 mn97:9.3 mn97:9.4 ===
+File: data/thanissaro/sutta/mn/mn97_translation-en-thanissaro.json
+ABOVE mn97:9.1
+Pali: “Taṁ kiṁ maññasi, dhanañjāni, idhekacco mittāmaccānaṁ hetu adhammacārī visamacārī assa, tamenaṁ adhammacariyāvisamacariyāhetu nirayaṁ nirayapālā upakaḍḍheyyuṁ. 
+Sujato: friends and colleagues … 
+Translator: his friends & companions… 
+JUDGE mn97:9.2
+Pali: Labheyya nu kho so ‘ahaṁ kho mittāmaccānaṁ hetu adhammacārī visamacārī ahosiṁ, mā maṁ nirayaṁ nirayapālā’ti, mittāmaccā vā panassa labheyyuṁ ‘eso kho amhākaṁ hetu adhammacārī visamacārī ahosi, mā naṁ nirayaṁ nirayapālā’”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:9.3
+Pali: “No hidaṁ, bho sāriputta. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:9.4
+Pali: Atha kho naṁ vikkandantaṁyeva niraye nirayapālā pakkhipeyyuṁ”. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn97:10.1
+Pali: “Taṁ kiṁ maññasi, dhanañjāni, idhekacco ñātisālohitānaṁ hetu adhammacārī visamacārī assa, tamenaṁ adhammacariyāvisamacariyāhetu nirayaṁ nirayapālā upakaḍḍheyyuṁ. 
+Sujato: relatives and kin … 
+Translator: his kinsmen & relatives… 
+
+=== RUN 276: mn97:10.2 mn97:10.3 mn97:10.4 ===
+File: data/thanissaro/sutta/mn/mn97_translation-en-thanissaro.json
+ABOVE mn97:10.1
+Pali: “Taṁ kiṁ maññasi, dhanañjāni, idhekacco ñātisālohitānaṁ hetu adhammacārī visamacārī assa, tamenaṁ adhammacariyāvisamacariyāhetu nirayaṁ nirayapālā upakaḍḍheyyuṁ. 
+Sujato: relatives and kin … 
+Translator: his kinsmen & relatives… 
+JUDGE mn97:10.2
+Pali: Labheyya nu kho so ‘ahaṁ kho ñātisālohitānaṁ hetu adhammacārī visamacārī ahosiṁ, mā maṁ nirayaṁ nirayapālā’ti, ñātisālohitā vā panassa labheyyuṁ ‘eso kho amhākaṁ hetu adhammacārī visamacārī ahosi, mā naṁ nirayaṁ nirayapālā’”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:10.3
+Pali: “No hidaṁ, bho sāriputta. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:10.4
+Pali: Atha kho naṁ vikkandantaṁyeva niraye nirayapālā pakkhipeyyuṁ”. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn97:11.1
+Pali: “Taṁ kiṁ maññasi, dhanañjāni, idhekacco atithīnaṁ hetu adhammacārī visamacārī assa, tamenaṁ adhammacariyāvisamacariyāhetu nirayaṁ nirayapālā upakaḍḍheyyuṁ. 
+Sujato: guests … 
+Translator: his guests… 
+
+=== RUN 277: mn97:11.2 mn97:11.3 mn97:11.4 ===
+File: data/thanissaro/sutta/mn/mn97_translation-en-thanissaro.json
+ABOVE mn97:11.1
+Pali: “Taṁ kiṁ maññasi, dhanañjāni, idhekacco atithīnaṁ hetu adhammacārī visamacārī assa, tamenaṁ adhammacariyāvisamacariyāhetu nirayaṁ nirayapālā upakaḍḍheyyuṁ. 
+Sujato: guests … 
+Translator: his guests… 
+JUDGE mn97:11.2
+Pali: Labheyya nu kho so ‘ahaṁ kho atithīnaṁ hetu adhammacārī visamacārī ahosiṁ, mā maṁ nirayaṁ nirayapālā’ti, atithī vā panassa labheyyuṁ ‘eso kho amhākaṁ hetu adhammacārī visamacārī ahosi, mā naṁ nirayaṁ nirayapālā’”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:11.3
+Pali: “No hidaṁ, bho sāriputta. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:11.4
+Pali: Atha kho naṁ vikkandantaṁyeva niraye nirayapālā pakkhipeyyuṁ”. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn97:12.1
+Pali: “Taṁ kiṁ maññasi, dhanañjāni, idhekacco pubbapetānaṁ hetu adhammacārī visamacārī assa, tamenaṁ adhammacariyāvisamacariyāhetu nirayaṁ nirayapālā upakaḍḍheyyuṁ. 
+Sujato: ancestors … 
+Translator: his departed ancestors… 
+
+=== RUN 278: mn97:12.2 mn97:12.3 mn97:12.4 ===
+File: data/thanissaro/sutta/mn/mn97_translation-en-thanissaro.json
+ABOVE mn97:12.1
+Pali: “Taṁ kiṁ maññasi, dhanañjāni, idhekacco pubbapetānaṁ hetu adhammacārī visamacārī assa, tamenaṁ adhammacariyāvisamacariyāhetu nirayaṁ nirayapālā upakaḍḍheyyuṁ. 
+Sujato: ancestors … 
+Translator: his departed ancestors… 
+JUDGE mn97:12.2
+Pali: Labheyya nu kho so ‘ahaṁ kho pubbapetānaṁ hetu adhammacārī visamacārī ahosiṁ, mā maṁ nirayaṁ nirayapālā’ti, pubbapetā vā panassa labheyyuṁ ‘eso kho amhākaṁ hetu adhammacārī visamacārī ahosi, mā naṁ nirayaṁ nirayapālā’”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:12.3
+Pali: “No hidaṁ, bho sāriputta. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:12.4
+Pali: Atha kho naṁ vikkandantaṁyeva niraye nirayapālā pakkhipeyyuṁ”. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn97:13.1
+Pali: “Taṁ kiṁ maññasi, dhanañjāni, idhekacco devatānaṁ hetu adhammacārī visamacārī assa, tamenaṁ adhammacariyāvisamacariyāhetu nirayaṁ nirayapālā upakaḍḍheyyuṁ. 
+Sujato: deities … 
+Translator: the devatās… 
+
+=== RUN 279: mn97:13.2 mn97:13.3 mn97:13.4 ===
+File: data/thanissaro/sutta/mn/mn97_translation-en-thanissaro.json
+ABOVE mn97:13.1
+Pali: “Taṁ kiṁ maññasi, dhanañjāni, idhekacco devatānaṁ hetu adhammacārī visamacārī assa, tamenaṁ adhammacariyāvisamacariyāhetu nirayaṁ nirayapālā upakaḍḍheyyuṁ. 
+Sujato: deities … 
+Translator: the devatās… 
+JUDGE mn97:13.2
+Pali: Labheyya nu kho so ‘ahaṁ kho devatānaṁ hetu adhammacārī visamacārī ahosiṁ, mā maṁ nirayaṁ nirayapālā’ti, devatā vā panassa labheyyuṁ ‘eso kho amhākaṁ hetu adhammacārī visamacārī ahosi, mā naṁ nirayaṁ nirayapālā’”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:13.3
+Pali: “No hidaṁ, bho sāriputta. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:13.4
+Pali: Atha kho naṁ vikkandantaṁyeva niraye nirayapālā pakkhipeyyuṁ”. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn97:14.1
+Pali: “Taṁ kiṁ maññasi, dhanañjāni, idhekacco rañño hetu adhammacārī visamacārī assa, tamenaṁ adhammacariyāvisamacariyāhetu nirayaṁ nirayapālā upakaḍḍheyyuṁ. 
+Sujato: king … 
+Translator: the king, does what is unrighteous, does what is dissonant. Then, because of his unrighteous, dissonant conduct, hell-wardens drag him off to hell. 
+
+=== RUN 280: mn97:17.2 mn97:17.3 mn97:17.4 mn97:17.5 mn97:17.6 ===
+File: data/thanissaro/sutta/mn/mn97_translation-en-thanissaro.json
+ABOVE mn97:17.1
+Pali: Taṁ kiṁ maññasi, dhanañjāni, yo vā puttadārassa hetu adhammacārī visamacārī assa, yo vā puttadārassa hetu dhammacārī samacārī assa; 
+Sujato: Who do you think is better, Dhanañjāni? Someone who, for the sake of their wives and children … 
+Translator: “What do you think, Dhanañjānin? Which is the better: one who, for the sake of his wife & children… 
+JUDGE mn97:17.2
+Pali: katamaṁ seyyo”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:17.3
+Pali: “Yo hi, bho sāriputta, puttadārassa hetu adhammacārī visamacārī assa, na taṁ seyyo; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:17.4
+Pali: yo ca kho, bho sāriputta, puttadārassa hetu dhammacārī samacārī assa, tadevettha seyyo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:17.5
+Pali: Adhammacariyāvisamacariyāhi, bho sāriputta, dhammacariyāsamacariyā seyyo”ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:17.6
+Pali: “Atthi kho, dhanañjāni, aññesaṁ hetukā dhammikā kammantā yehi sakkā puttadārañceva posetuṁ, na ca pāpakammaṁ kātuṁ, puññañca paṭipadaṁ paṭipajjituṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn97:18.1
+Pali: Taṁ kiṁ maññasi, dhanañjāni, yo vā dāsakammakaraporisassa hetu adhammacārī visamacārī assa, yo vā dāsakammakaraporisassa hetu dhammacārī samacārī assa; 
+Sujato: bondservants and workers … 
+Translator: his slaves & workers… 
+
+=== RUN 281: mn97:18.2 mn97:18.3 mn97:18.4 mn97:18.5 mn97:18.6 ===
+File: data/thanissaro/sutta/mn/mn97_translation-en-thanissaro.json
+ABOVE mn97:18.1
+Pali: Taṁ kiṁ maññasi, dhanañjāni, yo vā dāsakammakaraporisassa hetu adhammacārī visamacārī assa, yo vā dāsakammakaraporisassa hetu dhammacārī samacārī assa; 
+Sujato: bondservants and workers … 
+Translator: his slaves & workers… 
+JUDGE mn97:18.2
+Pali: katamaṁ seyyo”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:18.3
+Pali: “Yo hi, bho sāriputta, dāsakammakaraporisassa hetu adhammacārī visamacārī assa, na taṁ seyyo; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:18.4
+Pali: yo ca kho, bho sāriputta, dāsakammakaraporisassa hetu dhammacārī samacārī assa, tadevettha seyyo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:18.5
+Pali: Adhammacariyāvisamacariyāhi, bho sāriputta, dhammacariyāsamacariyā seyyo”ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:18.6
+Pali: “Atthi kho, dhanañjāni, aññesaṁ hetukā dhammikā kammantā, yehi sakkā dāsakammakaraporise ceva posetuṁ, na ca pāpakammaṁ kātuṁ, puññañca paṭipadaṁ paṭipajjituṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn97:19.1
+Pali: Taṁ kiṁ maññasi, dhanañjāni, yo vā mittāmaccānaṁ hetu adhammacārī visamacārī assa, yo vā mittāmaccānaṁ hetu dhammacārī samacārī assa; 
+Sujato: friends and colleagues … 
+Translator: his friends & companions… 
+
+=== RUN 282: mn97:19.2 mn97:19.3 mn97:19.4 mn97:19.5 mn97:19.6 ===
+File: data/thanissaro/sutta/mn/mn97_translation-en-thanissaro.json
+ABOVE mn97:19.1
+Pali: Taṁ kiṁ maññasi, dhanañjāni, yo vā mittāmaccānaṁ hetu adhammacārī visamacārī assa, yo vā mittāmaccānaṁ hetu dhammacārī samacārī assa; 
+Sujato: friends and colleagues … 
+Translator: his friends & companions… 
+JUDGE mn97:19.2
+Pali: katamaṁ seyyo”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:19.3
+Pali: “Yo hi, bho sāriputta, mittāmaccānaṁ hetu adhammacārī visamacārī assa, na taṁ seyyo; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:19.4
+Pali: yo ca kho, bho sāriputta, mittāmaccānaṁ hetu dhammacārī samacārī assa, tadevettha seyyo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:19.5
+Pali: Adhammacariyāvisamacariyāhi, bho sāriputta, dhammacariyāsamacariyā seyyo”ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:19.6
+Pali: “Atthi kho, dhanañjāni, aññesaṁ hetukā dhammikā kammantā, yehi sakkā mittāmaccānañceva mittāmaccakaraṇīyaṁ kātuṁ, na ca pāpakammaṁ kātuṁ, puññañca paṭipadaṁ paṭipajjituṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn97:20.1
+Pali: Taṁ kiṁ maññasi, dhanañjāni, yo vā ñātisālohitānaṁ hetu adhammacārī visamacārī assa, yo vā ñātisālohitānaṁ hetu dhammacārī samacārī assa; 
+Sujato: relatives and kin … 
+Translator: his kinsmen & relatives… 
+
+=== RUN 283: mn97:20.2 mn97:20.3 mn97:20.4 mn97:20.5 mn97:20.6 ===
+File: data/thanissaro/sutta/mn/mn97_translation-en-thanissaro.json
+ABOVE mn97:20.1
+Pali: Taṁ kiṁ maññasi, dhanañjāni, yo vā ñātisālohitānaṁ hetu adhammacārī visamacārī assa, yo vā ñātisālohitānaṁ hetu dhammacārī samacārī assa; 
+Sujato: relatives and kin … 
+Translator: his kinsmen & relatives… 
+JUDGE mn97:20.2
+Pali: katamaṁ seyyo”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:20.3
+Pali: “Yo hi, bho sāriputta, ñātisālohitānaṁ hetu adhammacārī visamacārī assa, na taṁ seyyo; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:20.4
+Pali: yo ca kho, bho sāriputta, ñātisālohitānaṁ hetu dhammacārī samacārī assa, tadevettha seyyo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:20.5
+Pali: Adhammacariyāvisamacariyāhi, bho sāriputta, dhammacariyāsamacariyā seyyo”ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:20.6
+Pali: “Atthi kho, dhanañjāni, aññesaṁ hetukā dhammikā kammantā, yehi sakkā ñātisālohitānañceva ñātisālohitakaraṇīyaṁ kātuṁ, na ca pāpakammaṁ kātuṁ, puññañca paṭipadaṁ paṭipajjituṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn97:21.1
+Pali: Taṁ kiṁ maññasi, dhanañjāni, yo vā atithīnaṁ hetu adhammacārī visamacārī assa, yo vā atithīnaṁ hetu dhammacārī samacārī assa; 
+Sujato: guests … 
+Translator: his guests… 
+
+=== RUN 284: mn97:21.2 mn97:21.3 mn97:21.4 mn97:21.5 mn97:21.6 ===
+File: data/thanissaro/sutta/mn/mn97_translation-en-thanissaro.json
+ABOVE mn97:21.1
+Pali: Taṁ kiṁ maññasi, dhanañjāni, yo vā atithīnaṁ hetu adhammacārī visamacārī assa, yo vā atithīnaṁ hetu dhammacārī samacārī assa; 
+Sujato: guests … 
+Translator: his guests… 
+JUDGE mn97:21.2
+Pali: katamaṁ seyyo”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:21.3
+Pali: “Yo hi, bho sāriputta, atithīnaṁ hetu adhammacārī visamacārī assa, na taṁ seyyo; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:21.4
+Pali: yo ca kho, bho sāriputta, atithīnaṁ hetu dhammacārī samacārī assa, tadevettha seyyo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:21.5
+Pali: Adhammacariyāvisamacariyāhi, bho sāriputta, dhammacariyāsamacariyā seyyo”ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:21.6
+Pali: “Atthi kho, dhanañjāni, aññesaṁ hetukā dhammikā kammantā, yehi sakkā atithīnañceva atithikaraṇīyaṁ kātuṁ, na ca pāpakammaṁ kātuṁ, puññañca paṭipadaṁ paṭipajjituṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn97:22.1
+Pali: Taṁ kiṁ maññasi, dhanañjāni, yo vā pubbapetānaṁ hetu adhammacārī visamacārī assa, yo vā pubbapetānaṁ hetu dhammacārī samacārī assa; 
+Sujato: ancestors … 
+Translator: his departed ancestors… 
+
+=== RUN 285: mn97:22.2 mn97:22.3 mn97:22.4 mn97:22.5 mn97:22.6 ===
+File: data/thanissaro/sutta/mn/mn97_translation-en-thanissaro.json
+ABOVE mn97:22.1
+Pali: Taṁ kiṁ maññasi, dhanañjāni, yo vā pubbapetānaṁ hetu adhammacārī visamacārī assa, yo vā pubbapetānaṁ hetu dhammacārī samacārī assa; 
+Sujato: ancestors … 
+Translator: his departed ancestors… 
+JUDGE mn97:22.2
+Pali: katamaṁ seyyo”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:22.3
+Pali: “Yo hi, bho sāriputta, pubbapetānaṁ hetu adhammacārī visamacārī assa, na taṁ seyyo; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:22.4
+Pali: yo ca kho, bho sāriputta, pubbapetānaṁ hetu dhammacārī samacārī assa, tadevettha seyyo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:22.5
+Pali: Adhammacariyāvisamacariyāhi, bho sāriputta, dhammacariyāsamacariyā seyyo”ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:22.6
+Pali: “Atthi kho, dhanañjāni, aññesaṁ hetukā dhammikā kammantā, yehi sakkā pubbapetānañceva pubbapetakaraṇīyaṁ kātuṁ, na ca pāpakammaṁ kātuṁ, puññañca paṭipadaṁ paṭipajjituṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn97:23.1
+Pali: Taṁ kiṁ maññasi, dhanañjāni, yo vā devatānaṁ hetu adhammacārī visamacārī assa, yo vā devatānaṁ hetu dhammacārī samacārī assa; 
+Sujato: deities … 
+Translator: the devatās… 
+
+=== RUN 286: mn97:23.2 mn97:23.3 mn97:23.4 mn97:23.5 mn97:23.6 ===
+File: data/thanissaro/sutta/mn/mn97_translation-en-thanissaro.json
+ABOVE mn97:23.1
+Pali: Taṁ kiṁ maññasi, dhanañjāni, yo vā devatānaṁ hetu adhammacārī visamacārī assa, yo vā devatānaṁ hetu dhammacārī samacārī assa; 
+Sujato: deities … 
+Translator: the devatās… 
+JUDGE mn97:23.2
+Pali: katamaṁ seyyo”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:23.3
+Pali: “Yo hi, bho sāriputta, devatānaṁ hetu adhammacārī visamacārī assa, na taṁ seyyo; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:23.4
+Pali: yo ca kho, bho sāriputta, devatānaṁ hetu dhammacārī samacārī assa, tadevettha seyyo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:23.5
+Pali: Adhammacariyāvisamacariyāhi, bho sāriputta, dhammacariyāsamacariyā seyyo”ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:23.6
+Pali: “Atthi kho, dhanañjāni, aññesaṁ hetukā dhammikā kammantā, yehi sakkā devatānañceva devatākaraṇīyaṁ kātuṁ, na ca pāpakammaṁ kātuṁ, puññañca paṭipadaṁ paṭipajjituṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn97:24.1
+Pali: Taṁ kiṁ maññasi, dhanañjāni, yo vā rañño hetu adhammacārī visamacārī assa, yo vā rañño hetu dhammacārī samacārī assa; 
+Sujato: king … 
+Translator: the king… 
+
+=== RUN 287: mn97:24.2 mn97:24.3 mn97:24.4 mn97:24.5 mn97:24.6 ===
+File: data/thanissaro/sutta/mn/mn97_translation-en-thanissaro.json
+ABOVE mn97:24.1
+Pali: Taṁ kiṁ maññasi, dhanañjāni, yo vā rañño hetu adhammacārī visamacārī assa, yo vā rañño hetu dhammacārī samacārī assa; 
+Sujato: king … 
+Translator: the king… 
+JUDGE mn97:24.2
+Pali: katamaṁ seyyo”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:24.3
+Pali: “Yo hi, bho sāriputta, rañño hetu adhammacārī visamacārī assa, na taṁ seyyo; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:24.4
+Pali: yo ca kho, bho sāriputta, rañño hetu dhammacārī samacārī assa, tadevettha seyyo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:24.5
+Pali: Adhammacariyāvisamacariyāhi, bho sāriputta, dhammacariyāsamacariyā seyyo”ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn97:24.6
+Pali: “Atthi kho, dhanañjāni, aññesaṁ hetukā dhammikā kammantā, yehi sakkā rañño ceva rājakaraṇīyaṁ kātuṁ, na ca pāpakammaṁ kātuṁ, puññañca paṭipadaṁ paṭipajjituṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn97:25.1
+Pali: Taṁ kiṁ maññasi, dhanañjāni, yo vā kāyassa pīṇanāhetu brūhanāhetu adhammacārī visamacārī assa, yo vā kāyassa pīṇanāhetu brūhanāhetu dhammacārī samacārī assa; 
+Sujato: fattening and building up their body, behaves in an unprincipled and immoral manner, or someone who behaves in a principled and moral manner?” 
+Translator: refreshing & nourishing his body, would do what is unrighteous, what is dissonant; or one who, for the sake of refreshing & nourishing his body, would do what is righteous, what is harmonious? 
+
+=== RUN 288: mn101:5.3 mn101:5.4 mn101:5.5 ===
+File: data/thanissaro/sutta/mn/mn101_translation-en-thanissaro.json
+ABOVE mn101:5.2
+Pali: ahuvamheva mayaṁ pubbe, na nāhuvamhāti, na jānātha—
+Sujato: (empty)
+Translator: that you existed in the past, and that you did not not exist… 
+JUDGE mn101:5.3
+Pali: akaramheva mayaṁ pubbe pāpakammaṁ, na nākaramhāti, na jānātha—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn101:5.4
+Pali: evarūpaṁ vā evarūpaṁ vā pāpakammaṁ akaramhāti, na jānātha—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn101:5.5
+Pali: ettakaṁ vā dukkhaṁ nijjiṇṇaṁ, ettakaṁ vā dukkhaṁ nijjīretabbaṁ, ettakamhi vā dukkhe nijjiṇṇe sabbaṁ dukkhaṁ nijjiṇṇaṁ bhavissatīti, na jānātha—
+Sujato: (empty)
+Translator: (empty)
+BELOW mn101:5.6
+Pali: diṭṭheva dhamme akusalānaṁ dhammānaṁ pahānaṁ, kusalānaṁ dhammānaṁ upasampadaṁ; 
+Sujato: (empty)
+Translator: you don’t know what is the abandoning of unskillful qualities and the attainment of skillful qualities in the here & now. 
+
+=== RUN 289: mn101:8.3 mn101:8.4 mn101:8.5 ===
+File: data/thanissaro/sutta/mn/mn101_translation-en-thanissaro.json
+ABOVE mn101:8.2
+Pali: ahuvamheva mayaṁ pubbe, na nāhuvamhāti, jāneyyātha—
+Sujato: (empty)
+Translator: that you existed in the past, and that you did not not exist… 
+JUDGE mn101:8.3
+Pali: akaramheva mayaṁ pubbe pāpakammaṁ, na nākaramhāti, jāneyyātha—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn101:8.4
+Pali: evarūpaṁ vā evarūpaṁ vā pāpakammaṁ akaramhāti, jāneyyātha—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn101:8.5
+Pali: ettakaṁ vā dukkhaṁ nijjiṇṇaṁ, ettakaṁ vā dukkhaṁ nijjīretabbaṁ, ettakamhi vā dukkhe nijjiṇṇe sabbaṁ dukkhaṁ nijjiṇṇaṁ bhavissatīti, jāneyyātha—
+Sujato: (empty)
+Translator: (empty)
+BELOW mn101:8.6
+Pali: diṭṭheva dhamme akusalānaṁ dhammānaṁ pahānaṁ, kusalānaṁ dhammānaṁ upasampadaṁ; 
+Sujato: (empty)
+Translator: if you knew what is the abandoning of unskillful qualities and the attainment of skillful qualities in the here & now, 
+
+=== RUN 290: mn101:9.2 mn101:9.3 mn101:9.4 mn101:9.5 ===
+File: data/thanissaro/sutta/mn/mn101_translation-en-thanissaro.json
+ABOVE mn101:9.1
+Pali: Yasmā ca kho tumhe, āvuso nigaṇṭhā, na jānātha—
+Sujato: But since you don’t know any of these things, 
+Translator: But because you do not know that you existed in the past… 
+JUDGE mn101:9.2
+Pali: ahuvamheva mayaṁ pubbe, na nāhuvamhāti, na jānātha—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn101:9.3
+Pali: akaramheva mayaṁ pubbe pāpakammaṁ, na nākaramhāti, na jānātha—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn101:9.4
+Pali: evarūpaṁ vā evarūpaṁ vā pāpakammaṁ akaramhāti, na jānātha—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn101:9.5
+Pali: ettakaṁ vā dukkhaṁ nijjiṇṇaṁ, ettakaṁ vā dukkhaṁ nijjīretabbaṁ, ettakamhi vā dukkhe nijjiṇṇe sabbaṁ dukkhaṁ nijjiṇṇaṁ bhavissatīti, na jānātha—
+Sujato: (empty)
+Translator: (empty)
+BELOW mn101:9.6
+Pali: diṭṭheva dhamme akusalānaṁ dhammānaṁ pahānaṁ, kusalānaṁ dhammānaṁ upasampadaṁ; 
+Sujato: (empty)
+Translator: you do not know what is the abandoning of unskillful qualities and the attainment of skillful qualities in the here & now, 
+
+=== RUN 291: mn101:26.9 mn101:26.10 ===
+File: data/thanissaro/sutta/mn/mn101_translation-en-thanissaro.json
+ABOVE mn101:26.8
+Pali: Tassa tassa dukkhanidānassa ajjhupekkhato upekkhaṁ bhāvayato virāgo hoti—
+Sujato: Through developing equanimity they become dispassionate toward that other source of suffering, 
+Translator: and the stress coming from the cause of stress where there is dispassion from the development of equanimity is exhausted. 
+JUDGE mn101:26.9
+Pali: evampissa taṁ dukkhaṁ nijjiṇṇaṁ hoti. 
+Sujato: and so that suffering is worn away. 
+Translator: (empty)
+JUDGE mn101:26.10
+Pali: Evampi, bhikkhave, saphalo upakkamo hoti, saphalaṁ padhānaṁ. 
+Sujato: That’s how exertion and striving is fruitful. 
+Translator: (empty)
+BELOW (outside this paragraph) mn101:27.1
+Pali: Puna caparaṁ, bhikkhave, bhikkhu iti paṭisañcikkhati: 
+Sujato: Furthermore, a mendicant reflects: 
+Translator: “And further, the monk notices this: 
+
+=== RUN 292: mn102:12.9 mn102:12.10 ===
+File: data/thanissaro/sutta/mn/mn102_translation-en-thanissaro.json
+ABOVE mn102:12.8
+Pali: evamevime bhonto samaṇabrāhmaṇā sakkāyabhayā sakkāyaparijegucchā sakkāyaññeva anuparidhāvanti anuparivattanti. 
+Sujato: In the same way, those ascetics and brahmins, from fear and disgust with substantial reality, just keep running and circling around substantial reality. 
+Translator: in the same way, these venerable contemplative & brahmans—through fear of self-identity, through disgust for self-identity—(nevertheless) keep running & circling around self-identity. 
+JUDGE mn102:12.9
+Pali: ‘Tayidaṁ saṅkhataṁ oḷārikaṁ atthi kho pana saṅkhārānaṁ nirodho atthetan’ti—
+Sujato: ‘All that is conditioned and crude. But there is the cessation of conditions—<em>that</em> is real.’ 
+Translator: (empty)
+JUDGE mn102:12.10
+Pali: iti viditvā tassa nissaraṇadassāvī tathāgato tadupātivatto. 
+Sujato: Understanding this and seeing the escape from it, the Realized One has gone beyond all that. 
+Translator: (empty)
+BELOW (outside this paragraph) mn102:15.4
+Pali: ‘Tayidaṁ saṅkhataṁ oḷārikaṁ atthi kho pana saṅkhārānaṁ nirodho atthetan’ti—
+Sujato: ‘All that is conditioned and crude. But there is the cessation of conditions—<em>that</em> is real.’ 
+Translator: With regard to that—fabricated, gross—there is still the cessation of fabrications: There is this.’ 
+
+=== RUN 293: mn113:9.2 mn113:9.3 mn113:9.4 mn113:9.5 mn113:9.6 mn113:9.7 mn113:9.8 mn113:9.9 mn113:9.10 mn113:9.11 ===
+File: data/thanissaro/sutta/mn/mn113_translation-en-thanissaro.json
+ABOVE mn113:9.1
+Pali: Puna caparaṁ, bhikkhave, asappuriso bahussuto hoti. 
+Sujato: Furthermore, take an untrue person who is very learned … 
+Translator: “And further, a person of no integrity is learned… 
+JUDGE mn113:9.2
+Pali: So iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:9.3
+Pali: ‘ahaṁ khomhi bahussuto, ime panaññe bhikkhū na bahussutā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:9.4
+Pali: So tena bāhusaccena attānukkaṁseti, paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:9.5
+Pali: Ayampi, bhikkhave, asappurisadhammo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:9.6
+Pali: Sappuriso ca kho, bhikkhave, iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:9.7
+Pali: ‘na kho bāhusaccena lobhadhammā vā parikkhayaṁ gacchanti, dosadhammā vā parikkhayaṁ gacchanti, mohadhammā vā parikkhayaṁ gacchanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:9.8
+Pali: No cepi bahussuto hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:9.9
+Pali: so ca hoti dhammānudhammappaṭipanno sāmīcippaṭipanno anudhammacārī, so tattha pujjo, so tattha pāsaṁso’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:9.10
+Pali: So paṭipadaṁyeva antaraṁ karitvā tena bāhusaccena nevattānukkaṁseti, na paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:9.11
+Pali: Ayampi, bhikkhave, sappurisadhammo. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn113:10.1
+Pali: Puna caparaṁ, bhikkhave, asappuriso vinayadharo hoti. 
+Sujato: who is an expert in the monastic law … 
+Translator: a master of the Vinaya… 
+
+=== RUN 294: mn113:10.2 mn113:10.3 mn113:10.4 mn113:10.5 mn113:10.6 mn113:10.7 mn113:10.8 mn113:10.9 mn113:10.10 mn113:10.11 ===
+File: data/thanissaro/sutta/mn/mn113_translation-en-thanissaro.json
+ABOVE mn113:10.1
+Pali: Puna caparaṁ, bhikkhave, asappuriso vinayadharo hoti. 
+Sujato: who is an expert in the monastic law … 
+Translator: a master of the Vinaya… 
+JUDGE mn113:10.2
+Pali: So iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:10.3
+Pali: ‘ahaṁ khomhi vinayadharo, ime panaññe bhikkhū na vinayadharā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:10.4
+Pali: So tena vinayadharattena attānukkaṁseti, paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:10.5
+Pali: Ayampi, bhikkhave, asappurisadhammo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:10.6
+Pali: Sappuriso ca kho, bhikkhave, iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:10.7
+Pali: ‘na kho vinayadharattena lobhadhammā vā parikkhayaṁ gacchanti, dosadhammā vā parikkhayaṁ gacchanti, mohadhammā vā parikkhayaṁ gacchanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:10.8
+Pali: No cepi vinayadharo hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:10.9
+Pali: so ca hoti dhammānudhammappaṭipanno sāmīcippaṭipanno anudhammacārī, so tattha pujjo, so tattha pāsaṁso’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:10.10
+Pali: So paṭipadaṁyeva antaraṁ karitvā tena vinayadharattena nevattānukkaṁseti, na paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:10.11
+Pali: Ayampi, bhikkhave, sappurisadhammo. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn113:11.1
+Pali: Puna caparaṁ, bhikkhave, asappuriso dhammakathiko hoti. 
+Sujato: who is a Dhamma teacher … 
+Translator: a Dhamma-speaker. 
+
+=== RUN 295: mn113:13.2 mn113:13.3 mn113:13.4 mn113:13.5 mn113:13.6 mn113:13.7 mn113:13.8 mn113:13.9 mn113:13.10 mn113:13.11 ===
+File: data/thanissaro/sutta/mn/mn113_translation-en-thanissaro.json
+ABOVE mn113:13.1
+Pali: Puna caparaṁ, bhikkhave, asappuriso paṁsukūliko hoti. 
+Sujato: who is a rag robe wearer … 
+Translator: “And further, a person of no integrity is one who wears robes of thrown-away rags… 
+JUDGE mn113:13.2
+Pali: So iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:13.3
+Pali: ‘ahaṁ khomhi paṁsukūliko, ime panaññe bhikkhū na paṁsukūlikā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:13.4
+Pali: So tena paṁsukūlikattena attānukkaṁseti, paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:13.5
+Pali: Ayampi, bhikkhave, asappurisadhammo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:13.6
+Pali: Sappuriso ca kho, bhikkhave, iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:13.7
+Pali: ‘na kho paṁsukūlikattena lobhadhammā vā parikkhayaṁ gacchanti, dosadhammā vā parikkhayaṁ gacchanti, mohadhammā vā parikkhayaṁ gacchanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:13.8
+Pali: No cepi paṁsukūliko hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:13.9
+Pali: so ca hoti dhammānudhammappaṭipanno sāmīcippaṭipanno anudhammacārī, so tattha pujjo, so tattha pāsaṁso’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:13.10
+Pali: So paṭipadaṁyeva antaraṁ karitvā tena paṁsukūlikattena nevattānukkaṁseti, na paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:13.11
+Pali: Ayampi, bhikkhave, sappurisadhammo. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn113:14.1
+Pali: Puna caparaṁ, bhikkhave, asappuriso piṇḍapātiko hoti. 
+Sujato: who eats only almsfood … 
+Translator: an alms-goer… 
+
+=== RUN 296: mn113:14.2 mn113:14.3 mn113:14.4 mn113:14.5 mn113:14.6 mn113:14.7 mn113:14.8 mn113:14.9 mn113:14.10 mn113:14.11 ===
+File: data/thanissaro/sutta/mn/mn113_translation-en-thanissaro.json
+ABOVE mn113:14.1
+Pali: Puna caparaṁ, bhikkhave, asappuriso piṇḍapātiko hoti. 
+Sujato: who eats only almsfood … 
+Translator: an alms-goer… 
+JUDGE mn113:14.2
+Pali: So iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:14.3
+Pali: ‘ahaṁ khomhi piṇḍapātiko, ime panaññe bhikkhū na piṇḍapātikā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:14.4
+Pali: So tena piṇḍapātikattena attānukkaṁseti, paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:14.5
+Pali: Ayampi, bhikkhave, asappurisadhammo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:14.6
+Pali: Sappuriso ca kho, bhikkhave, iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:14.7
+Pali: ‘na kho piṇḍapātikattena lobhadhammā vā parikkhayaṁ gacchanti, dosadhammā vā parikkhayaṁ gacchanti, mohadhammā vā parikkhayaṁ gacchanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:14.8
+Pali: No cepi piṇḍapātiko hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:14.9
+Pali: so ca hoti dhammānudhammappaṭipanno sāmīcippaṭipanno anudhammacārī, so tattha pujjo, so tattha pāsaṁso’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:14.10
+Pali: So paṭipadaṁyeva antaraṁ karitvā tena piṇḍapātikattena nevattānukkaṁseti, na paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:14.11
+Pali: Ayampi, bhikkhave, sappurisadhammo. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn113:15.1
+Pali: Puna caparaṁ, bhikkhave, asappuriso rukkhamūliko hoti. 
+Sujato: who stays at the root of a tree … 
+Translator: one who dwells at the root of a tree… 
+
+=== RUN 297: mn113:15.2 mn113:15.3 mn113:15.4 mn113:15.5 mn113:15.6 mn113:15.7 mn113:15.8 mn113:15.9 mn113:15.10 mn113:15.11 ===
+File: data/thanissaro/sutta/mn/mn113_translation-en-thanissaro.json
+ABOVE mn113:15.1
+Pali: Puna caparaṁ, bhikkhave, asappuriso rukkhamūliko hoti. 
+Sujato: who stays at the root of a tree … 
+Translator: one who dwells at the root of a tree… 
+JUDGE mn113:15.2
+Pali: So iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:15.3
+Pali: ‘ahaṁ khomhi rukkhamūliko, ime panaññe bhikkhū na rukkhamūlikā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:15.4
+Pali: So tena rukkhamūlikattena attānukkaṁseti, paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:15.5
+Pali: Ayampi, bhikkhave, asappurisadhammo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:15.6
+Pali: Sappuriso ca kho, bhikkhave, iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:15.7
+Pali: ‘na kho rukkhamūlikattena lobhadhammā vā parikkhayaṁ gacchanti, dosadhammā vā parikkhayaṁ gacchanti, mohadhammā vā parikkhayaṁ gacchanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:15.8
+Pali: No cepi rukkhamūliko hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:15.9
+Pali: so ca hoti dhammānudhammappaṭipanno sāmīcippaṭipanno anudhammacārī, so tattha pujjo, so tattha pāsaṁso’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:15.10
+Pali: So paṭipadaṁyeva antaraṁ karitvā tena rukkhamūlikattena nevattānukkaṁseti, na paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:15.11
+Pali: Ayampi, bhikkhave, sappurisadhammo. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn113:16-20.1
+Pali: Puna caparaṁ, bhikkhave, asappuriso sosāniko hoti …pe… 
+Sujato: who stays in a charnel ground … 
+Translator: a cemetery dweller… 
+
+=== RUN 298: mn113:22-24.4 mn113:22-24.5 mn113:22-24.6 mn113:22-24.7 mn113:22-24.8 mn113:22-24.9 mn113:22-24.10 mn113:22-24.11 mn113:22-24.12 ===
+File: data/thanissaro/sutta/mn/mn113_translation-en-thanissaro.json
+ABOVE mn113:22-24.3
+Pali: catutthaṁ jhānaṁ upasampajja viharati. 
+Sujato: fourth absorption. 
+Translator: the fourth jhāna… 
+JUDGE mn113:22-24.4
+Pali: So iti paṭisañcikkhati: 
+Sujato: They reflect: 
+Translator: (empty)
+JUDGE mn113:22-24.5
+Pali: ‘ahaṁ khomhi catutthajjhānasamāpattiyā lābhī, ime panaññe bhikkhū catutthajjhānasamāpattiyā na lābhino’ti. 
+Sujato: ‘I have attained the fourth absorption, unlike these other mendicants.’ 
+Translator: (empty)
+JUDGE mn113:22-24.6
+Pali: So tāya catutthajjhānasamāpattiyā attānukkaṁseti, paraṁ vambheti. 
+Sujato: And they glorify themselves and put others down on account of that. 
+Translator: (empty)
+JUDGE mn113:22-24.7
+Pali: Ayampi, bhikkhave, asappurisadhammo. 
+Sujato: This too is a quality of an untrue person. 
+Translator: (empty)
+JUDGE mn113:22-24.8
+Pali: Sappuriso ca kho, bhikkhave, iti paṭisañcikkhati: 
+Sujato: A true person reflects: 
+Translator: (empty)
+JUDGE mn113:22-24.9
+Pali: ‘catutthajjhānasamāpattiyāpi kho atammayatā vuttā bhagavatā. 
+Sujato: ‘The Buddha has spoken of not being determined even by the attainment of the fourth absorption. 
+Translator: (empty)
+JUDGE mn113:22-24.10
+Pali: Yena yena hi maññanti tato taṁ hoti aññathā’ti. 
+Sujato: For however they imagine it, it turns out to be something else.’ 
+Translator: (empty)
+JUDGE mn113:22-24.11
+Pali: So atammayataññeva antaraṁ karitvā tāya catutthajjhānasamāpattiyā nevattānukkaṁseti, na paraṁ vambheti. 
+Sujato: Keeping to themselves the fact that they are not determined by that, they don’t glorify themselves and put others down on account of their attainment of the fourth absorption. 
+Translator: (empty)
+JUDGE mn113:22-24.12
+Pali: Ayampi, bhikkhave, sappurisadhammo. 
+Sujato: This too is a quality of a true person. 
+Translator: (empty)
+BELOW (outside this paragraph) mn113:25.1
+Pali: Puna caparaṁ, bhikkhave, asappuriso sabbaso rūpasaññānaṁ samatikkamā paṭighasaññānaṁ atthaṅgamā nānattasaññānaṁ amanasikārā ‘ananto ākāso’ti ākāsānañcāyatanaṁ upasampajja viharati. 
+Sujato: Furthermore, take an untrue person who, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, enters and remains in the dimension of infinite space … 
+Translator: the dimension of the infinitude of space… 
+
+=== RUN 299: mn113:25.2 mn113:25.3 mn113:25.4 mn113:25.5 mn113:25.6 mn113:25.7 mn113:25.8 mn113:25.9 mn113:25.10 ===
+File: data/thanissaro/sutta/mn/mn113_translation-en-thanissaro.json
+ABOVE mn113:25.1
+Pali: Puna caparaṁ, bhikkhave, asappuriso sabbaso rūpasaññānaṁ samatikkamā paṭighasaññānaṁ atthaṅgamā nānattasaññānaṁ amanasikārā ‘ananto ākāso’ti ākāsānañcāyatanaṁ upasampajja viharati. 
+Sujato: Furthermore, take an untrue person who, going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that ‘space is infinite’, enters and remains in the dimension of infinite space … 
+Translator: the dimension of the infinitude of space… 
+JUDGE mn113:25.2
+Pali: So iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:25.3
+Pali: ‘ahaṁ khomhi ākāsānañcāyatanasamāpattiyā lābhī, ime panaññe bhikkhū ākāsānañcāyatanasamāpattiyā na lābhino’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:25.4
+Pali: So tāya ākāsānañcāyatanasamāpattiyā attānukkaṁseti, paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:25.5
+Pali: Ayampi, bhikkhave, asappurisadhammo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:25.6
+Pali: Sappuriso ca kho, bhikkhave, iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:25.7
+Pali: ‘ākāsānañcāyatanasamāpattiyāpi kho atammayatā vuttā bhagavatā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:25.8
+Pali: Yena yena hi maññanti tato taṁ hoti aññathā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:25.9
+Pali: So atammayataññeva antaraṁ karitvā tāya ākāsānañcāyatanasamāpattiyā nevattānukkaṁseti, na paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:25.10
+Pali: Ayampi, bhikkhave, sappurisadhammo. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn113:26.1
+Pali: Puna caparaṁ, bhikkhave, asappuriso sabbaso ākāsānañcāyatanaṁ samatikkamma ‘anantaṁ viññāṇan’ti viññāṇañcāyatanaṁ upasampajja viharati. 
+Sujato: the dimension of infinite consciousness … 
+Translator: the dimension of the infinitude of consciousness… 
+
+=== RUN 300: mn113:26.2 mn113:26.3 mn113:26.4 mn113:26.5 mn113:26.6 mn113:26.7 mn113:26.8 mn113:26.9 mn113:26.10 ===
+File: data/thanissaro/sutta/mn/mn113_translation-en-thanissaro.json
+ABOVE mn113:26.1
+Pali: Puna caparaṁ, bhikkhave, asappuriso sabbaso ākāsānañcāyatanaṁ samatikkamma ‘anantaṁ viññāṇan’ti viññāṇañcāyatanaṁ upasampajja viharati. 
+Sujato: the dimension of infinite consciousness … 
+Translator: the dimension of the infinitude of consciousness… 
+JUDGE mn113:26.2
+Pali: So iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:26.3
+Pali: ‘ahaṁ khomhi viññāṇañcāyatanasamāpattiyā lābhī, ime panaññe bhikkhū viññāṇañcāyatanasamāpattiyā na lābhino’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:26.4
+Pali: So tāya viññāṇañcāyatanasamāpattiyā attānukkaṁseti, paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:26.5
+Pali: Ayampi, bhikkhave, asappurisadhammo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:26.6
+Pali: Sappuriso ca kho, bhikkhave, iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:26.7
+Pali: ‘viññāṇañcāyatanasamāpattiyāpi kho atammayatā vuttā bhagavatā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:26.8
+Pali: Yena yena hi maññanti tato taṁ hoti aññathā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:26.9
+Pali: So atammayataññeva antaraṁ karitvā tāya viññāṇañcāyatanasamāpattiyā nevattānukkaṁseti, na paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn113:26.10
+Pali: Ayampi, bhikkhave, sappurisadhammo. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn113:27.1
+Pali: Puna caparaṁ, bhikkhave, asappuriso sabbaso viññāṇañcāyatanaṁ samatikkamma ‘natthi kiñcī’ti ākiñcaññāyatanaṁ upasampajja viharati. 
+Sujato: the dimension of nothingness … 
+Translator: the dimension of nothingness… 

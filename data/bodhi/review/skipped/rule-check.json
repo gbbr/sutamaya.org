@@ -1,0 +1,418 @@
+{
+  "translator": "bodhi",
+  "rule": "Own content explicitly rendered; abbreviated or compressed repetitions and doubtful lines stay skipped.",
+  "input_marks_sha256": "7b6691b5199e12f7fa735ae97ffbb1346f96132948615b57870e9a19330060e1",
+  "covered_checked": 68,
+  "changed": 36,
+  "complete": true,
+  "records": [
+    {
+      "key": "an3.21:4.5",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Closing restatement after the omitted question/list is not separately rendered; the English before its ellipsis translates the opening assertion. User-confirmed correction."
+    },
+    {
+      "key": "an3.21:6.5",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Closing restatement after the omitted question/list is not separately rendered; the English before its ellipsis translates the opening assertion. User-confirmed correction."
+    },
+    {
+      "key": "an5.56:2.2",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Reported what the pupil said compresses the repeated quotation; its mention does not make the quotation introduction covered."
+    },
+    {
+      "key": "an5.56:5.4",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Reported what the pupil said compresses the repeated quotation; its mention does not make the quotation introduction covered."
+    },
+    {
+      "key": "an5.57:6.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "Good or bad is explicit in the full reflection."
+    },
+    {
+      "key": "an5.57:6.7",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "Both inheritance of the action and frequent reflection by woman/man/householder/renunciant are explicitly rendered."
+    },
+    {
+      "key": "an8.17:1.4",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Elliptic series names smile/speech while suppressing repeated binding statements; compressed repetition stays skipped."
+    },
+    {
+      "key": "an8.17:1.5",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Elliptic series names smile/speech while suppressing repeated binding statements; compressed repetition stays skipped."
+    },
+    {
+      "key": "an8.18:1.4",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Elliptic series names smile/speech while suppressing repeated binding statements; compressed repetition stays skipped."
+    },
+    {
+      "key": "an8.18:1.5",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Elliptic series names smile/speech while suppressing repeated binding statements; compressed repetition stays skipped."
+    },
+    {
+      "key": "an8.23:3.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "Moral shame is explicit in the complete quality list; no repeated claim is replaced by a reference."
+    },
+    {
+      "key": "an8.23:3.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "Moral dread is explicit in the complete quality list."
+    },
+    {
+      "key": "an8.46:1.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "Complete voice acquisition sentence is explicit despite reordered voice and pleasure."
+    },
+    {
+      "key": "an8.46:1.7",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "Complete pleasure acquisition sentence is explicit."
+    },
+    {
+      "key": "an10.29:19.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "Full claim about not being unrepelled by existence is explicit."
+    },
+    {
+      "key": "an10.29:19.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "Full claim about not being repelled by cessation of existence is explicit."
+    },
+    {
+      "key": "dn2:16.6",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Asked him as in section14 condenses the repeated direct question; even mentioning its subject does not cover the abbreviated repetition."
+    },
+    {
+      "key": "dn2:19.4",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Asked him as in section14 condenses the repeated direct question; even mentioning its subject does not cover the abbreviated repetition."
+    },
+    {
+      "key": "dn2:22.4",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Asked him as in section14 condenses the repeated direct question; even mentioning its subject does not cover the abbreviated repetition."
+    },
+    {
+      "key": "dn2:25.4",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Asked him as in section14 condenses the repeated direct question; even mentioning its subject does not cover the abbreviated repetition."
+    },
+    {
+      "key": "dn2:28.4",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Asked him as in section14 condenses the repeated direct question; even mentioning its subject does not cover the abbreviated repetition."
+    },
+    {
+      "key": "dn2:31.4",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Asked him as in section14 condenses the repeated direct question; even mentioning its subject does not cover the abbreviated repetition."
+    },
+    {
+      "key": "dn15:34.5",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Several repeated questions/bases are condensed into one list and one question; the mentioned endpoints remain part of compressed repetition."
+    },
+    {
+      "key": "dn15:34.7",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Several repeated questions/bases are condensed into one list and one question; the mentioned endpoints remain part of compressed repetition."
+    },
+    {
+      "key": "dn15:34.8",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Several repeated questions/bases are condensed into one list and one question; the mentioned endpoints remain part of compressed repetition."
+    },
+    {
+      "key": "mn7:4.3",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Ill will through negligence is condensed into one predicate around an ellipsis; repeated knowing/abandoning clauses remain skipped."
+    },
+    {
+      "key": "mn7:4.30",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Ill will through negligence is condensed into one predicate around an ellipsis; repeated knowing/abandoning clauses remain skipped."
+    },
+    {
+      "key": "mn7:4.31",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Ill will through negligence is condensed into one predicate around an ellipsis; repeated knowing/abandoning clauses remain skipped."
+    },
+    {
+      "key": "mn7:5.3",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Ill will through negligence is condensed into one predicate around an ellipsis; repeated knowing/abandoning clauses remain skipped."
+    },
+    {
+      "key": "mn7:5.30",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Ill will through negligence is condensed into one predicate around an ellipsis; repeated knowing/abandoning clauses remain skipped."
+    },
+    {
+      "key": "mn7:5.31",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Ill will through negligence is condensed into one predicate around an ellipsis; repeated knowing/abandoning clauses remain skipped."
+    },
+    {
+      "key": "mn11:11.8",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "All four clinging categories and the positive/negative understanding predicates are explicit."
+    },
+    {
+      "key": "mn11:12.8",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "All four clinging categories and the positive/negative understanding predicates are explicit."
+    },
+    {
+      "key": "mn31:7.12",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Spoke likewise abbreviates the repeated speech, including its introduction."
+    },
+    {
+      "key": "mn63:3.47",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The second if the Blessed One knows conditional is explicitly repeated in English."
+    },
+    {
+      "key": "mn63:3.48",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The neither-exists-nor-not-exists proposition and request to declare it are explicitly rendered."
+    },
+    {
+      "key": "mn82:7.14",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Elliptic repeated speech is abbreviated; where a closing question recurs, the single English question cannot safely distinguish the occurrences. In doubt skipped."
+    },
+    {
+      "key": "mn82:7.19",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Elliptic repeated speech is abbreviated; where a closing question recurs, the single English question cannot safely distinguish the occurrences. In doubt skipped."
+    },
+    {
+      "key": "mn82:8.22",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Elliptic repeated speech is abbreviated; where a closing question recurs, the single English question cannot safely distinguish the occurrences. In doubt skipped."
+    },
+    {
+      "key": "mn82:10.18",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Elliptic repeated speech is abbreviated; where a closing question recurs, the single English question cannot safely distinguish the occurrences. In doubt skipped."
+    },
+    {
+      "key": "sn12.32:18.9",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Up to seven days and nights condenses the repeated duration series into one statement."
+    },
+    {
+      "key": "sn16.7:3.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The complete quality list and its condition/consequence are explicitly rendered in English without an abbreviated repeated formula."
+    },
+    {
+      "key": "sn16.7:3.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The complete quality list and its condition/consequence are explicitly rendered in English without an abbreviated repeated formula."
+    },
+    {
+      "key": "sn16.7:3.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The complete quality list and its condition/consequence are explicitly rendered in English without an abbreviated repeated formula."
+    },
+    {
+      "key": "sn16.7:3.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The complete quality list and its condition/consequence are explicitly rendered in English without an abbreviated repeated formula."
+    },
+    {
+      "key": "sn16.7:6.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The complete quality list and its condition/consequence are explicitly rendered in English without an abbreviated repeated formula."
+    },
+    {
+      "key": "sn16.7:6.4",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The complete quality list and its condition/consequence are explicitly rendered in English without an abbreviated repeated formula."
+    },
+    {
+      "key": "sn16.7:6.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The complete quality list and its condition/consequence are explicitly rendered in English without an abbreviated repeated formula."
+    },
+    {
+      "key": "sn16.7:6.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The complete quality list and its condition/consequence are explicitly rendered in English without an abbreviated repeated formula."
+    },
+    {
+      "key": "sn22.89:2.2",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Reported what Khemaka said abbreviates the repeated quotation; its introduction is only mentioned by that report."
+    },
+    {
+      "key": "sn22.89:4.2",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Reported what Khemaka said abbreviates the repeated quotation; its introduction is only mentioned by that report."
+    },
+    {
+      "key": "sn22.89:6.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The narrative report to the elders is explicitly rendered before the abbreviated quotation; this is the narrative speech act, not the repeated quotation introduction."
+    },
+    {
+      "key": "sn22.89:6.3",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Reported what Khemaka said abbreviates the repeated quotation; its introduction is only mentioned by that report."
+    },
+    {
+      "key": "sn22.90:7.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The instruction or Dhamma-talk request is explicitly rendered as its own request."
+    },
+    {
+      "key": "sn22.90:7.7",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The instruction or Dhamma-talk request is explicitly rendered as its own request."
+    },
+    {
+      "key": "sn35.69:1.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The scattering condition and chaff comparison are rendered completely in this occurrence."
+    },
+    {
+      "key": "sn35.69:1.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The scattering condition and chaff comparison are rendered completely in this occurrence."
+    },
+    {
+      "key": "sn35.69:2.5",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The scattering condition and chaff comparison are rendered completely in this occurrence."
+    },
+    {
+      "key": "sn35.69:2.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The scattering condition and chaff comparison are rendered completely in this occurrence."
+    },
+    {
+      "key": "sn35.232:10.6",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "The complete Blessed One hears sound with the ear sentence is explicit; the ellipsis skips the later passion/liberation sentences."
+    },
+    {
+      "key": "sn44.3:3.3",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "First/last questions and replies are condensed with ellipses and in each case; repeated question/answer material stays skipped."
+    },
+    {
+      "key": "sn44.3:3.4",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "First/last questions and replies are condensed with ellipses and in each case; repeated question/answer material stays skipped."
+    },
+    {
+      "key": "sn46.3:2.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "Developing or bringing the factor to fulfillment is explicitly rendered as its own clause."
+    },
+    {
+      "key": "sn46.3:2.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "Developing or bringing the factor to fulfillment is explicitly rendered as its own clause."
+    },
+    {
+      "key": "sn46.3:3.2",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "Developing or bringing the factor to fulfillment is explicitly rendered as its own clause."
+    },
+    {
+      "key": "sn46.3:3.3",
+      "first_verdict": "covered",
+      "verdict": "covered",
+      "reason": "Developing or bringing the factor to fulfillment is explicitly rendered as its own clause."
+    },
+    {
+      "key": "sn47.9:3.4",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Three Pali wellbeing assertions are rendered as two English assertions; mapping bearing up between khamaniya and yapaniya is doubtful, so neither empty line is included."
+    },
+    {
+      "key": "sn47.9:3.5",
+      "first_verdict": "covered",
+      "verdict": "skipped",
+      "reason": "Three Pali wellbeing assertions are rendered as two English assertions; mapping bearing up between khamaniya and yapaniya is doubtful, so neither empty line is included."
+    }
+  ]
+}

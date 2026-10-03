@@ -262,10 +262,6 @@
     "sutta/an/an5/an5.200.html": "https://www.dhammatalks.org/suttas/AN/AN5_200.html",
     "sutta/an/an5/an5.202.html": "https://www.dhammatalks.org/suttas/AN/AN5_202.html",
     "sutta/an/an5/an5.210.html": "https://www.dhammatalks.org/suttas/AN/AN5_210.html",
-    "sutta/an/an5/an5.254-259.html": "https://www.dhammatalks.org/suttas/AN/AN5_254.html",
-    "sutta/an/an5/an5.257-263.html": "https://github.com/suttacentral/sc-data/blob/main/html_text/en/pli/sutta/an/an5/an5.257-263.html",
-    "sutta/an/an5/an5.264.html": "https://github.com/suttacentral/sc-data/blob/main/html_text/en/pli/sutta/an/an5/an5.264.html",
-    "sutta/an/an5/an5.265-271.html": "https://github.com/suttacentral/sc-data/blob/main/html_text/en/pli/sutta/an/an5/an5.265-271.html",
     "sutta/an/an6/an6.12.html": "https://www.dhammatalks.org/suttas/AN/AN6_12.html",
     "sutta/an/an6/an6.13.html": "https://www.dhammatalks.org/suttas/AN/AN6_13.html",
     "sutta/an/an6/an6.16.html": "https://www.dhammatalks.org/suttas/AN/AN6_16.html",
@@ -1440,6 +1436,7 @@
     "sutta/sn/sn56/sn56.45.html": "https://www.dhammatalks.org/suttas/SN/SN56_45.html",
     "sutta/sn/sn56/sn56.46.html": "https://www.dhammatalks.org/suttas/SN/SN56_46.html",
     "sutta/sn/sn56/sn56.48.html": "https://www.dhammatalks.org/suttas/SN/SN56_48.html",
-    "sutta/sn/sn56/sn56.102-113.html": "https://www.dhammatalks.org/suttas/SN/SN56_102.html"
+    "sutta/sn/sn56/sn56.102-113.html": "https://www.dhammatalks.org/suttas/SN/SN56_102.html",
+    "sutta/an/an5/an5.254-271.html": "https://www.dhammatalks.org/suttas/AN/AN5_254.html"
   }
 }

@@ -1,0 +1,984 @@
+thanissaro: skipped-Pali review batch 010
+Read the full English above, each original Pali line, and the next English. Sujato is context only.
+covered = this line's own content is explicitly rendered by the English above, including complete lists.
+skipped = abbreviated or compressed repetition, even if mentioned, or omitted. When in doubt, skipped.
+Judge each key independently; a run may be mixed. An ellipsis alone does not decide.
+Only runs of two or more empty prose lines in the same paragraph are reviewed; lone lines join automatically.
+Write <key> covered|skipped|unsure for every RUN key, then # done. Do not mark context keys.
+
+=== RUN 451: sn43.12:8.9 sn43.12:8.10 ===
+File: data/thanissaro/sutta/sn/sn43/sn43.12_translation-en-thanissaro.json
+ABOVE sn43.12:8.8
+Pali: Idha, bhikkhave, bhikkhu satindriyaṁ bhāveti …pe… 
+Sujato: mindfulness … 
+Translator: mindfulness… 
+JUDGE sn43.12:8.9
+Pali: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:8.10
+Pali: katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn43.12:8.11
+Pali: Idha, bhikkhave, bhikkhu samādhindriyaṁ bhāveti …pe… 
+Sujato: immersion … 
+Translator: concentration… 
+
+=== RUN 452: sn43.12:8.12 sn43.12:8.13 ===
+File: data/thanissaro/sutta/sn/sn43/sn43.12_translation-en-thanissaro.json
+ABOVE sn43.12:8.11
+Pali: Idha, bhikkhave, bhikkhu samādhindriyaṁ bhāveti …pe… 
+Sujato: immersion … 
+Translator: concentration… 
+JUDGE sn43.12:8.12
+Pali: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:8.13
+Pali: katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn43.12:8.14
+Pali: Idha, bhikkhave, bhikkhu paññindriyaṁ bhāveti vivekanissitaṁ virāganissitaṁ nirodhanissitaṁ vossaggapariṇāmiṁ. Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe…. 
+Sujato: wisdom, which relies on seclusion, fading away, and cessation, and ripens as letting go. … 
+Translator: discernment dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go. This is called the path leading to the unfabricated… 
+
+=== RUN 453: sn43.12:9.3 sn43.12:9.4 ===
+File: data/thanissaro/sutta/sn/sn43/sn43.12_translation-en-thanissaro.json
+ABOVE sn43.12:9.2
+Pali: Idha, bhikkhave, bhikkhu saddhābalaṁ bhāveti vivekanissitaṁ …pe… 
+Sujato: A mendicant develops the power of faith … 
+Translator: There is the case where a monk develops the strength of conviction… 
+JUDGE sn43.12:9.3
+Pali: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:9.4
+Pali: katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn43.12:9.5
+Pali: Idha, bhikkhave, bhikkhu vīriyabalaṁ bhāveti …pe… 
+Sujato: energy … 
+Translator: persistence… 
+
+=== RUN 454: sn43.12:9.6 sn43.12:9.7 ===
+File: data/thanissaro/sutta/sn/sn43/sn43.12_translation-en-thanissaro.json
+ABOVE sn43.12:9.5
+Pali: Idha, bhikkhave, bhikkhu vīriyabalaṁ bhāveti …pe… 
+Sujato: energy … 
+Translator: persistence… 
+JUDGE sn43.12:9.6
+Pali: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:9.7
+Pali: katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn43.12:9.8
+Pali: Idha, bhikkhave, bhikkhu satibalaṁ bhāveti …pe… 
+Sujato: mindfulness … 
+Translator: mindfulness… 
+
+=== RUN 455: sn43.12:9.9 sn43.12:9.10 ===
+File: data/thanissaro/sutta/sn/sn43/sn43.12_translation-en-thanissaro.json
+ABOVE sn43.12:9.8
+Pali: Idha, bhikkhave, bhikkhu satibalaṁ bhāveti …pe… 
+Sujato: mindfulness … 
+Translator: mindfulness… 
+JUDGE sn43.12:9.9
+Pali: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:9.10
+Pali: katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn43.12:9.11
+Pali: Idha, bhikkhave, bhikkhu samādhibalaṁ bhāveti …pe… 
+Sujato: immersion … 
+Translator: concentration… 
+
+=== RUN 456: sn43.12:9.12 sn43.12:9.13 ===
+File: data/thanissaro/sutta/sn/sn43/sn43.12_translation-en-thanissaro.json
+ABOVE sn43.12:9.11
+Pali: Idha, bhikkhave, bhikkhu samādhibalaṁ bhāveti …pe… 
+Sujato: immersion … 
+Translator: concentration… 
+JUDGE sn43.12:9.12
+Pali: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:9.13
+Pali: katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn43.12:9.14
+Pali: Idha, bhikkhave, bhikkhu paññābalaṁ bhāveti vivekanissitaṁ virāganissitaṁ nirodhanissitaṁ vossaggapariṇāmiṁ. Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe…. 
+Sujato: wisdom, which relies on seclusion, fading away, and cessation, and ripens as letting go. … 
+Translator: discernment dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go. This is called the path leading to the unfabricated… 
+
+=== RUN 457: sn43.12:10.3 sn43.12:10.4 ===
+File: data/thanissaro/sutta/sn/sn43/sn43.12_translation-en-thanissaro.json
+ABOVE sn43.12:10.2
+Pali: Idha, bhikkhave, bhikkhu satisambojjhaṅgaṁ bhāveti vivekanissitaṁ …pe… 
+Sujato: A mendicant develops the awakening factor of mindfulness … 
+Translator: There is the case where a monk develops mindfulness as a factor for awakening… 
+JUDGE sn43.12:10.3
+Pali: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:10.4
+Pali: katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn43.12:10.5
+Pali: Idha, bhikkhave, bhikkhu dhammavicayasambojjhaṅgaṁ bhāveti …pe… 
+Sujato: investigation of principles … 
+Translator: analysis of qualities as a factor for awakening… 
+
+=== RUN 458: sn43.12:11.3 sn43.12:11.4 ===
+File: data/thanissaro/sutta/sn/sn43/sn43.12_translation-en-thanissaro.json
+ABOVE sn43.12:11.2
+Pali: Idha, bhikkhave, bhikkhu sammādiṭṭhiṁ bhāveti vivekanissitaṁ virāganissitaṁ nirodhanissitaṁ vossaggapariṇāmiṁ. 
+Sujato: A mendicant develops right view … 
+Translator: There is the case where a monk develops right view… 
+JUDGE sn43.12:11.3
+Pali: Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:11.4
+Pali: katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn43.12:11.5
+Pali: Idha, bhikkhave, bhikkhu sammāsaṅkappaṁ bhāveti …pe… 
+Sujato: right purpose … 
+Translator: right resolve… 
+
+=== RUN 459: sn43.12:11.11 sn43.12:11.12 sn43.12:11.13 ===
+File: data/thanissaro/sutta/sn/sn43/sn43.12_translation-en-thanissaro.json
+ABOVE sn43.12:11.10
+Pali: sammāsatiṁ bhāveti …pe… 
+Sujato: right mindfulness … 
+Translator: right mindfulness dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go. This is called the path leading to the unfabricated… 
+JUDGE sn43.12:11.11
+Pali: asaṅkhatañca vo, bhikkhave, desessāmi asaṅkhatagāmiñca maggaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:11.12
+Pali: Taṁ suṇātha. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:11.13
+Pali: Katamañca, bhikkhave, asaṅkhataṁ …pe…? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn43.12:11.14
+Pali: Katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+Sujato: (empty)
+Translator: “And which is the path leading to the unfabricated? 
+
+=== RUN 460: sn43.13:1.2 sn43.13:1.3 ===
+File: data/thanissaro/sutta/sn/sn43/sn43.13_translation-en-thanissaro.json
+ABOVE sn43.13:1.1
+Pali: “Anatañca vo, bhikkhave, desessāmi, anatagāmiñca maggaṁ. 
+Sujato: “Mendicants, I will teach you the uninclined …” 
+Translator: “Monks, I will also teach you the unbent and the path leading to the unbent… 
+JUDGE sn43.13:1.2
+Pali: Taṁ suṇātha. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.13:1.3
+Pali: Katamañca, bhikkhave, anataṁ …pe…”. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph): (none)
+
+=== RUN 461: sn43.23:1.2 sn43.23:1.3 ===
+File: data/thanissaro/sutta/sn/sn43/sn43.14-43_translation-en-thanissaro.json
+ABOVE sn43.23:1.1
+Pali: Nippapañcañca vo, bhikkhave, desessāmi nippapañcagāmiñca maggaṁ. 
+Sujato: “the unproliferated …” 
+Translator: “Monks, I will also teach you non-objectification and the path leading to non-objectification … 
+JUDGE sn43.23:1.2
+Pali: Taṁ suṇātha. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.23:1.3
+Pali: Katamañca, bhikkhave, nippapañcaṁ …pe…? 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn43.24:1.1
+Pali: Santañca vo, bhikkhave, desessāmi santagāmiñca maggaṁ. 
+Sujato: “the peaceful …” 
+Translator: “Monks, I will also teach you peace and the path leading to peace … 
+
+=== RUN 462: sn43.29:1.2 sn43.29:1.3 ===
+File: data/thanissaro/sutta/sn/sn43/sn43.14-43_translation-en-thanissaro.json
+ABOVE sn43.29:1.1
+Pali: Taṇhākkhayañca vo, bhikkhave, desessāmi taṇhākkhayagāmiñca maggaṁ. 
+Sujato: “the ending of craving …” 
+Translator: “Monks, I will also teach you the ending of craving and the path leading to the ending of craving … 
+JUDGE sn43.29:1.2
+Pali: Taṁ suṇātha. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.29:1.3
+Pali: Katamañca, bhikkhave, taṇhākkhayaṁ …pe…? 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn43.30:1.1
+Pali: Acchariyañca vo, bhikkhave, desessāmi acchariyagāmiñca maggaṁ. 
+Sujato: “the incredible …” 
+Translator: “Monks, I will also teach you the amazing and the path leading to the amazing … 
+
+=== RUN 463: sn43.36:1.2 sn43.36:1.3 ===
+File: data/thanissaro/sutta/sn/sn43/sn43.14-43_translation-en-thanissaro.json
+ABOVE sn43.36:1.1
+Pali: Virāgañca vo, bhikkhave, desessāmi virāgagāmiñca maggaṁ. 
+Sujato: “dispassion …” 
+Translator: “Monks, I will also teach you dispassion and the path leading to dispassion … 
+JUDGE sn43.36:1.2
+Pali: Taṁ suṇātha. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.36:1.3
+Pali: Katamo ca, bhikkhave, virāgo …pe…? 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn43.37:1.1
+Pali: Suddhiñca vo, bhikkhave, desessāmi suddhigāmiñca maggaṁ. 
+Sujato: “purity …” 
+Translator: “Monks, I will also teach you purity and the path leading to purity … 
+
+=== RUN 464: sn44.1:5.5 sn44.1:5.6 ===
+File: data/thanissaro/sutta/sn/sn44/sn44.1_translation-en-thanissaro.json
+ABOVE sn44.1:5.4
+Pali: ‘Kiṁ panayye, na hoti tathāgato paraṁ maraṇā’ti iti puṭṭhā samānā: 
+Sujato: (empty)
+Translator: When asked if the Tathāgata does not exist after death… 
+JUDGE sn44.1:5.5
+Pali: ‘etampi kho, mahārāja, abyākataṁ bhagavatā—
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:5.6
+Pali: na hoti tathāgato paraṁ maraṇā’ti vadesi. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn44.1:5.7
+Pali: ‘Kiṁ nu kho, ayye, hoti ca na ca hoti tathāgato paraṁ maraṇā’ti iti puṭṭhā samānā: 
+Sujato: (empty)
+Translator: both exists and does not exist after death… 
+
+=== RUN 465: sn44.1:5.8 sn44.1:5.9 ===
+File: data/thanissaro/sutta/sn/sn44/sn44.1_translation-en-thanissaro.json
+ABOVE sn44.1:5.7
+Pali: ‘Kiṁ nu kho, ayye, hoti ca na ca hoti tathāgato paraṁ maraṇā’ti iti puṭṭhā samānā: 
+Sujato: (empty)
+Translator: both exists and does not exist after death… 
+JUDGE sn44.1:5.8
+Pali: ‘abyākataṁ kho etaṁ, mahārāja, bhagavatā—
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:5.9
+Pali: hoti ca na ca hoti tathāgato paraṁ maraṇā’ti vadesi. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn44.1:5.10
+Pali: ‘Kiṁ panayye, neva hoti na na hoti tathāgato paraṁ maraṇā’ti iti puṭṭhā samānā: 
+Sujato: (empty)
+Translator: neither exists nor does not exist after death, 
+
+=== RUN 466: sn44.1:7.2 sn44.1:7.3 sn44.1:7.4 ===
+File: data/thanissaro/sutta/sn/sn44/sn44.1_translation-en-thanissaro.json
+ABOVE sn44.1:7.1
+Pali: Yāya vedanāya tathāgataṁ paññāpayamāno paññāpeyya, sā vedanā tathāgatassa pahīnā ucchinnamūlā tālāvatthukatā anabhāvaṅkatā āyatiṁ anuppādadhammā. 
+Sujato: Any feeling … 
+Translator: “Any feeling… 
+JUDGE sn44.1:7.2
+Pali: Vedanāsaṅkhāyavimutto, mahārāja, tathāgato gambhīro appameyyo duppariyogāho—
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:7.3
+Pali: seyyathāpi mahāsamuddo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:7.4
+Pali: ‘Hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘na hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipi na upeti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn44.1:8.1
+Pali: Yāya saññāya tathāgataṁ …pe… 
+Sujato: perception … 
+Translator: Any perception… 
+
+=== RUN 467: sn44.1:8.3 sn44.1:8.4 sn44.1:8.5 ===
+File: data/thanissaro/sutta/sn/sn44/sn44.1_translation-en-thanissaro.json
+ABOVE sn44.1:8.2
+Pali: yehi saṅkhārehi tathāgataṁ paññāpayamāno paññāpeyya, te saṅkhārā tathāgatassa pahīnā ucchinnamūlā tālāvatthukatā anabhāvaṅkatā āyatiṁ anuppādadhammā. 
+Sujato: choices … 
+Translator: Any fabrications… 
+JUDGE sn44.1:8.3
+Pali: Saṅkhārasaṅkhāyavimutto kho, mahārāja, tathāgato gambhīro appameyyo duppariyogāho—
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:8.4
+Pali: seyyathāpi mahāsamuddo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:8.5
+Pali: ‘Hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘na hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipi na upeti, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipi na upeti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn44.1:9.1
+Pali: Yena viññāṇena tathāgataṁ paññāpayamāno paññāpeyya taṁ viññāṇaṁ tathāgatassa pahīnaṁ ucchinnamūlaṁ tālāvatthukataṁ anabhāvaṅkataṁ āyatiṁ anuppādadhammaṁ. 
+Sujato: consciousness by which a realized one might be described has been cut off at the root, made like a palm stump, obliterated, and unable to arise in the future. 
+Translator: “Any consciousness by which one describing the Tathāgata would describe him: That the Tathāgata has abandoned, its root destroyed, made like a palmyra stump, deprived of the conditions of development, not destined for future arising. 
+
+=== RUN 468: sn44.1:10.2 sn44.1:10.3 sn44.1:10.4 sn44.1:10.5 sn44.1:10.6 sn44.1:10.7 sn44.1:10.8 sn44.1:10.9 sn44.1:10.10 sn44.1:10.11 sn44.1:10.12 sn44.1:10.13 sn44.1:10.14 sn44.1:10.15 sn44.1:10.16 sn44.1:10.17 sn44.1:10.18 sn44.1:10.19 ===
+File: data/thanissaro/sutta/sn/sn44/sn44.1_translation-en-thanissaro.json
+ABOVE sn44.1:10.1
+Pali: Atha kho rājā pasenadi kosalo aparena samayena yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ nisīdi. Ekamantaṁ nisinno kho rājā pasenadi kosalo bhagavantaṁ etadavoca: 
+Sujato: Then on a later occasion King Pasenadi of Kosala went up to the Buddha, bowed, and sat down to one side. He asked the Buddha exactly the same questions he had asked the nun Khemā, and received the same answers. 
+Translator: Then at another time he went to the Blessed One and, on arrival, having bowed down to the Blessed One, sat to one side. As he was sitting there [he asked the Blessed One the same questions he had asked Khemā the nun, and received precisely the same responses and analogies. Then he exclaimed:] 
+JUDGE sn44.1:10.2
+Pali: “kiṁ nu kho, bhante, hoti tathāgato paraṁ maraṇā”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.3
+Pali: “Abyākataṁ kho etaṁ, mahārāja, mayā: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.4
+Pali: ‘hoti tathāgato paraṁ maraṇā’”ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.5
+Pali: “Kiṁ pana, bhante, na hoti tathāgato paraṁ maraṇā”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.6
+Pali: “Etampi kho, mahārāja, abyākataṁ mayā: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.7
+Pali: ‘na hoti tathāgato paraṁ maraṇā’”ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.8
+Pali: “Kiṁ nu kho, bhante, hoti ca na ca hoti tathāgato paraṁ maraṇā”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.9
+Pali: “Abyākataṁ kho etaṁ, mahārāja, mayā: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.10
+Pali: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’”ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.11
+Pali: “Kiṁ pana, bhante, neva hoti na na hoti tathāgato paraṁ maraṇā”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.12
+Pali: “Etampi kho, mahārāja, abyākataṁ mayā: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.13
+Pali: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.14
+Pali: “‘Kiṁ nu kho, bhante, hoti tathāgato paraṁ maraṇā’ti iti puṭṭho samāno: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.15
+Pali: ‘abyākataṁ kho etaṁ, mahārāja, mayā—hoti tathāgato paraṁ maraṇā’ti vadesi …pe…. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.16
+Pali: “‘Kiṁ pana, bhante, neva hoti na na hoti tathāgato paraṁ maraṇā’ti iti puṭṭho samāno: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.17
+Pali: ‘etampi kho, mahārāja, abyākataṁ mayā—
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.18
+Pali: neva hoti na na hoti tathāgato paraṁ maraṇā’ti vadesi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.1:10.19
+Pali: Ko nu kho, bhante, hetu, ko paccayo, yenetaṁ abyākataṁ bhagavatā”ti? 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn44.1:13.1
+Pali: “Acchariyaṁ, bhante, abbhutaṁ, bhante. 
+Sujato: He said, “It’s incredible, sir, it’s amazing! 
+Translator: “Amazing, lord! Astounding! 
+
+=== RUN 469: sn44.3:3.2 sn44.3:3.3 sn44.3:3.4 sn44.3:3.5 ===
+File: data/thanissaro/sutta/sn/sn44/sn44.3_translation-en-thanissaro.json
+ABOVE sn44.3:3.1
+Pali: “‘Kiṁ nu kho, āvuso, hoti tathāgato paraṁ maraṇā’ti iti puṭṭho samāno, ‘abyākataṁ kho etaṁ, āvuso, bhagavatā—
+Sujato: “Reverend, when asked these questions, you say that they have not been declared by the Buddha. 
+Translator: “Now, friend Sāriputta, when asked if the Tathāgata exists after death, you say, ‘That has not been declared by the Blessed One: “The Tathāgata exists after death.”’ When asked if the Tathāgata does not exist after death… both exists and does not exist after death… neither exists nor does not exist after death, you say, ‘That too has not been declared by the Blessed One: “The Tathāgata neither exists nor does not exist after death.”’ 
+JUDGE sn44.3:3.2
+Pali: hoti tathāgato paraṁ maraṇā’ti vadesi …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.3:3.3
+Pali: ‘kiṁ panāvuso, neva hoti na na hoti tathāgato paraṁ maraṇā’ti iti puṭṭho samāno: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.3:3.4
+Pali: ‘etampi kho, āvuso, abyākataṁ bhagavatā—
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.3:3.5
+Pali: neva hoti na na hoti tathāgato paraṁ maraṇā’ti vadesi. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn44.3:3.6
+Pali: Ko nu kho, āvuso, hetu, ko paccayo yenetaṁ abyākataṁ bhagavatā”ti? 
+Sujato: What’s the cause, what’s the reason why they have not been declared by the Buddha?” 
+Translator: Now, what is the cause, what is the reason, why that has not been declared by the Blessed One?” 
+
+=== RUN 470: sn44.3:4.6 sn44.3:4.7 sn44.3:4.8 ===
+File: data/thanissaro/sutta/sn/sn44/sn44.3_translation-en-thanissaro.json
+ABOVE sn44.3:4.5
+Pali: Hoti tathāgato paraṁ maraṇāti kho, āvuso, vedanāgatametaṁ. 
+Sujato: ‘Does a realized one still exist after death?’ is included in feeling … 
+Translator: “‘The Tathāgata exists after death’ is immersed in feeling… 
+JUDGE sn44.3:4.6
+Pali: Na hoti tathāgato paraṁ maraṇāti, vedanāgatametaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.3:4.7
+Pali: Hoti ca na ca hoti tathāgato paraṁ maraṇāti, vedanāgatametaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.3:4.8
+Pali: Neva hoti na na hoti tathāgato paraṁ maraṇāti, vedanāgatametaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn44.3:4.9
+Pali: Hoti tathāgato paraṁ maraṇāti kho, āvuso, saññāgatametaṁ. 
+Sujato: perception … 
+Translator: “‘The Tathāgata exists after death’ is immersed in perception… 
+
+=== RUN 471: sn44.3:4.10 sn44.3:4.11 sn44.3:4.12 ===
+File: data/thanissaro/sutta/sn/sn44/sn44.3_translation-en-thanissaro.json
+ABOVE sn44.3:4.9
+Pali: Hoti tathāgato paraṁ maraṇāti kho, āvuso, saññāgatametaṁ. 
+Sujato: perception … 
+Translator: “‘The Tathāgata exists after death’ is immersed in perception… 
+JUDGE sn44.3:4.10
+Pali: Na hoti tathāgato paraṁ maraṇāti, saññāgatametaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.3:4.11
+Pali: Hoti ca na ca hoti tathāgato paraṁ maraṇāti, saññāgatametaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.3:4.12
+Pali: Neva hoti na na hoti tathāgato paraṁ maraṇāti, saññāgatametaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn44.3:4.13
+Pali: Hoti tathāgato paraṁ maraṇāti kho, āvuso, saṅkhāragatametaṁ. 
+Sujato: choices … 
+Translator: “‘The Tathāgata exists after death’ is immersed in fabrication… 
+
+=== RUN 472: sn44.3:4.14 sn44.3:4.15 sn44.3:4.16 ===
+File: data/thanissaro/sutta/sn/sn44/sn44.3_translation-en-thanissaro.json
+ABOVE sn44.3:4.13
+Pali: Hoti tathāgato paraṁ maraṇāti kho, āvuso, saṅkhāragatametaṁ. 
+Sujato: choices … 
+Translator: “‘The Tathāgata exists after death’ is immersed in fabrication… 
+JUDGE sn44.3:4.14
+Pali: Na hoti tathāgato paraṁ maraṇāti, saṅkhāragatametaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.3:4.15
+Pali: Hoti ca na ca hoti tathāgato paraṁ maraṇāti, saṅkhāragatametaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.3:4.16
+Pali: Neva hoti na na hoti tathāgato paraṁ maraṇāti, saṅkhāragatametaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn44.3:4.17
+Pali: Hoti tathāgato paraṁ maraṇāti kho, āvuso, viññāṇagatametaṁ. 
+Sujato: consciousness. 
+Translator: “‘The Tathāgata exists after death’ is immersed in consciousness. 
+
+=== RUN 473: sn44.6:1.6 sn44.6:1.7 ===
+File: data/thanissaro/sutta/sn/sn44/sn44.6_translation-en-thanissaro.json
+ABOVE sn44.6:1.5
+Pali: ‘kiṁ panāvuso, neva hoti na na hoti tathāgato paraṁ maraṇā’ti iti puṭṭho samāno: 
+Sujato: “Reverend, when asked these questions, you say that this has not been declared by the Buddha. 
+Translator: “Now, friend Koṭṭhita, when asked if the Tathāgata exists after death, you say, ‘That has not been declared by the Blessed One: “The Tathāgata exists after death.”’ When asked if the Tathāgata does not exist after death… both exists and does not exist after death… neither exists nor does not exist after death, you say, ‘That too has not been declared by the Blessed One: “The Tathāgata neither exists nor does not exist after death.”’ 
+JUDGE sn44.6:1.6
+Pali: ‘etampi kho, āvuso, abyākataṁ bhagavatā—
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.6:1.7
+Pali: neva hoti na na hoti tathāgato paraṁ maraṇā’ti vadesi. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn44.6:1.8
+Pali: Ko nu kho, āvuso, hetu, ko paccayo, yenetaṁ abyākataṁ bhagavatā”ti? 
+Sujato: What’s the cause, what’s the reason why this has not been declared by the Buddha?” 
+Translator: Now, what is the cause, what is the reason, why that has not been declared by the Blessed One?” 
+
+=== RUN 474: sn44.7:5.3 sn44.7:5.4 sn44.7:5.5 sn44.7:5.6 sn44.7:5.7 ===
+File: data/thanissaro/sutta/sn/sn44/sn44.7_translation-en-thanissaro.json
+ABOVE sn44.7:5.2
+Pali: Sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdi. Ekamantaṁ nisinno kho vacchagotto paribbājako bhagavantaṁ etadavoca: 
+Sujato: When the greetings and polite conversation were over, he sat down to one side. He asked the Buddha the same questions, and received the same answers. 
+Translator: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he (addressed the same questions to the Blessed One and received exactly the same explanation). 
+JUDGE sn44.7:5.3
+Pali: “kiṁ nu kho, bho gotama, sassato loko”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.7:5.4
+Pali: “Abyākataṁ kho etaṁ, vaccha, mayā: ‘sassato loko’ti …pe…. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.7:5.5
+Pali: “Kiṁ pana, bho gotama, neva hoti na na hoti tathāgato paraṁ maraṇā”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.7:5.6
+Pali: “Etampi kho, vaccha, abyākataṁ mayā: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.7:5.7
+Pali: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn44.7:8.1
+Pali: “Acchariyaṁ, bho gotama, abbhutaṁ, bho gotama. 
+Sujato: He said, “It’s incredible, worthy Gotama, it’s amazing! 
+Translator: “Amazing, Master Gotama! Astounding! 
+
+=== RUN 475: sn44.8:4.3 sn44.8:4.4 sn44.8:4.5 sn44.8:4.6 sn44.8:4.7 ===
+File: data/thanissaro/sutta/sn/sn44/sn44.8_translation-en-thanissaro.json
+ABOVE sn44.8:4.2
+Pali: Sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdi. Ekamantaṁ nisinno kho vacchagotto paribbājako āyasmantaṁ mahāmoggallānaṁ etadavoca: 
+Sujato: When the greetings and polite conversation were over, he sat down to one side. He asked Mahāmoggallāna the same questions, and received the same answers. 
+Translator: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he (addressed the same questions to Ven. Mahā Moggallāna and received exactly the same explanation). 
+JUDGE sn44.8:4.3
+Pali: “kiṁ nu kho, bho moggallāna, sassato loko”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.8:4.4
+Pali: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: ‘sassato loko’ti …pe…. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.8:4.5
+Pali: “Kiṁ pana, bho moggallāna, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.8:4.6
+Pali: “Etampi kho, vaccha, abyākataṁ bhagavatā: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn44.8:4.7
+Pali: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn44.8:7.1
+Pali: “Acchariyaṁ, bho moggallāna, abbhutaṁ, bho moggallāna. 
+Sujato: He said, “It’s incredible, worthy Moggallāna, it’s amazing. 
+Translator: “Amazing, Master Moggallāna! Astounding! 
+
+=== RUN 476: sn46.26:2.3 sn46.26:2.4 ===
+File: data/thanissaro/sutta/sn/sn46/sn46.26_translation-en-thanissaro.json
+ABOVE sn46.26:2.2
+Pali: Tassa satisambojjhaṅgaṁ bhāvayato vivekanissitaṁ virāganissitaṁ nirodhanissitaṁ vossaggapariṇāmiṁ vipulaṁ mahaggataṁ appamāṇaṁ abyāpajjaṁ taṇhā pahīyati. 
+Sujato: As they do so, craving is given up. 
+Translator: craving is abandoned. 
+JUDGE sn46.26:2.3
+Pali: Taṇhāya pahānā kammaṁ pahīyati. 
+Sujato: When craving is given up, deeds are given up. 
+Translator: (empty)
+JUDGE sn46.26:2.4
+Pali: Kammassa pahānā dukkhaṁ pahīyati …pe… 
+Sujato: When deeds are given up, suffering is given up. … 
+Translator: (empty)
+BELOW (outside this paragraph) sn46.26:2.5
+Pali: upekkhāsambojjhaṅgaṁ bhāveti vivekanissitaṁ virāganissitaṁ nirodhanissitaṁ vossaggapariṇāmiṁ vipulaṁ mahaggataṁ appamāṇaṁ abyāpajjaṁ. 
+Sujato: A mendicant develops the awakening factor of equanimity, which relies on seclusion, fading away, and cessation, and ripens as letting go. And it is abundant, expansive, limitless, and free of ill will. 
+Translator: [Similarly with the remaining factors for awakening.] 
+
+=== RUN 477: sn46.29:1.3 sn46.29:1.4 ===
+File: data/thanissaro/sutta/sn/sn46/sn46.29_translation-en-thanissaro.json
+ABOVE sn46.29:1.2
+Pali: Katame satta? 
+Sujato: What seven? 
+Translator: Which seven? 
+JUDGE sn46.29:1.3
+Pali: Satisambojjhaṅgo …pe… upekkhāsambojjhaṅgo. 
+Sujato: The awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, and equanimity. 
+Translator: (empty)
+JUDGE sn46.29:1.4
+Pali: Kathaṁ bhāvitā ca, bhikkhave, satta bojjhaṅgā kathaṁ bahulīkatā saṁyojanīyānaṁ dhammānaṁ pahānāya saṁvattanti? 
+Sujato: And how are the seven awakening factors developed and cultivated so as to lead to giving up the things that tighten the fetters? 
+Translator: (empty)
+BELOW (outside this paragraph) sn46.29:2.1
+Pali: Idha, bhikkhave, bhikkhu satisambojjhaṅgaṁ bhāveti vivekanissitaṁ …pe… 
+Sujato: It’s when a mendicant develops the awakening factors of mindfulness, investigation of principles, energy, rapture, tranquility, immersion, 
+Translator: “There is the case where a monk develops mindfulness as a factor for awakening dependent on seclusion, dependent on dispassion, dependent on cessation, resulting in letting go. He develops analysis of qualities as a factor for awakening… persistence as a factor for awakening… rapture as a factor for awakening… calm as a factor for awakening… concentration as a factor for awakening… 
+
+=== RUN 478: sn47.8:7.5 sn47.8:7.6 ===
+File: data/thanissaro/sutta/sn/sn47/sn47.8_translation-en-thanissaro.json
+ABOVE sn47.8:7.4
+Pali: Evameva kho, bhikkhave, idhekacco paṇḍito byatto kusalo bhikkhu kāye kāyānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+Sujato: In the same way, an astute, competent, skillful mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
+Translator: “In the same way, there is the case where a wise, competent, skillful monk remains focused on the body in & of itself… 
+JUDGE sn47.8:7.5
+Pali: Tassa kāye kāyānupassino viharato cittaṁ samādhiyati, upakkilesā pahīyanti. 
+Sujato: As they meditate observing an aspect of the body, their mind enters immersion, and their corruptions are given up. 
+Translator: (empty)
+JUDGE sn47.8:7.6
+Pali: So taṁ nimittaṁ uggaṇhāti. 
+Sujato: They take the hint. 
+Translator: (empty)
+BELOW sn47.8:7.7
+Pali: Vedanāsu vedanānupassī viharati …pe… 
+Sujato: They meditate observing an aspect of feelings … 
+Translator: feelings in & of themselves… 
+
+=== RUN 479: sn47.10:8.8 sn47.10:8.9 ===
+File: data/thanissaro/sutta/sn/sn47/sn47.10_translation-en-thanissaro.json
+ABOVE sn47.10:8.7
+Pali: Atha ca pana ‘vedanāsu vedanānupassī viharāmi ātāpī sampajāno satimā sukhamasmī’ti pajānāti. 
+Sujato: And they also understand: ‘I meditate observing an aspect of feelings—keen, aware, mindful; I am happy.’ 
+Translator: And then, I remain focused on feelings… 
+JUDGE sn47.10:8.8
+Pali: Bahiddhā, ānanda, bhikkhu cittaṁ appaṇidhāya ‘appaṇihitaṁ me bahiddhā cittan’ti pajānāti. 
+Sujato: Not directing their mind externally, a mendicant understands: ‘My mind is not directed externally.’ 
+Translator: (empty)
+JUDGE sn47.10:8.9
+Pali: Atha pacchāpure ‘asaṅkhittaṁ vimuttaṁ appaṇihitan’ti pajānāti. 
+Sujato: And they understand: ‘Before and behind, it’s unconstricted, freed, and undirected.’ 
+Translator: (empty)
+BELOW sn47.10:8.10
+Pali: Atha ca pana ‘citte cittānupassī viharāmi ātāpī sampajāno satimā sukhamasmī’ti pajānāti. 
+Sujato: And they also understand: ‘I meditate observing an aspect of the mind—keen, aware, mindful; I am happy.’ 
+Translator: mind… 
+
+=== RUN 480: sn47.10:8.11 sn47.10:8.12 ===
+File: data/thanissaro/sutta/sn/sn47/sn47.10_translation-en-thanissaro.json
+ABOVE sn47.10:8.10
+Pali: Atha ca pana ‘citte cittānupassī viharāmi ātāpī sampajāno satimā sukhamasmī’ti pajānāti. 
+Sujato: And they also understand: ‘I meditate observing an aspect of the mind—keen, aware, mindful; I am happy.’ 
+Translator: mind… 
+JUDGE sn47.10:8.11
+Pali: Bahiddhā, ānanda, bhikkhu cittaṁ appaṇidhāya ‘appaṇihitaṁ me bahiddhā cittan’ti pajānāti. 
+Sujato: Not directing their mind externally, a mendicant understands: ‘My mind is not directed externally.’ 
+Translator: (empty)
+JUDGE sn47.10:8.12
+Pali: Atha pacchāpure ‘asaṅkhittaṁ vimuttaṁ appaṇihitan’ti pajānāti. 
+Sujato: And they understand: ‘Before and behind, it’s unconstricted, freed, and undirected.’ 
+Translator: (empty)
+BELOW sn47.10:8.13
+Pali: Atha ca pana ‘dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā sukhamasmī’ti pajānāti. 
+Sujato: And they also understand: ‘I meditate observing an aspect of principles—keen, aware, mindful; I am happy.’ 
+Translator: mental qualities in & of themselves. I am ardent, alert, mindful, & at ease.’ 
+
+=== RUN 481: sn48.39:6.3 sn48.39:6.4 ===
+File: data/thanissaro/sutta/sn/sn48/sn48.39_translation-en-thanissaro.json
+ABOVE sn48.39:6.2
+Pali: evameva kho, bhikkhave, sukhavedaniyaṁ phassaṁ paṭicca uppajjati sukhindriyaṁ. 
+Sujato: In the same way, the faculty of pleasure arises dependent on a contact to be experienced as pleasant. 
+Translator: in the same way, in dependence on a contact to be experienced as pleasure, the pleasure-faculty arises… 
+JUDGE sn48.39:6.3
+Pali: So sukhitova samāno ‘sukhitosmī’ti pajānāti. 
+Sujato: When in a state of pleasure, you understand: ‘I’m in a state of pleasure.’ 
+Translator: (empty)
+JUDGE sn48.39:6.4
+Pali: Tasseva sukhavedaniyassa phassassa nirodhā ‘yaṁ tajjaṁ vedayitaṁ sukhavedaniyaṁ phassaṁ paṭicca uppajjati sukhindriyaṁ taṁ nirujjhati, taṁ vūpasammatī’ti pajānāti. 
+Sujato: With the cessation of that contact to be experienced as pleasant, you understand that the corresponding faculty of pleasure that arises ceases and stops. 
+Translator: (empty)
+BELOW (outside this paragraph) sn48.39:7.1
+Pali: Dukkhavedaniyaṁ, bhikkhave, phassaṁ paṭicca …pe… 
+Sujato: The faculty of pain … 
+Translator: “In dependence on a contact to be experienced as pain, the pain-faculty arises… 
+
+=== RUN 482: sn51.13:2.3 sn51.13:2.4 sn51.13:2.5 sn51.13:2.6 sn51.13:2.7 ===
+File: data/thanissaro/sutta/sn/sn51/sn51.13_translation-en-thanissaro.json
+ABOVE sn51.13:2.2
+Pali: ayaṁ vuccati ‘vīriyasamādhi’. 
+Sujato: this is called immersion due to energy. 
+Translator: that is called concentration founded on persistence… 
+JUDGE sn51.13:2.3
+Pali: So anuppannānaṁ …pe… 
+Sujato: They generate enthusiasm, try, make an effort, exert the mind, and strive so that bad, unskillful qualities don’t arise … 
+Translator: (empty)
+JUDGE sn51.13:2.4
+Pali: uppannānaṁ kusalānaṁ dhammānaṁ ṭhitiyā asammosāya bhiyyobhāvāya vepullāya bhāvanāya pāripūriyā chandaṁ janeti vāyamati vīriyaṁ ārabhati cittaṁ paggaṇhāti padahati. 
+Sujato: so that skillful qualities that have arisen remain, are not lost, but increase, mature, and are fully developed. 
+Translator: (empty)
+JUDGE sn51.13:2.5
+Pali: Ime vuccanti ‘padhānasaṅkhārā’ti. 
+Sujato: These are called active efforts. 
+Translator: (empty)
+JUDGE sn51.13:2.6
+Pali: Iti idañca vīriyaṁ, ayañca vīriyasamādhi, ime ca padhānasaṅkhārā—
+Sujato: And so there is this energy, this immersion due to energy, and these active efforts. 
+Translator: (empty)
+JUDGE sn51.13:2.7
+Pali: ayaṁ vuccati, bhikkhave, vīriyasamādhippadhānasaṅkhārasamannāgato iddhipādo. 
+Sujato: This is called the basis of psychic power that has immersion due to energy, and active effort. 
+Translator: (empty)
+BELOW (outside this paragraph) sn51.13:3.1
+Pali: Cittañce, bhikkhave, bhikkhu nissāya labhati samādhiṁ, labhati cittassa ekaggataṁ—
+Sujato: If a mendicant depends on mental development in order to gain immersion, gain unification of mind, 
+Translator: “If a monk attains concentration, attains singleness of mind founded on intent, 
+
+=== RUN 483: sn51.13:3.3 sn51.13:3.4 sn51.13:3.5 sn51.13:3.6 sn51.13:3.7 ===
+File: data/thanissaro/sutta/sn/sn51/sn51.13_translation-en-thanissaro.json
+ABOVE sn51.13:3.2
+Pali: ayaṁ vuccati ‘cittasamādhi’. 
+Sujato: this is called immersion due to mental development. 
+Translator: that is called concentration founded on intent… 
+JUDGE sn51.13:3.3
+Pali: So anuppannānaṁ pāpakānaṁ …pe… 
+Sujato: They generate enthusiasm, try, make an effort, exert the mind, and strive so that bad, unskillful qualities don’t arise … 
+Translator: (empty)
+JUDGE sn51.13:3.4
+Pali: uppannānaṁ kusalānaṁ dhammānaṁ ṭhitiyā asammosāya bhiyyobhāvāya vepullāya bhāvanāya pāripūriyā chandaṁ janeti vāyamati vīriyaṁ ārabhati cittaṁ paggaṇhāti padahati. 
+Sujato: so that skillful qualities that have arisen remain, are not lost, but increase, mature, and are fully developed. 
+Translator: (empty)
+JUDGE sn51.13:3.5
+Pali: Ime vuccanti ‘padhānasaṅkhārā’ti. 
+Sujato: These are called active efforts. 
+Translator: (empty)
+JUDGE sn51.13:3.6
+Pali: Iti idañca cittaṁ, ayañca cittasamādhi, ime ca padhānasaṅkhārā—
+Sujato: And so there is this mental development, this immersion due to mental development, and these active efforts. 
+Translator: (empty)
+JUDGE sn51.13:3.7
+Pali: ayaṁ vuccati, bhikkhave, cittasamādhippadhānasaṅkhārasamannāgato iddhipādo. 
+Sujato: This is called the basis of psychic power that has immersion due to mental development, and active effort. 
+Translator: (empty)
+BELOW (outside this paragraph) sn51.13:4.1
+Pali: Vīmaṁsañce, bhikkhave, bhikkhu nissāya labhati samādhiṁ, labhati cittassa ekaggataṁ—
+Sujato: If a mendicant depends on inquiry in order to gain immersion, gain unification of mind, 
+Translator: “If a monk attains concentration, attains singleness of mind founded on discrimination, 
+
+=== RUN 484: sn51.20:11.2 sn51.20:11.3 ===
+File: data/thanissaro/sutta/sn/sn51/sn51.20_translation-en-thanissaro.json
+ABOVE sn51.20:11.1
+Pali: Katamañca, bhikkhave, atilīnaṁ vīriyaṁ? 
+Sujato: And what is energy that’s too lax? … 
+Translator: [The above discussion is then repeated for persistence, 
+JUDGE sn51.20:11.2
+Pali: Yaṁ, bhikkhave, vīriyaṁ kosajjasahagataṁ kosajjasampayuttaṁ—
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn51.20:11.3
+Pali: idaṁ vuccati, bhikkhave, atilīnaṁ vīriyaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn51.20:16.1
+Pali: Katamañca, bhikkhave, atilīnaṁ cittaṁ? 
+Sujato: And what is mental development that’s too lax? … 
+Translator: intent, 
+
+=== RUN 485: sn51.20:16.2 sn51.20:16.3 ===
+File: data/thanissaro/sutta/sn/sn51/sn51.20_translation-en-thanissaro.json
+ABOVE sn51.20:16.1
+Pali: Katamañca, bhikkhave, atilīnaṁ cittaṁ? 
+Sujato: And what is mental development that’s too lax? … 
+Translator: intent, 
+JUDGE sn51.20:16.2
+Pali: Yaṁ, bhikkhave, cittaṁ kosajjasahagataṁ kosajjasampayuttaṁ—
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn51.20:16.3
+Pali: idaṁ vuccati, bhikkhave, atilīnaṁ cittaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn51.20:20.1
+Pali: Katamā ca, bhikkhave, atilīnā vīmaṁsā? 
+Sujato: And what is inquiry that’s too lax? 
+Translator: & discrimination.] 
+
+=== RUN 486: sn51.20:20.2 sn51.20:20.3 ===
+File: data/thanissaro/sutta/sn/sn51/sn51.20_translation-en-thanissaro.json
+ABOVE sn51.20:20.1
+Pali: Katamā ca, bhikkhave, atilīnā vīmaṁsā? 
+Sujato: And what is inquiry that’s too lax? 
+Translator: & discrimination.] 
+JUDGE sn51.20:20.2
+Pali: Yā, bhikkhave, vīmaṁsā kosajjasahagatā kosajjasampayuttā—
+Sujato: It’s when inquiry is coupled with laziness. 
+Translator: (empty)
+JUDGE sn51.20:20.3
+Pali: ayaṁ vuccati, bhikkhave, atilīnā vīmaṁsā. 
+Sujato: This is called lax inquiry. 
+Translator: (empty)
+BELOW (outside this paragraph) sn51.20:24.1
+Pali: Evaṁ bhāvitesu kho, bhikkhave, bhikkhu catūsu iddhipādesu evaṁ bahulīkatesu, anekavihitaṁ iddhividhaṁ paccanubhoti—ekopi hutvā bahudhā hoti, bahudhāpi hutvā eko hoti …pe… yāva brahmalokāpi kāyena vasaṁ vatteti. 
+Sujato: When the four bases of psychic power have been developed and cultivated in this way, a mendicant wields the many kinds of psychic power: multiplying themselves and becoming one again … controlling the body as far as the realm of divinity. … 
+Translator: “When a monk has thus developed & pursued the four bases of power, he experiences manifold supranormal powers. Having been one he becomes many; having been many he becomes one. He appears. He vanishes. He goes unimpeded through walls, ramparts, & mountains as if through space. He dives in & out of the earth as if it were water. He walks on water without sinking as if it were dry land. Sitting cross-legged he flies through the air like a winged bird. With his hand he touches & strokes even the sun & moon, so mighty & powerful. He exercises influence with his body even as far as the Brahmā worlds. “He hears—by means of the divine ear-element, purified & surpassing the human—both kinds of sounds: divine & human, whether near or far. “He knows the awareness of other beings, other individuals, having encompassed it with his own awareness. He discerns a mind with passion as ‘a mind with passion,’ and a mind without passion as ‘a mind without passion.’ He discerns a mind with aversion as ‘a mind with aversion,’ and a mind without aversion as ‘a mind without aversion.’ He discerns a mind with delusion as ‘a mind with delusion,’ and a mind without delusion as ‘a mind without delusion.’ He discerns a restricted mind as ‘a restricted mind,’ and a scattered mind as ‘a scattered mind.’ He discerns an enlarged mind as ‘an enlarged mind,’ and an unenlarged mind as ‘an unenlarged mind.’ He discerns a surpassed mind [one that is not at the most excellent level] as ‘a surpassed mind,’ and an unsurpassed mind as ‘an unsurpassed mind.’ He discerns a concentrated mind as ‘a concentrated mind,’ and an unconcentrated mind as ‘an unconcentrated mind.’ He discerns a released mind as ‘a released mind,’ and an unreleased mind as ‘an unreleased mind.’ “He recollects his manifold past lives [lit: previous homes], i.e., one birth, two births, three births, four, five, ten, twenty, thirty, forty, fifty, one hundred, one thousand, one hundred thousand, many eons of cosmic contraction, many eons of cosmic expansion, many eons of cosmic contraction & expansion, (recollecting,) ‘There I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my experience of pleasure & pain, such the end of my life. Passing away from that state, I re-arose there. There too I had such a name, belonged to such a clan, had such an appearance. Such was my food, such my experience of pleasure & pain, such the end of my life. Passing away from that state, I re-arose here.’ Thus he remembers his manifold past lives in their modes & details. “He sees—by means of the divine eye, purified & surpassing the human—beings passing away and re-appearing, and he discerns how they are inferior & superior, beautiful & ugly, fortunate & unfortunate in accordance with their kamma: ‘These beings—who were endowed with bad conduct of body, speech, & mind, who reviled the noble ones, held wrong views and undertook actions under the influence of wrong views—with the break-up of the body, after death, have re-appeared in a plane of deprivation, a bad destination, a lower realm, hell. But these beings—who were endowed with good conduct of body, speech, & mind, who did not revile the noble ones, who held right views and undertook actions under the influence of right views—with the break-up of the body, after death, have re-appeared in a good destination, a heavenly world.’ Thus—by means of the divine eye, purified & surpassing the human—he sees beings passing away and re-appearing, and he discerns how they are inferior & superior, beautiful & ugly, fortunate & unfortunate in accordance with their kamma. 
+
+=== RUN 487: sn55.26:10.2 sn55.26:10.3 ===
+File: data/thanissaro/sutta/sn/sn55/sn55.26_translation-en-thanissaro.json
+ABOVE sn55.26:10.1
+Pali: Yathārūpena kho, gahapati, micchāsaṅkappena samannāgato assutavā puthujjano kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapajjati, tathārūpo te micchāsaṅkappo natthi. 
+Sujato: You don’t have the wrong purpose … 
+Translator: “Householder, you don’t have the type of wrong resolve… 
+JUDGE sn55.26:10.2
+Pali: Atthi ca kho te, gahapati, sammāsaṅkappo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn55.26:10.3
+Pali: Tañca pana te sammāsaṅkappaṁ attani samanupassato ṭhānaso vedanā paṭippassambheyya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn55.26:11.1
+Pali: Yathārūpāya kho, gahapati, micchāvācāya samannāgato assutavā puthujjano kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapajjati, tathārūpā te micchāvācā natthi. 
+Sujato: wrong speech … 
+Translator: wrong speech… 
+
+=== RUN 488: sn55.26:11.2 sn55.26:11.3 ===
+File: data/thanissaro/sutta/sn/sn55/sn55.26_translation-en-thanissaro.json
+ABOVE sn55.26:11.1
+Pali: Yathārūpāya kho, gahapati, micchāvācāya samannāgato assutavā puthujjano kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapajjati, tathārūpā te micchāvācā natthi. 
+Sujato: wrong speech … 
+Translator: wrong speech… 
+JUDGE sn55.26:11.2
+Pali: Atthi ca kho te, gahapati, sammāvācā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn55.26:11.3
+Pali: Tañca pana te sammāvācaṁ attani samanupassato ṭhānaso vedanā paṭippassambheyya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn55.26:12.1
+Pali: Yathārūpena kho, gahapati, micchākammantena samannāgato assutavā puthujjano kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapajjati, tathārūpo te micchākammanto natthi. 
+Sujato: wrong action … 
+Translator: wrong action… 
+
+=== RUN 489: sn55.26:12.2 sn55.26:12.3 ===
+File: data/thanissaro/sutta/sn/sn55/sn55.26_translation-en-thanissaro.json
+ABOVE sn55.26:12.1
+Pali: Yathārūpena kho, gahapati, micchākammantena samannāgato assutavā puthujjano kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapajjati, tathārūpo te micchākammanto natthi. 
+Sujato: wrong action … 
+Translator: wrong action… 
+JUDGE sn55.26:12.2
+Pali: Atthi ca kho te, gahapati, sammākammanto. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn55.26:12.3
+Pali: Tañca pana te sammākammantaṁ attani samanupassato ṭhānaso vedanā paṭippassambheyya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn55.26:13.1
+Pali: Yathārūpena kho, gahapati, micchāājīvena samannāgato assutavā puthujjano kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapajjati, tathārūpo te micchāājīvo natthi. 
+Sujato: wrong livelihood … 
+Translator: wrong livelihood… 
+
+=== RUN 490: sn55.26:13.2 sn55.26:13.3 ===
+File: data/thanissaro/sutta/sn/sn55/sn55.26_translation-en-thanissaro.json
+ABOVE sn55.26:13.1
+Pali: Yathārūpena kho, gahapati, micchāājīvena samannāgato assutavā puthujjano kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapajjati, tathārūpo te micchāājīvo natthi. 
+Sujato: wrong livelihood … 
+Translator: wrong livelihood… 
+JUDGE sn55.26:13.2
+Pali: Atthi ca kho te, gahapati, sammāājīvo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn55.26:13.3
+Pali: Tañca pana te sammāājīvaṁ attani samanupassato ṭhānaso vedanā paṭippassambheyya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn55.26:14.1
+Pali: Yathārūpena kho, gahapati, micchāvāyāmena samannāgato assutavā puthujjano kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapajjati, tathārūpo te micchāvāyāmo natthi. 
+Sujato: wrong effort … 
+Translator: wrong effort… 
+
+=== RUN 491: sn55.26:14.2 sn55.26:14.3 ===
+File: data/thanissaro/sutta/sn/sn55/sn55.26_translation-en-thanissaro.json
+ABOVE sn55.26:14.1
+Pali: Yathārūpena kho, gahapati, micchāvāyāmena samannāgato assutavā puthujjano kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapajjati, tathārūpo te micchāvāyāmo natthi. 
+Sujato: wrong effort … 
+Translator: wrong effort… 
+JUDGE sn55.26:14.2
+Pali: Atthi ca kho te, gahapati, sammāvāyāmo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn55.26:14.3
+Pali: Tañca pana te sammāvāyāmaṁ attani samanupassato ṭhānaso vedanā paṭippassambheyya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn55.26:15.1
+Pali: Yathārūpāya kho, gahapati, micchāsatiyā samannāgato assutavā puthujjano kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapajjati, tathārūpā te micchāsati natthi. 
+Sujato: wrong mindfulness … 
+Translator: wrong mindfulness… 
+
+=== RUN 492: sn55.26:15.2 sn55.26:15.3 ===
+File: data/thanissaro/sutta/sn/sn55/sn55.26_translation-en-thanissaro.json
+ABOVE sn55.26:15.1
+Pali: Yathārūpāya kho, gahapati, micchāsatiyā samannāgato assutavā puthujjano kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapajjati, tathārūpā te micchāsati natthi. 
+Sujato: wrong mindfulness … 
+Translator: wrong mindfulness… 
+JUDGE sn55.26:15.2
+Pali: Atthi ca kho te, gahapati, sammāsati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn55.26:15.3
+Pali: Tañca pana te sammāsatiṁ attani samanupassato ṭhānaso vedanā paṭippassambheyya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn55.26:16.1
+Pali: Yathārūpena kho, gahapati, micchāsamādhinā samannāgato assutavā puthujjano kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapajjati, tathārūpo te micchāsamādhi natthi. 
+Sujato: wrong immersion … 
+Translator: wrong concentration… 
+
+=== RUN 493: sn55.26:16.2 sn55.26:16.3 ===
+File: data/thanissaro/sutta/sn/sn55/sn55.26_translation-en-thanissaro.json
+ABOVE sn55.26:16.1
+Pali: Yathārūpena kho, gahapati, micchāsamādhinā samannāgato assutavā puthujjano kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapajjati, tathārūpo te micchāsamādhi natthi. 
+Sujato: wrong immersion … 
+Translator: wrong concentration… 
+JUDGE sn55.26:16.2
+Pali: Atthi ca kho te, gahapati, sammāsamādhi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn55.26:16.3
+Pali: Tañca pana te sammāsamādhiṁ attani samanupassato ṭhānaso vedanā paṭippassambheyya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn55.26:17.1
+Pali: Yathārūpena kho, gahapati, micchāñāṇena samannāgato assutavā puthujjano kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapajjati, tathārūpaṁ te micchāñāṇaṁ natthi. 
+Sujato: wrong knowledge … 
+Translator: wrong knowledge… 
+
+=== RUN 494: sn55.26:17.2 sn55.26:17.3 ===
+File: data/thanissaro/sutta/sn/sn55/sn55.26_translation-en-thanissaro.json
+ABOVE sn55.26:17.1
+Pali: Yathārūpena kho, gahapati, micchāñāṇena samannāgato assutavā puthujjano kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapajjati, tathārūpaṁ te micchāñāṇaṁ natthi. 
+Sujato: wrong knowledge … 
+Translator: wrong knowledge… 
+JUDGE sn55.26:17.2
+Pali: Atthi ca kho te, gahapati, sammāñāṇaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn55.26:17.3
+Pali: Tañca pana te sammāñāṇaṁ attani samanupassato ṭhānaso vedanā paṭippassambheyya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn55.26:18.1
+Pali: Yathārūpāya kho, gahapati, micchāvimuttiyā samannāgato assutavā puthujjano kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapajjati, tathārūpā te micchāvimutti natthi. 
+Sujato: wrong freedom … 
+Translator: wrong release endowed with which an uninstructed run-of-the-mill person—with the breakup of the body, after death—re-appears in a plane of deprivation, a bad destination, a lower realm, hell. 

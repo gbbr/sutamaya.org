@@ -1,0 +1,175 @@
+{
+  "translator": "thanissaro",
+  "baselineCommit": "68d603ac71e8e1a714be50e17d1b6d3ba3088763",
+  "status": "first read reviewed; snapshot before settled findings",
+  "authority": "original Pali; Sujato is secondary context",
+  "inputs": {
+    "data/thanissaro/sutta/an/an5/an5.254_translation-en-thanissaro.json": {
+      "bytes": 572,
+      "sha256": "5f627b7b2c0a9e1fa8bd21e8b39c7eaa1cade0b05195939eb3be6d2eca5deb66"
+    },
+    "data/pali/sutta/an/an5/an5.254_root-pli-ms.json": {
+      "bytes": 603,
+      "sha256": "9ce472500393d49114929e3c23c0df2d12d827e8ddc1b67c5e91730ca0900772"
+    },
+    "data/sujato/sutta/an/an5/an5.254_translation-en-sujato.json": {
+      "bytes": 538,
+      "sha256": "02a0fccd428fbdd198e465f51903c02b75fac5bbef059fda6fb8befe93d91294"
+    },
+    "data/html/pli/ms/sutta/an/an5/an5.254_html.json": {
+      "bytes": 362,
+      "sha256": "22d37b24bc8bd59755538972861f7144e149c992f6ce52d4c899062290aac1d2"
+    },
+    "data/thanissaro/notes/an/an5/an5.254_comment-en-thanissaro.json": {
+      "bytes": 599,
+      "sha256": "8b7b0c254129be7000901a27093aeafc83b2436350e729e35cebae74e6653bca"
+    },
+    "data/upstream/thanissaro/sutta/an/an5/an5.254-271.html": {
+      "bytes": 5805,
+      "sha256": "dc20e89494a7d0c6b9d32be6e3236948fadceaea839bddba4458ee6c56d55dcc"
+    },
+    "data/thanissaro/sutta/an/an5/an5.255_translation-en-thanissaro.json": {
+      "bytes": 742,
+      "sha256": "76b7bdc0b2be59b4a2e0d576b116d780072d9b0711b4ee7c5bc07c42d3998982"
+    },
+    "data/pali/sutta/an/an5/an5.255_root-pli-ms.json": {
+      "bytes": 721,
+      "sha256": "39500a107f12eca3925c6a49e16738cdc395fca4a7925a163333e0db9ba7ba5e"
+    },
+    "data/sujato/sutta/an/an5/an5.255_translation-en-sujato.json": {
+      "bytes": 529,
+      "sha256": "1fa8c929bcae1385add7017c1ea8211a3111e62f8fe8ee973527eefc0c384c0a"
+    },
+    "data/html/pli/ms/sutta/an/an5/an5.255_html.json": {
+      "bytes": 362,
+      "sha256": "8f78e2a56c5a1aac517ae63520637daade422586834ca9b4661fb1e0875f9dd3"
+    },
+    "data/thanissaro/sutta/an/an5/an5.256_translation-en-thanissaro.json": {
+      "bytes": 1047,
+      "sha256": "c5ed556792d3a03f3dc16a95f2c5fc0ddb6d3b868c0e4e349bdec7b674a95bcf"
+    },
+    "data/pali/sutta/an/an5/an5.256_root-pli-ms.json": {
+      "bytes": 970,
+      "sha256": "d60bcb3ea650c5b2a95dcb6151d61598ebb288514364c0ed1a5d4df44b372fd6"
+    },
+    "data/sujato/sutta/an/an5/an5.256_translation-en-sujato.json": {
+      "bytes": 882,
+      "sha256": "48f4176c958d684e7dc2e6a5f9cc7741dd85d22549f382e84f76aba2b6bb4afd"
+    },
+    "data/html/pli/ms/sutta/an/an5/an5.256_html.json": {
+      "bytes": 438,
+      "sha256": "7ecdf3ce2bdd9ce3f4feec63956fd955aa291b1697150bf7ab5b079070e848d4"
+    },
+    "data/thanissaro/sutta/an/an5/an5.257-263_translation-en-thanissaro.json": {
+      "bytes": 1719,
+      "sha256": "1795b69a2276b8d18d4d907cf9f08c7678635e7640b767523a766df5d6b9c0f9"
+    },
+    "data/pali/sutta/an/an5/an5.257-263_root-pli-ms.json": {
+      "bytes": 1336,
+      "sha256": "7f3c2a5af99564a8d8caa95e25e348c2c33ad7443bb036eb89db431dd2743292"
+    },
+    "data/sujato/sutta/an/an5/an5.257-263_translation-en-sujato.json": {
+      "bytes": 1214,
+      "sha256": "5834ff5911569b841b0cf6f864bc012519cb17e0e6903229b8452c3d8d775301"
+    },
+    "data/html/pli/ms/sutta/an/an5/an5.257-263_html.json": {
+      "bytes": 490,
+      "sha256": "69a47283973a2e21e7f38643f5ffa69e590c2b8436226828646f87d10908633a"
+    },
+    "data/thanissaro/sutta/an/an5/an5.264_translation-en-thanissaro.json": {
+      "bytes": 768,
+      "sha256": "9f1bbae9f7d753abc382c730218537af45cfc5a5deaefb887e4efdb1ad44d22b"
+    },
+    "data/pali/sutta/an/an5/an5.264_root-pli-ms.json": {
+      "bytes": 995,
+      "sha256": "e25bb2c983229e7385d6d08d8ebdcf05a838ee7be0af1398c5052ac2873dd49a"
+    },
+    "data/sujato/sutta/an/an5/an5.264_translation-en-sujato.json": {
+      "bytes": 945,
+      "sha256": "6fd1ce92379c0eadeb172fab27d160323998655189588c28d7204e648b386442"
+    },
+    "data/html/pli/ms/sutta/an/an5/an5.264_html.json": {
+      "bytes": 438,
+      "sha256": "cc03b31616a319db0602030fb6dc1ea82c56579597d0fa30b378d2a49903b908"
+    },
+    "data/thanissaro/sutta/an/an5/an5.265-271_translation-en-thanissaro.json": {
+      "bytes": 1347,
+      "sha256": "cab283dc70d71ab72aa41cf533abed357018dfa032f128afa9ff466a508eb045"
+    },
+    "data/pali/sutta/an/an5/an5.265-271_root-pli-ms.json": {
+      "bytes": 1315,
+      "sha256": "c19bcfcd6c258d6ef0cb15f6f208798bb2f71d0a5813febf8b7e63c89b07070d"
+    },
+    "data/sujato/sutta/an/an5/an5.265-271_translation-en-sujato.json": {
+      "bytes": 1302,
+      "sha256": "604e1cd7c09c12089f5748cc4bb9f2439ae2df29edff2a62699106b31586a98b"
+    },
+    "data/html/pli/ms/sutta/an/an5/an5.265-271_html.json": {
+      "bytes": 541,
+      "sha256": "50e1cb6e341985239368900e286b9be31b6fbf35c956d68d81748aa9c28d92ec"
+    }
+  },
+  "packets": [
+    {
+      "path": "batch-001.txt",
+      "document": "an5.254",
+      "rows": 9,
+      "sourcePages": [
+        "sutta/an/an5/an5.254-271.html"
+      ],
+      "bytes": 1602,
+      "sha256": "c7d88f3cefd3f98bbbd8b0ac9b40fc35e5104d8872d0d7a9e20c4c78d7f50ac9"
+    },
+    {
+      "path": "batch-002.txt",
+      "document": "an5.255",
+      "rows": 9,
+      "sourcePages": [
+        "sutta/an/an5/an5.254-271.html"
+      ],
+      "bytes": 1908,
+      "sha256": "d5b28afad3cec4d4c6b2cafd9450c58a6ec48f8a45e72a0999a0671f3fc3a15d"
+    },
+    {
+      "path": "batch-003.txt",
+      "document": "an5.256",
+      "rows": 12,
+      "sourcePages": [
+        "sutta/an/an5/an5.254-271.html"
+      ],
+      "bytes": 2686,
+      "sha256": "2ef0c5ee0c18ba700ff9603111fbd8301e6ef4b85b8492ecb966553a156e2067"
+    },
+    {
+      "path": "batch-004.txt",
+      "document": "an5.257-263",
+      "rows": 12,
+      "sourcePages": [
+        "sutta/an/an5/an5.254-271.html"
+      ],
+      "bytes": 3978,
+      "sha256": "64a46356a8fa4894067c0b042d2baa66af609a5091f6b6770ec8e204f09f8e8f"
+    },
+    {
+      "path": "batch-005.txt",
+      "document": "an5.264",
+      "rows": 12,
+      "sourcePages": [
+        "sutta/an/an5/an5.254-271.html"
+      ],
+      "bytes": 2516,
+      "sha256": "7f8730834d234ee20971af3fef5c2073959a5758214b0bdff34d71d00100de53"
+    },
+    {
+      "path": "batch-006.txt",
+      "document": "an5.265-271",
+      "rows": 13,
+      "sourcePages": [
+        "sutta/an/an5/an5.254-271.html"
+      ],
+      "bytes": 3643,
+      "sha256": "22b1fdde16cc63abb435d0aafc7b1f638214ee18783d797ce3090339fa3d6d3b"
+    }
+  ],
+  "note": "Source mapping follows the current report; known numbering/range limitations still require direct source review. A hash check is not semantic verification. Original markup and notes remain in the inputs."
+}

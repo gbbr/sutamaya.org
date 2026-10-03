@@ -1,0 +1,1331 @@
+bodhi: skipped-Pali review batch 001
+Read the full English above, each original Pali line, and the next English. Sujato is context only.
+covered = this line's own content is explicitly rendered by the English above, including complete lists.
+skipped = abbreviated or compressed repetition, even if mentioned, or omitted. When in doubt, skipped.
+Judge each key independently; a run may be mixed. An ellipsis alone does not decide.
+Only runs of two or more empty prose lines in the same paragraph are reviewed; lone lines join automatically.
+Write <key> covered|skipped|unsure for every RUN key, then # done. Do not mark context keys.
+
+=== RUN 1: an3.1:2.6 an3.1:2.7 ===
+File: data/bodhi/sutta/an/an3/an3.1_translation-en-bodhi.json
+ABOVE an3.1:2.5
+Pali: evamevaṁ kho, bhikkhave, yāni kānici bhayāni uppajjanti sabbāni tāni bālato uppajjanti, no paṇḍitato. 
+Sujato: In the same way, whatever dangers there are, all come from the foolish, not from the astute. 
+Translator: so too, whatever perils arise … all arise on account of the fool, not on account of the wise person. 
+JUDGE an3.1:2.6
+Pali: Ye keci upaddavā uppajjanti sabbe te bālato uppajjanti, no paṇḍitato. 
+Sujato: Whatever perils there are, all come from the foolish, not from the astute. 
+Translator: (empty)
+JUDGE an3.1:2.7
+Pali: Ye keci upasaggā uppajjanti sabbe te bālato uppajjanti, no paṇḍitato. 
+Sujato: Whatever hazards there are, all come from the foolish, not from the astute. 
+Translator: (empty)
+BELOW (outside this paragraph) an3.1:3.1
+Pali: Iti kho, bhikkhave, sappaṭibhayo bālo, appaṭibhayo paṇḍito. 
+Sujato: So, the fool is dangerous, but the astute person is safe. 
+Translator: (1) Thus, bhikkhus, the fool brings peril, the wise person brings no peril; 
+
+=== RUN 2: an3.21:3.2 an3.21:3.3 an3.21:3.4 ===
+File: data/bodhi/sutta/an/an3/an3.21_translation-en-bodhi.json
+ABOVE an3.21:3.1
+Pali: “Tayome, āvuso sāriputta, puggalā santo saṁvijjamānā lokasmiṁ. 
+Sujato: “Reverend Sāriputta, these three individuals are found in the world. 
+Translator: “Friend Sāriputta, 
+JUDGE an3.21:3.2
+Pali: Katame tayo? 
+Sujato: What three? 
+Translator: (empty)
+JUDGE an3.21:3.3
+Pali: Kāyasakkhī, diṭṭhippatto, saddhāvimutto. 
+Sujato: The direct witness, the one attained to view, and the one freed by faith. 
+Translator: (empty)
+JUDGE an3.21:3.4
+Pali: Ime kho, āvuso, tayo puggalā santo saṁvijjamānā lokasmiṁ. 
+Sujato: These are the three individuals found in the world. 
+Translator: (empty)
+BELOW an3.21:3.5
+Pali: Imesaṁ, āvuso, tiṇṇaṁ puggalānaṁ yvāyaṁ puggalo saddhāvimutto, ayaṁ me puggalo khamati imesaṁ tiṇṇaṁ puggalānaṁ abhikkantataro ca paṇītataro ca. 
+Sujato: Of these three individuals, I believe the individual freed by faith to be finest. 
+Translator: of those three kinds of persons, I consider the one liberated by faith to be the most excellent and sublime. 
+
+=== RUN 3: an3.21:4.3 an3.21:4.4 an3.21:4.5 ===
+File: data/bodhi/sutta/an/an3/an3.21_translation-en-bodhi.json
+ABOVE an3.21:4.2
+Pali: “tayome, āvuso koṭṭhika, puggalā santo saṁvijjamānā lokasmiṁ. 
+Sujato: “Reverend Koṭṭhita, these three people are found in the world. 
+Translator: “Friend Koṭṭhita, there are these three kinds of persons found existing in the world…. 
+JUDGE an3.21:4.3
+Pali: Katame tayo? 
+Sujato: What three? 
+Translator: (empty)
+JUDGE an3.21:4.4
+Pali: Kāyasakkhī, diṭṭhippatto, saddhāvimutto. 
+Sujato: The direct witness, the one attained to view, and the one freed by faith. 
+Translator: (empty)
+JUDGE an3.21:4.5
+Pali: Ime kho, āvuso, tayo puggalā santo saṁvijjamānā lokasmiṁ. 
+Sujato: These are the three individuals found in the world. 
+Translator: (empty)
+BELOW an3.21:4.6
+Pali: Imesaṁ, āvuso, tiṇṇaṁ puggalānaṁ katamo te puggalo khamati abhikkantataro ca paṇītataro cā”ti? 
+Sujato: Of these three individuals, who do you believe to be the finest?” 
+Translator: Which of these three kinds of persons do you consider the most excellent and sublime?” 
+
+=== RUN 4: an3.21:5.2 an3.21:5.3 an3.21:5.4 ===
+File: data/bodhi/sutta/an/an3/an3.21_translation-en-bodhi.json
+ABOVE an3.21:5.1
+Pali: “Tayome, āvuso sāriputta, puggalā santo saṁvijjamānā lokasmiṁ. 
+Sujato: “Reverend Sāriputta, these three individuals are found in the world. 
+Translator: “Friend Sāriputta, 
+JUDGE an3.21:5.2
+Pali: Katame tayo? 
+Sujato: What three? 
+Translator: (empty)
+JUDGE an3.21:5.3
+Pali: Kāyasakkhī, diṭṭhippatto, saddhāvimutto. 
+Sujato: The direct witness, the one attained to view, and the one freed by faith. 
+Translator: (empty)
+JUDGE an3.21:5.4
+Pali: Ime kho, āvuso, tayo puggalā santo saṁvijjamānā lokasmiṁ. 
+Sujato: These are the three individuals found in the world. 
+Translator: (empty)
+BELOW an3.21:5.5
+Pali: Imesaṁ, āvuso, tiṇṇaṁ puggalānaṁ yvāyaṁ puggalo kāyasakkhī, ayaṁ me puggalo khamati imesaṁ tiṇṇaṁ puggalānaṁ abhikkantataro ca paṇītataro ca. 
+Sujato: Of these three individuals, I believe the direct witness to be finest. 
+Translator: of those three kinds of persons, I consider the body witness to be the most excellent and sublime. 
+
+=== RUN 5: an3.21:6.3 an3.21:6.4 an3.21:6.5 ===
+File: data/bodhi/sutta/an/an3/an3.21_translation-en-bodhi.json
+ABOVE an3.21:6.2
+Pali: “tayome, āvuso sāriputta, puggalā santo saṁvijjamānā lokasmiṁ. 
+Sujato: “Reverend Sāriputta, these three individuals are found in the world. 
+Translator: “Friend Sāriputta, there are these three kinds of persons found existing in the world…. 
+JUDGE an3.21:6.3
+Pali: Katame tayo? 
+Sujato: What three? 
+Translator: (empty)
+JUDGE an3.21:6.4
+Pali: Kāyasakkhī, diṭṭhippatto, saddhāvimutto. 
+Sujato: The direct witness, the one attained to view, and the one freed by faith. 
+Translator: (empty)
+JUDGE an3.21:6.5
+Pali: Ime kho, āvuso, tayo puggalā santo saṁvijjamānā lokasmiṁ. 
+Sujato: These are the three individuals found in the world. 
+Translator: (empty)
+BELOW an3.21:6.6
+Pali: Imesaṁ, āvuso, tiṇṇaṁ puggalānaṁ katamo te puggalo khamati abhikkantataro ca paṇītataro cā”ti? 
+Sujato: Of these three individuals, who do you believe to be the finest?” 
+Translator: Which of these three kinds of persons do you consider the most excellent and sublime?” 
+
+=== RUN 6: an3.21:7.2 an3.21:7.3 an3.21:7.4 ===
+File: data/bodhi/sutta/an/an3/an3.21_translation-en-bodhi.json
+ABOVE an3.21:7.1
+Pali: “Tayome, āvuso koṭṭhika, puggalā santo saṁvijjamānā lokasmiṁ. 
+Sujato: “Reverend Koṭṭhita, these three people are found in the world. 
+Translator: “Friend Koṭṭhita, 
+JUDGE an3.21:7.2
+Pali: Katame tayo? 
+Sujato: What three? 
+Translator: (empty)
+JUDGE an3.21:7.3
+Pali: Kāyasakkhī, diṭṭhippatto, saddhāvimutto. 
+Sujato: The direct witness, the one attained to view, and the one freed by faith. 
+Translator: (empty)
+JUDGE an3.21:7.4
+Pali: Ime kho, āvuso, tayo puggalā santo saṁvijjamānā lokasmiṁ. 
+Sujato: These are the three individuals found in the world. 
+Translator: (empty)
+BELOW an3.21:7.5
+Pali: Imesaṁ, āvuso, tiṇṇaṁ puggalānaṁ yvāyaṁ puggalo diṭṭhippatto, ayaṁ me puggalo khamati imesaṁ tiṇṇaṁ puggalānaṁ abhikkantataro ca paṇītataro ca. 
+Sujato: Of these three individuals, I believe the individual attained to view to be finest. 
+Translator: of those three kinds of persons, I consider the one attained to view to be the most excellent and sublime. 
+
+=== RUN 7: an3.30:1.11 an3.30:1.12 ===
+File: data/bodhi/sutta/an/an3/an3.30_translation-en-bodhi.json
+ABOVE an3.30:1.10
+Pali: evamevaṁ kho, bhikkhave, idhekacco puggalo ārāmaṁ gantā hoti abhikkhaṇaṁ bhikkhūnaṁ santike dhammassavanāya. 
+Sujato: In the same way, an individual often goes to the monastery to hear the teaching in the presence of the mendicants. 
+Translator: so too, some person often goes to the monastery to listen to the Dhamma from the bhikkhus…. 
+JUDGE an3.30:1.11
+Pali: Tassa bhikkhū dhammaṁ desenti ādikalyāṇaṁ majjhekalyāṇaṁ pariyosānakalyāṇaṁ sātthaṁ sabyañjanaṁ, kevalaparipuṇṇaṁ parisuddhaṁ brahmacariyaṁ pakāsenti. 
+Sujato: The mendicants teach them Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And they reveal a spiritual practice that’s entirely full and pure. 
+Translator: (empty)
+JUDGE an3.30:1.12
+Pali: So tasmiṁ āsane nisinno tassā kathāya neva ādiṁ manasi karoti, na majjhaṁ manasi karoti, na pariyosānaṁ manasi karoti; 
+Sujato: But even while sitting there, that person doesn’t apply the mind to the discussion in the beginning, middle, or end. 
+Translator: (empty)
+BELOW an3.30:1.13
+Pali: vuṭṭhitopi tamhā āsanā tassā kathāya neva ādiṁ manasi karoti, na majjhaṁ manasi karoti, na pariyosānaṁ manasi karoti. 
+Sujato: And when they rise from their seat, they don’t apply the mind to the beginning, middle, or end of the discussion. 
+Translator: After he has risen from his seat, he still does not attend to that talk at the beginning, in the middle, or at the end. 
+
+=== RUN 8: an3.30:2.10 an3.30:2.11 ===
+File: data/bodhi/sutta/an/an3/an3.30_translation-en-bodhi.json
+ABOVE an3.30:2.9
+Pali: Evamevaṁ kho, bhikkhave, idhekacco puggalo ārāmaṁ gantā hoti abhikkhaṇaṁ bhikkhūnaṁ santike dhammassavanāya. 
+Sujato: In the same way, an individual often goes to the monastery to hear the teaching in the presence of the mendicants. 
+Translator: so too, some person often goes to the monastery to listen to the Dhamma from the bhikkhus…. 
+JUDGE an3.30:2.10
+Pali: Tassa bhikkhū dhammaṁ desenti ādikalyāṇaṁ majjhekalyāṇaṁ pariyosānakalyāṇaṁ sātthaṁ sabyañjanaṁ, kevalaparipuṇṇaṁ parisuddhaṁ brahmacariyaṁ pakāsenti. 
+Sujato: The mendicants teach them Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And they reveal a spiritual practice that’s entirely full and pure. 
+Translator: (empty)
+JUDGE an3.30:2.11
+Pali: So tasmiṁ āsane nisinno tassā kathāya ādimpi manasi karoti, majjhampi manasi karoti, pariyosānampi manasi karoti; 
+Sujato: While sitting there, that person applies the mind to the discussion in the beginning, middle, and end. 
+Translator: (empty)
+BELOW an3.30:2.12
+Pali: vuṭṭhito ca kho tamhā āsanā tassā kathāya neva ādiṁ manasi karoti, na majjhaṁ manasi karoti, na pariyosānaṁ manasi karoti. 
+Sujato: But when they rise from their seat, they don’t apply the mind to the beginning, middle, or end of the discussion. 
+Translator: But after he has risen from his seat, he does not attend to that talk at the beginning, in the middle, or at the end. 
+
+=== RUN 9: an3.30:3.8 an3.30:3.9 ===
+File: data/bodhi/sutta/an/an3/an3.30_translation-en-bodhi.json
+ABOVE an3.30:3.7
+Pali: evamevaṁ kho, bhikkhave, idhekacco puggalo ārāmaṁ gantā hoti abhikkhaṇaṁ bhikkhūnaṁ santike dhammassavanāya. 
+Sujato: In the same way, an individual often goes to the monastery to hear the teaching in the presence of the mendicants. 
+Translator: so too, some person often goes to the monastery to listen to the Dhamma from the bhikkhus…. 
+JUDGE an3.30:3.8
+Pali: Tassa bhikkhū dhammaṁ desenti ādikalyāṇaṁ majjhekalyāṇaṁ pariyosānakalyāṇaṁ sātthaṁ sabyañjanaṁ, kevalaparipuṇṇaṁ parisuddhaṁ brahmacariyaṁ pakāsenti. 
+Sujato: The mendicants teach them Dhamma that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. And they reveal a spiritual practice that’s entirely full and pure. 
+Translator: (empty)
+JUDGE an3.30:3.9
+Pali: So tasmiṁ āsane nisinno tassā kathāya ādimpi manasi karoti, majjhampi manasi karoti, pariyosānampi manasi karoti; 
+Sujato: While sitting there, they apply the mind to the discussion in the beginning, middle, and end. 
+Translator: (empty)
+BELOW an3.30:3.10
+Pali: vuṭṭhitopi tamhā āsanā tassā kathāya ādimpi manasi karoti, majjhampi manasi karoti, pariyosānampi manasi karoti. 
+Sujato: And when they rise from their seat, they continue to apply the mind to the beginning, middle, or end of the discussion. 
+Translator: After he has risen from his seat, again he attends to that talk at the beginning, in the middle, and at the end. 
+
+=== RUN 10: an3.53:2.3 an3.53:2.4 an3.53:2.5 an3.53:2.6 ===
+File: data/bodhi/sutta/an/an3/an3.53_translation-en-bodhi.json
+ABOVE an3.53:2.2
+Pali: Rāge pahīne nevattabyābādhāyapi ceteti, na parabyābādhāyapi ceteti, na ubhayabyābādhāyapi ceteti, na cetasikaṁ dukkhaṁ domanassaṁ paṭisaṁvedeti. 
+Sujato: When greed has been given up, they don’t intend to hurt themselves, hurt others, and hurt both. They don’t experience mental pain and sadness. 
+Translator: But when lust is abandoned, he does not intend for his own affliction, for the affliction of others, or for the affliction of both, and he does not experience mental suffering and dejection. 
+JUDGE an3.53:2.3
+Pali: Ratto kho …pe… kāyena duccaritaṁ carati, vācāya duccaritaṁ carati, manasā duccaritaṁ carati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an3.53:2.4
+Pali: Rāge pahīne neva kāyena duccaritaṁ carati, na vācāya duccaritaṁ carati, na manasā duccaritaṁ carati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an3.53:2.5
+Pali: Ratto kho …pe… attatthampi yathābhūtaṁ nappajānāti, paratthampi yathābhūtaṁ nappajānāti, ubhayatthampi yathābhūtaṁ nappajānāti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an3.53:2.6
+Pali: Rāge pahīne attatthampi yathābhūtaṁ pajānāti, paratthampi yathābhūtaṁ pajānāti, ubhayatthampi yathābhūtaṁ pajānāti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW an3.53:2.7
+Pali: Evampi kho, brāhmaṇa, sandiṭṭhiko dhammo hoti …pe…. 
+Sujato: This is how the teaching is apparent in the present life, immediately effective, inviting inspection, relevant, so that sensible people can know it for themselves. 
+Translator: It is in this way that the Dhamma is directly visible…. 
+
+=== RUN 11: an3.57:1.8 an3.57:1.9 an3.57:1.10 an3.57:1.11 an3.57:1.12 ===
+File: data/bodhi/sutta/an/an3/an3.57_translation-en-bodhi.json
+ABOVE an3.57:1.7
+Pali: mayhameva sāvakānaṁ dinnaṁ mahapphalaṁ, nāññesaṁ sāvakānaṁ dinnaṁ mahapphalan’ti. 
+Sujato: Only what is given to my disciples is very fruitful, not what is given to the disciples of others.’ 
+Translator: only what is given to my disciples is very fruitful, not what is given to the disciples of others.”’ 
+JUDGE an3.57:1.8
+Pali: Ye te, bho gotama, evamāhaṁsu ‘samaṇo gotamo evamāha: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an3.57:1.9
+Pali: “mayhameva dānaṁ dātabbaṁ, nāññesaṁ dānaṁ dātabbaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an3.57:1.10
+Pali: Mayhameva sāvakānaṁ dānaṁ dātabbaṁ, nāññesaṁ sāvakānaṁ dānaṁ dātabbaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an3.57:1.11
+Pali: Mayhameva dinnaṁ mahapphalaṁ, nāññesaṁ dinnaṁ mahapphalaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an3.57:1.12
+Pali: Mayhameva sāvakānaṁ dinnaṁ mahapphalaṁ, nāññesaṁ sāvakānaṁ dinnaṁ mahapphalan”’ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) an3.57:1.13
+Pali: Kacci te bhoto gotamassa vuttavādino na ca bhavantaṁ gotamaṁ abhūtena abbhācikkhanti, dhammassa cānudhammaṁ byākaronti, na ca koci sahadhammiko vādānupāto gārayhaṁ ṭhānaṁ āgacchati? 
+Sujato: I trust those who say this repeat what the worthy Gotama has said, and do not misrepresent him with an untruth? Is their explanation in line with the teaching? Are there any legitimate grounds for rebuttal and criticism? 
+Translator: Do those who speak thus state what has been said by Master Gotama and not misrepresent him with what is contrary to fact? Do they explain in accordance with the Dhamma so that they would not incur any reasonable criticism or ground for censure? 
+
+=== RUN 12: an3.60:20.2 an3.60:20.3 ===
+File: data/bodhi/sutta/an/an3/an3.60_translation-en-bodhi.json
+ABOVE an3.60:20.1
+Pali: “Abhikkantaṁ, bho gotama, abhikkantaṁ, bho gotama. 
+Sujato: “Excellent, worthy Gotama! Excellent! 
+Translator: “Excellent, Master Gotama! … 
+JUDGE an3.60:20.2
+Pali: Seyyathāpi, bho gotama, nikkujjitaṁ vā ukkujjeyya, paṭicchannaṁ vā vivareyya, mūḷhassa vā maggaṁ ācikkheyya, andhakāre vā telapajjotaṁ dhāreyya: ‘cakkhumanto rūpāni dakkhantī’ti; evamevaṁ bhotā gotamena anekapariyāyena dhammo pakāsito. 
+Sujato: As if he were righting the overturned, or revealing the hidden, or pointing out the path to the lost, or lighting a lamp in the dark so people with clear eyes can see what’s there, worthy Gotama has made the teaching clear in many ways. 
+Translator: (empty)
+JUDGE an3.60:20.3
+Pali: Esāhaṁ bhavantaṁ gotamaṁ saraṇaṁ gacchāmi, dhammañca bhikkhusaṅghañca. 
+Sujato: I go for refuge to the worthy Gotama, to the teaching, and to the mendicant Saṅgha. 
+Translator: (empty)
+BELOW an3.60:20.4
+Pali: Upāsakaṁ maṁ bhavaṁ gotamo dhāretu ajjatagge pāṇupetaṁ saraṇaṁ gatan”ti. 
+Sujato: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” 
+Translator: Let Master Gotama consider me a lay follower who from today has gone for refuge for life.” 
+
+=== RUN 13: an3.64:1.9 an3.64:1.10 ===
+File: data/bodhi/sutta/an/an3/an3.64_translation-en-bodhi.json
+ABOVE an3.64:1.8
+Pali: Assosuṁ kho te bhikkhū sarabhassa paribbājakassa rājagahe parisati evaṁ vācaṁ bhāsamānassa: 
+Sujato: They heard what Sarabha was saying. 
+Translator: They then heard the wanderer Sarabha making such a statement to an assembly in Rājagaha. 
+JUDGE an3.64:1.9
+Pali: “aññāto mayā samaṇānaṁ sakyaputtikānaṁ dhammo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an3.64:1.10
+Pali: Aññāya ca panāhaṁ samaṇānaṁ sakyaputtikānaṁ dhammaṁ evāhaṁ tasmā dhammavinayā apakkanto”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) an3.64:2.1
+Pali: Atha kho te bhikkhū rājagahe piṇḍāya caritvā pacchābhattaṁ piṇḍapātapaṭikkantā yena bhagavā tenupasaṅkamiṁsu; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ nisīdiṁsu. Ekamantaṁ nisinnā kho te bhikkhū bhagavantaṁ etadavocuṁ: 
+Sujato: Then, after the meal, when they returned from almsround, they went up to the Buddha, bowed, sat down to one side, and said to him, 
+Translator: When those bhikkhus had walked for alms in Rājagaha, after their meal, when they returned from their alms round, they approached the Blessed One, paid homage to him, sat down to one side, and said to him: 
+
+=== RUN 14: an3.183-352:3.17 an3.183-352:3.18 an3.183-352:3.19 an3.183-352:3.20 an3.183-352:3.21 an3.183-352:3.22 an3.183-352:3.23 an3.183-352:3.24 an3.183-352:3.25 ===
+File: data/bodhi/sutta/an/an3/an3.183-352_translation-en-bodhi.json
+ABOVE an3.183-352:3.16
+Pali: pamādassa … 
+Sujato: negligence … 
+Translator: heedlessness, three things are to be developed. What three? Emptiness concentration, markless concentration, and wishless concentration. 
+JUDGE an3.183-352:3.17
+Pali: abhiññāya … 
+Sujato: insight … 
+Translator: (empty)
+JUDGE an3.183-352:3.18
+Pali: pariññāya … 
+Sujato: complete understanding … 
+Translator: (empty)
+JUDGE an3.183-352:3.19
+Pali: parikkhayāya … 
+Sujato: complete ending … 
+Translator: (empty)
+JUDGE an3.183-352:3.20
+Pali: pahānāya … 
+Sujato: giving up … 
+Translator: (empty)
+JUDGE an3.183-352:3.21
+Pali: khayāya … 
+Sujato: ending … 
+Translator: (empty)
+JUDGE an3.183-352:3.22
+Pali: vayāya … 
+Sujato: vanishing … 
+Translator: (empty)
+JUDGE an3.183-352:3.23
+Pali: virāgāya … 
+Sujato: fading away … 
+Translator: (empty)
+JUDGE an3.183-352:3.24
+Pali: nirodhāya … 
+Sujato: cessation … 
+Translator: (empty)
+JUDGE an3.183-352:3.25
+Pali: cāgāya … 
+Sujato: giving away … 
+Translator: (empty)
+BELOW an3.183-352:3.26
+Pali: paṭinissaggāya ime tayo dhammā bhāvetabbā”ti. 
+Sujato: For the letting go of negligence, these three things should be developed.” 
+Translator: For the relinquishment of heedlessness, these three things are to be developed.” 
+
+=== RUN 15: an4.11:2.2 an4.11:2.3 ===
+File: data/bodhi/sutta/an/an4/an4.11_translation-en-bodhi.json
+ABOVE an4.11:2.1
+Pali: Ṭhitassa cepi, bhikkhave, bhikkhuno uppajjati kāmavitakko vā byāpādavitakko vā vihiṁsāvitakko vā. 
+Sujato: Suppose a mendicant has a sensual, malicious, or cruel thought while standing … 
+Translator: (2) “If a sensual thought … arises in a bhikkhu while standing … 
+JUDGE an4.11:2.2
+Pali: Tañce bhikkhu adhivāseti, nappajahati na vinodeti na byantīkaroti na anabhāvaṁ gameti, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an4.11:2.3
+Pali: ṭhitopi, bhikkhave, bhikkhu evaṁbhūto ‘anātāpī anottāpī satataṁ samitaṁ kusīto hīnavīriyo’ti vuccati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW an4.11:3.1
+Pali: Nisinnassa cepi, bhikkhave, bhikkhuno uppajjati kāmavitakko vā byāpādavitakko vā vihiṁsāvitakko vā. 
+Sujato: sitting … 
+Translator: (3) If a sensual thought … arises in a bhikkhu while sitting … 
+
+=== RUN 16: an4.11:3.2 an4.11:3.3 ===
+File: data/bodhi/sutta/an/an4/an4.11_translation-en-bodhi.json
+ABOVE an4.11:3.1
+Pali: Nisinnassa cepi, bhikkhave, bhikkhuno uppajjati kāmavitakko vā byāpādavitakko vā vihiṁsāvitakko vā. 
+Sujato: sitting … 
+Translator: (3) If a sensual thought … arises in a bhikkhu while sitting … 
+JUDGE an4.11:3.2
+Pali: Tañce bhikkhu adhivāseti, nappajahati na vinodeti na byantīkaroti na anabhāvaṁ gameti, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an4.11:3.3
+Pali: nisinnopi, bhikkhave, bhikkhu evaṁbhūto ‘anātāpī anottāpī satataṁ samitaṁ kusīto hīnavīriyo’ti vuccati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW an4.11:4.1
+Pali: Sayānassa cepi, bhikkhave, bhikkhuno jāgarassa uppajjati kāmavitakko vā byāpādavitakko vā vihiṁsāvitakko vā. 
+Sujato: or when lying down while awake. 
+Translator: (4) If a sensual thought, a thought of ill will, or a thought of harming arises in a bhikkhu while wakefully lying down, 
+
+=== RUN 17: an4.11:6.2 an4.11:6.3 ===
+File: data/bodhi/sutta/an/an4/an4.11_translation-en-bodhi.json
+ABOVE an4.11:6.1
+Pali: Ṭhitassa cepi, bhikkhave, bhikkhuno uppajjati kāmavitakko vā byāpādavitakko vā vihiṁsāvitakko vā. 
+Sujato: Suppose a mendicant has a sensual, malicious, or cruel thought while standing … 
+Translator: (2) “If a sensual thought … arises in a bhikkhu while standing … 
+JUDGE an4.11:6.2
+Pali: Tañce bhikkhu nādhivāseti, pajahati vinodeti byantīkaroti anabhāvaṁ gameti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an4.11:6.3
+Pali: ṭhitopi, bhikkhave, bhikkhu evaṁbhūto ‘ātāpī ottāpī satataṁ samitaṁ āraddhavīriyo pahitatto’ti vuccati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW an4.11:7.1
+Pali: Nisinnassa cepi, bhikkhave, bhikkhuno uppajjati kāmavitakko vā byāpādavitakko vā vihiṁsāvitakko vā. 
+Sujato: sitting … 
+Translator: (3) If a sensual thought … arises in a bhikkhu while sitting … 
+
+=== RUN 18: an4.11:7.2 an4.11:7.3 ===
+File: data/bodhi/sutta/an/an4/an4.11_translation-en-bodhi.json
+ABOVE an4.11:7.1
+Pali: Nisinnassa cepi, bhikkhave, bhikkhuno uppajjati kāmavitakko vā byāpādavitakko vā vihiṁsāvitakko vā. 
+Sujato: sitting … 
+Translator: (3) If a sensual thought … arises in a bhikkhu while sitting … 
+JUDGE an4.11:7.2
+Pali: Tañce bhikkhu nādhivāseti, pajahati vinodeti byantīkaroti anabhāvaṁ gameti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an4.11:7.3
+Pali: nisinnopi, bhikkhave, bhikkhu evaṁbhūto ‘ātāpī ottāpī satataṁ samitaṁ āraddhavīriyo pahitatto’ti vuccati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW an4.11:8.1
+Pali: Sayānassa cepi, bhikkhave, bhikkhuno jāgarassa uppajjati kāmavitakko vā byāpādavitakko vā vihiṁsāvitakko vā. 
+Sujato: or when lying down while awake. 
+Translator: (4) If a sensual thought, a thought of ill will, or a thought of harming arises in a bhikkhu while wakefully lying down, 
+
+=== RUN 19: an4.16:1.7 an4.16:1.8 ===
+File: data/bodhi/sutta/an/an4/an4.16_translation-en-bodhi.json
+ABOVE an4.16:1.6
+Pali: Vedanāsokhummena samannāgato hoti paramena; 
+Sujato: A mendicant has ultimate subtlety of feeling. 
+Translator: (2) He possesses supreme exquisiteness of feeling … 
+JUDGE an4.16:1.7
+Pali: tena ca vedanāsokhummena aññaṁ vedanāsokhummaṁ uttaritaraṁ vā paṇītataraṁ vā na samanupassati; 
+Sujato: They don’t see any other subtlety of feeling that’s better or finer than that, 
+Translator: (empty)
+JUDGE an4.16:1.8
+Pali: tena ca vedanāsokhummena aññaṁ vedanāsokhummaṁ uttaritaraṁ vā paṇītataraṁ vā na pattheti. 
+Sujato: nor do they aim for it. 
+Translator: (empty)
+BELOW (outside this paragraph) an4.16:1.9
+Pali: Saññāsokhummena samannāgato hoti paramena; 
+Sujato: A mendicant has ultimate subtlety of perception. 
+Translator: (3) … supreme exquisiteness of perception … 
+
+=== RUN 20: an4.16:1.10 an4.16:1.11 ===
+File: data/bodhi/sutta/an/an4/an4.16_translation-en-bodhi.json
+ABOVE an4.16:1.9
+Pali: Saññāsokhummena samannāgato hoti paramena; 
+Sujato: A mendicant has ultimate subtlety of perception. 
+Translator: (3) … supreme exquisiteness of perception … 
+JUDGE an4.16:1.10
+Pali: tena ca saññāsokhummena aññaṁ saññāsokhummaṁ uttaritaraṁ vā paṇītataraṁ vā na samanupassati; 
+Sujato: They don’t see any other subtlety of perception that’s better or finer than that, 
+Translator: (empty)
+JUDGE an4.16:1.11
+Pali: tena ca saññāsokhummena aññaṁ saññāsokhummaṁ uttaritaraṁ vā paṇītataraṁ vā na pattheti. 
+Sujato: nor do they aim for it. 
+Translator: (empty)
+BELOW (outside this paragraph) an4.16:1.12
+Pali: Saṅkhārasokhummena samannāgato hoti paramena; 
+Sujato: A mendicant has ultimate subtlety of choices. 
+Translator: (4) … supreme exquisiteness of volitional activities. 
+
+=== RUN 21: an4.59:1.3 an4.59:1.4 an4.59:1.5 ===
+File: data/bodhi/sutta/an/an4/an4.59_translation-en-bodhi.json
+ABOVE an4.59:1.2
+Pali: Katamāni cattāri? 
+Sujato: What four? 
+Translator: What four? … as in preceding sutta … 
+JUDGE an4.59:1.3
+Pali: Āyuṁ deti, vaṇṇaṁ deti, sukhaṁ deti, balaṁ deti. 
+Sujato: Long life, beauty, happiness, and strength. …” 
+Translator: (empty)
+JUDGE an4.59:1.4
+Pali: Āyuṁ kho pana datvā āyussa bhāgī hoti dibbassa vā mānusassa vā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an4.59:1.5
+Pali: Vaṇṇaṁ datvā … sukhaṁ datvā … balaṁ datvā balassa bhāgī hoti dibbassa vā mānusassa vā. 
+Sujato: (empty)
+Translator: (empty)
+BELOW an4.59:1.6
+Pali: Bhojanaṁ, bhikkhave, dadamāno dāyako paṭiggāhakānaṁ imāni cattāri ṭhānāni detīti. 
+Sujato: (empty)
+Translator: Bhikkhus, when a donor gives food, he gives the recipients these four things.” 
+
+=== RUN 22: an5.28:13.3 an5.28:13.4 an5.28:13.5 an5.28:13.6 an5.28:13.7 an5.28:13.8 an5.28:13.9 an5.28:13.10 an5.28:13.11 an5.28:13.12 an5.28:13.13 an5.28:13.14 an5.28:13.15 an5.28:13.16 ===
+File: data/bodhi/sutta/an/an5/an5.28_translation-en-bodhi.json
+ABOVE an5.28:13.2
+Pali: sarāgaṁ vā cittaṁ sarāgaṁ cittanti pajāneyyaṁ, 
+Sujato: May I understand mind with greed as “mind with greed”, 
+Translator: May I understand … 
+JUDGE an5.28:13.3
+Pali: vītarāgaṁ vā cittaṁ vītarāgaṁ cittanti pajāneyyaṁ, 
+Sujato: and mind without greed as “mind without greed”; 
+Translator: (empty)
+JUDGE an5.28:13.4
+Pali: sadosaṁ vā cittaṁ … 
+Sujato: mind with hate as “mind with hate”, 
+Translator: (empty)
+JUDGE an5.28:13.5
+Pali: vītadosaṁ vā cittaṁ … 
+Sujato: and mind without hate as “mind without hate”; 
+Translator: (empty)
+JUDGE an5.28:13.6
+Pali: samohaṁ vā cittaṁ … 
+Sujato: mind with delusion as “mind with delusion”, 
+Translator: (empty)
+JUDGE an5.28:13.7
+Pali: vītamohaṁ vā cittaṁ … 
+Sujato: and mind without delusion as “mind without delusion”; 
+Translator: (empty)
+JUDGE an5.28:13.8
+Pali: saṅkhittaṁ vā cittaṁ … 
+Sujato: constricted mind as “constricted mind”, 
+Translator: (empty)
+JUDGE an5.28:13.9
+Pali: vikkhittaṁ vā cittaṁ … 
+Sujato: and scattered mind as “scattered mind”; 
+Translator: (empty)
+JUDGE an5.28:13.10
+Pali: mahaggataṁ vā cittaṁ … 
+Sujato: expansive mind as “expansive mind”, 
+Translator: (empty)
+JUDGE an5.28:13.11
+Pali: amahaggataṁ vā cittaṁ … 
+Sujato: and unexpansive mind as “unexpansive mind”; 
+Translator: (empty)
+JUDGE an5.28:13.12
+Pali: sauttaraṁ vā cittaṁ … 
+Sujato: mind that is not supreme as “mind that is not supreme”, 
+Translator: (empty)
+JUDGE an5.28:13.13
+Pali: anuttaraṁ vā cittaṁ … 
+Sujato: and mind that is supreme as “mind that is supreme”; 
+Translator: (empty)
+JUDGE an5.28:13.14
+Pali: samāhitaṁ vā cittaṁ … 
+Sujato: mind immersed in samādhi as “mind immersed in samādhi”, 
+Translator: (empty)
+JUDGE an5.28:13.15
+Pali: asamāhitaṁ vā cittaṁ … 
+Sujato: and mind not immersed in samādhi as “mind not immersed in samādhi”; 
+Translator: (empty)
+JUDGE an5.28:13.16
+Pali: vimuttaṁ vā cittaṁ … 
+Sujato: freed mind as “freed mind”, 
+Translator: (empty)
+BELOW an5.28:13.17
+Pali: avimuttaṁ vā cittaṁ avimuttaṁ cittanti pajāneyyan’ti, 
+Sujato: and unfreed mind as “unfreed mind”.’ 
+Translator: an unliberated mind as unliberated,’ 
+
+=== RUN 23: an5.42:2.4 an5.42:2.5 an5.42:2.6 ===
+File: data/bodhi/sutta/an/an5/an5.42_translation-en-bodhi.json
+ABOVE an5.42:2.3
+Pali: mātāpitūnaṁ atthāya hitāya sukhāya hoti; 
+Sujato: (empty)
+Translator: It is for the good, welfare, and happiness of his mother and father … 
+JUDGE an5.42:2.4
+Pali: puttadārassa atthāya hitāya sukhāya hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an5.42:2.5
+Pali: dāsakammakaraporisassa atthāya hitāya sukhāya hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an5.42:2.6
+Pali: mittāmaccānaṁ atthāya hitāya sukhāya hoti; 
+Sujato: (empty)
+Translator: (empty)
+BELOW an5.42:2.7
+Pali: samaṇabrāhmaṇānaṁ atthāya hitāya sukhāya hotīti. 
+Sujato: (empty)
+Translator: ascetics and brahmins.” 
+
+=== RUN 24: an5.43:5.2 an5.43:5.3 an5.43:5.4 ===
+File: data/bodhi/sutta/an/an5/an5.43_translation-en-bodhi.json
+ABOVE an5.43:5.1
+Pali: Na kho, gahapati, arahati ariyasāvako vaṇṇakāmo vaṇṇaṁ āyācituṁ vā abhinandituṁ vā vaṇṇassa vāpi hetu. 
+Sujato: A noble disciple who wants to be beautiful ought not pray for it, or hope for it, or pine for it. 
+Translator: (2) “Householder, the noble disciple who desires beauty … 
+JUDGE an5.43:5.2
+Pali: Vaṇṇakāmena, gahapati, ariyasāvakena vaṇṇasaṁvattanikā paṭipadā paṭipajjitabbā. 
+Sujato: Instead, they should practice the way that leads to beauty. 
+Translator: (empty)
+JUDGE an5.43:5.3
+Pali: Vaṇṇasaṁvattanikā hissa paṭipadā paṭipannā vaṇṇapaṭilābhāya saṁvattati. 
+Sujato: For by practicing that way they gain beauty 
+Translator: (empty)
+JUDGE an5.43:5.4
+Pali: So lābhī hoti vaṇṇassa dibbassa vā mānusassa vā. 
+Sujato: as a god or a human being. 
+Translator: (empty)
+BELOW (outside this paragraph) an5.43:6.1
+Pali: Na kho, gahapati, arahati ariyasāvako sukhakāmo sukhaṁ āyācituṁ vā abhinandituṁ vā sukhassa vāpi hetu. 
+Sujato: A noble disciple who wants to be happy ought not pray for it, or hope for it, or pine for it. 
+Translator: (3) … who desires happiness … 
+
+=== RUN 25: an5.43:6.2 an5.43:6.3 an5.43:6.4 ===
+File: data/bodhi/sutta/an/an5/an5.43_translation-en-bodhi.json
+ABOVE an5.43:6.1
+Pali: Na kho, gahapati, arahati ariyasāvako sukhakāmo sukhaṁ āyācituṁ vā abhinandituṁ vā sukhassa vāpi hetu. 
+Sujato: A noble disciple who wants to be happy ought not pray for it, or hope for it, or pine for it. 
+Translator: (3) … who desires happiness … 
+JUDGE an5.43:6.2
+Pali: Sukhakāmena, gahapati, ariyasāvakena sukhasaṁvattanikā paṭipadā paṭipajjitabbā. 
+Sujato: Instead, they should practice the way that leads to happiness. 
+Translator: (empty)
+JUDGE an5.43:6.3
+Pali: Sukhasaṁvattanikā hissa paṭipadā paṭipannā sukhapaṭilābhāya saṁvattati. 
+Sujato: For by practicing that way they gain happiness 
+Translator: (empty)
+JUDGE an5.43:6.4
+Pali: So lābhī hoti sukhassa dibbassa vā mānusassa vā. 
+Sujato: as a god or a human being. 
+Translator: (empty)
+BELOW (outside this paragraph) an5.43:7.1
+Pali: Na kho, gahapati, arahati ariyasāvako yasakāmo yasaṁ āyācituṁ vā abhinandituṁ vā yasassa vāpi hetu. 
+Sujato: A noble disciple who wants to be famous ought not pray for it, or hope for it, or pine for it. 
+Translator: (4) … who desires fame ought not to pray for fame or delight in it or passively yearn for it. 
+
+=== RUN 26: an5.55:2.2 an5.55:2.3 an5.55:2.4 ===
+File: data/bodhi/sutta/an/an5/an5.55_translation-en-bodhi.json
+ABOVE an5.55:2.1
+Pali: Atha kho sambahulā bhikkhū yena bhagavā tenupasaṅkamiṁsu; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ nisīdiṁsu. Ekamantaṁ nisinnā kho te bhikkhū bhagavantaṁ etadavocuṁ: 
+Sujato: Then several mendicants went up to the Buddha, bowed, sat down to one side, and told him what had happened. 
+Translator: Then a number of bhikkhus approached the Blessed One, paid homage to him, sat down to one side, and reported what had happened. 
+JUDGE an5.55:2.2
+Pali: “idha, bhante, sāvatthiyaṁ ubho mātāputtā vassāvāsaṁ upagamiṁsu—
+Sujato: (empty)
+Translator: (empty)
+JUDGE an5.55:2.3
+Pali: bhikkhu ca bhikkhunī ca, te aññamaññassa abhiṇhaṁ dassanakāmā ahesuṁ, mātāpi puttassa abhiṇhaṁ dassanakāmā ahosi, puttopi mātaraṁ abhiṇhaṁ dassanakāmo ahosi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an5.55:2.4
+Pali: Tesaṁ abhiṇhaṁ dassanā saṁsaggo ahosi, saṁsagge sati vissāso ahosi, vissāse sati otāro ahosi, te otiṇṇacittā sikkhaṁ apaccakkhāya dubbalyaṁ anāvikatvā methunaṁ dhammaṁ paṭiseviṁsū”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) an5.55:3.1
+Pali: “Kiṁ nu so, bhikkhave, moghapuriso maññati: 
+Sujato: “Mendicants, how could that futile man imagine that 
+Translator: The Blessed One said: “Bhikkhus, did that foolish man think: 
+
+=== RUN 27: an5.56:2.2 an5.56:2.3 ===
+File: data/bodhi/sutta/an/an5/an5.56_translation-en-bodhi.json
+ABOVE an5.56:2.1
+Pali: Atha kho so bhikkhu taṁ saddhivihārikaṁ bhikkhuṁ ādāya yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ nisīdi. Ekamantaṁ nisinno kho so bhikkhu bhagavantaṁ etadavoca: 
+Sujato: Then that mendicant took his protégé to the Buddha, bowed, sat down to one side, and said to him, 
+Translator: Then the preceptor took his pupil to the Blessed One. He paid homage to the Blessed One, sat down to one side, and told the Blessed One what his pupil had said. 
+JUDGE an5.56:2.2
+Pali: “ayaṁ, bhante, bhikkhu evamāha: 
+Sujato: “Sir, this mendicant says this: 
+Translator: (empty)
+JUDGE an5.56:2.3
+Pali: ‘etarahi me, bhante, madhurakajāto ceva kāyo, disā ca maṁ na pakkhāyanti, dhammā ca me nappaṭibhanti, thinamiddhañca me cittaṁ pariyādāya tiṭṭhati, anabhirato ca brahmacariyaṁ carāmi, atthi ca me dhammesu vicikicchā’”ti. 
+Sujato: ‘Now, sir, my body feels like it’s drugged. I’m disorientated, the teachings don’t spring to mind, and dullness and drowsiness fill my mind. I lead the spiritual life dissatisfied, and have doubts about the teachings.’” 
+Translator: (empty)
+BELOW (outside this paragraph) an5.56:3.1
+Pali: “Evañhetaṁ, bhikkhu, hoti indriyesu aguttadvārassa, bhojane amattaññuno, jāgariyaṁ ananuyuttassa, avipassakassa kusalānaṁ dhammānaṁ, pubbarattāpararattaṁ bodhipakkhiyānaṁ dhammānaṁ bhāvanānuyogaṁ ananuyuttassa viharato, yaṁ madhurakajāto ceva kāyo hoti, disā cassa na pakkhāyanti, dhammā ca taṁ nappaṭibhanti, thinamiddhañcassa cittaṁ pariyādāya tiṭṭhati, anabhirato ca brahmacariyaṁ carati, hoti cassa dhammesu vicikicchā. 
+Sujato: “That’s how it is, mendicant, when your sense doors are unguarded, you eat too much, you’re not dedicated to wakefulness, you’re unable to discern skillful qualities, and you don’t pursue the development of the qualities on the side of awakening in the evening and toward dawn. Your body feels like it’s drugged. You’re disorientated, the teachings don’t spring to mind, and dullness and drowsiness fill your mind. You lead the spiritual life dissatisfied, and have doubts about the teachings. 
+Translator: The Blessed One said: “So it is, bhikkhu! (1) When one is unguarded in the doors of the sense faculties, (2) immoderate in eating, (3) and not intent on wakefulness; (4) when one lacks insight into wholesome qualities (5) and does not dwell intent on the endeavor to develop the aids to enlightenment in the earlier and later phases of the night, one’s body seems as if it had been drugged, one becomes disoriented, and the teachings are no longer clear to one. Dullness and drowsiness obsess one’s mind. One lives the spiritual life dissatisfied and has doubt about the teachings. 
+
+=== RUN 28: an5.56:5.4 an5.56:5.5 ===
+File: data/bodhi/sutta/an/an5/an5.56_translation-en-bodhi.json
+ABOVE an5.56:5.3
+Pali: Atha kho so bhikkhu taṁ saddhivihārikaṁ bhikkhuṁ ādāya yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ nisīdi. Ekamantaṁ nisinno kho so bhikkhu bhagavantaṁ etadavoca: 
+Sujato: Then that mendicant took his protégé to the Buddha, bowed, sat down to one side, and said to him, 
+Translator: Then the preceptor took his pupil to the Blessed One. He paid homage to the Blessed One, sat down to one side, and told the Blessed One what his pupil had said. 
+JUDGE an5.56:5.4
+Pali: “ayaṁ, bhante, bhikkhu evamāha: 
+Sujato: “Sir, this mendicant says this: 
+Translator: (empty)
+JUDGE an5.56:5.5
+Pali: ‘etarahi me, bhante, na ceva madhurakajāto kāyo, disā ca me pakkhāyanti, dhammā ca maṁ paṭibhanti, thinamiddhañca me cittaṁ na pariyādāya tiṭṭhati, abhirato ca brahmacariyaṁ carāmi, natthi ca me dhammesu vicikicchā’”ti. 
+Sujato: ‘Now, sir, my body doesn’t feel like it’s drugged. I’m not disorientated, the teachings spring to mind, and dullness and drowsiness don’t fill my mind. I lead the spiritual life satisfied, and have no doubts about the teachings.’” 
+Translator: (empty)
+BELOW (outside this paragraph) an5.56:6.1
+Pali: “Evañhetaṁ, bhikkhu, hoti indriyesu guttadvārassa, bhojane mattaññuno, jāgariyaṁ anuyuttassa, vipassakassa kusalānaṁ dhammānaṁ, pubbarattāpararattaṁ bodhipakkhiyānaṁ dhammānaṁ bhāvanānuyogaṁ anuyuttassa viharato, yaṁ na ceva madhurakajāto kāyo hoti, disā cassa pakkhāyanti, dhammā ca taṁ paṭibhanti, thinamiddhañcassa cittaṁ na pariyādāya tiṭṭhati, abhirato ca brahmacariyaṁ carati, na cassa hoti dhammesu vicikicchā. 
+Sujato: “That’s how it is, mendicant, when your sense doors are guarded, you’re moderate in eating, you’re dedicated to wakefulness, you’re able to discern skillful qualities, and you pursue the development of the qualities on the side of awakening in the evening and toward dawn. Your body doesn’t feel like it’s drugged. You’re not disorientated, the teachings spring to mind, and dullness and drowsiness don’t fill your mind. You lead the spiritual life satisfied, and have no doubts about the teachings. 
+Translator: The Blessed One said: “So it is, bhikkhu! When one is guarded in the doors of the sense faculties, moderate in eating, and intent on wakefulness; when one has insight into wholesome qualities and dwells intent on the endeavor to develop the aids to enlightenment in the earlier and later phases of the night, one’s body does not seem as if it had been drugged, one becomes well oriented, and the teachings are clear to one. Dullness and drowsiness do not obsess one’s mind. One lives the spiritual life joyfully and has no doubt about the teachings. 
+
+=== RUN 29: an5.57:6.6 an5.57:6.7 ===
+File: data/bodhi/sutta/an/an5/an5.57_translation-en-bodhi.json
+ABOVE an5.57:6.5
+Pali: Idaṁ kho, bhikkhave, atthavasaṁ paṭicca ‘kammassakomhi, kammadāyādo kammayoni kammabandhu kammapaṭisaraṇo, yaṁ kammaṁ karissāmi—
+Sujato: This is the advantage for a woman or a man, a layperson or a renunciate of often reviewing like this: ‘I am the owner of my deeds and heir to my deeds. Deeds are my womb, my relative, and my refuge. 
+Translator: It is for the sake of this benefit that a woman or a man, a householder or one gone forth, should often reflect thus: ‘I am the owner of my kamma, the heir of my kamma; I have kamma as my origin, kamma as my relative, kamma as my resort; I will be the heir of whatever kamma, good or bad, that I do.’ 
+JUDGE an5.57:6.6
+Pali: kalyāṇaṁ vā pāpakaṁ vā—
+Sujato: I shall be the heir of whatever deeds I do, whether good or bad.’ 
+Translator: (empty)
+JUDGE an5.57:6.7
+Pali: tassa dāyādo bhavissāmī’ti abhiṇhaṁ paccavekkhitabbaṁ itthiyā vā purisena vā gahaṭṭhena vā pabbajitena vā. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) an5.57:7.1
+Pali: Sa kho so, bhikkhave, ariyasāvako iti paṭisañcikkhati: 
+Sujato: Then that noble disciple reflects: 
+Translator: (1) “This noble disciple reflects thus: 
+
+=== RUN 30: an8.2:16.2 an8.2:16.3 an8.2:16.4 an8.2:16.5 an8.2:16.6 ===
+File: data/bodhi/sutta/an/an8/an8.2_translation-en-bodhi.json
+ABOVE an8.2:16.1
+Pali: ‘Pañcasu kho panāyamāyasmā upādānakkhandhesu udayabbayānupassī viharati—
+Sujato: ‘They meditate observing rise and fall in the five grasping aggregates. … 
+Translator: (8) “‘This venerable one dwells contemplating arising and vanishing in the five aggregates subject to clinging…. 
+JUDGE an8.2:16.2
+Pali: iti rūpaṁ, iti rūpassa samudayo, iti rūpassa atthaṅgamo; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an8.2:16.3
+Pali: iti vedanā …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an8.2:16.4
+Pali: iti saññā … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an8.2:16.5
+Pali: iti saṅkhārā … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an8.2:16.6
+Pali: iti viññāṇaṁ, iti viññāṇassa samudayo, iti viññāṇassa atthaṅgamoti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW an8.2:16.7
+Pali: Addhā ayamāyasmā jānaṁ jānāti passaṁ passatī’ti. 
+Sujato: Clearly this venerable knows and sees.’ 
+Translator: This venerable one surely knows and sees.’ 
+
+=== RUN 31: an8.8:8.2 an8.8:8.3 an8.8:8.4 an8.8:8.5 an8.8:8.6 an8.8:8.7 an8.8:8.8 an8.8:8.9 an8.8:8.10 an8.8:8.11 an8.8:8.12 an8.8:8.13 an8.8:8.14 an8.8:8.15 ===
+File: data/bodhi/sutta/an/an8/an8.8_translation-en-bodhi.json
+ABOVE an8.8:8.1
+Pali: ‘Sādhu, bhikkhave, bhikkhu kālena kālaṁ attavipattiṁ paccavekkhitā hoti. 
+Sujato: ‘Mendicants, it’s good for a mendicant from time to time to check their own failings … 
+Translator: ‘Bhikkhus, it is good for a bhikkhu from time to time to review his own failings…. 
+JUDGE an8.8:8.2
+Pali: Sādhu, bhikkhave, bhikkhu kālena kālaṁ paravipattiṁ …pe… 
+Sujato: the failings of others … 
+Translator: (empty)
+JUDGE an8.8:8.3
+Pali: attasampattiṁ … 
+Sujato: their own successes … 
+Translator: (empty)
+JUDGE an8.8:8.4
+Pali: parasampattiṁ paccavekkhitā hoti. 
+Sujato: the successes of others. 
+Translator: (empty)
+JUDGE an8.8:8.5
+Pali: Aṭṭhahi, bhikkhave, asaddhammehi abhibhūto pariyādinnacitto devadatto āpāyiko nerayiko kappaṭṭho atekiccho. 
+Sujato: Overcome and overwhelmed by eight things that oppose the true teaching, Devadatta is going to a place of loss, to hell, there to remain for an eon, irredeemable. 
+Translator: (empty)
+JUDGE an8.8:8.6
+Pali: Katamehi aṭṭhahi? 
+Sujato: What eight? 
+Translator: (empty)
+JUDGE an8.8:8.7
+Pali: Lābhena hi, bhikkhave, abhibhūto pariyādinnacitto devadatto āpāyiko nerayiko kappaṭṭho atekiccho; 
+Sujato: Overcome and overwhelmed by gain … 
+Translator: (empty)
+JUDGE an8.8:8.8
+Pali: alābhena, bhikkhave …pe… 
+Sujato: loss … 
+Translator: (empty)
+JUDGE an8.8:8.9
+Pali: yasena, bhikkhave … 
+Sujato: fame … 
+Translator: (empty)
+JUDGE an8.8:8.10
+Pali: ayasena, bhikkhave … 
+Sujato: disgrace … 
+Translator: (empty)
+JUDGE an8.8:8.11
+Pali: sakkārena, bhikkhave … 
+Sujato: honor … 
+Translator: (empty)
+JUDGE an8.8:8.12
+Pali: asakkārena, bhikkhave … 
+Sujato: dishonor … 
+Translator: (empty)
+JUDGE an8.8:8.13
+Pali: pāpicchatāya, bhikkhave … 
+Sujato: corrupt wishes … 
+Translator: (empty)
+JUDGE an8.8:8.14
+Pali: pāpamittatāya, bhikkhave, abhibhūto pariyādinnacitto devadatto āpāyiko nerayiko kappaṭṭho atekiccho. 
+Sujato: bad friendship, Devadatta is going to a place of loss, to hell, there to remain for an eon, irredeemable. 
+Translator: (empty)
+JUDGE an8.8:8.15
+Pali: Imehi kho, bhikkhave, aṭṭhahi asaddhammehi abhibhūto pariyādinnacitto devadatto āpāyiko nerayiko kappaṭṭho atekiccho. 
+Sujato: Overcome and overwhelmed by these eight things that oppose the true teaching, Devadatta is going to a place of loss, to hell, there to remain for an eon, irredeemable. 
+Translator: (empty)
+BELOW (outside this paragraph) an8.8:10.1
+Pali: Kiñca, bhikkhave, bhikkhu atthavasaṁ paṭicca uppannaṁ lābhaṁ abhibhuyya abhibhuyya vihareyya; 
+Sujato: What advantage does a mendicant gain by overcoming these eight things? 
+Translator: Sakka here cites the Buddha’s entire discourse of <a href="https://suttacentral.net/an8.7">AN8.7</a>, 
+
+=== RUN 32: an8.8:10.4 an8.8:10.5 an8.8:10.6 an8.8:10.7 an8.8:10.8 ===
+File: data/bodhi/sutta/an/an8/an8.8_translation-en-bodhi.json
+ABOVE an8.8:10.3
+Pali: uppannaṁ yasaṁ … 
+Sujato: (empty)
+Translator: down to: 
+JUDGE an8.8:10.4
+Pali: uppannaṁ ayasaṁ … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an8.8:10.5
+Pali: uppannaṁ sakkāraṁ … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an8.8:10.6
+Pali: uppannaṁ asakkāraṁ … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an8.8:10.7
+Pali: uppannaṁ pāpicchataṁ … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an8.8:10.8
+Pali: uppannaṁ pāpamittataṁ abhibhuyya abhibhuyya vihareyya? 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) an8.8:12.3
+Pali: uppannaṁ alābhaṁ …pe… 
+Sujato: loss … 
+Translator: [165–
+
+=== RUN 33: an8.8:12.5 an8.8:12.6 an8.8:12.7 an8.8:12.8 an8.8:12.9 ===
+File: data/bodhi/sutta/an/an8/an8.8_translation-en-bodhi.json
+ABOVE an8.8:12.4
+Pali: uppannaṁ yasaṁ … 
+Sujato: fame … 
+Translator: 66] … 
+JUDGE an8.8:12.5
+Pali: uppannaṁ ayasaṁ … 
+Sujato: disgrace … 
+Translator: (empty)
+JUDGE an8.8:12.6
+Pali: uppannaṁ sakkāraṁ … 
+Sujato: honor … 
+Translator: (empty)
+JUDGE an8.8:12.7
+Pali: uppannaṁ asakkāraṁ … 
+Sujato: dishonor … 
+Translator: (empty)
+JUDGE an8.8:12.8
+Pali: uppannaṁ pāpicchataṁ … 
+Sujato: corrupt wishes … 
+Translator: (empty)
+JUDGE an8.8:12.9
+Pali: uppannaṁ pāpamittataṁ abhibhuyya abhibhuyya viharissāmā”ti. 
+Sujato: bad friendship.” 
+Translator: (empty)
+BELOW an8.8:12.10
+Pali: Evañhi vo, bhikkhave, sikkhitabban’ti. 
+Sujato: That’s how you should train.’ 
+Translator: It is in such a way, bhikkhus, that you should train yourselves.’ 
+
+=== RUN 34: an8.17:1.4 an8.17:1.5 ===
+File: data/bodhi/sutta/an/an8/an8.17_translation-en-bodhi.json
+ABOVE an8.17:1.3
+Pali: Ruṇṇena, bhikkhave, itthī purisaṁ bandhati; 
+Sujato: With weeping, 
+Translator: A woman binds a man by her form … by her smile … by her speech … by singing … by weeping … 
+JUDGE an8.17:1.4
+Pali: hasitena, bhikkhave, itthī purisaṁ bandhati; 
+Sujato: laughing, 
+Translator: (empty)
+JUDGE an8.17:1.5
+Pali: bhaṇitena, bhikkhave, itthī purisaṁ bandhati; 
+Sujato: speaking, 
+Translator: (empty)
+BELOW an8.17:1.6
+Pali: ākappena, bhikkhave, itthī purisaṁ bandhati; 
+Sujato: appearance, 
+Translator: by her appearance … 
+
+=== RUN 35: an8.17:1.8 an8.17:1.9 ===
+File: data/bodhi/sutta/an/an8/an8.17_translation-en-bodhi.json
+ABOVE an8.17:1.7
+Pali: vanabhaṅgena, bhikkhave, itthī purisaṁ bandhati; 
+Sujato: gifts of wildflowers, 
+Translator: by a present … 
+JUDGE an8.17:1.8
+Pali: gandhena, bhikkhave, itthī purisaṁ bandhati; 
+Sujato: scents, 
+Translator: (empty)
+JUDGE an8.17:1.9
+Pali: rasena, bhikkhave, itthī purisaṁ bandhati; 
+Sujato: tastes, 
+Translator: (empty)
+BELOW an8.17:1.10
+Pali: phassena, bhikkhave, itthī purisaṁ bandhati. 
+Sujato: and touches. 
+Translator: by her touch. 
+
+=== RUN 36: an8.18:1.4 an8.18:1.5 ===
+File: data/bodhi/sutta/an/an8/an8.18_translation-en-bodhi.json
+ABOVE an8.18:1.3
+Pali: Ruṇṇena, bhikkhave, puriso itthiṁ bandhati; 
+Sujato: With weeping, 
+Translator: A man binds a woman by his form … by his smile … by his speech … by singing … by weeping … 
+JUDGE an8.18:1.4
+Pali: hasitena, bhikkhave, puriso itthiṁ bandhati; 
+Sujato: laughing, 
+Translator: (empty)
+JUDGE an8.18:1.5
+Pali: bhaṇitena, bhikkhave, puriso itthiṁ bandhati; 
+Sujato: speaking, 
+Translator: (empty)
+BELOW an8.18:1.6
+Pali: ākappena, bhikkhave, puriso itthiṁ bandhati; 
+Sujato: appearance, 
+Translator: by his appearance … 
+
+=== RUN 37: an8.18:1.8 an8.18:1.9 ===
+File: data/bodhi/sutta/an/an8/an8.18_translation-en-bodhi.json
+ABOVE an8.18:1.7
+Pali: vanabhaṅgena, bhikkhave, puriso itthiṁ bandhati; 
+Sujato: gifts of wildflowers, 
+Translator: by a present … 
+JUDGE an8.18:1.8
+Pali: gandhena, bhikkhave, puriso itthiṁ bandhati; 
+Sujato: scents, 
+Translator: (empty)
+JUDGE an8.18:1.9
+Pali: rasena, bhikkhave, puriso itthiṁ bandhati; 
+Sujato: tastes, 
+Translator: (empty)
+BELOW an8.18:1.10
+Pali: phassena, bhikkhave, puriso itthiṁ bandhati. 
+Sujato: and touches. 
+Translator: by his touch. 
+
+=== RUN 38: an8.20:4.3 an8.20:4.4 an8.20:4.5 ===
+File: data/bodhi/sutta/an/an8/an8.20_translation-en-bodhi.json
+ABOVE an8.20:4.2
+Pali: Dutiyampi kho āyasmā mahāmoggallāno taṁ puggalaṁ etadavoca: 
+Sujato: For a second time 
+Translator: A second time … 
+JUDGE an8.20:4.3
+Pali: “uṭṭhehāvuso, diṭṭhosi bhagavatā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an8.20:4.4
+Pali: Natthi te bhikkhūhi saddhiṁ saṁvāso”ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an8.20:4.5
+Pali: Dutiyampi kho so puggalo tuṇhī ahosi. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) an8.20:4.6
+Pali: Tatiyampi kho āyasmā mahāmoggallāno taṁ puggalaṁ etadavoca: 
+Sujato: and a third time, 
+Translator: A third time the Venerable Mahāmoggallāna said to that person: 
+
+=== RUN 39: an8.22:4.3 an8.22:4.4 an8.22:4.5 an8.22:4.6 an8.22:4.7 an8.22:4.8 ===
+File: data/bodhi/sutta/an/an8/an8.22_translation-en-bodhi.json
+ABOVE an8.22:4.2
+Pali: Tassa me bhagavā anupubbiṁ kathaṁ kathesi, seyyathidaṁ—
+Sujato: The Buddha taught me step by step, with 
+Translator: The Blessed One then gave me a progressive discourse…. as in <a href="https://suttacentral.net/an8.21">AN8.21</a> … 
+JUDGE an8.22:4.3
+Pali: dānakathaṁ sīlakathaṁ saggakathaṁ; kāmānaṁ ādīnavaṁ okāraṁ saṅkilesaṁ, nekkhamme ānisaṁsaṁ pakāsesi. 
+Sujato: a talk on giving, ethical conduct, and heaven. He revealed the drawbacks of sensual pleasures, so sordid and corrupt, and the benefit of renunciation. 
+Translator: (empty)
+JUDGE an8.22:4.4
+Pali: Yadā maṁ bhagavā aññāsi kallacittaṁ muducittaṁ vinīvaraṇacittaṁ udaggacittaṁ pasannacittaṁ, atha yā buddhānaṁ sāmukkaṁsikā dhammadesanā taṁ pakāsesi—
+Sujato: And when he knew that my mind was ready, pliable, rid of hindrances, elated, and confident he revealed the special teaching of the Buddhas: 
+Translator: (empty)
+JUDGE an8.22:4.5
+Pali: dukkhaṁ, samudayaṁ, nirodhaṁ, maggaṁ. 
+Sujato: suffering, its origin, its cessation, and the path. 
+Translator: (empty)
+JUDGE an8.22:4.6
+Pali: Seyyathāpi nāma suddhaṁ vatthaṁ apagatakāḷakaṁ sammadeva rajanaṁ paṭiggaṇheyya; 
+Sujato: Just as a clean cloth rid of stains would properly absorb dye, 
+Translator: (empty)
+JUDGE an8.22:4.7
+Pali: evamevaṁ kho me tasmiṁyeva āsane virajaṁ vītamalaṁ dhammacakkhuṁ udapādi: 
+Sujato: in that very seat the stainless, immaculate vision of the Dhamma arose in me: 
+Translator: (empty)
+JUDGE an8.22:4.8
+Pali: ‘yaṁ kiñci samudayadhammaṁ sabbaṁ taṁ nirodhadhamman’ti. 
+Sujato: ‘Everything that is liable to arise is liable to cease.’ 
+Translator: (empty)
+BELOW an8.22:4.9
+Pali: So kho ahaṁ, bhante, diṭṭhadhammo pattadhammo viditadhammo pariyogāḷhadhammo tiṇṇavicikiccho vigatakathaṅkatho vesārajjappatto aparappaccayo satthusāsane tattheva buddhañca dhammañca saṅghañca saraṇaṁ agamāsiṁ, brahmacariyapañcamāni ca sikkhāpadāni samādiyiṁ. 
+Sujato: I saw, attained, understood, and fathomed the Dhamma. I went beyond doubt, got rid of indecision, and became self-assured and independent of others regarding the Teacher’s instructions. Right there I went for refuge to the Buddha, his teaching, and the Saṅgha. And I undertook the five training rules with chastity as the fifth. 
+Translator: Right there I went for refuge to the Buddha, the Dhamma, and the Saṅgha, and undertook the training rules with celibacy as the fifth. 
+
+=== RUN 40: an8.22:5.3 an8.22:5.4 an8.22:5.5 ===
+File: data/bodhi/sutta/an/an8/an8.22_translation-en-bodhi.json
+ABOVE an8.22:5.2
+Pali: Atha khvāhaṁ, bhante, yena tā pajāpatiyo tenupasaṅkamiṁ; upasaṅkamitvā tā pajāpatiyo etadavacaṁ: 
+Sujato: And I went to them and said: 
+Translator: I then went to them … 
+JUDGE an8.22:5.3
+Pali: ‘mayā kho, bhaginiyo, brahmacariyapañcamāni sikkhāpadāni samādinnāni. 
+Sujato: ‘Sisters, I’ve undertaken the five training rules with chastity as fifth. 
+Translator: (empty)
+JUDGE an8.22:5.4
+Pali: Yā icchati sā idheva bhoge ca bhuñjatu puññāni ca karotu, sakāni vā ñātikulāni gacchatu. 
+Sujato: If you wish, you may stay here, enjoy my wealth, and do good deeds. Or you can return to your own families. 
+Translator: (empty)
+JUDGE an8.22:5.5
+Pali: Hoti vā pana purisādhippāyo, kassa vo dammī’ti? 
+Sujato: Or would you prefer if I gave you to another man?’ 
+Translator: (empty)
+BELOW an8.22:5.6
+Pali: Evaṁ vutte, sā, bhante, jeṭṭhā pajāpati maṁ etadavoca: 
+Sujato: When I said this, my eldest wife said to me: 
+Translator: as in <a href="https://suttacentral.net/an8.21">AN8.21</a> … 
+
+=== RUN 41: an8.22:5.7 an8.22:5.8 ===
+File: data/bodhi/sutta/an/an8/an8.22_translation-en-bodhi.json
+ABOVE an8.22:5.6
+Pali: Evaṁ vutte, sā, bhante, jeṭṭhā pajāpati maṁ etadavoca: 
+Sujato: When I said this, my eldest wife said to me: 
+Translator: as in <a href="https://suttacentral.net/an8.21">AN8.21</a> … 
+JUDGE an8.22:5.7
+Pali: ‘itthannāmassa maṁ, ayyaputta, purisassa dehī’ti. 
+Sujato: ‘Master, please give me to the man named so-and-so.’ 
+Translator: (empty)
+JUDGE an8.22:5.8
+Pali: Atha kho ahaṁ, bhante, taṁ purisaṁ pakkosāpetvā vāmena hatthena pajāpatiṁ gahetvā dakkhiṇena hatthena bhiṅgāraṁ gahetvā tassa purisassa oṇojesiṁ. 
+Sujato: Then I summoned that man. Taking my wife with my left hand and a ceremonial vase with my right, I presented her to that man with the pouring of water. 
+Translator: (empty)
+BELOW an8.22:5.9
+Pali: Komāriṁ kho panāhaṁ, bhante, dāraṁ pariccajanto nābhijānāmi cittassa aññathattaṁ. 
+Sujato: But I can’t recall getting upset while giving away my teenage wife. 
+Translator: But even while giving away my young wife, I don’t recall that any alteration took place in my mind. 
+
+=== RUN 42: an8.23:3.5 an8.23:3.6 ===
+File: data/bodhi/sutta/an/an8/an8.23_translation-en-bodhi.json
+ABOVE an8.23:3.4
+Pali: sīlavā …pe… 
+Sujato: ethical, 
+Translator: He is virtuous and has a sense of moral shame and moral dread. 
+JUDGE an8.23:3.5
+Pali: hirīmā … 
+Sujato: conscientious, 
+Translator: (empty)
+JUDGE an8.23:3.6
+Pali: ottappī … 
+Sujato: prudent, 
+Translator: (empty)
+BELOW an8.23:3.7
+Pali: bahussuto … 
+Sujato: learned, 
+Translator: He is learned, 
+
+=== RUN 43: an8.30:3.4 an8.30:3.5 an8.30:3.6 an8.30:3.7 an8.30:3.8 ===
+File: data/bodhi/sutta/an/an8/an8.30_translation-en-bodhi.json
+ABOVE an8.30:3.3
+Pali: ‘appicchassāyaṁ dhammo, nāyaṁ dhammo mahicchassa; 
+Sujato: ‘This teaching is for those of few wishes, not those of many wishes. 
+Translator: ‘This Dhamma is for one with few desires, not for one with strong desires…. 
+JUDGE an8.30:3.4
+Pali: santuṭṭhassāyaṁ dhammo, nāyaṁ dhammo asantuṭṭhassa; 
+Sujato: It’s for the contented, not those who lack contentment. 
+Translator: (empty)
+JUDGE an8.30:3.5
+Pali: pavivittassāyaṁ dhammo, nāyaṁ dhammo saṅgaṇikārāmassa; 
+Sujato: It’s for the secluded, not those who enjoy company. 
+Translator: (empty)
+JUDGE an8.30:3.6
+Pali: āraddhavīriyassāyaṁ dhammo, nāyaṁ dhammo kusītassa; 
+Sujato: It’s for the energetic, not the lazy. 
+Translator: (empty)
+JUDGE an8.30:3.7
+Pali: upaṭṭhitassatissāyaṁ dhammo, nāyaṁ dhammo muṭṭhassatissa; 
+Sujato: It’s for the mindful, not the unmindful. 
+Translator: (empty)
+JUDGE an8.30:3.8
+Pali: samāhitassāyaṁ dhammo, nāyaṁ dhammo asamāhitassa; 
+Sujato: It’s for those with immersion, not those without immersion. 
+Translator: (empty)
+BELOW an8.30:3.9
+Pali: paññavato ayaṁ dhammo, nāyaṁ dhammo duppaññassā’ti. 
+Sujato: It’s for the wise, not the witless.’ 
+Translator: This Dhamma is for one who is wise, not for one who is unwise.’ 
+
+=== RUN 44: an8.43:1.5 an8.43:1.6 an8.43:1.7 an8.43:1.8 an8.43:1.9 ===
+File: data/bodhi/sutta/an/an8/an8.43_translation-en-bodhi.json
+ABOVE an8.43:1.4
+Pali: Kathaṁ upavuttho ca, visākhe, aṭṭhaṅgasamannāgato uposatho mahapphalo hoti mahānisaṁso mahājutiko mahāvipphāro? 
+Sujato: And how should it be observed? 
+Translator: And how is the uposatha observed complete in eight factors, so that it is of great fruit and benefit, extraordinarily brilliant and pervasive?” 
+JUDGE an8.43:1.5
+Pali: Idha, visākhe, ariyasāvako iti paṭisañcikkhati: 
+Sujato: It’s when a noble disciple reflects: 
+Translator: (empty)
+JUDGE an8.43:1.6
+Pali: ‘yāvajīvaṁ arahanto pāṇātipātaṁ pahāya pāṇātipātā paṭiviratā nihitadaṇḍā nihitasatthā lajjī dayāpannā, sabbapāṇabhūtahitānukampino viharanti. 
+Sujato: ‘As long as they live, the perfected ones give up killing living creatures, renouncing the rod and the sword. They are scrupulous and kind, and live full of sympathy for all living beings. 
+Translator: (empty)
+JUDGE an8.43:1.7
+Pali: Ahampajja imañca rattiṁ imañca divasaṁ pāṇātipātaṁ pahāya pāṇātipātā paṭivirato nihitadaṇḍo nihitasattho lajjī dayāpanno, sabbapāṇabhūtahitānukampī viharāmi. 
+Sujato: I, too, for this day and night will give up killing living creatures, renouncing the rod and the sword. I’ll be scrupulous and kind, and live full of sympathy for all living beings. 
+Translator: (empty)
+JUDGE an8.43:1.8
+Pali: Imināpaṅgena arahataṁ anukaromi, uposatho ca me upavuttho bhavissatī’ti. 
+Sujato: I will observe the sabbath by doing as the perfected ones do in this respect.’ 
+Translator: (empty)
+JUDGE an8.43:1.9
+Pali: Iminā paṭhamena aṅgena samannāgato hoti …pe…. 
+Sujato: This is its first factor. … 
+Translator: (empty)
+BELOW (outside this paragraph) an8.43:3.1
+Pali: Kīvamahapphalo hoti, kīvamahānisaṁso, kīvamahājutiko, kīvamahāvipphāro? 
+Sujato: How much so? 
+Translator: All as in <a href="https://suttacentral.net/an8.42">AN8.42</a>, including the verses. 
+
+=== RUN 45: an8.43:3.2 an8.43:3.3 an8.43:3.4 an8.43:3.5 ===
+File: data/bodhi/sutta/an/an8/an8.43_translation-en-bodhi.json
+ABOVE an8.43:3.1
+Pali: Kīvamahapphalo hoti, kīvamahānisaṁso, kīvamahājutiko, kīvamahāvipphāro? 
+Sujato: How much so? 
+Translator: All as in <a href="https://suttacentral.net/an8.42">AN8.42</a>, including the verses. 
+JUDGE an8.43:3.2
+Pali: Seyyathāpi, visākhe, yo imesaṁ soḷasannaṁ mahājanapadānaṁ pahūtarattaratanānaṁ issariyādhipaccaṁ rajjaṁ kāreyya, seyyathidaṁ—
+Sujato: Suppose you were to rule as sovereign lord over these sixteen great countries—Aṅga, Magadha, Kāsi, Kosala, Vajji, Malla, Cetī, Vaccha, Kuru, Pañcāla, Maccha, Sūrasena, Assaka, Avanti, Gandhāra, and Persia—full of the seven treasures. 
+Translator: (empty)
+JUDGE an8.43:3.3
+Pali: aṅgānaṁ magadhānaṁ kāsīnaṁ kosalānaṁ vajjīnaṁ mallānaṁ cetīnaṁ vaṅgānaṁ kurūnaṁ pañcālānaṁ macchānaṁ sūrasenānaṁ assakānaṁ avantīnaṁ gandhārānaṁ kambojānaṁ, aṭṭhaṅgasamannāgatassa uposathassa etaṁ kalaṁ nāgghati soḷasiṁ. 
+Sujato: This wouldn’t be worth a sixteenth part of the sabbath with its eight factors. 
+Translator: (empty)
+JUDGE an8.43:3.4
+Pali: Taṁ kissa hetu? 
+Sujato: Why is that? 
+Translator: (empty)
+JUDGE an8.43:3.5
+Pali: Kapaṇaṁ, visākhe, mānusakaṁ rajjaṁ dibbaṁ sukhaṁ upanidhāya. 
+Sujato: Because human kingship is a poor thing compared to the happiness of the gods. 
+Translator: (empty)
+BELOW (outside this paragraph) an8.43:12.1
+Pali: Tasmā hi nārī ca naro ca sīlavā, 
+Sujato: So an ethical woman or man, 
+Translator: [256–258] 
+
+=== RUN 46: an8.46:1.6 an8.46:1.7 ===
+File: data/bodhi/sutta/an/an8/an8.46_translation-en-bodhi.json
+ABOVE an8.46:1.5
+Pali: Mayaṁ, bhante anuruddha, yādisakaṁ vaṇṇaṁ ākaṅkhāma tādisakaṁ vaṇṇaṁ ṭhānaso paṭilabhāma; 
+Sujato: We can turn any color we want on the spot. 
+Translator: We immediately acquire whatever color we want. We immediately acquire whatever pleasure we want. And we immediately acquire whatever voice we want. 
+JUDGE an8.46:1.6
+Pali: yādisakaṁ saraṁ ākaṅkhāma tādisakaṁ saraṁ ṭhānaso paṭilabhāma; 
+Sujato: We can get any voice that we want on the spot. 
+Translator: (empty)
+JUDGE an8.46:1.7
+Pali: yādisakaṁ sukhaṁ ākaṅkhāma tādisakaṁ sukhaṁ ṭhānaso paṭilabhāma. 
+Sujato: We can get any pleasure that we want on the spot. 
+Translator: (empty)
+BELOW an8.46:1.8
+Pali: Mayaṁ, bhante anuruddha, manāpakāyikā nāma devatā imesu tīsu ṭhānesu issariyaṁ kārema vasaṁ vattemā”ti. 
+Sujato: We are the deities called ‘Agreeable’. We wield authority and control over these three things.” 
+Translator: We agreeable-bodied deities exert mastery and exercise control over these three things.” 
+
+=== RUN 47: an8.46:6.2 an8.46:6.3 an8.46:6.4 an8.46:6.5 an8.46:6.6 an8.46:6.7 an8.46:6.8 an8.46:6.9 an8.46:6.10 ===
+File: data/bodhi/sutta/an/an8/an8.46_translation-en-bodhi.json
+ABOVE an8.46:6.1
+Pali: “Idhāhaṁ, bhante, divāvihāraṁ gato homi paṭisallīno. 
+Sujato: (empty)
+Translator: “Here, Bhante, I had gone off to pass the day and was in seclusion … He reports everything that happened down to: … 
+JUDGE an8.46:6.2
+Pali: Atha kho, bhante, sambahulā manāpakāyikā devatā yenāhaṁ tenupasaṅkamiṁsu; upasaṅkamitvā maṁ abhivādetvā ekamantaṁ aṭṭhaṁsu. Ekamantaṁ ṭhitā kho, bhante, tā devatā maṁ etadavocuṁ: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an8.46:6.3
+Pali: ‘mayaṁ, bhante anuruddha, manāpakāyikā nāma devatā tīsu ṭhānesu issariyaṁ kārema vasaṁ vattema. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an8.46:6.4
+Pali: Mayaṁ, bhante anuruddha, yādisakaṁ vaṇṇaṁ ākaṅkhāma tādisakaṁ vaṇṇaṁ ṭhānaso paṭilabhāma; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an8.46:6.5
+Pali: yādisakaṁ saraṁ ākaṅkhāma tādisakaṁ saraṁ ṭhānaso paṭilabhāma; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an8.46:6.6
+Pali: yādisakaṁ sukhaṁ ākaṅkhāma tādisakaṁ sukhaṁ ṭhānaso paṭilabhāma. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an8.46:6.7
+Pali: Mayaṁ, bhante anuruddha, manāpakāyikā nāma devatā imesu tīsu ṭhānesu issariyaṁ kārema vasaṁ vattemā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an8.46:6.8
+Pali: Tassa mayhaṁ, bhante, etadahosi: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an8.46:6.9
+Pali: ‘aho vatimā devatā sabbāva nīlā assu nīlavaṇṇā nīlavatthā nīlālaṅkārā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE an8.46:6.10
+Pali: Atha kho, bhante, tā devatā mama cittamaññāya sabbāva nīlā ahesuṁ nīlavaṇṇā nīlavatthā nīlālaṅkārā. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) an8.46:9.1
+Pali: Atha kho, bhante, tā devatā ‘na khvayyo anuruddho sādiyatī’ti tatthevantaradhāyiṁsu. 
+Sujato: (empty)
+Translator: Then those deities, thinking: ‘Master Anuruddha is not enjoying this,’ disappeared right on the spot. 
+
+=== RUN 48: an8.148-627:1.17 an8.148-627:1.18 an8.148-627:1.19 an8.148-627:1.20 an8.148-627:1.21 an8.148-627:1.22 an8.148-627:1.23 an8.148-627:1.24 an8.148-627:1.25 ===
+File: data/bodhi/sutta/an/an8/an8.148-627_translation-en-bodhi.json
+ABOVE an8.148-627:1.16
+Pali: pamādassa abhiññāya …pe… 
+Sujato: For insight into negligence … 
+Translator: of heedlessness … 
+JUDGE an8.148-627:1.17
+Pali: pariññāya … 
+Sujato: complete understanding … 
+Translator: (empty)
+JUDGE an8.148-627:1.18
+Pali: parikkhayāya … 
+Sujato: complete ending … 
+Translator: (empty)
+JUDGE an8.148-627:1.19
+Pali: pahānāya … 
+Sujato: giving up … 
+Translator: (empty)
+JUDGE an8.148-627:1.20
+Pali: khayāya … 
+Sujato: ending … 
+Translator: (empty)
+JUDGE an8.148-627:1.21
+Pali: vayāya … 
+Sujato: vanishing … 
+Translator: (empty)
+JUDGE an8.148-627:1.22
+Pali: virāgāya … 
+Sujato: fading away … 
+Translator: (empty)
+JUDGE an8.148-627:1.23
+Pali: nirodhāya … 
+Sujato: cessation … 
+Translator: (empty)
+JUDGE an8.148-627:1.24
+Pali: cāgāya … 
+Sujato: giving away … 
+Translator: (empty)
+JUDGE an8.148-627:1.25
+Pali: paṭinissaggāya …pe… 
+Sujato: For the letting go of negligence 
+Translator: (empty)
+BELOW an8.148-627:1.26
+Pali: ime aṭṭha dhammā bhāvetabbā”ti. 
+Sujato: these eight things should be developed.” 
+Translator: these eight things are to be developed.” This is what the Blessed One said. Elated, those bhikkhus delighted in the Blessed One’s statement. 
+
+=== RUN 49: an10.4:1.2 an10.4:1.3 an10.4:1.4 an10.4:1.5 an10.4:1.6 an10.4:1.7 an10.4:1.8 ===
+File: data/bodhi/sutta/an/an10/an10.4_translation-en-bodhi.json
+ABOVE an10.4:1.1
+Pali: Tatra kho āyasmā sāriputto bhikkhū āmantesi …pe… 
+Sujato: There Venerable Sāriputta addressed the mendicants … 
+Translator: There the Venerable Sāriputta addressed the bhikkhus: Identical with <a href="https://suttacentral.net/an10.3">AN10.3</a>, but spoken by Sāriputta. 
+JUDGE an10.4:1.2
+Pali: “dussīlassa, āvuso, sīlavipannassa hatūpaniso hoti avippaṭisāro; 
+Sujato: “Reverends, an unethical person, who lacks ethics, has destroyed a vital condition for having no regrets. 
+Translator: (empty)
+JUDGE an10.4:1.3
+Pali: avippaṭisāre asati avippaṭisāravipannassa hatūpanisaṁ hoti …pe… 
+Sujato: When there are regrets, one who has regrets has destroyed a vital condition for joy. … 
+Translator: (empty)
+JUDGE an10.4:1.4
+Pali: vimuttiñāṇadassanaṁ. 
+Sujato: One who lacks disillusionment and dispassion has destroyed a vital condition for knowledge and vision of freedom. 
+Translator: (empty)
+JUDGE an10.4:1.5
+Pali: Seyyathāpi, āvuso, rukkho sākhāpalāsavipanno. Tassa papaṭikāpi na pāripūriṁ gacchati, tacopi … pheggupi … sāropi na pāripūriṁ gacchati. 
+Sujato: Suppose there was a tree that lacked branches and foliage. Its shoots, bark, softwood, and heartwood would not grow to fullness. 
+Translator: (empty)
+JUDGE an10.4:1.6
+Pali: Evamevaṁ kho, āvuso, dussīlassa sīlavipannassa hatūpaniso hoti avippaṭisāro; 
+Sujato: In the same way, an unethical person, who lacks ethics, has destroyed a vital condition for having no regrets. 
+Translator: (empty)
+JUDGE an10.4:1.7
+Pali: avippaṭisāre asati avippaṭisāravipannassa hatūpanisaṁ hoti …pe… 
+Sujato: When there are regrets, one who has regrets has destroyed a vital condition for joy. … 
+Translator: (empty)
+JUDGE an10.4:1.8
+Pali: vimuttiñāṇadassanaṁ. 
+Sujato: One who lacks disillusionment and dispassion has destroyed a vital condition for knowledge and vision of freedom. 
+Translator: (empty)
+BELOW (outside this paragraph): (none)
+
+=== RUN 50: an10.5:1.2 an10.5:1.3 an10.5:1.4 an10.5:1.5 an10.5:1.6 an10.5:1.7 an10.5:1.8 an10.5:1.9 an10.5:1.10 ===
+File: data/bodhi/sutta/an/an10/an10.5_translation-en-bodhi.json
+ABOVE an10.5:1.1
+Pali: Tatra kho āyasmā ānando bhikkhū āmantesi …pe… 
+Sujato: There Venerable Ānanda addressed the mendicants … 
+Translator: There the Venerable Ānanda addressed the bhikkhus: Identical with <a href="https://suttacentral.net/an10.3">AN10.3</a>, but spoken by Ānanda. 
+JUDGE an10.5:1.2
+Pali: “dussīlassa, āvuso, sīlavipannassa hatūpaniso hoti avippaṭisāro; 
+Sujato: “Reverends, an unethical person, who lacks ethics, has destroyed a vital condition for having no regrets. 
+Translator: (empty)
+JUDGE an10.5:1.3
+Pali: avippaṭisāre asati avippaṭisāravipannassa hatūpanisaṁ hoti pāmojjaṁ; 
+Sujato: When there are regrets, one who has regrets has destroyed a vital condition for joy. 
+Translator: (empty)
+JUDGE an10.5:1.4
+Pali: pāmojje asati pāmojjavipannassa hatūpanisā hoti pīti; 
+Sujato: When there is no joy, one who lacks joy has destroyed a vital condition for rapture. 
+Translator: (empty)
+JUDGE an10.5:1.5
+Pali: pītiyā asati pītivipannassa hatūpanisā hoti passaddhi; 
+Sujato: When there is no rapture, one who lacks rapture has destroyed a vital condition for tranquility. 
+Translator: (empty)
+JUDGE an10.5:1.6
+Pali: passaddhiyā asati passaddhivipannassa hatūpanisaṁ hoti sukhaṁ; 
+Sujato: When there is no tranquility, one who lacks tranquility has destroyed a vital condition for bliss. 
+Translator: (empty)
+JUDGE an10.5:1.7
+Pali: sukhe asati sukhavipannassa hatūpaniso hoti sammāsamādhi; 
+Sujato: When there is no bliss, one who lacks bliss has destroyed a vital condition for right immersion. 
+Translator: (empty)
+JUDGE an10.5:1.8
+Pali: sammāsamādhimhi asati sammāsamādhivipannassa hatūpanisaṁ hoti yathābhūtañāṇadassanaṁ; 
+Sujato: When there is no right immersion, one who lacks right immersion has destroyed a vital condition for true knowledge and vision. 
+Translator: (empty)
+JUDGE an10.5:1.9
+Pali: yathābhūtañāṇadassane asati yathābhūtañāṇadassanavipannassa hatūpaniso hoti nibbidāvirāgo; 
+Sujato: When there is no true knowledge and vision, one who lacks true knowledge and vision has destroyed a vital condition for disillusionment and dispassion. 
+Translator: (empty)
+JUDGE an10.5:1.10
+Pali: nibbidāvirāge asati nibbidāvirāgavipannassa hatūpanisaṁ hoti vimuttiñāṇadassanaṁ. 
+Sujato: When there is no disillusionment and dispassion, one who lacks disillusionment and dispassion has destroyed a vital condition for knowledge and vision of freedom. 
+Translator: (empty)
+BELOW (outside this paragraph): (none)

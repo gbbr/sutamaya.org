@@ -1,0 +1,1237 @@
+bodhi: skipped-Pali review batch 008
+Read the full English above, each original Pali line, and the next English. Sujato is context only.
+covered = this line's own content is explicitly rendered by the English above, including complete lists.
+skipped = abbreviated or compressed repetition, even if mentioned, or omitted. When in doubt, skipped.
+Judge each key independently; a run may be mixed. An ellipsis alone does not decide.
+Only runs of two or more empty prose lines in the same paragraph are reviewed; lone lines join automatically.
+Write <key> covered|skipped|unsure for every RUN key, then # done. Do not mark context keys.
+
+=== RUN 351: sn22.28:1.13 sn22.28:1.14 sn22.28:1.15 sn22.28:1.16 ===
+File: data/bodhi/sutta/sn/sn22/sn22.28_translation-en-bodhi.json
+ABOVE sn22.28:1.12
+Pali: No cedaṁ, bhikkhave, viññāṇassa assādo abhavissa, nayidaṁ sattā viññāṇasmiṁ sārajjeyyuṁ. 
+Sujato: consciousness, sentient beings wouldn’t be aroused by it. 
+Translator: in consciousness, beings would not become enamoured with it … 
+JUDGE sn22.28:1.13
+Pali: Yasmā ca kho, bhikkhave, atthi viññāṇassa assādo, tasmā sattā viññāṇasmiṁ sārajjanti. 
+Sujato: But since there is gratification in consciousness, sentient beings are aroused by it. 
+Translator: (empty)
+JUDGE sn22.28:1.14
+Pali: No cedaṁ, bhikkhave, viññāṇassa ādīnavo abhavissa, nayidaṁ sattā viññāṇasmiṁ nibbindeyyuṁ. 
+Sujato: If consciousness had no drawback, sentient beings wouldn’t grow disillusioned with it. 
+Translator: (empty)
+JUDGE sn22.28:1.15
+Pali: Yasmā ca kho, bhikkhave, atthi viññāṇassa ādīnavo, tasmā sattā viññāṇasmiṁ nibbindanti. 
+Sujato: But since consciousness has a drawback, sentient beings do grow disillusioned with it. 
+Translator: (empty)
+JUDGE sn22.28:1.16
+Pali: No cedaṁ, bhikkhave, viññāṇassa nissaraṇaṁ abhavissa, nayidaṁ sattā viññāṇasmā nissareyyuṁ. 
+Sujato: If there were no escape from consciousness, sentient beings wouldn’t escape from it. 
+Translator: (empty)
+BELOW sn22.28:1.17
+Pali: Yasmā ca kho, bhikkhave, atthi viññāṇassa nissaraṇaṁ, tasmā sattā viññāṇasmā nissaranti. 
+Sujato: But since there is an escape from consciousness, sentient beings do escape from it. 
+Translator: but because there is an escape from consciousness, beings escape from it. 
+
+=== RUN 352: sn22.35:3.6 sn22.35:3.7 ===
+File: data/bodhi/sutta/sn/sn22/sn22.35_translation-en-bodhi.json
+ABOVE sn22.35:3.5
+Pali: saññañce … 
+Sujato: perception … 
+Translator: as above in full … 
+JUDGE sn22.35:3.6
+Pali: saṅkhāre ce … 
+Sujato: choices … 
+Translator: (empty)
+JUDGE sn22.35:3.7
+Pali: viññāṇañce anuseti tena saṅkhaṁ gacchati. 
+Sujato: consciousness, you’re reckoned by that. 
+Translator: (empty)
+BELOW (outside this paragraph) sn22.35:3.12
+Pali: viññāṇañce nānuseti na tena saṅkhaṁ gacchati. 
+Sujato: consciousness, you’re not reckoned by that. 
+Translator: then one is not reckoned in terms of it. 
+
+=== RUN 353: sn22.36:3.4 sn22.36:3.5 sn22.36:3.6 sn22.36:3.7 sn22.36:3.8 sn22.36:3.9 ===
+File: data/bodhi/sutta/sn/sn22/sn22.36_translation-en-bodhi.json
+ABOVE sn22.36:3.3
+Pali: Rūpañce, bhikkhu, anuseti taṁ anumīyati; 
+Sujato: If you have an underlying tendency for form, you’re measured against that, 
+Translator: If, bhikkhu, one has an underlying tendency towards form … 
+JUDGE sn22.36:3.4
+Pali: yaṁ anumīyati tena saṅkhaṁ gacchati. 
+Sujato: and you’re reckoned by what you’re measured against. 
+Translator: (empty)
+JUDGE sn22.36:3.5
+Pali: Vedanañce, bhikkhu … 
+Sujato: If you have an underlying tendency for feeling … 
+Translator: (empty)
+JUDGE sn22.36:3.6
+Pali: saññañce, bhikkhu … 
+Sujato: perception … 
+Translator: (empty)
+JUDGE sn22.36:3.7
+Pali: saṅkhāre ce, bhikkhu … 
+Sujato: choices … 
+Translator: (empty)
+JUDGE sn22.36:3.8
+Pali: viññāṇañce, bhikkhu, anuseti taṁ anumīyati; 
+Sujato: consciousness, you’re measured against that, 
+Translator: (empty)
+JUDGE sn22.36:3.9
+Pali: yaṁ anumīyati tena saṅkhaṁ gacchati. 
+Sujato: and you’re reckoned by what you’re measured against. 
+Translator: (empty)
+BELOW (outside this paragraph) sn22.36:3.13
+Pali: saññañce nānuseti … 
+Sujato: perception … 
+Translator: as above in full … 
+
+=== RUN 354: sn22.36:3.14 sn22.36:3.15 ===
+File: data/bodhi/sutta/sn/sn22/sn22.36_translation-en-bodhi.json
+ABOVE sn22.36:3.13
+Pali: saññañce nānuseti … 
+Sujato: perception … 
+Translator: as above in full … 
+JUDGE sn22.36:3.14
+Pali: saṅkhāre ce nānuseti … 
+Sujato: choices … 
+Translator: (empty)
+JUDGE sn22.36:3.15
+Pali: viññāṇañce nānuseti na taṁ anumīyati; 
+Sujato: consciousness, you’re not measured against that, 
+Translator: (empty)
+BELOW sn22.36:3.16
+Pali: yaṁ nānumīyati na tena saṅkhaṁ gacchati. 
+Sujato: and you’re not reckoned by what you’re not measured against. 
+Translator: then one is not reckoned in terms of it. 
+
+=== RUN 355: sn22.38:2.7 sn22.38:2.8 sn22.38:2.9 ===
+File: data/bodhi/sutta/sn/sn22/sn22.38_translation-en-bodhi.json
+ABOVE sn22.38:2.6
+Pali: “Sace maṁ, bhante, evaṁ puccheyyuṁ: 
+Sujato: “Sir, suppose they were to ask me: 
+Translator: “Venerable sir, if they were to ask me this, 
+JUDGE sn22.38:2.7
+Pali: ‘katamesaṁ, āvuso ānanda, dhammānaṁ uppādo paññāyittha, vayo paññāyittha, ṭhitassa aññathattaṁ paññāyittha? 
+Sujato: ‘Reverend Ānanda, what are the things for which arising, vanishing, and change while persisting were evident? 
+Translator: (empty)
+JUDGE sn22.38:2.8
+Pali: Katamesaṁ dhammānaṁ uppādo paññāyissati, vayo paññāyissati, ṭhitassa aññathattaṁ paññāyissati? 
+Sujato: What are the things for which arising, vanishing, and change while persisting will be evident? 
+Translator: (empty)
+JUDGE sn22.38:2.9
+Pali: Katamesaṁ dhammānaṁ uppādo paññāyati, vayo paññāyati, ṭhitassa aññathattaṁ paññāyatī’ti? 
+Sujato: What are the things for which arising, vanishing, and change while persisting are evident?’ 
+Translator: (empty)
+BELOW sn22.38:2.10
+Pali: Evaṁ puṭṭhohaṁ, bhante, evaṁ byākareyyaṁ: 
+Sujato: I’d answer like this: 
+Translator: I would answer thus: 
+
+=== RUN 356: sn22.38:5.2 sn22.38:5.3 sn22.38:5.4 sn22.38:5.5 sn22.38:5.6 sn22.38:5.7 sn22.38:5.8 sn22.38:5.9 ===
+File: data/bodhi/sutta/sn/sn22/sn22.38_translation-en-bodhi.json
+ABOVE sn22.38:5.1
+Pali: “Sādhu sādhu, ānanda. 
+Sujato: “Good, good, Ānanda. 
+Translator: “Good, good, Ānanda!” 
+JUDGE sn22.38:5.2
+Pali: Yaṁ kho, ānanda, rūpaṁ atītaṁ niruddhaṁ vipariṇataṁ; 
+Sujato: Whatever form has passed, ceased, and perished, 
+Translator: (empty)
+JUDGE sn22.38:5.3
+Pali: tassa uppādo paññāyittha, vayo paññāyittha, ṭhitassa aññathattaṁ paññāyittha. 
+Sujato: its arising, vanishing, and change while persisting were evident. 
+Translator: (empty)
+JUDGE sn22.38:5.4
+Pali: Yā vedanā … 
+Sujato: Whatever feeling … 
+Translator: (empty)
+JUDGE sn22.38:5.5
+Pali: yā saññā … 
+Sujato: perception … 
+Translator: (empty)
+JUDGE sn22.38:5.6
+Pali: ye saṅkhārā … 
+Sujato: choices … 
+Translator: (empty)
+JUDGE sn22.38:5.7
+Pali: yaṁ viññāṇaṁ atītaṁ niruddhaṁ vipariṇataṁ; 
+Sujato: consciousness has passed, ceased, and perished, 
+Translator: (empty)
+JUDGE sn22.38:5.8
+Pali: tassa uppādo paññāyittha, vayo paññāyittha, ṭhitassa aññathattaṁ paññāyittha. 
+Sujato: its arising, vanishing, and change while persisting were evident. 
+Translator: (empty)
+JUDGE sn22.38:5.9
+Pali: Imesaṁ kho, ānanda, dhammānaṁ uppādo paññāyittha, vayo paññāyittha, ṭhitassa aññathattaṁ paññāyittha. 
+Sujato: These are the things for which arising, vanishing, and change while persisting were evident. 
+Translator: (empty)
+BELOW (outside this paragraph) sn22.38:7.9
+Pali: Evaṁ puṭṭho tvaṁ, ānanda, evaṁ byākareyyāsī”ti. 
+Sujato: That’s how you should answer such a question.” 
+Translator: The Buddha here repeats the entire answer of the Venerable Ānanda, concluding: “Being asked thus, Ānanda, you should answer in such a way.” 
+
+=== RUN 357: sn22.43:2.7 sn22.43:2.8 ===
+File: data/bodhi/sutta/sn/sn22/sn22.43_translation-en-bodhi.json
+ABOVE sn22.43:2.6
+Pali: Vedanaṁ attato samanupassati, vedanāvantaṁ vā attānaṁ; attani vā vedanaṁ, vedanāya vā attānaṁ. 
+Sujato: They regard feeling as self … 
+Translator: “He regards feeling as self … 
+JUDGE sn22.43:2.7
+Pali: Tassa sā vedanā vipariṇamati, aññathā ca hoti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.43:2.8
+Pali: Tassa vedanāvipariṇāmaññathābhāvā uppajjanti sokaparideva …pe… pāyāsā. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.43:2.9
+Pali: Saññaṁ attato samanupassati … 
+Sujato: They regard perception as self … 
+Translator: perception as self … 
+
+=== RUN 358: sn22.46:1.3 sn22.46:1.4 sn22.46:1.5 ===
+File: data/bodhi/sutta/sn/sn22/sn22.46_translation-en-bodhi.json
+ABOVE sn22.46:1.2
+Pali: “Rūpaṁ, bhikkhave, aniccaṁ. 
+Sujato: “Mendicants, form is impermanent. 
+Translator: “Bhikkhus, form is impermanent…. 
+JUDGE sn22.46:1.3
+Pali: Yadaniccaṁ taṁ dukkhaṁ; 
+Sujato: What’s impermanent is suffering. 
+Translator: (empty)
+JUDGE sn22.46:1.4
+Pali: yaṁ dukkhaṁ tadanattā; 
+Sujato: What’s suffering is not-self. 
+Translator: (empty)
+JUDGE sn22.46:1.5
+Pali: yadanattā taṁ ‘netaṁ mama, nesohamasmi, na meso attā’ti evametaṁ yathābhūtaṁ sammappaññāya daṭṭhabbaṁ. 
+Sujato: And what’s not-self should be truly seen with right understanding like this: ‘This is not mine, I am not this, this is not my self.’ 
+Translator: (empty)
+BELOW (outside this paragraph) sn22.46:1.6
+Pali: Vedanā aniccā … 
+Sujato: Feeling is impermanent … 
+Translator: Feeling is impermanent…. 
+
+=== RUN 359: sn22.49:2.6 sn22.49:2.7 sn22.49:2.8 ===
+File: data/bodhi/sutta/sn/sn22/sn22.49_translation-en-bodhi.json
+ABOVE sn22.49:2.5
+Pali: Aniccāya vedanāya dukkhāya vipariṇāmadhammāya ‘seyyohamasmī’ti vā samanupassanti; 
+Sujato: Based on feeling … 
+Translator: “When any ascetics and brahmins, on the basis of feeling … 
+JUDGE sn22.49:2.6
+Pali: ‘sadisohamasmī’ti vā samanupassanti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.49:2.7
+Pali: ‘hīnohamasmī’ti vā samanupassanti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.49:2.8
+Pali: kimaññatra yathābhūtassa adassanā? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn22.49:2.9
+Pali: Aniccāya saññāya … 
+Sujato: perception … 
+Translator: on the basis of perception … 
+
+=== RUN 360: sn22.49:2.11 sn22.49:2.12 sn22.49:2.13 ===
+File: data/bodhi/sutta/sn/sn22/sn22.49_translation-en-bodhi.json
+ABOVE sn22.49:2.10
+Pali: aniccehi saṅkhārehi dukkhehi vipariṇāmadhammehi ‘seyyohamasmī’ti vā samanupassanti; 
+Sujato: choices … 
+Translator: on the basis of volitional formations … 
+JUDGE sn22.49:2.11
+Pali: ‘sadisohamasmī’ti vā samanupassanti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.49:2.12
+Pali: ‘hīnohamasmī’ti vā samanupassanti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.49:2.13
+Pali: kimaññatra yathābhūtassa adassanā? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn22.49:2.14
+Pali: Aniccena viññāṇena dukkhena vipariṇāmadhammena ‘seyyohamasmī’ti vā samanupassanti; 
+Sujato: consciousness, which is impermanent, suffering, and perishable, they regard themselves thus: ‘I’m better’, 
+Translator: on the basis of consciousness—which is impermanent, suffering, and subject to change—regard themselves thus: ‘I am superior,’ or 
+
+=== RUN 361: sn22.51:1.7 sn22.51:1.8 sn22.51:1.9 ===
+File: data/bodhi/sutta/sn/sn22/sn22.51_translation-en-bodhi.json
+ABOVE sn22.51:1.6
+Pali: Aniccaññeva, bhikkhave, bhikkhu vedanaṁ aniccanti passati. Sāssa hoti sammādiṭṭhi. 
+Sujato: Feeling … 
+Translator: “A bhikkhu sees as impermanent feeling which is actually impermanent … 
+JUDGE sn22.51:1.7
+Pali: Sammā passaṁ nibbindati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.51:1.8
+Pali: Nandikkhayā rāgakkhayo, rāgakkhayā nandikkhayo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.51:1.9
+Pali: Nandirāgakkhayā cittaṁ vimuttaṁ suvimuttanti vuccati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.51:1.10
+Pali: Aniccaññeva, bhikkhave, bhikkhu saññaṁ aniccanti passati …pe… 
+Sujato: Perception … 
+Translator: perception which is actually impermanent … 
+
+=== RUN 362: sn22.51:1.12 sn22.51:1.13 sn22.51:1.14 ===
+File: data/bodhi/sutta/sn/sn22/sn22.51_translation-en-bodhi.json
+ABOVE sn22.51:1.11
+Pali: anicceyeva bhikkhave, bhikkhu saṅkhāre aniccāti passati. Sāssa hoti sammādiṭṭhi. 
+Sujato: Choices … 
+Translator: volitional formations which are actually impermanent … 
+JUDGE sn22.51:1.12
+Pali: Sammā passaṁ nibbindati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.51:1.13
+Pali: Nandikkhayā rāgakkhayo, rāgakkhayā nandikkhayo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.51:1.14
+Pali: Nandirāgakkhayā cittaṁ vimuttaṁ suvimuttanti vuccati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.51:1.15
+Pali: Aniccaññeva, bhikkhave, bhikkhu viññāṇaṁ aniccanti passati. Sāssa hoti sammādiṭṭhi. 
+Sujato: Consciousness really is impermanent. A mendicant sees that it is impermanent: that’s their right view. 
+Translator: consciousness which is actually impermanent: that is his right view…. 
+
+=== RUN 363: sn22.51:1.16 sn22.51:1.17 ===
+File: data/bodhi/sutta/sn/sn22/sn22.51_translation-en-bodhi.json
+ABOVE sn22.51:1.15
+Pali: Aniccaññeva, bhikkhave, bhikkhu viññāṇaṁ aniccanti passati. Sāssa hoti sammādiṭṭhi. 
+Sujato: Consciousness really is impermanent. A mendicant sees that it is impermanent: that’s their right view. 
+Translator: consciousness which is actually impermanent: that is his right view…. 
+JUDGE sn22.51:1.16
+Pali: Sammā passaṁ nibbindati. 
+Sujato: Seeing rightly, they grow disillusioned. 
+Translator: (empty)
+JUDGE sn22.51:1.17
+Pali: Nandikkhayā rāgakkhayo, rāgakkhayā nandikkhayo. 
+Sujato: When relishing ends, greed ends. When greed ends, relishing ends. 
+Translator: (empty)
+BELOW sn22.51:1.18
+Pali: Nandirāgakkhayā cittaṁ vimuttaṁ suvimuttanti vuccatī”ti. 
+Sujato: When relishing and greed end, the mind is freed, and is said to be well freed.” 
+Translator: With the destruction of delight and lust the mind is liberated and is said to be well liberated.” 
+
+=== RUN 364: sn22.52:1.7 sn22.52:1.8 sn22.52:1.9 ===
+File: data/bodhi/sutta/sn/sn22/sn22.52_translation-en-bodhi.json
+ABOVE sn22.52:1.6
+Pali: Vedanaṁ, bhikkhave, yoniso manasi karotha, vedanāniccatañca yathābhūtaṁ samanupassatha. 
+Sujato: Rationally apply the mind to feeling … 
+Translator: “Bhikkhus, attend carefully to feeling … 
+JUDGE sn22.52:1.7
+Pali: Vedanaṁ, bhikkhave, bhikkhu yoniso manasi karonto, vedanāniccatañca yathābhūtaṁ samanupassanto vedanāya nibbindati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.52:1.8
+Pali: Nandikkhayā rāgakkhayo, rāgakkhayā nandikkhayo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.52:1.9
+Pali: Nandirāgakkhayā cittaṁ vimuttaṁ suvimuttanti vuccati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.52:1.10
+Pali: Saññaṁ bhikkhave … 
+Sujato: perception … 
+Translator: to perception … 
+
+=== RUN 365: sn22.52:1.12 sn22.52:1.13 sn22.52:1.14 ===
+File: data/bodhi/sutta/sn/sn22/sn22.52_translation-en-bodhi.json
+ABOVE sn22.52:1.11
+Pali: saṅkhāre, bhikkhave, yoniso manasi karotha, saṅkhārāniccatañca yathābhūtaṁ samanupassatha. 
+Sujato: choices … 
+Translator: to volitional formations … 
+JUDGE sn22.52:1.12
+Pali: Saṅkhāre, bhikkhave, bhikkhu yoniso manasi karonto, saṅkhārāniccataṁ yathābhūtaṁ samanupassanto saṅkhāresu nibbindati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.52:1.13
+Pali: Nandikkhayā rāgakkhayo, rāgakkhayā nandikkhayo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.52:1.14
+Pali: Nandirāgakkhayā cittaṁ vimuttaṁ suvimuttanti vuccati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.52:1.15
+Pali: Viññāṇaṁ, bhikkhave, yoniso manasi karotha, viññāṇāniccatañca yathābhūtaṁ samanupassatha. 
+Sujato: consciousness. Truly see the impermanence of consciousness. 
+Translator: to consciousness…. 
+
+=== RUN 366: sn22.52:1.16 sn22.52:1.17 ===
+File: data/bodhi/sutta/sn/sn22/sn22.52_translation-en-bodhi.json
+ABOVE sn22.52:1.15
+Pali: Viññāṇaṁ, bhikkhave, yoniso manasi karotha, viññāṇāniccatañca yathābhūtaṁ samanupassatha. 
+Sujato: consciousness. Truly see the impermanence of consciousness. 
+Translator: to consciousness…. 
+JUDGE sn22.52:1.16
+Pali: Viññāṇaṁ, bhikkhave, bhikkhu yoniso manasi karonto, viññāṇāniccatañca yathābhūtaṁ samanupassanto viññāṇasmiṁ nibbindati. 
+Sujato: When a mendicant does this, they grow disillusioned with consciousness. 
+Translator: (empty)
+JUDGE sn22.52:1.17
+Pali: Nandikkhayā rāgakkhayo, rāgakkhayā nandikkhayo. 
+Sujato: When relishing ends, greed ends. When greed ends, relishing ends. 
+Translator: (empty)
+BELOW sn22.52:1.18
+Pali: Nandirāgakkhayā cittaṁ vimuttaṁ suvimuttanti vuccatī”ti. 
+Sujato: When relishing and greed end, the mind is freed, and is said to be well freed.” 
+Translator: With the destruction of delight and lust the mind is liberated and is said to be well liberated.” 
+
+=== RUN 367: sn22.55:2.3 sn22.55:2.4 sn22.55:2.5 ===
+File: data/bodhi/sutta/sn/sn22/sn22.55_translation-en-bodhi.json
+ABOVE sn22.55:2.2
+Pali: sappurisadhamme avinīto rūpaṁ attato samanupassati, rūpavantaṁ vā attānaṁ; attani vā rūpaṁ, rūpasmiṁ vā attānaṁ. 
+Sujato: They regard form as self, self as having form, form in self, or self in form. 
+Translator: regards form as self … 
+JUDGE sn22.55:2.3
+Pali: Vedanaṁ … 
+Sujato: They regard feeling … 
+Translator: (empty)
+JUDGE sn22.55:2.4
+Pali: saññaṁ … 
+Sujato: perception … 
+Translator: (empty)
+JUDGE sn22.55:2.5
+Pali: saṅkhāre … 
+Sujato: choices … 
+Translator: (empty)
+BELOW sn22.55:2.6
+Pali: viññāṇaṁ attato samanupassati, viññāṇavantaṁ vā attānaṁ; attani vā viññāṇaṁ, viññāṇasmiṁ vā attānaṁ. 
+Sujato: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. 
+Translator: or self as in consciousness. 
+
+=== RUN 368: sn22.55:7.3 sn22.55:7.4 sn22.55:7.5 ===
+File: data/bodhi/sutta/sn/sn22/sn22.55_translation-en-bodhi.json
+ABOVE sn22.55:7.2
+Pali: na rūpaṁ attato samanupassati …pe… 
+Sujato: They don’t regard form as self … 
+Translator: does not regard form as self … 
+JUDGE sn22.55:7.3
+Pali: na vedanaṁ … 
+Sujato: They don’t regard feeling … 
+Translator: (empty)
+JUDGE sn22.55:7.4
+Pali: na saññaṁ … 
+Sujato: perception … 
+Translator: (empty)
+JUDGE sn22.55:7.5
+Pali: na saṅkhāre … 
+Sujato: choices … 
+Translator: (empty)
+BELOW sn22.55:7.6
+Pali: na viññāṇaṁ attato samanupassati. 
+Sujato: consciousness as self. 
+Translator: or self as in consciousness. 
+
+=== RUN 369: sn22.55:8.2 sn22.55:8.3 sn22.55:8.4 ===
+File: data/bodhi/sutta/sn/sn22/sn22.55_translation-en-bodhi.json
+ABOVE sn22.55:8.1
+Pali: So aniccaṁ rūpaṁ ‘aniccaṁ rūpan’ti yathābhūtaṁ pajānāti. 
+Sujato: They truly understand form—which is impermanent—as impermanent. 
+Translator: “He understands as it really is impermanent form as ‘impermanent form’ … 
+JUDGE sn22.55:8.2
+Pali: Aniccaṁ vedanaṁ … 
+Sujato: They truly understand feeling … 
+Translator: (empty)
+JUDGE sn22.55:8.3
+Pali: aniccaṁ saññaṁ … 
+Sujato: perception … 
+Translator: (empty)
+JUDGE sn22.55:8.4
+Pali: anicce saṅkhāre … 
+Sujato: choices … 
+Translator: (empty)
+BELOW sn22.55:8.5
+Pali: aniccaṁ viññāṇaṁ ‘aniccaṁ viññāṇan’ti yathābhūtaṁ pajānāti. 
+Sujato: consciousness—which is impermanent—as impermanent. 
+Translator: impermanent consciousness as ‘impermanent consciousness.’ 
+
+=== RUN 370: sn22.59:3.4 sn22.59:3.5 ===
+File: data/bodhi/sutta/sn/sn22/sn22.59_translation-en-bodhi.json
+ABOVE sn22.59:3.3
+Pali: ‘evaṁ me vedanā hotu, evaṁ me vedanā mā ahosī’ti. 
+Sujato: (empty)
+Translator: … 
+JUDGE sn22.59:3.4
+Pali: Yasmā ca kho, bhikkhave, vedanā anattā, tasmā vedanā ābādhāya saṁvattati, na ca labbhati vedanāya: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.59:3.5
+Pali: ‘evaṁ me vedanā hotu, evaṁ me vedanā mā ahosī’ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.59:4.1
+Pali: Saññā anattā …pe… 
+Sujato: Perception is not-self … 
+Translator: Perception is nonself…. 
+
+=== RUN 371: sn22.59:4.3 sn22.59:4.4 sn22.59:4.5 sn22.59:4.6 ===
+File: data/bodhi/sutta/sn/sn22/sn22.59_translation-en-bodhi.json
+ABOVE sn22.59:4.2
+Pali: saṅkhārā anattā. 
+Sujato: Choices are not-self … 
+Translator: Volitional formations are nonself…. 
+JUDGE sn22.59:4.3
+Pali: Saṅkhārā ca hidaṁ, bhikkhave, attā abhavissaṁsu, nayidaṁ saṅkhārā ābādhāya saṁvatteyyuṁ, labbhetha ca saṅkhāresu: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.59:4.4
+Pali: ‘evaṁ me saṅkhārā hontu, evaṁ me saṅkhārā mā ahesun’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.59:4.5
+Pali: Yasmā ca kho, bhikkhave, saṅkhārā anattā, tasmā saṅkhārā ābādhāya saṁvattanti, na ca labbhati saṅkhāresu: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.59:4.6
+Pali: ‘evaṁ me saṅkhārā hontu, evaṁ me saṅkhārā mā ahesun’ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.59:5.1
+Pali: Viññāṇaṁ anattā. 
+Sujato: Consciousness is not-self. 
+Translator: Consciousness is nonself. 
+
+=== RUN 372: sn22.60:6.2 sn22.60:6.3 sn22.60:6.4 sn22.60:6.5 sn22.60:6.6 ===
+File: data/bodhi/sutta/sn/sn22/sn22.60_translation-en-bodhi.json
+ABOVE sn22.60:6.1
+Pali: Vedanā ca hidaṁ, mahāli, ekantadukkhā abhavissa dukkhānupatitā dukkhāvakkantā anavakkantā sukhena, nayidaṁ sattā vedanāya sārajjeyyuṁ. 
+Sujato: If feeling … 
+Translator: “If, Mahali, this feeling were exclusively suffering … 
+JUDGE sn22.60:6.2
+Pali: Yasmā ca kho, mahāli, vedanā sukhā sukhānupatitā sukhāvakkantā anavakkantā dukkhena, tasmā sattā vedanāya sārajjanti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.60:6.3
+Pali: sārāgā saṁyujjanti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.60:6.4
+Pali: saṁyogā saṅkilissanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.60:6.5
+Pali: Ayampi kho, mahāli, hetu, ayaṁ paccayo sattānaṁ saṅkilesāya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.60:6.6
+Pali: Evampi sahetū sappaccayā sattā saṅkilissanti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.60:7.1
+Pali: Saññā ca hidaṁ, mahāli …pe… 
+Sujato: perception … 
+Translator: If this perception … 
+
+=== RUN 373: sn22.60:7.5 sn22.60:7.6 sn22.60:7.7 ===
+File: data/bodhi/sutta/sn/sn22/sn22.60_translation-en-bodhi.json
+ABOVE sn22.60:7.4
+Pali: sārāgā saṁyujjanti; 
+Sujato: (empty)
+Translator: … 
+JUDGE sn22.60:7.5
+Pali: saṁyogā saṅkilissanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.60:7.6
+Pali: Ayampi kho, mahāli, hetu, ayaṁ paccayo sattānaṁ saṅkilesāya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.60:7.7
+Pali: Evampi sahetū sappaccayā sattā saṅkilissanti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.60:8.1
+Pali: Viññāṇañca hidaṁ, mahāli, ekantadukkhaṁ abhavissa dukkhānupatitaṁ dukkhāvakkantaṁ anavakkantaṁ sukhena, nayidaṁ sattā viññāṇasmiṁ sārajjeyyuṁ. 
+Sujato: consciousness were absolutely painful—soaked and steeped in pain and not steeped in pleasure—sentient beings wouldn’t be aroused by it. 
+Translator: this consciousness were exclusively suffering … beings would not become enamoured with it. 
+
+=== RUN 374: sn22.63:3.4 sn22.63:3.5 ===
+File: data/bodhi/sutta/sn/sn22/sn22.63_translation-en-bodhi.json
+ABOVE sn22.63:3.3
+Pali: Rūpaṁ kho, bhikkhu, upādiyamāno baddho mārassa; 
+Sujato: When you grasp form you’re bound by Māra. 
+Translator: In clinging to form, bhikkhu, one is bound by Mara … 
+JUDGE sn22.63:3.4
+Pali: anupādiyamāno mutto pāpimato. 
+Sujato: Not grasping, you’re free from the Wicked One. 
+Translator: (empty)
+JUDGE sn22.63:3.5
+Pali: Vedanaṁ … 
+Sujato: When you grasp feeling … 
+Translator: (empty)
+BELOW sn22.63:3.6
+Pali: saññaṁ … 
+Sujato: perception … 
+Translator: as above in full … 
+
+=== RUN 375: sn22.63:3.7 sn22.63:3.8 ===
+File: data/bodhi/sutta/sn/sn22/sn22.63_translation-en-bodhi.json
+ABOVE sn22.63:3.6
+Pali: saññaṁ … 
+Sujato: perception … 
+Translator: as above in full … 
+JUDGE sn22.63:3.7
+Pali: saṅkhāre … 
+Sujato: choices … 
+Translator: (empty)
+JUDGE sn22.63:3.8
+Pali: viññāṇaṁ upādiyamāno baddho mārassa; 
+Sujato: consciousness, you’re bound by Māra. 
+Translator: (empty)
+BELOW sn22.63:3.9
+Pali: anupādiyamāno mutto pāpimato. 
+Sujato: Not grasping, you’re free from the Wicked One. 
+Translator: by not clinging to it one is freed from the Evil One. 
+
+=== RUN 376: sn22.64:3.4 sn22.64:3.5 ===
+File: data/bodhi/sutta/sn/sn22/sn22.64_translation-en-bodhi.json
+ABOVE sn22.64:3.3
+Pali: Rūpaṁ kho, bhikkhu, maññamāno baddho mārassa; 
+Sujato: When you conceive form you’re bound by Māra. 
+Translator: In conceiving form, bhikkhu, one is bound by Mara … 
+JUDGE sn22.64:3.4
+Pali: amaññamāno mutto pāpimato. 
+Sujato: Not conceiving, you’re free from the Wicked One. 
+Translator: (empty)
+JUDGE sn22.64:3.5
+Pali: Vedanaṁ … 
+Sujato: When you conceive feeling … 
+Translator: (empty)
+BELOW sn22.64:3.6
+Pali: saññaṁ … 
+Sujato: perception … 
+Translator: as above in full … 
+
+=== RUN 377: sn22.64:3.7 sn22.64:3.8 ===
+File: data/bodhi/sutta/sn/sn22/sn22.64_translation-en-bodhi.json
+ABOVE sn22.64:3.6
+Pali: saññaṁ … 
+Sujato: perception … 
+Translator: as above in full … 
+JUDGE sn22.64:3.7
+Pali: saṅkhāre … 
+Sujato: choices … 
+Translator: (empty)
+JUDGE sn22.64:3.8
+Pali: viññāṇaṁ maññamāno baddho mārassa; 
+Sujato: consciousness, you’re bound by Māra. 
+Translator: (empty)
+BELOW sn22.64:3.9
+Pali: amaññamāno mutto pāpimato. 
+Sujato: Not conceiving, you’re free from the Wicked One. 
+Translator: by not conceiving it one is freed from the Evil One. 
+
+=== RUN 378: sn22.65:3.4 sn22.65:3.5 ===
+File: data/bodhi/sutta/sn/sn22/sn22.65_translation-en-bodhi.json
+ABOVE sn22.65:3.3
+Pali: Rūpaṁ kho, bhikkhu, abhinandamāno baddho mārassa; 
+Sujato: When you take pleasure in form you’re bound by Māra. 
+Translator: In seeking delight in form, bhikkhu, one is bound by Mara … 
+JUDGE sn22.65:3.4
+Pali: anabhinandamāno mutto pāpimato. 
+Sujato: Not taking pleasure, you’re free from the Wicked One. 
+Translator: (empty)
+JUDGE sn22.65:3.5
+Pali: Vedanaṁ … 
+Sujato: When you take pleasure in feeling … 
+Translator: (empty)
+BELOW sn22.65:3.6
+Pali: saññaṁ … 
+Sujato: perception … 
+Translator: as above in full … 
+
+=== RUN 379: sn22.65:3.7 sn22.65:3.8 ===
+File: data/bodhi/sutta/sn/sn22/sn22.65_translation-en-bodhi.json
+ABOVE sn22.65:3.6
+Pali: saññaṁ … 
+Sujato: perception … 
+Translator: as above in full … 
+JUDGE sn22.65:3.7
+Pali: saṅkhāre … 
+Sujato: choices … 
+Translator: (empty)
+JUDGE sn22.65:3.8
+Pali: viññāṇaṁ abhinandamāno baddho mārassa; 
+Sujato: consciousness you’re bound by Māra. 
+Translator: (empty)
+BELOW sn22.65:3.9
+Pali: anabhinandamāno mutto pāpimato. 
+Sujato: Not taking pleasure, you’re free from the Wicked One. 
+Translator: by not seeking delight in it one is freed from the Evil One. 
+
+=== RUN 380: sn22.72:1.9 sn22.72:1.10 ===
+File: data/bodhi/sutta/sn/sn22/sn22.72_translation-en-bodhi.json
+ABOVE sn22.72:1.8
+Pali: yaṁ kiñci viññāṇaṁ atītānāgatapaccuppannaṁ ajjhattaṁ vā bahiddhā vā oḷārikaṁ vā sukhumaṁ vā hīnaṁ vā paṇītaṁ vā yaṁ dūre santike vā, sabbā vedanā …pe… 
+Sujato: consciousness at all—past, future, or present; internal or external; solid or subtle; inferior or superior; far or near: <em>all</em> consciousness—with right understanding: ‘This is not mine, I am not this, this is not my self.’ 
+Translator: Any kind of consciousness whatsoever, whether past, future, or present, internal or external, gross or subtle, inferior or superior, far or near—having seen all consciousness as it really is with correct wisdom thus: ‘This is not mine, this I am not, this is not my self,’ 
+JUDGE sn22.72:1.9
+Pali: sabbā saññā … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.72:1.10
+Pali: sabbe saṅkhārā … 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn22.72:1.11
+Pali: sabbaṁ viññāṇaṁ: ‘netaṁ mama, nesohamasmi, na meso attā’ti evametaṁ yathābhūtaṁ sammappaññāya disvā anupādāvimutto hoti. 
+Sujato: (empty)
+Translator: one is liberated by nonclinging. 
+
+=== RUN 381: sn22.79:8.4 sn22.79:8.5 ===
+File: data/bodhi/sutta/sn/sn22/sn22.79_translation-en-bodhi.json
+ABOVE sn22.79:8.3
+Pali: Ahañceva kho pana anāgataṁ vedanaṁ abhinandeyyaṁ; 
+Sujato: (empty)
+Translator: … 
+JUDGE sn22.79:8.4
+Pali: anāgatampāhaṁ addhānaṁ evameva vedanāya khajjeyyaṁ, seyyathāpi etarahi paccuppannāya vedanāya khajjāmī’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.79:8.5
+Pali: So iti paṭisaṅkhāya atītāya vedanāya anapekkho hoti; 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn22.79:8.6
+Pali: anāgataṁ vedanaṁ nābhinandati; 
+Sujato: (empty)
+Translator: … 
+
+=== RUN 382: sn22.79:9.3 sn22.79:9.4 sn22.79:9.5 sn22.79:9.6 sn22.79:9.7 ===
+File: data/bodhi/sutta/sn/sn22/sn22.79_translation-en-bodhi.json
+ABOVE sn22.79:9.2
+Pali: ahaṁ kho etarahi saṅkhārehi khajjāmi. 
+Sujato: choices … 
+Translator: ‘I am now being devoured by volitional formations.’ 
+JUDGE sn22.79:9.3
+Pali: Atītampāhaṁ addhānaṁ evameva saṅkhārehi khajjiṁ, seyyathāpi etarahi paccuppannehi saṅkhārehi khajjāmīti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.79:9.4
+Pali: Ahañceva kho pana anāgate saṅkhāre abhinandeyyaṁ; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.79:9.5
+Pali: anāgatampāhaṁ addhānaṁ evameva saṅkhārehi khajjeyyaṁ, seyyathāpi etarahi paccuppannehi saṅkhārehi khajjāmī’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.79:9.6
+Pali: So iti paṭisaṅkhāya atītesu saṅkhāresu anapekkho hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.79:9.7
+Pali: anāgate saṅkhāre nābhinandati; 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn22.79:9.8
+Pali: paccuppannānaṁ saṅkhārānaṁ nibbidāya virāgāya nirodhāya paṭipanno hoti. 
+Sujato: (empty)
+Translator: … 
+
+=== RUN 383: sn22.80:3.9 sn22.80:3.10 ===
+File: data/bodhi/sutta/sn/sn22/sn22.80_translation-en-bodhi.json
+ABOVE sn22.80:3.8
+Pali: evameva santettha bhikkhū navā acirapabbajitā adhunāgatā imaṁ dhammavinayaṁ tesaṁ bhagavantaṁ apassantānaṁ siyā aññathattaṁ siyā vipariṇāmo. 
+Sujato: (empty)
+Translator: If they do not see the Blessed One there may take place in them some alteration or change. 
+JUDGE sn22.80:3.9
+Pali: Seyyathāpi nāma bījānaṁ taruṇānaṁ udakaṁ alabhantānaṁ siyā aññathattaṁ siyā vipariṇāmo; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.80:3.10
+Pali: evameva santettha bhikkhū navā acirapabbajitā adhunāgatā imaṁ dhammavinayaṁ, tesaṁ bhagavantaṁ alabhantānaṁ dassanāya siyā aññathattaṁ siyā vipariṇāmo. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn22.80:3.11
+Pali: Abhinandatu, bhante, bhagavā bhikkhusaṅghaṁ; 
+Sujato: May the Buddha be happy with the mendicant Saṅgha! 
+Translator: Venerable sir, let the Blessed One take delight in the Saṅgha of bhikkhus! 
+
+=== RUN 384: sn22.81:6.4 sn22.81:6.5 ===
+File: data/bodhi/sutta/sn/sn22/sn22.81_translation-en-bodhi.json
+ABOVE sn22.81:6.3
+Pali: Yā kho pana sā, bhikkhave, samanupassanā saṅkhāro so. 
+Sujato: But that regarding is just a conditioned phenomenon. … 
+Translator: That regarding is a formation … 
+JUDGE sn22.81:6.4
+Pali: So pana saṅkhāro kiṁnidāno kiṁsamudayo kiṁjātiko kiṁpabhavo? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:6.5
+Pali: Avijjāsamphassajena, bhikkhave, vedayitena phuṭṭhassa assutavato puthujjanassa uppannā taṇhā; 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn22.81:6.6
+Pali: tatojo so saṅkhāro. 
+Sujato: (empty)
+Translator: all as above … 
+
+=== RUN 385: sn22.81:6.7 sn22.81:6.8 sn22.81:6.9 sn22.81:6.10 sn22.81:6.11 ===
+File: data/bodhi/sutta/sn/sn22/sn22.81_translation-en-bodhi.json
+ABOVE sn22.81:6.6
+Pali: tatojo so saṅkhāro. 
+Sujato: (empty)
+Translator: all as above … 
+JUDGE sn22.81:6.7
+Pali: Iti kho, bhikkhave, sopi saṅkhāro anicco saṅkhato paṭiccasamuppanno. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:6.8
+Pali: Sāpi taṇhā … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:6.9
+Pali: sāpi vedanā … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:6.10
+Pali: sopi phasso … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:6.11
+Pali: sāpi avijjā aniccā saṅkhatā paṭiccasamuppannā. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn22.81:6.12
+Pali: Evampi kho, bhikkhave, jānato evaṁ passato anantarā āsavānaṁ khayo hoti. 
+Sujato: (empty)
+Translator: When one knows and sees thus, bhikkhus, the immediate destruction of the taints occurs. 
+
+=== RUN 386: sn22.81:7.4 sn22.81:7.5 sn22.81:7.6 sn22.81:7.7 sn22.81:7.8 sn22.81:7.9 sn22.81:7.10 sn22.81:7.11 sn22.81:7.12 ===
+File: data/bodhi/sutta/sn/sn22/sn22.81_translation-en-bodhi.json
+ABOVE sn22.81:7.3
+Pali: Yā kho pana sā, bhikkhave, samanupassanā saṅkhāro so. 
+Sujato: But that regarding is just a conditioned phenomenon. … 
+Translator: That regarding is a formation…. 
+JUDGE sn22.81:7.4
+Pali: So pana saṅkhāro kiṁnidāno kiṁsamudayo kiṁjātiko kiṁpabhavo? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:7.5
+Pali: Avijjāsamphassajena, bhikkhave, vedayitena phuṭṭhassa assutavato puthujjanassa uppannā taṇhā; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:7.6
+Pali: tatojo so saṅkhāro. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:7.7
+Pali: Iti kho, bhikkhave, sopi saṅkhāro anicco saṅkhato paṭiccasamuppanno. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:7.8
+Pali: Sāpi taṇhā … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:7.9
+Pali: sāpi vedanā … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:7.10
+Pali: sopi phasso … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:7.11
+Pali: sāpi avijjā aniccā saṅkhatā paṭiccasamuppannā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:7.12
+Pali: Evampi kho, bhikkhave, jānato evaṁ passato anantarā āsavānaṁ khayo hoti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.81:8.1
+Pali: Na heva kho rūpaṁ attato samanupassati, na rūpavantaṁ attānaṁ samanupassati, na attani rūpaṁ samanupassati; 
+Sujato: Perhaps they don’t regard form as self, or self as possessing form, or form in self, 
+Translator: “He may not regard form as self or self as possessing form or form as in self, 
+
+=== RUN 387: sn22.81:8.4 sn22.81:8.5 sn22.81:8.6 sn22.81:8.7 sn22.81:8.8 sn22.81:8.9 sn22.81:8.10 sn22.81:8.11 sn22.81:8.12 ===
+File: data/bodhi/sutta/sn/sn22/sn22.81_translation-en-bodhi.json
+ABOVE sn22.81:8.3
+Pali: Yā kho pana sā, bhikkhave, samanupassanā saṅkhāro so. 
+Sujato: But that regarding is just a conditioned phenomenon. … 
+Translator: That regarding is a formation…. 
+JUDGE sn22.81:8.4
+Pali: So pana saṅkhāro kiṁnidāno kiṁsamudayo kiṁjātiko kiṁpabhavo? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:8.5
+Pali: Avijjāsamphassajena, bhikkhave, vedayitena phuṭṭhassa assutavato puthujjanassa uppannā taṇhā; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:8.6
+Pali: tatojo so saṅkhāro. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:8.7
+Pali: Iti kho, bhikkhave, sopi saṅkhāro anicco saṅkhato paṭiccasamuppanno. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:8.8
+Pali: Sāpi taṇhā … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:8.9
+Pali: sāpi vedanā … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:8.10
+Pali: sopi phasso … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:8.11
+Pali: sāpi avijjā aniccā saṅkhatā paṭiccasamuppannā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:8.12
+Pali: Evampi kho, bhikkhave, jānato …pe… āsavānaṁ khayo hoti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.81:9.1
+Pali: Na heva kho rūpaṁ attato samanupassati, na rūpavantaṁ attānaṁ, na attani rūpaṁ, na rūpasmiṁ attānaṁ samanupassati; 
+Sujato: Perhaps they don’t regard form as self, or self as possessing form, or form in self, or self in form. 
+Translator: “He may not regard form as self … or self as in form, 
+
+=== RUN 388: sn22.81:9.7 sn22.81:9.8 sn22.81:9.9 sn22.81:9.10 sn22.81:9.11 sn22.81:9.12 sn22.81:9.13 sn22.81:9.14 ===
+File: data/bodhi/sutta/sn/sn22/sn22.81_translation-en-bodhi.json
+ABOVE sn22.81:9.6
+Pali: Yā kho pana sā, bhikkhave, samanupassanā saṅkhāro so. 
+Sujato: But that regarding is just a conditioned phenomenon. 
+Translator: That regarding is a formation…. 
+JUDGE sn22.81:9.7
+Pali: So pana saṅkhāro kiṁnidāno …pe… kiṁpabhavo? 
+Sujato: And what’s the source of that conditioned phenomenon? 
+Translator: (empty)
+JUDGE sn22.81:9.8
+Pali: Avijjāsamphassajena, bhikkhave, vedayitena phuṭṭhassa assutavato puthujjanassa uppannā taṇhā; 
+Sujato: When an unlearned ordinary person is struck by feelings born of contact with ignorance, craving arises. 
+Translator: (empty)
+JUDGE sn22.81:9.9
+Pali: tatojo so saṅkhāro. 
+Sujato: That conditioned phenomenon is born from that. 
+Translator: (empty)
+JUDGE sn22.81:9.10
+Pali: Iti kho, bhikkhave, sopi saṅkhāro anicco saṅkhato paṭiccasamuppanno. 
+Sujato: So that conditioned phenomenon is impermanent, conditioned, and dependently originated. 
+Translator: (empty)
+JUDGE sn22.81:9.11
+Pali: Sāpi taṇhā … 
+Sujato: And that craving, 
+Translator: (empty)
+JUDGE sn22.81:9.12
+Pali: sāpi vedanā … 
+Sujato: that feeling, 
+Translator: (empty)
+JUDGE sn22.81:9.13
+Pali: sopi phasso … 
+Sujato: that contact, 
+Translator: (empty)
+JUDGE sn22.81:9.14
+Pali: sāpi avijjā aniccā saṅkhatā paṭiccasamuppannā. 
+Sujato: and that ignorance are also impermanent, conditioned, and dependently originated. 
+Translator: (empty)
+BELOW sn22.81:9.15
+Pali: Evaṁ kho, bhikkhave, jānato evaṁ passato anantarā āsavānaṁ khayo hoti. 
+Sujato: That’s how you should know and see in order to end the defilements without delay. 
+Translator: When one knows and sees thus, bhikkhus, the immediate destruction of the taints occurs. 
+
+=== RUN 389: sn22.81:10.2 sn22.81:10.3 ===
+File: data/bodhi/sutta/sn/sn22/sn22.81_translation-en-bodhi.json
+ABOVE sn22.81:10.1
+Pali: Na heva kho rūpaṁ attato samanupassati, 
+Sujato: Perhaps they don’t regard form 
+Translator: “He may not regard form as self … 
+JUDGE sn22.81:10.2
+Pali: na vedanaṁ attato samanupassati, 
+Sujato: or feeling 
+Translator: (empty)
+JUDGE sn22.81:10.3
+Pali: na saññaṁ … 
+Sujato: or perception 
+Translator: (empty)
+BELOW sn22.81:10.4
+Pali: na saṅkhāre … 
+Sujato: or choices 
+Translator: … 
+
+=== RUN 390: sn22.81:11.2 sn22.81:11.3 sn22.81:11.4 sn22.81:11.5 ===
+File: data/bodhi/sutta/sn/sn22/sn22.81_translation-en-bodhi.json
+ABOVE sn22.81:11.1
+Pali: Na heva kho rūpaṁ attato samanupassati, 
+Sujato: Perhaps they don’t regard form 
+Translator: “He may not regard form as self … 
+JUDGE sn22.81:11.2
+Pali: na vedanaṁ … 
+Sujato: or feeling 
+Translator: (empty)
+JUDGE sn22.81:11.3
+Pali: na saññaṁ … 
+Sujato: or perception 
+Translator: (empty)
+JUDGE sn22.81:11.4
+Pali: na saṅkhāre … 
+Sujato: or choices 
+Translator: (empty)
+JUDGE sn22.81:11.5
+Pali: na viññāṇaṁ attato samanupassati; 
+Sujato: or consciousness as self. 
+Translator: (empty)
+BELOW sn22.81:11.6
+Pali: nāpi evaṁdiṭṭhi hoti: 
+Sujato: Nor do they have such a view: 
+Translator: or hold such an eternalist view, 
+
+=== RUN 391: sn22.81:11.11 sn22.81:11.12 sn22.81:11.13 sn22.81:11.14 sn22.81:11.15 ===
+File: data/bodhi/sutta/sn/sn22/sn22.81_translation-en-bodhi.json
+ABOVE sn22.81:11.10
+Pali: Yā kho pana sā, bhikkhave, ucchedadiṭṭhi saṅkhāro so. 
+Sujato: But that annihilationist view is just a conditioned phenomenon. 
+Translator: That annihilationist view is a formation…. 
+JUDGE sn22.81:11.11
+Pali: So pana saṅkhāro kiṁnidāno kiṁsamudayo kiṁjātiko kiṁpabhavo? 
+Sujato: And what’s the source of that conditioned phenomenon? … 
+Translator: (empty)
+JUDGE sn22.81:11.12
+Pali: Avijjāsamphassajena, bhikkhave, vedayitena phuṭṭhassa assutavato puthujjanassa uppannā taṇhā; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:11.13
+Pali: tatojo so saṅkhāro. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:11.14
+Pali: Iti kho, bhikkhave, sopi saṅkhāro anicco …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.81:11.15
+Pali: evampi kho, bhikkhave, jānato evaṁ passato anantarā āsavānaṁ khayo hoti. 
+Sujato: That’s how you should know and see in order to end the defilements without delay. 
+Translator: (empty)
+BELOW (outside this paragraph) sn22.81:12.1
+Pali: Na heva kho rūpaṁ attato samanupassati, na vedanaṁ … 
+Sujato: Perhaps they don’t regard form or feeling 
+Translator: “He may not regard form as self … 
+
+=== RUN 392: sn22.81:12.2 sn22.81:12.3 sn22.81:12.4 sn22.81:12.5 sn22.81:12.6 ===
+File: data/bodhi/sutta/sn/sn22/sn22.81_translation-en-bodhi.json
+ABOVE sn22.81:12.1
+Pali: Na heva kho rūpaṁ attato samanupassati, na vedanaṁ … 
+Sujato: Perhaps they don’t regard form or feeling 
+Translator: “He may not regard form as self … 
+JUDGE sn22.81:12.2
+Pali: na saññaṁ … 
+Sujato: or perception 
+Translator: (empty)
+JUDGE sn22.81:12.3
+Pali: na saṅkhāre … 
+Sujato: or choices 
+Translator: (empty)
+JUDGE sn22.81:12.4
+Pali: na viññāṇaṁ attato samanupassati …pe… 
+Sujato: or consciousness as self. 
+Translator: (empty)
+JUDGE sn22.81:12.5
+Pali: na viññāṇasmiṁ attato samanupassati, nāpi evaṁdiṭṭhi hoti: 
+Sujato: Nor do they have such a view: 
+Translator: (empty)
+JUDGE sn22.81:12.6
+Pali: ‘so attā so loko, so pecca bhavissāmi nicco dhuvo sassato avipariṇāmadhammo’ti; 
+Sujato: ‘The self and the cosmos are one and the same. After death I will be that, permanent, everlasting, eternal, and imperishable.’ 
+Translator: (empty)
+BELOW sn22.81:12.7
+Pali: nāpi evaṁdiṭṭhi hoti: 
+Sujato: Nor do they have such a view: 
+Translator: or hold such an annihilationist view, 
+
+=== RUN 393: sn22.84:2.2 sn22.84:2.3 ===
+File: data/bodhi/sutta/sn/sn22/sn22.84_translation-en-bodhi.json
+ABOVE sn22.84:2.1
+Pali: Atha kho sambahulā bhikkhū yena bhagavā tenupasaṅkamiṁsu; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ nisīdiṁsu. Ekamantaṁ nisinnā kho te bhikkhū bhagavantaṁ etadavocuṁ: 
+Sujato: Then several mendicants went up to the Buddha, bowed, sat down to one side, and told him what had happened. 
+Translator: Then a number of bhikkhus approached the Blessed One, paid homage to him, sat down to one side, and reported this matter to him. 
+JUDGE sn22.84:2.2
+Pali: “āyasmā, bhante, tisso bhagavato pitucchāputto sambahulānaṁ bhikkhūnaṁ evamāroceti: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.84:2.3
+Pali: ‘api me, āvuso, madhurakajāto viya kāyo; disāpi me na pakkhāyanti; dhammāpi maṁ na paṭibhanti; thinamiddhañca me cittaṁ pariyādāya tiṭṭhati; anabhirato ca brahmacariyaṁ carāmi; hoti ca me dhammesu vicikicchā’”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.84:3.1
+Pali: Atha kho bhagavā aññataraṁ bhikkhuṁ āmantesi: 
+Sujato: So the Buddha addressed one of the monks, 
+Translator: The Blessed One then addressed a certain bhikkhu thus: 
+
+=== RUN 394: sn22.84:4.7 sn22.84:4.8 sn22.84:5.1 sn22.84:5.2 ===
+File: data/bodhi/sutta/sn/sn22/sn22.84_translation-en-bodhi.json
+ABOVE sn22.84:4.6
+Pali: saṅkhāresu avigatarāgassa …pe… 
+Sujato: choices … 
+Translator: for volitional formations … 
+JUDGE sn22.84:4.7
+Pali: tesaṁ saṅkhārānaṁ vipariṇāmaññathābhāvā uppajjanti sokaparidevadukkhadomanassupāyāsā”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.84:4.8
+Pali: “Evaṁ, bhante”. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.84:5.1
+Pali: “Sādhu sādhu, tissa. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.84:5.2
+Pali: Evañhetaṁ, tissa, hoti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn22.84:5.3
+Pali: Yathā taṁ saṅkhāresu anigatarāgassa, viññāṇe avigatarāgassa avigatacchandassa avigatapemassa avigatapipāsassa avigatapariḷāhassa avigatataṇhassa, tassa viññāṇassa vipariṇāmaññathābhāvā uppajjanti sokaparidevadukkhadomanassupāyāsā”ti? 
+Sujato: consciousness, when that consciousness decays and perishes, will it give rise to sorrow, lamentation, pain, sadness, and distress?” 
+Translator: for consciousness, not devoid of desire, affection, thirst, passion, and craving for it, then with the change and alteration of that consciousness, do sorrow, lamentation, pain, displeasure, and despair arise within?” 
+
+=== RUN 395: sn22.85:5.2 sn22.85:5.3 ===
+File: data/bodhi/sutta/sn/sn22/sn22.85_translation-en-bodhi.json
+ABOVE sn22.85:5.1
+Pali: Yato kho te bhikkhū nāsakkhiṁsu āyasmantaṁ yamakaṁ etasmā pāpakā diṭṭhigatā vivecetuṁ, atha kho te bhikkhū uṭṭhāyāsanā yenāyasmā sāriputto tenupasaṅkamiṁsu; upasaṅkamitvā āyasmantaṁ sāriputtaṁ etadavocuṁ: 
+Sujato: When those mendicants were unable to dissuade Yamaka from that misconception, they rose from their seats and went to see Venerable Sāriputta. They told him what had happened, and said, 
+Translator: Since those bhikkhus were unable to detach the Venerable Yamaka from that pernicious view, they rose from their seats, approached the Venerable Sāriputta, and told him all that had occurred, adding: 
+JUDGE sn22.85:5.2
+Pali: “yamakassa nāma, āvuso sāriputta, bhikkhuno evarūpaṁ pāpakaṁ diṭṭhigataṁ uppannaṁ: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.85:5.3
+Pali: ‘tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi yathā khīṇāsavo bhikkhu kāyassa bhedā ucchijjati vinassati, na hoti paraṁ maraṇā’ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn22.85:5.4
+Pali: Sādhāyasmā sāriputto yena yamako bhikkhu tenupasaṅkamatu anukampaṁ upādāyā”ti. 
+Sujato: “May Venerable Sāriputta please go to the mendicant Yamaka out of sympathy.” 
+Translator: “It would be good if the Venerable Sāriputta would approach the bhikkhu Yamaka out of compassion for him.” 
+
+=== RUN 396: sn22.85:23.2 sn22.85:23.3 sn22.85:23.4 ===
+File: data/bodhi/sutta/sn/sn22/sn22.85_translation-en-bodhi.json
+ABOVE sn22.85:23.1
+Pali: So aniccaṁ rūpaṁ ‘aniccaṁ rūpan’ti yathābhūtaṁ pajānāti. 
+Sujato: They truly understand form—which is impermanent—as impermanent. 
+Translator: “He understands as it really is impermanent form as ‘impermanent form’ … 
+JUDGE sn22.85:23.2
+Pali: Aniccaṁ vedanaṁ … 
+Sujato: They truly understand feeling … 
+Translator: (empty)
+JUDGE sn22.85:23.3
+Pali: aniccaṁ saññaṁ … 
+Sujato: perception … 
+Translator: (empty)
+JUDGE sn22.85:23.4
+Pali: anicce saṅkhāre … 
+Sujato: choices … 
+Translator: (empty)
+BELOW sn22.85:23.5
+Pali: aniccaṁ viññāṇaṁ ‘aniccaṁ viññāṇan’ti yathābhūtaṁ pajānāti. 
+Sujato: consciousness—which is impermanent—as impermanent. 
+Translator: impermanent consciousness as ‘impermanent consciousness.’ 
+
+=== RUN 397: sn22.85:24.2 sn22.85:24.3 sn22.85:24.4 ===
+File: data/bodhi/sutta/sn/sn22/sn22.85_translation-en-bodhi.json
+ABOVE sn22.85:24.1
+Pali: Dukkhaṁ rūpaṁ ‘dukkhaṁ rūpan’ti yathābhūtaṁ pajānāti. 
+Sujato: They truly understand form—which is suffering—as suffering. 
+Translator: “He understands as it really is painful form as ‘painful form’ … 
+JUDGE sn22.85:24.2
+Pali: Dukkhaṁ vedanaṁ … 
+Sujato: They truly understand feeling … 
+Translator: (empty)
+JUDGE sn22.85:24.3
+Pali: dukkhaṁ saññaṁ … 
+Sujato: perception … 
+Translator: (empty)
+JUDGE sn22.85:24.4
+Pali: dukkhe saṅkhāre … 
+Sujato: choices … 
+Translator: (empty)
+BELOW sn22.85:24.5
+Pali: dukkhaṁ viññāṇaṁ ‘dukkhaṁ viññāṇan’ti yathābhūtaṁ pajānāti. 
+Sujato: consciousness—which is suffering—as suffering. 
+Translator: painful consciousness as ‘painful consciousness.’ 
+
+=== RUN 398: sn22.85:25.2 sn22.85:25.3 sn22.85:25.4 ===
+File: data/bodhi/sutta/sn/sn22/sn22.85_translation-en-bodhi.json
+ABOVE sn22.85:25.1
+Pali: Anattaṁ rūpaṁ ‘anattā rūpan’ti yathābhūtaṁ pajānāti. 
+Sujato: They truly understand form—which is not-self—as not-self. 
+Translator: “He understands as it really is selfless form as ‘selfless form’ … 
+JUDGE sn22.85:25.2
+Pali: Anattaṁ vedanaṁ … 
+Sujato: They truly understand feeling … 
+Translator: (empty)
+JUDGE sn22.85:25.3
+Pali: anattaṁ saññaṁ … 
+Sujato: perception … 
+Translator: (empty)
+JUDGE sn22.85:25.4
+Pali: anatte saṅkhāre … 
+Sujato: choices … 
+Translator: (empty)
+BELOW sn22.85:25.5
+Pali: anattaṁ viññāṇaṁ ‘anattā viññāṇan’ti yathābhūtaṁ pajānāti. 
+Sujato: consciousness—which is not-self—as not-self. 
+Translator: selfless consciousness as ‘selfless consciousness.’ 
+
+=== RUN 399: sn22.85:26.2 sn22.85:26.3 sn22.85:26.4 ===
+File: data/bodhi/sutta/sn/sn22/sn22.85_translation-en-bodhi.json
+ABOVE sn22.85:26.1
+Pali: Saṅkhataṁ rūpaṁ ‘saṅkhataṁ rūpan’ti yathābhūtaṁ pajānāti. 
+Sujato: They truly understand form—which is conditioned—as conditioned. 
+Translator: “He understands as it really is conditioned form as ‘conditioned form’ … 
+JUDGE sn22.85:26.2
+Pali: Saṅkhataṁ vedanaṁ … 
+Sujato: They truly understand feeling … 
+Translator: (empty)
+JUDGE sn22.85:26.3
+Pali: saṅkhataṁ saññaṁ … 
+Sujato: perception … 
+Translator: (empty)
+JUDGE sn22.85:26.4
+Pali: saṅkhate saṅkhāre … 
+Sujato: choices … 
+Translator: (empty)
+BELOW sn22.85:26.5
+Pali: saṅkhataṁ viññāṇaṁ ‘saṅkhataṁ viññāṇan’ti yathābhūtaṁ pajānāti. 
+Sujato: consciousness—which is conditioned—as conditioned. 
+Translator: conditioned consciousness as ‘conditioned consciousness. ’ 
+
+=== RUN 400: sn22.85:27.2 sn22.85:27.3 sn22.85:27.4 ===
+File: data/bodhi/sutta/sn/sn22/sn22.85_translation-en-bodhi.json
+ABOVE sn22.85:27.1
+Pali: Vadhakaṁ rūpaṁ ‘vadhakaṁ rūpan’ti yathābhūtaṁ pajānāti. 
+Sujato: They truly understand form—which is a killer—as a killer. 
+Translator: “He understands as it really is murderous form as ‘murderous form’ … 
+JUDGE sn22.85:27.2
+Pali: Vadhakaṁ vedanaṁ … 
+Sujato: They truly understand feeling … 
+Translator: (empty)
+JUDGE sn22.85:27.3
+Pali: vadhakaṁ saññaṁ … 
+Sujato: perception … 
+Translator: (empty)
+JUDGE sn22.85:27.4
+Pali: vadhake saṅkhāre ‘vadhakā saṅkhārā’ti yathābhūtaṁ pajānāti. 
+Sujato: choices … 
+Translator: (empty)
+BELOW sn22.85:27.5
+Pali: Vadhakaṁ viññāṇaṁ ‘vadhakaṁ viññāṇan’ti yathābhūtaṁ pajānāti. 
+Sujato: consciousness—which is a killer—as a killer. 
+Translator: murderous consciousness as ‘murderous consciousness.’ 

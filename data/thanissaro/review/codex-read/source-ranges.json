@@ -169,7 +169,7 @@
       "note": "The original Pali itself has one contracted path line for the eight path factors. Retain the translator path list on that same single Pali line; separately split the five preparatory qualities because original Pali57-61 provides each its own key. Ordinals and concluding uddana are untranslated."
     },
     {
-      "source": "sutta/an/an5/an5.254-259.html",
+      "source": "sutta/an/an5/an5.254-271.html",
       "targetDocuments": [
         "an5.254",
         "an5.255",
@@ -178,7 +178,7 @@
         "an5.264",
         "an5.265-271"
       ],
-      "status": "requires-explicit-legacy-range-remap-and-source-precedence",
+      "status": "resolved-by-app-span-and-removal-of-older-duplicates",
       "editionMap": {
         "legacy254": "an5.254",
         "legacy255": "an5.255",
@@ -209,7 +209,20 @@
           "key": "an5.265-271:2.1",
           "note": "The positive full series ends with an ellipsis; keep it together on2.1, not an orphan arahantship on2.4."
         }
-      ]
+      ],
+      "originalSource": "sutta/an/an5/an5.254-259.html",
+      "resolution": {
+        "pageBytes": "unchanged; renamed by the complete app span",
+        "selectedSource": "https://www.dhammatalks.org/suttas/AN/AN5_254.html",
+        "removedSources": [
+          "sutta/an/an5/an5.257-263.html",
+          "sutta/an/an5/an5.264.html",
+          "sutta/an/an5/an5.265-271.html"
+        ],
+        "segmenterChange": false,
+        "review": "Pali on every row, high effort; source-mapping-cuts, source-mapping-read and source-mapping-reread",
+        "note": "The original proposals and editionMap above are historical evidence. The requested source precedence chooses dhammatalks.org for every covered text; the app span supplies all six documents without a special remap."
+      }
     }
   ],
   "appPlanNote": "The data records minimal shared-stem/contracted clauses without duplicating translator words. App reveal work is deferred; later reveal should account for translated alternatives sharing an earlier English stem and Pali abbreviations."

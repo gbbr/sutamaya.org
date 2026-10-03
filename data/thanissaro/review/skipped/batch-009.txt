@@ -1,0 +1,1281 @@
+thanissaro: skipped-Pali review batch 009
+Read the full English above, each original Pali line, and the next English. Sujato is context only.
+covered = this line's own content is explicitly rendered by the English above, including complete lists.
+skipped = abbreviated or compressed repetition, even if mentioned, or omitted. When in doubt, skipped.
+Judge each key independently; a run may be mixed. An ellipsis alone does not decide.
+Only runs of two or more empty prose lines in the same paragraph are reviewed; lone lines join automatically.
+Write <key> covered|skipped|unsure for every RUN key, then # done. Do not mark context keys.
+
+=== RUN 401: sn22.85:13.8 sn22.85:13.9 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.85_translation-en-thanissaro.json
+ABOVE sn22.85:13.7
+Pali: ‘rūpaṁ kho, āvuso, aniccaṁ. 
+Sujato: ‘Reverend, form is impermanent. 
+Translator: ‘Form is inconstant… 
+JUDGE sn22.85:13.8
+Pali: Yadaniccaṁ taṁ dukkhaṁ; 
+Sujato: What’s impermanent is suffering. 
+Translator: (empty)
+JUDGE sn22.85:13.9
+Pali: yaṁ dukkhaṁ taṁ niruddhaṁ tadatthaṅgataṁ. 
+Sujato: What’s suffering has ceased and disappeared. 
+Translator: (empty)
+BELOW (outside this paragraph) sn22.85:13.10
+Pali: Vedanā … 
+Sujato: Feeling … 
+Translator: Feeling… 
+
+=== RUN 402: sn22.85:14.7 sn22.85:14.8 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.85_translation-en-thanissaro.json
+ABOVE sn22.85:14.6
+Pali: Tassa evamassa: 
+Sujato: They’d think: 
+Translator: The thought would occur to this man: 
+JUDGE sn22.85:14.7
+Pali: ‘ayaṁ kho gahapati vā gahapatiputto vā aḍḍho mahaddhano mahābhogo; 
+Sujato: ‘This householder or householder’s son is rich, with a lot of money and great wealth, 
+Translator: (empty)
+JUDGE sn22.85:14.8
+Pali: so ca ārakkhasampanno; 
+Sujato: and a bodyguard for protection. 
+Translator: (empty)
+BELOW sn22.85:14.9
+Pali: nāyaṁ sukaro pasayha jīvitā voropetuṁ. 
+Sujato: It won’t be easy to take his life by force. 
+Translator: ‘It would not be easy to kill this person by force. 
+
+=== RUN 403: sn22.89:8.5 sn22.89:8.6 sn22.89:8.7 sn22.89:8.8 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.89_translation-en-thanissaro.json
+ABOVE sn22.89:8.4
+Pali: Rūpaṁ ‘asmī’ti vadesi aññatra rūpā ‘asmī’ti vadesi? 
+Sujato: (empty)
+Translator: Do you say, “I am form,” or do you say, “I am something other than form”? Do you say, “I am feeling… perception… fabrications… consciousness,” or do you say, “I am something other than consciousness” ’? 
+JUDGE sn22.89:8.5
+Pali: Vedanaṁ … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.89:8.6
+Pali: saññaṁ … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.89:8.7
+Pali: saṅkhāre … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.89:8.8
+Pali: viññāṇaṁ ‘asmī’ti vadesi aññatra viññāṇā ‘asmī’ti vadesi? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn22.89:8.9
+Pali: Yametaṁ, āvuso khemaka, ‘asmī’ti vadesi, kimetaṁ ‘asmī’ti vadesī”ti? 
+Sujato: (empty)
+Translator: This “I am” of which you speak: what do you say “I am”?’” 
+
+=== RUN 404: sn22.90:7.6 sn22.90:7.7 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.90_translation-en-thanissaro.json
+ABOVE sn22.90:7.5
+Pali: Ovadatu maṁ, āyasmā ānando; 
+Sujato: “May Venerable Ānanda advise me and instruct me! May he give me a Dhamma talk so that I can see the teaching!” 
+Translator: “May Ven. Ānanda exhort me, may Ven. Ānanda teach me, may Ven. Ānanda give me a Dhamma talk so that I might see the Dhamma.” 
+JUDGE sn22.90:7.6
+Pali: anusāsatu maṁ, āyasmā ānando; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.90:7.7
+Pali: karotu me, āyasmā ānando dhammiṁ kathaṁ yathāhaṁ dhammaṁ passeyyan”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.90:8.1
+Pali: “Ettakenapi mayaṁ āyasmato channassa attamanā api nāma taṁ āyasmā channo āvi akāsi khīlaṁ chindi. 
+Sujato: “I’m already delighted with Venerable Channa. Hopefully you’ve opened yourself up and severed your hard-heartedness. 
+Translator: “Even this much makes me feel gratified & satisfied with Ven. Channa, that he opens up & breaks down his stubbornness. 
+
+=== RUN 405: sn22.97:3.2 sn22.97:3.3 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.97_translation-en-thanissaro.json
+ABOVE sn22.97:3.1
+Pali: Ettakāpi kho, bhikkhu, vedanā natthi niccā dhuvā sassatā avipariṇāmadhammā sassatisamaṁ tatheva ṭhassati. 
+Sujato: There’s not even this much of any feeling … 
+Translator: “There isn’t even this much feeling.… 
+JUDGE sn22.97:3.2
+Pali: Ettakā cepi, bhikkhu, vedanā abhavissa niccā dhuvā sassatā avipariṇāmadhammā, na yidaṁ brahmacariyavāso paññāyetha sammā dukkhakkhayāya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.97:3.3
+Pali: Yasmā ca kho, bhikkhu, ettakāpi vedanā natthi niccā dhuvā sassatā avipariṇāmadhammā, tasmā brahmacariyavāso paññāyati sammā dukkhakkhayāya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.97:4.1
+Pali: Ettakāpi kho, bhikkhu, saññā natthi …pe… 
+Sujato: perception … 
+Translator: “There isn’t even this much perception.… 
+
+=== RUN 406: sn22.97:4.3 sn22.97:4.4 ===
+File: data/thanissaro/sutta/sn/sn22/sn22.97_translation-en-thanissaro.json
+ABOVE sn22.97:4.2
+Pali: ettakāpi kho, bhikkhu, saṅkhārā natthi niccā dhuvā sassatā avipariṇāmadhammā sassatisamaṁ tatheva ṭhassanti. 
+Sujato: choices … 
+Translator: “There aren’t even this many fabrications.… 
+JUDGE sn22.97:4.3
+Pali: Ettakā cepi, bhikkhu, saṅkhārā abhavissaṁsu niccā dhuvā sassatā avipariṇāmadhammā, na yidaṁ brahmacariyavāso paññāyetha sammā dukkhakkhayāya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn22.97:4.4
+Pali: Yasmā ca kho, bhikkhu, ettakāpi saṅkhārā natthi niccā dhuvā sassatā avipariṇāmadhammā, tasmā brahmacariyavāso paññāyati sammā dukkhakkhayāya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn22.97:5.1
+Pali: Ettakampi kho, bhikkhu, viññāṇaṁ natthi niccaṁ dhuvaṁ sassataṁ avipariṇāmadhammaṁ sassatisamaṁ tatheva ṭhassati. 
+Sujato: consciousness that’s permanent, everlasting, eternal, imperishable, and will last forever and ever. 
+Translator: “There isn’t even this much consciousness that is constant, lasting, eternal, not subject to change, that will stay just as it is for eternity. 
+
+=== RUN 407: sn35.17:1.10 sn35.17:1.11 sn35.17:1.12 sn35.17:1.13 sn35.17:1.14 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.17_translation-en-thanissaro.json
+ABOVE sn35.17:1.9
+Pali: no cedaṁ, bhikkhave, jivhāya assādo abhavissa, nayidaṁ sattā jivhāya sārajjeyyuṁ. 
+Sujato: tongue … 
+Translator: “If there were not this allure to the tongue… 
+JUDGE sn35.17:1.10
+Pali: Yasmā ca kho, bhikkhave, atthi jivhāya assādo, tasmā sattā jivhāya sārajjanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.17:1.11
+Pali: No cedaṁ, bhikkhave, jivhāya ādīnavo abhavissa, nayidaṁ sattā jivhāya nibbindeyyuṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.17:1.12
+Pali: Yasmā ca kho, bhikkhave, atthi jivhāya ādīnavo, tasmā sattā jivhāya nibbindanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.17:1.13
+Pali: No cedaṁ, bhikkhave, jivhāya nissaraṇaṁ abhavissa, nayidaṁ sattā jivhāya nissareyyuṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.17:1.14
+Pali: Yasmā ca kho, bhikkhave, atthi jivhāya nissaraṇaṁ, tasmā sattā jivhāya nissaranti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.17:1.15
+Pali: No cedaṁ, bhikkhave, kāyassa assādo abhavissa … 
+Sujato: body … 
+Translator: “If there were not this allure to the body… 
+
+=== RUN 408: sn35.28:1.9 sn35.28:1.10 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.28_translation-en-thanissaro.json
+ABOVE sn35.28:1.8
+Pali: jivhā ādittā, rasā ādittā, jivhāviññāṇaṁ ādittaṁ, jivhāsamphasso āditto. Yampidaṁ jivhāsamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi ādittaṁ. 
+Sujato: The ear … nose … tongue … body … 
+Translator: “The ear is aflame. Sounds are aflame… “The nose is aflame. Aromas are aflame… “The tongue is aflame. Flavors are aflame… “The body is aflame. Tactile sensations are aflame… 
+JUDGE sn35.28:1.9
+Pali: Kena ādittaṁ? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.28:1.10
+Pali: ‘Rāgagginā, dosagginā, mohagginā ādittaṁ, jātiyā jarāya maraṇena sokehi paridevehi dukkhehi domanassehi upāyāsehi ādittan’ti vadāmi …pe… 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn35.28:1.11
+Pali: mano āditto, dhammā ādittā, manoviññāṇaṁ ādittaṁ, manosamphasso āditto. Yampidaṁ manosamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi ādittaṁ. 
+Sujato: The mind is burning. Ideas are burning. Mind consciousness is burning. Mind contact is burning. The painful, pleasant, or neutral feeling that arises dependent on mind contact is also burning. 
+Translator: “The intellect is aflame. Ideas are aflame. Intellect-consciousness is aflame. Intellect-contact is aflame. And whatever there is that arises in dependence on intellect-contact—experienced as pleasure, pain or neither-pleasure-nor-pain—that too is aflame. 
+
+=== RUN 409: sn35.69:1.5 sn35.69:1.6 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.69_translation-en-thanissaro.json
+ABOVE sn35.69:1.4
+Pali: “etha me, āvuso, imaṁ kāyaṁ mañcakaṁ āropetvā bahiddhā nīharatha. 
+Sujato: “Come, reverends, lift this body onto a cot and carry it outside 
+Translator: “Quick, friends, lift this body of mine onto a couch and carry it outside before it’s scattered like a fistful of chaff!” 
+JUDGE sn35.69:1.5
+Pali: Purāyaṁ kāyo idheva vikirati; 
+Sujato: before it’s scattered right here 
+Translator: (empty)
+JUDGE sn35.69:1.6
+Pali: seyyathāpi bhusamuṭṭhī”ti. 
+Sujato: like a handful of hay.” 
+Translator: (empty)
+BELOW (outside this paragraph) sn35.69:2.1
+Pali: Evaṁ vutte, āyasmā sāriputto āyasmantaṁ upasenaṁ etadavoca: 
+Sujato: When he said this, Sāriputta said to him, 
+Translator: When this was said, Ven. Sāriputta said to Ven. Upasena, 
+
+=== RUN 410: sn35.69:2.5 sn35.69:2.6 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.69_translation-en-thanissaro.json
+ABOVE sn35.69:2.4
+Pali: ‘etha me, āvuso, imaṁ kāyaṁ mañcakaṁ āropetvā bahiddhā nīharatha. 
+Sujato: ‘Come, reverends, lift this body onto a cot and carry it outside 
+Translator: “Quick, friends, lift this body of mine onto a couch and carry it outside before it’s scattered like a fistful of chaff! 
+JUDGE sn35.69:2.5
+Pali: Purāyaṁ kāyo idheva vikirati; 
+Sujato: before it’s scattered right here 
+Translator: (empty)
+JUDGE sn35.69:2.6
+Pali: seyyathāpi bhusamuṭṭhī’”ti. 
+Sujato: like a handful of hay.’” 
+Translator: (empty)
+BELOW (outside this paragraph) sn35.69:2.7
+Pali: “Yassa nūna, āvuso sāriputta, evamassa: 
+Sujato: “Reverend Sāriputta, there may be an impairment in body or deterioration of faculties for someone who thinks: 
+Translator: Friend Sāriputta, in anyone who had the thought, 
+
+=== RUN 411: sn35.75:11.7 sn35.75:11.8 sn35.75:11.9 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.75_translation-en-thanissaro.json
+ABOVE sn35.75:11.6
+Pali: mano … 
+Sujato: mind … 
+Translator: “What do you think, monk? Is the intellect constant or inconstant?” 
+JUDGE sn35.75:11.7
+Pali: manoviññāṇaṁ … 
+Sujato: mind consciousness … 
+Translator: (empty)
+JUDGE sn35.75:11.8
+Pali: manosamphasso … 
+Sujato: mind contact … 
+Translator: (empty)
+JUDGE sn35.75:11.9
+Pali: yampidaṁ manosamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi niccaṁ vā aniccaṁ vā”ti? 
+Sujato: The pleasant, painful, or neutral feeling that arises dependent on mind contact: is that permanent or impermanent?” 
+Translator: (empty)
+BELOW (outside this paragraph) sn35.75:12.1
+Pali: “Aniccaṁ, bhante”. 
+Sujato: “Impermanent, sir.” 
+Translator: “Inconstant, lord.” “ 
+
+=== RUN 412: sn35.75:17.3 sn35.75:17.4 sn35.75:17.5 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.75_translation-en-thanissaro.json
+ABOVE sn35.75:17.2
+Pali: manasmimpi … 
+Sujato: mind … 
+Translator: disenchanted with the intellect. 
+JUDGE sn35.75:17.3
+Pali: manoviññāṇepi … 
+Sujato: mind consciousness … 
+Translator: (empty)
+JUDGE sn35.75:17.4
+Pali: manosamphassepi nibbindati. 
+Sujato: mind contact … 
+Translator: (empty)
+JUDGE sn35.75:17.5
+Pali: Yampidaṁ manosamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tasmimpi nibbindati. 
+Sujato: They grow disillusioned with the painful, pleasant, or neutral feeling that arises dependent on mind contact. 
+Translator: (empty)
+BELOW sn35.75:17.6
+Pali: Nibbindaṁ virajjati; virāgā vimuccati; vimuttasmiṁ vimuttamiti ñāṇaṁ hoti. 
+Sujato: Being disillusioned, desire fades away. When desire fades away they’re freed. When they’re freed, they know they’re freed. 
+Translator: Disenchanted, he becomes dispassionate. Through dispassion, he is released. With release, there is the knowledge, ‘Released.’ 
+
+=== RUN 413: sn35.88:8.3 sn35.88:8.4 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.88_translation-en-thanissaro.json
+ABOVE sn35.88:8.2
+Pali: ‘bhaddakā vatime sunāparantakā manussā, subhaddakā vatime sunāparantakā manussā, yaṁ me nayime leḍḍunā pahāraṁ dentī’ti. 
+Sujato: ‘These people of Sunāparanta are gracious, truly gracious, since they don’t throw stones at me.’ 
+Translator: ‘These Sunāparanta people are civilized, very civilized, in that they don’t hit me with a clod’…” 
+JUDGE sn35.88:8.3
+Pali: Evamettha, bhagavā, bhavissati; 
+Sujato: That’s what I’ll think, Blessed One. 
+Translator: (empty)
+JUDGE sn35.88:8.4
+Pali: evamettha, sugata, bhavissatī”ti. 
+Sujato: That’s what I’ll think, Holy One.” 
+Translator: (empty)
+BELOW (outside this paragraph) sn35.88:9.1
+Pali: “Sace pana te, puṇṇa, sunāparantakā manussā leḍḍunā pahāraṁ dassanti, tatra pana te, puṇṇa, kinti bhavissatī”ti? 
+Sujato: “But if they do throw stones at you, what will you think of them then?” 
+Translator: “But if they hit you with a clod…?” 
+
+=== RUN 414: sn35.88:10.3 sn35.88:10.4 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.88_translation-en-thanissaro.json
+ABOVE sn35.88:10.2
+Pali: ‘bhaddakā vatime sunāparantakā manussā, subhaddakā vatime sunāparantakā manussā, yaṁ me nayime daṇḍena pahāraṁ dentī’ti. 
+Sujato: ‘These people of Sunāparanta are gracious, truly gracious, since they don’t beat me with a club.’ 
+Translator: ‘These Sunāparanta people are civilized, very civilized, in that they don’t hit me with a stick’…” 
+JUDGE sn35.88:10.3
+Pali: Evamettha, bhagavā, bhavissati; 
+Sujato: That’s what I’ll think, Blessed One. 
+Translator: (empty)
+JUDGE sn35.88:10.4
+Pali: evamettha, sugata, bhavissatī”ti. 
+Sujato: That’s what I’ll think, Holy One.” 
+Translator: (empty)
+BELOW (outside this paragraph) sn35.88:11.1
+Pali: “Sace pana puṇṇa, sunāparantakā manussā daṇḍena pahāraṁ dassanti, tatra pana te, puṇṇa, kinti bhavissatī”ti? 
+Sujato: “But if they do beat you with a club, what will you think of them then?” 
+Translator: “But if they hit you with a stick…?” 
+
+=== RUN 415: sn35.88:12.3 sn35.88:12.4 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.88_translation-en-thanissaro.json
+ABOVE sn35.88:12.2
+Pali: ‘bhaddakā vatime sunāparantakā manussā, subhaddakā vatime sunāparantakā manussā, yaṁ me nayime satthena pahāraṁ dentī’ti. 
+Sujato: ‘These people of Sunāparanta are gracious, truly gracious, since they don’t stab me with a knife.’ 
+Translator: ‘These Sunāparanta people are civilized, very civilized, in that they don’t hit me with a knife’…” 
+JUDGE sn35.88:12.3
+Pali: Evamettha, bhagavā, bhavissati; 
+Sujato: That’s what I’ll think, Blessed One. 
+Translator: (empty)
+JUDGE sn35.88:12.4
+Pali: evamettha, sugata, bhavissatī”ti. 
+Sujato: That’s what I’ll think, Holy One.” 
+Translator: (empty)
+BELOW (outside this paragraph) sn35.88:13.1
+Pali: “Sace pana te, puṇṇa, sunāparantakā manussā satthena pahāraṁ dassanti, tatra pana te, puṇṇa, kinti bhavissatī”ti? 
+Sujato: “But if they do stab you with a knife, what will you think of them then?” 
+Translator: “But if they hit you with a knife…?” 
+
+=== RUN 416: sn35.88:14.3 sn35.88:14.4 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.88_translation-en-thanissaro.json
+ABOVE sn35.88:14.2
+Pali: ‘bhaddakā vatime sunāparantakā manussā, subhaddakā vatime sunāparantakā manussā, yaṁ maṁ nayime tiṇhena satthena jīvitā voropentī’ti. 
+Sujato: ‘These people of Sunāparanta are gracious, truly gracious, since they don’t take my life with a sharp knife.’ 
+Translator: ‘These Sunāparanta people are civilized, very civilized, in that they don’t take my life with a sharp knife’…” 
+JUDGE sn35.88:14.3
+Pali: Evamettha, bhagavā, bhavissati; 
+Sujato: That’s what I’ll think, Blessed One. 
+Translator: (empty)
+JUDGE sn35.88:14.4
+Pali: evamettha, sugata, bhavissatī”ti. 
+Sujato: That’s what I’ll think, Holy One.” 
+Translator: (empty)
+BELOW (outside this paragraph) sn35.88:15.1
+Pali: “Sace pana taṁ, puṇṇa, sunāparantakā manussā tiṇhena satthena jīvitā voropessanti, tatra pana te, puṇṇa, kinti bhavissatī”ti? 
+Sujato: “But if they do take your life with a sharp knife, what will you think of them then?” 
+Translator: “But if they take your life with a sharp knife…?” 
+
+=== RUN 417: sn35.93:2.2 sn35.93:2.3 sn35.93:2.4 sn35.93:2.5 sn35.93:2.6 sn35.93:2.7 sn35.93:2.8 sn35.93:2.9 sn35.93:2.10 sn35.93:2.11 sn35.93:2.12 sn35.93:2.13 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.93_translation-en-thanissaro.json
+ABOVE sn35.93:2.1
+Pali: Jivhañca paṭicca rase ca uppajjati jivhāviññāṇaṁ. 
+Sujato: Ear consciousness … Nose consciousness … Tongue consciousness … Body consciousness … 
+Translator: “In dependence on the ear & sounds there arises ear-consciousness.… “In dependence on the nose & aromas there arises nose-consciousness.… “In dependence on the tongue & flavors there arises tongue-consciousness.… “In dependence on the body & tactile sensations there arises body-consciousness.… 
+JUDGE sn35.93:2.2
+Pali: Jivhā aniccā vipariṇāmī aññathābhāvī. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.93:2.3
+Pali: Rasā aniccā vipariṇāmino aññathābhāvino. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.93:2.4
+Pali: Itthetaṁ dvayaṁ calañceva byathañca aniccaṁ vipariṇāmi aññathābhāvi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.93:2.5
+Pali: Jivhāviññāṇaṁ aniccaṁ vipariṇāmi aññathābhāvi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.93:2.6
+Pali: Yopi hetu yopi paccayo jivhāviññāṇassa uppādāya, sopi hetu sopi paccayo anicco vipariṇāmī aññathābhāvī. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.93:2.7
+Pali: Aniccaṁ kho pana, bhikkhave, paccayaṁ paṭicca uppannaṁ jivhāviññāṇaṁ, kuto niccaṁ bhavissati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.93:2.8
+Pali: Yā kho, bhikkhave, imesaṁ tiṇṇaṁ dhammānaṁ saṅgati sannipāto samavāyo, ayaṁ vuccati jivhāsamphasso. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.93:2.9
+Pali: Jivhāsamphassopi anicco vipariṇāmī aññathābhāvī. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.93:2.10
+Pali: Yopi hetu yopi paccayo jivhāsamphassassa uppādāya, sopi hetu sopi paccayo anicco vipariṇāmī aññathābhāvī. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.93:2.11
+Pali: Aniccaṁ kho pana, bhikkhave, paccayaṁ paṭicca uppanno jivhāsamphasso, kuto nicco bhavissati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.93:2.12
+Pali: Phuṭṭho, bhikkhave, vedeti, phuṭṭho ceteti, phuṭṭho sañjānāti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.93:2.13
+Pali: Itthetepi dhammā calā ceva byathā ca aniccā vipariṇāmino aññathābhāvino …pe… 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn35.93:3.1
+Pali: Manañca paṭicca dhamme ca uppajjati manoviññāṇaṁ. 
+Sujato: Mind consciousness arises dependent on the mind and ideas. 
+Translator: “In dependence on the intellect & ideas there arises intellect-consciousness. 
+
+=== RUN 418: sn35.97:1.13 sn35.97:1.14 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.97_translation-en-thanissaro.json
+ABOVE sn35.97:1.12
+Pali: jivhindriyaṁ asaṁvutassa, bhikkhave, viharato cittaṁ byāsiñcati jivhāviññeyyesu rasesu, 
+Sujato: When you live with the ear … nose … tongue … body … 
+Translator: “When a monk dwells without restraint over the ear… nose… tongue… body… 
+JUDGE sn35.97:1.13
+Pali: tassa byāsittacittassa …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.97:1.14
+Pali: pamādavihārītveva saṅkhaṁ gacchati …pe… 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.97:1.15
+Pali: manindriyaṁ asaṁvutassa, bhikkhave, viharato cittaṁ byāsiñcati manoviññeyyesu dhammesu, 
+Sujato: mind faculty unrestrained, your mind becomes polluted when it comes to ideas known by the mind. 
+Translator: “When a monk dwells without restraint over the faculty of the intellect, the mind is stained with ideas cognizable via the intellect. 
+
+=== RUN 419: sn35.101:1.8 sn35.101:1.9 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.101_translation-en-thanissaro.json
+ABOVE sn35.101:1.7
+Pali: Rūpā na tumhākaṁ. 
+Sujato: Sights … 
+Translator: Forms are not yours… 
+JUDGE sn35.101:1.8
+Pali: Te pajahatha. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.101:1.9
+Pali: Te vo pahīnā hitāya sukhāya bhavissanti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.101:1.10
+Pali: Cakkhuviññāṇaṁ na tumhākaṁ. 
+Sujato: Eye consciousness … 
+Translator: Eye-consciousness isn’t yours… 
+
+=== RUN 420: sn35.101:1.11 sn35.101:1.12 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.101_translation-en-thanissaro.json
+ABOVE sn35.101:1.10
+Pali: Cakkhuviññāṇaṁ na tumhākaṁ. 
+Sujato: Eye consciousness … 
+Translator: Eye-consciousness isn’t yours… 
+JUDGE sn35.101:1.11
+Pali: Taṁ pajahatha. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.101:1.12
+Pali: Taṁ vo pahīnaṁ hitāya sukhāya bhavissati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.101:1.13
+Pali: Cakkhusamphasso na tumhākaṁ. 
+Sujato: Eye contact … 
+Translator: Eye-contact isn’t yours… 
+
+=== RUN 421: sn35.101:1.14 sn35.101:1.15 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.101_translation-en-thanissaro.json
+ABOVE sn35.101:1.13
+Pali: Cakkhusamphasso na tumhākaṁ. 
+Sujato: Eye contact … 
+Translator: Eye-contact isn’t yours… 
+JUDGE sn35.101:1.14
+Pali: Taṁ pajahatha. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.101:1.15
+Pali: So vo pahīno hitāya sukhāya bhavissati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.101:1.16
+Pali: Yampidaṁ cakkhusamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi na tumhākaṁ. 
+Sujato: The pleasant, painful, or neutral feeling that arises dependent on eye contact isn’t yours: give it up. 
+Translator: Whatever arises in dependence on eye-contact—experienced either as pleasure, as pain, or as neither-pleasure-nor-pain—that too isn’t yours: 
+
+=== RUN 422: sn35.101:2.2 sn35.101:2.3 sn35.101:2.4 sn35.101:2.5 sn35.101:2.6 sn35.101:2.7 sn35.101:2.8 sn35.101:2.9 sn35.101:2.10 sn35.101:2.11 sn35.101:2.12 sn35.101:2.13 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.101_translation-en-thanissaro.json
+ABOVE sn35.101:2.1
+Pali: Jivhā na tumhākaṁ. 
+Sujato: The ear … nose … tongue … body … 
+Translator: “The ear isn’t yours: Let go of it… “The nose isn’t yours: Let go of it… “The tongue isn’t yours: Let go of it… “The body’s not yours: 
+JUDGE sn35.101:2.2
+Pali: Taṁ pajahatha. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.101:2.3
+Pali: Sā vo pahīnā hitāya sukhāya bhavissati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.101:2.4
+Pali: Rasā na tumhākaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.101:2.5
+Pali: Te pajahatha. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.101:2.6
+Pali: Te vo pahīnā hitāya sukhāya bhavissanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.101:2.7
+Pali: Jivhāviññāṇaṁ na tumhākaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.101:2.8
+Pali: Taṁ pajahatha. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.101:2.9
+Pali: Taṁ vo pahīnaṁ hitāya sukhāya bhavissati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.101:2.10
+Pali: Jivhāsamphasso na tumhākaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.101:2.11
+Pali: Taṁ pajahatha. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.101:2.12
+Pali: So vo pahīno hitāya sukhāya bhavissati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.101:2.13
+Pali: Yampidaṁ jivhāsamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi na tumhākaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.101:2.14
+Pali: Taṁ pajahatha. Taṁ vo pahīnaṁ hitāya sukhāya bhavissati …pe…. 
+Sujato: (empty)
+Translator: Let go of it… 
+
+=== RUN 423: sn35.101:3.5 sn35.101:3.6 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.101_translation-en-thanissaro.json
+ABOVE sn35.101:3.4
+Pali: Dhammā na tumhākaṁ. 
+Sujato: Ideas … 
+Translator: Ideas are not yours… 
+JUDGE sn35.101:3.5
+Pali: Te pajahatha. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.101:3.6
+Pali: Te vo pahīnā hitāya sukhāya bhavissanti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.101:3.7
+Pali: Manoviññāṇaṁ na tumhākaṁ. 
+Sujato: Mind consciousness … 
+Translator: Intellect-consciousness isn’t yours… 
+
+=== RUN 424: sn35.101:3.8 sn35.101:3.9 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.101_translation-en-thanissaro.json
+ABOVE sn35.101:3.7
+Pali: Manoviññāṇaṁ na tumhākaṁ. 
+Sujato: Mind consciousness … 
+Translator: Intellect-consciousness isn’t yours… 
+JUDGE sn35.101:3.8
+Pali: Taṁ pajahatha. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.101:3.9
+Pali: Taṁ vo pahīnaṁ hitāya sukhāya bhavissati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.101:3.10
+Pali: Manosamphasso na tumhākaṁ. 
+Sujato: Mind contact … 
+Translator: Intellect-contact isn’t yours… 
+
+=== RUN 425: sn35.101:3.11 sn35.101:3.12 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.101_translation-en-thanissaro.json
+ABOVE sn35.101:3.10
+Pali: Manosamphasso na tumhākaṁ. 
+Sujato: Mind contact … 
+Translator: Intellect-contact isn’t yours… 
+JUDGE sn35.101:3.11
+Pali: Taṁ pajahatha. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.101:3.12
+Pali: So vo pahīno hitāya sukhāya bhavissati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.101:3.13
+Pali: Yampidaṁ manosamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi na tumhākaṁ. 
+Sujato: The pleasant, painful, or neutral feeling that arises dependent on mind contact isn’t yours: give it up. 
+Translator: Whatever arises in dependence on intellect-contact—experienced either as pleasure, as pain, or as neither-pleasure-nor-pain—that too isn’t yours: 
+
+=== RUN 426: sn35.101:8.5 sn35.101:8.6 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.101_translation-en-thanissaro.json
+ABOVE sn35.101:8.4
+Pali: Rūpā na tumhākaṁ … 
+Sujato: (empty)
+Translator: The ear… The nose… The tongue… The body… The intellect’s not yours: Let go of it. Your letting go of it will be for your long-term happiness & benefit… 
+JUDGE sn35.101:8.5
+Pali: cakkhuviññāṇaṁ … 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.101:8.6
+Pali: cakkhusamphasso …pe… 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn35.101:8.7
+Pali: yampidaṁ manosamphassapaccayā uppajjati vedayitaṁ sukhaṁ vā dukkhaṁ vā adukkhamasukhaṁ vā tampi na tumhākaṁ. 
+Sujato: The pleasant, painful, or neutral feeling that arises dependent on mind contact isn’t yours: give it up. 
+Translator: Whatever arises in dependence on intellect-contact—experienced either as pleasure, as pain, or as neither-pleasure-nor-pain—that too isn’t yours: 
+
+=== RUN 427: sn35.116:4.1 sn35.116:4.2 sn35.116:4.3 sn35.116:4.4 sn35.116:4.5 sn35.116:4.6 sn35.116:4.7 sn35.116:4.8 sn35.116:4.9 sn35.116:4.10 sn35.116:4.11 sn35.116:4.12 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.116_translation-en-thanissaro.json
+ABOVE sn35.116:3.2
+Pali: Sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdiṁsu. Ekamantaṁ nisinnā kho te bhikkhū āyasmantaṁ ānandaṁ etadavocuṁ: 
+Sujato: When the greetings and polite conversation were over, they sat down to one side. They told him what had happened, and said, 
+Translator: After an exchange of friendly greetings & courtesies, they sat to one side. As they were sitting there, they [told him what had happened, and added,] 
+JUDGE sn35.116:4.1
+Pali: “Idaṁ kho no, āvuso ānanda, bhagavā saṅkhittena uddesaṁ uddisitvā vitthārena atthaṁ avibhajitvā uṭṭhāyāsanā vihāraṁ paviṭṭho: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.116:4.2
+Pali: ‘nāhaṁ, bhikkhave, gamanena lokassa antaṁ ñāteyyaṁ, daṭṭheyyaṁ, patteyyanti vadāmi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.116:4.3
+Pali: Na ca panāhaṁ, bhikkhave, appatvā lokassa antaṁ dukkhassa antakiriyaṁ vadāmī’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.116:4.4
+Pali: Tesaṁ no, āvuso, amhākaṁ acirapakkantassa bhagavato etadahosi: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.116:4.5
+Pali: ‘idaṁ kho no, āvuso, bhagavā saṅkhittena uddesaṁ uddisitvā vitthārena atthaṁ avibhajitvā uṭṭhāyāsanā vihāraṁ paviṭṭho—
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.116:4.6
+Pali: nāhaṁ, bhikkhave, gamanena lokassa antaṁ ñāteyyaṁ, daṭṭheyyaṁ, patteyyanti vadāmi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.116:4.7
+Pali: Na ca panāhaṁ, bhikkhave, appatvā lokassa antaṁ dukkhassa antakiriyaṁ vadāmīti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.116:4.8
+Pali: Ko nu kho imassa bhagavatā saṅkhittena uddesassa uddiṭṭhassa vitthārena atthaṁ avibhattassa vitthārena atthaṁ vibhajeyyā’ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.116:4.9
+Pali: Tesaṁ no, āvuso, amhākaṁ etadahosi: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.116:4.10
+Pali: ‘ayaṁ kho, āvuso, āyasmā ānando satthu ceva saṁvaṇṇito, sambhāvito ca viññūnaṁ sabrahmacārīnaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.116:4.11
+Pali: Pahoti cāyasmā ānando imassa bhagavatā saṅkhittena uddesassa uddiṭṭhassa vitthārena atthaṁ avibhattassa vitthārena atthaṁ vibhajituṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.116:4.12
+Pali: Yannūna mayaṁ yenāyasmā ānando tenupasaṅkameyyāma; upasaṅkamitvā āyasmantaṁ ānandaṁ etamatthaṁ paṭipuccheyyāmā’ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.116:4.13
+Pali: Vibhajatāyasmā ānando”ti. 
+Sujato: “May Venerable Ānanda please explain this.” 
+Translator: “Analyze the meaning, Ven. Ānanda!” 
+
+=== RUN 428: sn35.117:5.1 sn35.117:5.2 sn35.117:5.3 sn35.117:5.4 sn35.117:5.5 sn35.117:5.6 sn35.117:5.7 sn35.117:5.8 sn35.117:5.9 sn35.117:5.10 sn35.117:5.11 sn35.117:5.12 sn35.117:5.13 sn35.117:5.14 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.117_translation-en-thanissaro.json
+ABOVE sn35.117:4.2
+Pali: Sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdiṁsu. Ekamantaṁ nisinnā kho te bhikkhū āyasmantaṁ ānandaṁ etadavocuṁ: 
+Sujato: When the greetings and polite conversation were over, they sat down to one side. They told him what had happened, and said, 
+Translator: After an exchange of friendly greetings & courtesies, they sat to one side. As they were sitting there, they [told him what had happened, and added,] 
+JUDGE sn35.117:5.1
+Pali: “Idaṁ kho no, āvuso ānanda, bhagavā saṅkhittena uddesaṁ uddisitvā vitthārena atthaṁ avibhajitvā uṭṭhāyāsanā vihāraṁ paviṭṭho: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.117:5.2
+Pali: ‘tasmātiha, bhikkhave, se āyatane veditabbe yattha cakkhu ca nirujjhati, rūpasaññā ca nirujjhati, se āyatane veditabbe …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.117:5.3
+Pali: yattha jivhā ca nirujjhati, rasasaññā ca nirujjhati, se āyatane veditabbe …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.117:5.4
+Pali: yattha mano ca nirujjhati, dhammasaññā ca nirujjhati, se āyatane veditabbe’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.117:5.5
+Pali: Tesaṁ no, āvuso, amhākaṁ acirapakkantassa bhagavato etadahosi: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.117:5.6
+Pali: ‘idaṁ kho no, āvuso, bhagavā saṅkhittena uddesaṁ uddisitvā vitthārena atthaṁ avibhajitvā uṭṭhāyāsanā vihāraṁ paviṭṭho: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.117:5.7
+Pali: “tasmātiha, bhikkhave, se āyatane veditabbe yattha cakkhu ca nirujjhati, rūpasaññā ca nirujjhati, se āyatane veditabbe …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.117:5.8
+Pali: yattha jivhā ca nirujjhati, rasasaññā ca nirujjhati se āyatane veditabbe …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.117:5.9
+Pali: yattha mano ca nirujjhati, dhammasaññā ca nirujjhati, se āyatane veditabbe”ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.117:5.10
+Pali: Ko nu kho imassa bhagavatā saṅkhittena uddesassa uddiṭṭhassa vitthārena atthaṁ avibhattassa vitthārena atthaṁ vibhajeyyā’ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.117:5.11
+Pali: Tesaṁ no, āvuso, amhākaṁ etadahosi: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.117:5.12
+Pali: ‘ayaṁ kho āyasmā ānando satthu ceva saṁvaṇṇito, sambhāvito ca viññūnaṁ sabrahmacārīnaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.117:5.13
+Pali: Pahoti cāyasmā ānando imassa bhagavatā saṅkhittena uddesassa uddiṭṭhassa vitthārena atthaṁ avibhattassa vitthārena atthaṁ vibhajituṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.117:5.14
+Pali: Yannūna mayaṁ yenāyasmā ānando tenupasaṅkameyyāma; upasaṅkamitvā āyasmantaṁ ānandaṁ etamatthaṁ paṭipuccheyyāmā’ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.117:5.15
+Pali: Vibhajatāyasmā ānando”ti. 
+Sujato: “May Venerable Ānanda please explain this.” 
+Translator: “Analyze the meaning, Ven. Ānanda!” 
+
+=== RUN 429: sn35.117:8.6 sn35.117:8.7 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.117_translation-en-thanissaro.json
+ABOVE sn35.117:8.5
+Pali: Saḷāyatananirodhaṁ no etaṁ, āvuso, bhagavatā sandhāya bhāsitaṁ: 
+Sujato: The Buddha was referring to the cessation of the six sense fields when he said: 
+Translator: This was stated by the Blessed One with regard to the cessation of the six sense media.” 
+JUDGE sn35.117:8.6
+Pali: ‘tasmātiha, bhikkhave, se āyatane veditabbe, yattha cakkhu ca nirujjhati, rūpasaññā ca nirujjhati, se āyatane veditabbe …pe… 
+Sujato: ‘So you should understand that dimension where the eye ceases and perception of sights fades away. You should understand that dimension where the ear … nose … tongue … body … 
+Translator: (empty)
+JUDGE sn35.117:8.7
+Pali: yattha mano ca nirujjhati, dhammasaññā ca nirujjhati, se āyatane veditabbe’ti. 
+Sujato: mind ceases and perception of ideas fades away.’ 
+Translator: (empty)
+BELOW (outside this paragraph) sn35.117:8.8
+Pali: Ayaṁ kho, āvuso, bhagavā saṅkhittena uddesaṁ uddisitvā vitthārena atthaṁ avibhajitvā uṭṭhāyāsanā vihāraṁ paviṭṭho: 
+Sujato: The Buddha gave this brief summary, then entered his dwelling without explaining the meaning in detail. 
+Translator: “So, concerning the brief statement the Blessed One made, after which he entered his dwelling without analyzing the detailed meaning—i.e., 
+
+=== RUN 430: sn35.228:2.4 sn35.228:2.5 sn35.228:2.6 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.228_translation-en-thanissaro.json
+ABOVE sn35.228:2.3
+Pali: jivhā, bhikkhave, purisassa samuddo; 
+Sujato: For a person, the ear … nose … tongue … body … 
+Translator: “The ear is a person’s ocean… “The nose is a person’s ocean… “The tongue is a person’s ocean… “The body is a person’s ocean… 
+JUDGE sn35.228:2.4
+Pali: tassa rasamayo vego. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.228:2.5
+Pali: Yo taṁ rasamayaṁ vegaṁ sahati, ayaṁ vuccati, bhikkhave, atari jivhāsamuddaṁ saūmiṁ sāvaṭṭaṁ sagāhaṁ sarakkhasaṁ; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.228:2.6
+Pali: tiṇṇo pāraṅgato thale tiṭṭhati brāhmaṇo …pe… 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.228:2.7
+Pali: mano, bhikkhave, purisassa samuddo; 
+Sujato: mind is an ocean, 
+Translator: “The intellect is a person’s ocean, 
+
+=== RUN 431: sn35.231:5.2 sn35.231:5.3 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.231_translation-en-thanissaro.json
+ABOVE sn35.231:5.1
+Pali: “Evameva kho, bhikkhave, yassa kassaci bhikkhussa vā bhikkhuniyā vā cakkhuviññeyyesu rūpesu yo rāgo so atthi, yo doso so atthi, yo moho so atthi, yo rāgo so appahīno, yo doso so appahīno, yo moho so appahīno, tassa parittā cepi cakkhuviññeyyā rūpā cakkhussa āpāthaṁ āgacchanti pariyādiyantevassa cittaṁ; ko pana vādo adhimattānaṁ. 
+Sujato: “In the same way, take any monk or nun who, when it comes to sights known by the eye, still has greed, hate, and delusion, and has not given them up. If even trivial sights come into their range of vision they overcome their mind, let alone those that are compelling. 
+Translator: “In the same way, monks, for any monk or nun who, with regard to forms cognizable via the eye… 
+JUDGE sn35.231:5.2
+Pali: Taṁ kissa hetu? 
+Sujato: Why is that? 
+Translator: (empty)
+JUDGE sn35.231:5.3
+Pali: Yo, bhikkhave, rāgo so atthi, yo doso so atthi, yo moho so atthi, yo rāgo so appahīno, yo doso so appahīno, yo moho so appahīno …pe…. 
+Sujato: Because they still have greed, hate, and delusion, and have not given them up. 
+Translator: (empty)
+BELOW (outside this paragraph) sn35.231:6.1
+Pali: Yassa kassaci, bhikkhave, bhikkhussa vā bhikkhuniyā vā jivhāviññeyyesu rasesu yo rāgo so atthi …pe…. 
+Sujato: When it comes to sounds … smells … tastes … touches … 
+Translator: sounds cognizable via the ear… aromas cognizable via the nose… flavors cognizable via the tongue… tactile sensations cognizable via the body… 
+
+=== RUN 432: sn35.231:10.2 sn35.231:10.3 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.231_translation-en-thanissaro.json
+ABOVE sn35.231:10.1
+Pali: “Evameva kho, bhikkhave, yassa kassaci bhikkhussa vā bhikkhuniyā vā cakkhuviññeyyesu rūpesu yo rāgo so natthi, yo doso so natthi, yo moho so natthi, yo rāgo so pahīno, yo doso so pahīno, yo moho so pahīno, tassa adhimattā cepi cakkhuviññeyyā rūpā cakkhussa āpāthaṁ āgacchanti nevassa cittaṁ pariyādiyanti; ko pana vādo parittānaṁ. 
+Sujato: “In the same way, take any monk or nun who, when it comes to sights known by the eye, has no greed, hate, and delusion left, and has given them up. If even compelling sights come into their range of vision they don’t overcome their mind, let alone those that are trivial. 
+Translator: “In the same way, monks, for any monk or nun who, with regard to forms cognizable via the eye… 
+JUDGE sn35.231:10.2
+Pali: Taṁ kissa hetu? 
+Sujato: Why is that? 
+Translator: (empty)
+JUDGE sn35.231:10.3
+Pali: Yo, bhikkhave, rāgo so natthi, yo doso so natthi, yo moho so natthi, yo rāgo so pahīno, yo doso so pahīno, yo moho so pahīno …pe…. 
+Sujato: Because they have no greed, hate, and delusion left, and have given them up. 
+Translator: (empty)
+BELOW (outside this paragraph) sn35.231:11.1
+Pali: Yassa kassaci, bhikkhave, bhikkhussa vā bhikkhuniyā vā jivhāviññeyyesu rasesu …pe…. 
+Sujato: When it comes to sounds … smells … tastes … touches … 
+Translator: sounds cognizable via the ear… aromas cognizable via the nose… flavors cognizable via the tongue… tactile sensations cognizable via the body… 
+
+=== RUN 433: sn35.232:10.6 sn35.232:10.7 sn35.232:10.8 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.232_translation-en-thanissaro.json
+ABOVE sn35.232:10.5
+Pali: Saṁvijjati kho, āvuso, bhagavato sotaṁ. 
+Sujato: The Buddha has an ear … 
+Translator: “There is an ear in the Blessed One… 
+JUDGE sn35.232:10.6
+Pali: Suṇāti bhagavā sotena saddaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.232:10.7
+Pali: Chandarāgo bhagavato natthi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.232:10.8
+Pali: Suvimuttacitto bhagavā. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.232:10.9
+Pali: Saṁvijjati kho, āvuso, bhagavato ghānaṁ. 
+Sujato: nose … 
+Translator: “There is a nose in the Blessed One… 
+
+=== RUN 434: sn35.232:10.10 sn35.232:10.11 sn35.232:10.12 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.232_translation-en-thanissaro.json
+ABOVE sn35.232:10.9
+Pali: Saṁvijjati kho, āvuso, bhagavato ghānaṁ. 
+Sujato: nose … 
+Translator: “There is a nose in the Blessed One… 
+JUDGE sn35.232:10.10
+Pali: Ghāyati bhagavā ghānena gandhaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.232:10.11
+Pali: Chandarāgo bhagavato natthi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.232:10.12
+Pali: Suvimuttacitto bhagavā. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.232:10.13
+Pali: Saṁvijjati kho, āvuso, bhagavato jivhā. 
+Sujato: tongue … 
+Translator: “There is a tongue in the Blessed One… 
+
+=== RUN 435: sn35.232:10.14 sn35.232:10.15 sn35.232:10.16 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.232_translation-en-thanissaro.json
+ABOVE sn35.232:10.13
+Pali: Saṁvijjati kho, āvuso, bhagavato jivhā. 
+Sujato: tongue … 
+Translator: “There is a tongue in the Blessed One… 
+JUDGE sn35.232:10.14
+Pali: Sāyati bhagavā jivhāya rasaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.232:10.15
+Pali: Chandarāgo bhagavato natthi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.232:10.16
+Pali: Suvimuttacitto bhagavā. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.232:10.17
+Pali: Saṁvijjati kho, āvuso, bhagavato kāyo. 
+Sujato: The Buddha has a body 
+Translator: “There is a body in the Blessed One… 
+
+=== RUN 436: sn35.232:10.18 sn35.232:10.19 sn35.232:10.20 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.232_translation-en-thanissaro.json
+ABOVE sn35.232:10.17
+Pali: Saṁvijjati kho, āvuso, bhagavato kāyo. 
+Sujato: The Buddha has a body 
+Translator: “There is a body in the Blessed One… 
+JUDGE sn35.232:10.18
+Pali: Phusati bhagavā kāyena phoṭṭhabbaṁ. 
+Sujato: with which he senses touch. 
+Translator: (empty)
+JUDGE sn35.232:10.19
+Pali: Chandarāgo bhagavato natthi. 
+Sujato: But he has no desire and greed, 
+Translator: (empty)
+JUDGE sn35.232:10.20
+Pali: Suvimuttacitto bhagavā. 
+Sujato: for his mind is well freed. 
+Translator: (empty)
+BELOW sn35.232:10.21
+Pali: Saṁvijjati kho, āvuso, bhagavato mano. 
+Sujato: The Buddha has a mind 
+Translator: “There is an intellect in the Blessed One. 
+
+=== RUN 437: sn35.234:5.3 sn35.234:5.4 sn35.234:5.5 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.234_translation-en-thanissaro.json
+ABOVE sn35.234:5.2
+Pali: “Evamāvuso”ti. 
+Sujato: (empty)
+Translator: … 
+JUDGE sn35.234:5.3
+Pali: “Yo cāvuso, hetu yo ca paccayo jivhāviññāṇassa uppādāya, so ca hetu, so ca paccayo sabbena sabbaṁ sabbathā sabbaṁ aparisesaṁ nirujjheyya, api nu kho jivhāviññāṇaṁ paññāyethā”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.234:5.4
+Pali: “No hetaṁ, āvuso”. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.234:5.5
+Pali: “Imināpi kho etaṁ, āvuso, pariyāyena bhagavatā akkhātaṁ vivaṭaṁ pakāsitaṁ: ‘itipidaṁ viññāṇaṁ anattā’”ti …pe…. 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn35.234:6.1
+Pali: “Manañcāvuso, paṭicca dhamme ca uppajjati manoviññāṇan”ti? 
+Sujato: mind consciousness arise dependent on the mind and ideas?” 
+Translator: “Doesn’t intellect-consciousness arise in dependence on the intellect & ideas?” 
+
+=== RUN 438: sn35.245:5.2 sn35.245:5.3 sn35.245:5.4 sn35.245:5.5 sn35.245:5.6 sn35.245:5.7 sn35.245:5.8 sn35.245:5.9 sn35.245:5.10 sn35.245:5.11 sn35.245:5.12 ===
+File: data/thanissaro/sutta/sn/sn35/sn35.245_translation-en-thanissaro.json
+ABOVE sn35.245:5.1
+Pali: Atha kho so bhikkhu asantuṭṭho tassa bhikkhussa pañhaveyyākaraṇena, yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ etadavoca: “idhāhaṁ, bhante, yenaññataro bhikkhu tenupasaṅkamiṁ; upasaṅkamitvā taṁ bhikkhuṁ etadavocaṁ: 
+Sujato: Not content with any of those answers, that mendicant went up to the Buddha and told him what had happened. Then he said to him, 
+Translator: The first monk, dissatisfied with this monk’s answer to his question, then went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there he [reported to the Blessed One his conversations with the other monks. The Blessed One then said:] 
+JUDGE sn35.245:5.2
+Pali: ‘kittāvatā nu kho, āvuso, bhikkhuno dassanaṁ suvisuddhaṁ hotī’ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:5.3
+Pali: Evaṁ vutte, bhante, so bhikkhu maṁ etadavoca: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:5.4
+Pali: ‘yato kho, āvuso, bhikkhu channaṁ phassāyatanānaṁ samudayañca atthaṅgamañca yathābhūtaṁ pajānāti, ettāvatā kho, āvuso, bhikkhuno dassanaṁ suvisuddhaṁ hotī’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:5.5
+Pali: Atha khvāhaṁ, bhante, asantuṭṭho tassa bhikkhussa pañhaveyyākaraṇena, yenaññataro bhikkhu tenupasaṅkamiṁ; upasaṅkamitvā taṁ bhikkhuṁ etadavocaṁ: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:5.6
+Pali: ‘kittāvatā nu kho, āvuso, bhikkhuno dassanaṁ suvisuddhaṁ hotī’ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:5.7
+Pali: Evaṁ vutte, bhante, so bhikkhu maṁ etadavoca: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:5.8
+Pali: ‘yato kho, āvuso, bhikkhu pañcannaṁ upādānakkhandhānaṁ …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:5.9
+Pali: catunnaṁ mahābhūtānaṁ samudayañca atthaṅgamañca yathābhūtaṁ pajānāti …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:5.10
+Pali: yaṁ kiñci samudayadhammaṁ sabbaṁ taṁ nirodhadhammanti yathābhūtaṁ pajānāti, ettāvatā kho, āvuso, bhikkhuno dassanaṁ suvisuddhaṁ hotī’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:5.11
+Pali: Atha khvāhaṁ, bhante, asantuṭṭho tassa bhikkhussa pañhaveyyākaraṇena yena bhagavā tenupasaṅkamiṁ (…). 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn35.245:5.12
+Pali: Kittāvatā nu kho, bhante, bhikkhuno dassanaṁ suvisuddhaṁ hotī”ti? 
+Sujato: “Sir, at what point is a mendicant’s vision well purified?” 
+Translator: (empty)
+BELOW (outside this paragraph) sn35.245:6.1
+Pali: “Seyyathāpi, bhikkhu, purisassa kiṁsuko adiṭṭhapubbo assa. 
+Sujato: “Mendicant, suppose a person had never seen a parrot tree before. 
+Translator: “Monk, it’s as if there were a man who had never seen a riddle tree. 
+
+=== RUN 439: sn36.19:2.2 sn36.19:2.3 sn36.19:2.4 sn36.19:2.5 ===
+File: data/thanissaro/sutta/sn/sn36/sn36.19_translation-en-thanissaro.json
+ABOVE sn36.19:2.1
+Pali: Dutiyampi kho āyasmā udāyī pañcakaṅgaṁ thapatiṁ etadavoca: 
+Sujato: For a second time, Udāyī said to him, 
+Translator: A second time… 
+JUDGE sn36.19:2.2
+Pali: “na kho, thapati, dve vedanā vuttā bhagavatā. 
+Sujato: “The Buddha hasn’t spoken of two feelings, 
+Translator: (empty)
+JUDGE sn36.19:2.3
+Pali: Tisso vedanā vuttā bhagavatā. 
+Sujato: he’s spoken of three.” 
+Translator: (empty)
+JUDGE sn36.19:2.4
+Pali: Sukhā vedanā, dukkhā vedanā, adukkhamasukhā vedanā—
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn36.19:2.5
+Pali: imā tisso vedanā vuttā bhagavatā”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn36.19:3.1
+Pali: Tatiyampi kho āyasmā udāyī pañcakaṅgaṁ thapatiṁ etadavoca: 
+Sujato: And for a third time, Udāyī said to him, 
+Translator: A third time, Ven. Udāyin said to Pañcakaṅga the carpenter, 
+
+=== RUN 440: sn41.3:3.5 sn41.3:3.6 ===
+File: data/thanissaro/sutta/sn/sn41/sn41.3_translation-en-thanissaro.json
+ABOVE sn41.3:3.4
+Pali: “yā imā, bhante thera, anekavihitā diṭṭhiyo loke uppajjanti—
+Sujato: “Honorable Senior, there are many different views that arise in the world. … 
+Translator: “Concerning the various views that arise in the world… 
+JUDGE sn41.3:3.5
+Pali: sassato lokoti vā, asassato lokoti vā, antavā lokoti vā, anantavā lokoti vā, taṁ jīvaṁ taṁ sarīranti vā, aññaṁ jīvaṁ aññaṁ sarīranti vā, hoti tathāgato paraṁ maraṇāti vā, na hoti tathāgato paraṁ maraṇāti vā, hoti ca na ca hoti tathāgato paraṁ maraṇāti vā, neva hoti na na hoti tathāgato paraṁ maraṇāti vā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn41.3:3.6
+Pali: Yāni cimāni dvāsaṭṭhi diṭṭhigatāni brahmajāle bhaṇitāni; 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn41.3:3.7
+Pali: imā nu kho, bhante, diṭṭhiyo kismiṁ sati honti, kismiṁ asati na hontī”ti? 
+Sujato: When what exists do these views come to be? When what doesn’t exist do these views not come to be?” 
+Translator: when what is present do they come into being, and what is absent do they not come into being?” 
+
+=== RUN 441: sn41.3:4.11 sn41.3:4.12 ===
+File: data/thanissaro/sutta/sn/sn41/sn41.3_translation-en-thanissaro.json
+ABOVE sn41.3:4.10
+Pali: “Yā imā, gahapati, anekavihitā diṭṭhiyo loke uppajjanti: 
+Sujato: “Householder, there are many different views that arise in the world. For example: 
+Translator: “Concerning the various views that arise in the world, householder… 
+JUDGE sn41.3:4.11
+Pali: ‘sassato lokoti vā, asassato lokoti vā, antavā lokoti vā anantavā lokoti vā, taṁ jīvaṁ taṁ sarīranti vā, aññaṁ jīvaṁ aññaṁ sarīranti vā, hoti tathāgato paraṁ maraṇāti vā, na hoti tathāgato paraṁ maraṇāti vā, hoti ca na ca hoti tathāgato paraṁ maraṇāti vā, neva hoti na na hoti tathāgato paraṁ maraṇāti vā. 
+Sujato: the cosmos is eternal, or not eternal, or finite, or infinite; the soul and the body are one and the same, or the soul is one thing, the body another; after death, a realized one still exists, or no longer exists, or both still exists and no longer exists, or neither still exists nor no longer exists. 
+Translator: (empty)
+JUDGE sn41.3:4.12
+Pali: Yāni cimāni dvāsaṭṭhi diṭṭhigatāni brahmajāle bhaṇitāni; 
+Sujato: And also the sixty-two misconceptions spoken of in ‘The Divine Net’. 
+Translator: (empty)
+BELOW (outside this paragraph) sn41.3:4.13
+Pali: imā kho, gahapati, diṭṭhiyo sakkāyadiṭṭhiyā sati honti, sakkāyadiṭṭhiyā asati na hontī’”ti. 
+Sujato: These views come to be when substantialist view exists. When substantialist view does not exist they do not come to be.” 
+Translator: when self-identity view is present, these views come into being; when self-identity view is absent, they don’t come into being.” 
+
+=== RUN 442: sn42.2:1.8 sn42.2:1.9 sn42.2:1.10 sn42.2:1.11 ===
+File: data/thanissaro/sutta/sn/sn42/sn42.2_translation-en-thanissaro.json
+ABOVE sn42.2:1.7
+Pali: Dutiyampi kho tālapuṭo naṭagāmaṇi bhagavantaṁ etadavoca: 
+Sujato: For a second time … 
+Translator: A second time… 
+JUDGE sn42.2:1.8
+Pali: “sutaṁ metaṁ, bhante, pubbakānaṁ ācariyapācariyānaṁ naṭānaṁ bhāsamānānaṁ: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn42.2:1.9
+Pali: ‘yo so naṭo raṅgamajjhe samajjamajjhe saccālikena janaṁ hāseti rameti, so kāyassa bhedā paraṁ maraṇā pahāsānaṁ devānaṁ sahabyataṁ upapajjatī’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn42.2:1.10
+Pali: Idha bhagavā kimāhā”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn42.2:1.11
+Pali: “Alaṁ, gāmaṇi, tiṭṭhatetaṁ. Mā maṁ etaṁ pucchī”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn42.2:1.12
+Pali: Tatiyampi kho tālapuṭo naṭagāmaṇi bhagavantaṁ etadavoca: 
+Sujato: And for a third time Tālapuṭa said to the Buddha: 
+Translator: A third time Tālapuṭa, the head of an acting troupe, said: 
+
+=== RUN 443: sn42.8:3.3 sn42.8:3.4 ===
+File: data/thanissaro/sutta/sn/sn42/sn42.8_translation-en-thanissaro.json
+ABOVE sn42.8:3.2
+Pali: yo so puriso adinnādāyī rattiyā vā divasassa vā samayāsamayaṁ upādāya, katamo bahutaro samayo, yaṁ vā so adinnaṁ ādiyati, yaṁ vā so adinnaṁ nādiyatī”ti. 
+Sujato: Take a person who steals … 
+Translator: If a man is one who steals… 
+JUDGE sn42.8:3.3
+Pali: “Yo so, bhante, puriso adinnādāyī rattiyā vā divasassa vā samayāsamayaṁ upādāya appataro so samayo, yaṁ so adinnaṁ ādiyati, atha kho sveva bahutaro samayo, yaṁ so adinnaṁ nādiyatī”ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn42.8:3.4
+Pali: “‘Yaṁbahulaṁ yaṁbahulañca, gāmaṇi, viharati tena tena nīyatī’ti, evaṁ sante na koci āpāyiko nerayiko bhavissati, yathā nigaṇṭhassa nāṭaputtassa vacanaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn42.8:4.1
+Pali: Taṁ kiṁ maññasi, gāmaṇi, yo so puriso kāmesumicchācārī rattiyā vā divasassa vā samayāsamayaṁ upādāya, katamo bahutaro samayo, yaṁ vā so kāmesu micchā carati, yaṁ vā so kāmesu micchā na caratī”ti? 
+Sujato: Take a person who commits sexual misconduct … 
+Translator: indulges in illicit sex… 
+
+=== RUN 444: sn42.8:4.2 sn42.8:4.3 ===
+File: data/thanissaro/sutta/sn/sn42/sn42.8_translation-en-thanissaro.json
+ABOVE sn42.8:4.1
+Pali: Taṁ kiṁ maññasi, gāmaṇi, yo so puriso kāmesumicchācārī rattiyā vā divasassa vā samayāsamayaṁ upādāya, katamo bahutaro samayo, yaṁ vā so kāmesu micchā carati, yaṁ vā so kāmesu micchā na caratī”ti? 
+Sujato: Take a person who commits sexual misconduct … 
+Translator: indulges in illicit sex… 
+JUDGE sn42.8:4.2
+Pali: “Yo so, bhante, puriso kāmesumicchācārī rattiyā vā divasassa vā samayāsamayaṁ upādāya, appataro so samayo yaṁ so kāmesu micchā carati, atha kho sveva bahutaro samayo, yaṁ so kāmesu micchā na caratī”ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn42.8:4.3
+Pali: “‘Yaṁbahulaṁ yaṁbahulañca, gāmaṇi, viharati tena tena nīyatī’ti, evaṁ sante na koci āpāyiko nerayiko bhavissati, yathā nigaṇṭhassa nāṭaputtassa vacanaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn42.8:5.1
+Pali: Taṁ kiṁ maññasi, gāmaṇi, yo so puriso musāvādī rattiyā vā divasassa vā samayāsamayaṁ upādāya, katamo bahutaro samayo, yaṁ vā so musā bhaṇati, yaṁ vā so musā na bhaṇatī”ti? 
+Sujato: Take a person who lies. If we compare periods of time during the day and night, which is more frequent: the occasions when they’re lying or when they’re not lying?” 
+Translator: tells lies, then taking into consideration time spent doing & not doing, whether by day or by night, which time is more: the time he spends telling lies or the time he spends not telling lies?” 
+
+=== RUN 445: sn42.8:6.11 sn42.8:6.12 sn42.8:6.13 ===
+File: data/thanissaro/sutta/sn/sn42/sn42.8_translation-en-thanissaro.json
+ABOVE sn42.8:6.10
+Pali: yo koci adinnaṁ ādiyati, sabbo so āpāyiko nerayikoti. 
+Sujato: (empty)
+Translator: ‘All those who steal… 
+JUDGE sn42.8:6.11
+Pali: Atthi kho pana mayā adinnaṁ ādinnaṁ ahampamhi āpāyiko nerayikoti diṭṭhiṁ paṭilabhati. 
+Sujato: stolen … 
+Translator: (empty)
+JUDGE sn42.8:6.12
+Pali: Taṁ, gāmaṇi, vācaṁ appahāya taṁ cittaṁ appahāya taṁ diṭṭhiṁ appaṭinissajjitvā yathābhataṁ nikkhitto evaṁ niraye. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn42.8:6.13
+Pali: Mayhaṁ kho satthā evaṁvādī evaṁdiṭṭhi—
+Sujato: (empty)
+Translator: (empty)
+BELOW sn42.8:6.14
+Pali: yo koci kāmesu micchā carati, sabbo so āpāyiko nerayiko’ti. 
+Sujato: (empty)
+Translator: All those who indulge in illicit sex… 
+
+=== RUN 446: sn42.8:6.15 sn42.8:6.16 sn42.8:6.17 sn42.8:6.18 ===
+File: data/thanissaro/sutta/sn/sn42/sn42.8_translation-en-thanissaro.json
+ABOVE sn42.8:6.14
+Pali: yo koci kāmesu micchā carati, sabbo so āpāyiko nerayiko’ti. 
+Sujato: (empty)
+Translator: All those who indulge in illicit sex… 
+JUDGE sn42.8:6.15
+Pali: Atthi kho pana mayā kāmesu micchā ciṇṇaṁ. 
+Sujato: committed sexual misconduct … 
+Translator: (empty)
+JUDGE sn42.8:6.16
+Pali: ‘Ahampamhi āpāyiko nerayiko’ti diṭṭhiṁ paṭilabhati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn42.8:6.17
+Pali: Taṁ, gāmaṇi, vācaṁ appahāya taṁ cittaṁ appahāya taṁ diṭṭhiṁ appaṭinissajjitvā yathābhataṁ nikkhitto evaṁ niraye. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn42.8:6.18
+Pali: Mayhaṁ kho satthā evaṁvādī evaṁdiṭṭhi—
+Sujato: (empty)
+Translator: (empty)
+BELOW sn42.8:6.19
+Pali: yo koci musā bhaṇati, sabbo so āpāyiko nerayikoti. 
+Sujato: (empty)
+Translator: All those who tell lies are destined for a plane of deprivation, are destined for hell.’ 
+
+=== RUN 447: sn42.8:8.2 sn42.8:8.3 sn42.8:8.4 sn42.8:8.5 sn42.8:8.6 sn42.8:8.7 sn42.8:8.8 ===
+File: data/thanissaro/sutta/sn/sn42/sn42.8_translation-en-thanissaro.json
+ABOVE sn42.8:8.1
+Pali: ‘Bhagavā kho anekapariyāyena adinnādānaṁ garahati vigarahati, adinnādānā viramathāti cāha. 
+Sujato: ‘In many ways the Buddha criticizes and denounces stealing …’ 
+Translator: “(He reflects:) ‘The Blessed One in a variety of ways criticizes & censures stealing… 
+JUDGE sn42.8:8.2
+Pali: Atthi kho pana mayā adinnaṁ ādinnaṁ yāvatakaṁ vā tāvatakaṁ vā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn42.8:8.3
+Pali: Yaṁ kho pana mayā adinnaṁ ādinnaṁ yāvatakaṁ vā tāvatakaṁ vā taṁ na suṭṭhu, taṁ na sādhu. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn42.8:8.4
+Pali: Ahañceva kho pana tappaccayā vippaṭisārī assaṁ, na metaṁ pāpaṁ kammaṁ akataṁ bhavissatī’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn42.8:8.5
+Pali: So iti paṭisaṅkhāya tañceva adinnādānaṁ pajahati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn42.8:8.6
+Pali: Āyatiñca adinnādānā paṭivirato hoti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn42.8:8.7
+Pali: Evametassa pāpassa kammassa pahānaṁ hoti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn42.8:8.8
+Pali: Evametassa pāpassa kammassa samatikkamo hoti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn42.8:9.1
+Pali: ‘Bhagavā kho pana anekapariyāyena kāmesumicchācāraṁ garahati vigarahati, kāmesumicchācārā viramathāti cāha. 
+Sujato: ‘In many ways the Buddha criticizes and denounces sexual misconduct …’ 
+Translator: indulging in illicit sex… 
+
+=== RUN 448: sn42.8:9.2 sn42.8:9.3 sn42.8:9.4 sn42.8:9.5 sn42.8:9.6 sn42.8:9.7 ===
+File: data/thanissaro/sutta/sn/sn42/sn42.8_translation-en-thanissaro.json
+ABOVE sn42.8:9.1
+Pali: ‘Bhagavā kho pana anekapariyāyena kāmesumicchācāraṁ garahati vigarahati, kāmesumicchācārā viramathāti cāha. 
+Sujato: ‘In many ways the Buddha criticizes and denounces sexual misconduct …’ 
+Translator: indulging in illicit sex… 
+JUDGE sn42.8:9.2
+Pali: Atthi kho pana mayā kāmesu micchā ciṇṇaṁ yāvatakaṁ vā tāvatakaṁ vā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn42.8:9.3
+Pali: Yaṁ kho pana mayā kāmesu micchā ciṇṇaṁ yāvatakaṁ vā tāvatakaṁ vā taṁ na suṭṭhu, taṁ na sādhu. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn42.8:9.4
+Pali: Ahañceva kho pana tappaccayā vippaṭisārī assaṁ, na metaṁ pāpaṁ kammaṁ akataṁ bhavissatī’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn42.8:9.5
+Pali: So iti paṭisaṅkhāya tañceva kāmesumicchācāraṁ pajahati, āyatiñca kāmesumicchācārā paṭivirato hoti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn42.8:9.6
+Pali: Evametassa pāpassa kammassa pahānaṁ hoti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn42.8:9.7
+Pali: Evametassa pāpassa kammassa samatikkamo hoti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn42.8:10.1
+Pali: ‘Bhagavā kho pana anekapariyāyena musāvādaṁ garahati vigarahati, musāvādā viramathāti cāha. 
+Sujato: ‘In many ways the Buddha criticizes and denounces lying, saying: “Stop lying!” 
+Translator: the telling of lies, and says, “Abstain from the telling of lies.” 
+
+=== RUN 449: sn43.12:2.8 sn43.12:2.9 sn43.12:2.10 ===
+File: data/thanissaro/sutta/sn/sn43/sn43.12_translation-en-thanissaro.json
+ABOVE sn43.12:2.7
+Pali: Vipassanā. 
+Sujato: Discernment. 
+Translator: Insight… 
+JUDGE sn43.12:2.8
+Pali: Ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo. 
+Sujato: This is called the path that leads to the unconditioned. …” 
+Translator: (empty)
+JUDGE sn43.12:2.9
+Pali: Iti kho, bhikkhave, desitaṁ vo mayā asaṅkhataṁ …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:2.10
+Pali: ayaṁ vo amhākaṁ anusāsanīti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) sn43.12:3.1
+Pali: Katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+Sujato: “And what is the path that leads to the unconditioned? 
+Translator: “And which is the path leading to the unfabricated? 
+
+=== RUN 450: sn43.12:8.6 sn43.12:8.7 ===
+File: data/thanissaro/sutta/sn/sn43/sn43.12_translation-en-thanissaro.json
+ABOVE sn43.12:8.5
+Pali: Idha, bhikkhave, bhikkhu vīriyindriyaṁ bhāveti vivekanissitaṁ …pe… 
+Sujato: A mendicant develops the faculty of energy … 
+Translator: There is the case where a monk develops the faculty of persistence… 
+JUDGE sn43.12:8.6
+Pali: ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE sn43.12:8.7
+Pali: katamo ca, bhikkhave, asaṅkhatagāmimaggo? 
+Sujato: (empty)
+Translator: (empty)
+BELOW sn43.12:8.8
+Pali: Idha, bhikkhave, bhikkhu satindriyaṁ bhāveti …pe… 
+Sujato: mindfulness … 
+Translator: mindfulness… 

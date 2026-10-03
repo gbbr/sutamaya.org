@@ -767,24 +767,6 @@
  "maliciou": [
   "harmful"
  ],
- "giv": [
-  "abandon"
- ],
- "entry": [
-  "stream"
- ],
- "stream": [
-  "entry"
- ],
- "perfection": [
-  "arahantship"
- ],
- "dwelling": [
-  "supporter"
- ],
- "family": [
-  "supporter"
- ],
  "gods": [
   "deva"
  ],
@@ -1385,6 +1367,9 @@
   "unreach",
   "realization",
   "unrealiz"
+ ],
+ "giv": [
+  "abandon"
  ],
  "staunch": [
   "steadfast",
@@ -2801,6 +2786,12 @@
   "liquor",
   "steal",
   "sexual"
+ ],
+ "entry": [
+  "stream"
+ ],
+ "stream": [
+  "entry"
  ],
  "experiential": [
   "verifi",
@@ -5144,6 +5135,9 @@
  "abus": [
   "insult"
  ],
+ "perfection": [
+  "arahantship"
+ ],
  "mahakotthita": [
   "kotthita",
   "varanasi",
@@ -5933,6 +5927,9 @@
   "steady",
   "imperturbability",
   "inclin"
+ ],
+ "dwelling": [
+  "supporter"
  ],
  "deft": [
   "dexterou",

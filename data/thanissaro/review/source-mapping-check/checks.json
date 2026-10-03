@@ -1,0 +1,75 @@
+{
+  "status": "verified in fresh working-tree copy and copied into repository",
+  "reviewedDocuments": [
+    "an5.254",
+    "an5.255",
+    "an5.256",
+    "an5.257-263",
+    "an5.264",
+    "an5.265-271"
+  ],
+  "reviewedRows": 67,
+  "cuts": {
+    "reviewed": 32,
+    "independentlyAgreed": 26,
+    "resolvedWithWholeTextFixes": 6
+  },
+  "wholeTextFixes": {
+    "passingGroups": 5,
+    "judgedBetter": 5,
+    "rejected": 0
+  },
+  "secondRead": {
+    "rows": 67,
+    "findings": 0,
+    "unresolved": 0
+  },
+  "crossFollowup": {
+    "lines": 0,
+    "stretches": 0
+  },
+  "listsFollowup": {
+    "lines": 0,
+    "stretches": 0
+  },
+  "sourcePageSHA256": "dc20e89494a7d0c6b9d32be6e3236948fadceaea839bddba4458ee6c56d55dcc",
+  "unchangedSourceBytes": true,
+  "removedDuplicatePages": 3,
+  "sourceManifestComplete": true,
+  "checkUpstream": "1430 pages match word for word; 0 differ",
+  "checkIntegrity": "0 problems",
+  "segmenter": "1437 texts; 0 empty; 0 not written; no stale settled cuts",
+  "mappedReport": {
+    "file": "sutta/an/an5/an5.254-271.html",
+    "uids": "an5.254 an5.255 an5.256 an5.257-263 an5.264 an5.265-271",
+    "lines": 49,
+    "segments": 36,
+    "unsure": 0,
+    "unsureKeys": [],
+    "joined": 6,
+    "merged": 2,
+    "elided": 4,
+    "long": 2,
+    "unmatched": 3,
+    "ratio": 1.29
+  },
+  "changedTranslationFiles": [
+    "data/thanissaro/sutta/an/an5/an5.256_translation-en-thanissaro.json",
+    "data/thanissaro/sutta/an/an5/an5.257-263_translation-en-thanissaro.json",
+    "data/thanissaro/sutta/an/an5/an5.264_translation-en-thanissaro.json",
+    "data/thanissaro/sutta/an/an5/an5.265-271_translation-en-thanissaro.json"
+  ],
+  "allOtherTextsAndNotesUnchanged": true,
+  "skippedFilesUntouched": true,
+  "segmenterChanges": false,
+  "freshCopy": "/private/tmp/thanissaro-mapping-fresh-sjoxtri6",
+  "placesFollowup": {
+    "items": 0,
+    "openings": 0,
+    "above": 0,
+    "below": 0,
+    "waiting": 0
+  },
+  "finalReviewInputsVerified": true,
+  "baselineScopeVerified": true
+}

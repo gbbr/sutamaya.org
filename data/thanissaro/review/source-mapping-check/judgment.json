@@ -1,0 +1,27 @@
+[
+  {
+    "group": 1,
+    "verdict": "better",
+    "reason": "All five macchariya items now belong to the Pali list at 1.3; the imani kho summary at 1.4 contains only its own summary sentence. The final meanest-stinginess sentence remains correctly at 1.5. Combined source text and order are preserved exactly."
+  },
+  {
+    "group": 2,
+    "verdict": "better",
+    "reason": "Katamesam pancannam now receives its own question at 1.2. The complete monastery sentence stays at 1.3, while the distinct family-through-Dhamma ellipsis series goes to its own Pali key at 1.4. The opening and final formula remain complete, and combined source text and order are preserved exactly."
+  },
+  {
+    "group": 3,
+    "verdict": "better",
+    "reason": "The two questions and their two lists now occupy their corresponding negative and positive Pali keys in order. The negative summary at 1.4 receives the complete negative expanded series, replacing an incorrectly positive fragment; both positive initial and final series now remain complete at 2.1 and 2.4. The English expansions of the Pali final arahantship summaries stay together as complete sentences. Combined source text and order are preserved exactly, with no duplicated occurrence."
+  },
+  {
+    "group": 4,
+    "verdict": "better",
+    "reason": "The sole expressed positive first-jhana sentence matches the opening positive formula at 2.1. Its trailing ellipsis abbreviates the later question, list, and final formula, so those later keys appropriately remain empty instead of claiming the expressed sentence at 2.4. The adjacent negative formulas remain correctly assigned, and combined source text and order are preserved exactly."
+  },
+  {
+    "group": 5,
+    "verdict": "better",
+    "reason": "The final arahantship item completes the positive series explicitly given in the Pali at 2.1, so it belongs with that whole sentence. The trailing ellipsis abbreviates the question, list, and final formula at later keys; it supplies no separate expressed final-summary sentence for 2.4. Combined source text and order are preserved exactly."
+  }
+]

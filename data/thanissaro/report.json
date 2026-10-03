@@ -140,48 +140,6 @@
   "ratio": 1.12
  },
  {
-  "file": "sutta/an/an5/an5.257-263.html",
-  "uids": "an5.257-263",
-  "lines": 9,
-  "segments": 8,
-  "unsure": 0,
-  "unsureKeys": [],
-  "joined": 0,
-  "merged": 0,
-  "elided": 0,
-  "long": 0,
-  "unmatched": 2,
-  "ratio": 1.66
- },
- {
-  "file": "sutta/an/an5/an5.264.html",
-  "uids": "an5.264",
-  "lines": 9,
-  "segments": 5,
-  "unsure": 0,
-  "unsureKeys": [],
-  "joined": 3,
-  "merged": 0,
-  "elided": 3,
-  "long": 1,
-  "unmatched": 0,
-  "ratio": 1.02
- },
- {
-  "file": "sutta/an/an5/an5.265-271.html",
-  "uids": "an5.265-271",
-  "lines": 10,
-  "segments": 5,
-  "unsure": 0,
-  "unsureKeys": [],
-  "joined": 3,
-  "merged": 1,
-  "elided": 2,
-  "long": 1,
-  "unmatched": 0,
-  "ratio": 1.12
- },
- {
   "file": "sutta/an/an1/an1.140-141.html",
   "uids": "an1.140 an1.141",
   "lines": 8,
@@ -3964,18 +3922,18 @@
   "ratio": 1.55
  },
  {
-  "file": "sutta/an/an5/an5.254-259.html",
-  "uids": "an5.254 an5.255 an5.256 an5.257 an5.258 an5.259",
-  "lines": 21,
-  "segments": 18,
+  "file": "sutta/an/an5/an5.254-271.html",
+  "uids": "an5.254 an5.255 an5.256 an5.257-263 an5.264 an5.265-271",
+  "lines": 49,
+  "segments": 36,
   "unsure": 0,
   "unsureKeys": [],
-  "joined": 0,
-  "merged": 0,
-  "elided": 0,
-  "long": 0,
-  "unmatched": 1,
-  "ratio": 3
+  "joined": 6,
+  "merged": 2,
+  "elided": 4,
+  "long": 2,
+  "unmatched": 3,
+  "ratio": 1.29
  },
  {
   "file": "sutta/an/an5/an5.26.html",

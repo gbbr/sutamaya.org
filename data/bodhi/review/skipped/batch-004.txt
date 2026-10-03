@@ -1,0 +1,1637 @@
+bodhi: skipped-Pali review batch 004
+Read the full English above, each original Pali line, and the next English. Sujato is context only.
+covered = this line's own content is explicitly rendered by the English above, including complete lists.
+skipped = abbreviated or compressed repetition, even if mentioned, or omitted. When in doubt, skipped.
+Judge each key independently; a run may be mixed. An ellipsis alone does not decide.
+Only runs of two or more empty prose lines in the same paragraph are reviewed; lone lines join automatically.
+Write <key> covered|skipped|unsure for every RUN key, then # done. Do not mark context keys.
+
+=== RUN 151: mn27:7.2 mn27:7.3 mn27:7.4 mn27:7.5 mn27:7.6 mn27:7.7 mn27:7.8 mn27:7.9 ===
+File: data/bodhi/sutta/mn/mn27_translation-en-bodhi.json
+ABOVE mn27:7.1
+Pali: samaṇapaṇḍite nipuṇe kataparappavāde vālavedhirūpe te bhindantā maññe caranti paññāgatena diṭṭhigatāni. 
+Sujato: Furthermore, I see some astute ascetics who are subtle, accomplished in the doctrines of others, hair-splitters. … 
+Translator: “Again, I have seen certain learned recluses who were clever…
+JUDGE mn27:7.2
+Pali: Te suṇanti: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn27:7.3
+Pali: ‘samaṇo khalu bho gotamo amukaṁ nāma gāmaṁ vā nigamaṁ vā osarissatī’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn27:7.4
+Pali: Te pañhaṁ abhisaṅkharonti ‘imaṁ mayaṁ pañhaṁ samaṇaṁ gotamaṁ upasaṅkamitvā pucchissāma. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn27:7.5
+Pali: Evañce no puṭṭho evaṁ byākarissati, evamassa mayaṁ vādaṁ āropessāma. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn27:7.6
+Pali: Evañcepi no puṭṭho evaṁ byākarissati, evampissa mayaṁ vādaṁ āropessāmā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn27:7.7
+Pali: Te suṇanti ‘samaṇo khalu bho gotamo amukaṁ nāma gāmaṁ vā nigamaṁ vā osaṭo’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn27:7.8
+Pali: Te yena samaṇo gotamo tenupasaṅkamanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn27:7.9
+Pali: Te samaṇo gotamo dhammiyā kathāya sandasseti samādapeti samuttejeti sampahaṁseti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn27:7.10
+Pali: Te samaṇena gotamena dhammiyā kathāya sandassitā samādapitā samuttejitā sampahaṁsitā na ceva samaṇaṁ gotamaṁ pañhaṁ pucchanti, kutossa vādaṁ āropessanti? 
+Sujato: They don’t even get around to asking their question to the ascetic Gotama, so how could they refute his answer? 
+Translator: They do not so much as ask him the question, so how should they refute his doctrine? 
+
+=== RUN 152: mn28:23.2 mn28:23.3 mn28:23.4 mn28:23.5 mn28:23.6 mn28:23.7 ===
+File: data/bodhi/sutta/mn/mn28_translation-en-bodhi.json
+ABOVE mn28:23.1
+Pali: Tañce, āvuso, bhikkhuṁ pare akkosanti paribhāsanti rosenti vihesenti. 
+Sujato: If others abuse, attack, harass, and trouble that mendicant, they understand: 
+Translator: “So then, if others abuse, revile, scold, and harass a bhikkhu who has seen this element as it actually is, he understands thus:… repeat §§8—10…
+JUDGE mn28:23.2
+Pali: So evaṁ pajānāti, uppannā kho me ayaṁ sotasamphassajā dukkhā vedanā. 
+Sujato: ‘This painful feeling born of ear contact has arisen in me. 
+Translator: (empty)
+JUDGE mn28:23.3
+Pali: Sā ca kho paṭicca, no apaṭicca. 
+Sujato: That’s dependent, not independent. 
+Translator: (empty)
+JUDGE mn28:23.4
+Pali: Kiṁ paṭicca? 
+Sujato: Dependent on what? 
+Translator: (empty)
+JUDGE mn28:23.5
+Pali: Phassaṁ paṭicca. 
+Sujato: Dependent on contact.’ 
+Translator: (empty)
+JUDGE mn28:23.6
+Pali: Sopi phasso aniccoti passati, vedanā aniccāti passati, saññā aniccāti passati, saṅkhārā aniccāti passati, viññāṇaṁ aniccanti passati. 
+Sujato: They see that contact, feeling, perception, choices, and consciousness are impermanent. 
+Translator: (empty)
+JUDGE mn28:23.7
+Pali: Tassa dhātārammaṇameva cittaṁ pakkhandati pasīdati santiṭṭhati adhimuccati. 
+Sujato: Based on that element alone, their mind leaps forth, gains confidence, settles down, and becomes decided. 
+Translator: (empty)
+BELOW (outside this paragraph) mn28:25.11
+Pali: Ettāvatāpi kho, āvuso, bhikkhuno bahukataṁ hoti. 
+Sujato: At this point, much has been done by that mendicant. 
+Translator: At that point too, friends, much has been done by that bhikkhu. 
+
+=== RUN 153: mn29:2.15 mn29:2.16 mn29:2.17 mn29:2.18 mn29:2.19 ===
+File: data/bodhi/sutta/mn/mn29_translation-en-bodhi.json
+ABOVE mn29:2.14
+Pali: Evameva kho, bhikkhave, idhekacco kulaputto saddhā agārasmā anagāriyaṁ pabbajito hoti: 
+Sujato: (empty)
+Translator: So too, bhikkhus, here some clansman goes forth out of faith… 
+JUDGE mn29:2.15
+Pali: ‘otiṇṇomhi jātiyā jarāya maraṇena sokehi paridevehi dukkhehi domanassehi upāyāsehi, dukkhotiṇṇo dukkhapareto, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:2.16
+Pali: appeva nāma imassa kevalassa dukkhakkhandhassa antakiriyā paññāyethā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:2.17
+Pali: So evaṁ pabbajito samāno lābhasakkārasilokaṁ abhinibbatteti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:2.18
+Pali: So tena lābhasakkārasilokena attamano hoti paripuṇṇasaṅkappo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:2.19
+Pali: So tena lābhasakkārasilokena attānukkaṁseti, paraṁ vambheti ‘ahamasmi lābhasakkārasilokavā, ime panaññe bhikkhū appaññātā appesakkhā’ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn29:2.20
+Pali: So tena lābhasakkārasilokena majjati pamajjati pamādaṁ āpajjati, pamatto samāno dukkhaṁ viharati. 
+Sujato: (empty)
+Translator: …he lives in suffering. 
+
+=== RUN 154: mn29:4.2 mn29:4.3 mn29:4.4 mn29:4.5 mn29:4.6 mn29:4.7 mn29:4.8 mn29:4.9 mn29:4.10 mn29:4.11 mn29:4.12 ===
+File: data/bodhi/sutta/mn/mn29_translation-en-bodhi.json
+ABOVE mn29:4.1
+Pali: Evameva kho, bhikkhave, idhekacco kulaputto saddhā agārasmā anagāriyaṁ pabbajito hoti: 
+Sujato: (empty)
+Translator: So too, bhikkhus, here some clansman goes forth out of faith…he lives in suffering. 
+JUDGE mn29:4.2
+Pali: ‘otiṇṇomhi jātiyā jarāya maraṇena sokehi paridevehi dukkhehi domanassehi upāyāsehi, dukkhotiṇṇo dukkhapareto, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.3
+Pali: appeva nāma imassa kevalassa dukkhakkhandhassa antakiriyā paññāyethā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.4
+Pali: So evaṁ pabbajito samāno lābhasakkārasilokaṁ abhinibbatteti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.5
+Pali: So tena lābhasakkārasilokena na attamano hoti na paripuṇṇasaṅkappo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.6
+Pali: So tena lābhasakkārasilokena na attānukkaṁseti, na paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.7
+Pali: So tena lābhasakkārasilokena na majjati nappamajjati na pamādaṁ āpajjati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.8
+Pali: Appamatto samāno sīlasampadaṁ ārādheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.9
+Pali: So tāya sīlasampadāya attamano hoti paripuṇṇasaṅkappo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.10
+Pali: So tāya sīlasampadāya attānukkaṁseti, paraṁ vambheti: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.11
+Pali: ‘ahamasmi sīlavā kalyāṇadhammo, ime panaññe bhikkhū dussīlā pāpadhammā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.12
+Pali: So tāya sīlasampadāya majjati pamajjati pamādaṁ āpajjati, pamatto samāno dukkhaṁ viharati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn29:4.13
+Pali: Ayaṁ vuccati, bhikkhave, bhikkhu papaṭikaṁ aggahesi brahmacariyassa; 
+Sujato: This is called a mendicant who has grabbed the shoots of the spiritual life 
+Translator: This bhikkhu is called one who has taken the outer bark of the holy life and stopped short with that. 
+
+=== RUN 155: mn29:4.35 mn29:4.36 mn29:4.37 mn29:4.38 mn29:4.39 mn29:4.40 mn29:4.41 mn29:4.42 mn29:4.43 mn29:4.44 mn29:4.45 mn29:4.46 mn29:4.47 ===
+File: data/bodhi/sutta/mn/mn29_translation-en-bodhi.json
+ABOVE mn29:4.34
+Pali: Evameva kho, bhikkhave, idhekacco kulaputto saddhā agārasmā anagāriyaṁ pabbajito hoti: 
+Sujato: (empty)
+Translator: So too, bhikkhus, here some clansman goes forth out of faith…he lives in suffering. 
+JUDGE mn29:4.35
+Pali: ‘otiṇṇomhi jātiyā jarāya maraṇena sokehi paridevehi dukkhehi domanassehi upāyāsehi, dukkhotiṇṇo dukkhapareto, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.36
+Pali: appeva nāma imassa kevalassa dukkhakkhandhassa antakiriyā paññāyethā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.37
+Pali: So evaṁ pabbajito samāno lābhasakkārasilokaṁ abhinibbatteti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.38
+Pali: So tena lābhasakkārasilokena na attamano hoti na paripuṇṇasaṅkappo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.39
+Pali: So tena lābhasakkārasilokena na attānukkaṁseti, na paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.40
+Pali: So tena lābhasakkārasilokena na majjati nappamajjati na pamādaṁ āpajjati, appamatto samāno sīlasampadaṁ ārādheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.41
+Pali: So tāya sīlasampadāya attamano hoti no ca kho paripuṇṇasaṅkappo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.42
+Pali: So tāya sīlasampadāya na attānukkaṁseti, na paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.43
+Pali: So tāya sīlasampadāya na majjati nappamajjati na pamādaṁ āpajjati, appamatto samāno samādhisampadaṁ ārādheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.44
+Pali: So tāya samādhisampadāya attamano hoti paripuṇṇasaṅkappo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.45
+Pali: So tāya samādhisampadāya attānukkaṁseti, paraṁ vambheti: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.46
+Pali: ‘ahamasmi samāhito ekaggacitto, ime panaññe bhikkhū asamāhitā vibbhantacittā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:4.47
+Pali: So tāya samādhisampadāya majjati pamajjati pamādaṁ āpajjati, pamatto samāno dukkhaṁ viharati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn29:4.48
+Pali: Ayaṁ vuccati, bhikkhave, bhikkhu tacaṁ aggahesi brahmacariyassa; 
+Sujato: This is called a mendicant who has grabbed the bark of the spiritual life 
+Translator: This bhikkhu is called one who has taken the inner bark of the holy life and stopped short with that. 
+
+=== RUN 156: mn29:5.6 mn29:5.7 ===
+File: data/bodhi/sutta/mn/mn29_translation-en-bodhi.json
+ABOVE mn29:5.5
+Pali: So tena lābhasakkārasilokena na attamano hoti na paripuṇṇasaṅkappo. 
+Sujato: (empty)
+Translator: He is not pleased with that gain, honour, and renown, and his intention is not fulfilled…
+JUDGE mn29:5.6
+Pali: So tena lābhasakkārasilokena na attānukkaṁseti, na paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:5.7
+Pali: So tena lābhasakkārasilokena na majjati nappamajjati na pamādaṁ āpajjati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn29:5.8
+Pali: Appamatto samāno sīlasampadaṁ ārādheti. 
+Sujato: (empty)
+Translator: Being diligent, he achieves the attainment of virtue. 
+
+=== RUN 157: mn29:5.26 mn29:5.27 mn29:5.28 mn29:5.29 mn29:5.30 mn29:5.31 mn29:5.32 mn29:5.33 mn29:5.34 mn29:5.35 mn29:5.36 mn29:5.37 mn29:5.38 mn29:5.39 mn29:5.40 mn29:5.41 ===
+File: data/bodhi/sutta/mn/mn29_translation-en-bodhi.json
+ABOVE mn29:5.25
+Pali: Evameva kho, bhikkhave, idhekacco kulaputto saddhā agārasmā anagāriyaṁ pabbajito hoti: 
+Sujato: (empty)
+Translator: So too, bhikkhus, here some clansman goes forth out of faith…he lives in suffering. 
+JUDGE mn29:5.26
+Pali: ‘otiṇṇomhi jātiyā jarāya maraṇena sokehi paridevehi dukkhehi domanassehi upāyāsehi, dukkhotiṇṇo dukkhapareto, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:5.27
+Pali: appeva nāma imassa kevalassa dukkhakkhandhassa antakiriyā paññāyethā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:5.28
+Pali: So evaṁ pabbajito samāno lābhasakkārasilokaṁ abhinibbatteti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:5.29
+Pali: So tena lābhasakkārasilokena na attamano hoti na paripuṇṇasaṅkappo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:5.30
+Pali: So tena lābhasakkārasilokena na attānukkaṁseti, na paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:5.31
+Pali: So tena lābhasakkārasilokena na majjati nappamajjati na pamādaṁ āpajjati, appamatto samāno sīlasampadaṁ ārādheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:5.32
+Pali: So tāya sīlasampadāya attamano hoti, no ca kho paripuṇṇasaṅkappo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:5.33
+Pali: So tāya sīlasampadāya na attānukkaṁseti, na paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:5.34
+Pali: So tāya sīlasampadāya na majjati nappamajjati na pamādaṁ āpajjati, appamatto samāno samādhisampadaṁ ārādheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:5.35
+Pali: So tāya samādhisampadāya attamano hoti, no ca kho paripuṇṇasaṅkappo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:5.36
+Pali: So tāya samādhisampadāya na attānukkaṁseti, na paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:5.37
+Pali: So tāya samādhisampadāya na majjati nappamajjati na pamādaṁ āpajjati, appamatto samāno ñāṇadassanaṁ ārādheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:5.38
+Pali: So tena ñāṇadassanena attamano hoti paripuṇṇasaṅkappo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:5.39
+Pali: So tena ñāṇadassanena attānukkaṁseti, paraṁ vambheti: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:5.40
+Pali: ‘ahamasmi jānaṁ passaṁ viharāmi, ime panaññe bhikkhū ajānaṁ apassaṁ viharantī’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:5.41
+Pali: So tena ñāṇadassanena majjati pamajjati pamādaṁ āpajjati, pamatto samāno dukkhaṁ viharati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn29:5.42
+Pali: Ayaṁ vuccati, bhikkhave, bhikkhu phegguṁ aggahesi brahmacariyassa; 
+Sujato: This is called a mendicant who has grabbed the softwood of the spiritual life 
+Translator: This bhikkhu is called one who has taken the sapwood of the holy life and stopped short with that. 
+
+=== RUN 158: mn29:6.24 mn29:6.25 mn29:6.26 mn29:6.27 mn29:6.28 mn29:6.29 mn29:6.30 mn29:6.31 mn29:6.32 mn29:6.33 mn29:6.34 mn29:6.35 mn29:6.36 mn29:6.37 ===
+File: data/bodhi/sutta/mn/mn29_translation-en-bodhi.json
+ABOVE mn29:6.23
+Pali: Evameva kho, bhikkhave, idhekacco kulaputto saddhā agārasmā anagāriyaṁ pabbajito hoti: 
+Sujato: (empty)
+Translator: So too, bhikkhus, here some clansman goes forth out of faith…
+JUDGE mn29:6.24
+Pali: ‘otiṇṇomhi jātiyā jarāya maraṇena sokehi paridevehi dukkhehi domanassehi upāyāsehi, dukkhotiṇṇo dukkhapareto, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:6.25
+Pali: appeva nāma imassa kevalassa dukkhakkhandhassa antakiriyā paññāyethā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:6.26
+Pali: So evaṁ pabbajito samāno lābhasakkārasilokaṁ abhinibbatteti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:6.27
+Pali: So tena lābhasakkārasilokena na attamano hoti, na paripuṇṇasaṅkappo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:6.28
+Pali: So tena lābhasakkārasilokena na attānukkaṁseti, na paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:6.29
+Pali: So tena lābhasakkārasilokena na majjati nappamajjati na pamādaṁ āpajjati, appamatto samāno sīlasampadaṁ ārādheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:6.30
+Pali: So tāya sīlasampadāya attamano hoti, no ca kho paripuṇṇasaṅkappo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:6.31
+Pali: So tāya sīlasampadāya na attānukkaṁseti, na paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:6.32
+Pali: So tāya sīlasampadāya na majjati nappamajjati na pamādaṁ āpajjati, appamatto samāno samādhisampadaṁ ārādheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:6.33
+Pali: So tāya samādhisampadāya attamano hoti, no ca kho paripuṇṇasaṅkappo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:6.34
+Pali: So tāya samādhisampadāya na attānukkaṁseti, na paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:6.35
+Pali: So tāya samādhisampadāya na majjati nappamajjati na pamādaṁ āpajjati, appamatto samāno ñāṇadassanaṁ ārādheti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:6.36
+Pali: So tena ñāṇadassanena attamano hoti, no ca kho paripuṇṇasaṅkappo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn29:6.37
+Pali: So tena ñāṇadassanena na attānukkaṁseti, na paraṁ vambheti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn29:6.38
+Pali: So tena ñāṇadassanena na majjati nappamajjati na pamādaṁ āpajjati, appamatto samāno asamayavimokkhaṁ ārādheti. 
+Sujato: (empty)
+Translator: When he is diligent, he attains perpetual liberation. 
+
+=== RUN 159: mn31:7.12 mn31:7.13 mn31:7.14 mn31:7.15 mn31:7.16 mn31:7.17 mn31:7.18 mn31:7.19 mn31:7.20 mn31:7.21 mn31:7.22 ===
+File: data/bodhi/sutta/mn/mn31_translation-en-bodhi.json
+ABOVE mn31:7.11
+Pali: Āyasmāpi kho nandiyo …pe… 
+Sujato: And the venerables Nandiya and Kimbila spoke likewise, and they added: 
+Translator: The venerable Nandiya and the venerable Kimbila each spoke likewise, adding: 
+JUDGE mn31:7.12
+Pali: āyasmāpi kho kimilo bhagavantaṁ etadavoca: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn31:7.13
+Pali: “mayhampi, bhante, evaṁ hoti: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn31:7.14
+Pali: ‘lābhā vata me, suladdhaṁ vata me, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn31:7.15
+Pali: yohaṁ evarūpehi sabrahmacārīhi saddhiṁ viharāmī’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn31:7.16
+Pali: Tassa mayhaṁ, bhante, imesu āyasmantesu mettaṁ kāyakammaṁ paccupaṭṭhitaṁ āvi ceva raho ca, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn31:7.17
+Pali: mettaṁ vacīkammaṁ paccupaṭṭhitaṁ āvi ceva raho ca, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn31:7.18
+Pali: mettaṁ manokammaṁ paccupaṭṭhitaṁ āvi ceva raho ca. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn31:7.19
+Pali: Tassa mayhaṁ, bhante, evaṁ hoti: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn31:7.20
+Pali: ‘yannūnāhaṁ sakaṁ cittaṁ nikkhipitvā imesaṁyeva āyasmantānaṁ cittassa vasena vatteyyan’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn31:7.21
+Pali: So kho ahaṁ, bhante, sakaṁ cittaṁ nikkhipitvā imesaṁyeva āyasmantānaṁ cittassa vasena vattāmi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn31:7.22
+Pali: Nānā hi kho no, bhante, kāyā ekañca pana maññe cittan”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn31:7.23
+Pali: “Evaṁ kho mayaṁ, bhante, samaggā sammodamānā avivadamānā khīrodakībhūtā aññamaññaṁ piyacakkhūhi sampassantā viharāmā”ti. 
+Sujato: “That’s how we live in harmony, appreciating each other, without quarreling, blending like milk and water, and regarding each other with kindly eyes.” 
+Translator: “That is how, venerable sir, we are living in concord, with mutual appreciation, without disputing, blending like milk and water, viewing each other with kindly eyes.” 
+
+=== RUN 160: mn32:12.2 mn32:12.3 ===
+File: data/bodhi/sutta/mn/mn32_translation-en-bodhi.json
+ABOVE mn32:12.1
+Pali: “Evaṁ vutte, ahaṁ, bhante, āyasmantaṁ revataṁ etadavocaṁ: 
+Sujato: “Next I asked Revata the same question. 
+Translator: “When this was said, venerable sir, I addressed the venerable Revata thus: 
+JUDGE mn32:12.2
+Pali: ‘byākataṁ kho, āvuso revata, āyasmatā ānandena yathāsakaṁ paṭibhānaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn32:12.3
+Pali: Tattha dāni mayaṁ āyasmantaṁ revataṁ pucchāma—
+Sujato: (empty)
+Translator: (empty)
+BELOW mn32:12.4
+Pali: ramaṇīyaṁ, āvuso revata, gosiṅgasālavanaṁ, dosinā ratti, sabbaphāliphullā sālā, dibbā maññe gandhā sampavanti. 
+Sujato: (empty)
+Translator: ‘Friend Revata…
+
+=== RUN 161: mn32:16.3 mn32:16.4 ===
+File: data/bodhi/sutta/mn/mn32_translation-en-bodhi.json
+ABOVE mn32:16.2
+Pali: “atha khvāhaṁ, bhante, āyasmantaṁ sāriputtaṁ etadavocaṁ: 
+Sujato: “Next, I asked Sāriputta: 
+Translator: “Then, venerable sir, I addressed the venerable Sāriputta thus: 
+JUDGE mn32:16.3
+Pali: ‘byākataṁ kho, āvuso sāriputta, amhehi sabbeheva yathāsakaṁ paṭibhānaṁ. 
+Sujato: ‘Each of us has spoken according to our own inspiration. 
+Translator: (empty)
+JUDGE mn32:16.4
+Pali: Tattha dāni mayaṁ āyasmantaṁ sāriputtaṁ pucchāma—
+Sujato: And now we ask you: 
+Translator: (empty)
+BELOW mn32:16.5
+Pali: ramaṇīyaṁ, āvuso sāriputta, gosiṅgasālavanaṁ, dosinā ratti, sabbaphāliphullā sālā, dibbā, maññe, gandhā sampavanti. 
+Sujato: Reverend Sāriputta, the sal forest park at Gosiṅga is lovely, the night is bright, the sal trees are in full blossom, and heavenly scents seem to float on the air. 
+Translator: ‘Friend Sāriputta…
+
+=== RUN 162: mn32:16.9 mn32:16.10 mn32:16.11 mn32:16.12 mn32:16.13 mn32:16.14 mn32:16.15 mn32:16.16 mn32:16.17 mn32:16.18 mn32:16.19 ===
+File: data/bodhi/sutta/mn/mn32_translation-en-bodhi.json
+ABOVE mn32:16.8
+Pali: ‘idhāvuso moggallāna, bhikkhu cittaṁ vasaṁ vatteti no ca bhikkhu cittassa vasena vattati. 
+Sujato: ‘Reverend Moggallāna, it’s when a mendicant masters their mind and is not mastered by it … 
+Translator: ‘Here, friend Moggallāna, a bhikkhu wields mastery over his mind… as in §9…
+JUDGE mn32:16.9
+Pali: So yāya vihārasamāpattiyā ākaṅkhati pubbaṇhasamayaṁ viharituṁ, tāya vihārasamāpattiyā pubbaṇhasamayaṁ viharati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn32:16.10
+Pali: yāya vihārasamāpattiyā ākaṅkhati majjhanhikasamayaṁ viharituṁ, tāya vihārasamāpattiyā majjhanhikasamayaṁ viharati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn32:16.11
+Pali: yāya vihārasamāpattiyā ākaṅkhati sāyanhasamayaṁ viharituṁ, tāya vihārasamāpattiyā sāyanhasamayaṁ viharati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn32:16.12
+Pali: Seyyathāpi, āvuso moggallāna, rañño vā rājamahāmattassa vā nānārattānaṁ dussānaṁ dussakaraṇḍako pūro assa. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn32:16.13
+Pali: So yaññadeva dussayugaṁ ākaṅkheyya pubbaṇhasamayaṁ pārupituṁ, taṁ tadeva dussayugaṁ pubbaṇhasamayaṁ pārupeyya; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn32:16.14
+Pali: yaññadeva dussayugaṁ ākaṅkheyya majjhanhikasamayaṁ pārupituṁ, taṁ tadeva dussayugaṁ majjhanhikasamayaṁ pārupeyya; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn32:16.15
+Pali: yaññadeva dussayugaṁ ākaṅkheyya sāyanhasamayaṁ pārupituṁ, taṁ tadeva dussayugaṁ sāyanhasamayaṁ pārupeyya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn32:16.16
+Pali: Evameva kho, āvuso moggallāna, bhikkhu cittaṁ vasaṁ vatteti, no ca bhikkhu cittassa vasena vattati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn32:16.17
+Pali: So yāya vihārasamāpattiyā ākaṅkhati pubbaṇhasamayaṁ viharituṁ, tāya vihārasamāpattiyā pubbaṇhasamayaṁ viharati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn32:16.18
+Pali: yāya vihārasamāpattiyā ākaṅkhati majjhanhikasamayaṁ viharituṁ, tāya vihārasamāpattiyā majjhanhikasamayaṁ viharati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn32:16.19
+Pali: yāya vihārasamāpattiyā ākaṅkhati sāyanhasamayaṁ viharituṁ, tāya vihārasamāpattiyā sāyanhasamayaṁ viharati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn32:16.20
+Pali: Evarūpena kho, āvuso moggallāna, bhikkhunā gosiṅgasālavanaṁ sobheyyā’”ti. 
+Sujato: That’s the kind of mendicant who would grace this park.’” 
+Translator: That kind of bhikkhu could illuminate this Gosinga Sāla-tree Wood.’” 
+
+=== RUN 163: mn38:3.2 mn38:3.3 ===
+File: data/bodhi/sutta/mn/mn38_translation-en-bodhi.json
+ABOVE mn38:3.1
+Pali: Assosuṁ kho sambahulā bhikkhū: 
+Sujato: Several mendicants heard this rumour. 
+Translator: Several bhikkhus, having heard about this, 
+JUDGE mn38:3.2
+Pali: “sātissa kira nāma bhikkhuno kevaṭṭaputtassa evarūpaṁ pāpakaṁ diṭṭhigataṁ uppannaṁ: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:3.3
+Pali: ‘tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi yathā tadevidaṁ viññāṇaṁ sandhāvati saṁsarati, anaññan’”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn38:3.4
+Pali: Atha kho te bhikkhū yena sāti bhikkhu kevaṭṭaputto tenupasaṅkamiṁsu; upasaṅkamitvā sātiṁ bhikkhuṁ kevaṭṭaputtaṁ etadavocuṁ: 
+Sujato: They went up to Sāti and said to him, 
+Translator: went to the bhikkhu Sāti and asked him: 
+
+=== RUN 164: mn38:4.2 mn38:4.3 mn38:4.4 mn38:4.5 mn38:4.6 mn38:4.7 mn38:4.8 mn38:4.9 mn38:4.10 mn38:4.11 mn38:4.12 mn38:4.13 mn38:4.14 mn38:4.15 ===
+File: data/bodhi/sutta/mn/mn38_translation-en-bodhi.json
+ABOVE mn38:4.1
+Pali: Yato kho te bhikkhū nāsakkhiṁsu sātiṁ bhikkhuṁ kevaṭṭaputtaṁ etasmā pāpakā diṭṭhigatā vivecetuṁ, atha kho te bhikkhū yena bhagavā tenupasaṅkamiṁsu; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ nisīdiṁsu. Ekamantaṁ nisinnā kho te bhikkhū bhagavantaṁ etadavocuṁ: 
+Sujato: When they weren’t able to dissuade Sāti from his view, the mendicants went to the Buddha, bowed, sat down to one side, and told him what had happened. 
+Translator: Since the bhikkhus were unable to detach him from that pernicious view, they went to the Blessed One, and after paying homage to him, they sat down at one side and told him all that had occurred, adding: 
+JUDGE mn38:4.2
+Pali: “sātissa nāma, bhante, bhikkhuno kevaṭṭaputtassa evarūpaṁ pāpakaṁ diṭṭhigataṁ uppannaṁ: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:4.3
+Pali: ‘tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi yathā tadevidaṁ viññāṇaṁ sandhāvati saṁsarati, anaññan’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:4.4
+Pali: Assumha kho mayaṁ, bhante, sātissa kira nāma bhikkhuno kevaṭṭaputtassa evarūpaṁ pāpakaṁ diṭṭhigataṁ uppannaṁ: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:4.5
+Pali: ‘tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi yathā tadevidaṁ viññāṇaṁ sandhāvati saṁsarati, anaññan’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:4.6
+Pali: Atha kho mayaṁ, bhante, yena sāti bhikkhu kevaṭṭaputto tenupasaṅkamimha; upasaṅkamitvā sātiṁ bhikkhuṁ kevaṭṭaputtaṁ etadavocumha: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:4.7
+Pali: ‘saccaṁ kira te, āvuso sāti, evarūpaṁ pāpakaṁ diṭṭhigataṁ uppannaṁ: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:4.8
+Pali: “tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi yathā tadevidaṁ viññāṇaṁ sandhāvati saṁsarati, anaññan”’ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:4.9
+Pali: Evaṁ vutte, bhante, sāti bhikkhu kevaṭṭaputto amhe etadavoca: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:4.10
+Pali: ‘evaṁ byā kho ahaṁ, āvuso, bhagavatā dhammaṁ desitaṁ ājānāmi yathā tadevidaṁ viññāṇaṁ sandhāvati saṁsarati, anaññan’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:4.11
+Pali: Atha kho mayaṁ, bhante, sātiṁ bhikkhuṁ kevaṭṭaputtaṁ etasmā pāpakā diṭṭhigatā vivecetukāmā samanuyuñjimha samanugāhimha samanubhāsimha: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:4.12
+Pali: ‘mā evaṁ, āvuso sāti, avaca, mā bhagavantaṁ abbhācikkhi, na hi sādhu bhagavato abbhakkhānaṁ, na hi bhagavā evaṁ vadeyya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:4.13
+Pali: Anekapariyāyenāvuso sāti, paṭiccasamuppannaṁ viññāṇaṁ vuttaṁ bhagavatā, aññatra paccayā natthi viññāṇassa sambhavo’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:4.14
+Pali: Evampi kho, bhante, sāti bhikkhu kevaṭṭaputto amhehi samanuyuñjiyamāno samanugāhiyamāno samanubhāsiyamāno tadeva pāpakaṁ diṭṭhigataṁ thāmasā parāmasā abhinivissa voharati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:4.15
+Pali: ‘evaṁ byā kho ahaṁ, āvuso, bhagavatā dhammaṁ desitaṁ ājānāmi yathā tadevidaṁ viññāṇaṁ sandhāvati saṁsarati, anaññan’ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn38:4.16
+Pali: Yato kho mayaṁ, bhante, nāsakkhimha sātiṁ bhikkhuṁ kevaṭṭaputtaṁ etasmā pāpakā diṭṭhigatā vivecetuṁ, atha mayaṁ etamatthaṁ bhagavato ārocemā”ti. 
+Sujato: (empty)
+Translator: “Venerable sir, since we could not detach the bhikkhu Sāti, son of a fisherman, from this pernicious view, we have reported this matter to the Blessed One.” 
+
+=== RUN 165: mn38:8.17 mn38:8.18 mn38:8.19 mn38:8.20 ===
+File: data/bodhi/sutta/mn/mn38_translation-en-bodhi.json
+ABOVE mn38:8.16
+Pali: Cakkhuñca paṭicca rūpe ca uppajjati viññāṇaṁ, cakkhuviññāṇantveva saṅkhyaṁ gacchati; 
+Sujato: (empty)
+Translator: When consciousness arises dependent on the eye and forms, it is reckoned as eye-consciousness…
+JUDGE mn38:8.17
+Pali: sotañca paṭicca sadde ca uppajjati viññāṇaṁ, sotaviññāṇantveva saṅkhyaṁ gacchati, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:8.18
+Pali: ghānañca paṭicca gandhe ca uppajjati viññāṇaṁ, ghānaviññāṇantveva saṅkhyaṁ gacchati, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:8.19
+Pali: jivhañca paṭicca rase ca uppajjati viññāṇaṁ, jivhāviññāṇantveva saṅkhyaṁ gacchati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:8.20
+Pali: Kāyañca paṭicca phoṭṭhabbe ca uppajjati viññāṇaṁ, kāyaviññāṇantveva saṅkhyaṁ gacchati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn38:8.21
+Pali: Manañca paṭicca dhamme ca uppajjati viññāṇaṁ, manoviññāṇantveva saṅkhyaṁ gacchati. 
+Sujato: (empty)
+Translator: when consciousness arises dependent on the mind and mind-objects, it is reckoned as mind-consciousness. 
+
+=== RUN 166: mn38:21.7 mn38:21.8 mn38:21.9 mn38:21.10 ===
+File: data/bodhi/sutta/mn/mn38_translation-en-bodhi.json
+ABOVE mn38:21.6
+Pali: “Bhavanirodhā jātinirodhoti iti kho panetaṁ vuttaṁ; 
+Sujato: “‘When continued existence ceases, rebirth ceases.’ … 
+Translator: “‘With the cessation of being, cessation of birth’…
+JUDGE mn38:21.7
+Pali: bhavanirodhā nu kho, bhikkhave, jātinirodho, no vā, kathaṁ vā ettha hotī”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.8
+Pali: “Bhavanirodhā, bhante, jātinirodho; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.9
+Pali: evaṁ no ettha hoti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.10
+Pali: bhavanirodhā jātinirodho”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn38:21.11
+Pali: “Upādānanirodhā bhavanirodhoti iti kho panetaṁ vuttaṁ; 
+Sujato: (empty)
+Translator: ‘With the cessation of clinging, cessation of being’…
+
+=== RUN 167: mn38:21.12 mn38:21.13 mn38:21.14 mn38:21.15 ===
+File: data/bodhi/sutta/mn/mn38_translation-en-bodhi.json
+ABOVE mn38:21.11
+Pali: “Upādānanirodhā bhavanirodhoti iti kho panetaṁ vuttaṁ; 
+Sujato: (empty)
+Translator: ‘With the cessation of clinging, cessation of being’…
+JUDGE mn38:21.12
+Pali: upādānanirodhā nu kho, bhikkhave, bhavanirodho, no vā, kathaṁ vā ettha hotī”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.13
+Pali: “Upādānanirodhā, bhante, bhavanirodho; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.14
+Pali: evaṁ no ettha hoti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.15
+Pali: upādānanirodhā bhavanirodho”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn38:21.16
+Pali: “Taṇhānirodhā upādānanirodhoti iti kho panetaṁ vuttaṁ; 
+Sujato: (empty)
+Translator: ‘With the cessation of craving, cessation of clinging’…
+
+=== RUN 168: mn38:21.17 mn38:21.18 mn38:21.19 mn38:21.20 ===
+File: data/bodhi/sutta/mn/mn38_translation-en-bodhi.json
+ABOVE mn38:21.16
+Pali: “Taṇhānirodhā upādānanirodhoti iti kho panetaṁ vuttaṁ; 
+Sujato: (empty)
+Translator: ‘With the cessation of craving, cessation of clinging’…
+JUDGE mn38:21.17
+Pali: taṇhānirodhā nu kho, bhikkhave, upādānanirodho, no vā, kathaṁ vā ettha hotī”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.18
+Pali: “Taṇhānirodhā, bhante, upādānanirodho; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.19
+Pali: evaṁ no ettha hoti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.20
+Pali: taṇhānirodhā upādānanirodho”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn38:21.21
+Pali: “Vedanānirodhā taṇhānirodhoti iti kho panetaṁ vuttaṁ; 
+Sujato: (empty)
+Translator: ‘With the cessation of feeling, cessation of craving’…
+
+=== RUN 169: mn38:21.22 mn38:21.23 mn38:21.24 mn38:21.25 ===
+File: data/bodhi/sutta/mn/mn38_translation-en-bodhi.json
+ABOVE mn38:21.21
+Pali: “Vedanānirodhā taṇhānirodhoti iti kho panetaṁ vuttaṁ; 
+Sujato: (empty)
+Translator: ‘With the cessation of feeling, cessation of craving’…
+JUDGE mn38:21.22
+Pali: vedanānirodhā nu kho, bhikkhave, taṇhānirodho, no vā, kathaṁ vā ettha hotī”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.23
+Pali: “Vedanānirodhā, bhante, taṇhānirodho; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.24
+Pali: evaṁ no ettha hoti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.25
+Pali: vedanānirodhā taṇhānirodho”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn38:21.26
+Pali: “Phassanirodhā vedanānirodhoti iti kho panetaṁ vuttaṁ; 
+Sujato: (empty)
+Translator: ‘With the cessation of contact, cessation of feeling’ …
+
+=== RUN 170: mn38:21.27 mn38:21.28 mn38:21.29 mn38:21.30 ===
+File: data/bodhi/sutta/mn/mn38_translation-en-bodhi.json
+ABOVE mn38:21.26
+Pali: “Phassanirodhā vedanānirodhoti iti kho panetaṁ vuttaṁ; 
+Sujato: (empty)
+Translator: ‘With the cessation of contact, cessation of feeling’ …
+JUDGE mn38:21.27
+Pali: phassanirodhā nu kho, bhikkhave, vedanānirodho, no vā, kathaṁ vā ettha hotī”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.28
+Pali: “Phassanirodhā, bhante, vedanānirodho; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.29
+Pali: evaṁ no ettha hoti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.30
+Pali: phassanirodhā vedanānirodho”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn38:21.31
+Pali: “Saḷāyatananirodhā phassanirodhoti iti kho panetaṁ vuttaṁ; 
+Sujato: (empty)
+Translator: ’With the cessation of the sixfold base, cessation of contact’…
+
+=== RUN 171: mn38:21.32 mn38:21.33 mn38:21.34 mn38:21.35 ===
+File: data/bodhi/sutta/mn/mn38_translation-en-bodhi.json
+ABOVE mn38:21.31
+Pali: “Saḷāyatananirodhā phassanirodhoti iti kho panetaṁ vuttaṁ; 
+Sujato: (empty)
+Translator: ’With the cessation of the sixfold base, cessation of contact’…
+JUDGE mn38:21.32
+Pali: saḷāyatananirodhā nu kho, bhikkhave, phassanirodho, no vā, kathaṁ vā ettha hotīti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.33
+Pali: Saḷāyatananirodhā, bhante, phassanirodho; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.34
+Pali: evaṁ no ettha hoti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.35
+Pali: saḷāyatananirodhā phassanirodho”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn38:21.36
+Pali: “Nāmarūpanirodhā saḷāyatananirodhoti iti kho panetaṁ vuttaṁ; 
+Sujato: (empty)
+Translator: ‘With the cessation of mentality-materiality, cessation of the sixfold base’…
+
+=== RUN 172: mn38:21.37 mn38:21.38 mn38:21.39 mn38:21.40 ===
+File: data/bodhi/sutta/mn/mn38_translation-en-bodhi.json
+ABOVE mn38:21.36
+Pali: “Nāmarūpanirodhā saḷāyatananirodhoti iti kho panetaṁ vuttaṁ; 
+Sujato: (empty)
+Translator: ‘With the cessation of mentality-materiality, cessation of the sixfold base’…
+JUDGE mn38:21.37
+Pali: nāmarūpanirodhā nu kho, bhikkhave, saḷāyatananirodho, no vā, kathaṁ vā ettha hotī”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.38
+Pali: “Nāmarūpanirodhā, bhante, saḷāyatananirodho; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.39
+Pali: evaṁ no ettha hoti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.40
+Pali: nāmarūpanirodhā saḷāyatananirodho”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn38:21.41
+Pali: “Viññāṇanirodhā nāmarūpanirodhoti iti kho panetaṁ vuttaṁ; 
+Sujato: (empty)
+Translator: ‘With the cessation of consciousness, cessation of mentality-materiality’…
+
+=== RUN 173: mn38:21.47 mn38:21.48 mn38:21.49 mn38:21.50 ===
+File: data/bodhi/sutta/mn/mn38_translation-en-bodhi.json
+ABOVE mn38:21.46
+Pali: “Saṅkhāranirodhā viññāṇanirodhoti iti kho panetaṁ vuttaṁ; 
+Sujato: (empty)
+Translator: ‘With the cessation of formations, cessation of consciousness’…
+JUDGE mn38:21.47
+Pali: saṅkhāranirodhā nu kho, bhikkhave, viññāṇanirodho, no vā, kathaṁ vā ettha hotī”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.48
+Pali: “Saṅkhāranirodhā, bhante, viññāṇanirodho; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.49
+Pali: evaṁ no ettha hoti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn38:21.50
+Pali: saṅkhāranirodhā viññāṇanirodho”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn38:21.51
+Pali: “Avijjānirodhā saṅkhāranirodhoti iti kho panetaṁ vuttaṁ; 
+Sujato: ‘When ignorance ceases, choices cease.’ That’s what I said. 
+Translator: ‘With the cessation of ignorance, cessation of formations’: so it was said. 
+
+=== RUN 174: mn38:31.2 mn38:31.3 mn38:31.4 ===
+File: data/bodhi/sutta/mn/mn38_translation-en-bodhi.json
+ABOVE mn38:31.1
+Pali: Idha, bhikkhave, tathāgato loke uppajjati arahaṁ sammāsambuddho vijjācaraṇasampanno sugato lokavidū anuttaro purisadammasārathi satthā devamanussānaṁ buddho bhagavā. 
+Sujato: But consider when a Realized One arises in the world, perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed. 
+Translator: <span class="heading">The Ending of the Round: The Gradual Training</span> “Here, bhikkhus, a Tathāgata appears in the world, accomplished, fully enlightened…as <a href="https://suttacentral.net/mn27">MN27</a>, 
+JUDGE mn38:31.2
+Pali: So imaṁ lokaṁ sadevakaṁ samārakaṁ sabrahmakaṁ sassamaṇabrāhmaṇiṁ pajaṁ sadevamanussaṁ sayaṁ abhiññā sacchikatvā pavedeti. 
+Sujato: He has realized with his own insight this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, gods and humans—and he makes it known to others. 
+Translator: (empty)
+JUDGE mn38:31.3
+Pali: So dhammaṁ deseti ādikalyāṇaṁ majjhekalyāṇaṁ pariyosānakalyāṇaṁ sātthaṁ sabyañjanaṁ; 
+Sujato: He proclaims a teaching that’s good in the beginning, good in the middle, and good in the end, meaningful and well-phrased. 
+Translator: (empty)
+JUDGE mn38:31.4
+Pali: kevalaparipuṇṇaṁ parisuddhaṁ brahmacariyaṁ pakāseti. 
+Sujato: He reveals an entirely full and pure spiritual life. 
+Translator: (empty)
+BELOW (outside this paragraph) mn38:38.6
+Pali: vicikicchaṁ pahāya tiṇṇavicikiccho viharati akathaṅkathī kusalesu dhammesu, vicikicchāya cittaṁ parisodheti. 
+Sujato: Giving up doubt, they meditate having gone beyond doubt, not undecided about skillful qualities, cleansing the mind of doubt. 
+Translator: §§11-18 [268-69]…he purifies his mind from doubt. 
+
+=== RUN 175: mn41:18-42.3 mn41:18-42.4 mn41:18-42.5 mn41:18-42.6 ===
+File: data/bodhi/sutta/mn/mn41_translation-en-bodhi.json
+ABOVE mn41:18-42.2
+Pali: ‘aho vatāhaṁ kāyassa bhedā paraṁ maraṇā cātumahārājikānaṁ devānaṁ sahabyataṁ upapajjeyyan’ti; 
+Sujato: the gods of the four great kings … 
+Translator: ‘Oh, that on the dissolution of the body, after death, I might reappear in the company of the gods of the heaven of the Four Great Kings!…
+JUDGE mn41:18-42.3
+Pali: ṭhānaṁ kho panetaṁ vijjati, yaṁ so kāyassa bhedā paraṁ maraṇā cātumahārājikānaṁ devānaṁ sahabyataṁ upapajjeyya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn41:18-42.4
+Pali: Taṁ kissa hetu? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn41:18-42.5
+Pali: Tathā hi so dhammacārī samacārī. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn41:18-42.6
+Pali: Ākaṅkheyya ce, gahapatayo, dhammacārī samacārī: 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn41:18-42.7
+Pali: ‘aho vatāhaṁ kāyassa bhedā paraṁ maraṇā tāvatiṁsānaṁ devānaṁ …pe… 
+Sujato: the gods of the thirty-three … 
+Translator: in the company of the gods of the heaven of the Thirty-three…
+
+=== RUN 176: mn41:18-42.13 mn41:18-42.14 mn41:18-42.15 mn41:18-42.16 ===
+File: data/bodhi/sutta/mn/mn41_translation-en-bodhi.json
+ABOVE mn41:18-42.12
+Pali: brahmakāyikānaṁ devānaṁ sahabyataṁ upapajjeyyan’ti; 
+Sujato: the gods of the Divinity’s host … 
+Translator: the gods of Brahmā’ s retinue…
+JUDGE mn41:18-42.13
+Pali: ṭhānaṁ kho panetaṁ vijjati, yaṁ so kāyassa bhedā paraṁ maraṇā brahmakāyikānaṁ devānaṁ sahabyataṁ upapajjeyya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn41:18-42.14
+Pali: Taṁ kissa hetu? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn41:18-42.15
+Pali: Tathā hi so dhammacārī samacārī. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn41:18-42.16
+Pali: Ākaṅkheyya ce, gahapatayo, dhammacārī samacārī: 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn41:18-42.17
+Pali: ‘aho vatāhaṁ kāyassa bhedā paraṁ maraṇā ābhānaṁ devānaṁ sahabyataṁ upapajjeyyan’ti; 
+Sujato: the luminous gods … 
+Translator: the gods of Radiance …
+
+=== RUN 177: mn41:18-42.18 mn41:18-42.19 mn41:18-42.20 mn41:18-42.21 ===
+File: data/bodhi/sutta/mn/mn41_translation-en-bodhi.json
+ABOVE mn41:18-42.17
+Pali: ‘aho vatāhaṁ kāyassa bhedā paraṁ maraṇā ābhānaṁ devānaṁ sahabyataṁ upapajjeyyan’ti; 
+Sujato: the luminous gods … 
+Translator: the gods of Radiance …
+JUDGE mn41:18-42.18
+Pali: ṭhānaṁ kho panetaṁ vijjati, yaṁ so kāyassa bhedā paraṁ maraṇā ābhānaṁ devānaṁ sahabyataṁ upapajjeyya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn41:18-42.19
+Pali: Taṁ kissa hetu? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn41:18-42.20
+Pali: Tathā hi so dhammacārī samacārī. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn41:18-42.21
+Pali: Ākaṅkheyya ce, gahapatayo, dhammacārī samacārī: 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn41:18-42.22
+Pali: ‘aho vatāhaṁ kāyassa bhedā paraṁ maraṇā parittābhānaṁ devānaṁ …pe… 
+Sujato: the gods of limited luminosity … 
+Translator: the gods of Limited Radiance…
+
+=== RUN 178: mn46:15.4 mn46:15.5 mn46:15.6 mn46:15.7 mn46:15.8 mn46:15.9 mn46:15.10 ===
+File: data/bodhi/sutta/mn/mn46_translation-en-bodhi.json
+ABOVE mn46:15.3
+Pali: sahāpi sukhena sahāpi somanassena adinnādāyī hoti, adinnādānapaccayā ca sukhaṁ somanassaṁ paṭisaṁvedeti; 
+Sujato: (empty)
+Translator: In pleasure and joy he takes what is not given… 
+JUDGE mn46:15.4
+Pali: sahāpi sukhena sahāpi somanassena kāmesumicchācārī hoti, kāmesumicchācārapaccayā ca sukhaṁ somanassaṁ paṭisaṁvedeti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn46:15.5
+Pali: sahāpi sukhena sahāpi somanassena musāvādī hoti, musāvādapaccayā ca sukhaṁ somanassaṁ paṭisaṁvedeti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn46:15.6
+Pali: sahāpi sukhena sahāpi somanassena pisuṇavāco hoti, pisuṇavācāpaccayā ca sukhaṁ somanassaṁ paṭisaṁvedeti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn46:15.7
+Pali: sahāpi sukhena sahāpi somanassena pharusavāco hoti, pharusavācāpaccayā ca sukhaṁ somanassaṁ paṭisaṁvedeti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn46:15.8
+Pali: sahāpi sukhena sahāpi somanassena samphappalāpī hoti, samphappalāpapaccayā ca sukhaṁ somanassaṁ paṭisaṁvedeti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn46:15.9
+Pali: sahāpi sukhena sahāpi somanassena abhijjhālu hoti, abhijjhāpaccayā ca sukhaṁ somanassaṁ paṭisaṁvedeti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn46:15.10
+Pali: sahāpi sukhena sahāpi somanassena byāpannacitto hoti, byāpādapaccayā ca sukhaṁ somanassaṁ paṭisaṁvedeti; 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn46:15.11
+Pali: sahāpi sukhena sahāpi somanassena micchādiṭṭhi hoti, micchādiṭṭhipaccayā ca sukhaṁ somanassaṁ paṭisaṁvedeti. 
+Sujato: (empty)
+Translator: …holds wrong view, and he experiences pleasure and joy that have wrong view as condition. 
+
+=== RUN 179: mn46:17.4 mn46:17.5 mn46:17.6 mn46:17.7 mn46:17.8 mn46:17.9 mn46:17.10 ===
+File: data/bodhi/sutta/mn/mn46_translation-en-bodhi.json
+ABOVE mn46:17.3
+Pali: sahāpi sukhena sahāpi somanassena adinnādānā paṭivirato hoti, adinnādānā veramaṇīpaccayā ca sukhaṁ somanassaṁ paṭisaṁvedeti; 
+Sujato: (empty)
+Translator: In pleasure and joy he abstains from taking what is not given…
+JUDGE mn46:17.4
+Pali: sahāpi sukhena sahāpi somanassena kāmesumicchācārā paṭivirato hoti, kāmesumicchācārā veramaṇīpaccayā ca sukhaṁ somanassaṁ paṭisaṁvedeti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn46:17.5
+Pali: sahāpi sukhena sahāpi somanassena musāvādā paṭivirato hoti, musāvādā veramaṇīpaccayā ca sukhaṁ somanassaṁ paṭisaṁvedeti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn46:17.6
+Pali: sahāpi sukhena sahāpi somanassena pisuṇāya vācāya paṭivirato hoti, pisuṇāya vācāya veramaṇīpaccayā ca sukhaṁ somanassaṁ paṭisaṁvedeti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn46:17.7
+Pali: sahāpi sukhena sahāpi somanassena pharusāya vācāya paṭivirato hoti, pharusāya vācāya veramaṇīpaccayā ca sukhaṁ somanassaṁ paṭisaṁvedeti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn46:17.8
+Pali: sahāpi sukhena sahāpi somanassena samphappalāpā paṭivirato hoti, samphappalāpā veramaṇīpaccayā ca sukhaṁ somanassaṁ paṭisaṁvedeti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn46:17.9
+Pali: sahāpi sukhena sahāpi somanassena anabhijjhālu hoti, anabhijjhāpaccayā ca sukhaṁ somanassaṁ paṭisaṁvedeti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn46:17.10
+Pali: sahāpi sukhena sahāpi somanassena abyāpannacitto hoti, abyāpādapaccayā ca sukhaṁ somanassaṁ paṭisaṁvedeti; 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn46:17.11
+Pali: sahāpi sukhena sahāpi somanassena sammādiṭṭhi hoti, sammādiṭṭhipaccayā ca sukhaṁ somanassaṁ paṭisaṁvedeti. 
+Sujato: (empty)
+Translator: he holds right view, and he experiences pleasure and joy that have right view as condition. 
+
+=== RUN 180: mn54:7.2 mn54:7.3 mn54:7.4 mn54:7.5 mn54:7.6 mn54:7.7 ===
+File: data/bodhi/sutta/mn/mn54_translation-en-bodhi.json
+ABOVE mn54:7.1
+Pali: ‘Dinnādānaṁ nissāya adinnādānaṁ pahātabban’ti iti kho panetaṁ vuttaṁ, kiñcetaṁ paṭicca vuttaṁ? 
+Sujato: ‘Stealing … 
+Translator: “‘With the support of taking only what is given, the taking of what is not given is to be abandoned.’ 
+JUDGE mn54:7.2
+Pali: Idha, gahapati, ariyasāvako iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:7.3
+Pali: ‘yesaṁ kho ahaṁ saṁyojanānaṁ hetu adinnādāyī assaṁ, tesāhaṁ saṁyojanānaṁ pahānāya samucchedāya paṭipanno. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:7.4
+Pali: Ahañceva kho pana adinnādāyī assaṁ, attāpi maṁ upavadeyya adinnādānapaccayā, anuviccāpi maṁ viññū garaheyyuṁ adinnādānapaccayā, kāyassa bhedā paraṁ maraṇā duggati pāṭikaṅkhā adinnādānapaccayā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:7.5
+Pali: Etadeva kho pana saṁyojanaṁ etaṁ nīvaraṇaṁ yadidaṁ adinnādānaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:7.6
+Pali: Ye ca adinnādānapaccayā uppajjeyyuṁ āsavā vighātapariḷāhā adinnādānā paṭiviratassa evaṁsa te āsavā vighātapariḷāhā na honti’. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:7.7
+Pali: ‘Dinnādānaṁ nissāya adinnādānaṁ pahātabban’ti—
+Sujato: (empty)
+Translator: (empty)
+BELOW mn54:7.8
+Pali: iti yantaṁ vuttaṁ idametaṁ paṭicca vuttaṁ. 
+Sujato: (empty)
+Translator: So it was said… 
+
+=== RUN 181: mn54:8.2 mn54:8.3 mn54:8.4 mn54:8.5 mn54:8.6 mn54:8.7 ===
+File: data/bodhi/sutta/mn/mn54_translation-en-bodhi.json
+ABOVE mn54:8.1
+Pali: ‘Saccavācaṁ nissāya musāvādo pahātabbo’ti iti kho panetaṁ vuttaṁ, kiñcetaṁ paṭicca vuttaṁ? 
+Sujato: lying … 
+Translator: “‘With the support of truthful speech, false speech is to be abandoned.’ 
+JUDGE mn54:8.2
+Pali: Idha, gahapati, ariyasāvako iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:8.3
+Pali: ‘yesaṁ kho ahaṁ saṁyojanānaṁ hetu musāvādī assaṁ, tesāhaṁ saṁyojanānaṁ pahānāya samucchedāya paṭipanno. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:8.4
+Pali: Ahañceva kho pana musāvādī assaṁ, attāpi maṁ upavadeyya musāvādapaccayā, anuviccāpi maṁ viññū garaheyyuṁ musāvādapaccayā, kāyassa bhedā paraṁ maraṇā duggati pāṭikaṅkhā musāvādapaccayā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:8.5
+Pali: Etadeva kho pana saṁyojanaṁ etaṁ nīvaraṇaṁ yadidaṁ musāvādo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:8.6
+Pali: Ye ca musāvādapaccayā uppajjeyyuṁ āsavā vighātapariḷāhā, musāvādā paṭiviratassa evaṁsa te āsavā vighātapariḷāhā na honti’. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:8.7
+Pali: ‘Saccavācaṁ nissāya musāvādo pahātabbo’ti—
+Sujato: (empty)
+Translator: (empty)
+BELOW mn54:8.8
+Pali: iti yantaṁ vuttaṁ idametaṁ paṭicca vuttaṁ. 
+Sujato: (empty)
+Translator: So it was said… 
+
+=== RUN 182: mn54:9.2 mn54:9.3 mn54:9.4 mn54:9.5 mn54:9.6 mn54:9.7 ===
+File: data/bodhi/sutta/mn/mn54_translation-en-bodhi.json
+ABOVE mn54:9.1
+Pali: ‘Apisuṇaṁ vācaṁ nissāya pisuṇā vācā pahātabbā’ti iti kho panetaṁ vuttaṁ, kiñcetaṁ paṭicca vuttaṁ? 
+Sujato: backbiting … 
+Translator: “‘With the support of unmalicious speech, malicious speech is to be abandoned.’ 
+JUDGE mn54:9.2
+Pali: Idha, gahapati, ariyasāvako iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:9.3
+Pali: ‘yesaṁ kho ahaṁ saṁyojanānaṁ hetu pisuṇavāco assaṁ, tesāhaṁ saṁyojanānaṁ pahānāya samucchedāya paṭipanno. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:9.4
+Pali: Ahañceva kho pana pisuṇavāco assaṁ, attāpi maṁ upavadeyya pisuṇavācāpaccayā, anuviccāpi maṁ viññū garaheyyuṁ pisuṇavācāpaccayā, kāyassa bhedā paraṁ maraṇā duggati pāṭikaṅkhā pisuṇavācāpaccayā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:9.5
+Pali: Etadeva kho pana saṁyojanaṁ etaṁ nīvaraṇaṁ yadidaṁ pisuṇā vācā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:9.6
+Pali: Ye ca pisuṇavācāpaccayā uppajjeyyuṁ āsavā vighātapariḷāhā, pisuṇāya vācāya paṭiviratassa evaṁsa te āsavā vighātapariḷāhā na honti’. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:9.7
+Pali: ‘Apisuṇaṁ vācaṁ nissāya pisuṇā vācā pahātabbā’ti—
+Sujato: (empty)
+Translator: (empty)
+BELOW mn54:9.8
+Pali: iti yantaṁ vuttaṁ idametaṁ paṭicca vuttaṁ. 
+Sujato: (empty)
+Translator: So it was said… 
+
+=== RUN 183: mn54:10.2 mn54:10.3 mn54:10.4 mn54:10.5 mn54:10.6 mn54:10.7 ===
+File: data/bodhi/sutta/mn/mn54_translation-en-bodhi.json
+ABOVE mn54:10.1
+Pali: ‘Agiddhilobhaṁ nissāya giddhilobho pahātabbo’ti iti kho panetaṁ vuttaṁ, kiñcetaṁ paṭicca vuttaṁ? 
+Sujato: greed and lust … 
+Translator: “‘With the support of no rapacity and greed, rapacity and greed are to be abandoned.’ 
+JUDGE mn54:10.2
+Pali: Idha, gahapati, ariyasāvako iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:10.3
+Pali: ‘yesaṁ kho ahaṁ saṁyojanānaṁ hetu giddhilobhī assaṁ, tesāhaṁ saṁyojanānaṁ pahānāya samucchedāya paṭipanno. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:10.4
+Pali: Ahañceva kho pana giddhilobhī assaṁ, attāpi maṁ upavadeyya giddhilobhapaccayā, anuviccāpi maṁ viññū garaheyyuṁ giddhilobhapaccayā, kāyassa bhedā paraṁ maraṇā duggati pāṭikaṅkhā giddhilobhapaccayā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:10.5
+Pali: Etadeva kho pana saṁyojanaṁ etaṁ nīvaraṇaṁ yadidaṁ giddhilobho. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:10.6
+Pali: Ye ca giddhilobhapaccayā uppajjeyyuṁ āsavā vighātapariḷāhā, giddhilobhā paṭiviratassa evaṁsa te āsavā vighātapariḷāhā na honti’. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:10.7
+Pali: ‘Agiddhilobhaṁ nissāya giddhilobho pahātabbo’ti—
+Sujato: (empty)
+Translator: (empty)
+BELOW mn54:10.8
+Pali: iti yantaṁ vuttaṁ idametaṁ paṭicca vuttaṁ. 
+Sujato: (empty)
+Translator: So it was said… 
+
+=== RUN 184: mn54:11.2 mn54:11.3 mn54:11.4 mn54:11.5 mn54:11.6 mn54:11.7 ===
+File: data/bodhi/sutta/mn/mn54_translation-en-bodhi.json
+ABOVE mn54:11.1
+Pali: ‘Anindārosaṁ nissāya nindāroso pahātabbo’ti iti kho panetaṁ vuttaṁ, kiñcetaṁ paṭicca vuttaṁ? 
+Sujato: blaming and insulting … 
+Translator: “‘With the support of no spite and scolding, spite and scolding are to be abandoned.’ 
+JUDGE mn54:11.2
+Pali: Idha, gahapati, ariyasāvako iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:11.3
+Pali: ‘yesaṁ kho ahaṁ saṁyojanānaṁ hetu nindārosī assaṁ, tesāhaṁ saṁyojanānaṁ pahānāya samucchedāya paṭipanno. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:11.4
+Pali: Ahañceva kho pana nindārosī assaṁ, attāpi maṁ upavadeyya nindārosapaccayā, anuviccāpi maṁ viññū garaheyyuṁ nindārosapaccayā, kāyassa bhedā paraṁ maraṇā duggati pāṭikaṅkhā nindārosapaccayā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:11.5
+Pali: Etadeva kho pana saṁyojanaṁ etaṁ nīvaraṇaṁ yadidaṁ nindāroso. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:11.6
+Pali: Ye ca nindārosapaccayā uppajjeyyuṁ āsavā vighātapariḷāhā, anindārosissa evaṁsa te āsavā vighātapariḷāhā na honti’. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:11.7
+Pali: ‘Anindārosaṁ nissāya nindāroso pahātabbo’ti—
+Sujato: (empty)
+Translator: (empty)
+BELOW mn54:11.8
+Pali: iti yantaṁ vuttaṁ idametaṁ paṭicca vuttaṁ. 
+Sujato: (empty)
+Translator: So it was said… 
+
+=== RUN 185: mn54:12.2 mn54:12.3 mn54:12.4 mn54:12.5 mn54:12.6 mn54:12.7 ===
+File: data/bodhi/sutta/mn/mn54_translation-en-bodhi.json
+ABOVE mn54:12.1
+Pali: ‘Akkodhūpāyāsaṁ nissāya kodhūpāyāso pahātabbo’ti iti kho panetaṁ vuttaṁ, kiñcetaṁ paṭicca vuttaṁ? 
+Sujato: anger and distress … 
+Translator: “‘With the support of no anger and irritation, anger and irritation are to be abandoned.’ 
+JUDGE mn54:12.2
+Pali: Idha, gahapati, ariyasāvako iti paṭisañcikkhati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:12.3
+Pali: ‘yesaṁ kho ahaṁ saṁyojanānaṁ hetu kodhūpāyāsī assaṁ, tesāhaṁ saṁyojanānaṁ pahānāya samucchedāya paṭipanno. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:12.4
+Pali: Ahañceva kho pana kodhūpāyāsī assaṁ, attāpi maṁ upavadeyya kodhūpāyāsapaccayā, anuviccāpi maṁ viññū garaheyyuṁ kodhūpāyāsapaccayā, kāyassa bhedā paraṁ maraṇā duggati pāṭikaṅkhā kodhūpāyāsapaccayā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:12.5
+Pali: Etadeva kho pana saṁyojanaṁ etaṁ nīvaraṇaṁ yadidaṁ kodhūpāyāso. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:12.6
+Pali: Ye ca kodhūpāyāsapaccayā uppajjeyyuṁ āsavā vighātapariḷāhā, akkodhūpāyāsissa evaṁsa te āsavā vighātapariḷāhā na honti’. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn54:12.7
+Pali: ‘Akkodhūpāyāsaṁ nissāya kodhūpāyāso pahātabbo’ti—
+Sujato: (empty)
+Translator: (empty)
+BELOW mn54:12.8
+Pali: iti yantaṁ vuttaṁ idametaṁ paṭicca vuttaṁ. 
+Sujato: (empty)
+Translator: So it was said… 
+
+=== RUN 186: mn60:15.3 mn60:15.4 ===
+File: data/bodhi/sutta/mn/mn60_translation-en-bodhi.json
+ABOVE mn60:15.2
+Pali: ‘karoto kārayato, chindato chedāpayato, pacato pācāpayato, socayato socāpayato, kilamato kilamāpayato, phandato phandāpayato, pāṇamatipātayato, adinnaṁ ādiyato, sandhiṁ chindato, nillopaṁ harato, ekāgārikaṁ karoto, paripanthe tiṭṭhato, paradāraṁ gacchato, musā bhaṇato; karoto na karīyati pāpaṁ. 
+Sujato: the one who acts does nothing wrong when they punish, etc. 
+Translator: ‘When one acts or makes others act…there is no merit and no outcome of merit,’ 
+JUDGE mn60:15.3
+Pali: Khurapariyantena cepi cakkena yo imissā pathaviyā pāṇe ekaṁ maṁsakhalaṁ ekaṁ maṁsapuñjaṁ kareyya, natthi tatonidānaṁ pāpaṁ, natthi pāpassa āgamo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn60:15.4
+Pali: Dakkhiṇañcepi gaṅgāya tīraṁ gaccheyya hananto ghātento …pe… dānena damena saṁyamena saccavajjena natthi puññaṁ, natthi puññassa āgamo’ti 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn60:15.5
+Pali: tesametaṁ pāṭikaṅkhaṁ—yamidaṁ kāyasucaritaṁ, vacīsucaritaṁ, manosucaritaṁ—ime tayo kusale dhamme abhinivajjetvā yamidaṁ kāyaduccaritaṁ, vacīduccaritaṁ, manoduccaritaṁ—ime tayo akusale dhamme samādāya vattissanti. 
+Sujato: You can expect that they will shun good conduct by way of body, speech, and mind, and undertake and implement bad conduct by way of body, speech, and mind. 
+Translator: it is to be expected that they will avoid these three wholesome states, namely, good bodily conduct, good verbal conduct and good mental conduct, and that they will undertake and practise these three unwholesome states, namely, bodily misconduct, verbal misconduct, and mental misconduct. 
+
+=== RUN 187: mn60:18.3 mn60:18.4 mn60:18.5 ===
+File: data/bodhi/sutta/mn/mn60_translation-en-bodhi.json
+ABOVE mn60:18.2
+Pali: ‘karoto kārayato, chindato chedāpayato, pacato pācāpayato, socayato socāpayato, kilamato kilamāpayato, phandato phandāpayato, pāṇamatipātayato, adinnaṁ ādiyato, sandhiṁ chindato, nillopaṁ harato, ekāgārikaṁ karoto, paripanthe tiṭṭhato, paradāraṁ gacchato, musā bhaṇato; karoto karīyati pāpaṁ. 
+Sujato: the one who acts does a bad deed when they punish, etc. 
+Translator: ‘When one acts or makes others act…there is merit and outcome of merit,’ 
+JUDGE mn60:18.3
+Pali: Khurapariyantena cepi cakkena yo imissā pathaviyā pāṇe ekaṁ maṁsakhalaṁ ekaṁ maṁsapuñjaṁ kareyya, atthi tatonidānaṁ pāpaṁ, atthi pāpassa āgamo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn60:18.4
+Pali: Dakkhiṇañcepi gaṅgāya tīraṁ gaccheyya hananto ghātento, chindanto chedāpento, pacanto pācento, atthi tatonidānaṁ pāpaṁ, atthi pāpassa āgamo. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn60:18.5
+Pali: Uttarañcepi gaṅgāya tīraṁ gaccheyya dadanto dāpento, yajanto yajāpento, atthi tatonidānaṁ puññaṁ, atthi puññassa āgamo. Dānena damena saṁyamena saccavajjena atthi puññaṁ, atthi puññassa āgamo’ti 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn60:18.6
+Pali: tesametaṁ pāṭikaṅkhaṁ yamidaṁ kāyaduccaritaṁ, vacīduccaritaṁ, manoduccaritaṁ—ime tayo akusale dhamme abhinivajjetvā yamidaṁ kāyasucaritaṁ, vacīsucaritaṁ, manosucaritaṁ—ime tayo kusale dhamme samādāya vattissanti. 
+Sujato: You can expect that they will shun bad conduct by way of body, speech, and mind, and undertake and implement good conduct by way of body, speech, and mind. 
+Translator: it is to be expected that they will avoid these three unwholesome states, namely, bodily misconduct, verbal misconduct, and mental misconduct, and that they will undertake and practise these three wholesome states, namely, good bodily conduct, good verbal conduct, and good mental conduct. 
+
+=== RUN 188: mn60:23.3 mn60:23.4 mn60:23.5 mn60:23.6 ===
+File: data/bodhi/sutta/mn/mn60_translation-en-bodhi.json
+ABOVE mn60:23.2
+Pali: ‘natthi hetu, natthi paccayo sattānaṁ saṅkilesāya; 
+Sujato: there’s no cause or reason for the corruption of sentient beings, etc. 
+Translator: ‘There is no cause or condition for the defilement of beings…they experience pleasure and pain in the six classes,’ 
+JUDGE mn60:23.3
+Pali: ahetū appaccayā sattā saṅkilissanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn60:23.4
+Pali: Natthi hetu, natthi paccayo sattānaṁ visuddhiyā; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn60:23.5
+Pali: ahetū appaccayā sattā visujjhanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn60:23.6
+Pali: Natthi balaṁ, natthi vīriyaṁ, natthi purisathāmo, natthi purisaparakkamo; sabbe sattā sabbe pāṇā sabbe bhūtā sabbe jīvā avasā abalā avīriyā niyatisaṅgatibhāvapariṇatā chasvevābhijātīsu sukhadukkhaṁ paṭisaṁvedentī’ti 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn60:23.7
+Pali: tesametaṁ pāṭikaṅkhaṁ—yamidaṁ kāyasucaritaṁ, vacīsucaritaṁ, manosucaritaṁ—ime tayo kusale dhamme abhinivajjetvā yamidaṁ kāyaduccaritaṁ, vacīduccaritaṁ, manoduccaritaṁ—ime tayo akusale dhamme samādāya vattissanti. 
+Sujato: You can expect that they will shun good conduct by way of body, speech, and mind, and undertake and implement bad conduct by way of body, speech, and mind. 
+Translator: it is to be expected that they will avoid these three wholesome states, namely, good bodily conduct, good verbal conduct, and good mental conduct, and that they will undertake and practise these three unwholesome states, namely, bodily misconduct, verbal misconduct, and mental misconduct. 
+
+=== RUN 189: mn60:26.3 mn60:26.4 mn60:26.5 mn60:26.6 ===
+File: data/bodhi/sutta/mn/mn60_translation-en-bodhi.json
+ABOVE mn60:26.2
+Pali: ‘atthi hetu, atthi paccayo sattānaṁ saṅkilesāya; 
+Sujato: there is a cause and reason for the corruption of sentient beings, etc. 
+Translator: ‘There is a cause and condition for the defilement of beings…they experience pleasure and pain in the six classes,’ 
+JUDGE mn60:26.3
+Pali: sahetū sappaccayā sattā saṅkilissanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn60:26.4
+Pali: Atthi hetu, atthi paccayo sattānaṁ visuddhiyā; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn60:26.5
+Pali: sahetū sappaccayā sattā visujjhanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn60:26.6
+Pali: Atthi balaṁ, atthi vīriyaṁ, atthi purisathāmo, atthi purisaparakkamo; na sabbe sattā sabbe pāṇā sabbe bhūtā sabbe jīvā avasā abalā avīriyā niyatisaṅgatibhāvapariṇatā chasvevābhijātīsu sukhadukkhaṁ paṭisaṁvedentī’ti 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn60:26.7
+Pali: tesametaṁ pāṭikaṅkhaṁ—yamidaṁ kāyaduccaritaṁ, vacīduccaritaṁ, manoduccaritaṁ—ime tayo akusale dhamme abhinivajjetvā yamidaṁ kāyasucaritaṁ, vacīsucaritaṁ, manosucaritaṁ—ime tayo kusale dhamme samādāya vattissanti. 
+Sujato: You can expect that they will shun bad conduct by way of body, speech, and mind, and undertake and implement good conduct by way of body, speech, and mind. 
+Translator: it is to be expected that they will avoid these three unwholesome states, namely, bodily misconduct, verbal misconduct, and mental misconduct, and that they will undertake and practise these three wholesome states, namely, good bodily conduct, good verbal conduct, and good mental conduct. 
+
+=== RUN 190: mn60:40-54.2 mn60:40-54.3 mn60:40-54.4 mn60:40-54.5 mn60:40-54.6 mn60:40-54.7 ===
+File: data/bodhi/sutta/mn/mn60_translation-en-bodhi.json
+ABOVE mn60:40-54.1
+Pali: Idha, gahapatayo, tathāgato loke uppajjati arahaṁ sammāsambuddho … 
+Sujato: It’s when a Realized One arises in the world, perfected, a fully awakened Buddha … 
+Translator: “Here, householders, a Tathāgata appears in the world…as <a href="https://suttacentral.net/mn51">MN51</a>, 
+JUDGE mn60:40-54.2
+Pali: pe… 
+Sujato: A householder hears that teaching, or a householder’s child, or someone reborn in some good family. … 
+Translator: (empty)
+JUDGE mn60:40-54.3
+Pali: so ime pañca nīvaraṇe pahāya cetaso upakkilese paññāya dubbalīkaraṇe 
+Sujato: They give up these five hindrances, corruptions of the heart that weaken wisdom. 
+Translator: (empty)
+JUDGE mn60:40-54.4
+Pali: vivicceva kāmehi vivicca akusalehi dhammehi savitakkaṁ savicāraṁ vivekajaṁ pītisukhaṁ paṭhamaṁ jhānaṁ upasampajja viharati. 
+Sujato: Then, quite secluded from sensual pleasures, secluded from unskillful qualities, they enter and remain in the first absorption … 
+Translator: (empty)
+JUDGE mn60:40-54.5
+Pali: Vitakkavicārānaṁ vūpasamā ajjhattaṁ sampasādanaṁ cetaso ekodibhāvaṁ avitakkaṁ avicāraṁ samādhijaṁ pītisukhaṁ dutiyaṁ jhānaṁ …pe… 
+Sujato: second absorption … 
+Translator: (empty)
+JUDGE mn60:40-54.6
+Pali: tatiyaṁ jhānaṁ …pe… 
+Sujato: third absorption … 
+Translator: (empty)
+JUDGE mn60:40-54.7
+Pali: catutthaṁ jhānaṁ upasampajja viharati. 
+Sujato: fourth absorption. 
+Translator: (empty)
+BELOW (outside this paragraph) mn60:55.10
+Pali: ‘Khīṇā jāti, vusitaṁ brahmacariyaṁ, kataṁ karaṇīyaṁ, nāparaṁ itthattāyā’ti pajānāti. 
+Sujato: They understand: ‘Rebirth is ended, the spiritual journey has been completed, what had to be done has been done, there is nothing further for this place.’ 
+Translator: §§12-27 …He understands: ‘Birth is destroyed, the holy life has been lived, what had to be done has been done, there is no more coming to any state of being.’ 
+
+=== RUN 191: mn63:2.12 mn63:2.13 ===
+File: data/bodhi/sutta/mn/mn63_translation-en-bodhi.json
+ABOVE mn63:2.11
+Pali: no ce me bhagavā byākarissati: 
+Sujato: If he does not explain these points to me, 
+Translator: if he does not declare these to me, 
+JUDGE mn63:2.12
+Pali: ‘sassato loko’ti vā ‘asassato loko’ti vā …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:2.13
+Pali: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā—
+Sujato: (empty)
+Translator: (empty)
+BELOW mn63:2.14
+Pali: evāhaṁ sikkhaṁ paccakkhāya hīnāyāvattissāmī”ti. 
+Sujato: I shall resign the training and return to a lesser life.” 
+Translator: then I will abandon the training and return to the low life.” 
+
+=== RUN 192: mn63:3.4 mn63:3.5 mn63:3.6 mn63:3.7 mn63:3.8 mn63:3.9 mn63:3.10 mn63:3.11 mn63:3.12 ===
+File: data/bodhi/sutta/mn/mn63_translation-en-bodhi.json
+ABOVE mn63:3.3
+Pali: yānimāni diṭṭhigatāni bhagavatā abyākatāni ṭhapitāni paṭikkhittāni: 
+Sujato: (empty)
+Translator: ‘These speculative views have been left undeclared by the Blessed One…
+JUDGE mn63:3.4
+Pali: ‘sassato loko’tipi, ‘asassato loko’tipi …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:3.5
+Pali: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipi—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:3.6
+Pali: tāni me bhagavā na byākaroti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:3.7
+Pali: Yāni me bhagavā na byākaroti taṁ me na ruccati, taṁ me nakkhamati. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:3.8
+Pali: Sohaṁ bhagavantaṁ upasaṅkamitvā etamatthaṁ pucchissāmi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:3.9
+Pali: Sace me bhagavā byākarissati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:3.10
+Pali: ‘sassato loko’ti vā, ‘asassato loko’ti vā …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:3.11
+Pali: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:3.12
+Pali: evāhaṁ bhagavati, brahmacariyaṁ carissāmi. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn63:3.13
+Pali: No ce me bhagavā byākarissati: 
+Sujato: (empty)
+Translator: If he does not declare these to me, 
+
+=== RUN 193: mn63:3.14 mn63:3.15 ===
+File: data/bodhi/sutta/mn/mn63_translation-en-bodhi.json
+ABOVE mn63:3.13
+Pali: No ce me bhagavā byākarissati: 
+Sujato: (empty)
+Translator: If he does not declare these to me, 
+JUDGE mn63:3.14
+Pali: ‘sassato loko’ti vā, ‘asassato loko’ti vā …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:3.15
+Pali: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā—
+Sujato: (empty)
+Translator: (empty)
+BELOW mn63:3.16
+Pali: evāhaṁ sikkhaṁ paccakkhāya hīnāyāvattissāmīti. 
+Sujato: (empty)
+Translator: then I will abandon the training and return to the low life.’ 
+
+=== RUN 194: mn63:3.28 mn63:3.29 mn63:3.30 mn63:3.31 ===
+File: data/bodhi/sutta/mn/mn63_translation-en-bodhi.json
+ABOVE mn63:3.27
+Pali: ‘anantavā loko’ti, ‘anantavā loko’ti me bhagavā byākarotu. 
+Sujato: or infinite; 
+Translator: ‘the world is infinite,’…
+JUDGE mn63:3.28
+Pali: No ce bhagavā jānāti: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:3.29
+Pali: ‘antavā loko’ti vā, ‘anantavā loko’ti vā, ajānato kho pana apassato etadeva ujukaṁ hoti yadidaṁ: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:3.30
+Pali: ‘na jānāmi, na passāmī’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:3.31
+Pali: Sace bhagavā jānāti: 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn63:3.32
+Pali: ‘taṁ jīvaṁ taṁ sarīran’ti, ‘taṁ jīvaṁ taṁ sarīran’ti me bhagavā byākarotu; 
+Sujato: that the soul and the body are one and the same, 
+Translator: ‘the soul is the same as the body,’…
+
+=== RUN 195: mn63:3.35 mn63:3.36 mn63:3.37 mn63:3.38 ===
+File: data/bodhi/sutta/mn/mn63_translation-en-bodhi.json
+ABOVE mn63:3.34
+Pali: ‘aññaṁ jīvaṁ aññaṁ sarīran’ti, ‘aññaṁ jīvaṁ aññaṁ sarīran’ti me bhagavā byākarotu. 
+Sujato: or is the soul one thing, the body another; 
+Translator: ‘the soul is one thing and the body another,’…
+JUDGE mn63:3.35
+Pali: No ce bhagavā jānāti: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:3.36
+Pali: ‘taṁ jīvaṁ taṁ sarīran’ti vā, ‘aññaṁ jīvaṁ aññaṁ sarīran’ti vā, ajānato kho pana apassato etadeva ujukaṁ hoti yadidaṁ: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:3.37
+Pali: ‘na jānāmi, na passāmī’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:3.38
+Pali: Sace bhagavā jānāti: 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn63:3.39
+Pali: ‘hoti tathāgato paraṁ maraṇā’ti, ‘hoti tathāgato paraṁ maraṇā’ti me bhagavā byākarotu; 
+Sujato: that after death, a realized one still exists, 
+Translator: ‘after death a Tathāgata exists,’ 
+
+=== RUN 196: mn63:3.42 mn63:3.43 mn63:3.44 mn63:3.45 ===
+File: data/bodhi/sutta/mn/mn63_translation-en-bodhi.json
+ABOVE mn63:3.41
+Pali: ‘na hoti tathāgato paraṁ maraṇā’ti, ‘na hoti tathāgato paraṁ maraṇā’ti me bhagavā byākarotu. 
+Sujato: or no longer exists, 
+Translator: …’after death a Tathāgata does not exist,’…
+JUDGE mn63:3.42
+Pali: No ce bhagavā jānāti: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:3.43
+Pali: ‘hoti tathāgato paraṁ maraṇā’ti vā, ‘na hoti tathāgato paraṁ maraṇā’ti vā, ajānato kho pana apassato etadeva ujukaṁ hoti yadidaṁ: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:3.44
+Pali: ‘na jānāmi na passāmī’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:3.45
+Pali: Sace bhagavā jānāti: 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn63:3.46
+Pali: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’ti, ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’ti me bhagavā byākarotu; 
+Sujato: or both still exists and no longer exists, or neither still exists nor no longer exists, please tell me. 
+Translator: If the Blessed One knows ‘after death a Tathāgata both exists and does not exist,’ let the Blessed One declare that to me; if the Blessed One knows ‘after death a Tathāgata neither exists nor does not exist,’ let the Blessed One declare that to me. 
+
+=== RUN 197: mn63:3.47 mn63:3.48 ===
+File: data/bodhi/sutta/mn/mn63_translation-en-bodhi.json
+ABOVE mn63:3.46
+Pali: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’ti, ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’ti me bhagavā byākarotu; 
+Sujato: or both still exists and no longer exists, or neither still exists nor no longer exists, please tell me. 
+Translator: If the Blessed One knows ‘after death a Tathāgata both exists and does not exist,’ let the Blessed One declare that to me; if the Blessed One knows ‘after death a Tathāgata neither exists nor does not exist,’ let the Blessed One declare that to me. 
+JUDGE mn63:3.47
+Pali: sace bhagavā jānāti: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:3.48
+Pali: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti me bhagavā byākarotu. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn63:3.49
+Pali: No ce bhagavā jānāti: 
+Sujato: If you don’t know 
+Translator: If the Blessed One does not know either ‘after death a Tathāgata both exists and does not exist’ or ‘after death a Tathāgata neither exists nor does not exist,’ 
+
+=== RUN 198: mn63:6.7 mn63:6.8 ===
+File: data/bodhi/sutta/mn/mn63_translation-en-bodhi.json
+ABOVE mn63:6.6
+Pali: ‘Anantavā loko’ti, mālukyaputta, diṭṭhiyā sati brahmacariyavāso abhavissāti, evampi no. 
+Sujato: ‘the cosmos is infinite’ … 
+Translator: ‘the world is infinite, ’…
+JUDGE mn63:6.7
+Pali: ‘Antavā loko’ti vā, mālukyaputta, diṭṭhiyā sati, ‘anantavā loko’ti vā diṭṭhiyā sati attheva jāti, atthi jarā, atthi maraṇaṁ, santi sokaparidevadukkhadomanassupāyāsā; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:6.8
+Pali: yesāhaṁ diṭṭheva dhamme nighātaṁ paññapemi. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn63:6.9
+Pali: ‘Taṁ jīvaṁ taṁ sarīran’ti, mālukyaputta, diṭṭhiyā sati brahmacariyavāso abhavissāti, evaṁ no. 
+Sujato: ‘the soul and the body are one and the same’ … 
+Translator: ‘the soul is the same as the body,’…
+
+=== RUN 199: mn63:6.11 mn63:6.12 ===
+File: data/bodhi/sutta/mn/mn63_translation-en-bodhi.json
+ABOVE mn63:6.10
+Pali: ‘Aññaṁ jīvaṁ aññaṁ sarīran’ti, mālukyaputta, diṭṭhiyā sati brahmacariyavāso abhavissāti, evampi no. 
+Sujato: ‘the soul is one thing, the body another’ … 
+Translator: ‘the soul is one thing and the body another,’…
+JUDGE mn63:6.11
+Pali: ‘Taṁ jīvaṁ taṁ sarīran’ti vā, mālukyaputta, diṭṭhiyā sati, ‘aññaṁ jīvaṁ aññaṁ sarīran’ti vā diṭṭhiyā sati attheva jāti …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:6.12
+Pali: nighātaṁ paññapemi. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn63:6.13
+Pali: ‘Hoti tathāgato paraṁ maraṇā’ti, mālukyaputta, diṭṭhiyā sati brahmacariyavāso abhavissāti, evaṁ no. 
+Sujato: ‘a realized one still exists after death’ … 
+Translator: ‘after death a Tathāgata exists,’…
+
+=== RUN 200: mn63:6.15 mn63:6.16 ===
+File: data/bodhi/sutta/mn/mn63_translation-en-bodhi.json
+ABOVE mn63:6.14
+Pali: ‘Na hoti tathāgato paraṁ maraṇā’ti, mālukyaputta, diṭṭhiyā sati brahmacariyavāso abhavissāti, evampi no. 
+Sujato: ‘a realized one no longer exists after death’ … 
+Translator: ‘after death a Tathāgata does not exist,’ the holy life cannot be lived… 
+JUDGE mn63:6.15
+Pali: ‘Hoti tathāgato paraṁ maraṇā’ti vā, mālukyaputta, diṭṭhiyā sati, ‘na hoti tathāgato paraṁ maraṇā’ti vā diṭṭhiyā sati attheva jāti …pe… 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn63:6.16
+Pali: yesāhaṁ diṭṭheva dhamme nighātaṁ paññapemi. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn63:6.17
+Pali: ‘Hoti ca na ca hoti tathāgato paraṁ maraṇā’ti, mālukyaputta, diṭṭhiyā sati brahmacariyavāso abhavissāti, evaṁ no. 
+Sujato: ‘a realized one both still exists and no longer exists after death’ … 
+Translator: If there is the view ‘after death a Tathāgata both exists and does not exist,’ the holy life cannot be lived; 

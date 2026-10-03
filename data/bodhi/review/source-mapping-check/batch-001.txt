@@ -1,0 +1,14 @@
+## 1 (bodhi, sn45.50-55)
+sn45.50-54:1.7 | P: yadidaṁ—appamādasampadā …pe….  | S: “… accomplishment in diligence …”
+  Before: accomplishment in diligence …
+  After: accomplishment in diligence … …
+sn45.50-54:1.8 | P: Chaṭṭhaṁ.  | S: 
+  Before: …
+  After: (none)
+sn45.55:1.1 | P: “Sūriyassa, bhikkhave, udayato etaṁ pubbaṅgamaṁ etaṁ pubbanimittaṁ, yadidaṁ—aruṇuggaṁ;  | S: “Mendicants, the dawn is the forerunner and harbinger of the sunrise.
+  Before: (none)
+  After: (none)
+sn45.55:1.2 | P: evameva kho, bhikkhave, bhikkhuno ariyassa aṭṭhaṅgikassa maggassa uppādāya etaṁ pubbaṅgamaṁ etaṁ pubbanimittaṁ, yadidaṁ—yonisomanasikārasampadā.  | S: In the same way accomplishment in rational application of mind is the forerunner and harbinger of the noble eightfold path for a mendicant.
+  Before: accomplishment in careful attention.
+  After: accomplishment in careful attention.
+

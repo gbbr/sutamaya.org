@@ -14,20 +14,22 @@ each rule the work settles goes into "Pulling updates" and "Reviewing new and re
 the same change, as something the segmenter does itself wherever it can, leaving readers only what
 a rule can't decide.
 
-1. **Skipped lines**: each translation's `skipped.json`, the lines below its English that it
-   abbreviates or leaves out (see "Building them into the app"). A passage rendered earlier than
-   its Pali, as in Bodhi's SN 4.25, 12.68 and 22.80 and Ṭhānissaro's SN 22.58, is skipped where it
-   stands. The rounds are in `review/skipped/`.
+1. **Covered lines**: each translation's `covered.json`, the lines in a run of two or more empty
+   lines that the English above translates (see "Building them into the app"). Most such runs are
+   repetitions the translator abbreviates, which stay out. A passage rendered earlier than its
+   Pali, as in Bodhi's SN 4.25, 12.68 and 22.80 and Ṭhānissaro's SN 22.58, isn't covered by the
+   line above it. The rounds are in `review/skipped/`.
 2. **Verse**: in every collection, each verse's English sits in its own verse, in order, spread
    over its Pali lines as far as the translator's line breaks allow (see "Building them into the
    app"). The rounds are in `review/verse/`.
-3. **Source mapping**: Bodhi's SN 45 has eight range pages whose body the single sutta after them
-   repeats (45.42–47 and 48, through 45.92–95 and 96), so both app texts show the whole body; it
-   belongs once, spread over both by their Pali (`data/bodhi/review/codex-read/source-ranges.json`).
-   Ṭhānissaro's AN 5:254–259 on dhammatalks.org, numbered the Thai way, are SuttaCentral's AN 5.254,
-   255, 256, 257–263, 264 and 265–271, three of which the older copies here also hold; which page
-   each app text reads, with no English duplicated or lost, is open
-   (`data/thanissaro/review/codex-read/source-ranges.json`).
+3. **Source mapping**: Bodhi's eight shared SN 45 pages (45.42–48 through 45.92–96)
+   are each saved once under their full span, with their English spread once over both app texts
+   by their Pali (`data/bodhi/review/source-mapping-final/`).
+   Ṭhānissaro's mapping is settled: dhammatalks.org's Thai-numbered AN 5:254–259 is saved as
+   `an5.254-271.html`, covering the app's AN 5.254, 255, 256, 257–263, 264 and 265–271. Each reads
+   its part of that page once; the three older duplicate pages have left the folder. The cuts
+   were reviewed with Pali on every row (`data/thanissaro/review/source-mapping-reread/`), with
+   the numbering evidence in `data/thanissaro/review/codex-read/source-ranges.json`.
 4. **Teach the segmenter**: the patterns items 1–3 settle become rules it applies to new texts,
    checked against the reviews' own answers, and the steps in "Reviewing new and revised texts"
    shrink to what the rules leave.
@@ -38,8 +40,8 @@ a rule can't decide.
 
 | Path | Contents |
 |---|---|
-| `bodhi/` | Bhikkhu Bodhi: 47 MN, 807 SN and 312 AN suttas from Wisdom Publications, and DN 1, 2 and 15 from the Buddhist Publication Society, all via SuttaCentral; Thag 8.1 from Access to Insight; notes for DN 1 |
-| `thanissaro/` | Ṭhānissaro Bhikkhu: 1,427 texts from dhammatalks.org, 6 older ones from SuttaCentral for suttas dhammatalks.org lacks, and the Dhammapada's endnotes |
+| `bodhi/` | Bhikkhu Bodhi: 47 MN, 799 SN and 312 AN pages from Wisdom Publications, and DN 1, 2 and 15 from the Buddhist Publication Society, all via SuttaCentral; Thag 8.1 from Access to Insight; notes for DN 1 |
+| `thanissaro/` | Ṭhānissaro Bhikkhu: 1,427 texts from dhammatalks.org, 3 older ones from SuttaCentral for suttas dhammatalks.org lacks, and the Dhammapada's endnotes |
 | `*/sources.json` | The source URL of every file, and the date they were fetched |
 
 SuttaCentral's files are from sc-data at commit `8442c9f`. Every text is one the app has.
@@ -67,7 +69,8 @@ from several suttas, as in AN 1 and AN 2, counts when any of them holds some.
 
 Each file sits in the folder that holds Sujato's text of the same sutta and is named by the app's
 sutta ID: `thanissaro/sutta/an/an3/an3.65.html`. Notes published apart from their text go under
-`notes/`, as Sujato's do. Bodhi's files keep SuttaCentral's numbers, which are the app's.
+`notes/`, as Sujato's do. Bodhi's files keep SuttaCentral's numbers, which are the app's. His shared SN 45 pages
+are named by their full coverage, as `sn45.50-55.html` for the app's `sn45.50-54` and `sn45.55`.
 
 - A page covering several of the app's suttas is named by the span: `sn15.14-19.html`.
   A page covering several spans names each, after a comma: `an1.21-30,39-40.html`.
@@ -93,11 +96,17 @@ saved under every sutta it holds, and only the section a file is named for is re
 - **dhammatalks.org** — each page's text block, `<div id="sutta">`, without the site around it. The
   translator's introduction is the italic paragraphs after the `<h1>`; the notes close the block.
   The Dhammapada's notes are in `notes/kn/dhp/endnotes.html`, which its chapters link to.
+  Its Thai-numbered AN 5:254–259 is saved unchanged as `sutta/an/an5/an5.254-271.html`: its six
+  blocks belong to AN 5.254, 255, 256, 257–263, 264 and 265–271, in that order. The span in the
+  filename supplies those app IDs to the segmenter, including the app's grouped texts.
 - **SuttaCentral** — its HTML as published, with SuttaCentral and PTS references
-  (`<a class='ref …'>`) and the licence at the end. None carries notes.
-- **Ṭhānissaro's older copies** — `an1.31-40`, `an5.257-263`, `an5.264`, `an5.265-271`, `an11.16`
-  and `an11.17` are Access to Insight's 2013 versions, which dhammatalks.org supersedes wherever it
-  has the sutta: `an1.31-40`'s 1.39–40 are read from `an1.21-30,39-40.html` instead.
+  (`<a class='ref …'>`) and the licence at the end. None carries notes. Bodhi's eight shared SN 45
+  bodies are saved once, byte for byte from the range copy; the repeated terminal-sutta copy is
+  absent, and `sources.json` gives the retained copy's URL under its full-span filename.
+- **Ṭhānissaro's older copies** — `an1.31-40`, `an11.16` and `an11.17` are Access to Insight's
+  2013 versions, which dhammatalks.org supersedes wherever it has the sutta: `an1.31-40`'s 1.39–40
+  are read from `an1.21-30,39-40.html` instead. The older `an5.257-263`, `an5.264` and
+  `an5.265-271` pages were removed; all three texts read dhammatalks.org's `an5.254-271.html`.
 - **Bodhi's notes** — free only for DN 1: `notes/dn/dn1.html` is Access to Insight's copy of the
   same translation with its notes, while `sutta/dn/dn1.html` has the fuller text. His notes to MN,
   SN and AN are only in Wisdom's books.
@@ -126,8 +135,14 @@ dhammatalks.org revises its translations and adds new ones; Bodhi's change rarel
    name it by the app's sutta ID as above, checking the number against Sujato's text and the Pali
    title where the Thai numbering differs, and add its URL to `sources.json`. Only texts the app
    carries belong here.
+   For Ṭhānissaro, a page's span names the app IDs it covers, even when the Thai title's span is
+   shorter, as with AN 5:254–259 in `an5.254-271.html`. Remove older pages it replaces in full
+   and their entries in `sources.json`; a partially replaced page stays for the suttas still
+   read from it, as `an1.31-40.html` does.
 3. **SuttaCentral's files** (Bodhi, and Ṭhānissaro's older copies): copy them again from sc-data's
-   `html_text/en/pli/sutta/`, and update the commit above.
+   `html_text/en/pli/sutta/`, and update the commit above. For Bodhi's shared SN 45 pages, keep
+   one range copy under its full span, with its original URL; leave out its duplicate terminal
+   copy, and confirm the two bodies still match before treating them as one.
 4. **Segment**: `node scripts/segmenter/segment-translations.mjs thanissaro` (or `bodhi`). A new
    text comes out with the segmenter's own cuts. A revised one keeps every settled cut that still
    fits, and the run names those that don't.
@@ -145,7 +160,7 @@ in `data/sujato/`'s layout:
 | `cuts.json` | what the reviews settled, by line, kept across runs |
 | `learned.json` | the translator's words learned for Sujato's |
 | `report.json` | each text's alignment and how sure it is |
-| `skipped.json` | the lines below an English line that the translation abbreviates or leaves out |
+| `covered.json` | the lines in a run of two or more empty lines that the English above translates |
 | `review/` | the review rounds, the read-throughs, the audits and the list of references |
 
 - **The words are only cut**: a text whose lines, joined, aren't word for word its page is reported
@@ -169,7 +184,9 @@ The segmenter's unsure cuts, and the places a cut can't mend, go to reviewers in
 <folder> <segmenter options>` puts a round up in batches in `review/<folder>/`; reviewers answer
 beside them, as [review-rounds.md](review-rounds.md) says; `keep <folder>` keeps the answers. Every
 text here has been through the rounds, so a round takes only the texts in hand: `--only <page>,…`
-names them, as their files here are named.
+names them, as their files here are named. Bodhi's shared SN 45 pages are reviewed across both
+app texts: a common formula stays where it is first translated, each listed variant sits on its
+own Pali line, and the final full passage sits on the terminal sutta's Pali.
 
 Every round keeps to these:
 
@@ -255,10 +272,15 @@ Once segmenting is done, the app's build takes these translations in. What it mu
   - **verse**: the translator's lines are spread over the verse's Pali lines in order, at his own
     line breaks, the way Sujato's are. A line needn't translate the Pali it sits on; the verse
     must. The English never matches the Pali line for line, and the Pali's line keys never change.
-- An English line shows the Pali of its own line and of the empty lines below it, up to the next
-  English line in the same paragraph, leaving out those in `skipped.json`. Pali with no English
-  line above it in its paragraph shows under none, as with Sujato's lines; so does the rest of a
-  sutta given in excerpt (Ṭhānissaro's DN 21, DN 26, MN 54 and MN 91). The paragraphs come from the
+- The Pali under an English line follows the rule for Sujato's lines ([docs/corpus.md](../../docs/corpus.md)'s
+  "A segment"): a lone empty line in its paragraph joins the line above, and a run of two or more
+  stays hidden, since most runs are repetitions the translator abbreviates. The exception is the
+  lines in `covered.json`, whose own content the English above renders, as where Bodhi gives a
+  list whole in one sentence (AN 8.46:1.5–1.7): they join it too. A repetition the English
+  abbreviates or compresses is never covered, even where the English mentions it, and a doubtful
+  line isn't either: a missing entry only hides Pali, while a wrong one puts repetition under a
+  line. The rest of a sutta given in excerpt (Ṭhānissaro's DN 21, DN 26,
+  MN 54 and MN 91) shows under no line. The paragraphs come from the
   Pali's markup (`data/html`), not the line keys, which make each of the Dhammapada's verse lines
   a paragraph of its own.
 - The markup to render:
@@ -271,7 +293,7 @@ Once segmenting is done, the app's build takes these translations in. What it mu
   The links should open the sutta in the app instead.
 - The note on a sutta's title line, or on its first line where it has none, holds the translator's
   introduction and "See also". Bodhi has notes only for DN 1.
-- Only `sutta/`, `notes/` and `skipped.json` ship. `review/`, `cuts.json`, `learned.json` and
+- Only `sutta/`, `notes/` and `covered.json` ship. `review/`, `cuts.json`, `learned.json` and
   `report.json` are working files.
 
 ## Where to look

@@ -1,0 +1,1869 @@
+bodhi: skipped-Pali review batch 003
+Read the full English above, each original Pali line, and the next English. Sujato is context only.
+covered = this line's own content is explicitly rendered by the English above, including complete lists.
+skipped = abbreviated or compressed repetition, even if mentioned, or omitted. When in doubt, skipped.
+Judge each key independently; a run may be mixed. An ellipsis alone does not decide.
+Only runs of two or more empty prose lines in the same paragraph are reviewed; lone lines join automatically.
+Write <key> covered|skipped|unsure for every RUN key, then # done. Do not mark context keys.
+
+=== RUN 101: dn2:98.4 dn2:98.5 dn2:98.6 ===
+File: data/bodhi/sutta/dn/dn2_translation-en-bodhi.json
+ABOVE dn2:98.3
+Pali: ‘So idaṁ dukkhan’ti yathābhūtaṁ pajānāti, ‘ayaṁ dukkhasamudayo’ti yathābhūtaṁ pajānāti, ‘ayaṁ dukkhanirodho’ti yathābhūtaṁ pajānāti, ‘ayaṁ dukkhanirodhagāminī paṭipadā’ti yathābhūtaṁ pajānāti. 
+Sujato: (empty)
+Translator: He understands as it really is: ‘This is suffering’ … 
+JUDGE dn2:98.4
+Pali: ‘Ime āsavā’ti yathābhūtaṁ pajānāti, ‘ayaṁ āsavasamudayo’ti yathābhūtaṁ pajānāti, ‘ayaṁ āsavanirodho’ti yathābhūtaṁ pajānāti, ‘ayaṁ āsavanirodhagāminī paṭipadā’ti yathābhūtaṁ pajānāti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn2:98.5
+Pali: Tassa evaṁ jānato evaṁ passato kāmāsavāpi cittaṁ vimuccati, bhavāsavāpi cittaṁ vimuccati, avijjāsavāpi cittaṁ vimuccati, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn2:98.6
+Pali: vimuttasmiṁ ‘vimuttam’iti ñāṇaṁ hoti, 
+Sujato: (empty)
+Translator: (empty)
+BELOW dn2:98.7
+Pali: ‘khīṇā jāti, vusitaṁ brahmacariyaṁ, kataṁ karaṇīyaṁ, nāparaṁ itthattāyā’ti pajānāti. 
+Sujato: (empty)
+Translator: He understands: ‘Destroyed is birth, the holy life has been lived, what had to be done has been done, there is nothing further beyond this.’ 
+
+=== RUN 102: dn15:34.5 dn15:34.6 dn15:34.7 dn15:34.8 ===
+File: data/bodhi/sutta/dn/dn15_translation-en-bodhi.json
+ABOVE dn15:34.4
+Pali: “tatrānanda, yamidaṁ asaññasattāyatanaṁ. 
+Sujato: (empty)
+Translator: “If one understands the remaining stations for consciousness … the base of non-percipient beings … the base of neither perception nor non-perception, and if one understands its origin, its passing away, its satisfaction, its unsatisfactoriness, and the escape from it, is it proper for one to seek enjoyment in it?” 
+JUDGE dn15:34.5
+Pali: Yo nu kho, ānanda, tañca pajānāti, tassa ca samudayaṁ pajānāti, tassa ca atthaṅgamaṁ pajānāti, tassa ca assādaṁ pajānāti, tassa ca ādīnavaṁ pajānāti, tassa ca nissaraṇaṁ pajānāti, kallaṁ nu tena tadabhinanditun”ti? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn15:34.6
+Pali: “No hetaṁ, bhante”. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn15:34.7
+Pali: “Tatrānanda, yamidaṁ nevasaññānāsaññāyatanaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE dn15:34.8
+Pali: Yo nu kho, ānanda, tañca pajānāti, tassa ca samudayaṁ pajānāti, tassa ca atthaṅgamaṁ pajānāti, tassa ca assādaṁ pajānāti, tassa ca ādīnavaṁ pajānāti, tassa ca nissaraṇaṁ pajānāti, kallaṁ nu tena tadabhinanditun”ti? 
+Sujato: (empty)
+Translator: (empty)
+BELOW dn15:34.9
+Pali: “No hetaṁ, bhante”. 
+Sujato: (empty)
+Translator: “Certainly not, venerable sir.” 
+
+=== RUN 103: mn1:29.1 mn1:30.1 mn1:31.1 mn1:32.1 mn1:33.1 mn1:34.1 mn1:35.1 mn1:36.1 mn1:37.1 mn1:38.1 mn1:39.1 mn1:40.1 mn1:41.1 mn1:42.1 mn1:43.1 mn1:44.1 mn1:45.1 mn1:46.1 mn1:47.1 mn1:48.1 ===
+File: data/bodhi/sutta/mn/mn1_translation-en-bodhi.json
+ABOVE mn1:28.1
+Pali: Āpaṁ …pe… 
+Sujato: They directly know water … 
+Translator: 28–49. “He directly knows water as water…
+JUDGE mn1:29.1
+Pali: tejaṁ … 
+Sujato: fire … 
+Translator: (empty)
+JUDGE mn1:30.1
+Pali: vāyaṁ … 
+Sujato: air … 
+Translator: (empty)
+JUDGE mn1:31.1
+Pali: bhūte … 
+Sujato: creatures … 
+Translator: (empty)
+JUDGE mn1:32.1
+Pali: deve … 
+Sujato: gods … 
+Translator: (empty)
+JUDGE mn1:33.1
+Pali: pajāpatiṁ … 
+Sujato: the Progenitor … 
+Translator: (empty)
+JUDGE mn1:34.1
+Pali: brahmaṁ … 
+Sujato: the Divinity … 
+Translator: (empty)
+JUDGE mn1:35.1
+Pali: ābhassare … 
+Sujato: those of sublime luminosity … 
+Translator: (empty)
+JUDGE mn1:36.1
+Pali: subhakiṇhe … 
+Sujato: those replete with glory … 
+Translator: (empty)
+JUDGE mn1:37.1
+Pali: vehapphale … 
+Sujato: those of abundant fruit … 
+Translator: (empty)
+JUDGE mn1:38.1
+Pali: abhibhuṁ … 
+Sujato: the Vanquisher … 
+Translator: (empty)
+JUDGE mn1:39.1
+Pali: ākāsānañcāyatanaṁ … 
+Sujato: the dimension of infinite space … 
+Translator: (empty)
+JUDGE mn1:40.1
+Pali: viññāṇañcāyatanaṁ … 
+Sujato: the dimension of infinite consciousness … 
+Translator: (empty)
+JUDGE mn1:41.1
+Pali: ākiñcaññāyatanaṁ … 
+Sujato: the dimension of nothingness … 
+Translator: (empty)
+JUDGE mn1:42.1
+Pali: nevasaññānāsaññāyatanaṁ … 
+Sujato: the dimension of neither perception nor non-perception … 
+Translator: (empty)
+JUDGE mn1:43.1
+Pali: diṭṭhaṁ … 
+Sujato: the seen … 
+Translator: (empty)
+JUDGE mn1:44.1
+Pali: sutaṁ … 
+Sujato: the heard … 
+Translator: (empty)
+JUDGE mn1:45.1
+Pali: mutaṁ … 
+Sujato: the thought … 
+Translator: (empty)
+JUDGE mn1:46.1
+Pali: viññātaṁ … 
+Sujato: the known … 
+Translator: (empty)
+JUDGE mn1:47.1
+Pali: ekattaṁ … 
+Sujato: oneness … 
+Translator: (empty)
+JUDGE mn1:48.1
+Pali: nānattaṁ … 
+Sujato: diversity … 
+Translator: (empty)
+BELOW mn1:49.1
+Pali: sabbaṁ … 
+Sujato: all … 
+Translator: He directly knows all as all… 
+
+=== RUN 104: mn1:53.1 mn1:54.1 mn1:55.1 mn1:56.1 mn1:57.1 mn1:58.1 mn1:59.1 mn1:60.1 mn1:61.1 mn1:62.1 mn1:63.1 mn1:64.1 mn1:65.1 mn1:66.1 mn1:67.1 mn1:68.1 mn1:69.1 mn1:70.1 mn1:71.1 mn1:72.1 mn1:73.1 ===
+File: data/bodhi/sutta/mn/mn1_translation-en-bodhi.json
+ABOVE mn1:52.1
+Pali: Āpaṁ …pe… 
+Sujato: They directly know water … 
+Translator: “He too directly knows water as water…
+JUDGE mn1:53.1
+Pali: tejaṁ … 
+Sujato: fire … 
+Translator: (empty)
+JUDGE mn1:54.1
+Pali: vāyaṁ … 
+Sujato: air … 
+Translator: (empty)
+JUDGE mn1:55.1
+Pali: bhūte … 
+Sujato: creatures … 
+Translator: (empty)
+JUDGE mn1:56.1
+Pali: deve … 
+Sujato: gods … 
+Translator: (empty)
+JUDGE mn1:57.1
+Pali: pajāpatiṁ … 
+Sujato: the Progenitor … 
+Translator: (empty)
+JUDGE mn1:58.1
+Pali: brahmaṁ … 
+Sujato: the Divinity … 
+Translator: (empty)
+JUDGE mn1:59.1
+Pali: ābhassare … 
+Sujato: those of sublime luminosity … 
+Translator: (empty)
+JUDGE mn1:60.1
+Pali: subhakiṇhe … 
+Sujato: those replete with glory … 
+Translator: (empty)
+JUDGE mn1:61.1
+Pali: vehapphale … 
+Sujato: those of abundant fruit … 
+Translator: (empty)
+JUDGE mn1:62.1
+Pali: abhibhuṁ … 
+Sujato: the Vanquisher … 
+Translator: (empty)
+JUDGE mn1:63.1
+Pali: ākāsānañcāyatanaṁ … 
+Sujato: the dimension of infinite space … 
+Translator: (empty)
+JUDGE mn1:64.1
+Pali: viññāṇañcāyatanaṁ … 
+Sujato: the dimension of infinite consciousness … 
+Translator: (empty)
+JUDGE mn1:65.1
+Pali: ākiñcaññāyatanaṁ … 
+Sujato: the dimension of nothingness … 
+Translator: (empty)
+JUDGE mn1:66.1
+Pali: nevasaññānāsaññāyatanaṁ … 
+Sujato: the dimension of neither perception nor non-perception … 
+Translator: (empty)
+JUDGE mn1:67.1
+Pali: diṭṭhaṁ … 
+Sujato: the seen … 
+Translator: (empty)
+JUDGE mn1:68.1
+Pali: sutaṁ … 
+Sujato: the heard … 
+Translator: (empty)
+JUDGE mn1:69.1
+Pali: mutaṁ … 
+Sujato: the thought … 
+Translator: (empty)
+JUDGE mn1:70.1
+Pali: viññātaṁ … 
+Sujato: the known … 
+Translator: (empty)
+JUDGE mn1:71.1
+Pali: ekattaṁ … 
+Sujato: oneness … 
+Translator: (empty)
+JUDGE mn1:72.1
+Pali: nānattaṁ … 
+Sujato: diversity … 
+Translator: (empty)
+JUDGE mn1:73.1
+Pali: sabbaṁ … 
+Sujato: all … 
+Translator: (empty)
+BELOW mn1:74.1
+Pali: nibbānaṁ nibbānato abhijānāti; 
+Sujato: They directly know extinguishment as extinguishment. 
+Translator: Nibbāna as Nibbāna…
+
+=== RUN 105: mn1:77.1 mn1:78.1 mn1:79.1 mn1:80.1 mn1:81.1 mn1:82.1 mn1:83.1 mn1:84.1 mn1:85.1 mn1:86.1 mn1:87.1 mn1:88.1 mn1:89.1 mn1:90.1 mn1:91.1 mn1:92.1 mn1:93.1 mn1:94.1 mn1:95.1 mn1:96.1 mn1:97.1 ===
+File: data/bodhi/sutta/mn/mn1_translation-en-bodhi.json
+ABOVE mn1:76.1
+Pali: Āpaṁ …pe… 
+Sujato: They directly know water … 
+Translator: “He too directly knows water as water…
+JUDGE mn1:77.1
+Pali: tejaṁ … 
+Sujato: fire … 
+Translator: (empty)
+JUDGE mn1:78.1
+Pali: vāyaṁ … 
+Sujato: air … 
+Translator: (empty)
+JUDGE mn1:79.1
+Pali: bhūte … 
+Sujato: creatures … 
+Translator: (empty)
+JUDGE mn1:80.1
+Pali: deve … 
+Sujato: gods … 
+Translator: (empty)
+JUDGE mn1:81.1
+Pali: pajāpatiṁ … 
+Sujato: the Progenitor … 
+Translator: (empty)
+JUDGE mn1:82.1
+Pali: brahmaṁ … 
+Sujato: the Divinity … 
+Translator: (empty)
+JUDGE mn1:83.1
+Pali: ābhassare … 
+Sujato: those of sublime luminosity … 
+Translator: (empty)
+JUDGE mn1:84.1
+Pali: subhakiṇhe … 
+Sujato: those replete with glory … 
+Translator: (empty)
+JUDGE mn1:85.1
+Pali: vehapphale … 
+Sujato: those of abundant fruit … 
+Translator: (empty)
+JUDGE mn1:86.1
+Pali: abhibhuṁ … 
+Sujato: the Vanquisher … 
+Translator: (empty)
+JUDGE mn1:87.1
+Pali: ākāsānañcāyatanaṁ … 
+Sujato: the dimension of infinite space … 
+Translator: (empty)
+JUDGE mn1:88.1
+Pali: viññāṇañcāyatanaṁ … 
+Sujato: the dimension of infinite consciousness … 
+Translator: (empty)
+JUDGE mn1:89.1
+Pali: ākiñcaññāyatanaṁ … 
+Sujato: the dimension of nothingness … 
+Translator: (empty)
+JUDGE mn1:90.1
+Pali: nevasaññānāsaññāyatanaṁ … 
+Sujato: the dimension of neither perception nor non-perception … 
+Translator: (empty)
+JUDGE mn1:91.1
+Pali: diṭṭhaṁ … 
+Sujato: the seen … 
+Translator: (empty)
+JUDGE mn1:92.1
+Pali: sutaṁ … 
+Sujato: the heard … 
+Translator: (empty)
+JUDGE mn1:93.1
+Pali: mutaṁ … 
+Sujato: the thought … 
+Translator: (empty)
+JUDGE mn1:94.1
+Pali: viññātaṁ … 
+Sujato: the known … 
+Translator: (empty)
+JUDGE mn1:95.1
+Pali: ekattaṁ … 
+Sujato: oneness … 
+Translator: (empty)
+JUDGE mn1:96.1
+Pali: nānattaṁ … 
+Sujato: diversity … 
+Translator: (empty)
+JUDGE mn1:97.1
+Pali: sabbaṁ … 
+Sujato: all … 
+Translator: (empty)
+BELOW mn1:98.1
+Pali: nibbānaṁ nibbānato abhijānāti; 
+Sujato: They directly know extinguishment as extinguishment. 
+Translator: Nibbāna as Nibbāna…
+
+=== RUN 106: mn1:101.1 mn1:102.1 mn1:103.1 mn1:104.1 mn1:105.1 mn1:106.1 mn1:107.1 mn1:108.1 mn1:109.1 mn1:110.1 mn1:111.1 mn1:112.1 mn1:113.1 mn1:114.1 mn1:115.1 mn1:116.1 mn1:117.1 mn1:118.1 mn1:119.1 mn1:120.1 mn1:121.1 ===
+File: data/bodhi/sutta/mn/mn1_translation-en-bodhi.json
+ABOVE mn1:100.1
+Pali: Āpaṁ …pe… 
+Sujato: They directly know water … 
+Translator: “He too directly knows water as water…
+JUDGE mn1:101.1
+Pali: tejaṁ … 
+Sujato: fire … 
+Translator: (empty)
+JUDGE mn1:102.1
+Pali: vāyaṁ … 
+Sujato: air … 
+Translator: (empty)
+JUDGE mn1:103.1
+Pali: bhūte … 
+Sujato: creatures … 
+Translator: (empty)
+JUDGE mn1:104.1
+Pali: deve … 
+Sujato: gods … 
+Translator: (empty)
+JUDGE mn1:105.1
+Pali: pajāpatiṁ … 
+Sujato: the Progenitor … 
+Translator: (empty)
+JUDGE mn1:106.1
+Pali: brahmaṁ … 
+Sujato: the Divinity … 
+Translator: (empty)
+JUDGE mn1:107.1
+Pali: ābhassare … 
+Sujato: those of sublime luminosity … 
+Translator: (empty)
+JUDGE mn1:108.1
+Pali: subhakiṇhe … 
+Sujato: those replete with glory … 
+Translator: (empty)
+JUDGE mn1:109.1
+Pali: vehapphale … 
+Sujato: those of abundant fruit … 
+Translator: (empty)
+JUDGE mn1:110.1
+Pali: abhibhuṁ … 
+Sujato: the Vanquisher … 
+Translator: (empty)
+JUDGE mn1:111.1
+Pali: ākāsānañcāyatanaṁ … 
+Sujato: the dimension of infinite space … 
+Translator: (empty)
+JUDGE mn1:112.1
+Pali: viññāṇañcāyatanaṁ … 
+Sujato: the dimension of infinite consciousness … 
+Translator: (empty)
+JUDGE mn1:113.1
+Pali: ākiñcaññāyatanaṁ … 
+Sujato: the dimension of nothingness … 
+Translator: (empty)
+JUDGE mn1:114.1
+Pali: nevasaññānāsaññāyatanaṁ … 
+Sujato: the dimension of neither perception nor non-perception … 
+Translator: (empty)
+JUDGE mn1:115.1
+Pali: diṭṭhaṁ … 
+Sujato: the seen … 
+Translator: (empty)
+JUDGE mn1:116.1
+Pali: sutaṁ … 
+Sujato: the heard … 
+Translator: (empty)
+JUDGE mn1:117.1
+Pali: mutaṁ … 
+Sujato: the thought … 
+Translator: (empty)
+JUDGE mn1:118.1
+Pali: viññātaṁ … 
+Sujato: the known … 
+Translator: (empty)
+JUDGE mn1:119.1
+Pali: ekattaṁ … 
+Sujato: oneness … 
+Translator: (empty)
+JUDGE mn1:120.1
+Pali: nānattaṁ … 
+Sujato: diversity … 
+Translator: (empty)
+JUDGE mn1:121.1
+Pali: sabbaṁ … 
+Sujato: all … 
+Translator: (empty)
+BELOW mn1:122.1
+Pali: nibbānaṁ nibbānato abhijānāti; 
+Sujato: They directly know extinguishment as extinguishment. 
+Translator: Nibbāna as Nibbāna…
+
+=== RUN 107: mn1:125.1 mn1:126.1 mn1:127.1 mn1:128.1 mn1:129.1 mn1:130.1 mn1:131.1 mn1:132.1 mn1:133.1 mn1:134.1 mn1:135.1 mn1:136.1 mn1:137.1 mn1:138.1 mn1:139.1 mn1:140.1 mn1:141.1 mn1:142.1 mn1:143.1 mn1:144.1 mn1:145.1 ===
+File: data/bodhi/sutta/mn/mn1_translation-en-bodhi.json
+ABOVE mn1:124.1
+Pali: Āpaṁ …pe… 
+Sujato: They directly know water … 
+Translator: “He too directly knows water as water…
+JUDGE mn1:125.1
+Pali: tejaṁ … 
+Sujato: fire … 
+Translator: (empty)
+JUDGE mn1:126.1
+Pali: vāyaṁ … 
+Sujato: air … 
+Translator: (empty)
+JUDGE mn1:127.1
+Pali: bhūte … 
+Sujato: creatures … 
+Translator: (empty)
+JUDGE mn1:128.1
+Pali: deve … 
+Sujato: gods … 
+Translator: (empty)
+JUDGE mn1:129.1
+Pali: pajāpatiṁ … 
+Sujato: the Progenitor … 
+Translator: (empty)
+JUDGE mn1:130.1
+Pali: brahmaṁ … 
+Sujato: the Divinity … 
+Translator: (empty)
+JUDGE mn1:131.1
+Pali: ābhassare … 
+Sujato: those of sublime luminosity … 
+Translator: (empty)
+JUDGE mn1:132.1
+Pali: subhakiṇhe … 
+Sujato: those replete with glory … 
+Translator: (empty)
+JUDGE mn1:133.1
+Pali: vehapphale … 
+Sujato: those of abundant fruit … 
+Translator: (empty)
+JUDGE mn1:134.1
+Pali: abhibhuṁ … 
+Sujato: the Vanquisher … 
+Translator: (empty)
+JUDGE mn1:135.1
+Pali: ākāsānañcāyatanaṁ … 
+Sujato: the dimension of infinite space … 
+Translator: (empty)
+JUDGE mn1:136.1
+Pali: viññāṇañcāyatanaṁ … 
+Sujato: the dimension of infinite consciousness … 
+Translator: (empty)
+JUDGE mn1:137.1
+Pali: ākiñcaññāyatanaṁ … 
+Sujato: the dimension of nothingness … 
+Translator: (empty)
+JUDGE mn1:138.1
+Pali: nevasaññānāsaññāyatanaṁ … 
+Sujato: the dimension of neither perception nor non-perception … 
+Translator: (empty)
+JUDGE mn1:139.1
+Pali: diṭṭhaṁ … 
+Sujato: the seen … 
+Translator: (empty)
+JUDGE mn1:140.1
+Pali: sutaṁ … 
+Sujato: the heard … 
+Translator: (empty)
+JUDGE mn1:141.1
+Pali: mutaṁ … 
+Sujato: the thought … 
+Translator: (empty)
+JUDGE mn1:142.1
+Pali: viññātaṁ … 
+Sujato: the known … 
+Translator: (empty)
+JUDGE mn1:143.1
+Pali: ekattaṁ … 
+Sujato: oneness … 
+Translator: (empty)
+JUDGE mn1:144.1
+Pali: nānattaṁ … 
+Sujato: diversity … 
+Translator: (empty)
+JUDGE mn1:145.1
+Pali: sabbaṁ … 
+Sujato: all … 
+Translator: (empty)
+BELOW mn1:146.1
+Pali: nibbānaṁ nibbānato abhijānāti; 
+Sujato: They directly know extinguishment as extinguishment. 
+Translator: Nibbāna as Nibbāna…
+
+=== RUN 108: mn1:149.1 mn1:150.1 mn1:151.1 mn1:152.1 mn1:153.1 mn1:154.1 mn1:155.1 mn1:156.1 mn1:157.1 mn1:158.1 mn1:159.1 mn1:160.1 mn1:161.1 mn1:162.1 mn1:163.1 mn1:164.1 mn1:165.1 mn1:166.1 mn1:167.1 mn1:168.1 mn1:169.1 ===
+File: data/bodhi/sutta/mn/mn1_translation-en-bodhi.json
+ABOVE mn1:148.1
+Pali: Āpaṁ …pe… 
+Sujato: He directly knows water … 
+Translator: “He too directly knows water as water…
+JUDGE mn1:149.1
+Pali: tejaṁ … 
+Sujato: fire … 
+Translator: (empty)
+JUDGE mn1:150.1
+Pali: vāyaṁ … 
+Sujato: air … 
+Translator: (empty)
+JUDGE mn1:151.1
+Pali: bhūte … 
+Sujato: creatures … 
+Translator: (empty)
+JUDGE mn1:152.1
+Pali: deve … 
+Sujato: gods … 
+Translator: (empty)
+JUDGE mn1:153.1
+Pali: pajāpatiṁ … 
+Sujato: the Progenitor … 
+Translator: (empty)
+JUDGE mn1:154.1
+Pali: brahmaṁ … 
+Sujato: the Divinity … 
+Translator: (empty)
+JUDGE mn1:155.1
+Pali: ābhassare … 
+Sujato: those of sublime luminosity … 
+Translator: (empty)
+JUDGE mn1:156.1
+Pali: subhakiṇhe … 
+Sujato: those replete with glory … 
+Translator: (empty)
+JUDGE mn1:157.1
+Pali: vehapphale … 
+Sujato: those of abundant fruit … 
+Translator: (empty)
+JUDGE mn1:158.1
+Pali: abhibhuṁ … 
+Sujato: the Vanquisher … 
+Translator: (empty)
+JUDGE mn1:159.1
+Pali: ākāsānañcāyatanaṁ … 
+Sujato: the dimension of infinite space … 
+Translator: (empty)
+JUDGE mn1:160.1
+Pali: viññāṇañcāyatanaṁ … 
+Sujato: the dimension of infinite consciousness … 
+Translator: (empty)
+JUDGE mn1:161.1
+Pali: ākiñcaññāyatanaṁ … 
+Sujato: the dimension of nothingness … 
+Translator: (empty)
+JUDGE mn1:162.1
+Pali: nevasaññānāsaññāyatanaṁ … 
+Sujato: the dimension of neither perception nor non-perception … 
+Translator: (empty)
+JUDGE mn1:163.1
+Pali: diṭṭhaṁ … 
+Sujato: the seen … 
+Translator: (empty)
+JUDGE mn1:164.1
+Pali: sutaṁ … 
+Sujato: the heard … 
+Translator: (empty)
+JUDGE mn1:165.1
+Pali: mutaṁ … 
+Sujato: the thought … 
+Translator: (empty)
+JUDGE mn1:166.1
+Pali: viññātaṁ … 
+Sujato: the known … 
+Translator: (empty)
+JUDGE mn1:167.1
+Pali: ekattaṁ … 
+Sujato: oneness … 
+Translator: (empty)
+JUDGE mn1:168.1
+Pali: nānattaṁ … 
+Sujato: diversity … 
+Translator: (empty)
+JUDGE mn1:169.1
+Pali: sabbaṁ … 
+Sujato: all … 
+Translator: (empty)
+BELOW mn1:170.1
+Pali: nibbānaṁ nibbānato abhijānāti; 
+Sujato: He directly knows extinguishment as extinguishment. 
+Translator: Nibbāna as Nibbāna…
+
+=== RUN 109: mn1:173.1 mn1:174.1 mn1:175.1 mn1:176.1 mn1:177.1 mn1:178.1 mn1:179.1 mn1:180.1 mn1:181.1 mn1:182.1 mn1:183.1 mn1:184.1 mn1:185.1 mn1:186.1 mn1:187.1 mn1:188.1 mn1:189.1 mn1:190.1 mn1:191.1 mn1:192.1 mn1:193.1 ===
+File: data/bodhi/sutta/mn/mn1_translation-en-bodhi.json
+ABOVE mn1:172.1
+Pali: Āpaṁ …pe… 
+Sujato: He directly knows water … 
+Translator: “He too directly knows water as water…
+JUDGE mn1:173.1
+Pali: tejaṁ … 
+Sujato: fire … 
+Translator: (empty)
+JUDGE mn1:174.1
+Pali: vāyaṁ … 
+Sujato: air … 
+Translator: (empty)
+JUDGE mn1:175.1
+Pali: bhūte … 
+Sujato: creatures … 
+Translator: (empty)
+JUDGE mn1:176.1
+Pali: deve … 
+Sujato: gods … 
+Translator: (empty)
+JUDGE mn1:177.1
+Pali: pajāpatiṁ … 
+Sujato: the Progenitor … 
+Translator: (empty)
+JUDGE mn1:178.1
+Pali: brahmaṁ … 
+Sujato: the Divinity … 
+Translator: (empty)
+JUDGE mn1:179.1
+Pali: ābhassare … 
+Sujato: those of sublime luminosity … 
+Translator: (empty)
+JUDGE mn1:180.1
+Pali: subhakiṇhe … 
+Sujato: those replete with glory … 
+Translator: (empty)
+JUDGE mn1:181.1
+Pali: vehapphale … 
+Sujato: those of abundant fruit … 
+Translator: (empty)
+JUDGE mn1:182.1
+Pali: abhibhuṁ … 
+Sujato: the Vanquisher … 
+Translator: (empty)
+JUDGE mn1:183.1
+Pali: ākāsānañcāyatanaṁ … 
+Sujato: the dimension of infinite space … 
+Translator: (empty)
+JUDGE mn1:184.1
+Pali: viññāṇañcāyatanaṁ … 
+Sujato: the dimension of infinite consciousness … 
+Translator: (empty)
+JUDGE mn1:185.1
+Pali: ākiñcaññāyatanaṁ … 
+Sujato: the dimension of nothingness … 
+Translator: (empty)
+JUDGE mn1:186.1
+Pali: nevasaññānāsaññāyatanaṁ … 
+Sujato: the dimension of neither perception nor non-perception … 
+Translator: (empty)
+JUDGE mn1:187.1
+Pali: diṭṭhaṁ … 
+Sujato: the seen … 
+Translator: (empty)
+JUDGE mn1:188.1
+Pali: sutaṁ … 
+Sujato: the heard … 
+Translator: (empty)
+JUDGE mn1:189.1
+Pali: mutaṁ … 
+Sujato: the thought … 
+Translator: (empty)
+JUDGE mn1:190.1
+Pali: viññātaṁ … 
+Sujato: the known … 
+Translator: (empty)
+JUDGE mn1:191.1
+Pali: ekattaṁ … 
+Sujato: oneness … 
+Translator: (empty)
+JUDGE mn1:192.1
+Pali: nānattaṁ … 
+Sujato: diversity … 
+Translator: (empty)
+JUDGE mn1:193.1
+Pali: sabbaṁ … 
+Sujato: all … 
+Translator: (empty)
+BELOW mn1:194.1
+Pali: nibbānaṁ nibbānato abhijānāti; 
+Sujato: He directly knows extinguishment as extinguishment. 
+Translator: Nibbāna as Nibbāna…
+
+=== RUN 110: mn2:10.3 mn2:10.4 ===
+File: data/bodhi/sutta/mn/mn2_translation-en-bodhi.json
+ABOVE mn2:10.2
+Pali: Yassa, bhikkhave, dhamme manasikaroto anuppanno vā kāmāsavo uppajjati, uppanno vā kāmāsavo pavaḍḍhati; 
+Sujato: They are the things that, when the mind is applied to them, give rise to unarisen defilements and make arisen defilements grow: the defilements of sensual desire, 
+Translator: They are things such that when he attends to them, the unarisen taint of sensual desire arises in him…as §6…and the arisen taint of ignorance increases. 
+JUDGE mn2:10.3
+Pali: anuppanno vā bhavāsavo uppajjati, uppanno vā bhavāsavo pavaḍḍhati; 
+Sujato: desire to be reborn, 
+Translator: (empty)
+JUDGE mn2:10.4
+Pali: anuppanno vā avijjāsavo uppajjati, uppanno vā avijjāsavo pavaḍḍhati—
+Sujato: and ignorance. 
+Translator: (empty)
+BELOW mn2:10.5
+Pali: ime dhammā na manasikaraṇīyā, ye dhamme na manasi karoti. 
+Sujato: These are the things to which they don’t apply the mind and should not. 
+Translator: These are the things unfit for attention that he does not attend to. 
+
+=== RUN 111: mn2:10.8 mn2:10.9 ===
+File: data/bodhi/sutta/mn/mn2_translation-en-bodhi.json
+ABOVE mn2:10.7
+Pali: Yassa, bhikkhave, dhamme manasikaroto anuppanno vā kāmāsavo na uppajjati, uppanno vā kāmāsavo pahīyati; 
+Sujato: They are the things that, when the mind is applied to them, do not give rise to unarisen defilements and give up arisen defilements: the defilements of sensual desire, 
+Translator: They are things such that when he attends to them, the unarisen taint of sensual desire does not arise in him…as §6…and the arisen taint of ignorance is abandoned. 
+JUDGE mn2:10.8
+Pali: anuppanno vā bhavāsavo na uppajjati, uppanno vā bhavāsavo pahīyati; 
+Sujato: desire to be reborn, 
+Translator: (empty)
+JUDGE mn2:10.9
+Pali: anuppanno vā avijjāsavo na uppajjati, uppanno vā avijjāsavo pahīyati—
+Sujato: and ignorance. 
+Translator: (empty)
+BELOW mn2:10.10
+Pali: ime dhammā manasikaraṇīyā ye dhamme manasi karoti. 
+Sujato: These are the things to which they do apply the mind and should. 
+Translator: These are the things fit for attention that he attends to. 
+
+=== RUN 112: mn4:8.5 mn4:8.6 ===
+File: data/bodhi/sutta/mn/mn4_translation-en-bodhi.json
+ABOVE mn4:8.4
+Pali: anabhijjhālūhamasmi. 
+Sujato: I am not full of desire …’ 
+Translator: I am uncovetous…’ 
+JUDGE mn4:8.5
+Pali: Ye hi vo ariyā anabhijjhālū araññavanapatthāni pantāni senāsanāni paṭisevanti, tesamahaṁ aññataro’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn4:8.6
+Pali: Etamahaṁ, brāhmaṇa, anabhijjhālutaṁ attani sampassamāno bhiyyo pallomamāpādiṁ araññe vihārāya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn4:9.2
+Pali: ‘ye kho keci samaṇā vā brāhmaṇā vā byāpannacittā paduṭṭhamanasaṅkappā araññavanapatthāni pantāni senāsanāni paṭisevanti, byāpannacittapaduṭṭhamanasaṅkappasandosahetu have te bhonto samaṇabrāhmaṇā akusalaṁ bhayabheravaṁ avhāyanti. 
+Sujato: ‘There are ascetics and brahmins full of ill will, with malicious intentions … 
+Translator: “‘…with a mind of ill will and intentions of hate…
+
+=== RUN 113: mn4:9.5 mn4:9.6 ===
+File: data/bodhi/sutta/mn/mn4_translation-en-bodhi.json
+ABOVE mn4:9.4
+Pali: mettacittohamasmi. 
+Sujato: I have a heart full of love …’ 
+Translator: I have a mind of loving-kindness…’ 
+JUDGE mn4:9.5
+Pali: Ye hi vo ariyā mettacittā araññavanapatthāni pantāni senāsanāni paṭisevanti tesamahaṁ aññataro’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn4:9.6
+Pali: Etamahaṁ, brāhmaṇa, mettacittataṁ attani sampassamāno bhiyyo pallomamāpādiṁ araññe vihārāya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn4:10.2
+Pali: ‘ye kho keci samaṇā vā brāhmaṇā vā thinamiddhapariyuṭṭhitā araññavanapatthāni pantāni senāsanāni paṭisevanti, thinamiddhapariyuṭṭhānasandosahetu have te bhonto samaṇabrāhmaṇā akusalaṁ bhayabheravaṁ avhāyanti. 
+Sujato: ‘There are ascetics and brahmins overcome with dullness and drowsiness … 
+Translator: “‘…overcome by sloth and torpor…
+
+=== RUN 114: mn4:10.5 mn4:10.6 ===
+File: data/bodhi/sutta/mn/mn4_translation-en-bodhi.json
+ABOVE mn4:10.4
+Pali: vigatathinamiddhohamasmi. 
+Sujato: I am rid of dullness and drowsiness …’ 
+Translator: I am without sloth and torpor…’ 
+JUDGE mn4:10.5
+Pali: Ye hi vo ariyā vigatathinamiddhā araññavanapatthāni pantāni senāsanāni paṭisevanti tesamahaṁ aññataro’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn4:10.6
+Pali: Etamahaṁ, brāhmaṇa, vigatathinamiddhataṁ attani sampassamāno bhiyyo pallomamāpādiṁ araññe vihārāya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn4:11.2
+Pali: ‘ye kho keci samaṇā vā brāhmaṇā vā uddhatā avūpasantacittā araññavanapatthāni pantāni senāsanāni paṭisevanti, uddhataavūpasantacittasandosahetu have te bhonto samaṇabrāhmaṇā akusalaṁ bhayabheravaṁ avhāyanti. 
+Sujato: ‘There are ascetics and brahmins who are restless, with minds unsettled … 
+Translator: “‘…overcome with restlessness and unpeaceful in mind…
+
+=== RUN 115: mn4:11.5 mn4:11.6 ===
+File: data/bodhi/sutta/mn/mn4_translation-en-bodhi.json
+ABOVE mn4:11.4
+Pali: vūpasantacittohamasmi. 
+Sujato: My mind is settled …’ 
+Translator: I have a peaceful mind…’ 
+JUDGE mn4:11.5
+Pali: Ye hi vo ariyā vūpasantacittā araññavanapatthāni pantāni senāsanāni paṭisevanti, tesamahaṁ aññataro’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn4:11.6
+Pali: Etamahaṁ, brāhmaṇa, vūpasantacittataṁ attani sampassamāno bhiyyo pallomamāpādiṁ araññe vihārāya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn4:12.2
+Pali: ‘ye kho keci samaṇā vā brāhmaṇā vā kaṅkhī vicikicchī araññavanapatthāni pantāni senāsanāni paṭisevanti, kaṅkhivicikicchisandosahetu have te bhonto samaṇabrāhmaṇā akusalaṁ bhayabheravaṁ avhāyanti. 
+Sujato: ‘There are ascetics and brahmins who are doubting and uncertain … 
+Translator: “‘…uncertain and doubting…
+
+=== RUN 116: mn4:12.5 mn4:12.6 ===
+File: data/bodhi/sutta/mn/mn4_translation-en-bodhi.json
+ABOVE mn4:12.4
+Pali: tiṇṇavicikicchohamasmi. 
+Sujato: I’ve gone beyond doubt …’ 
+Translator: I have gone beyond doubt…’ 
+JUDGE mn4:12.5
+Pali: Ye hi vo ariyā tiṇṇavicikicchā araññavanapatthāni pantāni senāsanāni paṭisevanti tesamahaṁ aññataro’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn4:12.6
+Pali: Etamahaṁ, brāhmaṇa, tiṇṇavicikicchataṁ attani sampassamāno bhiyyo pallomamāpādiṁ araññe vihārāya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn4:13.2
+Pali: ‘ye kho keci samaṇā vā brāhmaṇā vā attukkaṁsakā paravambhī araññavanapatthāni pantāni senāsanāni paṭisevanti, attukkaṁsanaparavambhanasandosahetu have te bhonto samaṇabrāhmaṇā akusalaṁ bhayabheravaṁ avhāyanti. 
+Sujato: ‘There are ascetics and brahmins who glorify themselves and put others down … 
+Translator: “‘ …given to self-praise and disparagement of others…
+
+=== RUN 117: mn4:13.5 mn4:13.6 ===
+File: data/bodhi/sutta/mn/mn4_translation-en-bodhi.json
+ABOVE mn4:13.4
+Pali: anattukkaṁsako aparavambhīhamasmi. 
+Sujato: I don’t glorify myself and put others down …’ 
+Translator: I am not given to self-praise and disparagement of others…’ 
+JUDGE mn4:13.5
+Pali: Ye hi vo ariyā anattukkaṁsakā aparavambhī araññavanapatthāni pantāni senāsanāni paṭisevanti tesamahaṁ aññataro’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn4:13.6
+Pali: Etamahaṁ, brāhmaṇa, anattukkaṁsakataṁ aparavambhitaṁ attani sampassamāno bhiyyo pallomamāpādiṁ araññe vihārāya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn4:14.2
+Pali: ‘ye kho keci samaṇā vā brāhmaṇā vā chambhī bhīrukajātikā araññavanapatthāni pantāni senāsanāni paṭisevanti, chambhibhīrukajātikasandosahetu have te bhonto samaṇabrāhmaṇā akusalaṁ bhayabheravaṁ avhāyanti. 
+Sujato: ‘There are ascetics and brahmins who are cowardly and craven … 
+Translator: “‘…subject to alarm and terror…
+
+=== RUN 118: mn4:14.5 mn4:14.6 ===
+File: data/bodhi/sutta/mn/mn4_translation-en-bodhi.json
+ABOVE mn4:14.4
+Pali: vigatalomahaṁsohamasmi. 
+Sujato: I don’t get startled …’ 
+Translator: I am free from trepidation…’ 
+JUDGE mn4:14.5
+Pali: Ye hi vo ariyā vigatalomahaṁsā araññavanapatthāni pantāni senāsanāni paṭisevanti tesamahaṁ aññataro’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn4:14.6
+Pali: Etamahaṁ, brāhmaṇa, vigatalomahaṁsataṁ attani sampassamāno bhiyyo pallomamāpādiṁ araññe vihārāya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn4:15.2
+Pali: ‘ye kho keci samaṇā vā brāhmaṇā vā lābhasakkārasilokaṁ nikāmayamānā araññavanapatthāni pantāni senāsanāni paṭisevanti, lābhasakkārasilokanikāmanasandosahetu have te bhonto samaṇabrāhmaṇā akusalaṁ bhayabheravaṁ avhāyanti. 
+Sujato: ‘There are ascetics and brahmins who enjoy possessions, honor, and popularity … 
+Translator: “‘…desirous of gain, honour, and renown…
+
+=== RUN 119: mn4:15.5 mn4:15.6 ===
+File: data/bodhi/sutta/mn/mn4_translation-en-bodhi.json
+ABOVE mn4:15.4
+Pali: appicchohamasmi. 
+Sujato: I have few wishes …’ 
+Translator: I have few wishes…’ 
+JUDGE mn4:15.5
+Pali: Ye hi vo ariyā appicchā araññavanapatthāni pantāni senāsanāni paṭisevanti tesamahaṁ aññataro’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn4:15.6
+Pali: Etamahaṁ, brāhmaṇa, appicchataṁ attani sampassamāno bhiyyo pallomamāpādiṁ araññe vihārāya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn4:16.2
+Pali: ‘ye kho keci samaṇā vā brāhmaṇā vā kusītā hīnavīriyā araññavanapatthāni pantāni senāsanāni paṭisevanti, kusītahīnavīriyasandosahetu have te bhonto samaṇabrāhmaṇā akusalaṁ bhayabheravaṁ avhāyanti. 
+Sujato: ‘There are ascetics and brahmins who are lazy and lack energy … 
+Translator: “‘…lazy and wanting in energy…
+
+=== RUN 120: mn4:16.5 mn4:16.6 ===
+File: data/bodhi/sutta/mn/mn4_translation-en-bodhi.json
+ABOVE mn4:16.4
+Pali: āraddhavīriyohamasmi. 
+Sujato: I am energetic …’ 
+Translator: I am energetic…’ 
+JUDGE mn4:16.5
+Pali: Ye hi vo ariyā āraddhavīriyā araññavanapatthāni pantāni senāsanāni paṭisevanti tesamahaṁ aññataro’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn4:16.6
+Pali: Etamahaṁ, brāhmaṇa, āraddhavīriyataṁ attani sampassamāno bhiyyo pallomamāpādiṁ araññe vihārāya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn4:17.2
+Pali: ‘ye kho keci samaṇā vā brāhmaṇā vā muṭṭhassatī asampajānā araññavanapatthāni pantāni senāsanāni paṭisevanti, muṭṭhassatiasampajānasandosahetu have te bhonto samaṇabrāhmaṇā akusalaṁ bhayabheravaṁ avhāyanti. 
+Sujato: ‘There are ascetics and brahmins who are unmindful and lack situational awareness … 
+Translator: “‘… unmindful and not fully aware…
+
+=== RUN 121: mn4:17.5 mn4:17.6 ===
+File: data/bodhi/sutta/mn/mn4_translation-en-bodhi.json
+ABOVE mn4:17.4
+Pali: upaṭṭhitassatihamasmi. 
+Sujato: I am mindful …’ 
+Translator: I am established in mindfulness…’ 
+JUDGE mn4:17.5
+Pali: Ye hi vo ariyā upaṭṭhitassatī araññavanapatthāni pantāni senāsanāni paṭisevanti tesamahaṁ aññataro’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn4:17.6
+Pali: Etamahaṁ, brāhmaṇa, upaṭṭhitassatitaṁ attani sampassamāno bhiyyo pallomamāpādiṁ araññe vihārāya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn4:18.2
+Pali: ‘ye kho keci samaṇā vā brāhmaṇā vā asamāhitā vibbhantacittā araññavanapatthāni pantāni senāsanāni paṭisevanti, asamāhitavibbhantacittasandosahetu have te bhonto samaṇabrāhmaṇā akusalaṁ bhayabheravaṁ avhāyanti. 
+Sujato: ‘There are ascetics and brahmins who lack immersion, with straying minds … 
+Translator: “‘…unconcentrated and with straying minds…
+
+=== RUN 122: mn4:18.5 mn4:18.6 ===
+File: data/bodhi/sutta/mn/mn4_translation-en-bodhi.json
+ABOVE mn4:18.4
+Pali: samādhisampannohamasmi. 
+Sujato: I am accomplished in immersion …’ 
+Translator: I am possessed of concentration…’ 
+JUDGE mn4:18.5
+Pali: Ye hi vo ariyā samādhisampannā araññavanapatthāni pantāni senāsanāni paṭisevanti tesamahaṁ aññataro’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn4:18.6
+Pali: Etamahaṁ, brāhmaṇa, samādhisampadaṁ attani sampassamāno bhiyyo pallomamāpādiṁ araññe vihārāya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn4:19.1
+Pali: Tassa mayhaṁ, brāhmaṇa, etadahosi: 
+Sujato: (empty)
+Translator: “ I considered thus: 
+
+=== RUN 123: mn7:4.3 mn7:4.4 mn7:4.5 mn7:4.6 mn7:4.7 mn7:4.8 mn7:4.9 mn7:4.10 mn7:4.11 mn7:4.12 mn7:4.13 mn7:4.14 mn7:4.15 mn7:4.16 mn7:4.17 mn7:4.18 mn7:4.19 mn7:4.20 mn7:4.21 mn7:4.22 mn7:4.23 mn7:4.24 mn7:4.25 mn7:4.26 mn7:4.27 mn7:4.28 mn7:4.29 mn7:4.30 mn7:4.31 ===
+File: data/bodhi/sutta/mn/mn7_translation-en-bodhi.json
+ABOVE mn7:4.2
+Pali: ‘byāpādo cittassa upakkileso’ti—
+Sujato: A mendicant who understands that ill will … 
+Translator: Knowing that ill will…negligence is an imperfection that defiles the mind, a bhikkhu abandons it. 
+JUDGE mn7:4.3
+Pali: iti viditvā byāpādaṁ cittassa upakkilesaṁ pajahati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.4
+Pali: ‘kodho cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.5
+Pali: iti viditvā kodhaṁ cittassa upakkilesaṁ pajahati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.6
+Pali: ‘upanāho cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.7
+Pali: iti viditvā upanāhaṁ cittassa upakkilesaṁ pajahati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.8
+Pali: ‘makkho cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.9
+Pali: iti viditvā makkhaṁ cittassa upakkilesaṁ pajahati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.10
+Pali: ‘paḷāso cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.11
+Pali: iti viditvā paḷāsaṁ cittassa upakkilesaṁ pajahati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.12
+Pali: ‘issā cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.13
+Pali: iti viditvā issaṁ cittassa upakkilesaṁ pajahati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.14
+Pali: ‘macchariyaṁ cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.15
+Pali: iti viditvā macchariyaṁ cittassa upakkilesaṁ pajahati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.16
+Pali: ‘māyā cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.17
+Pali: iti viditvā māyaṁ cittassa upakkilesaṁ pajahati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.18
+Pali: ‘sāṭheyyaṁ cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.19
+Pali: iti viditvā sāṭheyyaṁ cittassa upakkilesaṁ pajahati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.20
+Pali: ‘thambho cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.21
+Pali: iti viditvā thambhaṁ cittassa upakkilesaṁ pajahati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.22
+Pali: ‘sārambho cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.23
+Pali: iti viditvā sārambhaṁ cittassa upakkilesaṁ pajahati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.24
+Pali: ‘māno cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.25
+Pali: iti viditvā mānaṁ cittassa upakkilesaṁ pajahati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.26
+Pali: ‘atimāno cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.27
+Pali: iti viditvā atimānaṁ cittassa upakkilesaṁ pajahati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.28
+Pali: ‘mado cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.29
+Pali: iti viditvā madaṁ cittassa upakkilesaṁ pajahati; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:4.30
+Pali: ‘pamādo cittassa upakkileso’ti—
+Sujato: negligence is a corruption of the mind gives it up. 
+Translator: (empty)
+JUDGE mn7:4.31
+Pali: iti viditvā pamādaṁ cittassa upakkilesaṁ pajahati. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn7:5.1
+Pali: Yato kho, bhikkhave, bhikkhuno ‘abhijjhāvisamalobho cittassa upakkileso’ti—iti viditvā abhijjhāvisamalobho cittassa upakkileso pahīno hoti, 
+Sujato: When they have understood these corruptions of the mind 
+Translator: “When a bhikkhu has known that covetousness and unrighteous greed is an imperfection that defiles the mind and has abandoned it; 
+
+=== RUN 124: mn7:5.3 mn7:5.4 mn7:5.5 mn7:5.6 mn7:5.7 mn7:5.8 mn7:5.9 mn7:5.10 mn7:5.11 mn7:5.12 mn7:5.13 mn7:5.14 mn7:5.15 mn7:5.16 mn7:5.17 mn7:5.18 mn7:5.19 mn7:5.20 mn7:5.21 mn7:5.22 mn7:5.23 mn7:5.24 mn7:5.25 mn7:5.26 mn7:5.27 mn7:5.28 mn7:5.29 mn7:5.30 mn7:5.31 ===
+File: data/bodhi/sutta/mn/mn7_translation-en-bodhi.json
+ABOVE mn7:5.2
+Pali: ‘byāpādo cittassa upakkileso’ti—
+Sujato: for what they are, and have given them up, 
+Translator: when a bhikkhu has known that ill will…negligence is an imperfection that defiles the mind and has abandoned it, 
+JUDGE mn7:5.3
+Pali: iti viditvā byāpādo cittassa upakkileso pahīno hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.4
+Pali: ‘kodho cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.5
+Pali: iti viditvā kodho cittassa upakkileso pahīno hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.6
+Pali: ‘upanāho cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.7
+Pali: iti viditvā upanāho cittassa upakkileso pahīno hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.8
+Pali: ‘makkho cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.9
+Pali: iti viditvā makkho cittassa upakkileso pahīno hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.10
+Pali: ‘paḷāso cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.11
+Pali: iti viditvā paḷāso cittassa upakkileso pahīno hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.12
+Pali: ‘issā cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.13
+Pali: iti viditvā issā cittassa upakkileso pahīno hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.14
+Pali: ‘macchariyaṁ cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.15
+Pali: iti viditvā macchariyaṁ cittassa upakkileso pahīno hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.16
+Pali: ‘māyā cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.17
+Pali: iti viditvā māyā cittassa upakkileso pahīno hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.18
+Pali: ‘sāṭheyyaṁ cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.19
+Pali: iti viditvā sāṭheyyaṁ cittassa upakkileso pahīno hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.20
+Pali: ‘thambho cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.21
+Pali: iti viditvā thambho cittassa upakkileso pahīno hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.22
+Pali: ‘sārambho cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.23
+Pali: iti viditvā sārambho cittassa upakkileso pahīno hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.24
+Pali: ‘māno cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.25
+Pali: iti viditvā māno cittassa upakkileso pahīno hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.26
+Pali: ‘atimāno cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.27
+Pali: iti viditvā atimāno cittassa upakkileso pahīno hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.28
+Pali: ‘mado cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.29
+Pali: iti viditvā mado cittassa upakkileso pahīno hoti; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.30
+Pali: ‘pamādo cittassa upakkileso’ti—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn7:5.31
+Pali: iti viditvā pamādo cittassa upakkileso pahīno hoti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn7:5.32
+Pali: So buddhe aveccappasādena samannāgato hoti: 
+Sujato: they have experiential confidence in the Buddha: 
+Translator: he acquires unwavering confidence in the Buddha thus: 
+
+=== RUN 125: mn8:16.7 mn8:16.8 mn8:16.9 mn8:16.10 mn8:16.11 mn8:16.12 mn8:16.13 ===
+File: data/bodhi/sutta/mn/mn8_translation-en-bodhi.json
+ABOVE mn8:16.6
+Pali: Adinnādāyissa purisapuggalassa adinnādānā veramaṇī hoti parinibbānāya. 
+Sujato: (empty)
+Translator: (3–43) One given to… …by which to extinguish it. 
+JUDGE mn8:16.7
+Pali: Abrahmacārissa purisapuggalassa abrahmacariyā veramaṇī hoti parinibbānāya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn8:16.8
+Pali: Musāvādissa purisapuggalassa musāvādā veramaṇī hoti parinibbānāya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn8:16.9
+Pali: Pisuṇavācassa purisapuggalassa pisuṇāya vācāya veramaṇī hoti parinibbānāya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn8:16.10
+Pali: Pharusavācassa purisapuggalassa pharusāya vācāya veramaṇī hoti parinibbānāya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn8:16.11
+Pali: Samphappalāpissa purisapuggalassa samphappalāpā veramaṇī hoti parinibbānāya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn8:16.12
+Pali: Abhijjhālussa purisapuggalassa anabhijjhā hoti parinibbānāya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn8:16.13
+Pali: Byāpannacittassa purisapuggalassa abyāpādo hoti parinibbānāya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn8:16.47
+Pali: Sandiṭṭhiparāmāsiādhānaggāhiduppaṭinissaggissa purisapuggalassa asandiṭṭhiparāmāsianādhānaggāhisuppaṭinissaggitā hoti parinibbānāya. 
+Sujato: An individual who is attached to their own views, holding them tight, and refusing to let go, extinguishes it by not being attached to their own views, not holding them tight, but letting them go easily. 
+Translator: (44) One given to adhere to his own views, who holds on to them tenaciously and relinquishes them with difficulty, has non-adherence to his own views, not holding on to them tenaciously and relinquishing them easily, by which to extinguish it. 
+
+=== RUN 126: mn11:3.3 mn11:3.4 ===
+File: data/bodhi/sutta/mn/mn11_translation-en-bodhi.json
+ABOVE mn11:3.2
+Pali: ‘ko panāyasmantānaṁ assāso, kiṁ balaṁ, yena tumhe āyasmanto evaṁ vadetha—
+Sujato: ‘But what is the source of the venerables’ certainty and forcefulness that they say this?’ 
+Translator: ‘But on the strength of what argument or with the support of what authority do the venerable ones say thus?’ 
+JUDGE mn11:3.3
+Pali: idheva samaṇo, idha dutiyo samaṇo, idha tatiyo samaṇo, idha catuttho samaṇo; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn11:3.4
+Pali: suññā parappavādā samaṇebhi aññehī’ti? 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn11:3.5
+Pali: Evaṁvādino, bhikkhave, aññatitthiyā paribbājakā evamassu vacanīyā: 
+Sujato: You should say to them: 
+Translator: Wanderers of other sects who ask thus may be answered in this way: 
+
+=== RUN 127: mn11:3.14 mn11:3.15 ===
+File: data/bodhi/sutta/mn/mn11_translation-en-bodhi.json
+ABOVE mn11:3.13
+Pali: Ime kho no, āvuso, tena bhagavatā jānatā passatā arahatā sammāsambuddhena cattāro dhammā akkhātā ye mayaṁ attani sampassamānā evaṁ vadema—
+Sujato: These are the four things.’ 
+Translator: These are the four things declared to us by the Blessed One who knows and sees, accomplished and fully enlightened, on seeing which in ourselves we say as we do.’ 
+JUDGE mn11:3.14
+Pali: idheva samaṇo, idha dutiyo samaṇo, idha tatiyo samaṇo, idha catuttho samaṇo; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn11:3.15
+Pali: suññā parappavādā samaṇebhi aññehī’ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn11:4.1
+Pali: Ṭhānaṁ kho panetaṁ, bhikkhave, vijjati yaṁ aññatitthiyā paribbājakā evaṁ vadeyyuṁ: 
+Sujato: It’s possible that wanderers of other religions might say: 
+Translator: “It is possible, bhikkhus, that wanderers of other sects might say thus: 
+
+=== RUN 128: mn11:11.7 mn11:11.8 ===
+File: data/bodhi/sutta/mn/mn11_translation-en-bodhi.json
+ABOVE mn11:11.6
+Pali: Tasmā te bhonto samaṇabrāhmaṇā sabbupādānapariññāvādā paṭijānamānā; 
+Sujato: That’s why they claim to propound the complete understanding of all kinds of grasping, 
+Translator: therefore they describe only the full understanding of clinging to sensual pleasures and clinging to views without describing the full understanding of clinging to rules and observances and clinging to a doctrine of self. 
+JUDGE mn11:11.7
+Pali: te na sammā sabbupādānapariññaṁ paññapenti—
+Sujato: but they don’t really. 
+Translator: (empty)
+JUDGE mn11:11.8
+Pali: kāmupādānassa pariññaṁ paññapenti, diṭṭhupādānassa pariññaṁ paññapenti, na sīlabbatupādānassa pariññaṁ paññapenti, na attavādupādānassa pariññaṁ paññapenti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn11:12.1
+Pali: Santi, bhikkhave, eke samaṇabrāhmaṇā sabbupādānapariññāvādā paṭijānamānā. 
+Sujato: There are some other ascetics and brahmins who claim to propound the complete understanding of all kinds of grasping, 
+Translator: “Though certain recluses and brahmins claim to propound the full understanding of all kinds of clinging…
+
+=== RUN 129: mn11:12.7 mn11:12.8 ===
+File: data/bodhi/sutta/mn/mn11_translation-en-bodhi.json
+ABOVE mn11:12.6
+Pali: Tasmā te bhonto samaṇabrāhmaṇā sabbupādānapariññāvādā paṭijānamānā; 
+Sujato: That’s why they claim to propound the complete understanding of all kinds of grasping, 
+Translator: therefore they describe only the full understanding of clinging to sensual pleasures, clinging to views, and clinging to rules and observances without describing the full understanding of clinging to a doctrine of self. 
+JUDGE mn11:12.7
+Pali: te na sammā sabbupādānapariññaṁ paññapenti—
+Sujato: but they don’t really. 
+Translator: (empty)
+JUDGE mn11:12.8
+Pali: kāmupādānassa pariññaṁ paññapenti, diṭṭhupādānassa pariññaṁ paññapenti, sīlabbatupādānassa pariññaṁ paññapenti, na attavādupādānassa pariññaṁ paññapenti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn11:13.1
+Pali: Evarūpe kho, bhikkhave, dhammavinaye yo satthari pasādo so na sammaggato akkhāyati; 
+Sujato: In such a teaching and training, confidence in the Teacher is said to be not rightly placed. 
+Translator: “Bhikkhus, in such a Dhamma and Discipline as that, it is plain that confidence in the Teacher is not rightly directed, 
+
+=== RUN 130: mn12:3.3 mn12:3.4 mn12:3.5 ===
+File: data/bodhi/sutta/mn/mn12_translation-en-bodhi.json
+ABOVE mn12:3.2
+Pali: Assosi kho āyasmā sāriputto sunakkhattassa licchaviputtassa vesāliyaṁ parisati evaṁ vācaṁ bhāsamānassa: 
+Sujato: He heard what Sunakkhatta was saying. 
+Translator: Then he heard Sunakkhatta, son of the Licchavis, making this statement before the Vesālī assembly. 
+JUDGE mn12:3.3
+Pali: “natthi samaṇassa gotamassa uttari manussadhammā alamariyañāṇadassanaviseso. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:3.4
+Pali: Takkapariyāhataṁ samaṇo gotamo dhammaṁ deseti vīmaṁsānucaritaṁ sayampaṭibhānaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:3.5
+Pali: Yassa ca khvāssa atthāya dhammo desito so niyyāti takkarassa sammā dukkhakkhayāyā”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn12:3.6
+Pali: Atha kho āyasmā sāriputto vesāliyaṁ piṇḍāya caritvā pacchābhattaṁ piṇḍapātapaṭikkanto yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ nisīdi. Ekamantaṁ nisinno kho āyasmā sāriputto bhagavantaṁ etadavoca: 
+Sujato: Then he wandered for alms in Vesālī. After the meal, on his return from almsround, he went to the Buddha, bowed, sat down to one side, and told him what had happened. 
+Translator: When he had wandered for alms in Vesālī and had returned from his almsround, after his meal he went to the Blessed One, and after paying homage to him, he sat down at one side and told the Blessed One what Sunakkhatta was saying. 
+
+=== RUN 131: mn12:3.7 mn12:3.8 mn12:3.9 mn12:3.10 mn12:3.11 ===
+File: data/bodhi/sutta/mn/mn12_translation-en-bodhi.json
+ABOVE mn12:3.6
+Pali: Atha kho āyasmā sāriputto vesāliyaṁ piṇḍāya caritvā pacchābhattaṁ piṇḍapātapaṭikkanto yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ nisīdi. Ekamantaṁ nisinno kho āyasmā sāriputto bhagavantaṁ etadavoca: 
+Sujato: Then he wandered for alms in Vesālī. After the meal, on his return from almsround, he went to the Buddha, bowed, sat down to one side, and told him what had happened. 
+Translator: When he had wandered for alms in Vesālī and had returned from his almsround, after his meal he went to the Blessed One, and after paying homage to him, he sat down at one side and told the Blessed One what Sunakkhatta was saying. 
+JUDGE mn12:3.7
+Pali: “sunakkhatto, bhante, licchaviputto acirapakkanto imasmā dhammavinayā. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:3.8
+Pali: So vesāliyaṁ parisati evaṁ vācaṁ bhāsati: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:3.9
+Pali: ‘natthi samaṇassa gotamassa uttari manussadhammā alamariyañāṇadassanaviseso. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:3.10
+Pali: Takkapariyāhataṁ samaṇo gotamo dhammaṁ deseti vīmaṁsānucaritaṁ sayampaṭibhānaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:3.11
+Pali: Yassa ca khvāssa atthāya dhammo desito so niyyāti takkarassa sammā dukkhakkhayāyā’”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn12:4.1
+Pali: “Kodhano heso, sāriputta, sunakkhatto moghapuriso. 
+Sujato: “Sāriputta, Sunakkhatta, that futile man, is angry. 
+Translator: The Blessed One said: “Sāriputta, the misguided man Sunakkhatta is angry and his words are spoken out of anger. 
+
+=== RUN 132: mn12:28.4 mn12:28.5 ===
+File: data/bodhi/sutta/mn/mn12_translation-en-bodhi.json
+ABOVE mn12:28.3
+Pali: taṁ, sāriputta, vācaṁ appahāya taṁ cittaṁ appahāya taṁ diṭṭhiṁ appaṭinissajjitvā yathābhataṁ nikkhitto evaṁ niraye. 
+Sujato: Unless they give up that speech and that thought, and let go of that view, they will be placed in hell as if delivered there. 
+Translator: he will wind up in hell. 
+JUDGE mn12:28.4
+Pali: Seyyathāpi, sāriputta, bhikkhu sīlasampanno samādhisampanno paññāsampanno diṭṭheva dhamme aññaṁ ārādheyya, evaṁ sampadamidaṁ, sāriputta, vadāmi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:28.5
+Pali: Taṁ vācaṁ appahāya taṁ cittaṁ appahāya taṁ diṭṭhiṁ appaṭinissajjitvā yathābhataṁ nikkhitto evaṁ niraye. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn12:29.1
+Pali: Aṭṭha kho imā, sāriputta, parisā. 
+Sujato: Sāriputta, there are these eight assemblies. 
+Translator: <span class="heading">The Eight Assemblies</span> “Sāriputta, there are these eight assemblies. 
+
+=== RUN 133: mn12:29.7 mn12:29.8 mn12:29.9 ===
+File: data/bodhi/sutta/mn/mn12_translation-en-bodhi.json
+ABOVE mn12:29.6
+Pali: Abhijānāmi kho panāhaṁ, sāriputta, anekasataṁ khattiyaparisaṁ upasaṅkamitā. 
+Sujato: I recall having approached an assembly of hundreds of aristocrats. 
+Translator: “I recall having approached many hundred assemblies of nobles…
+JUDGE mn12:29.7
+Pali: Tatrapi mayā sannisinnapubbañceva, sallapitapubbañca, sākacchā ca samāpajjitapubbā. 
+Sujato: There I used to sit with them, converse, and engage in discussion. 
+Translator: (empty)
+JUDGE mn12:29.8
+Pali: Tatra vata maṁ bhayaṁ vā sārajjaṁ vā okkamissatīti nimittametaṁ, sāriputta, na samanupassāmi. 
+Sujato: But I don’t see any reason to feel afraid or insecure. 
+Translator: (empty)
+JUDGE mn12:29.9
+Pali: Etamahaṁ, sāriputta, nimittaṁ asamanupassanto khemappatto abhayappatto vesārajjappatto viharāmi. 
+Sujato: Since I see no such reason, I live secure, fearless, and self-assured. 
+Translator: (empty)
+BELOW (outside this paragraph) mn12:30.1
+Pali: Abhijānāmi kho panāhaṁ, sāriputta, anekasataṁ brāhmaṇaparisaṁ …pe… 
+Sujato: I recall having approached an assembly of hundreds of brahmins … 
+Translator: many hundred assemblies of brahmins…
+
+=== RUN 134: mn12:31.4 mn12:31.5 ===
+File: data/bodhi/sutta/mn/mn12_translation-en-bodhi.json
+ABOVE mn12:31.3
+Pali: taṁ, sāriputta, vācaṁ appahāya taṁ cittaṁ appahāya taṁ diṭṭhiṁ appaṭinissajjitvā yathābhataṁ nikkhitto evaṁ niraye. 
+Sujato: Unless they give up that speech and that thought, and let go of that view, they will be placed in hell as if delivered there. 
+Translator: he will wind up in hell. 
+JUDGE mn12:31.4
+Pali: Seyyathāpi, sāriputta, bhikkhu sīlasampanno samādhisampanno paññāsampanno diṭṭheva dhamme aññaṁ ārādheyya, evaṁ sampadamidaṁ, sāriputta, vadāmi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:31.5
+Pali: Taṁ vācaṁ appahāya taṁ cittaṁ appahāya taṁ diṭṭhiṁ appaṭinissajjitvā yathābhataṁ nikkhitto evaṁ niraye. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn12:32.1
+Pali: Catasso kho imā, sāriputta, yoniyo. 
+Sujato: Sāriputta, there are these four kinds of reproduction. 
+Translator: <span class="heading">Four Kinds of Generation</span> “Sāriputta, there are these four kinds of generation. 
+
+=== RUN 135: mn12:34.4 mn12:34.5 ===
+File: data/bodhi/sutta/mn/mn12_translation-en-bodhi.json
+ABOVE mn12:34.3
+Pali: taṁ, sāriputta, vācaṁ appahāya taṁ cittaṁ appahāya taṁ diṭṭhiṁ appaṭinissajjitvā yathābhataṁ nikkhitto evaṁ niraye. 
+Sujato: Unless they give up that speech and that thought, and let go of that view, they will be placed in hell as if delivered there. 
+Translator: he will wind up in hell. 
+JUDGE mn12:34.4
+Pali: Seyyathāpi, sāriputta, bhikkhu sīlasampanno samādhisampanno paññāsampanno diṭṭheva dhamme aññaṁ ārādheyya, evaṁ sampadamidaṁ, sāriputta, vadāmi. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:34.5
+Pali: Taṁ vācaṁ appahāya taṁ cittaṁ appahāya taṁ diṭṭhiṁ appaṭinissajjitvā yathābhataṁ nikkhitto evaṁ niraye. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn12:35.1
+Pali: Pañca kho imā, sāriputta, gatiyo. 
+Sujato: There are these five destinations. 
+Translator: <span class="heading">The Five Destinations and Nibbāna</span> “Sāriputta, there are these five destinations. 
+
+=== RUN 136: mn12:37.10 mn12:37.11 ===
+File: data/bodhi/sutta/mn/mn12_translation-en-bodhi.json
+ABOVE mn12:37.9
+Pali: Evameva kho ahaṁ, sāriputta, idhekaccaṁ puggalaṁ evaṁ cetasā ceto paricca pajānāmi—
+Sujato: (empty)
+Translator: So too, by encompassing mind with mind…piercing feelings. 
+JUDGE mn12:37.10
+Pali: tathāyaṁ puggalo paṭipanno tathā ca iriyati tañca maggaṁ samārūḷho yathā kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapajjissatīti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:37.11
+Pali: Tamenaṁ passāmi aparena samayena dibbena cakkhunā visuddhena atikkantamānusakena kāyassa bhedā paraṁ maraṇā apāyaṁ duggatiṁ vinipātaṁ nirayaṁ upapannaṁ, ekantadukkhā tibbā kaṭukā vedanā vedayamānaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn12:38.1
+Pali: Idha panāhaṁ, sāriputta, ekaccaṁ puggalaṁ evaṁ cetasā ceto paricca pajānāmi—
+Sujato: When I’ve comprehended the mind of a certain individual, I understand: 
+Translator: (2) “By encompassing mind with mind I understand a certain person thus: 
+
+=== RUN 137: mn12:38.10 mn12:38.11 ===
+File: data/bodhi/sutta/mn/mn12_translation-en-bodhi.json
+ABOVE mn12:38.9
+Pali: Evameva kho ahaṁ, sāriputta, idhekaccaṁ puggalaṁ evaṁ cetasā ceto paricca pajānāmi—
+Sujato: (empty)
+Translator: So too, by encompassing mind with mind…piercing feelings. 
+JUDGE mn12:38.10
+Pali: tathāyaṁ puggalo paṭipanno tathā ca iriyati tañca maggaṁ samārūḷho, yathā kāyassa bhedā paraṁ maraṇā tiracchānayoniṁ upapajjissatīti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:38.11
+Pali: Tamenaṁ passāmi aparena samayena dibbena cakkhunā visuddhena atikkantamānusakena kāyassa bhedā paraṁ maraṇā tiracchānayoniṁ upapannaṁ, dukkhā tibbā kaṭukā vedanā vedayamānaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn12:39.1
+Pali: Idha panāhaṁ, sāriputta, ekaccaṁ puggalaṁ evaṁ cetasā ceto paricca pajānāmi—
+Sujato: When I’ve comprehended the mind of a certain individual, I understand: 
+Translator: (3) “By encompassing mind with mind I understand a certain person thus: 
+
+=== RUN 138: mn12:39.10 mn12:39.11 ===
+File: data/bodhi/sutta/mn/mn12_translation-en-bodhi.json
+ABOVE mn12:39.9
+Pali: Evameva kho ahaṁ, sāriputta, idhekaccaṁ puggalaṁ evaṁ cetasā ceto paricca pajānāmi—
+Sujato: (empty)
+Translator: So too, by encompassing mind with mind …much painful feeling. 
+JUDGE mn12:39.10
+Pali: tathāyaṁ puggalo paṭipanno tathā ca iriyati tañca maggaṁ samārūḷho, yathā kāyassa bhedā paraṁ maraṇā pettivisayaṁ upapajjissatīti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:39.11
+Pali: Tamenaṁ passāmi aparena samayena dibbena cakkhunā visuddhena atikkantamānusakena kāyassa bhedā paraṁ maraṇā pettivisayaṁ upapannaṁ, dukkhabahulā vedanā vedayamānaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn12:40.1
+Pali: Idha panāhaṁ, sāriputta, ekaccaṁ puggalaṁ evaṁ cetasā ceto paricca pajānāmi—
+Sujato: When I’ve comprehended the mind of a certain individual, I understand: 
+Translator: (4) “By encompassing mind with mind I understand a certain person thus: 
+
+=== RUN 139: mn12:40.10 mn12:40.11 ===
+File: data/bodhi/sutta/mn/mn12_translation-en-bodhi.json
+ABOVE mn12:40.9
+Pali: Evameva kho ahaṁ, sāriputta, idhekaccaṁ puggalaṁ evaṁ cetasā ceto paricca pajānāmi—
+Sujato: (empty)
+Translator: So too, by encompassing mind with mind…much pleasant feeling. 
+JUDGE mn12:40.10
+Pali: tathāyaṁ puggalo paṭipanno tathā ca iriyati tañca maggaṁ samārūḷho yathā kāyassa bhedā paraṁ maraṇā manussesu upapajjissatīti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:40.11
+Pali: Tamenaṁ passāmi aparena samayena dibbena cakkhunā visuddhena atikkantamānusakena kāyassa bhedā paraṁ maraṇā manussesu upapannaṁ, sukhabahulā vedanā vedayamānaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn12:41.1
+Pali: Idha panāhaṁ, sāriputta, ekaccaṁ puggalaṁ evaṁ cetasā ceto paricca pajānāmi: 
+Sujato: When I’ve comprehended the mind of a certain individual, I understand: 
+Translator: (5) “By encompassing mind with mind I understand a certain person thus: 
+
+=== RUN 140: mn12:41.11 mn12:41.12 ===
+File: data/bodhi/sutta/mn/mn12_translation-en-bodhi.json
+ABOVE mn12:41.10
+Pali: Evameva kho ahaṁ, sāriputta, idhekaccaṁ puggalaṁ evaṁ cetasā ceto paricca pajānāmi—
+Sujato: (empty)
+Translator: So too, by encompassing mind with mind…exclusively pleasant feelings. 
+JUDGE mn12:41.11
+Pali: tathāyaṁ puggalo paṭipanno tathā ca iriyati tañca maggaṁ samārūḷho yathā kāyassa bhedā paraṁ maraṇā sugatiṁ saggaṁ lokaṁ upapajjissatīti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:41.12
+Pali: Tamenaṁ passāmi aparena samayena dibbena cakkhunā visuddhena atikkantamānusakena kāyassa bhedā paraṁ maraṇā sugatiṁ saggaṁ lokaṁ upapannaṁ, ekantasukhā vedanā vedayamānaṁ. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn12:42.1
+Pali: Idha panāhaṁ, sāriputta, ekaccaṁ puggalaṁ cetasā ceto paricca pajānāmi—
+Sujato: When I’ve comprehended the mind of a certain individual, I understand: 
+Translator: (6) “By encompassing mind with mind I understand a certain person thus: 
+
+=== RUN 141: mn12:42.11 mn12:42.12 ===
+File: data/bodhi/sutta/mn/mn12_translation-en-bodhi.json
+ABOVE mn12:42.10
+Pali: Evameva kho ahaṁ, sāriputta, idhekaccaṁ puggalaṁ evaṁ cetasā ceto paricca pajānāmi: 
+Sujato: In the same way, when I’ve comprehended the mind of an individual, I understand: 
+Translator: So too, by encompassing mind with mind…exclusively pleasant feelings. 
+JUDGE mn12:42.11
+Pali: ‘tathāyaṁ puggalo paṭipanno tathā ca iriyati tañca maggaṁ samārūḷho, yathā āsavānaṁ khayā anāsavaṁ cetovimuttiṁ paññāvimuttiṁ diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharissatī’ti. 
+Sujato: ‘This individual is practicing in such a way and is riding upon such a path that they will realize the undefiled freedom of heart and freedom by wisdom, and live having realized it with their own insight in this very life due to the ending of defilements.’ 
+Translator: (empty)
+JUDGE mn12:42.12
+Pali: Tamenaṁ passāmi aparena samayena āsavānaṁ khayā anāsavaṁ cetovimuttiṁ paññāvimuttiṁ diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharantaṁ, ekantasukhā vedanā vedayamānaṁ. 
+Sujato: Some time later I see that they have indeed realized the undefiled freedom of heart and freedom by wisdom, and live having realized it with their own insight in this very life due to the ending of defilements, experiencing feelings of absolute happiness. 
+Translator: (empty)
+BELOW mn12:42.13
+Pali: Imā kho, sāriputta, pañca gatiyo. 
+Sujato: These are the five destinations. 
+Translator: These are the five destinations. 
+
+=== RUN 142: mn12:48.8 mn12:48.9 ===
+File: data/bodhi/sutta/mn/mn12_translation-en-bodhi.json
+ABOVE mn12:48.7
+Pali: evameva kho ahaṁ, sāriputta, yadā passāmi gopālakaṁ vā pasupālakaṁ vā tiṇahārakaṁ vā kaṭṭhahārakaṁ vā vanakammikaṁ vā vanena vanaṁ gahanena gahanaṁ ninnena ninnaṁ thalena thalaṁ sampatāmi. 
+Sujato: (empty)
+Translator: so too, when I saw a cowherd or a shepherd…
+JUDGE mn12:48.8
+Pali: Taṁ kissa hetu? 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:48.9
+Pali: Mā maṁ te addasaṁsu ahañca mā te addasanti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn12:48.10
+Pali: Idaṁsu me, sāriputta, pavivittasmiṁ hoti. 
+Sujato: Such was my practice of seclusion. 
+Translator: Such was my seclusion. 
+
+=== RUN 143: mn12:53-55.15 mn12:53-55.16 mn12:53-55.17 mn12:53-55.18 mn12:53-55.19 mn12:53-55.20 mn12:53-55.21 mn12:53-55.22 ===
+File: data/bodhi/sutta/mn/mn12_translation-en-bodhi.json
+ABOVE mn12:53-55.14
+Pali: Tassa mayhaṁ, sāriputta, ekaṁyeva taṇḍulaṁ āhāraṁ āhārayato adhimattakasimānaṁ patto kāyo hoti. 
+Sujato: (empty)
+Translator: Through feeding on a single rice grain a day, my body reached a state of extreme emaciation. 
+JUDGE mn12:53-55.15
+Pali: Seyyathāpi nāma āsītikapabbāni vā kāḷapabbāni vā; evamevassu me aṅgapaccaṅgāni bhavanti tāyevappāhāratāya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:53-55.16
+Pali: Seyyathāpi nāma oṭṭhapadaṁ; evamevassu me ānisadaṁ hoti tāyevappāhāratāya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:53-55.17
+Pali: Seyyathāpi nāma vaṭṭanāvaḷī; evamevassu me piṭṭhikaṇṭako unnatāvanato hoti tāyevappāhāratāya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:53-55.18
+Pali: Seyyathāpi nāma jarasālāya gopānasiyo oluggaviluggā bhavanti; evamevassu me phāsuḷiyo oluggaviluggā bhavanti tāyevappāhāratāya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:53-55.19
+Pali: Seyyathāpi nāma gambhīre udapāne udakatārakā gambhīragatā okkhāyikā dissanti; evamevassu me akkhikūpesu akkhitārakā gambhīragatā okkhāyikā dissanti tāyevappāhāratāya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:53-55.20
+Pali: Seyyathāpi nāma tittakālābu āmakacchinno vātātapena samphuṭito hoti sammilāto; evamevassu me sīsacchavi samphuṭitā hoti sammilātā tāyevappāhāratāya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:53-55.21
+Pali: So kho ahaṁ, sāriputta, ‘udaracchaviṁ parimasissāmī’ti piṭṭhikaṇṭakaṁyeva pariggaṇhāmi, ‘piṭṭhikaṇṭakaṁ parimasissāmī’ti udaracchaviṁyeva pariggaṇhāmi. Yāvassu me, sāriputta, udaracchavi piṭṭhikaṇṭakaṁ allīnā hoti tāyevappāhāratāya. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn12:53-55.22
+Pali: So kho ahaṁ, sāriputta, ‘vaccaṁ vā muttaṁ vā karissāmī’ti tattheva avakujjo papatāmi tāyevappāhāratāya. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn12:53-55.23
+Pali: So kho ahaṁ, sāriputta, tameva kāyaṁ assāsento pāṇinā gattāni anomajjāmi. Tassa mayhaṁ, sāriputta, pāṇinā gattāni anomajjato pūtimūlāni lomāni kāyasmā patanti tāyevappāhāratāya. 
+Sujato: Due to eating so little, when I tried to relieve my body by rubbing my limbs with my hands, the hair, rotted at its roots, fell out. 
+Translator: Because of eating so little…the hair, rotted at its roots, fell from my body as I rubbed. 
+
+=== RUN 144: mn13:5.2 mn13:5.3 mn13:5.4 mn13:5.5 mn13:5.6 mn13:5.7 mn13:5.8 mn13:5.9 mn13:5.10 mn13:5.11 mn13:5.12 mn13:5.13 mn13:5.14 ===
+File: data/bodhi/sutta/mn/mn13_translation-en-bodhi.json
+ABOVE mn13:5.1
+Pali: Atha kho te bhikkhū sāvatthiyaṁ piṇḍāya caritvā pacchābhattaṁ piṇḍapātapaṭikkantā yena bhagavā tenupasaṅkamiṁsu; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ nisīdiṁsu. Ekamantaṁ nisinnā kho te bhikkhū bhagavantaṁ etadavocuṁ: 
+Sujato: Then, after the meal, when they returned from almsround, they went up to the Buddha, bowed, sat down to one side, and told him what had happened. The Buddha said: 
+Translator: When they had wandered for alms in Sāvatthī and had returned from their almsround, after the meal they went to the Blessed One, and after paying homage to him, they sat down at one side and told him what had taken place. The Blessed One said: 
+JUDGE mn13:5.2
+Pali: “idha mayaṁ, bhante, pubbaṇhasamayaṁ nivāsetvā pattacīvaramādāya sāvatthiṁ piṇḍāya pāvisimha. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn13:5.3
+Pali: Tesaṁ no, bhante, amhākaṁ etadahosi: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn13:5.4
+Pali: ‘atippago kho tāva sāvatthiyaṁ piṇḍāya carituṁ, 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn13:5.5
+Pali: yaṁ nūna mayaṁ yena aññatitthiyānaṁ paribbājakānaṁ ārāmo tenupasaṅkameyyāmā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn13:5.6
+Pali: Atha kho mayaṁ, bhante, yena aññatitthiyānaṁ paribbājakānaṁ ārāmo tenupasaṅkamimha; upasaṅkamitvā tehi aññatitthiyehi paribbājakehi saddhiṁ sammodimha; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn13:5.7
+Pali: sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdimha. Ekamantaṁ nisinne kho amhe, bhante, te aññatitthiyā paribbājakā etadavocuṁ: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn13:5.8
+Pali: ‘samaṇo, āvuso, gotamo kāmānaṁ pariññaṁ paññapeti, mayampi kāmānaṁ pariññaṁ paññapema. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn13:5.9
+Pali: Samaṇo, āvuso, gotamo rūpānaṁ pariññaṁ paññapeti, mayampi rūpānaṁ pariññaṁ paññapema. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn13:5.10
+Pali: Samaṇo, āvuso, gotamo vedanānaṁ pariññaṁ paññapeti, mayampi vedanānaṁ pariññaṁ paññapema. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn13:5.11
+Pali: Idha no, āvuso, ko viseso, ko adhippayāso, kiṁ nānākaraṇaṁ samaṇassa vā gotamassa amhākaṁ vā, yadidaṁ dhammadesanāya vā dhammadesanaṁ anusāsaniyā vā anusāsanin’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn13:5.12
+Pali: Atha kho mayaṁ, bhante, tesaṁ aññatitthiyānaṁ paribbājakānaṁ bhāsitaṁ neva abhinandimha, nappaṭikkosimha; 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn13:5.13
+Pali: anabhinanditvā appaṭikkositvā uṭṭhāyāsanā pakkamimha: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn13:5.14
+Pali: ‘bhagavato santike etassa bhāsitassa atthaṁ ājānissāmā’”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn13:6.1
+Pali: “Evaṁvādino, bhikkhave, aññatitthiyā paribbājakā evamassu vacanīyā: 
+Sujato: “Mendicants, when wanderers of other religions say this, you should say to them: 
+Translator: “Bhikkhus, wanderers of other sects who speak thus should be questioned thus: 
+
+=== RUN 145: mn19:4-5.6 mn19:4-5.7 mn19:4-5.8 ===
+File: data/bodhi/sutta/mn/mn19_translation-en-bodhi.json
+ABOVE mn19:4-5.5
+Pali: So ca kho attabyābādhāyapi saṁvattati, parabyābādhāyapi saṁvattati, ubhayabyābādhāyapi saṁvattati, paññānirodhiko vighātapakkhiko anibbānasaṁvattaniko’. 
+Sujato: It leads to hurting myself, hurting others, and hurting both. It blocks wisdom, it’s on the side of distress, and it doesn’t lead to extinguishment.’ 
+Translator: This leads to my own affliction, to others’ affliction, and to the affliction of both; it obstructs wisdom, causes difficulties, and leads away from Nibbāna.‘ 
+JUDGE mn19:4-5.6
+Pali: ‘Attabyābādhāya saṁvattatī’tipi me, bhikkhave, paṭisañcikkhato abbhatthaṁ gacchati; 
+Sujato: When I reflected that it leads to hurting myself … 
+Translator: (empty)
+JUDGE mn19:4-5.7
+Pali: ‘parabyābādhāya saṁvattatī’tipi me, bhikkhave, paṭisañcikkhato abbhatthaṁ gacchati; 
+Sujato: hurting others … 
+Translator: (empty)
+JUDGE mn19:4-5.8
+Pali: ‘ubhayabyābādhāya saṁvattatī’tipi me, bhikkhave, paṭisañcikkhato abbhatthaṁ gacchati; 
+Sujato: hurting both, it went away. 
+Translator: (empty)
+BELOW mn19:4-5.9
+Pali: ‘paññānirodhiko vighātapakkhiko anibbānasaṁvattaniko’tipi me, bhikkhave, paṭisañcikkhato abbhatthaṁ gacchati. 
+Sujato: When I reflected that it blocks wisdom, it’s on the side of distress, and it doesn’t lead to extinguishment, it went away. 
+Translator: When I considered thus…it subsided in me. 
+
+=== RUN 146: mn20:4.7 mn20:4.8 ===
+File: data/bodhi/sutta/mn/mn20_translation-en-bodhi.json
+ABOVE mn20:4.6
+Pali: evameva kho, bhikkhave, tassa ce bhikkhuno tamhāpi nimittā aññaṁ nimittaṁ manasikaroto kusalūpasaṁhitaṁ uppajjanteva pāpakā akusalā vitakkā chandūpasaṁhitāpi dosūpasaṁhitāpi mohūpasaṁhitāpi, tena, bhikkhave, bhikkhunā tesaṁ vitakkānaṁ ādīnavo upaparikkhitabbo: 
+Sujato: In the same way, a mendicant … should examine the drawbacks of those thoughts … 
+Translator: so too…when a bhikkhu examines the danger in those thoughts…
+JUDGE mn20:4.7
+Pali: ‘itipime vitakkā akusalā, itipime vitakkā sāvajjā, itipime vitakkā dukkhavipākā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn20:4.8
+Pali: Tassa tesaṁ vitakkānaṁ ādīnavaṁ upaparikkhato ye pāpakā akusalā vitakkā chandūpasaṁhitāpi dosūpasaṁhitāpi mohūpasaṁhitāpi te pahīyanti te abbhatthaṁ gacchanti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn20:4.9
+Pali: Tesaṁ pahānā ajjhattameva cittaṁ santiṭṭhati sannisīdati ekodi hoti samādhiyati. 
+Sujato: (empty)
+Translator: his mind becomes steadied internally, quieted, brought to singleness, and concentrated. 
+
+=== RUN 147: mn22:2.4 mn22:2.5 ===
+File: data/bodhi/sutta/mn/mn22_translation-en-bodhi.json
+ABOVE mn22:2.3
+Pali: Assosuṁ kho sambahulā bhikkhū: 
+Sujato: Several mendicants heard this rumour. 
+Translator: Several bhikkhus, having heard about this, 
+JUDGE mn22:2.4
+Pali: “ariṭṭhassa kira nāma bhikkhuno gaddhabādhipubbassa evarūpaṁ pāpakaṁ diṭṭhigataṁ uppannaṁ: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn22:2.5
+Pali: ‘tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi yathā yeme antarāyikā dhammā vuttā bhagavatā te paṭisevato nālaṁ antarāyāyā’”ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW mn22:3.1
+Pali: Atha kho te bhikkhū yena ariṭṭho bhikkhu gaddhabādhipubbo tenupasaṅkamiṁsu; upasaṅkamitvā ariṭṭhaṁ bhikkhuṁ gaddhabādhipubbaṁ etadavocuṁ: 
+Sujato: They went up to Ariṭṭha and said to him, 
+Translator: went to the bhikkhu Ariṭṭha and asked him: 
+
+=== RUN 148: mn22:3.22 mn22:3.23 mn22:3.24 mn22:3.25 mn22:3.26 ===
+File: data/bodhi/sutta/mn/mn22_translation-en-bodhi.json
+ABOVE mn22:3.21
+Pali: Yato kho te bhikkhū nāsakkhiṁsu ariṭṭhaṁ bhikkhuṁ gaddhabādhipubbaṁ etasmā pāpakā diṭṭhigatā vivecetuṁ, atha kho te bhikkhū yena bhagavā tenupasaṅkamiṁsu; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ nisīdiṁsu. Ekamantaṁ nisinnā kho te bhikkhū bhagavantaṁ etadavocuṁ: 
+Sujato: When they weren’t able to dissuade Ariṭṭha from his view, the mendicants went to the Buddha, bowed, sat down to one side, and told him what had happened. 
+Translator: Since the bhikkhus were unable to detach him from that pernicious view, they went to the Blessed One, and after paying homage to him, they sat down at one side and told him all that had occurred, adding: 
+JUDGE mn22:3.22
+Pali: “ariṭṭhassa nāma, bhante, bhikkhuno gaddhabādhipubbassa evarūpaṁ pāpakaṁ diṭṭhigataṁ uppannaṁ: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn22:3.23
+Pali: ‘tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi yathā yeme antarāyikā dhammā vuttā bhagavatā te paṭisevato nālaṁ antarāyāyā’ti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn22:3.24
+Pali: Assumha kho mayaṁ, bhante: 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn22:3.25
+Pali: ‘ariṭṭhassa kira nāma bhikkhuno gaddhabādhipubbassa evarūpaṁ pāpakaṁ diṭṭhigataṁ uppannaṁ—
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn22:3.26
+Pali: tathāhaṁ bhagavatā dhammaṁ desitaṁ ājānāmi yathā yeme antarāyikā dhammā vuttā bhagavatā te paṭisevato nālaṁ antarāyāyā’ti. 
+Sujato: (empty)
+Translator: (empty)
+BELOW (outside this paragraph) mn22:4.1
+Pali: Yato kho mayaṁ, bhante, nāsakkhimha ariṭṭhaṁ bhikkhuṁ gaddhabādhipubbaṁ etasmā pāpakā diṭṭhigatā vivecetuṁ, atha mayaṁ etamatthaṁ bhagavato ārocemā”ti. 
+Sujato: (empty)
+Translator: “Venerable sir, since we could not detach the bhikkhu Ariṭṭha, formerly of the vulture killers, from this pernicious view, we have reported this matter to the Blessed One.” 
+
+=== RUN 149: mn22:10.18 mn22:10.19 mn22:10.20 mn22:10.21 mn22:10.22 mn22:10.23 ===
+File: data/bodhi/sutta/mn/mn22_translation-en-bodhi.json
+ABOVE mn22:10.17
+Pali: Evameva kho, bhikkhave, idhekacce moghapurisā dhammaṁ pariyāpuṇanti—
+Sujato: In the same way, a futile person memorizes the teaching … 
+Translator: So too, here some misguided men learn the Dhamma…
+JUDGE mn22:10.18
+Pali: suttaṁ, geyyaṁ, veyyākaraṇaṁ, gāthaṁ, udānaṁ, itivuttakaṁ, jātakaṁ, abbhutadhammaṁ, vedallaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn22:10.19
+Pali: Te taṁ dhammaṁ pariyāpuṇitvā tesaṁ dhammānaṁ paññāya atthaṁ na upaparikkhanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn22:10.20
+Pali: Tesaṁ te dhammā paññāya atthaṁ anupaparikkhataṁ na nijjhānaṁ khamanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn22:10.21
+Pali: Te upārambhānisaṁsā ceva dhammaṁ pariyāpuṇanti itivādappamokkhānisaṁsā ca. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn22:10.22
+Pali: Yassa catthāya dhammaṁ pariyāpuṇanti tañcassa atthaṁ nānubhonti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn22:10.23
+Pali: Tesaṁ te dhammā duggahitā dīgharattaṁ ahitāya dukkhāya saṁvattanti. 
+Sujato: and those teachings lead to their lasting harm and suffering. 
+Translator: (empty)
+BELOW mn22:10.24
+Pali: Taṁ kissa hetu? 
+Sujato: Why is that? 
+Translator: Why is that? 
+
+=== RUN 150: mn22:11.18 mn22:11.19 mn22:11.20 mn22:11.21 mn22:11.22 mn22:11.23 ===
+File: data/bodhi/sutta/mn/mn22_translation-en-bodhi.json
+ABOVE mn22:11.17
+Pali: Evameva kho, bhikkhave, idhekacce kulaputtā dhammaṁ pariyāpuṇanti—
+Sujato: In the same way, a gentleman memorizes the teaching … 
+Translator: So too, here some clansmen learn the Dhamma… 
+JUDGE mn22:11.18
+Pali: suttaṁ, geyyaṁ, veyyākaraṇaṁ, gāthaṁ, udānaṁ, itivuttakaṁ, jātakaṁ, abbhutadhammaṁ, vedallaṁ. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn22:11.19
+Pali: Te taṁ dhammaṁ pariyāpuṇitvā tesaṁ dhammānaṁ paññāya atthaṁ upaparikkhanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn22:11.20
+Pali: Tesaṁ te dhammā paññāya atthaṁ upaparikkhataṁ nijjhānaṁ khamanti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn22:11.21
+Pali: Te na ceva upārambhānisaṁsā dhammaṁ pariyāpuṇanti, na itivādappamokkhānisaṁsā ca. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn22:11.22
+Pali: Yassa catthāya dhammaṁ pariyāpuṇanti, tañcassa atthaṁ anubhonti. 
+Sujato: (empty)
+Translator: (empty)
+JUDGE mn22:11.23
+Pali: Tesaṁ te dhammā suggahitā dīgharattaṁ atthāya hitāya sukhāya saṁvattanti. 
+Sujato: and those teachings lead to his lasting welfare and happiness. 
+Translator: (empty)
+BELOW mn22:11.24
+Pali: Taṁ kissa hetu? 
+Sujato: Why is that? 
+Translator: Why is that? 
