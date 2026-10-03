@@ -1,0 +1,386 @@
+[
+  {
+    "key": "sn4.24:10.4",
+    "text": "sn4.24",
+    "status": "deferred-segmenter",
+    "effort": "xhigh",
+    "source": "data/upstream/thanissaro/sutta/sn/sn4/sn4.24.html",
+    "groupVerses": [
+      10
+    ],
+    "groupPaliRows": [
+      "sn4.24:10.1",
+      "sn4.24:10.2",
+      "sn4.24:10.3",
+      "sn4.24:10.4"
+    ],
+    "assignments": [
+      {
+        "key": "sn4.24:10.1",
+        "pali": "Aladdhā tattha assādaṁ, ",
+        "sourceLines": [
+          52
+        ],
+        "wholeSourceLines": [
+          "—but not getting anything tasty there,"
+        ],
+        "starts": "—but not getting anything tasty there,",
+        "none": false,
+        "current": "—but not getting anything tasty there, "
+      },
+      {
+        "key": "sn4.24:10.2",
+        "pali": "vāyasetto apakkame; ",
+        "sourceLines": [
+          53
+        ],
+        "wholeSourceLines": [
+          "the crow went away."
+        ],
+        "starts": "the crow went away.",
+        "none": false,
+        "current": "the crow went away. "
+      },
+      {
+        "key": "sn4.24:10.3",
+        "pali": "Kākova selamāsajja, ",
+        "sourceLines": [
+          54
+        ],
+        "wholeSourceLines": [
+          "Like a crow attacking the rock,"
+        ],
+        "starts": "Like a crow attacking the rock,",
+        "none": false,
+        "current": "Like a crow attacking the rock, "
+      },
+      {
+        "key": "sn4.24:10.4",
+        "pali": "nibbijjāpema gotamā”ti. ",
+        "sourceLines": [
+          55
+        ],
+        "wholeSourceLines": [
+          "I weary myself with Gotama.”"
+        ],
+        "starts": "I weary myself with Gotama.”",
+        "none": false,
+        "current": "I weary myself with Gotama.” Then Māra the Evil One, having recited these verses of dejection in the Blessed One’s presence, left that place and sat on the ground not far from the Blessed One, silent, abashed, with his shoulders drooping, his head down, brooding, at a loss for words, drawing in the dirt with a stick. "
+      }
+    ],
+    "rationale": "Verse 10 is already four whole source lines. Source 56 is the single following narrative sentence, and its exact Pali begins at sn4.25:1.1. Move that prose across the text boundary; current monotonic per-page cuts cannot transfer ownership while check-upstream and plain regeneration preserve each source page.",
+    "activeDirectives": [],
+    "desiredProseMoves": [
+      {
+        "sourceLines": [
+          56
+        ],
+        "destination": "sn4.25:1.1",
+        "starts": "Then Māra the Evil One, having recited these",
+        "pali": "Atha kho māro pāpimā bhagavato santike imā nibbejanīyā gāthāyo abhāsitvā tamhā ṭhānā apakkamma bhagavato avidūre pathaviyaṁ pallaṅkena nisīdi tuṇhībhūto maṅkubhūto pattakkhandho adhomukho pajjhāyanto appaṭibhāno kaṭṭhena bhūmiṁ vilikhanto. "
+      }
+    ],
+    "segmenterNeeded": "Cross-text ownership transfer of source paragraph 56 from sn4.24 source to sn4.25:1.1; word-for-word checker must recognize that same transfer."
+  },
+  {
+    "key": "an4.19:4.1",
+    "text": "an4.19",
+    "status": "deferred-segmenter",
+    "effort": "xhigh",
+    "source": "data/upstream/thanissaro/sutta/an/an4/an4.19.html",
+    "groupVerses": [
+      3,
+      4
+    ],
+    "groupPaliRows": [
+      "an4.19:3.1",
+      "an4.19:3.2",
+      "an4.19:3.3",
+      "an4.19:3.4",
+      "an4.19:4.1",
+      "an4.19:4.2",
+      "an4.19:4.3",
+      "an4.19:4.4"
+    ],
+    "assignments": [
+      {
+        "key": "an4.19:3.1",
+        "pali": "Chandā dosā bhayā mohā, ",
+        "sourceLines": [
+          2
+        ],
+        "wholeSourceLines": [
+          "If you—"
+        ],
+        "starts": "If you—",
+        "none": false,
+        "current": "If you— "
+      },
+      {
+        "key": "an4.19:3.2",
+        "pali": "yo dhammaṁ ativattati; ",
+        "sourceLines": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "wholeSourceLines": [
+          "through desire,",
+          "aversion,",
+          "delusion,",
+          "fear—",
+          "transgress the Dhamma,"
+        ],
+        "starts": "through desire,",
+        "none": false,
+        "current": "through desire,\naversion,\ndelusion,\nfear—\ntransgress the Dhamma, "
+      },
+      {
+        "key": "an4.19:3.3",
+        "pali": "Nihīyati tassa yaso, ",
+        "sourceLines": [
+          8
+        ],
+        "wholeSourceLines": [
+          "your honor wanes,"
+        ],
+        "starts": "your honor wanes,",
+        "none": false,
+        "current": "your honor wanes, "
+      },
+      {
+        "key": "an4.19:3.4",
+        "pali": "kāḷapakkheva candimā. ",
+        "sourceLines": [
+          9,
+          10
+        ],
+        "wholeSourceLines": [
+          "as in the dark fortnight,",
+          "the moon."
+        ],
+        "starts": "as in the dark fortnight,",
+        "none": false,
+        "current": "as in the dark fortnight,\nthe moon. "
+      },
+      {
+        "key": "an4.19:4.1",
+        "pali": "Chandā dosā bhayā mohā, ",
+        "sourceLines": [
+          12
+        ],
+        "wholeSourceLines": [
+          "If you don’t—"
+        ],
+        "starts": "If you don’t—",
+        "none": false,
+        "current": "“There are these four ways of not going off course. Which four? One doesn’t go off course through desire. One doesn’t go off course through aversion. One doesn’t go off course through delusion. One doesn’t go off course through fear. These are the four ways of not going off course.”\nIf you don’t— "
+      },
+      {
+        "key": "an4.19:4.2",
+        "pali": "yo dhammaṁ nātivattati; ",
+        "sourceLines": [
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "wholeSourceLines": [
+          "through desire,",
+          "aversion,",
+          "delusion,",
+          "fear—",
+          "transgress the Dhamma,"
+        ],
+        "starts": "through desire,",
+        "none": false,
+        "current": "through desire,\naversion,\ndelusion,\nfear—\ntransgress the Dhamma, "
+      },
+      {
+        "key": "an4.19:4.3",
+        "pali": "Āpūrati tassa yaso, ",
+        "sourceLines": [
+          18
+        ],
+        "wholeSourceLines": [
+          "your honor waxes,"
+        ],
+        "starts": "your honor waxes,",
+        "none": false,
+        "current": "your honor waxes, "
+      },
+      {
+        "key": "an4.19:4.4",
+        "pali": "sukkapakkheva candimā”ti. ",
+        "sourceLines": [
+          19,
+          20
+        ],
+        "wholeSourceLines": [
+          "as in the bright fortnight,",
+          "the moon."
+        ],
+        "starts": "as in the bright fortnight,",
+        "none": false,
+        "current": "as in the bright fortnight,\nthe moon. "
+      }
+    ],
+    "rationale": "Both verse spreads are already whole and show every Pali line. Source 11 is the second prose paragraph; its sentences correspond to Pali 2.1, 2.2, 2.3 and 2.4, but it follows verse 3 in the source and precedes it in the Pali. User permits moving prose; existing monotonic cuts cannot make this move while preserving source-page word order and regeneration.",
+    "activeDirectives": [],
+    "desiredProseMoves": [
+      {
+        "sourceLines": [
+          11
+        ],
+        "destinations": [
+          {
+            "key": "an4.19:2.1",
+            "starts": "“There are these four ways of not going"
+          },
+          {
+            "key": "an4.19:2.2",
+            "starts": "Which four?"
+          },
+          {
+            "key": "an4.19:2.3",
+            "starts": "One doesn’t go off course through desire."
+          },
+          {
+            "key": "an4.19:2.4",
+            "starts": "These are the four ways of not going"
+          }
+        ]
+      }
+    ],
+    "segmenterNeeded": "Explicit prose reordering across the first verse, keeping each prose sentence intact and checking source words in their source order rather than Pali row order."
+  },
+  {
+    "key": "ud7.8:4.6",
+    "text": "ud7.8",
+    "status": "deferred-segmenter",
+    "effort": "xhigh",
+    "source": "data/upstream/thanissaro/sutta/kn/ud/vagga7/ud7.8.html",
+    "groupVerses": [
+      4
+    ],
+    "groupPaliRows": [
+      "ud7.8:4.1",
+      "ud7.8:4.2",
+      "ud7.8:4.3",
+      "ud7.8:4.4",
+      "ud7.8:4.5",
+      "ud7.8:4.6"
+    ],
+    "assignments": [
+      {
+        "key": "ud7.8:4.1",
+        "pali": "“Yassa siyā sabbadā sati, ",
+        "sourceLines": [
+          3,
+          4
+        ],
+        "wholeSourceLines": [
+          "If one were to have",
+          "mindfulness always"
+        ],
+        "starts": "If one were to have",
+        "none": false,
+        "current": "If one were to have\nmindfulness always "
+      },
+      {
+        "key": "ud7.8:4.2",
+        "pali": "Satataṁ kāyagatā upaṭṭhitā; ",
+        "sourceLines": [
+          5,
+          6
+        ],
+        "wholeSourceLines": [
+          "established, continually",
+          "immersed in the body,"
+        ],
+        "starts": "established, continually",
+        "none": false,
+        "current": "established, continually\nimmersed in the body, "
+      },
+      {
+        "key": "ud7.8:4.3",
+        "pali": "No cassa no ca me siyā, ",
+        "sourceLines": [
+          7,
+          8,
+          9
+        ],
+        "wholeSourceLines": [
+          "(thinking,)",
+          "“It should not be,",
+          "it should not be mine;"
+        ],
+        "starts": "(thinking,)",
+        "none": false,
+        "current": "(thinking,)\n“It should not be,\nit should not be mine; "
+      },
+      {
+        "key": "ud7.8:4.4",
+        "pali": "Na bhavissati na ca me bhavissati; ",
+        "sourceLines": [
+          10,
+          11
+        ],
+        "wholeSourceLines": [
+          "it will not be,",
+          "it will not be mine”–"
+        ],
+        "starts": "it will not be,",
+        "none": false,
+        "current": "it will not be,\nit will not be mine”– "
+      },
+      {
+        "key": "ud7.8:4.5",
+        "pali": "Anupubbavihāri tattha so, ",
+        "sourceLines": [
+          12,
+          13
+        ],
+        "wholeSourceLines": [
+          "there,",
+          "in that step-by-step dwelling,"
+        ],
+        "starts": "there,",
+        "none": false,
+        "current": "there,\nin that step-by-step dwelling, "
+      },
+      {
+        "key": "ud7.8:4.6",
+        "pali": "Kāleneva tare visattikan”ti. ",
+        "sourceLines": [
+          14,
+          15,
+          16
+        ],
+        "wholeSourceLines": [
+          "one in no long time",
+          "would cross over",
+          "attachment."
+        ],
+        "starts": "one in no long time",
+        "none": false,
+        "current": "one in no long time\nwould cross over\nattachment. In AN 10:29, the Buddha recommends this view as conducive to developing dispassion for becoming. However, in MN 106 he warns that it can lead to the refined equanimity of the dimension of neither perception nor non-perception, which can become an object of clinging. Only if that subtle clinging is detected can all clinging be abandoned. The Canon’s most extended discussion of this theme of meditation is in SN 22:55. See Appendix Two. For more on this topic, see The Paradox of Becoming, chapter 5. "
+      }
+    ],
+    "rationale": "The verse ends at source 16 “attachment.” Sources 17–19 are translator’s editorial commentary outside the HTML note box and have no Pali counterpart. Preserve that text; do not invent a correspondence with the closing Aṭṭhamaṁ row. Separating it into notes needs source/notes parsing and independent upstream-check support, which current scripts do not supply.",
+    "activeDirectives": [],
+    "desiredEditorialMove": {
+      "sourceLines": [
+        17,
+        18,
+        19
+      ],
+      "destination": "note on ud7.8:4.6",
+      "paliCorrespondence": "none; translator editorial commentary"
+    },
+    "segmenterNeeded": "Treat post-note editorial paragraphs as commentary and preserve their original text/links in notes; update the independent check-upstream parser to classify those same paragraphs as commentary. Existing verse lines remain whole, but editorial stays attached pending that support."
+  }
+]

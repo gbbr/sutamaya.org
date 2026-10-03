@@ -1,0 +1,37 @@
+# ud7.8
+Source: data/upstream/thanissaro/sutta/kn/ud/vagga7/ud7.8.html
+
+SOURCE 001 prose: I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery. Now at that time Ven. Mahā Kaccāna was sitting not far from the Blessed One, his legs crossed, his body held erect, having mindfulness immersed in the body well-established to the fore within. The Blessed One saw Ven. Mahā Kaccāna sitting not far away, his legs crossed, his body held erect, having mindfulness immersed in the body well-established to the fore within.
+SOURCE 002 prose: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+SOURCE 003 verse: If one were to have
+SOURCE 004 verse: mindfulness always
+SOURCE 005 verse: established, continually
+SOURCE 006 verse: immersed in the body,
+SOURCE 007 verse: (thinking,)
+SOURCE 008 verse: “It should not be,
+SOURCE 009 verse: it should not be mine;
+SOURCE 010 verse: it will not be,
+SOURCE 011 verse: it will not be mine”–
+SOURCE 012 verse: there,
+SOURCE 013 verse: in that step-by-step dwelling,
+SOURCE 014 verse: one in no long time
+SOURCE 015 verse: would cross over
+SOURCE 016 verse: attachment.
+SOURCE 017 prose: In AN 10:29, the Buddha recommends this view as conducive to developing dispassion for becoming. However, in MN 106 he warns that it can lead to the refined equanimity of the dimension of neither perception nor non-perception, which can become an object of clinging. Only if that subtle clinging is detected can all clinging be abandoned.
+SOURCE 018 prose: The Canon’s most extended discussion of this theme of meditation is in SN 22:55. See Appendix Two.
+SOURCE 019 prose: For more on this topic, see The Paradox of Becoming, chapter 5.
+
+## Pali and present cuts
+
+ud7.8:1.1 | P: Evaṁ me sutaṁ— | S: So I have heard.  | T: I have heard that 
+ud7.8:1.2 | P: ekaṁ samayaṁ bhagavā sāvatthiyaṁ viharati jetavane anāthapiṇḍikassa ārāme.  | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.  | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery. 
+ud7.8:1.3 | P: Tena kho pana samayena āyasmā mahākaccāno bhagavato avidūre nisinno hoti pallaṅkaṁ ābhujitvā ujuṁ kāyaṁ paṇidhāya kāyagatāya satiyā ajjhattaṁ parimukhaṁ sūpaṭṭhitāya.  | S: Now at that time Venerable Mahākaccāna was sitting not far from the Buddha, cross-legged, with his body straight and mindfulness of the body well-established internally on the present.  | T: Now at that time Ven. Mahā Kaccāna was sitting not far from the Blessed One, his legs crossed, his body held erect, having mindfulness immersed in the body well-established to the fore within. 
+ud7.8:2.1 | P: Addasā kho bhagavā āyasmantaṁ mahākaccānaṁ avidūre nisinnaṁ pallaṅkaṁ ābhujitvā ujuṁ kāyaṁ paṇidhāya kāyagatāya satiyā ajjhattaṁ parimukhaṁ sūpaṭṭhitāya.  | S: The Buddha saw him meditating there.  | T: The Blessed One saw Ven. Mahā Kaccāna sitting not far away, his legs crossed, his body held erect, having mindfulness immersed in the body well-established to the fore within. 
+ud7.8:3.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi:  | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment:  | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed: 
+ud7.8:4.1 | P: “Yassa siyā sabbadā sati,  | S: “Their mindfulness would always  | T: If one were to have ⏎ mindfulness always 
+ud7.8:4.2 | P: Satataṁ kāyagatā upaṭṭhitā;  | S: be established in the body, constant:  | T: established, continually ⏎ immersed in the body, 
+ud7.8:4.3 | P: No cassa no ca me siyā,  | S: ‘It might not be, and it might not be mine,  | T: (thinking,) ⏎ “It should not be, ⏎ it should not be mine; 
+ud7.8:4.4 | P: Na bhavissati na ca me bhavissati;  | S: It will not be, and it will not be mine.’  | T: it will not be, ⏎ it will not be mine”– 
+ud7.8:4.5 | P: Anupubbavihāri tattha so,  | S: Meditating stage by stage on that,  | T: there, ⏎ in that step-by-step dwelling, 
+ud7.8:4.6 | P: Kāleneva tare visattikan”ti.  | S: in time they’d cross over clinging.”  | T: one in no long time ⏎ would cross over ⏎ attachment. In AN 10:29, the Buddha recommends this view as conducive to developing dispassion for becoming. However, in MN 106 he warns that it can lead to the refined equanimity of the dimension of neither perception nor non-perception, which can become an object of clinging. Only if that subtle clinging is detected can all clinging be abandoned. The Canon’s most extended discussion of this theme of meditation is in SN 22:55. See Appendix Two. For more on this topic, see The Paradox of Becoming, chapter 5. 
+ud7.8:4.7 | P: Aṭṭhamaṁ.  | S:  | T: 

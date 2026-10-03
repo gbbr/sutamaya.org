@@ -1,0 +1,61 @@
+# an5.57
+Source: data/upstream/thanissaro/sutta/an/an5/an5.57.html
+
+SOURCE 001 prose: “There are these five facts that one should reflect on often, whether one is a woman or a man, lay or ordained. Which five?
+SOURCE 002 prose: “‘I am subject to aging, have not gone beyond aging.’ This is the first fact that one should reflect on often.…
+SOURCE 003 prose: “‘I am subject to illness, have not gone beyond illness’.…
+SOURCE 004 prose: “‘I am subject to death, have not gone beyond death’.…
+SOURCE 005 prose: “‘I will grow different, separate from all that is dear & appealing to me’.…
+SOURCE 006 prose: “‘I am the owner of actions [kamma], heir to actions, born of actions, related through actions, and have actions as my arbitrator. Whatever I do, for good or for evil, to that will I fall heir’.…
+SOURCE 007 prose: “These are the five facts that one should reflect on often, whether one is a woman or a man, lay or ordained.
+SOURCE 008 prose: “Now, based on what line of reasoning should one often reflect… that ‘I am subject to aging, have not gone beyond aging’? There are beings who are intoxicated with a (typical) youth’s intoxication with youth. Because of that intoxication with youth, they conduct themselves in a bad way in body…in speech…and in mind. But when they often reflect on that fact, that youth’s intoxication with youth will either be entirely abandoned or grow weaker.…
+SOURCE 009 prose: “Now, based on what line of reasoning should one often reflect… that ‘I am subject to illness, have not gone beyond illness’? There are beings who are intoxicated with a (typical) healthy person’s intoxication with health. Because of that intoxication with health, they conduct themselves in a bad way in body…in speech…and in mind. But when they often reflect on that fact, that healthy person’s intoxication with health will either be entirely abandoned or grow weaker.…
+SOURCE 010 prose: “Now, based on what line of reasoning should one often reflect… that ‘I am subject to death, have not gone beyond death’? There are beings who are intoxicated with a (typical) living person’s intoxication with life. Because of that intoxication with life, they conduct themselves in a bad way in body…in speech…and in mind. But when they often reflect on that fact, that living person’s intoxication with life will either be entirely abandoned or grow weaker.…
+SOURCE 011 prose: “Now, based on what line of reasoning should one often reflect… that ‘I will grow different, separate from all that is dear & appealing to me’? There are beings who feel desire & passion for the things they find dear & appealing. Because of that passion, they conduct themselves in a bad way in body…in speech…and in mind. But when they often reflect on that fact, that desire & passion for the things they find dear & appealing will either be entirely abandoned or grow weaker.…
+SOURCE 012 prose: “Now, based on what line of reasoning should one often reflect… that ‘I am the owner of actions, heir to actions, born of actions, related through actions, and have actions as my arbitrator. Whatever I do, for good or for evil, to that will I fall heir’? There are beings who conduct themselves in a bad way in body… in speech…and in mind. But when they often reflect on that fact, that bad conduct in body, speech, & mind will either be entirely abandoned or grow weaker.…
+SOURCE 013 prose: “Now, a disciple of the noble ones considers this: ‘I am not the only one subject to aging, who has not gone beyond aging. To the extent that there is the coming & going, passing away & rearising of beings, all beings are subject to aging, have not gone beyond aging.’ When he/she often reflects on this, the (factors of the) path take birth. He/she sticks with that path, develops it, cultivates it. As he/she sticks with that path, develops it, & cultivates it, the fetters are abandoned, the obsessions destroyed.
+SOURCE 014 prose: “Further, a disciple of the noble ones considers this: ‘I am not the only one subject to illness, who has not gone beyond illness’.… ‘I am not the only one subject to death, who has not gone beyond death’.… ‘I am not the only one who will grow different, separate from all that is dear & appealing to me’.…
+SOURCE 015 prose: “A disciple of the noble ones considers this: ‘I am not the only one who is the owner of actions, heir to actions, born of actions, related through actions, and have actions as my arbitrator; who—whatever I do, for good or for evil, to that will I fall heir. To the extent that there is the coming & going, passing away & rearising of beings, all beings are the owners of actions, heir to actions, born of actions, related through actions, and have actions as their arbitrator. Whatever they do, for good or for evil, to that will they fall heir.’ When he/she often reflects on this, the (factors of the) path take birth. He/she sticks with that path, develops it, cultivates it. As he/she sticks with that path, develops it, & cultivates it, the fetters are abandoned, the obsessions destroyed.”
+SOURCE 016 verse: “‘Subject to birth, subject to aging,
+SOURCE 017 verse: subject to death,
+SOURCE 018 verse: run-of-the-mill people
+SOURCE 019 verse: are repelled by those who suffer
+SOURCE 020 verse: from that to which they are subject.
+SOURCE 021 verse: And if I were to be repelled
+SOURCE 022 verse: by beings subject to these things,
+SOURCE 023 verse: it would not be fitting for me,
+SOURCE 024 verse: living as they do.’
+SOURCE 025 verse: As I maintained this attitude—
+SOURCE 026 verse: knowing the Dhamma
+SOURCE 027 verse: without acquisitions—
+SOURCE 028 verse: I overcame all intoxication
+SOURCE 029 verse: with health, youth, & life
+SOURCE 030 verse: as one who sees
+SOURCE 031 verse: renunciation as rest.
+SOURCE 032 verse: For me, energy arose,
+SOURCE 033 verse: unbinding was clearly seen.
+SOURCE 034 verse: There’s now no way
+SOURCE 035 verse: I could partake of sensual pleasures.
+SOURCE 036 verse: Having followed the holy life,
+SOURCE 037 verse: I will not return.”
+SOURCE 038 prose: See also: AN 3:39; AN 7:70; AN 10:48
+
+## Pali and present cuts
+
+an5.57:13.1 | P: Ahañce taṁ jiguccheyyaṁ,  | S: If I were to be disgusted  | T: And if I were to be repelled 
+an5.57:13.2 | P: evaṁ dhammesu pāṇisu;  | S: with creatures whose nature is such,  | T: by beings subject to these things, 
+an5.57:13.3 | P: Na metaṁ patirūpassa,  | S: it would not be appropriate for me,  | T: it would not be fitting for me, 
+an5.57:13.4 | P: mama evaṁ vihārino.  | S: since my life is just the same.  | T: living as they do.’ 
+an5.57:14.1 | P: Sohaṁ evaṁ viharanto,  | S: Living in such a way,  | T: As I maintained this attitude— 
+an5.57:14.2 | P: ñatvā dhammaṁ nirūpadhiṁ;  | S: I understood the truth without attachments.  | T: knowing the Dhamma ⏎ without acquisitions— 
+an5.57:14.3 | P: Ārogye yobbanasmiñca,  | S: I mastered all vanities— | T: I overcame all intoxication 
+an5.57:14.4 | P: jīvitasmiñca ye madā.  | S: of health, of youth,  | T: with health, youth, 
+an5.57:15.1 | P: Sabbe made abhibhosmi,  | S: and even of life— | T: & life 
+an5.57:15.2 | P: Nekkhammaṁ daṭṭhu khemato;  | S: seeing renunciation as sanctuary.  | T: as one who sees ⏎ renunciation as rest. 
+an5.57:15.3 | P: Tassa me ahu ussāho,  | S: Zeal sprang up in me  | T: For me, energy arose, 
+an5.57:15.4 | P: Nibbānaṁ abhipassato.  | S: as I looked to extinguishment.  | T: unbinding was clearly seen. 
+an5.57:16.1 | P: Nāhaṁ bhabbo etarahi,  | S: Now I’m unable  | T: There’s now no way 
+an5.57:16.2 | P: Kāmāni paṭisevituṁ;  | S: to indulge in sensual pleasures;  | T: I could partake of sensual pleasures. 
+an5.57:16.3 | P: Anivatti bhavissāmi,  | S: there’s no turning back,  | T: Having followed the holy life, 
+an5.57:16.4 | P: Brahmacariyaparāyaṇo”ti.  | S: I’m committed to the spiritual life.”  | T: I will not return.” 
+an5.57:16.5 | P: Sattamaṁ.  | S:  | T: 

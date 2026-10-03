@@ -1,0 +1,248 @@
+{
+  "batch": "005",
+  "translator": "thanissaro",
+  "packet": "data/thanissaro/review/audit6/batch-005.pali.txt",
+  "coverage": {
+    "rows_read": 423,
+    "total_rows": 423,
+    "all_rows_read": true,
+    "pali_only_rows_included": true,
+    "texts_read": [
+      {
+        "id": "an7.53",
+        "rows_read": 15,
+        "coverage": "assigned continuation only"
+      },
+      {
+        "id": "an9.14",
+        "rows_read": 31,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp114",
+        "rows_read": 5,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp117",
+        "rows_read": 5,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp141",
+        "rows_read": 5,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp143",
+        "rows_read": 5,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp155",
+        "rows_read": 5,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp167",
+        "rows_read": 4,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp23",
+        "rows_read": 4,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp24",
+        "rows_read": 5,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp231",
+        "rows_read": 5,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp232",
+        "rows_read": 4,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp234",
+        "rows_read": 5,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp240",
+        "rows_read": 5,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp241",
+        "rows_read": 5,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp274",
+        "rows_read": 4,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp287",
+        "rows_read": 5,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp297",
+        "rows_read": 4,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp317",
+        "rows_read": 4,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp42",
+        "rows_read": 5,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp372",
+        "rows_read": 4,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp404",
+        "rows_read": 5,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp408",
+        "rows_read": 5,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp71",
+        "rows_read": 5,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "dhp97",
+        "rows_read": 5,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "iti1",
+        "rows_read": 16,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "snp4.4",
+        "rows_read": 33,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "thag12.1",
+        "rows_read": 49,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "thig5.8",
+        "rows_read": 21,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "ud4.9",
+        "rows_read": 22,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "sn1.64",
+        "rows_read": 8,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "sn12.20",
+        "rows_read": 61,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "sn12.55",
+        "rows_read": 26,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "sn14.11",
+        "rows_read": 19,
+        "coverage": "all assigned rows"
+      },
+      {
+        "id": "sn17.5",
+        "rows_read": 14,
+        "coverage": "all assigned rows"
+      }
+    ]
+  },
+  "proposals": [],
+  "concerns": [
+    {
+      "keys": [
+        "dhp114:2",
+        "dhp114:3",
+        "dhp234:2",
+        "dhp234:3",
+        "dhp240:3",
+        "dhp240:4",
+        "dhp97:1",
+        "dhp97:3",
+        "dhp404:1",
+        "dhp408:1"
+      ],
+      "disposition": "no proposal",
+      "explanation": "Compared surprising short lines and semantically crossed row placements against original source HTML. The current source verse lines remain whole and follow source order; source lines do not need to translate the exact Pali row they sit on."
+    },
+    {
+      "keys": [
+        "snp4.4:4.3",
+        "snp4.4:4.4",
+        "snp4.4:5.1",
+        "snp4.4:6.3",
+        "snp4.4:6.4"
+      ],
+      "disposition": "no proposal",
+      "explanation": "Source HTML confirms the monkey comparison connects neighboring verses in one verse-add source group and the question precedes its descriptive qualification. Existing source-order layout is coherent."
+    },
+    {
+      "keys": [
+        "thig5.8:5.3"
+      ],
+      "disposition": "no proposal",
+      "explanation": "Original HTML and note explicitly print birth and old age as a wordplay on jamme. Both printed source lines belong together; the Pali/source difference is not an alignment error."
+    },
+    {
+      "keys": [
+        "iti1:2.2",
+        "iti1:2.5",
+        "sn12.20:2.6",
+        "sn12.20:3.14",
+        "sn12.55:2.3",
+        "sn12.55:4.3",
+        "sn17.5:1.8"
+      ],
+      "disposition": "no proposal",
+      "explanation": "Each joined English clause independently renders its own Pali clause or repeated formula. English conjunctions or punctuation do not establish misplaced boundaries."
+    }
+  ],
+  "source_html_consulted": [
+    "data/upstream/thanissaro/sutta/kn/thig/thig5.8.html",
+    "data/upstream/thanissaro/sutta/kn/snp/vagga4/snp4.4.html",
+    "data/upstream/thanissaro/sutta/kn/dhp/dhp100-115.html",
+    "data/upstream/thanissaro/sutta/kn/dhp/dhp221-234.html",
+    "data/upstream/thanissaro/sutta/kn/dhp/dhp235-255.html",
+    "data/upstream/thanissaro/sutta/kn/dhp/dhp90-99.html",
+    "data/upstream/thanissaro/sutta/kn/dhp/dhp383-423.html"
+  ],
+  "explanation": "Read all 423 assigned rows across 35 text sections, including Pali-only uddana and closing rows. AN7.53 continuation is confined to assigned rows. Expanded dependency formulas sit on the relevant Pali abbreviation rows; omitted repetitions and closing verses remain omitted. No sure misplaced boundaries found."
+}

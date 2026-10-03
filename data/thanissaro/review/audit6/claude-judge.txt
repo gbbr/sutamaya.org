@@ -1,0 +1,90 @@
+# Subsequent Claude cross-model judgment: all changed groups
+Original Pali is the authority; current saved source HTML determines whole source lines.
+Compare BEFORE and AFTER. Judge each group better/same/worse with reason.
+Whole translator verse lines in source order may span adjacent verses as one group; prose stays on its starting Pali.
+Abridged repetition must stay hidden; rendered hidden verse Pali must show.
+
+## 1 (audit6, an10.96)
+Proposed boundaries: [{"key": "an10.96:10.1", "starts": "On being asked, ‘Very well then: “The cosmos", "settles": {"after": "ernal. Only this is true; anything otherwise is worthless.” Is this the sort of view you have?’ you inform me, ‘No, my friend, I don’t have that sort of view.’", "placed": true, "own": true}}]
+Source: data/upstream/thanissaro/sutta/an/an10/an10.96.html
+an10.96:9.1 | P: “‘Kiṁ nu kho, bho, sassato loko, idameva saccaṁ moghamaññanti—
+S: “When asked about all these points, you say that’s not your view.
+BEFORE: '“But on being asked, ‘How is it, my friend: “The cosmos is eternal. Only this is true; anything otherwise is worthless.” Is this the sort of view you have?’ you inform me, ‘No, my friend, I don’t have that sort of view.’ On being asked, ‘Very well then: “The cosmos is not eternal … ” …'
+AFTER: '“But on being asked, ‘How is it, my friend: “The cosmos is eternal. Only this is true; anything otherwise is worthless.” Is this the sort of view you have?’ you inform me, ‘No, my friend, I don’t have that sort of view.’'
+an10.96:9.2 | P: evaṁdiṭṭhi bhavan’ti, iti puṭṭho samāno: 
+S: 
+BEFORE: ''
+AFTER: ''
+an10.96:9.3 | P: ‘na kho ahaṁ, āvuso, evaṁdiṭṭhi—
+S: 
+BEFORE: ''
+AFTER: ''
+an10.96:9.4 | P: sassato loko, idameva saccaṁ moghamaññan’ti vadesi. 
+S: 
+BEFORE: ''
+AFTER: ''
+an10.96:10.1 | P: ‘Kiṁ pana, bho, asassato loko, idameva saccaṁ moghamaññanti—
+S: 
+BEFORE: ''
+AFTER: 'On being asked, ‘Very well then: “The cosmos is not eternal … ” …'
+an10.96:10.2 | P: evaṁdiṭṭhi bhavan’ti, iti puṭṭho samāno: 
+S: 
+BEFORE: ''
+AFTER: ''
+an10.96:10.3 | P: ‘na kho ahaṁ, āvuso, evaṁdiṭṭhi—
+S: 
+BEFORE: ''
+AFTER: ''
+an10.96:10.4 | P: asassato loko, idameva saccaṁ moghamaññan’ti vadesi. 
+S: 
+BEFORE: ''
+AFTER: ''
+an10.96:11.1 | P: Kiṁ nu kho, bho, antavā loko …pe… 
+S: 
+BEFORE: '“The cosmos is finite … ” …'
+AFTER: '“The cosmos is finite … ” …'
+
+## 2 (audit6, an10.96)
+Proposed boundaries: [{"key": "an10.96:12.3", "starts": "I do know. I do see.’", "settles": {"after": " not the case that I don’t know or see.", "placed": true}}]
+Source: data/upstream/thanissaro/sutta/an/an10/an10.96.html
+an10.96:12.2 | P: ‘na kho ahaṁ, āvuso, na jānāmi na passāmi. 
+S: you say, ‘That’s not so, reverend.
+BEFORE: 'you inform me, ‘No, my friend.'
+AFTER: 'you inform me, ‘No, my friend. It’s not the case that I don’t know or see.'
+an10.96:12.3 | P: Jānāmahaṁ, āvuso, passāmī’ti vadesi. 
+S: I do know and see.’
+BEFORE: 'It’s not the case that I don’t know or see. I do know. I do see.’'
+AFTER: 'I do know. I do see.’'
+an10.96:12.4 | P: Yathā kathaṁ panāvuso, imassa bhāsitassa attho daṭṭhabbo”ti? 
+S: How then should we see the meaning of this statement?”
+BEFORE: 'Now, how is the meaning of this statement to be understood?”'
+AFTER: 'Now, how is the meaning of this statement to be understood?”'
+
+## 3 (audit6, an4.192)
+Proposed boundaries: [{"key": "an4.192:9.9", "starts": null, "settles": {"empty": "up"}}]
+Source: data/upstream/thanissaro/sutta/an/an4/an4.192.html
+an4.192:9.5 | P: ‘yathā kho imassa āyasmato ummaggo yathā ca abhinīhāro yathā ca pañhāsamudāhāro, duppañño ayamāyasmā, nāyamāyasmā paññavā. 
+S: ‘Judging by this venerable’s approach, by what they’re getting at, and by how they discuss a question, they’re witless, not wise. …’
+BEFORE: '‘From the way this person rises to an issue, from the way he applies (his reasoning), from the way he addresses a question…'
+AFTER: '‘From the way this person rises to an issue, from the way he applies (his reasoning), from the way he addresses a question… he is dull, not discerning.’'
+an4.192:9.6 | P: Taṁ kissa hetu? 
+S: 
+BEFORE: ''
+AFTER: ''
+an4.192:9.7 | P: Tathā hi ayamāyasmā na ceva gambhīraṁ atthapadaṁ udāharati santaṁ paṇītaṁ atakkāvacaraṁ nipuṇaṁ paṇḍitavedanīyaṁ. 
+S: 
+BEFORE: ''
+AFTER: ''
+an4.192:9.8 | P: Yañca ayamāyasmā dhammaṁ bhāsati, tassa ca na paṭibalo saṅkhittena vā vitthārena vā atthaṁ ācikkhituṁ desetuṁ paññāpetuṁ paṭṭhapetuṁ vivarituṁ vibhajituṁ uttānīkātuṁ. 
+S: 
+BEFORE: ''
+AFTER: ''
+an4.192:9.9 | P: Duppañño ayamāyasmā, nāyamāyasmā paññavā’ti. 
+S: 
+BEFORE: 'he is dull, not discerning.’'
+AFTER: ''
+an4.192:10.1 | P: Idha pana, bhikkhave, puggalo puggalena saddhiṁ sākacchāyamāno evaṁ jānāti: 
+S: Take another individual who is discussing with someone else. They come to know:
+BEFORE: '“And then there is the case where one individual, through discussion with another, knows this:'
+AFTER: '“And then there is the case where one individual, through discussion with another, knows this:'
+

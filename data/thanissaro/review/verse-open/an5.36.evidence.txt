@@ -1,0 +1,45 @@
+# an5.36
+Source: data/upstream/thanissaro/sutta/an/an5/an5.36.html
+
+SOURCE 001 prose: “There are these five seasonable gifts. Which five? One gives to a newcomer. One gives to one going away. One gives to one who is ill. One gives in time of famine. One sets the first fruits of field & orchard in front of those who are virtuous. These are the five seasonable gifts.”
+SOURCE 002 verse: In the proper season they give—
+SOURCE 003 verse: those with discernment,
+SOURCE 004 verse: responsive, free from stinginess.
+SOURCE 005 verse: Having been given in proper season,
+SOURCE 006 verse: with hearts inspired by the noble ones
+SOURCE 007 verse: —straightened, Such—
+SOURCE 008 verse: their offering bears an abundance.
+SOURCE 009 verse: Those who rejoice in that gift
+SOURCE 010 verse: or give assistance,
+SOURCE 011 verse: they, too, have a share of the merit,
+SOURCE 012 verse: and the offering isn’t depleted by that.
+SOURCE 013 verse: So, with an unhesitant mind,
+SOURCE 014 verse: one should give where the gift bears great fruit.
+SOURCE 015 verse: Merit is what establishes
+SOURCE 016 verse: living beings in the next life.
+
+## Pali and present cuts
+
+an5.36:1.1 | P: “Pañcimāni, bhikkhave, kāladānāni.  | S: “Mendicants, there are these five timely gifts.  | T: “There are these five seasonable gifts. 
+an5.36:1.2 | P: Katamāni pañca?  | S: What five?  | T: Which five? 
+an5.36:1.3 | P: Āgantukassa dānaṁ deti;  | S: A gift to a visitor.  | T: One gives to a newcomer. 
+an5.36:1.4 | P: gamikassa dānaṁ deti;  | S: A gift to someone setting out on a journey.  | T: One gives to one going away. 
+an5.36:1.5 | P: gilānassa dānaṁ deti;  | S: A gift to someone who is sick.  | T: One gives to one who is ill. 
+an5.36:1.6 | P: dubbhikkhe dānaṁ deti;  | S: A gift at a time of famine.  | T: One gives in time of famine. 
+an5.36:1.7 | P: yāni tāni navasassāni navaphalāni tāni paṭhamaṁ sīlavantesu patiṭṭhāpeti.  | S: Presenting the freshly harvested grains and fruits first to those who are ethical.  | T: One sets the first fruits of field & orchard in front of those who are virtuous. 
+an5.36:1.8 | P: Imāni kho, bhikkhave, pañca kāladānānīti.  | S: These are the five timely gifts.  | T: These are the five seasonable gifts.” 
+an5.36:2.1 | P: Kāle dadanti sappaññā,  | S: The wise give at the right time,  | T: In the proper season they give— ⏎ those with discernment, 
+an5.36:2.2 | P: vadaññū vītamaccharā;  | S: being bountiful and rid of stinginess.  | T: responsive, free from stinginess. 
+an5.36:2.3 | P: Kālena dinnaṁ ariyesu,  | S: A religious donation at the right time  | T: Having been given in proper season, 
+an5.36:2.4 | P: ujubhūtesu tādisu.  | S: to the noble ones, upright and unaffected,  | T: with hearts inspired by the noble ones 
+an5.36:3.1 | P: Vippasannamanā tassa,  | S: given with a clear and confident mind,  | T: —straightened, Such— 
+an5.36:3.2 | P: vipulā hoti dakkhiṇā;  | S: is indeed abundant.  | T: their offering bears an abundance. 
+an5.36:3.3 | P: Ye tattha anumodanti,  | S: Those who rejoice at that,  | T: Those who rejoice in that gift 
+an5.36:3.4 | P: veyyāvaccaṁ karonti vā;  | S: or do other services,  | T: or give assistance, 
+an5.36:3.5 | P: Na tena dakkhiṇā ūnā,  | S: don’t miss out on the offering;  | T: they, too, have a share of the merit, 
+an5.36:3.6 | P: tepi puññassa bhāgino.  | S: they too have a share in the merit.  | T: and the offering isn’t depleted by that. 
+an5.36:4.1 | P: Tasmā dade appaṭivānacitto,  | S: So you should give without holding back,  | T: So, with an unhesitant mind, 
+an5.36:4.2 | P: Yattha dinnaṁ mahapphalaṁ;  | S: where a gift is very fruitful.  | T: one should give where the gift bears great fruit. 
+an5.36:4.3 | P: Puññāni paralokasmiṁ,  | S: The good deeds of sentient beings  | T: Merit is what establishes 
+an5.36:4.4 | P: Patiṭṭhā honti pāṇinan”ti.  | S: support them in the next world.”  | T: living beings in the next life. 
+an5.36:4.5 | P: Chaṭṭhaṁ.  | S:  | T: 

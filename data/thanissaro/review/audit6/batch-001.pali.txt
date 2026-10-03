@@ -1,0 +1,460 @@
+# Audit6: Pali is the authority; S is secondary context.
+Every selected non-title row is included. ↵ records a current saved line break; original source HTML decides whole source lines.
+
+## an6.74
+Source: data/upstream/thanissaro/sutta/an/an6/an6.74.html
+an6.74:1.1 | P: “Cha, bhikkhave, dhamme appahāya abhabbo paṭhamaṁ jhānaṁ upasampajja viharituṁ. | S: “Mendicants, without giving up these six qualities you can’t enter and remain in the first absorption. | T: “Monks, without abandoning six things, one is incapable of entering & remaining in the first jhāna.
+an6.74:1.2 | P: Katame cha? | S: What six? | T: Which six?
+an6.74:1.3 | P: Kāmavitakkaṁ, byāpādavitakkaṁ, vihiṁsāvitakkaṁ, kāmasaññaṁ, byāpādasaññaṁ, vihiṁsāsaññaṁ— | S: Sensual, malicious, and cruel thoughts; and sensual, malicious, and cruel perceptions. | T: Thoughts of sensuality, thoughts of ill will, thoughts of harmfulness; perceptions of sensuality, perceptions of ill will, perceptions of harmfulness.
+an6.74:1.4 | P: ime kho, bhikkhave, cha dhamme appahāya abhabbo paṭhamaṁ jhānaṁ upasampajja viharituṁ. | S: Without giving up these six qualities you can’t enter and remain in the first absorption. | T: Without abandoning these six things, one is incapable of entering & remaining in the first jhāna.”
+an6.74:2.1 | P: Cha, bhikkhave, dhamme pahāya bhabbo paṭhamaṁ jhānaṁ upasampajja viharituṁ. | S: But after giving up these six qualities you can enter and remain in the first absorption. | T: (none)
+an6.74:2.2 | P: Katame cha? | S: What six? | T: (none)
+an6.74:2.3 | P: Kāmavitakkaṁ, byāpādavitakkaṁ, vihiṁsāvitakkaṁ, kāmasaññaṁ, byāpādasaññaṁ, vihiṁsāsaññaṁ— | S: Sensual, malicious, and cruel thoughts; and sensual, malicious, and cruel perceptions. | T: (none)
+an6.74:2.4 | P: ime kho, bhikkhave, cha dhamme pahāya bhabbo paṭhamaṁ jhānaṁ upasampajja viharitun”ti. | S: After giving up these six qualities you can enter and remain in the first absorption.” | T: (none)
+an6.74:2.5 | P: Dasamaṁ. | S: (none) | T: (none)
+an6.74:2.6 | P: Devatāvaggo sattamo. | S: (none) | T: (none)
+an6.74:3.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an6.74:3.1 | P: Anāgāmi arahaṁ mittā, | S: (none) | T: (none)
+an6.74:3.2 | P: saṅgaṇikārāmadevatā; | S: (none) | T: (none)
+an6.74:3.3 | P: Samādhisakkhibhabbaṁ balaṁ, | S: (none) | T: (none)
+an6.74:3.4 | P: tajjhānā apare duveti. | S: (none) | T: (none)
+
+## sn43.13
+Source: data/upstream/thanissaro/sutta/sn/sn43/sn43.1-44.html
+sn43.13:1.1 | P: “Anatañca vo, bhikkhave, desessāmi, anatagāmiñca maggaṁ. | S: “Mendicants, I will teach you the uninclined …” | T: “Monks, I will also teach you the unbent and the path leading to the unbent…
+sn43.13:1.2 | P: Taṁ suṇātha. | S: (none) | T: (none)
+sn43.13:1.3 | P: Katamañca, bhikkhave, anataṁ …pe…”. | S: (none) | T: (none)
+sn43.13:1.4 | P: (Yathā asaṅkhataṁ tathā vitthāretabbaṁ.) | S: (Tell in full as in the unconditioned in the previous chapter.) | T: (none)
+sn43.13:1.5 | P: Dutiyaṁ. | S: (none) | T: (none)
+
+## an1.32
+Source: data/upstream/thanissaro/sutta/an/an1/an1.31-40.html
+an1.32:1.0 | P: 32 | S: 32 | T: (none)
+an1.32:1.1 | P: “Nāhaṁ, bhikkhave, aññaṁ ekadhammampi samanupassāmi yaṁ evaṁ dantaṁ mahato atthāya saṁvattati yathayidaṁ, bhikkhave, cittaṁ. | S: “Mendicants, I do not see a single thing that is so very beneficial as this mind that is tamed. | T: 1.32 “I don’t envision a single thing that, when tamed, leads to such great benefit as the mind.
+an1.32:1.2 | P: Cittaṁ, bhikkhave, dantaṁ mahato atthāya saṁvattatī”ti. | S: A tamed mind is very beneficial.” | T: The mind, when tamed leads to great benefit.”
+an1.32:1.3 | P: Dutiyaṁ. | S: (none) | T: (none)
+
+## thig1.1
+Source: data/upstream/thanissaro/sutta/kn/thig/thig1.1.html
+thig1.1:1.0 | P: Namo tassa Bhagavato Arahato Sammāsambuddhassa. | S: Homage to him, the blessed one, the perfected one, the fully awakened Buddha! | T: (none)
+thig1.1:1.1 | P: “Sukhaṁ supāhi therike, | S: Sleep softly, little nun, | T: Sleep, little therī, sleep comfortably,
+thig1.1:1.2 | P: Katvā coḷena pārutā; | S: wrapped in the cloth you sewed yourself; | T: wrapped in the robe you’ve made,
+thig1.1:1.3 | P: Upasanto hi te rāgo, | S: for your desire has been quelled, | T: for your passion is stilled—
+thig1.1:1.4 | P: Sukkhaḍākaṁ va kumbhiyan”ti. | S: like vegetables boiled dry in a pot. | T: like a pot of pickled greens ↵ boiled dry.
+thig1.1:2.1 | P: Itthaṁ sudaṁ aññatarā therī apaññātā bhikkhunī gāthaṁ abhāsitthāti. | S: That is how this verse was recited by a certain unnamed nun. | T: (none)
+
+## iti91
+Source: data/upstream/thanissaro/sutta/kn/iti/vagga10/iti91.html
+iti91:1.1 | P: Vuttañhetaṁ bhagavatā vuttamarahatāti me sutaṁ: | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti91:2.1 | P: “Antamidaṁ, bhikkhave, jīvikānaṁ yadidaṁ piṇḍolyaṁ. | S: “This is the last of lifestyles, mendicants, namely relying on alms. | T: “Monks, this is a lowly means of livelihood, alms gathering.
+iti91:2.2 | P: Abhisāpoyaṁ, bhikkhave, lokasmiṁ: ‘piṇḍolo vicarasi pattapāṇī’ti. | S: The world curses you: ‘You beggar, walking bowl in hand!’ | T: It’s a form of abuse in the world [to say], ‘You go around as an alms gatherer with a bowl in your hand!’
+iti91:2.3 | P: Tañca kho etaṁ, bhikkhave, kulaputtā upenti atthavasikā, atthavasaṁ paṭicca; | S: Yet earnest gentlemen take it up for a good reason. | T: Yet reasonable young men of good families have taken it up for a compelling reason.
+iti91:2.4 | P: neva rājābhinītā, na corābhinītā, na iṇaṭṭā, na bhayaṭṭā, na ājīvikāpakatā. | S: Not to escape a summons by a king or a summons for a bandit, or because you were in debt or in fear, or in order to make a living. | T: They have not been forced into it by kings or robbers, nor through debt, through fear, nor through the loss of their livelihood,
+iti91:2.5 | P: Api ca kho ‘otiṇṇamhā jātiyā jarāya maraṇena sokehi paridevehi dukkhehi domanassehi upāyāsehi dukkhotiṇṇā dukkhaparetā, | S: Rather, because they think: ‘I’m swamped by rebirth, old age, and death; by sorrow, lamentation, pain, sadness, and distress. I’m swamped by suffering, mired in suffering. | T: but through the thought: ‘We are beset by birth, aging, & death, by sorrows, lamentations, pains, distresses, & despairs, beset by stress, overcome with stress.
+iti91:2.6 | P: appeva nāma imassa kevalassa dukkhakkhandhassa antakiriyā paññāyethā’ti. | S: Hopefully I can make an end to this entire mass of suffering.’ | T: O, that the end of this entire mass of suffering & stress might be known!’
+iti91:2.7 | P: Evaṁ pabbajito cāyaṁ, bhikkhave, kulaputto. | S: That’s how this gentleman has gone forth. | T: But this young man of good family, having gone forth in this way,
+iti91:2.8 | P: So ca hoti abhijjhālu kāmesu tibbasārāgo, byāpannacitto paduṭṭhamanasaṅkappo, muṭṭhassati asampajāno asamāhito vibbhantacitto pākatindriyo. | S: Yet they covet sensual pleasures; they’re infatuated, full of ill will and malicious intent. They are unmindful, lacking situational awareness and immersion, with straying minds and undisciplined faculties. | T: may be greedy for sensual pleasures, strong in his passions, malevolent in mind, corrupt in his resolves, his mindfulness muddled, unalert, uncentered, his mind scattered, & his faculties uncontrolled.
+iti91:2.9 | P: Seyyathāpi, bhikkhave, chavālātaṁ ubhatopadittaṁ majjhe gūthagataṁ neva gāme kaṭṭhatthaṁ pharati na araññe; | S: Suppose there was a firebrand for lighting a funeral pyre, burning at both ends, and smeared with dung in the middle. It couldn’t be used as timber either in the village or the wilderness. | T: Just as a firebrand from a funeral pyre–burning at both ends, covered with excrement in the middle–is used as fuel neither in a village nor in the wilderness:
+iti91:2.10 | P: tathūpamāhaṁ, bhikkhave, imaṁ puggalaṁ vadāmi gihibhogā parihīno sāmaññatthañca na paripūretī”ti. | S: I say that individual is just like this. They’ve missed out on the pleasures of the lay life, and haven’t fulfilled the goal of the ascetic life.” | T: I tell you that this is a simile for this person. He has missed out on the householder’s enjoyments and does not fulfill the purpose of the contemplative life.”
+iti91:2.11 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+iti91:2.12 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti91:3.1 | P: “Gihibhogā parihīno, | S: “They’ve left behind the pleasures of the lay life, | T: He’s missed out ↵ on the householder’s enjoyment
+iti91:3.2 | P: Sāmaññatthañca dubbhago; | S: and miss out on the goal of the ascetic life. | T: & the purpose of the contemplative life ↵ –unfortunate man!
+iti91:3.3 | P: Paridhaṁsamāno pakireti, | S: Ruining it, they throw it away, | T: Ruining it, he throws it away,
+iti91:3.4 | P: Chavālātaṁva nassati. | S: and perish like a funeral firebrand. | T: perishes ↵ like a firebrand used at a funeral.
+iti91:4.1 | P: Kāsāvakaṇṭhā bahavo, | S: Many who wear a scrap of ocher cloth | T: (none)
+iti91:4.2 | P: pāpadhammā asaññatā; | S: are unrestrained and wicked. | T: (none)
+iti91:4.3 | P: Pāpā pāpehi kammehi, | S: Being wicked, they are reborn in hell | T: (none)
+iti91:4.4 | P: nirayaṁ te upapajjare. | S: due to their bad deeds. | T: (none)
+iti91:5.1 | P: Seyyo ayoguḷo bhutto, | S: It’d be better for the immoral and unrestrained | T: Better to eat an iron ball
+iti91:5.2 | P: tatto aggisikhūpamo; | S: to eat an iron ball, | T: –glowing, aflame–
+iti91:5.3 | P: Yañce bhuñjeyya dussīlo, | S: scorching, like a burning flame, | T: than that, unprincipled & ↵ unrestrained,
+iti91:5.4 | P: raṭṭhapiṇḍamasaññato”ti. | S: than to eat the nation’s alms.” | T: he should eat the alms of the country.
+iti91:6.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti91:6.2 | P: Dutiyaṁ. | S: (none) | T: (none)
+
+## iti68
+Source: data/upstream/thanissaro/sutta/kn/iti/vagga7/iti68.html
+iti68:1.1 | P: Vuttañhetaṁ bhagavatā vuttamarahatāti me sutaṁ: | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti68:2.1 | P: “Yassa kassaci, bhikkhave, rāgo appahīno, doso appahīno, moho appahīno— | S: “Whoever has not given up greed, hate, and delusion | T: “Monks, anyone whose passion is unabandoned, whose aversion is unabandoned, whose delusion is unabandoned
+iti68:2.2 | P: ayaṁ vuccati, bhikkhave, ‘baddho mārassa paṭimukkassa mārapāso yathākāmakaraṇīyo pāpimato’. | S: is said to be trapped. They’re caught in Māra’s snare, and the Wicked One can do with them what he wants. | T: is said to have gone over to Māra’s camp, has come under Māra’s power. The Evil One can do with that person as he likes.
+iti68:2.3 | P: Yassa kassaci, bhikkhave, rāgo pahīno, doso pahīno, moho pahīno— | S: Whoever has given up greed, hate, and delusion | T: But anyone whose passion is abandoned, whose aversion is abandoned, whose delusion is abandoned
+iti68:2.4 | P: ayaṁ vuccati, bhikkhave, ‘abaddho mārassa omukkassa mārapāso na yathākāmakaraṇīyo pāpimato’”ti. | S: is said to be free. They’re released from Māra’s snare, and the Wicked One cannot do with them what he wants.” | T: is said not to have gone over to Māra’s camp, has thrown off Māra’s power. With that person, the Evil One cannot do as he likes.”
+iti68:2.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+iti68:2.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti68:3.1 | P: “Yassa rāgo ca doso ca, | S: “Those in whom greed, hate, and ignorance | T: Anyone ↵ whose passion, aversion, & ignorance
+iti68:3.2 | P: avijjā ca virājitā; | S: have faded away, | T: have faded away,
+iti68:3.3 | P: Taṁ bhāvitattaññataraṁ, | S: belong with those who are evolved; | T: is said to be ↵ composed in mind,
+iti68:3.4 | P: brahmabhūtaṁ tathāgataṁ; | S: A manifestation of divinity, realized, | T: Brahma-become, ↵ awakened, Tathāgata,
+iti68:3.5 | P: Buddhaṁ verabhayātītaṁ, | S: awakened, beyond enmities and fears, | T: one for whom fear & hostility ↵ are past,
+iti68:3.6 | P: āhu sabbappahāyinan”ti. | S: they’ve given up everything, they say.” | T: one who’s abandoned ↵ the All.
+iti68:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti68:4.2 | P: Navamaṁ. | S: (none) | T: (none)
+
+## iti56
+Source: data/upstream/thanissaro/sutta/kn/iti/vagga6/iti56.html
+iti56:1.1 | P: Vuttañhetaṁ bhagavatā vuttamarahatāti me sutaṁ: | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti56:2.1 | P: “Tayome, bhikkhave, āsavā. | S: “Mendicants, there are these three defilements. | T: “Monks, there are these three effluents.
+iti56:2.2 | P: Katame tayo? | S: What three? | T: Which three?
+iti56:2.3 | P: Kāmāsavo, bhavāsavo, avijjāsavo— | S: The defilements of sensuality, desire to be reborn, and ignorance. | T: The effluent of sensuality, the effluent of becoming, the effluent of ignorance.
+iti56:2.4 | P: ime kho, bhikkhave, tayo āsavā”ti. | S: These are the three defilements.” | T: These are the three effluents.”
+iti56:2.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+iti56:2.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti56:3.1 | P: “Samāhito sampajāno, | S: “Stilled, aware, | T: Centered, ↵ alert,
+iti56:3.2 | P: sato buddhassa sāvako; | S: a mindful disciple of the Buddha | T: mindful, ↵ the Awakened One’s ↵ disciple
+iti56:3.3 | P: Āsave ca pajānāti, | S: understands defilements, | T: discerns effluents,
+iti56:3.4 | P: āsavānañca sambhavaṁ. | S: the cause of defilements, | T: how effluents come into play,
+iti56:4.1 | P: Yattha cetā nirujjhanti, | S: where they cease, | T: where they cease,
+iti56:4.2 | P: maggañca khayagāminaṁ; | S: and the path that leads to their ending. | T: & the path to their ending.
+iti56:4.3 | P: Āsavānaṁ khayā bhikkhu, | S: With the ending of defilements, a mendicant | T: With the ending of effluents, a monk
+iti56:4.4 | P: nicchāto parinibbuto”ti. | S: is hungerless, quenched.” | T: free from hunger ↵ is totally unbound.
+iti56:5.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti56:5.2 | P: Sattamaṁ. | S: (none) | T: (none)
+
+## iti29
+Source: data/upstream/thanissaro/sutta/kn/iti/vagga4/iti29.html
+iti29:1.1 | P: Vuttañhetaṁ bhagavatā vuttamarahatāti me sutaṁ: | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti29:2.1 | P: “Dvīhi, bhikkhave, dhammehi samannāgato bhikkhu diṭṭheva dhamme sukhaṁ viharati avighātaṁ anupāyāsaṁ apariḷāhaṁ; | S: “Mendicants, when a mendicant has two qualities they live happily in this very life—without distress, anguish, and fever— | T: “Endowed with two things, monks, a monk lives in ease in the present life–untroubled, undistressed, & unfeverish–
+iti29:2.2 | P: kāyassa bhedā paraṁ maraṇā sugati pāṭikaṅkhā. | S: and when the body breaks up, after death, they can expect a good rebirth. | T: and at the break-up of the body, after death, a good destination can be expected.
+iti29:2.3 | P: Katamehi dvīhi? | S: What two? | T: Which two?
+iti29:2.4 | P: Indriyesu guttadvāratāya ca, bhojane mattaññutāya ca. | S: Guarding the sense doors and moderation in eating. | T: A guarding of the doors of the sense faculties, and knowing moderation in food.
+iti29:2.5 | P: Imehi kho, bhikkhave, dvīhi dhammehi samannāgato bhikkhu diṭṭheva dhamme sukhaṁ viharati avighātaṁ anupāyāsaṁ apariḷāhaṁ; | S: When a mendicant possesses these two qualities they live happily in this very life—without distress, anguish, and fever— | T: Endowed with these two things, a monk lives in ease in the present life–untroubled, undistressed, & unfeverish–
+iti29:2.6 | P: kāyassa bhedā paraṁ maraṇā sugati pāṭikaṅkhā”ti. | S: and when the body breaks up, after death, they can expect a good rebirth.” | T: and at the break-up of the body, after death, a good destination can be expected.”
+iti29:2.7 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+iti29:2.8 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti29:3.1 | P: “Cakkhu sotañca ghānañca, | S: “Eye, ear, nose, | T: Eye & ear & nose,
+iti29:3.2 | P: jivhā kāyo tathā mano; | S: tongue, body, and likewise mind: | T: tongue, body, & mind:
+iti29:3.3 | P: Etāni yassa dvārāni, | S: a mendicant who makes these | T: when a monk has these doors well guarded
+iti29:3.4 | P: suguttāni ca bhikkhuno. | S: sense doors well guarded— | T: (none)
+iti29:4.1 | P: Bhojanamhi ca mattaññū, | S: eating in moderation, | T: –knowing moderation in food,
+iti29:4.2 | P: indriyesu ca saṁvuto; | S: restrained in the sense faculties— | T: restraining his senses–
+iti29:4.3 | P: Kāyasukhaṁ cetosukhaṁ, | S: reaps happiness | T: he experiences ease:
+iti29:4.4 | P: sukhaṁ so adhigacchati. | S: both physical and mental. | T: ease in body, ease ↵ in mind.
+iti29:5.1 | P: Aḍayhamānena kāyena, | S: Not burning in body, | T: Not burning in body,
+iti29:5.2 | P: Aḍayhamānena cetasā; | S: not burning in mind, | T: not burning in mind,
+iti29:5.3 | P: Divā vā yadi vā rattiṁ, | S: by day or by night | T: whether by day or by night,
+iti29:5.4 | P: Sukhaṁ viharati tādiso”ti. | S: such a person lives in happiness.” | T: one like this ↵ lives in ease.
+iti29:6.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti29:6.2 | P: Dutiyaṁ. | S: (none) | T: (none)
+
+## iti47
+Source: data/upstream/thanissaro/sutta/kn/iti/vagga5/iti47.html
+iti47:1.1 | P: Vuttañhetaṁ bhagavatā vuttamarahatāti me sutaṁ: | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti47:2.1 | P: “Jāgaro cassa, bhikkhave, bhikkhu vihareyya sato sampajāno samāhito pamudito vippasanno ca tattha kālavipassī ca kusalesu dhammesu. | S: “A mendicant should meditate wakeful, mendicants, mindful and aware, joyful and clear, and at times discern the skillful qualities in that state. | T: “Monks, a monk should be wakeful: mindful, alert, centered, sensitive, clear, & calm. And there he should, at the appropriate times, see clearly into skillful mental qualities.
+iti47:2.2 | P: Jāgarassa, bhikkhave, bhikkhuno viharato satassa sampajānassa samāhitassa pamuditassa vippasannassa tattha kālavipassino kusalesu dhammesu dvinnaṁ phalānaṁ aññataraṁ phalaṁ pāṭikaṅkhaṁ— | S: A mendicant who meditates in this way can expect one of two results: | T: For a monk who is wakeful–mindful, alert, centered, sensitive, clear, & calm, seeing clearly, at the appropriate times, into skillful mental qualities–one of two fruits can be expected:
+iti47:2.3 | P: diṭṭheva dhamme aññā, sati vā upādisese anāgāmitā”ti. | S: enlightenment in this very life, or if there’s residue left behind, non-return.” | T: either gnosis right in the here-&-now, or–if there be any remnant of clinging-sustenance–non-return.”
+iti47:2.4 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+iti47:2.5 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti47:3.1 | P: “Jāgarantā suṇāthetaṁ, | S: “Listen up, wakeful ones! | T: Those who are wakeful, listen to this!
+iti47:3.2 | P: ye suttā te pabujjhatha; | S: And those asleep, wake up! | T: Those who are sleeping, wake up!
+iti47:3.3 | P: Suttā jāgaritaṁ seyyo, | S: Wakefulness is better than sleep, | T: Wakefulness is better than sleep.
+iti47:3.4 | P: natthi jāgarato bhayaṁ. | S: the wakeful have nothing to fear. | T: For those who are wakeful, ↵ there’s no danger, no fear.
+iti47:4.1 | P: Yo jāgaro ca satimā sampajāno, | S: Those who are wakeful, mindful and aware, | T: Whoever is wakeful, ↵ mindful, alert,
+iti47:4.2 | P: Samāhito mudito vippasanno ca; | S: immersed in samādhi, joyful and clear, | T: centered, sensitive, ↵ calm, & clear,
+iti47:4.3 | P: Kālena so sammā dhammaṁ parivīmaṁsamāno, | S: rightly investigating the Dhamma in good time, | T: rightly exploring the Dhamma ↵ at appropriate times,
+iti47:4.4 | P: Ekodibhūto vihane tamaṁ so. | S: at one, would banish the darkness. | T: he–on becoming unified– ↵ could shatter the darkness.
+iti47:5.1 | P: Tasmā have jāgariyaṁ bhajetha, | S: That’s why you should apply yourself to wakefulness. | T: So be devoted to wakefulness.
+iti47:5.2 | P: Ātāpī bhikkhu nipako jhānalābhī; | S: A keen and alert mendicant, possessing absorption, | T: The ardent monk ↵ –masterful, acquiring jhāna,
+iti47:5.3 | P: Saṁyojanaṁ jātijarāya chetvā, | S: having cut the fetter of birth and old age, | T: cutting the fetter of birth & aging–
+iti47:5.4 | P: Idheva sambodhimanuttaraṁ phuse”ti. | S: would experience supreme awakening <j>in this very life.” | T: touches right here ↵ a self-awakening un- ↵ surpassed.
+iti47:6.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti47:6.2 | P: Dasamaṁ. | S: (none) | T: (none)
+
+## snp5.17
+Source: data/upstream/thanissaro/sutta/kn/snp/vagga5/snp5.17.html
+snp5.17:1.1 | P: “Jiṇṇohamasmi abalo vītavaṇṇo, | S: “I am old, feeble, and pallid,” | T: I’m old & weak, ↵ my complexion dull,
+snp5.17:1.2 | P: (iccāyasmā piṅgiyo) | S: said Venerable Piṅgiya, | T: (none)
+snp5.17:1.3 | P: Nettā na suddhā savanaṁ na phāsu; | S: “my eyes unclear, my hearing faint— | T: I’ve blurry eyes ↵ and trouble hearing—
+snp5.17:1.4 | P: Māhaṁ nassaṁ momuho antarāva, | S: don’t let me perish while still confused. | T: but may I not perish ↵ while still deluded, ↵ confused!
+snp5.17:1.5 | P: Ācikkha dhammaṁ yamahaṁ vijaññaṁ; | S: Explain the teaching so that I may understand | T: Teach me the Dhamma ↵ so that I may know
+snp5.17:1.6 | P: Jātijarāya idha vippahānaṁ”. | S: the giving up of rebirth and old age here.” | T: the abandoning here ↵ of birth & aging.
+snp5.17:2.1 | P: “Disvāna rūpesu vihaññamāne, | S: “Seeing them being harmed <j>on account of forms,” | T: The Buddha: ↵ Seeing people suffering ↵ on account of their bodies—
+snp5.17:2.2 | P: (piṅgiyāti bhagavā) | S: replied the Buddha, | T: (none)
+snp5.17:2.3 | P: Ruppanti rūpesu janā pamattā; | S: “those negligent folk are inflicted <j>on account of forms— | T: heedless people are afflicted ↵ on account of their bodies—
+snp5.17:2.4 | P: Tasmā tuvaṁ piṅgiya appamatto, | S: therefore, Piṅgiya, being diligent, | T: then heedful, Piṅgiya,
+snp5.17:2.5 | P: Jahassu rūpaṁ apunabbhavāya”. | S: give up form so as not to be reborn.” | T: let go of the body ↵ for the sake of no further becoming.
+snp5.17:3.1 | P: “Disā catasso vidisā catasso, | S: “The four quarters, the intermediate directions, | T: Piṅgiya: ↵ In the four cardinal directions, ↵ the four intermediate,
+snp5.17:3.2 | P: Uddhaṁ adho dasa disā imāyo; | S: below, and above: in these ten directions | T: above & below ↵ —these ten directions—
+snp5.17:3.3 | P: Na tuyhaṁ adiṭṭhaṁ asutaṁ amutaṁ, | S: there’s nothing at all in the world | T: there is nothing in the world
+snp5.17:3.4 | P: Atho aviññātaṁ kiñcanamatthi loke; | S: that you’ve not seen, heard, thought, or cognized. | T: unseen, unheard, ↵ unsensed, uncognized by you.
+snp5.17:3.5 | P: Ācikkha dhammaṁ yamahaṁ vijaññaṁ, | S: Explain the teaching so that I may understand | T: Teach me the Dhamma ↵ so that I may know
+snp5.17:3.6 | P: Jātijarāya idha vippahānaṁ”. | S: the giving up of rebirth and old age here.” | T: the abandoning here ↵ of birth & aging.
+snp5.17:4.1 | P: “Taṇhādhipanne manuje pekkhamāno, | S: “Observing mankind sunk in craving,” | T: The Buddha: ↵ Seeing people, ↵ victims of craving—
+snp5.17:4.2 | P: (piṅgiyāti bhagavā) | S: replied the Buddha, | T: (none)
+snp5.17:4.3 | P: Santāpajāte jarasā parete; | S: “tormented, mired in old age; | T: inflamed, overwhelmed with aging—
+snp5.17:4.4 | P: Tasmā tuvaṁ piṅgiya appamatto, | S: therefore, Piṅgiya, being diligent, | T: then heedful, Piṅgiya,
+snp5.17:4.5 | P: Jahassu taṇhaṁ apunabbhavāyā”ti. | S: give up craving so as not to be reborn.” | T: let go of craving ↵ for the sake of no further becoming.
+snp5.17:4.6 | P: Piṅgiyamāṇavapucchā soḷasamā. | S: (none) | T: (none)
+
+## iti24
+Source: data/upstream/thanissaro/sutta/kn/iti/vagga3/iti24.html
+iti24:1.1 | P: Vuttañhetaṁ bhagavatā vuttamarahatāti me sutaṁ: | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti24:2.1 | P: “Ekapuggalassa, bhikkhave, kappaṁ sandhāvato saṁsarato siyā evaṁ mahā aṭṭhikaṅkalo aṭṭhipuñjo aṭṭhirāsi yathāyaṁ vepullo pabbato, sace saṁhārako assa, sambhatañca na vinasseyyā”ti. | S: “Mendicants, one individual roaming and transmigrating for an eon would amass a heap of bones the size of this Mount Vepulla, if they were gathered together and not lost.” | T: “Monks, if a single person were to wander & transmigrate on for an eon, he/she would leave behind a chain of bones, a pile of bones, a heap of bones, as large as this Mount Vepulla, if there were someone to collect them and the collection were not destroyed.”
+iti24:2.2 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+iti24:2.3 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti24:3.1 | P: “Ekassekena kappena, | S: “If the bones of a single individual | T: The accumulation ↵ of a single person’s
+iti24:3.2 | P: puggalassaṭṭhisañcayo; | S: for a single eon were gathered up, | T: bones for an eon
+iti24:3.3 | P: Siyā pabbatasamo rāsi, | S: they’d make a pile the size of a mountain: | T: would be a heap ↵ on a par with the mountain,
+iti24:3.4 | P: iti vuttaṁ mahesinā. | S: so said the great seer. | T: so said the Great Seer.
+iti24:4.1 | P: So kho panāyaṁ akkhāto, | S: And this is declared to be | T: (He declared this to be
+iti24:4.2 | P: vepullo pabbato mahā; | S: as big as Mount Vepulla, | T: the great Mount Vepulla
+iti24:4.3 | P: Uttaro gijjhakūṭassa, | S: higher than the Vulture’s Peak | T: to the north of Vulture Peak
+iti24:4.4 | P: magadhānaṁ giribbaje. | S: in the Mountainfold of the Magadhans. | T: in the mountain-ring ↵ of the Magadhans.)
+iti24:5.1 | P: Yato ca ariyasaccāni, | S: But then, with right understanding, | T: But when that person sees ↵ with right discernment
+iti24:5.2 | P: sammappaññāya passati; | S: one sees the noble truths— | T: the four Noble Truths–
+iti24:5.3 | P: Dukkhaṁ dukkhasamuppādaṁ, | S: suffering, suffering’s origin, | T: stress, ↵ the cause of stress,
+iti24:5.4 | P: dukkhassa ca atikkamaṁ; | S: suffering’s transcendence, | T: the transcending of stress,
+iti24:5.5 | P: Ariyañcaṭṭhaṅgikaṁ maggaṁ, | S: and the noble eightfold path | T: & the noble eightfold path,
+iti24:5.6 | P: dukkhūpasamagāminaṁ. | S: that leads to the stilling of suffering. | T: the way to the stilling of stress–
+iti24:6.1 | P: Sa sattakkhattuṁ paramaṁ, | S: After roaming on seven times at most, | T: having wandered on ↵ seven times at most,
+iti24:6.2 | P: sandhāvitvāna puggalo; | S: that individual | T: then,
+iti24:6.3 | P: Dukkhassantakaro hoti, | S: makes an end of suffering, | T: with the ending of all fetters,
+iti24:6.4 | P: sabbasaṁyojanakkhayā”ti. | S: with the ending of all fetters.” | T: he makes an end ↵ of stress.
+iti24:7.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti24:7.2 | P: Catutthaṁ. | S: (none) | T: (none)
+
+## iti26
+Source: data/upstream/thanissaro/sutta/kn/iti/vagga3/iti26.html
+iti26:1.1 | P: Vuttañhetaṁ bhagavatā vuttamarahatāti me sutaṁ: | S: This was said by the Buddha, the Perfected One: that is what I heard. | T: This was said by the Blessed One, said by the Arahant, so I have heard:
+iti26:2.1 | P: “Evañce, bhikkhave, sattā jāneyyuṁ dānasaṁvibhāgassa vipākaṁ yathāhaṁ jānāmi, na adatvā bhuñjeyyuṁ, na ca nesaṁ maccheramalaṁ cittaṁ pariyādāya tiṭṭheyya. | S: “Mendicants, if sentient beings only knew, as I do, the fruit of giving and sharing, they would not eat without first giving, and the stain of stinginess would not occupy their minds. | T: “Monks, if beings knew, as I know, the results of giving & sharing, they would not eat without having given, nor would the stain of selfishness overcome their minds.
+iti26:2.2 | P: Yopi nesaṁ assa carimo ālopo carimaṁ kabaḷaṁ, tatopi na asaṁvibhajitvā bhuñjeyyuṁ, sace nesaṁ paṭiggāhakā assu. | S: They would not eat without sharing even their last mouthful, their last morsel, so long as there was someone to receive it. | T: Even if it were their last bite, their last mouthful, they would not eat without having shared, if there were someone to receive their gift.
+iti26:2.3 | P: Yasmā ca kho, bhikkhave, sattā na evaṁ jānanti dānasaṁvibhāgassa vipākaṁ yathāhaṁ jānāmi, tasmā adatvā bhuñjanti, maccheramalañca nesaṁ cittaṁ pariyādāya tiṭṭhatī”ti. | S: It is because sentient beings do not know, as I do, the fruit of giving and sharing, that they eat without first giving, and the stain of stinginess occupies their minds.” | T: But because beings do not know, as I know, the results of giving & sharing, they eat without having given. The stain of selfishness overcomes their minds.”
+iti26:2.4 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+iti26:2.5 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti26:3.1 | P: “Evañce sattā jāneyyuṁ, | S: “If sentient beings only knew | T: If beings knew
+iti26:3.2 | P: yathāvuttaṁ mahesinā; | S: how great is the fruit | T: what the Great Seer said,
+iti26:3.3 | P: Vipākaṁ saṁvibhāgassa, | S: of giving and sharing | T: how the result of sharing
+iti26:3.4 | P: yathā hoti mahapphalaṁ. | S: as taught by the great seer! | T: has such great fruit,
+iti26:4.1 | P: Vineyya maccheramalaṁ, | S: Rid of the stain of stinginess, | T: then, subduing the stain of selfishness
+iti26:4.2 | P: vippasannena cetasā; | S: with clear and confident heart, | T: with brightened awareness,
+iti26:4.3 | P: Dajjuṁ kālena ariyesu, | S: they would duly give to the noble ones, | T: they’d give in season ↵ to the noble ones,
+iti26:4.4 | P: yattha dinnaṁ mahapphalaṁ. | S: where a gift is very fruitful. | T: where a gift bears great fruit.
+iti26:5.1 | P: Annañca datvā bahuno, | S: Having given food in abundance | T: Having given food ↵ as an offering
+iti26:5.2 | P: dakkhiṇeyyesu dakkhiṇaṁ; | S: to those worthy of a religious donation, | T: to those worthy of offerings, ↵ many donors,
+iti26:5.3 | P: Ito cutā manussattā, | S: after passing from the human realm, | T: when they pass away from here, ↵ the human state,
+iti26:5.4 | P: saggaṁ gacchanti dāyakā. | S: the givers go to heaven. | T: go ↵ to heaven.
+iti26:6.1 | P: Te ca saggagatā tattha, | S: And when they have arrived there in heaven, | T: They, having gone there ↵ to heaven,
+iti26:6.2 | P: modanti kāmakāmino; | S: they enjoy all the pleasures they desire. | T: rejoice, ↵ enjoying sensual pleasures.
+iti26:6.3 | P: Vipākaṁ saṁvibhāgassa, | S: The generous enjoy the | T: Unselfish, they
+iti26:6.4 | P: anubhonti amaccharā”ti. | S: fruit of giving and sharing.” | T: partake of the result ↵ of sharing.
+iti26:7.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+iti26:7.2 | P: Chaṭṭhaṁ. | S: (none) | T: (none)
+
+## snp5.2
+Source: data/upstream/thanissaro/sutta/kn/snp/vagga5/snp5.2.html
+snp5.2:1.1 | P: “Kenassu nivuto loko, | S: “By what is the world shrouded?” | T: With what ↵ is the world shrouded?
+snp5.2:1.2 | P: (iccāyasmā ajito) | S: said Venerable Ajita. | T: (none)
+snp5.2:1.3 | P: Kenassu nappakāsati; | S: “Why does it not shine? | T: Because of what ↵ doesn’t it shine?
+snp5.2:1.4 | P: Kissābhilepanaṁ brūsi, | S: Tell me, what is its sullying? | T: With what ↵ is it smeared? Tell me.
+snp5.2:1.5 | P: Kiṁsu tassa mahabbhayaṁ”. | S: What is its greatest fear?” | T: What ↵ is its great danger & fear?
+snp5.2:2.1 | P: “Avijjāya nivuto loko, | S: “The world is shrouded in ignorance.” | T: The Buddha: ↵ With ignorance ↵ the world is shrouded.
+snp5.2:2.2 | P: (ajitāti bhagavā) | S: replied the Buddha. | T: (none)
+snp5.2:2.3 | P: Vevicchā pamādā nappakāsati; | S: “Avarice and negligence make it not shine. | T: Because of stinginess, ↵ heedlessness, ↵ it doesn’t shine.
+snp5.2:2.4 | P: Jappābhilepanaṁ brūmi, | S: Muttered prayer is its sullying, I say. | T: With longing ↵ it’s smeared—I tell you.
+snp5.2:2.5 | P: Dukkhamassa mahabbhayaṁ”. | S: Suffering is its greatest fear.” | T: Suffering-stress: ↵ its great danger & fear.
+snp5.2:3.1 | P: “Savanti sabbadhi sotā, | S: “The streams flow everywhere,” | T: Ajita: ↵ They flow every which way, ↵ the streams.
+snp5.2:3.2 | P: (iccāyasmā ajito) | S: said Venerable Ajita. | T: (none)
+snp5.2:3.3 | P: Sotānaṁ kiṁ nivāraṇaṁ; | S: “What is there to block them? | T: What is their blocking,
+snp5.2:3.4 | P: Sotānaṁ saṁvaraṁ brūhi, | S: And tell me the restraint of streams— | T: what their restraint—tell me—
+snp5.2:3.5 | P: Kena sotā pidhiyyare”. | S: by what are they locked out?” | T: with what are they finally stopped?
+snp5.2:4.1 | P: “Yāni sotāni lokasmiṁ, | S: “The streams in the world,” | T: The Buddha: ↵ Whatever streams ↵ there are in the world:
+snp5.2:4.2 | P: (ajitāti bhagavā) | S: replied the Buddha, | T: (none)
+snp5.2:4.3 | P: Sati tesaṁ nivāraṇaṁ; | S: “are blocked by mindfulness. | T: Their blocking is ↵ mindfulness,
+snp5.2:4.4 | P: Sotānaṁ saṁvaraṁ brūmi, | S: I tell you the restraint of streams— | T: mindfulness ↵ is their restraint—I tell you—
+snp5.2:4.5 | P: Paññāyete pidhiyyare”. | S: they are locked out by wisdom.” | T: with discernment ↵ they’re finally stopped.
+snp5.2:5.1 | P: “Paññā ceva sati yañca, | S: “That wisdom and mindfulness,” | T: Ajita: ↵ Discernment & mindfulness,
+snp5.2:5.2 | P: (iccāyasmā ajito) | S: said Venerable Ajita, | T: (none)
+snp5.2:5.3 | P: Nāmarūpañca mārisa; | S: “and that which is name and form, good fellow; | T: name-&-form, dear sir:
+snp5.2:5.4 | P: Etaṁ me puṭṭho pabrūhi, | S: when questioned, please tell me of this: | T: Tell me, when asked this,
+snp5.2:5.5 | P: Katthetaṁ uparujjhati”. | S: where does this all cease?” | T: where are they brought to a halt?
+snp5.2:6.1 | P: “Yametaṁ pañhaṁ apucchi, | S: “This question which you have asked, | T: The Buddha: ↵ This question you’ve asked,
+snp5.2:6.2 | P: ajita taṁ vadāmi te; | S: I shall answer you, Ajita. | T: Ajita, ↵ I’ll answer it for you—
+snp5.2:6.3 | P: Yattha nāmañca rūpañca, | S: Where name and form | T: where name-&-form
+snp5.2:6.4 | P: asesaṁ uparujjhati; | S: cease with no residue left behind— | T: are brought to a halt ↵ without trace:
+snp5.2:6.5 | P: Viññāṇassa nirodhena, | S: with the cessation of consciousness, | T: With the cessation of consciousness
+snp5.2:6.6 | P: etthetaṁ uparujjhati”. | S: here they cease.” | T: they’re here brought ↵ to a halt.
+snp5.2:7.1 | P: “Ye ca saṅkhātadhammāse, | S: “There are those who have appraised the teaching, | T: Ajita: ↵ Those here who have fathomed the Dhamma,
+snp5.2:7.2 | P: ye ca sekhā puthū idha; | S: and many kinds of trainees here. | T: those who are learners, ↵ those who are run-of-the-mill:
+snp5.2:7.3 | P: Tesaṁ me nipako iriyaṁ, | S: Now you, being alert, are asked | T: When you, dear sir, astute, ↵ are asked this,
+snp5.2:7.4 | P: puṭṭho pabrūhi mārisa”. | S: to tell me their behavior, good fellow.” | T: tell me their manner of life.
+snp5.2:8.1 | P: “Kāmesu nābhigijjheyya, | S: “Not greedy for sensual pleasures, | T: The Buddha: ↵ He ↵ should not hanker ↵ for sensual pleasures,
+snp5.2:8.2 | P: Manasānāvilo siyā; | S: their mind would be unclouded. | T: should be limpid in mind.
+snp5.2:8.3 | P: Kusalo sabbadhammānaṁ, | S: Skilled in all things, | T: Skilled in all mental qualities,
+snp5.2:8.4 | P: Sato bhikkhu paribbaje”ti. | S: a mendicant would wander mindful.” | T: he, the monk, should wander ↵ mindfully.
+snp5.2:8.5 | P: Ajitamāṇavapucchā paṭhamā. | S: (none) | T: (none)
+
+## sn16.5
+Source: data/upstream/thanissaro/sutta/sn/sn16/sn16.5.html
+sn16.5:1.1 | P: Evaṁ me sutaṁ … | S: So I have heard. | T: I have heard that
+sn16.5:1.2 | P: rājagahe veḷuvane. | S: Near Rājagaha, in the Bamboo Grove. | T: on one occasion the Blessed One was staying near Rājagaha in the Bamboo Forest, the Squirrels’ Sanctuary.
+sn16.5:1.3 | P: Atha kho āyasmā mahākassapo yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ nisīdi. Ekamantaṁ nisinnaṁ kho āyasmantaṁ mahākassapaṁ bhagavā etadavoca: | S: Then Venerable Mahākassapa went up to the Buddha, bowed, and sat down to one side. The Buddha said to him: | T: Then Ven. Mahā Kassapa went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there the Blessed One said to him,
+sn16.5:1.4 | P: “jiṇṇosi dāni tvaṁ, kassapa, garukāni ca te imāni sāṇāni paṁsukūlāni nibbasanāni. | S: “You’re old now, Kassapa. Those worn-out hempen rag robes must be a burden for you. | T: “You are now old, Kassapa. Your robes made of cast-off hemp rags are heavy for you.
+sn16.5:1.5 | P: Tasmātiha tvaṁ, kassapa, gahapatāni ceva cīvarāni dhārehi, nimantanāni ca bhuñjāhi, mama ca santike viharāhī”ti. | S: So Kassapa, you should wear clothes given by householders, accept invitations for the meal, and stay in my presence.” | T: So wear robes donated by householders, eat invitational meals, and live close by me.”
+sn16.5:2.1 | P: “Ahaṁ kho, bhante, dīgharattaṁ āraññiko ceva āraññikattassa ca vaṇṇavādī, piṇḍapātiko ceva piṇḍapātikattassa ca vaṇṇavādī, paṁsukūliko ceva paṁsukūlikattassa ca vaṇṇavādī, tecīvariko ceva tecīvarikattassa ca vaṇṇavādī, appiccho ceva appicchatāya ca vaṇṇavādī, santuṭṭho ceva santuṭṭhiyā ca vaṇṇavādī, pavivitto ceva pavivekassa ca vaṇṇavādī, asaṁsaṭṭho ceva asaṁsaggassa ca vaṇṇavādī, āraddhavīriyo ceva vīriyārambhassa ca vaṇṇavādī”ti. | S: “For a long time, sir, I’ve lived in the wilderness, eaten only almsfood, worn rag robes, and owned just three robes; and I’ve praised these things. I’ve been one of few wishes, content, secluded, aloof, and energetic; and I’ve praised these things.” | T: “Lord, for a long time I have lived in the wilderness and have extolled living in the wilderness. I have been an almsgoer and have extolled being an almsgoer. I have worn cast-off rags and have extolled wearing cast-off rags. I have worn only one set of the triple robe and have extolled wearing only one set of the triple robe. I have been modest and have extolled being modest. I have been content and have extolled being content. I have been reclusive and have extolled being reclusive. I have been unentangled and have extolled being unentangled. I have kept my persistence aroused and have extolled having persistence aroused.”
+sn16.5:3.1 | P: “Kiṁ pana tvaṁ, kassapa, atthavasaṁ sampassamāno dīgharattaṁ āraññiko ceva āraññikattassa ca vaṇṇavādī, piṇḍapātiko ceva …pe… | S: “But seeing what benefit, Kassapa, have you long practiced these things?” | T: “But, Kassapa, what compelling reason do you see that you for a long time have lived in the wilderness and have extolled living in the wilderness…
+sn16.5:3.2 | P: paṁsukūliko ceva … | S: (none) | T: (none)
+sn16.5:3.3 | P: tecīvariko ceva … | S: (none) | T: (none)
+sn16.5:3.4 | P: appiccho ceva … | S: (none) | T: (none)
+sn16.5:3.5 | P: santuṭṭho ceva … | S: (none) | T: (none)
+sn16.5:3.6 | P: pavivitto ceva … | S: (none) | T: (none)
+sn16.5:3.7 | P: asaṁsaṭṭho ceva … | S: (none) | T: (none)
+sn16.5:3.8 | P: āraddhavīriyo ceva vīriyārambhassa ca vaṇṇavādī”ti? | S: (none) | T: that you have kept your persistence aroused and have extolled having persistence aroused?”
+sn16.5:4.1 | P: “Dve khvāhaṁ, bhante, atthavase sampassamāno dīgharattaṁ āraññiko ceva āraññikattassa ca vaṇṇavādī, piṇḍapātiko ceva …pe… | S: “Sir, seeing two benefits I have long practiced these things. | T: “Lord, I see two compelling reasons that for a long time I have lived in the wilderness and have extolled living in the wilderness…
+sn16.5:4.2 | P: paṁsukūliko ceva … | S: (none) | T: (none)
+sn16.5:4.3 | P: tecīvariko ceva … | S: (none) | T: (none)
+sn16.5:4.4 | P: appiccho ceva … | S: (none) | T: (none)
+sn16.5:4.5 | P: santuṭṭho ceva … | S: (none) | T: (none)
+sn16.5:4.6 | P: pavivitto ceva … | S: (none) | T: (none)
+sn16.5:4.7 | P: asaṁsaṭṭho ceva … | S: (none) | T: (none)
+sn16.5:4.8 | P: āraddhavīriyo ceva vīriyārambhassa ca vaṇṇavādī. | S: (none) | T: that I have kept my persistence aroused and have extolled having persistence aroused:
+sn16.5:5.1 | P: Attano ca diṭṭhadhammasukhavihāraṁ sampassamāno, pacchimañca janataṁ anukampamāno: | S: I see happiness for myself in this life. And I have sympathy for future generations, thinking: | T: seeing a pleasant abiding for myself in the here & now, and feeling sympathy for later generations:
+sn16.5:5.2 | P: ‘appeva nāma pacchimā janatā diṭṭhānugatiṁ āpajjeyyuṁ. | S: ‘Hopefully those who come after might follow my example.’ | T: ‘Perhaps later generations will take it as an example:
+sn16.5:5.3 | P: Ye kira te ahesuṁ buddhānubuddhasāvakā te dīgharattaṁ āraññikā ceva ahesuṁ āraññikattassa ca vaṇṇavādino …pe… | S: For they may think: ‘It seems that the disciples awakened after the Buddha for a long time lived in the wilderness, ate only almsfood, wore rag robes, and owned just three robes; and they praised these things. They were of few wishes, content, secluded, aloof, and energetic; and they praised these things.’ | T: “It seems that the disciples of the Awakened One and those who awakened after him lived for a long time in the wilderness and extolled living in the wilderness; were almsgoers and extolled being almsgoers; wore cast-off rags and extolled wearing cast-off rags; wore only one set of the triple robe and extolled wearing only one set of the triple robe; were modest and extolled being modest; were content and extolled being content;
+sn16.5:5.4 | P: piṇḍapātikā ceva ahesuṁ …pe… | S: (none) | T: (none)
+sn16.5:5.5 | P: paṁsukūlikā ceva ahesuṁ … | S: (none) | T: (none)
+sn16.5:5.6 | P: tecīvarikā ceva ahesuṁ … | S: (none) | T: (none)
+sn16.5:5.7 | P: appicchā ceva ahesuṁ … | S: (none) | T: (none)
+sn16.5:5.8 | P: santuṭṭhā ceva ahesuṁ … | S: (none) | T: (none)
+sn16.5:5.9 | P: pavivittā ceva ahesuṁ … | S: (none) | T: were reclusive and extolled being reclusive;
+sn16.5:5.10 | P: asaṁsaṭṭhā ceva ahesuṁ … | S: (none) | T: were unentangled and extolled being unentangled;
+sn16.5:5.11 | P: āraddhavīriyā ceva ahesuṁ vīriyārambhassa ca vaṇṇavādino’ti. | S: (none) | T: kept their persistence aroused and extolled having persistence aroused.”’”
+sn16.5:5.12 | P: Te tathattāya paṭipajjissanti, tesaṁ taṁ bhavissati dīgharattaṁ hitāya sukhāya. | S: They’ll practice accordingly, which will be for their lasting welfare and happiness. | T: (none)
+sn16.5:6.1 | P: Ime khvāhaṁ, bhante, dve atthavase sampassamāno dīgharattaṁ āraññiko ceva āraññikattassa ca vaṇṇavādī, piṇḍapātiko ceva …pe… | S: Seeing these two benefits I have long practiced these things.” | T: (none)
+sn16.5:6.2 | P: paṁsukūliko ceva … | S: (none) | T: (none)
+sn16.5:6.3 | P: tecīvariko ceva … | S: (none) | T: (none)
+sn16.5:6.4 | P: appiccho ceva … | S: (none) | T: (none)
+sn16.5:6.5 | P: santuṭṭho ceva … | S: (none) | T: (none)
+sn16.5:6.6 | P: pavivitto ceva … | S: (none) | T: (none)
+sn16.5:6.7 | P: asaṁsaṭṭho ceva … | S: (none) | T: (none)
+sn16.5:6.8 | P: āraddhavīriyo ceva vīriyārambhassa ca vaṇṇavādī”ti. | S: (none) | T: (none)
+sn16.5:7.1 | P: “Sādhu sādhu, kassapa. | S: “Good, good, Kassapa! | T: “Good, Kassapa. Very good.
+sn16.5:7.2 | P: Bahujanahitāya kira tvaṁ, kassapa, paṭipanno bahujanasukhāya lokānukampāya atthāya hitāya sukhāya devamanussānaṁ. | S: You’re acting for the welfare and happiness of the people, out of sympathy for the world, for the benefit, welfare, and happiness of gods and humans. | T: It seems that you are one who practices for the benefit & happiness of many, out of sympathy for the world, for the welfare, benefit, & happiness of devas & human beings.
+sn16.5:7.3 | P: Tasmātiha tvaṁ, kassapa, sāṇāni ceva paṁsukūlāni dhārehi nibbasanāni, piṇḍāya ca carāhi, araññe ca viharāhī”ti. | S: So Kassapa, wear worn-out hempen rag robes, walk for alms, and stay in the wilderness.” | T: So continue wearing your robes of cast-off hemp cloth, go for alms, and live in the wilderness.”
+sn16.5:7.4 | P: Pañcamaṁ. | S: (none) | T: (none)
+
+## sn56.1
+Source: data/upstream/thanissaro/sutta/sn/sn56/sn56.1.html
+sn56.1:1.1 | P: Sāvatthinidānaṁ. | S: At Sāvatthī. | T: (none)
+sn56.1:1.2 | P: …pe… | S: (none) | T: (none)
+sn56.1:1.3 | P: “Samādhiṁ, bhikkhave, bhāvetha. | S: “Mendicants, develop immersion. | T: “Develop concentration, monks.
+sn56.1:1.4 | P: Samāhito, bhikkhave, bhikkhu yathābhūtaṁ pajānāti. | S: A mendicant who has immersion truly understands. | T: A concentrated monk discerns in line with what has come into being.
+sn56.1:1.5 | P: Kiñca yathābhūtaṁ pajānāti? | S: What do they truly understand? | T: And what does he discern in line with what has come into being?
+sn56.1:1.6 | P: ‘Idaṁ dukkhan’ti yathābhūtaṁ pajānāti, ‘ayaṁ dukkhasamudayo’ti yathābhūtaṁ pajānāti, ‘ayaṁ dukkhanirodho’ti yathābhūtaṁ pajānāti, ‘ayaṁ dukkhanirodhagāminī paṭipadā’ti yathābhūtaṁ pajānāti. | S: They truly understand: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’. | T: “He discerns, ‘This is stress.’ He discerns, ‘This is the origination of stress.’ He discerns, ‘This is the cessation of stress.’ He discerns, ‘This is the path of practice leading to the cessation of stress.’
+sn56.1:1.7 | P: Samādhiṁ, bhikkhave, bhāvetha. | S: Develop immersion. | T: “Develop concentration, monks.
+sn56.1:1.8 | P: Samāhito, bhikkhave, bhikkhu yathābhūtaṁ pajānāti. | S: A mendicant who has immersion truly understands. | T: A concentrated monk discerns in line with what has come into being.
+sn56.1:2.1 | P: Tasmātiha, bhikkhave, ‘idaṁ dukkhan’ti yogo karaṇīyo, ‘ayaṁ dukkhasamudayo’ti yogo karaṇīyo, ‘ayaṁ dukkhanirodho’ti yogo karaṇīyo, ‘ayaṁ dukkhanirodhagāminī paṭipadā’ti yogo karaṇīyo”ti. | S: That’s why you should practice meditation to understand: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering’.” | T: “Therefore, monks, your duty is the contemplation, ‘This is stress … This is the origination of stress … This is the cessation of stress.’ Your duty is the contemplation, ‘This is the path of practice leading to the cessation of stress.’”
+sn56.1:2.2 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## sn22.78
+Source: data/upstream/thanissaro/sutta/sn/sn22/sn22.78.html
+sn22.78:1.1 | P: Sāvatthinidānaṁ. | S: At Sāvatthī. | T: (none)
+sn22.78:1.2 | P: “Sīho, bhikkhave, migarājā sāyanhasamayaṁ āsayā nikkhamati; āsayā nikkhamitvā vijambhati; vijambhitvā samantā catuddisā anuviloketi; samantā catuddisā anuviloketvā tikkhattuṁ sīhanādaṁ nadati; tikkhattuṁ sīhanādaṁ naditvā gocarāya pakkamati. | S: “Mendicants, toward evening the lion, king of beasts, emerges from his den, yawns, surveys the four quarters, and roars his lion’s roar three times. Then he sets out on the hunt. | T: “Monks, the lion, the king of beasts, leaves his lair in the evening. Having left his lair, he stretches himself. Having stretched himself, he looks all around the four directions. Having looked all around the four directions, he roars his lion’s roar three times. Having roared his lion’s roar three times, he heads out for game.
+sn22.78:1.3 | P: Ye hi keci, bhikkhave, tiracchānagatā pāṇā sīhassa migarañño nadato saddaṁ suṇanti; yebhuyyena bhayaṁ saṁvegaṁ santāsaṁ āpajjanti; bilaṁ bilāsayā pavisanti; dakaṁ dakāsayā pavisanti; vanaṁ vanāsayā pavisanti; ākāsaṁ pakkhino bhajanti. | S: And whatever animals hear the roar of the lion, king of beasts, are typically filled with fear, awe, and terror. They return to their lairs, be they in a hole, the water, or a wood; and the birds take to the air. | T: Any animals who hear the sound of the roar of the lion, the king of beasts, for the most part feel fear, terror, & fright. Those who live in holes go into their holes. Those who live in the water go into the water. Those who live in the forest go into the forest. Birds flee to the air.
+sn22.78:1.4 | P: Yepi te, bhikkhave, rañño nāgā gāmanigamarājadhānīsu, daḷhehi varattehi baddhā, tepi tāni bandhanāni sañchinditvā sampadāletvā bhītā muttakarīsaṁ cajamānā, yena vā tena vā palāyanti. | S: Even the royal elephants, bound with strong harnesses in the villages, towns, and capital cities, break apart their bonds, and urinate and defecate in terror as they flee here and there. | T: Even royal bull elephants, bound by strong leather bonds in villages, towns, & capital cities, bursting & breaking their bonds, frightened, scattering their urine & feces, run to & fro.
+sn22.78:1.5 | P: Evaṁ mahiddhiko kho, bhikkhave, sīho migarājā tiracchānagatānaṁ pāṇānaṁ, evaṁ mahesakkho, evaṁ mahānubhāvo. | S: That’s how powerful is the lion, king of beasts, over animals, how illustrious and mighty. | T: So powerful among animals, monks, is the lion, the king of beasts—so mighty & majestic.
+sn22.78:2.1 | P: Evameva kho, bhikkhave, yadā tathāgato loke uppajjati arahaṁ sammāsambuddho vijjācaraṇasampanno sugato lokavidū anuttaro purisadammasārathi satthā devamanussānaṁ buddho bhagavā. So dhammaṁ deseti: | S: In the same way, when a Realized One arises in the world—perfected, a fully awakened Buddha, accomplished in knowledge and conduct, holy, knower of the world, supreme guide for those fit for training, teacher of gods and humans, awakened, blessed—he teaches the Dhamma: | T: “In the same way, monks, when a Tathāgata appears in the world—worthy & rightly self-awakened, consummate in clear-knowing & conduct, well-gone, an expert with regard to the cosmos, unexcelled trainer of people fit to be tamed, teacher of devas & human beings, awakened, blessed—he teaches the Dhamma:
+sn22.78:2.2 | P: ‘iti rūpaṁ, iti rūpassa samudayo, iti rūpassa atthaṅgamo; | S: ‘Such is form, such is the origin of form, such is the disappearance of form. | T: ‘Such is form, such its origination, such its disappearance.
+sn22.78:2.3 | P: iti vedanā … | S: Such is feeling … | T: Such is feeling.…
+sn22.78:2.4 | P: iti saññā … | S: Such is perception … | T: Such is perception.…
+sn22.78:2.5 | P: iti saṅkhārā … | S: Such are choices … | T: Such are fabrications.…
+sn22.78:2.6 | P: iti viññāṇaṁ, iti viññāṇassa samudayo, iti viññāṇassa atthaṅgamo’ti. | S: Such is consciousness, such is the origin of consciousness, such is the disappearance of consciousness.’ | T: Such is consciousness, such its origination, such its disappearance.’
+sn22.78:2.7 | P: Yepi te, bhikkhave, devā dīghāyukā vaṇṇavanto sukhabahulā uccesu vimānesu ciraṭṭhitikā tepi tathāgatassa dhammadesanaṁ sutvā yebhuyyena bhayaṁ saṁvegaṁ santāsaṁ āpajjanti: | S: Now, there are gods who are long-lived, beautiful, and very happy, lasting long in their divine palaces. When they hear this teaching by the Realized One, they’re typically filled with fear, awe, and terror. | T: Any devas who are long-lived, beautiful, abounding in pleasure, established for a long time in high palaces, on hearing the Tathāgata’s Dhamma, for the most part feel fear, terror, & fright:
+sn22.78:2.8 | P: ‘aniccāva kira, bho, mayaṁ samānā niccamhāti amaññimha. | S: ‘Oh no! It turns out we’re impermanent, though we thought we were permanent! | T: ‘Being inconstant, it seems, we supposed we were constant!
+sn22.78:2.9 | P: Addhuvāva kira, bho, mayaṁ samānā dhuvamhāti amaññimha. | S: It turns out we don’t last, though we thought we were everlasting! | T: Being impermanent, we supposed we were permanent!
+sn22.78:2.10 | P: Asassatāva kira, bho, mayaṁ samānā sassatamhāti amaññimha. | S: It turns out we’re transient, though we thought we were eternal! | T: Non-eternal, we supposed we were eternal!
+sn22.78:2.11 | P: Mayampi kira, bho, aniccā addhuvā asassatā sakkāyapariyāpannā’ti. | S: It turns out that we’re impermanent, not lasting, transient, and included within substantial reality.’ | T: We—inconstant, impermanent, & non-eternal, it seems—are encompassed in self-identification.’
+sn22.78:2.12 | P: Evaṁ mahiddhiko kho, bhikkhave, tathāgato sadevakassa lokassa, evaṁ mahesakkho, evaṁ mahānubhāvo”ti. | S: That’s how powerful is the Realized One in the world with its gods, how illustrious and mighty.” | T: So powerful in the world with its devas, monks, is the Tathāgata—so mighty & majestic.”
+sn22.78:2.13 | P: Idamavoca bhagavā …pe… | S: That is what the Buddha said. | T: (none)
+sn22.78:2.14 | P: etadavoca satthā: | S: Then the Holy One, the Teacher, went on to say: | T: (none)
+sn22.78:3.1 | P: “Yadā buddho abhiññāya, | S: “The Buddha, the unrivaled Teacher | T: When the Awakened One, through direct knowledge,
+sn22.78:3.2 | P: dhammacakkaṁ pavattayi; | S: in all the world with its gods, | T: —the Teacher, the person with no peer
+sn22.78:3.3 | P: Sadevakassa lokassa, | S: rolls forth the Wheel of Dhamma | T: in the world with its devas—
+sn22.78:3.4 | P: satthā appaṭipuggalo. | S: from his own insight: | T: sets the Dhamma wheel rolling:
+sn22.78:4.1 | P: Sakkāyañca nirodhañca, | S: substantial reality, its cessation, | T: the cessation of self-identification,
+sn22.78:4.2 | P: sakkāyassa ca sambhavaṁ; | S: the origin of substantial reality, | T: & the cause of self-identification,
+sn22.78:4.3 | P: Ariyañcaṭṭhaṅgikaṁ maggaṁ, | S: and the noble eightfold path | T: & the noble eightfold path,
+sn22.78:4.4 | P: dukkhūpasamagāminaṁ. | S: that leads to the stilling of suffering. | T: leading to the stilling of suffering,
+sn22.78:5.1 | P: Yepi dīghāyukā devā, | S: And then the long-lived gods, | T: long-lived devas—
+sn22.78:5.2 | P: vaṇṇavanto yasassino; | S: so beautiful and glorious, | T: beautiful, prestigious—
+sn22.78:5.3 | P: Bhītā santāsamāpāduṁ, | S: are afraid and full of terror, | T: become fearful & frightened,
+sn22.78:5.4 | P: sīhassevitare migā. | S: like the other beasts when they hear a lion. | T: like deer at a lion’s roar.
+sn22.78:6.1 | P: Avītivattā sakkāyaṁ, | S: ‘We haven’t passed beyond substantial reality! | T: ‘We’re not beyond self-identification.
+sn22.78:6.2 | P: aniccā kira bho mayaṁ; | S: It turns out we’re impermanent!’ | T: It seems we’re inconstant,’
+sn22.78:6.3 | P: Sutvā arahato vākyaṁ, | S: So they say when they hear the word | T: [they say,] ↵ on hearing the word
+sn22.78:6.4 | P: vippamuttassa tādino”ti. | S: of the perfected one, free and unaffected.” | T: of the Worthy One, ↵ the one fully released, ↵ the one who is Such.
+sn22.78:6.5 | P: Chaṭṭhaṁ. | S: (none) | T: (none)
+
+## sn54.8
+Source: data/upstream/thanissaro/sutta/sn/sn54/sn54.8.html
+sn54.8:1.1 | P: “Ānāpānassatisamādhi, bhikkhave, bhāvito bahulīkato mahapphalo hoti mahānisaṁso. | S: “Mendicants, when immersion due to mindfulness of breathing is developed and cultivated it’s very fruitful and beneficial. | T: “Monks, concentration through mindfulness of in-&-out breathing, when developed & pursued, is of great fruit, great benefit.
+sn54.8:1.2 | P: Kathaṁ bhāvito ca, bhikkhave, ānāpānassatisamādhi kathaṁ bahulīkato mahapphalo hoti mahānisaṁso? | S: How so? | T: And how is concentration through mindfulness of in-&-out breathing developed & pursued so as to be of great fruit, great benefit?
+sn54.8:2.1 | P: Idha, bhikkhave, bhikkhu araññagato vā rukkhamūlagato vā suññāgāragato vā nisīdati pallaṅkaṁ ābhujitvā ujuṁ kāyaṁ paṇidhāya parimukhaṁ satiṁ upaṭṭhapetvā. | S: It’s when a mendicant—gone to a wilderness, or to the root of a tree, or to an empty hut—sits down cross-legged, sets their body straight, and brings mindfulness to the present. | T: “There is the case where a monk, having gone to the wilderness, to the shade of a tree, or to an empty building, sits down folding his legs crosswise, holding his body erect, and establishing mindfulness to the fore.
+sn54.8:2.2 | P: So satova assasati, satova passasati. | S: Just mindful, they breathe in. Mindful, they breathe out. | T: Always mindful, he breathes in; mindful he breathes out.
+sn54.8:2.3 | P: Dīghaṁ vā assasanto ‘dīghaṁ assasāmī’ti pajānāti …pe… | S: Breathing in heavily they know: ‘I’m breathing in heavily.’ Breathing out heavily they know: ‘I’m breathing out heavily.’ … | T: “[1] Breathing in long, he discerns, ‘I am breathing in long’; or breathing out long, he discerns, ‘I am breathing out long.’ [2] Or breathing in short, he discerns, ‘I am breathing in short’; or breathing out short, he discerns, ‘I am breathing out short.’ [3] He trains himself, ‘I will breathe in sensitive to the entire body.’ He trains himself, ‘I will breathe out sensitive to the entire body.’ [4] He trains himself, ‘I will breathe in calming bodily fabrication.’ He trains himself, ‘I will breathe out calming bodily fabrication.’ “[5] He trains himself, ‘I will breathe in sensitive to rapture.’ He trains himself, ‘I will breathe out sensitive to rapture.’ [6] He trains himself, ‘I will breathe in sensitive to pleasure.’ He trains himself, ‘I will breathe out sensitive to pleasure.’ [7] He trains himself, ‘I will breathe in sensitive to mental fabrication.’ He trains himself, ‘I will breathe out sensitive to mental fabrication.’ [8] He trains himself, ‘I will breathe in calming mental fabrication.’ He trains himself, ‘I will breathe out calming mental fabrication.’ “[9] He trains himself, ‘I will breathe in sensitive to the mind.’ He trains himself, ‘I will breathe out sensitive to the mind.’ [10] He trains himself, ‘I will breathe in satisfying the mind.’ He trains himself, ‘I will breathe out satisfying the mind.’ [11] He trains himself, ‘I will breathe in steadying the mind.’ He trains himself, ‘I will breathe out steadying the mind. [12] He trains himself, ‘I will breathe in releasing the mind.’ He trains himself, ‘I will breathe out releasing the mind.’ “[13] He trains himself, ‘I will breathe in focusing on inconstancy.’ He trains himself, ‘I will breathe out focusing on inconstancy.’ [14] He trains himself, ‘I will breathe in focusing on dispassion [lit: fading].’ He trains himself, ‘I will breathe out focusing on dispassion.’ [15] He trains himself, ‘I will breathe in focusing on cessation.’ He trains himself, ‘I will breathe out focusing on cessation.’
+sn54.8:2.4 | P: ‘paṭinissaggānupassī assasissāmī’ti sikkhati, ‘paṭinissaggānupassī passasissāmī’ti sikkhati. | S: They practice like this: ‘I’ll breathe in observing letting go.’ They practice like this: ‘I’ll breathe out observing letting go.’ | T: [16] He trains himself, ‘I will breathe in focusing on relinquishment.’ He trains himself, ‘I will breathe out focusing on relinquishment.’
+sn54.8:2.5 | P: Evaṁ bhāvito kho, bhikkhave, ānāpānassatisamādhi evaṁ bahulīkato mahapphalo hoti mahānisaṁso. | S: That’s how immersion due to mindfulness of breathing, when developed and cultivated, is very fruitful and beneficial. | T: “This is how concentration through mindfulness of in-&-out breathing is developed & pursued so as to be of great fruit, great benefit.
+sn54.8:3.1 | P: Ahampi sudaṁ, bhikkhave, pubbeva sambodhā anabhisambuddho bodhisattova samāno iminā vihārena bahulaṁ viharāmi. | S: Before my awakening—when I was still unawakened but intent on awakening—I too usually practiced this kind of meditation. | T: “I myself, monks, before my awakening, when I was still an unawakened bodhisatta, often dwelt in this (meditative) dwelling.
+sn54.8:3.2 | P: Tassa mayhaṁ, bhikkhave, iminā vihārena bahulaṁ viharato neva kāyo kilamati na cakkhūni; | S: And while I was usually practicing this kind of meditation neither my body nor my eyes became fatigued. | T: While I was dwelling in this (meditative) dwelling, neither my body nor my eyes were fatigued,
+sn54.8:3.3 | P: anupādāya ca me āsavehi cittaṁ vimucci. | S: And my mind was freed from defilements by not grasping. | T: and the mind—through lack of clinging/sustenance—was released from effluents.
+sn54.8:4.1 | P: Tasmātiha, bhikkhave, bhikkhu cepi ākaṅkheyya: | S: Now, a mendicant might wish: | T: “Thus, monks, if a monk should wish,
+sn54.8:4.2 | P: ‘neva me kāyo kilameyya na cakkhūni, anupādāya ca me āsavehi cittaṁ vimucceyyā’ti, | S: ‘May neither my body nor my eyes became fatigued. And may my mind be freed from the defilements by not grasping.’ | T: ‘May neither my body nor my eyes be fatigued, and may my mind—through lack of clinging/sustenance—be released from effluents,’
+sn54.8:4.3 | P: ayameva ānāpānassatisamādhi sādhukaṁ manasi kātabbo. | S: So let them closely focus on this immersion due to mindfulness of breathing. | T: then he should attend closely to this very same concentration through mindfulness of in-&-out breathing.
+sn54.8:5.1 | P: Tasmātiha, bhikkhave, bhikkhu cepi ākaṅkheyya: | S: Now, a mendicant might wish: | T: “If a monk should wish,
+sn54.8:5.2 | P: ‘ye me gehasitā sarasaṅkappā te pahīyeyyun’ti, | S: ‘May I give up memories and thoughts tied to domestic life.’ | T: ‘May memories & resolves connected to the household life be abandoned within me,’
+sn54.8:5.3 | P: ayameva ānāpānassatisamādhi sādhukaṁ manasi kātabbo. | S: So let them closely focus on this immersion due to mindfulness of breathing. | T: he should attend closely to this very same concentration through mindfulness of in-&-out breathing.
+sn54.8:6.1 | P: Tasmātiha, bhikkhave, bhikkhu cepi ākaṅkheyya: | S: Now, a mendicant might wish: | T: “If a monk should wish,
+sn54.8:6.2 | P: ‘appaṭikūle paṭikūlasaññī vihareyyan’ti, | S: ‘May I meditate perceiving the repulsive in the unrepulsive.’ | T: ‘May I be percipient of loathsomeness in the presence of what is not loathsome,’
+sn54.8:6.3 | P: ayameva ānāpānassatisamādhi sādhukaṁ manasi kātabbo. | S: So let them closely focus on this immersion due to mindfulness of breathing. | T: he should attend closely to this very same concentration through mindfulness of in-&-out breathing.
+sn54.8:7.1 | P: Tasmātiha, bhikkhave, bhikkhu cepi ākaṅkheyya: | S: Now, a mendicant might wish: | T: “If a monk should wish,
+sn54.8:7.2 | P: ‘paṭikūle appaṭikūlasaññī vihareyyan’ti, | S: ‘May I meditate perceiving the unrepulsive in the repulsive.’ | T: ‘May I be percipient of unloathsomeness in the presence of what is loathsome…
+sn54.8:7.3 | P: ayameva ānāpānassatisamādhi sādhukaṁ manasi kātabbo. | S: So let them closely focus on this immersion due to mindfulness of breathing. | T: (none)
+sn54.8:8.1 | P: Tasmātiha, bhikkhave, bhikkhu cepi ākaṅkheyya: | S: Now, a mendicant might wish: | T: (none)
+sn54.8:8.2 | P: ‘paṭikūle ca appaṭikūle ca paṭikūlasaññī vihareyyan’ti, | S: ‘May I meditate perceiving the repulsive in the unrepulsive and the repulsive.’ | T: May I be percipient of loathesomeness in the presence of what is loathsome & what is not…
+sn54.8:8.3 | P: ayameva ānāpānassatisamādhi sādhukaṁ manasi kātabbo. | S: So let them closely focus on this immersion due to mindfulness of breathing. | T: (none)
+sn54.8:9.1 | P: Tasmātiha, bhikkhave, bhikkhu cepi ākaṅkheyya: | S: Now, a mendicant might wish: | T: (none)
+sn54.8:9.2 | P: ‘paṭikūle ca appaṭikūle ca appaṭikūlasaññī vihareyyan’ti, | S: ‘May I meditate perceiving the unrepulsive in the repulsive and the unrepulsive.’ | T: May I be percipient of unloathsomeness in the presence of what is loathsome & what is not…
+sn54.8:9.3 | P: ayameva ānāpānassatisamādhi sādhukaṁ manasi kātabbo. | S: So let them closely focus on this immersion due to mindfulness of breathing. | T: (none)
+sn54.8:10.1 | P: Tasmātiha, bhikkhave, bhikkhu cepi ākaṅkheyya: | S: Now, a mendicant might wish: | T: (none)
+sn54.8:10.2 | P: ‘appaṭikūlañca paṭikūlañca tadubhayaṁ abhinivajjetvā upekkhako vihareyyaṁ sato sampajāno’ti, | S: ‘May I meditate staying equanimous, mindful and aware, shunning both the repulsive and the unrepulsive.’ | T: May I—in the presence of what is loathsome & what is not—cutting myself off from both, remain equanimous, alert, & mindful,’
+sn54.8:10.3 | P: ayameva ānāpānassatisamādhi sādhukaṁ manasi kātabbo. | S: So let them closely focus on this immersion due to mindfulness of breathing. | T: then he should attend closely to this very same concentration through mindfulness of in-&-out breathing.
+sn54.8:11.1 | P: Tasmātiha, bhikkhave, bhikkhu cepi ākaṅkheyya: | S: Now, a mendicant might wish: | T: “If a monk should wish,
+sn54.8:11.2 | P: ‘vivicceva kāmehi vivicca akusalehi dhammehi savitakkaṁ savicāraṁ vivekajaṁ pītisukhaṁ paṭhamaṁ jhānaṁ upasampajja vihareyyan’ti, | S: ‘Quite secluded from sensual pleasures, secluded from unskillful qualities, may I enter and remain in the first absorption, which has the rapture and bliss born of seclusion, while placing the mind and keeping it connected.’ | T: ‘May I—quite secluded from sensuality, secluded from unskillful qualities—enter & remain in the first jhāna: rapture & pleasure born of seclusion, accompanied by directed thought & evaluation,’
+sn54.8:11.3 | P: ayameva ānāpānassatisamādhi sādhukaṁ manasi kātabbo. | S: So let them closely focus on this immersion due to mindfulness of breathing. | T: then he should attend closely to this very same concentration through mindfulness of in-&-out breathing.
+sn54.8:12.1 | P: Tasmātiha, bhikkhave, bhikkhu cepi ākaṅkheyya: | S: Now, a mendicant might wish: | T: “If a monk should wish,
+sn54.8:12.2 | P: ‘vitakkavicārānaṁ vūpasamā ajjhattaṁ sampasādanaṁ cetaso ekodibhāvaṁ avitakkaṁ avicāraṁ samādhijaṁ pītisukhaṁ dutiyaṁ jhānaṁ upasampajja vihareyyan’ti, | S: ‘As the placing of the mind and keeping it connected are stilled, may I enter and remain in the second absorption, which has the rapture and bliss born of immersion, with internal clarity and mind at one, without placing the mind and keeping it connected.’ | T: ‘May I, with the stilling of directed thoughts & evaluations, enter & remain in the second jhāna: rapture & pleasure born of concentration, unification of awareness free from directed thought & evaluation—internal assurance,
+sn54.8:12.3 | P: ayameva ānāpānassatisamādhi sādhukaṁ manasi kātabbo. | S: So let them closely focus on this immersion due to mindfulness of breathing. | T: then he should attend closely to this very same concentration through mindfulness of in-&-out breathing.
+sn54.8:13.1 | P: Tasmātiha, bhikkhave, bhikkhu cepi ākaṅkheyya: | S: Now, a mendicant might wish: | T: “If a monk should wish,
+sn54.8:13.2 | P: ‘pītiyā ca virāgā upekkhako ca vihareyyaṁ sato ca sampajāno, sukhañca kāyena paṭisaṁvedeyyaṁ, yaṁ taṁ ariyā ācikkhanti—upekkhako satimā sukhavihārīti tatiyaṁ jhānaṁ upasampajja vihareyyan’ti, | S: ‘With the fading away of rapture, may I enter and remain in the third absorption, where I will meditate with equanimity, mindful and aware, experiencing for themselves the bliss of which the noble ones declare, “Equanimous and mindful, one meditates in bliss.”’ | T: ‘May I, with the fading of rapture, remain equanimous, mindful, & alert, sense pleasure with the body, and enter & remain in the third jhāna, of which the noble ones declare, “Equanimous & mindful, he has a pleasant abiding,”’
+sn54.8:13.3 | P: ayameva ānāpānassatisamādhi sādhukaṁ manasi kātabbo. | S: So let them closely focus on this immersion due to mindfulness of breathing. | T: then he should attend closely to this very same concentration through mindfulness of in-&-out breathing.
+sn54.8:14.1 | P: Tasmātiha, bhikkhave, bhikkhu cepi ākaṅkheyya: | S: Now, a mendicant might wish: | T: “If a monk should wish,
+sn54.8:14.2 | P: ‘sukhassa ca pahānā dukkhassa ca pahānā pubbeva somanassadomanassānaṁ atthaṅgamā adukkhamasukhaṁ upekkhāsatipārisuddhiṁ catutthaṁ jhānaṁ upasampajja vihareyyan’ti, | S: ‘With the giving up of pleasure and pain, and the disappearance of former happiness and sadness, may I enter and remain in the fourth absorption, without pleasure or pain, with pure equanimity and mindfulness.’ | T: ‘May I, with the abandoning of pleasure & pain—as with the earlier disappearance of elation & distress—enter & remain in the fourth jhāna: purity of equanimity & mindfulness, neither-pleasure-nor-pain,’
+sn54.8:14.3 | P: ayameva ānāpānassatisamādhi sādhukaṁ manasi kātabbo. | S: So let them closely focus on this immersion due to mindfulness of breathing. | T: then he should attend closely to this very same concentration through mindfulness of in-&-out breathing.
+sn54.8:15.1 | P: Tasmātiha, bhikkhave, bhikkhu cepi ākaṅkheyya: | S: Now, a mendicant might wish: | T: “If a monk should wish,
+sn54.8:15.2 | P: ‘sabbaso rūpasaññānaṁ samatikkamā paṭighasaññānaṁ atthaṅgamā nānattasaññānaṁ amanasikārā ananto ākāsoti ākāsānañcāyatanaṁ upasampajja vihareyyan’ti, | S: ‘Going totally beyond perceptions of form, with the disappearance of perceptions of impingement, not focusing on perceptions of diversity, aware that “space is infinite”, may I enter and remain in the dimension of infinite space.’ | T: ‘May I, with the complete transcending of perceptions of (physical) form, with the disappearance of perceptions of resistance, and not attending to perceptions of multiplicity, (perceiving,) ‘Infinite space,’ enter & remain in the dimension of the infinitude of space,’
+sn54.8:15.3 | P: ayameva ānāpānassatisamādhi sādhukaṁ manasi kātabbo. | S: So let them closely focus on this immersion due to mindfulness of breathing. | T: then he should attend closely to this very same concentration through mindfulness of in-&-out breathing.
+sn54.8:16.1 | P: Tasmātiha, bhikkhave, bhikkhu cepi ākaṅkheyya: | S: Now, a mendicant might wish: | T: “If a monk should wish,
+sn54.8:16.2 | P: ‘sabbaso ākāsānañcāyatanaṁ samatikkamma anantaṁ viññāṇanti viññāṇañcāyatanaṁ upasampajja vihareyyan’ti, | S: ‘Going totally beyond the dimension of infinite space, aware that “consciousness is infinite”, may I enter and remain in the dimension of infinite consciousness.’ | T: ‘May I, with the complete transcending of the dimension of the infinitude of space, (perceiving,) ‘Infinite consciousness,’ enter & remain in the dimension of the infinitude of consciousness,’
+sn54.8:16.3 | P: ayameva ānāpānassatisamādhi sādhukaṁ manasi kātabbo. | S: So let them closely focus on this immersion due to mindfulness of breathing. | T: then he should attend closely to this very same concentration through mindfulness of in-&-out breathing.
+sn54.8:17.1 | P: Tasmātiha, bhikkhave, bhikkhu cepi ākaṅkheyya: | S: Now, a mendicant might wish: | T: “If a monk should wish,
+sn54.8:17.2 | P: ‘sabbaso viññāṇañcāyatanaṁ samatikkamma natthi kiñcīti ākiñcaññāyatanaṁ upasampajja vihareyyan’ti, | S: ‘Going totally beyond the dimension of infinite consciousness, aware that “there is nothing at all”, may I enter and remain in the dimension of nothingness.’ | T: ‘May I, with the complete transcending of the dimension of the infinitude of consciousness, (perceiving,) ‘There is nothing,’ enter & remain in the dimension of nothingness,’
+sn54.8:17.3 | P: ayameva ānāpānassatisamādhi sādhukaṁ manasi kātabbo. | S: So let them closely focus on this immersion due to mindfulness of breathing. | T: then he should attend closely to this very same concentration through mindfulness of in-&-out breathing.
+sn54.8:18.1 | P: Tasmātiha, bhikkhave, bhikkhu cepi ākaṅkheyya: | S: Now, a mendicant might wish: | T: “If a monk should wish,
+sn54.8:18.2 | P: ‘sabbaso ākiñcaññāyatanaṁ samatikkamma nevasaññānāsaññāyatanaṁ upasampajja vihareyyan’ti, | S: ‘Going totally beyond the dimension of nothingness, may I enter and remain in the dimension of neither perception nor non-perception.’ | T: ‘May I, with the complete transcending of the dimension of nothingness, enter & remain in the dimension of neither perception nor non-perception,’
+sn54.8:18.3 | P: ayameva ānāpānassatisamādhi sādhukaṁ manasi kātabbo. | S: So let them closely focus on this immersion due to mindfulness of breathing. | T: then he should attend closely to this very same concentration through mindfulness of in-&-out breathing.
+sn54.8:19.1 | P: Tasmātiha, bhikkhave, bhikkhu cepi ākaṅkheyya: | S: Now, a mendicant might wish: | T: “If a monk should wish,
+sn54.8:19.2 | P: ‘sabbaso nevasaññānāsaññāyatanaṁ samatikkamma saññāvedayitanirodhaṁ upasampajja vihareyyan’ti, | S: ‘Going totally beyond the dimension of neither perception nor non-perception, may I enter and remain in the cessation of perception and feeling.’ | T: ‘May I, with the complete transcending of the dimension of neither perception nor non-perception, enter & remain in the cessation of perception & feeling,’
+sn54.8:19.3 | P: ayameva ānāpānassatisamādhi sādhukaṁ manasi kātabbo. | S: So let them closely focus on this immersion due to mindfulness of breathing. | T: then he should attend closely to this very same concentration through mindfulness of in-&-out breathing.
+sn54.8:20.1 | P: Evaṁ bhāvite kho, bhikkhave, ānāpānassatisamādhimhi evaṁ bahulīkate, sukhañce vedanaṁ vedayati, sā ‘aniccā’ti pajānāti, ‘anajjhositā’ti pajānāti, ‘anabhinanditā’ti pajānāti; | S: When immersion due to mindfulness of breathing has been developed and cultivated in this way, if they feel a pleasant feeling, they understand that it’s impermanent, that they’re not attached to it, and that they don’t take pleasure in it. | T: “When concentration through mindfulness of in-&-out breathing has been thus developed, thus pursued, one senses a feeling of pleasure. One discerns it as ‘inconstant.’ One discerns it as ‘not grasped at.’ One discerns it as ‘not relished.’
+sn54.8:20.2 | P: dukkhañce vedanaṁ vedayati, sā ‘aniccā’ti pajānāti, ‘anajjhositā’ti pajānāti, ‘anabhinanditā’ti pajānāti; | S: If they feel a painful feeling, they understand that it’s impermanent, that they’re not attached to it, and that they don’t take pleasure in it. | T: One senses a feeling of pain. One discerns it as ‘inconstant.’ One discerns it as ‘not grasped at.’ One discerns it as ‘not relished.’
+sn54.8:20.3 | P: adukkhamasukhañce vedanaṁ vedayati, ‘sā aniccā’ti pajānāti, ‘anajjhositā’ti pajānāti, ‘anabhinanditā’ti pajānāti. | S: If they feel a neutral feeling, they understand that it’s impermanent, that they’re not attached to it, and that they don’t take pleasure in it. | T: One senses a feeling of neither pleasure nor pain. One discerns it as ‘inconstant.’ One discerns it as ‘not grasped at.’ One discerns it as ‘not relished.’
+sn54.8:21.1 | P: Sukhañce vedanaṁ vedayati, visaṁyutto naṁ vedayati; | S: If they feel a pleasant feeling, they feel it detached. | T: “If sensing a feeling of pleasure, one senses it disjoined from it.
+sn54.8:21.2 | P: dukkhañce vedanaṁ vedayati, visaṁyutto naṁ vedayati; | S: If they feel a painful feeling, they feel it detached. | T: If sensing a feeling of pain, one senses it disjoined from it.
+sn54.8:21.3 | P: adukkhamasukhañce vedanaṁ vedayati, visaṁyutto naṁ vedayati. | S: If they feel a neutral feeling, they feel it detached. | T: If sensing a feeling of neither pleasure nor pain, one senses it disjoined from it.
+sn54.8:21.4 | P: So kāyapariyantikaṁ vedanaṁ vedayamāno ‘kāyapariyantikaṁ vedanaṁ vedayāmī’ti pajānāti, jīvitapariyantikaṁ vedanaṁ vedayamāno ‘jīvitapariyantikaṁ vedanaṁ vedayāmī’ti pajānāti, | S: Feeling the end of the body draw close, they understand: ‘I feel the end of the body draw close.’ Feeling the end of life draw close, they understand: ‘I feel the end of life draw close.’ | T: When sensing a feeling limited to the body, one discerns, ‘I am sensing a feeling limited to the body.’ When sensing a feeling limited to life, one discerns, ‘I am sensing a feeling limited to life.’
+sn54.8:21.5 | P: ‘kāyassa bhedā uddhaṁ jīvitapariyādānā idheva sabbavedayitāni anabhinanditāni sītībhavissantī’ti pajānāti. | S: They understand: ‘When my body breaks up and my life has come to an end, everything that’s felt, since I no longer take pleasure in it, will become cool right here.’ | T: One discerns, ‘With the break-up of the body, after the termination of life, all that is experienced, not being relished, will grow cold right here.’
+sn54.8:22.1 | P: Seyyathāpi, bhikkhave, telañca paṭicca, vaṭṭiñca paṭicca telappadīpo jhāyeyya, | S: Suppose an oil lamp depended on oil and a wick to burn. | T: “Just as an oil lamp would burn in dependence on oil & wick and,
+sn54.8:22.2 | P: tasseva telassa ca vaṭṭiyā ca pariyādānā anāhāro nibbāyeyya; | S: As the oil and the wick are used up, it would be extinguished due to not being fed. | T: from the termination of the oil & wick, it would go out unnourished;
+sn54.8:22.3 | P: evameva kho, bhikkhave, bhikkhu kāyapariyantikaṁ vedanaṁ vedayamāno ‘kāyapariyantikaṁ vedanaṁ vedayāmī’ti pajānāti, jīvitapariyantikaṁ vedanaṁ vedayamāno ‘jīvitapariyantikaṁ vedanaṁ vedayāmī’ti pajānāti, | S: In the same way, feeling the end of the body draw close, they understand: ‘I feel the end of the body draw close.’ Feeling the end of life draw close, they understand: ‘I feel the end of life draw close.’ | T: in the same way, when sensing a feeling limited to the body, one discerns that ‘I am sensing a feeling limited to the body.’ When sensing a feeling limited to life, one discerns that ‘I am sensing a feeling limited to life.’
+sn54.8:22.4 | P: ‘kāyassa bhedā uddhaṁ jīvitapariyādānā idheva sabbavedayitāni anabhinanditāni sītībhavissantī’ti pajānātī”ti. | S: They understand: ‘When my body breaks up and my life has come to an end, everything that’s felt, since I no longer take pleasure in it, will become cool right here.’” | T: One discerns, ‘With the break-up of the body, after the termination of life, all that is sensed, not being relished, will grow cold right here.’”
+sn54.8:22.5 | P: Aṭṭhamaṁ. | S: (none) | T: (none)
+

@@ -1,0 +1,1949 @@
+{
+  "rules": "Whole source lines in source order; neighboring crossed verses form one group; lone empty rows reveal their Pali; moving prose must preserve the source under current verification.",
+  "cases": [
+    {
+      "key": "sn3.19:7.1",
+      "text": "sn3.19",
+      "status": "repair-ready",
+      "effort": "xhigh",
+      "source": "data/upstream/thanissaro/sutta/sn/sn3/sn3.19.html",
+      "groupVerses": [
+        7
+      ],
+      "groupPaliRows": [
+        "sn3.19:7.1",
+        "sn3.19:7.2",
+        "sn3.19:7.3",
+        "sn3.19:7.4"
+      ],
+      "assignments": [
+        {
+          "key": "sn3.19:7.1",
+          "pali": "“Amanussaṭṭhāne udakaṁva sītaṁ, ",
+          "sourceLines": [
+            8,
+            9
+          ],
+          "wholeSourceLines": [
+            "“Like water",
+            "in a haunted place"
+          ],
+          "starts": "“Like water",
+          "none": false,
+          "current": "That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further:\n“Like water\nin a haunted place "
+        },
+        {
+          "key": "sn3.19:7.2",
+          "pali": "Tadapeyyamānaṁ parisosameti; ",
+          "sourceLines": [
+            10,
+            11
+          ],
+          "wholeSourceLines": [
+            "that, without being imbibed,",
+            "dries up:"
+          ],
+          "starts": "that, without being imbibed,",
+          "none": false,
+          "current": "that, without being imbibed,\ndries up: "
+        },
+        {
+          "key": "sn3.19:7.3",
+          "pali": "Evaṁ dhanaṁ kāpuriso labhitvā, ",
+          "sourceLines": [
+            12,
+            13
+          ],
+          "wholeSourceLines": [
+            "Such is the wealth",
+            "acquired by a worthless man"
+          ],
+          "starts": "Such is the wealth",
+          "none": false,
+          "current": "Such is the wealth\nacquired by a worthless man "
+        },
+        {
+          "key": "sn3.19:7.4",
+          "pali": "Nevattanā bhuñjati no dadāti. ",
+          "sourceLines": [
+            14,
+            15
+          ],
+          "wholeSourceLines": [
+            "who neither enjoys it himself",
+            "nor gives."
+          ],
+          "starts": "who neither enjoys it himself",
+          "none": false,
+          "current": "who neither enjoys it himself\nnor gives. "
+        }
+      ],
+      "rationale": "The first true verse line is source 8. Start 7.1 there. The source-only speech bridge (source 7) has no corresponding Pali row; retain it after the existing translated prose on 6.6, immediately before the verse. This is an edition addition, not translated verse.",
+      "activeDirectives": [
+        "sn3.19:7.1 starts: “Like water"
+      ],
+      "sourceAddition": {
+        "sourceLines": [
+          7
+        ],
+        "destination": "sn3.19:6.6",
+        "paliCorrespondence": "none; preceding translated prose is the nearest antecedent"
+      }
+    },
+    {
+      "key": "sn4.24:10.4",
+      "text": "sn4.24",
+      "status": "deferred-segmenter",
+      "effort": "xhigh",
+      "source": "data/upstream/thanissaro/sutta/sn/sn4/sn4.24.html",
+      "groupVerses": [
+        10
+      ],
+      "groupPaliRows": [
+        "sn4.24:10.1",
+        "sn4.24:10.2",
+        "sn4.24:10.3",
+        "sn4.24:10.4"
+      ],
+      "assignments": [
+        {
+          "key": "sn4.24:10.1",
+          "pali": "Aladdhā tattha assādaṁ, ",
+          "sourceLines": [
+            52
+          ],
+          "wholeSourceLines": [
+            "—but not getting anything tasty there,"
+          ],
+          "starts": "—but not getting anything tasty there,",
+          "none": false,
+          "current": "—but not getting anything tasty there, "
+        },
+        {
+          "key": "sn4.24:10.2",
+          "pali": "vāyasetto apakkame; ",
+          "sourceLines": [
+            53
+          ],
+          "wholeSourceLines": [
+            "the crow went away."
+          ],
+          "starts": "the crow went away.",
+          "none": false,
+          "current": "the crow went away. "
+        },
+        {
+          "key": "sn4.24:10.3",
+          "pali": "Kākova selamāsajja, ",
+          "sourceLines": [
+            54
+          ],
+          "wholeSourceLines": [
+            "Like a crow attacking the rock,"
+          ],
+          "starts": "Like a crow attacking the rock,",
+          "none": false,
+          "current": "Like a crow attacking the rock, "
+        },
+        {
+          "key": "sn4.24:10.4",
+          "pali": "nibbijjāpema gotamā”ti. ",
+          "sourceLines": [
+            55
+          ],
+          "wholeSourceLines": [
+            "I weary myself with Gotama.”"
+          ],
+          "starts": "I weary myself with Gotama.”",
+          "none": false,
+          "current": "I weary myself with Gotama.” Then Māra the Evil One, having recited these verses of dejection in the Blessed One’s presence, left that place and sat on the ground not far from the Blessed One, silent, abashed, with his shoulders drooping, his head down, brooding, at a loss for words, drawing in the dirt with a stick. "
+        }
+      ],
+      "rationale": "Verse 10 is already four whole source lines. Source 56 is the single following narrative sentence, and its exact Pali begins at sn4.25:1.1. Move that prose across the text boundary; current monotonic per-page cuts cannot transfer ownership while check-upstream and plain regeneration preserve each source page.",
+      "activeDirectives": [],
+      "desiredProseMoves": [
+        {
+          "sourceLines": [
+            56
+          ],
+          "destination": "sn4.25:1.1",
+          "starts": "Then Māra the Evil One, having recited these",
+          "pali": "Atha kho māro pāpimā bhagavato santike imā nibbejanīyā gāthāyo abhāsitvā tamhā ṭhānā apakkamma bhagavato avidūre pathaviyaṁ pallaṅkena nisīdi tuṇhībhūto maṅkubhūto pattakkhandho adhomukho pajjhāyanto appaṭibhāno kaṭṭhena bhūmiṁ vilikhanto. "
+        }
+      ],
+      "segmenterNeeded": "Cross-text ownership transfer of source paragraph 56 from sn4.24 source to sn4.25:1.1; word-for-word checker must recognize that same transfer."
+    },
+    {
+      "key": "an3.39:10.3",
+      "text": "an3.39",
+      "status": "repair-ready",
+      "effort": "xhigh",
+      "source": "data/upstream/thanissaro/sutta/an/an3/an3.39.html",
+      "groupVerses": [
+        10,
+        11
+      ],
+      "groupPaliRows": [
+        "an3.39:10.1",
+        "an3.39:10.2",
+        "an3.39:10.3",
+        "an3.39:10.4",
+        "an3.39:11.1",
+        "an3.39:11.2",
+        "an3.39:11.3",
+        "an3.39:11.4"
+      ],
+      "assignments": [
+        {
+          "key": "an3.39:10.1",
+          "pali": "Sohaṁ evaṁ viharanto, ",
+          "sourceLines": [
+            20
+          ],
+          "wholeSourceLines": [
+            "As I maintained this attitude—"
+          ],
+          "starts": "As I maintained this attitude—",
+          "none": false,
+          "current": "As I maintained this attitude— "
+        },
+        {
+          "key": "an3.39:10.2",
+          "pali": "ñatvā dhammaṁ nirūpadhiṁ; ",
+          "sourceLines": [
+            21,
+            22
+          ],
+          "wholeSourceLines": [
+            "knowing the Dhamma",
+            "without acquisitions—"
+          ],
+          "starts": "knowing the Dhamma",
+          "none": false,
+          "current": "knowing the Dhamma\nwithout acquisitions— "
+        },
+        {
+          "key": "an3.39:10.3",
+          "pali": "Ārogye yobbanasmiñca, ",
+          "sourceLines": [
+            23
+          ],
+          "wholeSourceLines": [
+            "I overcame all intoxication"
+          ],
+          "starts": "I overcame all intoxication",
+          "none": false,
+          "current": "I overcame all intoxication "
+        },
+        {
+          "key": "an3.39:10.4",
+          "pali": "jīvitasmiñca ye madā. ",
+          "sourceLines": [
+            24
+          ],
+          "wholeSourceLines": [
+            "with health, youth, & life"
+          ],
+          "starts": "with health, youth, & life",
+          "none": false,
+          "current": "with health, youth, "
+        },
+        {
+          "key": "an3.39:11.1",
+          "pali": "Sabbe made abhibhosmi, ",
+          "sourceLines": [
+            25
+          ],
+          "wholeSourceLines": [
+            "as one who sees"
+          ],
+          "starts": "as one who sees",
+          "none": false,
+          "current": "& life "
+        },
+        {
+          "key": "an3.39:11.2",
+          "pali": "Nekkhamme daṭṭhu khemataṁ; ",
+          "sourceLines": [
+            26
+          ],
+          "wholeSourceLines": [
+            "renunciation as rest."
+          ],
+          "starts": "renunciation as rest.",
+          "none": false,
+          "current": "as one who sees\nrenunciation as rest. "
+        },
+        {
+          "key": "an3.39:11.3",
+          "pali": "Tassa me ahu ussāho, ",
+          "sourceLines": [
+            27
+          ],
+          "wholeSourceLines": [
+            "For me, energy arose,"
+          ],
+          "starts": "For me, energy arose,",
+          "none": false,
+          "current": "For me, energy arose, "
+        },
+        {
+          "key": "an3.39:11.4",
+          "pali": "Nibbānaṁ abhipassato. ",
+          "sourceLines": [
+            28
+          ],
+          "wholeSourceLines": [
+            "unbinding was clearly seen."
+          ],
+          "starts": "unbinding was clearly seen.",
+          "none": false,
+          "current": "unbinding was clearly seen. "
+        }
+      ],
+      "rationale": "Verses 10–11 form one group because source 23 renders the next verse before source 24 finishes the earlier one. Keep health/youth/life together as source 24; put source 25 and 26 separately on 11.1 and 11.2. Nine whole source lines occupy all eight Pali rows in source order.",
+      "activeDirectives": [
+        "an3.39:11.1 starts: as one who sees",
+        "an3.39:11.2 starts: renunciation as rest."
+      ]
+    },
+    {
+      "key": "an4.19:4.1",
+      "text": "an4.19",
+      "status": "deferred-segmenter",
+      "effort": "xhigh",
+      "source": "data/upstream/thanissaro/sutta/an/an4/an4.19.html",
+      "groupVerses": [
+        3,
+        4
+      ],
+      "groupPaliRows": [
+        "an4.19:3.1",
+        "an4.19:3.2",
+        "an4.19:3.3",
+        "an4.19:3.4",
+        "an4.19:4.1",
+        "an4.19:4.2",
+        "an4.19:4.3",
+        "an4.19:4.4"
+      ],
+      "assignments": [
+        {
+          "key": "an4.19:3.1",
+          "pali": "Chandā dosā bhayā mohā, ",
+          "sourceLines": [
+            2
+          ],
+          "wholeSourceLines": [
+            "If you—"
+          ],
+          "starts": "If you—",
+          "none": false,
+          "current": "If you— "
+        },
+        {
+          "key": "an4.19:3.2",
+          "pali": "yo dhammaṁ ativattati; ",
+          "sourceLines": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "wholeSourceLines": [
+            "through desire,",
+            "aversion,",
+            "delusion,",
+            "fear—",
+            "transgress the Dhamma,"
+          ],
+          "starts": "through desire,",
+          "none": false,
+          "current": "through desire,\naversion,\ndelusion,\nfear—\ntransgress the Dhamma, "
+        },
+        {
+          "key": "an4.19:3.3",
+          "pali": "Nihīyati tassa yaso, ",
+          "sourceLines": [
+            8
+          ],
+          "wholeSourceLines": [
+            "your honor wanes,"
+          ],
+          "starts": "your honor wanes,",
+          "none": false,
+          "current": "your honor wanes, "
+        },
+        {
+          "key": "an4.19:3.4",
+          "pali": "kāḷapakkheva candimā. ",
+          "sourceLines": [
+            9,
+            10
+          ],
+          "wholeSourceLines": [
+            "as in the dark fortnight,",
+            "the moon."
+          ],
+          "starts": "as in the dark fortnight,",
+          "none": false,
+          "current": "as in the dark fortnight,\nthe moon. "
+        },
+        {
+          "key": "an4.19:4.1",
+          "pali": "Chandā dosā bhayā mohā, ",
+          "sourceLines": [
+            12
+          ],
+          "wholeSourceLines": [
+            "If you don’t—"
+          ],
+          "starts": "If you don’t—",
+          "none": false,
+          "current": "“There are these four ways of not going off course. Which four? One doesn’t go off course through desire. One doesn’t go off course through aversion. One doesn’t go off course through delusion. One doesn’t go off course through fear. These are the four ways of not going off course.”\nIf you don’t— "
+        },
+        {
+          "key": "an4.19:4.2",
+          "pali": "yo dhammaṁ nātivattati; ",
+          "sourceLines": [
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "wholeSourceLines": [
+            "through desire,",
+            "aversion,",
+            "delusion,",
+            "fear—",
+            "transgress the Dhamma,"
+          ],
+          "starts": "through desire,",
+          "none": false,
+          "current": "through desire,\naversion,\ndelusion,\nfear—\ntransgress the Dhamma, "
+        },
+        {
+          "key": "an4.19:4.3",
+          "pali": "Āpūrati tassa yaso, ",
+          "sourceLines": [
+            18
+          ],
+          "wholeSourceLines": [
+            "your honor waxes,"
+          ],
+          "starts": "your honor waxes,",
+          "none": false,
+          "current": "your honor waxes, "
+        },
+        {
+          "key": "an4.19:4.4",
+          "pali": "sukkapakkheva candimā”ti. ",
+          "sourceLines": [
+            19,
+            20
+          ],
+          "wholeSourceLines": [
+            "as in the bright fortnight,",
+            "the moon."
+          ],
+          "starts": "as in the bright fortnight,",
+          "none": false,
+          "current": "as in the bright fortnight,\nthe moon. "
+        }
+      ],
+      "rationale": "Both verse spreads are already whole and show every Pali line. Source 11 is the second prose paragraph; its sentences correspond to Pali 2.1, 2.2, 2.3 and 2.4, but it follows verse 3 in the source and precedes it in the Pali. User permits moving prose; existing monotonic cuts cannot make this move while preserving source-page word order and regeneration.",
+      "activeDirectives": [],
+      "desiredProseMoves": [
+        {
+          "sourceLines": [
+            11
+          ],
+          "destinations": [
+            {
+              "key": "an4.19:2.1",
+              "starts": "“There are these four ways of not going"
+            },
+            {
+              "key": "an4.19:2.2",
+              "starts": "Which four?"
+            },
+            {
+              "key": "an4.19:2.3",
+              "starts": "One doesn’t go off course through desire."
+            },
+            {
+              "key": "an4.19:2.4",
+              "starts": "These are the four ways of not going"
+            }
+          ]
+        }
+      ],
+      "segmenterNeeded": "Explicit prose reordering across the first verse, keeping each prose sentence intact and checking source words in their source order rather than Pali row order."
+    },
+    {
+      "key": "an5.36:3.1",
+      "text": "an5.36",
+      "status": "settled-with-group",
+      "effort": "xhigh",
+      "source": "data/upstream/thanissaro/sutta/an/an5/an5.36.html",
+      "groupVerses": [
+        2,
+        3
+      ],
+      "groupPaliRows": [
+        "an5.36:2.1",
+        "an5.36:2.2",
+        "an5.36:2.3",
+        "an5.36:2.4",
+        "an5.36:3.1",
+        "an5.36:3.2",
+        "an5.36:3.3",
+        "an5.36:3.4",
+        "an5.36:3.5",
+        "an5.36:3.6"
+      ],
+      "assignments": [
+        {
+          "key": "an5.36:2.1",
+          "pali": "Kāle dadanti sappaññā, ",
+          "sourceLines": [
+            2,
+            3
+          ],
+          "wholeSourceLines": [
+            "In the proper season they give—",
+            "those with discernment,"
+          ],
+          "starts": "In the proper season they give—",
+          "none": false,
+          "current": "In the proper season they give—\nthose with discernment, "
+        },
+        {
+          "key": "an5.36:2.2",
+          "pali": "vadaññū vītamaccharā; ",
+          "sourceLines": [
+            4
+          ],
+          "wholeSourceLines": [
+            "responsive, free from stinginess."
+          ],
+          "starts": "responsive, free from stinginess.",
+          "none": false,
+          "current": "responsive, free from stinginess. "
+        },
+        {
+          "key": "an5.36:2.3",
+          "pali": "Kālena dinnaṁ ariyesu, ",
+          "sourceLines": [
+            5
+          ],
+          "wholeSourceLines": [
+            "Having been given in proper season,"
+          ],
+          "starts": "Having been given in proper season,",
+          "none": false,
+          "current": "Having been given in proper season, "
+        },
+        {
+          "key": "an5.36:2.4",
+          "pali": "ujubhūtesu tādisu. ",
+          "sourceLines": [
+            6
+          ],
+          "wholeSourceLines": [
+            "with hearts inspired by the noble ones"
+          ],
+          "starts": "with hearts inspired by the noble ones",
+          "none": false,
+          "current": "with hearts inspired by the noble ones "
+        },
+        {
+          "key": "an5.36:3.1",
+          "pali": "Vippasannamanā tassa, ",
+          "sourceLines": [
+            7
+          ],
+          "wholeSourceLines": [
+            "—straightened, Such—"
+          ],
+          "starts": "—straightened, Such—",
+          "none": false,
+          "current": "—straightened, Such— "
+        },
+        {
+          "key": "an5.36:3.2",
+          "pali": "vipulā hoti dakkhiṇā; ",
+          "sourceLines": [
+            8
+          ],
+          "wholeSourceLines": [
+            "their offering bears an abundance."
+          ],
+          "starts": "their offering bears an abundance.",
+          "none": false,
+          "current": "their offering bears an abundance. "
+        },
+        {
+          "key": "an5.36:3.3",
+          "pali": "Ye tattha anumodanti, ",
+          "sourceLines": [
+            9
+          ],
+          "wholeSourceLines": [
+            "Those who rejoice in that gift"
+          ],
+          "starts": "Those who rejoice in that gift",
+          "none": false,
+          "current": "Those who rejoice in that gift "
+        },
+        {
+          "key": "an5.36:3.4",
+          "pali": "veyyāvaccaṁ karonti vā; ",
+          "sourceLines": [
+            10
+          ],
+          "wholeSourceLines": [
+            "or give assistance,"
+          ],
+          "starts": "or give assistance,",
+          "none": false,
+          "current": "or give assistance, "
+        },
+        {
+          "key": "an5.36:3.5",
+          "pali": "Na tena dakkhiṇā ūnā, ",
+          "sourceLines": [
+            11
+          ],
+          "wholeSourceLines": [
+            "they, too, have a share of the merit,"
+          ],
+          "starts": "they, too, have a share of the merit,",
+          "none": false,
+          "current": "they, too, have a share of the merit, "
+        },
+        {
+          "key": "an5.36:3.6",
+          "pali": "tepi puññassa bhāgino. ",
+          "sourceLines": [
+            12
+          ],
+          "wholeSourceLines": [
+            "and the offering isn’t depleted by that."
+          ],
+          "starts": "and the offering isn’t depleted by that.",
+          "none": false,
+          "current": "and the offering isn’t depleted by that. "
+        }
+      ],
+      "rationale": "Source 6 combines inspired hearts (verse 3) and noble recipients (verse 2) in one line, and source 7 completes the recipients. Verses 2–3 therefore form one group. Current layout already preserves all eleven source lines over all ten Pali rows. Keep it.",
+      "activeDirectives": []
+    },
+    {
+      "key": "an5.57:14.3",
+      "text": "an5.57",
+      "status": "repair-ready",
+      "effort": "xhigh",
+      "source": "data/upstream/thanissaro/sutta/an/an5/an5.57.html",
+      "groupVerses": [
+        14,
+        15
+      ],
+      "groupPaliRows": [
+        "an5.57:14.1",
+        "an5.57:14.2",
+        "an5.57:14.3",
+        "an5.57:14.4",
+        "an5.57:15.1",
+        "an5.57:15.2",
+        "an5.57:15.3",
+        "an5.57:15.4"
+      ],
+      "assignments": [
+        {
+          "key": "an5.57:14.1",
+          "pali": "Sohaṁ evaṁ viharanto, ",
+          "sourceLines": [
+            25
+          ],
+          "wholeSourceLines": [
+            "As I maintained this attitude—"
+          ],
+          "starts": "As I maintained this attitude—",
+          "none": false,
+          "current": "As I maintained this attitude— "
+        },
+        {
+          "key": "an5.57:14.2",
+          "pali": "ñatvā dhammaṁ nirūpadhiṁ; ",
+          "sourceLines": [
+            26,
+            27
+          ],
+          "wholeSourceLines": [
+            "knowing the Dhamma",
+            "without acquisitions—"
+          ],
+          "starts": "knowing the Dhamma",
+          "none": false,
+          "current": "knowing the Dhamma\nwithout acquisitions— "
+        },
+        {
+          "key": "an5.57:14.3",
+          "pali": "Ārogye yobbanasmiñca, ",
+          "sourceLines": [
+            28
+          ],
+          "wholeSourceLines": [
+            "I overcame all intoxication"
+          ],
+          "starts": "I overcame all intoxication",
+          "none": false,
+          "current": "I overcame all intoxication "
+        },
+        {
+          "key": "an5.57:14.4",
+          "pali": "jīvitasmiñca ye madā. ",
+          "sourceLines": [
+            29
+          ],
+          "wholeSourceLines": [
+            "with health, youth, & life"
+          ],
+          "starts": "with health, youth, & life",
+          "none": false,
+          "current": "with health, youth, "
+        },
+        {
+          "key": "an5.57:15.1",
+          "pali": "Sabbe made abhibhosmi, ",
+          "sourceLines": [
+            30
+          ],
+          "wholeSourceLines": [
+            "as one who sees"
+          ],
+          "starts": "as one who sees",
+          "none": false,
+          "current": "& life "
+        },
+        {
+          "key": "an5.57:15.2",
+          "pali": "Nekkhammaṁ daṭṭhu khemato; ",
+          "sourceLines": [
+            31
+          ],
+          "wholeSourceLines": [
+            "renunciation as rest."
+          ],
+          "starts": "renunciation as rest.",
+          "none": false,
+          "current": "as one who sees\nrenunciation as rest. "
+        },
+        {
+          "key": "an5.57:15.3",
+          "pali": "Tassa me ahu ussāho, ",
+          "sourceLines": [
+            32
+          ],
+          "wholeSourceLines": [
+            "For me, energy arose,"
+          ],
+          "starts": "For me, energy arose,",
+          "none": false,
+          "current": "For me, energy arose, "
+        },
+        {
+          "key": "an5.57:15.4",
+          "pali": "Nibbānaṁ abhipassato. ",
+          "sourceLines": [
+            33
+          ],
+          "wholeSourceLines": [
+            "unbinding was clearly seen."
+          ],
+          "starts": "unbinding was clearly seen.",
+          "none": false,
+          "current": "unbinding was clearly seen. "
+        }
+      ],
+      "rationale": "The same crossing as AN 3.39 requires one group spanning verses 14–15. Restore the whole health/youth/life line at 14.4 and separate source 30 and 31 on 15.1 and 15.2; nine source lines occupy all eight Pali rows.",
+      "activeDirectives": [
+        "an5.57:15.1 starts: as one who sees",
+        "an5.57:15.2 starts: renunciation as rest."
+      ]
+    },
+    {
+      "key": "an6.45:21.3",
+      "text": "an6.45",
+      "status": "repair-ready",
+      "effort": "xhigh",
+      "source": "data/upstream/thanissaro/sutta/an/an6/an6.45.html",
+      "groupVerses": [
+        21,
+        22
+      ],
+      "groupPaliRows": [
+        "an6.45:21.1",
+        "an6.45:21.2",
+        "an6.45:21.3",
+        "an6.45:21.4",
+        "an6.45:22.1",
+        "an6.45:22.2",
+        "an6.45:22.3",
+        "an6.45:22.4",
+        "an6.45:22.5",
+        "an6.45:22.6"
+      ],
+      "assignments": [
+        {
+          "key": "an6.45:21.1",
+          "pali": "Etañhi bandhanaṁ dukkhaṁ, ",
+          "sourceLines": [
+            64
+          ],
+          "wholeSourceLines": [
+            "the painful bond"
+          ],
+          "starts": "the painful bond",
+          "none": false,
+          "current": "the painful bond "
+        },
+        {
+          "key": "an6.45:21.2",
+          "pali": "yamhā dhīro pamuccati; ",
+          "sourceLines": [
+            65,
+            66
+          ],
+          "wholeSourceLines": [
+            "from which the enlightened",
+            "are freed."
+          ],
+          "starts": "from which the enlightened",
+          "none": false,
+          "current": "from which the enlightened\nare freed. "
+        },
+        {
+          "key": "an6.45:21.3",
+          "pali": "Dhammaladdhehi bhogehi, ",
+          "sourceLines": [
+            67,
+            68,
+            69
+          ],
+          "wholeSourceLines": [
+            "But one with confidence,",
+            "living at home,",
+            "making gifts of his belongings,"
+          ],
+          "starts": "But one with confidence,",
+          "none": false,
+          "current": "But one with confidence,\nliving at home,\nmaking gifts "
+        },
+        {
+          "key": "an6.45:21.4",
+          "pali": "dadaṁ cittaṁ pasādayaṁ. ",
+          "sourceLines": [
+            70
+          ],
+          "wholeSourceLines": [
+            "righteously-gained,"
+          ],
+          "starts": "righteously-gained,",
+          "none": false,
+          "current": "of his belongings,\nrighteously-gained, "
+        },
+        {
+          "key": "an6.45:22.1",
+          "pali": "Ubhayattha kaṭaggāho, ",
+          "sourceLines": [
+            71
+          ],
+          "wholeSourceLines": [
+            "wins both goals:"
+          ],
+          "starts": "wins both goals:",
+          "none": false,
+          "current": "wins both goals: "
+        },
+        {
+          "key": "an6.45:22.2",
+          "pali": "saddhassa gharamesino; ",
+          "sourceLines": [],
+          "wholeSourceLines": [],
+          "starts": null,
+          "none": true,
+          "current": ""
+        },
+        {
+          "key": "an6.45:22.3",
+          "pali": "Diṭṭhadhammahitatthāya, ",
+          "sourceLines": [
+            72
+          ],
+          "wholeSourceLines": [
+            "advantage in the here & now,"
+          ],
+          "starts": "advantage in the here & now,",
+          "none": false,
+          "current": "advantage in the here & now, "
+        },
+        {
+          "key": "an6.45:22.4",
+          "pali": "samparāyasukhāya ca; ",
+          "sourceLines": [
+            73
+          ],
+          "wholeSourceLines": [
+            "& happiness in the world beyond."
+          ],
+          "starts": "& happiness in the world beyond.",
+          "none": false,
+          "current": "& happiness in the world beyond. "
+        },
+        {
+          "key": "an6.45:22.5",
+          "pali": "Evametaṁ gahaṭṭhānaṁ, ",
+          "sourceLines": [
+            74
+          ],
+          "wholeSourceLines": [
+            "The liberality of this householder"
+          ],
+          "starts": "The liberality of this householder",
+          "none": false,
+          "current": "The liberality of this householder "
+        },
+        {
+          "key": "an6.45:22.6",
+          "pali": "cāgo puññaṁ pavaḍḍhati. ",
+          "sourceLines": [
+            75
+          ],
+          "wholeSourceLines": [
+            "piles up merit."
+          ],
+          "starts": "piles up merit.",
+          "none": false,
+          "current": "piles up merit. "
+        }
+      ],
+      "rationale": "Source 68 renders the householder of verse 22 before source 69–70 finish the gift/wealth of verse 21. Group 21–22. Move 21.4 to source 70 so the whole source line “making gifts of his belongings,” stays on 21.3. Keep existing 22.2 empty: it is a lone empty Pali row revealed under 22.1, so no Pali line is hidden.",
+      "activeDirectives": [
+        "an6.45:21.4 starts: righteously-gained,"
+      ],
+      "revealWithoutCoverage": [
+        "an6.45:22.2"
+      ]
+    },
+    {
+      "key": "an8.54:18.2",
+      "text": "an8.54",
+      "status": "repair-ready",
+      "effort": "xhigh",
+      "source": "data/upstream/thanissaro/sutta/an/an8/an8.54.html",
+      "groupVerses": [
+        17,
+        18
+      ],
+      "groupPaliRows": [
+        "an8.54:17.1",
+        "an8.54:17.2",
+        "an8.54:17.3",
+        "an8.54:17.4",
+        "an8.54:18.1",
+        "an8.54:18.2",
+        "an8.54:18.3",
+        "an8.54:18.4"
+      ],
+      "assignments": [
+        {
+          "key": "an8.54:17.1",
+          "pali": "Iccete aṭṭha dhammā ca, ",
+          "sourceLines": [
+            25
+          ],
+          "wholeSourceLines": [
+            "Thus for one who seeks the household life,"
+          ],
+          "starts": "Thus for one who seeks the household life,",
+          "none": false,
+          "current": "Thus for one who seeks the household life, "
+        },
+        {
+          "key": "an8.54:17.2",
+          "pali": "saddhassa gharamesino; ",
+          "sourceLines": [
+            26
+          ],
+          "wholeSourceLines": [
+            "these eight qualities—"
+          ],
+          "starts": "these eight qualities—",
+          "none": false,
+          "current": "these eight qualities— "
+        },
+        {
+          "key": "an8.54:17.3",
+          "pali": "Akkhātā saccanāmena, ",
+          "sourceLines": [
+            27
+          ],
+          "wholeSourceLines": [
+            "leading to welfare & happiness"
+          ],
+          "starts": "leading to welfare & happiness",
+          "none": false,
+          "current": ""
+        },
+        {
+          "key": "an8.54:17.4",
+          "pali": "ubhayattha sukhāvahā. ",
+          "sourceLines": [
+            28
+          ],
+          "wholeSourceLines": [
+            "both in this life & in lives to come—"
+          ],
+          "starts": "both in this life & in lives to",
+          "none": false,
+          "current": "leading to welfare & happiness "
+        },
+        {
+          "key": "an8.54:18.1",
+          "pali": "Diṭṭhadhammahitatthāya, ",
+          "sourceLines": [
+            29
+          ],
+          "wholeSourceLines": [
+            "have been declared by the one"
+          ],
+          "starts": "have been declared by the one",
+          "none": false,
+          "current": "both in this life & in lives to come— "
+        },
+        {
+          "key": "an8.54:18.2",
+          "pali": "samparāyasukhāya ca; ",
+          "sourceLines": [
+            30
+          ],
+          "wholeSourceLines": [
+            "who is truly named."
+          ],
+          "starts": "who is truly named.",
+          "none": false,
+          "current": "have been declared by the one\nwho is truly named. "
+        },
+        {
+          "key": "an8.54:18.3",
+          "pali": "Evametaṁ gahaṭṭhānaṁ, ",
+          "sourceLines": [
+            31
+          ],
+          "wholeSourceLines": [
+            "And this is how, for householders,"
+          ],
+          "starts": "And this is how, for householders,",
+          "none": false,
+          "current": "And this is how, for householders, "
+        },
+        {
+          "key": "an8.54:18.4",
+          "pali": "cāgo puññaṁ pavaḍḍhatī”ti. ",
+          "sourceLines": [
+            32
+          ],
+          "wholeSourceLines": [
+            "generosity & merit increase.”"
+          ],
+          "starts": "generosity & merit increase.”",
+          "none": false,
+          "current": "generosity & merit increase.” "
+        }
+      ],
+      "rationale": "Source 28 renders both lives (verse 18) before source 29–30 render the declaration (verse 17). Group 17–18. Exactly eight source lines and eight Pali lines require one whole source line per row, filling 17.3 and shifting the following starts through 18.2.",
+      "activeDirectives": [
+        "an8.54:17.3 starts: leading to welfare & happiness",
+        "an8.54:17.4 starts: both in this life & in lives to",
+        "an8.54:18.1 starts: have been declared by the one",
+        "an8.54:18.2 starts: who is truly named."
+      ]
+    },
+    {
+      "key": "snp3.1:6.4",
+      "text": "snp3.1",
+      "status": "settled-with-group",
+      "effort": "xhigh",
+      "source": "data/upstream/thanissaro/sutta/kn/snp/vagga3/snp3.1.html",
+      "groupVerses": [
+        6,
+        7
+      ],
+      "groupPaliRows": [
+        "snp3.1:6.1",
+        "snp3.1:6.2",
+        "snp3.1:6.3",
+        "snp3.1:6.4",
+        "snp3.1:7.1",
+        "snp3.1:7.2",
+        "snp3.1:7.3",
+        "snp3.1:7.4"
+      ],
+      "assignments": [
+        {
+          "key": "snp3.1:6.1",
+          "pali": "“Imaṁ bhonto nisāmetha, ",
+          "sourceLines": [
+            20
+          ],
+          "wholeSourceLines": [
+            "“Look at this one, sirs."
+          ],
+          "starts": "“Look at this one, sirs.",
+          "none": false,
+          "current": "“Look at this one, sirs. "
+        },
+        {
+          "key": "snp3.1:6.2",
+          "pali": "abhirūpo brahā suci; ",
+          "sourceLines": [
+            21
+          ],
+          "wholeSourceLines": [
+            "How handsome, stately, pure!"
+          ],
+          "starts": "How handsome, stately, pure!",
+          "none": false,
+          "current": "How handsome, stately, pure! "
+        },
+        {
+          "key": "snp3.1:6.3",
+          "pali": "Caraṇena ca sampanno, ",
+          "sourceLines": [
+            22
+          ],
+          "wholeSourceLines": [
+            "How consummate his demeanor!"
+          ],
+          "starts": "How consummate his demeanor!",
+          "none": false,
+          "current": "How consummate his demeanor! "
+        },
+        {
+          "key": "snp3.1:6.4",
+          "pali": "yugamattañca pekkhati. ",
+          "sourceLines": [
+            23,
+            24
+          ],
+          "wholeSourceLines": [
+            "Mindful, his eyes downcast,",
+            "looking only a plow-length before him."
+          ],
+          "starts": "Mindful, his eyes downcast,",
+          "none": false,
+          "current": "Mindful, his eyes downcast,\nlooking only a plow-length before him. "
+        },
+        {
+          "key": "snp3.1:7.1",
+          "pali": "Okkhittacakkhu satimā, ",
+          "sourceLines": [
+            25
+          ],
+          "wholeSourceLines": [
+            "This one’s not like one"
+          ],
+          "starts": "This one’s not like one",
+          "none": false,
+          "current": "This one’s not like one "
+        },
+        {
+          "key": "snp3.1:7.2",
+          "pali": "nāyaṁ nīcakulāmiva; ",
+          "sourceLines": [
+            26
+          ],
+          "wholeSourceLines": [
+            "from a lowly lineage:"
+          ],
+          "starts": "from a lowly lineage:",
+          "none": false,
+          "current": "from a lowly lineage: "
+        },
+        {
+          "key": "snp3.1:7.3",
+          "pali": "Rājadūtābhidhāvantu, ",
+          "sourceLines": [
+            27
+          ],
+          "wholeSourceLines": [
+            "Have the royal messengers hurry"
+          ],
+          "starts": "Have the royal messengers hurry",
+          "none": false,
+          "current": "Have the royal messengers hurry "
+        },
+        {
+          "key": "snp3.1:7.4",
+          "pali": "kuhiṁ bhikkhu gamissati”. ",
+          "sourceLines": [
+            28
+          ],
+          "wholeSourceLines": [
+            "to see where this monk will go.”"
+          ],
+          "starts": "to see where this monk will go.”",
+          "none": false,
+          "current": "to see where this monk will go.” "
+        }
+      ],
+      "rationale": "Source 23 renders verse 7’s mindful/downcast opening before source 24 finishes verse 6’s plow-length gaze. Group verses 6–7. Current nine whole source lines already occupy all eight Pali rows in source order; retain them.",
+      "activeDirectives": []
+    },
+    {
+      "key": "snp3.12:25.1",
+      "text": "snp3.12",
+      "status": "settled-with-group",
+      "effort": "xhigh",
+      "source": "data/upstream/thanissaro/sutta/kn/snp/vagga3/snp3.12.html",
+      "groupVerses": [
+        25,
+        26
+      ],
+      "groupPaliRows": [
+        "snp3.12:25.1",
+        "snp3.12:25.2",
+        "snp3.12:25.3",
+        "snp3.12:25.4",
+        "snp3.12:26.1",
+        "snp3.12:26.2",
+        "snp3.12:26.3",
+        "snp3.12:26.4",
+        "snp3.12:26.5",
+        "snp3.12:26.6"
+      ],
+      "assignments": [
+        {
+          "key": "snp3.12:25.1",
+          "pali": "“Sukhaṁ vā yadi vā dukkhaṁ, ",
+          "sourceLines": [
+            109,
+            110
+          ],
+          "wholeSourceLines": [
+            "“Knowing that",
+            "whatever is felt—"
+          ],
+          "starts": "“Knowing that",
+          "none": false,
+          "current": "“Knowing that\nwhatever is felt— "
+        },
+        {
+          "key": "snp3.12:25.2",
+          "pali": "Adukkhamasukhaṁ saha; ",
+          "sourceLines": [
+            111
+          ],
+          "wholeSourceLines": [
+            "pleasure, pain,"
+          ],
+          "starts": "pleasure, pain,",
+          "none": false,
+          "current": "pleasure, pain, "
+        },
+        {
+          "key": "snp3.12:25.3",
+          "pali": "Ajjhattañca bahiddhā ca, ",
+          "sourceLines": [
+            112
+          ],
+          "wholeSourceLines": [
+            "neither pleasure nor pain,"
+          ],
+          "starts": "neither pleasure nor pain,",
+          "none": false,
+          "current": "neither pleasure nor pain, "
+        },
+        {
+          "key": "snp3.12:25.4",
+          "pali": "Yaṁ kiñci atthi veditaṁ. ",
+          "sourceLines": [
+            113
+          ],
+          "wholeSourceLines": [
+            "within or without—"
+          ],
+          "starts": "within or without—",
+          "none": false,
+          "current": "within or without— "
+        },
+        {
+          "key": "snp3.12:26.1",
+          "pali": "Etaṁ dukkhanti ñatvāna, ",
+          "sourceLines": [
+            114
+          ],
+          "wholeSourceLines": [
+            "is stressful;"
+          ],
+          "starts": "is stressful;",
+          "none": false,
+          "current": "is stressful; "
+        },
+        {
+          "key": "snp3.12:26.2",
+          "pali": "Mosadhammaṁ palokinaṁ; ",
+          "sourceLines": [
+            115,
+            116,
+            117
+          ],
+          "wholeSourceLines": [
+            "seeing",
+            "its deceptive nature,",
+            "its dissolving,"
+          ],
+          "starts": "seeing",
+          "none": false,
+          "current": "seeing\nits deceptive nature,\nits dissolving, "
+        },
+        {
+          "key": "snp3.12:26.3",
+          "pali": "Phussa phussa vayaṁ passaṁ, ",
+          "sourceLines": [
+            118,
+            119,
+            120,
+            121
+          ],
+          "wholeSourceLines": [
+            "its passing away",
+            "at each contact,",
+            "each",
+            "contact,"
+          ],
+          "starts": "its passing away",
+          "none": false,
+          "current": "its passing away\nat each contact,\neach\ncontact, "
+        },
+        {
+          "key": "snp3.12:26.4",
+          "pali": "Evaṁ tattha vijānati; ",
+          "sourceLines": [
+            122
+          ],
+          "wholeSourceLines": [
+            "he knows it right there:"
+          ],
+          "starts": "he knows it right there:",
+          "none": false,
+          "current": "he knows it right there: "
+        },
+        {
+          "key": "snp3.12:26.5",
+          "pali": "Vedanānaṁ khayā bhikkhu, ",
+          "sourceLines": [
+            123
+          ],
+          "wholeSourceLines": [
+            "With just the ending of feeling,"
+          ],
+          "starts": "With just the ending of feeling,",
+          "none": false,
+          "current": "With just the ending of feeling, "
+        },
+        {
+          "key": "snp3.12:26.6",
+          "pali": "Nicchāto parinibbutoti. ",
+          "sourceLines": [
+            124,
+            125
+          ],
+          "wholeSourceLines": [
+            "there is no stress",
+            "coming into play."
+          ],
+          "starts": "there is no stress",
+          "none": false,
+          "current": "there is no stress\ncoming into play. "
+        }
+      ],
+      "rationale": "Source 109 renders the knowing in verse 26 before the feelings list of verse 25. Group verses 25–26. Present seventeen whole source lines are already spread over all ten Pali rows, first source line on 25.1; retain the layout.",
+      "activeDirectives": []
+    },
+    {
+      "key": "thag17.2:22.3",
+      "text": "thag17.2",
+      "status": "settled-with-group",
+      "effort": "xhigh",
+      "source": "data/upstream/thanissaro/sutta/kn/thag/thag17.2.html",
+      "groupVerses": [
+        22,
+        23
+      ],
+      "groupPaliRows": [
+        "thag17.2:22.1",
+        "thag17.2:22.2",
+        "thag17.2:22.3",
+        "thag17.2:22.4",
+        "thag17.2:23.1",
+        "thag17.2:23.2",
+        "thag17.2:23.3",
+        "thag17.2:23.4"
+      ],
+      "assignments": [
+        {
+          "key": "thag17.2:22.1",
+          "pali": "Nābhinandāmi maraṇaṁ, ",
+          "sourceLines": [
+            109
+          ],
+          "wholeSourceLines": [
+            "I don’t delight in death,"
+          ],
+          "starts": "I don’t delight in death,",
+          "none": false,
+          "current": "I don’t delight in death, "
+        },
+        {
+          "key": "thag17.2:22.2",
+          "pali": "nābhinandāmi jīvitaṁ; ",
+          "sourceLines": [
+            110
+          ],
+          "wholeSourceLines": [
+            "don’t delight in living."
+          ],
+          "starts": "don’t delight in living.",
+          "none": false,
+          "current": "don’t delight in living. "
+        },
+        {
+          "key": "thag17.2:22.3",
+          "pali": "Nikkhipissaṁ imaṁ kāyaṁ, ",
+          "sourceLines": [
+            111
+          ],
+          "wholeSourceLines": [
+            "I await my time"
+          ],
+          "starts": "I await my time",
+          "none": false,
+          "current": "I await my time "
+        },
+        {
+          "key": "thag17.2:22.4",
+          "pali": "sampajāno patissato. ",
+          "sourceLines": [
+            112
+          ],
+          "wholeSourceLines": [
+            "like a worker his wage."
+          ],
+          "starts": "like a worker his wage.",
+          "none": false,
+          "current": "like a worker his wage. "
+        },
+        {
+          "key": "thag17.2:23.1",
+          "pali": "Nābhinandāmi maraṇaṁ, ",
+          "sourceLines": [
+            113
+          ],
+          "wholeSourceLines": [
+            "I don’t delight in death,"
+          ],
+          "starts": "I don’t delight in death,",
+          "none": false,
+          "current": "I don’t delight in death, "
+        },
+        {
+          "key": "thag17.2:23.2",
+          "pali": "nābhinandāmi jīvitaṁ; ",
+          "sourceLines": [
+            114
+          ],
+          "wholeSourceLines": [
+            "don’t delight in living."
+          ],
+          "starts": "don’t delight in living.",
+          "none": false,
+          "current": "don’t delight in living. "
+        },
+        {
+          "key": "thag17.2:23.3",
+          "pali": "Kālañca paṭikaṅkhāmi, ",
+          "sourceLines": [
+            115
+          ],
+          "wholeSourceLines": [
+            "I await my time,"
+          ],
+          "starts": "I await my time,",
+          "none": false,
+          "current": "I await my time, "
+        },
+        {
+          "key": "thag17.2:23.4",
+          "pali": "nibbisaṁ bhatako yathā”. ",
+          "sourceLines": [
+            116
+          ],
+          "wholeSourceLines": [
+            "mindful, alert."
+          ],
+          "starts": "mindful, alert.",
+          "none": false,
+          "current": "mindful, alert. "
+        }
+      ],
+      "rationale": "The wage-ending stanza precedes the mindful/alert stanza in the source, reversing the Pali’s distinguishing endings. Group verses 22–23; the present eight whole source lines already occupy eight Pali rows. “I await my time” in place of the Pali body-laying is a source edition/translation difference, not a boundary repair.",
+      "activeDirectives": []
+    },
+    {
+      "key": "thig6.7:3.1",
+      "text": "thig6.7",
+      "status": "settled-with-group",
+      "effort": "xhigh",
+      "source": "data/upstream/thanissaro/sutta/kn/thig/thig6.7.html",
+      "groupVerses": [
+        3,
+        4
+      ],
+      "groupPaliRows": [
+        "thig6.7:3.1",
+        "thig6.7:3.2",
+        "thig6.7:3.3",
+        "thig6.7:3.4",
+        "thig6.7:4.1",
+        "thig6.7:4.2",
+        "thig6.7:4.3",
+        "thig6.7:4.4"
+      ],
+      "assignments": [
+        {
+          "key": "thig6.7:3.1",
+          "pali": "Kāmacchandañca byāpādaṁ, ",
+          "sourceLines": [
+            13,
+            14
+          ],
+          "wholeSourceLines": [
+            "Abandoning these lower fetters, nun—",
+            "sensual desire, ill will,"
+          ],
+          "starts": "Abandoning these lower fetters, nun—",
+          "none": false,
+          "current": "Abandoning these lower fetters, nun—\nsensual desire, ill will, "
+        },
+        {
+          "key": "thig6.7:3.2",
+          "pali": "sakkāyadiṭṭhimeva ca; ",
+          "sourceLines": [
+            15
+          ],
+          "wholeSourceLines": [
+            "self-identity views,"
+          ],
+          "starts": "self-identity views,",
+          "none": false,
+          "current": "self-identity views, "
+        },
+        {
+          "key": "thig6.7:3.3",
+          "pali": "Sīlabbataparāmāsaṁ, ",
+          "sourceLines": [
+            16
+          ],
+          "wholeSourceLines": [
+            "grasping at habits & practices,"
+          ],
+          "starts": "grasping at habits & practices,",
+          "none": false,
+          "current": "grasping at habits & practices, "
+        },
+        {
+          "key": "thig6.7:3.4",
+          "pali": "vicikicchañca pañcamaṁ. ",
+          "sourceLines": [
+            17
+          ],
+          "wholeSourceLines": [
+            "and uncertainty as the fifth—"
+          ],
+          "starts": "and uncertainty as the fifth—",
+          "none": false,
+          "current": "and uncertainty as the fifth— "
+        },
+        {
+          "key": "thig6.7:4.1",
+          "pali": "Saṁyojanāni etāni, ",
+          "sourceLines": [
+            18
+          ],
+          "wholeSourceLines": [
+            "you won’t come"
+          ],
+          "starts": "you won’t come",
+          "none": false,
+          "current": "you won’t come "
+        },
+        {
+          "key": "thig6.7:4.2",
+          "pali": "pajahitvāna bhikkhunī; ",
+          "sourceLines": [],
+          "wholeSourceLines": [],
+          "starts": null,
+          "none": true,
+          "current": ""
+        },
+        {
+          "key": "thig6.7:4.3",
+          "pali": "Orambhāgamanīyāni, ",
+          "sourceLines": [
+            19
+          ],
+          "wholeSourceLines": [
+            "to this again."
+          ],
+          "starts": "to this again.",
+          "none": false,
+          "current": "to this again. "
+        },
+        {
+          "key": "thig6.7:4.4",
+          "pali": "nayidaṁ punarehisi. ",
+          "sourceLines": [],
+          "wholeSourceLines": [],
+          "starts": null,
+          "none": true,
+          "current": ""
+        }
+      ],
+      "rationale": "Source 13 renders the abandoning of verse 4 before verse 3’s fetter list. Group 3–4. Current seven source lines are whole and ordered. Empty 4.2 and 4.4 are each lone empty rows and reveal under 4.1 and 4.3, so all eight Pali lines show; retain layout.",
+      "activeDirectives": [],
+      "revealWithoutCoverage": [
+        "thig6.7:4.2",
+        "thig6.7:4.4"
+      ]
+    },
+    {
+      "key": "ud7.8:4.6",
+      "text": "ud7.8",
+      "status": "deferred-segmenter",
+      "effort": "xhigh",
+      "source": "data/upstream/thanissaro/sutta/kn/ud/vagga7/ud7.8.html",
+      "groupVerses": [
+        4
+      ],
+      "groupPaliRows": [
+        "ud7.8:4.1",
+        "ud7.8:4.2",
+        "ud7.8:4.3",
+        "ud7.8:4.4",
+        "ud7.8:4.5",
+        "ud7.8:4.6"
+      ],
+      "assignments": [
+        {
+          "key": "ud7.8:4.1",
+          "pali": "“Yassa siyā sabbadā sati, ",
+          "sourceLines": [
+            3,
+            4
+          ],
+          "wholeSourceLines": [
+            "If one were to have",
+            "mindfulness always"
+          ],
+          "starts": "If one were to have",
+          "none": false,
+          "current": "If one were to have\nmindfulness always "
+        },
+        {
+          "key": "ud7.8:4.2",
+          "pali": "Satataṁ kāyagatā upaṭṭhitā; ",
+          "sourceLines": [
+            5,
+            6
+          ],
+          "wholeSourceLines": [
+            "established, continually",
+            "immersed in the body,"
+          ],
+          "starts": "established, continually",
+          "none": false,
+          "current": "established, continually\nimmersed in the body, "
+        },
+        {
+          "key": "ud7.8:4.3",
+          "pali": "No cassa no ca me siyā, ",
+          "sourceLines": [
+            7,
+            8,
+            9
+          ],
+          "wholeSourceLines": [
+            "(thinking,)",
+            "“It should not be,",
+            "it should not be mine;"
+          ],
+          "starts": "(thinking,)",
+          "none": false,
+          "current": "(thinking,)\n“It should not be,\nit should not be mine; "
+        },
+        {
+          "key": "ud7.8:4.4",
+          "pali": "Na bhavissati na ca me bhavissati; ",
+          "sourceLines": [
+            10,
+            11
+          ],
+          "wholeSourceLines": [
+            "it will not be,",
+            "it will not be mine”–"
+          ],
+          "starts": "it will not be,",
+          "none": false,
+          "current": "it will not be,\nit will not be mine”– "
+        },
+        {
+          "key": "ud7.8:4.5",
+          "pali": "Anupubbavihāri tattha so, ",
+          "sourceLines": [
+            12,
+            13
+          ],
+          "wholeSourceLines": [
+            "there,",
+            "in that step-by-step dwelling,"
+          ],
+          "starts": "there,",
+          "none": false,
+          "current": "there,\nin that step-by-step dwelling, "
+        },
+        {
+          "key": "ud7.8:4.6",
+          "pali": "Kāleneva tare visattikan”ti. ",
+          "sourceLines": [
+            14,
+            15,
+            16
+          ],
+          "wholeSourceLines": [
+            "one in no long time",
+            "would cross over",
+            "attachment."
+          ],
+          "starts": "one in no long time",
+          "none": false,
+          "current": "one in no long time\nwould cross over\nattachment. In AN 10:29, the Buddha recommends this view as conducive to developing dispassion for becoming. However, in MN 106 he warns that it can lead to the refined equanimity of the dimension of neither perception nor non-perception, which can become an object of clinging. Only if that subtle clinging is detected can all clinging be abandoned. The Canon’s most extended discussion of this theme of meditation is in SN 22:55. See Appendix Two. For more on this topic, see The Paradox of Becoming, chapter 5. "
+        }
+      ],
+      "rationale": "The verse ends at source 16 “attachment.” Sources 17–19 are translator’s editorial commentary outside the HTML note box and have no Pali counterpart. Preserve that text; do not invent a correspondence with the closing Aṭṭhamaṁ row. Separating it into notes needs source/notes parsing and independent upstream-check support, which current scripts do not supply.",
+      "activeDirectives": [],
+      "desiredEditorialMove": {
+        "sourceLines": [
+          17,
+          18,
+          19
+        ],
+        "destination": "note on ud7.8:4.6",
+        "paliCorrespondence": "none; translator editorial commentary"
+      },
+      "segmenterNeeded": "Treat post-note editorial paragraphs as commentary and preserve their original text/links in notes; update the independent check-upstream parser to classify those same paragraphs as commentary. Existing verse lines remain whole, but editorial stays attached pending that support."
+    },
+    {
+      "key": "snp3.6:46.1",
+      "text": "snp3.6",
+      "status": "repair-ready",
+      "effort": "xhigh",
+      "source": "data/upstream/thanissaro/sutta/kn/snp/vagga3/snp3.6.html",
+      "groupVerses": [
+        45,
+        46
+      ],
+      "groupPaliRows": [
+        "snp3.6:45.1",
+        "snp3.6:45.2",
+        "snp3.6:45.3",
+        "snp3.6:45.4",
+        "snp3.6:46.1",
+        "snp3.6:46.2",
+        "snp3.6:46.3",
+        "snp3.6:46.4"
+      ],
+      "assignments": [
+        {
+          "key": "snp3.6:45.1",
+          "pali": "Yā me kaṅkhā pure āsi, ",
+          "sourceLines": [
+            215
+          ],
+          "wholeSourceLines": [
+            "The doubt I had before,"
+          ],
+          "starts": "The doubt I had before,",
+          "none": false,
+          "current": "The doubt I had before, "
+        },
+        {
+          "key": "snp3.6:45.2",
+          "pali": "Taṁ me byākāsi cakkhumā; ",
+          "sourceLines": [
+            216
+          ],
+          "wholeSourceLines": [
+            "you have answered, One with Eyes."
+          ],
+          "starts": "you have answered, One with Eyes.",
+          "none": false,
+          "current": "you have answered, One with Eyes. "
+        },
+        {
+          "key": "snp3.6:45.3",
+          "pali": "Addhā munīsi sambuddho, ",
+          "sourceLines": [
+            217
+          ],
+          "wholeSourceLines": [
+            "Yes, you are a sage, rightly"
+          ],
+          "starts": "Yes, you are a sage, rightly",
+          "none": false,
+          "current": "Yes, you are a sage, rightly\nself-awakened. "
+        },
+        {
+          "key": "snp3.6:45.4",
+          "pali": "Natthi nīvaraṇā tava. ",
+          "sourceLines": [
+            218
+          ],
+          "wholeSourceLines": [
+            "self-awakened. You have"
+          ],
+          "starts": "self-awakened. You have",
+          "none": false,
+          "current": "You have\nno hindrances. "
+        },
+        {
+          "key": "snp3.6:46.1",
+          "pali": "Upāyāsā ca te sabbe, ",
+          "sourceLines": [
+            219
+          ],
+          "wholeSourceLines": [
+            "no hindrances. Your despairs"
+          ],
+          "starts": "no hindrances. Your despairs",
+          "none": false,
+          "current": "Your despairs "
+        },
+        {
+          "key": "snp3.6:46.2",
+          "pali": "Viddhastā vinaḷīkatā; ",
+          "sourceLines": [
+            220
+          ],
+          "wholeSourceLines": [
+            "are fallen down, cut from the stem."
+          ],
+          "starts": "are fallen down, cut from the stem.",
+          "none": false,
+          "current": "are fallen down, cut from the stem. "
+        },
+        {
+          "key": "snp3.6:46.3",
+          "pali": "Sītibhūto damappatto, ",
+          "sourceLines": [
+            221
+          ],
+          "wholeSourceLines": [
+            "Cooled, attained to self-control,"
+          ],
+          "starts": "Cooled, attained to self-control,",
+          "none": false,
+          "current": "Cooled, attained to self-control,\nsteadfast, "
+        },
+        {
+          "key": "snp3.6:46.4",
+          "pali": "Dhitimā saccanikkamo. ",
+          "sourceLines": [
+            222
+          ],
+          "wholeSourceLines": [
+            "steadfast, enduring in truth:"
+          ],
+          "starts": "steadfast, enduring in truth:",
+          "none": false,
+          "current": "enduring in truth: "
+        }
+      ],
+      "rationale": "Source 218 combines the self-awakened ending with “You have”; source 219 combines the absence of hindrances (verse 45) with despairs (verse 46). Group verses 45–46. Exactly eight true source lines on eight Pali lines restores three internal starts, including the whole steadfast/enduring-in-truth line. Keep already corrected verse 47 untouched.",
+      "activeDirectives": [
+        "snp3.6:45.4 starts: self-awakened. You have",
+        "snp3.6:46.1 starts: no hindrances. Your despairs",
+        "snp3.6:46.4 starts: steadfast, enduring in truth:"
+      ]
+    }
+  ],
+  "activeDirectiveCount": 13,
+  "repairReadyCases": 6,
+  "settledWithGroupCases": 5,
+  "deferredCases": 3,
+  "requiredSupersededDirectives": [
+    {
+      "file": "data/thanissaro/review/hand/flagged-001.findings",
+      "line": 17,
+      "old": "an6.45:21.4 starts: of his belongings, righteously-gained, wins both goals:",
+      "replacement": "an6.45:21.4 starts: righteously-gained,",
+      "required": true,
+      "reason": "New xhigh whole-source-line group judgment replaces incompatible old boundary."
+    },
+    {
+      "file": "data/thanissaro/review/read/batch-083.findings",
+      "line": 18,
+      "old": "an6.45:21.4 starts: of his belongings, righteously-gained, wins both goals:",
+      "replacement": "an6.45:21.4 starts: righteously-gained,",
+      "required": true,
+      "reason": "New xhigh whole-source-line group judgment replaces incompatible old boundary."
+    },
+    {
+      "file": "data/thanissaro/review/verse/batch-021.findings",
+      "line": 27,
+      "old": "an8.54:17.3 none",
+      "replacement": "an8.54:17.3 starts: leading to welfare & happiness",
+      "required": true,
+      "reason": "New xhigh whole-source-line group judgment replaces incompatible old boundary."
+    },
+    {
+      "file": "data/thanissaro/review/verse/batch-021.findings",
+      "line": 28,
+      "old": "an8.54:17.4 starts: leading to welfare & happiness",
+      "replacement": "an8.54:17.4 starts: both in this life & in lives to",
+      "required": true,
+      "reason": "New xhigh whole-source-line group judgment replaces incompatible old boundary."
+    },
+    {
+      "file": "data/thanissaro/review/verse/batch-021.findings",
+      "line": 29,
+      "old": "an8.54:18.1 starts: both in this life & in lives to",
+      "replacement": "an8.54:18.1 starts: have been declared by the one",
+      "required": true,
+      "reason": "New xhigh whole-source-line group judgment replaces incompatible old boundary."
+    },
+    {
+      "file": "data/thanissaro/review/verse/batch-021.findings",
+      "line": 30,
+      "old": "an8.54:18.2 starts: have been declared by the one",
+      "replacement": "an8.54:18.2 starts: who is truly named.",
+      "required": true,
+      "reason": "New xhigh whole-source-line group judgment replaces incompatible old boundary."
+    }
+  ],
+  "deferredDirectivesAreNotActive": true
+}

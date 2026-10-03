@@ -1,0 +1,105 @@
+# snp3.1
+Source: data/upstream/thanissaro/sutta/kn/snp/vagga3/snp3.1.html
+
+SOURCE 001 verse: I will praise the Going Forth,
+SOURCE 002 verse: how he went forth, the One with Eyes,
+SOURCE 003 verse: how he reasoned and chose the Going Forth.
+SOURCE 004 verse: “Household life is confining,
+SOURCE 005 verse: a realm of dust,
+SOURCE 006 verse: while going forth
+SOURCE 007 verse: is the open air.”
+SOURCE 008 verse: Seeing this, he went forth.
+SOURCE 009 verse: On going forth,
+SOURCE 010 verse: he avoided evil deeds in body.
+SOURCE 011 verse: Abandoning verbal misconduct,
+SOURCE 012 verse: he purified his livelihood.
+SOURCE 013 verse: Then he, the Buddha, went to Rājagaha,
+SOURCE 014 verse: the mountain fortress of the Magadhans,
+SOURCE 015 verse: and wandered for alms,
+SOURCE 016 verse: teeming with the foremost marks.
+SOURCE 017 verse: King Bimbisāra, standing in his palace, saw him,
+SOURCE 018 verse: and on seeing him, consummate in marks,
+SOURCE 019 verse: said this:
+SOURCE 020 verse: “Look at this one, sirs.
+SOURCE 021 verse: How handsome, stately, pure!
+SOURCE 022 verse: How consummate his demeanor!
+SOURCE 023 verse: Mindful, his eyes downcast,
+SOURCE 024 verse: looking only a plow-length before him.
+SOURCE 025 verse: This one’s not like one
+SOURCE 026 verse: from a lowly lineage:
+SOURCE 027 verse: Have the royal messengers hurry
+SOURCE 028 verse: to see where this monk will go.”
+SOURCE 029 verse: They—the messengers dispatched—
+SOURCE 030 verse: followed behind him.
+SOURCE 031 verse: “Where will this monk go?
+SOURCE 032 verse: Where will his dwelling place be?”
+SOURCE 033 verse: As he went from house to house—
+SOURCE 034 verse: well-restrained, his sense-doors guarded,
+SOURCE 035 verse: mindful, alert—
+SOURCE 036 verse: his bowl filled quickly.
+SOURCE 037 verse: Then he, the sage, completing his alms round,
+SOURCE 038 verse: left the city, headed for Mount Paṇḍava.
+SOURCE 039 verse: “That’s where his dwelling will be.”
+SOURCE 040 verse: Seeing him go to his dwelling place,
+SOURCE 041 verse: three messengers sat down,
+SOURCE 042 verse: while one returned to tell the king.
+SOURCE 043 verse: “That monk, your majesty,
+SOURCE 044 verse: on the flank of Paṇḍava,
+SOURCE 045 verse: sits like a tiger, a bull,
+SOURCE 046 verse: a lion in a mountain cleft.”
+SOURCE 047 verse: Hearing the messenger’s words,
+SOURCE 048 verse: the noble-warrior king
+SOURCE 049 verse: straight away set out by royal coach,
+SOURCE 050 verse: for Mount Paṇḍava.
+SOURCE 051 verse: Going as far as the coach would go,
+SOURCE 052 verse: the noble-warrior king
+SOURCE 053 verse: got down from the coach,
+SOURCE 054 verse: went up on foot,
+SOURCE 055 verse: and on arrival sat down.
+SOURCE 056 verse: Sitting there,
+SOURCE 057 verse: he exchanged courteous greetings,
+SOURCE 058 verse: and after giving friendly greetings,
+SOURCE 059 verse: said this:
+SOURCE 060 verse: “Young you are, and youthful,
+SOURCE 061 verse: in the first stage of youth,
+SOURCE 062 verse: consummate in stature & coloring
+SOURCE 063 verse: like a noble-warrior by birth.
+SOURCE 064 verse: You would look glorious
+SOURCE 065 verse: in the vanguard of an army,
+SOURCE 066 verse: arrayed with an elephant squadron.
+SOURCE 067 verse: I offer you wealth : Enjoy it.
+SOURCE 068 verse: I ask your birth : Inform me.”
+SOURCE 069 verse: “Straight ahead, your majesty,
+SOURCE 070 verse: by the foothills of the Himalayas,
+SOURCE 071 verse: is a country consummate
+SOURCE 072 verse: in energy & wealth,
+SOURCE 073 verse: inhabited by Kosalans:
+SOURCE 074 verse: Solar by clan,
+SOURCE 075 verse: Sakyans by birth.
+SOURCE 076 verse: From that lineage I have gone forth,
+SOURCE 077 verse: but not in hope of sensuality.
+SOURCE 078 verse: Seeing the danger in sensuality
+SOURCE 079 verse: —and renunciation as rest—
+SOURCE 080 verse: I go to strive.
+SOURCE 081 verse: That’s where my heart delights.”
+SOURCE 082 prose: vv. 405–424
+SOURCE 083 prose: See also: MN 26; MN 36; AN 3:39; AN 5:57
+
+## Pali and present cuts
+
+snp3.1:5.1 | P: Tamaddasā bimbisāro,  | S: Bimbisāra saw him  | T: King Bimbisāra, standing in his palace, saw him, 
+snp3.1:5.2 | P: pāsādasmiṁ patiṭṭhito;  | S: while standing atop his longhouse.  | T: 
+snp3.1:5.3 | P: Disvā lakkhaṇasampannaṁ,  | S: Noticing that he was endowed with marks,  | T: and on seeing him, consummate in marks, 
+snp3.1:5.4 | P: imamatthaṁ abhāsatha.  | S: he said the following:  | T: said this: 
+snp3.1:6.1 | P: “Imaṁ bhonto nisāmetha,  | S: ‘Pay heed, sirs, to this one,  | T: “Look at this one, sirs. 
+snp3.1:6.2 | P: abhirūpo brahā suci;  | S: handsome, majestic, radiant;  | T: How handsome, stately, pure! 
+snp3.1:6.3 | P: Caraṇena ca sampanno,  | S: accomplished in deportment,  | T: How consummate his demeanor! 
+snp3.1:6.4 | P: yugamattañca pekkhati.  | S: he looks just a plough’s length in front.  | T: Mindful, his eyes downcast, ⏎ looking only a plow-length before him. 
+snp3.1:7.1 | P: Okkhittacakkhu satimā,  | S: Eyes downcast, mindful,  | T: This one’s not like one 
+snp3.1:7.2 | P: nāyaṁ nīcakulāmiva;  | S: unlike one from a low family.  | T: from a lowly lineage: 
+snp3.1:7.3 | P: Rājadūtābhidhāvantu,  | S: Let the king’s messengers run out,  | T: Have the royal messengers hurry 
+snp3.1:7.4 | P: kuhiṁ bhikkhu gamissati”.  | S: and find where the mendicant will go.’  | T: to see where this monk will go.” 
+snp3.1:8.1 | P: Te pesitā rājadūtā,  | S: The messengers sent out  | T: They—the messengers dispatched— 
+snp3.1:8.2 | P: piṭṭhito anubandhisuṁ;  | S: followed right behind, thinking  | T: followed behind him. 
+snp3.1:8.3 | P: Kuhiṁ gamissati bhikkhu,  | S: ‘Where will the mendicant go?  | T: “Where will this monk go? 
+snp3.1:8.4 | P: kattha vāso bhavissati.  | S: Where shall he find a place to stay?’  | T: Where will his dwelling place be?” 

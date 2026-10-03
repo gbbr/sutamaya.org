@@ -1,0 +1,39 @@
+{
+  "status": "complete; verified and copied back; no commit",
+  "textsRead": 100,
+  "rowsRead": 2517,
+  "readerBatchesCompleted": 7,
+  "proposalsJudged": 3,
+  "keptDirectives": 3,
+  "rateBeforeRepairsPercent": 0.11918951132300357,
+  "changedEnglishRows": 6,
+  "changedTexts": [
+    "an10.96",
+    "an4.192"
+  ],
+  "checks": {
+    "upstreamDiffer": 0,
+    "integrityProblems": 0,
+    "partialSourceLines": 0,
+    "hiddenTranslatedVersePali": 0,
+    "newlyHiddenOutsideCoverage": [
+      "an4.192:9.9"
+    ],
+    "newlyHiddenReviewedAbbreviatedRepetition": [
+      "an4.192:9.9"
+    ],
+    "coverageAdded": [],
+    "plainReproducesExactly": true,
+    "freshFilesCompared": 2679,
+    "crossSuspects": 0,
+    "listSuspects": 0,
+    "copyBackMatchesVerifiedCorpus": true
+  },
+  "claudeCrossModelReview": "pending after this session",
+  "job1DeferredSegmenterCases": [
+    "sn4.24:10.4",
+    "an4.19:4.1",
+    "ud7.8:4.6"
+  ],
+  "committed": false
+}

@@ -1,0 +1,44 @@
+# an4.19
+Source: data/upstream/thanissaro/sutta/an/an4/an4.19.html
+
+SOURCE 001 prose: “There are these four ways of going off course. Which four? One goes off course through desire. One goes off course through aversion. One goes off course through delusion. One goes off course through fear. These are the four ways of going off course.”
+SOURCE 002 verse: If you—
+SOURCE 003 verse: through desire,
+SOURCE 004 verse: aversion,
+SOURCE 005 verse: delusion,
+SOURCE 006 verse: fear—
+SOURCE 007 verse: transgress the Dhamma,
+SOURCE 008 verse: your honor wanes,
+SOURCE 009 verse: as in the dark fortnight,
+SOURCE 010 verse: the moon.
+SOURCE 011 prose: “There are these four ways of not going off course. Which four? One doesn’t go off course through desire. One doesn’t go off course through aversion. One doesn’t go off course through delusion. One doesn’t go off course through fear. These are the four ways of not going off course.”
+SOURCE 012 verse: If you don’t—
+SOURCE 013 verse: through desire,
+SOURCE 014 verse: aversion,
+SOURCE 015 verse: delusion,
+SOURCE 016 verse: fear—
+SOURCE 017 verse: transgress the Dhamma,
+SOURCE 018 verse: your honor waxes,
+SOURCE 019 verse: as in the bright fortnight,
+SOURCE 020 verse: the moon.
+SOURCE 021 prose: See also: AN 9:7
+
+## Pali and present cuts
+
+an4.19:1.1 | P: “Cattārimāni, bhikkhave, agatigamanāni.  | S: “Mendicants, there are these four ways of making prejudiced decisions.  | T: “There are these four ways of going off course. 
+an4.19:1.2 | P: Katamāni cattāri?  | S: What four?  | T: Which four? 
+an4.19:1.3 | P: Chandāgatiṁ gacchati, dosāgatiṁ gacchati, mohāgatiṁ gacchati, bhayāgatiṁ gacchati— | S: Making decisions prejudiced by favoritism, hostility, stupidity, and cowardice.  | T: One goes off course through desire. One goes off course through aversion. One goes off course through delusion. One goes off course through fear. 
+an4.19:1.4 | P: Imāni kho, bhikkhave, cattāri agatigamanāni.  | S: These are the four ways of making prejudiced decisions.  | T: These are the four ways of going off course.” 
+an4.19:2.1 | P: Cattārimāni, bhikkhave, nāgatigamanāni.  | S: There are these four ways of making unprejudiced decisions.  | T: 
+an4.19:2.2 | P: Katamāni cattāri?  | S: What four?  | T: 
+an4.19:2.3 | P: Na chandāgatiṁ gacchati, na dosāgatiṁ gacchati, na mohāgatiṁ gacchati, na bhayāgatiṁ gacchati— | S: Making decisions unprejudiced by favoritism, hostility, stupidity, and cowardice.  | T: 
+an4.19:2.4 | P: Imāni kho, bhikkhave, cattāri nāgatigamanānīti.  | S: These are the four ways of making unprejudiced decisions.  | T: 
+an4.19:3.1 | P: Chandā dosā bhayā mohā,  | S: If you act against the teaching  | T: If you— 
+an4.19:3.2 | P: yo dhammaṁ ativattati;  | S: out of favoritism, hostility, cowardice, or stupidity,  | T: through desire, ⏎ aversion, ⏎ delusion, ⏎ fear— ⏎ transgress the Dhamma, 
+an4.19:3.3 | P: Nihīyati tassa yaso,  | S: your fame fades away,  | T: your honor wanes, 
+an4.19:3.4 | P: kāḷapakkheva candimā.  | S: like the moon in the waning fortnight.  | T: as in the dark fortnight, ⏎ the moon. 
+an4.19:4.1 | P: Chandā dosā bhayā mohā,  | S: If you don’t act against the teaching  | T: “There are these four ways of not going off course. Which four? One doesn’t go off course through desire. One doesn’t go off course through aversion. One doesn’t go off course through delusion. One doesn’t go off course through fear. These are the four ways of not going off course.” ⏎ If you don’t— 
+an4.19:4.2 | P: yo dhammaṁ nātivattati;  | S: out of favoritism, hostility, cowardice, and stupidity,  | T: through desire, ⏎ aversion, ⏎ delusion, ⏎ fear— ⏎ transgress the Dhamma, 
+an4.19:4.3 | P: Āpūrati tassa yaso,  | S: your fame swells,  | T: your honor waxes, 
+an4.19:4.4 | P: sukkapakkheva candimā”ti.  | S: like the moon in the waxing fortnight.”  | T: as in the bright fortnight, ⏎ the moon. 
+an4.19:4.5 | P: Navamaṁ.  | S:  | T: 

@@ -1,0 +1,75 @@
+{
+  "batch": "004",
+  "packet": "data/thanissaro/review/audit6/batch-004.pali.txt",
+  "rows_read": 296,
+  "all_rows_read": true,
+  "pali_only_rows_read": true,
+  "texts_read": [
+    {
+      "id": "an4.182",
+      "rows": 14
+    },
+    {
+      "id": "an4.192",
+      "rows": 73
+    },
+    {
+      "id": "an4.245",
+      "rows": 24
+    },
+    {
+      "id": "an4.88",
+      "rows": 17
+    },
+    {
+      "id": "an4.96",
+      "rows": 28
+    },
+    {
+      "id": "an5.254",
+      "rows": 6
+    },
+    {
+      "id": "an5.257-263",
+      "rows": 9
+    },
+    {
+      "id": "an5.7",
+      "rows": 19
+    },
+    {
+      "id": "an5.99",
+      "rows": 22
+    },
+    {
+      "id": "an6.86",
+      "rows": 9
+    },
+    {
+      "id": "an6.87",
+      "rows": 9
+    },
+    {
+      "id": "an7.53",
+      "rows": 66
+    }
+  ],
+  "proposals": [
+    {
+      "keys": [
+        "an4.192:9.9"
+      ],
+      "action": "none; allow the clause to return to the sentence at an4.192:9.5",
+      "reason": "The compressed source sentence begins at 9.5 and ends with a dependent clause, not a new sentence, presently placed at 9.9. The Pali at 9.5 already contains that exact conclusion (duppañño ... nā ... paññavā); 9.9 is a repeated conclusion after an omitted explanation. Emptying 9.9 reunites the complete abbreviated sentence on the row it starts. The parallel positive sentence is already together on 11.5.",
+      "source_verified": "data/upstream/thanissaro/sutta/an/an4/an4.192.html:26"
+    }
+  ],
+  "concerns": [],
+  "notes": [
+    "All packet lines 1–334 read in consecutive portions, including the Pali-only repetition rows.",
+    "AN 4.182 list members and AN 4.96 repeated subduing clauses correctly retain separate Pali rows, including rows Sujato leaves empty.",
+    "AN 5.257–263 source compression lies within its matching grouped Pali rows, so no splitting is required.",
+    "AN 5.99 ellipsis-separated animals and assemblies correctly sit on distinct corresponding rows.",
+    "AN 7.53 read through 12.5, the last row supplied in this packet; narrative, dialogue, and absorption passages have no further sure misplaced boundary."
+  ]
+}

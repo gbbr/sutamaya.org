@@ -1,0 +1,31 @@
+{
+  "timing": "after every proposal judged, before applying any audit6 repairs",
+  "denominator": "audit5 read --every displayed non-title rows, including Pali-only rows and :0 story headings",
+  "numerator": "distinct approved boundary directives, including none directives",
+  "collections": {
+    "sn": {
+      "textsRead": 33,
+      "rowsRead": 828,
+      "boundaryDirectives": 0,
+      "ratePercent": 0.0
+    },
+    "an": {
+      "textsRead": 25,
+      "rowsRead": 831,
+      "boundaryDirectives": 3,
+      "ratePercent": 0.36101083032490977
+    },
+    "kn": {
+      "textsRead": 42,
+      "rowsRead": 858,
+      "boundaryDirectives": 0,
+      "ratePercent": 0.0
+    },
+    "all": {
+      "textsRead": 100,
+      "rowsRead": 2517,
+      "boundaryDirectives": 3,
+      "ratePercent": 0.11918951132300357
+    }
+  }
+}

@@ -1,0 +1,330 @@
+{
+  "groups": [
+    {
+      "text": "an3.39",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an3.39:11.1",
+          "starts": "as one who sees",
+          "settles": {
+            "after": "intoxication\nwith health, youth, & life",
+            "placed": true
+          }
+        },
+        {
+          "key": "an3.39:11.2",
+          "starts": "renunciation as rest.",
+          "settles": {
+            "after": "h health, youth, & life\nas one who sees",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an3.39:10.4",
+          "sujato": "of health, of youth,",
+          "before": "with health, youth,",
+          "after": "with health, youth, & life"
+        },
+        {
+          "key": "an3.39:11.1",
+          "sujato": "and even of life—",
+          "before": "& life",
+          "after": "as one who sees"
+        },
+        {
+          "key": "an3.39:11.2",
+          "sujato": "seeing renunciation as sanctuary.",
+          "before": "as one who sees renunciation as rest.",
+          "after": "renunciation as rest."
+        },
+        {
+          "key": "an3.39:11.3",
+          "sujato": "Zeal sprang up in me",
+          "before": "For me, energy arose,",
+          "after": "For me, energy arose,"
+        }
+      ]
+    },
+    {
+      "text": "an5.57",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an5.57:15.1",
+          "starts": "as one who sees",
+          "settles": {
+            "after": "intoxication\nwith health, youth, & life",
+            "placed": true
+          }
+        },
+        {
+          "key": "an5.57:15.2",
+          "starts": "renunciation as rest.",
+          "settles": {
+            "after": "h health, youth, & life\nas one who sees",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an5.57:14.4",
+          "sujato": "of health, of youth,",
+          "before": "with health, youth,",
+          "after": "with health, youth, & life"
+        },
+        {
+          "key": "an5.57:15.1",
+          "sujato": "and even of life—",
+          "before": "& life",
+          "after": "as one who sees"
+        },
+        {
+          "key": "an5.57:15.2",
+          "sujato": "seeing renunciation as sanctuary.",
+          "before": "as one who sees renunciation as rest.",
+          "after": "renunciation as rest."
+        },
+        {
+          "key": "an5.57:15.3",
+          "sujato": "Zeal sprang up in me",
+          "before": "For me, energy arose,",
+          "after": "For me, energy arose,"
+        }
+      ]
+    },
+    {
+      "text": "an6.45",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an6.45:21.4",
+          "starts": "righteously-gained,",
+          "settles": {
+            "after": "t home,\nmaking gifts of his belongings,",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an6.45:21.3",
+          "sujato": "With confident heart, they give",
+          "before": "But one with confidence, living at home, making gifts",
+          "after": "But one with confidence, living at home, making gifts of his belongings,"
+        },
+        {
+          "key": "an6.45:21.4",
+          "sujato": "with wealth that is properly earned.",
+          "before": "of his belongings, righteously-gained,",
+          "after": "righteously-gained,"
+        },
+        {
+          "key": "an6.45:22.1",
+          "sujato": "That faithful householder of discernment",
+          "before": "wins both goals:",
+          "after": "wins both goals:"
+        }
+      ]
+    },
+    {
+      "text": "an8.54",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an8.54:17.3",
+          "starts": "leading to welfare & happiness",
+          "settles": {
+            "after": " household life,\nthese eight qualities—",
+            "placed": true,
+            "own": true
+          }
+        },
+        {
+          "key": "an8.54:17.4",
+          "starts": "both in this life & in lives to",
+          "settles": {
+            "after": "alities—\nleading to welfare & happiness",
+            "placed": true
+          }
+        },
+        {
+          "key": "an8.54:18.1",
+          "starts": "have been declared by the one",
+          "settles": {
+            "after": "s\nboth in this life & in lives to come—",
+            "placed": true,
+            "own": true
+          }
+        },
+        {
+          "key": "an8.54:18.2",
+          "starts": "who is truly named.",
+          "settles": {
+            "after": " to come—\nhave been declared by the one",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an8.54:17.2",
+          "sujato": "of a faithful householder of discernment",
+          "before": "these eight qualities—",
+          "after": "these eight qualities—"
+        },
+        {
+          "key": "an8.54:17.3",
+          "sujato": "are declared by the one who is truly named",
+          "before": "",
+          "after": "leading to welfare & happiness"
+        },
+        {
+          "key": "an8.54:17.4",
+          "sujato": "to lead to happiness in both spheres,",
+          "before": "leading to welfare & happiness",
+          "after": "both in this life & in lives to come—"
+        },
+        {
+          "key": "an8.54:18.1",
+          "sujato": "welfare and benefit in this life,",
+          "before": "both in this life & in lives to come—",
+          "after": "have been declared by the one"
+        },
+        {
+          "key": "an8.54:18.2",
+          "sujato": "and happiness in lives to come.",
+          "before": "have been declared by the one who is truly named.",
+          "after": "who is truly named."
+        },
+        {
+          "key": "an8.54:18.3",
+          "sujato": "This is how, for a householder,",
+          "before": "And this is how, for householders,",
+          "after": "And this is how, for householders,"
+        }
+      ]
+    },
+    {
+      "text": "snp3.6",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "snp3.6:45.4",
+          "starts": "self-awakened. You have",
+          "settles": {
+            "after": "with Eyes.\nYes, you are a sage, rightly",
+            "placed": true
+          }
+        },
+        {
+          "key": "snp3.6:46.1",
+          "starts": "no hindrances. Your despairs",
+          "settles": {
+            "after": "a sage, rightly\nself-awakened. You have",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "snp3.6:45.3",
+          "sujato": "Clearly you are a sage, an Awakened One,",
+          "before": "Yes, you are a sage, rightly self-awakened.",
+          "after": "Yes, you are a sage, rightly"
+        },
+        {
+          "key": "snp3.6:45.4",
+          "sujato": "there are no hindrances in you.",
+          "before": "You have no hindrances.",
+          "after": "self-awakened. You have"
+        },
+        {
+          "key": "snp3.6:46.1",
+          "sujato": "All your distress",
+          "before": "Your despairs",
+          "after": "no hindrances. Your despairs"
+        },
+        {
+          "key": "snp3.6:46.2",
+          "sujato": "is blown away and mown down.",
+          "before": "are fallen down, cut from the stem.",
+          "after": "are fallen down, cut from the stem."
+        }
+      ]
+    },
+    {
+      "text": "snp3.6",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "snp3.6:46.4",
+          "starts": "steadfast, enduring in truth:",
+          "settles": {
+            "after": "stem.\nCooled, attained to self-control,",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "snp3.6:46.3",
+          "sujato": "Cooled, tamed, steadfast:",
+          "before": "Cooled, attained to self-control, steadfast,",
+          "after": "Cooled, attained to self-control,"
+        },
+        {
+          "key": "snp3.6:46.4",
+          "sujato": "truth is your strength.",
+          "before": "enduring in truth:",
+          "after": "steadfast, enduring in truth:"
+        },
+        {
+          "key": "snp3.6:47.1",
+          "sujato": "O giant among giants, O great hero,",
+          "before": "In your words, Nāga of nāgas, great hero,",
+          "after": "In your words, Nāga of nāgas, great hero,"
+        }
+      ]
+    },
+    {
+      "text": "sn3.19",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn3.19:7.1",
+          "starts": "“Like water",
+          "settles": {
+            "after": "e Well-Gone, the Teacher, said further:",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn3.19:6.6",
+          "sujato": "it’s used, not wasted.",
+          "before": "his wealth, properly put to use, goes to a good use and not to waste.”",
+          "after": "his wealth, properly put to use, goes to a good use and not to waste.” That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further:"
+        },
+        {
+          "key": "sn3.19:7.1",
+          "sujato": "As cool water in an uninhabited region",
+          "before": "That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further: “Like water in a haunted place",
+          "after": "“Like water in a haunted place"
+        },
+        {
+          "key": "sn3.19:7.2",
+          "sujato": "evaporates when not drunk;",
+          "before": "that, without being imbibed, dries up:",
+          "after": "that, without being imbibed, dries up:"
+        }
+      ]
+    }
+  ],
+  "others": []
+}

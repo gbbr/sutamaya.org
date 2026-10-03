@@ -1,0 +1,86 @@
+{
+  "batch": "001",
+  "packet": "data/thanissaro/review/audit6/batch-001.pali.txt",
+  "rows_read": 406,
+  "all_rows_read": true,
+  "pali_only_rows_read": true,
+  "texts_read": [
+    {
+      "id": "an6.74",
+      "rows": 15
+    },
+    {
+      "id": "sn43.13",
+      "rows": 5
+    },
+    {
+      "id": "an1.32",
+      "rows": 4
+    },
+    {
+      "id": "thig1.1",
+      "rows": 6
+    },
+    {
+      "id": "iti91",
+      "rows": 27
+    },
+    {
+      "id": "iti68",
+      "rows": 15
+    },
+    {
+      "id": "iti56",
+      "rows": 17
+    },
+    {
+      "id": "iti29",
+      "rows": 23
+    },
+    {
+      "id": "iti47",
+      "rows": 20
+    },
+    {
+      "id": "snp5.17",
+      "rows": 23
+    },
+    {
+      "id": "iti24",
+      "rows": 24
+    },
+    {
+      "id": "iti26",
+      "rows": 24
+    },
+    {
+      "id": "snp5.2",
+      "rows": 40
+    },
+    {
+      "id": "sn16.5",
+      "rows": 46
+    },
+    {
+      "id": "sn56.1",
+      "rows": 10
+    },
+    {
+      "id": "sn22.78",
+      "rows": 36
+    },
+    {
+      "id": "sn54.8",
+      "rows": 71
+    }
+  ],
+  "proposals": [],
+  "concerns": [],
+  "notes": [
+    "All packet lines 1–460 read in consecutive portions; Pali treated as authority.",
+    "AN 6.74 second formulation and Iti 91 middle verse absent in T are source omission/edition differences, not moved boundaries.",
+    "SN 43.13 and SN 16.5 ellipses abbreviate repetition; no words available for omitted items. SN 16.5 5.3 is a continuous semicolon-linked source sentence, so its several clauses do not require new boundaries.",
+    "Iti and Snp verse lines retain translator order within each verse; reversed semantic ordering within verses is permissible. Iti 29 3.4 is a lone empty row whose Pali is revealed with the preceding source line.",
+    "SN 54.8 presents all breathing steps against an abbreviated Pali row; later abbreviated wishes sit on their corresponding rows. No sure misplaced boundary found."
+  ]
+}

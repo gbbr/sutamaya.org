@@ -1,0 +1,327 @@
+# Fourteen open cases: direct source and Pali
+
+# Whole source lines, smallest coherent verse groups; prose cases explicitly deferred.
+
+## sn3.19:7.1
+Source: data/upstream/thanissaro/sutta/sn/sn3/sn3.19.html
+Judged group: 7
+
+SOURCE 8: “Like water
+SOURCE 9: in a haunted place
+SOURCE 10: that, without being imbibed,
+SOURCE 11: dries up:
+SOURCE 12: Such is the wealth
+SOURCE 13: acquired by a worthless man
+SOURCE 14: who neither enjoys it himself
+SOURCE 15: nor gives.
+sn3.19:7.1 | P: “Amanussaṭṭhāne udakaṁva sītaṁ,  | T: That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further: ⏎ “Like water ⏎ in a haunted place 
+sn3.19:7.2 | P: Tadapeyyamānaṁ parisosameti;  | T: that, without being imbibed, ⏎ dries up: 
+sn3.19:7.3 | P: Evaṁ dhanaṁ kāpuriso labhitvā,  | T: Such is the wealth ⏎ acquired by a worthless man 
+sn3.19:7.4 | P: Nevattanā bhuñjati no dadāti.  | T: who neither enjoys it himself ⏎ nor gives. 
+
+## sn4.24:10.4
+Source: data/upstream/thanissaro/sutta/sn/sn4/sn4.24.html
+Judged group: 10
+
+SOURCE 52: —but not getting anything tasty there,
+SOURCE 53: the crow went away.
+SOURCE 54: Like a crow attacking the rock,
+SOURCE 55: I weary myself with Gotama.”
+sn4.24:10.1 | P: Aladdhā tattha assādaṁ,  | T: —but not getting anything tasty there, 
+sn4.24:10.2 | P: vāyasetto apakkame;  | T: the crow went away. 
+sn4.24:10.3 | P: Kākova selamāsajja,  | T: Like a crow attacking the rock, 
+sn4.24:10.4 | P: nibbijjāpema gotamā”ti.  | T: I weary myself with Gotama.” Then Māra the Evil One, having recited these verses of dejection in the Blessed One’s presence, left that place and sat on the ground not far from the Blessed One, silent, abashed, with his shoulders drooping, his head down, brooding, at a loss for words, drawing in the dirt with a stick. 
+DEFERRED PROSE: [{"sourceLines": [56], "destination": "sn4.25:1.1", "starts": "Then Māra the Evil One, having recited these", "pali": "Atha kho māro pāpimā bhagavato santike imā nibbejanīyā gāthāyo abhāsitvā tamhā ṭhānā apakkamma bhagavato avidūre pathaviyaṁ pallaṅkena nisīdi tuṇhībhūto maṅkubhūto pattakkhandho adhomukho pajjhāyanto appaṭibhāno kaṭṭhena bhūmiṁ vilikhanto. "}]
+
+## an3.39:10.3
+Source: data/upstream/thanissaro/sutta/an/an3/an3.39.html
+Judged group: 10, 11
+
+SOURCE 20: As I maintained this attitude—
+SOURCE 21: knowing the Dhamma
+SOURCE 22: without acquisitions—
+SOURCE 23: I overcame all intoxication
+SOURCE 24: with health, youth, & life
+SOURCE 25: as one who sees
+SOURCE 26: renunciation as rest.
+SOURCE 27: For me, energy arose,
+SOURCE 28: unbinding was clearly seen.
+an3.39:10.1 | P: Sohaṁ evaṁ viharanto,  | T: As I maintained this attitude— 
+an3.39:10.2 | P: ñatvā dhammaṁ nirūpadhiṁ;  | T: knowing the Dhamma ⏎ without acquisitions— 
+an3.39:10.3 | P: Ārogye yobbanasmiñca,  | T: I overcame all intoxication 
+an3.39:10.4 | P: jīvitasmiñca ye madā.  | T: with health, youth, 
+an3.39:11.1 | P: Sabbe made abhibhosmi,  | T: & life 
+an3.39:11.2 | P: Nekkhamme daṭṭhu khemataṁ;  | T: as one who sees ⏎ renunciation as rest. 
+an3.39:11.3 | P: Tassa me ahu ussāho,  | T: For me, energy arose, 
+an3.39:11.4 | P: Nibbānaṁ abhipassato.  | T: unbinding was clearly seen. 
+
+## an4.19:4.1
+Source: data/upstream/thanissaro/sutta/an/an4/an4.19.html
+Judged group: 3, 4
+
+SOURCE 2: If you—
+SOURCE 3: through desire,
+SOURCE 4: aversion,
+SOURCE 5: delusion,
+SOURCE 6: fear—
+SOURCE 7: transgress the Dhamma,
+SOURCE 8: your honor wanes,
+SOURCE 9: as in the dark fortnight,
+SOURCE 10: the moon.
+SOURCE 12: If you don’t—
+SOURCE 13: through desire,
+SOURCE 14: aversion,
+SOURCE 15: delusion,
+SOURCE 16: fear—
+SOURCE 17: transgress the Dhamma,
+SOURCE 18: your honor waxes,
+SOURCE 19: as in the bright fortnight,
+SOURCE 20: the moon.
+an4.19:3.1 | P: Chandā dosā bhayā mohā,  | T: If you— 
+an4.19:3.2 | P: yo dhammaṁ ativattati;  | T: through desire, ⏎ aversion, ⏎ delusion, ⏎ fear— ⏎ transgress the Dhamma, 
+an4.19:3.3 | P: Nihīyati tassa yaso,  | T: your honor wanes, 
+an4.19:3.4 | P: kāḷapakkheva candimā.  | T: as in the dark fortnight, ⏎ the moon. 
+an4.19:4.1 | P: Chandā dosā bhayā mohā,  | T: “There are these four ways of not going off course. Which four? One doesn’t go off course through desire. One doesn’t go off course through aversion. One doesn’t go off course through delusion. One doesn’t go off course through fear. These are the four ways of not going off course.” ⏎ If you don’t— 
+an4.19:4.2 | P: yo dhammaṁ nātivattati;  | T: through desire, ⏎ aversion, ⏎ delusion, ⏎ fear— ⏎ transgress the Dhamma, 
+an4.19:4.3 | P: Āpūrati tassa yaso,  | T: your honor waxes, 
+an4.19:4.4 | P: sukkapakkheva candimā”ti.  | T: as in the bright fortnight, ⏎ the moon. 
+DEFERRED PROSE: [{"sourceLines": [11], "destinations": [{"key": "an4.19:2.1", "starts": "“There are these four ways of not going"}, {"key": "an4.19:2.2", "starts": "Which four?"}, {"key": "an4.19:2.3", "starts": "One doesn’t go off course through desire."}, {"key": "an4.19:2.4", "starts": "These are the four ways of not going"}]}]
+
+## an5.36:3.1
+Source: data/upstream/thanissaro/sutta/an/an5/an5.36.html
+Judged group: 2, 3
+
+SOURCE 2: In the proper season they give—
+SOURCE 3: those with discernment,
+SOURCE 4: responsive, free from stinginess.
+SOURCE 5: Having been given in proper season,
+SOURCE 6: with hearts inspired by the noble ones
+SOURCE 7: —straightened, Such—
+SOURCE 8: their offering bears an abundance.
+SOURCE 9: Those who rejoice in that gift
+SOURCE 10: or give assistance,
+SOURCE 11: they, too, have a share of the merit,
+SOURCE 12: and the offering isn’t depleted by that.
+an5.36:2.1 | P: Kāle dadanti sappaññā,  | T: In the proper season they give— ⏎ those with discernment, 
+an5.36:2.2 | P: vadaññū vītamaccharā;  | T: responsive, free from stinginess. 
+an5.36:2.3 | P: Kālena dinnaṁ ariyesu,  | T: Having been given in proper season, 
+an5.36:2.4 | P: ujubhūtesu tādisu.  | T: with hearts inspired by the noble ones 
+an5.36:3.1 | P: Vippasannamanā tassa,  | T: —straightened, Such— 
+an5.36:3.2 | P: vipulā hoti dakkhiṇā;  | T: their offering bears an abundance. 
+an5.36:3.3 | P: Ye tattha anumodanti,  | T: Those who rejoice in that gift 
+an5.36:3.4 | P: veyyāvaccaṁ karonti vā;  | T: or give assistance, 
+an5.36:3.5 | P: Na tena dakkhiṇā ūnā,  | T: they, too, have a share of the merit, 
+an5.36:3.6 | P: tepi puññassa bhāgino.  | T: and the offering isn’t depleted by that. 
+
+## an5.57:14.3
+Source: data/upstream/thanissaro/sutta/an/an5/an5.57.html
+Judged group: 14, 15
+
+SOURCE 25: As I maintained this attitude—
+SOURCE 26: knowing the Dhamma
+SOURCE 27: without acquisitions—
+SOURCE 28: I overcame all intoxication
+SOURCE 29: with health, youth, & life
+SOURCE 30: as one who sees
+SOURCE 31: renunciation as rest.
+SOURCE 32: For me, energy arose,
+SOURCE 33: unbinding was clearly seen.
+an5.57:14.1 | P: Sohaṁ evaṁ viharanto,  | T: As I maintained this attitude— 
+an5.57:14.2 | P: ñatvā dhammaṁ nirūpadhiṁ;  | T: knowing the Dhamma ⏎ without acquisitions— 
+an5.57:14.3 | P: Ārogye yobbanasmiñca,  | T: I overcame all intoxication 
+an5.57:14.4 | P: jīvitasmiñca ye madā.  | T: with health, youth, 
+an5.57:15.1 | P: Sabbe made abhibhosmi,  | T: & life 
+an5.57:15.2 | P: Nekkhammaṁ daṭṭhu khemato;  | T: as one who sees ⏎ renunciation as rest. 
+an5.57:15.3 | P: Tassa me ahu ussāho,  | T: For me, energy arose, 
+an5.57:15.4 | P: Nibbānaṁ abhipassato.  | T: unbinding was clearly seen. 
+
+## an6.45:21.3
+Source: data/upstream/thanissaro/sutta/an/an6/an6.45.html
+Judged group: 21, 22
+
+SOURCE 64: the painful bond
+SOURCE 65: from which the enlightened
+SOURCE 66: are freed.
+SOURCE 67: But one with confidence,
+SOURCE 68: living at home,
+SOURCE 69: making gifts of his belongings,
+SOURCE 70: righteously-gained,
+SOURCE 71: wins both goals:
+SOURCE 72: advantage in the here & now,
+SOURCE 73: & happiness in the world beyond.
+SOURCE 74: The liberality of this householder
+SOURCE 75: piles up merit.
+an6.45:21.1 | P: Etañhi bandhanaṁ dukkhaṁ,  | T: the painful bond 
+an6.45:21.2 | P: yamhā dhīro pamuccati;  | T: from which the enlightened ⏎ are freed. 
+an6.45:21.3 | P: Dhammaladdhehi bhogehi,  | T: But one with confidence, ⏎ living at home, ⏎ making gifts 
+an6.45:21.4 | P: dadaṁ cittaṁ pasādayaṁ.  | T: of his belongings, ⏎ righteously-gained, 
+an6.45:22.1 | P: Ubhayattha kaṭaggāho,  | T: wins both goals: 
+an6.45:22.2 | P: saddhassa gharamesino;  | T: (none)
+an6.45:22.3 | P: Diṭṭhadhammahitatthāya,  | T: advantage in the here & now, 
+an6.45:22.4 | P: samparāyasukhāya ca;  | T: & happiness in the world beyond. 
+an6.45:22.5 | P: Evametaṁ gahaṭṭhānaṁ,  | T: The liberality of this householder 
+an6.45:22.6 | P: cāgo puññaṁ pavaḍḍhati.  | T: piles up merit. 
+
+## an8.54:18.2
+Source: data/upstream/thanissaro/sutta/an/an8/an8.54.html
+Judged group: 17, 18
+
+SOURCE 25: Thus for one who seeks the household life,
+SOURCE 26: these eight qualities—
+SOURCE 27: leading to welfare & happiness
+SOURCE 28: both in this life & in lives to come—
+SOURCE 29: have been declared by the one
+SOURCE 30: who is truly named.
+SOURCE 31: And this is how, for householders,
+SOURCE 32: generosity & merit increase.”
+an8.54:17.1 | P: Iccete aṭṭha dhammā ca,  | T: Thus for one who seeks the household life, 
+an8.54:17.2 | P: saddhassa gharamesino;  | T: these eight qualities— 
+an8.54:17.3 | P: Akkhātā saccanāmena,  | T: (none)
+an8.54:17.4 | P: ubhayattha sukhāvahā.  | T: leading to welfare & happiness 
+an8.54:18.1 | P: Diṭṭhadhammahitatthāya,  | T: both in this life & in lives to come— 
+an8.54:18.2 | P: samparāyasukhāya ca;  | T: have been declared by the one ⏎ who is truly named. 
+an8.54:18.3 | P: Evametaṁ gahaṭṭhānaṁ,  | T: And this is how, for householders, 
+an8.54:18.4 | P: cāgo puññaṁ pavaḍḍhatī”ti.  | T: generosity & merit increase.” 
+
+## snp3.1:6.4
+Source: data/upstream/thanissaro/sutta/kn/snp/vagga3/snp3.1.html
+Judged group: 6, 7
+
+SOURCE 20: “Look at this one, sirs.
+SOURCE 21: How handsome, stately, pure!
+SOURCE 22: How consummate his demeanor!
+SOURCE 23: Mindful, his eyes downcast,
+SOURCE 24: looking only a plow-length before him.
+SOURCE 25: This one’s not like one
+SOURCE 26: from a lowly lineage:
+SOURCE 27: Have the royal messengers hurry
+SOURCE 28: to see where this monk will go.”
+snp3.1:6.1 | P: “Imaṁ bhonto nisāmetha,  | T: “Look at this one, sirs. 
+snp3.1:6.2 | P: abhirūpo brahā suci;  | T: How handsome, stately, pure! 
+snp3.1:6.3 | P: Caraṇena ca sampanno,  | T: How consummate his demeanor! 
+snp3.1:6.4 | P: yugamattañca pekkhati.  | T: Mindful, his eyes downcast, ⏎ looking only a plow-length before him. 
+snp3.1:7.1 | P: Okkhittacakkhu satimā,  | T: This one’s not like one 
+snp3.1:7.2 | P: nāyaṁ nīcakulāmiva;  | T: from a lowly lineage: 
+snp3.1:7.3 | P: Rājadūtābhidhāvantu,  | T: Have the royal messengers hurry 
+snp3.1:7.4 | P: kuhiṁ bhikkhu gamissati”.  | T: to see where this monk will go.” 
+
+## snp3.12:25.1
+Source: data/upstream/thanissaro/sutta/kn/snp/vagga3/snp3.12.html
+Judged group: 25, 26
+
+SOURCE 109: “Knowing that
+SOURCE 110: whatever is felt—
+SOURCE 111: pleasure, pain,
+SOURCE 112: neither pleasure nor pain,
+SOURCE 113: within or without—
+SOURCE 114: is stressful;
+SOURCE 115: seeing
+SOURCE 116: its deceptive nature,
+SOURCE 117: its dissolving,
+SOURCE 118: its passing away
+SOURCE 119: at each contact,
+SOURCE 120: each
+SOURCE 121: contact,
+SOURCE 122: he knows it right there:
+SOURCE 123: With just the ending of feeling,
+SOURCE 124: there is no stress
+SOURCE 125: coming into play.
+snp3.12:25.1 | P: “Sukhaṁ vā yadi vā dukkhaṁ,  | T: “Knowing that ⏎ whatever is felt— 
+snp3.12:25.2 | P: Adukkhamasukhaṁ saha;  | T: pleasure, pain, 
+snp3.12:25.3 | P: Ajjhattañca bahiddhā ca,  | T: neither pleasure nor pain, 
+snp3.12:25.4 | P: Yaṁ kiñci atthi veditaṁ.  | T: within or without— 
+snp3.12:26.1 | P: Etaṁ dukkhanti ñatvāna,  | T: is stressful; 
+snp3.12:26.2 | P: Mosadhammaṁ palokinaṁ;  | T: seeing ⏎ its deceptive nature, ⏎ its dissolving, 
+snp3.12:26.3 | P: Phussa phussa vayaṁ passaṁ,  | T: its passing away ⏎ at each contact, ⏎ each ⏎ contact, 
+snp3.12:26.4 | P: Evaṁ tattha vijānati;  | T: he knows it right there: 
+snp3.12:26.5 | P: Vedanānaṁ khayā bhikkhu,  | T: With just the ending of feeling, 
+snp3.12:26.6 | P: Nicchāto parinibbutoti.  | T: there is no stress ⏎ coming into play. 
+
+## thag17.2:22.3
+Source: data/upstream/thanissaro/sutta/kn/thag/thag17.2.html
+Judged group: 22, 23
+
+SOURCE 109: I don’t delight in death,
+SOURCE 110: don’t delight in living.
+SOURCE 111: I await my time
+SOURCE 112: like a worker his wage.
+SOURCE 113: I don’t delight in death,
+SOURCE 114: don’t delight in living.
+SOURCE 115: I await my time,
+SOURCE 116: mindful, alert.
+thag17.2:22.1 | P: Nābhinandāmi maraṇaṁ,  | T: I don’t delight in death, 
+thag17.2:22.2 | P: nābhinandāmi jīvitaṁ;  | T: don’t delight in living. 
+thag17.2:22.3 | P: Nikkhipissaṁ imaṁ kāyaṁ,  | T: I await my time 
+thag17.2:22.4 | P: sampajāno patissato.  | T: like a worker his wage. 
+thag17.2:23.1 | P: Nābhinandāmi maraṇaṁ,  | T: I don’t delight in death, 
+thag17.2:23.2 | P: nābhinandāmi jīvitaṁ;  | T: don’t delight in living. 
+thag17.2:23.3 | P: Kālañca paṭikaṅkhāmi,  | T: I await my time, 
+thag17.2:23.4 | P: nibbisaṁ bhatako yathā”.  | T: mindful, alert. 
+
+## thig6.7:3.1
+Source: data/upstream/thanissaro/sutta/kn/thig/thig6.7.html
+Judged group: 3, 4
+
+SOURCE 13: Abandoning these lower fetters, nun—
+SOURCE 14: sensual desire, ill will,
+SOURCE 15: self-identity views,
+SOURCE 16: grasping at habits & practices,
+SOURCE 17: and uncertainty as the fifth—
+SOURCE 18: you won’t come
+SOURCE 19: to this again.
+thig6.7:3.1 | P: Kāmacchandañca byāpādaṁ,  | T: Abandoning these lower fetters, nun— ⏎ sensual desire, ill will, 
+thig6.7:3.2 | P: sakkāyadiṭṭhimeva ca;  | T: self-identity views, 
+thig6.7:3.3 | P: Sīlabbataparāmāsaṁ,  | T: grasping at habits & practices, 
+thig6.7:3.4 | P: vicikicchañca pañcamaṁ.  | T: and uncertainty as the fifth— 
+thig6.7:4.1 | P: Saṁyojanāni etāni,  | T: you won’t come 
+thig6.7:4.2 | P: pajahitvāna bhikkhunī;  | T: (none)
+thig6.7:4.3 | P: Orambhāgamanīyāni,  | T: to this again. 
+thig6.7:4.4 | P: nayidaṁ punarehisi.  | T: (none)
+
+## ud7.8:4.6
+Source: data/upstream/thanissaro/sutta/kn/ud/vagga7/ud7.8.html
+Judged group: 4
+
+SOURCE 3: If one were to have
+SOURCE 4: mindfulness always
+SOURCE 5: established, continually
+SOURCE 6: immersed in the body,
+SOURCE 7: (thinking,)
+SOURCE 8: “It should not be,
+SOURCE 9: it should not be mine;
+SOURCE 10: it will not be,
+SOURCE 11: it will not be mine”–
+SOURCE 12: there,
+SOURCE 13: in that step-by-step dwelling,
+SOURCE 14: one in no long time
+SOURCE 15: would cross over
+SOURCE 16: attachment.
+ud7.8:4.1 | P: “Yassa siyā sabbadā sati,  | T: If one were to have ⏎ mindfulness always 
+ud7.8:4.2 | P: Satataṁ kāyagatā upaṭṭhitā;  | T: established, continually ⏎ immersed in the body, 
+ud7.8:4.3 | P: No cassa no ca me siyā,  | T: (thinking,) ⏎ “It should not be, ⏎ it should not be mine; 
+ud7.8:4.4 | P: Na bhavissati na ca me bhavissati;  | T: it will not be, ⏎ it will not be mine”– 
+ud7.8:4.5 | P: Anupubbavihāri tattha so,  | T: there, ⏎ in that step-by-step dwelling, 
+ud7.8:4.6 | P: Kāleneva tare visattikan”ti.  | T: one in no long time ⏎ would cross over ⏎ attachment. In AN 10:29, the Buddha recommends this view as conducive to developing dispassion for becoming. However, in MN 106 he warns that it can lead to the refined equanimity of the dimension of neither perception nor non-perception, which can become an object of clinging. Only if that subtle clinging is detected can all clinging be abandoned. The Canon’s most extended discussion of this theme of meditation is in SN 22:55. See Appendix Two. For more on this topic, see The Paradox of Becoming, chapter 5. 
+DEFERRED EDITORIAL: {"sourceLines": [17, 18, 19], "destination": "note on ud7.8:4.6", "paliCorrespondence": "none; translator editorial commentary"}
+
+## snp3.6:46.1
+Source: data/upstream/thanissaro/sutta/kn/snp/vagga3/snp3.6.html
+Judged group: 45, 46
+
+SOURCE 215: The doubt I had before,
+SOURCE 216: you have answered, One with Eyes.
+SOURCE 217: Yes, you are a sage, rightly
+SOURCE 218: self-awakened. You have
+SOURCE 219: no hindrances. Your despairs
+SOURCE 220: are fallen down, cut from the stem.
+SOURCE 221: Cooled, attained to self-control,
+SOURCE 222: steadfast, enduring in truth:
+snp3.6:45.1 | P: Yā me kaṅkhā pure āsi,  | T: The doubt I had before, 
+snp3.6:45.2 | P: Taṁ me byākāsi cakkhumā;  | T: you have answered, One with Eyes. 
+snp3.6:45.3 | P: Addhā munīsi sambuddho,  | T: Yes, you are a sage, rightly ⏎ self-awakened. 
+snp3.6:45.4 | P: Natthi nīvaraṇā tava.  | T: You have ⏎ no hindrances. 
+snp3.6:46.1 | P: Upāyāsā ca te sabbe,  | T: Your despairs 
+snp3.6:46.2 | P: Viddhastā vinaḷīkatā;  | T: are fallen down, cut from the stem. 
+snp3.6:46.3 | P: Sītibhūto damappatto,  | T: Cooled, attained to self-control, ⏎ steadfast, 
+snp3.6:46.4 | P: Dhitimā saccanikkamo.  | T: enduring in truth: 
+

@@ -26,7 +26,7 @@ an4.192:8.1 starts: [4] “‘It’s through discussion that a person’s discer
 an4.192:8.8 starts: He is dull, not discerning.’
 an4.192:9.5 starts: ‘From the way this person rises to
 an4.192:9.8 none
-an4.192:9.9 starts: he is dull, not discerning.’
+# superseded: an4.192:9.9 starts: he is dull, not discerning.’
 an4.192:10.6 starts: He is discerning, not dull.’
 an4.192:11.5 starts: ‘From the way this person rises to
 an4.192:11.8 none

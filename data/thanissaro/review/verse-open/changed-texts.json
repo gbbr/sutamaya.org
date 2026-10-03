@@ -1,0 +1,57 @@
+[
+  {
+    "file": "data/thanissaro/sutta/kn/snp/vagga3/snp3.6_translation-en-thanissaro.json",
+    "text": "snp3.6",
+    "changedRows": [
+      "snp3.6:45.3",
+      "snp3.6:45.4",
+      "snp3.6:46.1",
+      "snp3.6:46.3",
+      "snp3.6:46.4"
+    ]
+  },
+  {
+    "file": "data/thanissaro/sutta/an/an6/an6.45_translation-en-thanissaro.json",
+    "text": "an6.45",
+    "changedRows": [
+      "an6.45:21.3",
+      "an6.45:21.4"
+    ]
+  },
+  {
+    "file": "data/thanissaro/sutta/an/an8/an8.54_translation-en-thanissaro.json",
+    "text": "an8.54",
+    "changedRows": [
+      "an8.54:17.3",
+      "an8.54:17.4",
+      "an8.54:18.1",
+      "an8.54:18.2"
+    ]
+  },
+  {
+    "file": "data/thanissaro/sutta/an/an5/an5.57_translation-en-thanissaro.json",
+    "text": "an5.57",
+    "changedRows": [
+      "an5.57:14.4",
+      "an5.57:15.1",
+      "an5.57:15.2"
+    ]
+  },
+  {
+    "file": "data/thanissaro/sutta/an/an3/an3.39_translation-en-thanissaro.json",
+    "text": "an3.39",
+    "changedRows": [
+      "an3.39:10.4",
+      "an3.39:11.1",
+      "an3.39:11.2"
+    ]
+  },
+  {
+    "file": "data/thanissaro/sutta/sn/sn3/sn3.19_translation-en-thanissaro.json",
+    "text": "sn3.19",
+    "changedRows": [
+      "sn3.19:6.6",
+      "sn3.19:7.1"
+    ]
+  }
+]

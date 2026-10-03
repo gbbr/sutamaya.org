@@ -1,0 +1,52 @@
+# thig6.7
+Source: data/upstream/thanissaro/sutta/kn/thig/thig6.7.html
+
+SOURCE 001 verse: [The Buddha admonished me:]
+SOURCE 002 verse: Guttā, devote yourself to the goal
+SOURCE 003 verse: for which you went forth,
+SOURCE 004 verse: having discarded [hope]
+SOURCE 005 verse: for a dear son of your own.
+SOURCE 006 verse: Don’t fall under the sway
+SOURCE 007 verse: of the mind.
+SOURCE 008 verse: Hoodwinked by mind,
+SOURCE 009 verse: beings in love with Māra’s realm,
+SOURCE 010 verse: roam
+SOURCE 011 verse: through the many-birth wandering-on,
+SOURCE 012 verse: unknowing.
+SOURCE 013 verse: Abandoning these lower fetters, nun—
+SOURCE 014 verse: sensual desire, ill will,
+SOURCE 015 verse: self-identity views,
+SOURCE 016 verse: grasping at habits & practices,
+SOURCE 017 verse: and uncertainty as the fifth—
+SOURCE 018 verse: you won’t come
+SOURCE 019 verse: to this again.
+SOURCE 020 verse: Forsaking passion, conceit,
+SOURCE 021 verse: ignorance, & restlessness
+SOURCE 022 verse: —cutting through [all] the fetters—
+SOURCE 023 verse: you will make an end
+SOURCE 024 verse: of suffering & stress.
+SOURCE 025 verse: Discarding birth & wandering-on,
+SOURCE 026 verse: comprehending further becoming,
+SOURCE 027 verse: free from hunger
+SOURCE 028 verse: in the right-here-&-now
+SOURCE 029 verse: you will go about
+SOURCE 030 verse: totally calmed.
+
+## Pali and present cuts
+
+thig6.7:2.1 | P: Cittena vañcitā sattā,  | S: Beings deceived by the mind,  | T: Hoodwinked by mind, 
+thig6.7:2.2 | P: mārassa visaye ratā;  | S: playing in Māra’s domain,  | T: beings in love with Māra’s realm, 
+thig6.7:2.3 | P: Anekajātisaṁsāraṁ,  | S: ignorant, they journey on,  | T: roam 
+thig6.7:2.4 | P: sandhāvanti aviddasū.  | S: transmigrating through countless rebirths.  | T: through the many-birth wandering-on, ⏎ unknowing. 
+thig6.7:3.1 | P: Kāmacchandañca byāpādaṁ,  | S: Sensual desire and ill will,  | T: Abandoning these lower fetters, nun— ⏎ sensual desire, ill will, 
+thig6.7:3.2 | P: sakkāyadiṭṭhimeva ca;  | S: and substantialist view;  | T: self-identity views, 
+thig6.7:3.3 | P: Sīlabbataparāmāsaṁ,  | S: misapprehension of precepts and observances,  | T: grasping at habits & practices, 
+thig6.7:3.4 | P: vicikicchañca pañcamaṁ.  | S: and doubt as the fifth.  | T: and uncertainty as the fifth— 
+thig6.7:4.1 | P: Saṁyojanāni etāni,  | S: O nun, when you have given up  | T: you won’t come 
+thig6.7:4.2 | P: pajahitvāna bhikkhunī;  | S: these lower fetters,  | T: 
+thig6.7:4.3 | P: Orambhāgamanīyāni,  | S: you won’t come back  | T: to this again. 
+thig6.7:4.4 | P: nayidaṁ punarehisi.  | S: to this world again.  | T: 
+thig6.7:5.1 | P: Rāgaṁ mānaṁ avijjañca,  | S: And when you’re rid of desire,  | T: Forsaking passion, conceit, 
+thig6.7:5.2 | P: uddhaccañca vivajjiya;  | S: conceit, ignorance, and restlessness,  | T: ignorance, & restlessness 
+thig6.7:5.3 | P: Saṁyojanāni chetvāna,  | S: having cut the fetters,  | T: —cutting through [all] the fetters— 
+thig6.7:5.4 | P: dukkhassantaṁ karissasi.  | S: you’ll make an end to suffering.  | T: you will make an end ⏎ of suffering & stress. 

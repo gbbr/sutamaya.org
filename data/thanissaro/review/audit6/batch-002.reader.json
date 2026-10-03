@@ -1,0 +1,85 @@
+{
+  "batch": "002",
+  "translator": "thanissaro",
+  "packet": "data/thanissaro/review/audit6/batch-002.pali.txt",
+  "coverage": {
+    "rows_read": 418,
+    "total_rows": 418,
+    "all_rows_read": true,
+    "pali_only_rows_included": true,
+    "texts_read": [
+      {
+        "id": "snp1.5",
+        "rows_read": 38
+      },
+      {
+        "id": "snp4.9",
+        "rows_read": 64
+      },
+      {
+        "id": "an9.15",
+        "rows_read": 14
+      },
+      {
+        "id": "ud6.4",
+        "rows_read": 104
+      },
+      {
+        "id": "sn12.48",
+        "rows_read": 22
+      },
+      {
+        "id": "an6.46",
+        "rows_read": 29
+      },
+      {
+        "id": "an10.95",
+        "rows_read": 54
+      },
+      {
+        "id": "an8.8",
+        "rows_read": 93
+      }
+    ]
+  },
+  "proposals": [],
+  "concerns": [
+    {
+      "keys": [
+        "an9.15:1.2",
+        "an9.15:1.6",
+        "an9.15:2.4",
+        "an9.15:2.6",
+        "ud6.4:1.2",
+        "ud6.4:17.2",
+        "an10.95:1.5",
+        "an10.95:2.3",
+        "an10.95:3.10",
+        "an10.95:4.2",
+        "an10.95:6.10",
+        "an10.95:10.3",
+        "an10.95:10.8",
+        "an8.8:3.4",
+        "an8.8:5.9",
+        "an8.8:6.2",
+        "an8.8:6.3"
+      ],
+      "disposition": "no proposal",
+      "explanation": "English clauses continue across rows, but each current clause independently renders the Pali on its own row. Punctuation alone does not establish a misplaced boundary; formula and meaningful clause cuts remain sound."
+    },
+    {
+      "keys": [
+        "an8.8:11.2",
+        "an8.8:11.3",
+        "an8.8:11.4",
+        "an8.8:11.5",
+        "an8.8:11.6",
+        "an8.8:11.7",
+        "an8.8:11.8"
+      ],
+      "disposition": "no proposal",
+      "explanation": "Bracketed comma-separated item list follows the Pali items in order, with each item on its own relevant row."
+    }
+  ],
+  "explanation": "Read every assigned Pali/T row, including untranslated closing lines and abbreviation rows. All verse layouts preserve coherent translator order over each verse; speaker labels and lone empty attribution rows are compliant. Expanded dependent-origination formula occupies the Pali abbreviation row. No sure misplaced boundaries found."
+}

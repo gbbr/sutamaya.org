@@ -1,0 +1,491 @@
+# Audit6: Pali is the authority; S is secondary context.
+Every selected non-title row is included. ↵ records a current saved line break; original source HTML decides whole source lines.
+
+## an8.8, continued
+Source: data/upstream/thanissaro/sutta/an/an8/an8.8.html
+an8.8:12.2 | P: “uppannaṁ lābhaṁ abhibhuyya abhibhuyya viharissāma, | S: “Whenever we encounter it, we will overcome gain … | T: “We will keep conquering again & again any arisen material gain…
+an8.8:12.3 | P: uppannaṁ alābhaṁ …pe… | S: loss … | T: any arisen lack of material gain…
+an8.8:12.4 | P: uppannaṁ yasaṁ … | S: fame … | T: any arisen status…
+an8.8:12.5 | P: uppannaṁ ayasaṁ … | S: disgrace … | T: any arisen lack of status…
+an8.8:12.6 | P: uppannaṁ sakkāraṁ … | S: honor … | T: any arisen offerings…
+an8.8:12.7 | P: uppannaṁ asakkāraṁ … | S: dishonor … | T: any arisen lack of offerings…
+an8.8:12.8 | P: uppannaṁ pāpicchataṁ … | S: corrupt wishes … | T: any arisen evil ambition…
+an8.8:12.9 | P: uppannaṁ pāpamittataṁ abhibhuyya abhibhuyya viharissāmā”ti. | S: bad friendship.” | T: any arisen evil friendship.”
+an8.8:12.10 | P: Evañhi vo, bhikkhave, sikkhitabban’ti. | S: That’s how you should train.’ | T: That’s how you should train yourselves.’
+an8.8:13.1 | P: Ettāvatā, bhante uttara, manussesu catasso parisā— | S: Honorable Uttara, this exposition of the teaching is not established anywhere in the four assemblies— | T: “Up to now, Ven. Uttara, the four companies—monks, nuns, lay men, & lay women—have not established this Dhamma-discourse among human beings.
+an8.8:13.2 | P: bhikkhū, bhikkhuniyo, upāsakā, upāsikāyo. | S: monks, nuns, laymen, and laywomen. | T: (none)
+an8.8:13.3 | P: Nāyaṁ dhammapariyāyo kismiñci upaṭṭhito. | S: (none) | T: (none)
+an8.8:13.4 | P: Uggaṇhatu, bhante, āyasmā uttaro imaṁ dhammapariyāyaṁ. | S: Sir, learn this exposition of the teaching! | T: Take up this Dhamma-discourse, Ven. Uttara!
+an8.8:13.5 | P: Pariyāpuṇātu, bhante, āyasmā uttaro imaṁ dhammapariyāyaṁ. | S: Memorize this exposition of the teaching! | T: Master this Dhamma-discourse, Ven. Uttara!
+an8.8:13.6 | P: Dhāretu, bhante, āyasmā uttaro imaṁ dhammapariyāyaṁ. | S: Remember this exposition of the teaching! | T: Remember this Dhamma-discourse, Ven. Uttara!
+an8.8:13.7 | P: Atthasaṁhito ayaṁ, bhante, dhammapariyāyo ādibrahmacariyako”ti. | S: Sir, this exposition of the teaching is beneficial and relevant to the fundamentals of the spiritual life.” | T: Connected with the goal is this Dhamma-discourse, and basic to the holy life!”
+an8.8:13.8 | P: Aṭṭhamaṁ. | S: (none) | T: (none)
+
+## an10.96
+Source: data/upstream/thanissaro/sutta/an/an10/an10.96.html
+an10.96:1.1 | P: Ekaṁ samayaṁ āyasmā ānando rājagahe viharati tapodārāme. | S: At one time Venerable Ānanda was staying near Rājagaha in the Hot Springs Monastery. | T: On one occasion Ven. Ānanda was staying near Rājagaha in Tapodā monastery.
+an10.96:1.2 | P: Atha kho āyasmā ānando rattiyā paccūsasamayaṁ paccuṭṭhāya yena tapodā tenupasaṅkami gattāni parisiñcituṁ. | S: Then Ānanda rose at the crack of dawn and went to the hot springs to bathe. | T: Then, as night was ending, he got up & went to the Tapodā Hot Springs to bathe his limbs.
+an10.96:1.3 | P: Tapodāya gattāni parisiñcitvā paccuttaritvā ekacīvaro aṭṭhāsi gattāni pubbāpayamāno. | S: When he had bathed and emerged from the water he stood in one robe drying his limbs. | T: Having bathed his limbs and having gotten out of the springs, he stood wearing only his lower robe, drying his limbs.
+an10.96:1.4 | P: Kokanudopi kho paribbājako rattiyā paccūsasamayaṁ paccuṭṭhāya yena tapodā tenupasaṅkami gattāni parisiñcituṁ. | S: The wanderer Kokanada also rose at the crack of dawn and went to the hot springs to bathe. | T: Kokanuda the wanderer, as night was ending, also got up & went to the Tapodā Hot Springs to bathe his limbs.
+an10.96:2.1 | P: Addasā kho kokanudo paribbājako āyasmantaṁ ānandaṁ dūratova āgacchantaṁ. | S: He saw Ānanda coming off in the distance | T: He saw Ven. Ānanda from afar,
+an10.96:2.2 | P: Disvāna āyasmantaṁ ānandaṁ etadavoca: | S: and said to him, | T: and on seeing him said to him,
+an10.96:2.3 | P: “kvettha, āvuso”ti? | S: “Who’s here, reverend?” | T: “Who are you, my friend?”
+an10.96:2.4 | P: “Ahamāvuso, bhikkhū”ti. | S: “I’m a mendicant, reverend.” | T: “I am a monk, my friend.”
+an10.96:3.1 | P: “Katamesaṁ, āvuso, bhikkhūnan”ti? | S: “Of which mendicants?” | T: “Which kind of monk?”
+an10.96:3.2 | P: “Samaṇānaṁ, āvuso, sakyaputtiyānan”ti. | S: “Of the ascetics who follow the Sakyan.” | T: “A son-of-the-Sakyan contemplative.”
+an10.96:4.1 | P: “Puccheyyāma mayaṁ āyasmantaṁ kiñcideva desaṁ, sace āyasmā okāsaṁ karoti pañhassa veyyākaraṇāyā”ti. | S: “I’d like to ask the venerable about a certain point, if you’d take the time to answer.” | T: “I would like to ask you about a certain point, if you would give me leave to pose a question.”
+an10.96:4.2 | P: “Pucchāvuso, sutvā vedissāmā”ti. | S: “Ask, reverend. When I’ve heard it I’ll know.” | T: “Go ahead and ask. Having heard (your question), I’ll inform you.”
+an10.96:5.1 | P: “Kiṁ nu kho, bho, ‘sassato loko, idameva saccaṁ moghamaññan’ti—evaṁdiṭṭhi bhavan”ti? | S: “Is this your view: ‘The cosmos is eternal. This is the only truth, anything else is futile’?” | T: “How is it, my friend: ‘The cosmos is eternal. Only this is true; anything otherwise is worthless.’ Is this the sort of view you have?”
+an10.96:5.2 | P: “Na kho ahaṁ, āvuso, evaṁdiṭṭhi: | S: “That’s not my view, reverend.” | T: “No, my friend, I don’t have that sort of view.”
+an10.96:5.3 | P: ‘sassato loko, idameva saccaṁ moghamaññan’”ti. | S: (none) | T: (none)
+an10.96:6.1 | P: “Kiṁ pana, bho, ‘asassato loko, idameva saccaṁ moghamaññan’ti—evaṁdiṭṭhi bhavan”ti? | S: “Then is this your view: ‘The cosmos is not eternal. This is the only truth, anything else is futile’?” | T: “Very well, then: ‘The cosmos is not eternal. Only this is true; anything otherwise is worthless.’ Is this the sort of view you have?”
+an10.96:6.2 | P: “Na kho ahaṁ, āvuso, evaṁdiṭṭhi: | S: “That’s not my view, reverend.” | T: “No, my friend, I don’t have that sort of view.”
+an10.96:6.3 | P: ‘asassato loko, idameva saccaṁ moghamaññan’”ti. | S: (none) | T: (none)
+an10.96:7.1 | P: “Kiṁ nu kho, bho, antavā loko …pe… | S: “Then is this your view: ‘The cosmos is finite …’ … | T: “Very well, then: ‘The cosmos is finite … ’ …
+an10.96:7.2 | P: anantavā loko … | S: ‘The cosmos is infinite …’ … | T: ‘The cosmos is infinite … ’ …
+an10.96:7.3 | P: taṁ jīvaṁ taṁ sarīraṁ … | S: ‘The soul and the body are one and the same …’ … | T: ‘The soul & the body are the same … ’ …
+an10.96:7.4 | P: aññaṁ jīvaṁ aññaṁ sarīraṁ … | S: ‘The soul is one thing, the body another …’ … | T: ‘The soul is one thing and the body another … ’ …
+an10.96:7.5 | P: hoti tathāgato paraṁ maraṇā … | S: ‘A realized one still exists after death …’ … | T: ‘After death a Tathāgata exists … ’ …
+an10.96:7.6 | P: na hoti tathāgato paraṁ maraṇā … | S: ‘A realized one no longer exists after death …’ … | T: ‘After death a Tathāgata does not exist … ’ …
+an10.96:7.7 | P: hoti ca na ca hoti tathāgato paraṁ maraṇā … | S: ‘A realized one both still exists and no longer exists after death …’ … | T: ‘After death a Tathāgata both does & does not exist … ’ …
+an10.96:7.8 | P: neva hoti na na hoti tathāgato paraṁ maraṇā, idameva saccaṁ moghamaññanti—evaṁdiṭṭhi bhavan”ti? | S: ‘A realized one neither still exists nor no longer exists after death. This is the only truth, anything else is futile’?” | T: ‘After death a Tathāgata neither does nor does not exist. Only this is true; anything otherwise is worthless.’ Is this the sort of view you have?”
+an10.96:7.9 | P: “Na kho ahaṁ, āvuso, evaṁdiṭṭhi: | S: “That’s not my view, reverend.” | T: “No, my friend, I don’t have that sort of view.”
+an10.96:7.10 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā, idameva saccaṁ moghamaññan’”ti. | S: (none) | T: (none)
+an10.96:8.1 | P: “Tena hi bhavaṁ na jānāti, na passatī”ti? | S: “Then, sir, do you neither know nor see?” | T: “Then in that case, do you not know or see?”
+an10.96:8.2 | P: “Na kho ahaṁ, āvuso, na jānāmi na passāmi. | S: “That’s not so, reverend. | T: “No, my friend. It’s not the case that I don’t know, I don’t see.
+an10.96:8.3 | P: Jānāmahaṁ, āvuso, passāmī”ti. | S: I do know and see.” | T: I do know. I do see.”
+an10.96:9.1 | P: “‘Kiṁ nu kho, bho, sassato loko, idameva saccaṁ moghamaññanti— | S: “When asked about all these points, you say that’s not your view. | T: “But on being asked, ‘How is it, my friend: “The cosmos is eternal. Only this is true; anything otherwise is worthless.” Is this the sort of view you have?’ you inform me, ‘No, my friend, I don’t have that sort of view.’ On being asked, ‘Very well then: “The cosmos is not eternal … ” …
+an10.96:9.2 | P: evaṁdiṭṭhi bhavan’ti, iti puṭṭho samāno: | S: (none) | T: (none)
+an10.96:9.3 | P: ‘na kho ahaṁ, āvuso, evaṁdiṭṭhi— | S: (none) | T: (none)
+an10.96:9.4 | P: sassato loko, idameva saccaṁ moghamaññan’ti vadesi. | S: (none) | T: (none)
+an10.96:10.1 | P: ‘Kiṁ pana, bho, asassato loko, idameva saccaṁ moghamaññanti— | S: (none) | T: (none)
+an10.96:10.2 | P: evaṁdiṭṭhi bhavan’ti, iti puṭṭho samāno: | S: (none) | T: (none)
+an10.96:10.3 | P: ‘na kho ahaṁ, āvuso, evaṁdiṭṭhi— | S: (none) | T: (none)
+an10.96:10.4 | P: asassato loko, idameva saccaṁ moghamaññan’ti vadesi. | S: (none) | T: (none)
+an10.96:11.1 | P: Kiṁ nu kho, bho, antavā loko …pe… | S: (none) | T: “The cosmos is finite … ” …
+an10.96:11.2 | P: anantavā loko … | S: (none) | T: “The cosmos is infinite … ” …
+an10.96:11.3 | P: taṁ jīvaṁ taṁ sarīraṁ … | S: (none) | T: “The soul & the body are the same … ” …
+an10.96:11.4 | P: aññaṁ jīvaṁ aññaṁ sarīraṁ … | S: (none) | T: “The soul is one thing and the body another … ” …
+an10.96:11.5 | P: hoti tathāgato paraṁ maraṇā … | S: (none) | T: “After death a Tathāgata exists … ” …
+an10.96:11.6 | P: na hoti tathāgato paraṁ maraṇā … | S: (none) | T: “After death a Tathāgata does not exist … ” …
+an10.96:11.7 | P: hoti ca na ca hoti tathāgato paraṁ maraṇā … | S: (none) | T: “After death a Tathāgata both does & does not exist … ” …
+an10.96:11.8 | P: neva hoti na na hoti tathāgato paraṁ maraṇā, idameva saccaṁ moghamaññanti— | S: (none) | T: “After death a Tathāgata neither does nor does not exist. Only this is true; anything otherwise is worthless.”
+an10.96:11.9 | P: evaṁdiṭṭhi bhavanti, iti puṭṭho samāno: | S: (none) | T: Is this the sort of view you have?’ you inform me,
+an10.96:11.10 | P: ‘na kho ahaṁ, āvuso, evaṁdiṭṭhi— | S: (none) | T: ‘No, my friend, I don’t have that sort of view.’
+an10.96:11.11 | P: neva hoti na na hoti tathāgato paraṁ maraṇā, idameva saccaṁ moghamaññan’ti vadesi. | S: (none) | T: (none)
+an10.96:12.1 | P: ‘Tena hi bhavaṁ na jānāti na passatī’ti, iti puṭṭho samāno: | S: Yet when asked whether you neither know nor see, | T: But on being asked, ‘Then in that case, do you not know or see?’
+an10.96:12.2 | P: ‘na kho ahaṁ, āvuso, na jānāmi na passāmi. | S: you say, ‘That’s not so, reverend. | T: you inform me, ‘No, my friend.
+an10.96:12.3 | P: Jānāmahaṁ, āvuso, passāmī’ti vadesi. | S: I do know and see.’ | T: It’s not the case that I don’t know or see. I do know. I do see.’
+an10.96:12.4 | P: Yathā kathaṁ panāvuso, imassa bhāsitassa attho daṭṭhabbo”ti? | S: How then should we see the meaning of this statement?” | T: Now, how is the meaning of this statement to be understood?”
+an10.96:13.1 | P: “‘Sassato loko, idameva saccaṁ moghamaññan’ti kho, āvuso, diṭṭhigatametaṁ. | S: “‘The cosmos is eternal. This is the only truth, anything else is futile:’ that’s a misconception. | T: “‘The cosmos is eternal. Only this is true; anything otherwise is worthless,’ is a viewpoint.
+an10.96:13.2 | P: ‘Asassato loko, idameva saccaṁ moghamaññan’ti kho, āvuso, diṭṭhigatametaṁ. | S: ‘The cosmos is not eternal. This is the only truth, anything else is futile:’ that’s a misconception. | T: ‘The cosmos is not eternal …’ …
+an10.96:13.3 | P: Antavā loko …pe… | S: ‘The cosmos is finite …’ … | T: ‘The cosmos is finite … ’ …
+an10.96:13.4 | P: anantavā loko … | S: ‘The cosmos is infinite …’ … | T: ‘The cosmos is infinite … ’ …
+an10.96:13.5 | P: taṁ jīvaṁ taṁ sarīraṁ … | S: ‘The soul and the body are one and the same …’ … | T: ‘The soul & the body are the same … ’ …
+an10.96:13.6 | P: aññaṁ jīvaṁ aññaṁ sarīraṁ … | S: ‘The soul is one thing, the body another …’ … | T: ‘The soul is one thing and the body another … ’ …
+an10.96:13.7 | P: hoti tathāgato paraṁ maraṇā … | S: ‘A realized one still exists after death …’ … | T: ‘After death a Tathāgata exists … ’ …
+an10.96:13.8 | P: na hoti tathāgato paraṁ maraṇā … | S: ‘A realized one no longer exists after death …’ … | T: ‘After death a Tathāgata does not exist … ’ …
+an10.96:13.9 | P: hoti ca na ca hoti tathāgato paraṁ maraṇā … | S: ‘A realized one both still exists and no longer exists after death …’ … | T: ‘After death a Tathāgata both does & does not exist … ’ …
+an10.96:13.10 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā, idameva saccaṁ moghamaññan’ti kho, āvuso, diṭṭhigatametaṁ. | S: ‘A realized one neither still exists nor no longer exists after death. This is the only truth, anything else is futile:’ that’s a misconception. | T: ‘After death a Tathāgata neither does nor does not exist. Only this is true; anything otherwise is worthless,’ is a viewpoint.
+an10.96:14.1 | P: Yāvatā, āvuso, diṭṭhi yāvatā diṭṭhiṭṭhānaṁ diṭṭhiadhiṭṭhānaṁ diṭṭhipariyuṭṭhānaṁ diṭṭhisamuṭṭhānaṁ diṭṭhisamugghāto, tamahaṁ jānāmi tamahaṁ passāmi. | S: I know and see the scope of convictions, the scope of grounds for views, fixation on views, obsession with views, the origin of views, and the uprooting of views. | T: The extent to which there are viewpoints, view-stances, the taking up of views, obsessions with views, the cause of views, & the uprooting of views: that’s what I know. That’s what I see.
+an10.96:14.2 | P: Tamahaṁ jānanto tamahaṁ passanto kyāhaṁ vakkhāmi: | S: Knowing and seeing thus, why should I say: | T: Knowing that, I say ‘I know.’ Seeing that, I say ‘I see.’ Why should I say
+an10.96:14.3 | P: ‘na jānāmi na passāmī’ti? | S: ‘I neither know nor see?’ | T: ‘I don’t know, I don’t see’?
+an10.96:14.4 | P: Jānāmahaṁ, āvuso, passāmī”ti. | S: I do know and see.” | T: I do know. I do see.”
+an10.96:15.1 | P: “Ko nāmo āyasmā, kathañca panāyasmantaṁ sabrahmacārī jānantī”ti? | S: “What is the venerable’s name? And how are you known among your spiritual companions?” | T: “What is your name, my friend? What do your companions in the holy life call you?”
+an10.96:15.2 | P: “‘Ānando’ti kho me, āvuso, nāmaṁ. | S: “Reverend, my name is Ānanda. | T: “My name is Ānanda, my friend,
+an10.96:15.3 | P: ‘Ānando’ti ca pana maṁ sabrahmacārī jānantī”ti. | S: And that’s how I’m known among my spiritual companions.” | T: and that’s what my companions in the holy life call me.”
+an10.96:15.4 | P: “Mahācariyena vata kira, bho, saddhiṁ mantayamānā na jānimha: | S: “Goodness! I had no idea I was consulting such a great tutor as | T: “What? Have I been talking with the great teacher without realizing that he was Ven. Ānanda?
+an10.96:15.5 | P: ‘āyasmā ānando’ti. | S: Venerable Ānanda! | T: (none)
+an10.96:15.6 | P: Sace hi mayaṁ jāneyyāma: | S: If I had known who | T: Had I recognized that he was Ven. Ānanda,
+an10.96:15.7 | P: ‘ayaṁ āyasmā ānando’ti, ettakampi no nappaṭibhāyeyya. | S: you were, I wouldn’t have said so much. | T: I would not have cross-examined him so much.
+an10.96:15.8 | P: Khamatu ca me āyasmā ānando”ti. | S: May Venerable Ānanda please forgive me.” | T: May Ven. Ānanda please forgive me.”
+an10.96:15.9 | P: Chaṭṭhaṁ. | S: (none) | T: (none)
+
+## snp3.11
+Source: data/upstream/thanissaro/sutta/kn/snp/vagga3/snp3.11.html
+snp3.11:1.1 | P: Ānandajāte tidasagaṇe patīte, | S: The seer Asita in his daily meditation | T: Asita the seer, in his mid-day meditation,
+snp3.11:1.2 | P: Sakkañca indaṁ sucivasane ca deve; | S: saw the bright-clad gods of the host of Thirty | T: saw the Group of Thirty— ↵ Sakka the king, and devas dressed in pure white
+snp3.11:1.3 | P: Dussaṁ gahetvā atiriva thomayante, | S: and their lord Sakka joyfully celebrating, | T: exultant, ecstatic—
+snp3.11:1.4 | P: Asito isi addasa divāvihāre. | S: waving streamers in exuberant exaltation. | T: holding up banners, cheering wildly,
+snp3.11:2.1 | P: Disvāna deve muditamane udagge, | S: Seeing the gods rejoicing, elated, | T: & on seeing the devas so joyful & happy,
+snp3.11:2.2 | P: Cittiṁ karitvāna idamavoca tattha; | S: he paid respects and said this there: | T: having paid his respects, he said:
+snp3.11:2.3 | P: “Kiṁ devasaṅgho atiriva kalyarūpo, | S: “Why is the community of gods <j>in such excellent spirits? | T: “Why is the deva community ↵ so wildly elated?
+snp3.11:2.4 | P: Dussaṁ gahetvā ramayatha kiṁ paṭicca. | S: Why take up streamers and whirl them about? | T: Why are they holding up banners ↵ & waving them around?
+snp3.11:3.1 | P: Yadāpi āsī asurehi saṅgamo, | S: Even in the war with the titans, | T: Even after the war with the Asuras
+snp3.11:3.2 | P: Jayo surānaṁ asurā parājitā; | S: when gods were victorious and titans defeated, | T: —when victory was the devas’, ↵ the Asuras defeated—
+snp3.11:3.3 | P: Tadāpi netādiso lomahaṁsano, | S: there was no such excitement. | T: even then there was nothing hair-raising like this.
+snp3.11:3.4 | P: Kimabbhutaṁ daṭṭhu marū pamoditā. | S: What marvel have the celestials seen <j>that they so rejoice? | T: Seeing what marvel ↵ are the devas so joyful?
+snp3.11:4.1 | P: Seḷenti gāyanti ca vādayanti ca, | S: Shouting and singing and playing music, | T: They whistle, ↵ they sing, ↵ play music,
+snp3.11:4.2 | P: Bhujāni phoṭenti ca naccayanti ca; | S: they clap their hands and dance. | T: clap their hands, ↵ dance.
+snp3.11:4.3 | P: Pucchāmi vohaṁ merumuddhavāsine, | S: I ask you, dwellers on Mount Meru’s peak, | T: So I ask you, who live on Mount Meru’s summit.
+snp3.11:4.4 | P: Dhunātha me saṁsayaṁ khippa mārisā”. | S: quickly dispel my doubt, good fellows!” | T: Please dispel my doubt quickly, dear sirs.”
+snp3.11:5.1 | P: “So bodhisatto ratanavaro atulyo, | S: “The being intent on awakening, a peerless gem, | T: “The Bodhisatta, the foremost jewel, ↵ unequaled,
+snp3.11:5.2 | P: Manussaloke hitasukhatthāya jāto; | S: has been born in the human realm <j>for the sake of welfare and happiness, | T: has been born for welfare & happiness ↵ in the human world,
+snp3.11:5.3 | P: Sakyāna gāme janapade lumbineyye, | S: in Lumbinī, a village in the Sakyan land. | T: in a town in the Sakyan countryside, ↵ Lumbini.
+snp3.11:5.4 | P: Tenamha tuṭṭhā atiriva kalyarūpā. | S: That’s why we’re so happy, in such excellent spirits. | T: That’s why we’re contented, so wildly elated.
+snp3.11:6.1 | P: So sabbasattuttamo aggapuggalo, | S: He is supreme among all beings, the peak individual, | T: He, the highest of all beings, ↵ the ultimate person,
+snp3.11:6.2 | P: Narāsabho sabbapajānamuttamo; | S: captain of men, supreme among all creatures. | T: a bull among men, highest of all people,
+snp3.11:6.3 | P: Vattessati cakkamisivhaye vane, | S: He will roll forth the wheel in the grove of the seers, | T: will set turning the Wheel [of Dhamma] ↵ in the forest named after the seers,
+snp3.11:6.4 | P: Nadaṁva sīho balavā migābhibhū”. | S: roaring like a mighty lion, lord of beasts.” | T: like a strong, roaring lion, ↵ the conqueror of beasts.”
+snp3.11:7.1 | P: Taṁ saddaṁ sutvā turitamavasarī so, | S: Hearing this, he swiftly descended | T: Hearing these words, ↵ Asita quickly descended [from heaven]
+snp3.11:7.2 | P: Suddhodanassa tada bhavanaṁ upāvisi; | S: and right away approached Suddhodana’s home. | T: and went to Suddhodana’s dwelling.
+snp3.11:7.3 | P: Nisajja tattha idamavocāsi sakye, | S: Seated there he said this to the Sakyans, | T: There, taking a seat, he said to the Sakyans:
+snp3.11:7.4 | P: “Kuhiṁ kumāro ahamapi daṭṭhukāmo”. | S: “Where is the boy? I too wish to see him!” | T: “Where is the prince? ↵ I, too, want to see him.”
+snp3.11:8.1 | P: Tato kumāraṁ jalitamiva suvaṇṇaṁ, | S: Then the Sakyans showed their son <j>to the one named Asita— | T: The Sakyans then showed ↵ to the seer named Asita ↵ their son, the prince,
+snp3.11:8.2 | P: Ukkāmukheva sukusalasampahaṭṭhaṁ; | S: the boy shone like burning gold | T: like gold aglow,
+snp3.11:8.3 | P: Daddallamānaṁ siriyā anomavaṇṇaṁ, | S: well-wrought in the forge; | T: burnished by a most skillful smith ↵ in the mouth of the furnace,
+snp3.11:8.4 | P: Dassesu puttaṁ asitavhayassa sakyā. | S: dazzling with glory, of peerless beauty. | T: blazing with glory, flawless in color.
+snp3.11:9.1 | P: Disvā kumāraṁ sikhimiva pajjalantaṁ, | S: The boy beamed like crested flame, | T: On seeing the prince blazing like flame,
+snp3.11:9.2 | P: Tārāsabhaṁva nabhasigamaṁ visuddhaṁ; | S: pure as the moon, lord of stars traversing the sky, | T: pure like the bull of the stars ↵ going across the sky
+snp3.11:9.3 | P: Suriyaṁ tapantaṁ saradarivabbhamuttaṁ, | S: blazing like the sun free of stormclouds <j>after the rains; | T: —the burning sun, ↵ released from the clouds of autumn—
+snp3.11:9.4 | P: Ānandajāto vipulamalattha pītiṁ. | S: seeing him, he was joyful, brimming with happiness. | T: he was exultant, filled with abundant rapture.
+snp3.11:10.1 | P: Anekasākhañca sahassamaṇḍalaṁ, | S: The celestials held up a parasol in the sky, | T: The devas held in the sky
+snp3.11:10.2 | P: Chattaṁ marū dhārayumantalikkhe; | S: many-ribbed and thousand-circled; | T: a many-spoked sunshade ↵ of a thousand circles.
+snp3.11:10.3 | P: Suvaṇṇadaṇḍā vītipatanti cāmarā, | S: and golden-handled chowries waved— | T: Gold-handled whisks ↵ waved up & down,
+snp3.11:10.4 | P: Na dissare cāmarachattagāhakā. | S: but none could see who held <j>the chowries or the parasols. | T: but those holding the whisks & the sunshade ↵ couldn’t be seen.
+snp3.11:11.1 | P: Disvā jaṭī kaṇhasirivhayo isi, | S: When the matted hair seer named “Dark Splendor” | T: The coiled-haired seer ↵ named Dark Splendor,
+snp3.11:11.2 | P: Suvaṇṇanikkhaṁ viya paṇḍukambale; | S: had seen the boy like a gold ingot on a cream rug | T: seeing the boy, like an ornament of gold ↵ on the red woolen blanket,
+snp3.11:11.3 | P: Setañca chattaṁ dhariyanta muddhani, | S: with a white parasol held over his head, | T: a white sunshade held over his head,
+snp3.11:11.4 | P: Udaggacitto sumano paṭiggahe. | S: he received him, elated and happy. | T: received him, joyful in mind & pleased.
+snp3.11:12.1 | P: Paṭiggahetvā pana sakyapuṅgavaṁ, | S: Having received the Sakyan bull, | T: And on receiving the bull of the Sakyans,
+snp3.11:12.2 | P: Jigīsako lakkhaṇamantapāragū; | S: the seeker, master of marks and hymns, | T: longingly, the master of mantras & signs
+snp3.11:12.3 | P: Pasannacitto giramabbhudīrayi, | S: lifted up his voice with confident heart: | T: exclaimed with a confident mind:
+snp3.11:12.4 | P: “Anuttarāyaṁ dvipadānamuttamo”. | S: “He is supreme, the best of men!” | T: “This one is unsurpassed, ↵ the highest of the biped race.”
+snp3.11:13.1 | P: Athattano gamanamanussaranto, | S: But then, remembering he would depart this world, | T: Then, foreseeing his own imminent departure,
+snp3.11:13.2 | P: Akalyarūpo gaḷayati assukāni; | S: his spirits fell and his tears flowed. | T: he, dejected, shed tears.
+snp3.11:13.3 | P: Disvāna sakyā isimavocuṁ rudantaṁ, | S: Seeing the weeping seer, the Sakyans said, | T: On seeing him weeping, ↵ the Sakyans asked:
+snp3.11:13.4 | P: “No ce kumāre bhavissati antarāyo”. | S: “Surely there will be no threat to the boy?” | T: “But surely there will be ↵ no danger for the prince?”
+snp3.11:14.1 | P: Disvāna sakye isimavoca akalye, | S: Seeing the crestfallen Sakyans, the seer said, | T: On seeing the Sakyans’ concern ↵ he replied,
+snp3.11:14.2 | P: “Nāhaṁ kumāre ahitamanussarāmi; | S: “I do not forsee harm befall the boy, | T: “I foresee for the prince ↵ no harm.
+snp3.11:14.3 | P: Na cāpimassa bhavissati antarāyo, | S: and there will be no threat to him, | T: Nor will there be any danger for him.
+snp3.11:14.4 | P: Na orakāyaṁ adhimānasā bhavātha. | S: not in the least; set your minds at ease. | T: This one’s not insignificant: Be assured.
+snp3.11:15.1 | P: Sambodhiyaggaṁ phusissatāyaṁ kumāro, | S: This boy shall reach the highest awakening. | T: This prince will touch ↵ the ultimate self-awakening.
+snp3.11:15.2 | P: So dhammacakkaṁ paramavisuddhadassī; | S: As one of perfectly purified vision, <j>compassionate for the welfare of the many, | T: He, seeing the utmost purity,
+snp3.11:15.3 | P: Vattessatāyaṁ bahujanahitānukampī, | S: he shall roll forth the wheel of the teaching; | T: will set rolling the Wheel of Dhamma ↵ through sympathy for the welfare of many.
+snp3.11:15.4 | P: Vitthārikassa bhavissati brahmacariyaṁ. | S: his spiritual path will become widespread. | T: His holy life will spread far & wide.
+snp3.11:16.1 | P: Mamañca āyu na ciramidhāvaseso, | S: But I have not long left in this life, | T: But as for me, ↵ my life here has no long remainder.
+snp3.11:16.2 | P: Athantarā me bhavissati kālakiriyā; | S: I shall die before then. | T: My death will take place before then.
+snp3.11:16.3 | P: Sohaṁ na sossaṁ asamadhurassa dhammaṁ, | S: I will never hear the teaching of the one <j>who bore the unequaled burden. | T: I won’t get to hear ↵ the Dhamma of this one with the peerless role.
+snp3.11:16.4 | P: Tenamhi aṭṭo byasanaṅgato aghāvī”. | S: That’s why I’m so upset and distraught—<j>it’s a disaster for me!” | T: That’s why I’m stricken, ↵ afflicted, & pained.”
+snp3.11:17.1 | P: So sākiyānaṁ vipulaṁ janetvā pītiṁ, | S: Having brought abundant happiness to the Sakyans, | T: He, having brought the Sakyans ↵ abundant rapture,
+snp3.11:17.2 | P: Antepuramhā niggamā brahmacārī; | S: the spiritual seeker left the royal compound. | T: the follower of the holy life ↵ left the inner chamber and,
+snp3.11:17.3 | P: So bhāgineyyaṁ sayaṁ anukampamāno, | S: He had a nephew; and out of sympathy | T: out of sympathy for his nephew,
+snp3.11:17.4 | P: Samādapesi asamadhurassa dhamme. | S: he encouraged him in the teaching <j>of the one who bore the unequaled burden. | T: urged him on toward the Dhamma ↵ of the one with the peerless role:
+snp3.11:18.1 | P: “Buddhoti ghosaṁ yada parato suṇāsi, | S: “When you hear the voice of another saying <j>‘Buddha’— | T: “When you hear from another the word, ↵ ‘Awakened One,’
+snp3.11:18.2 | P: Sambodhipatto vivarati dhammamaggaṁ; | S: one who has attained awakening <j>and who reveals the foremost teaching— | T: or ‘Attaining self-awakening, ↵ he lays open the path of the Dhamma,’
+snp3.11:18.3 | P: Gantvāna tattha samayaṁ paripucchamāno, | S: go there and ask about his breakthrough; | T: go there and, asking him yourself,
+snp3.11:18.4 | P: Carassu tasmiṁ bhagavati brahmacariyaṁ”. | S: lead the spiritual life under that Blessed One.” | T: follow the holy life ↵ under that Blessed One.”
+snp3.11:19.1 | P: Tenānusiṭṭho hitamanena tādinā, | S: Now, that Nālaka had a store of accumulated merit; | T: Instructed by the one ↵ whose mind was set on his benefit, ↵ Such,
+snp3.11:19.2 | P: Anāgate paramavisuddhadassinā; | S: so when instructed by one of such kindly intent, | T: seeing in the future the utmost purity,
+snp3.11:19.3 | P: So nālako upacitapuññasañcayo, | S: with perfectly purified vision of the future, | T: Nālaka, who had laid up a store of merit,
+snp3.11:19.4 | P: Jinaṁ patikkhaṁ parivasi rakkhitindriyo. | S: he waited anticipating the Victor, <j>guarding his senses. | T: awaited the Victor expectantly, ↵ guarding his senses.
+snp3.11:20.1 | P: Sutvāna ghosaṁ jinavaracakkavattane, | S: When he heard of the Victor rolling forth <j>the excellent wheel he went to him, | T: On hearing word of the Victor’s ↵ turning of the foremost wheel, ↵ he went,
+snp3.11:20.2 | P: Gantvāna disvā isinisabhaṁ pasanno; | S: and seeing the boss seer, he became confident. | T: he saw ↵ the bull among seers. Confident,
+snp3.11:20.3 | P: Moneyyaseṭṭhaṁ munipavaraṁ apucchi, | S: The time of Asita’s instruction had arrived; | T: he asked the foremost sage ↵ about the utmost sagacity,
+snp3.11:20.4 | P: Samāgate asitāvhayassa sāsaneti. | S: so he asked the excellent sage <j>about the highest sagacity. | T: now that Asita’s forecast ↵ had come to pass.
+snp3.11:20.5 | P: Vatthugāthā niṭṭhitā. | S: The introductory verses are finished. | T: (none)
+snp3.11:21.1 | P: “Aññātametaṁ vacanaṁ, | S: “I now know that Asita’s words | T: Nālaka: ↵ “Now that I know ↵ Asita’s words
+snp3.11:21.2 | P: Asitassa yathātathaṁ; | S: have turned out to be true. | T: to be true,
+snp3.11:21.3 | P: Taṁ taṁ gotama pucchāmi, | S: I ask you this, Gotama, | T: I ask you, Gotama,
+snp3.11:21.4 | P: Sabbadhammāna pāraguṁ. | S: who has gone beyond all things: | T: you who have gone ↵ to the beyond of all dhammas.
+snp3.11:22.1 | P: Anagāriyupetassa, | S: For one who has entered the homeless life, | T: I’m intent on the homeless life;
+snp3.11:22.2 | P: Bhikkhācariyaṁ jigīsato; | S: seeking food on alms round, | T: I long for the almsround.
+snp3.11:22.3 | P: Muni pabrūhi me puṭṭho, | S: when questioned, O sage, please tell me | T: Tell me sage, when asked,
+snp3.11:22.4 | P: Moneyyaṁ uttamaṁ padaṁ”. | S: of sagacity, the ultimate state.” | T: the highest state of sagacity.”
+snp3.11:23.1 | P: “Moneyyaṁ te upaññissaṁ, | S: “I shall school you in sagacity,” | T: The Buddha: ↵ “I’ll teach you ↵ a sagacity
+snp3.11:23.2 | P: (iti bhagavā) | S: said the Buddha, | T: (none)
+snp3.11:23.3 | P: Dukkaraṁ durabhisambhavaṁ; | S: “so difficult and challenging. | T: hard to do, ↵ hard to master.
+snp3.11:23.4 | P: Handa te naṁ pavakkhāmi, | S: Come, I shall tell you all about it. | T: Come now, I’ll tell you.
+snp3.11:23.5 | P: Santhambhassu daḷho bhava. | S: Brace yourself; stay strong! | T: Be steadfast. Be firm.
+snp3.11:24.1 | P: Samānabhāgaṁ kubbetha, | S: In the village, keep the same attitude | T: Practice even-mindedness, ↵ for in a village
+snp3.11:24.2 | P: Gāme akkuṭṭhavanditaṁ; | S: no matter if reviled or praised. | T: there’s praise & abuse.
+snp3.11:24.3 | P: Manopadosaṁ rakkheyya, | S: Guard against ill-tempered thoughts; | T: Ward off any flaw in the heart.
+snp3.11:24.4 | P: Santo anuṇṇato care. | S: wander peaceful and humble. | T: Go about calmed & not haughty.
+snp3.11:25.1 | P: Uccāvacā niccharanti, | S: Many different things come up, | T: High & low things will come up
+snp3.11:25.2 | P: Dāye aggisikhūpamā; | S: like tongues of fire in a forest. | T: like fire-flames in a forest.
+snp3.11:25.3 | P: Nāriyo muniṁ palobhenti, | S: Women try to seduce a sage— | T: Women seduce a sage.
+snp3.11:25.4 | P: Tā su taṁ mā palobhayuṁ. | S: let them not seduce you! | T: May they not seduce you.
+snp3.11:26.1 | P: Virato methunā dhammā, | S: Refraining from sex, | T: Abstaining from sexual intercourse,
+snp3.11:26.2 | P: Hitvā kāme paropare; | S: having left behind sensual pleasures high and low, | T: abandoning various sensual pleasures,
+snp3.11:26.3 | P: Aviruddho asāratto, | S: don’t be hostile or attached | T: be unopposed, unattached,
+snp3.11:26.4 | P: Pāṇesu tasathāvare. | S: to living creatures firm or frail. | T: to beings moving & still.
+snp3.11:27.1 | P: Yathā ahaṁ tathā ete, | S: ‘As am I, so are they; | T: ‘As I am, so are these.
+snp3.11:27.2 | P: Yathā ete tathā ahaṁ; | S: as are they, so am I’— | T: As are these, so am I.’
+snp3.11:27.3 | P: Attānaṁ upamaṁ katvā, | S: Treating others like oneself, | T: Drawing the parallel to ↵ yourself,
+snp3.11:27.4 | P: Na haneyya na ghātaye. | S: neither kill nor incite to kill. | T: neither kill nor get others to kill.
+snp3.11:28.1 | P: Hitvā icchañca lobhañca, | S: Leaving behind desire and greed | T: Abandoning the wants & greed
+snp3.11:28.2 | P: Yattha satto puthujjano; | S: for what ordinary people are attached to, | T: where people run-of-the-mill are stuck,
+snp3.11:28.3 | P: Cakkhumā paṭipajjeyya, | S: one whose eye is clear would set out to practice, | T: practice with vision,
+snp3.11:28.4 | P: Tareyya narakaṁ imaṁ. | S: they’d cross over this abyss. | T: cross over this hell.
+snp3.11:29.1 | P: Ūnūdaro mitāhāro, | S: With empty stomach, taking limited food, | T: Stomach not full, ↵ moderate in food,
+snp3.11:29.2 | P: Appicchassa alolupo; | S: few in wishes, not greedy; | T: modest, ↵ not being greedy,
+snp3.11:29.3 | P: Sadā icchāya nicchāto, | S: truly hungerless regarding all desires, | T: always not hungering for wants:
+snp3.11:29.4 | P: Aniccho hoti nibbuto. | S: desireless, one is quenched. | T: One without hunger ↵ is one who’s unbound.
+snp3.11:30.1 | P: Sa piṇḍacāraṁ caritvā, | S: Having wandered for alms, | T: Having gone on his almsround, the sage
+snp3.11:30.2 | P: Vanantamabhihāraye; | S: they’d take themselves into the forest; | T: should then go to the forest,
+snp3.11:30.3 | P: Upaṭṭhito rukkhamūlasmiṁ, | S: and nearing the foot of a tree, | T: approaching the root of a tree,
+snp3.11:30.4 | P: Āsanūpagato muni. | S: the sage would take their seat. | T: taking a seat.
+snp3.11:31.1 | P: Sa jhānapasuto dhīro, | S: That attentive one intent on absorption, | T: The enlightened one, intent on jhāna,
+snp3.11:31.2 | P: Vanante ramito siyā; | S: would delight within the forest. | T: should find delight in the forest,
+snp3.11:31.3 | P: Jhāyetha rukkhamūlasmiṁ, | S: They’d practice absorption at the foot of a tree, | T: should practice jhāna at the foot of a tree,
+snp3.11:31.4 | P: Attānamabhitosayaṁ. | S: filling themselves with bliss. | T: attaining his own satisfaction.
+snp3.11:32.1 | P: Tato ratyā vivasāne, | S: Then, at the end of the night, | T: Then, at the end of the night,
+snp3.11:32.2 | P: Gāmantamabhihāraye; | S: they’d take themselves into a village. | T: he should go to the village,
+snp3.11:32.3 | P: Avhānaṁ nābhinandeyya, | S: They’d not welcome being called, | T: not delighting in an invitation
+snp3.11:32.4 | P: Abhihārañca gāmato. | S: nor offerings brought from the village. | T: or gift from the village.
+snp3.11:33.1 | P: Na munī gāmamāgamma, | S: A sage who has come to a village | T: Having gone to the village, ↵ the sage should not go
+snp3.11:33.2 | P: Kulesu sahasā care; | S: would not walk hastily among the families. | T: forcing his way among families.
+snp3.11:33.3 | P: Ghāsesanaṁ chinnakatho, | S: They’d not discuss their search for food, | T: Cutting off chatter,
+snp3.11:33.4 | P: Na vācaṁ payutaṁ bhaṇe. | S: nor would they speak suggestively. | T: he shouldn’t utter a scheming word.
+snp3.11:34.1 | P: Alatthaṁ yadidaṁ sādhu, | S: ‘I got something, that’s good. | T: ‘I got something. ↵ That’s fine.
+snp3.11:34.2 | P: Nālatthaṁ kusalaṁ iti; | S: I got nothing, that’s fine.’ | T: I got nothing. ↵ That, too, is good.’
+snp3.11:34.3 | P: Ubhayeneva so tādī, | S: Unaffected in both cases, | T: Being such with regard to both,
+snp3.11:34.4 | P: Rukkhaṁvupanivattati. | S: they return right to the tree. | T: he returns to the very same tree.
+snp3.11:35.1 | P: Sa pattapāṇi vicaranto, | S: Wandering with bowl in hand, | T: Wandering with his bowl in hand
+snp3.11:35.2 | P: Amūgo mūgasammato; | S: not dumb, but thought to be dumb, | T: —not dumb, ↵ but seemingly dumb—
+snp3.11:35.3 | P: Appaṁ dānaṁ na hīḷeyya, | S: they wouldn’t scorn a tiny gift, | T: he shouldn’t despise a piddling gift
+snp3.11:35.4 | P: Dātāraṁ nāvajāniyā. | S: nor look down upon the giver. | T: nor disparage the giver.
+snp3.11:36.1 | P: Uccāvacā hi paṭipadā, | S: For the practice has many aspects, | T: High & low are the practices
+snp3.11:36.2 | P: Samaṇena pakāsitā; | S: as revealed by the Ascetic. | T: proclaimed by the contemplative.
+snp3.11:36.3 | P: Na pāraṁ diguṇaṁ yanti, | S: They do not go to the far shore twice, | T: They don’t go twice to the further shore.
+snp3.11:36.4 | P: Nayidaṁ ekaguṇaṁ mutaṁ. | S: nor having gone once do they fall away. | T: This [unbinding] isn’t sensed only once.
+snp3.11:37.1 | P: Yassa ca visatā natthi, | S: When a mendicant has no creeping, | T: In one who has no attachment—
+snp3.11:37.2 | P: Chinnasotassa bhikkhuno; | S: and has cut the stream of craving, | T: the monk who has cut the stream,
+snp3.11:37.3 | P: Kiccākiccappahīnassa, | S: and given up all the various duties, | T: abandoning what is ↵ & isn’t a duty—
+snp3.11:37.4 | P: Pariḷāho na vijjati. | S: no fever is found in them. | T: no fever is found.
+snp3.11:38.1 | P: Moneyyaṁ te upaññissaṁ, | S: I shall school you in sagacity. | T: I’ll teach you ↵ sagacity:
+snp3.11:38.2 | P: Khuradhārūpamo bhave; | S: Practice as if you were licking a razor’s edge. | T: Be like a razor’s edge.
+snp3.11:38.3 | P: Jivhāya tālumāhacca, | S: With tongue pressed against the roof of your mouth, | T: Pressing tongue against palate,
+snp3.11:38.4 | P: Udare saññato siyā. | S: be restrained regarding your stomach. | T: restrain your stomach.
+snp3.11:39.1 | P: Alīnacitto ca siyā, | S: Don’t be sluggish in mind, | T: Neither be lazy in mind,
+snp3.11:39.2 | P: Na cāpi bahu cintaye; | S: nor think overly much. | T: nor have many thoughts.
+snp3.11:39.3 | P: Nirāmagandho asito, | S: Be free of putrefaction and unattached, | T: Be free of raw stench, ↵ independent,
+snp3.11:39.4 | P: Brahmacariyaparāyaṇo. | S: committed to the spiritual life. | T: having the holy life as your aim.
+snp3.11:40.1 | P: Ekāsanassa sikkhetha, | S: Train in a lonely seat, | T: Train in solitude
+snp3.11:40.2 | P: Samaṇūpāsanassa ca; | S: attending closely to ascetics; | T: & the contemplative’s task,
+snp3.11:40.3 | P: Ekattaṁ monamakkhātaṁ, | S: solitude is sagacity, they say. | T: Solitude ↵ is called ↵ sagacity.
+snp3.11:40.4 | P: Eko ce abhiramissasi; | S: If you welcome solitude, | T: Alone, you truly delight
+snp3.11:40.5 | P: Atha bhāhisi dasadisā. | S: you’ll light up the ten directions. | T: & shine in the ten directions.
+snp3.11:41.1 | P: Sutvā dhīrānaṁ nighosaṁ, | S: Having heard the words of the attentive, | T: On hearing the fame of the enlightened
+snp3.11:41.2 | P: Jhāyīnaṁ kāmacāginaṁ; | S: the meditators who’ve given up sensual desires, | T: —those who practice jhāna, ↵ relinquishing sensuality—
+snp3.11:41.3 | P: Tato hiriñca saddhañca, | S: a follower of mine would develop | T: my disciple should foster
+snp3.11:41.4 | P: Bhiyyo kubbetha māmako. | S: conscience and faith all the more. | T: all the more ↵ shame & conviction.
+snp3.11:42.1 | P: Taṁ nadīhi vijānātha, | S: Understand this by the way streams move | T: Know from the rivers
+snp3.11:42.2 | P: Sobbhesu padaresu ca; | S: in clefts and crevices: | T: in clefts & in crevices:
+snp3.11:42.3 | P: Saṇantā yanti kusobbhā, | S: the little creeks flow on resounding, | T: Those in small channels flow ↵ noisily,
+snp3.11:42.4 | P: Tuṇhī yanti mahodadhī. | S: while silent flow the great rivers. | T: the great ↵ flow silent.
+snp3.11:43.1 | P: Yadūnakaṁ taṁ saṇati, | S: What is lacking, resounds; | T: Whatever’s deficient ↵ makes noise.
+snp3.11:43.2 | P: Yaṁ pūraṁ santameva taṁ; | S: what is full is at peace. | T: Whatever is full ↵ is quiet.
+snp3.11:43.3 | P: Aḍḍhakumbhūpamo bālo, | S: The fool is like a half-full pot; | T: The fool is like a half-empty pot;
+snp3.11:43.4 | P: Rahado pūrova paṇḍito. | S: the wise like a brimfull lake. | T: one who is wise, a full lake.
+snp3.11:44.1 | P: Yaṁ samaṇo bahuṁ bhāsati, | S: When the Ascetic speaks much | T: A contemplative who speaks a great deal
+snp3.11:44.2 | P: Upetaṁ atthasañhitaṁ; | S: it is relevant and meaningful: | T: endowed with meaning:
+snp3.11:44.3 | P: Jānaṁ so dhammaṁ deseti, | S: knowing, he teaches the Dhamma; | T: Knowing, he teaches the Dhamma;
+snp3.11:44.4 | P: Jānaṁ so bahu bhāsati. | S: knowing, he speaks much. | T: knowing, he speaks a great deal.
+snp3.11:45.1 | P: Yo ca jānaṁ saṁyatatto, | S: But one who, knowing, is self-controlled, | T: But he who, ↵ knowing, is restrained,
+snp3.11:45.2 | P: Jānaṁ na bahu bhāsati; | S: knowing, does not speak much; | T: knowing, doesn’t speak a great deal:
+snp3.11:45.3 | P: Sa munī monamarahati, | S: that sage is worthy of sagacity, | T: He is a sage ↵ worthy of sagehood.
+snp3.11:45.4 | P: Sa munī monamajjhagā”ti. | S: that sage has achieved sagacity.” | T: He is a sage, ↵ his sagehood attained.”
+snp3.11:45.5 | P: Nālakasuttaṁ ekādasamaṁ. | S: (none) | T: (none)
+
+## an6.43
+Source: data/upstream/thanissaro/sutta/an/an6/an6.43.html
+an6.43:1.1 | P: Ekaṁ samayaṁ bhagavā sāvatthiyaṁ viharati jetavane anāthapiṇḍikassa ārāme. | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: On one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+an6.43:1.2 | P: Atha kho bhagavā pubbaṇhasamayaṁ nivāsetvā pattacīvaramādāya sāvatthiyaṁ piṇḍāya pāvisi. | S: Then the Buddha robed up in the morning and, taking his bowl and robe, entered Sāvatthī for alms. | T: Then early in the morning the Blessed One adjusted his under robe and—carrying his bowl & robes—went into Sāvatthī for alms.
+an6.43:1.3 | P: Sāvatthiyaṁ piṇḍāya caritvā pacchābhattaṁ piṇḍapātapaṭikkanto āyasmantaṁ ānandaṁ āmantesi: | S: Then, after the meal, on his return from almsround, he addressed Venerable Ānanda, | T: After his meal, on returning from his alms round, he addressed Ven. Ānanda,
+an6.43:1.4 | P: “āyāmānanda, yena pubbārāmo migāramātupāsādo tenupasaṅkamissāma divāvihārāyā”ti. | S: “Come, Ānanda, let’s go to the stilt longhouse of Migāra’s mother in the Eastern Monastery for the day’s meditation.” | T: “Come, Ānanda, let’s go to the Eastern Monastery, the palace of Migāra’s mother, for the day’s abiding.”
+an6.43:1.5 | P: “Evaṁ, bhante”ti kho āyasmā ānando bhagavato paccassosi. | S: “Yes, sir,” Ānanda replied. | T: “As you say, lord,” Ven. Ānanda responded to the Blessed One.
+an6.43:2.1 | P: Atha kho bhagavā āyasmatā ānandena saddhiṁ yena pubbārāmo migāramātupāsādo tenupasaṅkami. | S: So the Buddha went with Ānanda to the Eastern Monastery. | T: Then the Blessed One together with Ven. Ānanda went to the Eastern Monastery, the palace of Migāra’s mother.
+an6.43:2.2 | P: Atha kho bhagavā sāyanhasamayaṁ paṭisallānā vuṭṭhito āyasmantaṁ ānandaṁ āmantesi: | S: In the late afternoon the Buddha came out of retreat and addressed Ānanda, | T: On emerging from his seclusion in the late afternoon, he addressed Ven. Ānanda,
+an6.43:2.3 | P: “āyāmānanda, yena pubbakoṭṭhako tenupasaṅkamissāma gattāni parisiñcitun”ti. | S: “Come, Ānanda, let’s go to the eastern gate to bathe.” | T: “Come, Ānanda, let’s go to the Eastern Gatehouse to bathe our limbs.”
+an6.43:2.4 | P: “Evaṁ, bhante”ti kho āyasmā ānando bhagavato paccassosi. | S: “Yes, sir,” Ānanda replied. | T: “As you say, lord,” Ven. Ānanda responded to the Blessed One.
+an6.43:2.5 | P: Atha kho bhagavā āyasmatā ānandena saddhiṁ yena pubbakoṭṭhako tenupasaṅkami gattāni parisiñcituṁ. | S: So the Buddha went with Ānanda to the eastern gate to bathe. | T: Then the Blessed One together with Ven. Ānanda went to the Eastern Gatehouse to bathe his limbs.
+an6.43:2.6 | P: Pubbakoṭṭhake gattāni parisiñcitvā paccuttaritvā ekacīvaro aṭṭhāsi gattāni pubbāpayamāno. | S: When he had bathed and emerged from the water he stood in one robe drying his limbs. | T: Having bathed his limbs near the Eastern Gatehouse and gotten out of the water, he stood wearing only his lower robe, letting his limbs dry.
+an6.43:3.1 | P: Tena kho pana samayena rañño pasenadissa kosalassa seto nāma nāgo mahātūriyatāḷitavāditena pubbakoṭṭhakā paccuttarati. | S: Now, at that time King Pasenadi had a giant bull elephant called “White”. It emerged from the eastern gate to the beating and playing of musical instruments. | T: Then King Pasenadi Kosala’s nāga elephant named Seta came out of the Eastern Gatehouse accompanied by a great noise of instruments & drums.
+an6.43:3.2 | P: Apissu taṁ jano disvā evamāha: | S: When people saw it they said, | T: People, on seeing him, said,
+an6.43:3.3 | P: “abhirūpo vata bho rañño nāgo; dassanīyo vata bho rañño nāgo; pāsādiko vata, bho, rañño nāgo, kāyupapanno vata bho rañño nāgo”ti. | S: “The royal giant is so handsome! The royal giant is so good-looking! The royal giant is so lovely! The royal giant has such a big body!” | T: “How beautiful is the king’s nāga! How lovely the king’s nāga! How inspiring the king’s nāga! How blessed with a body the king’s nāga!”
+an6.43:3.4 | P: Evaṁ vutte, āyasmā udāyī bhagavantaṁ etadavoca: | S: When they said this, Venerable Udāyī said to the Buddha, | T: When this was said, Ven. Udāyin said to the Blessed One,
+an6.43:3.5 | P: “hatthimeva nu kho, bhante, mahantaṁ brahantaṁ kāyupapannaṁ jano disvā evamāha: | S: “Sir, is it only when they see elephants with such a big, formidable body that people say: | T: “Lord, is it only on seeing an elephant blessed with a large, massive body that people say,
+an6.43:3.6 | P: ‘nāgo vata bho nāgo’ti, udāhu aññampi kañci mahantaṁ brahantaṁ kāyupapannaṁ jano disvā evamāha: ‘nāgo vata bho nāgo’”ti? | S: ‘A giant, such a giant’? Or do they say it when they see any other creatures with big, formidable bodies?” | T: ‘A nāga! What a nāga!’? Or is there anything else blessed with a large, massive body that people, on seeing it, say, ‘A nāga! What a nāga!’?”
+an6.43:3.7 | P: “Hatthimpi kho, udāyi, mahantaṁ brahantaṁ kāyupapannaṁ jano disvā evamāha: | S: “Udāyī, when they see elephants with such a big, formidable body people say: | T: “Udāyin, it’s on seeing an elephant blessed with a large, massive body that that people say,
+an6.43:3.8 | P: ‘nāgo vata bho nāgo’ti. | S: ‘A giant, such a giant!’ | T: ‘A nāga! What a nāga!’
+an6.43:3.9 | P: Assampi kho, udāyi, mahantaṁ brahantaṁ …pe… | S: And also when they see a horse with a big, formidable body … | T: It’s on seeing a horse blessed with a large, massive body,
+an6.43:3.10 | P: goṇampi kho, udāyi, mahantaṁ brahantaṁ …pe… | S: When they see a bull with a big, formidable body … | T: a bull blessed with a large, massive body,
+an6.43:3.11 | P: uragampi kho, udāyi, mahantaṁ brahantaṁ …pe… | S: When they see a serpent with a big, formidable body … | T: a serpent blessed with a large, massive body,
+an6.43:3.12 | P: rukkhampi kho, udāyi, mahantaṁ brahantaṁ …pe… | S: When they see a tree with a big, formidable body … | T: a tree blessed with a large, massive body,
+an6.43:3.13 | P: manussampi kho, udāyi, mahantaṁ brahantaṁ kāyupapannaṁ jano disvā evamāha: | S: And when they see a human being with such a big, formidable body people say: | T: a human being blessed with a large, massive body that people say,
+an6.43:3.14 | P: ‘nāgo vata, bho, nāgo’ti. | S: ‘A giant, such a giant!’ | T: ‘A nāga! What a nāga!’
+an6.43:3.15 | P: Api ca, udāyi, yo sadevake loke samārake sabrahmake sassamaṇabrāhmaṇiyā pajāya sadevamanussāya āguṁ na karoti kāyena vācāya manasā, tamahaṁ ‘nāgo’ti brūmī”ti. | S: But Udāyī, one who does nothing monstrous by way of body, speech, and mind is who I call a ‘giant’ in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans.” | T: “But, Udāyin, whoever in this world with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & commonfolk—does no misdeed in body, speech, or mind: That’s whom I call a nāga.”
+an6.43:4.1 | P: “Acchariyaṁ, bhante, abbhutaṁ, bhante. | S: “It’s incredible, sir, it’s amazing! | T: “Amazing, lord! Astounding!
+an6.43:4.2 | P: Yāva subhāsitañcidaṁ, bhante, bhagavatā— | S: How well said this was by the Buddha: | T: How that was well-said by the Blessed One:
+an6.43:4.3 | P: api ca, udāyi, yo sadevake loke samārake sabrahmake sassamaṇabrāhmaṇiyā pajāya sadevamanussāya āguṁ na karoti kāyena vācāya manasā, tamahaṁ ‘nāgo’ti brūmīti. | S: ‘But Udāyī, one who does nothing monstrous by way of body, speech, and mind is who I call a “giant” in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans.’ | T: ‘But, Udāyin, whoever in this world with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & commonfolk, does no misdeed in body, speech, or mind: That’s whom I call a nāga.’
+an6.43:4.4 | P: Idañca panāhaṁ, bhante, bhagavatā subhāsitaṁ imāhi gāthāhi anumodāmi— | S: And I celebrate the well-spoken words of the Buddha with these verses: | T: And with these verses, lord, I will rejoice in what was well-said by the Blessed One:
+an6.43:5.1 | P: Manussabhūtaṁ sambuddhaṁ, | S: Awakened as a human being, | T: A human being, self-awakened,
+an6.43:5.2 | P: attadantaṁ samāhitaṁ; | S: self-tamed and immersed in samādhi, | T: his mind tamed, concentrated,
+an6.43:5.3 | P: Iriyamānaṁ brahmapathe, | S: following the spiritual path, | T: traveling along the Brahmā road,
+an6.43:5.4 | P: cittassūpasame rataṁ. | S: he loves peace of mind. | T: delighting in the stilling of the mind:
+an6.43:6.1 | P: Yaṁ manussā namassanti, | S: Revered by people, | T: He, having gone beyond all dhammas,
+an6.43:6.2 | P: sabbadhammāna pāraguṁ; | S: gone beyond all things, | T: to whom human beings pay homage,
+an6.43:6.3 | P: Devāpi taṁ namassanti, | S: even the gods revere him; | T: the devas pay homage as well—
+an6.43:6.4 | P: iti me arahato sutaṁ. | S: so I’ve heard from the perfected one. | T: so I have heard from the Worthy One
+an6.43:7.1 | P: Sabbasaṁyojanātītaṁ, | S: He has transcended all fetters | T: —to him, gone past all fetters,
+an6.43:7.2 | P: vanā nibbanamāgataṁ; | S: and escaped from entanglements. | T: gone from the forest to the clearing,
+an6.43:7.3 | P: Kāmehi nekkhammarataṁ, | S: Delighting to renounce sensual pleasures, | T: delighting in the renunciation of sensuality,
+an6.43:7.4 | P: muttaṁ selāva kañcanaṁ. | S: he’s freed like lustrous gold from stone. | T: released like gold from its ore.
+an6.43:8.1 | P: Sabbe accarucī nāgo, | S: That giant outshines all, | T: He, the nāga outshining all others,
+an6.43:8.2 | P: himavāññe siluccaye; | S: like the Himalaya beside other mountains. | T: as the Himalayas, rocky hills:
+an6.43:8.3 | P: Sabbesaṁ nāganāmānaṁ, | S: Of all those named ‘giant’, | T: Among all things named ‘nāga,’
+an6.43:8.4 | P: saccanāmo anuttaro. | S: he is truly named, supreme. | T: he, unexcelled, is truly named.
+an6.43:9.1 | P: Nāgaṁ vo kittayissāmi, | S: I shall extol the giant for you, | T: I will praise the nāga to you—
+an6.43:9.2 | P: na hi āguṁ karoti so; | S: for he does nothing monstrous. | T: for he does no misdeed.
+an6.43:9.3 | P: Soraccaṁ avihiṁsā ca, | S: Gentleness and harmlessness | T: Composure & harmlessness
+an6.43:9.4 | P: pādā nāgassa te duve. | S: are two feet of the giant. | T: are the nāga’s two feet.
+an6.43:10.1 | P: Tapo ca brahmacariyaṁ, | S: Fervor and chastity | T: Austerity & celibacy
+an6.43:10.2 | P: caraṇā nāgassa tyāpare; | S: are his two other feet. | T: are the nāga’s two other feet.
+an6.43:10.3 | P: Saddhāhattho mahānāgo, | S: Faith is the giant’s trunk, | T: Conviction is the great nāga’s trunk, ↵ his hand;
+an6.43:10.4 | P: upekkhāsetadantavā. | S: and equanimity his white tusks. | T: equanimity, his white tusks.
+an6.43:11.1 | P: Sati gīvā siro paññā, | S: Mindfulness is his neck, his head is wisdom— | T: Mindfulness his neck; his head, ↵ discernment,
+an6.43:11.2 | P: vīmaṁsā dhammacintanā; | S: inquiry and thinking about principles. | T: discrimination, ↵ reflection on dhammas;
+an6.43:11.3 | P: Dhammakucchisamātapo, | S: His belly is the sacred hearth of the Dhamma, | T: Dhamma the balanced heat of his digestion;
+an6.43:11.4 | P: viveko tassa vāladhi. | S: and his tail is seclusion. | T: seclusion his tail.
+an6.43:12.1 | P: So jhāyī assāsarato, | S: Practicing absorption, enjoying the breath, | T: He, in jhāna, delighting in assurance,
+an6.43:12.2 | P: ajjhattaṁ susamāhito; | S: he is serene within. | T: inwardly well-concentrated,
+an6.43:12.3 | P: Gacchaṁ samāhito nāgo, | S: The giant is serene when walking, | T: the nāga, when going, is concentrated,
+an6.43:12.4 | P: ṭhito nāgo samāhito. | S: the giant is serene when standing, | T: when standing, the nāga is concentrated,
+an6.43:13.1 | P: Seyyaṁ samāhito nāgo, | S: the giant is serene when lying down, | T: when reclining, the nāga is concentrated,
+an6.43:13.2 | P: nisinnopi samāhito; | S: and when sitting, the giant is serene. | T: when sitting, the nāga is concentrated.
+an6.43:13.3 | P: Sabbattha saṁvuto nāgo, | S: The giant is restrained everywhere: | T: Everywhere he’s restrained, the nāga:
+an6.43:13.4 | P: esā nāgassa sampadā. | S: this is the accomplishment of the giant. | T: That is the nāga’s consummation.
+an6.43:14.1 | P: Bhuñjati anavajjāni, | S: He eats blameless things, | T: He eats what is blameless;
+an6.43:14.2 | P: sāvajjāni na bhuñjati; | S: he doesn’t eat blameworthy things. | T: doesn’t eat what is not;
+an6.43:14.3 | P: Ghāsamacchādanaṁ laddhā, | S: When he gets food and clothes, | T: on gaining food & clothing,
+an6.43:14.4 | P: sannidhiṁ parivajjayaṁ. | S: he avoids storing them up. | T: doesn’t store it up.
+an6.43:15.1 | P: Saṁyojanaṁ aṇuṁ thūlaṁ, | S: Having severed all bonds, | T: Having cut all bonds,
+an6.43:15.2 | P: sabbaṁ chetvāna bandhanaṁ; | S: fetters large and small, | T: fetters tiny & large,
+an6.43:15.3 | P: Yena yeneva gacchati, | S: wherever he goes, | T: wherever he goes,
+an6.43:15.4 | P: anapekkhova gacchati. | S: he goes without concern. | T: he goes without longing.
+an6.43:16.1 | P: Yathāpi udake jātaṁ, | S: A white lotus, | T: Like a white lotus, born & growing in the water,
+an6.43:16.2 | P: puṇḍarīkaṁ pavaḍḍhati; | S: fragrant and delightful, | T: but not smeared by the water
+an6.43:16.3 | P: Nupalippati toyena, | S: sprouts in water and grows there, | T: —fragrant, delightful—
+an6.43:16.4 | P: sucigandhaṁ manoramaṁ. | S: but water does not stick to it. | T: (none)
+an6.43:17.1 | P: Tatheva loke sujāto, | S: Just so the Buddha is born in the world, | T: even so the awakened one,
+an6.43:17.2 | P: buddho loke viharati; | S: and lives in the world, | T: well-born in the world, lives in the world,
+an6.43:17.3 | P: Nupalippati lokena, | S: but the world does not stick to him, | T: but is not smeared by the world,
+an6.43:17.4 | P: toyena padumaṁ yathā. | S: as water does not stick to the lotus. | T: like the lotus, by the water.
+an6.43:18.1 | P: Mahāginīva jalito, | S: A great blazing fire | T: A great blazing fire
+an6.43:18.2 | P: anāhārūpasammati; | S: dies down when the fuel runs out. | T: unnourished grows calm,
+an6.43:18.3 | P: Saṅkhāresūpasantesu, | S: When the coals have gone out | T: and though its embers exist
+an6.43:18.4 | P: nibbutoti pavuccati. | S: it’s said to be ‘quenched’. | T: is described as unbound:
+an6.43:19.1 | P: Atthassāyaṁ viññāpanī, | S: This simile is taught by the discerning | T: Conveying an instructive meaning,
+an6.43:19.2 | P: upamā viññūhi desitā; | S: to express the meaning clearly. | T: this image is taught by the observant.
+an6.43:19.3 | P: Viññassanti mahānāgā, | S: Great giants will understand | T: Great nāgas will recognize
+an6.43:19.4 | P: nāgaṁ nāgena desitaṁ. | S: what the giant taught the giant. | T: the nāga as taught by the nāga
+an6.43:20.1 | P: Vītarāgo vītadoso, | S: Free of greed, free of hate, | T: as free from passion, ↵ free from aversion,
+an6.43:20.2 | P: Vītamoho anāsavo; | S: free of delusion, undefiled; | T: free from delusion, ↵ effluent-free.
+an6.43:20.3 | P: Sarīraṁ vijahaṁ nāgo, | S: the giant, giving up his body, | T: His body discarded, the nāga
+an6.43:20.4 | P: Parinibbissati anāsavo”ti. | S: being undefiled, will be fully quenched.” | T: will totally unbind, ↵ effluent-free.
+an6.43:20.5 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## an10.101
+Source: data/upstream/thanissaro/sutta/an/an10/an10.101.html
+an10.101:1.1 | P: “Tisso imā, bhikkhave, samaṇasaññā bhāvitā bahulīkatā satta dhamme paripūrenti. | S: “Mendicants, when these three perceptions for ascetics are developed and cultivated they fulfill seven things. | T: “Monks, three contemplative perceptions, when developed & pursued, bring seven things to completion.
+an10.101:1.2 | P: Katamā tisso? | S: What three? | T: Which three?
+an10.101:1.3 | P: Vevaṇṇiyamhi ajjhupagato, parapaṭibaddhā me jīvikā, añño me ākappo karaṇīyoti— | S: ‘I have secured freedom from class.’ ‘My livelihood is tied up with others.’ ‘My behavior should be different.’ | T: “‘I have become casteless. “‘My life is dependent on others. “‘My behavior should be different (from that of householders).’
+an10.101:1.4 | P: imā kho, bhikkhave, tisso samaṇasaññā bhāvitā bahulīkatā satta dhamme paripūrenti. | S: When these three perceptions for ascetics are developed and cultivated they fulfill seven things. | T: “These three contemplative perceptions, when developed & pursued, bring seven things to completion.
+an10.101:2.1 | P: Katame satta? | S: What seven? | T: Which seven?
+an10.101:2.2 | P: Santatakārī hoti santatavutti sīlesu, anabhijjhālu hoti, abyāpajjo hoti, anatimānī hoti, sikkhākāmo hoti, “idamatthan”tissa hoti jīvitaparikkhāresu, āraddhavīriyo ca viharati. | S: Their deeds and behavior are always consistent with the precepts. They’re content, kind-hearted, and humble. They are eager to train. They use the necessities of life after reflecting on their purpose. They’re energetic. | T: “One acts & behaves consistently with the virtues. “One isn’t greedy. “One is devoid of ill will. “One is devoid of arrogance. “One desires training. “One thinks, ‘They have this purpose,’ with regard to the requisites of life. “One remains with one’s persistence aroused.
+an10.101:2.3 | P: Imā kho, bhikkhave, tisso samaṇasaññā bhāvitā bahulīkatā ime satta dhamme paripūrentī”ti. | S: When those three perceptions for ascetics are developed and cultivated they fulfill these seven things.” | T: “Monks, these three contemplative perceptions, when developed & pursued, bring these seven things to completion.”
+an10.101:2.4 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## an3.105
+Source: data/upstream/thanissaro/sutta/an/an3/an3.105.html
+an3.105:1.1 | P: “No cedaṁ, bhikkhave, loke assādo abhavissa, nayidaṁ sattā loke sārajjeyyuṁ. | S: “Mendicants, if there were no gratification in the world, sentient beings wouldn’t be aroused by it. | T: “Monks, if there were not this allure to the cosmos, beings would not become impassioned with the cosmos.
+an3.105:1.2 | P: Yasmā ca kho, bhikkhave, atthi loke assādo, tasmā sattā loke sārajjanti. | S: But because there is gratification in the world, sentient beings are aroused by it. | T: But because there is an allure to the cosmos, beings become impassioned with the cosmos.
+an3.105:1.3 | P: No cedaṁ, bhikkhave, loke ādīnavo abhavissa, nayidaṁ sattā loke nibbindeyyuṁ. | S: If the world had no drawback, sentient beings wouldn’t grow disillusioned with it. | T: “If there were not this drawback to the cosmos, beings would not become disenchanted with the cosmos.
+an3.105:1.4 | P: Yasmā ca kho, bhikkhave, atthi loke ādīnavo, tasmā sattā loke nibbindanti. | S: But since the world has a drawback, sentient beings do grow disillusioned with it. | T: But because there is a drawback to the cosmos, beings become disenchanted with the cosmos.
+an3.105:1.5 | P: No cedaṁ, bhikkhave, loke nissaraṇaṁ abhavissa, nayidaṁ sattā lokamhā nissareyyuṁ. | S: If there were no escape from the world, sentient beings wouldn’t escape from it. | T: “If there were not this escape from the cosmos, beings would not escape from the cosmos.
+an3.105:1.6 | P: Yasmā ca kho, bhikkhave, atthi loke nissaraṇaṁ, tasmā sattā lokamhā nissaranti. | S: But since there is an escape from the world, sentient beings do escape from it. | T: But because there is an escape from the cosmos, beings escape from the cosmos.
+an3.105:1.7 | P: Yāvakīvañca, bhikkhave, sattā lokassa assādañca assādato ādīnavañca ādīnavato nissaraṇañca nissaraṇato yathābhūtaṁ nābbhaññāsuṁ, neva tāva, bhikkhave, sattā sadevakā lokā samārakā sabrahmakā sassamaṇabrāhmaṇiyā pajāya sadevamanussāya nissaṭā visaṁyuttā vippamuttā vimariyādīkatena cetasā vihariṁsu. | S: As long as sentient beings don’t truly understand the world’s gratification, drawback, and escape for what they are, they haven’t escaped from this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—and they don’t live detached, liberated, with mind free of boundaries. | T: “And, monks, as long as beings don’t know as it has come to be—with regard to the cosmos—the allure as the allure, the drawback as the drawback, and the escape as the escape, they have not escaped from this cosmos with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & common people, nor do they dwell disjoined from it, released from it, with unrestricted awareness.
+an3.105:1.8 | P: Yato ca kho, bhikkhave, sattā lokassa assādañca assādato ādīnavañca ādīnavato nissaraṇañca nissaraṇato yathābhūtaṁ abbhaññāsuṁ, atha, bhikkhave, sattā sadevakā lokā samārakā sabrahmakā sassamaṇabrāhmaṇiyā pajāya sadevamanussāya nissaṭā visaṁyuttā vippamuttā vimariyādīkatena cetasā viharantī”ti. | S: But when sentient beings truly understand the world’s gratification, drawback, and escape for what they are, they’ve escaped from this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—and they live detached, liberated, with mind free of boundaries.” | T: “But when beings know as it has come to be—with regard to the cosmos—the allure as the allure, the drawback as the drawback, and the escape as the escape, they have escaped from this cosmos with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & common people, and they dwell disjoined from it, released from it, with unrestricted awareness.”
+an3.105:1.9 | P: Tatiyaṁ. | S: (none) | T: (none)
+
+## an4.124
+Source: data/upstream/thanissaro/sutta/an/an4/an4.124.html
+an4.124:1.1 | P: “Cattārome, bhikkhave, puggalā santo saṁvijjamānā lokasmiṁ. | S: “Mendicants, these four individuals are found in the world. | T: “Monks, there are these four types of individuals to be found existing in the world.
+an4.124:1.2 | P: Katame cattāro? | S: What four? | T: Which four?
+an4.124:1.3 | P: Idha, bhikkhave, ekacco puggalo vivicceva kāmehi …pe… paṭhamaṁ jhānaṁ upasampajja viharati. | S: Take an individual who, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption … | T: “There is the case where an individual, quite secluded from sensuality, secluded from unskillful qualities, enters & remains in the first jhāna: rapture & pleasure born of seclusion, accompanied by directed thought & evaluation.
+an4.124:1.4 | P: So yadeva tattha hoti rūpagataṁ vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ, te dhamme aniccato dukkhato rogato gaṇḍato sallato aghato ābādhato parato palokato suññato anattato samanupassati. | S: They contemplate the phenomena there—included in form, feeling, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. | T: He regards whatever phenomena there that are connected with form, feeling, perception, fabrications, & consciousness, as inconstant, stressful, a disease, a cancer, an arrow, painful, an affliction, alien, a disintegration, an emptiness, not-self.
+an4.124:1.5 | P: So kāyassa bhedā paraṁ maraṇā suddhāvāsānaṁ devānaṁ sahabyataṁ upapajjati. | S: When their body breaks up, after death, they’re reborn in the company of the gods of the pure abodes. | T: At the break-up of the body, after death, he reappears in conjunction with the Devas of the Pure Abodes.
+an4.124:1.6 | P: Ayaṁ, bhikkhave, upapatti asādhāraṇā puthujjanehi. | S: This rebirth is distinct from that of ordinary people. | T: This rebirth is not in common with run-of-the-mill people.
+an4.124:2.1 | P: Puna caparaṁ, bhikkhave, idhekacco puggalo vitakkavicārānaṁ vūpasamā …pe… dutiyaṁ jhānaṁ …pe… tatiyaṁ jhānaṁ …pe… catutthaṁ jhānaṁ upasampajja viharati. | S: Furthermore, take an individual who, as the placing of the mind and keeping it connected are stilled, enters and remains in the second absorption … third absorption … fourth absorption … | T: “Again, there is the case where an individual… enters the second jhāna… the third jhāna… the fourth jhāna…
+an4.124:2.2 | P: So yadeva tattha hoti rūpagataṁ vedanāgataṁ saññāgataṁ saṅkhāragataṁ viññāṇagataṁ, te dhamme aniccato dukkhato rogato gaṇḍato sallato aghato ābādhato parato palokato suññato anattato samanupassati. | S: They contemplate the phenomena there—included in form, feeling, perception, choices, and consciousness—as impermanent, as suffering, as diseased, as a boil, as a dart, as gloom, as an affliction, as alien, as breaking apart, as empty, as not-self. | T: He regards whatever phenomena there that are connected with form, feeling, perception, fabrications, & consciousness, as inconstant, stressful, a disease, a cancer, an arrow, painful, an affliction, alien, a disintegration, an emptiness, not-self.
+an4.124:2.3 | P: So kāyassa bhedā paraṁ maraṇā suddhāvāsānaṁ devānaṁ sahabyataṁ upapajjati. | S: When their body breaks up, after death, they’re reborn in the company of the gods of the pure abodes. | T: At the break-up of the body, after death, he reappears in conjunction with the Devas of the Pure Abodes.
+an4.124:2.4 | P: Ayaṁ, bhikkhave, upapatti asādhāraṇā puthujjanehi. | S: This rebirth is distinct from that of ordinary people. | T: This rebirth is not in common with run-of-the-mill people.
+an4.124:2.5 | P: Ime kho, bhikkhave, cattāro puggalā santo saṁvijjamānā lokasmin”ti. | S: These are the four individuals found in the world.” | T: “These are four types of individuals to be found existing in the world.”
+an4.124:2.6 | P: Catutthaṁ. | S: (none) | T: (none)
+
+## an4.159
+Source: data/upstream/thanissaro/sutta/an/an4/an4.159.html
+an4.159:1.1 | P: Evaṁ me sutaṁ— | S: So I have heard. | T: I have heard that
+an4.159:1.2 | P: ekaṁ samayaṁ āyasmā ānando kosambiyaṁ viharati ghositārāme. | S: At one time Venerable Ānanda was staying near Kosambī in Ghosita’s monastery. | T: on one occasion Ven. Ānanda was staying in Kosambī at Ghosita’s monastery.
+an4.159:1.3 | P: Atha kho aññatarā bhikkhunī aññataraṁ purisaṁ āmantesi: | S: And then a certain nun addressed a man, | T: Then a certain nun said to a certain man,
+an4.159:1.4 | P: “ehi tvaṁ, ambho purisa, yenayyo ānando tenupasaṅkama; upasaṅkamitvā mama vacanena ayyassa ānandassa pāde sirasā vanda: | S: “Please, my friend, go to the venerable Ānanda, and in my name bow with your head to his feet. Say to him: | T: “Go, my good man, to my lord Ānanda and, on arrival, bowing your head to his feet in my name, tell him,
+an4.159:1.5 | P: ‘itthannāmā, bhante, bhikkhunī ābādhikinī dukkhitā bāḷhagilānā. | S: ‘Sir, the nun named so-and-so is sick, suffering, and gravely ill. | T: ‘The nun named such-&-such, venerable sir, is sick, in pain, severely ill.
+an4.159:1.6 | P: Sā ayyassa ānandassa pāde sirasā vandatī’ti. Evañca vadehi: | S: She bows with her head to your feet.’ And then say: | T: She bows her head to the feet of her lord Ānanda and says,
+an4.159:1.7 | P: ‘sādhu kira, bhante, ayyo ānando yena bhikkhunupassayo yena sā bhikkhunī tenupasaṅkamatu anukampaṁ upādāyā’”ti. | S: ‘Sir, please go to the nuns’ quarters to visit that nun out of sympathy.’” | T: “It would be good if my lord Ānanda were to go to the nuns’ quarters, to visit this nun out of sympathy for her.”’”
+an4.159:1.8 | P: “Evaṁ, ayye”ti kho so puriso tassā bhikkhuniyā paṭissutvā yenāyasmā ānando tenupasaṅkami; upasaṅkamitvā āyasmantaṁ ānandaṁ abhivādetvā ekamantaṁ nisīdi. Ekamantaṁ nisinno kho so puriso āyasmantaṁ ānandaṁ etadavoca: | S: “Yes, ma’am,” that man replied. He did as the nun asked. | T: Responding, “Yes, my lady,” the man then went to Ven. Ānanda and, on arrival, having bowed down, sat to one side. As he was sitting there he said to Ven. Ānanda,
+an4.159:2.1 | P: “Itthannāmā, bhante, bhikkhunī ābādhikinī dukkhitā bāḷhagilānā. | S: (none) | T: “The nun named such-&-such, venerable sir, is sick, in pain, severely ill.
+an4.159:2.2 | P: Sā āyasmato ānandassa pāde sirasā vandati, evañca vadeti: | S: (none) | T: She bows her head to the feet of her lord Ānanda and says,
+an4.159:2.3 | P: ‘sādhu kira, bhante, āyasmā ānando yena bhikkhunupassayo yena sā bhikkhunī tenupasaṅkamatu anukampaṁ upādāyā’”ti. | S: (none) | T: ‘It would be good if my lord Ānanda were to go to the nuns’ quarters, to visit this nun out of sympathy for her.’”
+an4.159:2.4 | P: Adhivāsesi kho āyasmā ānando tuṇhībhāvena. | S: Ānanda consented with silence. | T: Ven. Ānanda acquiesced with silence.
+an4.159:3.1 | P: Atha kho āyasmā ānando nivāsetvā pattacīvaramādāya yena bhikkhunupassayo yena sā bhikkhunī tenupasaṅkami. | S: Then Ānanda robed up and went to the nuns’ quarters to visit that nun, taking his bowl and robe. | T: Then in the early morning, having adjusted his lower robe and carrying his bowl & outer robe, Ven. Ānanda went to the nuns’ quarters.
+an4.159:3.2 | P: Addasā kho sā bhikkhunī āyasmantaṁ ānandaṁ dūratova āgacchantaṁ. | S: That nun saw Ānanda coming off in the distance. | T: The nun saw Ven. Ānanda coming from afar.
+an4.159:3.3 | P: Disvā sasīsaṁ pārupitvā mañcake nipajji. | S: She wrapped herself up from head to foot and laid down on her cot. | T: On seeing him, she lay down on a bed, having covered her head.
+an4.159:3.4 | P: Atha kho āyasmā ānando yena sā bhikkhunī tenupasaṅkami; upasaṅkamitvā paññatte āsane nisīdi. Nisajja kho āyasmā ānando taṁ bhikkhuniṁ etadavoca: | S: Then Venerable Ānanda went up to her, and sat down on the seat spread out. Then Ānanda said to the nun: | T: Then Ven. Ānanda went to the nun and, on arrival, sat down on a seat made ready. As he was sitting there, he said to the nun:
+an4.159:4.1 | P: “Āhārasambhūto ayaṁ, bhagini, kāyo āhāraṁ nissāya. | S: “Sister, this body is produced by food. Relying on food, | T: “This body, sister, comes into being through food. And yet it is by relying on food that
+an4.159:4.2 | P: Āhāro pahātabbo. | S: you should give up food. | T: food is to be abandoned.
+an4.159:4.3 | P: Taṇhāsambhūto ayaṁ, bhagini, kāyo taṇhaṁ nissāya. | S: This body is produced by craving. Relying on craving, | T: “This body comes into being through craving. And yet it is by relying on craving that
+an4.159:4.4 | P: Taṇhā pahātabbā. | S: you should give up craving. | T: craving is to be abandoned.
+an4.159:4.5 | P: Mānasambhūto ayaṁ, bhagini, kāyo mānaṁ nissāya. | S: This body is produced by conceit. Relying on conceit, | T: “This body comes into being through conceit. And yet it is by relying on conceit that
+an4.159:4.6 | P: Māno pahātabbo. | S: you should give up conceit. | T: conceit is to be abandoned.
+an4.159:4.7 | P: Methunasambhūto ayaṁ, bhagini, kāyo. | S: This body is produced by sex. | T: “This body comes into being through sexual intercourse.
+an4.159:4.8 | P: Methune ca setughāto vutto bhagavatā. | S: The Buddha spoke of breaking off everything to do with sex. | T: Sexual intercourse is to be abandoned. With regard to sexual intercourse, the Buddha declares the cutting-off of the bridge.
+an4.159:5.1 | P: ‘Āhārasambhūto ayaṁ, bhagini, kāyo āhāraṁ nissāya. | S: ‘This body is produced by food. Relying on food, | T: “‘This body, sister, comes into being through food. And yet it is by relying on food that
+an4.159:5.2 | P: Āhāro pahātabbo’ti, iti kho panetaṁ vuttaṁ. | S: you should give up food.’ This is what I said, | T: food is to be abandoned.’ Thus it was said.
+an4.159:5.3 | P: Kiñcetaṁ paṭicca vuttaṁ? | S: but why did I say it? | T: And in reference to what was it said?
+an4.159:5.4 | P: Idha, bhagini, bhikkhu paṭisaṅkhā yoniso āhāraṁ āhāreti: | S: Take a mendicant who reflects rationally on the food that they eat: | T: There is the case, sister, where a monk, considering it thoughtfully, takes food—
+an4.159:5.5 | P: ‘neva davāya na madāya na maṇḍanāya na vibhūsanāya, yāvadeva imassa kāyassa ṭhitiyā yāpanāya vihiṁsūparatiyā brahmacariyānuggahāya. Iti purāṇañca vedanaṁ paṭihaṅkhāmi, navañca vedanaṁ na uppādessāmi. Yātrā ca me bhavissati anavajjatā ca phāsuvihāro cā’ti. | S: ‘Not for fun, indulgence, adornment, or decoration, but only to sustain this body, to avoid harm, and to support spiritual practice. In this way, I shall put an end to old discomfort and not give rise to new discomfort, and I will have the means to keep going, blamelessness, and a comfortable abiding.’ | T: not playfully, nor for intoxication, nor for putting on bulk, nor for beautification—but simply for the survival & continuance of this body, for ending its afflictions, for the support of the holy life, (thinking,) ‘Thus will I destroy old feelings (of hunger) and not create new feelings (from overeating). I will maintain myself, be blameless, & live in comfort.’
+an4.159:5.6 | P: So aparena samayena āhāraṁ nissāya āhāraṁ pajahati. | S: After some time, relying on food, they give up food. | T: Then, at a later time, he abandons food, having relied on food.
+an4.159:5.7 | P: ‘Āhārasambhūto ayaṁ, bhagini, kāyo āhāraṁ nissāya āhāro pahātabbo’ti, | S: (none) | T: ‘This body, sister, comes into being through food. And yet it is by relying on food that food is to be abandoned.’
+an4.159:5.8 | P: iti yaṁ taṁ vuttaṁ idametaṁ paṭicca vuttaṁ. | S: That’s why I said what I said. | T: Thus it was said. And in reference to this was it said.
+an4.159:6.1 | P: ‘Taṇhāsambhūto ayaṁ, bhagini, kāyo taṇhaṁ nissāya. | S: ‘This body is produced by craving. Relying on craving, | T: “‘This body comes into being through craving. And yet it is by relying on craving that
+an4.159:6.2 | P: Taṇhā pahātabbā’ti, iti kho panetaṁ vuttaṁ. | S: you should give up craving.’ This is what I said, | T: craving is to be abandoned.’ Thus it was said.
+an4.159:6.3 | P: Kiñcetaṁ paṭicca vuttaṁ? | S: but why did I say it? | T: And in reference to what was it said?
+an4.159:6.4 | P: Idha, bhagini, bhikkhu suṇāti: | S: Take a mendicant who hears this: | T: There is the case, sister, where a monk hears,
+an4.159:6.5 | P: ‘itthannāmo kira bhikkhu āsavānaṁ khayā anāsavaṁ cetovimuttiṁ paññāvimuttiṁ diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharatī’ti. | S: ‘They say that the mendicant named so-and-so has realized the undefiled freedom of heart and freedom by wisdom. And they live having realized it with their own insight in this very life due to the ending of defilements.’ | T: ‘The monk named such-&-such, they say, through the ending of the effluents, has entered & remains in the effluent-free awareness-release & discernment-release, having known & realized them for himself right in the here & now.’
+an4.159:6.6 | P: Tassa evaṁ hoti: | S: They think: | T: The thought occurs to him,
+an4.159:6.7 | P: ‘kudāssu nāma ahampi āsavānaṁ khayā anāsavaṁ cetovimuttiṁ paññāvimuttiṁ diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharissāmī’ti. | S: ‘Oh, when will I too realize the undefiled freedom of heart and freedom by wisdom … in this very life …’ | T: ‘I hope that I, too, will—through the ending of the effluents—enter & remain in the effluent-free awareness-release & discernment-release, having directly known & realized them for myself right in the here & now.’
+an4.159:6.8 | P: So aparena samayena taṇhaṁ nissāya taṇhaṁ pajahati. | S: After some time, relying on craving, they give up craving. | T: Then, at a later time, he abandons craving, having relied on craving.
+an4.159:6.9 | P: ‘Taṇhāsambhūto ayaṁ, bhagini, kāyo taṇhaṁ nissāya taṇhā pahātabbā’ti, | S: (none) | T: ‘This body comes into being through craving. And yet it is by relying on craving that craving is to be abandoned.’
+an4.159:6.10 | P: iti yaṁ taṁ vuttaṁ idametaṁ paṭicca vuttaṁ. | S: That’s why I said what I said. | T: Thus it was said. And in reference to this was it said.
+an4.159:7.1 | P: ‘Mānasambhūto ayaṁ, bhagini, kāyo mānaṁ nissāya. | S: ‘This body is produced by conceit. Relying on conceit, | T: “‘This body comes into being through conceit. And yet it is by relying on conceit that
+an4.159:7.2 | P: Māno pahātabbo’ti, iti kho panetaṁ vuttaṁ. | S: you should give up conceit.’ This is what I said, | T: conceit is to be abandoned.’ Thus it was said.
+an4.159:7.3 | P: Kiñcetaṁ paṭicca vuttaṁ? | S: but why did I say it? | T: And in reference to what was it said?
+an4.159:7.4 | P: Idha, bhagini, bhikkhu suṇāti: | S: Take a mendicant who hears this: | T: There is the case, sister, where a monk hears,
+an4.159:7.5 | P: ‘itthannāmo kira bhikkhu āsavānaṁ khayā anāsavaṁ cetovimuttiṁ paññāvimuttiṁ diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharatī’ti. | S: ‘They say that the mendicant named so-and-so has realized the undefiled freedom of heart and freedom by wisdom. And they live having realized it with their own insight in this very life due to the ending of defilements.’ | T: ‘The monk named such-&-such, they say, through the ending of the effluents, has entered & remains in the effluent-free awareness-release & discernment-release, having directly known & realized them for himself right in the here & now.’
+an4.159:7.6 | P: Tassa evaṁ hoti: | S: They think: | T: The thought occurs to him,
+an4.159:7.7 | P: ‘so hi nāma āyasmā āsavānaṁ khayā anāsavaṁ cetovimuttiṁ paññāvimuttiṁ diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharissati; | S: ‘Well, that venerable can realize the undefiled freedom of heart and freedom by wisdom … in this very life … | T: ‘The monk named such-&-such, they say, through the ending of the effluents, has entered & remains in the effluent-free awareness-release & discernment-release, having directly known & realized them for himself right in the here & now.
+an4.159:7.8 | P: kimaṅgaṁ panāhan’ti. | S: Why can’t I?’ | T: Then why not me?’
+an4.159:7.9 | P: So aparena samayena mānaṁ nissāya mānaṁ pajahati. | S: After some time, relying on conceit, they give up conceit. | T: Then, at a later time, he abandons conceit, having relied on conceit.
+an4.159:7.10 | P: ‘Mānasambhūto ayaṁ, bhagini, kāyo, mānaṁ nissāya māno pahātabbo’ti, | S: (none) | T: ‘This body comes into being through conceit. And yet it is by relying on conceit that conceit is to be abandoned.’
+an4.159:7.11 | P: iti yaṁ taṁ vuttaṁ idametaṁ paṭicca vuttaṁ. | S: That’s why I said what I said. | T: Thus it was said. And in reference to this was it said.
+an4.159:8.1 | P: Methunasambhūto ayaṁ, bhagini, kāyo. | S: ‘This body is produced by sex. | T: “This body comes into being through sexual intercourse.
+an4.159:8.2 | P: Methune ca setughāto vutto bhagavatā”ti. | S: The Buddha spoke of breaking off everything to do with sex.’” | T: Sexual intercourse is to be abandoned. With regard to sexual intercourse, the Buddha declares the cutting-off of the bridge.”
+an4.159:9.1 | P: Atha kho sā bhikkhunī mañcakā vuṭṭhahitvā ekaṁsaṁ uttarāsaṅgaṁ karitvā āyasmato ānandassa pādesu sirasā nipatitvā āyasmantaṁ ānandaṁ etadavoca: | S: Then that nun rose from her cot, placed her robe over one shoulder, bowed with her head to Ānanda’s feet, and said, | T: Then the nun—getting up from her bed, arranging her upper robe over one shoulder, and bowing down with her head at Ven. Ānanda’s feet—said,
+an4.159:9.2 | P: “accayo maṁ, bhante, accagamā, yathābālaṁ yathāmūḷhaṁ yathāakusalaṁ, yāhaṁ evamakāsiṁ. | S: “I made a mistake, sir. It was foolish, stupid, and unskillful of me to act in that way. | T: “A transgression has overcome me, venerable sir, in that I was so foolish, so muddle-headed, and so unskilled as to act in this way.
+an4.159:9.3 | P: Tassā me, bhante, ayyo ānando accayaṁ accayato paṭiggaṇhātu, āyatiṁ saṁvarāyā”ti. | S: Please, sir, accept my mistake for what it is, so I can restrain myself in future.” | T: May my lord Ānanda please accept this confession of my transgression as such, so that I may restrain myself in the future.”
+an4.159:9.4 | P: “Taggha taṁ, bhagini, accayo accagamā, yathābālaṁ yathāmūḷhaṁ yathāakusalaṁ, yā tvaṁ evamakāsi. | S: “Indeed, sister, you made a mistake. It was foolish, stupid, and unskillful of you to act in that way. | T: “Yes, sister, a transgression overcame you in that you were so foolish, so muddle-headed, and so unskilled as to act in this way.
+an4.159:9.5 | P: Yato ca kho tvaṁ, bhagini, accayaṁ accayato disvā yathādhammaṁ paṭikarosi, taṁ te mayaṁ paṭiggaṇhāma. | S: But since you have recognized your mistake for what it is, and have dealt with it properly, I accept it. | T: But because you see your transgression as such and make amends in accordance with the Dhamma, we accept your confession.
+an4.159:9.6 | P: Vuddhi hesā, bhagini, ariyassa vinaye yo accayaṁ accayato disvā yathādhammaṁ paṭikaroti āyatiṁ saṁvaraṁ āpajjatī”ti. | S: For it is growth in the training of the Noble One to recognize a mistake for what it is, deal with it properly, and commit to restraint in the future.” | T: For it is a cause of growth in the discipline of the noble ones when, seeing a transgression as such, one makes amends in accordance with the Dhamma and exercises restraint in the future.”
+an4.159:9.7 | P: Navamaṁ. | S: (none) | T: (none)
+

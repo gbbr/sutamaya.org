@@ -1,0 +1,48 @@
+# Audit6 independent xhigh judge: proposed repairs only; no audit batches supplied.
+Use original Pali and original source. Current T is BEFORE repairs.
+
+## Proposal 1: an10.96:10.1
+{"key": "an10.96:10.1", "starts": "On being asked, ‘Very well then: “The cosmos", "readerFile": "batch-003.findings"}
+Source: data/upstream/thanissaro/sutta/an/an10/an10.96.html
+an10.96:8.3 | P: Jānāmahaṁ, āvuso, passāmī”ti.  | S: I do know and see.”  | T: 'I do know. I do see.” '
+an10.96:9.1 | P: “‘Kiṁ nu kho, bho, sassato loko, idameva saccaṁ moghamaññanti— | S: “When asked about all these points, you say that’s not your view.  | T: '“But on being asked, ‘How is it, my friend: “The cosmos is eternal. Only this is true; anything otherwise is worthless.” Is this the sort of view you have?’ you inform me, ‘No, my friend, I don’t have that sort of view.’ On being asked, ‘Very well then: “The cosmos is not eternal … ” … '
+an10.96:9.2 | P: evaṁdiṭṭhi bhavan’ti, iti puṭṭho samāno:  | S:  | T: ''
+an10.96:9.3 | P: ‘na kho ahaṁ, āvuso, evaṁdiṭṭhi— | S:  | T: ''
+an10.96:9.4 | P: sassato loko, idameva saccaṁ moghamaññan’ti vadesi.  | S:  | T: ''
+an10.96:10.1 | P: ‘Kiṁ pana, bho, asassato loko, idameva saccaṁ moghamaññanti— | S:  | T: ''
+an10.96:10.2 | P: evaṁdiṭṭhi bhavan’ti, iti puṭṭho samāno:  | S:  | T: ''
+an10.96:10.3 | P: ‘na kho ahaṁ, āvuso, evaṁdiṭṭhi— | S:  | T: ''
+an10.96:10.4 | P: asassato loko, idameva saccaṁ moghamaññan’ti vadesi.  | S:  | T: ''
+an10.96:11.1 | P: Kiṁ nu kho, bho, antavā loko …pe…  | S:  | T: '“The cosmos is finite … ” … '
+an10.96:11.2 | P: anantavā loko …  | S:  | T: '“The cosmos is infinite … ” … '
+
+## Proposal 2: an10.96:12.3
+{"key": "an10.96:12.3", "starts": "I do know. I do see.’", "readerFile": "batch-003.findings"}
+Source: data/upstream/thanissaro/sutta/an/an10/an10.96.html
+an10.96:11.9 | P: evaṁdiṭṭhi bhavanti, iti puṭṭho samāno:  | S:  | T: 'Is this the sort of view you have?’ you inform me, '
+an10.96:11.10 | P: ‘na kho ahaṁ, āvuso, evaṁdiṭṭhi— | S:  | T: '‘No, my friend, I don’t have that sort of view.’ '
+an10.96:11.11 | P: neva hoti na na hoti tathāgato paraṁ maraṇā, idameva saccaṁ moghamaññan’ti vadesi.  | S:  | T: ''
+an10.96:12.1 | P: ‘Tena hi bhavaṁ na jānāti na passatī’ti, iti puṭṭho samāno:  | S: Yet when asked whether you neither know nor see,  | T: 'But on being asked, ‘Then in that case, do you not know or see?’ '
+an10.96:12.2 | P: ‘na kho ahaṁ, āvuso, na jānāmi na passāmi.  | S: you say, ‘That’s not so, reverend.  | T: 'you inform me, ‘No, my friend. '
+an10.96:12.3 | P: Jānāmahaṁ, āvuso, passāmī’ti vadesi.  | S: I do know and see.’  | T: 'It’s not the case that I don’t know or see. I do know. I do see.’ '
+an10.96:12.4 | P: Yathā kathaṁ panāvuso, imassa bhāsitassa attho daṭṭhabbo”ti?  | S: How then should we see the meaning of this statement?”  | T: 'Now, how is the meaning of this statement to be understood?” '
+an10.96:13.1 | P: “‘Sassato loko, idameva saccaṁ moghamaññan’ti kho, āvuso, diṭṭhigatametaṁ.  | S: “‘The cosmos is eternal. This is the only truth, anything else is futile:’ that’s a misconception.  | T: '“‘The cosmos is eternal. Only this is true; anything otherwise is worthless,’ is a viewpoint. '
+an10.96:13.2 | P: ‘Asassato loko, idameva saccaṁ moghamaññan’ti kho, āvuso, diṭṭhigatametaṁ.  | S: ‘The cosmos is not eternal. This is the only truth, anything else is futile:’ that’s a misconception.  | T: '‘The cosmos is not eternal …’ … '
+an10.96:13.3 | P: Antavā loko …pe…  | S: ‘The cosmos is finite …’ …  | T: '‘The cosmos is finite … ’ … '
+an10.96:13.4 | P: anantavā loko …  | S: ‘The cosmos is infinite …’ …  | T: '‘The cosmos is infinite … ’ … '
+
+## Proposal 3: an4.192:9.9
+{"key": "an4.192:9.9", "starts": null, "readerFile": "batch-004.findings"}
+Source: data/upstream/thanissaro/sutta/an/an4/an4.192.html
+an4.192:9.4 | P: Evamevaṁ kho, bhikkhave, puggalo puggalena saddhiṁ sākacchāyamāno evaṁ jānāti:  | S: In the same way, an individual who is discussing with someone else would come to know:  | T: 'In the same way, one individual, in discussion with another, knows this: '
+an4.192:9.5 | P: ‘yathā kho imassa āyasmato ummaggo yathā ca abhinīhāro yathā ca pañhāsamudāhāro, duppañño ayamāyasmā, nāyamāyasmā paññavā.  | S: ‘Judging by this venerable’s approach, by what they’re getting at, and by how they discuss a question, they’re witless, not wise. …’  | T: '‘From the way this person rises to an issue, from the way he applies (his reasoning), from the way he addresses a question… '
+an4.192:9.6 | P: Taṁ kissa hetu?  | S:  | T: ''
+an4.192:9.7 | P: Tathā hi ayamāyasmā na ceva gambhīraṁ atthapadaṁ udāharati santaṁ paṇītaṁ atakkāvacaraṁ nipuṇaṁ paṇḍitavedanīyaṁ.  | S:  | T: ''
+an4.192:9.8 | P: Yañca ayamāyasmā dhammaṁ bhāsati, tassa ca na paṭibalo saṅkhittena vā vitthārena vā atthaṁ ācikkhituṁ desetuṁ paññāpetuṁ paṭṭhapetuṁ vivarituṁ vibhajituṁ uttānīkātuṁ.  | S:  | T: ''
+an4.192:9.9 | P: Duppañño ayamāyasmā, nāyamāyasmā paññavā’ti.  | S:  | T: 'he is dull, not discerning.’ '
+an4.192:10.1 | P: Idha pana, bhikkhave, puggalo puggalena saddhiṁ sākacchāyamāno evaṁ jānāti:  | S: Take another individual who is discussing with someone else. They come to know:  | T: '“And then there is the case where one individual, through discussion with another, knows this: '
+an4.192:10.2 | P: ‘yathā kho imassa āyasmato ummaggo yathā ca abhinīhāro yathā ca pañhāsamudāhāro, paññavā ayamāyasmā, nāyamāyasmā duppañño.  | S: ‘Judging by this venerable’s approach, by what they’re getting at, and by how they discuss a question, they’re wise, not witless.  | T: '‘From the way this person rises to an issue, from the way he applies (his reasoning), from the way he addresses a question, he is discerning, not dull. '
+an4.192:10.3 | P: Taṁ kissa hetu?  | S: Why is that?  | T: 'Why is that? '
+an4.192:10.4 | P: Tathā hi ayamāyasmā gambhīrañceva atthapadaṁ udāharati santaṁ paṇītaṁ atakkāvacaraṁ nipuṇaṁ paṇḍitavedanīyaṁ.  | S: This venerable brings up a deep and meaningful saying that is peaceful, sublime, beyond the scope of logic, subtle, comprehensible to the astute.  | T: 'He makes statements that are deep, tranquil, refined, beyond the scope of conjecture, subtle, to-be-experienced by the wise. '
+an4.192:10.5 | P: Yañca ayamāyasmā dhammaṁ bhāsati, tassa ca paṭibalo saṅkhittena vā vitthārena vā atthaṁ ācikkhituṁ desetuṁ paññāpetuṁ paṭṭhapetuṁ vivarituṁ vibhajituṁ uttānīkātuṁ.  | S: When this venerable speaks on Dhamma they’re able to explain the meaning, either briefly or in detail. They teach it, assert it, establish it, clarify it, analyze it, and reveal it.  | T: 'He can declare the meaning, teach it, describe it, set it forth, reveal it, explain it, & make it plain. '
+

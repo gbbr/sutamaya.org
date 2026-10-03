@@ -1,0 +1,161 @@
+{
+  "groups": [
+    {
+      "text": "an10.96",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an10.96:10.1",
+          "starts": "On being asked, ‘Very well then: “The cosmos",
+          "settles": {
+            "after": "ernal. Only this is true; anything otherwise is worthless.” Is this the sort of view you have?’ you inform me, ‘No, my friend, I don’t have that sort of view.’",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an10.96:9.1",
+          "sujato": "“When asked about all these points, you say that’s not your view.",
+          "before": "“But on being asked, ‘How is it, my friend: “The cosmos is eternal. Only this is true; anything otherwise is worthless.” Is this the sort of view you have?’ you inform me, ‘No, my friend, I don’t have that sort of view.’ On being asked, ‘Very well then: “The cosmos is not eternal … ” …",
+          "after": "“But on being asked, ‘How is it, my friend: “The cosmos is eternal. Only this is true; anything otherwise is worthless.” Is this the sort of view you have?’ you inform me, ‘No, my friend, I don’t have that sort of view.’"
+        },
+        {
+          "key": "an10.96:9.2",
+          "pali": "evaṁdiṭṭhi bhavan’ti, iti puṭṭho samāno:",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an10.96:9.3",
+          "pali": "‘na kho ahaṁ, āvuso, evaṁdiṭṭhi—",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an10.96:9.4",
+          "pali": "sassato loko, idameva saccaṁ moghamaññan’ti vadesi.",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an10.96:10.1",
+          "pali": "‘Kiṁ pana, bho, asassato loko, idameva saccaṁ moghamaññanti—",
+          "before": "",
+          "after": "On being asked, ‘Very well then: “The cosmos is not eternal … ” …"
+        },
+        {
+          "key": "an10.96:10.2",
+          "pali": "evaṁdiṭṭhi bhavan’ti, iti puṭṭho samāno:",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an10.96:10.3",
+          "pali": "‘na kho ahaṁ, āvuso, evaṁdiṭṭhi—",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an10.96:10.4",
+          "pali": "asassato loko, idameva saccaṁ moghamaññan’ti vadesi.",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an10.96:11.1",
+          "pali": "Kiṁ nu kho, bho, antavā loko …pe…",
+          "before": "“The cosmos is finite … ” …",
+          "after": "“The cosmos is finite … ” …"
+        }
+      ]
+    },
+    {
+      "text": "an10.96",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an10.96:12.3",
+          "starts": "I do know. I do see.’",
+          "settles": {
+            "after": " not the case that I don’t know or see.",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an10.96:12.2",
+          "sujato": "you say, ‘That’s not so, reverend.",
+          "before": "you inform me, ‘No, my friend.",
+          "after": "you inform me, ‘No, my friend. It’s not the case that I don’t know or see."
+        },
+        {
+          "key": "an10.96:12.3",
+          "sujato": "I do know and see.’",
+          "before": "It’s not the case that I don’t know or see. I do know. I do see.’",
+          "after": "I do know. I do see.’"
+        },
+        {
+          "key": "an10.96:12.4",
+          "sujato": "How then should we see the meaning of this statement?”",
+          "before": "Now, how is the meaning of this statement to be understood?”",
+          "after": "Now, how is the meaning of this statement to be understood?”"
+        }
+      ]
+    },
+    {
+      "text": "an4.192",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an4.192:9.9",
+          "starts": null,
+          "settles": {
+            "empty": "up"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an4.192:9.5",
+          "sujato": "‘Judging by this venerable’s approach, by what they’re getting at, and by how they discuss a question, they’re witless, not wise. …’",
+          "before": "‘From the way this person rises to an issue, from the way he applies (his reasoning), from the way he addresses a question…",
+          "after": "‘From the way this person rises to an issue, from the way he applies (his reasoning), from the way he addresses a question… he is dull, not discerning.’"
+        },
+        {
+          "key": "an4.192:9.6",
+          "pali": "Taṁ kissa hetu?",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an4.192:9.7",
+          "pali": "Tathā hi ayamāyasmā na ceva gambhīraṁ atthapadaṁ udāharati santaṁ paṇītaṁ atakkāvacaraṁ nipuṇaṁ paṇḍitavedanīyaṁ.",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an4.192:9.8",
+          "pali": "Yañca ayamāyasmā dhammaṁ bhāsati, tassa ca na paṭibalo saṅkhittena vā vitthārena vā atthaṁ ācikkhituṁ desetuṁ paññāpetuṁ paṭṭhapetuṁ vivarituṁ vibhajituṁ uttānīkātuṁ.",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an4.192:9.9",
+          "pali": "Duppañño ayamāyasmā, nāyamāyasmā paññavā’ti.",
+          "before": "he is dull, not discerning.’",
+          "after": ""
+        },
+        {
+          "key": "an4.192:10.1",
+          "sujato": "Take another individual who is discussing with someone else. They come to know:",
+          "before": "“And then there is the case where one individual, through discussion with another, knows this:",
+          "after": "“And then there is the case where one individual, through discussion with another, knows this:"
+        }
+      ]
+    }
+  ],
+  "others": []
+}

@@ -1,0 +1,433 @@
+## snp1.5
+snp1.5:1.1 | S: “I ask the sage abounding in wisdom,” | T: Cunda the smith: I ask the sage of abundant discernment,
+snp1.5:1.2 | S: said Cunda the smith, | T: (none)
+snp1.5:1.3 | S: “the Buddha, master of the teaching, free of craving, | T: awakened, lord of the Dhamma, free of craving,
+snp1.5:1.4 | S: best of men, excellent charioteer, please tell me this: | T: supreme among two-legged beings, best of charioteers:
+snp1.5:1.5 | S: how many ascetics are there in the world?” | T: How many contemplatives are there in the world? Please tell me.
+snp1.5:2.1 | S: “There are four ascetics, not a fifth.” | T: The Buddha: Four contemplatives, there is no fifth.
+snp1.5:2.2 | S: said the Buddha to Cunda, | T: (none)
+snp1.5:2.3 | S: “Being asked to bear witness, <j>I will explain them to you: | T: Being asked in person, I disclose them to you:
+snp1.5:2.4 | S: the path-victor, the path-teacher, | T: the path-victor, the path-explainer,
+snp1.5:2.5 | S: the path-liver, and the path-wrecker.” | T: one who lives by the path, and the path-corrupter.
+snp1.5:3.1 | S: “Who is a path-victor according to the Buddhas?” | T: Cunda: Whom do the awakened call the path-victor?
+snp1.5:3.2 | S: said Cunda the smith, | T: (none)
+snp1.5:3.3 | S: “and how is one an unequaled explainer of the path? | T: How is one unequaled in pointing out the path?
+snp1.5:3.4 | S: Tell me when asked about one who lives the path, | T: When asked, tell me about the one who lives by the path.
+snp1.5:3.5 | S: then declare the path-wrecker.” | T: Then disclose the path-corrupter to me.
+snp1.5:4.1 | S: “Rid of indecision, free of thorns, | T: The Buddha: Whoever, de-arrowed, has crossed over doubt,
+snp1.5:4.2 | S: delighting in extinguishment, not fawning, | T: is refreshed in unbinding, devoid of greed,
+snp1.5:4.3 | S: a guide for the world with its gods. | T: a guide to the world along with its devas:
+snp1.5:4.4 | S: The Buddhas say one such is victor of the path. | T: The awakened call such a person path-victor.
+snp1.5:5.1 | S: Knowing the ultimate as ultimate, | T: Whoever here knowing the foremost as foremost,
+snp1.5:5.2 | S: they explain and analyze the teaching right here. | T: who points out, who analyzes the Dhamma right here,
+snp1.5:5.3 | S: That sage unstirred, with doubt cut off, | T: he, the cutter of doubt, the sage unperturbed,
+snp1.5:5.4 | S: is the second mendicant, I say, the teacher of the path. | T: is called the second of monks: path-explainer.
+snp1.5:6.1 | S: Living restrained and mindful on the path | T: Whoever lives by the path, the Dhamma-way well-explained,
+snp1.5:6.2 | S: of the well-taught passage of teaching, | T: restrained, mindful,
+snp1.5:6.3 | S: cultivating blameless states, | T: partaking of blameless ways,
+snp1.5:6.4 | S: is the third mendicant, I say, the path-liver. | T: is called the third of monks: with the path as his life.
+snp1.5:7.1 | S: Dressed like one true to their vows, | T: Making a façade of good practices,
+snp1.5:7.2 | S: pushy, rude, a corrupter of families, | T: brash, reckless, a corrupter of families,
+snp1.5:7.3 | S: devious, unrestrained, chaff, | T: idle, deceitful, unrestrained,
+snp1.5:7.4 | S: the path-wrecker’s life is a sham. | T: & going about as a counterfeit: He is a path-corrupter.
+snp1.5:8.1 | S: A layperson who gets this, | T: And when any householder
+snp1.5:8.2 | S: a learned, wise noble disciple, | T: —an instructed disciple of the noble ones, discerning— understands these,
+snp1.5:8.3 | S: knows that ‘They are not all like that one’. | T: knowing, “Not all are like that one,”
+snp1.5:8.4 | S: So when they see them they don’t lose their faith. | T: seeing one like that doesn’t kill his conviction.
+snp1.5:8.5 | S: For how could one equate them— | T: For how would one equate
+snp1.5:8.6 | S: the corrupt with the uncorrupt, <j>the pure with the impure?” | T: the corrupt with the uncorrupt, the impure with the pure?
+snp1.5:8.7 | P: Cundasuttaṁ pañcamaṁ. | T: (none)
+
+## snp4.9
+snp4.9:1.1 | S: “Even when I saw the sirens <j>Craving, Malignancy, and Lust, | T: [Māgandiya, a brahman, offers his daughter to the Buddha, who replies:] “On seeing [the daughters of Māra] —Discontent, Craving, & Passion—
+snp4.9:1.2 | S: I had no desire for sex. | T: there wasn’t even the desire for sex.
+snp4.9:1.3 | S: What is this body full of piss and shit? | T: So what would I want with this, filled with urine & excrement?
+snp4.9:1.4 | S: I wouldn’t even want to touch it with my foot.” | T: I wouldn’t want to touch it even with my foot.”
+snp4.9:2.1 | S: “If you do not want a gem such as this, | T: Māgandiya: “If you don’t want this gem of a woman,
+snp4.9:2.2 | S: a lady desired by many lords of men, | T: coveted by many kings,
+snp4.9:2.3 | S: then what manner of theory, <j>precepts and vows, livelihood, | T: then for what sort of viewpoint, habit, practice, life,
+snp4.9:2.4 | S: and rebirth in a new life do you assert?” | T: attainment of [further] becoming do you argue?”
+snp4.9:3.1 | S: “After judging among the teachings,” | T: The Buddha: “‘I argue for this’
+snp4.9:3.2 | S: said the Buddha to Māgaṇḍiya, | T: (none)
+snp4.9:3.3 | S: “none have been adopted thinking, ‘I assert this.’ | T: doesn’t occur to one when considering what’s grasped among doctrines.
+snp4.9:3.4 | S: Seeing views without adopting any, | T: Looking for what is ungrasped with regard to views,
+snp4.9:3.5 | S: searching, I saw inner peace.” | T: and detecting inner peace, I saw.”
+snp4.9:4.1 | S: “O sage, you speak of judgments you have formed,” | T: Māgandiya: “Sage, you speak
+snp4.9:4.2 | S: said Māgaṇḍiya, | T: (none)
+snp4.9:4.3 | S: “without having adopted any of those views. | T: of not grasping at any theorized judgments.
+snp4.9:4.4 | S: As to that matter of ‘inner peace’— | T: This ‘inner peace’: What does it mean?
+snp4.9:4.5 | S: how is that described by the attentive?” | T: How is it, by the enlightened, proclaimed?”
+snp4.9:5.1 | S: “Purity is spoken of not as due to view,” | T: The Buddha: “He doesn’t speak of purity in connection with view,
+snp4.9:5.2 | S: said the Buddha to Māgaṇḍiya, | T: (none)
+snp4.9:5.3 | S: “learning, knowledge, or precepts and vows; | T: learning, knowledge, habit or practice.
+snp4.9:5.4 | S: nor without view, learning, | T: Nor is it found by a person through lack of view, of learning,
+snp4.9:5.5 | S: knowledge, or precepts and vows. | T: of knowledge, of habit or practice.
+snp4.9:5.6 | S: Having relinquished these, not adopting them, | T: Letting these go, without grasping,
+snp4.9:5.7 | S: peaceful, independent, one would not pray <j>for another life.” | T: at peace, independent, one wouldn’t long for becoming.”
+snp4.9:6.1 | S: “It seems purity is spoken of not as due to view,” | T: Māgandiya: “Well, if he doesn’t speak of purity in connection with view,
+snp4.9:6.2 | S: said Māgaṇḍiya, | T: (none)
+snp4.9:6.3 | S: “learning, knowledge, or precepts and vows; | T: learning, knowledge, habit or practice.
+snp4.9:6.4 | S: nor without view, learning, | T: and it isn’t found by a person through lack of view, of learning,
+snp4.9:6.5 | S: knowledge, or precepts and vows. | T: of knowledge, of habit or practice,
+snp4.9:6.6 | S: If so, I think this teaching is sheer folly; | T: it seems to me that this teaching’s simply confused,
+snp4.9:6.7 | S: some believe that purity comes from view.” | T: for some assume a purity in terms of —by means of— a view.”
+snp4.9:7.1 | S: “Continuing to question while relying on a view,” | T: The Buddha: “Asking questions dependent on view,
+snp4.9:7.2 | S: said the Buddha to Māgaṇḍiya, | T: (none)
+snp4.9:7.3 | S: “you’ve become confused by all you’ve adopted. | T: you’re confused by the things you have grasped.
+snp4.9:7.4 | S: From this you’ve not glimpsed the slightest idea, | T: And so you don’t glimpse even the slightest notion [of what I am saying].
+snp4.9:7.5 | S: which is why you consider the teaching folly. | T: That’s why you think it’s confused.
+snp4.9:8.1 | S: If you think that ‘I’m equal, | T: Whoever supposes ‘equal,’ ‘superior,’ or ‘inferior,’
+snp4.9:8.2 | S: special, or worse’, you’ll dispute about that. | T: by that he’d dispute;
+snp4.9:8.3 | S: Not wavering due to the three discriminations, | T: whereas to one unaffected by these three,
+snp4.9:8.4 | S: they have no thought, ‘I’m equal or special’. | T: ‘equal,’ ‘superior,’ do not occur.
+snp4.9:9.1 | S: Why would that brahmin say, ‘It’s true’, | T: Of what would the brahman say ‘true’
+snp4.9:9.2 | S: or with whom would they dispute, ‘It’s false’? | T: or ‘false,’ with whom would he dispute?
+snp4.9:9.3 | S: There is no equal or unequal in them, | T: With whom would he join in dispute,
+snp4.9:9.4 | S: so who would they take on in debate? | T: he in whom ‘equal,’ ‘unequal’ are not?
+snp4.9:10.1 | S: After leaving their bastion to migrate without abode, | T: Having abandoned home, living free from society,
+snp4.9:10.2 | S: a sage doesn’t get close to anyone in town. | T: the sage in villages creates no intimacies.
+snp4.9:10.3 | S: Rid of sensual pleasures, not expecting, | T: Remote from sensuality, not preferring,
+snp4.9:10.4 | S: they wouldn’t get in arguments with people. | T: he wouldn’t engage with people in quarrelsome debate.
+snp4.9:11.1 | S: A spiritual giant would not take up for debate | T: Those things aloof from which he should go about in the world:
+snp4.9:11.2 | S: the things in the world from which they live secluded. | T: The Nāga wouldn’t take them up & argue for them.
+snp4.9:11.3 | S: As a prickly lotus born in the water | T: As the prickly lotus
+snp4.9:11.4 | S: is unsullied by water and mud, | T: is unsmeared by water & mud,
+snp4.9:11.5 | S: so the greedless sage, proponent of peace, | T: so the sage, an exponent of peace, without greed,
+snp4.9:11.6 | S: is unsmeared by sensuality and the world. | T: is unsmeared by sensuality & the world.
+snp4.9:12.1 | S: A knowledge master does not become conceited | T: An attainer-of-knowledge isn’t measured made proud
+snp4.9:12.2 | S: due to view or thought, <j>for they are not determined by that. | T: by views or what’s thought, for he isn’t fashioned of them.
+snp4.9:12.3 | S: They’ve no need for deeds or learning, | T: He wouldn’t be led by action, learning;
+snp4.9:12.4 | S: they’re not indoctrinated in dogmas. | T: doesn’t reach a conclusion in any entrenchments.
+snp4.9:13.1 | S: There are no ties for one detached from ideas; | T: For one dispassionate toward perception there are no snares;
+snp4.9:13.2 | S: there are no delusions for one freed by wisdom. | T: for one released by discernment, no delusions.
+snp4.9:13.3 | S: But those who have adopted ideas and views | T: Those who grasp at perceptions & views
+snp4.9:13.4 | S: wander the world causing conflict.” | T: go about clashing in the world.”
+snp4.9:13.5 | P: Māgaṇḍiyasuttaṁ navamaṁ. | T: (none)
+
+## an9.15
+an9.15:1.1 | S: “Mendicants, suppose there was a boil that was many years old. | T: “Monks, it’s just as if there were a boil that had been building for many years
+an9.15:1.2 | S: And that boil had nine orifices that were continually open wounds. | T: with nine openings, nine un-lanced heads.
+an9.15:1.3 | S: Whatever oozed out of them | T: Whatever would ooze out from it would be an uncleanliness oozing out, a stench oozing out, a disgust oozing out.
+an9.15:1.4 | S: would be filthy, stinking, and disgusting. | T: (none)
+an9.15:1.5 | S: Whatever exuded from them | T: Whatever would be discharged from it
+an9.15:1.6 | S: would be filthy, stinking, and disgusting. | T: would be an uncleanliness discharging, a stench discharging, a disgust discharging.
+an9.15:2.1 | S: ‘Boil’ is a term for this body made up of the four principal states, produced by mother and father, built up from rice and porridge, liable to impermanence, to wearing away and erosion, to breaking up and destruction. | T: “’A boil,’ monks, is another word for this body composed of the four properties, born of mother & father, fed on rice & porridge, subject to inconstancy, rubbing & abrasion, breaking-up & disintegrating.
+an9.15:2.2 | S: And that boil has nine orifices that are continually open wounds. | T: It has nine openings, nine un-lanced heads.
+an9.15:2.3 | S: Whatever oozes out of them | T: Whatever would ooze out from it
+an9.15:2.4 | S: is filthy, stinking, and disgusting. | T: would be an uncleanliness oozing out, a stench oozing out, a disgust oozing out.
+an9.15:2.5 | S: Whatever exudes from them | T: Whatever would be discharged from it
+an9.15:2.6 | S: is filthy, stinking, and disgusting. | T: would be an uncleanliness discharging, a stench discharging, a disgust discharging.
+an9.15:2.7 | S: So, mendicants, have no illusion about this body.” | T: For that reason, you should become disenchanted with this body.”
+an9.15:2.8 | P: Pañcamaṁ. | T: (none)
+
+## ud6.4
+ud6.4:1.1 | S: So I have heard. | T: I have heard that
+ud6.4:1.2 | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery.
+ud6.4:1.3 | S: Now at that time several ascetics, brahmins, and wanderers who followed various other religions were residing in Sāvatthī, holding different views, beliefs, and opinions, relying on different views. | T: And on that occasion there were many contemplatives, brahmans, & wanderers of various sects living around Sāvatthī with differing views, differing opinions, differing beliefs, dependent for support on their differing views.
+ud6.4:2.1 | S: There were some ascetics and brahmins who had this doctrine and view: | T: Some of the contemplatives & brahmans held this doctrine, this view:
+ud6.4:2.2 | S: “The cosmos is eternal. This is the only truth, anything else is futile.” | T: “The cosmos is eternal. Only this is true; anything otherwise is worthless.”
+ud6.4:3.1 | S: Others held views such as the following, each regarding their own view as true and others as silly. | T: Some of the contemplatives & brahmans held this doctrine, this view:
+ud6.4:3.2 | S: “The cosmos is not eternal.” | T: “The cosmos is not eternal” …
+ud6.4:4.1 | P: Santeke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.4:4.2 | S: “The cosmos is finite.” | T: “The cosmos is finite” …
+ud6.4:5.1 | P: Santi paneke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.4:5.2 | S: “The cosmos is infinite.” | T: “The cosmos is infinite” …
+ud6.4:6.1 | P: Santeke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.4:6.2 | S: “The soul and the body are one and the same.” | T: “The soul is the same thing as the body” …
+ud6.4:7.1 | P: Santi paneke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.4:7.2 | S: “The soul is one thing, the body another.” | T: “The soul is one thing and the body another” …
+ud6.4:8.1 | P: Santeke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.4:8.2 | S: “A realized one still exists after death.” | T: “After death a Tathāgata exists” …
+ud6.4:9.1 | P: Santi paneke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.4:9.2 | S: “A realized one no longer exists after death.” | T: “After death a Tathāgata does not exist” …
+ud6.4:10.1 | P: Santeke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.4:10.2 | S: “A realized one both still exists and no longer exists after death.” | T: “After death a Tathāgata both exists & does not exist” …
+ud6.4:11.1 | P: Santi paneke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.4:11.2 | S: “A realized one neither still exists nor no longer exists after death.” | T: “After death a Tathāgata neither exists nor does not exist. Only this is true; anything otherwise is worthless.”
+ud6.4:12.1 | S: They were fighting, quarreling, and disputing, continually wounding each other with barbed words: | T: And they kept on arguing, quarreling, & disputing, wounding one another with weapons of the mouth, saying,
+ud6.4:12.2 | S: “Such is Truth, such is not Truth! | T: “The Dhamma is like this, it’s not like that.
+ud6.4:12.3 | S: Such is not Truth, such is Truth!” | T: The Dhamma’s not like that, it’s like this.”
+ud6.4:13.1 | S: Then several mendicants robed up in the morning and, taking their bowls and robes, entered Sāvatthī for alms. | T: Then in the early morning, a large number of monks adjusted their under robes and–carrying their bowls & robes–went into Sāvatthī for alms.
+ud6.4:13.2 | S: Then, after the meal, when they returned from almsround, they went up to the Buddha, bowed, sat down to one side, and told him what was happening. The Buddha said: | T: Having gone for alms in Sāvatthī, after the meal, returning from their alms round, they went to the Blessed One and, on arrival, having bowed down to him, sat to one side.
+ud6.4:13.3 | P: Ekamantaṁ nisinnā kho te bhikkhū bhagavantaṁ etadavocuṁ: | T: As they were sitting there, they said to the Blessed One,
+ud6.4:14.1 | P: “Idha, bhante, sambahulā nānātitthiyasamaṇabrāhmaṇaparibbājakā sāvatthiyaṁ paṭivasanti nānādiṭṭhikā nānākhantikā nānārucikā nānādiṭṭhinissayanissitā— | T: “Lord, there are many contemplatives, brahmans, & wanderers of various sects living around Sāvatthī with differing views, differing opinions, differing beliefs, dependent for support on their differing views….
+ud6.4:15.1 | P: Santeke samaṇabrāhmaṇā evaṁvādino evaṁdiṭṭhino: | T: (none)
+ud6.4:15.2 | P: ‘sassato loko, idameva saccaṁ moghamaññan’ti …pe… | T: (none)
+ud6.4:15.3 | P: te bhaṇḍanajātā kalahajātā vivādāpannā aññamaññaṁ mukhasattīhi vitudantā viharanti: | T: And they keep on arguing, quarreling, & disputing, wounding one another with weapons of the mouth, saying,
+ud6.4:15.4 | P: ‘ediso dhammo, nediso dhammo; | T: ‘The Dhamma is like this, it’s not like that.
+ud6.4:15.5 | P: nediso dhammo, ediso dhammo’”ti. | T: The Dhamma’s not like that, it’s like this.’”
+ud6.4:16.1 | S: “The wanderers of other religions are blind and sightless. | T: “Monks, the wanderers of other sects are blind & eyeless.
+ud6.4:16.2 | S: They don’t understand what is beneficial or what is not beneficial, nor what is the truth and what is not the truth. | T: They don’t know what is beneficial and what is harmful. They don’t know what is the Dhamma and what is non-Dhamma.
+ud6.4:16.3 | S: That’s why they are fighting, quarreling, and disputing, continually wounding each other with barbed words. | T: Not knowing what is beneficial and what is harmful, not knowing what is Dhamma and what is non-Dhamma, they keep on arguing, quarreling, & disputing, wounding one another with weapons of the mouth, saying,
+ud6.4:16.4 | P: ‘ediso dhammo, nediso dhammo; | T: ‘The Dhamma is like this, it’s not like that.
+ud6.4:16.5 | P: nediso dhammo, ediso dhammo’ti. | T: The Dhamma’s not like that, it’s like this.’
+ud6.4:17.1 | S: Once upon a time, mendicants, right here in Sāvatthī there was a certain king. | T: “Once, monks, in this same Sāvatthī, there was a certain king,
+ud6.4:17.2 | S: Then the king addressed a man, | T: and the king said to a certain man,
+ud6.4:17.3 | S: ‘Please, my man, gather all those blind from birth throughout Sāvatthī and bring them together in one place.’ | T: ‘Come, my good man. Gather together all the people in Sāvatthī who have been blind from birth.’”
+ud6.4:17.4 | S: ‘Yes, Your Majesty,’ that man replied. He did as the king asked, then said to him, | T: “Responding, ‘As you say, your majesty,’ to the king, the man–having rounded up all the people in Sāvatthī who had been blind from birth–went to the king and on arrival said,
+ud6.4:17.5 | S: ‘Your Majesty, the blind people throughout Sāvatthī have been gathered.’ | T: ‘Your majesty, the people in Sāvatthī who have been blind from birth have been gathered together.’
+ud6.4:17.6 | S: ‘Well then, lad, show them an elephant.’ | T: “‘Very well then, I say, show the blind people an elephant.’
+ud6.4:17.7 | S: ‘Yes, Your Majesty,’ that man replied. He did as the king asked. | T: “Responding, ‘As you say, your majesty,’ to the king, the man showed the blind people an elephant.
+ud6.4:18.1 | S: To some of the blind people he showed the elephant’s head, saying, | T: To some of the blind people he showed the elephant’s head, saying,
+ud6.4:18.2 | S: ‘Here is the elephant.’ | T: ‘This, blind people, is what an elephant is like.’
+ud6.4:18.3 | S: To some of them he showed the elephant’s ear, saying, | T: To some of them he showed the elephant’s ear, saying,
+ud6.4:18.4 | S: ‘Here is the elephant.’ | T: ‘This, blind people, is what an elephant is like.’
+ud6.4:18.5 | S: To some of them he showed the elephant’s tusk, saying, | T: To some of them he showed the elephant’s tusk…
+ud6.4:18.6 | S: ‘Here is the elephant.’ | T: (none)
+ud6.4:18.7 | S: To some of them he showed the elephant’s trunk, saying, | T: the elephant’s trunk…
+ud6.4:18.8 | S: ‘Here is the elephant.’ | T: (none)
+ud6.4:18.9 | S: To some of them he showed the elephant’s flank, saying, | T: the elephant’s body…
+ud6.4:18.10 | S: ‘Here is the elephant.’ | T: (none)
+ud6.4:18.11 | S: To some of them he showed the elephant’s leg, saying, | T: the elephant’s foot…
+ud6.4:18.12 | S: ‘Here is the elephant.’ | T: (none)
+ud6.4:18.13 | S: To some of them he showed the elephant’s thigh, saying, | T: the elephant’s hindquarters…
+ud6.4:18.14 | S: ‘Here is the elephant.’ | T: (none)
+ud6.4:18.15 | S: To some of them he showed the elephant’s tail, saying, | T: the elephant’s tail…
+ud6.4:18.16 | S: ‘Here is the elephant.’ | T: (none)
+ud6.4:18.17 | S: To some of them he showed the tip of the elephant’s tail, saying, | T: the tuft at the end of the elephant’s tail, saying,
+ud6.4:18.18 | S: ‘Here is the elephant.’ | T: ‘This, blind people, is what an elephant is like.’
+ud6.4:19.1 | S: Then he approached the king and said, | T: “Then, having shown the blind people the elephant, the man went to the king and on arrival said,
+ud6.4:19.2 | S: ‘Your Majesty, the blind people have been shown the elephant. | T: ‘Your majesty, the blind people have seen the elephant.
+ud6.4:19.3 | S: Please go at your convenience.’ | T: May your majesty do what you think it is now time to do.’
+ud6.4:20.1 | S: Then the king went up to the blind people and said, | T: “Then the king went to the blind people and on arrival asked them,
+ud6.4:20.2 | S: ‘Have you seen the elephant?’ | T: ‘Blind people, have you seen the elephant?’
+ud6.4:20.3 | S: ‘Yes, Your Majesty, we have been shown the elephant.’ | T: “‘Yes, your majesty. We have seen the elephant.’
+ud6.4:20.4 | S: ‘Then tell us, what kind of thing is an elephant?’ | T: “‘Now tell me, blind people, what the elephant is like.’
+ud6.4:21.1 | S: The blind people who had been shown the elephant’s head said, | T: “The blind people who had been shown the elephant’s head said,
+ud6.4:21.2 | S: ‘Your Majesty, an elephant is like a pot.’ | T: ‘The elephant, your majesty, is just like a jar.’
+ud6.4:22.1 | S: Those who had been shown the ear said, | T: “Those who had been shown the elephant’s ear said,
+ud6.4:22.2 | S: ‘An elephant is like a winnowing fan.’ | T: ‘The elephant, your majesty, is just like a winnowing basket.’
+ud6.4:23.1 | S: Those who had been shown the tusk said, | T: “Those who had been shown the elephant’s tusk said,
+ud6.4:23.2 | S: ‘An elephant is like a ploughshare.’ | T: ‘The elephant, your majesty, is just like a plowshare.’
+ud6.4:24.1 | S: Those who had been shown the trunk said, | T: “Those who had been shown the elephant’s trunk said,
+ud6.4:24.2 | S: ‘An elephant is like a draft-pole.’ | T: ‘The elephant, your majesty, is just like the pole of a plow.’
+ud6.4:25.1 | S: Those who had been shown the flank said, | T: “Those who had been shown the elephant’s body said,
+ud6.4:25.2 | S: ‘An elephant is like a storehouse.’ | T: ‘The elephant, your majesty, is just like a granary.’
+ud6.4:26.1 | S: Those who had been shown the leg said, | T: “Those who had been shown the elephant’s foot said,
+ud6.4:26.2 | S: ‘An elephant is like a pillar.’ | T: ‘The elephant, your majesty, is just like a post.’
+ud6.4:27.1 | S: Those who had been shown the thigh said, | T: “Those who had been shown the elephant’s hindquarters said,
+ud6.4:27.2 | S: ‘An elephant is like a mortar.’ | T: ‘The elephant, your majesty, is just like a mortar.’
+ud6.4:28.1 | S: Those who had been shown the tail said, | T: “Those who had been shown the elephant’s tail said,
+ud6.4:28.2 | S: ‘An elephant is like a pestle.’ | T: ‘The elephant, your majesty, is just like a pestle.’
+ud6.4:29.1 | S: Those who had been shown the tip of the tail said, | T: “Those who had been shown the tuft at the end of the elephant’s tail said,
+ud6.4:29.2 | S: ‘An elephant is like a broom.’ | T: ‘The elephant, your majesty, is just like a broom.’
+ud6.4:30.1 | S: Saying, ‘Such is an elephant, not such! | T: “Saying, ‘The elephant is like this, it’s not like that.
+ud6.4:30.2 | S: Such is not an elephant, such is!’ they punched each other with their fists. | T: The elephant’s not like that, it’s like this,’ they struck one another with their fists.
+ud6.4:30.3 | S: At that, the king was pleased. | T: That gratified the king.
+ud6.4:31.1 | S: In the same way, mendicants, the wanderers of other religions are blind and sightless. | T: “In the same way, monks, the wanderers of other sects are blind & eyeless.
+ud6.4:31.2 | S: They don’t understand what is beneficial or what is not beneficial, nor what is the truth and what is not the truth. | T: They don’t know what is beneficial and what is harmful. They don’t know what is the Dhamma and what is non-Dhamma.
+ud6.4:31.3 | S: That’s why they are fighting, quarreling, and disputing, continually wounding each other with barbed words. | T: Not knowing what is beneficial and what is harmful, not knowing what is Dhamma and what is non-Dhamma, they keep on arguing, quarreling, & disputing, wounding one another with weapons of the mouth, saying,
+ud6.4:31.4 | S: ‘Such is Truth, such is not! | T: ‘The Dhamma is like this, it’s not like that.
+ud6.4:31.5 | S: Such is not Truth, such is!’” | T: The Dhamma’s not like that, it’s like this.’”
+ud6.4:32.1 | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud6.4:33.1 | S: “Some ascetics and brahmins, it seems, | T: With regard to these things they’re attached–
+ud6.4:33.2 | S: cling to these things. | T: some contemplatives & brahmans.
+ud6.4:33.3 | S: Arguing, they dispute, | T: They quarrel & fight–
+ud6.4:33.4 | S: the folk who see just one part.” | T: people seeing one side.
+ud6.4:33.5 | P: Catutthaṁ. | T: (none)
+
+## sn12.48
+sn12.48:1.1 | S: At Sāvatthī. | T: Near Sāvatthī.
+sn12.48:1.2 | S: Then a brahmin cosmologist went up to the Buddha … | T: Then a brahman cosmologist went to the Blessed One and, on arrival, exchanged courteous greetings with him. After an exchange of friendly greetings & courtesies, he sat to one side.
+sn12.48:1.3 | S: Seated to one side he said to the Buddha: | T: As he was sitting there, he said to the Blessed One,
+sn12.48:2.1 | S: “Worthy Gotama, does all exist?” | T: “Now, then, Master Gotama, does everything exist?”
+sn12.48:2.2 | S: “‘All exists’: this is the oldest cosmology, brahmin.” | T: “‘Everything exists’ is the senior form of cosmology, brahman.”
+sn12.48:3.1 | S: “Then does all not exist?” | T: “Then, Master Gotama, does everything not exist?”
+sn12.48:3.2 | S: “‘All does not exist’: this is the second cosmology.” | T: “‘Everything does not exist’ is the second form of cosmology, brahman.”
+sn12.48:4.1 | S: “Well, is all oneness?” | T: “Then is everything a Oneness?”
+sn12.48:4.2 | S: “‘All is oneness’: this is the third cosmology.” | T: “‘Everything is a Oneness’ is the third form of cosmology, brahman.”
+sn12.48:5.1 | S: “Then is all expansiveness?” | T: “Then is everything a plurality?”
+sn12.48:5.2 | S: “‘All is expansiveness’: this is the fourth cosmology. | T: “‘Everything is a plurality is the fourth form of cosmology, brahman.
+sn12.48:6.1 | S: Avoiding these two extremes, the Realized One teaches by the middle way: | T: Avoiding these two extremes, the Tathāgata teaches the Dhamma via the middle:
+sn12.48:6.2 | S: ‘Ignorance is a requirement for choices. | T: From ignorance as a requisite condition come fabrications.
+sn12.48:6.3 | S: Choices are a requirement for consciousness. … | T: From fabrications as a requisite condition comes consciousness. From consciousness as a requisite condition comes name-&-form. From name-&-form as a requisite condition come the six sense media. From the six sense media as a requisite condition comes contact. From contact as a requisite condition comes feeling. From feeling as a requisite condition comes craving. From craving as a requisite condition comes clinging/sustenance. From clinging/sustenance as a requisite condition comes becoming. From becoming as a requisite condition comes birth. From birth as a requisite condition, then aging-&-death, sorrow, lamentation, pain, distress, & despair come into play.
+sn12.48:6.4 | S: That is how this entire mass of suffering originates. | T: Such is the origination of this entire mass of stress & suffering.
+sn12.48:6.5 | S: When ignorance fades away and ceases no residue left behind, choices cease. | T: “Now from the remainderless fading & cessation of that very ignorance comes the cessation of fabrications.
+sn12.48:6.6 | S: When choices cease, consciousness ceases. … | T: From the cessation of fabrications comes the cessation of consciousness. From the cessation of consciousness comes the cessation of name-&-form. From the cessation of name-&-form comes the cessation of the six sense media. From the cessation of the six sense media comes the cessation of contact. From the cessation of contact comes the cessation of feeling. From the cessation of feeling comes the cessation of craving. From the cessation of craving comes the cessation of clinging/sustenance. From the cessation of clinging/sustenance comes the cessation of becoming. From the cessation of becoming comes the cessation of birth. From the cessation of birth, then aging-&-death, sorrow, lamentation, pain, distress, & despair all cease.
+sn12.48:6.7 | S: That is how this entire mass of suffering ceases.’” | T: Such is the cessation of this entire mass of stress & suffering.”
+sn12.48:7.1 | S: When he said this, the brahmin cosmologist said to the Buddha, | T: (none)
+sn12.48:7.2 | S: “Excellent, worthy Gotama! Excellent! … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear. I go to Master Gotama for refuge, to the Dhamma, and to the Saṅgha of monks.
+sn12.48:7.3 | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: May Master Gotama remember me as a lay follower who has gone to him for refuge, from this day forward, for life.”
+sn12.48:7.4 | P: Aṭṭhamaṁ. | T: (none)
+
+## an6.46
+an6.46:1.1 | S: So I have heard. | T: (none)
+an6.46:1.2 | S: At one time Venerable Mahācunda was staying in the land of the Cetis at Sahajāti. | T: On one occasion Ven. Mahā Cunda was staying among the Cetis in Sañjāti.
+an6.46:1.3 | S: There he addressed the mendicants: | T: There he addressed the monks,
+an6.46:1.4 | S: “Reverends, mendicants!” | T: “Friend monks!”
+an6.46:1.5 | S: “Reverend,” they replied. | T: “Yes, friend,” the monks responded to him.
+an6.46:1.6 | S: Venerable Mahācunda said this: | T: Ven. Mahā Cunda said,
+an6.46:2.1 | S: “Take a case where mendicants who practice discernment of principles rebuke mendicants who practice absorption: | T: “Friends, there is the case where Dhamma-devotee monks [those devoted to memorizing and analyzing the Dhamma] disparage jhāna monks,
+an6.46:2.2 | S: ‘They say, “We practice absorption meditation! We practice absorption meditation!” And they meditate and concentrate and contemplate and ruminate. | T: saying, ‘These people are absorbed and besorbed in jhāna, saying, “We are absorbed, we are absorbed.”
+an6.46:2.3 | S: Why do they practice absorption meditation? In what way do they practice absorption meditation? How do they practice absorption meditation?’ | T: But why, indeed, are they absorbed? For what purpose are they absorbed? How are they absorbed?’
+an6.46:2.4 | S: In this case the mendicants who practice discernment of principles are not inspired, and the mendicants who practice absorption are not inspired. And they’re not acting for the welfare and happiness of the people, for the people, for the benefit, welfare, and happiness of gods and humans. | T: In that, the Dhamma-devotee monks do not shine brightly, and the jhāna monks do not shine brightly. That is not practicing for the welfare of the masses, for the happiness of the masses, for the good of the masses, nor for the welfare & happiness of devas & human beings.
+an6.46:3.1 | S: Now, take a case where mendicants who practice absorption meditation rebuke mendicants who practice discernment of principles: | T: “And further, there is the case where jhāna monks disparage Dhamma-devotee monks,
+an6.46:3.2 | S: ‘They say, “We practice discernment of principles! We practice discernment of principles!” But they’re haughty, insolent, fickle, scurrilous, loose-tongued, unmindful, lacking situational awareness and immersion, with straying minds and undisciplined faculties. | T: saying, ‘These people say, “We are Dhamma-devotees, we are Dhamma-devotees,’ but they are excitable, boisterous, unsteady, mouthy, loose in their talk, muddled in their mindfulness, unalert, unconcentrated, their minds wandering, their senses uncontrolled.
+an6.46:3.3 | S: Why do they practice discernment of principles? In what way do they practice discernment of principles? How do they practice discernment of principles?’ | T: Why, indeed, are they Dhamma devotees? For what purpose are they Dhamma devotees? How are they Dhamma devotees?’
+an6.46:3.4 | S: In this case the mendicants who practice absorption are not inspired, and the mendicants who practice discernment of principles are not inspired. And they’re not acting for the welfare and happiness of the people, for the people, for the benefit, welfare, and happiness of gods and humans. | T: In that, the jhāna monks do not shine brightly, and the Dhamma-devotee monks do not shine brightly. That is not practicing for the welfare of the masses, for the happiness of the masses, for the good of the masses, nor for the welfare & happiness of devas & human beings.
+an6.46:4.1 | S: Now, take a case where mendicants who practice discernment of principles praise only others like them, not mendicants who practice absorption. | T: “And further, there is the case where Dhamma-devotee monks praise only Dhamma-devotee monks, and not jhāna monks.
+an6.46:4.2 | S: In this case the mendicants who practice discernment of principles are not inspired, and the mendicants who practice absorption are not inspired. And they’re not acting for the welfare and happiness of the people, for the people, for the benefit, welfare, and happiness of gods and humans. | T: In that, the Dhamma-devotee monks do not shine brightly, and the jhāna monks do not shine brightly. That is not practicing for the welfare of the masses, for the happiness of the masses, for the good of the masses, nor for the welfare & happiness of devas & human beings.
+an6.46:5.1 | S: And take a case where mendicants who practice absorption praise only others like them, not mendicants who practice discernment of principles. | T: “And further, there is the case where jhāna monks praise only jhāna monks, and not Dhamma-devotee monks.
+an6.46:5.2 | S: In this case the mendicants who practice absorption are not inspired, and the mendicants who practice discernment of principles are not inspired. And they’re not acting for the welfare and happiness of the people, for the people, for the benefit, welfare, and happiness of gods and humans. | T: In that, the jhāna monks do not shine brightly, and the Dhamma-devotee monks do not shine brightly. That is not practicing for the welfare of the masses, for the happiness of the masses, for the good of the masses, nor for the welfare & happiness of devas & human beings.
+an6.46:6.1 | S: So you should train like this: | T: “Thus, friends, you should train yourselves:
+an6.46:6.2 | S: ‘As mendicants who practice discernment of principles, we will praise mendicants who practice absorption.’ | T: ‘Being Dhamma-devotee monks, we will speak in praise of jhāna monks.’
+an6.46:6.3 | S: That’s how you should train. | T: That’s how you should train yourselves.
+an6.46:6.4 | S: Why is that? | T: Why is that?
+an6.46:6.5 | S: Because it’s rare to find such incredible individuals in the world who have direct meditative experience of the element free of death. | T: Because these are amazing people, hard to find in the world: those who dwell touching the deathless element with the body.
+an6.46:7.1 | S: So you should train like this: | T: “And thus, friends, you should train yourselves:
+an6.46:7.2 | S: ‘As mendicants who practice absorption, we will praise mendicants who practice discernment of principles.’ | T: ‘Being jhāna monks, we will speak in praise of Dhamma-devotee monks.’
+an6.46:7.3 | S: That’s how you should train. | T: That’s how you should train yourselves.
+an6.46:7.4 | S: Why is that? | T: Why is that?
+an6.46:7.5 | S: Because it’s incredibly rare to find individuals in the world who see the meaning of a deep saying with penetrating wisdom.” | T: Because these are amazing people, hard to find in the world: those who penetrate with discernment statements of profound meaning.”
+an6.46:7.6 | P: Catutthaṁ. | T: (none)
+
+## an10.95
+an10.95:1.1 | S: Then the wanderer Uttiya went up to the Buddha, and exchanged greetings with him. | T: Then Uttiya the wanderer went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+an10.95:1.2 | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha, | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to the Blessed One,
+an10.95:1.3 | S: “Worthy Gotama, is this right: ‘The cosmos is eternal. This is the only truth, anything else is futile’?” | T: “Master Gotama, is it the case that ‘The cosmos is eternal: Only this is true; anything otherwise is worthless’?”
+an10.95:1.4 | S: “This has not been declared by me, Uttiya.” | T: “Uttiya, I haven’t declared that
+an10.95:1.5 | P: ‘sassato loko, idameva saccaṁ moghamaññan’”ti. | T: ‘The cosmos is eternal: Only this is true; anything otherwise is worthless.’”
+an10.95:2.1 | S: “Then is this right: ‘The cosmos is not eternal. This is the only truth, anything else is futile’?” | T: “Very well, then, Master Gotama, is it the case that: ‘The cosmos is not eternal: Only this is true; anything otherwise is worthless’?”
+an10.95:2.2 | S: “This has not been declared by me, Uttiya.” | T: “Uttiya, I haven’t declared that
+an10.95:2.3 | P: ‘asassato loko, idameva saccaṁ moghamaññan’”ti. | T: ‘The cosmos is not eternal: Only this is true; anything otherwise is worthless.’”
+an10.95:3.1 | S: “Then is this right: ‘The cosmos is finite …’ … | T: “Very well, then, Master Gotama, is it the case that ‘The cosmos is finite … ’ …
+an10.95:3.2 | S: ‘The cosmos is infinite …’ … | T: ‘The cosmos is infinite … ’ …
+an10.95:3.3 | S: ‘The soul and the body are one and the same …’ … | T: ‘The soul & the body are the same … ’ …
+an10.95:3.4 | S: ‘The soul is one thing, the body another …’ … | T: ‘The soul is one thing and the body another … ’ …
+an10.95:3.5 | S: ‘A realized one still exists after death …’ … | T: ‘After death a Tathāgata exists … ’ …
+an10.95:3.6 | S: ‘A realized one no longer exists after death …’ … | T: ‘After death a Tathāgata does not exist … ’ …
+an10.95:3.7 | S: ‘A realized one both still exists and no longer exists after death …’ … | T: ‘After death a Tathāgata both does & does not exist … ’ …
+an10.95:3.8 | S: ‘A realized one neither still exists nor no longer exists after death. This is the only truth, anything else is futile’?” | T: ‘After death a Tathāgata neither does nor does not exist. Only this is true; anything otherwise is worthless’?”
+an10.95:3.9 | S: “This has not been declared by me, Uttiya.” | T: “Uttiya, I haven’t declared that
+an10.95:3.10 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā, idameva saccaṁ moghamaññan’”ti. | T: ‘After death a Tathāgata neither does nor does not exist: Only this is true; anything otherwise is worthless.’”
+an10.95:4.1 | S: “When asked about all these points, worthy Gotama says that they have not been declared by him. | T: “But, Master Gotama, on being asked, ‘Is it the case that “The cosmos is eternal: Only this is true; anything otherwise is worthless”?’ you inform me, ‘Uttiya, I haven’t declared that
+an10.95:4.2 | P: sassato loko, idameva saccaṁ moghamaññan’ti vadesi. | T: “The cosmos is eternal: Only this is true; anything otherwise is worthless.”’
+an10.95:5.1 | P: ‘Kiṁ pana, bho gotama, asassato loko, idameva saccaṁ moghamaññan’ti, iti puṭṭho samāno: | T: On being asked, ‘Is it the case that “The cosmos is not eternal … ” …
+an10.95:5.2 | P: ‘etampi kho, uttiya, abyākataṁ mayā asassato loko, idameva saccaṁ moghamaññan’ti vadesi. | T: (none)
+an10.95:6.1 | P: ‘Kiṁ nu kho, bho gotama, antavā loko …pe… | T: “The cosmos is finite … ” …
+an10.95:6.2 | P: anantavā loko … | T: “The cosmos is infinite … ” …
+an10.95:6.3 | P: taṁ jīvaṁ taṁ sarīraṁ … | T: “The soul & the body are the same … ” …
+an10.95:6.4 | P: aññaṁ jīvaṁ aññaṁ sarīraṁ … | T: “The soul is one thing and the body another … ” …
+an10.95:6.5 | P: hoti tathāgato paraṁ maraṇā … | T: “After death a Tathāgata exists … ” …
+an10.95:6.6 | P: na hoti tathāgato paraṁ maraṇā … | T: “After death a Tathāgata does not exist … ” …
+an10.95:6.7 | P: hoti ca na ca hoti tathāgato paraṁ maraṇā … | T: “After death a Tathāgata both does & does not exist … ” …
+an10.95:6.8 | P: neva hoti na na hoti tathāgato paraṁ maraṇā, idameva saccaṁ moghamaññan’ti, iti puṭṭho samāno: | T: “After death a Tathāgata neither does nor does not exist. Only this is true; anything otherwise is worthless”?’
+an10.95:6.9 | P: ‘etampi kho, uttiya, abyākataṁ mayā— | T: you inform me, ‘Uttiya, I haven’t declared that
+an10.95:6.10 | P: neva hoti na na hoti tathāgato paraṁ maraṇā, idameva saccaṁ moghamaññan’ti vadesi. | T: “After death a Tathāgata neither does nor does not exist. Only this is true; anything otherwise is worthless.”’
+an10.95:6.11 | S: So what then has been declared by Worthy Gotama?” | T: Now is there anything you have declared?”
+an10.95:7.1 | S: “Uttiya, I teach my disciples from my own insight in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to end the cycle of suffering, and to realize extinguishment.” | T: “Uttiya, having directly known it, I teach the Dhamma to my disciples for the purification of beings, for the overcoming of sorrow & lamentation, for the disappearance of pain & distress, for the attainment of the right method, & for the realization of unbinding.”
+an10.95:8.1 | S: “But when the worthy Gotama teaches in this way, is the whole world saved, or half, or a third?” | T: “And, Master Gotama, when having directly known it, you teach the Dhamma to your disciples for the purification of beings, for the overcoming of sorrow & lamentation, for the disappearance of pain & distress, for the attainment of the right method, & for the realization of unbinding, will all the cosmos be led (to release), or a half of it, or a third?”
+an10.95:8.2 | S: But when he said this, the Buddha kept silent. | T: When this was said, the Blessed One was silent.
+an10.95:9.1 | S: Then Venerable Ānanda thought, | T: Then the thought occurred to Ven. Ānanda:
+an10.95:9.2 | S: “The wanderer Uttiya must not get the harmful misconception: | T: “Don’t let Uttiya the wanderer acquire the evil viewpoint that,
+an10.95:9.3 | S: ‘When the ascetic Gotama was asked this all-important question he falters without answering. He just can’t do it!’ | T: ‘When I asked him an all-encompassing question, Gotama the contemplative faltered and didn’t reply. Perhaps he was unable to.’
+an10.95:9.4 | S: That would be for his lasting harm and suffering.” | T: That would be for his long-term harm & suffering.”
+an10.95:10.1 | S: Then Ānanda said to the wanderer Uttiya, | T: So he said to Uttiya,
+an10.95:10.2 | S: “Well then, Reverend Uttiya, I shall give you a simile. | T: “In that case, my friend, I will give you an analogy,
+an10.95:10.3 | S: For by means of a simile some sensible people understand the meaning of what is said. | T: for there are cases where it is through the use of analogy that intelligent people can understand the meaning of what is being said.
+an10.95:10.4 | S: Suppose there was a king’s frontier citadel with fortified embankments, ramparts, and arches, and a single gate. | T: “Suppose that there were a royal frontier city with strong ramparts, strong walls & arches, and a single gate.
+an10.95:10.5 | S: And it has a gatekeeper who is astute, competent, and intelligent. He keeps strangers out and lets known people in. | T: In it would be a wise, competent, & intelligent gatekeeper to keep out those he didn’t know and to let in those he did.
+an10.95:10.6 | S: As he walks around the patrol path, he doesn’t see a hole or cleft in the wall, not even one big enough for a cat to slip out. | T: Walking along the path encircling the city, he wouldn’t see a crack or an opening in the walls big enough for even a cat to slip through.
+an10.95:10.7 | S: He doesn’t know how many creatures enter or leave the citadel. | T: Although he wouldn’t know that ‘So-and-so many creatures enter or leave the city,’
+an10.95:10.8 | S: But he does know that whatever sizable creatures enter or leave the citadel, all of them do so via this gate. | T: he would know this: ‘Whatever large creatures enter or leave the city all enter or leave it through this gate.’
+an10.95:11.1 | S: In the same way, it’s not the Realized One’s concern whether the whole world is saved by this, or half, or a third. | T: “In the same way, the Tathāgata does not endeavor to have all the cosmos or half of it or a third of it led (to release) by means of (his Dhamma).
+an10.95:11.2 | S: But the Realized One knows that whoever is saved from the world—whether in the past, the future, or the present—all have given up the five hindrances, corruptions of the heart that weaken wisdom. They have firmly established their mind in the four kinds of mindfulness meditation. And they have truly developed the seven awakening factors. | T: But he does know this: ‘All those who have been led, are being led, or will be led (to release) from the cosmos have done so, are doing so, or will do so after having abandoned the five hindrances—those defilements of awareness that weaken discernment—having well-established [‘well-tuned’] their minds in the four establishings of mindfulness, and having developed, as they have come to be, the seven factors for awakening.
+an10.95:11.3 | S: That’s how they’re saved from the world, in the past, future, or present. | T: (none)
+an10.95:11.4 | S: Uttiya, you were just asking the Buddha the same question as before in a different way. | T: When you asked the Blessed One this question, you had already asked it in another way.
+an10.95:11.5 | S: That’s why he didn’t answer.” | T: That’s why he didn’t respond.”
+an10.95:11.6 | P: Pañcamaṁ. | T: (none)
+
+## an8.8
+an8.8:1.1 | S: At one time Venerable Uttara was staying on the Saṅkheyyaka Mountain in the Mahisa region near Dhavajālikā. | T: On one occasion Ven. Uttara was staying at Mahisavatthu [Water Buffalo Ground] on Saṅkheyyaka Mountain in Vaṭṭajālika.
+an8.8:1.2 | S: There Uttara addressed the mendicants: | T: There he addressed the monks:
+an8.8:1.3 | S: “Mendicants, it’s good for a mendicant to check their own failings from time to time. | T: “Friends, it’s good for a monk periodically to have reflected on his own failings.
+an8.8:1.4 | S: It’s good for a mendicant to check the failings of others from time to time. | T: It’s good for a monk periodically to have reflected on the failings of others.
+an8.8:1.5 | S: It’s good for a mendicant to check their own successes from time to time. | T: It’s good for a monk periodically to have reflected on his own attainments.
+an8.8:1.6 | S: It’s good for a mendicant to check the successes of others from time to time.” | T: It’s good for a monk periodically to have reflected on the attainments of others.”
+an8.8:2.1 | S: Now at that time the great king Vessavaṇa was on his way from the north to the south on some business. | T: Now on that occasion the Great King Vessavaṇa had gone from the north to the south on some business or other.
+an8.8:2.2 | S: He heard Venerable Uttara teaching this to the mendicants on Saṅkheyyaka Mountain. | T: He heard Ven. Uttara in Mahisavatthu on Saṅkheyyaka Mountain in Vaṭṭajālika teaching the monks the Dhamma in this way:
+an8.8:2.3 | P: “sādhāvuso, bhikkhu kālena kālaṁ attavipattiṁ paccavekkhitā hoti. | T: “Friends, it’s good for a monk periodically to have reflected on his own failings.
+an8.8:2.4 | P: Sādhāvuso, bhikkhu kālena kālaṁ paravipattiṁ paccavekkhitā hoti. | T: It’s good for a monk periodically to have reflected on the failings of others.
+an8.8:2.5 | P: Sādhāvuso, bhikkhu kālena kālaṁ attasampattiṁ paccavekkhitā hoti. | T: It’s good for a monk periodically to have reflected on his own attainments.
+an8.8:2.6 | P: Sādhāvuso, bhikkhu kālena kālaṁ parasampattiṁ paccavekkhitā hotī”ti. | T: It’s good for a monk periodically to have reflected on the attainments of others.”
+an8.8:3.1 | S: Then Vessavaṇa vanished from Saṅkheyyaka Mountain and appeared among the gods of the thirty-three, as easily as a strong person would extend or contract their arm. | T: So—just as a strong man might extend his flexed arm or flex his extended arm—the Great King Vessavaṇa disappeared from Vaṭṭajālika on Saṅkheyyaka Mountain in Mahisavatthu and reappeared among the Devas of the Heaven of the Thirty-three.
+an8.8:3.2 | S: Then he went up to Sakka, lord of gods, and said to him: | T: Then he went to Sakka the deva-king and, on arrival, said,
+an8.8:3.3 | S: “Please good fellow, you should know this. | T: “You should know, dear sir,
+an8.8:3.4 | S: Venerable Uttara is teaching the mendicants on Saṅkheyyaka Mountain in this way: | T: that Ven. Uttara in Mahisavatthu on Saṅkheyyaka Mountain in Vaṭṭajālika is teaching the monks the Dhamma in this way:
+an8.8:3.5 | S: ‘It’s good for a mendicant from time to time to check their own failings. … | T: ‘Friends, it’s good for a monk periodically to have reflected on his own failings…
+an8.8:3.6 | S: the failings of others … | T: on the failings of others…
+an8.8:3.7 | S: their own successes … | T: on his own attainments…
+an8.8:3.8 | S: the successes of others.’” | T: on the attainments of others.’”
+an8.8:4.1 | S: Then, as easily as a strong person would extend or contract their arm, Sakka vanished from the gods of the thirty-three and reappeared on Saṅkheyyaka Mountain in front of Venerable Uttara. | T: So Sakka the deva-king—just as a strong man might extend his flexed arm or flex his extended arm—disappeared from the Devas of the Heaven of the Thirty-three and reappeared in Mahisavatthu on Saṅkheyyaka Mountain in Vaṭṭajālika in Ven. Uttara’s presence.
+an8.8:4.2 | S: Then Sakka went up to Venerable Uttara, bowed, stood to one side, and said to him: | T: Then he went to Ven. Uttara and, on arrival, bowed down to him and stood to one side. As he was standing there, he said to Ven. Uttara,
+an8.8:5.1 | S: “Is it really true, sir, that you teach the mendicants in this way: | T: “Is it true, venerable sir, that Ven. Uttara is teaching the monks the Dhamma in this way:
+an8.8:5.2 | S: ‘It’s good for a mendicant from time to time to check their own failings … | T: ‘Friends, it’s good for a monk periodically to have reflected on his own failings…
+an8.8:5.3 | S: the failings of others … | T: on the failings of others…
+an8.8:5.4 | S: their own successes … | T: on his own attainments…
+an8.8:5.5 | S: the successes of others’?” | T: on the attainments of others’?”
+an8.8:5.6 | S: “Indeed, lord of gods.” | T: “Yes, deva-king.”
+an8.8:5.7 | S: “Sir, did this teaching come to you from your own inspiration, or was it spoken by the Blessed One, the perfected one, the fully awakened Buddha?” | T: “But is this Ven. Uttara’s own extemporaneous invention, or is it the saying of the Blessed One, the Worthy One, the Rightly Self-awakened One?”
+an8.8:5.8 | S: “Well then, lord of gods, I shall give you a simile. | T: “Very well, then, deva-king, I will give you an analogy,
+an8.8:5.9 | S: For by means of a simile some sensible people understand the meaning of what is said. | T: for there are cases where it’s through an analogy that observant people can understand the meaning of what is being said.
+an8.8:6.1 | S: Suppose there was a large heap of grain not far from a town or village. | T: Suppose that not far from a village or town there was a great pile of grain,
+an8.8:6.2 | S: And a large crowd were to take away grain | T: from which a great crowd of people were carrying away grain
+an8.8:6.3 | S: with carrying poles, baskets, hip sacks, or their cupped hands. | T: on their bodies, on their heads, in their laps [the laps of their robes], or in their cupped hands.
+an8.8:6.4 | S: If someone were to go to that crowd and ask them | T: If someone were to approach that great crowd of people and ask them,
+an8.8:6.5 | S: where they got the grain from, how should that crowd rightly reply?” | T: ‘From where are you carrying away grain?’ answering in what way would that great crowd of people answer so as to be answering rightly?”
+an8.8:6.6 | S: “Sir, they should reply that they took it from the large heap of grain.” | T: “Venerable sir, they would answer, ‘We are carrying it from that great pile of grain,’ so as to be answering rightly.”
+an8.8:6.7 | S: “In the same way, lord of gods, whatever is well spoken is spoken by the Blessed One, the perfected one, the fully awakened Buddha. | T: “In the same way, deva-king, whatever is well said is all a saying of the Blessed One, the Worthy One, the Rightly Self-awakened One.
+an8.8:6.8 | S: Both myself and others rely completely on that when we speak.” | T: Adopting it again & again from there do we & others speak.”
+an8.8:7.1 | S: “It’s incredible, sir, it’s amazing! | T: “Amazing, venerable sir. Astounding, venerable sir—
+an8.8:7.2 | S: How well this was said by Venerable Uttara! | T: how well that has been said by Ven. Uttara:
+an8.8:7.3 | S: ‘Whatever is well spoken is spoken by the Blessed One, the perfected one, the fully awakened Buddha. | T: ‘Whatever is well said is all a saying of the Blessed One, the Worthy One, the Rightly Self-awakened One.
+an8.8:7.4 | S: Both myself and others rely completely on that when we speak.’ | T: Adopting it again & again from there do we & others speak.’
+an8.8:7.5 | S: At one time, Honorable Uttara, the Buddha was staying near Rājagaha, on the Vulture’s Peak Mountain, not long after Devadatta had left. | T: On one occasion the Blessed One was staying near Rājagaha on Vulture Peak Mountain, not long after Devadatta’s departure.
+an8.8:7.6 | S: There the Buddha spoke to the mendicants about Devadatta: | T: There, referring to Devadatta, he addressed the monks:
+an8.8:8.1 | S: ‘Mendicants, it’s good for a mendicant from time to time to check their own failings … | T: ‘Monks, it’s good for a monk periodically to have reflected on his own failings.
+an8.8:8.2 | S: the failings of others … | T: It’s good for a monk periodically to have reflected on the failings of others.
+an8.8:8.3 | S: their own successes … | T: It’s good for a monk periodically to have reflected on his own attainments.
+an8.8:8.4 | S: the successes of others. | T: It’s good for a monk periodically to have reflected on the attainments of others.
+an8.8:8.5 | S: Overcome and overwhelmed by eight things that oppose the true teaching, Devadatta is going to a place of loss, to hell, there to remain for an eon, irredeemable. | T: “‘Conquered by eight untrue dhammas, his mind overcome, Devadatta is headed for a state of deprivation, headed for hell, there to stay for an eon, incurable.
+an8.8:8.6 | S: What eight? | T: Which eight?
+an8.8:8.7 | S: Overcome and overwhelmed by gain … | T: “‘Conquered by material gain, his mind overcome, Devadatta is headed for a state of deprivation, headed for hell, there to stay for an eon, incurable.
+an8.8:8.8 | S: loss … | T: “‘Conquered by lack of material gain.…
+an8.8:8.9 | S: fame … | T: “‘Conquered by status.…
+an8.8:8.10 | S: disgrace … | T: “‘Conquered by lack of status.…
+an8.8:8.11 | S: honor … | T: “‘Conquered by offerings.…
+an8.8:8.12 | S: dishonor … | T: “‘Conquered by lack of offerings.…
+an8.8:8.13 | S: corrupt wishes … | T: “‘Conquered by evil ambition.…
+an8.8:8.14 | S: bad friendship, Devadatta is going to a place of loss, to hell, there to remain for an eon, irredeemable. | T: “‘Conquered by evil friendship, his mind overcome, Devadatta is headed for a state of deprivation, headed for hell, there to stay for an eon, incurable.
+an8.8:8.15 | S: Overcome and overwhelmed by these eight things that oppose the true teaching, Devadatta is going to a place of loss, to hell, there to remain for an eon, irredeemable. | T: (none)
+an8.8:9.1 | S: It’s good for a mendicant, whenever they encounter it, to overcome gain … | T: “‘Monks, it’s good for a monk to keep conquering again & again any arisen material gain.
+an8.8:9.2 | S: loss … | T: It’s good for a monk to keep conquering again & again any arisen lack of material gain…
+an8.8:9.3 | S: fame … | T: any arisen status…
+an8.8:9.4 | S: disgrace … | T: any arisen lack of status…
+an8.8:9.5 | S: honor … | T: any arisen offerings…
+an8.8:9.6 | S: dishonor … | T: any arisen lack of offerings…
+an8.8:9.7 | S: corrupt wishes … | T: any arisen evil ambition…
+an8.8:9.8 | S: bad friendship. | T: any arisen evil friendship.
+an8.8:10.1 | S: What advantage does a mendicant gain by overcoming these eight things? | T: “‘And for what compelling reason should a monk keep conquering again & again any arisen material gain…
+an8.8:10.2 | P: uppannaṁ alābhaṁ …pe… | T: (none)
+an8.8:10.3 | P: uppannaṁ yasaṁ … | T: (none)
+an8.8:10.4 | P: uppannaṁ ayasaṁ … | T: (none)
+an8.8:10.5 | P: uppannaṁ sakkāraṁ … | T: (none)
+an8.8:10.6 | P: uppannaṁ asakkāraṁ … | T: (none)
+an8.8:10.7 | P: uppannaṁ pāpicchataṁ … | T: (none)
+an8.8:10.8 | P: uppannaṁ pāpamittataṁ abhibhuyya abhibhuyya vihareyya? | T: any arisen evil friendship?
+an8.8:11.1 | S: The distressing and feverish defilements that might arise in someone who lives without overcoming these eight things do not arise when they have overcome them. | T: Because when one dwells not having conquered any arisen material gain, effluents arise, along with vexations & fevers. But when one dwells having conquered any arisen material gain, those effluents, vexations, & fevers are not.
+an8.8:11.2 | P: Yaṁ hissa, bhikkhave, uppannaṁ alābhaṁ …pe… | T: [Similarly with any arisen lack of material gain,
+an8.8:11.3 | P: uppannaṁ yasaṁ … | T: any arisen status,
+an8.8:11.4 | P: uppannaṁ ayasaṁ … | T: any arisen lack of status,
+an8.8:11.5 | P: uppannaṁ sakkāraṁ … | T: any arisen offerings,
+an8.8:11.6 | P: uppannaṁ asakkāraṁ … | T: any arisen lack of offerings,
+an8.8:11.7 | P: uppannaṁ pāpicchataṁ … | T: any arisen evil ambition,
+an8.8:11.8 | P: uppannaṁ pāpamittataṁ anabhibhuyya viharato uppajjeyyuṁ āsavā vighātapariḷāhā, uppannaṁ pāpamittataṁ abhibhuyya viharato evaṁsa te āsavā vighātapariḷāhā na honti. | T: & any arisen evil friendship.]
+an8.8:11.9 | S: This is the advantage that a mendicant gains by overcoming these eight things. | T: “‘It’s for this compelling reason that a monk should keep conquering again & again any arisen material gain…
+an8.8:11.10 | P: uppannaṁ alābhaṁ …pe… | T: (none)
+an8.8:11.11 | P: uppannaṁ yasaṁ … | T: (none)
+an8.8:11.12 | P: uppannaṁ ayasaṁ … | T: (none)
+an8.8:11.13 | P: uppannaṁ sakkāraṁ … | T: (none)
+an8.8:11.14 | P: uppannaṁ asakkāraṁ … | T: (none)
+an8.8:11.15 | P: uppannaṁ pāpicchataṁ … | T: (none)
+an8.8:11.16 | P: uppannaṁ pāpamittataṁ abhibhuyya abhibhuyya vihareyya. | T: any arisen evil friendship.
+an8.8:12.1 | S: So you should train like this: | T: “‘Therefore, monks, you should train yourselves:

@@ -1,0 +1,43 @@
+{
+  "rowsRead": 2517,
+  "textsRead": 100,
+  "allSevenBatchesEndDone": true,
+  "packetsAndInputsUnchanged": true,
+  "batches": {
+    "batch-001": {
+      "rows": 406,
+      "complete": true,
+      "readerRowsConfirmed": 406
+    },
+    "batch-002": {
+      "rows": 418,
+      "complete": true,
+      "readerRowsConfirmed": 418
+    },
+    "batch-003": {
+      "rows": 464,
+      "complete": true,
+      "readerRowsConfirmed": 464
+    },
+    "batch-004": {
+      "rows": 296,
+      "complete": true,
+      "readerRowsConfirmed": 296
+    },
+    "batch-005": {
+      "rows": 423,
+      "complete": true,
+      "readerRowsConfirmed": 423
+    },
+    "batch-006": {
+      "rows": 297,
+      "complete": true,
+      "readerRowsConfirmed": 297
+    },
+    "batch-007": {
+      "rows": 213,
+      "complete": true,
+      "readerRowsConfirmed": 213
+    }
+  }
+}

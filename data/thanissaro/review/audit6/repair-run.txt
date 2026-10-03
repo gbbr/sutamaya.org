@@ -1,0 +1,2 @@
+findings: 11875 lines; 3 in 3 groups: passes; 11872 already so; 0 disputed
+thanissaro: 1437 texts, 0 empty, 0 not written; 65445 segments, 1 unsure cuts, 3766 lines joined, 462 long, 3151 unmatched; 602 texts clean

@@ -1,0 +1,39 @@
+{
+  "batch": "007",
+  "packet": "data/thanissaro/review/audit6/batch-007.pali.txt",
+  "rows_read": 213,
+  "all_rows_read": true,
+  "pali_only_rows_read": true,
+  "texts_read": [
+    {
+      "id": "sn44.7",
+      "rows": 79
+    },
+    {
+      "id": "sn47.38",
+      "rows": 15
+    },
+    {
+      "id": "sn6.1",
+      "rows": 50
+    },
+    {
+      "id": "sn7.14",
+      "rows": 57
+    },
+    {
+      "id": "sn9.4",
+      "rows": 12
+    }
+  ],
+  "proposals": [],
+  "concerns": [],
+  "notes": [
+    "All packet lines 1–231 read in consecutive portions against Pali.",
+    "SN 44.7 repeated unanswered questions are source abbreviation. The complete sense-faculty items sit on the first matching Pali rows; later Buddha dialogue is explicitly summarized, so its repetition remains empty.",
+    "SN 47.38 body, feelings, mind, and qualities each preserve their own matching Pali rows.",
+    "SN 6.1 verse semantic reordering is internal to the translator-ordered verse; source-only repeated exhortation at 10.2 stays with that line, and the pronoun variation in 11.1 is source wording, not misplaced text.",
+    "SN 7.14 both recitals have been read including the second recital that Sujato abbreviates; every verse begins on its first Pali row, and its English source lines remain spread in order.",
+    "SN 9.4 wording of the wandering period differs from the Pali, but that is not an alignment error. No sure misplaced boundary found."
+  ]
+}

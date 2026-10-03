@@ -1,0 +1,56 @@
+# an3.39
+Source: data/upstream/thanissaro/sutta/an/an3/an3.39.html
+
+SOURCE 001 prose: “Monks, I lived in refinement, utmost refinement, total refinement. My father even had lotus ponds made in our palace: one where red lotuses bloomed, one where white lotuses bloomed, one where blue lotuses bloomed, all for my sake. I used no sandalwood that was not from Vārāṇasī. My turban was from Vārāṇasī, as were my tunic, my lower garments, & my outer cloak. A white sunshade was held over me day & night to protect me from cold, heat, dust, dirt, & dew.
+SOURCE 002 prose: “I had three palaces: one for the cold season, one for the hot season, one for the rainy season. During the four months of the rainy season I was entertained in the rainy-season palace by minstrels without a single man among them, and I did not once come down from the palace. Whereas the servants, workers, & retainers in other people’s homes are fed meals of lentil soup & broken rice, in my father’s home the servants, workers, & retainers were fed wheat, rice, & meat.
+SOURCE 003 prose: “Even though I was endowed with such fortune, such total refinement, the thought occurred to me: ‘When an untaught, run-of-the-mill person, himself subject to aging, not beyond aging, sees another who is aged, he is repelled, ashamed, & disgusted, oblivious to himself that he too is subject to aging, not beyond aging. If I—who am subject to aging, not beyond aging—were to be repelled, ashamed, & disgusted on seeing another person who is aged, that would not be fitting for me.’ As I noticed this, the (typical) young person’s intoxication with youth entirely dropped away.
+SOURCE 004 prose: “Even though I was endowed with such fortune, such total refinement, the thought occurred to me: ‘When an untaught, run-of-the-mill person, himself subject to illness, not beyond illness, sees another who is ill, he is repelled, ashamed, & disgusted, oblivious to himself that he too is subject to illness, not beyond illness. And if I—who am subject to illness, not beyond illness—were to be repelled, ashamed, & disgusted on seeing another person who is ill, that would not be fitting for me.’ As I noticed this, the healthy person’s intoxication with health entirely dropped away.
+SOURCE 005 prose: “Even though I was endowed with such fortune, such total refinement, the thought occurred to me: ‘When an untaught, run-of-the-mill person, himself subject to death, not beyond death, sees another who is dead, he is repelled, ashamed, & disgusted, oblivious to himself that he too is subject to death, not beyond death. And if I—who am subject to death, not beyond death—were to be repelled, ashamed, & disgusted on seeing another person who is dead, that would not be fitting for me.’ As I noticed this, the living person’s intoxication with life entirely dropped away.
+SOURCE 006 prose: “Monks, there are these three forms of intoxication. Which three? Intoxication with youth, intoxication with health, intoxication with life.
+SOURCE 007 prose: “Drunk with the intoxication of youth, an uninstructed, run-of-the-mill person engages in bodily misconduct, verbal misconduct, & mental misconduct. Having engaged in bodily misconduct, verbal misconduct, & mental misconduct, he—on the break-up of the body, after death—reappears in the plane of deprivation, the bad destination, the lower realms, in hell.
+SOURCE 008 prose: “Drunk with the intoxication of health, an uninstructed, run-of-the-mill person engages in bodily misconduct, verbal misconduct, & mental misconduct. Having engaged in bodily misconduct, verbal misconduct, & mental misconduct, he—on the break-up of the body, after death—reappears in the plane of deprivation, the bad destination, the lower realms, in hell.
+SOURCE 009 prose: “Drunk with the intoxication of life, an uninstructed, run-of-the-mill person engages in bodily misconduct, verbal misconduct, & mental misconduct. Having engaged in bodily misconduct, verbal misconduct, & mental misconduct, he—on the break-up of the body, after death—reappears in the plane of deprivation, the bad destination, the lower realms, in hell.
+SOURCE 010 prose: “Drunk with the intoxication of youth, a monk leaves the training and returns to the lower life. Drunk with the intoxication of health, a monk leaves the training and returns to the lower life. Drunk with the intoxication of life, a monk leaves the training and returns to the lower life.”
+SOURCE 011 verse: ‘Subject to birth, subject to aging,
+SOURCE 012 verse: subject to death,
+SOURCE 013 verse: run-of-the-mill people
+SOURCE 014 verse: are repelled by those who suffer
+SOURCE 015 verse: from that to which they are subject.
+SOURCE 016 verse: And if I were to be repelled
+SOURCE 017 verse: by beings subject to these things,
+SOURCE 018 verse: it would not be fitting for me,
+SOURCE 019 verse: living as they do.’
+SOURCE 020 verse: As I maintained this attitude—
+SOURCE 021 verse: knowing the Dhamma
+SOURCE 022 verse: without acquisitions—
+SOURCE 023 verse: I overcame all intoxication
+SOURCE 024 verse: with health, youth, & life
+SOURCE 025 verse: as one who sees
+SOURCE 026 verse: renunciation as rest.
+SOURCE 027 verse: For me, energy arose,
+SOURCE 028 verse: unbinding was clearly seen.
+SOURCE 029 verse: There’s now no way
+SOURCE 030 verse: I could partake of sensual pleasures.
+SOURCE 031 verse: Having followed the holy life,
+SOURCE 032 verse: I will not return.
+SOURCE 033 prose: See also: MN 26; MN 36; MN 82; AN 5:57; Sn 3:1; Sn 3:2; Sn 4:15
+
+## Pali and present cuts
+
+an3.39:9.1 | P: Ahañce taṁ jiguccheyyaṁ,  | S: If I were to be disgusted  | T: And if I were to be repelled 
+an3.39:9.2 | P: evaṁdhammesu pāṇisu;  | S: with creatures whose nature is such,  | T: by beings subject to these things, 
+an3.39:9.3 | P: Na metaṁ patirūpassa,  | S: it would not be appropriate for me,  | T: it would not be fitting for me, 
+an3.39:9.4 | P: mama evaṁ vihārino.  | S: since my life is just the same.  | T: living as they do.’ 
+an3.39:10.1 | P: Sohaṁ evaṁ viharanto,  | S: Living in such a way,  | T: As I maintained this attitude— 
+an3.39:10.2 | P: ñatvā dhammaṁ nirūpadhiṁ;  | S: I understood the truth without attachments.  | T: knowing the Dhamma ⏎ without acquisitions— 
+an3.39:10.3 | P: Ārogye yobbanasmiñca,  | S: I mastered all vanities— | T: I overcame all intoxication 
+an3.39:10.4 | P: jīvitasmiñca ye madā.  | S: of health, of youth,  | T: with health, youth, 
+an3.39:11.1 | P: Sabbe made abhibhosmi,  | S: and even of life— | T: & life 
+an3.39:11.2 | P: Nekkhamme daṭṭhu khemataṁ;  | S: seeing renunciation as sanctuary.  | T: as one who sees ⏎ renunciation as rest. 
+an3.39:11.3 | P: Tassa me ahu ussāho,  | S: Zeal sprang up in me  | T: For me, energy arose, 
+an3.39:11.4 | P: Nibbānaṁ abhipassato.  | S: as I looked to extinguishment.  | T: unbinding was clearly seen. 
+an3.39:12.1 | P: Nāhaṁ bhabbo etarahi,  | S: Now I’m unable  | T: There’s now no way 
+an3.39:12.2 | P: Kāmāni paṭisevituṁ;  | S: to indulge in sensual pleasures;  | T: I could partake of sensual pleasures. 
+an3.39:12.3 | P: Anivatti bhavissāmi,  | S: there’s no turning back,  | T: Having followed the holy life, 
+an3.39:12.4 | P: Brahmacariyaparāyaṇo”ti.  | S: I’m committed to the spiritual life.”  | T: I will not return. 
+an3.39:12.5 | P: Navamaṁ.  | S:  | T: 

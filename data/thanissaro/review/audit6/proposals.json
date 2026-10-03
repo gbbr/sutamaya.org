@@ -1,0 +1,17 @@
+[
+  {
+    "key": "an10.96:10.1",
+    "starts": "On being asked, ‘Very well then: “The cosmos",
+    "readerFile": "batch-003.findings"
+  },
+  {
+    "key": "an10.96:12.3",
+    "starts": "I do know. I do see.’",
+    "readerFile": "batch-003.findings"
+  },
+  {
+    "key": "an4.192:9.9",
+    "starts": null,
+    "readerFile": "batch-004.findings"
+  }
+]

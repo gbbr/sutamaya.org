@@ -1,0 +1,13 @@
+{
+  "partialSourceLines": 0,
+  "hiddenTranslatedVersePali": 0,
+  "newlyHiddenOutsideCoverage": [
+    "an4.192:9.9"
+  ],
+  "allNewlyHiddenJudged": true,
+  "acceptedAbbreviations": [
+    "an4.192:9.9"
+  ],
+  "coverageAdded": [],
+  "rationale": "Pali9.9 repeats predicate rendered on9.5, after source-omitted explanation9.6–9.8; source ellipsis abbreviates it. Abbreviated repetition remains hidden, per Building them into app and independent xhigh judge."
+}

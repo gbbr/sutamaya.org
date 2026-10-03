@@ -1,0 +1,32 @@
+[
+  {
+    "file": "data/thanissaro/review/hand/flagged-001.findings",
+    "directive": "an6.45:21.4 starts: of his belongings, righteously-gained, wins both goals:",
+    "replacement": "an6.45:21.4 starts: righteously-gained,"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-083.findings",
+    "directive": "an6.45:21.4 starts: of his belongings, righteously-gained, wins both goals:",
+    "replacement": "an6.45:21.4 starts: righteously-gained,"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-021.findings",
+    "directive": "an8.54:17.3 none",
+    "replacement": "an8.54:17.3 starts: leading to welfare & happiness"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-021.findings",
+    "directive": "an8.54:17.4 starts: leading to welfare & happiness",
+    "replacement": "an8.54:17.4 starts: both in this life & in lives to"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-021.findings",
+    "directive": "an8.54:18.1 starts: both in this life & in lives to",
+    "replacement": "an8.54:18.1 starts: have been declared by the one"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-021.findings",
+    "directive": "an8.54:18.2 starts: have been declared by the one",
+    "replacement": "an8.54:18.2 starts: who is truly named."
+  }
+]

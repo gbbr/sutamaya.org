@@ -1,0 +1,81 @@
+{
+  "translator": "thanissaro",
+  "audit": "audit6",
+  "status": "all final audit6 proposals judged against original Pali and source HTML",
+  "independence": "Judge read none of the audit6 batches. Read judge.txt, proposals.json, original source HTML, original Pali, and current local corpus for proposed repairs only.",
+  "proposalsJudged": 3,
+  "accepted": 3,
+  "rejected": 0,
+  "refined": 0,
+  "decisions": [
+    {
+      "key": "an10.96:10.1",
+      "starts": "On being asked, ‘Very well then: “The cosmos",
+      "decision": "accept",
+      "rationale": "Pali10.1 begins the separate question about asassato loko (the non-eternal cosmos), distinct from sassato loko at9.1. The original source independently renders this as a new On being asked unit after completing the first eternal-cosmos question and answer. The current9.1 incorrectly includes that second question. Its ellipsis abbreviates the following repeated formula and does not erase this separately rendered item. Move the whole source unit to10.1; preserve the existing finite-cosmos list at11.1 onward.",
+      "paliEvidence": {
+        "an10.96:9.1": "sassato loko",
+        "an10.96:10.1": "Kiṁ pana, bho, asassato loko",
+        "an10.96:10.2": "evaṁdiṭṭhi bhavan’ti, iti puṭṭho samāno"
+      },
+      "source": "data/upstream/thanissaro/sutta/an/an10/an10.96.html",
+      "sourceLocation": "Paragraph beginning “But on being asked”; second On being asked unit",
+      "sourceQuoteVerified": true,
+      "coverage": {
+        "add": [],
+        "rationale": "The source abbreviates the repeated question/answer after this item with ellipses. Existing empty10.2–10.4 remain abbreviation, not newly rendered independent material."
+      },
+      "readerFile": "batch-003.findings",
+      "effort": "xhigh"
+    },
+    {
+      "key": "an10.96:12.3",
+      "starts": "I do know. I do see.’",
+      "decision": "accept",
+      "rationale": "Pali12.2 denies that Ānanda does not know or see (na ... na jānāmi na passāmi). Pali12.3 then positively asserts knowledge and seeing (Jānāmahaṁ ... passāmī). The source prints these as distinct sentences: the negative denial followed by two affirmative sentences. Current12.3 begins with the negative denial, which belongs to12.2. Move the12.3 start to the affirmative statement; preserve the question/introduction on12.1 and the answer introduction on12.2.",
+      "paliEvidence": {
+        "an10.96:12.2": "na kho ahaṁ, āvuso, na jānāmi na passāmi",
+        "an10.96:12.3": "Jānāmahaṁ, āvuso, passāmī’ti vadesi"
+      },
+      "source": "data/upstream/thanissaro/sutta/an/an10/an10.96.html",
+      "sourceLocation": "Paragraph beginning “But on being asked”; final quoted answer",
+      "sourceQuoteVerified": true,
+      "coverage": {
+        "add": [],
+        "rationale": "No rows are emptied by this boundary move."
+      },
+      "readerFile": "batch-003.findings",
+      "effort": "xhigh"
+    },
+    {
+      "key": "an4.192:9.9",
+      "starts": null,
+      "decision": "accept",
+      "rationale": "The original source compresses the repeated comparison into one sentence beginning From the way this person rises to an issue and ending he is dull, not discerning, with an ellipsis before the predicate. Pali9.5 already holds both this opening and its predicate (duppañño ... nāyamāyasmā paññavā). Pali9.6–9.8 repeat the omitted explanation, and9.9 repeats the same predicate. The compressed source sentence therefore belongs on its first matching Pali row9.5. Empty9.9 into9.5, preserving the translator’s abbreviation and the complete sentence. This is supported by the predicate already present in9.5, not by punctuation alone.",
+      "paliEvidence": {
+        "an4.192:9.5": "yathā ... pañhāsamudāhāro, duppañño ayamāyasmā, nāyamāyasmā paññavā",
+        "an4.192:9.9": "Duppañño ayamāyasmā, nāyamāyasmā paññavā’ti"
+      },
+      "source": "data/upstream/thanissaro/sutta/an/an4/an4.192.html",
+      "sourceLocation": "Paragraph beginning “There is the case where one individual, through discussion”; final abbreviated In the same way comparison",
+      "sourceQuoteVerified": true,
+      "coverage": {
+        "add": [],
+        "mustStayHidden": [
+          "an4.192:9.6",
+          "an4.192:9.7",
+          "an4.192:9.8",
+          "an4.192:9.9"
+        ],
+        "newlyHidden": [
+          "an4.192:9.9"
+        ],
+        "rationale": "The source ellipsis shortens a repetition.9.6–9.8 are omitted explanatory repetition;9.9 repeats the predicate already rendered at9.5. Building them into the app explicitly says a repetition the English abbreviates/compresses is never covered even where English mentions it. Do not add9.9 to covered.json. A check-round newly-hidden listing for9.9 is explained by this legitimate source abbreviation, not a missing coverage entry."
+      },
+      "readerFile": "batch-004.findings",
+      "effort": "xhigh"
+    }
+  ],
+  "crossModelReview": "Pending separate Claude session; this judge does not claim that step complete.",
+  "verification": "No corpus changes, segmenter runs, or commits by judge. Root handles trial, checks, regeneration, and copying."
+}

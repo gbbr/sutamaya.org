@@ -1,0 +1,44 @@
+# sn3.19
+Source: data/upstream/thanissaro/sutta/sn/sn3/sn3.19.html
+
+SOURCE 001 prose: Near Sāvatthī. Then King Pasenadi Kosala went to the Blessed One in the middle of the day and, on arrival, having bowed down to the Blessed One, sat to one side. As he was sitting there the Blessed One said to him, “Well now, great king, where are you coming from in the middle of the day?”
+SOURCE 002 prose: “Just now, lord, a money-lending householder died in Sāvatthī. I have come from conveying his heirless fortune to the royal palace: eight million in silver, to say nothing of the gold. But even though he was a money-lending householder, his enjoyment of food was like this: He ate broken rice & pickle brine. His enjoyment of clothing was like this: He wore three lengths of hempen cloth. His enjoyment of a vehicle was like this: He rode in a dilapidated little cart with an awning of leaves.”
+SOURCE 003 prose: “That’s the way it is, great king. That’s the way it is. When a person of no integrity acquires lavish wealth, he doesn’t provide for his own pleasure & satisfaction, nor for the pleasure & satisfaction of his parents, nor for the pleasure & satisfaction of his wife & children; nor for the pleasure & satisfaction of his slaves, servants, & assistants; nor for the pleasure & satisfaction of his friends. He doesn’t institute for contemplatives & brahmans offerings of supreme aim, heavenly, resulting in happiness, leading to heaven. When his wealth isn’t properly put to use, kings make off with it, or thieves make off with it, or fire burns it, or water sweeps it away, or hateful heirs make off with it. Thus his wealth, not properly put to use, goes to waste and not to any good use.
+SOURCE 004 prose: “Just as with a pond in a place haunted by non-human beings, with clear water, cool water, fresh water, clean, with good fords, delightful: No people would draw water from it or drink it or bathe in it or apply it to their needs. And so that water, not properly put to use, would go to waste and not to any good use. In the same way, when a person of no integrity acquires lavish wealth… his wealth, not properly put to use, goes to waste and not to any good use.
+SOURCE 005 prose: “But when a person of integrity acquires lavish wealth, he provides for his own pleasure & satisfaction, for the pleasure & satisfaction of his parents, the pleasure & satisfaction of his wife & children; the pleasure & satisfaction of his slaves, servants, & assistants; and the pleasure & satisfaction of his friends. He institutes for contemplatives & brahmans offerings of supreme aim, heavenly, resulting in happiness, leading to heaven. When his wealth is properly put to use, kings don’t make off with it, thieves don’t make off with it, fire doesn’t burn it, water doesn’t sweep it away, and hateful heirs don’t make off with it. Thus his wealth, properly put to use, goes to a good use and not to waste.
+SOURCE 006 prose: “Just as with a pond not far from a town or village, with clear water, cool water, fresh water, clean, with good fords, delightful. People would draw water from it or drink it or bathe in it or apply it to their needs. And so that water, properly put to use, would go to a good use and not to waste. In the same way, when a person of integrity acquires lavish wealth… his wealth, properly put to use, goes to a good use and not to waste.”
+SOURCE 007 prose: That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further:
+SOURCE 008 verse: “Like water
+SOURCE 009 verse: in a haunted place
+SOURCE 010 verse: that, without being imbibed,
+SOURCE 011 verse: dries up:
+SOURCE 012 verse: Such is the wealth
+SOURCE 013 verse: acquired by a worthless man
+SOURCE 014 verse: who neither enjoys it himself
+SOURCE 015 verse: nor gives.
+SOURCE 016 verse: But one enlightened & knowing,
+SOURCE 017 verse: on acquiring wealth,
+SOURCE 018 verse: enjoys it & performs his duties.
+SOURCE 019 verse: He, a bull among men,
+SOURCE 020 verse: having supported his kin
+SOURCE 021 verse: without blame,
+SOURCE 022 verse: without blame
+SOURCE 023 verse: goes to the land of heaven.”
+SOURCE 024 prose: See also: SN 1:41; AN 3:52–53; AN 5:41; AN 7:6–7; AN 9:20; Khp 8
+
+## Pali and present cuts
+
+sn3.19:6.1 | P: Seyyathāpi, mahārāja, gāmassa vā nigamassa vā avidūre pokkharaṇī acchodakā sītodakā sātodakā setodakā supatitthā ramaṇīyā.  | S: Suppose there was a lotus pond not far from a town or village with clear, sweet, cool water, clean, with smooth banks, delightful.  | T: “Just as with a pond not far from a town or village, with clear water, cool water, fresh water, clean, with good fords, delightful. 
+sn3.19:6.2 | P: Tañca udakaṁ jano hareyyapi piveyyapi nahāyeyyapi yathāpaccayampi kareyya.  | S: And people collected it and drank it and bathed in it and used it for their own purpose.  | T: People would draw water from it or drink it or bathe in it or apply it to their needs. 
+sn3.19:6.3 | P: Evañhi taṁ, mahārāja, udakaṁ sammā paribhuñjiyamānaṁ paribhogaṁ gaccheyya, no parikkhayaṁ.  | S: Since that water is properly utilized, it’s used, not wasted.  | T: And so that water, properly put to use, would go to a good use and not to waste. 
+sn3.19:6.4 | P: Evameva kho, mahārāja, sappuriso uḷāre bhoge labhitvā attānaṁ sukheti pīṇeti, mātāpitaro sukheti pīṇeti, puttadāraṁ sukheti pīṇeti, dāsakammakaraporise sukheti pīṇeti, mittāmacce sukheti pīṇeti, samaṇabrāhmaṇesu uddhaggikaṁ dakkhiṇaṁ patiṭṭhāpeti sovaggikaṁ sukhavipākaṁ saggasaṁvattanikaṁ.  | S: In the same way, when a true person has acquired notable wealth …  | T: In the same way, when a person of integrity acquires lavish wealth… 
+sn3.19:6.5 | P: Tassa te bhoge evaṁ sammā paribhuñjiyamāne neva rājāno haranti, na corā haranti, na aggi ḍahati, na udakaṁ vahati, na appiyā dāyādā haranti.  | S:  | T: 
+sn3.19:6.6 | P: Evaṁsa te, mahārāja, bhogā sammā paribhuñjiyamānā paribhogaṁ gacchanti, no parikkhayan”ti.  | S: it’s used, not wasted.  | T: his wealth, properly put to use, goes to a good use and not to waste.” 
+sn3.19:7.1 | P: “Amanussaṭṭhāne udakaṁva sītaṁ,  | S: As cool water in an uninhabited region  | T: That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further: ⏎ “Like water ⏎ in a haunted place 
+sn3.19:7.2 | P: Tadapeyyamānaṁ parisosameti;  | S: evaporates when not drunk;  | T: that, without being imbibed, ⏎ dries up: 
+sn3.19:7.3 | P: Evaṁ dhanaṁ kāpuriso labhitvā,  | S: so too when a reprobate acquires wealth,  | T: Such is the wealth ⏎ acquired by a worthless man 
+sn3.19:7.4 | P: Nevattanā bhuñjati no dadāti.  | S: they neither use it themselves nor give it away.  | T: who neither enjoys it himself ⏎ nor gives. 
+sn3.19:8.1 | P: Dhīro ca viññū adhigamma bhoge,  | S: When the attentive and sensible acquire wealth,  | T: But one enlightened & knowing, ⏎ on acquiring wealth, 
+sn3.19:8.2 | P: So bhuñjati kiccakaro ca hoti;  | S: they use it, being dutiful.  | T: enjoys it & performs his duties. 
+sn3.19:8.3 | P: So ñātisaṅghaṁ nisabho bharitvā,  | S: That boss, having supported the family unit,  | T: He, a bull among men, ⏎ having supported his kin 
+sn3.19:8.4 | P: Anindito saggamupeti ṭhānan”ti.  | S: blameless, goes to a heavenly place.”  | T: without blame, ⏎ without blame ⏎ goes to the land of heaven.” 

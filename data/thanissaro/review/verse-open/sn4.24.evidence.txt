@@ -1,0 +1,79 @@
+# sn4.24
+Source: data/upstream/thanissaro/sutta/sn/sn4/sn4.24.html
+
+SOURCE 001 prose: I have heard that on one occasion, when the Blessed One was newly self-awakened, he was dwelling near Uruvelā on the bank of the Nerañjarā River, at the root of the Goatherd’s Banyan Tree.
+SOURCE 002 prose: And at that time, Māra the Evil One had been following the Blessed One for seven years, looking for an opening, but unable to find one.
+SOURCE 003 prose: Then Māra the Evil One went to the Blessed One and addressed him in verse:
+SOURCE 004 verse: “Practicing jhāna in the forest—
+SOURCE 005 verse: are you overcome with grief?
+SOURCE 006 verse: Have you lost,
+SOURCE 007 verse: or do you desire, wealth?
+SOURCE 008 verse: Have you done something
+SOURCE 009 verse: blameworthy in the village?
+SOURCE 010 verse: Is it because
+SOURCE 011 verse: you become intimate with people,
+SOURCE 012 verse: but intimacy doesn’t prosper for you
+SOURCE 013 verse: with anyone at all?”
+SOURCE 014 verse: The Buddha:
+SOURCE 015 verse: “Having dug up all the root of grief,
+SOURCE 016 verse: blameless, I practice jhāna not grieving.
+SOURCE 017 verse: Defeating all greed, all
+SOURCE 018 verse: yearning for becoming,
+SOURCE 019 verse: I, without effluent, practice jhāna—
+SOURCE 020 verse: you, Kinsman of the Heedless.”
+SOURCE 021 verse: Māra:
+SOURCE 022 verse: “Of whatever they say,
+SOURCE 023 verse: ‘This is mine,’
+SOURCE 024 verse: and whoever says, ‘mine,’
+SOURCE 025 verse: if your heart is here,
+SOURCE 026 verse: contemplative, you’re not free from me.”
+SOURCE 027 verse: The Buddha:
+SOURCE 028 verse: “Of whatever they speak,
+SOURCE 029 verse: it’s not mine.
+SOURCE 030 verse: And whoever speaks
+SOURCE 031 verse: they are not me.
+SOURCE 032 verse: Know that, Evil One.
+SOURCE 033 verse: You can’t even see my tracks.”
+SOURCE 034 verse: Māra:
+SOURCE 035 verse: “If the path has been awakened to—
+SOURCE 036 verse: secure, leading to the deathless—
+SOURCE 037 verse: then go away! Go alone!
+SOURCE 038 verse: What’s the use of instructing others?”
+SOURCE 039 verse: The Buddha:
+SOURCE 040 verse: “People seeking the far side
+SOURCE 041 verse: ask about the deathless realm.
+SOURCE 042 verse: Asked by them, I explain
+SOURCE 043 verse: the truth that’s acquisition-free.”
+SOURCE 044 verse: Māra:
+SOURCE 045 prose: “Suppose, lord, that not far from a village or town was a pond. There in it was a crab. Then a number of boys & girls, leaving the village or town, would go to the pond and, on arrival, would take the crab out of the water and place it on the ground. And whenever the crab extended a leg, the boys or girls would cut it off, break it, and smash it with sticks or stones right there, so that the crab—with all its legs cut off, broken, & smashed—would be unable to get back in the pond as before.
+SOURCE 046 prose: “In the same way, whatever writhings, tricks, & contortions [there are], the Blessed One has cut them off, broken them, and smashed them all. Now I’m unable to approach the Blessed One, looking for an opening.”
+SOURCE 047 prose: Then Māra the Evil One recited these verses of dejection in the Blessed One’s presence:
+SOURCE 048 verse: “A crow circled a stone
+SOURCE 049 verse: the color of fat—
+SOURCE 050 verse: ‘Perhaps I’ll find something tender here,
+SOURCE 051 verse: Maybe there’s something tasty’
+SOURCE 052 verse: —but not getting anything tasty there,
+SOURCE 053 verse: the crow went away.
+SOURCE 054 verse: Like a crow attacking the rock,
+SOURCE 055 verse: I weary myself with Gotama.”
+SOURCE 056 prose: Then Māra the Evil One, having recited these verses of dejection in the Blessed One’s presence, left that place and sat on the ground not far from the Blessed One, silent, abashed, with his shoulders drooping, his head down, brooding, at a loss for words, drawing in the dirt with a stick.
+SOURCE 057 prose: See also: SN 4:25; Sn 3:2
+
+## Pali and present cuts
+
+sn4.24:8.1 | P: “Seyyathāpi, bhante, gāmassa vā nigamassa vā avidūre pokkharaṇī.  | S: “Sir, suppose there was a lotus pond not far from a town or village,  | T: Māra: “Suppose, lord, that not far from a village or town was a pond. 
+sn4.24:8.2 | P: Tatrassa kakkaṭako.  | S: and a crab lived there.  | T: There in it was a crab. 
+sn4.24:8.3 | P: Atha kho, bhante, sambahulā kumārakā vā kumārikāyo vā tamhā gāmā vā nigamā vā nikkhamitvā yena sā pokkharaṇī tenupasaṅkameyyuṁ; upasaṅkamitvā taṁ kakkaṭakaṁ udakā uddharitvā thale patiṭṭhapeyyuṁ.  | S: Then several boys or girls would leave the town or village and go to the pond, where they’d pull out the crab and put it on solid ground.  | T: Then a number of boys & girls, leaving the village or town, would go to the pond and, on arrival, would take the crab out of the water and place it on the ground. 
+sn4.24:8.4 | P: Yaṁ yadeva hi so, bhante, kakkaṭako aḷaṁ abhininnāmeyya taṁ tadeva te kumārakā vā kumārikāyo vā kaṭṭhena vā kathalāya vā sañchindeyyuṁ sambhañjeyyuṁ sampalibhañjeyyuṁ.  | S: Whenever that crab extended a claw, those boys or girls would snap, crack, and break it off with a stick or a stone.  | T: And whenever the crab extended a leg, the boys or girls would cut it off, break it, and smash it with sticks or stones right there, 
+sn4.24:8.5 | P: Evañhi so, bhante, kakkaṭako sabbehi aḷehi sañchinnehi sambhaggehi sampalibhaggehi abhabbo taṁ pokkharaṇiṁ otarituṁ.  | S: And when that crab’s claws had all been snapped, cracked, and broken off it wouldn’t be able to return down into that lotus pond.  | T: so that the crab—with all its legs cut off, broken, & smashed—would be unable to get back in the pond as before. 
+sn4.24:8.6 | P: Evameva kho, bhante, yāni kānici visūkāyikāni visevitāni vipphanditāni, sabbāni tāni bhagavatā sañchinnāni sambhaggāni sampalibhaggāni.  | S: In the same way, sir, the Buddha has snapped, cracked, and broken off all my twists, ducks, and dodges.  | T: “In the same way, whatever writhings, tricks, & contortions [there are], the Blessed One has cut them off, broken them, and smashed them all. 
+sn4.24:8.7 | P: Abhabbo dānāhaṁ, bhante, puna bhagavantaṁ upasaṅkamituṁ yadidaṁ otārāpekkho”ti.  | S: Now I’m not able to approach the Buddha again in hopes of finding a vulnerability.”  | T: Now I’m unable to approach the Blessed One, looking for an opening.” 
+sn4.24:8.8 | P: Atha kho māro pāpimā bhagavato santike imā nibbejanīyā gāthāyo abhāsi:  | S: Then Māra the Wicked recited these verses of disappointment in the Buddha’s presence:  | T: Then Māra the Evil One recited these verses of dejection in the Blessed One’s presence: 
+sn4.24:9.1 | P: “Medavaṇṇañca pāsāṇaṁ,  | S: “A crow once circled a stone  | T: “A crow circled a stone 
+sn4.24:9.2 | P: vāyaso anupariyagā;  | S: that looked like a lump of fat.  | T: the color of fat— 
+sn4.24:9.3 | P: Apettha muduṁ vindema,  | S: ‘Perhaps I’ll find something tender,’ it thought,  | T: ‘Perhaps I’ll find something tender here, 
+sn4.24:9.4 | P: api assādanā siyā.  | S: ‘perhaps there’s something tasty.’  | T: Maybe there’s something tasty’ 
+sn4.24:10.1 | P: Aladdhā tattha assādaṁ,  | S: But finding nothing tasty,  | T: —but not getting anything tasty there, 
+sn4.24:10.2 | P: vāyasetto apakkame;  | S: the crow left that place.  | T: the crow went away. 
+sn4.24:10.3 | P: Kākova selamāsajja,  | S: Like the crow that pecked the stone,  | T: Like a crow attacking the rock, 
+sn4.24:10.4 | P: nibbijjāpema gotamā”ti.  | S: I leave Gotama disappointed.”  | T: I weary myself with Gotama.” Then Māra the Evil One, having recited these verses of dejection in the Blessed One’s presence, left that place and sat on the ground not far from the Blessed One, silent, abashed, with his shoulders drooping, his head down, brooding, at a loss for words, drawing in the dirt with a stick. 

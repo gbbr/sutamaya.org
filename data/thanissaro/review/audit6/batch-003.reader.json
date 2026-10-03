@@ -1,0 +1,46 @@
+{
+  "batch": "003",
+  "translator": "thanissaro",
+  "packet": "batch-003.pali.txt",
+  "coverage": {
+    "rows_read": 464,
+    "all_rows_read": true,
+    "includes_pali_only_rows": true,
+    "file_lines_read": [1, 491],
+    "texts_read": ["an8.8 (continued)", "an10.96", "snp3.11", "an6.43", "an10.101", "an3.105", "an4.124", "an4.159"]
+  },
+  "proposals": [
+    {
+      "key": "an10.96:10.1",
+      "explanation": "The second independently introduced question, about the cosmos not being eternal, currently begins on 9.1 after the completed eternal-cosmos question and answer. Its Pali begins at 10.1. Move that distinct question/list opening to 10.1 while retaining the already correctly placed subsequent ellipsis-separated items on 11.1–11.8.",
+      "source_verified": "data/upstream/thanissaro/sutta/an/an10/an10.96.html"
+    },
+    {
+      "key": "an10.96:12.3",
+      "explanation": "The negative clarification at the start of current 12.3 renders na janami na passami on 12.2, following its introductory denial. The affirmative janamaha passami on 12.3 begins with the proposed six-word quote. This boundary restores the negative answer to 12.2 and the affirmative answer to 12.3.",
+      "source_verified": "data/upstream/thanissaro/sutta/an/an10/an10.96.html"
+    }
+  ],
+  "concerns_checked_without_proposal": [
+    {
+      "keys": "an8.8:13.1–13.3",
+      "explanation": "One coherent English sentence begins on 13.1 and renders the four companies and their not having established the discourse; the following empty rows are a valid spanning sentence, not missing starts."
+    },
+    {
+      "keys": "an10.96:2.1–2.2, 15.4–15.7",
+      "explanation": "Sound existing clause boundaries are retained; the complete short question on 15.4 coherently spans 15.5, and the conditional clauses on 15.6–15.7 remain in their Pali order."
+    },
+    {
+      "keys": "snp3.11:1.1–45.5",
+      "explanation": "All verse rows and the Pali-only introductory/closing rows were read. Differences between source order and Pali order remain coherent within their verse; speaker labels and the empty speaker-attribution row at 23.2 are not misplaced content. No sure crossing or source-line split was found."
+    },
+    {
+      "keys": "an6.43:6.4–7.1, 16.1–16.4, 19.4–20.1",
+      "explanation": "Continuing syntax at adjacent verses preserves source order. The three whole source lines of verse 16 occupy its first three Pali rows, with one lone empty final row revealing under the prior row; this is compliant. Source HTML confirms the long white-lotus line and the separate fragrant/delightful line."
+    },
+    {
+      "keys": "an10.101, an3.105, an4.124, an4.159",
+      "explanation": "Every row read, including repetitions rendered in full despite Sujato abbreviation. The additional sexual-intercourse abandonment sentence at an4.159:4.8 and 8.2 is source wording rather than a misplaced boundary; it was not forced onto unrelated Pali. No sure misplaced starts found in these texts."
+    }
+  ]
+}

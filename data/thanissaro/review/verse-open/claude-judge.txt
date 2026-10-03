@@ -1,0 +1,142 @@
+# Subsequent Claude cross-model judgment: all changed groups
+Original Pali is the authority; current saved source HTML determines whole source lines.
+Compare BEFORE and AFTER. Judge each group better/same/worse with reason.
+Whole translator verse lines in source order may span adjacent verses as one group; prose stays on its starting Pali.
+Abridged repetition must stay hidden; rendered hidden verse Pali must show.
+
+## 1 (verse-open, an3.39)
+Proposed boundaries: [{"key": "an3.39:11.1", "starts": "as one who sees", "settles": {"after": "intoxication\nwith health, youth, & life", "placed": true}}, {"key": "an3.39:11.2", "starts": "renunciation as rest.", "settles": {"after": "h health, youth, & life\nas one who sees", "placed": true}}]
+Source: data/upstream/thanissaro/sutta/an/an3/an3.39.html
+an3.39:10.4 | P: jīvitasmiñca ye madā. 
+S: of health, of youth,
+BEFORE: 'with health, youth,'
+AFTER: 'with health, youth, & life'
+an3.39:11.1 | P: Sabbe made abhibhosmi, 
+S: and even of life—
+BEFORE: '& life'
+AFTER: 'as one who sees'
+an3.39:11.2 | P: Nekkhamme daṭṭhu khemataṁ; 
+S: seeing renunciation as sanctuary.
+BEFORE: 'as one who sees renunciation as rest.'
+AFTER: 'renunciation as rest.'
+an3.39:11.3 | P: Tassa me ahu ussāho, 
+S: Zeal sprang up in me
+BEFORE: 'For me, energy arose,'
+AFTER: 'For me, energy arose,'
+
+## 2 (verse-open, an5.57)
+Proposed boundaries: [{"key": "an5.57:15.1", "starts": "as one who sees", "settles": {"after": "intoxication\nwith health, youth, & life", "placed": true}}, {"key": "an5.57:15.2", "starts": "renunciation as rest.", "settles": {"after": "h health, youth, & life\nas one who sees", "placed": true}}]
+Source: data/upstream/thanissaro/sutta/an/an5/an5.57.html
+an5.57:14.4 | P: jīvitasmiñca ye madā. 
+S: of health, of youth,
+BEFORE: 'with health, youth,'
+AFTER: 'with health, youth, & life'
+an5.57:15.1 | P: Sabbe made abhibhosmi, 
+S: and even of life—
+BEFORE: '& life'
+AFTER: 'as one who sees'
+an5.57:15.2 | P: Nekkhammaṁ daṭṭhu khemato; 
+S: seeing renunciation as sanctuary.
+BEFORE: 'as one who sees renunciation as rest.'
+AFTER: 'renunciation as rest.'
+an5.57:15.3 | P: Tassa me ahu ussāho, 
+S: Zeal sprang up in me
+BEFORE: 'For me, energy arose,'
+AFTER: 'For me, energy arose,'
+
+## 3 (verse-open, an6.45)
+Proposed boundaries: [{"key": "an6.45:21.4", "starts": "righteously-gained,", "settles": {"after": "t home,\nmaking gifts of his belongings,", "placed": true, "own": true}}]
+Source: data/upstream/thanissaro/sutta/an/an6/an6.45.html
+an6.45:21.3 | P: Dhammaladdhehi bhogehi, 
+S: With confident heart, they give
+BEFORE: 'But one with confidence, living at home, making gifts'
+AFTER: 'But one with confidence, living at home, making gifts of his belongings,'
+an6.45:21.4 | P: dadaṁ cittaṁ pasādayaṁ. 
+S: with wealth that is properly earned.
+BEFORE: 'of his belongings, righteously-gained,'
+AFTER: 'righteously-gained,'
+an6.45:22.1 | P: Ubhayattha kaṭaggāho, 
+S: That faithful householder of discernment
+BEFORE: 'wins both goals:'
+AFTER: 'wins both goals:'
+
+## 4 (verse-open, an8.54)
+Proposed boundaries: [{"key": "an8.54:17.3", "starts": "leading to welfare & happiness", "settles": {"after": " household life,\nthese eight qualities—", "placed": true, "own": true}}, {"key": "an8.54:17.4", "starts": "both in this life & in lives to", "settles": {"after": "alities—\nleading to welfare & happiness", "placed": true}}, {"key": "an8.54:18.1", "starts": "have been declared by the one", "settles": {"after": "s\nboth in this life & in lives to come—", "placed": true, "own": true}}, {"key": "an8.54:18.2", "starts": "who is truly named.", "settles": {"after": " to come—\nhave been declared by the one", "placed": true}}]
+Source: data/upstream/thanissaro/sutta/an/an8/an8.54.html
+an8.54:17.2 | P: saddhassa gharamesino; 
+S: of a faithful householder of discernment
+BEFORE: 'these eight qualities—'
+AFTER: 'these eight qualities—'
+an8.54:17.3 | P: Akkhātā saccanāmena, 
+S: are declared by the one who is truly named
+BEFORE: ''
+AFTER: 'leading to welfare & happiness'
+an8.54:17.4 | P: ubhayattha sukhāvahā. 
+S: to lead to happiness in both spheres,
+BEFORE: 'leading to welfare & happiness'
+AFTER: 'both in this life & in lives to come—'
+an8.54:18.1 | P: Diṭṭhadhammahitatthāya, 
+S: welfare and benefit in this life,
+BEFORE: 'both in this life & in lives to come—'
+AFTER: 'have been declared by the one'
+an8.54:18.2 | P: samparāyasukhāya ca; 
+S: and happiness in lives to come.
+BEFORE: 'have been declared by the one who is truly named.'
+AFTER: 'who is truly named.'
+an8.54:18.3 | P: Evametaṁ gahaṭṭhānaṁ, 
+S: This is how, for a householder,
+BEFORE: 'And this is how, for householders,'
+AFTER: 'And this is how, for householders,'
+
+## 5 (verse-open, snp3.6)
+Proposed boundaries: [{"key": "snp3.6:45.4", "starts": "self-awakened. You have", "settles": {"after": "with Eyes.\nYes, you are a sage, rightly", "placed": true}}, {"key": "snp3.6:46.1", "starts": "no hindrances. Your despairs", "settles": {"after": "a sage, rightly\nself-awakened. You have", "placed": true}}]
+Source: data/upstream/thanissaro/sutta/kn/snp/vagga3/snp3.6.html
+snp3.6:45.3 | P: Addhā munīsi sambuddho, 
+S: Clearly you are a sage, an Awakened One,
+BEFORE: 'Yes, you are a sage, rightly self-awakened.'
+AFTER: 'Yes, you are a sage, rightly'
+snp3.6:45.4 | P: Natthi nīvaraṇā tava. 
+S: there are no hindrances in you.
+BEFORE: 'You have no hindrances.'
+AFTER: 'self-awakened. You have'
+snp3.6:46.1 | P: Upāyāsā ca te sabbe, 
+S: All your distress
+BEFORE: 'Your despairs'
+AFTER: 'no hindrances. Your despairs'
+snp3.6:46.2 | P: Viddhastā vinaḷīkatā; 
+S: is blown away and mown down.
+BEFORE: 'are fallen down, cut from the stem.'
+AFTER: 'are fallen down, cut from the stem.'
+
+## 6 (verse-open, snp3.6)
+Proposed boundaries: [{"key": "snp3.6:46.4", "starts": "steadfast, enduring in truth:", "settles": {"after": "stem.\nCooled, attained to self-control,", "placed": true}}]
+Source: data/upstream/thanissaro/sutta/kn/snp/vagga3/snp3.6.html
+snp3.6:46.3 | P: Sītibhūto damappatto, 
+S: Cooled, tamed, steadfast:
+BEFORE: 'Cooled, attained to self-control, steadfast,'
+AFTER: 'Cooled, attained to self-control,'
+snp3.6:46.4 | P: Dhitimā saccanikkamo. 
+S: truth is your strength.
+BEFORE: 'enduring in truth:'
+AFTER: 'steadfast, enduring in truth:'
+snp3.6:47.1 | P: Tassa te nāganāgassa, 
+S: O giant among giants, O great hero,
+BEFORE: 'In your words, Nāga of nāgas, great hero,'
+AFTER: 'In your words, Nāga of nāgas, great hero,'
+
+## 7 (verse-open, sn3.19)
+Proposed boundaries: [{"key": "sn3.19:7.1", "starts": "“Like water", "settles": {"after": "e Well-Gone, the Teacher, said further:", "placed": true}}]
+Source: data/upstream/thanissaro/sutta/sn/sn3/sn3.19.html
+sn3.19:6.6 | P: Evaṁsa te, mahārāja, bhogā sammā paribhuñjiyamānā paribhogaṁ gacchanti, no parikkhayan”ti. 
+S: it’s used, not wasted.
+BEFORE: 'his wealth, properly put to use, goes to a good use and not to waste.”'
+AFTER: 'his wealth, properly put to use, goes to a good use and not to waste.” That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further:'
+sn3.19:7.1 | P: “Amanussaṭṭhāne udakaṁva sītaṁ, 
+S: As cool water in an uninhabited region
+BEFORE: 'That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further: “Like water in a haunted place'
+AFTER: '“Like water in a haunted place'
+sn3.19:7.2 | P: Tadapeyyamānaṁ parisosameti; 
+S: evaporates when not drunk;
+BEFORE: 'that, without being imbibed, dries up:'
+AFTER: 'that, without being imbibed, dries up:'
+

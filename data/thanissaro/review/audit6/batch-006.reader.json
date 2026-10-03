@@ -1,0 +1,39 @@
+{
+  "batch": "006",
+  "translator": "thanissaro",
+  "packet": "batch-006.pali.txt",
+  "coverage": {
+    "rows_read": 297,
+    "all_rows_read": true,
+    "includes_pali_only_rows": true,
+    "file_lines_read": [1, 351],
+    "texts_read": ["sn20.1", "sn21.6", "sn21.8", "sn23.1", "sn25.1", "sn25.8", "sn27.9", "sn35.134", "sn35.234", "sn36.11", "sn38.3", "sn42.9", "sn43.19", "sn43.34", "sn43.37", "sn43.3", "sn44.6"]
+  },
+  "proposals": [],
+  "concerns_checked_without_proposal": [
+    {
+      "keys": "sn20.1, sn21.6, sn21.8",
+      "explanation": "All prose, verse, and closing rows read. Expanded opening formulas and the additional description of Bhaddiya follow source edition wording rather than displaced boundaries. Verse lines remain in coherent source order across their own Pali verses."
+    },
+    {
+      "keys": "sn23.1, sn25.1, sn25.8, sn27.9",
+      "explanation": "Every individual ellipsis-separated item sits on its relevant Pali row. SN25.8 expands a Pali compressed formula on 1.8 and leaves its closing formula row empty; distinct unrepresented repetition clauses have no independent Pali rows onto which to move them. The additional concluding prose on SN27.9:1.8–1.9 agrees with its Pali despite Sujato's empty context."
+    },
+    {
+      "keys": "sn35.134:1.11–1.12, 1.15; sn35.234:2.1–3.2, 5.1–5.5",
+      "explanation": "The mindfulness and bodily tranquility details absent from the translation of SN35.134 are omission/compression, not text on a wrong neighbouring row. Additional intervening sense-base examples are represented only by Pali ellipsis and remain with that compressed section. SN35.234's quoted body-not-self phrase completes the coherent sentence begun on 2.1. The affirmative abbreviated response begins on 3.2 where the corresponding affirmative consciousness explanation occurs. Tongue/body and other sense examples compressed in Pali do not provide distinct rows for every expanded source item."
+    },
+    {
+      "keys": "sn36.11:2.7–2.14, 2.26–2.30",
+      "explanation": "Repeated quoted statements are omitted by the translator, while expanded progressive-stilling repetitions on 2.28 belong to that Pali ellipsis section. All remaining attainment rows have their own correctly matched statements."
+    },
+    {
+      "keys": "sn38.3:1.1; sn42.9; sn43.19; sn43.34; sn43.37; sn43.3",
+      "explanation": "The source-only opening narrative of SN38.3 has no earlier Pali row in this packet and was not forced onto another passage. SN42.9's narrative, argument, list, and refuge conclusion are aligned. The four short SN43 sections abbreviate the omitted formulas and remain correctly placed."
+    },
+    {
+      "keys": "sn44.6:1.4–1.8, 2.8–2.9, 3.1–3.7, 4.3–6.6",
+      "explanation": "The initial dialogue on 1.4 is expanded from the Pali ellipsis; 1.5 begins the separate retrospective question and coherently spans its answer quote through 1.7. Subsequent expanded lists and their final neither-exists-nor-does-not-exist items are already divided at the relevant Pali rows. No sure boundary fix found."
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+# Audit6: Pali is the authority; S is secondary context.
+Every selected non-title row is included. ↵ records a current saved line break; original source HTML decides whole source lines.
+
+## sn44.7
+Source: data/upstream/thanissaro/sutta/sn/sn44/sn44.7.html
+sn44.7:1.1 | P: Atha kho vacchagotto paribbājako yenāyasmā mahāmoggallāno tenupasaṅkami; upasaṅkamitvā āyasmatā mahāmoggallānena saddhiṁ sammodi. | S: Then the wanderer Vacchagotta went up to Venerable Mahāmoggallāna, and exchanged greetings with him. | T: Then Vacchagotta the wanderer went to Ven. Mahā Moggallāna and, on arrival, exchanged courteous greetings with him.
+sn44.7:1.2 | P: Sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdi. Ekamantaṁ nisinno kho vacchagotto paribbājako āyasmantaṁ mahāmoggallānaṁ etadavoca: | S: When the greetings and polite conversation were over, he sat down to one side, and said to Mahāmoggallāna: | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he said to Ven. Mahā Moggallāna,
+sn44.7:2.1 | P: “Kiṁ nu kho, bho moggallāna, sassato loko”ti? | S: “Worthy Moggallāna, is this right: ‘the cosmos is eternal’?” | T: “Now then, Master Moggallāna, is the cosmos eternal?”
+sn44.7:2.2 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: | S: “Vaccha, this has not been declared by the Buddha.” | T: “That has not been declared by the Blessed One, Vaccha:
+sn44.7:2.3 | P: ‘sassato loko’”ti. | S: (none) | T: ‘The cosmos is eternal.’”
+sn44.7:2.4 | P: “Kiṁ pana, bho moggallāna, asassato loko”ti? | S: “Then is this right: ‘the cosmos is not eternal’ … | T: “Well then, Master Moggallāna, is the cosmos not eternal?”
+sn44.7:2.5 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | S: (none) | T: “Vaccha, that too has not been declared by the Blessed One:
+sn44.7:2.6 | P: ‘asassato loko’”ti. | S: (none) | T: ‘The cosmos is not eternal.’”
+sn44.7:2.7 | P: “Kiṁ nu kho, bho moggallāna, antavā loko”ti? | S: ‘the cosmos is finite’ … | T: “Then is the cosmos finite?”
+sn44.7:2.8 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: | S: (none) | T: (none)
+sn44.7:2.9 | P: ‘antavā loko’”ti. | S: (none) | T: …
+sn44.7:2.10 | P: “Kiṁ pana, bho moggallāna, anantavā loko”ti? | S: ‘the cosmos is infinite’ … | T: “Is the cosmos infinite?”
+sn44.7:2.11 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | S: (none) | T: (none)
+sn44.7:2.12 | P: ‘anantavā loko’”ti. | S: (none) | T: …
+sn44.7:2.13 | P: “Kiṁ nu kho, bho moggallāna, taṁ jīvaṁ taṁ sarīran”ti? | S: ‘the soul and the body are one and the same’ … | T: “Is the body the same as the soul?”
+sn44.7:2.14 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: | S: (none) | T: (none)
+sn44.7:2.15 | P: ‘taṁ jīvaṁ taṁ sarīran’”ti. | S: (none) | T: …
+sn44.7:2.16 | P: “Kiṁ pana, bho moggallāna, aññaṁ jīvaṁ aññaṁ sarīran”ti? | S: ‘the soul is one thing, the body another’ … | T: “Is the body one thing, and the soul another?”
+sn44.7:2.17 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | S: (none) | T: (none)
+sn44.7:2.18 | P: ‘aññaṁ jīvaṁ aññaṁ sarīran’”ti. | S: (none) | T: …
+sn44.7:2.19 | P: “Kiṁ nu kho, bho moggallāna, hoti tathāgato paraṁ maraṇā”ti? | S: ‘a realized one still exists after death’ … | T: “Does the Tathāgata exist after death?”
+sn44.7:2.20 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: | S: (none) | T: (none)
+sn44.7:2.21 | P: ‘hoti tathāgato paraṁ maraṇā’”ti. | S: (none) | T: …
+sn44.7:2.22 | P: “Kiṁ pana, bho moggallāna, na hoti tathāgato paraṁ maraṇā”ti? | S: ‘a realized one no longer exists after death’ … | T: “Does the Tathāgata not exist after death?”
+sn44.7:2.23 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | S: (none) | T: (none)
+sn44.7:2.24 | P: ‘na hoti tathāgato paraṁ maraṇā’”ti. | S: (none) | T: …
+sn44.7:2.25 | P: “Kiṁ nu kho, bho moggallāna, hoti ca na ca hoti tathāgato paraṁ maraṇā”ti? | S: ‘a realized one both still exists and no longer exists after death’ … | T: “Does the Tathāgata both exist and not exist after death?”
+sn44.7:2.26 | P: “Abyākataṁ kho etaṁ, vaccha, bhagavatā: | S: (none) | T: …
+sn44.7:2.27 | P: ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’”ti. | S: (none) | T: (none)
+sn44.7:2.28 | P: “Kiṁ pana, bho moggallāna, neva hoti na na hoti tathāgato paraṁ maraṇā”ti? | S: ‘a realized one neither still exists nor no longer exists after death’?” | T: “Does the Tathāgata neither exist nor not exist after death?”
+sn44.7:2.29 | P: “Etampi kho, vaccha, abyākataṁ bhagavatā: | S: “This too has not been declared by the Buddha.” | T: “Vaccha, that too has not been declared by the Blessed One:
+sn44.7:2.30 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | S: (none) | T: ‘The Tathāgata neither exists nor does not exist after death.”
+sn44.7:3.1 | P: “Ko nu kho, bho moggallāna, hetu ko paccayo, yena aññatitthiyānaṁ paribbājakānaṁ evaṁ puṭṭhānaṁ evaṁ veyyākaraṇaṁ hoti— | S: “What’s the cause, worthy Moggallāna, what’s the reason why, when the wanderers of other religions are asked these questions, they declare one of these to be true? | T: “Now, Master Moggallāna, what is the cause, what is the reason why—when wanderers of other sects are asked in this way, they answer that
+sn44.7:3.2 | P: sassato lokoti vā, asassato lokoti vā, antavā lokoti vā, anantavā lokoti vā, taṁ jīvaṁ taṁ sarīranti vā, aññaṁ jīvaṁ aññaṁ sarīranti vā, hoti tathāgato paraṁ maraṇāti vā, na hoti tathāgato paraṁ maraṇāti vā, hoti ca na ca hoti tathāgato paraṁ maraṇāti vā, neva hoti na na hoti tathāgato paraṁ maraṇāti vā? | S: (none) | T: ‘The cosmos is eternal’ or ‘The cosmos is not eternal’ or ‘The cosmos is finite’ or ‘The cosmos is infinite’ or ‘The body is the same as the soul’ or ‘The body is one thing and the soul another’ or ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death” or ‘The Tathāgata neither exists nor does not exist after death,’
+sn44.7:3.3 | P: Ko pana, bho moggallāna, hetu ko paccayo, yena samaṇassa gotamassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti— | S: And what’s the reason why, when the ascetic Gotama is asked these questions, he does not declare one of these to be true?” | T: yet when Gotama the contemplative is asked in this way, he does not answer that
+sn44.7:3.4 | P: sassato lokotipi, asassato lokotipi, antavā lokotipi, anantavā lokotipi, taṁ jīvaṁ taṁ sarīrantipi, aññaṁ jīvaṁ aññaṁ sarīrantipi, hoti tathāgato paraṁ maraṇātipi, na hoti tathāgato paraṁ maraṇātipi, hoti ca na ca hoti tathāgato paraṁ maraṇātipi, neva hoti na na hoti tathāgato paraṁ maraṇātipī”ti? | S: (none) | T: ‘The cosmos is eternal’ or ‘The cosmos is not eternal’ or ‘The cosmos is finite’ or ‘The cosmos is infinite’ or ‘The body is the same as the soul’ or ‘The body is one thing and the soul another’ or ‘The Tathāgata exists after death’ or ‘The Tathāgata does not exist after death’ or ‘The Tathāgata both exists and does not exist after death” or ‘The Tathāgata neither exists nor does not exist after death’?”
+sn44.7:4.1 | P: “Aññatitthiyā kho, vaccha, paribbājakā cakkhuṁ ‘etaṁ mama, esohamasmi, eso me attā’ti samanupassanti …pe… | S: “Vaccha, the wanderers of other religions regard the eye like this: ‘This is mine, I am this, this is my self.’ They regard the ear … nose … | T: “Vaccha, the members of other sects assume of the eye that ‘This is mine, this is my self, this is what I am.’ They assume of the ear… the nose…
+sn44.7:4.2 | P: jivhaṁ ‘etaṁ mama, esohamasmi, eso me attā’ti samanupassanti …pe… | S: tongue … body … | T: the tongue… the body…
+sn44.7:4.3 | P: manaṁ ‘etaṁ mama, esohamasmi, eso me attā’ti samanupassanti. | S: mind like this: ‘This is mine, I am this, this is my self.’ | T: the intellect that ‘This is mine, this is my self, this is what I am.’
+sn44.7:4.4 | P: Tasmā aññatitthiyānaṁ paribbājakānaṁ evaṁ puṭṭhānaṁ evaṁ veyyākaraṇaṁ hoti— | S: That’s why, when asked, they declare one of those answers to be true. | T: That is why, when asked in this way, they answer that
+sn44.7:4.5 | P: sassato lokoti vā …pe… | S: (none) | T: ‘The cosmos is eternal’…
+sn44.7:4.6 | P: neva hoti na na hoti tathāgato paraṁ maraṇāti vā. | S: (none) | T: or that ‘The Tathāgata neither exists nor does not exist after death.’
+sn44.7:4.7 | P: Tathāgato ca kho, vaccha, arahaṁ sammāsambuddho cakkhuṁ ‘netaṁ mama, nesohamasmi, na meso attā’ti samanupassati …pe… | S: The Realized One, the perfected one, the fully awakened Buddha regards the eye like this: ‘This is not mine, I am not this, this is not my self.’ He regards the ear … nose … | T: But the Tathāgata, worthy & rightly self-awakened, doesn’t assume of the eye that ‘This is mine, this is my self, this is what I am.’ He doesn’t assume of the ear… the nose…
+sn44.7:4.8 | P: jivhaṁ ‘netaṁ mama, nesohamasmi, na meso attā’ti samanupassati …pe… | S: tongue … body … | T: the tongue… the body…
+sn44.7:4.9 | P: manaṁ ‘netaṁ mama, nesohamasmi, na meso attā’ti samanupassati. | S: mind like this: ‘This is not mine, I am not this, this is not my self.’ | T: the intellect that ‘This is mine, this is my self, this is what I am.’
+sn44.7:4.10 | P: Tasmā tathāgatassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti— | S: That’s why, when asked, he does not declare one of those answers to be true.” | T: That is why, when asked in this way, he does not answer that
+sn44.7:4.11 | P: sassato lokotipi …pe… | S: (none) | T: ‘The cosmos is eternal’…
+sn44.7:4.12 | P: neva hoti na na hoti tathāgato paraṁ maraṇātipī”ti. | S: (none) | T: or that ‘The Tathāgata neither exists nor does not exist after death.’”
+sn44.7:5.1 | P: Atha kho vacchagotto paribbājako uṭṭhāyāsanā yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavatā saddhiṁ sammodi. | S: Then the wanderer Vacchagotta rose from his seat and went to the Buddha and exchanged greetings with him. | T: The Vacchagotta the wanderer, getting up from his seat, went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+sn44.7:5.2 | P: Sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdi. Ekamantaṁ nisinno kho vacchagotto paribbājako bhagavantaṁ etadavoca: | S: When the greetings and polite conversation were over, he sat down to one side. He asked the Buddha the same questions, and received the same answers. | T: After an exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there, he (addressed the same questions to the Blessed One and received exactly the same explanation).
+sn44.7:5.3 | P: “kiṁ nu kho, bho gotama, sassato loko”ti? | S: (none) | T: (none)
+sn44.7:5.4 | P: “Abyākataṁ kho etaṁ, vaccha, mayā: ‘sassato loko’ti …pe…. | S: (none) | T: (none)
+sn44.7:5.5 | P: “Kiṁ pana, bho gotama, neva hoti na na hoti tathāgato paraṁ maraṇā”ti? | S: (none) | T: (none)
+sn44.7:5.6 | P: “Etampi kho, vaccha, abyākataṁ mayā: | S: (none) | T: (none)
+sn44.7:5.7 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’”ti. | S: (none) | T: (none)
+sn44.7:6.1 | P: “Ko nu kho, bho gotama, hetu ko paccayo, yena aññatitthiyānaṁ paribbājakānaṁ evaṁ puṭṭhānaṁ evaṁ veyyākaraṇaṁ hoti: | S: (none) | T: (none)
+sn44.7:6.2 | P: ‘sassato loko’ti vā …pe… | S: (none) | T: (none)
+sn44.7:6.3 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā? | S: (none) | T: (none)
+sn44.7:6.4 | P: Ko pana, bho gotama, hetu ko paccayo, yena bhoto gotamassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti: | S: (none) | T: (none)
+sn44.7:6.5 | P: ‘sassato loko’tipi …pe… | S: (none) | T: (none)
+sn44.7:6.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti? | S: (none) | T: (none)
+sn44.7:7.1 | P: “Aññatitthiyā kho, vaccha, paribbājakā cakkhuṁ ‘etaṁ mama, esohamasmi, eso me attā’ti samanupassanti …pe… | S: (none) | T: (none)
+sn44.7:7.2 | P: jivhaṁ ‘etaṁ mama, esohamasmi, eso me attā’ti samanupassanti …pe… | S: (none) | T: (none)
+sn44.7:7.3 | P: manaṁ ‘etaṁ mama, esohamasmi, eso me attā’ti samanupassanti. | S: (none) | T: (none)
+sn44.7:7.4 | P: Tasmā aññatitthiyānaṁ paribbājakānaṁ evaṁ puṭṭhānaṁ evaṁ veyyākaraṇaṁ hoti: | S: (none) | T: (none)
+sn44.7:7.5 | P: ‘sassato loko’ti vā …pe… | S: (none) | T: (none)
+sn44.7:7.6 | P: ‘neva hoti na na hoti tathāgato paraṁ maraṇā’ti vā. | S: (none) | T: (none)
+sn44.7:7.7 | P: Tathāgato ca kho, vaccha, arahaṁ sammāsambuddho cakkhuṁ ‘netaṁ mama, nesohamasmi, na meso attā’ti samanupassati …pe… | S: (none) | T: (none)
+sn44.7:7.8 | P: jivhaṁ ‘netaṁ mama, nesohamasmi, na meso attā’ti samanupassati …pe… | S: (none) | T: (none)
+sn44.7:7.9 | P: manaṁ ‘netaṁ mama, nesohamasmi, na meso attā’ti samanupassati. | S: (none) | T: (none)
+sn44.7:7.10 | P: Tasmā tathāgatassa evaṁ puṭṭhassa na evaṁ veyyākaraṇaṁ hoti: | S: (none) | T: (none)
+sn44.7:7.11 | P: ‘sassato loko’tipi, ‘asassato loko’tipi, ‘antavā loko’tipi, ‘anantavā loko’tipi, ‘taṁ jīvaṁ taṁ sarīran’tipi, ‘aññaṁ jīvaṁ aññaṁ sarīran’tipi, ‘hoti tathāgato paraṁ maraṇā’tipi, ‘na hoti tathāgato paraṁ maraṇā’tipi, ‘hoti ca na ca hoti tathāgato paraṁ maraṇā’tipi, ‘neva hoti na na hoti tathāgato paraṁ maraṇā’tipī”ti. | S: (none) | T: (none)
+sn44.7:8.1 | P: “Acchariyaṁ, bho gotama, abbhutaṁ, bho gotama. | S: He said, “It’s incredible, worthy Gotama, it’s amazing! | T: “Amazing, Master Gotama! Astounding!
+sn44.7:8.2 | P: Yatra hi nāma satthu ca sāvakassa ca atthena attho byañjanena byañjanaṁ saṁsandissati samessati na virodhayissati, yadidaṁ aggapadasmiṁ. | S: How the meaning and the phrasing of the Teacher and the disciple fit together and agree without contradiction when it comes to the chief matter! | T: How the meaning and phrasing of the teacher and disciple agree, coincide, and do not diverge from one another with regard to the supreme teaching!
+sn44.7:8.3 | P: Idānāhaṁ, bho gotama, samaṇaṁ mahāmoggallānaṁ upasaṅkamitvā etamatthaṁ apucchiṁ. | S: Just now I went to the ascetic Mahāmoggallāna and asked him about this matter. | T: Just now, Master Gotama, I went to the contemplative Moggallāna and, on arrival, asked him about this matter,
+sn44.7:8.4 | P: Samaṇopi me moggallāno etehi padehi etehi byañjanehi tamatthaṁ byākāsi, seyyathāpi bhavaṁ gotamo. | S: And he explained it to me with these words and phrases, just like the worthy Gotama. | T: and he answered me with the same words, the same phrasing, as Master Gotama.
+sn44.7:8.5 | P: Acchariyaṁ, bho gotama, abbhutaṁ, bho gotama. | S: It’s incredible, worthy Gotama, it’s amazing! | T: Amazing, Master Gotama! Astounding!
+sn44.7:8.6 | P: Yatra hi nāma satthu ca sāvakassa ca atthena attho byañjanena byañjanaṁ saṁsandissati samessati na virodhayissati, yadidaṁ aggapadasmin”ti. | S: How the meaning and the phrasing of the Teacher and the disciple fit together and agree without contradiction when it comes to the chief matter!” | T: How the meaning and phrasing of the teacher and disciple agree, coincide, and do not diverge from one another with regard to the supreme teaching!”
+sn44.7:8.7 | P: Sattamaṁ. | S: (none) | T: (none)
+
+## sn47.38
+Source: data/upstream/thanissaro/sutta/sn/sn47/sn47.38.html
+sn47.38:1.1 | P: “Cattārome, bhikkhave, satipaṭṭhānā. | S: “Mendicants, there are these four kinds of mindfulness meditation. | T: “Monks, there are these four establishings of mindfulness.
+sn47.38:1.2 | P: Katame cattāro? | S: What four? | T: Which four?
+sn47.38:1.3 | P: Idha, bhikkhave, bhikkhu kāye kāyānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. | S: It’s when a mendicant meditates by observing an aspect of the body—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: “There is the case where a monk remains focused on the body in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn47.38:1.4 | P: Tassa kāye kāyānupassino viharato kāyo pariññāto hoti. | S: As they do so they completely understand the body. | T: For him, remaining focused on the body in & of itself, the body is comprehended.
+sn47.38:1.5 | P: Kāyassa pariññātattā amataṁ sacchikataṁ hoti. | S: When the body is completely understood they realize freedom from death. | T: From the comprehension of the body, the deathless is realized.
+sn47.38:2.1 | P: Vedanāsu vedanānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. | S: They meditate observing an aspect of feelings—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: “He remains focused on feelings in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn47.38:2.2 | P: Tassa vedanāsu vedanānupassino viharato vedanā pariññātā honti. | S: As they do so they completely understand feelings. | T: For him, remaining focused on feelings in & of themselves, feelings are comprehended.
+sn47.38:2.3 | P: Vedanānaṁ pariññātattā amataṁ sacchikataṁ hoti. | S: When feelings are completely understood they realize freedom from death. | T: From the comprehension of feelings, the deathless is realized.
+sn47.38:3.1 | P: Citte cittānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. | S: They meditate observing an aspect of the mind—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: “He remains focused on the mind in & of itself—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn47.38:3.2 | P: Tassa citte cittānupassino viharato cittaṁ pariññātaṁ hoti. | S: As they do so they completely understand the mind. | T: For him, remaining focused on the mind in & of itself, the mind is comprehended.
+sn47.38:3.3 | P: Cittassa pariññātattā amataṁ sacchikataṁ hoti. | S: When the mind is completely understood they realize freedom from death. | T: From the comprehension of the mind, the deathless is realized.
+sn47.38:4.1 | P: Dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. | S: They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. | T: “He remains focused on mental qualities in & of themselves—ardent, alert, & mindful—subduing greed & distress with reference to the world.
+sn47.38:4.2 | P: Tassa dhammesu dhammānupassino viharato dhammā pariññātā honti. | S: As they do so they completely understand principles. | T: For him, remaining focused on mental qualities in & of themselves, mental qualities are comprehended.
+sn47.38:4.3 | P: Dhammānaṁ pariññātattā amataṁ sacchikataṁ hotī”ti. | S: When principles are completely understood they realize freedom from death.” | T: From the comprehension of mental qualities, the deathless is realized.”
+sn47.38:4.4 | P: Aṭṭhamaṁ. | S: (none) | T: (none)
+
+## sn6.1
+Source: data/upstream/thanissaro/sutta/sn/sn6/sn6.1.html
+sn6.1:1.1 | P: Evaṁ me sutaṁ— | S: So I have heard. | T: I have heard that
+sn6.1:1.2 | P: ekaṁ samayaṁ bhagavā uruvelāyaṁ viharati najjā nerañjarāya tīre ajapālanigrodhamūle paṭhamābhisambuddho. | S: At one time, when he was first awakened, the Buddha was staying in Uruvelā at the root of the goatherd’s banyan tree on the bank of the Nerañjarā River. | T: on one occasion, when the Blessed One was newly self-awakened, he was staying near Uruvelā on the bank of the Nerañjarā River, at the foot of the Goatherd’s Banyan Tree.
+sn6.1:1.3 | P: Atha kho bhagavato rahogatassa paṭisallīnassa evaṁ cetaso parivitakko udapādi: | S: Then as he was in private retreat this thought came to his mind, | T: Then, while he was alone & in seclusion, this line of thinking arose in his awareness:
+sn6.1:1.4 | P: “adhigato kho myāyaṁ dhammo gambhīro duddaso duranubodho santo paṇīto atakkāvacaro nipuṇo paṇḍitavedanīyo. | S: “This principle I have discovered is deep, hard to see, hard to understand, peaceful, sublime, beyond the scope of logic, subtle, comprehensible to the astute. | T: “This Dhamma that I have attained is deep, hard to see, hard to realize, peaceful, refined, beyond the scope of conjecture, subtle, to-be-experienced by the observant.
+sn6.1:1.5 | P: Ālayarāmā kho panāyaṁ pajā ālayaratā ālayasammuditā. | S: But people like clinging, they love it and enjoy it. | T: But this generation delights in attachment, is excited by attachment, enjoys attachment.
+sn6.1:1.6 | P: Ālayarāmāya kho pana pajāya ālayaratāya ālayasammuditāya duddasaṁ idaṁ ṭhānaṁ yadidaṁ idappaccayatāpaṭiccasamuppādo. | S: It’s hard for them to see this topic; that is, specific conditionality, dependent origination. | T: For a generation delighting in attachment, excited by attachment, enjoying attachment, this/that conditionality & dependent co-arising are hard to see.
+sn6.1:1.7 | P: Idampi kho ṭhānaṁ duddasaṁ yadidaṁ sabbasaṅkhārasamatho sabbūpadhipaṭinissaggo taṇhākkhayo virāgo nirodho nibbānaṁ. | S: It’s also hard for them to see this topic; that is, the stilling of all activities, the letting go of all attachments, the ending of craving, fading away, cessation, extinguishment. | T: This state, too, is hard to see: the pacification of all fabrications, the relinquishing of all acquisitions, the ending of craving; dispassion; cessation; unbinding.
+sn6.1:1.8 | P: Ahañceva kho pana dhammaṁ deseyyaṁ; pare ca me na ājāneyyuṁ; so mamassa kilamatho, sā mamassa vihesā”ti. | S: And if I were to teach this principle, others might not understand me, which would be wearying and troublesome for me.” | T: And if I were to teach the Dhamma and if others would not understand me, that would be tiresome for me, troublesome for me.”
+sn6.1:1.9 | P: Apissu bhagavantaṁ imā anacchariyā gāthāyo paṭibhaṁsu pubbe assutapubbā: | S: And then these verses, which were neither supernaturally inspired, nor learned before in the past, occurred to the Buddha: | T: Just then these verses, unspoken in the past, unheard before, occurred to the Blessed One:
+sn6.1:2.1 | P: “Kicchena me adhigataṁ, | S: “I’ve struggled hard to realize this, | T: “Enough now with teaching
+sn6.1:2.2 | P: halaṁ dāni pakāsituṁ; | S: there’s no need to reveal it now! | T: what ↵ only with difficulty ↵ I reached.
+sn6.1:2.3 | P: Rāgadosaparetehi, | S: Those mired in greed and hate | T: This Dhamma is not easily realized
+sn6.1:2.4 | P: nāyaṁ dhammo susambudho. | S: can’t really understand this teaching. | T: by those overcome ↵ with aversion & passion.
+sn6.1:3.1 | P: Paṭisotagāmiṁ nipuṇaṁ, | S: It goes against the stream, subtle, | T: What is abstruse, subtle,
+sn6.1:3.2 | P: gambhīraṁ duddasaṁ aṇuṁ; | S: deep, obscure, and very fine. | T: deep, ↵ hard to see, ↵ going against the flow—
+sn6.1:3.3 | P: Rāgarattā na dakkhanti, | S: Those besotted by greed cannot see, | T: those delighting in passion,
+sn6.1:3.4 | P: tamokhandhena āvuṭā”ti. | S: for they’re cloaked in a mass of darkness.” | T: cloaked in the mass of darkness, ↵ won’t see.”
+sn6.1:4.1 | P: Itiha bhagavato paṭisañcikkhato appossukkatāya cittaṁ namati, no dhammadesanāya. | S: And as the Buddha reflected like this, his mind inclined to remaining passive, not to teaching the Dhamma. | T: As the Blessed One reflected thus, his mind inclined to dwelling at ease, not to teaching the Dhamma.
+sn6.1:5.1 | P: Atha kho brahmuno sahampatissa bhagavato cetasā cetoparivitakkamaññāya etadahosi: | S: Then, knowing the Buddha’s train of thought, it occurred to the divinity Sahampati, | T: Then Brahmā Sahampati, having known with his own awareness the line of thinking in the Blessed One’s awareness, thought:
+sn6.1:5.2 | P: “nassati vata bho loko, vinassati vata bho loko, yatra hi nāma tathāgatassa arahato sammāsambuddhassa appossukkatāya cittaṁ namati, no dhammadesanāyā”ti. | S: “Oh lord! The world will be lost, the world will perish! For the mind of the Realized One, the perfected one, the fully awakened Buddha, inclines to remaining passive, not to teaching the Dhamma.” | T: “The world is lost! The world is destroyed! The mind of the Tathāgata, the Arahant, the Rightly Self-awakened One inclines to dwelling at ease, not to teaching the Dhamma!”
+sn6.1:5.3 | P: Atha kho brahmā sahampati—seyyathāpi nāma balavā puriso samiñjitaṁ vā bāhaṁ pasāreyya, pasāritaṁ vā bāhaṁ samiñjeyya; evameva—brahmaloke antarahito bhagavato purato pāturahosi. | S: Then, as easily as a strong person would extend or contract their arm, he vanished from the realm of divinity and reappeared in front of the Buddha. | T: Then, just as a strong man might extend his flexed arm or flex his extended arm, Brahmā Sahampati disappeared from the Brahmā world and reappeared in front the Blessed One.
+sn6.1:5.4 | P: Atha kho brahmā sahampati ekaṁsaṁ uttarāsaṅgaṁ karitvā dakkhiṇajāṇumaṇḍalaṁ pathaviyaṁ nihantvā yena bhagavā tenañjaliṁ paṇāmetvā bhagavantaṁ etadavoca: | S: He arranged his robe over one shoulder, knelt on his right knee, raised his joined palms toward the Buddha, and said: | T: Arranging his upper robe over one shoulder, he knelt down with his right knee on the ground, saluted the Blessed One with his hands before his heart, and said to him:
+sn6.1:5.5 | P: “desetu, bhante, bhagavā dhammaṁ, desetu sugato dhammaṁ. | S: “Sir, let the Blessed One teach the Dhamma! Let the Holy One teach the Dhamma! | T: “Lord, let the Blessed One teach the Dhamma! Let the One-Well-Gone teach the Dhamma!
+sn6.1:5.6 | P: Santi sattā apparajakkhajātikā, assavanatā dhammassa parihāyanti. | S: There are beings with little dust in their eyes. They’re in decline because they haven’t heard the teaching. | T: There are beings with little dust in their eyes who are falling away because they do not hear the Dhamma.
+sn6.1:5.7 | P: Bhavissanti dhammassa aññātāro”ti. | S: There will be those who understand the teaching!” | T: There will be those who will understand the Dhamma.”
+sn6.1:5.8 | P: Idamavoca brahmā sahampati, idaṁ vatvā athāparaṁ etadavoca: | S: That is what the divinity Sahampati said. Then he went on to say: | T: That is what Brahmā Sahampati said. Having said that, he further said this:
+sn6.1:6.1 | P: “Pāturahosi magadhesu pubbe, | S: “Among the Magadhans there appeared in the past | T: “In the past ↵ there appeared among the Magadhans
+sn6.1:6.2 | P: Dhammo asuddho samalehi cintito; | S: an impure teaching thought up by the stained. | T: an impure Dhamma ↵ devised by the stained.
+sn6.1:6.3 | P: Apāpuretaṁ amatassa dvāraṁ, | S: Fling open the door to freedom from death! | T: Throw open the door to the Deathless!
+sn6.1:6.4 | P: Suṇantu dhammaṁ vimalenānubuddhaṁ. | S: Let them hear the teaching <j>the immaculate one discovered. | T: Let them hear the Dhamma ↵ realized by the Stainless One!
+sn6.1:7.1 | P: Sele yathā pabbatamuddhaniṭṭhito, | S: Standing high on a rocky mountain, | T: Just as one standing on a rocky crag
+sn6.1:7.2 | P: Yathāpi passe janataṁ samantato; | S: you can see the people all around. | T: might see people ↵ all around below,
+sn6.1:7.3 | P: Tathūpamaṁ dhammamayaṁ sumedha, | S: In just the same way, All-seer, so intelligent, | T: so, intelligent one, with all-around vision,
+sn6.1:7.4 | P: Pāsādamāruyha samantacakkhu; | S: having ascended the Temple of Truth, | T: ascend the palace ↵ fashioned of Dhamma.
+sn6.1:7.5 | P: Sokāvatiṇṇaṁ janatamapetasoko, | S: rid of sorrow, look upon the people | T: Free from sorrow, behold the people
+sn6.1:7.6 | P: Avekkhassu jātijarābhibhūtaṁ. | S: swamped with sorrow,  <j>overcome by rebirth and old age. | T: submerged in sorrow, ↵ oppressed by birth & aging.
+sn6.1:8.1 | P: Uṭṭhehi vīra vijitasaṅgāma, | S: Rise, hero! Victor in battle, caravan leader, | T: Rise up, hero, victor in battle! ↵ O Teacher,
+sn6.1:8.2 | P: Satthavāha anaṇa vicara loke; | S: wander the world free of debt. | T: wander without debt in the world.
+sn6.1:8.3 | P: Desassu bhagavā dhammaṁ, | S: Let the Blessed One teach the Dhamma! | T: Teach the Dhamma, O Blessed One:
+sn6.1:8.4 | P: Aññātāro bhavissantī”ti. | S: There will be those who understand!” | T: There will be those who will understand.”
+sn6.1:9.1 | P: Atha kho bhagavā brahmuno ca ajjhesanaṁ viditvā sattesu ca kāruññataṁ paṭicca buddhacakkhunā lokaṁ volokesi. | S: Then the Buddha, understanding the Divinity’s invitation, surveyed the world with the eye of a Buddha, out of his compassion for sentient beings. | T: Then the Blessed One, having understood Brahmā’s invitation, out of compassion for beings, surveyed the world with the eye of an Awakened One.
+sn6.1:9.2 | P: Addasā kho bhagavā buddhacakkhunā lokaṁ volokento satte apparajakkhe mahārajakkhe tikkhindriye mudindriye svākāre dvākāre suviññāpaye duviññāpaye, appekacce paralokavajjabhayadassāvine viharante, appekacce na paralokavajjabhayadassāvine viharante. | S: And the Buddha saw sentient beings with little dust in their eyes, and some with much dust in their eyes; with keen faculties and with weak faculties, with good qualities and with bad qualities, easy to teach and hard to teach. And some of them lived seeing the danger in the fault to do with the next world, while others did not. | T: As he did so, he saw beings with little dust in their eyes and those with much, those with keen faculties and those with dull, those with good attributes and those with bad, those easy to teach and those hard, some of them seeing disgrace & danger in the other world.
+sn6.1:9.3 | P: Seyyathāpi nāma uppaliniyaṁ vā paduminiyaṁ vā puṇḍarīkiniyaṁ vā appekaccāni uppalāni vā padumāni vā puṇḍarīkāni vā udake jātāni udake saṁvaḍḍhāni udakānuggatāni anto nimuggaposīni, appekaccāni uppalāni vā padumāni vā puṇḍarīkāni vā udake jātāni udake saṁvaḍḍhāni samodakaṁ ṭhitāni, appekaccāni uppalāni vā padumāni vā puṇḍarīkāni vā udake jātāni udake saṁvaḍḍhāni udakā accuggamma ṭhitāni anupalittāni udakena; | S: It’s like a pool with blue water lilies, or pink or white lotuses. Some of them sprout and grow in the water without rising above it, thriving underwater. Some of them sprout and grow in the water reaching the water’s surface. And some of them sprout and grow in the water but rise up above the water and stand with no water clinging to them. | T: Just as in a pond of blue or red or white lotuses, some lotuses—born & growing in the water—might flourish while immersed in the water, without rising up from the water; some might stand at an even level with the water; while some might rise up from the water and stand without being smeared by the water—
+sn6.1:9.4 | P: evameva bhagavā buddhacakkhunā lokaṁ volokento addasa satte apparajakkhe mahārajakkhe tikkhindriye mudindriye svākāre dvākāre suviññāpaye duviññāpaye, appekacce paralokavajjabhayadassāvine viharante, appekacce na paralokavajjabhayadassāvine viharante. | S: In the same way, the Buddha saw sentient beings with little dust in their eyes, and some with much dust in their eyes; with keen faculties and with weak faculties, with good qualities and with bad qualities, easy to teach and hard to teach. And some of them lived seeing the danger in the fault to do with the next world, while others did not. | T: so too, surveying the world with the eye of an Awakened One, the Blessed One saw beings with little dust in their eyes and those with much, those with keen faculties and those with dull, those with good attributes and those with bad, those easy to teach and those hard, some of them seeing disgrace & danger in the other world.
+sn6.1:9.5 | P: Disvāna brahmānaṁ sahampatiṁ gāthāya paccabhāsi: | S: When he had seen this he replied in verse to the divinity Sahampati: | T: Having seen this, he answered Brahmā Sahampati in verse:
+sn6.1:10.1 | P: “Apārutā tesaṁ amatassa dvārā, | S: “Flung open are the doors to freedom from death! | T: “Open are the doors to the deathless.
+sn6.1:10.2 | P: Ye sotavanto pamuñcantu saddhaṁ; | S: Let those with ears to hear commit to faith. | T: Let those with ears show their conviction. ↵ Let them show their conviction.
+sn6.1:10.3 | P: Vihiṁsasaññī paguṇaṁ na bhāsiṁ, | S: Thinking it would be troublesome, Divinity, <j>I did not teach | T: Perceiving trouble, O Brahmā, ↵ I did not tell people
+sn6.1:10.4 | P: Dhammaṁ paṇītaṁ manujesu brahme”ti. | S: the sophisticated, sublime Dhamma among mankind.” | T: the refined, ↵ sublime Dhamma.”
+sn6.1:11.1 | P: Atha kho brahmā sahampati “katāvakāso khomhi bhagavatā dhammadesanāyā”ti bhagavantaṁ abhivādetvā padakkhiṇaṁ katvā tatthevantaradhāyīti. | S: Then the divinity Sahampati, knowing that his request for the Buddha to teach the Dhamma had been granted, bowed and respectfully circled the Buddha, keeping him on his right, before vanishing right there. | T: “Then Brahmā Sahampati, thinking, ‘I’m the one who created the opportunity for the teaching of the Dhamma by the Blessed One!’ bowed down to me and, circling me on the right, disappeared right there.
+
+## sn7.14
+Source: data/upstream/thanissaro/sutta/sn/sn7/sn7.14.html
+sn7.14:1.1 | P: Sāvatthinidānaṁ. | S: At Sāvatthī. | T: Near Sāvatthī.
+sn7.14:1.2 | P: Atha kho aññataro brāhmaṇamahāsālo lūkho lūkhapāvuraṇo yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavatā saddhiṁ sammodi. | S: Then a certain well-to-do brahmin, shabby, wearing a shabby cloak, went up to the Buddha, and exchanged greetings with him. | T: Then a certain very rich brahman—shabby, shabbily dressed—went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+sn7.14:1.3 | P: Sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdi. Ekamantaṁ nisinnaṁ kho taṁ brāhmaṇamahāsālaṁ bhagavā etadavoca: | S: When the greetings and polite conversation were over, he sat down to one side. The Buddha said to him, | T: After this exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there the Blessed One said to him,
+sn7.14:1.4 | P: “kiṁ nu tvaṁ, brāhmaṇa, lūkho lūkhapāvuraṇo”ti? | S: “Brahmin, why are you so shabby, wearing a shabby cloak?” | T: “Why, brahman, are you shabby & shabbily dressed?”
+sn7.14:1.5 | P: “Idha me, bho gotama, cattāro puttā. | S: “Worthy Gotama, I have four sons. | T: “Just now, Master Gotama, my four sons—
+sn7.14:1.6 | P: Te maṁ dārehi sampuccha gharā nikkhāmentī”ti. | S: At their wives’ bidding they expelled me from my house.” | T: at their wives’ instigation—threw me out of the house.”
+sn7.14:1.7 | P: “Tena hi tvaṁ, brāhmaṇa, imā gāthāyo pariyāpuṇitvā sabhāyaṁ mahājanakāye sannipatite puttesu ca sannisinnesu bhāsassu: | S: “Well then, brahmin, memorize these verses and recite them to your sons when you are all seated in the council hall with a large crowd. | T: “In that case, brahman, memorize these verses and then recite them when a large assembly of people have gathered in the town hall and your sons are sitting there, too.
+sn7.14:2.1 | P: ‘Yehi jātehi nandissaṁ, | S: ‘I was overjoyed when they were born, | T: “Those whose birth ↵ I delighted in
+sn7.14:2.2 | P: yesañca bhavamicchisaṁ; | S: and wished prosperity for them. | T: —whose growth I desired—
+sn7.14:2.3 | P: Te maṁ dārehi sampuccha, | S: But at their wives’ bidding they chased me out, | T: at their wives’ instigation ↵ have chased me away,
+sn7.14:2.4 | P: sāva vārenti sūkaraṁ. | S: like hounds after hogs. | T: as dogs would swine.
+sn7.14:3.1 | P: Asantā kira maṁ jammā, | S: It turns out they’re wicked, those nasty men, | T: Wicked & vile,
+sn7.14:3.2 | P: tāta tātāti bhāsare; | S: though they called me their dear old Dad. | T: though they call me ‘Dad’:
+sn7.14:3.3 | P: Rakkhasā puttarūpena, | S: They’re monsters in the shape of sons, | T: demons in the disguise of sons
+sn7.14:3.4 | P: te jahanti vayogataṁ. | S: throwing me out as I’ve grown old. | T: who abandon me in old age.
+sn7.14:4.1 | P: Assova jiṇṇo nibbhogo, | S: Like an old, useless horse | T: As an old horse ↵ of no more use
+sn7.14:4.2 | P: khādanā apanīyati; | S: led away from its fodder, | T: is deprived of fodder,
+sn7.14:4.3 | P: Bālakānaṁ pitā thero, | S: the elderly father of those kids | T: so the elderly father ↵ of those foolish boys
+sn7.14:4.4 | P: parāgāresu bhikkhati. | S: begs for alms at others’ homes. | T: begs at other people’s homes.
+sn7.14:5.1 | P: Daṇḍova kira me seyyo, | S: Even my staff is better | T: My staff serves me better
+sn7.14:5.2 | P: yañce puttā anassavā; | S: than those disobedient sons, | T: than those disobedient sons.
+sn7.14:5.3 | P: Caṇḍampi goṇaṁ vāreti, | S: for it wards off a wild bull, | T: It fends off ↵ ferocious bulls
+sn7.14:5.4 | P: atho caṇḍampi kukkuraṁ. | S: and even a wild dog. | T: & ferocious curs.
+sn7.14:6.1 | P: Andhakāre pure hoti, | S: It goes before me in the dark; | T: In the dark it goes before me;
+sn7.14:6.2 | P: gambhīre gādhamedhati; | S: in deep waters it finds a footing. | T: down steep slopes, it gives support.
+sn7.14:6.3 | P: Daṇḍassa ānubhāvena, | S: By the wonderful power of this staff, | T: Through the power of my staff,
+sn7.14:6.4 | P: khalitvā patitiṭṭhatī’”ti. | S: when I stumble, I stand firm again.’” | T: when I stumble ↵ I still stand firm.”
+sn7.14:7.1 | P: Atha kho so brāhmaṇamahāsālo bhagavato santike imā gāthāyo pariyāpuṇitvā sabhāyaṁ mahājanakāye sannipatite puttesu ca sannisinnesu abhāsi: | S: Having memorized those verses in the Buddha’s presence, the brahmin recited them to his sons when they were all seated in the council hall with a large crowd. … | T: Then the very rich brahman, having memorized these verses in the presence of the Blessed One, recited them when a large assembly of people had gathered in the town hall and his sons were sitting there, too:
+sn7.14:8.1 | P: “Yehi jātehi nandissaṁ, | S: (none) | T: “Those whose birth ↵ I delighted in
+sn7.14:8.2 | P: yesañca bhavamicchisaṁ; | S: (none) | T: —whose growth I desired—
+sn7.14:8.3 | P: Te maṁ dārehi sampuccha, | S: (none) | T: at their wives’ instigation ↵ have chased me away,
+sn7.14:8.4 | P: sāva vārenti sūkaraṁ. | S: (none) | T: as dogs would swine.
+sn7.14:9.1 | P: Asantā kira maṁ jammā, | S: (none) | T: Wicked & vile,
+sn7.14:9.2 | P: tāta tātāti bhāsare; | S: (none) | T: though they call me ‘Dad’:
+sn7.14:9.3 | P: Rakkhasā puttarūpena, | S: (none) | T: demons in the disguise of sons
+sn7.14:9.4 | P: te jahanti vayogataṁ. | S: (none) | T: who abandon me in old age.
+sn7.14:10.1 | P: Assova jiṇṇo nibbhogo, | S: (none) | T: As an old horse ↵ of no more use
+sn7.14:10.2 | P: khādanā apanīyati; | S: (none) | T: is deprived of fodder,
+sn7.14:10.3 | P: Bālakānaṁ pitā thero, | S: (none) | T: so the elderly father ↵ of those foolish boys
+sn7.14:10.4 | P: parāgāresu bhikkhati. | S: (none) | T: begs at other people’s homes.
+sn7.14:11.1 | P: Daṇḍova kira me seyyo, | S: (none) | T: My staff serves me better
+sn7.14:11.2 | P: yañce puttā anassavā; | S: (none) | T: than those disobedient sons.
+sn7.14:11.3 | P: Caṇḍampi goṇaṁ vāreti, | S: (none) | T: It fends off ↵ ferocious bulls
+sn7.14:11.4 | P: atho caṇḍampi kukkuraṁ. | S: (none) | T: & ferocious curs.
+sn7.14:12.1 | P: Andhakāre pure hoti, | S: (none) | T: In the dark it goes before me;
+sn7.14:12.2 | P: gambhīre gādhamedhati; | S: (none) | T: down steep slopes, it gives support.
+sn7.14:12.3 | P: Daṇḍassa ānubhāvena, | S: (none) | T: Through the power of my staff,
+sn7.14:12.4 | P: khalitvā patitiṭṭhatī”ti. | S: (none) | T: when I stumble ↵ I still stand firm.”
+sn7.14:13.1 | P: Atha kho naṁ brāhmaṇamahāsālaṁ puttā gharaṁ netvā nhāpetvā paccekaṁ dussayugena acchādesuṁ. | S: Then the brahmin’s sons led him back home, bathed him, and each clothed him with a fine pair of garments. | T: Then the brahman’s sons, having led him home, bathed him, and each provided him in a pair of cloths.
+sn7.14:13.2 | P: Atha kho so brāhmaṇamahāsālo ekaṁ dussayugaṁ ādāya yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavatā saddhiṁ sammodi. | S: Then the brahmin, taking one pair of garments, went to the Buddha and exchanged greetings with him. | T: So the brahman, taking one pair of cloths, went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+sn7.14:13.3 | P: Sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdi. Ekamantaṁ nisinno kho brāhmaṇamahāsālo bhagavantaṁ etadavoca: | S: When the greetings and polite conversation were over, he sat down to one side and said to the Buddha: | T: After this exchange of friendly greetings & courtesies, he sat to one side. As he was sitting there he said to the Blessed One,
+sn7.14:13.4 | P: “mayaṁ, bho gotama, brāhmaṇā nāma ācariyassa ācariyadhanaṁ pariyesāma. | S: “Worthy Gotama, we brahmins seek a fee for our tutor. | T: “We brahmans, Master Gotama, look for a teacher’s fee for our teacher.
+sn7.14:13.5 | P: Paṭiggaṇhatu me bhavaṁ gotamo ācariyadhanan”ti. | S: May the worthy Gotama please accept my tutor’s fee!” | T: May Master Gotama accept this teacher’s portion from me.”
+sn7.14:13.6 | P: Paṭiggahesi bhagavā anukampaṁ upādāya. | S: So the Buddha accepted it out of sympathy. | T: The Blessed One accepted it out of sympathy.
+sn7.14:13.7 | P: Atha kho so brāhmaṇamahāsālo bhagavantaṁ etadavoca: | S: Then the well-to-do brahmin said to the Buddha, | T: Then the very rich brahman said to the Blessed One:
+sn7.14:13.8 | P: “abhikkantaṁ, bho gotama …pe… | S: “Excellent, worthy Gotama … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear. I go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks.
+sn7.14:13.9 | P: upāsakaṁ maṁ bhavaṁ gotamo dhāretu ajjatagge pāṇupetaṁ saraṇaṁ gatan”ti. | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: May Master Gotama remember me as a lay follower who has gone for refuge from this day forward, for life.”
+
+## sn9.4
+Source: data/upstream/thanissaro/sutta/sn/sn9/sn9.4.html
+sn9.4:1.1 | P: Ekaṁ samayaṁ sambahulā bhikkhū kosalesu viharanti aññatarasmiṁ vanasaṇḍe. | S: At one time several mendicants were staying in the land of the Kosalans in a certain forest grove. | T: On one occasion many monks were staying among the Kosalans in a forest grove.
+sn9.4:1.2 | P: Atha kho te bhikkhū vassaṁvuṭṭhā temāsaccayena cārikaṁ pakkamiṁsu. | S: Then after completing the three months of the rainy season residence, those mendicants set out wandering. | T: Then, at the end of the Rains, they left to go on a three-month wandering tour.
+sn9.4:1.3 | P: Atha kho yā tasmiṁ vanasaṇḍe adhivatthā devatā te bhikkhū apassantī paridevamānā tāyaṁ velāyaṁ imaṁ gāthaṁ abhāsi: | S: Not seeing those mendicants, the deity haunting that forest cried. And on that occasion they spoke this verse: | T: And at that time, the devatā living in that forest grove, lamenting from not seeing those monks, recited this verse:
+sn9.4:2.1 | P: “Arati viya mejja khāyati, | S: “Dissatisfaction, <j>it seems to me today, | T: “Today it’s as if discontent ↵ is displayed to me,
+sn9.4:2.2 | P: Bahuke disvāna vivitte āsane; | S: seeing so many vacated seats. | T: as I see many empty seats.
+sn9.4:2.3 | P: Te cittakathā bahussutā, | S: They were so learned, such brilliant speakers! | T: They, brilliant speakers, learned:
+sn9.4:2.4 | P: Kome gotamasāvakā gatā”ti. | S: Where have these disciples of Gotama gone?” | T: Where have those disciples ↵ of Gotama gone?”
+sn9.4:3.1 | P: Evaṁ vutte, aññatarā devatā taṁ devataṁ gāthāya paccabhāsi: | S: When they had spoken, another deity replied with this verse: | T: When this was said, another devatā recited a verse for that devatā:
+sn9.4:4.1 | P: “Māgadhaṁ gatā kosalaṁ gatā, | S: “They’ve gone to Magadha, they’ve gone to Kosala, | T: “They’ve gone to Magadha, ↵ gone to Kosala,
+sn9.4:4.2 | P: Ekacciyā pana vajjibhūmiyā; | S: and some are in the Vajjian lands. | T: & some to the land of the Vajjians.
+sn9.4:4.3 | P: Magā viya asaṅgacārino, | S: Like deer that wander free of ties, | T: Like deer, wandering free from ties,
+sn9.4:4.4 | P: Aniketā viharanti bhikkhavo”ti. | S: the mendicants live with no abode.” | T: the monks dwell without home.”
+

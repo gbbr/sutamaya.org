@@ -1,0 +1,19 @@
+{
+  "status": "verified and copied back; three segmenter-dependent cases remain open",
+  "casesJudged": 14,
+  "focalPaliRowsRead": 108,
+  "casesRecut": 6,
+  "casesSettledByGrouping": 5,
+  "casesDeferred": 3,
+  "boundaryDirectivesKept": 13,
+  "changedEnglishRows": 19,
+  "checks": {
+    "upstreamDiffer": 0,
+    "integrityProblems": 0,
+    "partialSourceLines": 0,
+    "newlyHiddenUncovered": 0,
+    "hiddenTranslatedVersePali": 0,
+    "plainReproducesExactly": true
+  },
+  "committed": false
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "file": "data/thanissaro/sutta/an/an4/an4.192_translation-en-thanissaro.json",
+    "text": "an4.192",
+    "changedRows": [
+      "an4.192:9.5",
+      "an4.192:9.9"
+    ]
+  },
+  {
+    "file": "data/thanissaro/sutta/an/an10/an10.96_translation-en-thanissaro.json",
+    "text": "an10.96",
+    "changedRows": [
+      "an10.96:9.1",
+      "an10.96:10.1",
+      "an10.96:12.2",
+      "an10.96:12.3"
+    ]
+  }
+]
