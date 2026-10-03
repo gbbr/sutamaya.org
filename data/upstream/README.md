@@ -8,24 +8,31 @@ settle the cuts it is unsure of.
 
 ## What's left
 
+The work has two aims: these texts aligned with their Pali, and a process that brings every new or
+revised sutta from either translator into the same shape with as little review as possible. So
+each rule the work settles goes into "Pulling updates" and "Reviewing new and revised texts" in
+the same change, as something the segmenter does itself wherever it can, leaving readers only what
+a rule can't decide.
+
 1. **Skipped lines**: each translation's `skipped.json`, the lines below its English that it
    abbreviates or leaves out (see "Building them into the app"). A passage rendered earlier than
    its Pali, as in Bodhi's SN 4.25, 12.68 and 22.80 and Ṭhānissaro's SN 22.58, is skipped where it
-   stands.
-2. **Verse**: in SN, AN and KN, each verse's English sits in its own verse, in order, spread over
-   its Pali lines as far as the translator's line breaks allow (see "Building them into the app").
-   `scripts/segmenter/review-pali.py packet` writes texts with the Pali on every row for the
-   readers.
-3. **Source mapping**: Bodhi's SN 45 pages repeat one body under two numbers in eight pairs (45.42–47
-   and 48, through 45.92–95 and 96), so which app text holds it is open
-   (`data/bodhi/review/codex-read/source-ranges.json`). Ṭhānissaro's older AN 5.254–271 copies
-   number the suttas the Thai way, as AN 5.254, 255, 256, 257–263, 264 and 265–271
+   stands. The rounds are in `review/skipped/`.
+2. **Verse**: in every collection, each verse's English sits in its own verse, in order, spread
+   over its Pali lines as far as the translator's line breaks allow (see "Building them into the
+   app"). The rounds are in `review/verse/`.
+3. **Source mapping**: Bodhi's SN 45 has eight range pages whose body the single sutta after them
+   repeats (45.42–47 and 48, through 45.92–95 and 96), so both app texts show the whole body; it
+   belongs once, spread over both by their Pali (`data/bodhi/review/codex-read/source-ranges.json`).
+   Ṭhānissaro's AN 5:254–259 on dhammatalks.org, numbered the Thai way, are SuttaCentral's AN 5.254,
+   255, 256, 257–263, 264 and 265–271, three of which the older copies here also hold; which page
+   each app text reads, with no English duplicated or lost, is open
    (`data/thanissaro/review/codex-read/source-ranges.json`).
-4. **A fresh audit**, drawn as `review/audit5/draw.py` draws, with a new seed.
-5. **New and revised texts**: each rule settled here goes into "Pulling updates" and "Reviewing new
-   and revised texts" as it's settled, so a new or revised sutta from either translator is
-   imported and aligned in the fewest steps that keep it right. The segmenter applies whatever a
-   rule can decide, and readers judge only what it can't.
+4. **Teach the segmenter**: the patterns items 1–3 settle become rules it applies to new texts,
+   checked against the reviews' own answers, and the steps in "Reviewing new and revised texts"
+   shrink to what the rules leave.
+5. **A fresh audit** once the rest is done, drawn as `review/audit5/draw.py` draws, with a new
+   seed.
 
 ## What's here
 
@@ -163,6 +170,20 @@ The segmenter's unsure cuts, and the places a cut can't mend, go to reviewers in
 beside them, as [review-rounds.md](review-rounds.md) says; `keep <folder>` keeps the answers. Every
 text here has been through the rounds, so a round takes only the texts in hand: `--only <page>,…`
 names them, as their files here are named.
+
+Every round keeps to these:
+
+- **The Pali decides.** Sujato's English is context only: his verse lines often follow a different
+  order from the Pali's. `scripts/segmenter/review-pali.py packet` writes texts with the Pali on
+  every row.
+- **Findings are tried and kept in an isolated copy** of the repository (scripts and data, with
+  `node_modules` linked), and only the results are copied back, after the checks in step 5. The
+  segmenter has no dry run: even `--findings` writes files.
+- **One session at a time writes a translator's files** (`sutta/`, `notes/`, `cuts.json`,
+  `report.json`). The segmenter works on one translator at a time, so sessions on different
+  translators run side by side.
+- **Readers work at effort high**, and nothing above it. The steps below name Sonnet and Opus; any
+  strong model does the same work.
 
 1. **Unsure cuts**: `put cuts --items 1.0`. Sonnet answers each cut, and Opus answers the same cuts
    on its own. `keep-agreed cuts` keeps what the two agree on. The rest goes to Opus once more, with

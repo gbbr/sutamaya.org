@@ -10,6 +10,7 @@ read before changing something, the rules that span files, and how documentation
 |---|---|
 | the offline mirror, the sync, or the Worker's data routes | [docs/offline-sync.md](docs/offline-sync.md), the design and its invariants |
 | a retranslation rule, or anything under `data/sujato*` | [docs/retranslation.md](docs/retranslation.md), then the `retranslate` skill |
+| Bodhi's or Ṭhānissaro's translations (`data/bodhi*`, `data/thanissaro*`, `data/upstream/`) | [data/upstream/README.md](data/upstream/README.md): the plan ("What's left"), the review rules and what the app needs |
 | search | [docs/search.md](docs/search.md) |
 | the corpus build, the browse tree, the dictionary | [docs/corpus.md](docs/corpus.md) |
 | the Worker: routes, schema, sign-in, hostnames | [docs/backend.md](docs/backend.md) |
@@ -35,6 +36,8 @@ and `worker/src/lib/{writes,listTree,userData}.js`.
 - **Never hand-edit `data/sujato/`**: every change to the English is a rule. Don't run
   `update-data apply` or `accept` unless asked.
 - **`web/public/data/` is generated and git-ignored.** `data/diff/` is generated too, but checked in.
+- **Plans and decisions live in the repository**, in the README or doc of the part they concern,
+  never only in an assistant's memory: several accounts and tools work on this project.
 
 ## Rules that span files
 
