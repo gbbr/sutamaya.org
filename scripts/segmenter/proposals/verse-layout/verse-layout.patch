@@ -1,0 +1,142 @@
+--- a/scripts/segmenter/segment-translations.mjs
++++ b/scripts/segmenter/segment-translations.mjs
+@@ -78,6 +78,16 @@
+ // The Pali side: documents, their keys, Sujato's English and the markup
+ 
+ const readJson = (file) => (fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {});
++
++// A completed verse round also settles layouts it left unchanged, with no new cuts.json entry.
++const verseManifest = readJson(path.join(REVIEW, 'verse/manifest.json'));
++const verseRecords = Array.isArray(verseManifest.verses)
++  ? verseManifest.verses : (verseManifest.batches ?? []).flatMap((b) => b.items ?? []);
++const verseRead = readJson(path.join(REVIEW, 'verse/review.json'));
++const verseResults = readJson(path.join(REVIEW, 'verse/results.json'));
++const verseRoundDone = (verseRead.batchesLeft === 0 || !!verseResults.usage?.completedUtc)
++  && (verseRead.versesRead ?? verseResults.versesRead) === verseRecords.length;
++const reviewedVerseKeys = new Set(verseRoundDone ? verseRecords.flatMap((v) => v.keys) : []);
+ 
+ function walk(dir, out = []) {
+   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+@@ -847,7 +857,7 @@
+ 
+ // Returns each line's piece of the stream — its span, and whether it's empty or merged into the
+ // piece of a line above — with how sure each cut is, or null if no alignment fits.
+-function align(stream, lines) {
++function align(stream, lines, { verseLayout = false, verseGapCost = VERSE_MATCH } = {}) {
+   const { text, cuts } = stream;
+   const n = lines.length;
+   const m = cuts.length;
+@@ -977,8 +987,9 @@
+       const fromG = new Int8Array(m).fill(-2);
+       const before = rows[i];
+       for (const j of allowed) {
+-        if (before[j] > NEG) {
+-          row[j] = before[j] + emptyScore[i];
++        // Verse starts on its first Pali row. Only fewer source lines can leave rows empty.
++        if (before[j] > NEG && (!verseLayout || (i > 0 && m - 1 < n))) {
++          row[j] = before[j] + emptyScore[i] - (verseLayout ? verseGapCost : 0);
+           fromK[j] = j;
+           fromG[j] = -1;
+         }
+@@ -988,7 +999,7 @@
+       let a1 = allowed.length - 1;
+       while (a1 >= 0 && cuts[allowed[a1]].at > hi[i]) a1--;
+ 
+-      for (let g = 0; g < MAX_MERGE && g <= i; g++) {
++      for (let g = 0; g < (verseLayout ? 1 : MAX_MERGE) && g <= i; g++) {
+         const first = i - g;
+         const base = rows[first];
+         const exp = sumOver(expect, first, i);
+@@ -1010,7 +1021,7 @@
+           const end = cuts[j].at;
+           const cv = cutValue(j, first, i);
+           // A piece covers several lines only where there's no place to cut it between them.
+-          const bLast = g ? a - 1 : 0;
++          const bLast = g || (verseLayout && m - 1 <= n) ? a - 1 : 0;
+           for (let b = a - 1; b >= bLast; b--) {
+             const k = allowed[b];
+             if (cuts[k].at < end - maxSpan) break;
+@@ -1091,6 +1102,67 @@
+     if (wide.pieces) results = evaluate(wide.pieces, wide.expect);
+   }
+   return { results, ratio };
++}
++
++function layoutVerse(stream, lines, start, end) {
++  const { text, blocks } = stream;
++  const before = blocks.findLast((b) => b.at <= start);
++  if (!before || text.slice(before.at, start).trim()) return { reason: 'starts inside a source line' };
++  const after = blocks.find((b) => b.at >= end);
++  if (!after && text.slice(end).trim()) return { reason: 'ends inside a source line' };
++  if (after && text.slice(end, after.at).trim()) return { reason: 'ends inside a source line' };
++  const own = blocks.filter((b) => b.at >= start && b.at < end).map((b) => ({ ...b, at: b.at - start }));
++  if (!own.length || own[0].at) own.unshift({ at: 0, kind: before.kind });
++  // A speaker label stays attached to the first line of the speech.
++  const cuts = [
++    { at: 0, strength: 3 },
++    ...own.filter((b, i) => i && b.kind !== 'spk' && own[i - 1].kind !== 'spk')
++      .map((b) => ({ at: b.at, strength: b.kind === 'v' ? 2 : 3, block: true, paragraph: b.kind !== 'v' })),
++    { at: end - start, strength: 3 },
++  ];
++  // A verse rendered as prose has no source line breaks to spread.
++  if (cuts.length === 2) return { reason: 'no source line breaks' };
++  // Equal counts decide the layout without lexical guesses. With fewer source lines, each
++  // stays on its own row; with more, group only whole adjacent lines and occupy every row.
++  if (cuts.length - 1 === lines.length) return { results: lines.map((line, i) => ({
++    key: line.key, start: start + cuts[i].at, end: start + cuts[i + 1].at,
++    empty: false, merged: false, lexical: 0, margin: null,
++  })) };
++  const aligned = align({ text: text.slice(start, end), blocks: own, cuts }, lines, { verseLayout: true });
++  if (!aligned) return { reason: 'no verse layout' };
++  return { results: aligned.results.map((r) => ({ ...r, start: r.start + start, end: r.end + start })) };
++}
++
++// The whole verse's boundaries still come from the alignment and settled cuts. Its internal
++// layout is automatic for new text. A reviewed layout remains authoritative; disagreements
++// are reported with both layouts, rather than being silently rewritten.
++function spreadVerses(stream, body, results, entry, decided = decisions, reviewedKeys = reviewedVerseKeys) {
++  for (let i = 0; i < body.length; i++) {
++    if (!body[i].verse) continue;
++    let end = i + 1;
++    while (end < body.length && body[end].verse && !body[end].paraStart && body[end].doc === body[i].doc) end++;
++    const lines = body.slice(i, end);
++    const current = results.slice(i, end);
++    const active = current.filter((r) => !r.empty && !r.merged && r.end > r.start);
++    if (!active.length || lines.length === 1) { i = end - 1; continue; }
++    const proposal = layoutVerse(stream, lines, active[0].start, active.at(-1).end);
++    const record = { key: lines[0].key };
++    if (proposal.reason) record.status = proposal.reason;
++    else {
++      const now = segmentsOf(current, stream.text).segText;
++      const next = segmentsOf(proposal.results, stream.text).segText;
++      if (now.every((s, x) => s === next[x])) record.status = 'same';
++      else {
++        const first = decided[current[0].key];
++        const settled = lines.some((l) => reviewedKeys.has(l.key)) || current.slice(1).some((r) => decided[r.key] !== undefined) || !!(first?.empty || first?.own);
++        record.status = settled ? 'reviewed layout kept' : 'spread';
++        record.lines = lines.map((l, x) => ({ key: l.key, before: now[x], proposed: next[x] }));
++        if (!settled) proposal.results.forEach((r, x) => { results[i + x] = r; });
++      }
++    }
++    (entry.verseLayouts ??= []).push(record);
++    i = end - 1;
++  }
+ }
+ 
+ // Returns each line's segment of the stream, from `pieces`, with how sure each cut is: how much less
+@@ -1486,6 +1558,7 @@
+   const run = (decided) => {
+     const results = aligned.map((r) => ({ ...r }));
+     applyDecisions(results, text, {}, decided);
++    spreadVerses(stream, body, results, {}, decided);
+     return { results, ...segmentsOf(results, text) };
+   };
+   const holds = (t, x) => !!t.segText[x] && !t.results[x].empty && !t.results[x].merged;
+@@ -1789,6 +1862,7 @@
+       if (keepFindings) for (const g of groups) if (g.verdict === 'passes') for (const f of g.findings) decisions[f.key] = f.settles;
+     }
+     applyDecisions(results, stream.text, entry);
++    spreadVerses(stream, body, results, entry);
+     const { segText, endsJoined, joined: got } = segmentsOf(results, stream.text);
+ 
+     // The text check: the segments, joined as they are written — a space after each but one with no

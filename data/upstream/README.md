@@ -14,39 +14,27 @@ each rule the work settles goes into "Pulling updates" and "Reviewing new and re
 the same change, as something the segmenter does itself wherever it can, leaving readers only what
 a rule can't decide.
 
-1. **Covered lines**: each translation's `covered.json`, the empty lines the reader would never see
-   (a run of two or more, or a lone one opening its paragraph) whose content the English above
-   translates (see "Building them into the app"). Most such runs are
-   repetitions the translator abbreviates, which stay out. A passage rendered earlier than its
-   Pali, as in Bodhi's SN 4.25, 12.68 and 22.80 and Ṭhānissaro's SN 22.58, isn't covered by the
-   line above it. The rounds are in `review/skipped/`.
-2. **Verse**: in every collection, each verse's English sits in its own verse, in order, spread
-   over its Pali lines as far as the translator's line breaks allow (see "Building them into the
-   app"). The rounds are in `review/verse/`. Both translators' rounds are done: Bodhi's every
-   verse in MN, SN, AN and Thag (his DN texts have none), Ṭhānissaro's every verse in his ten
-   books. What's left:
-   - the Pali lines still hidden in a verse he translates, which `check-round.py` lists: mostly
-     a verse whose first Pali line has none of his lines, or a run of bare lines at its end. His
-     lines move whole, up or apart, and any left over go into `covered.json`;
-   - fifteen places in Ṭhānissaro where his lines interleave neighbouring verses, or the fix
-     needs a prose line (`data/thanissaro/review/verse/results.json`).
-3. **Source mapping**: Bodhi's eight shared SN 45 pages (45.42–48 through 45.92–96)
-   are each saved once under their full span, with their English spread once over both app texts
-   by their Pali (`data/bodhi/review/source-mapping-final/`).
-   Ṭhānissaro's mapping is settled: dhammatalks.org's Thai-numbered AN 5:254–259 is saved as
-   `an5.254-271.html`, covering the app's AN 5.254, 255, 256, 257–263, 264 and 265–271. Each reads
-   its part of that page once; the three older duplicate pages have left the folder. The cuts
-   were reviewed with Pali on every row (`data/thanissaro/review/source-mapping-reread/`), with
-   the numbering evidence in `data/thanissaro/review/codex-read/source-ranges.json`.
-4. **Teach the segmenter**: the patterns items 1–3 settle become rules it applies to new texts,
-   checked against the reviews' own answers, and the steps in "Reviewing new and revised texts"
-   shrink to what the rules leave. Verse starts from what the verse rounds settled: the
-   translator's lines are never cut, his first line sits on the verse's first Pali line, a verse
-   with as many of his lines as Pali lines takes one on each (both review scripts already do
-   this), the rest are spread so that no Pali line is hidden, and only a line whose wording
-   crosses into the next verse needs a reader to say which verse it sits in. The evidence for
-   Ṭhānissaro is in `data/thanissaro/review/verse/automation.json`.
-5. **A fresh audit** once the rest is done, drawn as `review/audit5/draw.py` draws, with a new
+The covered lines, the source mapping and both translators' verse rounds are done: what they
+settled is in "The files", "Segmenting" and "Building them into the app", and each round's packets
+and answers are in `data/<translator>/review/`. What remains, in order:
+
+1. **Teach the segmenter** the rules those rounds settled, checked against the reviews' own
+   answers, so the steps in "Reviewing new and revised texts" shrink to what the rules leave. For
+   verse: the translator's lines are never cut, his first line sits on the verse's first Pali
+   line, a verse with as many of his lines as Pali lines takes one on each (both verse review
+   scripts already do this), the rest are spread so that no Pali line is hidden, and only a line
+   whose wording crosses into the next verse needs a reader to say which verse it sits in.
+   A rule for this is ready but not applied, in `scripts/segmenter/proposals/verse-layout/`
+   (patch, tests and report). It lays out 1,123 of Bodhi's 1,172 reviewed verses and 2,953 of
+   Ṭhānissaro's 3,966 exactly as the reviews did, and keeps every reviewed layout as it is;
+   most of the rest are verses with more of his lines than Pali lines, which it groups
+   differently. Its tests import the prototype's module and need pointing at the segmenter.
+   A plain run of the segmenter reproduces the committed texts exactly, despite the drift the
+   report describes, so applying the patch can be checked by regenerating. The evidence for
+   Ṭhānissaro's equal-count verses is in `data/thanissaro/review/verse/automation.json`.
+2. **Fourteen places in Ṭhānissaro's verse** where his lines interleave neighbouring verses, or
+   the fix needs a prose line (`data/thanissaro/review/verse/results.json`).
+3. **A fresh audit** once the rest is done, drawn as `review/audit5/draw.py` draws, with a new
    seed.
 
 ## What's here
@@ -218,7 +206,9 @@ Every round keeps to these:
   every row.
 - **Findings are tried and kept in an isolated copy** of the repository (scripts and data, with
   `node_modules` linked), and only the results are copied back, after the checks in step 5. The
-  segmenter has no dry run: even `--findings` writes files.
+  segmenter has no dry run: even `--findings` writes files. Before a round is committed, a plain
+  run of the segmenter in a fresh copy reproduces its texts exactly, so a later update can't
+  undo it.
 - **One session at a time writes a translator's files** (`sutta/`, `notes/`, `cuts.json`,
   `report.json`). The segmenter works on one translator at a time, so sessions on different
   translators run side by side.
@@ -233,6 +223,8 @@ Every round keeps to these:
   and each Pali line it newly hides is either repetition the English abbreviates, which stays
   hidden, or content the English above renders, which goes into `covered.json`. It also lists
   every Pali line still hidden in a verse he translates, which the round fixes before it ends.
+  For Bodhi it also checks the source paragraph for abbreviation, so a closing line of a
+  shortened verse or a repeat note is left alone even when its own Pali paragraph lacks the note.
 
 1. **Unsure cuts**: `put cuts --items 1.0`. Sonnet answers each cut, and Opus answers the same cuts
    on its own. `keep-agreed cuts` keeps what the two agree on. The rest goes to Opus once more, with
@@ -311,9 +303,10 @@ Once segmenting is done, the app's build takes these translations in. What it mu
   stays hidden, since most runs are repetitions the translator abbreviates. The exception is the
   lines in `covered.json`, whose own content the English above renders, as where Bodhi gives a
   list whole in one sentence (AN 8.46:1.5–1.7): they join it too. A repetition the English
-  abbreviates or compresses is never covered, even where the English mentions it, and a doubtful
-  line isn't either: a missing entry only hides Pali, while a wrong one puts repetition under a
-  line. In a verse he translates, every Pali line the rule would hide is covered, unless he
+  abbreviates or compresses is never covered, even where the English mentions it, nor is a
+  passage rendered earlier than its Pali (Bodhi's SN 4.25, 12.68 and 22.80, Ṭhānissaro's
+  SN 22.58), and a doubtful line isn't either: a missing entry only hides Pali, while a wrong one
+  puts repetition under a line. In a verse he translates, every Pali line the rule would hide is covered, unless he
   shortens the verse to "…", which leaves the rest of its Pali hidden like other repetition.
   A verse he gives only as a note, as in Bodhi's AN 4.56 ("The verses are identical with those
   of AN 4.55"), stays hidden too: the note's link takes the reader to the verse. The rest of a
@@ -343,6 +336,7 @@ Once segmenting is done, the app's build takes these translations in. What it mu
 | The word-for-word check against the pages | `scripts/segmenter/check-upstream.py` |
 | The check of titles, headings, closing lines, notes and links | `scripts/segmenter/check-integrity.py` |
 | The check of a round's changes against the pages and the reveal rule | `scripts/segmenter/check-round.py` |
+| The proposed verse rule for the segmenter | `scripts/segmenter/proposals/verse-layout/` |
 | The audits | `data/<translator>/review/audit*/` |
 | Review packets with the Pali on every row | `scripts/segmenter/review-pali.py` |
 | How a session answers a round, and the prompts | [review-rounds.md](review-rounds.md) |
