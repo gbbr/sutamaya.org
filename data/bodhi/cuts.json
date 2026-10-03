@@ -7201,11 +7201,12 @@
   "placed": true
  },
  "an3.30:7.1": {
-  "empty": "up"
+  "after": " the former.\nHe too often goes to visit bhikkhus\nto hear them teach the Dhamma.",
+  "placed": true,
+  "own": true
  },
  "an3.30:7.2": {
-  "after": " the former.\nHe too often goes to visit bhikkhus\nto hear them teach the Dhamma.",
-  "placed": true
+  "empty": "up"
  },
  "an3.30:9.1": {
   "after": "st of these.\nHe too often goes to visit bhikkhus\nto hear them teach the Dhamma.",
@@ -15404,8 +15405,7 @@
   "own": true
  },
  "an4.60:4.4": {
-  "after": "dicines:\nfor them both by day and night",
-  "placed": true
+  "empty": "up"
  },
  "an4.60:4.5": {
   "after": "y day and night\nmerit always increases;",
@@ -23193,7 +23193,8 @@
   "placed": true
  },
  "an3.39:11.1": {
-  "empty": "up"
+  "after": "with health,\nwith youth, and with life—",
+  "placed": true
  },
  "an3.39:12.4": {
   "after": "easures.\nRelying on the spiritual life,",
@@ -23486,7 +23487,8 @@
   "own": true
  },
  "an4.60:4.1": {
-  "empty": "up"
+  "after": "bes, almsfood, lodgings, and medicines:",
+  "placed": true
  },
  "an4.60:4.2": {
   "empty": "up"
@@ -23642,7 +23644,8 @@
   "placed": true
  },
  "an5.57:15.1": {
-  "empty": "up"
+  "after": "with health,\nwith youth, and with life—",
+  "placed": true
  },
  "an5.57:16.4": {
   "after": "easures.\nRelying on the spiritual life,",
@@ -24216,5 +24219,31 @@
   "after": "d humiliated\nBy this foul, putrid body,",
   "placed": true,
   "own": true
+ },
+ "an3.39:11.2": {
+  "empty": "up"
+ },
+ "an4.60:4.3": {
+  "after": "dicines:\nfor them both by day and night",
+  "placed": true
+ },
+ "an5.57:15.2": {
+  "empty": "up"
+ },
+ "sn22.76:5.1": {
+  "after": "I am,’\nBurst asunder is delusion’s net.",
+  "placed": true,
+  "own": true
+ },
+ "sn22.76:5.2": {
+  "empty": "up"
+ },
+ "sn22.76:10.1": {
+  "after": "y life\nThey no longer depend on others.",
+  "placed": true,
+  "own": true
+ },
+ "sn22.76:10.2": {
+  "empty": "up"
  }
 }

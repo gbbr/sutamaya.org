@@ -1239,8 +1239,8 @@
   "unsure": 0,
   "unsureKeys": [],
   "joined": 7,
-  "merged": 2,
-  "elided": 5,
+  "merged": 3,
+  "elided": 4,
   "long": 3,
   "unmatched": 1,
   "ratio": 0.81
@@ -2543,7 +2543,7 @@
   "joined": 2,
   "merged": 2,
   "elided": 0,
-  "long": 1,
+  "long": 0,
   "unmatched": 0,
   "ratio": 1.08
  },
@@ -8944,10 +8944,10 @@
   "unsure": 0,
   "unsureKeys": [],
   "joined": 2,
-  "merged": 0,
-  "elided": 2,
+  "merged": 2,
+  "elided": 0,
   "long": 0,
-  "unmatched": 0,
+  "unmatched": 1,
   "ratio": 1.11
  },
  {

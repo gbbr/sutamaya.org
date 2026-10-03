@@ -1,0 +1,64 @@
+{
+  "translator": "bodhi",
+  "translatedVersesRepositioned": 6,
+  "textsChanged": [
+    "an3.30",
+    "an3.39",
+    "an4.60",
+    "an5.57",
+    "sn22.76"
+  ],
+  "verseFirstKeys": [
+    "an3.30:7.1",
+    "an3.39:11.1",
+    "an4.60:4.1",
+    "an5.57:15.1",
+    "sn22.76:5.1",
+    "sn22.76:10.1"
+  ],
+  "englishRowsChanged": 13,
+  "paliLinesNewlyShown": 7,
+  "sourceAbbreviatedVerseParagraphsLeftUnchanged": [
+    "sn11.12:10.1",
+    "sn11.5:8.1",
+    "sn11.5:13.1",
+    "sn35.95:23.1",
+    "sn35.95:35.1"
+  ],
+  "sourceContextChecker": "Recognises a source ellipsis or repeat note spanning multiple Pali paragraphs, matching English in page order to distinguish identical full and abbreviated endings. Only Bodhi uses this additional source-context check.",
+  "coveredAdded": [],
+  "coveredRemoved": [
+    "an3.39:11.1",
+    "an4.60:4.1",
+    "an4.60:4.2",
+    "an5.57:15.1"
+  ],
+  "judge": {
+    "effort": "high",
+    "model": "gpt-6-astra",
+    "better": 6,
+    "same": 0,
+    "worse": 0
+  },
+  "checks": {
+    "isolated": {
+      "hiddenTranslatedVersePaliLines": 0,
+      "partialMovedSourceLines": 0,
+      "newlyHiddenOutsideCovered": 0,
+      "upstreamDiffer": 0,
+      "integrityProblems": 0,
+      "sourceContextRegression": "passed"
+    },
+    "repository": {
+      "hiddenTranslatedVersePaliLines": 0,
+      "partialMovedSourceLines": 0,
+      "newlyHiddenOutsideCovered": 0,
+      "upstreamDiffer": 0,
+      "integrityProblems": 0,
+      "sourceContextRegression": "passed",
+      "gitDiffCheck": "passed"
+    }
+  },
+  "preserved": "English source-line wording, order and verse contents; Pali keys; all saved source pages; abbreviated passages; other translation.",
+  "note": "These six verses have enough whole English lines, so no new covered entries are needed. Four existing covered entries became unnecessary. No commit."
+}

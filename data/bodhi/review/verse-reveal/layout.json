@@ -1,0 +1,371 @@
+{
+  "actions": [
+    {
+      "file": "data/bodhi/sutta/an/an3/an3.30_translation-en-bodhi.json",
+      "keys": [
+        "an3.30:7.1",
+        "an3.30:7.2",
+        "an3.30:7.3",
+        "an3.30:7.4",
+        "an3.30:7.5",
+        "an3.30:7.6"
+      ],
+      "pali": {
+        "an3.30:7.1": "Ādiṁ kathāya majjhañca, ",
+        "an3.30:7.2": "pariyosānañca tādiso; ",
+        "an3.30:7.3": "Nisinno āsane tasmiṁ, ",
+        "an3.30:7.4": "uggahetvāna byañjanaṁ; ",
+        "an3.30:7.5": "Vuṭṭhito nappajānāti, ",
+        "an3.30:7.6": "gahitaṁ hissa mussati. "
+      },
+      "before": {
+        "an3.30:7.1": "",
+        "an3.30:7.2": "While sitting in his seat, ",
+        "an3.30:7.3": "he grasps the phrasing of the talk, ",
+        "an3.30:7.4": "at its beginning, middle, and end. ",
+        "an3.30:7.5": "But after rising, he no longer understands, ",
+        "an3.30:7.6": "but forgets what he had learned. "
+      },
+      "coveredBefore": [],
+      "after": {
+        "an3.30:7.1": "While sitting in his seat, ",
+        "an3.30:7.2": "",
+        "an3.30:7.3": "he grasps the phrasing of the talk, ",
+        "an3.30:7.4": "at its beginning, middle, and end. ",
+        "an3.30:7.5": "But after rising, he no longer understands, ",
+        "an3.30:7.6": "but forgets what he had learned. "
+      },
+      "positions": [
+        "an3.30:7.1",
+        "an3.30:7.3",
+        "an3.30:7.4",
+        "an3.30:7.5",
+        "an3.30:7.6"
+      ],
+      "coveredAfter": [],
+      "rule": "Keep source lines whole and ordered; first line on first Pali row; minimise hidden bare lines, then moves."
+    },
+    {
+      "file": "data/bodhi/sutta/an/an3/an3.39_translation-en-bodhi.json",
+      "keys": [
+        "an3.39:11.1",
+        "an3.39:11.2",
+        "an3.39:11.3",
+        "an3.39:11.4"
+      ],
+      "pali": {
+        "an3.39:11.1": "Sabbe made abhibhosmi, ",
+        "an3.39:11.2": "Nekkhamme daṭṭhu khemataṁ; ",
+        "an3.39:11.3": "Tassa me ahu ussāho, ",
+        "an3.39:11.4": "Nibbānaṁ abhipassato. "
+      },
+      "before": {
+        "an3.39:11.1": "",
+        "an3.39:11.2": "having seen security in renunciation. ",
+        "an3.39:11.3": "“Zeal then arose in me ",
+        "an3.39:11.4": "as I clearly saw nibbāna. "
+      },
+      "coveredBefore": [
+        "an3.39:11.1"
+      ],
+      "after": {
+        "an3.39:11.1": "having seen security in renunciation. ",
+        "an3.39:11.2": "",
+        "an3.39:11.3": "“Zeal then arose in me ",
+        "an3.39:11.4": "as I clearly saw nibbāna. "
+      },
+      "positions": [
+        "an3.39:11.1",
+        "an3.39:11.3",
+        "an3.39:11.4"
+      ],
+      "coveredAfter": [],
+      "rule": "Keep source lines whole and ordered; first line on first Pali row; minimise hidden bare lines, then moves."
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.60_translation-en-bodhi.json",
+      "keys": [
+        "an4.60:4.1",
+        "an4.60:4.2",
+        "an4.60:4.3",
+        "an4.60:4.4",
+        "an4.60:4.5",
+        "an4.60:4.6"
+      ],
+      "pali": {
+        "an4.60:4.1": "Piṇḍapātasayanena, ",
+        "an4.60:4.2": "Gilānappaccayena ca; ",
+        "an4.60:4.3": "Tesaṁ divā ca ratto ca, ",
+        "an4.60:4.4": "Sadā puññaṁ pavaḍḍhati; ",
+        "an4.60:4.5": "Saggañca kamatiṭṭhānaṁ, ",
+        "an4.60:4.6": "Kammaṁ katvāna bhaddakan”ti. "
+      },
+      "before": {
+        "an4.60:4.1": "",
+        "an4.60:4.2": "",
+        "an4.60:4.3": "for them both by day and night ",
+        "an4.60:4.4": "merit always increases; ",
+        "an4.60:4.5": "having done excellent deeds, ",
+        "an4.60:4.6": "they pass on to a heavenly state. "
+      },
+      "coveredBefore": [
+        "an4.60:4.1",
+        "an4.60:4.2"
+      ],
+      "after": {
+        "an4.60:4.1": "for them both by day and night ",
+        "an4.60:4.2": "",
+        "an4.60:4.3": "merit always increases; ",
+        "an4.60:4.4": "",
+        "an4.60:4.5": "having done excellent deeds, ",
+        "an4.60:4.6": "they pass on to a heavenly state. "
+      },
+      "positions": [
+        "an4.60:4.1",
+        "an4.60:4.3",
+        "an4.60:4.5",
+        "an4.60:4.6"
+      ],
+      "coveredAfter": [],
+      "rule": "Keep source lines whole and ordered; first line on first Pali row; minimise hidden bare lines, then moves."
+    },
+    {
+      "file": "data/bodhi/sutta/an/an5/an5.57_translation-en-bodhi.json",
+      "keys": [
+        "an5.57:15.1",
+        "an5.57:15.2",
+        "an5.57:15.3",
+        "an5.57:15.4"
+      ],
+      "pali": {
+        "an5.57:15.1": "Sabbe made abhibhosmi, ",
+        "an5.57:15.2": "Nekkhammaṁ daṭṭhu khemato; ",
+        "an5.57:15.3": "Tassa me ahu ussāho, ",
+        "an5.57:15.4": "Nibbānaṁ abhipassato. "
+      },
+      "before": {
+        "an5.57:15.1": "",
+        "an5.57:15.2": "having seen security in renunciation. ",
+        "an5.57:15.3": "“Zeal then arose in me ",
+        "an5.57:15.4": "as I clearly saw nibbāna. "
+      },
+      "coveredBefore": [
+        "an5.57:15.1"
+      ],
+      "after": {
+        "an5.57:15.1": "having seen security in renunciation. ",
+        "an5.57:15.2": "",
+        "an5.57:15.3": "“Zeal then arose in me ",
+        "an5.57:15.4": "as I clearly saw nibbāna. "
+      },
+      "positions": [
+        "an5.57:15.1",
+        "an5.57:15.3",
+        "an5.57:15.4"
+      ],
+      "coveredAfter": [],
+      "rule": "Keep source lines whole and ordered; first line on first Pali row; minimise hidden bare lines, then moves."
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn22/sn22.76_translation-en-bodhi.json",
+      "keys": [
+        "sn22.76:5.1",
+        "sn22.76:5.2",
+        "sn22.76:5.3",
+        "sn22.76:5.4"
+      ],
+      "pali": {
+        "sn22.76:5.1": "Anejaṁ te anuppattā, ",
+        "sn22.76:5.2": "cittaṁ tesaṁ anāvilaṁ; ",
+        "sn22.76:5.3": "Loke anupalittā te, ",
+        "sn22.76:5.4": "brahmabhūtā anāsavā. "
+      },
+      "before": {
+        "sn22.76:5.1": "",
+        "sn22.76:5.2": "Limpid are their minds; ",
+        "sn22.76:5.3": "They are unsullied in the world— ",
+        "sn22.76:5.4": "The holy ones, without taints. "
+      },
+      "coveredBefore": [],
+      "after": {
+        "sn22.76:5.1": "Limpid are their minds; ",
+        "sn22.76:5.2": "",
+        "sn22.76:5.3": "They are unsullied in the world— ",
+        "sn22.76:5.4": "The holy ones, without taints. "
+      },
+      "positions": [
+        "sn22.76:5.1",
+        "sn22.76:5.3",
+        "sn22.76:5.4"
+      ],
+      "coveredAfter": [],
+      "rule": "Keep source lines whole and ordered; first line on first Pali row; minimise hidden bare lines, then moves."
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn22/sn22.76_translation-en-bodhi.json",
+      "keys": [
+        "sn22.76:10.1",
+        "sn22.76:10.2",
+        "sn22.76:10.3",
+        "sn22.76:10.4"
+      ],
+      "pali": {
+        "sn22.76:10.1": "Vidhāsu na vikampanti, ",
+        "sn22.76:10.2": "vippamuttā punabbhavā; ",
+        "sn22.76:10.3": "Dantabhūmimanuppattā, ",
+        "sn22.76:10.4": "te loke vijitāvino. "
+      },
+      "before": {
+        "sn22.76:10.1": "",
+        "sn22.76:10.2": "They are released from renewed existence. ",
+        "sn22.76:10.3": "Having reached the stage of the tamed, ",
+        "sn22.76:10.4": "They are the victors in the world. "
+      },
+      "coveredBefore": [],
+      "after": {
+        "sn22.76:10.1": "They are released from renewed existence. ",
+        "sn22.76:10.2": "",
+        "sn22.76:10.3": "Having reached the stage of the tamed, ",
+        "sn22.76:10.4": "They are the victors in the world. "
+      },
+      "positions": [
+        "sn22.76:10.1",
+        "sn22.76:10.3",
+        "sn22.76:10.4"
+      ],
+      "coveredAfter": [],
+      "rule": "Keep source lines whole and ordered; first line on first Pali row; minimise hidden bare lines, then moves."
+    }
+  ],
+  "excluded": [
+    {
+      "first": "sn11.12:10.1",
+      "keys": [
+        "sn11.12:10.1",
+        "sn11.12:10.2",
+        "sn11.12:10.3",
+        "sn11.12:10.4"
+      ],
+      "sourcePages": [
+        "sutta/sn/sn11/sn11.12.html"
+      ],
+      "reason": "Source passage contains an ellipsis or an identical-verse note; all this Pali verse's English belongs to that abbreviated passage."
+    },
+    {
+      "first": "sn11.5:8.1",
+      "keys": [
+        "sn11.5:8.1",
+        "sn11.5:8.2",
+        "sn11.5:8.3",
+        "sn11.5:8.4"
+      ],
+      "sourcePages": [
+        "sutta/sn/sn11/sn11.5.html"
+      ],
+      "reason": "Source passage contains an ellipsis or an identical-verse note; all this Pali verse's English belongs to that abbreviated passage."
+    },
+    {
+      "first": "sn11.5:13.1",
+      "keys": [
+        "sn11.5:13.1",
+        "sn11.5:13.2",
+        "sn11.5:13.3",
+        "sn11.5:13.4"
+      ],
+      "sourcePages": [
+        "sutta/sn/sn11/sn11.5.html"
+      ],
+      "reason": "Source passage contains an ellipsis or an identical-verse note; all this Pali verse's English belongs to that abbreviated passage."
+    },
+    {
+      "first": "sn35.95:23.1",
+      "keys": [
+        "sn35.95:23.1",
+        "sn35.95:23.2",
+        "sn35.95:23.3",
+        "sn35.95:23.4",
+        "sn35.95:23.5",
+        "sn35.95:23.6"
+      ],
+      "sourcePages": [
+        "sutta/sn/sn35/sn35.95.html"
+      ],
+      "reason": "Source passage contains an ellipsis or an identical-verse note; all this Pali verse's English belongs to that abbreviated passage."
+    },
+    {
+      "first": "sn35.95:35.1",
+      "keys": [
+        "sn35.95:35.1",
+        "sn35.95:35.2",
+        "sn35.95:35.3",
+        "sn35.95:35.4",
+        "sn35.95:35.5",
+        "sn35.95:35.6"
+      ],
+      "sourcePages": [
+        "sutta/sn/sn35/sn35.95.html"
+      ],
+      "reason": "Source passage contains an ellipsis or an identical-verse note; all this Pali verse's English belongs to that abbreviated passage."
+    }
+  ],
+  "superseded": [
+    {
+      "file": "data/bodhi/review/reread/batch-024.findings",
+      "line": 2,
+      "key": "an3.30:7.1",
+      "old": null,
+      "new": "While sitting in his seat,"
+    },
+    {
+      "file": "data/bodhi/review/verse/batch-001.findings",
+      "line": 11,
+      "key": "an3.30:7.2",
+      "old": "While sitting in his seat,",
+      "new": null
+    },
+    {
+      "file": "data/bodhi/review/verse/batch-001.findings",
+      "line": 24,
+      "key": "an3.39:11.1",
+      "old": null,
+      "new": "having seen security in renunciation."
+    },
+    {
+      "file": "data/bodhi/review/verse/batch-004.findings",
+      "line": 6,
+      "key": "an4.60:4.1",
+      "old": null,
+      "new": "for them both by day and night"
+    },
+    {
+      "file": "data/bodhi/review/verse/batch-004.findings",
+      "line": 8,
+      "key": "an4.60:4.3",
+      "old": "for them both by day and night",
+      "new": "merit always increases;"
+    },
+    {
+      "file": "data/bodhi/review/verse/batch-004.findings",
+      "line": 9,
+      "key": "an4.60:4.4",
+      "old": "merit always increases;",
+      "new": null
+    },
+    {
+      "file": "data/bodhi/review/verse/batch-005.findings",
+      "line": 22,
+      "key": "an5.57:15.1",
+      "old": null,
+      "new": "having seen security in renunciation."
+    }
+  ],
+  "overridesHandKeys": [],
+  "coveredAdded": [],
+  "coveredRemoved": [
+    "an3.39:11.1",
+    "an4.60:4.1",
+    "an4.60:4.2",
+    "an5.57:15.1"
+  ],
+  "ruleFindings": 28
+}

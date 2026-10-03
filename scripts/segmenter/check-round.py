@@ -42,6 +42,41 @@ def source_lines(translator):
     return lines
 
 
+def source_shortened_keys(translator, pages, english):
+    """Recognises excerpts whose ellipsis or repeat note sits on another Pali paragraph.
+
+    Match the English in page order, so a repeated closing line is judged in its own source
+    passage rather than in an earlier full rendering of the same verse. Unmatched text is
+    never exempted. Saved pages are read without changing their words or line breaks.
+    """
+    passages, stream, cursor = [], '', 0
+    for page in pages:
+        text = (ROOT / 'data/upstream' / translator / page).read_text()
+        article = re.search(r'<article\b[^>]*>(.*?)(?:<footer\b|</article>)', text, re.S | re.I)
+        if not article:
+            continue
+        for paragraph in article[1].split('</p>'):
+            words = clean(html.unescape(TAG.sub('', MARKER.sub('', paragraph))))
+            if not words:
+                continue
+            start = len(stream)
+            stream += words + ' '
+            passages.append((start, len(stream), bool(SHORTENED.search(words))))
+    shortened = set()
+    for key, value in english.items():
+        words = clean(html.unescape(TAG.sub('', value)))
+        if not words:
+            continue
+        start = stream.find(words, cursor)
+        if start < 0:
+            continue
+        cursor = start + len(words)
+        context = [short for lo, hi, short in passages if lo < cursor and hi > start]
+        if context and all(context):
+            shortened.add(key)
+    return shortened
+
+
 def paragraphs(pali, markup):
     """Returns each line's paragraph, from the Pali's markup where there is any (the line keys make
     each of the Dhammapada's verse lines a paragraph of its own), else from the key."""
@@ -87,6 +122,11 @@ def main():
     lines = source_lines(translator)
     covered = set(json.loads((ROOT / f'data/{translator}/covered.json').read_text()))
     suffix = f'_translation-en-{translator}.json'
+    sources = {}
+    if translator == 'bodhi':
+        for entry in json.loads((ROOT / 'data/bodhi/report.json').read_text()):
+            for uid in entry['uids'].split():
+                sources.setdefault(uid, []).append(entry['file'])
     partial, newly_hidden, shown, changed, verse_hidden = [], [], 0, 0, []
     for path in sorted((ROOT / f'data/{translator}/sutta').rglob(f'*{suffix}')):
         relative = path.relative_to(ROOT)
@@ -100,9 +140,17 @@ def main():
         english = {}
         for key in pali:
             english[paragraph[key]] = english.get(paragraph[key], '') + new.get(key, '')
+        source_shortened = source_shortened_keys(translator, sources.get(path.name.split('_')[0], []), new)
+        holders = {}
+        for key in pali:
+            if new.get(key, '').strip():
+                holders.setdefault(paragraph[key], []).append(key)
+        shortened_paragraphs = {p for p, keys in holders.items()
+                                if all(key in source_shortened for key in keys)}
         verse_hidden += sorted((key for key in hidden(pali, new, markup) - covered
                                 if 'verse-line' in markup.get(key, '')
                                 and english[paragraph[key]].strip()
+                                and paragraph[key] not in shortened_paragraphs
                                 and not SHORTENED.search(english[paragraph[key]])), key=order.index)
         old = at(base, relative)
         if old is None or old == new:
