@@ -60,6 +60,13 @@ English-proxy reads and local Pali judgments. A repaired cut or a current anchor
 proposal does not establish a complete verified read. Coverage and source issues remain pending
 even where the boundary itself is settled.
 
+The [saved inventory](pali-review-inventory/README.md) on 2026-10-03 covers all 2,617 current
+Bodhi/Ṭhānissaro documents. Its targeted queue is 17,725 translator–Pali rows (20,962 with minimum
+context); 78 recovered proposals have later Pali-based boundary evidence and 325 need judgment.
+Its complete-scope evidence ledger records every stored English segment and Pali key, including
+the broader review/verification gaps. Local boundary or audit-row evidence is not full verified
+correspondence. Sujato is explicitly outside this inventory. No semantic review or pilot is run.
+
 Record the inventory's translators, documents, key ranges and exclusions. A targeted inventory of
 verse and known problems does not certify the remaining prose. For each translation included in
 the final goal, the coverage ledger must account for every English segment and Pali row, recording
@@ -74,6 +81,9 @@ Gabriel uses ChatGPT/Codex at $100/month. Subscription capacity cannot be inferr
 API pricing or raw token totals. Check the current usage dashboard, or `/status` in the Codex CLI,
 and the [current Codex usage guidance](https://learn.chatgpt.com/docs/pricing).
 
+Before launching pilot readers, follow [Effort selection and advance notice](#effort-selection-and-advance-notice),
+including the scoped proposal for any comparison above `high`.
+
 1. Inspect `git status` and read this handoff and the saved inventory. Verify the archive and
    distinguish the inventory's targeted queue from remaining gaps in complete verification.
    If another session has changed the corpus, check which saved evidence is stale before using it.
@@ -86,13 +96,22 @@ and the [current Codex usage guidance](https://learn.chatgpt.com/docs/pricing).
    reader for verification. The verifier sees revised alignment, proposed correspondence and
    original sources, without the first reader's verdicts. Use model diversity if available and
    affordable; it is useful but not a substitute for independence.
-4. Save inputs, findings, judgments, changes and uncertainty as the work proceeds. Measure actual
-   allowance consumption, reset window, model/effort, elapsed time, rows reviewed and verified,
-   and the size of the context. Do not launch large parallel runs before this measurement.
-5. Report whether the allowance supports a comfortable batch size, how much work remains, and a
+4. On a small frozen subset containing ordinary and difficult passages, compare `high` with
+   `xhigh` using the same model, source/Pali inputs, context and instructions. Readers work in
+   fresh contexts without each other's findings. Include `max` only in an approved comparison
+   scope. Judge each result independently against Pali, recording verified errors caught, missed
+   or introduced, and remaining uncertainty. A higher-effort answer is not the reference truth.
+5. Save inputs, findings, judgments, changes and uncertainty as the work proceeds. Measure actual
+   allowance consumption, reset window, requested and effective model/effort, elapsed time,
+   rows reviewed and verified, and the size of the context. Do not launch large parallel runs
+   before this measurement.
+   Count repeated comparison reads and adjudication in the workload and usage totals.
+6. Report whether the allowance supports a comfortable batch size, how much work remains, and a
    realistic range of sessions. Set a checkpoint before allowance exhaustion. Never lower the
    accuracy standard just to fit a month; spread the work over more sessions if needed.
-6. Exercise the correspondence checks and replay saved approved decisions in isolation. Record
+   Recommend effort levels and escalation criteria from verified accuracy, time and actual usage;
+   retain the lightest setting that meets the quality standard for each kind of work.
+7. Exercise the correspondence checks and replay saved approved decisions in isolation. Record
    whether identical inputs reproduce identical alignment and coverage without further review.
    Identify missing tooling before adopting the process for a large round.
 
@@ -103,6 +122,52 @@ not the full remaining workload. A fresh backlog inventory is required after reb
 
 The pilot is future work. Packet-tool smoke checks during parking do not perform reviews,
 change alignments, or measure account consumption.
+
+### Effort selection and advance notice
+
+Use `high` as the candidate baseline for full direct-Pali reads and independent verification;
+the pilot must establish whether it meets the accuracy standard. Inventory, packet generation
+and mechanical validation normally need no effort above `high`. Set and record each reader's
+actual model and effort explicitly: an inherited or saved `max` default is not a reason to run
+every review at that level.
+
+Consider `xhigh` for reader disagreements, reordered or interleaved verse, noncontiguous coverage,
+ambiguous source ranges or edition differences, and the design or review of the coverage schema
+and reuse and invalidation rules. An incorrect shared rule can affect many texts. Consider `max`
+for particularly difficult cases or where pilot evidence supports the additional work.
+Alignment decisions still require Pali-based judgment and independent verification; preserve
+uncertainty when more reasoning does not resolve it.
+
+Before starting any handoff work above `high`, including pilot comparisons, present Gabriel with a
+bounded proposal stating:
+
+- Why higher effort is useful and which model/effort each reader or adjudicator will use.
+- Which documents, passages or design questions it covers, with row/context counts where relevant.
+- The number of agents, passes, batches and concurrent runs, including comparison and verification.
+- Expected time and allowance consumption, the basis and uncertainty of the estimate, and the
+  maximum planned scope plus the checkpoint at which work stops for reassessment.
+- Any expected monetary charge and its billing route, if applicable. Subscription allowance is
+  measured from the account; API token prices are not a conversion to subscription usage or cost.
+
+Get Gabriel's go-ahead for that bounded proposal before launching. Authorization to delegate
+does not by itself approve higher effort or an unbounded run. Reuse an already approved scope
+without asking again for each passage; propose any increase in effort, agent count, passes or
+workload beyond those bounds before starting it. Save approved bounds and actual usage so an
+interrupted session can resume within them. Unknown usage is reported as unknown and measured
+through a small agreed run rather than presented as a precise estimate.
+
+When delegation is explicitly requested by Gabriel or applicable `AGENTS.md`/skill instructions,
+Codex can select supported model/effort settings for individual subagents. Use fresh source/Pali
+context, separate findings folders and no shared reviewer verdicts; review agents preserve the
+corpus and the main agent coordinates isolated application. A restart instruction can be:
+“Use subagents according to the handoff's effort policy; propose higher-effort batches before
+starting them.” This handoff's recommendations alone do not enable unsolicited delegation.
+
+If explicit subagent effort selection is unavailable, explain that before launching and ask
+Gabriel to select the level through `/model` or run a separate session with the frozen inputs.
+The main session's effort is a separate client setting. See the official
+[subagent controls](https://learn.chatgpt.com/docs/agent-configuration/subagents#choosing-models-and-reasoning)
+and [model controls](https://learn.chatgpt.com/docs/models#choose-a-model).
 
 ## Work order after the pilot
 
@@ -268,8 +333,9 @@ Test the final workflow on representative incoming/revised cases: ordinary prose
 reordered verse, excerpts, grouped sources and edition differences. Confirm accurate correspondence,
 independent verification, repeatability, change invalidation and interrupted-run recovery. Record
 actual time and usage and document the tested tools, prompts, checkpoints and exception handling
-in the upstream README and `review-rounds.md`. These operational instructions are finalized from
-all the corpus learning; the pilot alone does not settle them.
+in the upstream README and `review-rounds.md`, including measured effort-selection rules,
+escalation criteria and advance proposals for higher-effort work. These operational instructions
+are finalized from all the corpus learning; the pilot alone does not settle them.
 
 ## Idempotence and reuse
 
@@ -420,10 +486,11 @@ Use the revised input manifest. A mechanical pass or agreement with S is not sem
 ## Session close and finish line
 
 At each checkpoint save completed keys, pending keys, input hashes, proposed/applied decisions,
-rejections, uncertainties, validation results and the next exact command/task. Update the dated
-status records when the state changes. Never claim a read complete because a findings file exists
-unless coverage is explicit; an empty findings file can be a completed clean read or an unfinished
-one. Keep historical commit approval separate from current permission.
+rejections, uncertainties, validation results, approved effort/workload bounds, actual usage and
+the next exact command/task. Update the dated status records when the state changes. Never claim
+a read complete because a findings file exists unless coverage is explicit; an empty findings
+file can be a completed clean read or an unfinished one. Keep historical commit approval separate
+from current permission.
 
 The data is ready for app implementation when every English segment in the declared scope has
 verified correspondence or a reviewed explanation of material without a Pali counterpart, known
@@ -454,6 +521,7 @@ one commit of the finished parking work with “commit it”; alignment work sta
 | What | Where |
 |---|---|
 | Repository recovery archive, inventory and safe restoration | [review-archive/2026-10-02/README.md](review-archive/2026-10-02/README.md) |
+| Remaining targeted queue, complete-scope evidence gaps and resumable scan | [pali-review-inventory/README.md](pali-review-inventory/README.md) |
 | Complete MN/DN status | [mn-dn-review.json](mn-dn-review.json) |
 | Consolidated SN/AN/KN evidence and deferrals | [codex-sn-an-kn-review.json](codex-sn-an-kn-review.json) |
 | Accepted import provenance/judgments | `data/{bodhi,thanissaro}/review/codex-read/` |
