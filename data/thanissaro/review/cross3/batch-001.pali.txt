@@ -1,0 +1,10 @@
+# Pali-inclusive cross-check after verse reveal
+One new suspect: judge by WHOLE VERSE, never literal English/Pali row matching. The translator’s source lines stay whole and ordered and are spread with first line first/no adjacent bare rows where possible.
+A blank verse row next to another translation’s occupied row is legitimate under that rule; avoid collapsing source lines or changing word order. Pali every row and actual T source breaks shown as ⏎.
+Do not change outside reviewed verse-reveal paragraphs. Only clearly wrong own-verse boundary or source-line layout merits a finding.
+## sn22.82
+sn22.82:14.15 | S: Seeing this … | P: evaṁ passaṁ …pe…  | T: “Seeing thus, the instructed disciple of the noble ones grows disenchanted with form, disenchanted with feeling, disenchanted with perception, disenchanted with fabrications, disenchanted with consciousness. Disenchanted, he becomes dispassionate. Through dispassion, he is released. With release, there is the knowledge, ‘Released.’  | O: Seeing thus …
+sn22.82:14.16 | S: They understand: ‘… there is nothing further for this place.’” | P: nāparaṁ itthattāyāti pajānātī”ti.  | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’”  | O: He understands: ‘… there is no more for this state of being.’”
+sn22.82:15.1 | S: “Two on the aggregates; exactly the same; <j>and can there be; | P: “Dve khandhā taññeva siyaṁ,  | T: (none) | O: These are the ten questions The bhikkhu came to ask:
+sn22.82:15.2 | S: on the term; and on the cause; | P: adhivacanañca hetunā;  | T: (none) | O: Two about the aggregates, Whether the same, can there be,
+sn22.82:15.3 | S: two questions on substantial reality; | P: Sakkāyena duve vuttā,  | T: (none) | O: Designation and the cause,

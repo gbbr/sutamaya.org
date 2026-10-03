@@ -1,0 +1,154 @@
+{
+  "cases": [
+    {
+      "firstKey": "thag6.13:6.1",
+      "assignments": {
+        "thag6.13:6.1": "Your last day approaches.",
+        "thag6.13:6.2": "This isn’t your time",
+        "thag6.13:6.3": "",
+        "thag6.13:6.4": "to be heedless."
+      },
+      "coveredCandidates": ["thag6.13:6.3"],
+      "reason": "Three whole source lines occupy verse positions 0,1,3, retaining the first line and filling the closing verse row; the isolated bare row is only a coverage candidate if still hidden."
+    },
+    {
+      "firstKey": "thag16.7:14.1",
+      "assignments": {
+        "thag16.7:14.1": "Accepting whatever lodging he’s assigned, persevering,",
+        "thag16.7:14.2": "",
+        "thag16.7:14.3": "",
+        "thag16.7:14.4": ""
+      },
+      "coveredCandidates": ["thag16.7:14.2", "thag16.7:14.3", "thag16.7:14.4"],
+      "reason": "The paragraph owns only one certified source line, already on its first verse row; all three following bare verse rows are unavoidable."
+    },
+    {
+      "firstKey": "thig6.7:4.1",
+      "assignments": {
+        "thig6.7:4.1": "you won’t come",
+        "thig6.7:4.2": "",
+        "thig6.7:4.3": "to this again.",
+        "thig6.7:4.4": ""
+      },
+      "coveredCandidates": ["thig6.7:4.2", "thig6.7:4.4"],
+      "reason": "Two whole source lines occupy verse positions 0,2, placing the first actual line first and separating the two unavoidable bare rows."
+    },
+    {
+      "firstKey": "snp5.1:3.1",
+      "assignments": {
+        "snp5.1:3.1": "Close by was a large village.",
+        "snp5.1:3.2": "And with the income from that village",
+        "snp5.1:3.3": "",
+        "snp5.1:3.4": "he performed a great sacrifice."
+      },
+      "coveredCandidates": ["snp5.1:3.3"],
+      "reason": "Three whole source lines occupy verse positions 0,1,3, placing the first line first and retaining an occupied last row."
+    },
+    {
+      "firstKey": "snp3.7:20.1",
+      "assignments": {
+        "snp3.7:20.1": "Sela:\n“You claim to be rightly self-awakened,",
+        "snp3.7:20.2": "",
+        "snp3.7:20.3": "",
+        "snp3.7:20.4": "a Dhamma king unexcelled.",
+        "snp3.7:20.5": ""
+      },
+      "coveredCandidates": ["snp3.7:20.3", "snp3.7:20.5"],
+      "reason": "Two own verse lines occupy verse positions 0,2; Sela’s preface stays attached to the first actual line. The nonverse speaker row stays empty."
+    },
+    {
+      "firstKey": "snp4.9:3.1",
+      "assignments": {
+        "snp4.9:3.1": "The Buddha:\n“‘I argue for this’",
+        "snp4.9:3.2": "",
+        "snp4.9:3.3": "doesn’t occur to one\nwhen considering what’s grasped\namong doctrines.",
+        "snp4.9:3.4": "Looking for what is ungrasped\nwith regard to views,",
+        "snp4.9:3.5": "and detecting inner peace,\nI saw.”"
+      },
+      "coveredCandidates": [],
+      "reason": "Attach the speaker prefix and first whole source line to the first verse row within this paragraph, leaving the nonverse speaker row empty; retain all later whole lines and their order with minimal redistribution."
+    },
+    {
+      "firstKey": "an6.45:22.1",
+      "assignments": {
+        "an6.45:22.1": "wins both goals:",
+        "an6.45:22.2": "",
+        "an6.45:22.3": "advantage in the here & now,",
+        "an6.45:22.4": "& happiness in the world beyond.",
+        "an6.45:22.5": "The liberality of this householder",
+        "an6.45:22.6": "piles up merit."
+      },
+      "coveredCandidates": ["an6.45:22.2"],
+      "reason": "Move only the first whole source line to the first verse row; five lines leave a single isolated bare row and keep the final verse row occupied."
+    },
+    {
+      "firstKey": "an7.64:9.1",
+      "assignments": {
+        "an7.64:9.1": "An angry person is ugly & sleeps poorly.",
+        "an7.64:9.2": "",
+        "an7.64:9.3": "Gaining a profit, he turns it into a loss,",
+        "an7.64:9.4": ""
+      },
+      "coveredCandidates": ["an7.64:9.2", "an7.64:9.4"],
+      "reason": "The existing two whole source lines already occupy verse positions 0,2; retain them without splitting their wording. The bare tail borders the empty first row of the next paragraph in the packet and needs checker review after that paragraph’s first-row correction."
+    },
+    {
+      "firstKey": "an7.64:10.1",
+      "assignments": {
+        "an7.64:10.1": "having done damage with word & deed.",
+        "an7.64:10.2": "A person overwhelmed with anger",
+        "an7.64:10.3": "",
+        "an7.64:10.4": "destroys his wealth."
+      },
+      "coveredCandidates": ["an7.64:10.3"],
+      "reason": "Three whole source lines occupy verse positions 0,1,3, ensuring first-row placement and an occupied final row."
+    },
+    {
+      "firstKey": "an7.64:21.1",
+      "assignments": {
+        "an7.64:21.1": "with a sword, taking poison,",
+        "an7.64:21.2": "",
+        "an7.64:21.3": "hanging himself by a rope in a mountain glen.",
+        "an7.64:21.4": ""
+      },
+      "coveredCandidates": ["an7.64:21.2", "an7.64:21.4"],
+      "reason": "Two whole source lines occupy verse positions 0,2 without splitting the second line; the remaining bare rows are separated."
+    },
+    {
+      "firstKey": "an3.30:7.1",
+      "assignments": {
+        "an3.30:7.1": "while sitting in that seat, grasps the words",
+        "an3.30:7.2": "of the beginning, middle, & end of the talk,",
+        "an3.30:7.3": "",
+        "an3.30:7.4": "but getting up, he doesn’t discern anything like that,",
+        "an3.30:7.5": "",
+        "an3.30:7.6": "for he forgets what he had grasped."
+      },
+      "coveredCandidates": ["an3.30:7.3", "an3.30:7.5"],
+      "reason": "Four whole source lines occupy verse positions 0,1,3,5, keeping the first and final rows occupied and separating the two bare rows."
+    },
+    {
+      "firstKey": "an3.30:9.1",
+      "assignments": {
+        "an3.30:9.1": "while sitting in that seat, he grasps the words",
+        "an3.30:9.2": "",
+        "an3.30:9.3": "of the beginning, middle, & end of the talk.",
+        "an3.30:9.4": ""
+      },
+      "coveredCandidates": ["an3.30:9.2", "an3.30:9.4"],
+      "reason": "Two whole source lines occupy verse positions 0,2; retain the entire second source line while separating the unavoidable bare rows."
+    },
+    {
+      "firstKey": "sn4.18:3.1",
+      "assignments": {
+        "sn4.18:3.1": "The Buddha:\n“You’ve produced demerit, Evil One,",
+        "sn4.18:3.2": "",
+        "sn4.18:3.3": "insulting the Tathāgata.",
+        "sn4.18:3.4": ""
+      },
+      "coveredCandidates": ["sn4.18:3.2", "sn4.18:3.4"],
+      "reason": "Two actual verse lines occupy verse positions 0,2, keeping The Buddha’s speaker preface attached to the first actual source line and separating the bare verse rows."
+    }
+  ],
+  "casesRead": 13
+}

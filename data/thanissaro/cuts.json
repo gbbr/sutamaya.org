@@ -3129,7 +3129,10 @@
  "snp4.8:11.2": "upreme?\nSo here you come,\nconjecturing,",
  "snp4.9:1.3": "—\nthere wasn’t even the desire for sex.",
  "snp4.9:2.3": " gem of a woman, coveted\nby many kings,",
- "snp4.9:3.3": "er] becoming\ndo you argue?”\nThe Buddha:",
+ "snp4.9:3.3": {
+  "after": "argue?”\nThe Buddha:\n“‘I argue for this’",
+  "placed": true
+ },
  "snp4.9:3.4": "idering what’s grasped\namong doctrines.",
  "snp4.9:4.5": "\nThis ‘inner peace’:\nWhat does it mean?",
  "snp4.9:6.4": "ming.”\nMāgandiya:\n“Well, if he doesn’t speak of purity\nin connection with view,\nlearning,\nknowledge,\nhabit or practice.",
@@ -10093,7 +10096,9 @@
  "sn38.8:1.12": " This is the path, this is the practice for the abandoning of these effluents.”",
  "sn38.9:1.9": "y this noble eightfold path, my friend:",
  "sn4.18:3.1": " time. I’ll arrange that you get alms.”",
- "sn4.18:3.2": "ha:\n“You’ve produced demerit, Evil One,",
+ "sn4.18:3.2": {
+  "empty": "up"
+ },
  "sn4.21:1.6": "—without having played with sensuality.",
  "sn4.24:10.1": "er here,\nMaybe there’s something tasty’",
  "sn4.25:2.3": "ed, Daddy?\nFor which man do you grieve?",
@@ -23852,7 +23857,7 @@
   "empty": "up"
  },
  "an7.64:10.2": {
-  "after": "ning a profit, he turns it into a loss,",
+  "after": "s,\nhaving done damage with word & deed.",
   "placed": true,
   "own": true
  },
@@ -28891,7 +28896,8 @@
   "placed": true
  },
  "snp4.9:3.1": {
-  "empty": "up"
+  "after": "nt of [further] becoming\ndo you argue?”",
+  "placed": true
  },
  "snp4.9:4.2": {
   "empty": "down"
@@ -28925,9 +28931,7 @@
   "placed": true
  },
  "snp5.1:3.3": {
-  "after": "& fruits.\nClose by was a large village.",
-  "placed": true,
-  "own": true
+  "empty": "up"
  },
  "snp5.1:8.1": {
   "after": "e, brahman,\nI don’t have five hundred.”",
@@ -40176,8 +40180,7 @@
   "own": true
  },
  "an6.45:22.2": {
-  "after": " of his belongings,\nrighteously-gained,",
-  "placed": true
+  "empty": "up"
  },
  "an9.34:6.2": {
   "after": "e dimension of the infinitude of space.",
@@ -51124,18 +51127,18 @@
   "own": true
  },
  "an3.30:7.3": {
-  "after": "e beginning, middle, & end of the talk,",
-  "placed": true
+  "empty": "down"
  },
  "an3.30:7.4": {
-  "after": " he doesn’t discern anything like that,",
+  "after": "e beginning, middle, & end of the talk,",
   "placed": true
  },
  "an3.30:7.5": {
   "empty": "up"
  },
  "an3.30:7.6": {
-  "empty": "up"
+  "after": " he doesn’t discern anything like that,",
+  "placed": true
  },
  "an3.30:9.1": {
   "after": "id to be better than those ones.\nIf he often goes in the presence of the monks,",
@@ -51143,12 +51146,11 @@
   "own": true
  },
  "an3.30:9.2": {
-  "after": "tting in that seat, he grasps the words",
-  "placed": true,
-  "own": true
+  "empty": "up"
  },
  "an3.30:9.3": {
-  "empty": "up"
+  "after": "tting in that seat, he grasps the words",
+  "placed": true
  },
  "an3.30:9.4": {
   "empty": "up"
@@ -51475,11 +51477,11 @@
   "own": true
  },
  "an7.64:21.2": {
-  "after": "many ways:\nwith a sword, taking poison,",
-  "placed": true
+  "empty": "up"
  },
  "an7.64:21.3": {
-  "empty": "up"
+  "after": "many ways:\nwith a sword, taking poison,",
+  "placed": true
  },
  "an7.7:4.2": {
   "after": "ver, man or woman, has these treasures,",
@@ -53654,11 +53656,11 @@
   "own": true
  },
  "thag6.13:6.3": {
-  "after": "st day approaches.\nThis isn’t your time",
-  "placed": true
+  "empty": "up"
  },
  "thag6.13:6.4": {
-  "empty": "up"
+  "after": "st day approaches.\nThis isn’t your time",
+  "placed": true
  },
  "thag6.3:1.2": {
   "after": "One in whom respect for his fellows in the holy life",
@@ -54466,6 +54468,56 @@
  },
  "sn9.3:2.3": {
   "after": "\nat the wrong time,\nexhorting a hunter,",
+  "placed": true,
+  "own": true
+ },
+ "an6.45:22.1": {
+  "after": " of his belongings,\nrighteously-gained,",
+  "placed": true,
+  "own": true
+ },
+ "an7.64:10.1": {
+  "after": "ning a profit, he turns it into a loss,",
+  "placed": true,
+  "own": true
+ },
+ "an7.64:10.3": {
+  "empty": "up"
+ },
+ "snp3.7:20.3": {
+  "empty": "up"
+ },
+ "snp3.7:20.4": {
+  "after": "“You claim to be rightly self-awakened,",
+  "placed": true,
+  "own": true
+ },
+ "snp4.9:3.2": {
+  "empty": "up"
+ },
+ "snp5.1:3.1": {
+  "after": "Godhāvarī,\nlived on gleanings & fruits.",
+  "placed": true,
+  "own": true
+ },
+ "snp5.1:3.2": {
+  "after": "& fruits.\nClose by was a large village.",
+  "placed": true
+ },
+ "thig6.7:4.1": {
+  "after": "ractices,\nand uncertainty as the fifth—",
+  "placed": true,
+  "own": true
+ },
+ "thig6.7:4.3": {
+  "after": "ncertainty as the fifth—\nyou won’t come",
+  "placed": true
+ },
+ "thig6.7:4.4": {
+  "empty": "up"
+ },
+ "sn4.18:3.3": {
+  "after": "ha:\n“You’ve produced demerit, Evil One,",
   "placed": true,
   "own": true
  }

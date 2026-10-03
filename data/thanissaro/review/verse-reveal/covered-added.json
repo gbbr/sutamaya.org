@@ -1,0 +1,48 @@
+{
+  "before": 54,
+  "after": 59,
+  "added": [
+    "snp3.7:20.2",
+    "snp3.7:20.3",
+    "thag16.7:14.2",
+    "thag16.7:14.3",
+    "thag16.7:14.4"
+  ],
+  "evidence": [
+    {
+      "key": "thag16.7:14.2",
+      "verseLine": true,
+      "firstEnglishKey": "thag16.7:14.1",
+      "firstEnglish": "Accepting whatever lodging he’s assigned, persevering, ",
+      "reason": "too few whole source lines for native paragraph reveal rule; first row occupied; source order preserved"
+    },
+    {
+      "key": "thag16.7:14.3",
+      "verseLine": true,
+      "firstEnglishKey": "thag16.7:14.1",
+      "firstEnglish": "Accepting whatever lodging he’s assigned, persevering, ",
+      "reason": "too few whole source lines for native paragraph reveal rule; first row occupied; source order preserved"
+    },
+    {
+      "key": "thag16.7:14.4",
+      "verseLine": true,
+      "firstEnglishKey": "thag16.7:14.1",
+      "firstEnglish": "Accepting whatever lodging he’s assigned, persevering, ",
+      "reason": "too few whole source lines for native paragraph reveal rule; first row occupied; source order preserved"
+    },
+    {
+      "key": "snp3.7:20.2",
+      "verseLine": false,
+      "firstEnglishKey": "snp3.7:20.1",
+      "firstEnglish": "Sela:\n“You claim to be rightly self-awakened, ",
+      "reason": "too few whole source lines for native paragraph reveal rule; first row occupied; source order preserved"
+    },
+    {
+      "key": "snp3.7:20.3",
+      "verseLine": true,
+      "firstEnglishKey": "snp3.7:20.1",
+      "firstEnglish": "Sela:\n“You claim to be rightly self-awakened, ",
+      "reason": "too few whole source lines for native paragraph reveal rule; first row occupied; source order preserved"
+    }
+  ]
+}

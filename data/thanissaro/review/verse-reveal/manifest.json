@@ -1,0 +1,327 @@
+{
+  "initialHidden": 21,
+  "cases": [
+    {
+      "file": "kn/thag/thag6.13_translation-en-thanissaro.json",
+      "keys": [
+        "thag6.13:6.1",
+        "thag6.13:6.2",
+        "thag6.13:6.3",
+        "thag6.13:6.4"
+      ],
+      "hidden": [
+        "thag6.13:6.4"
+      ],
+      "lineCount": 3,
+      "paliRows": 4,
+      "firstEmpty": false,
+      "barePair": false,
+      "nonverseRows": [],
+      "paragraphKeys": [
+        "thag6.13:6.1",
+        "thag6.13:6.2",
+        "thag6.13:6.3",
+        "thag6.13:6.4"
+      ]
+    },
+    {
+      "file": "kn/thag/thag16.7_translation-en-thanissaro.json",
+      "keys": [
+        "thag16.7:14.1",
+        "thag16.7:14.2",
+        "thag16.7:14.3",
+        "thag16.7:14.4"
+      ],
+      "hidden": [
+        "thag16.7:14.2",
+        "thag16.7:14.3",
+        "thag16.7:14.4"
+      ],
+      "lineCount": 1,
+      "paliRows": 4,
+      "firstEmpty": false,
+      "barePair": true,
+      "nonverseRows": [],
+      "paragraphKeys": [
+        "thag16.7:14.1",
+        "thag16.7:14.2",
+        "thag16.7:14.3",
+        "thag16.7:14.4"
+      ]
+    },
+    {
+      "file": "kn/thig/thig6.7_translation-en-thanissaro.json",
+      "keys": [
+        "thig6.7:4.1",
+        "thig6.7:4.2",
+        "thig6.7:4.3",
+        "thig6.7:4.4"
+      ],
+      "hidden": [
+        "thig6.7:4.1",
+        "thig6.7:4.2"
+      ],
+      "lineCount": 2,
+      "paliRows": 4,
+      "firstEmpty": true,
+      "barePair": true,
+      "nonverseRows": [],
+      "paragraphKeys": [
+        "thig6.7:4.1",
+        "thig6.7:4.2",
+        "thig6.7:4.3",
+        "thig6.7:4.4"
+      ]
+    },
+    {
+      "file": "kn/snp/vagga5/snp5.1_translation-en-thanissaro.json",
+      "keys": [
+        "snp5.1:3.1",
+        "snp5.1:3.2",
+        "snp5.1:3.3",
+        "snp5.1:3.4"
+      ],
+      "hidden": [
+        "snp5.1:3.1"
+      ],
+      "lineCount": 3,
+      "paliRows": 4,
+      "firstEmpty": true,
+      "barePair": false,
+      "nonverseRows": [],
+      "paragraphKeys": [
+        "snp5.1:3.1",
+        "snp5.1:3.2",
+        "snp5.1:3.3",
+        "snp5.1:3.4"
+      ]
+    },
+    {
+      "file": "kn/snp/vagga3/snp3.7_translation-en-thanissaro.json",
+      "keys": [
+        "snp3.7:20.1",
+        "snp3.7:20.3",
+        "snp3.7:20.4",
+        "snp3.7:20.5"
+      ],
+      "hidden": [
+        "snp3.7:20.4",
+        "snp3.7:20.5"
+      ],
+      "lineCount": 3,
+      "paliRows": 4,
+      "firstEmpty": false,
+      "barePair": true,
+      "nonverseRows": [
+        "snp3.7:20.2"
+      ],
+      "paragraphKeys": [
+        "snp3.7:20.1",
+        "snp3.7:20.2",
+        "snp3.7:20.3",
+        "snp3.7:20.4",
+        "snp3.7:20.5"
+      ]
+    },
+    {
+      "file": "kn/snp/vagga4/snp4.9_translation-en-thanissaro.json",
+      "keys": [
+        "snp4.9:3.1",
+        "snp4.9:3.3",
+        "snp4.9:3.4",
+        "snp4.9:3.5"
+      ],
+      "hidden": [
+        "snp4.9:3.1"
+      ],
+      "lineCount": 8,
+      "paliRows": 4,
+      "firstEmpty": true,
+      "barePair": false,
+      "nonverseRows": [
+        "snp4.9:3.2"
+      ],
+      "paragraphKeys": [
+        "snp4.9:3.1",
+        "snp4.9:3.2",
+        "snp4.9:3.3",
+        "snp4.9:3.4",
+        "snp4.9:3.5"
+      ]
+    },
+    {
+      "file": "an/an6/an6.45_translation-en-thanissaro.json",
+      "keys": [
+        "an6.45:22.1",
+        "an6.45:22.2",
+        "an6.45:22.3",
+        "an6.45:22.4",
+        "an6.45:22.5",
+        "an6.45:22.6"
+      ],
+      "hidden": [
+        "an6.45:22.1"
+      ],
+      "lineCount": 5,
+      "paliRows": 6,
+      "firstEmpty": true,
+      "barePair": false,
+      "nonverseRows": [],
+      "paragraphKeys": [
+        "an6.45:22.1",
+        "an6.45:22.2",
+        "an6.45:22.3",
+        "an6.45:22.4",
+        "an6.45:22.5",
+        "an6.45:22.6"
+      ]
+    },
+    {
+      "file": "an/an7/an7.64_translation-en-thanissaro.json",
+      "keys": [
+        "an7.64:9.1",
+        "an7.64:9.2",
+        "an7.64:9.3",
+        "an7.64:9.4"
+      ],
+      "hidden": [
+        "an7.64:9.4"
+      ],
+      "lineCount": 2,
+      "paliRows": 4,
+      "firstEmpty": false,
+      "barePair": false,
+      "nonverseRows": [],
+      "paragraphKeys": [
+        "an7.64:9.1",
+        "an7.64:9.2",
+        "an7.64:9.3",
+        "an7.64:9.4"
+      ]
+    },
+    {
+      "file": "an/an7/an7.64_translation-en-thanissaro.json",
+      "keys": [
+        "an7.64:10.1",
+        "an7.64:10.2",
+        "an7.64:10.3",
+        "an7.64:10.4"
+      ],
+      "hidden": [
+        "an7.64:10.1"
+      ],
+      "lineCount": 3,
+      "paliRows": 4,
+      "firstEmpty": true,
+      "barePair": false,
+      "nonverseRows": [],
+      "paragraphKeys": [
+        "an7.64:10.1",
+        "an7.64:10.2",
+        "an7.64:10.3",
+        "an7.64:10.4"
+      ]
+    },
+    {
+      "file": "an/an7/an7.64_translation-en-thanissaro.json",
+      "keys": [
+        "an7.64:21.1",
+        "an7.64:21.2",
+        "an7.64:21.3",
+        "an7.64:21.4"
+      ],
+      "hidden": [
+        "an7.64:21.3",
+        "an7.64:21.4"
+      ],
+      "lineCount": 2,
+      "paliRows": 4,
+      "firstEmpty": false,
+      "barePair": true,
+      "nonverseRows": [],
+      "paragraphKeys": [
+        "an7.64:21.1",
+        "an7.64:21.2",
+        "an7.64:21.3",
+        "an7.64:21.4"
+      ]
+    },
+    {
+      "file": "an/an3/an3.30_translation-en-thanissaro.json",
+      "keys": [
+        "an3.30:7.1",
+        "an3.30:7.2",
+        "an3.30:7.3",
+        "an3.30:7.4",
+        "an3.30:7.5",
+        "an3.30:7.6"
+      ],
+      "hidden": [
+        "an3.30:7.5",
+        "an3.30:7.6"
+      ],
+      "lineCount": 4,
+      "paliRows": 6,
+      "firstEmpty": false,
+      "barePair": true,
+      "nonverseRows": [],
+      "paragraphKeys": [
+        "an3.30:7.1",
+        "an3.30:7.2",
+        "an3.30:7.3",
+        "an3.30:7.4",
+        "an3.30:7.5",
+        "an3.30:7.6"
+      ]
+    },
+    {
+      "file": "an/an3/an3.30_translation-en-thanissaro.json",
+      "keys": [
+        "an3.30:9.1",
+        "an3.30:9.2",
+        "an3.30:9.3",
+        "an3.30:9.4"
+      ],
+      "hidden": [
+        "an3.30:9.3",
+        "an3.30:9.4"
+      ],
+      "lineCount": 2,
+      "paliRows": 4,
+      "firstEmpty": false,
+      "barePair": true,
+      "nonverseRows": [],
+      "paragraphKeys": [
+        "an3.30:9.1",
+        "an3.30:9.2",
+        "an3.30:9.3",
+        "an3.30:9.4"
+      ]
+    },
+    {
+      "file": "sn/sn4/sn4.18_translation-en-thanissaro.json",
+      "keys": [
+        "sn4.18:3.1",
+        "sn4.18:3.2",
+        "sn4.18:3.3",
+        "sn4.18:3.4"
+      ],
+      "hidden": [
+        "sn4.18:3.3",
+        "sn4.18:3.4"
+      ],
+      "lineCount": 3,
+      "paliRows": 4,
+      "firstEmpty": false,
+      "barePair": true,
+      "nonverseRows": [],
+      "paragraphKeys": [
+        "sn4.18:3.1",
+        "sn4.18:3.2",
+        "sn4.18:3.3",
+        "sn4.18:3.4"
+      ]
+    }
+  ],
+  "sourceEvidence": "Prior native source-block export checked against byte-identical saved pages"
+}

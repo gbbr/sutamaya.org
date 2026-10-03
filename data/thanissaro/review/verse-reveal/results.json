@@ -1,0 +1,70 @@
+{
+  "status": "copied back to translations; all three repository checks pass; no commit",
+  "initialHiddenVersePaliLines": 21,
+  "remainingHiddenVersePaliLines": 0,
+  "paragraphsReviewed": 13,
+  "changedEnglishRows": 27,
+  "changedNotesRows": 0,
+  "changedAppTexts": [
+    "an3.30",
+    "an6.45",
+    "an7.64",
+    "sn4.18",
+    "snp3.7",
+    "snp4.9",
+    "snp5.1",
+    "thag6.13",
+    "thig6.7"
+  ],
+  "coveredAdded": [
+    "snp3.7:20.2",
+    "snp3.7:20.3",
+    "thag16.7:14.2",
+    "thag16.7:14.3",
+    "thag16.7:14.4"
+  ],
+  "existingCoveragePreserved": true,
+  "allFirstOwnLinesOnFirstPaliVerseRows": true,
+  "wholeSourceLinesAndWordOrderPreserved": true,
+  "judge": {
+    "groups": 11,
+    "counts": {
+      "better": 10,
+      "same": 1
+    },
+    "model": "gpt-6-astra",
+    "effort": "high"
+  },
+  "checks": {
+    "check-round": {
+      "partialSourceLines": 0,
+      "newlyShownByRedistribution": 18,
+      "newlyHiddenOutsideCoverage": 0,
+      "hiddenTranslatedVerseLines": 0
+    },
+    "check-upstream": {
+      "pages": 1430,
+      "differ": 0,
+      "expectedReferences": 13,
+      "expectedHeadingNumbers": 6
+    },
+    "check-integrity": {
+      "problems": 0
+    },
+    "plainReproducesKeptCutsAndTexts": true,
+    "cross3": "1 suspect; reviewed none (verse has no translation)",
+    "cross4": "0 suspects",
+    "lists3": "0 suspects"
+  },
+  "speakerRows": "Speaker prefixes kept with first actual English line; snp3.7:20.2 also covered because its English speaker prefix is above it.",
+  "previousOpenCaseSettled": "snp4.9:3.1 speaker interruption fixed without changing word order",
+  "otherEarlierVerseOwnershipCases": "Unchanged; this round only settles reveal layout.",
+  "effort": "high",
+  "startedUtc": "2026-10-03T12:51:24.467564+00:00",
+  "validatedUtc": "2026-10-03T13:19:24.737834+00:00",
+  "repositoryChecksPassed": true,
+  "allOtherTranslatorFilesAndUpstreamPagesPreserved": true,
+  "scriptsNotCopiedOrEdited": true,
+  "completedUtc": "2026-10-03T13:21:43.675118+00:00",
+  "elapsedMinutes": 30.3
+}

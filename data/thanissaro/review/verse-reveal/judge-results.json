@@ -1,0 +1,9 @@
+{
+  "groups": 11,
+  "counts": {
+    "better": 10,
+    "same": 1
+  },
+  "model": "gpt-6-astra",
+  "effort": "high"
+}

@@ -76,8 +76,8 @@ thag6.12:2.3 starts: Whoever doesn’t flare up
 thag6.12:2.4 starts: wins a battle
 thag6.13:6.1 starts: Your last day approaches.
 thag6.13:6.2 starts: This isn’t your time
-thag6.13:6.3 starts: to be heedless.
-thag6.13:6.4 none
+# superseded: thag6.13:6.3 starts: to be heedless.
+# superseded: thag6.13:6.4 none
 thag7.1:2.1 starts: Stepping out of her slippers—
 thag7.1:2.2 starts: her hands raised before me,
 thag7.1:2.3 starts: she softly, tenderly,

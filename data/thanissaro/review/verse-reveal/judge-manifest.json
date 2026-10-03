@@ -1,0 +1,7 @@
+{
+  "groups": 11,
+  "sampling": "all passing groups",
+  "packetSha256": "d75ecde0cc5252544b668dfd0f369cafed153e384f865906331b298bd4ab7650",
+  "model": "gpt-6-astra",
+  "effort": "high"
+}

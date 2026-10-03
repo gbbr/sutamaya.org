@@ -1,0 +1,67 @@
+[
+  {
+    "file": "data/thanissaro/review/hand/flagged-001.findings",
+    "finding": "an6.45:22.2 starts: wins both goals:",
+    "reason": "new verse reveal layout: first own line first; whole lines spread to avoid hidden Pali"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-055.findings",
+    "finding": "an7.64:10.2 starts: having done damage with word & deed.",
+    "reason": "new verse reveal layout: first own line first; whole lines spread to avoid hidden Pali"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-092.findings",
+    "finding": "snp5.1:3.3 starts: And with the income from that village",
+    "reason": "new verse reveal layout: first own line first; whole lines spread to avoid hidden Pali"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-083.findings",
+    "finding": "an6.45:22.2 starts: wins both goals: advantage in the here",
+    "reason": "new verse reveal layout: first own line first; whole lines spread to avoid hidden Pali"
+  },
+  {
+    "file": "data/thanissaro/review/verse/source-breaks.findings",
+    "finding": "an3.30:7.3 starts: but getting up, he doesn’t discern anything like",
+    "reason": "new verse reveal layout: first own line first; whole lines spread to avoid hidden Pali"
+  },
+  {
+    "file": "data/thanissaro/review/verse/source-breaks.findings",
+    "finding": "an3.30:7.4 starts: for he forgets what he had grasped.",
+    "reason": "new verse reveal layout: first own line first; whole lines spread to avoid hidden Pali"
+  },
+  {
+    "file": "data/thanissaro/review/verse/source-breaks.findings",
+    "finding": "an3.30:7.6 none",
+    "reason": "new verse reveal layout: first own line first; whole lines spread to avoid hidden Pali"
+  },
+  {
+    "file": "data/thanissaro/review/verse/source-breaks.findings",
+    "finding": "an3.30:9.2 starts: of the beginning, middle, & end of the",
+    "reason": "new verse reveal layout: first own line first; whole lines spread to avoid hidden Pali"
+  },
+  {
+    "file": "data/thanissaro/review/verse/source-breaks.findings",
+    "finding": "an3.30:9.3 none",
+    "reason": "new verse reveal layout: first own line first; whole lines spread to avoid hidden Pali"
+  },
+  {
+    "file": "data/thanissaro/review/verse/source-breaks.findings",
+    "finding": "an7.64:21.2 starts: hanging himself by a rope in a mountain",
+    "reason": "new verse reveal layout: first own line first; whole lines spread to avoid hidden Pali"
+  },
+  {
+    "file": "data/thanissaro/review/verse/source-breaks.findings",
+    "finding": "an7.64:21.3 none",
+    "reason": "new verse reveal layout: first own line first; whole lines spread to avoid hidden Pali"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-057.findings",
+    "finding": "thag6.13:6.3 starts: to be heedless.",
+    "reason": "new verse reveal layout: first own line first; whole lines spread to avoid hidden Pali"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-057.findings",
+    "finding": "thag6.13:6.4 none",
+    "reason": "new verse reveal layout: first own line first; whole lines spread to avoid hidden Pali"
+  }
+]

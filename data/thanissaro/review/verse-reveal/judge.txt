@@ -1,0 +1,107 @@
+# Blind judge: Ṭhānissaro verse reveal, 11 changed groups
+Judge numbered groups better/same/worse. Pali decides whole verse, not literal English/Pali row matching.
+New rule: first actual own English line on first Pali verse row, English kept whole at its source line breaks in order, spread so no two bare verse rows adjacent where enough own lines exist.
+A speaker prefix stays with actual first English line when moved. Bare leftovers from too few lines may be covered; their English need not be invented or split.
+Before/After show actual English line breaks as ⏎. Do not mark worse merely because a line translates another row within same verse.
+Full paragraphs shown including internal speaker rows; surrounding CONTEXT unchanged.
+No first-reader notes/findings included. Save 1 better / 2 same / N worse: short concrete reason, all1–11.
+
+## 1 an3.30
+VERSE an3.30:7.1 an3.30:7.2 an3.30:7.3 an3.30:7.4 an3.30:7.5 an3.30:7.6
+an3.30:7.1 | P: Ādiṁ kathāya majjhañca,  | S: such a person can only learn  | Before: while sitting in that seat, grasps the words  | After: while sitting in that seat, grasps the words 
+an3.30:7.2 | P: pariyosānañca tādiso;  | S: the beginning, middle, and end  | Before: of the beginning, middle, & end of the talk,  | After: of the beginning, middle, & end of the talk,
+an3.30:7.3 | P: Nisinno āsane tasmiṁ,  | S: while sitting in that seat;  | Before: but getting up, he doesn’t discern anything like that,  | After: (none)
+an3.30:7.4 | P: uggahetvāna byañjanaṁ;  | S: but they’ve only grasped the phrasing,  | Before: for he forgets what he had grasped.  | After: but getting up, he doesn’t discern anything like that,
+an3.30:7.5 | P: Vuṭṭhito nappajānāti,  | S: for when they rise their understanding fails,  | Before: (none) | After: (none)
+an3.30:7.6 | P: gahitaṁ hissa mussati.  | S: and what they’ve learned is lost.  | Before: (none) | After: for he forgets what he had grasped.
+an3.30:8.1 | P: Puthupañño ca puriso,  | S: The person with widespread wisdom  | Before: But a man of wide open discernment  | After: But a man of wide open discernment 
+
+## 2 an3.30
+VERSE an3.30:9.1 an3.30:9.2 an3.30:9.3 an3.30:9.4
+an3.30:9.1 | P: Ādiṁ kathāya majjhañca,  | S: one such can learn  | Before: while sitting in that seat, he grasps the words  | After: while sitting in that seat, he grasps the words
+an3.30:9.2 | P: pariyosānañca tādiso;  | S: the beginning, middle, and end  | Before: of the beginning, middle, & end of the talk.  | After: (none)
+an3.30:9.3 | P: Nisinno āsane tasmiṁ,  | S: while sitting in that seat;  | Before: (none) | After: of the beginning, middle, & end of the talk.
+an3.30:9.4 | P: uggahetvāna byañjanaṁ.  | S: and when they’ve grasped the phrasing,  | Before: (none) | After: (none)
+an3.30:10.1 | P: Dhāreti seṭṭhasaṅkappo,  | S: they remember it with the best of intentions.  | Before: He remembers—the person of undivided mind,  | After: He remembers—the person of undivided mind, 
+
+## 3 an6.45
+an6.45:21.4 | P: dadaṁ cittaṁ pasādayaṁ.  | S: with wealth that is properly earned.  | Before: of his belongings, ⏎ righteously-gained,  | After: of his belongings, ⏎ righteously-gained, 
+VERSE an6.45:22.1 an6.45:22.2 an6.45:22.3 an6.45:22.4 an6.45:22.5 an6.45:22.6
+an6.45:22.1 | P: Ubhayattha kaṭaggāho,  | S: That faithful householder of discernment  | Before: (none) | After: wins both goals:
+an6.45:22.2 | P: saddhassa gharamesino;  | S: holds a winning hand on both counts:  | Before: wins both goals:  | After: (none)
+an6.45:22.3 | P: Diṭṭhadhammahitatthāya,  | S: welfare and benefit in this life,  | Before: advantage in the here & now,  | After: advantage in the here & now,
+an6.45:22.4 | P: samparāyasukhāya ca;  | S: and happiness in lives to come.  | Before: & happiness in the world beyond.  | After: & happiness in the world beyond. 
+an6.45:22.5 | P: Evametaṁ gahaṭṭhānaṁ,  | S: This is how, for a householder,  | Before: The liberality of this householder  | After: The liberality of this householder 
+an6.45:22.6 | P: cāgo puññaṁ pavaḍḍhati.  | S: merit grows by generosity.  | Before: piles up merit.  | After: piles up merit. 
+
+## 4 an7.64
+VERSE an7.64:9.1 an7.64:9.2 an7.64:9.3 an7.64:9.4
+an7.64:9.1 | P: Kodhano dubbaṇṇo hoti,  | S: An irritable person is ugly  | Before: An angry person is ugly & sleeps poorly.  | After: An angry person is ugly & sleeps poorly. 
+an7.64:9.2 | P: atho dukkhampi seti so;  | S: and they sleep badly.  | Before: (none) | After: (none)
+an7.64:9.3 | P: Atho atthaṁ gahetvāna,  | S: When they get what they need,  | Before: Gaining a profit, he turns it into a loss,  | After: Gaining a profit, he turns it into a loss,
+an7.64:9.4 | P: anatthaṁ adhipajjati.  | S: they take it to be what they don’t need.  | Before: (none) | After: (none)
+VERSE an7.64:10.1 an7.64:10.2 an7.64:10.3 an7.64:10.4
+an7.64:10.1 | P: Tato kāyena vācāya,  | S: An angry person  | Before: (none) | After: having done damage with word & deed.
+an7.64:10.2 | P: vadhaṁ katvāna kodhano;  | S: kills with body or speech;  | Before: having done damage with word & deed.  | After: A person overwhelmed with anger
+an7.64:10.3 | P: Kodhābhibhūto puriso,  | S: overcome with anger,  | Before: A person overwhelmed with anger  | After: (none)
+an7.64:10.4 | P: dhanajāniṁ nigacchati.  | S: they lose their wealth.  | Before: destroys his wealth.  | After: destroys his wealth.
+
+## 5 an7.64
+VERSE an7.64:21.1 an7.64:21.2 an7.64:21.3 an7.64:21.4
+an7.64:21.1 | P: Asinā hanti attānaṁ,  | S: Some kill themselves with swords,  | Before: with a sword, taking poison,  | After: with a sword, taking poison,
+an7.64:21.2 | P: visaṁ khādanti mucchitā;  | S: some, distraught, take poison.  | Before: hanging himself by a rope in a mountain glen.  | After: (none)
+an7.64:21.3 | P: Rajjuyā bajjha mīyanti,  | S: Some hang themselves with rope,  | Before: (none) | After: hanging himself by a rope in a mountain glen.
+an7.64:21.4 | P: pabbatāmapi kandare.  | S: or fling themselves down a mountain gorge.  | Before: (none) | After: (none)
+an7.64:22.1 | P: Bhūnahaccāni kammāni,  | S: When they commit deeds of baby-killing,  | Before: Doing these deeds  | After: Doing these deeds 
+
+## 6 snp3.7
+VERSE snp3.7:20.1 snp3.7:20.3 snp3.7:20.4 snp3.7:20.5
+snp3.7:20.1 | P: “Sambuddho paṭijānāsi,  | S: “You claim to be awakened,”  | Before: Sela: ⏎ “You claim to be rightly self-awakened,  | After: Sela: ⏎ “You claim to be rightly self-awakened,
+snp3.7:20.2 | P: (iti selo brāhmaṇo)  | S: said Sela the brahmin,  | Before: (none) | After: (none)
+snp3.7:20.3 | P: Dhammarājā anuttaro;  | S: “the supreme king of the teaching.  | Before: a Dhamma king unexcelled.  | After: (none)
+snp3.7:20.4 | P: ‘Dhammena cakkaṁ vattemi’,  | S: ‘I roll forth the teaching’:  | Before: (none) | After: a Dhamma king unexcelled.
+snp3.7:20.5 | P: Iti bhāsasi gotama.  | S: so you say, Gotama.  | Before: (none) | After: (none)
+snp3.7:21.1 | P: Ko nu senāpati bhoto,  | S: Then who is your general,  | Before: But who, master, is your general,  | After: But who, master, is your general, 
+
+## 7 snp4.9
+snp4.9:2.4 | P: Bhavūpapattiñca vadesi kīdisaṁ”.  | S: and rebirth in a new life do you assert?”  | Before: attainment of [further] becoming ⏎ do you argue?”  | After: attainment of [further] becoming ⏎ do you argue?” 
+VERSE snp4.9:3.1 snp4.9:3.3 snp4.9:3.4 snp4.9:3.5
+snp4.9:3.1 | P: “Idaṁ vadāmīti na tassa hoti,  | S: “After judging among the teachings,”  | Before: (none) | After: The Buddha: ⏎ “‘I argue for this’
+snp4.9:3.2 | P: (māgaṇḍiyāti bhagavā)  | S: said the Buddha to Māgaṇḍiya,  | Before: The Buddha:  | After: (none)
+snp4.9:3.3 | P: Dhammesu niccheyya samuggahītaṁ;  | S: “none have been adopted thinking, ‘I assert this.’  | Before: “‘I argue for this’ ⏎ doesn’t occur to one ⏎ when considering what’s grasped ⏎ among doctrines.  | After: doesn’t occur to one ⏎ when considering what’s grasped ⏎ among doctrines.
+snp4.9:3.4 | P: Passañca diṭṭhīsu anuggahāya,  | S: Seeing views without adopting any,  | Before: Looking for what is ungrasped ⏎ with regard to views,  | After: Looking for what is ungrasped ⏎ with regard to views,
+snp4.9:3.5 | P: Ajjhattasantiṁ pacinaṁ adassaṁ”.  | S: searching, I saw inner peace.”  | Before: and detecting inner peace, ⏎ I saw.”  | After: and detecting inner peace, ⏎ I saw.” 
+
+## 8 snp5.1
+snp5.1:2.4 | P: uñchena ca phalena ca.  | S: getting by on gleanings and fruit.  | Before: lived on gleanings & fruits.  | After: lived on gleanings & fruits. 
+VERSE snp5.1:3.1 snp5.1:3.2 snp5.1:3.3 snp5.1:3.4
+snp5.1:3.1 | P: Tasseva upanissāya,  | S: He was supported  | Before: (none) | After: Close by was a large village.
+snp5.1:3.2 | P: gāmo ca vipulo ahu;  | S: by a prosperous village nearby.  | Before: Close by was a large village.  | After: And with the income from that village
+snp5.1:3.3 | P: Tato jātena āyena,  | S: With the revenue earned from there  | Before: And with the income from that village  | After: (none)
+snp5.1:3.4 | P: mahāyaññamakappayi.  | S: he performed a great sacrifice.  | Before: he performed a great sacrifice.  | After: he performed a great sacrifice.
+
+## 9 thag6.13
+VERSE thag6.13:6.1 thag6.13:6.2 thag6.13:6.3 thag6.13:6.4
+thag6.13:6.1 | P: Carato tiṭṭhato vāpi,  | S: Walking or standing,  | Before: Your last day approaches.  | After: Your last day approaches. 
+thag6.13:6.2 | P: āsīnasayanassa vā;  | S: sitting or lying down:  | Before: This isn’t your time  | After: This isn’t your time
+thag6.13:6.3 | P: Upeti carimā ratti,  | S: your final night draws near;  | Before: to be heedless.  | After: (none)
+thag6.13:6.4 | P: na te kālo pamajjitun”ti.  | S: you have no time to be careless.  | Before: (none) | After: to be heedless.
+thag6.13:6.5 | P: … Sirimaṇḍo thero ….  | S:  | Before: (none) | After: (none)
+
+## 10 thig6.7
+thig6.7:3.4 | P: vicikicchañca pañcamaṁ.  | S: and doubt as the fifth.  | Before: and uncertainty as the fifth—  | After: and uncertainty as the fifth— 
+VERSE thig6.7:4.1 thig6.7:4.2 thig6.7:4.3 thig6.7:4.4
+thig6.7:4.1 | P: Saṁyojanāni etāni,  | S: O nun, when you have given up  | Before: (none) | After: you won’t come
+thig6.7:4.2 | P: pajahitvāna bhikkhunī;  | S: these lower fetters,  | Before: (none) | After: (none)
+thig6.7:4.3 | P: Orambhāgamanīyāni,  | S: you won’t come back  | Before: you won’t come  | After: to this again.
+thig6.7:4.4 | P: nayidaṁ punarehisi.  | S: to this world again.  | Before: to this again.  | After: (none)
+thig6.7:5.1 | P: Rāgaṁ mānaṁ avijjañca,  | S: And when you’re rid of desire,  | Before: Forsaking passion, conceit,  | After: Forsaking passion, conceit, 
+
+## 11 sn4.18
+VERSE sn4.18:3.1 sn4.18:3.2 sn4.18:3.3 sn4.18:3.4
+sn4.18:3.1 | P: “Apuññaṁ pasavi māro,  | S: “Māra has produced wickedness  | Before: The Buddha: ⏎ “You’ve produced demerit, Evil One,  | After: The Buddha: ⏎ “You’ve produced demerit, Evil One,
+sn4.18:3.2 | P: āsajja naṁ tathāgataṁ;  | S: in attacking the Realized One.  | Before: insulting the Tathāgata.  | After: (none)
+sn4.18:3.3 | P: Kiṁ nu maññasi pāpima,  | S: Wicked One, do you imagine that  | Before: (none) | After: insulting the Tathāgata.
+sn4.18:3.4 | P: na me pāpaṁ vipaccati.  | S: your wickedness won’t bear fruit?  | Before: (none) | After: (none)
+sn4.18:4.1 | P: Susukhaṁ vata jīvāma,  | S: Let us live so very happily,  | Before: How very happily we live,  | After: How very happily we live, 
+

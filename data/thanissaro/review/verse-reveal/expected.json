@@ -1,0 +1,201 @@
+{
+  "cases": [
+    {
+      "firstKey": "thag6.13:6.1",
+      "assignments": {
+        "thag6.13:6.1": "Your last day approaches.",
+        "thag6.13:6.2": "This isn’t your time",
+        "thag6.13:6.3": "",
+        "thag6.13:6.4": "to be heedless."
+      },
+      "sourceWhole": true,
+      "paragraphWordOrderPreserved": true
+    },
+    {
+      "firstKey": "thag16.7:14.1",
+      "assignments": {
+        "thag16.7:14.1": "Accepting whatever lodging he’s assigned, persevering,",
+        "thag16.7:14.2": "",
+        "thag16.7:14.3": "",
+        "thag16.7:14.4": ""
+      },
+      "sourceWhole": true,
+      "paragraphWordOrderPreserved": true
+    },
+    {
+      "firstKey": "thig6.7:4.1",
+      "assignments": {
+        "thig6.7:4.1": "you won’t come",
+        "thig6.7:4.2": "",
+        "thig6.7:4.3": "to this again.",
+        "thig6.7:4.4": ""
+      },
+      "sourceWhole": true,
+      "paragraphWordOrderPreserved": true
+    },
+    {
+      "firstKey": "snp5.1:3.1",
+      "assignments": {
+        "snp5.1:3.1": "Close by was a large village.",
+        "snp5.1:3.2": "And with the income from that village",
+        "snp5.1:3.3": "",
+        "snp5.1:3.4": "he performed a great sacrifice."
+      },
+      "sourceWhole": true,
+      "paragraphWordOrderPreserved": true
+    },
+    {
+      "firstKey": "snp3.7:20.1",
+      "assignments": {
+        "snp3.7:20.1": "Sela:\n“You claim to be rightly self-awakened,",
+        "snp3.7:20.2": "",
+        "snp3.7:20.3": "",
+        "snp3.7:20.4": "a Dhamma king unexcelled.",
+        "snp3.7:20.5": ""
+      },
+      "sourceWhole": true,
+      "paragraphWordOrderPreserved": true
+    },
+    {
+      "firstKey": "snp4.9:3.1",
+      "assignments": {
+        "snp4.9:3.1": "The Buddha:\n“‘I argue for this’",
+        "snp4.9:3.2": "",
+        "snp4.9:3.3": "doesn’t occur to one\nwhen considering what’s grasped\namong doctrines.",
+        "snp4.9:3.4": "Looking for what is ungrasped\nwith regard to views,",
+        "snp4.9:3.5": "and detecting inner peace,\nI saw.”"
+      },
+      "sourceWhole": true,
+      "paragraphWordOrderPreserved": true
+    },
+    {
+      "firstKey": "an6.45:22.1",
+      "assignments": {
+        "an6.45:22.1": "wins both goals:",
+        "an6.45:22.2": "",
+        "an6.45:22.3": "advantage in the here & now,",
+        "an6.45:22.4": "& happiness in the world beyond.",
+        "an6.45:22.5": "The liberality of this householder",
+        "an6.45:22.6": "piles up merit."
+      },
+      "sourceWhole": true,
+      "paragraphWordOrderPreserved": true
+    },
+    {
+      "firstKey": "an7.64:9.1",
+      "assignments": {
+        "an7.64:9.1": "An angry person is ugly & sleeps poorly.",
+        "an7.64:9.2": "",
+        "an7.64:9.3": "Gaining a profit, he turns it into a loss,",
+        "an7.64:9.4": ""
+      },
+      "sourceWhole": true,
+      "paragraphWordOrderPreserved": true
+    },
+    {
+      "firstKey": "an7.64:10.1",
+      "assignments": {
+        "an7.64:10.1": "having done damage with word & deed.",
+        "an7.64:10.2": "A person overwhelmed with anger",
+        "an7.64:10.3": "",
+        "an7.64:10.4": "destroys his wealth."
+      },
+      "sourceWhole": true,
+      "paragraphWordOrderPreserved": true
+    },
+    {
+      "firstKey": "an7.64:21.1",
+      "assignments": {
+        "an7.64:21.1": "with a sword, taking poison,",
+        "an7.64:21.2": "",
+        "an7.64:21.3": "hanging himself by a rope in a mountain glen.",
+        "an7.64:21.4": ""
+      },
+      "sourceWhole": true,
+      "paragraphWordOrderPreserved": true
+    },
+    {
+      "firstKey": "an3.30:7.1",
+      "assignments": {
+        "an3.30:7.1": "while sitting in that seat, grasps the words",
+        "an3.30:7.2": "of the beginning, middle, & end of the talk,",
+        "an3.30:7.3": "",
+        "an3.30:7.4": "but getting up, he doesn’t discern anything like that,",
+        "an3.30:7.5": "",
+        "an3.30:7.6": "for he forgets what he had grasped."
+      },
+      "sourceWhole": true,
+      "paragraphWordOrderPreserved": true
+    },
+    {
+      "firstKey": "an3.30:9.1",
+      "assignments": {
+        "an3.30:9.1": "while sitting in that seat, he grasps the words",
+        "an3.30:9.2": "",
+        "an3.30:9.3": "of the beginning, middle, & end of the talk.",
+        "an3.30:9.4": ""
+      },
+      "sourceWhole": true,
+      "paragraphWordOrderPreserved": true
+    },
+    {
+      "firstKey": "sn4.18:3.1",
+      "assignments": {
+        "sn4.18:3.1": "The Buddha:\n“You’ve produced demerit, Evil One,",
+        "sn4.18:3.2": "",
+        "sn4.18:3.3": "insulting the Tathāgata.",
+        "sn4.18:3.4": ""
+      },
+      "sourceWhole": true,
+      "paragraphWordOrderPreserved": true
+    }
+  ],
+  "changedKeys": [
+    "thag6.13:6.1",
+    "thag6.13:6.2",
+    "thag6.13:6.3",
+    "thag6.13:6.4",
+    "thag16.7:14.1",
+    "thig6.7:4.1",
+    "thig6.7:4.3",
+    "thig6.7:4.4",
+    "snp5.1:3.1",
+    "snp5.1:3.2",
+    "snp5.1:3.3",
+    "snp5.1:3.4",
+    "snp3.7:20.1",
+    "snp3.7:20.3",
+    "snp3.7:20.4",
+    "snp4.9:3.1",
+    "snp4.9:3.2",
+    "snp4.9:3.3",
+    "snp4.9:3.4",
+    "snp4.9:3.5",
+    "an6.45:22.1",
+    "an6.45:22.2",
+    "an6.45:22.3",
+    "an6.45:22.4",
+    "an6.45:22.5",
+    "an6.45:22.6",
+    "an7.64:9.1",
+    "an7.64:9.3",
+    "an7.64:10.1",
+    "an7.64:10.2",
+    "an7.64:10.3",
+    "an7.64:10.4",
+    "an7.64:21.1",
+    "an7.64:21.2",
+    "an7.64:21.3",
+    "an3.30:7.1",
+    "an3.30:7.2",
+    "an3.30:7.3",
+    "an3.30:7.4",
+    "an3.30:7.6",
+    "an3.30:9.1",
+    "an3.30:9.2",
+    "an3.30:9.3",
+    "sn4.18:3.1",
+    "sn4.18:3.2",
+    "sn4.18:3.3"
+  ]
+}

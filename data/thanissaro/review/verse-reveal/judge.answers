@@ -1,0 +1,11 @@
+1 better: Preserves all four English lines in order and removes adjacent bare verse rows.
+2 better: Spreads the two intact English lines so the bare verse rows are no longer adjacent.
+3 better: Moves the actual first English line to the first verse row while preserving order.
+4 better: The second verse now begins with its actual first English line and retains all lines in order.
+5 better: Separates the two bare verse rows without splitting or reordering either English line.
+6 better: Preserves the speaker and English line order while removing adjacent bare verse rows.
+7 better: Reveals the actual first English line on the first verse row with its speaker prefix and preserves every source line.
+8 better: Reveals the actual first English line on the first verse row and keeps the remaining lines intact and ordered.
+9 same: Both versions begin with the first English line and have only one bare verse row; the move preserves all lines and order.
+10 better: Starts the verse with its actual first English line and removes adjacent bare verse rows.
+11 better: Preserves the speaker and both intact English lines while separating the bare verse rows.
