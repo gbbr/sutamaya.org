@@ -5,9 +5,11 @@
 another large review. This plan and its repository archive let any capable AI continue without
 access to Claude account memories, the Desktop ZIP, or ignored recovery folders.
 
-The goal is accurate English–Pali correspondence and enough explicit coverage data to make most
-Pali revealable in the app. Keep the translator's wording and source order intact. Prepare data
-first; app implementation comes later.
+The goal is correct correspondence for every English segment in the translations this work covers,
+including groups where English and Pali order or segmentation differ. Reviewed coverage must make
+the corresponding Pali revealable honestly. Keep the translator's wording and source order intact.
+Prepare data first; app implementation comes later. Completion includes idempotent processing and
+a tested incoming-sutta workflow that incorporates the learning from the completed corpus work.
 
 ## Boundaries and permission
 
@@ -50,27 +52,49 @@ Detailed, dated evidence is in [the MN/DN record](mn-dn-review.json),
 [the SN/AN/KN record](codex-sn-an-kn-review.json), and each translator's `review/codex-read/`
 and `review/audit5/`. Keep historical measurements distinct from new review results.
 
+### Establish the remaining scope
+
+Use the saved inventory to reconcile completed reviews, later repairs and pending correspondence
+work against current input hashes. Distinguish complete direct-Pali reads, independent verification,
+English-proxy reads and local Pali judgments. A repaired cut or a current anchor matching an old
+proposal does not establish a complete verified read. Coverage and source issues remain pending
+even where the boundary itself is settled.
+
+Record the inventory's translators, documents, key ranges and exclusions. A targeted inventory of
+verse and known problems does not certify the remaining prose. For each translation included in
+the final goal, the coverage ledger must account for every English segment and Pali row, recording
+current review and verification evidence or the remaining gap. Reuse valid evidence; identify
+unverified passages even when no finding names them. Sujato's targeted checks do not establish a
+complete direct-Pali review of his translation; make his inclusion or exclusion in the final scope
+explicit. Establish the additional review scope from this evidence before planning further reads.
+
 ## First on return: the usage pilot
 
 Gabriel uses ChatGPT/Codex at $100/month. Subscription capacity cannot be inferred reliably from
 API pricing or raw token totals. Check the current usage dashboard, or `/status` in the Codex CLI,
 and the [current Codex usage guidance](https://learn.chatgpt.com/docs/pricing).
 
-1. Inspect `git status` and read this handoff. Verify the archive. If another session has changed
-   the corpus, check which saved evidence is stale before using it.
+1. Inspect `git status` and read this handoff and the saved inventory. Verify the archive and
+   distinguish the inventory's targeted queue from remaining gaps in complete verification.
+   If another session has changed the corpus, check which saved evidence is stale before using it.
 2. Select roughly 500–1,000 Pali rows in complete, representative documents: ordinary prose,
    lists/refrains, reordered verse, and an excerpt or grouped-source case. Include both translators;
    keep the actual row count and complexity mix. This is a proposed pilot size, not a fixed quota.
-3. Build fresh packets with Pali on every row. Use a strong reader for the first pass and an
-   independent strong reader for verification. The verifier sees revised alignment and original
-   sources, without the first reader's verdicts. Use model diversity if available and affordable;
-   it is useful but not a substitute for independence.
+3. Choose an initial correspondence schema and build fresh packets with Pali on every row.
+   Produce actual coverage records for the pilot's fine cuts, reordered verse, merged clauses,
+   abbreviations and omissions. Use a strong reader for the first pass and an independent strong
+   reader for verification. The verifier sees revised alignment, proposed correspondence and
+   original sources, without the first reader's verdicts. Use model diversity if available and
+   affordable; it is useful but not a substitute for independence.
 4. Save inputs, findings, judgments, changes and uncertainty as the work proceeds. Measure actual
    allowance consumption, reset window, model/effort, elapsed time, rows reviewed and verified,
    and the size of the context. Do not launch large parallel runs before this measurement.
 5. Report whether the allowance supports a comfortable batch size, how much work remains, and a
    realistic range of sessions. Set a checkpoint before allowance exhaustion. Never lower the
    accuracy standard just to fit a month; spread the work over more sessions if needed.
+6. Exercise the correspondence checks and replay saved approved decisions in isolation. Record
+   whether identical inputs reproduce identical alignment and coverage without further review.
+   Identify missing tooling before adopting the process for a large round.
 
 The existing full imported pass alone logs about 5.9 million reported tokens across 201 batches.
 That number is historical CLI telemetry, not a conversion to subscription quota or dollars.
@@ -87,9 +111,10 @@ change alignments, or measure account consumption.
 | 1 | Reconcile recovered verse proposals and finish the unchecked SN/AN/KN verse, starting with the KN patterns exposed by audit5 | Every affected passage is judged against original Pali; accepted, rejected, superseded and unresolved candidates have dispositions; remaining coverage is counted |
 | 2 | Resolve Bodhi duplicate source ranges and Ṭhānissaro legacy AN numbering/precedence | Canonical source mapping and aliases are explicit; all affected documents preserve source words and rebuild correctly |
 | 3 | Verify Sujato's English–Pali correspondence where it affects alignment, especially reordered verse | Suspect patterns are checked directly; any correction follows the retranslation pipeline, with its review and validation |
-| 4 | Prepare explicit coverage, omissions and source-edition differences | Smallest coherent translated groups have reviewed Pali key lists; empty English is no longer the sole evidence for omission |
+| 4 | Finalize the schema exercised in the pilot and prepare coverage, omissions and source-edition differences | Exact English segments/groups and Pali key lists have reviewed correspondence; validation and the authoritative corpus artifact are defined |
 | 5 | Correct patterns throughout the affected corpus and run a fresh audit | New, documented draw and independent Pali review; unresolved errors and unsampled collections are reported honestly |
-| 6 | Discuss and implement the app requirements later | Reveal and translation switching use reviewed coverage and preserve the Pali location; app work has separate authorization |
+| 6 | Demonstrate idempotence and finalize the incoming-sutta workflow from the completed work | Saved approved decisions reproduce alignment and coverage; the documented workflow passes representative incoming/revised cases and uses the learned rules |
+| 7 | Discuss and implement the app requirements later | Reveal and translation switching use reviewed coverage and preserve the Pali location; app work has separate authorization |
 
 Priorities can overlap when a verse issue depends on source mapping. Do not force a cut to avoid
 recording such a dependency. A completed audit does not close an unresolved source problem.
@@ -147,43 +172,75 @@ passage, an omission, a rendering elsewhere, and a source-edition difference. If
 is uncertain, retain the uncertainty. Do not label every empty English row an omission, or join
 all empty rows to the preceding English.
 
-A future coverage record should identify translator, document, English anchor/group, exact Pali
-keys, coverage kind, source evidence/variant, input hashes and review disposition. A key list can
-be noncontiguous. This is a data design requirement, not an implemented schema; choose the schema
-and validate it before producing corpus-wide records. Keep existing line keys stable where possible.
+### Correspondence records
+
+For four Pali verse lines and four English segments, preserve the English segments and their
+source order. Record individual matches where meaning permits and exact group matches where
+meaning crosses line boundaries. A necessary whole-stanza match names all four Pali keys and the
+corresponding English segments. Its first-key placement is a storage anchor; the coverage record
+establishes what it translates. Preserve the smallest faithful correspondence in each case.
+
+Records must identify translator and document, exact English segments or source spans tied to the
+source hash, ordered English groups, exact Pali keys, coverage kind, source evidence/variant,
+input hashes and review disposition. Support one-to-many, many-to-one and many-to-many relations;
+Pali key lists can be noncontiguous. Preserve stable line keys and identify group-only matches
+where finer pairing would misrepresent meaning. Translator-added material without a Pali
+counterpart needs an explicit disposition rather than an invented match.
+
+Choose the schema and exercise its validator during the pilot. Checks must account for every
+English span without accidental loss or duplication, validate references to current Pali keys,
+and require reviewed explanations for overlapping or shared coverage. Every Pali row needs a
+disposition: translated, abbreviated, omitted, rendered elsewhere, source-edition difference or
+unresolved. Include independently Pali-reviewed examples of reordered verse, merged clauses,
+compressed repetitions, noncontiguous coverage and source ranges. These checks establish valid
+records; direct-Pali review and independent verification establish their semantic correctness.
+
+Define the authoritative maintained corpus location for approved correspondence and its
+reproducible build path before producing corpus-wide records. Round-local `coverage.json` holds
+review evidence and proposals; the approved artifact must become an input to the later app build
+and its reveal/location behavior. The README's current text-and-notes-only shipping rule needs
+updating when that data path is implemented. This schema, validator and build path are planned
+requirements, not existing capabilities; app implementation remains later work.
 
 ## Incoming and revised suttas: the agreed direction
 
 This is the planned replacement for repeated broad English-proxy rereads. The active legacy
 process text in [README.md](README.md) and [review-rounds.md](review-rounds.md) is unchanged during
 parking. Its Claude model names, default English-proxy packets, early stop after low finding yield,
-and small audits must not be mistaken for the direct-Pali quality standard below. Adopt and
-update the operational process after the pilot, with the actual tooling and budget established.
+and small audits must not be mistaken for the direct-Pali quality standard below. The pilot
+establishes a provisional process with actual tooling and budget; finalize the operational process
+from the learning accumulated by completing the corpus goal.
 
 1. **Identify the source.** Save URL/version/hash and translator; map its IDs directly against
    the Pali and source contents. Resolve edition numbering, grouped documents, excerpts and source
    precedence before trusting a generated cut. Preserve the translator's wording and licence.
-2. **Generate an initial alignment.** Use the existing segmenter as a proposal generator.
-   Mechanically applicable cuts and high scores are not semantic judgments.
+2. **Generate an initial alignment.** Use the segmenter as a proposal generator, incorporating
+   validated source mappings and alignment patterns learned from the completed work. Produce
+   proposed correspondence alongside cuts. Mechanically applicable cuts and high scores are not
+   semantic judgments.
 3. **Read every line against the Pali.** A strong reader reviews the complete new/revised document,
    including empty English and omitted or abbreviated passages, with source and stanza context.
    Sujato is secondary. Record finer valid cuts, necessary groups and explicit coverage issues.
 4. **Apply judged changes in isolation.** Judge every proposed changed group against original Pali,
    retain rejection reasons, resolve conflicts explicitly, and preserve raw findings. Check wording
    and structural integrity. Never use a passing mechanical verdict as semantic acceptance.
-5. **Verify independently.** A second strong reader checks every line of the resulting new/revised
-   text directly against Pali, without the first reader's conclusions. Investigate disagreements
-   and verify subsequent changes. An early low yield does not excuse leaving a new text unread.
+5. **Verify independently.** A second strong reader checks every line and proposed correspondence
+   of the resulting new/revised text directly against Pali, without the first reader's conclusions.
+   Investigate disagreements and verify subsequent changes. An early low yield does not excuse
+   leaving a new text unread.
 6. **Follow up narrowly.** Revisit unresolved/affected passages with adequate surrounding context.
    Recheck all texts sharing a discovered error pattern. Keep input and output hashes, model/effort,
    covered keys, judgments and source variants so unchanged verified work is not reread repeatedly.
-7. **Validate and report.** Run preservation, integrity and reproducible-rebuild checks. Keep
-   uncertain correspondence visible. Summarize the concrete scope and get permission for the
-   individual commit after the work is ready.
+7. **Validate and report.** Run preservation, integrity, correspondence and reproducible-rebuild
+   checks, including a repeat replay from saved approved decisions. Save the verified state and
+   keep uncertain correspondence pending. Summarize the concrete scope and get permission for
+   the individual commit after the work is ready.
 
 For a revised document, retained cuts are candidates until checked against the new source. The
 budget-saving aim is two thorough passes once, followed by targeted work, not weaker checking.
-This standard for incoming texts does not authorize restarting every completed historical round.
+For unchanged verified inputs, reuse saved decisions. For the existing corpus, use the inventory
+to identify actual gaps and reuse valid direct-Pali evidence rather than replaying completed
+historical rounds.
 
 ### Save progress where the next session can find it
 
@@ -199,6 +256,43 @@ Decisions identify each candidate, disposition, Pali-based reason, affected keys
 Distinguish a completed read with no findings from an unfinished empty file. Save before changing
 tasks or approaching an account limit. These are the required contents, not a final imposed schema.
 
+### Finalize the operational workflow
+
+When the corpus goal is reached, consolidate the useful checks, rejected approaches, source
+mapping rules and recurring alignment exceptions into the incoming-sutta workflow. Convert
+validated patterns into better initial proposals and regression cases; preserve direct-Pali
+review and independent verification. Remove redundant work where saved evidence establishes
+that the same inputs and correspondence have already been verified.
+
+Test the final workflow on representative incoming/revised cases: ordinary prose, lists/refrains,
+reordered verse, excerpts, grouped sources and edition differences. Confirm accurate correspondence,
+independent verification, repeatability, change invalidation and interrupted-run recovery. Record
+actual time and usage and document the tested tools, prompts, checkpoints and exception handling
+in the upstream README and `review-rounds.md`. These operational instructions are finalized from
+all the corpus learning; the pilot alone does not settle them.
+
+## Idempotence and reuse
+
+Identical saved inputs, source mappings, approved decisions and processing rules must produce
+byte-identical alignment, coverage and generated corpus artifacts. Include source texts, Pali,
+markup and all other relevant inputs and rule versions in the saved manifests. Repeating the
+process must preserve settled work, avoid duplicate records and skip review of unchanged verified inputs.
+Keep volatile run telemetry separate from reproducible artifacts. Fresh AI judgments can vary;
+idempotence comes from replaying saved, versioned approved decisions and explicit supersessions.
+
+Track the input and rule dependencies of each verified passage. Source or Pali changes, changed
+mapping/coverage rules, or new evidence of an error invalidate the affected decisions and their
+relevant stanza, neighbouring or shared-source context. Do not reuse a decision solely because
+its anchor words still match. Preserve verification for demonstrably unaffected work while
+satisfying the incoming/revised document checks above. Widen the review to complete dependent
+documents when the effect of a change cannot be bounded reliably.
+
+Demonstrate a normal isolated rebuild followed by a repeat replay with identical inputs. Compare
+alignment, coverage and generated data byte for byte and confirm no new decisions or duplicate
+records. Replaying the same approved decisions from a saved checkpoint must converge to the
+same result as uninterrupted processing. Report this evidence before declaring the process
+complete.
+
 ## Audits and acceptance
 
 Plan around 2,500 reviewed rows per translator, stratified by collection, with whole-text context
@@ -213,6 +307,11 @@ Report how error keys/groups are counted. Review patterns beyond the sample, app
 repairs, then draw fresh evidence. Do not report pre-repair rates as post-repair quality. Empty
 cross/list queues only mean no new candidates under their exclusion rules; they do not certify
 previously shown passages or the whole corpus.
+
+Audits detect missed patterns; they do not replace the complete review/verification ledger.
+Legitimate groups, omissions, abbreviations and source differences count as resolved only with
+reviewed explanations. Uncertain placement or coverage remains unfinished and cannot be counted
+as correct alignment when claiming the corpus goal is reached.
 
 ## Tools and restart commands
 
@@ -232,6 +331,9 @@ columns, current source-page pointers, and a SHA-256 manifest of the English, Pa
 markup, notes where present, and source pages. It refuses an existing output folder. Source
 mapping follows the current report and still needs scrutiny for the known range/numbering cases.
 Rows show plain text; inspect the hashed original files for stanza markup, notes and ambiguity.
+Once the correspondence schema is adopted, review inputs must also preserve exact English group
+identities and include the proposed coverage artifact in their manifests. The current packet
+helper does not yet provide that coverage data.
 
 `verify` checks the saved packets and whether their recorded corpus inputs still match. It does
 not verify findings or semantics. Keep findings and coverage records separate from input packets;
@@ -282,6 +384,9 @@ Preserve T's wording and source order. Split independent clauses/items/refrains 
 faithfully; retain the smallest coherent group when splitting would misrepresent reordered or
 indivisible English. Report omissions, abbreviations, rendered-earlier passages and edition
 variants distinctly. Do not infer coverage from empty rows alone.
+Keep English segments identifiable within groups and record their exact Pali coverage, including
+group-only correspondence and noncontiguous keys where needed. Source-only material needs an
+explicit disposition. Produce correspondence proposals as well as boundary proposals.
 Save exact starts/none proposals separately from coverage issues. Quote starts exactly from T,
 using only enough words to identify the cut. Record covered keys, uncertainty, input manifest,
 model/effort and progress. If interrupted, save the last completed key and resume there.
@@ -292,7 +397,8 @@ model/effort and progress. If interrupted, save the last completed key and resum
 ```text
 Verify every row of the revised alignment directly against Pali and its source context. Do not
 read the first reader's judgments. Check fine cuts as well as grouped, reordered, omitted,
-abbreviated and rendered-elsewhere passages. Preserve source wording/order. Report remaining
+abbreviated and rendered-elsewhere passages. Check the proposed English-span/Pali-key relations,
+including group-only matches and shared coverage. Preserve source wording/order. Report remaining
 errors and uncertain coverage; give an explicit completed-key record even when there are none.
 Use the revised input manifest. A mechanical pass or agreement with S is not semantic evidence.
 ```
@@ -319,11 +425,17 @@ status records when the state changes. Never claim a read complete because a fin
 unless coverage is explicit; an empty findings file can be a completed clean read or an unfinished
 one. Keep historical commit approval separate from current permission.
 
-The data is ready for app implementation when relevant English is faithfully correlated to Pali,
-known source mappings are settled, group/omission/variant coverage is reviewed, preservation and
-rebuild checks pass, and fresh audit results and residual uncertainties are explicit. Most Pali
-must be revealable honestly, including a distinct option for omitted Pali. Do not create a false
-English match merely to make a line revealable. App requirements remain in
+The data is ready for app implementation when every English segment in the declared scope has
+verified correspondence or a reviewed explanation of material without a Pali counterpart, known
+source mappings are settled, and all Pali rows have reviewed coverage/omission/variant dispositions.
+The complete ledger must establish current direct-Pali review and independent verification;
+unresolved alignment remains pending. Preservation, correspondence and rebuild checks pass,
+approved coverage has an authoritative corpus artifact and a defined build path, and fresh audit
+results are recorded. Completion also requires demonstrated idempotence and the tested final
+incoming-sutta workflow based on the corpus learning. Scope exclusions remain explicit.
+
+Corresponding Pali must be revealable honestly, including a distinct option for omitted Pali.
+Do not create a false English match merely to make a line revealable. App requirements remain in
 [Building them into the app](README.md#building-them-into-the-app).
 
 ### Parking verification

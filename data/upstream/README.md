@@ -9,8 +9,12 @@ settle the cuts it is unsure of.
 ## Work paused
 
 Start with [the alignment handoff](HANDOFF.md) when resuming. It records completed work,
-remaining tasks, repository archives and the planned incoming-sutta process. The first task
-on return is the usage pilot; the existing process and app notes below are unchanged.
+remaining tasks and repository archives, and defines the direct-Pali review standard, explicit
+correspondence, idempotent processing and the planned incoming-sutta workflow. Use the saved
+inventory to establish remaining scope before the usage and correspondence pilot. The process
+below is the legacy workflow awaiting a tested replacement; follow the handoff's quality
+requirements when resuming. Finalize the operational instructions from the completed corpus
+learning. The app notes below are unchanged.
 
 ## What's here
 
