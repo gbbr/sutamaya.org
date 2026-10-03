@@ -26,8 +26,7 @@ and answers are in `data/<translator>/review/`. What remains, in order:
    out as the verse rounds did), then `note-placement.patch` (a note standing for a whole passage
    placed as Bodhi's notes round did); `report.txt` has the measurements. Each keeps every
    reviewed layout, so after applying them a plain run must reproduce both translations exactly,
-   and `npm test` must pass. `proposals/verse-layout/` is an earlier version of the first patch
-   and goes once it is applied.
+   and `npm test` must pass.
 2. **The translator's own commentary read as text**: his introductions, closing remarks and
    alternative renderings belong in `notes/`, as most of his introductions already are, but the
    segmenter doesn't recognise some of them as notes and reads them into a line: SN 1.8:1.2 (an
@@ -377,7 +376,8 @@ What the data can't settle, left for when the Reader takes these translations in
 | The word-for-word check against the pages | `scripts/segmenter/check-upstream.py` |
 | The check of titles, headings, closing lines, notes and links | `scripts/segmenter/check-integrity.py` |
 | The check of a round's changes against the pages and the reveal rule | `scripts/segmenter/check-round.py` |
-| The proposed verse rule for the segmenter | `scripts/segmenter/proposals/verse-layout/` |
+| The segmenter's verse and note rules, ready to apply | `scripts/segmenter/proposals/note-placement/` |
+| The fix that reads the translator's commentary as notes, ready to apply | `scripts/segmenter/proposals/page-parsing/` |
 | The audits | `data/<translator>/review/audit*/` |
 | Review packets with the Pali on every row | `scripts/segmenter/review-pali.py` |
 | How a session answers a round, and the prompts | [review-rounds.md](review-rounds.md) |
