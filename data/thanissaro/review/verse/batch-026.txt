@@ -1,0 +1,419 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## dhp206:1–dhp206:4 (dhp)
+CONTEXT dhp206:0 | P: Sakkavatthu | S: (none) | T: (none)
+dhp206:1 | P: Sāhu dassanamariyānaṁ, | S: It’s good to see the noble ones, | T: It’s good to see Noble Ones.
+dhp206:2 | P: sannivāso sadā sukho; | S: staying with them is always good. | T: Happy their company–always.
+dhp206:3 | P: Adassanena bālānaṁ, | S: Were you not to see fools, | T: Through not seeing fools
+dhp206:4 | P: niccameva sukhī siyā. | S: you’d always be happy. | T: constantly, constantly ⏎ one would be happy.
+
+## dhp207:1–dhp207:6 (dhp)
+dhp207:1 | P: Bālasaṅgatacārī hi, | S: For one who consorts with fools | T: For, living with a fool,
+dhp207:2 | P: dīghamaddhāna socati; | S: grieves long. | T: one grieves a long time.
+dhp207:3 | P: Dukkho bālehi saṁvāso, | S: Painful is living with fools, | T: Painful is communion with fools,
+dhp207:4 | P: amitteneva sabbadā; | S: like being stuck with your enemy. | T: as with an enemy– ⏎ always.
+dhp207:5 | P: Dhīro ca sukhasaṁvāso, | S: Happy is living with an attentive one, | T: Happy is communion ⏎ with the enlightened,
+dhp207:6 | P: ñātīnaṁva samāgamo. | S: like meeting with your kin. | T: as with a gathering of kin.
+
+## dhp208:1–dhp208:5 (dhp)
+dhp208:1 | P: Tasmā hi— | S: Therefore: | T: So:
+dhp208:2 | P: Dhīrañca paññañca bahussutañca, | S: An attentive one, wise and learned, | T: the enlightened man– ⏎ discerning, learned,
+dhp208:3 | P: Dhorayhasīlaṁ vatavantamariyaṁ; | S: a behemoth of virtue, true to their vows, noble: | T: enduring, dutiful, noble,
+dhp208:4 | P: Taṁ tādisaṁ sappurisaṁ sumedhaṁ, | S: follow a true and intelligent person such as this, | T: intelligent, a man of integrity: ⏎ follow him ⏎ –one of this sort–
+dhp208:5 | P: Bhajetha nakkhattapathaṁva candimā. | S: as the moon tracks the path of the stars. | T: as the moon, the path ⏎ of the zodiac stars.
+CONTEXT dhp208:6 | P: Sukhavaggo pannarasamo. | S: (none) | T: (none)
+
+## dhp209:1–dhp209:4 (dhp)
+CONTEXT dhp209:0.3 | P: Piyavagga | S: 16. The Beloved | T: Dhp XVI : Dear Ones
+CONTEXT dhp209:0.4 | P: Tayojanapabbajitavatthu | S: (none) | T: (none)
+dhp209:1 | P: Ayoge yuñjamattānaṁ, | S: Applying yourself where you ought not, | T: Having applied himself ⏎ to what was not his own task,
+dhp209:2 | P: yogasmiñca ayojayaṁ; | S: neglecting what you should be doing, | T: and not having applied himself ⏎ to what was,
+dhp209:3 | P: Atthaṁ hitvā piyaggāhī, | S: forgetting your goal, you cling to what you hold dear, | T: having disregarded the goal ⏎ to grasp at what he held dear,
+dhp209:4 | P: pihetattānuyoginaṁ. | S: jealous of those devoted to their heart’s goal. | T: he now envies those ⏎ who ⏎ kept after themselves, ⏎ took themselves ⏎ to task.
+
+## dhp210:1–dhp210:4 (dhp)
+dhp210:1 | P: Mā piyehi samāgañchi, | S: Don’t ever get too close | T: Don’t ever–regardless– ⏎ be conjoined
+dhp210:2 | P: appiyehi kudācanaṁ; | S: to those you like or dislike. | T: with what’s dear ⏎ or undear.
+dhp210:3 | P: Piyānaṁ adassanaṁ dukkhaṁ, | S: For not seeing the liked is suffering, | T: It’s painful ⏎ not to see what’s dear
+dhp210:4 | P: appiyānañca dassanaṁ. | S: and so is seeing the disliked. | T: or to see what’s not.
+
+## dhp211:1–dhp211:4 (dhp)
+dhp211:1 | P: Tasmā piyaṁ na kayirātha, | S: Therefore don’t hold anything dear, | T: So don’t make anything dear,
+dhp211:2 | P: piyāpāyo hi pāpako; | S: for it’s bad to lose those you love. | T: for it’s dreadful to be far ⏎ from what’s dear.
+dhp211:3 | P: Ganthā tesaṁ na vijjanti, | S: No ties are found in they who | T: No bonds are found ⏎ for those for whom ⏎ there’s neither dear
+dhp211:4 | P: yesaṁ natthi piyāppiyaṁ. | S: hold nothing loved or loathed. | T: nor undear.
+CONTEXT dhp212:0 | P: Aññatarakuṭumbikavatthu | S: (none) | T: (none)
+
+## dhp212:1–dhp212:4 (dhp)
+CONTEXT dhp212:0 | P: Aññatarakuṭumbikavatthu | S: (none) | T: (none)
+dhp212:1 | P: Piyato jāyatī soko, | S: Sorrow springs from what we hold dear, | T: From what’s dear is born grief,
+dhp212:2 | P: piyato jāyatī bhayaṁ; | S: fear springs from what we hold dear; | T: from what’s dear is born fear.
+dhp212:3 | P: Piyato vippamuttassa, | S: one free from holding anything dear | T: For one freed from what’s dear
+dhp212:4 | P: natthi soko kuto bhayaṁ. | S: has no sorrow, let alone fear. | T: there’s no grief ⏎ –so how fear?
+CONTEXT dhp213:0 | P: Visākhāvatthu | S: (none) | T: (none)
+
+## dhp213:1–dhp213:4 (dhp)
+CONTEXT dhp213:0 | P: Visākhāvatthu | S: (none) | T: (none)
+dhp213:1 | P: Pemato jāyatī soko, | S: Sorrow springs from attachment, | T: From what’s loved is born grief,
+dhp213:2 | P: pemato jāyatī bhayaṁ; | S: fear springs from attachment; | T: from what’s loved is born fear.
+dhp213:3 | P: Pemato vippamuttassa, | S: one free from attachment | T: For one freed from what’s loved
+dhp213:4 | P: natthi soko kuto bhayaṁ. | S: has no sorrow, let alone fear. | T: there’s no grief ⏎ –so how fear?
+CONTEXT dhp214:0 | P: Licchavīvatthu | S: (none) | T: (none)
+
+## dhp214:1–dhp214:4 (dhp)
+CONTEXT dhp214:0 | P: Licchavīvatthu | S: (none) | T: (none)
+dhp214:1 | P: Ratiyā jāyatī soko, | S: Sorrow springs from relishing, | T: From delight is born grief,
+dhp214:2 | P: ratiyā jāyatī bhayaṁ; | S: fear springs from relishing; | T: from delight is born fear.
+dhp214:3 | P: Ratiyā vippamuttassa, | S: one free from relishing | T: For one freed from delight
+dhp214:4 | P: natthi soko kuto bhayaṁ. | S: has no sorrow, let alone fear. | T: there’s no grief ⏎ –so how fear?
+CONTEXT dhp215:0 | P: Anitthigandhakumāravatthu | S: (none) | T: (none)
+
+## dhp215:1–dhp215:4 (dhp)
+CONTEXT dhp215:0 | P: Anitthigandhakumāravatthu | S: (none) | T: (none)
+dhp215:1 | P: Kāmato jāyatī soko, | S: Sorrow springs from desire, | T: From sensuality is born grief,
+dhp215:2 | P: kāmato jāyatī bhayaṁ; | S: fear springs from desire; | T: from sensuality is born fear.
+dhp215:3 | P: Kāmato vippamuttassa, | S: one free from desire | T: For one freed from sensuality
+dhp215:4 | P: natthi soko kuto bhayaṁ. | S: has no sorrow, let alone fear. | T: there’s no grief ⏎ –so how fear?
+CONTEXT dhp216:0 | P: Aññatarabrāhmaṇavatthu | S: (none) | T: (none)
+
+## dhp216:1–dhp216:4 (dhp)
+CONTEXT dhp216:0 | P: Aññatarabrāhmaṇavatthu | S: (none) | T: (none)
+dhp216:1 | P: Taṇhāya jāyatī soko, | S: Sorrow springs from craving, | T: From craving is born grief,
+dhp216:2 | P: taṇhāya jāyatī bhayaṁ; | S: fear springs from craving; | T: from craving is born fear.
+dhp216:3 | P: Taṇhāya vippamuttassa, | S: one free from craving | T: For one freed from craving
+dhp216:4 | P: natthi soko kuto bhayaṁ. | S: has no sorrow, let alone fear. | T: there’s no grief ⏎ –so how fear?
+CONTEXT dhp217:0 | P: Pañcasatadārakavatthu | S: (none) | T: (none)
+
+## dhp217:1–dhp217:4 (dhp)
+CONTEXT dhp217:0 | P: Pañcasatadārakavatthu | S: (none) | T: (none)
+dhp217:1 | P: Sīladassanasampannaṁ, | S: One accomplished in virtue and vision, | T: One consummate in virtue & vision,
+dhp217:2 | P: dhammaṭṭhaṁ saccavedinaṁ; | S: firmly principled, and truthful, | T: judicious, ⏎ speaking the truth,
+dhp217:3 | P: Attano kamma kubbānaṁ, | S: doing oneself what ought be done: | T: doing his own task:
+dhp217:4 | P: taṁ jano kurute piyaṁ. | S: that’s who the people love. | T: the world holds him dear.
+CONTEXT dhp218:0 | P: Ekaanāgāmittheravatthu | S: (none) | T: (none)
+
+## dhp218:1–dhp218:4 (dhp)
+CONTEXT dhp218:0 | P: Ekaanāgāmittheravatthu | S: (none) | T: (none)
+dhp218:1 | P: Chandajāto anakkhāte, | S: One eager to realize the ineffable | T: If ⏎ you’ve given birth to a wish ⏎ for what can’t be expressed,
+dhp218:2 | P: Manasā ca phuṭo siyā; | S: would be filled with awareness. | T: are suffused with heart,
+dhp218:3 | P: Kāmesu ca appaṭibaddhacitto, | S: Their mind not bound to pleasures of sense, | T: your mind not enmeshed ⏎ in sensual passions:
+dhp218:4 | P: Uddhaṁsototi vuccati. | S: they’re said to be heading upstream. | T: you’re said to be ⏎ in the up-flowing stream.
+CONTEXT dhp219:0 | P: Nandiyavatthu | S: (none) | T: (none)
+
+## dhp219:1–dhp219:4 (dhp) GATHERED; equal counts: one line per row
+CONTEXT dhp219:0 | P: Nandiyavatthu | S: (none) | T: (none)
+dhp219:1 | P: Cirappavāsiṁ purisaṁ, | S: When a man returns safely | T: A man long absent ⏎ comes home safe from afar.
+dhp219:2 | P: dūrato sotthimāgataṁ; | S: after a long time spent abroad, | T: (none)
+dhp219:3 | P: Ñātimittā suhajjā ca, | S: family, friends, and loved ones | T: His kin, his friends, his companions,
+dhp219:4 | P: abhinandanti āgataṁ. | S: celebrate his return. | T: delight in his return.
+AUTO dhp219:1 starts: A man long absent
+AUTO dhp219:2 starts: comes home safe from afar.
+AUTO dhp219:3 starts: His kin, his friends, his companions,
+AUTO dhp219:4 starts: delight in his return.
+
+## dhp220:1–dhp220:4 (dhp)
+dhp220:1 | P: Tatheva katapuññampi, | S: Just so, when one who has done good | T: In just the same way, ⏎ when you’ve done good
+dhp220:2 | P: asmā lokā paraṁ gataṁ; | S: goes from this world to the next, | T: & gone from this world ⏎ to the world beyond,
+dhp220:3 | P: Puññāni paṭigaṇhanti, | S: their good deeds receive them there, | T: your good deeds receive you–
+dhp220:4 | P: piyaṁ ñātīva āgataṁ. | S: as family welcomes home one they love. | T: as kin, someone dear ⏎ come home.
+CONTEXT dhp220:5 | P: Piyavaggo soḷasamo. | S: (none) | T: (none)
+
+## dhp221:1–dhp221:4 (dhp) GATHERED; unequal counts require a reader
+CONTEXT dhp221:0.3 | P: Kodhavagga | S: 17. Anger | T: Dhp XVII : Anger
+CONTEXT dhp221:0.4 | P: Rohinīkhattiyakaññāvatthu | S: (none) | T: (none)
+dhp221:1 | P: Kodhaṁ jahe vippajaheyya mānaṁ, | S: Give up anger, get rid of conceit, | T: Abandon anger, ⏎ be done with conceit,
+dhp221:2 | P: Saṁyojanaṁ sabbamatikkameyya; | S: and escape every fetter. | T: get beyond every fetter.
+dhp221:3 | P: Taṁ nāmarūpasmimasajjamānaṁ, | S: Sufferings don’t befall one who has nothing, | T: When for name & form ⏎ you have no attachment ⏎ –have nothing at all– ⏎ no sufferings, no stresses, invade.
+dhp221:4 | P: Akiñcanaṁ nānupatanti dukkhā. | S: not clinging to name and form. | T: (none)
+CONTEXT dhp222:0 | P: Aññatarabhikkhuvatthu | S: (none) | T: (none)
+
+## dhp222:1–dhp222:4 (dhp)
+CONTEXT dhp222:0 | P: Aññatarabhikkhuvatthu | S: (none) | T: (none)
+dhp222:1 | P: Yo ve uppatitaṁ kodhaṁ, | S: When anger surges like a lurching chariot, | T: When anger arises,
+dhp222:2 | P: rathaṁ bhantaṁva vāraye; | S: keep it in check. | T: whoever keeps firm control ⏎ as if with a racing chariot:
+dhp222:3 | P: Tamahaṁ sārathiṁ brūmi, | S: That’s what I call a charioteer; | T: him ⏎ I call a master charioteer.
+dhp222:4 | P: rasmiggāho itaro jano. | S: others just hold the reins. | T: Anyone else, ⏎ a rein-holder– ⏎ that’s all.
+CONTEXT dhp223:0 | P: Uttarāupāsikavatthu | S: (none) | T: (none)
+
+## dhp223:1–dhp223:4 (dhp)
+CONTEXT dhp223:0 | P: Uttarāupāsikavatthu | S: (none) | T: (none)
+dhp223:1 | P: Akkodhena jine kodhaṁ, | S: Defeat anger with kindness, | T: Conquer anger ⏎ with lack of anger;
+dhp223:2 | P: asādhuṁ sādhunā jine; | S: villainy with virtue, | T: bad with good;
+dhp223:3 | P: Jine kadariyaṁ dānena, | S: stinginess with giving, | T: stinginess with a gift;
+dhp223:4 | P: saccenālikavādinaṁ. | S: and lies with truth. | T: a liar with truth.
+CONTEXT dhp224:0 | P: Mahāmoggallānapañhavatthu | S: (none) | T: (none)
+
+## dhp224:1–dhp224:4 (dhp)
+CONTEXT dhp224:0 | P: Mahāmoggallānapañhavatthu | S: (none) | T: (none)
+dhp224:1 | P: Saccaṁ bhaṇe na kujjheyya, | S: Speak the truth, do not be angry, | T: By telling the truth; ⏎ by not growing angry;
+dhp224:2 | P: dajjā appampi yācito; | S: and give when asked, if only a little. | T: by giving, when asked, ⏎ no matter how little you have:
+dhp224:3 | P: Etehi tīhi ṭhānehi, | S: By these three means, | T: by these three things
+dhp224:4 | P: gacche devāna santike. | S: you may enter the presence of the gods. | T: you enter the presence of devas.
+CONTEXT dhp225:0 | P: Buddhapitubrāhmaṇavatthu | S: (none) | T: (none)
+
+## dhp225:1–dhp225:4 (dhp)
+CONTEXT dhp225:0 | P: Buddhapitubrāhmaṇavatthu | S: (none) | T: (none)
+dhp225:1 | P: Ahiṁsakā ye munayo, | S: Those harmless sages, | T: Gentle sages,
+dhp225:2 | P: niccaṁ kāyena saṁvutā; | S: always restrained in body, | T: constantly restrained in body,
+dhp225:3 | P: Te yanti accutaṁ ṭhānaṁ, | S: go to the state that does not pass, | T: go to the unwavering state
+dhp225:4 | P: yattha gantvā na socare. | S: where there is no sorrow. | T: where, having gone, ⏎ there’s no grief.
+CONTEXT dhp226:0 | P: Puṇṇadāsīvatthu | S: (none) | T: (none)
+
+## dhp226:1–dhp226:4 (dhp)
+CONTEXT dhp226:0 | P: Puṇṇadāsīvatthu | S: (none) | T: (none)
+dhp226:1 | P: Sadā jāgaramānānaṁ, | S: Always wakeful, | T: Those who always stay wakeful,
+dhp226:2 | P: ahorattānusikkhinaṁ; | S: practicing night and day, | T: training by day & by night,
+dhp226:3 | P: Nibbānaṁ adhimuttānaṁ, | S: focused only on extinguishment, | T: keen on Unbinding:
+dhp226:4 | P: atthaṁ gacchanti āsavā. | S: their defilements come to an end. | T: their effluents come to an end.
+CONTEXT dhp227:0 | P: Atulaupāsakavatthu | S: (none) | T: (none)
+
+## dhp227:1–dhp227:6 (dhp)
+CONTEXT dhp227:0 | P: Atulaupāsakavatthu | S: (none) | T: (none)
+dhp227:1 | P: Porāṇametaṁ atula, | S: It’s always been this way, Atula, | T: This has come down from old, Atula,
+dhp227:2 | P: netaṁ ajjatanāmiva; | S: it’s not just today. | T: & not just from today:
+dhp227:3 | P: Nindanti tuṇhimāsīnaṁ, | S: They blame you when you’re silent, | T: they find fault with one ⏎ who sits silent,
+dhp227:4 | P: nindanti bahubhāṇinaṁ; | S: they blame you when you speak a lot, | T: they find fault with one ⏎ who speaks a great deal,
+dhp227:5 | P: Mitabhāṇimpi nindanti, | S: and even when you speak just right: | T: they find fault with one ⏎ who measures his words.
+dhp227:6 | P: natthi loke anindito. | S: no one in the world escapes blame. | T: There’s no one unfaulted in the world.
+
+## dhp228:1–dhp228:4 (dhp)
+dhp228:1 | P: Na cāhu na ca bhavissati, | S: There never was, nor will be, | T: There never was, ⏎ will be,
+dhp228:2 | P: na cetarahi vijjati; | S: nor is there today, | T: nor at present is found
+dhp228:3 | P: Ekantaṁ nindito poso, | S: someone who is wholly praised | T: anyone entirely faulted ⏎ or entirely praised. ⏎ If knowledgeable people praise him,
+dhp228:4 | P: ekantaṁ vā pasaṁsito. | S: or wholly blamed. | T: having observed him
+
+## dhp229:1–dhp229:4 (dhp)
+dhp229:1 | P: Yañce viññū pasaṁsanti, | S: If, after watching them day in day out, | T: day after day
+dhp229:2 | P: anuvicca suve suve; | S: discerning people praise | T: (none)
+dhp229:3 | P: Acchiddavuttiṁ medhāviṁ, | S: that sage of impeccable conduct, | T: to be blameless in conduct, intelligent,
+dhp229:4 | P: paññāsīlasamāhitaṁ. | S: endowed with ethics and wisdom; | T: endowed with discernment & virtue:
+
+## dhp230:1–dhp230:4 (dhp)
+dhp230:1 | P: Nikkhaṁ jambonadasseva, | S: like a pendant of Black Plum River gold, | T: like an ingot of gold–
+dhp230:2 | P: ko taṁ ninditumarahati; | S: who is worthy to criticize them? | T: who’s fit to find fault with him?
+dhp230:3 | P: Devāpi naṁ pasaṁsanti, | S: Even the gods praise them, | T: Even devas praise him.
+dhp230:4 | P: brahmunāpi pasaṁsito. | S: and by the Divinity, too, they’re praised. | T: Even by Brahma he’s praised.
+CONTEXT dhp231:0 | P: Chabbaggiyavatthu | S: (none) | T: (none)
+
+## dhp231:1–dhp231:4 (dhp)
+CONTEXT dhp231:0 | P: Chabbaggiyavatthu | S: (none) | T: (none)
+dhp231:1 | P: Kāyappakopaṁ rakkheyya, | S: Guard against ill-tempered deeds, | T: Guard against anger ⏎ erupting in body;
+dhp231:2 | P: kāyena saṁvuto siyā; | S: be restrained in body. | T: in body, be restrained.
+dhp231:3 | P: Kāyaduccaritaṁ hitvā, | S: Giving up bad bodily conduct, | T: Having abandoned bodily misconduct,
+dhp231:4 | P: kāyena sucaritaṁ care. | S: conduct yourself well in body. | T: live conducting yourself well ⏎ in body.
+
+## dhp232:1–dhp232:4 (dhp)
+dhp232:1 | P: Vacīpakopaṁ rakkheyya, | S: Guard against ill-tempered words, | T: Guard against anger ⏎ erupting in speech;
+dhp232:2 | P: vācāya saṁvuto siyā; | S: be restrained in speech. | T: in speech, be restrained.
+dhp232:3 | P: Vacīduccaritaṁ hitvā, | S: Giving up bad verbal conduct, | T: Having abandoned verbal misconduct,
+dhp232:4 | P: vācāya sucaritaṁ care. | S: conduct yourself well in speech. | T: live conducting yourself well ⏎ in speech.
+
+## dhp233:1–dhp233:4 (dhp)
+dhp233:1 | P: Manopakopaṁ rakkheyya, | S: Guard against ill-tempered thoughts, | T: Guard against anger ⏎ erupting in mind;
+dhp233:2 | P: manasā saṁvuto siyā; | S: be restrained in mind. | T: in mind, be restrained.
+dhp233:3 | P: Manoduccaritaṁ hitvā, | S: Giving up bad mental conduct, | T: Having abandoned mental misconduct,
+dhp233:4 | P: manasā sucaritaṁ care. | S: conduct yourself well in mind. | T: live conducting yourself well ⏎ in mind.
+
+## dhp234:1–dhp234:4 (dhp) GATHERED; unequal counts require a reader
+dhp234:1 | P: Kāyena saṁvutā dhīrā, | S: An attentive one is restrained in body | T: Those restrained in body ⏎ –the enlightened–
+dhp234:2 | P: atho vācāya saṁvutā; | S: restrained also in speech, | T: restrained in speech & in mind
+dhp234:3 | P: Manasā saṁvutā dhīrā, | S: in thought, too, they are restrained: | T: (none)
+dhp234:4 | P: te ve suparisaṁvutā. | S: they are restrained in every way. | T: –enlightened– ⏎ are the ones whose restraint is secure.
+CONTEXT dhp234:5 | P: Kodhavaggo sattarasamo. | S: (none) | T: (none)
+
+## dhp235:1–dhp235:4 (dhp)
+CONTEXT dhp235:0.3 | P: Malavagga | S: 18. Stains | T: Dhp XVIII : Impurities
+CONTEXT dhp235:0.4 | P: Goghātakaputtavatthu | S: (none) | T: (none)
+dhp235:1 | P: Paṇḍupalāsova dānisi, | S: Today you’re like a withered leaf, | T: You are now ⏎ like a yellowed leaf.
+dhp235:2 | P: Yamapurisāpi ca te upaṭṭhitā; | S: Yama’s men await you. | T: Already ⏎ Yama’s minions stand near.
+dhp235:3 | P: Uyyogamukhe ca tiṭṭhasi, | S: You stand at the departure gates, | T: You stand at the door to departure
+dhp235:4 | P: Pātheyyampi ca te na vijjati. | S: yet you have no supplies for the road. | T: but have yet to provide ⏎ for the journey.
+
+## dhp236:1–dhp236:4 (dhp)
+dhp236:1 | P: So karohi dīpamattano, | S: Make an island of yourself! | T: Make an island for yourself!
+dhp236:2 | P: Khippaṁ vāyama paṇḍito bhava; | S: Swiftly strive, learn to be wise! | T: Work quickly! Be wise!
+dhp236:3 | P: Niddhantamalo anaṅgaṇo, | S: Purged of stains, flawless, | T: With impurities all blown away, ⏎ unblemished,
+dhp236:4 | P: Dibbaṁ ariyabhūmiṁ upehisi. | S: you’ll go to the heavenly realm of the noble ones. | T: you’ll reach the divine realm ⏎ of the noble ones.
+
+## dhp237:1–dhp237:4 (dhp)
+dhp237:1 | P: Upanītavayo ca dānisi, | S: You’ve journeyed the stages of life, | T: You are now ⏎ right at the end of your time.
+dhp237:2 | P: Sampayātosi yamassa santikaṁ; | S: and now you set out to meet Yama. | T: You are headed ⏎ to Yama’s presence,
+dhp237:3 | P: Vāso te natthi antarā, | S: Along the way there’s nowhere to stay, | T: with no place to rest along the way,
+dhp237:4 | P: Pātheyyampi ca te na vijjati. | S: yet you have no supplies for the road. | T: but have yet to provide ⏎ for the journey.
+
+## dhp238:1–dhp238:4 (dhp)
+dhp238:1 | P: So karohi dīpamattano, | S: Make an island of yourself! | T: Make an island for yourself!
+dhp238:2 | P: Khippaṁ vāyama paṇḍito bhava; | S: Swiftly strive, learn to be wise! | T: Work quickly! Be wise!
+dhp238:3 | P: Niddhantamalo anaṅgaṇo, | S: Purged of stains, flawless, | T: With impurities all blown away, ⏎ unblemished,
+dhp238:4 | P: Na punaṁ jātijaraṁ upehisi. | S: you’ll not come again to rebirth and old age. | T: you won’t again undergo birth ⏎ & aging.
+CONTEXT dhp239:0 | P: Aññatarabrāhmaṇavatthu | S: (none) | T: (none)
+
+## dhp239:1–dhp239:4 (dhp) GATHERED; unequal counts require a reader
+CONTEXT dhp239:0 | P: Aññatarabrāhmaṇavatthu | S: (none) | T: (none)
+dhp239:1 | P: Anupubbena medhāvī, | S: A smart person would purge | T: Just as a silver smith ⏎ step by ⏎ step,
+dhp239:2 | P: thokaṁ thokaṁ khaṇe khaṇe; | S: their own stains gradually, | T: (none)
+dhp239:3 | P: Kammāro rajatasseva, | S: bit by bit, moment by moment, | T: bit by ⏎ bit, ⏎ moment to ⏎ moment,
+dhp239:4 | P: niddhame malamattano. | S: like a smith smelting silver. | T: blows away the impurities ⏎ of molten silver– ⏎ so the wise man, his own.
+CONTEXT dhp240:0 | P: Tissattheravatthu | S: (none) | T: (none)
+
+## dhp240:1–dhp240:4 (dhp) GATHERED; unequal counts require a reader
+CONTEXT dhp240:0 | P: Tissattheravatthu | S: (none) | T: (none)
+dhp240:1 | P: Ayasāva malaṁ samuṭṭhitaṁ, | S: It is the rust born on the iron | T: Just as rust ⏎ –iron’s impurity– ⏎ eats the very iron ⏎ from which it is born,
+dhp240:2 | P: Tatuṭṭhāya tameva khādati; | S: that eats away the place it arose. | T: (none)
+dhp240:3 | P: Evaṁ atidhonacārinaṁ, | S: And so it is their own deeds | T: so the deeds
+dhp240:4 | P: Sāni kammāni nayanti duggatiṁ. | S: that lead the overly-ascetic to a bad place. | T: of one who lives slovenly ⏎ lead him on ⏎ to a bad destination.
+CONTEXT dhp241:0 | P: Lāḷudāyīvatthu | S: (none) | T: (none)
+
+## dhp241:1–dhp241:4 (dhp)
+CONTEXT dhp241:0 | P: Lāḷudāyīvatthu | S: (none) | T: (none)
+dhp241:1 | P: Asajjhāyamalā mantā, | S: Not rehearsing is the stain of hymns. | T: No recitation: the ruinous impurity ⏎ of chants.
+dhp241:2 | P: anuṭṭhānamalā gharā; | S: The stain of houses is neglect. | T: No initiative: of a household.
+dhp241:3 | P: Malaṁ vaṇṇassa kosajjaṁ, | S: Laziness is the stain of beauty. | T: Indolence: of beauty.
+dhp241:4 | P: pamādo rakkhato malaṁ. | S: A guard’s stain is negligence. | T: Heedlessness: of a guard.
+CONTEXT dhp242:0 | P: Aññatarakulaputtavatthu | S: (none) | T: (none)
+
+## dhp242:1–dhp242:4 (dhp)
+CONTEXT dhp242:0 | P: Aññatarakulaputtavatthu | S: (none) | T: (none)
+dhp242:1 | P: Malitthiyā duccaritaṁ, | S: Misconduct is a woman’s stain. | T: In a woman, misconduct is an impurity.
+dhp242:2 | P: maccheraṁ dadato malaṁ; | S: A giver’s stain is stinginess. | T: In a donor, stinginess.
+dhp242:3 | P: Malā ve pāpakā dhammā, | S: Bad qualities are a stain | T: Evil deeds are the real impurities
+dhp242:4 | P: asmiṁ loke paramhi ca. | S: in this world and the next. | T: in this world & the next.
+
+## dhp243:1–dhp243:4 (dhp)
+dhp243:1 | P: Tato malā malataraṁ, | S: But a worse stain than these | T: More impure than these impurities
+dhp243:2 | P: avijjā paramaṁ malaṁ; | S: is ignorance, the worst stain of all. | T: is the ultimate impurity: ⏎ ignorance.
+dhp243:3 | P: Etaṁ malaṁ pahantvāna, | S: Having given up that stain, | T: Having abandoned this impurity,
+dhp243:4 | P: nimmalā hotha bhikkhavo. | S: be without stains, mendicants! | T: monks, you’re impurity-free.
+CONTEXT dhp244:0 | P: Cūḷasāribhikkhuvatthu | S: (none) | T: (none)
+
+## dhp244:1–dhp244:4 (dhp) GATHERED; unequal counts require a reader
+CONTEXT dhp244:0 | P: Cūḷasāribhikkhuvatthu | S: (none) | T: (none)
+dhp244:1 | P: Sujīvaṁ ahirikena, | S: Life is easy for the shameless. | T: Life’s easy to live ⏎ for someone unscrupulous,
+dhp244:2 | P: kākasūrena dhaṁsinā; | S: With all the rude courage of a crow, | T: cunning as a crow, ⏎ corrupt, back-biting,
+dhp244:3 | P: Pakkhandinā pagabbhena, | S: they live pushy, | T: forward, & brash;
+dhp244:4 | P: saṅkiliṭṭhena jīvitaṁ. | S: rude, and corrupt. | T: (none)
+
+## dhp245:1–dhp245:4 (dhp) GATHERED; unequal counts require a reader
+dhp245:1 | P: Hirīmatā ca dujjīvaṁ, | S: Life is hard for the conscientious, | T: but for someone who’s constantly ⏎ scrupulous, cautious, ⏎ observant, sincere, ⏎ pure in his livelihood, ⏎ clean in his pursuits, ⏎ it’s hard.
+dhp245:2 | P: niccaṁ sucigavesinā; | S: always seeking purity, | T: (none)
+dhp245:3 | P: Alīnenāppagabbhena, | S: neither clinging nor rude, | T: (none)
+dhp245:4 | P: suddhājīvena passatā. | S: pure of livelihood and discerning. | T: (none)
+CONTEXT dhp246:0 | P: Pañcaupāsakavatthu | S: (none) | T: (none)
+
+## dhp246:1–dhp246:4 (dhp)
+CONTEXT dhp246:0 | P: Pañcaupāsakavatthu | S: (none) | T: (none)
+dhp246:1 | P: Yo pāṇamatipāteti, | S: Take anyone in this world | T: Whoever kills,
+dhp246:2 | P: musāvādañca bhāsati; | S: who kills living creatures, | T: (none)
+dhp246:3 | P: Loke adinnamādiyati, | S: speaks falsely, steals, | T: lies, steals,
+dhp246:4 | P: paradārañca gacchati. | S: commits adultery, | T: goes to someone else’s wife,
+
+## dhp247:1–dhp247:4 (dhp) GATHERED; equal counts: one line per row
+dhp247:1 | P: Surāmerayapānañca, | S: and indulges in drinking | T: (none)
+dhp247:2 | P: yo naro anuyuñjati; | S: beer and wine. | T: & is addicted to intoxicants,
+dhp247:3 | P: Idheva meso lokasmiṁ, | S: Right here they dig up | T: (none)
+dhp247:4 | P: mūlaṁ khaṇati attano. | S: the root of their own self. | T: digs himself up ⏎ by the root ⏎ right here in this world.
+AUTO dhp247:1 starts: & is addicted to intoxicants,
+AUTO dhp247:2 starts: digs himself up
+AUTO dhp247:3 starts: by the root
+AUTO dhp247:4 starts: right here in this world.
+
+## dhp248:1–dhp248:4 (dhp)
+dhp248:1 | P: Evaṁ bho purisa jānāhi, | S: Know this, my man: | T: So know, my good man,
+dhp248:2 | P: pāpadhammā asaññatā; | S: they are unrestrained and wicked. | T: that bad deeds are reckless.
+dhp248:3 | P: Mā taṁ lobho adhammo ca, | S: Don’t let that greed and unrighteousness | T: Don’t let greed & unrighteousness
+dhp248:4 | P: ciraṁ dukkhāya randhayuṁ. | S: inflict pain on you for long. | T: oppress you with long-term pain.
+CONTEXT dhp249:0 | P: Tissadaharavatthu | S: (none) | T: (none)
+
+## dhp249:1–dhp249:6 (dhp) GATHERED; unequal counts require a reader
+CONTEXT dhp249:0 | P: Tissadaharavatthu | S: (none) | T: (none)
+dhp249:1 | P: Dadāti ve yathāsaddhaṁ, | S: The people give according to their faith, | T: People give ⏎ in line with their faith,
+dhp249:2 | P: yathāpasādanaṁ jano; | S: according to their confidence. | T: in line with conviction.
+dhp249:3 | P: Tattha yo ca maṅku bhavati, | S: If you get upset over that, | T: Whoever gets flustered
+dhp249:4 | P: paresaṁ pānabhojane; | S: over others’ food and drink, | T: at food & drink given to others,
+dhp249:5 | P: Na so divā vā rattiṁ vā, | S: you’ll not, by day or by night, | T: attains no concentration ⏎ by day or by night. ⏎ But one in whom this is
+dhp249:6 | P: samādhimadhigacchati. | S: become immersed in samādhi. | T: (none)
+
+## dhp250:1–dhp250:4 (dhp) GATHERED; unequal counts require a reader
+dhp250:1 | P: Yassa cetaṁ samucchinnaṁ, | S: Those who have cut that out, | T: cut through
+dhp250:2 | P: mūlaghaccaṁ samūhataṁ; | S: dug it up at the root, eradicated it, | T: up-rooted ⏎ wiped out– ⏎ attains concentration
+dhp250:3 | P: Sa ve divā vā rattiṁ vā, | S: they will, by day or by night, | T: by day or by night.
+dhp250:4 | P: samādhimadhigacchati. | S: become immersed in samādhi. | T: (none)
+CONTEXT dhp251:0 | P: Pañcaupāsakavatthu | S: (none) | T: (none)
+
+## dhp251:1–dhp251:4 (dhp)
+CONTEXT dhp251:0 | P: Pañcaupāsakavatthu | S: (none) | T: (none)
+dhp251:1 | P: Natthi rāgasamo aggi, | S: There is no fire like greed, | T: There’s no fire like passion,
+dhp251:2 | P: natthi dosasamo gaho; | S: no crime like hate, | T: no seizure like anger,
+dhp251:3 | P: Natthi mohasamaṁ jālaṁ, | S: no net like delusion, | T: no snare like delusion,
+dhp251:4 | P: natthi taṇhāsamā nadī. | S: no river like craving. | T: no river like craving.
+CONTEXT dhp252:0 | P: Meṇḍakaseṭṭhivatthu | S: (none) | T: (none)
+
+## dhp252:1–dhp252:6 (dhp) GATHERED; unequal counts require a reader
+CONTEXT dhp252:0 | P: Meṇḍakaseṭṭhivatthu | S: (none) | T: (none)
+dhp252:1 | P: Sudassaṁ vajjamaññesaṁ, | S: It’s easy to see the faults of others, | T: It’s easy to see ⏎ the errors of others,
+dhp252:2 | P: attano pana duddasaṁ; | S: hard to see one’s own. | T: but hard to see ⏎ your own.
+dhp252:3 | P: Paresaṁ hi so vajjāni, | S: For the faults of others | T: You winnow like chaff ⏎ the errors of others,
+dhp252:4 | P: opunāti yathā bhusaṁ; | S: are tossed high like hay, | T: (none)
+dhp252:5 | P: Attano pana chādeti, | S: while one’s own are hidden, | T: but conceal your own–
+dhp252:6 | P: kaliṁva kitavā saṭho. | S: as a cheat hides a bad hand. | T: like a cheat, an unlucky throw.
+CONTEXT dhp253:0 | P: Ujjhānasaññittheravatthu | S: (none) | T: (none)
+
+## dhp253:1–dhp253:4 (dhp)
+CONTEXT dhp253:0 | P: Ujjhānasaññittheravatthu | S: (none) | T: (none)
+dhp253:1 | P: Paravajjānupassissa, | S: When you look for the flaws of others, | T: If you focus on the errors of others,
+dhp253:2 | P: niccaṁ ujjhānasaññino; | S: always finding fault, | T: constantly finding fault,
+dhp253:3 | P: Āsavā tassa vaḍḍhanti, | S: your defilements only grow, | T: your effluents flourish.
+dhp253:4 | P: ārā so āsavakkhayā. | S: you’re far from ending defilements. | T: You’re far from their ending.
+CONTEXT dhp254:0 | P: Subhaddaparibbājakavatthu | S: (none) | T: (none)
+
+## dhp254:1–dhp254:4 (dhp)
+CONTEXT dhp254:0 | P: Subhaddaparibbājakavatthu | S: (none) | T: (none)
+dhp254:1 | P: Ākāseva padaṁ natthi, | S: In the atmosphere there is no track, | T: There’s no trail in space,
+dhp254:2 | P: samaṇo natthi bāhire; | S: there’s no true ascetic outside here. | T: no outside contemplative.
+dhp254:3 | P: Papañcābhiratā pajā, | S: People enjoy proliferation, | T: People are smitten ⏎ with objectification,
+dhp254:4 | P: nippapañcā tathāgatā. | S: the Realized Ones are free of proliferation. | T: but devoid of objectification are ⏎ the Tathagatas.
+
+## dhp255:1–dhp255:4 (dhp)
+dhp255:1 | P: Ākāseva padaṁ natthi, | S: In the atmosphere there is no track, | T: There’s no trail in space,
+dhp255:2 | P: samaṇo natthi bāhire; | S: there’s no true ascetic outside here. | T: no outside contemplative,
+dhp255:3 | P: Saṅkhārā sassatā natthi, | S: No conditions last forever, | T: no eternal fabrications,
+dhp255:4 | P: natthi buddhānamiñjitaṁ. | S: the Awakened Ones are not shaken. | T: no wavering in the Awakened.
+CONTEXT dhp255:5 | P: Malavaggo aṭṭhārasamo. | S: (none) | T: (none)
+
+## dhp256:1–dhp256:4 (dhp) GATHERED; unequal counts require a reader
+CONTEXT dhp256:0.3 | P: Dhammaṭṭhavagga | S: 19. The Just | T: Dhp XIX : The Judge
+CONTEXT dhp256:0.4 | P: Vinicchayamahāmattavatthu | S: (none) | T: (none)
+dhp256:1 | P: Na tena hoti dhammaṭṭho, | S: You don’t become just | T: To pass judgment hurriedly ⏎ doesn’t mean you’re a judge.
+dhp256:2 | P: yenatthaṁ sāhasā naye; | S: by passing hasty judgment. | T: (none)
+dhp256:3 | P: Yo ca atthaṁ anatthañca, | S: An astute person evaluates both | T: The wise one, weighing both ⏎ the
+dhp256:4 | P: ubho niccheyya paṇḍito. | S: what is pertinent and what is irrelevant. | T: right judgment & wrong,
+
+## dhp257:1–dhp257:4 (dhp) GATHERED; possible speaker requires a reader
+dhp257:1 | P: Asāhasena dhammena, | S: A wise one judges others without haste, | T: judges others impartially– ⏎ unhurriedly, in line with the Dhamma,
+dhp257:2 | P: samena nayatī pare; | S: justly and impartially; | T: (none)
+dhp257:3 | P: Dhammassa gutto medhāvī, | S: that guardian of the law | T: guarding the Dhamma, ⏎ guarded by Dhamma, ⏎ intelligent:
+dhp257:4 | P: “dhammaṭṭho”ti pavuccati. | S: is said to be just. | T: he’s called a judge.
+CONTEXT dhp258:0 | P: Chabbaggiyavatthu | S: (none) | T: (none)
+
+## dhp258:1–dhp258:4 (dhp) GATHERED; unequal counts require a reader
+CONTEXT dhp258:0 | P: Chabbaggiyavatthu | S: (none) | T: (none)
+dhp258:1 | P: Na tena paṇḍito hoti, | S: You’re not an astute scholar | T: (none)
+dhp258:2 | P: yāvatā bahu bhāsati; | S: just because you speak a lot. | T: Simply talking a lot ⏎ doesn’t mean one is wise.
+dhp258:3 | P: Khemī averī abhayo, | S: One who is secure, free of enmity and fear, | T: Whoever’s secure– ⏎ no ⏎ hostility, ⏎ fear–
+dhp258:4 | P: “paṇḍito”ti pavuccati. | S: is said to be astute. | T: is said to be wise.
+CONTEXT dhp259:0 | P: Ekudānakhīṇāsavavatthu | S: (none) | T: (none)
+
+## dhp259:1–dhp259:6 (dhp) GATHERED; possible speaker requires a reader
+CONTEXT dhp259:0 | P: Ekudānakhīṇāsavavatthu | S: (none) | T: (none)
+dhp259:1 | P: Na tāvatā dhammadharo, | S: You’re not one who has memorized the teaching | T: Simply talking a lot ⏎ doesn’t maintain the Dhamma.
+dhp259:2 | P: yāvatā bahu bhāsati; | S: just because you recite a lot. | T: (none)
+dhp259:3 | P: Yo ca appampi sutvāna, | S: Someone who directly sees the teaching | T: Whoever ⏎ –although he’s heard next to nothing–
+dhp259:4 | P: dhammaṁ kāyena passati; | S: after hearing only a little | T: sees Dhamma through his body,
+dhp259:5 | P: Sa ve dhammadharo hoti, | S: is truly one who has memorized the teaching, | T: is not heedless of Dhamma:
+dhp259:6 | P: yo dhammaṁ nappamajjati. | S: for they can never forget it. | T: he’s one who maintains the Dhamma.
+CONTEXT dhp260:0 | P: Lakuṇḍakabhaddiyattheravatthu | S: (none) | T: (none)

@@ -9,8 +9,8 @@ sn43.1:1.1 none
 sn43.1:1.2 starts: I “Monks, I will teach you
 sn43.1:1.4 starts: “Which, monks, is the unfabricated?
 thag6.13:5.3 starts: However much the day passes,
-sn22.95:12.2 starts: When bereft of these
-sn22.95:12.3 starts: it lies thrown away,
+# superseded: sn22.95:12.2 starts: When bereft of these
+# superseded: sn22.95:12.3 starts: it lies thrown away,
 thag14.2:8.2 starts: or the righteous loss,
 thag14.2:8.3 starts: righteous loss is better
 thag14.2:12.3 starts: dying for righteousness is better,

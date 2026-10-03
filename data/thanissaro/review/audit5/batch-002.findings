@@ -13,9 +13,9 @@ iti76:8.2 none
 iti76:9.2 none
 snp4.7:1.1 starts: Tissa-metteyya: “Tell the damage, dear sir, for
 snp4.7:1.2 none
-snp4.7:1.3 none
-snp4.7:10.2 none
-snp4.7:10.3 none
+# superseded: snp4.7:1.3 none
+# superseded: snp4.7:10.2 none
+# superseded: snp4.7:10.3 none
 sn35.229:3.4 starts: waves, so very hard to cross.
 sn35.229:4.2 none
 sn12.31:2.4 none

@@ -1,0 +1,17 @@
+{
+  "batch": 19,
+  "versesRead": 58,
+  "rowsRead": 238,
+  "automaticFindings": 29,
+  "readerFindings": 20,
+  "unresolved": [
+    {
+      "key": "an5.36:3.1",
+      "reason": "T —straightened, Such— belongs to prior stanza Pali2.4 ujubhūtesu tādisu. T2.4 with hearts inspired by the noble ones mixes current3.1 vippasannamanā with prior2.3 ariyesu. Own line and ordering prevent a compliant boundary-only repair; AUTO3.1 withheld, remaining AUTO retained."
+    },
+    {
+      "key": "an5.57:14.3",
+      "reason": "T I overcame all intoxication belongs to next stanza15.1 Sabbe made abhibhosmi; T15.1 & life completes prior stanza14.4. Translator order interleaves stanza concepts, preventing a repair using whole lines without reordering."
+    }
+  ]
+}

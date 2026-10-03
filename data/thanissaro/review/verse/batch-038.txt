@@ -1,0 +1,452 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## snp1.7:23.1–snp1.7:23.6 (snp) GATHERED; possible speaker requires a reader
+snp1.7:23.1 | P: Yo ve anarahaṁ santo, | S: He claims to be a perfected one, | T: Whoever, though not an arahant, ⏎ claims to be an arahant:
+snp1.7:23.2 | P: Arahaṁ paṭijānāti; | S: when he really is no such thing. | T: (none)
+snp1.7:23.3 | P: Coro sabrahmake loke, | S: In the world with its divinities, | T: He is the thief in this world with its Brahmās.
+snp1.7:23.4 | P: Eso kho vasalādhamo; | S: that crook is truly the lowest lowlife. | T: He is the vilest of outcastes.
+snp1.7:23.5 | P: Ete kho vasalā vuttā, | S: These who are called lowlifes | T: These are said to be outcastes,
+snp1.7:23.6 | P: Mayā yete pakāsitā. | S: I have revealed to you. | T: as I have proclaimed them to you.
+
+## snp1.7:24.1–snp1.7:24.4 (snp)
+snp1.7:24.1 | P: Na jaccā vasalo hoti, | S: You’re not a lowlife by birth, | T: Not by birth is one an outcaste,
+snp1.7:24.2 | P: Na jaccā hoti brāhmaṇo; | S: nor by birth are you a brahmin. | T: not by birth a brahman.
+snp1.7:24.3 | P: Kammunā vasalo hoti, | S: You’re a lowlife by your deeds, | T: By action one is an outcaste.
+snp1.7:24.4 | P: Kammunā hoti brāhmaṇo. | S: by deeds you’re a brahmin. | T: By action is one a brahman.
+
+## snp1.7:25.1–snp1.7:25.4 (snp)
+snp1.7:25.1 | P: Tadamināpi jānātha, | S: And also you should know | T: Know, too, by this,
+snp1.7:25.2 | P: Yathāmedaṁ nidassanaṁ; | S: according to this example. | T: as I give an example:
+snp1.7:25.3 | P: Caṇḍālaputto sopāko, | S: A corpse-worker’s son of the dog-eating caste | T: Sopāka, the son of an outcaste,
+snp1.7:25.4 | P: Mātaṅgo iti vissuto. | S: became renowned as Mātaṅga. | T: was well-known as Mātaṅga:
+
+## snp1.7:26.1–snp1.7:26.4 (snp) GATHERED; unequal counts require a reader
+snp1.7:26.1 | P: So yasaṁ paramaṁ patto, | S: Mātaṅga achieved the highest fame | T: He, Mātaṅga, ⏎ attained the highest prestige,
+snp1.7:26.2 | P: Mātaṅgo yaṁ sudullabhaṁ; | S: so very hard to find. | T: hard to gain.
+snp1.7:26.3 | P: Āgacchuṁ tassupaṭṭhānaṁ, | S: Lots of aristocrats and brahmins | T: They came into his service, ⏎ many noble warriors & brahmans.
+snp1.7:26.4 | P: Khattiyā brāhmaṇā bahū. | S: came to serve him. | T: (none)
+
+## snp1.7:27.1–snp1.7:27.6 (snp) GATHERED; equal counts: one line per row
+snp1.7:27.1 | P: Devayānaṁ abhiruyha, | S: He ascended the stainless highway | T: Mounting the divine chariot, ⏎ and the great, stainless road,
+snp1.7:27.2 | P: Virajaṁ so mahāpathaṁ; | S: that leads to the heavens; | T: (none)
+snp1.7:27.3 | P: Kāmarāgaṁ virājetvā, | S: having discarded sensual desire, | T: dispassioned for sensual passion,
+snp1.7:27.4 | P: Brahmalokūpago ahu; | S: he was reborn in a realm of divinity. | T: he reached the world of the Brahmās.
+snp1.7:27.5 | P: Na naṁ jāti nivāresi, | S: His birth did not prevent him | T: His birth didn’t prevent him
+snp1.7:27.6 | P: Brahmalokūpapattiyā. | S: from rebirth in the realm of divinity. | T: from reaching the world of the Brahmās.
+AUTO snp1.7:27.1 starts: Mounting the divine chariot,
+AUTO snp1.7:27.2 starts: and the great, stainless road,
+AUTO snp1.7:27.3 starts: dispassioned for sensual passion,
+AUTO snp1.7:27.4 starts: he reached the world of the Brahmās.
+AUTO snp1.7:27.5 starts: His birth didn’t prevent him
+AUTO snp1.7:27.6 starts: from reaching the world of the Brahmās.
+
+## snp1.7:28.1–snp1.7:28.4 (snp)
+snp1.7:28.1 | P: Ajjhāyakakule jātā, | S: Those born in a brahmin family | T: Though born into a family of scholars,
+snp1.7:28.2 | P: Brāhmaṇā mantabandhavā; | S: who recite as kinsmen of the hymns, | T: brahmans, with chants as their kinsmen,
+snp1.7:28.3 | P: Te ca pāpesu kammesu, | S: are often discovered | T: are repeatedly seen with evil deeds:
+snp1.7:28.4 | P: Abhiṇhamupadissare. | S: in the midst of wicked deeds. | T: (none)
+
+## snp1.7:29.1–snp1.7:29.4 (snp)
+snp1.7:29.1 | P: Diṭṭheva dhamme gārayhā, | S: Blameworthy in this very life, | T: blameworthy in the here-&-now,
+snp1.7:29.2 | P: Samparāye ca duggati; | S: and in lives to come, a bad destination. | T: with a bad destination in the afterlife.
+snp1.7:29.3 | P: Na ne jāti nivāreti, | S: Their birth does not prevent them | T: Their birth doesn’t prevent them
+snp1.7:29.4 | P: Duggatyā garahāya vā. | S: from blame or bad destiny. | T: from blame & a bad destination.
+
+## snp1.7:30.1–snp1.7:30.4 (snp)
+snp1.7:30.1 | P: Na jaccā vasalo hoti, | S: You’re not a lowlife by birth, | T: Not by birth is one an outcaste,
+snp1.7:30.2 | P: Na jaccā hoti brāhmaṇo; | S: nor by birth are you a brahmin. | T: not by birth a brahman.
+snp1.7:30.3 | P: Kammunā vasalo hoti, | S: You’re a lowlife by your deeds, | T: By action one is an outcaste.
+snp1.7:30.4 | P: Kammunā hoti brāhmaṇo”ti. | S: by deeds you’re a brahmin.” | T: By action is one a brahman.
+CONTEXT snp1.7:31.1 | P: Evaṁ vutte, aggikabhāradvājo brāhmaṇo bhagavantaṁ etadavoca: | S: When he had spoken, the brahmin Bhāradvāja the Fire-Worshiper said to the Buddha, | T: When this was said, the brahman Aggika Bhāradvāja said to the Blessed One:
+CONTEXT snp1.7:31.2 | P: “abhikkantaṁ, bho gotama …pe… | S: “Excellent, worthy Gotama! Excellent! … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear. I go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks.
+
+## snp1.8:1.1–snp1.8:1.4 (snp)
+CONTEXT snp1.8:0.1 | P: Sutta Nipāta 1.8 | S: Anthology of Discourses 1.8 | T: (none)
+CONTEXT snp1.8:0.2 | P: Mettasutta | S: The Discourse on Love | T: 1:8 Goodwill
+snp1.8:1.1 | P: “Karaṇīyamatthakusalena, | S: Those who are skilled in the meaning of scripture | T: This is to be done by one skilled in aims
+snp1.8:1.2 | P: Yanta santaṁ padaṁ abhisamecca; | S: should practice as follows to realize the state of peace. | T: appreciating the state of peace:
+snp1.8:1.3 | P: Sakko ujū ca suhujū ca, | S: Let them be capable and upright, very upright, | T: Be capable, upright, & straightforward,
+snp1.8:1.4 | P: Sūvaco cassa mudu anatimānī. | S: easy to speak to, gentle and humble; | T: easy to instruct, gentle, & not conceited,
+
+## snp1.8:2.1–snp1.8:2.4 (snp)
+snp1.8:2.1 | P: Santussako ca subharo ca, | S: content and unburdensome, | T: content & easy to support,
+snp1.8:2.2 | P: Appakicco ca sallahukavutti; | S: unbusied, living lightly, | T: with few duties, living lightly,
+snp1.8:2.3 | P: Santindriyo ca nipako ca, | S: alert, with senses calmed, | T: with peaceful faculties, astute,
+snp1.8:2.4 | P: Appagabbho kulesvananugiddho. | S: courteous, not fawning on families. | T: modest, & no greed for supporters.
+
+## snp1.8:3.1–snp1.8:3.4 (snp)
+snp1.8:3.1 | P: Na ca khuddamācare kiñci, | S: Let them not do the slightest thing | T: Do not do the slightest thing
+snp1.8:3.2 | P: Yena viññū pare upavadeyyuṁ; | S: that others who are wise would blame. | T: that the observant would later censure.
+snp1.8:3.3 | P: Sukhino va khemino hontu, | S: May they be happy and safe! | T: Think: Happy, at rest,
+snp1.8:3.4 | P: Sabbasattā bhavantu sukhitattā. | S: May all beings be happy! | T: may all beings be happy at heart.
+
+## snp1.8:4.1–snp1.8:4.4 (snp)
+snp1.8:4.1 | P: Ye keci pāṇabhūtatthi, | S: Whatever living creatures there are | T: Whatever beings there may be,
+snp1.8:4.2 | P: Tasā vā thāvarā vanavasesā; | S: with not a one left out— | T: weak or strong, without exception,
+snp1.8:4.3 | P: Dīghā vā ye va mahantā, | S: frail or firm, long or large, | T: long, large,
+snp1.8:4.4 | P: Majjhimā rassakā aṇukathūlā. | S: medium, small, tiny or round, | T: middling, short, ⏎ subtle, gross,
+
+## snp1.8:5.1–snp1.8:5.4 (snp)
+snp1.8:5.1 | P: Diṭṭhā vā ye va adiṭṭhā, | S: seen or unseen, | T: seen & unseen,
+snp1.8:5.2 | P: Ye va dūre vasanti avidūre; | S: living far or near, | T: living near & far away,
+snp1.8:5.3 | P: Bhūtā va sambhavesī va, | S: those who have been born and those about to be born— | T: born or seeking birth:
+snp1.8:5.4 | P: Sabbasattā bhavantu sukhitattā. | S: may all beings be happy! | T: May all beings be happy at heart.
+
+## snp1.8:6.1–snp1.8:6.4 (snp)
+snp1.8:6.1 | P: Na paro paraṁ nikubbetha, | S: Let none deceive another, | T: Let no one deceive another
+snp1.8:6.2 | P: Nātimaññetha katthaci na kañci; | S: nor look down on anyone anywhere. | T: or despise anyone anywhere,
+snp1.8:6.3 | P: Byārosanā paṭighasañña, | S: Though provoked or aggrieved, | T: or, through anger or resistance-perception,
+snp1.8:6.4 | P: Nāññamaññassa dukkhamiccheyya. | S: let them not wish pain on each other. | T: wish for another to suffer.
+
+## snp1.8:7.1–snp1.8:7.4 (snp) GATHERED; equal counts: one line per row
+snp1.8:7.1 | P: Mātā yathā niyaṁ puttam | S: Even as a mother would protect with her life | T: As a mother would risk her life
+snp1.8:7.2 | P: Āyusā ekaputtamanurakkhe; | S: her child, her only child, | T: to protect her child, her only child,
+snp1.8:7.3 | P: Evampi sabbabhūtesu, | S: so too for all creatures | T: even so should one cultivate the heart limitlessly ⏎ with regard to all beings.
+snp1.8:7.4 | P: Mānasaṁ bhāvaye aparimāṇaṁ. | S: unfold a boundless heart. | T: (none)
+AUTO snp1.8:7.1 starts: As a mother would risk her life
+AUTO snp1.8:7.2 starts: to protect her child, her only child,
+AUTO snp1.8:7.3 starts: even so should one cultivate the heart limitlessly
+AUTO snp1.8:7.4 starts: with regard to all beings.
+
+## snp1.8:8.1–snp1.8:8.4 (snp)
+snp1.8:8.1 | P: Mettañca sabbalokasmi, | S: With love for the whole world, | T: With goodwill for the entire cosmos,
+snp1.8:8.2 | P: Mānasaṁ bhāvaye aparimāṇaṁ; | S: unfold a boundless heart: | T: cultivate the heart limitlessly:
+snp1.8:8.3 | P: Uddhaṁ adho ca tiriyañca, | S: above, below, all round, | T: above, below, & all around,
+snp1.8:8.4 | P: Asambādhaṁ averamasapattaṁ. | S: unconstricted, without enmity or foe. | T: unobstructed, without hostility or hate.
+
+## snp1.8:9.1–snp1.8:9.4 (snp)
+snp1.8:9.1 | P: Tiṭṭhaṁ caraṁ nisinno va, | S: When standing, walking, sitting, | T: Whether standing, walking, ⏎ sitting,
+snp1.8:9.2 | P: Sayāno yāvatāssa vitamiddho; | S: or lying down while yet unweary, | T: or lying down, ⏎ as long as one has banished torpor,
+snp1.8:9.3 | P: Etaṁ satiṁ adhiṭṭheyya, | S: keep this ever in mind; | T: one should be determined on this mindfulness.
+snp1.8:9.4 | P: Brahmametaṁ vihāramidhamāhu. | S: for this, they say, is a divine meditation in this life. | T: This is called a Brahmā abiding ⏎ here.
+
+## snp1.8:10.1–snp1.8:10.4 (snp)
+snp1.8:10.1 | P: Diṭṭhiñca anupaggamma, | S: Avoiding harmful views, | T: Not taken with views,
+snp1.8:10.2 | P: Sīlavā dassanena sampanno; | S: virtuous, accomplished in insight, | T: but virtuous & consummate in vision,
+snp1.8:10.3 | P: Kāmesu vinaya gedhaṁ, | S: with desire for sensual pleasures dispelled, | T: having subdued greed for sensuality,
+snp1.8:10.4 | P: Na hi jātuggabbhaseyya punaretī”ti. | S: they never return to a womb again. | T: one never again ⏎ will lie in the womb.
+CONTEXT snp1.8:10.5 | P: Mettasuttaṁ aṭṭhamaṁ. | S: (none) | T: (none)
+
+## snp1.9:1.1–snp1.9:1.5 (snp)
+CONTEXT snp1.9:0.1 | P: Sutta Nipāta 1.9 | S: Anthology of Discourses 1.9 | T: (none)
+CONTEXT snp1.9:0.2 | P: Hemavatasutta | S: With Hemavata | T: 1:9 Hemavata
+snp1.9:1.1 | P: “Ajja pannaraso uposatho, | S: “Today is the fifteenth day sabbath,” | T: Sātāgira the yakkha: ⏎ Today is the fifteenth, ⏎ the uposatha day.
+CONTEXT snp1.9:1.2 | P: (iti sātāgiro yakkho) | S: said Sātāgira, the native spirit of mount Sātā, | T: (none)
+snp1.9:1.3 | P: Dibbā ratti upaṭṭhitā; | S: “a holy night is at hand. | T: A divine night is at hand.
+snp1.9:1.4 | P: Anomanāmaṁ satthāraṁ, | S: Come now, let us see Gotama, | T: Let’s go see Gotama,
+snp1.9:1.5 | P: Handa passāma gotamaṁ”. | S: the Teacher of peerless name.” | T: the Teacher perfectly named.
+CONTEXT snp1.9:2.2 | P: (iti hemavato yakkho) | S: said Hemavata, the native spirit of the Himalayas, | T: (none)
+
+## snp1.9:2.1–snp1.9:2.5 (snp)
+snp1.9:2.1 | P: “Kacci mano supaṇihito, | S: “Isn’t his mind well-disposed,” | T: Hemavata the yakkha: ⏎ Is his mind well-directed,
+CONTEXT snp1.9:2.2 | P: (iti hemavato yakkho) | S: said Hemavata, the native spirit of the Himalayas, | T: (none)
+snp1.9:2.3 | P: Sabbabhūtesu tādino; | S: “impartial toward all creatures? | T: Such, toward all beings?
+snp1.9:2.4 | P: Kacci iṭṭhe aniṭṭhe ca, | S: And aren’t his thoughts under control | T: Are his resolves mastered
+snp1.9:2.5 | P: Saṅkappassa vasīkatā”. | S: when it comes to likes and dislikes?” | T: regarding what’s desirable & not?
+CONTEXT snp1.9:3.2 | P: (iti sātāgiro yakkho) | S: said Sātāgira, | T: (none)
+
+## snp1.9:3.1–snp1.9:3.5 (snp)
+snp1.9:3.1 | P: “Mano cassa supaṇihito, | S: “His mind is well-disposed,” | T: Sātāgira the yakkha: ⏎ His mind is well-directed
+CONTEXT snp1.9:3.2 | P: (iti sātāgiro yakkho) | S: said Sātāgira, | T: (none)
+snp1.9:3.3 | P: Sabbabhūtesu tādino; | S: “impartial toward all creatures. | T: and Such toward all beings.
+snp1.9:3.4 | P: Atho iṭṭhe aniṭṭhe ca, | S: His thoughts are under control | T: And his resolves are mastered
+snp1.9:3.5 | P: Saṅkappassa vasīkatā”. | S: when it comes to his likes and dislikes.” | T: regarding what’s desirable & not.
+CONTEXT snp1.9:4.2 | P: (iti hemavato yakkho) | S: said Hemavata, | T: (none)
+
+## snp1.9:4.1–snp1.9:4.5 (snp)
+snp1.9:4.1 | P: “Kacci adinnaṁ nādiyati, | S: “Doesn’t he not steal?” | T: Hemavata the yakkha: ⏎ Does he not take what’s not given?
+CONTEXT snp1.9:4.2 | P: (iti hemavato yakkho) | S: said Hemavata, | T: (none)
+snp1.9:4.3 | P: Kacci pāṇesu saññato; | S: “And doesn’t he harm not a creature? | T: Is he restrained toward beings?
+snp1.9:4.4 | P: Kacci ārā pamādamhā, | S: Isn’t he far from negligence? | T: Is he far from complacency?
+snp1.9:4.5 | P: Kacci jhānaṁ na riñcati”. | S: And doesn’t he not neglect absorption?” | T: Does he not neglect jhāna?
+CONTEXT snp1.9:5.2 | P: (iti sātāgiro yakkho) | S: said Sātāgira, | T: (none)
+
+## snp1.9:5.1–snp1.9:5.5 (snp)
+snp1.9:5.1 | P: “Na so adinnaṁ ādiyati, | S: “He does not take what is not given,” | T: Sātāgira the yakkha: ⏎ He doesn’t take what’s not given,
+CONTEXT snp1.9:5.2 | P: (iti sātāgiro yakkho) | S: said Sātāgira, | T: (none)
+snp1.9:5.3 | P: Atho pāṇesu saññato; | S: “and he harms not a creature. | T: and he’s restrained toward beings.
+snp1.9:5.4 | P: Atho ārā pamādamhā, | S: He is far from negligence— | T: He’s far from complacency and,
+snp1.9:5.5 | P: Buddho jhānaṁ na riñcati”. | S: the Buddha does not neglect absorption.” | T: awakened, he does not neglect jhāna.
+CONTEXT snp1.9:6.2 | P: (iti hemavato yakkho) | S: said Hemavata, | T: (none)
+
+## snp1.9:6.1–snp1.9:6.5 (snp)
+snp1.9:6.1 | P: “Kacci musā na bhaṇati, | S: “Doesn’t he avoid lying?” | T: Hemavata the yakkha: ⏎ Does he not tell lies?
+CONTEXT snp1.9:6.2 | P: (iti hemavato yakkho) | S: said Hemavata, | T: (none)
+snp1.9:6.3 | P: Kacci na khīṇabyappatho; | S: “And doesn’t he not speak sharply? | T: Do his ways of speaking not cut things off?
+snp1.9:6.4 | P: Kacci vebhūtiyaṁ nāha, | S: Doesn’t he avoid backbiting, | T: Does he not speak destructively?
+snp1.9:6.5 | P: Kacci samphaṁ na bhāsati”. | S: as well as speaking nonsense?” | T: Does he not speak idly?
+CONTEXT snp1.9:7.2 | P: (iti sātāgiro yakkho) | S: said Sātāgira, | T: (none)
+
+## snp1.9:7.1–snp1.9:7.5 (snp)
+snp1.9:7.1 | P: “Musā ca so na bhaṇati, | S: “He does not lie,” | T: Sātāgira the yakkha: ⏎ He doesn’t tell lies.
+CONTEXT snp1.9:7.2 | P: (iti sātāgiro yakkho) | S: said Sātāgira, | T: (none)
+snp1.9:7.3 | P: Atho na khīṇabyappatho; | S: “nor does he speak sharply. | T: His ways of speaking don’t cut things off.
+snp1.9:7.4 | P: Atho vebhūtiyaṁ nāha, | S: He avoids backbiting, | T: He doesn’t speak destructively.
+snp1.9:7.5 | P: Mantā atthañca bhāsati”. | S: and thoughtfully speaks wise counsel.” | T: Deliberating, he speaks what’s of benefit.
+CONTEXT snp1.9:8.2 | P: (iti hemavato yakkho) | S: said Hemavata, | T: (none)
+
+## snp1.9:8.1–snp1.9:8.5 (snp)
+snp1.9:8.1 | P: “Kacci na rajjati kāmesu, | S: “Doesn’t he find sensual pleasures unattractive?” | T: Hemavata the yakkha: ⏎ Is he not passionate for sensuality?
+CONTEXT snp1.9:8.2 | P: (iti hemavato yakkho) | S: said Hemavata, | T: (none)
+snp1.9:8.3 | P: Kacci cittaṁ anāvilaṁ; | S: “And isn’t his mind unclouded? | T: Is his mind unmuddied?
+snp1.9:8.4 | P: Kacci mohaṁ atikkanto, | S: Hasn’t he escaped delusion? | T: Has he gone beyond delusion?
+snp1.9:8.5 | P: Kacci dhammesu cakkhumā”. | S: Does his eye see clearly in all things?” | T: Does he have an Eye ⏎ with regard to phenomena?
+CONTEXT snp1.9:9.2 | P: (iti sātāgiro yakkho) | S: said Sātāgira, | T: (none)
+
+## snp1.9:9.1–snp1.9:9.5 (snp)
+snp1.9:9.1 | P: “Na so rajjati kāmesu, | S: “He does not find sensual pleasures attractive,” | T: Sātāgira the yakkha: ⏎ He’s not passionate for sensuality.
+CONTEXT snp1.9:9.2 | P: (iti sātāgiro yakkho) | S: said Sātāgira, | T: (none)
+snp1.9:9.3 | P: Atho cittaṁ anāvilaṁ; | S: “and his mind is unclouded. | T: His mind is unmuddied.
+snp1.9:9.4 | P: Sabbamohaṁ atikkanto, | S: He has escaped all delusion— | T: He has gone beyond all delusion.
+snp1.9:9.5 | P: Buddho dhammesu cakkhumā”. | S: the Buddha, whose eye sees clearly in all things.” | T: Awakened, he has an Eye ⏎ with regard to phenomena.
+CONTEXT snp1.9:10.2 | P: (iti hemavato yakkho) | S: said Hemavata, | T: (none)
+
+## snp1.9:10.1–snp1.9:10.5 (snp)
+snp1.9:10.1 | P: “Kacci vijjāya sampanno, | S: “Isn’t he accomplished in knowledge?” | T: Hemavata the yakkha: ⏎ Is he consummate in clear-knowing?
+CONTEXT snp1.9:10.2 | P: (iti hemavato yakkho) | S: said Hemavata, | T: (none)
+snp1.9:10.3 | P: Kacci saṁsuddhacāraṇo; | S: “And doesn’t he live a pure life? | T: Is he pure in his conduct?
+snp1.9:10.4 | P: Kaccissa āsavā khīṇā, | S: Aren’t his defilements all ended? | T: Are his effluents ended?
+snp1.9:10.5 | P: Kacci natthi punabbhavo”. | S: Doesn’t he have no future lives?” | T: Does he have no further becoming?
+CONTEXT snp1.9:11.2 | P: (iti sātāgiro yakkho) | S: said Sātāgira, | T: (none)
+
+## snp1.9:11.1–snp1.9:11.5 (snp)
+snp1.9:11.1 | P: “Vijjāya ceva sampanno, | S: “He is accomplished in knowledge,” | T: Sātāgira the yakkha: ⏎ He is both consummate in clear-knowing
+CONTEXT snp1.9:11.2 | P: (iti sātāgiro yakkho) | S: said Sātāgira, | T: (none)
+snp1.9:11.3 | P: Atho saṁsuddhacāraṇo; | S: “and he does live a pure life. | T: & pure in his conduct.
+snp1.9:11.4 | P: Sabbassa āsavā khīṇā, | S: His defilements are all ended, | T: All his effluents are ended.
+snp1.9:11.5 | P: Natthi tassa punabbhavo”. | S: there’ll be no more future lives for him.” | T: He has no further becoming.
+
+## snp1.9:12.1–snp1.9:12.4 (snp) GATHERED; possible speaker requires a reader
+snp1.9:12.1 | P: “Sampannaṁ munino cittaṁ, | S: “Accomplished is the sage’s mind | T: Hemavata the yakkha: ⏎ Consummate the mind of the sage
+snp1.9:12.2 | P: Kammunā byappathena ca; | S: in action and in speech, | T: in action & in ways of speech,
+snp1.9:12.3 | P: Vijjācaraṇasampannaṁ, | S: and he’s accomplished in knowledge and conduct | T: you rightly praise him ⏎ as consummate in clear-knowing & conduct.
+snp1.9:12.4 | P: Dhammato naṁ pasaṁsati”. | S: as per the teaching you praise.” | T: (none)
+
+## snp1.9:13.1–snp1.9:13.4 (snp) GATHERED; equal counts: one line per row
+snp1.9:13.1 | P: “Sampannaṁ munino cittaṁ, | S: “Accomplished is the sage’s mind | T: Consummate the mind of the sage
+snp1.9:13.2 | P: Kammunā byappathena ca; | S: in action and in speech, | T: in action & in ways of speech,
+snp1.9:13.3 | P: Vijjācaraṇasampannaṁ, | S: and he’s accomplished in knowledge and conduct | T: you rightly rejoice in him ⏎ as consummate in clear-knowing & conduct.
+snp1.9:13.4 | P: Dhammato anumodasi. | S: as per the teaching you rejoice in. | T: (none)
+AUTO snp1.9:13.1 starts: Consummate the mind of the sage
+AUTO snp1.9:13.2 starts: in action & in ways of speech,
+AUTO snp1.9:13.3 starts: you rightly rejoice in him
+AUTO snp1.9:13.4 starts: as consummate in clear-knowing & conduct.
+
+## snp1.9:14.1–snp1.9:14.4 (snp) GATHERED; equal counts: one line per row
+snp1.9:14.1 | P: Sampannaṁ munino cittaṁ, | S: Accomplished is the sage’s mind | T: Consummate the mind of the sage
+snp1.9:14.2 | P: Kammunā byappathena ca; | S: in action and in speech, | T: in action & in ways of speech, ⏎ let’s go see Gotama,
+snp1.9:14.3 | P: Vijjācaraṇasampannaṁ, | S: and he’s accomplished in knowledge and conduct: | T: consummate in clear-knowing & conduct.
+snp1.9:14.4 | P: Handa passāma gotamaṁ”. | S: come now, let us see Gotama.” | T: (none)
+AUTO snp1.9:14.1 starts: Consummate the mind of the sage
+AUTO snp1.9:14.2 starts: in action & in ways of speech,
+AUTO snp1.9:14.3 starts: let’s go see Gotama,
+AUTO snp1.9:14.4 starts: consummate in clear-knowing & conduct.
+
+## snp1.9:15.1–snp1.9:15.4 (snp) GATHERED; unequal counts require a reader
+snp1.9:15.1 | P: “Eṇijaṅghaṁ kisaṁ vīraṁ, | S: “The hero so lean, with antelope calves, | T: Come, let’s go see Gotama, ⏎ enlightened, ⏎ with legs like an antelope, thin,
+snp1.9:15.2 | P: Appāhāraṁ alolupaṁ; | S: not greedy, eating little, | T: eating little, not greedy,
+snp1.9:15.3 | P: Muniṁ vanasmiṁ jhāyantaṁ, | S: the sage meditating alone in the forest, | T: doing jhāna in the forest.
+snp1.9:15.4 | P: Ehi passāma gotamaṁ. | S: come now, let us see Gotama. | T: (none)
+
+## snp1.9:16.1–snp1.9:16.4 (snp)
+snp1.9:16.1 | P: Sīhaṁvekacaraṁ nāgaṁ, | S: A giant, wandering alone like a lion, | T: Having gone to the nāga, ⏎ the lion wandering alone,
+snp1.9:16.2 | P: Kāmesu anapekkhinaṁ; | S: unconcerned for sensual pleasures, | T: indifferent to sensuality,
+snp1.9:16.3 | P: Upasaṅkamma pucchāma, | S: let’s approach him and ask about | T: let’s ask him
+snp1.9:16.4 | P: Maccupāsappamocanaṁ. | S: release from the snare of death.” | T: about release from Death’s snare.
+
+## snp1.9:17.1–snp1.9:17.4 (snp) GATHERED; possible speaker requires a reader
+snp1.9:17.1 | P: Akkhātāraṁ pavattāraṁ, | S: “The communicator, the instructor, | T: Let’s ask Gotama, ⏎ proclaimer, preacher,
+snp1.9:17.2 | P: Sabbadhammāna pāraguṁ; | S: who has gone beyond all things, | T: attained to the far shore ⏎ of all phenomena:
+snp1.9:17.3 | P: Buddhaṁ verabhayātītaṁ, | S: Awakened, beyond enmities and fears, | T: awakened, ⏎ gone past animosity ⏎ & fear.
+snp1.9:17.4 | P: Mayaṁ pucchāma gotamaṁ”. | S: let us ask Gotama.” | T: (none)
+CONTEXT snp1.9:18.2 | P: (iti hemavato yakkho) | S: said Hemavata, | T: (none)
+
+## snp1.9:18.1–snp1.9:18.5 (snp)
+snp1.9:18.1 | P: “Kismiṁ loko samuppanno, | S: “What has the world arisen in?” | T: Hemavata the yakkha: ⏎ In what has the world arisen?
+CONTEXT snp1.9:18.2 | P: (iti hemavato yakkho) | S: said Hemavata, | T: (none)
+snp1.9:18.3 | P: Kismiṁ kubbati santhavaṁ; | S: “What does it get close to? | T: In what does it make acquaintance?
+snp1.9:18.4 | P: Kissa loko upādāya, | S: By grasping what | T: From clinging to what
+snp1.9:18.5 | P: Kismiṁ loko vihaññati”. | S: is the world troubled in what?” | T: is the world? ⏎ In what is the world ⏎ afflicted?
+CONTEXT snp1.9:19.2 | P: (hemavatāti bhagavā) | S: said the Buddha to Hemavata. | T: (none)
+
+## snp1.9:19.1–snp1.9:19.5 (snp)
+snp1.9:19.1 | P: “Chasu loko samuppanno, | S: “The world’s arisen in six,” | T: The Buddha: ⏎ In six has the world arisen.
+CONTEXT snp1.9:19.2 | P: (hemavatāti bhagavā) | S: said the Buddha to Hemavata. | T: (none)
+snp1.9:19.3 | P: Chasu kubbati santhavaṁ; | S: “It gets close to six. | T: In six does it make acquaintance.
+snp1.9:19.4 | P: Channameva upādāya, | S: Derived from the six, | T: From clinging just to six
+snp1.9:19.5 | P: Chasu loko vihaññati”. | S: the world’s troubled in six.” | T: is the world, ⏎ in six is the world ⏎ afflicted.
+
+## snp1.9:20.1–snp1.9:20.4 (snp)
+snp1.9:20.1 | P: “Katamaṁ taṁ upādānaṁ, | S: “What is that grasping | T: Hemavata the yakkha: ⏎ Which is that clinging
+snp1.9:20.2 | P: Yattha loko vihaññati; | S: by which the world is troubled? | T: where the world is afflicted?
+snp1.9:20.3 | P: Niyyānaṁ pucchito brūhi, | S: Tell us the exit when asked: | T: When asked the way leading out, please tell
+snp1.9:20.4 | P: Kathaṁ dukkhā pamuccati”. | S: how is one released from all suffering?” | T: how is one released ⏎ from suffering & stress.
+
+## snp1.9:21.1–snp1.9:21.4 (snp)
+snp1.9:21.1 | P: “Pañca kāmaguṇā loke, | S: “The world has five kinds of sensual stimulation, | T: The Buddha: ⏎ The five strings of sensuality in the world,
+snp1.9:21.2 | P: Manochaṭṭhā paveditā; | S: and the mind is said to be the sixth. | T: with the heart described as the sixth:
+snp1.9:21.3 | P: Ettha chandaṁ virājetvā, | S: When you’ve discarded desire for these, | T: Being dispassioned for desire there:
+snp1.9:21.4 | P: Evaṁ dukkhā pamuccati. | S: you’re released from all suffering. | T: That’s how one’s released ⏎ from suffering & stress.
+
+## snp1.9:22.1–snp1.9:22.4 (snp)
+snp1.9:22.1 | P: Etaṁ lokassa niyyānaṁ, | S: This is the exit from the world, | T: That is the way leading out of the world
+snp1.9:22.2 | P: Akkhātaṁ vo yathātathaṁ; | S: explained in accord with the truth. | T: proclaimed to you as it really is,
+snp1.9:22.3 | P: Etaṁ vo ahamakkhāmi, | S: The way I’ve explained it is how | T: I have proclaimed to you:
+snp1.9:22.4 | P: Evaṁ dukkhā pamuccati”. | S: you’re released from all suffering.” | T: That’s how one is released ⏎ from suffering & stress.
+
+## snp1.9:23.1–snp1.9:23.4 (snp)
+snp1.9:23.1 | P: “Ko sūdha tarati oghaṁ, | S: “Who here crosses the flood, | T: Hemavata the yakkha: ⏎ Who here crosses ⏎ over the flood?
+snp1.9:23.2 | P: Kodha tarati aṇṇavaṁ; | S: Who crosses the deluge? | T: Who here crosses ⏎ over the ocean?
+snp1.9:23.3 | P: Appatiṭṭhe anālambe, | S: Who, not standing and unsupported, | T: Unestablished, ⏎ without support,
+snp1.9:23.4 | P: Ko gambhīre na sīdati”. | S: does not sink in the deep?” | T: who doesn’t sink ⏎ into the deep?
+
+## snp1.9:24.1–snp1.9:24.4 (snp)
+snp1.9:24.1 | P: “Sabbadā sīlasampanno, | S: “Someone who is always endowed with ethics, | T: The Buddha: ⏎ Always consummate in virtue,
+snp1.9:24.2 | P: Paññavā susamāhito; | S: wise and serene, | T: discerning, well-centered,
+snp1.9:24.3 | P: Ajjhattacintī satimā, | S: inwardly reflective, mindful, | T: internally percipient, mindful,
+snp1.9:24.4 | P: Oghaṁ tarati duttaraṁ. | S: crosses the flood so hard to cross. | T: one crosses over the flood ⏎ hard to cross.
+
+## snp1.9:25.1–snp1.9:25.4 (snp)
+snp1.9:25.1 | P: Virato kāmasaññāya, | S: Someone who desists from sensual perception, | T: Abstaining from perceptions of sensuality,
+snp1.9:25.2 | P: Sabbasaṁyojanātigo; | S: who has escaped all fetters, | T: overcoming all fetters,
+snp1.9:25.3 | P: Nandībhavaparikkhīṇo, | S: and has ended relish for rebirth, | T: having totally ended delight in becoming,
+snp1.9:25.4 | P: So gambhīre na sīdati”. | S: does not sink in the deep.” | T: one doesn’t sink ⏎ into the deep.
+
+## snp1.9:26.1–snp1.9:26.4 (snp)
+snp1.9:26.1 | P: “Gambhīrapaññaṁ nipuṇatthadassiṁ, | S: “Behold him of wisdom deep who sees the subtle meaning, | T: Hemavata the yakkha: ⏎ The one deeply discerning, ⏎ seeing the subtle goal,
+snp1.9:26.2 | P: Akiñcanaṁ kāmabhave asattaṁ; | S: who has nothing, unattached to sensual life, | T: having nothing, ⏎ unattached in sensual becoming:
+snp1.9:26.3 | P: Taṁ passatha sabbadhi vippamuttaṁ, | S: everywhere free, | T: See him, everywhere released,
+snp1.9:26.4 | P: Dibbe pathe kamamānaṁ mahesiṁ. | S: the great seer treading the holy road. | T: the great seer, going the divine way!
+
+## snp1.9:27.1–snp1.9:27.4 (snp)
+snp1.9:27.1 | P: Anomanāmaṁ nipuṇatthadassiṁ, | S: Behold him of peerless name who sees the subtle meaning, | T: Perfectly named, ⏎ seeing the subtle goal,
+snp1.9:27.2 | P: Paññādadaṁ kāmālaye asattaṁ; | S: giver of wisdom, unattached to the realm of sensuality: | T: granting discernment, ⏎ unattached to sensual nostalgia:
+snp1.9:27.3 | P: Taṁ passatha sabbaviduṁ sumedhaṁ, | S: the all-knower, so very intelligent, | T: See him, all-knowing, wise,
+snp1.9:27.4 | P: Ariye pathe kamamānaṁ mahesiṁ. | S: the great seer treading the noble road. | T: the great seer, going the noble way!
+
+## snp1.9:28.1–snp1.9:28.4 (snp)
+snp1.9:28.1 | P: Sudiṭṭhaṁ vata no ajja, | S: It was a fine sight for us today, | T: Truly, it was well-seen today,
+snp1.9:28.2 | P: Suppabhātaṁ suhuṭṭhitaṁ; | S: a good sunup, a good rising, | T: well-dawned, well-arisen,
+snp1.9:28.3 | P: Yaṁ addasāma sambuddhaṁ, | S: to see the Awakened One, | T: that we saw the One Self-Awakened,
+snp1.9:28.4 | P: Oghatiṇṇamanāsavaṁ. | S: the undefiled one who has crossed the flood. | T: crossed over the flood, ⏎ effluent-free.
+
+## snp1.9:29.1–snp1.9:29.4 (snp)
+snp1.9:29.1 | P: Ime dasasatā yakkhā, | S: These thousand native spirits | T: These ten hundred yakkhas,
+snp1.9:29.2 | P: Iddhimanto yasassino; | S: powerful and glorious, | T: powerful, prestigious,
+snp1.9:29.3 | P: Sabbe taṁ saraṇaṁ yanti, | S: all go to you for refuge, | T: all go to you for refuge.
+snp1.9:29.4 | P: Tvaṁ no satthā anuttaro. | S: you are our supreme Teacher. | T: You are our teacher unexcelled.
+
+## snp1.9:30.1–snp1.9:30.4 (snp)
+snp1.9:30.1 | P: Te mayaṁ vicarissāma, | S: We shall journey | T: We will wander
+snp1.9:30.2 | P: Gāmā gāmaṁ nagā nagaṁ; | S: village to village, peak to peak, | T: from village to village, ⏎ town to town,
+snp1.9:30.3 | P: Namassamānā sambuddhaṁ, | S: paying homage to the Buddha, | T: paying homage to the One Self-Awakened
+snp1.9:30.4 | P: Dhammassa ca sudhammatan”ti. | S: and the clear rightness of the teaching!” | T: & to the Dhamma’s true rightness.
+CONTEXT snp1.9:30.5 | P: Hemavatasuttaṁ navamaṁ. | S: (none) | T: (none)
+
+## snp1.10:6.1–snp1.10:6.4 (snp)
+CONTEXT snp1.10:5.2 | P: Api ca tvaṁ, āvuso, puccha yadākaṅkhasī”ti. | S: But anyway, ask what you wish.” | T: But nevertheless, ask me what you wish.”
+CONTEXT snp1.10:5.3 | P: Atha kho āḷavako yakkho bhagavantaṁ gāthāya ajjhabhāsi: | S: Then the native spirit Āḷavaka addressed the Buddha in verse: | T: (none)
+snp1.10:6.1 | P: “Kiṁ sūdha vittaṁ purisassa seṭṭhaṁ, | S: “What’s a person’s best wealth? | T: Āḷavaka: ⏎ What is a person’s highest wealth here?
+snp1.10:6.2 | P: Kiṁ su suciṇṇaṁ sukhamāvahāti; | S: What brings happiness when practiced well? | T: What, when well-practiced, brings bliss?
+snp1.10:6.3 | P: Kiṁ su have sādutaraṁ rasānaṁ, | S: What’s the sweetest taste of all? | T: What is the most excellent of savors?
+snp1.10:6.4 | P: Kathaṁjīviṁ jīvitamāhu seṭṭhaṁ”. | S: The one they say has the best life: how do they live?” | T: Living in what way ⏎ is one’s life called the best?
+
+## snp1.10:7.1–snp1.10:7.4 (snp)
+snp1.10:7.1 | P: “Saddhīdha vittaṁ purisassa seṭṭhaṁ, | S: “Faith here is a person’s best wealth. | T: The Buddha: ⏎ Conviction is a person’s highest wealth here.
+snp1.10:7.2 | P: Dhammo suciṇṇo sukhamāvahāti; | S: The teaching brings happiness when practiced well. | T: Dhamma, well-practiced, brings bliss.
+snp1.10:7.3 | P: Saccaṁ have sādutaraṁ rasānaṁ, | S: Truth is the sweetest taste of all. | T: Truth is the most excellent of savors.
+snp1.10:7.4 | P: Paññājīviṁ jīvitamāhu seṭṭhaṁ”. | S: The one they say has the best life lives by wisdom.” | T: Living with discernment, ⏎ one’s life is called best.
+
+## snp1.10:8.1–snp1.10:8.4 (snp)
+snp1.10:8.1 | P: “Kathaṁ su tarati oghaṁ, | S: “How do you cross the flood? | T: Āḷavaka: ⏎ How does one cross over the flood?
+snp1.10:8.2 | P: kathaṁ su tarati aṇṇavaṁ; | S: How do you cross the deluge? | T: How over the sea?
+snp1.10:8.3 | P: Kathaṁ su dukkhamacceti, | S: How do you get over suffering? | T: How does one overcome suffering & stress?
+snp1.10:8.4 | P: kathaṁ su parisujjhati”. | S: How do you get purified?” | T: How is a person purified?
+
+## snp1.10:9.1–snp1.10:9.4 (snp)
+snp1.10:9.1 | P: “Saddhāya tarati oghaṁ, | S: “By faith you cross the flood, | T: The Buddha: ⏎ Through conviction one crosses over the flood.
+snp1.10:9.2 | P: appamādena aṇṇavaṁ; | S: and by diligence the deluge. | T: Through heedfulness, the sea.
+snp1.10:9.3 | P: Vīriyena dukkhamacceti, | S: By energy you get past suffering, | T: Through persistence one overcomes ⏎ suffering & stress.
+snp1.10:9.4 | P: paññāya parisujjhati”. | S: and you’re purified by wisdom.” | T: Through discernment a person is purified.
+
+## snp1.10:10.1–snp1.10:10.6 (snp) GATHERED; possible speaker requires a reader
+snp1.10:10.1 | P: “Kathaṁ su labhate paññaṁ, | S: “How do you get wisdom? | T: Āḷavaka: ⏎ How does one gain discernment?
+snp1.10:10.2 | P: kathaṁ su vindate dhanaṁ; | S: How do you earn wealth? | T: How does one find wealth?
+snp1.10:10.3 | P: Kathaṁ su kittiṁ pappoti, | S: How do you get a good reputation? | T: How does one attain honor?
+snp1.10:10.4 | P: kathaṁ mittāni ganthati; | S: How do you hold on to friends? | T: How bind friends to oneself?
+snp1.10:10.5 | P: Asmā lokā paraṁ lokaṁ, | S: How do the departed not grieve | T: Passing from this world ⏎ to ⏎ the next world, ⏎ how does one not grieve?
+snp1.10:10.6 | P: kathaṁ pecca na socati”. | S: when passing from this world to the next?” | T: (none)
+
+## snp1.10:11.1–snp1.10:11.4 (snp) GATHERED; possible speaker requires a reader
+snp1.10:11.1 | P: “Saddahāno arahataṁ, | S: “One who is diligent and discerning | T: The Buddha: ⏎ Convinced of the arahants’ Dhamma ⏎ for attaining unbinding, ⏎ —heedful, investigating—
+snp1.10:11.2 | P: dhammaṁ nibbānapattiyā; | S: gains wisdom by wanting to learn, | T: one listening well ⏎ gains discernment.
+snp1.10:11.3 | P: Sussūsaṁ labhate paññaṁ, | S: having faith in the perfected ones, | T: (none)
+snp1.10:11.4 | P: appamatto vicakkhaṇo. | S: and the teaching for becoming extinguished. | T: (none)
+
+## snp1.10:12.1–snp1.10:12.4 (snp)
+snp1.10:12.1 | P: Patirūpakārī dhuravā, | S: Being responsible, acting appropriately, | T: Doing what’s fitting, ⏎ enduring burdens,
+snp1.10:12.2 | P: uṭṭhātā vindate dhanaṁ; | S: and working hard you earn wealth. | T: one with initiative ⏎ finds wealth.
+snp1.10:12.3 | P: Saccena kittiṁ pappoti, | S: Truthfulness wins you a good reputation. | T: Through truth ⏎ one attains honor.
+snp1.10:12.4 | P: dadaṁ mittāni ganthati. | S: You hold on to friends by giving. | T: Giving ⏎ binds friends to oneself.
+
+## snp1.10:13.1–snp1.10:13.4 (snp) GATHERED; unequal counts require a reader
+snp1.10:13.1 | P: Yassete caturo dhammā, | S: A faithful householder of discernment | T: Endowed with these four qualities, ⏎ —truth, ⏎ self-control, ⏎ stamina, ⏎ generosity— ⏎ a householder of conviction,
+snp1.10:13.2 | P: saddhassa gharamesino; | S: who possesses these four qualities | T: (none)
+snp1.10:13.3 | P: Saccaṁ dhammo dhiti cāgo, | S: does not grieve after passing away: | T: on passing away, doesn’t grieve.
+snp1.10:13.4 | P: sa ve pecca na socati. | S: truth, principle, steadfastness, and generosity. | T: (none)
+
+## snp1.10:14.1–snp1.10:14.4 (snp)
+snp1.10:14.1 | P: Iṅgha aññepi pucchassu, | S: Go ahead, ask others as well, | T: Now, go ask others,
+snp1.10:14.2 | P: puthū samaṇabrāhmaṇe; | S: there are many ascetics and brahmins. | T: common brahmans & contemplatives,
+snp1.10:14.3 | P: Yadi saccā damā cāgā, | S: See whether anything better is found | T: if anything better than
+snp1.10:14.4 | P: khantyā bhiyyodha vijjati”. | S: than truth, principle, generosity, and patience.” | T: truth, ⏎ self-control, ⏎ stamina, ⏎ & generosity ⏎ here can be found.
+
+## snp1.10:15.1–snp1.10:15.4 (snp)
+snp1.10:15.1 | P: “Kathaṁ nu dāni puccheyyaṁ, | S: “Why now would I question | T: Āḷavaka: ⏎ How could I go ask
+snp1.10:15.2 | P: Puthū samaṇabrāhmaṇe; | S: the many ascetics and brahmins? | T: common brahmans & contemplatives?—
+snp1.10:15.3 | P: Yohaṁ ajja pajānāmi, | S: Today I understand | T: now that today I discern
+snp1.10:15.4 | P: Yo attho samparāyiko. | S: what’s good for lives to come. | T: what benefits ⏎ the next life.
+
+## snp1.10:16.1–snp1.10:16.4 (snp)
+snp1.10:16.1 | P: Atthāya vata me buddho, | S: It was truly for my benefit | T: It was truly for my well-being
+snp1.10:16.2 | P: Vāsāyāḷavimāgamā; | S: that the Buddha came to stay at Āḷavī. | T: that the Awakened One came ⏎ to stay in Āḷavī.
+snp1.10:16.3 | P: Yohaṁ ajja pajānāmi, | S: Today I understand | T: Today I discern
+snp1.10:16.4 | P: Yattha dinnaṁ mahapphalaṁ. | S: where a gift is very fruitful. | T: where what is given ⏎ bears great fruit.
+
+## snp1.10:17.1–snp1.10:17.4 (snp)
+snp1.10:17.1 | P: So ahaṁ vicarissāmi, | S: I myself will journey | T: I will wander
+snp1.10:17.2 | P: Gāmā gāmaṁ purā puraṁ; | S: village to village, town to town, | T: from village to village, ⏎ town to town,
+snp1.10:17.3 | P: Namassamāno sambuddhaṁ, | S: paying homage to the Buddha, | T: paying homage to the One Self-Awakened
+snp1.10:17.4 | P: Dhammassa ca sudhammatan”ti. | S: and the clear rightness of the teaching!” | T: & to the Dhamma’s true rightness.
+CONTEXT snp1.10:17.5 | P: Āḷavakasuttaṁ dasamaṁ. | S: (none) | T: (none)
+
+## snp1.11:1.1–snp1.11:1.4 (snp)
+CONTEXT snp1.11:0.1 | P: Sutta Nipāta 1.11 | S: Anthology of Discourses 1.11 | T: (none)
+CONTEXT snp1.11:0.2 | P: Vijayasutta | S: Victory Over Desire for the Body | T: 1:11 Victory
+snp1.11:1.1 | P: Caraṁ vā yadi vā tiṭṭhaṁ, | S: Walking and standing, | T: Whether walking, standing,
+snp1.11:1.2 | P: nisinno uda vā sayaṁ; | S: sitting and lying down, | T: sitting, or lying down,
+snp1.11:1.3 | P: Samiñjeti pasāreti, | S: extending and contracting the limbs: | T: it flexes & stretches:
+snp1.11:1.4 | P: esā kāyassa iñjanā. | S: these are the movements of the body. | T: This is the body’s movement.
+
+## snp1.11:2.1–snp1.11:2.4 (snp)
+snp1.11:2.1 | P: Aṭṭhinahārusaṁyutto, | S: Linked together by bones and sinews, | T: Joined together with tendons & bones,
+snp1.11:2.2 | P: tacamaṁsāvalepano; | S: plastered over with flesh and hide, | T: plastered over with muscle & skin,
+snp1.11:2.3 | P: Chaviyā kāyo paṭicchanno, | S: and covered by the skin, | T: hidden by complexion,
+snp1.11:2.4 | P: yathābhūtaṁ na dissati. | S: the body is not seen as it is. | T: the body isn’t seen ⏎ for what it is:
+
+## snp1.11:3.1–snp1.11:3.4 (snp)
+snp1.11:3.1 | P: Antapūro udarapūro, | S: It’s full of guts and belly, | T: filled with intestines, filled with stomach,
+snp1.11:3.2 | P: yakanapeḷassa vatthino; | S: liver and bladder, | T: with the lump of the liver, ⏎ bladder,
+snp1.11:3.3 | P: Hadayassa papphāsassa, | S: heart and lungs, | T: lungs, heart,
+snp1.11:3.4 | P: vakkassa pihakassa ca. | S: kidney and spleen, | T: kidneys, spleen,
+
+## snp1.11:4.1–snp1.11:4.4 (snp)
+snp1.11:4.1 | P: Siṅghāṇikāya kheḷassa, | S: spit and snot, | T: mucus,
+snp1.11:4.2 | P: sedassa ca medassa ca; | S: sweat and fat, | T: sweat, saliva, fat,
+snp1.11:4.3 | P: Lohitassa lasikāya, | S: blood and synovial fluid, | T: blood, synovial fluid,
+snp1.11:4.4 | P: pittassa ca vasāya ca. | S: bile and grease. | T: bile, & oil.

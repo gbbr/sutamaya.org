@@ -1,0 +1,13 @@
+{
+  "batch": 47,
+  "versesRead": 54,
+  "rowsRead": 226,
+  "automaticFindings": 0,
+  "readerFindings": 26,
+  "unresolved": [
+    {
+      "key": "snp3.12:25.1–snp3.12:26.1",
+      "reason": "Translator puts “Knowing that” (26.1) before the feelings list of verse 25, with “is stressful” after it. Whole-stanza separation requires reordering; only internal whole-line distribution is proposed."
+    }
+  ]
+}

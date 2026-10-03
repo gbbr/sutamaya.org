@@ -1,0 +1,295 @@
+{
+  "casesReviewed": 14,
+  "resolved": 0,
+  "unresolved": [
+    {
+      "key": "sn3.19:7.1",
+      "reason": "prose/editorial attachment outside scope: Source block 7 is the prose introduction; the verse starts at block 8. Removing that introduction from verse 7 requires a non-verse boundary change."
+    },
+    {
+      "key": "sn4.18:3.3",
+      "reason": "omitted translation: The source goes directly from the two demerit lines (6–7) to the next stanza (8–11). No English line translates the question in Pali 3.3–3.4; the two empty rows are legitimate omissions."
+    },
+    {
+      "key": "sn4.24:10.4",
+      "reason": "prose/editorial attachment outside scope: The last verse line is source block 55; block 56 is the following narrative. The source does provide a break, but ending the verse there requires changing the following non-verse ownership."
+    },
+    {
+      "key": "an3.39:10.3",
+      "reason": "source-order interleaving: Source block 23, “I overcame all intoxication”, belongs to Pali stanza 11 but precedes block 24, “with health, youth, & life”, belonging to stanza 10. Block 24 is one source line, so its existing cut before “& life” is also invalid. No ordered complete-stanza cut exists."
+    },
+    {
+      "key": "an4.19:4.1",
+      "reason": "prose/editorial attachment outside scope: Source block 11 is the prose list of four ways not to go astray; stanza 4 begins at block 12. Moving the prose out of stanza 4 requires a non-verse key; leaving it in stanza 3 would attach it to another verse."
+    },
+    {
+      "key": "an5.36:3.1",
+      "reason": "source-order interleaving: Source block 6 combines stanza 3’s inspired hearts with stanza 2’s noble recipients in one line, followed by stanza 2’s “—straightened, Such—” at block 7. Stanza 3’s remaining offering lines follow at 8–12; whole-line cuts cannot give both stanzas their own translation."
+    },
+    {
+      "key": "an5.57:14.3",
+      "reason": "source-order interleaving: Source block 28, “I overcame all intoxication”, belongs to Pali stanza 15 but precedes stanza 14’s intoxication list in block 29. “with health, youth, & life” is one source line, so the current cut before “& life” is invalid; an ordered complete-stanza repair is impossible."
+    },
+    {
+      "key": "an6.45:21.3",
+      "reason": "source-order interleaving: Stanza 22’s householder description at block 68, “living at home,” precedes stanza 21’s gift and righteous-wealth lines at 69–70. Block 69 is the whole line “making gifts of his belongings,”, also ruling out the current internal cut before “of his belongings,”. Complete ownership requires reordering."
+    },
+    {
+      "key": "an8.54:18.2",
+      "reason": "source-order interleaving: The both-life wording in source block 28 translates stanza 18’s opening before blocks 29–30 translate stanza 17’s declaration by the truly named one. Blocks 25–30 therefore interleave the two stanza identities; no contiguous ordered cut restores both."
+    },
+    {
+      "key": "snp3.1:6.4",
+      "reason": "source-order interleaving: Source block 23, “Mindful, his eyes downcast,”, translates stanza 7’s opening before block 24 finishes stanza 6 with the plow-length gaze. Moving either boundary cannot restore both complete stanzas without reordering."
+    },
+    {
+      "key": "snp3.12:25.1",
+      "reason": "source-order interleaving: Stanza 26’s “Knowing that” at source block 109 precedes stanza 25’s feelings list at 110–113, while the rest of stanza 26 follows at 114–125. Its opening and remainder surround the other stanza, preventing complete ownership by ordered cuts."
+    },
+    {
+      "key": "thag17.2:22.3",
+      "reason": "source-order interleaving: Source blocks 109–112 put Pali stanza 23’s time/wage ending first; blocks 113–116 put stanza 22’s mindful/alert ending second. The source thus reverses the distinguishing endings. The supplied Pali stanza 22 body-laying line is also rendered as awaiting time. Boundaries alone cannot restore both identities."
+    },
+    {
+      "key": "thig6.7:3.1",
+      "reason": "source-order interleaving: Source block 13 translates stanza 4’s abandoning-the-lower-fetters opening before stanza 3’s list at 14–17; stanza 4’s result follows at 18–19. Its two parts surround stanza 3, so no ordered whole-line cut restores both."
+    },
+    {
+      "key": "ud7.8:4.6",
+      "reason": "prose/editorial attachment outside scope: The actual source separates verse-ending “attachment.” (block 16) from editorial paragraphs 17–19. Thus the displayed unbroken app line is not a true source line, but excluding the commentary still needs an end boundary or non-verse attachment unavailable to this verse-start-only review."
+    }
+  ],
+  "perCase": [
+    {
+      "key": "sn3.19:7.1",
+      "status": "unresolved",
+      "classification": "prose/editorial attachment outside scope",
+      "reason": "Source block 7 is the prose introduction; the verse starts at block 8. Removing that introduction from verse 7 requires a non-verse boundary change.",
+      "sourceLines": [
+        7,
+        8
+      ]
+    },
+    {
+      "key": "sn4.18:3.3",
+      "status": "unresolved",
+      "classification": "omitted translation",
+      "reason": "The source goes directly from the two demerit lines (6–7) to the next stanza (8–11). No English line translates the question in Pali 3.3–3.4; the two empty rows are legitimate omissions.",
+      "sourceLines": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "key": "sn4.24:10.4",
+      "status": "unresolved",
+      "classification": "prose/editorial attachment outside scope",
+      "reason": "The last verse line is source block 55; block 56 is the following narrative. The source does provide a break, but ending the verse there requires changing the following non-verse ownership.",
+      "sourceLines": [
+        55,
+        56
+      ]
+    },
+    {
+      "key": "an3.39:10.3",
+      "status": "unresolved",
+      "classification": "source-order interleaving",
+      "reason": "Source block 23, “I overcame all intoxication”, belongs to Pali stanza 11 but precedes block 24, “with health, youth, & life”, belonging to stanza 10. Block 24 is one source line, so its existing cut before “& life” is also invalid. No ordered complete-stanza cut exists.",
+      "sourceLines": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "key": "an4.19:4.1",
+      "status": "unresolved",
+      "classification": "prose/editorial attachment outside scope",
+      "reason": "Source block 11 is the prose list of four ways not to go astray; stanza 4 begins at block 12. Moving the prose out of stanza 4 requires a non-verse key; leaving it in stanza 3 would attach it to another verse.",
+      "sourceLines": [
+        11,
+        12
+      ]
+    },
+    {
+      "key": "an5.36:3.1",
+      "status": "unresolved",
+      "classification": "source-order interleaving",
+      "reason": "Source block 6 combines stanza 3’s inspired hearts with stanza 2’s noble recipients in one line, followed by stanza 2’s “—straightened, Such—” at block 7. Stanza 3’s remaining offering lines follow at 8–12; whole-line cuts cannot give both stanzas their own translation.",
+      "sourceLines": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "key": "an5.57:14.3",
+      "status": "unresolved",
+      "classification": "source-order interleaving",
+      "reason": "Source block 28, “I overcame all intoxication”, belongs to Pali stanza 15 but precedes stanza 14’s intoxication list in block 29. “with health, youth, & life” is one source line, so the current cut before “& life” is invalid; an ordered complete-stanza repair is impossible.",
+      "sourceLines": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "key": "an6.45:21.3",
+      "status": "unresolved",
+      "classification": "source-order interleaving",
+      "reason": "Stanza 22’s householder description at block 68, “living at home,” precedes stanza 21’s gift and righteous-wealth lines at 69–70. Block 69 is the whole line “making gifts of his belongings,”, also ruling out the current internal cut before “of his belongings,”. Complete ownership requires reordering.",
+      "sourceLines": [
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75
+      ]
+    },
+    {
+      "key": "an8.54:18.2",
+      "status": "unresolved",
+      "classification": "source-order interleaving",
+      "reason": "The both-life wording in source block 28 translates stanza 18’s opening before blocks 29–30 translate stanza 17’s declaration by the truly named one. Blocks 25–30 therefore interleave the two stanza identities; no contiguous ordered cut restores both.",
+      "sourceLines": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "key": "snp3.1:6.4",
+      "status": "unresolved",
+      "classification": "source-order interleaving",
+      "reason": "Source block 23, “Mindful, his eyes downcast,”, translates stanza 7’s opening before block 24 finishes stanza 6 with the plow-length gaze. Moving either boundary cannot restore both complete stanzas without reordering.",
+      "sourceLines": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "key": "snp3.12:25.1",
+      "status": "unresolved",
+      "classification": "source-order interleaving",
+      "reason": "Stanza 26’s “Knowing that” at source block 109 precedes stanza 25’s feelings list at 110–113, while the rest of stanza 26 follows at 114–125. Its opening and remainder surround the other stanza, preventing complete ownership by ordered cuts.",
+      "sourceLines": [
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125
+      ]
+    },
+    {
+      "key": "thag17.2:22.3",
+      "status": "unresolved",
+      "classification": "source-order interleaving",
+      "reason": "Source blocks 109–112 put Pali stanza 23’s time/wage ending first; blocks 113–116 put stanza 22’s mindful/alert ending second. The source thus reverses the distinguishing endings. The supplied Pali stanza 22 body-laying line is also rendered as awaiting time. Boundaries alone cannot restore both identities.",
+      "sourceLines": [
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116
+      ]
+    },
+    {
+      "key": "thig6.7:3.1",
+      "status": "unresolved",
+      "classification": "source-order interleaving",
+      "reason": "Source block 13 translates stanza 4’s abandoning-the-lower-fetters opening before stanza 3’s list at 14–17; stanza 4’s result follows at 18–19. Its two parts surround stanza 3, so no ordered whole-line cut restores both.",
+      "sourceLines": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "key": "ud7.8:4.6",
+      "status": "unresolved",
+      "classification": "prose/editorial attachment outside scope",
+      "reason": "The actual source separates verse-ending “attachment.” (block 16) from editorial paragraphs 17–19. Thus the displayed unbroken app line is not a true source line, but excluding the commentary still needs an end boundary or non-verse attachment unavailable to this verse-start-only review.",
+      "sourceLines": [
+        16,
+        17,
+        18,
+        19
+      ]
+    }
+  ],
+  "findingsCount": 4,
+  "additionalResolvedVerses": [
+    {
+      "key": "thig6.7:5",
+      "sourceLines": [
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "reason": "Source block 20 is the whole line “Forsaking passion, conceit,”. The current row 5.2 cuts inside it at “conceit,”. Give row 5.1 that complete line, row 5.2 block 21, row 5.3 block 22, and row 5.4 blocks 23–24, preserving order and filling all four rows.",
+      "findings": 4
+    }
+  ],
+  "ruleCandidate": "Actual source blocks can differ from displayed T breaks or existing starts. A source paragraph break can establish that prose is outside a verse while still requiring a non-verse boundary change beyond this review scope."
+}

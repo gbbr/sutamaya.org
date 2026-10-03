@@ -1,0 +1,478 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## thag15.2:9.1–thag15.2:9.4 (thag)
+thag15.2:9.1 | P: Sayaṁ samāhito nāgo, | S: the giant is serene when lying down, | T: when reclining, the nāga is concentrated,
+thag15.2:9.2 | P: nisinnopi samāhito; | S: and when sitting, the giant is serene. | T: when sitting, the nāga is concentrated.
+thag15.2:9.3 | P: Sabbattha saṁvuto nāgo, | S: The giant is restrained everywhere: | T: Everywhere he’s restrained, the nāga:
+thag15.2:9.4 | P: esā nāgassa sampadā. | S: this is the accomplishment of the giant. | T: That is the nāga’s consummation.
+
+## thag15.2:10.1–thag15.2:10.4 (thag)
+thag15.2:10.1 | P: Bhuñjati anavajjāni, | S: He eats blameless things, | T: He eats what is blameless;
+thag15.2:10.2 | P: sāvajjāni na bhuñjati; | S: he doesn’t eat blameworthy things. | T: doesn’t eat what is not;
+thag15.2:10.3 | P: Ghāsamacchādanaṁ laddhā, | S: When he gets food and clothes, | T: on gaining food & clothing,
+thag15.2:10.4 | P: sannidhiṁ parivajjayaṁ. | S: he avoids storing them up. | T: doesn’t store it up.
+
+## thag15.2:11.1–thag15.2:11.4 (thag)
+thag15.2:11.1 | P: Saṁyojanaṁ aṇuṁ thūlaṁ, | S: Having severed all bonds, | T: Having cut all bonds,
+thag15.2:11.2 | P: sabbaṁ chetvāna bandhanaṁ; | S: fetters large and small, | T: fetters tiny & large,
+thag15.2:11.3 | P: Yena yeneva gacchati, | S: wherever he goes, | T: wherever he goes,
+thag15.2:11.4 | P: anapekkhova gacchati. | S: he goes without concern. | T: he goes without longing.
+
+## thag15.2:12.1–thag15.2:12.4 (thag) GATHERED; equal counts: one line per row
+thag15.2:12.1 | P: Yathāpi udake jātaṁ, | S: A white lotus, | T: Like a white lotus,
+thag15.2:12.2 | P: puṇḍarīkaṁ pavaḍḍhati; | S: fragrant and delightful, | T: (none)
+thag15.2:12.3 | P: Nopalippati toyena, | S: sprouts in water and grows there, | T: born & growing in the water,
+thag15.2:12.4 | P: sucigandhaṁ manoramaṁ. | S: but the water doesn’t cling to it. | T: but not smeared by the water ⏎ —fragrant, delightful—
+AUTO thag15.2:12.1 starts: Like a white lotus,
+AUTO thag15.2:12.2 starts: born & growing in the water,
+AUTO thag15.2:12.3 starts: but not smeared by the water
+AUTO thag15.2:12.4 starts: —fragrant, delightful—
+
+## thag15.2:13.1–thag15.2:13.4 (thag)
+thag15.2:13.1 | P: Tatheva ca loke jāto, | S: Just so the Buddha is born in the world, | T: even so the awakened one, ⏎ well-born in the world,
+thag15.2:13.2 | P: buddho loke viharati; | S: and lives in the world, | T: lives in the world,
+thag15.2:13.3 | P: Nopalippati lokena, | S: but the world doesn’t stick to him, | T: but is not smeared by the world,
+thag15.2:13.4 | P: toyena padumaṁ yathā. | S: as water does not stick to the lotus. | T: like the lotus, by the water.
+
+## thag15.2:14.1–thag15.2:14.4 (thag)
+thag15.2:14.1 | P: Mahāgini pajjalito, | S: A great blazing fire | T: A great blazing fire
+thag15.2:14.2 | P: anāhāropasammati; | S: dies down when the fuel runs out. | T: unnourished grows calm,
+thag15.2:14.3 | P: Aṅgāresu ca santesu, | S: And when the coals have gone out | T: and though its embers exist
+thag15.2:14.4 | P: nibbutoti pavuccati. | S: it’s said to be “quenched”. | T: is described as unbound:
+
+## thag15.2:15.1–thag15.2:15.4 (thag) GATHERED; equal counts: one line per row
+thag15.2:15.1 | P: Atthassāyaṁ viññāpanī, | S: This simile is taught by the discerning | T: Conveying an instructive meaning, ⏎ this image is taught by the observant.
+thag15.2:15.2 | P: upamā viññūhi desitā; | S: to express the meaning clearly. | T: (none)
+thag15.2:15.3 | P: Viññissanti mahānāgā, | S: Great giants will understand | T: Great nāgas will recognize
+thag15.2:15.4 | P: nāgaṁ nāgena desitaṁ. | S: what the giant taught the giant. | T: the nāga as taught by the nāga
+AUTO thag15.2:15.1 starts: Conveying an instructive meaning,
+AUTO thag15.2:15.2 starts: this image is taught by the observant.
+AUTO thag15.2:15.3 starts: Great nāgas will recognize
+AUTO thag15.2:15.4 starts: the nāga as taught by the nāga
+
+## thag15.2:16.1–thag15.2:16.4 (thag)
+thag15.2:16.1 | P: Vītarāgo vītadoso, | S: Free of greed, free of hate, | T: as free from passion, ⏎ free from aversion,
+thag15.2:16.2 | P: Vītamoho anāsavo; | S: free of delusion, undefiled; | T: free from delusion, ⏎ effluent-free.
+thag15.2:16.3 | P: Sarīraṁ vijahaṁ nāgo, | S: the giant, giving up his body, | T: His body discarded, the nāga
+thag15.2:16.4 | P: Parinibbissatyanāsavo”ti. | S: undefiled, will be fully quenched. | T: will, without effluent, ⏎ totally unbind.
+CONTEXT thag15.2:16.5 | P: … Udāyī thero … | S: (none) | T: (none)
+CONTEXT thag15.2:16.6 | P: Soḷasakanipāto niṭṭhito. | S: (none) | T: (none)
+
+## thag15.2:17.1–thag15.2:17.4 (thag)
+CONTEXT thag15.2:16.6 | P: Soḷasakanipāto niṭṭhito. | S: (none) | T: (none)
+CONTEXT thag15.2:17.0 | P: Tatruddānaṁ | S: (none) | T: (none)
+thag15.2:17.1 | P: Koṇḍañño ca udāyī ca, | S: (none) | T: (none)
+thag15.2:17.2 | P: therā dve te mahiddhikā; | S: (none) | T: (none)
+thag15.2:17.3 | P: Soḷasamhi nipātamhi, | S: (none) | T: (none)
+thag15.2:17.4 | P: gāthāyo dve ca tiṁsa cāti. | S: (none) | T: (none)
+
+## thag16.1:1.1–thag16.1:1.4 (thag) GATHERED; possible speaker requires a reader
+CONTEXT thag16.1:0.3 | P: Paṭhamavagga | S: Chapter One | T: (none)
+CONTEXT thag16.1:0.4 | P: Adhimuttattheragāthā | S: Adhimutta (2nd) | T: Thag 16:1 Adhimutta & the Bandits
+thag16.1:1.1 | P: “Yaññatthaṁ vā dhanatthaṁ vā, | S: “Those who we killed in the past, | T: The bandit chief: ⏎ “Those who ⏎ for the sake of sacrifice ⏎ for the sake of wealth ⏎ we have killed in the past,
+thag16.1:1.2 | P: ye hanāma mayaṁ pure; | S: whether for sacrifice or for wealth, | T: against their will
+thag16.1:1.3 | P: Avasesaṁ bhayaṁ hoti, | S: without exception were afraid; | T: (none)
+thag16.1:1.4 | P: vedhanti vilapanti ca. | S: they trembled and they squealed. | T: have trembled & babbled ⏎ from fear.
+
+## thag16.1:2.1–thag16.1:2.4 (thag)
+thag16.1:2.1 | P: Tassa te natthi bhītattaṁ, | S: But you’re not scared; | T: But you— ⏎ you show no fear;
+thag16.1:2.2 | P: bhiyyo vaṇṇo pasīdati; | S: you look even calmer than before. | T: your complexion brightens.
+thag16.1:2.3 | P: Kasmā na paridevesi, | S: Why don’t you cry out | T: Why don’t you lament
+thag16.1:2.4 | P: evarūpe mahabbhaye”. | S: in such a terrifying situation?” | T: in the face of what’s greatly to be feared?”
+
+## thag16.1:3.1–thag16.1:3.4 (thag) GATHERED; unequal counts require a reader
+thag16.1:3.1 | P: “Natthi cetasikaṁ dukkhaṁ, | S: “There isn’t any mental suffering | T: Ven. Adhimutta: ⏎ “There are no painful mind-states,
+thag16.1:3.2 | P: anapekkhassa gāmaṇi; | S: for one without concern, village chief. | T: chieftain, ⏎ in one without longing.
+thag16.1:3.3 | P: Atikkantā bhayā sabbe, | S: All fears are left behind | T: In one whose fetters are ended, ⏎ all fears are overcome.
+thag16.1:3.4 | P: khīṇasaṁyojanassa ve. | S: by one whose fetters have ended. | T: (none)
+
+## thag16.1:4.1–thag16.1:4.4 (thag) GATHERED; unequal counts require a reader
+thag16.1:4.1 | P: Khīṇāya bhavanettiyā, | S: When the leash to existence is ended, | T: With the ending of [craving] ⏎ the guide to becoming,
+thag16.1:4.2 | P: diṭṭhe dhamme yathātathe; | S: and the truth is seen as it is, | T: when phenomena are seen ⏎ for what they are,
+thag16.1:4.3 | P: Na bhayaṁ maraṇe hoti, | S: there is no fear of death; | T: then as in the laying down of a burden, ⏎ there’s no fear in death.
+thag16.1:4.4 | P: bhāranikkhepane yathā. | S: it’s like laying down a burden. | T: (none)
+
+## thag16.1:5.1–thag16.1:5.4 (thag)
+thag16.1:5.1 | P: Suciṇṇaṁ brahmacariyaṁ me, | S: I’ve lived the spiritual life well, | T: I’ve lived well the holy life,
+thag16.1:5.2 | P: maggo cāpi subhāvito; | S: and developed the path well, too. | T: well-developed the path.
+thag16.1:5.3 | P: Maraṇe me bhayaṁ natthi, | S: I do not fear death; | T: Death holds no fear for me.
+thag16.1:5.4 | P: rogānamiva saṅkhaye. | S: it’s like the passing of a disease. | T: It’s like the end of a disease.
+
+## thag16.1:6.1–thag16.1:6.4 (thag)
+thag16.1:6.1 | P: Suciṇṇaṁ brahmacariyaṁ me, | S: I’ve lived the spiritual life well, | T: I’ve lived well the holy life,
+thag16.1:6.2 | P: maggo cāpi subhāvito; | S: and developed the path well, too. | T: well-developed the path,
+thag16.1:6.3 | P: Nirassādā bhavā diṭṭhā, | S: I’ve seen that there’s nothing gratifying in existences, | T: seen states of becoming ⏎ as devoid of allure,
+thag16.1:6.4 | P: visaṁ pitvāva chaḍḍitaṁ. | S: like someone who has tasted poison, then thrown it out. | T: like poison spit out ⏎ after it’s drunk.
+
+## thag16.1:7.1–thag16.1:7.4 (thag)
+thag16.1:7.1 | P: Pāragū anupādāno, | S: One who has gone beyond, without grasping, | T: One gone to the far shore ⏎ without clinging,
+thag16.1:7.2 | P: katakicco anāsavo; | S: they’ve completed the task and are free of defilements. | T: effluent-free, ⏎ his task completed,
+thag16.1:7.3 | P: Tuṭṭho āyukkhayā hoti, | S: They are content at the end of life, | T: welcomes the ending of life,
+thag16.1:7.4 | P: mutto āghātanā yathā. | S: like someone released from execution. | T: as if freed from a place of execution.
+
+## thag16.1:8.1–thag16.1:8.4 (thag) GATHERED; equal counts: one line per row
+thag16.1:8.1 | P: Uttamaṁ dhammataṁ patto, | S: Having realized the supreme Dhamma, | T: Having attained the supreme Rightness,
+thag16.1:8.2 | P: sabbaloke anatthiko; | S: without needing anything in the whole world, | T: unconcerned with all the world,
+thag16.1:8.3 | P: Ādittāva gharā mutto, | S: one doesn’t grieve at death; | T: as if released from a burning house, ⏎ he doesn’t sorrow at death.
+thag16.1:8.4 | P: maraṇasmiṁ na socati. | S: for it’s like escaping from a burning house. | T: (none)
+AUTO thag16.1:8.1 starts: Having attained the supreme Rightness,
+AUTO thag16.1:8.2 starts: unconcerned with all the world,
+AUTO thag16.1:8.3 starts: as if released from a burning house,
+AUTO thag16.1:8.4 starts: he doesn’t sorrow at death.
+
+## thag16.1:9.1–thag16.1:9.4 (thag)
+thag16.1:9.1 | P: Yadatthi saṅgataṁ kiñci, | S: Whatever has come to pass, | T: Whatever’s compounded,
+thag16.1:9.2 | P: bhavo vā yattha labbhati; | S: wherever life is obtained, | T: wherever a state of becoming’s obtained,
+thag16.1:9.3 | P: Sabbaṁ anissaraṁ etaṁ, | S: there is no Lord of all that: | T: all that has no one in charge:
+thag16.1:9.4 | P: iti vuttaṁ mahesinā. | S: so said the great seer. | T: So says the Great Seer.
+
+## thag16.1:10.1–thag16.1:10.4 (thag)
+thag16.1:10.1 | P: Yo taṁ tathā pajānāti, | S: Whoever understands this | T: Whoever discerns this,
+thag16.1:10.2 | P: yathā buddhena desitaṁ; | S: as it was taught by the Buddha | T: as taught by the Awakened One,
+thag16.1:10.3 | P: Na gaṇhāti bhavaṁ kiñci, | S: doesn’t grab on to any new life, | T: would no more grasp hold ⏎ of any state of becoming
+thag16.1:10.4 | P: sutattaṁva ayoguḷaṁ. | S: like you wouldn’t grab a hot iron ball. | T: than he would ⏎ a hot iron ball.
+
+## thag16.1:11.1–thag16.1:11.4 (thag)
+thag16.1:11.1 | P: Na me hoti ‘ahosin’ti, | S: It doesn’t occur to me, ‘I existed in the past’; | T: I have no ‘I was,’
+thag16.1:11.2 | P: ‘bhavissan’ti na hoti me; | S: nor, ‘I will exist in the future’. | T: no ‘I will be.’
+thag16.1:11.3 | P: Saṅkhārā vigamissanti, | S: Conditions will vanish— | T: Fabrications will simply ⏎ go out of existence.
+thag16.1:11.4 | P: tattha kā paridevanā. | S: why weep over that? | T: What’s to lament there in that?
+
+## thag16.1:12.1–thag16.1:12.4 (thag) GATHERED; equal counts: one line per row
+thag16.1:12.1 | P: Suddhaṁ dhammasamuppādaṁ, | S: Seeing truly | T: For one who sees, as it actually is,
+thag16.1:12.2 | P: Suddhaṁ saṅkhārasantatiṁ; | S: the bare arising of phenomena, | T: the pure arising of phenomena, ⏎ the pure seriality of fabrications,
+thag16.1:12.3 | P: Passantassa yathābhūtaṁ, | S: and the bare process of conditions, | T: (none)
+thag16.1:12.4 | P: Na bhayaṁ hoti gāmaṇi. | S: there is no fear, village chief. | T: there’s no fear.
+AUTO thag16.1:12.1 starts: For one who sees, as it actually is,
+AUTO thag16.1:12.2 starts: the pure arising of phenomena,
+AUTO thag16.1:12.3 starts: the pure seriality of fabrications,
+AUTO thag16.1:12.4 starts: there’s no fear.
+
+## thag16.1:13.1–thag16.1:13.4 (thag) GATHERED; unequal counts require a reader
+thag16.1:13.1 | P: Tiṇakaṭṭhasamaṁ lokaṁ, | S: The world is like grass and sticks: | T: When seeing the world, ⏎ with discernment, ⏎ as on a par ⏎ with grass & twigs,
+thag16.1:13.2 | P: yadā paññāya passati; | S: when this is seen with wisdom, | T: (none)
+thag16.1:13.3 | P: Mamattaṁ so asaṁvindaṁ, | S: not finding any possessiveness, | T: finding no ‘mine-ness,’
+thag16.1:13.4 | P: ‘natthi me’ti na socati. | S: you won’t grieve, thinking ‘I don’t have it’. | T: thinking, ‘There’s nothing of mine,’ ⏎ he feels no sorrow.
+
+## thag16.1:14.1–thag16.1:14.4 (thag) GATHERED; equal counts: one line per row
+thag16.1:14.1 | P: Ukkaṇṭhāmi sarīrena, | S: I’m fed up with the body; | T: Dissatisfied with this carcass, ⏎ I’m unconcerned with becoming.
+thag16.1:14.2 | P: bhavenamhi anatthiko; | S: I have no need for another life. | T: (none)
+thag16.1:14.3 | P: Soyaṁ bhijjissati kāyo, | S: This body will be broken up, | T: This body will break up
+thag16.1:14.4 | P: añño ca na bhavissati. | S: and there won’t be another. | T: and there will not be another.
+AUTO thag16.1:14.1 starts: Dissatisfied with this carcass,
+AUTO thag16.1:14.2 starts: I’m unconcerned with becoming.
+AUTO thag16.1:14.3 starts: This body will break up
+AUTO thag16.1:14.4 starts: and there will not be another.
+
+## thag16.1:15.1–thag16.1:15.4 (thag) GATHERED; unequal counts require a reader
+thag16.1:15.1 | P: Yaṁ vo kiccaṁ sarīrena, | S: Do what you want | T: Do as you like with this carcass.
+thag16.1:15.2 | P: taṁ karotha yadicchatha; | S: with my corpse. | T: (none)
+thag16.1:15.3 | P: Na me tappaccayā tattha, | S: I won’t be angry or attached | T: From that I will feel ⏎ neither hatred nor love.”
+thag16.1:15.4 | P: doso pemañca hehiti”. | S: on account of that.” | T: (none)
+
+## thag16.1:16.1–thag16.1:16.4 (thag)
+thag16.1:16.1 | P: Tassa taṁ vacanaṁ sutvā, | S: When they heard these words, | T: Hearing these awesome, hair-raising words,
+thag16.1:16.2 | P: abbhutaṁ lomahaṁsanaṁ; | S: so astonishing and hair-raising, | T: (none)
+thag16.1:16.3 | P: Satthāni nikkhipitvāna, | S: the young men laid down their swords | T: the young men threw down their weapons & said:
+thag16.1:16.4 | P: māṇavā etadabravuṁ. | S: and spoke these words: | T: (none)
+
+## thag16.1:17.1–thag16.1:17.4 (thag)
+thag16.1:17.1 | P: “Kiṁ bhadante karitvāna, | S: “What have you practiced, Venerable? | T: “What have you done, sir,
+thag16.1:17.2 | P: ko vā ācariyo tava; | S: And who is your tutor? | T: or who have you taken as mentor?
+thag16.1:17.3 | P: Kassa sāsanamāgamma, | S: Whose instructions do we follow | T: Because of whose teachings
+thag16.1:17.4 | P: labbhate taṁ asokatā”. | S: to gain the sorrowless state?” | T: is this lack of sorrow acquired?”
+
+## thag16.1:18.1–thag16.1:18.4 (thag)
+thag16.1:18.1 | P: “Sabbaññū sabbadassāvī, | S: “The knower of all, the seer of all: | T: Ven. Adhimutta: ⏎ “The all-knowing, ⏎ all-seeing
+thag16.1:18.2 | P: jino ācariyo mama; | S: the victor is my tutor. | T: conqueror: ⏎ He is my mentor.
+thag16.1:18.3 | P: Mahākāruṇiko satthā, | S: He is a Teacher of great compassion, | T: Greatly compassionate teacher,
+thag16.1:18.4 | P: sabbalokatikicchako. | S: healer of the whole world. | T: all the world’s healer,
+
+## thag16.1:19.1–thag16.1:19.4 (thag)
+thag16.1:19.1 | P: Tenāyaṁ desito dhammo, | S: He taught this Dhamma, | T: this doctrine is his,
+thag16.1:19.2 | P: khayagāmī anuttaro; | S: leading to ending, unsurpassed. | T: unexcelled, leading to ending.
+thag16.1:19.3 | P: Tassa sāsanamāgamma, | S: Following his instructions, | T: Because of his teachings
+thag16.1:19.4 | P: labbhate taṁ asokatā”. | S: you can gain the sorrowless state.” | T: is this lack of sorrow acquired.”
+
+## thag16.1:20.1–thag16.1:20.4 (thag)
+thag16.1:20.1 | P: Sutvāna corā isino subhāsitaṁ, | S: When the bandits heard the good words of the seer, | T: The bandits, hearing the good words of the seer,
+thag16.1:20.2 | P: Nikkhippa satthāni ca āvudhāni ca; | S: they laid down their swords and weapons. | T: threw down their swords & their weapons.
+thag16.1:20.3 | P: Tamhā ca kammā viramiṁsu eke, | S: Some refrained from their former deeds, | T: Some relinquished their life of crime,
+thag16.1:20.4 | P: Eke ca pabbajjamarocayiṁsu. | S: while others chose the going-forth. | T: some chose the Going-forth.
+
+## thag16.1:21.1–thag16.1:21.4 (thag)
+thag16.1:21.1 | P: Te pabbajitvā sugatassa sāsane, | S: Having gone forth in the teaching of the Holy One, | T: Having gone forth in the teachings ⏎ of the One Well-Gone,
+thag16.1:21.2 | P: Bhāvetva bojjhaṅgabalāni paṇḍitā; | S: those astute ones developed the awakening factors and the powers. | T: developing the strengths ⏎ & factors for awakening, ⏎ wise,
+thag16.1:21.3 | P: Udaggacittā sumanā katindriyā, | S: Elated, happy, their faculties complete, | T: happy, ⏎ exultant in mind, ⏎ their faculties ripened,
+thag16.1:21.4 | P: Phusiṁsu nibbānapadaṁ asaṅkhatanti. | S: they realized the state of extinguishment, the unconditioned. | T: they touched uncompounded unbinding.
+CONTEXT thag16.1:21.5 | P: … Adhimutto thero …. | S: (none) | T: (none)
+
+## thag16.4:1.1–thag16.4:1.4 (thag)
+CONTEXT thag16.4:0.3 | P: Paṭhamavagga | S: Chapter One | T: (none)
+CONTEXT thag16.4:0.4 | P: Raṭṭhapālattheragāthā | S: Raṭṭhapāla | T: Thag 16:4 Raṭṭhapāla
+thag16.4:1.1 | P: “Passa cittakataṁ bimbaṁ, | S: “See this fancy puppet, | T: Look at the image beautified,
+thag16.4:1.2 | P: arukāyaṁ samussitaṁ; | S: a body built of sores, | T: a heap of festering wounds, shored up:
+thag16.4:1.3 | P: Āturaṁ bahusaṅkappaṁ, | S: diseased, obsessed over, | T: ill, but the object ⏎ of many resolves,
+thag16.4:1.4 | P: yassa natthi dhuvaṁ ṭhiti. | S: in which nothing lasts at all. | T: where there is nothing ⏎ lasting or sure.
+
+## thag16.4:2.1–thag16.4:2.4 (thag)
+thag16.4:2.1 | P: Passa cittakataṁ rūpaṁ, | S: See this fancy figure, | T: Look at the form beautified
+thag16.4:2.2 | P: maṇinā kuṇḍalena ca; | S: with its gems and earrings; | T: with earrings & gems:
+thag16.4:2.3 | P: Aṭṭhiṁ tacena onaddhaṁ, | S: it is bones swathed in skin, | T: a skeleton wrapped in skin,
+thag16.4:2.4 | P: saha vatthehi sobhati. | S: made pretty by its clothes. | T: made attractive with clothes.
+
+## thag16.4:3.1–thag16.4:3.4 (thag)
+thag16.4:3.1 | P: Alattakakatā pādā, | S: Rouged feet | T: Feet reddened with henna,
+thag16.4:3.2 | P: mukhaṁ cuṇṇakamakkhitaṁ; | S: and powdered face | T: a face smeared with powder:
+thag16.4:3.3 | P: Alaṁ bālassa mohāya, | S: may be enough to beguile a fool, | T: enough to deceive a fool,
+thag16.4:3.4 | P: no ca pāragavesino. | S: but not a seeker of the far shore. | T: but not a seeker for the further shore.
+
+## thag16.4:4.1–thag16.4:4.4 (thag)
+thag16.4:4.1 | P: Aṭṭhapadakatā kesā, | S: Hair in eight braids | T: Hair plaited in eight pleats,
+thag16.4:4.2 | P: nettā añjanamakkhitā; | S: and eyeshadow | T: eyes smeared with unguent:
+thag16.4:4.3 | P: Alaṁ bālassa mohāya, | S: may be enough to beguile a fool, | T: enough to deceive a fool,
+thag16.4:4.4 | P: no ca pāragavesino. | S: but not a seeker of the far shore. | T: but not a seeker for the further shore.
+
+## thag16.4:5.1–thag16.4:5.4 (thag) GATHERED; possible speaker requires a reader
+thag16.4:5.1 | P: Añjanīva navā cittā, | S: A rotting body all adorned | T: Like a newly painted unguent pot— ⏎ a putrid body adorned:
+thag16.4:5.2 | P: pūtikāyo alaṅkato; | S: like a freshly painted makeup box | T: (none)
+thag16.4:5.3 | P: Alaṁ bālassa mohāya, | S: may be enough to beguile a fool, | T: enough to deceive a fool,
+thag16.4:5.4 | P: no ca pāragavesino. | S: but not a seeker of the far shore. | T: but not a seeker for the further shore.
+
+## thag16.4:6.1–thag16.4:6.4 (thag)
+thag16.4:6.1 | P: Odahi migavo pāsaṁ, | S: The hunter laid his snare, | T: The hunter set out the snares,
+thag16.4:6.2 | P: nāsadā vāguraṁ migo; | S: but the deer didn’t spring the trap. | T: but the deer didn’t go near the trap.
+thag16.4:6.3 | P: Bhutvā nivāpaṁ gacchāma, | S: I’ve eaten the bait and now I go, | T: Having eaten the bait, ⏎ we go,
+thag16.4:6.4 | P: kandante migabandhake. | S: leaving the trapper to lament. | T: leaving the hunters ⏎ to weep.
+
+## thag16.4:7.1–thag16.4:7.4 (thag)
+thag16.4:7.1 | P: Chinno pāso migavassa, | S: The hunter’s snare is broken, | T: The hunter’s snares are broken;
+thag16.4:7.2 | P: nāsadā vāguraṁ migo; | S: but the deer didn’t spring the trap. | T: the deer didn’t go near the trap.
+thag16.4:7.3 | P: Bhutvā nivāpaṁ gacchāma, | S: I’ve eaten the bait and now I go, | T: Having eaten the bait, ⏎ we go,
+thag16.4:7.4 | P: socante migaluddake. | S: leaving the deer-hunter to grieve.” | T: leaving the hunters ⏎ to grieve.
+
+## thag16.4:8.1–thag16.4:8.4 (thag)
+thag16.4:8.1 | P: Passāmi loke sadhane manusse, | S: “I see rich people in the world who, | T: I see in the world ⏎ people with wealth ⏎ who,
+thag16.4:8.2 | P: Laddhāna vittaṁ na dadanti mohā; | S: because of delusion, give not the wealth they’ve earned. | T: from delusion, ⏎ don’t make a gift ⏎ of the treasure they’ve gained.
+thag16.4:8.3 | P: Luddhā dhanaṁ sannicayaṁ karonti, | S: Greedily, they hoard their riches, | T: Greedy, they stash it away,
+thag16.4:8.4 | P: Bhiyyova kāme abhipatthayanti. | S: yearning for ever more sensual pleasures. | T: hoping for even more ⏎ sensual pleasures.
+
+## thag16.4:9.1–thag16.4:9.4 (thag)
+thag16.4:9.1 | P: Rājā pasayhappathaviṁ vijetvā, | S: A king who conquered the earth by force, | T: A king who, by force, ⏎ has conquered the world
+thag16.4:9.2 | P: Sasāgarantaṁ mahimāvasanto; | S: ruling the land from sea to sea, | T: and rules over the earth ⏎ to the edge of the sea,
+thag16.4:9.3 | P: Oraṁ samuddassa atittarūpo, | S: unsatisfied with the near shore of the ocean, | T: dissatisfied with the ocean’s near shore,
+thag16.4:9.4 | P: Pāraṁ samuddassapi patthayetha. | S: would still yearn for the further shore. | T: longs for the ocean’s ⏎ far shore as well.
+
+## thag16.4:10.1–thag16.4:10.4 (thag)
+thag16.4:10.1 | P: Rājā ca aññe ca bahū manussā, | S: Not just the king, but others too, | T: Kings & others ⏎ —plenty of people—
+thag16.4:10.2 | P: Avītataṇhā maraṇaṁ upenti; | S: reach death not rid of craving. | T: go to death with craving ⏎ unabated.
+thag16.4:10.3 | P: Ūnāva hutvāna jahanti dehaṁ, | S: They leave the body still wanting, | T: Unsated, ⏎ they leave the body behind,
+thag16.4:10.4 | P: Kāmehi lokamhi na hatthi titti. | S: for in this world sensual pleasures never satisfy. | T: having not had enough ⏎ of the world’s sensual pleasures.
+
+## thag16.4:11.1–thag16.4:11.4 (thag)
+thag16.4:11.1 | P: Kandanti naṁ ñātī pakiriya kese, | S: Relatives lament, their hair disheveled, | T: One’s relatives weep ⏎ & pull out their hair.
+thag16.4:11.2 | P: Aho vatā no amarāti cāhu; | S: saying ‘Ah! Alas! They’re not immortal!’ | T: ‘Oh woe, our loved one is dead,’ they cry.
+thag16.4:11.3 | P: Vatthena naṁ pārutaṁ nīharitvā, | S: They take out the body wrapped in a shroud, | T: Carrying him off, ⏎ wrapped in a piece of cloth,
+thag16.4:11.4 | P: Citaṁ samodhāya tato ḍahanti. | S: heap up a pyre, and burn it there. | T: they place him ⏎ on a pyre, ⏎ then set him on fire.
+
+## thag16.4:12.1–thag16.4:12.4 (thag) GATHERED; unequal counts require a reader
+thag16.4:12.1 | P: So ḍayhati sūlehi tujjamāno, | S: It’s poked with stakes while being burnt, | T: So he burns, poked with sticks,
+thag16.4:12.2 | P: Ekena vatthena pahāya bhoge; | S: in just a single cloth, all wealth gone. | T: in just one piece of cloth, ⏎ leaving all his possessions behind.
+thag16.4:12.3 | P: Na mīyamānassa bhavanti tāṇā, | S: Relatives, friends, and companions | T: They are not shelters for one who has died— ⏎ not relatives, ⏎ friends, ⏎ or companions.
+thag16.4:12.4 | P: Ñātī ca mittā atha vā sahāyā. | S: can’t help you when you’re dying. | T: (none)
+
+## thag16.4:13.1–thag16.4:13.4 (thag)
+thag16.4:13.1 | P: Dāyādakā tassa dhanaṁ haranti, | S: Heirs take your riches, | T: Heirs take over his wealth,
+thag16.4:13.2 | P: Satto pana gacchati yena kammaṁ; | S: while beings fare on according to their deeds. | T: while the being goes on, ⏎ in line with his kamma.
+thag16.4:13.3 | P: Na mīyamānaṁ dhanamanveti kiñci, | S: Riches don’t follow you when you die; | T: No wealth at all ⏎ follows the dead one—
+thag16.4:13.4 | P: Puttā ca dārā ca dhanañca raṭṭhaṁ. | S: nor do children, wife, wealth, nor kingdom. | T: not children, wives, ⏎ dominion, or riches.
+
+## thag16.4:14.1–thag16.4:14.4 (thag)
+thag16.4:14.1 | P: Na dīghamāyuṁ labhate dhanena, | S: Longevity isn’t gained by riches, | T: Long life ⏎ can’t be gotten with wealth,
+thag16.4:14.2 | P: Na cāpi vittena jaraṁ vihanti; | S: nor does wealth banish old age; | T: nor aging ⏎ warded off with treasure.
+thag16.4:14.3 | P: Appaṁ hidaṁ jīvitamāhu dhīrā, | S: for the attentive say this life is short, | T: The wise say this life ⏎ is next to nothing—
+thag16.4:14.4 | P: Asassataṁ vippariṇāmadhammaṁ. | S: it’s perishable and not eternal. | T: impermanent, ⏎ subject to change.
+
+## thag16.4:15.1–thag16.4:15.4 (thag)
+thag16.4:15.1 | P: Aḍḍhā daliddā ca phusanti phassaṁ, | S: The rich and the poor feel its touch; | T: The rich & the poor ⏎ touch the touch of Death.
+thag16.4:15.2 | P: Bālo ca dhīro ca tatheva phuṭṭho; | S: the fool and the attentive one feel it too. | T: The foolish & wise ⏎ are touched by it, too.
+thag16.4:15.3 | P: Bālo hi bālyā vadhitova seti, | S: But the fool lies stricken by their own folly, | T: But while fools lie as if slain by their folly,
+thag16.4:15.4 | P: Dhīro ca no vedhati phassaphuṭṭho. | S: while the attentive don’t tremble at the touch. | T: the wise don’t tremble ⏎ when touched by the touch.
+
+## thag16.4:16.1–thag16.4:16.4 (thag) GATHERED; unequal counts require a reader
+thag16.4:16.1 | P: Tasmā hi paññāva dhanena seyyā, | S: Therefore wisdom’s much better than wealth, | T: Thus the discernment by which ⏎ one attains to mastery, ⏎ is better than wealth—
+thag16.4:16.2 | P: Yāya vosānamidhādhigacchati; | S: since by wisdom you reach consummation in this life. | T: (none)
+thag16.4:16.3 | P: Abyositattā hi bhavābhavesu, | S: But if because of delusion you don’t reach consummation, | T: for those who haven’t reached mastery
+thag16.4:16.4 | P: Pāpāni kammāni karoti mohā. | S: you’ll do evil deeds in life after life. | T: go from existence to existence, ⏎ out of delusion, ⏎ doing bad deeds.
+
+## thag16.4:17.1–thag16.4:17.4 (thag)
+thag16.4:17.1 | P: Upeti gabbhañca parañca lokaṁ, | S: One who enters a womb and the world beyond, | T: One goes to a womb ⏎ & to the next world,
+thag16.4:17.2 | P: Saṁsāramāpajja paramparāya; | S: will transmigrate from one life to the next. | T: falling into the wandering on ⏎ —one thing ⏎ after another—
+thag16.4:17.3 | P: Tassappapañño abhisaddahanto, | S: While someone of little wisdom, placing faith in them, | T: while those of weak discernment, ⏎ trusting in one,
+thag16.4:17.4 | P: Upeti gabbhañca parañca lokaṁ. | S: also enters a womb and the world beyond. | T: also go to a womb ⏎ & to the next world.
+
+## thag16.4:18.1–thag16.4:18.4 (thag)
+thag16.4:18.1 | P: Coro yathā sandhimukhe gahīto, | S: As a bandit caught in a window | T: Just as an evil thief ⏎ caught at the break-in
+thag16.4:18.2 | P: Sakammunā haññati pāpadhammo; | S: is punished for his own bad deeds; | T: is destroyed ⏎ by his own act,
+thag16.4:18.3 | P: Evaṁ pajā pecca paramhi loke, | S: so after departing, in the world beyond, | T: so evil people ⏎ —after dying, in the next world—
+thag16.4:18.4 | P: Sakammunā haññati pāpadhammo. | S: people are punished for their own bad deeds. | T: are destroyed ⏎ by their own acts.
+
+## thag16.4:19.1–thag16.4:19.4 (thag)
+thag16.4:19.1 | P: Kāmā hi citrā madhurā manoramā, | S: Sensual pleasures are diverse, sweet, delightful; | T: Sensual pleasures— ⏎ variegated, ⏎ enticing, ⏎ sweet—
+thag16.4:19.2 | P: Virūparūpena mathenti cittaṁ; | S: appearing in disguise they disturb the mind. | T: in various ways disturb the mind.
+thag16.4:19.3 | P: Ādīnavaṁ kāmaguṇesu disvā, | S: Seeing danger in sensual stimulations, | T: Seeing the drawbacks in sensual objects:
+thag16.4:19.4 | P: Tasmā ahaṁ pabbajitomhi rāja. | S: I went forth, O King. | T: that’s why, O king, I went forth.
+
+## thag16.4:20.1–thag16.4:20.4 (thag)
+thag16.4:20.1 | P: Dumapphalānīva patanti māṇavā, | S: As fruit falls from a tree, so the sons of Manu fall, | T: Just like fruits, people fall
+thag16.4:20.2 | P: Daharā ca vuḍḍhā ca sarīrabhedā; | S: young and old, when the body breaks up. | T: —young & old— ⏎ at the break-up of the body.
+thag16.4:20.3 | P: Etampi disvā pabbajitomhi rāja, | S: Seeing this, too, I went forth, O King; | T: Knowing this, O king, ⏎ I went forth.
+thag16.4:20.4 | P: Apaṇṇakaṁ sāmaññameva seyyo. | S: it’s a sure bet that the ascetic life is better.” | T: The contemplative life is better ⏎ for sure.
+
+## thag16.4:21.1–thag16.4:21.4 (thag)
+thag16.4:21.1 | P: Saddhāyāhaṁ pabbajito, | S: “I went forth out of faith | T: Out of conviction, ⏎ I went forth
+thag16.4:21.2 | P: upeto jinasāsane; | S: joining the victor’s dispensation. | T: equipped with the Victor’s message.
+thag16.4:21.3 | P: Avañjhā mayhaṁ pabbajjā, | S: My going forth wasn’t wasted; | T: Blameless was my going-forth:
+thag16.4:21.4 | P: anaṇo bhuñjāmi bhojanaṁ. | S: I enjoy my food free of debt. | T: Debtless I eat my food.
+
+## thag16.4:22.1–thag16.4:22.4 (thag)
+thag16.4:22.1 | P: Kāme ādittato disvā, | S: I saw sensual pleasures as burning, | T: Seeing sensuality as burning,
+thag16.4:22.2 | P: Jātarūpāni satthato; | S: gold as a cutting blade, | T: gold as a knife,
+thag16.4:22.3 | P: Gabbhavokkantito dukkhaṁ, | S: conception in a womb as suffering, | T: pain in the entry into the womb
+thag16.4:22.4 | P: Nirayesu mahabbhayaṁ. | S: and the hells as very fearful. | T: & great danger in hells—
+
+## thag16.4:23.1–thag16.4:23.4 (thag) GATHERED; equal counts: one line per row
+thag16.4:23.1 | P: Etamādīnavaṁ ñatvā, | S: Knowing this danger, | T: seeing this peril, I was then dismayed—
+thag16.4:23.2 | P: saṁvegaṁ alabhiṁ tadā; | S: I was struck with a sense of urgency. | T: (none)
+thag16.4:23.3 | P: Sohaṁ viddho tadā santo, | S: I was stabbed, but then I found peace, | T: pierced (with dismay), ⏎ then calmed
+thag16.4:23.4 | P: sampatto āsavakkhayaṁ. | S: attaining the end of defilements. | T: on attaining the end of the effluents.
+AUTO thag16.4:23.1 starts: seeing this peril, I was then dismayed—
+AUTO thag16.4:23.2 starts: pierced (with dismay),
+AUTO thag16.4:23.3 starts: then calmed
+AUTO thag16.4:23.4 starts: on attaining the end of the effluents.
+
+## thag16.4:24.1–thag16.4:24.4 (thag)
+thag16.4:24.1 | P: Pariciṇṇo mayā satthā, | S: I’ve served the Teacher | T: The Teacher has been served by me;
+thag16.4:24.2 | P: kataṁ buddhassa sāsanaṁ; | S: and fulfilled the Buddha’s instructions. | T: the Awakened One’s bidding, ⏎ done;
+thag16.4:24.3 | P: Ohito garuko bhāro, | S: The heavy burden is laid down, | T: the heavy load, laid down;
+thag16.4:24.4 | P: bhavanetti samūhatā. | S: the leash to existence is eradicated. | T: the guide to becoming, uprooted.
+
+## thag16.4:25.1–thag16.4:25.4 (thag) GATHERED; possible speaker requires a reader
+thag16.4:25.1 | P: Yassatthāya pabbajito, | S: I’ve attained the goal | T: And the goal for which I went forth
+thag16.4:25.2 | P: agārasmānagāriyaṁ; | S: for the sake of which I went forth | T: (none)
+thag16.4:25.3 | P: So me attho anuppatto, | S: from the lay life to homelessness— | T: from home life into homelessness ⏎ I’ve reached:
+thag16.4:25.4 | P: sabbasaṁyojanakkhayo”ti. | S: the ending of all fetters.” | T: the end ⏎ of all fetters.
+CONTEXT thag16.4:25.5 | P: … Raṭṭhapālo thero …. | S: (none) | T: (none)
+
+## thag16.7:1.1–thag16.7:1.4 (thag) GATHERED; equal counts: one line per row
+CONTEXT thag16.7:0.3 | P: Paṭhamavagga | S: Chapter One | T: (none)
+CONTEXT thag16.7:0.4 | P: Kāḷigodhāputtabhaddiyattheragāthā | S: Kāḷigodhāputtabhaddiya | T: Thag 16:7 Bhaddiya Kāligodhāyaputta
+thag16.7:1.1 | P: “Yātaṁ me hatthigīvāya, | S: I rode on an elephant’s neck, | T: Whatever the fine clothes I wore ⏎ when astride the elephant’s neck,
+thag16.7:1.2 | P: sukhumā vatthā padhāritā; | S: wearing luxurious clothes. | T: (none)
+thag16.7:1.3 | P: Sālīnaṁ odano bhutto, | S: I ate boiled fine rice | T: whatever the fine rice I ate,
+thag16.7:1.4 | P: sucimaṁsūpasecano. | S: with pure meat sauce. | T: the pure meat sauce,
+AUTO thag16.7:1.1 starts: Whatever the fine clothes I wore
+AUTO thag16.7:1.2 starts: when astride the elephant’s neck,
+AUTO thag16.7:1.3 starts: whatever the fine rice I ate,
+AUTO thag16.7:1.4 starts: the pure meat sauce,
+
+## thag16.7:2.1–thag16.7:2.4 (thag)
+thag16.7:2.1 | P: Sojja bhaddo sātatiko, | S: Today I am fortunate, persistent, | T: today—fortunate, persevering,
+thag16.7:2.2 | P: uñchāpattāgate rato; | S: happy with the scraps in my bowl: | T: delighting in whatever falls into his bowl,
+thag16.7:2.3 | P: Jhāyati anupādāno, | S: Bhaddiya son of Godhā | T: Bhaddiya, son of Godhā,
+thag16.7:2.4 | P: putto godhāya bhaddiyo. | S: practices absorption without grasping. | T: does jhāna without clinging.
+
+## thag16.7:3.1–thag16.7:3.4 (thag)
+thag16.7:3.1 | P: Paṁsukūlī sātatiko, | S: Wearing rags, persistent, | T: Wearing cast-off cloth, persevering,
+thag16.7:3.2 | P: uñchāpattāgate rato; | S: happy with the scraps in my bowl: | T: delighting in whatever falls into his bowl,
+thag16.7:3.3 | P: Jhāyati anupādāno, | S: Bhaddiya son of Godhā | T: Bhaddiya, son of Godhā,
+thag16.7:3.4 | P: putto godhāya bhaddiyo. | S: practices absorption without grasping. | T: does jhāna without clinging.
+
+## thag16.7:4.1–thag16.7:4.4 (thag)
+thag16.7:4.1 | P: Piṇḍapātī sātatiko, | S: Living on almsfood, persistent, | T: Going for alms, persevering,
+thag16.7:4.2 | P: … | S: happy with the scraps in my bowl: | T: delighting in whatever falls into his bowl,
+thag16.7:4.3 | P: pe … | S: Bhaddiya son of Godhā | T: Bhaddiya, son of Godhā,
+thag16.7:4.4 | P: … | S: practices absorption without grasping. | T: does jhāna without clinging.
+
+## thag16.7:5.1–thag16.7:5.4 (thag)
+thag16.7:5.1 | P: Tecīvarī sātatiko, | S: Possessing only three robes, persistent, | T: Wearing only one triple set of robes, persevering…
+thag16.7:5.2 | P: … | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:5.3 | P: pe … | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:5.4 | P: … | S: practices absorption without grasping. | T: (none)
+
+## thag16.7:6.1–thag16.7:6.4 (thag)
+thag16.7:6.1 | P: Sapadānacārī sātatiko, | S: Wandering for alms indiscriminately, persistent, | T: Bypassing no donors on his alms round, persevering…
+thag16.7:6.2 | P: … | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:6.3 | P: pe … | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:6.4 | P: … | S: practices absorption without grasping. | T: (none)
+
+## thag16.7:7.1–thag16.7:7.4 (thag)
+thag16.7:7.1 | P: Ekāsanī sātatiko, | S: Sitting alone, persistent, | T: Eating only one meal a day, persevering…
+thag16.7:7.2 | P: … | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:7.3 | P: pe … | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:7.4 | P: … | S: practices absorption without grasping. | T: (none)
+
+## thag16.7:8.1–thag16.7:8.4 (thag)
+thag16.7:8.1 | P: Pattapiṇḍī sātatiko, | S: Eating only what’s put in the alms-bowl, persistent, | T: Eating from the bowl, persevering…
+thag16.7:8.2 | P: … | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:8.3 | P: pe … | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:8.4 | P: … | S: practices absorption without grasping. | T: (none)
+
+## thag16.7:9.1–thag16.7:9.4 (thag)
+thag16.7:9.1 | P: Khalupacchābhattī sātatiko, | S: Never eating too late, persistent, | T: Refusing food brought afterwards, persevering…
+thag16.7:9.2 | P: … | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:9.3 | P: pe … | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:9.4 | P: … | S: practices absorption without grasping. | T: (none)
+
+## thag16.7:10.1–thag16.7:10.4 (thag)
+thag16.7:10.1 | P: Āraññiko sātatiko, | S: Living in the wilderness, persistent, | T: Living in the wilderness, persevering…
+thag16.7:10.2 | P: … | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:10.3 | P: pe … | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:10.4 | P: … | S: practices absorption without grasping. | T: (none)
+
+## thag16.7:11.1–thag16.7:11.4 (thag)
+thag16.7:11.1 | P: Rukkhamūliko sātatiko, | S: Living at the foot of a tree, persistent, | T: Living at the foot of a tree, persevering…
+thag16.7:11.2 | P: … | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:11.3 | P: pe … | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:11.4 | P: … | S: practices absorption without grasping. | T: (none)
+
+## thag16.7:12.1–thag16.7:12.4 (thag)
+thag16.7:12.1 | P: Abbhokāsī sātatiko, | S: Living in the open, persistent, | T: Living in the open air, persevering…
+thag16.7:12.2 | P: … | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:12.3 | P: pe … | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:12.4 | P: … | S: practices absorption without grasping. | T: (none)
+
+## thag16.7:13.1–thag16.7:13.4 (thag)
+thag16.7:13.1 | P: Sosāniko sātatiko, | S: Living in a charnel ground, persistent, | T: Living in a cemetery, persevering…
+thag16.7:13.2 | P: … | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:13.3 | P: pe … | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:13.4 | P: … | S: practices absorption without grasping. | T: (none)
+
+## thag16.7:14.1–thag16.7:14.4 (thag)
+thag16.7:14.1 | P: Yathāsanthatiko sātatiko, | S: Accepting whatever seat is offered, persistent, | T: Accepting whatever lodging he’s assigned, persevering,
+thag16.7:14.2 | P: … | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:14.3 | P: pe … | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:14.4 | P: … | S: practices absorption without grasping. | T: (none)
+
+## thag16.7:15.1–thag16.7:15.4 (thag)
+thag16.7:15.1 | P: Nesajjiko sātatiko, | S: Not lying down to sleep, persistent, | T: Not lying down, persevering,
+thag16.7:15.2 | P: … | S: happy with the scraps in my bowl: | T: delighting in whatever falls into his bowl,
+thag16.7:15.3 | P: pe … | S: Bhaddiya son of Godhā | T: Bhaddiya, son of Godhā,
+thag16.7:15.4 | P: … | S: practices absorption without grasping. | T: does jhāna without clinging.
+
+## thag16.7:16.1–thag16.7:16.4 (thag)
+thag16.7:16.1 | P: Appiccho sātatiko, | S: Few in wishes, persistent, | T: Modest, persevering…
+thag16.7:16.2 | P: … | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:16.3 | P: pe … | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:16.4 | P: … | S: practices absorption without grasping. | T: (none)
+
+## thag16.7:17.1–thag16.7:17.4 (thag)
+thag16.7:17.1 | P: Santuṭṭho sātatiko, | S: Content, persistent, | T: Content, persevering…
+thag16.7:17.2 | P: … | S: happy with the scraps in my bowl: | T: (none)
+thag16.7:17.3 | P: pe … | S: Bhaddiya son of Godhā | T: (none)
+thag16.7:17.4 | P: … | S: practices absorption without grasping. | T: (none)

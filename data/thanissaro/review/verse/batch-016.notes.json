@@ -1,0 +1,13 @@
+{
+  "batch": 16,
+  "versesRead": 53,
+  "rowsRead": 224,
+  "automaticFindings": 12,
+  "readerFindings": 44,
+  "unresolved": [
+    {
+      "key": "an3.39:10.3–an3.39:11.1",
+      "reason": "Translator interlaces adjacent stanza content: “I overcame all intoxication” (11.1) precedes “with health, youth, & life” (10.3–10.4). Restoring both stanza identities would require reordering translator lines."
+    }
+  ]
+}

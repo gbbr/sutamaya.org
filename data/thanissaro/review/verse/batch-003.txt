@@ -1,0 +1,418 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## dn21:1.5.53–dn21:1.5.56 (dn)
+dn21:1.5.53 | P: Sālaṁva na ciraṁ phullaṁ, | S: Like a freshly blossoming sal tree | T: (none)
+dn21:1.5.54 | P: pitaraṁ te sumedhase; | S: is your father, my lady so wise. | T: (none)
+dn21:1.5.55 | P: Vandamāno namassāmi, | S: I pay homage to he, bowing humbly, | T: (none)
+dn21:1.5.56 | P: yassāsetādisī pajā”ti. | S: whose daughter is of such a kind.” | T: (none)
+CONTEXT dn21:1.6.1 | P: Evaṁ vutte, bhagavā pañcasikhaṁ gandhabbadevaputtaṁ etadavoca: | S: When Pañcasikha had spoken, the Buddha said to him, | T: (none)
+CONTEXT dn21:1.6.2 | P: “saṁsandati kho te, pañcasikha, tantissaro gītassarena, gītassaro ca tantissarena; | S: “Pañcasikha, the sound of your strings blends well with the sound of your singing, | T: (none)
+
+## dn21:1.7.1–dn21:1.7.4 (dn)
+CONTEXT dn21:1.6.9 | P: Yato kho ahaṁ, bhante, taṁ bhaginiṁ nālatthaṁ kenaci pariyāyena. | S: Since I couldn’t win that sister by any means, | T: (none)
+CONTEXT dn21:1.6.10 | P: Athāhaṁ beluvapaṇḍuvīṇaṁ ādāya yena timbaruno gandhabbarañño nivesanaṁ tenupasaṅkamiṁ; upasaṅkamitvā beluvapaṇḍuvīṇaṁ assāvesiṁ, imā ca gāthā abhāsiṁ buddhūpasañhitā dhammūpasañhitā saṅghūpasañhitā arahantūpasañhitā kāmūpasañhitā— | S: I took my arched harp to Timbaru’s home, where I played those verses. | T: (none)
+dn21:1.7.1 | P: Vande te pitaraṁ bhadde, | S: (none) | T: (none)
+dn21:1.7.2 | P: timbaruṁ sūriyavacchase; | S: (none) | T: (none)
+dn21:1.7.3 | P: Yena jātāsi kalyāṇī, | S: (none) | T: (none)
+dn21:1.7.4 | P: ānandajananī mama. | S: (none) | T: (none)
+CONTEXT dn21:1.7.5 | P: …pe… | S: (none) | T: (none)
+
+## dn21:1.7.6–dn21:1.7.9 (dn)
+CONTEXT dn21:1.7.5 | P: …pe… | S: (none) | T: (none)
+dn21:1.7.6 | P: Sālaṁva na ciraṁ phullaṁ, | S: (none) | T: (none)
+dn21:1.7.7 | P: pitaraṁ te sumedhase; | S: (none) | T: (none)
+dn21:1.7.8 | P: Vandamāno namassāmi, | S: (none) | T: (none)
+dn21:1.7.9 | P: yassāsetādisī pajāti. | S: (none) | T: (none)
+CONTEXT dn21:1.7.10 | P: Evaṁ vutte, bhante, bhaddā sūriyavacchasā maṁ etadavoca: | S: When I finished, Suriyavaccasā said to me, | T: (none)
+CONTEXT dn21:1.7.11 | P: ‘na kho me, mārisa, so bhagavā sammukhā diṭṭho, api ca sutoyeva me so bhagavā devānaṁ tāvatiṁsānaṁ sudhammāyaṁ sabhāyaṁ upanaccantiyā. | S: ‘Good fellow, I have not personally seen the Buddha. But I did hear about him when I went to dance for the gods of the thirty-three in the Hall of Clear Right. | T: (none)
+
+## dn21:1.12.1–dn21:1.12.4 (dn)
+CONTEXT dn21:1.11.18 | P: Duddiṭṭharūpaṁ vata bho addasāma, ye mayaṁ addasāma sahadhammike hīnaṁ gandhabbakāyaṁ upapanne’ti. | S: It is a sad sight indeed to see fellow practitioners reborn in the inferior centaur realm.’ | T: (none)
+CONTEXT dn21:1.11.19 | P: Tesaṁ, bhante, gopakena devaputtena paṭicoditānaṁ dve devā diṭṭheva dhamme satiṁ paṭilabhiṁsu kāyaṁ brahmapurohitaṁ, eko pana devo kāme ajjhāvasi. | S: When scolded by Gopaka, two of those gods regained their memory right away. They went to the host of the priests of Divinity, but one god remained attached to sensual pleasures. | T: (none)
+dn21:1.12.1 | P: ‘Upāsikā cakkhumato ahosiṁ, | S: ‘“I was a laywoman disciple of the Clear-eyed One, | T: (none)
+dn21:1.12.2 | P: Nāmampi mayhaṁ ahu “gopikā”ti; | S: and my name was Gopikā. | T: (none)
+dn21:1.12.3 | P: Buddhe ca dhamme ca abhippasannā, | S: I was devoted to the Buddha and the teaching, | T: (none)
+dn21:1.12.4 | P: Saṅghañcupaṭṭhāsiṁ pasannacittā. | S: and I faithfully served the Saṅgha. | T: (none)
+
+## dn21:1.12.5–dn21:1.12.8 (dn)
+dn21:1.12.5 | P: Tasseva buddhassa sudhammatāya, | S: Because of the clear rightness of the Buddha’s teaching, | T: (none)
+dn21:1.12.6 | P: Sakkassa puttomhi mahānubhāvo; | S: I’m now a mighty, dazzling son of Sakka, | T: (none)
+dn21:1.12.7 | P: Mahājutīko tidivūpapanno, | S: reborn in the Third Heaven. | T: (none)
+dn21:1.12.8 | P: Jānanti maṁ idhāpi “gopako”ti. | S: And here they know me as Gopaka. | T: (none)
+
+## dn21:1.12.9–dn21:1.12.12 (dn)
+dn21:1.12.9 | P: Athaddasaṁ bhikkhavo diṭṭhapubbe, | S: Then I saw some mendicants who I’d seen before, | T: (none)
+dn21:1.12.10 | P: Gandhabbakāyūpagate vasīne; | S: dwelling in the host of centaurs. | T: (none)
+dn21:1.12.11 | P: Imehi te gotamasāvakāse, | S: They were disciples of Gotama | T: (none)
+dn21:1.12.12 | P: Ye ca mayaṁ pubbe manussabhūtā. | S: when I used to be a human. | T: (none)
+
+## dn21:1.12.13–dn21:1.12.16 (dn)
+dn21:1.12.13 | P: Annena pānena upaṭṭhahimhā, | S: I served them with food and drink, | T: (none)
+dn21:1.12.14 | P: Pādūpasaṅgayha sake nivesane; | S: and clasped their feet in my own home. | T: (none)
+dn21:1.12.15 | P: Kutomukhā nāma ime bhavanto, | S: Where on earth were these good fellows at | T: (none)
+dn21:1.12.16 | P: Buddhassa dhammāni paṭiggahesuṁ. | S: when they learned the Buddha’s teachings? | T: (none)
+
+## dn21:1.12.17–dn21:1.12.20 (dn)
+dn21:1.12.17 | P: Paccattaṁ veditabbo hi dhammo, | S: For each must know for themselves the teaching | T: (none)
+dn21:1.12.18 | P: Sudesito cakkhumatānubuddho; | S: so well-taught, realized by the Clear-eyed One. | T: (none)
+dn21:1.12.19 | P: Ahañhi tumheva upāsamāno, | S: I was one who followed you, | T: (none)
+dn21:1.12.20 | P: Sutvāna ariyāna subhāsitāni. | S: having heard the fine words of the noble ones. | T: (none)
+
+## dn21:1.12.21–dn21:1.12.24 (dn)
+dn21:1.12.21 | P: Sakkassa puttomhi mahānubhāvo, | S: I’m now a mighty, dazzling son of Sakka, | T: (none)
+dn21:1.12.22 | P: Mahājutīko tidivūpapanno; | S: reborn in the Third Heaven. | T: (none)
+dn21:1.12.23 | P: Tumhe pana seṭṭhamupāsamānā, | S: But you followed the best of men, | T: (none)
+dn21:1.12.24 | P: Anuttaraṁ brahmacariyaṁ caritvā. | S: and led the supreme spiritual life, | T: (none)
+
+## dn21:1.12.25–dn21:1.12.28 (dn)
+dn21:1.12.25 | P: Hīnaṁ kāyaṁ upapannā bhavanto, | S: but still you’re born in this lesser realm, | T: (none)
+dn21:1.12.26 | P: Anānulomā bhavatūpapatti; | S: a rebirth unbefitting. | T: (none)
+dn21:1.12.27 | P: Duddiṭṭharūpaṁ vata addasāma, | S: It’s a sad sight I see, good fellows, | T: (none)
+dn21:1.12.28 | P: Sahadhammike hīnakāyūpapanne. | S: fellow practitioners in a lesser realm. | T: (none)
+
+## dn21:1.12.29–dn21:1.12.32 (dn)
+dn21:1.12.29 | P: Gandhabbakāyūpagatā bhavanto, | S: Reborn in the host of centaurs, | T: (none)
+dn21:1.12.30 | P: Devānamāgacchatha pāricariyaṁ; | S: only to wait upon the gods. | T: (none)
+dn21:1.12.31 | P: Agāre vasato mayhaṁ, | S: Meanwhile, I dwelt in a house— | T: (none)
+dn21:1.12.32 | P: Imaṁ passa visesataṁ. | S: but see my distinction now! | T: (none)
+
+## dn21:1.12.33–dn21:1.12.36 (dn)
+dn21:1.12.33 | P: Itthī hutvā svajja pumomhi devo, | S: Having been a woman now I’m a male god, | T: (none)
+dn21:1.12.34 | P: Dibbehi kāmehi samaṅgibhūto’; | S: blessed with heavenly sensual pleasures.” | T: (none)
+dn21:1.12.35 | P: Te coditā gotamasāvakena, | S: Scolded by that disciple of Gotama, | T: (none)
+dn21:1.12.36 | P: Saṁvegamāpādu samecca gopakaṁ. | S: comprehending Gopaka, they were struck with urgency. | T: (none)
+
+## dn21:1.12.37–dn21:1.12.40 (dn)
+dn21:1.12.37 | P: ‘Handa viyāyāma byāyāma, | S: “Let’s strive, let’s try hard— | T: (none)
+dn21:1.12.38 | P: Mā no mayaṁ parapessā ahumhā’; | S: we won’t serve others any more!” | T: (none)
+dn21:1.12.39 | P: Tesaṁ duve vīriyamārabhiṁsu, | S: Two of them roused up energy, | T: (none)
+dn21:1.12.40 | P: Anussaraṁ gotamasāsanāni. | S: recalling the Buddha’s instructions. | T: (none)
+
+## dn21:1.12.41–dn21:1.12.44 (dn)
+dn21:1.12.41 | P: Idheva cittāni virājayitvā, | S: Right away they became dispassionate, | T: (none)
+dn21:1.12.42 | P: Kāmesu ādīnavamaddasaṁsu; | S: seeing the drawbacks in sensual pleasures. | T: (none)
+dn21:1.12.43 | P: Te kāmasaṁyojanabandhanāni, | S: The fetters and bonds of sensual pleasures— | T: (none)
+dn21:1.12.44 | P: Pāpimayogāni duraccayāni. | S: the ties of the Wicked One so hard to break— | T: (none)
+
+## dn21:1.12.45–dn21:1.12.48 (dn)
+dn21:1.12.45 | P: Nāgova sannāni guṇāni chetvā, | S: they burst them like a bull elephant his ropes, | T: (none)
+dn21:1.12.46 | P: Deve tāvatiṁse atikkamiṁsu; | S: and passed right over the thirty-three. | T: (none)
+dn21:1.12.47 | P: Saindā devā sapajāpatikā, | S: The gods with Indra and the Progenitor | T: (none)
+dn21:1.12.48 | P: Sabbe sudhammāya sabhāyupaviṭṭhā. | S: were all gathered in the Hall of Clear Right. | T: (none)
+
+## dn21:1.12.49–dn21:1.12.52 (dn)
+dn21:1.12.49 | P: Tesaṁ nisinnānaṁ abhikkamiṁsu, | S: As they sat there, they passed over them, | T: (none)
+dn21:1.12.50 | P: Vīrā virāgā virajaṁ karontā; | S: the heroes desireless, practicing purity. | T: (none)
+dn21:1.12.51 | P: Te disvā saṁvegamakāsi vāsavo, | S: Seeing them, Vāsava was struck with urgency; | T: (none)
+dn21:1.12.52 | P: Devābhibhū devagaṇassa majjhe. | S: the master of gods in the midst of the group said, | T: (none)
+
+## dn21:1.12.53–dn21:1.12.56 (dn)
+dn21:1.12.53 | P: ‘Imehi te hīnakāyūpapannā, | S: “These were born in the lesser centaur realm, | T: (none)
+dn21:1.12.54 | P: Deve tāvatiṁse abhikkamanti’; | S: but now they pass us by!” | T: (none)
+dn21:1.12.55 | P: Saṁvegajātassa vaco nisamma, | S: Heeding the speech of one so moved, | T: (none)
+dn21:1.12.56 | P: So gopako vāsavamajjhabhāsi. | S: Gopaka addressed Vāsava, | T: (none)
+
+## dn21:1.12.57–dn21:1.12.60 (dn)
+dn21:1.12.57 | P: ‘Buddho janindatthi manussaloke, | S: “There is a Buddha, a lord of men, in the world. | T: (none)
+dn21:1.12.58 | P: Kāmābhibhū sakyamunīti ñāyati; | S: Known as the Sakyan Sage, he’s mastered the senses. | T: (none)
+dn21:1.12.59 | P: Tasseva te puttā satiyā vihīnā, | S: Those sons of his lost their memory; | T: (none)
+dn21:1.12.60 | P: Coditā mayā te satimajjhalatthuṁ’. | S: but when scolded by me they gained it back. | T: (none)
+
+## dn21:1.12.61–dn21:1.12.64 (dn)
+dn21:1.12.61 | P: Tiṇṇaṁ tesaṁ āvasinettha eko, | S: Of the three, there is one who remains | T: (none)
+dn21:1.12.62 | P: Gandhabbakāyūpagato vasīno; | S: dwelling in the host of centaurs. | T: (none)
+dn21:1.12.63 | P: Dve ca sambodhipathānusārino, | S: But two, recollecting the path to awakening, | T: (none)
+dn21:1.12.64 | P: Devepi hīḷenti samāhitattā. | S: serene, spurn even the gods. | T: (none)
+
+## dn21:1.12.65–dn21:1.12.68 (dn)
+dn21:1.12.65 | P: Etādisī dhammappakāsanettha, | S: Such is the explanation of the teaching here: | T: (none)
+dn21:1.12.66 | P: Na tattha kiṅkaṅkhati koci sāvako; | S: not a single disciple doubts that. | T: (none)
+dn21:1.12.67 | P: Nitiṇṇaoghaṁ vicikicchachinnaṁ, | S: We venerate the Buddha, the victor, lord of men, | T: (none)
+dn21:1.12.68 | P: Buddhaṁ namassāma jinaṁ janindaṁ. | S: who has crossed the flood and cut off doubt. | T: (none)
+
+## dn21:1.12.69–dn21:1.12.72 (dn)
+dn21:1.12.69 | P: Yaṁ te dhammaṁ idhaññāya, | S: They attained distinction to the extent | T: (none)
+dn21:1.12.70 | P: visesaṁ ajjhagaṁsu te; | S: they understood the teaching here; | T: (none)
+dn21:1.12.71 | P: Kāyaṁ brahmapurohitaṁ, | S: two of them distinguished | T: (none)
+dn21:1.12.72 | P: duve tesaṁ visesagū. | S: in the host of the priests of Divinity.”’ | T: (none)
+
+## dn21:1.12.73–dn21:1.12.76 (dn)
+dn21:1.12.73 | P: Tassa dhammassa pattiyā, | S: We have come here, dear sir, | T: (none)
+dn21:1.12.74 | P: āgatamhāsi mārisa; | S: to realize this same teaching. | T: (none)
+dn21:1.12.75 | P: Katāvakāsā bhagavatā, | S: If the Buddha would give me a chance, | T: (none)
+dn21:1.12.76 | P: pañhaṁ pucchemu mārisā”ti. | S: I would ask a question, dear sir.” | T: (none)
+CONTEXT dn21:1.13.1 | P: Atha kho bhagavato etadahosi: | S: Then it occurred to the Buddha, | T: (none)
+CONTEXT dn21:1.13.2 | P: “dīgharattaṁ visuddho kho ayaṁ yakkho, yaṁ kiñci maṁ pañhaṁ pucchissati, sabbaṁ taṁ atthasañhitaṁyeva pucchissati, no anatthasañhitaṁ. | S: “For a long time now this spirit has led a pure life. Any question he asks me will be beneficial, not unbeneficial. | T: (none)
+
+## dn21:1.13.5–dn21:1.13.8 (dn)
+CONTEXT dn21:1.13.3 | P: Yañcassāhaṁ puṭṭho byākarissāmi, taṁ khippameva ājānissatī”ti. | S: And he will quickly understand any answer I give to his question.” | T: (none)
+CONTEXT dn21:1.13.4 | P: Atha kho bhagavā sakkaṁ devānamindaṁ gāthāya ajjhabhāsi: | S: So the Buddha addressed Sakka in verse: | T: (none)
+dn21:1.13.5 | P: “Puccha vāsava maṁ pañhaṁ, | S: “Ask me your question, Vāsava, | T: (none)
+dn21:1.13.6 | P: yaṁ kiñci manasicchasi; | S: whatever you want. | T: (none)
+dn21:1.13.7 | P: Tassa tasseva pañhassa, | S: I’ll solve each and every | T: (none)
+dn21:1.13.8 | P: ahaṁ antaṁ karomi te”ti. | S: question you have.” | T: (none)
+CONTEXT dn21:1.13.9 | P: Paṭhamabhāṇavāro niṭṭhito. | S: The first recitation section is complete. | T: (none)
+CONTEXT dn21:2.1.1 | P: Katāvakāso sakko devānamindo bhagavatā imaṁ bhagavantaṁ paṭhamaṁ pañhaṁ apucchi: | S: Having been granted an opportunity by the Buddha, Sakka asked the first question. | T: Having been given leave by the Blessed One, Sakka the deva-king asked him his first question:
+
+## dn21:2.8.3–dn21:2.8.6 (dn)
+CONTEXT dn21:2.8.1 | P: “Kiṁ pana tvaṁ, devānaminda, atthavasaṁ sampassamāno evarūpaṁ vedapaṭilābhaṁ somanassapaṭilābhaṁ pavedesī”ti? | S: “But lord of gods, what reason do you see for speaking of such joy and happiness?” | T: (none)
+CONTEXT dn21:2.8.2 | P: “Cha kho ahaṁ, bhante, atthavase sampassamāno evarūpaṁ vedapaṭilābhaṁ somanassapaṭilābhaṁ pavedemi. | S: “I see six reasons to speak of such joy and happiness, sir. | T: (none)
+dn21:2.8.3 | P: Idheva tiṭṭhamānassa, | S: While staying right here, | T: (none)
+dn21:2.8.4 | P: devabhūtassa me sato; | S: remaining in the godly form, | T: (none)
+dn21:2.8.5 | P: Punarāyu ca me laddho, | S: I have gained an extended life: | T: (none)
+dn21:2.8.6 | P: evaṁ jānāhi mārisa. | S: know this, dear sir. | T: (none)
+CONTEXT dn21:2.8.7 | P: Imaṁ kho ahaṁ, bhante, paṭhamaṁ atthavasaṁ sampassamāno evarūpaṁ vedapaṭilābhaṁ somanassapaṭilābhaṁ pavedemi. | S: This is the first reason. | T: …
+
+## dn21:2.8.8–dn21:2.8.11 (dn)
+CONTEXT dn21:2.8.7 | P: Imaṁ kho ahaṁ, bhante, paṭhamaṁ atthavasaṁ sampassamāno evarūpaṁ vedapaṭilābhaṁ somanassapaṭilābhaṁ pavedemi. | S: This is the first reason. | T: …
+dn21:2.8.8 | P: Cutāhaṁ diviyā kāyā, | S: When I fall from the heavenly host, | T: (none)
+dn21:2.8.9 | P: āyuṁ hitvā amānusaṁ; | S: leaving behind the non-human life, | T: (none)
+dn21:2.8.10 | P: Amūḷho gabbhamessāmi, | S: I shall consciously go to a new womb, | T: (none)
+dn21:2.8.11 | P: yattha me ramatī mano. | S: wherever my mind delights. | T: (none)
+CONTEXT dn21:2.8.12 | P: Imaṁ kho ahaṁ, bhante, dutiyaṁ atthavasaṁ sampassamāno evarūpaṁ vedapaṭilābhaṁ somanassapaṭilābhaṁ pavedemi. | S: This is the second reason. | T: (none)
+
+## dn21:2.8.13–dn21:2.8.16 (dn)
+CONTEXT dn21:2.8.12 | P: Imaṁ kho ahaṁ, bhante, dutiyaṁ atthavasaṁ sampassamāno evarūpaṁ vedapaṭilābhaṁ somanassapaṭilābhaṁ pavedemi. | S: This is the second reason. | T: (none)
+dn21:2.8.13 | P: Svāhaṁ amūḷhapaññassa, | S: Living happily under the guidance | T: (none)
+dn21:2.8.14 | P: viharaṁ sāsane rato; | S: of the one of unclouded wisdom, | T: (none)
+dn21:2.8.15 | P: Ñāyena viharissāmi, | S: I shall practice systematically, | T: (none)
+dn21:2.8.16 | P: sampajāno paṭissato. | S: aware and mindful. | T: (none)
+CONTEXT dn21:2.8.17 | P: Imaṁ kho ahaṁ, bhante, tatiyaṁ atthavasaṁ sampassamāno evarūpaṁ vedapaṭilābhaṁ somanassapaṭilābhaṁ pavedemi. | S: This is the third reason. | T: (none)
+
+## dn21:2.8.18–dn21:2.8.21 (dn)
+CONTEXT dn21:2.8.17 | P: Imaṁ kho ahaṁ, bhante, tatiyaṁ atthavasaṁ sampassamāno evarūpaṁ vedapaṭilābhaṁ somanassapaṭilābhaṁ pavedemi. | S: This is the third reason. | T: (none)
+dn21:2.8.18 | P: Ñāyena me carato ca, | S: And if awakening should arise | T: (none)
+dn21:2.8.19 | P: sambodhi ce bhavissati; | S: as I practice systematically, | T: (none)
+dn21:2.8.20 | P: Aññātā viharissāmi, | S: I shall live as one who understands, | T: (none)
+dn21:2.8.21 | P: sveva anto bhavissati. | S: and my end shall come right there. | T: (none)
+CONTEXT dn21:2.8.22 | P: Imaṁ kho ahaṁ, bhante, catutthaṁ atthavasaṁ sampassamāno evarūpaṁ vedapaṭilābhaṁ somanassapaṭilābhaṁ pavedemi. | S: This is the fourth reason. | T: (none)
+
+## dn21:2.8.23–dn21:2.8.26 (dn)
+CONTEXT dn21:2.8.22 | P: Imaṁ kho ahaṁ, bhante, catutthaṁ atthavasaṁ sampassamāno evarūpaṁ vedapaṭilābhaṁ somanassapaṭilābhaṁ pavedemi. | S: This is the fourth reason. | T: (none)
+dn21:2.8.23 | P: Cutāhaṁ mānusā kāyā, | S: When I fall from the human realm, | T: (none)
+dn21:2.8.24 | P: āyuṁ hitvāna mānusaṁ; | S: leaving behind the human life, | T: (none)
+dn21:2.8.25 | P: Puna devo bhavissāmi, | S: I shall become a god again, | T: (none)
+dn21:2.8.26 | P: devalokamhi uttamo. | S: supreme in the heaven realm. | T: (none)
+CONTEXT dn21:2.8.27 | P: Imaṁ kho ahaṁ, bhante, pañcamaṁ atthavasaṁ sampassamāno evarūpaṁ vedapaṭilābhaṁ somanassapaṭilābhaṁ pavedemi. | S: This is the fifth reason. | T: (none)
+
+## dn21:2.8.28–dn21:2.8.31 (dn)
+CONTEXT dn21:2.8.27 | P: Imaṁ kho ahaṁ, bhante, pañcamaṁ atthavasaṁ sampassamāno evarūpaṁ vedapaṭilābhaṁ somanassapaṭilābhaṁ pavedemi. | S: This is the fifth reason. | T: (none)
+dn21:2.8.28 | P: Te paṇītatarā devā, | S: They are the finest of gods, | T: (none)
+dn21:2.8.29 | P: akaniṭṭhā yasassino; | S: the glorious Akaniṭṭhas. | T: (none)
+dn21:2.8.30 | P: Antime vattamānamhi, | S: So long as my final life goes on, | T: (none)
+dn21:2.8.31 | P: so nivāso bhavissati. | S: there my home will be. | T: (none)
+CONTEXT dn21:2.8.32 | P: Imaṁ kho ahaṁ, bhante, chaṭṭhaṁ atthavasaṁ sampassamāno evarūpaṁ vedapaṭilābhaṁ somanassapaṭilābhaṁ pavedemi. | S: This is the sixth reason. | T: (none)
+CONTEXT dn21:2.8.33 | P: Ime kho ahaṁ, bhante, cha atthavase sampassamāno evarūpaṁ vedapaṭilābhaṁ somanassapaṭilābhaṁ pavedemi. | S: Seeing these six reasons I speak of such joy and happiness. | T: (none)
+
+## dn21:2.9.1–dn21:2.9.4 (dn)
+CONTEXT dn21:2.8.32 | P: Imaṁ kho ahaṁ, bhante, chaṭṭhaṁ atthavasaṁ sampassamāno evarūpaṁ vedapaṭilābhaṁ somanassapaṭilābhaṁ pavedemi. | S: This is the sixth reason. | T: (none)
+CONTEXT dn21:2.8.33 | P: Ime kho ahaṁ, bhante, cha atthavase sampassamāno evarūpaṁ vedapaṭilābhaṁ somanassapaṭilābhaṁ pavedemi. | S: Seeing these six reasons I speak of such joy and happiness. | T: (none)
+dn21:2.9.1 | P: Apariyositasaṅkappo, | S: My wishes unfulfilled, | T: (none)
+dn21:2.9.2 | P: vicikiccho kathaṅkathī; | S: doubting and indecisive, | T: (none)
+dn21:2.9.3 | P: Vicariṁ dīghamaddhānaṁ, | S: I wandered for such a long time, | T: (none)
+dn21:2.9.4 | P: anvesanto tathāgataṁ. | S: in search of the Realized One. | T: (none)
+
+## dn21:2.9.5–dn21:2.9.8 (dn)
+dn21:2.9.5 | P: Yassu maññāmi samaṇe, | S: I imagined that ascetics | T: (none)
+dn21:2.9.6 | P: pavivittavihārino; | S: living in seclusion | T: (none)
+dn21:2.9.7 | P: Sambuddhā iti maññāno, | S: must surely be awakened, | T: (none)
+dn21:2.9.8 | P: gacchāmi te upāsituṁ. | S: so I went to sit near them. | T: (none)
+
+## dn21:2.9.9–dn21:2.9.12 (dn)
+dn21:2.9.9 | P: ‘Kathaṁ ārādhanā hoti, | S: ‘How is there success? | T: (none)
+dn21:2.9.10 | P: kathaṁ hoti virādhanā’; | S: How is there failure?’ | T: (none)
+dn21:2.9.11 | P: Iti puṭṭhā na sampāyanti, | S: But they were stumped by such questions | T: (none)
+dn21:2.9.12 | P: magge paṭipadāsu ca. | S: about the path and practice. | T: (none)
+
+## dn21:2.9.13–dn21:2.9.16 (dn)
+dn21:2.9.13 | P: Tyassu yadā maṁ jānanti, | S: And when they found out that I | T: (none)
+dn21:2.9.14 | P: sakko devānamāgato; | S: was Sakka, come from the gods, | T: (none)
+dn21:2.9.15 | P: Tyassu mameva pucchanti, | S: they questioned me instead about | T: (none)
+dn21:2.9.16 | P: ‘kiṁ katvā pāpuṇī idaṁ’. | S: the deed that brought me to this state. | T: (none)
+
+## dn21:2.9.17–dn21:2.9.20 (dn)
+dn21:2.9.17 | P: Tesaṁ yathāsutaṁ dhammaṁ, | S: I taught them the Dhamma | T: (none)
+dn21:2.9.18 | P: desayāmi jane sutaṁ; | S: as I had learned it among men. | T: (none)
+dn21:2.9.19 | P: Tena attamanā honti, | S: They were delighted with that, saying: | T: (none)
+dn21:2.9.20 | P: ‘diṭṭho no vāsavoti ca’. | S: ‘We’ve seen Vāsava!’ | T: (none)
+
+## dn21:2.9.21–dn21:2.9.24 (dn)
+dn21:2.9.21 | P: Yadā ca buddhamaddakkhiṁ, | S: Now since I’ve seen the Buddha, | T: (none)
+dn21:2.9.22 | P: vicikicchāvitāraṇaṁ; | S: who helps us overcome doubt, | T: (none)
+dn21:2.9.23 | P: Somhi vītabhayo ajja, | S: today, free of fear, | T: (none)
+dn21:2.9.24 | P: sambuddhaṁ payirupāsiya. | S: I pay homage to the awakened one. | T: (none)
+
+## dn21:2.9.25–dn21:2.9.28 (dn)
+dn21:2.9.25 | P: Taṇhāsallassa hantāraṁ, | S: Destroyer of the dart of craving, | T: (none)
+dn21:2.9.26 | P: buddhaṁ appaṭipuggalaṁ; | S: the Buddha is unrivaled. | T: (none)
+dn21:2.9.27 | P: Ahaṁ vande mahāvīraṁ, | S: I bow to the great hero, | T: (none)
+dn21:2.9.28 | P: buddhamādiccabandhunaṁ. | S: the Buddha, Kinsman of the Sun. | T: (none)
+
+## dn21:2.9.29–dn21:2.9.32 (dn)
+dn21:2.9.29 | P: Yaṁ karomasi brahmuno, | S: In the same way that divinity ought be revered | T: (none)
+dn21:2.9.30 | P: samaṁ devehi mārisa; | S: by we gods, dear sir, | T: (none)
+dn21:2.9.31 | P: Tadajja tuyhaṁ kassāma, | S: today we shall revere you— | T: (none)
+dn21:2.9.32 | P: handa sāmaṁ karoma te. | S: come, let us revere you ourselves! | T: (none)
+
+## dn21:2.9.33–dn21:2.9.36 (dn)
+dn21:2.9.33 | P: Tvameva asi sambuddho, | S: You alone are the Awakened! | T: (none)
+dn21:2.9.34 | P: tuvaṁ satthā anuttaro; | S: You are the Teacher supreme! | T: (none)
+dn21:2.9.35 | P: Sadevakasmiṁ lokasmiṁ, | S: In the world with its gods, | T: (none)
+dn21:2.9.36 | P: natthi te paṭipuggalo”ti. | S: you have no rival.” | T: (none)
+CONTEXT dn21:2.10.1 | P: Atha kho sakko devānamindo pañcasikhaṁ gandhabbaputtaṁ āmantesi: | S: Then Sakka addressed the centaur Pañcasikha, | T: (none)
+CONTEXT dn21:2.10.2 | P: “bahūpakāro kho mesi tvaṁ, tāta pañcasikha, yaṁ tvaṁ bhagavantaṁ paṭhamaṁ pasādesi. | S: “Dear Pañcasikha, you were very helpful to me, since you first charmed the Buddha, | T: (none)
+
+## dn34:1.1.7–dn34:1.1.10 (dn)
+CONTEXT dn34:1.1.5 | P: “Āvuso”ti kho te bhikkhū āyasmato sāriputtassa paccassosuṁ. | S: “Reverend,” they replied. | T: “Yes, friend,” the monks responded to him.
+CONTEXT dn34:1.1.6 | P: Āyasmā sāriputto etadavoca: | S: Sāriputta said this: | T: Ven. Sāriputta said,
+dn34:1.1.7 | P: “Dasuttaraṁ pavakkhāmi, | S: “I will relate the teachings | T: “I will teach the Dhamma
+dn34:1.1.8 | P: dhammaṁ nibbānapattiyā; | S: up to ten for attaining extinguishment, | T: progressing by tens, ⏎ for attaining unbinding,
+dn34:1.1.9 | P: Dukkhassantakiriyāya, | S: for making an end of suffering, | T: for putting an end to suffering & stress,
+dn34:1.1.10 | P: sabbaganthappamocanaṁ. | S: the release from all ties. | T: for releasing from all ties.
+CONTEXT dn34:1.2.0 | P: 1. Eko dhammo | S: 1. Groups of One | T: Ones
+CONTEXT dn34:1.2.1 | P: Eko, āvuso, dhammo bahukāro, eko dhammo bhāvetabbo, eko dhammo pariññeyyo, eko dhammo pahātabbo, eko dhammo hānabhāgiyo, eko dhammo visesabhāgiyo, eko dhammo duppaṭivijjho, eko dhammo uppādetabbo, eko dhammo abhiññeyyo, eko dhammo sacchikātabbo. | S: Reverends, one thing is helpful, one thing should be developed, one thing should be completely understood, one thing should be given up, one thing makes things worse, one thing leads to distinction, one thing is hard to comprehend, one thing should be produced, one thing should be directly known, one thing should be realized. | T: “One dhamma, friends, is very helpful. One dhamma should be developed. One dhamma should be comprehended. One dhamma should be abandoned. One dhamma is on the side of decline. One dhamma is on the side of distinction. One dhamma is hard to penetrate. One dhamma should be made to arise. One dhamma should be directly known. One dhamma should be realized.
+
+## dn34:2.4.1–dn34:2.4.4 (dn)
+CONTEXT dn34:2.3.134 | P: Pāthikavaggo niṭṭhito. | S: (none) | T: (none)
+CONTEXT dn34:2.4.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+dn34:2.4.1 | P: Pāthiko ca udumbaraṁ, | S: (none) | T: (none)
+dn34:2.4.2 | P: cakkavatti aggaññakaṁ; | S: (none) | T: (none)
+dn34:2.4.3 | P: Sampasādanapāsādaṁ, | S: (none) | T: (none)
+dn34:2.4.4 | P: mahāpurisalakkhaṇaṁ. | S: (none) | T: (none)
+
+## dn34:2.4.5–dn34:2.4.8 (dn)
+dn34:2.4.5 | P: Siṅgālāṭānāṭiyakaṁ, | S: (none) | T: (none)
+dn34:2.4.6 | P: saṅgīti ca dasuttaraṁ; | S: (none) | T: (none)
+dn34:2.4.7 | P: Ekādasahi suttehi, | S: (none) | T: (none)
+dn34:2.4.8 | P: pāthikavaggoti vuccati. | S: (none) | T: (none)
+CONTEXT dn34:2.4.9 | P: Pāthikavaggapāḷi niṭṭhitā. | S: (none) | T: (none)
+CONTEXT dn34:2.4.10 | P: Tīhi vaggehi paṭimaṇḍito sakalo | S: (none) | T: (none)
+
+## mn7:20.2–mn7:20.7 (mn)
+CONTEXT mn7:19.6 | P: “Lokkhasammatā hi, bho gotama, bāhukā nadī bahujanassa, puññasammatā hi, bho gotama, bāhukā nadī bahujanassa, bāhukāya pana nadiyā bahujano pāpakammaṁ kataṁ pavāhetī”ti. | S: “Many people deem that the Bāhukā River leads to a heavenly world and bestows merit. And many people rinse off their bad deeds in the Bāhukā River.” | T: “The Bāhuka River is agreed by many people to (lead to the next) world, Master Gotama. The Bāhuka River is agreed by many people to be meritorious, Master Gotama. And in the Bāhuka River many people wash away any evil deed they have done.”
+CONTEXT mn7:20.1 | P: Atha kho bhagavā sundarikabhāradvājaṁ brāhmaṇaṁ gāthāhi ajjhabhāsi: | S: Then the Buddha addressed Bhāradvāja of Sundarikā in verse: | T: So the Blessed One addressed Sundarika Bhāradvāja the brahman in verses:
+mn7:20.2 | P: “Bāhukaṁ adhikakkañca, | S: “The Bāhukā and the Adhikakkā, | T: “The Bāhuka & the Adhikakkā,
+mn7:20.3 | P: gayaṁ sundarikaṁ mapi; | S: at Gayā and the Sundarikā too, | T: the Gayā, the Sundarikā,
+mn7:20.4 | P: Sarassatiṁ payāgañca, | S: Sarasvatī and Payāga, | T: the Sarassati & the Payāga,
+mn7:20.5 | P: atho bāhumatiṁ nadiṁ; | S: and the Bāhumatī River: | T: and also the Bāhumati:
+mn7:20.6 | P: Niccampi bālo pakkhando, | S: a fool can constantly plunge into them | T: A fool, ⏎ even if he bathes there constantly,
+mn7:20.7 | P: kaṇhakammo na sujjhati. | S: but it won’t purify their dark deeds. | T: wouldn’t cleanse ⏎ a dark deed.
+
+## mn7:20.8–mn7:20.11 (mn)
+mn7:20.8 | P: Kiṁ sundarikā karissati, | S: What can the Sundarikā do? | T: What can the Sundarikā do?
+mn7:20.9 | P: Kiṁ payāgā kiṁ bāhukā nadī; | S: What the Payāga or the Bāhukā? | T: What the Payāga? What the Bāhuka?
+mn7:20.10 | P: Veriṁ katakibbisaṁ naraṁ, | S: They can’t cleanse a cruel person, a sinner | T: A person of animosity, ⏎ one who’s done wrong, ⏎ cannot be cleansed there
+mn7:20.11 | P: Na hi naṁ sodhaye pāpakamminaṁ. | S: from their bad deeds. | T: of evil deeds.
+
+## mn7:20.12–mn7:20.17 (mn)
+mn7:20.12 | P: Suddhassa ve sadā phaggu, | S: For the pure in heart it’s always | T: But for one who is pure, ⏎ it’s always
+mn7:20.13 | P: Suddhassuposatho sadā; | S: the spring festival or the sabbath. | T: the Phaggu festival; ⏎ for one who is pure, ⏎ always the uposatha.
+mn7:20.14 | P: Suddhassa sucikammassa, | S: For the pure in heart and clean of deed, | T: For one who is pure, clean in his deeds,
+mn7:20.15 | P: Sadā sampajjate vataṁ; | S: their vows will always be fulfilled. | T: his practices always ⏎ reach consummation.
+mn7:20.16 | P: Idheva sināhi brāhmaṇa, | S: It’s here alone that you should bathe, brahmin, | T: Bathe right here, brahman.
+mn7:20.17 | P: Sabbabhūtesu karohi khemataṁ. | S: making yourself a sanctuary for all creatures. | T: Create safety for yourself ⏎ with regard to all beings.
+
+## mn7:20.18–mn7:20.23 (mn)
+mn7:20.18 | P: Sace musā na bhaṇasi, | S: And if you speak no lies, | T: If you ⏎ don’t tell a lie,
+mn7:20.19 | P: sace pāṇaṁ na hiṁsasi; | S: nor harm any living creature, | T: don’t harm living beings,
+mn7:20.20 | P: Sace adinnaṁ nādiyasi, | S: nor steal anything not given, | T: don’t take what’s not given,
+mn7:20.21 | P: saddahāno amaccharī; | S: and you’re faithful and not stingy: | T: if you have conviction ⏎ & are free from stinginess,
+mn7:20.22 | P: Kiṁ kāhasi gayaṁ gantvā, | S: what’s the point of going to Gayā? | T: what would you gain ⏎ from going to the Gayā?
+mn7:20.23 | P: udapānopi te gayā”ti. | S: For any well may be your Gayā!” | T: Even a well ⏎ would be Gayā for you.”
+CONTEXT mn7:21.1 | P: Evaṁ vutte, sundarikabhāradvājo brāhmaṇo bhagavantaṁ etadavoca: | S: When he had spoken, the brahmin Bhāradvāja of Sundarikā said to the Buddha, | T: When this was said, Sundarika Bhāradvāja the brahman said to the Blessed One,
+CONTEXT mn7:21.2 | P: “abhikkantaṁ, bho gotama, abhikkantaṁ, bho gotama. | S: “Excellent, worthy Gotama! Excellent! | T: “Magnificent, Master Gotama! Magnificent!
+
+## mn10:48.1–mn10:48.4 (mn)
+CONTEXT mn10:47.6 | P: Mūlapariyāyavaggo niṭṭhito paṭhamo. | S: (none) | T: (none)
+CONTEXT mn10:48.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+mn10:48.1 | P: Mūlasusaṁvaradhammadāyādā, | S: (none) | T: (none)
+mn10:48.2 | P: Bheravānaṅgaṇākaṅkheyyavatthaṁ; | S: (none) | T: (none)
+mn10:48.3 | P: Sallekhasammādiṭṭhisatipaṭṭhaṁ, | S: (none) | T: (none)
+mn10:48.4 | P: Vaggavaro asamo susamatto. | S: (none) | T: (none)
+
+## mn12:50.7–mn12:50.10 (mn)
+CONTEXT mn12:50.5 | P: gimhānaṁ pacchime māse divā abbhokāse viharāmi, rattiṁ vanasaṇḍe. | S: But in the last month of summer I’d stay in the open by day and in the forest by night. | T: In the last month of the hot season, I would stay in the open by day and in the grove by night.
+CONTEXT mn12:50.6 | P: Apissu maṁ, sāriputta, ayaṁ anacchariyagāthā paṭibhāsi pubbe assutapubbā: | S: And then these verses, which were neither supernaturally inspired, nor learned before in the past, occurred to me: | T: And then this verse of amazement—never heard before—occurred to me:
+mn12:50.7 | P: ‘Sotatto sosinno ceva, | S: ‘Scorched and frozen, | T: “‘He is scorched, he is drenched,
+mn12:50.8 | P: eko bhiṁsanake vane; | S: alone in the awe-inspiring forest. | T: alone— ⏎ alone in the awe-inspiring forest,
+mn12:50.9 | P: Naggo na caggimāsīno, | S: nude, no fire to sit beside, | T: naked, not sitting near a fire,
+mn12:50.10 | P: esanāpasuto munī’ti. | S: the sage still pursues his quest.’ | T: the sage exerting himself in the search.’
+CONTEXT mn12:51.1 | P: So kho ahaṁ, sāriputta, susāne seyyaṁ kappemi chavaṭṭhikāni upadhāya. | S: I would make my bed in a charnel ground, with the bones of the dead for a pillow. | T: “I arranged a sleeping place in a charnel ground, piling up bones from the corpses.
+CONTEXT mn12:51.2 | P: Apissu maṁ, sāriputta, gāmaṇḍalā upasaṅkamitvā oṭṭhubhantipi, omuttentipi, paṁsukenapi okiranti, kaṇṇasotesupi salākaṁ pavesenti. | S: Then village louts would come up to me. They’d spit and piss on me, throw mud on me, even poke twigs in my ears. | T: “And then cowherd boys, coming up to me, would spit on me, or urinate on me, or throw dirt on me, or stick twigs into my ears.
+
+## mn20:9.1–mn20:9.4 (mn)
+CONTEXT mn20:8.17 | P: Sīhanādavaggo niṭṭhito dutiyo. | S: (none) | T: (none)
+CONTEXT mn20:9.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+mn20:9.1 | P: Cūḷasīhanādalomahaṁsavaro, | S: (none) | T: (none)
+mn20:9.2 | P: Mahācūḷadukkhakkhandhaanumānikasuttaṁ; | S: (none) | T: (none)
+mn20:9.3 | P: Khilapatthamadhupiṇḍikadvidhāvitakka, | S: (none) | T: (none)
+mn20:9.4 | P: Pañcanimittakathā puna vaggo. | S: (none) | T: (none)
+
+## mn26:19.8–mn26:19.11 (mn) GATHERED; unequal counts require a reader
+CONTEXT mn26:19.6 | P: Ahañceva kho pana dhammaṁ deseyyaṁ, pare ca me na ājāneyyuṁ, so mamassa kilamatho, sā mamassa vihesā’ti. | S: And if I were to teach this principle, others might not understand me, which would be wearying and troublesome for me.’ | T: And if I were to teach the Dhamma and others would not understand me, that would be tiresome for me, troublesome for me.’
+CONTEXT mn26:19.7 | P: Apissu maṁ, bhikkhave, imā anacchariyā gāthāyo paṭibhaṁsu pubbe assutapubbā: | S: And then these verses, which were neither supernaturally inspired, nor learned before in the past, occurred to me: | T: “Just then these verses, unspoken in the past, unheard before, occurred to me:
+mn26:19.8 | P: ‘Kicchena me adhigataṁ, | S: ‘I’ve struggled hard to realize this, | T: ‘Enough now with teaching ⏎ what ⏎ only with difficulty ⏎ I reached.
+mn26:19.9 | P: halaṁ dāni pakāsituṁ; | S: there’s no need to reveal it now! | T: (none)
+mn26:19.10 | P: Rāgadosaparetehi, | S: Those mired in greed and hate | T: This Dhamma is not easily realized ⏎ by those overcome ⏎ with aversion & passion.
+mn26:19.11 | P: nāyaṁ dhammo susambudho. | S: can’t really understand this teaching. | T: (none)
+
+## mn26:19.12–mn26:19.15 (mn)
+mn26:19.12 | P: Paṭisotagāmiṁ nipuṇaṁ, | S: It goes against the stream, subtle, | T: What is abstruse, subtle,
+mn26:19.13 | P: gambhīraṁ duddasaṁ aṇuṁ; | S: deep, obscure, and very fine. | T: deep, ⏎ hard to see, ⏎ going against the flow—
+mn26:19.14 | P: Rāgarattā na dakkhanti, | S: Those besotted by greed cannot see, | T: those delighting in passion,
+mn26:19.15 | P: tamokhandhena āvuṭā’ti. | S: for they’re cloaked in a mass of darkness.’ | T: cloaked in the mass of darkness, ⏎ won’t see.’
+CONTEXT mn26:19.16 | P: Itiha me, bhikkhave, paṭisañcikkhato appossukkatāya cittaṁ namati, no dhammadesanāya. | S: So, as I reflected like this, my mind inclined to remaining passive, not to teaching the Dhamma. | T: “As I reflected thus, my mind inclined to dwelling at ease, not to teaching the Dhamma.
+CONTEXT mn26:20.1 | P: Atha kho, bhikkhave, brahmuno sahampatissa mama cetasā cetoparivitakkamaññāya etadahosi: | S: Then the divinity Sahampati, knowing my train of thought, thought, | T: “Then Brahmā Sahampati, having known with his own awareness the line of thinking in my awareness, thought:
+
+## mn26:20.10–mn26:20.13 (mn)
+CONTEXT mn26:20.8 | P: Idamavoca, bhikkhave, brahmā sahampati. | S: That is what the divinity Sahampati said. | T: “That is what Brahmā Sahampati said.
+CONTEXT mn26:20.9 | P: Idaṁ vatvā athāparaṁ etadavoca: | S: Then he went on to say: | T: Having said that, he further said this:
+mn26:20.10 | P: ‘Pāturahosi magadhesu pubbe, | S: ‘Among the Magadhans there appeared in the past | T: ‘In the past ⏎ there appeared among the Magadhans
+mn26:20.11 | P: Dhammo asuddho samalehi cintito; | S: an impure teaching thought up by the stained. | T: an impure Dhamma ⏎ devised by the stained.
+mn26:20.12 | P: Apāpuretaṁ amatassa dvāraṁ, | S: Fling open the door to freedom from death! | T: Throw open the door to the deathless!
+mn26:20.13 | P: Suṇantu dhammaṁ vimalenānubuddhaṁ. | S: Let them hear the teaching the immaculate one discovered. | T: Let them hear the Dhamma ⏎ realized by the Stainless One!
+
+## mn26:20.14–mn26:20.19 (mn)
+mn26:20.14 | P: Sele yathā pabbatamuddhaniṭṭhito, | S: Standing high on a rocky mountain, | T: Just as one standing on a rocky crag
+mn26:20.15 | P: Yathāpi passe janataṁ samantato; | S: you can see the people all around. | T: might see people ⏎ all around below,
+mn26:20.16 | P: Tathūpamaṁ dhammamayaṁ sumedha, | S: In just the same way, All-seer, so intelligent, | T: so, intelligent one, with all-around vision,
+mn26:20.17 | P: Pāsādamāruyha samantacakkhu; | S: having ascended the Temple of Truth, | T: ascend the palace ⏎ fashioned of Dhamma.
+mn26:20.18 | P: Sokāvatiṇṇaṁ janatamapetasoko, | S: rid of sorrow, look upon the people | T: Free from sorrow, behold the people
+mn26:20.19 | P: Avekkhassu jātijarābhibhūtaṁ. | S: swamped with sorrow, overcome by rebirth and old age. | T: submerged in sorrow, ⏎ oppressed by birth & aging.
+
+## mn26:20.20–mn26:20.23 (mn)
+mn26:20.20 | P: Uṭṭhehi vīra vijitasaṅgāma, | S: Rise, hero! Victor in battle, caravan leader, | T: Rise up, hero, victor in battle! ⏎ O Teacher,
+mn26:20.21 | P: Satthavāha aṇaṇa vicara loke; | S: wander the world free of debt. | T: wander without debt in the world.
+mn26:20.22 | P: Desassu bhagavā dhammaṁ, | S: Let the Blessed One teach the Dhamma! | T: Teach the Dhamma, O Blessed One:
+mn26:20.23 | P: Aññātāro bhavissantī’ti. | S: There will be those who understand!’ | T: There will be those who will understand.’
+CONTEXT mn26:21.1 | P: Atha kho ahaṁ, bhikkhave, brahmuno ca ajjhesanaṁ viditvā sattesu ca kāruññataṁ paṭicca buddhacakkhunā lokaṁ volokesiṁ. | S: Then, understanding the Divinity’s invitation, I surveyed the world with the eye of a Buddha, because of my compassion for sentient beings. | T: “Then, having understood Brahmā’s invitation, out of compassion for beings, I surveyed the world with the eye of an Awakened One.
+CONTEXT mn26:21.2 | P: Addasaṁ kho ahaṁ, bhikkhave, buddhacakkhunā lokaṁ volokento satte apparajakkhe mahārajakkhe, tikkhindriye mudindriye, svākāre dvākāre, suviññāpaye duviññāpaye, appekacce paralokavajjabhayadassāvine viharante, appekacce na paralokavajjabhayadassāvine viharante. | S: And I saw sentient beings with little dust in their eyes, and some with much dust in their eyes; with keen faculties and with weak faculties, with good qualities and with bad qualities, easy to teach and hard to teach. And some of them lived seeing the danger in the fault to do with the next world, while others did not. | T: As I did so, I saw beings with little dust in their eyes and those with much, those with keen faculties and those with dull, those with good attributes and those with bad, those easy to teach and those hard, some of them seeing disgrace & danger in the other world.
+
+## mn26:21.6–mn26:21.9 (mn)
+CONTEXT mn26:21.4 | P: evameva kho ahaṁ, bhikkhave, buddhacakkhunā lokaṁ volokento addasaṁ satte apparajakkhe mahārajakkhe, tikkhindriye mudindriye, svākāre dvākāre, suviññāpaye duviññāpaye, appekacce paralokavajjabhayadassāvine viharante, appekacce na paralokavajjabhayadassāvine viharante. | S: In the same way, I saw sentient beings with little dust in their eyes, and some with much dust in their eyes. | T: so too, surveying the world with the eye of an Awakened One, I saw beings with little dust in their eyes and those with much, those with keen faculties and those with dull, those with good attributes and those with bad, those easy to teach and those hard, some of them seeing disgrace & danger in the other world.
+CONTEXT mn26:21.5 | P: Atha khvāhaṁ, bhikkhave, brahmānaṁ sahampatiṁ gāthāya paccabhāsiṁ: | S: Then I replied in verse to the divinity Sahampati: | T: “Having seen this, I answered Brahmā Sahampati in verse:
+mn26:21.6 | P: ‘Apārutā tesaṁ amatassa dvārā, | S: ‘Flung open are the doors to freedom from death! | T: ‘Open are the doors to the deathless.
+mn26:21.7 | P: Ye sotavanto pamuñcantu saddhaṁ; | S: Let those with ears to hear commit to faith. | T: Let those with ears show their conviction.
+mn26:21.8 | P: Vihiṁsasaññī paguṇaṁ na bhāsiṁ, | S: Thinking it would be troublesome, Divinity, I did not teach | T: Perceiving trouble, O Brahmā, ⏎ I did not tell people
+mn26:21.9 | P: Dhammaṁ paṇītaṁ manujesu brahme’ti. | S: the sophisticated, sublime Dhamma among mankind.’ | T: the refined, ⏎ sublime Dhamma.’
+CONTEXT mn26:21.10 | P: Atha kho, bhikkhave, brahmā sahampati ‘katāvakāso khomhi bhagavatā dhammadesanāyā’ti maṁ abhivādetvā padakkhiṇaṁ katvā tatthevantaradhāyi. | S: Then the divinity Sahampati, knowing that his request for me to teach the Dhamma had been granted, bowed and respectfully circled me, keeping me on his right, before vanishing right there. | T: “Then Brahmā Sahampati, thinking, ‘The Blessed One has given his consent to teach the Dhamma,’ bowed down to me and, circling me on the right, disappeared right there.
+CONTEXT mn26:22.1 | P: Tassa mayhaṁ, bhikkhave, etadahosi: | S: Then I thought, | T: “Then the thought occurred to me,
+
+## mn26:25.6–mn26:25.9 (mn)
+CONTEXT mn26:25.4 | P: Kaṁsi tvaṁ, āvuso, uddissa pabbajito, ko vā te satthā, kassa vā tvaṁ dhammaṁ rocesī’ti? | S: In whose name have you gone forth, reverend? Who is your Teacher? Whose teaching do you believe in?’ | T: On whose account have you gone forth? Who is your teacher? In whose Dhamma do you delight?’
+CONTEXT mn26:25.5 | P: Evaṁ vutte, ahaṁ, bhikkhave, upakaṁ ājīvakaṁ gāthāhi ajjhabhāsiṁ: | S: I replied to Upaka in verse: | T: “When this was said, I replied to Upaka the Ājīvaka in verses:
+mn26:25.6 | P: ‘Sabbābhibhū sabbavidūhamasmi, | S: ‘I am the vanquisher of all, the knower of all, | T: ‘All-vanquishing, ⏎ all-knowing am I,
+mn26:25.7 | P: Sabbesu dhammesu anūpalitto; | S: unsullied in the midst of all things. | T: with regard to all things, ⏎ unadhering.
+mn26:25.8 | P: Sabbañjaho taṇhākkhaye vimutto, | S: I’ve given up all, freed through the ending of craving. | T: All-abandoning, ⏎ released in the ending of craving:
+mn26:25.9 | P: Sayaṁ abhiññāya kamuddiseyyaṁ. | S: Since I know for myself, whose follower should I be? | T: having fully known on my own, ⏎ to whom should I point as my teacher?
+
+## mn26:25.10–mn26:25.13 (mn)
+mn26:25.10 | P: Na me ācariyo atthi, | S: I have no tutor. | T: I have no teacher,
+mn26:25.11 | P: sadiso me na vijjati; | S: There is no one like me. | T: and one like me can’t be found.
+mn26:25.12 | P: Sadevakasmiṁ lokasmiṁ, | S: In the world with its gods, | T: In the world with its devas,
+mn26:25.13 | P: natthi me paṭipuggalo. | S: I have no rival. | T: I have no counterpart.

@@ -1,0 +1,31 @@
+{
+  "groups": 150,
+  "counts": {
+    "better": 148,
+    "same": 2,
+    "worse": 0
+  },
+  "byJudge": [
+    {
+      "judge": "judge-001",
+      "counts": {
+        "better": 48,
+        "same": 2
+      }
+    },
+    {
+      "judge": "judge-002",
+      "counts": {
+        "better": 50
+      }
+    },
+    {
+      "judge": "judge-003",
+      "counts": {
+        "better": 50
+      }
+    }
+  ],
+  "worseStopThreshold": 6,
+  "status": "accepted"
+}

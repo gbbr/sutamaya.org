@@ -1,0 +1,437 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## snp1.1:1.1–snp1.1:1.4 (snp)
+CONTEXT snp1.1:0.1 | P: Sutta Nipāta 1.1 | S: Anthology of Discourses 1.1 | T: (none)
+CONTEXT snp1.1:0.2 | P: Uragasutta | S: The Serpent | T: 1:1 The Snake
+snp1.1:1.1 | P: Yo uppatitaṁ vineti kodhaṁ, | S: When anger surges, they drive it out, | T: The monk who subdues his arisen anger
+snp1.1:1.2 | P: Visaṭaṁ sappavisaṁva osadhehi; | S: as with medicine a cobra’s spreading venom. | T: as, with herbs, snake-venom once it has spread,
+snp1.1:1.3 | P: So bhikkhu jahāti orapāraṁ, | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:1.4 | P: Urago jiṇṇamivattacaṁ purāṇaṁ. | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+
+## snp1.1:2.1–snp1.1:2.4 (snp)
+snp1.1:2.1 | P: Yo rāgamudacchidā asesaṁ, | S: They’ve cut off greed entirely, | T: The monk who has cut off passion ⏎ without leaving a trace,
+snp1.1:2.2 | P: Bhisapupphaṁva saroruhaṁ vigayha; | S: like a lotus plucked flower and stalk. | T: as he would, plunging into a lake, a lotus,
+snp1.1:2.3 | P: So bhikkhu jahāti orapāraṁ, | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:2.4 | P: Urago jiṇṇamivattacaṁ purāṇaṁ. | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+
+## snp1.1:3.1–snp1.1:3.4 (snp)
+snp1.1:3.1 | P: Yo taṇhamudacchidā asesaṁ, | S: They’ve cut off craving entirely, | T: The monk who has cut off craving ⏎ without leaving a trace,
+snp1.1:3.2 | P: Saritaṁ sīghasaraṁ visosayitvā; | S: drying up that swift-flowing stream. | T: drying up the swift-flowing flood,
+snp1.1:3.3 | P: So bhikkhu jahāti orapāraṁ, | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:3.4 | P: Urago jiṇṇamivattacaṁ purāṇaṁ. | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+
+## snp1.1:4.1–snp1.1:4.4 (snp)
+snp1.1:4.1 | P: Yo mānamudabbadhī asesaṁ, | S: They’ve swept away conceit entirely, | T: The monk who has uprooted conceit ⏎ without leaving a trace,
+snp1.1:4.2 | P: Naḷasetuṁva sudubbalaṁ mahogho; | S: as a fragile bridge of reeds by a great flood. | T: as a great flood, a very weak bridge made of reeds,
+snp1.1:4.3 | P: So bhikkhu jahāti orapāraṁ, | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:4.4 | P: Urago jiṇṇamivattacaṁ purāṇaṁ. | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+
+## snp1.1:5.1–snp1.1:5.4 (snp)
+snp1.1:5.1 | P: Yo nājjhagamā bhavesu sāraṁ, | S: In future lives they find no worth, | T: The monk seeing ⏎ in states of becoming ⏎ no essence,
+snp1.1:5.2 | P: Vicinaṁ pupphamivā udumbaresu; | S: as an inspector of fig trees finds no flower. | T: as he would, ⏎ when examining fig trees, ⏎ no flowers,
+snp1.1:5.3 | P: So bhikkhu jahāti orapāraṁ, | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:5.4 | P: Urago jiṇṇamivattacaṁ purāṇaṁ. | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+
+## snp1.1:6.1–snp1.1:6.4 (snp)
+snp1.1:6.1 | P: Yassantarato na santi kopā, | S: They hide no anger within, | T: The monk with no inner anger,
+snp1.1:6.2 | P: Itibhavābhavatañca vītivatto; | S: passed beyond any kind of existence. | T: who has thus gone beyond ⏎ becoming & not-,
+snp1.1:6.3 | P: So bhikkhu jahāti orapāraṁ, | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:6.4 | P: Urago jiṇṇamivattacaṁ purāṇaṁ. | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+
+## snp1.1:7.1–snp1.1:7.4 (snp)
+snp1.1:7.1 | P: Yassa vitakkā vidhūpitā, | S: Their mental vibrations are cleared away, | T: The monk whose discursive thoughts are dispersed,
+snp1.1:7.2 | P: Ajjhattaṁ suvikappitā asesā; | S: internally clipped off entirely. | T: well-dealt with inside ⏎ without leaving a trace,
+snp1.1:7.3 | P: So bhikkhu jahāti orapāraṁ, | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:7.4 | P: Urago jiṇṇamivattacaṁ purāṇaṁ. | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+
+## snp1.1:8.1–snp1.1:8.4 (snp)
+snp1.1:8.1 | P: Yo nāccasārī na paccasārī, | S: They have not run too far nor run back, | T: The monk who hasn’t slipped past or held back,
+snp1.1:8.2 | P: Sabbaṁ accagamā imaṁ papañcaṁ; | S: but have gone beyond all this proliferation. | T: transcending all ⏎ this objectification,
+snp1.1:8.3 | P: So bhikkhu jahāti orapāraṁ, | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:8.4 | P: Urago jiṇṇamivattacaṁ purāṇaṁ. | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+
+## snp1.1:9.1–snp1.1:9.4 (snp)
+snp1.1:9.1 | P: Yo nāccasārī na paccasārī, | S: They have not run too far nor run back, | T: The monk who hasn’t slipped past or held back,
+snp1.1:9.2 | P: Sabbaṁ vitathamidanti ñatva loke; | S: for they know that nothing in the world is what it seems. | T: knowing with regard to the world ⏎ that “All this is unreal,”
+snp1.1:9.3 | P: So bhikkhu jahāti orapāraṁ, | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:9.4 | P: Urago jiṇṇamivattacaṁ purāṇaṁ. | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+
+## snp1.1:10.1–snp1.1:10.4 (snp)
+snp1.1:10.1 | P: Yo nāccasārī na paccasārī, | S: They have not run too far nor run back, | T: (none)
+snp1.1:10.2 | P: Sabbaṁ vitathamidanti vītalobho; | S: knowing nothing is what it seems, free of greed. | T: (none)
+snp1.1:10.3 | P: So bhikkhu jahāti orapāraṁ, | S: Such a mendicant sheds the near shore and the far, | T: (none)
+snp1.1:10.4 | P: Urago jiṇṇamivattacaṁ purāṇaṁ. | S: as a serpent its old worn-out skin. | T: (none)
+
+## snp1.1:11.1–snp1.1:11.4 (snp)
+snp1.1:11.1 | P: Yo nāccasārī na paccasārī, | S: They have not run too far nor run back, | T: The monk who hasn’t slipped past or held back,
+snp1.1:11.2 | P: Sabbaṁ vitathamidanti vītarāgo; | S: knowing nothing is what it seems, free of lust. | T: without greed, as “All this is unreal,”
+snp1.1:11.3 | P: So bhikkhu jahāti orapāraṁ, | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:11.4 | P: Urago jiṇṇamivattacaṁ purāṇaṁ. | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+
+## snp1.1:12.1–snp1.1:12.4 (snp)
+snp1.1:12.1 | P: Yo nāccasārī na paccasārī, | S: They have not run too far nor run back, | T: The monk who hasn’t slipped past or held back,
+snp1.1:12.2 | P: Sabbaṁ vitathamidanti vītadoso; | S: knowing nothing is what it seems, free of hate. | T: without aversion, as “All this is unreal,”
+snp1.1:12.3 | P: So bhikkhu jahāti orapāraṁ, | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:12.4 | P: Urago jiṇṇamivattacaṁ purāṇaṁ. | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+
+## snp1.1:13.1–snp1.1:13.4 (snp)
+snp1.1:13.1 | P: Yo nāccasārī na paccasārī, | S: They have not run too far nor run back, | T: The monk who hasn’t slipped past or turned back,
+snp1.1:13.2 | P: Sabbaṁ vitathamidanti vītamoho; | S: knowing nothing is what it seems, free of delusion. | T: without delusion, as “All this is unreal,”
+snp1.1:13.3 | P: So bhikkhu jahāti orapāraṁ, | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:13.4 | P: Urago jiṇṇamivattacaṁ purāṇaṁ. | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+
+## snp1.1:14.1–snp1.1:14.4 (snp)
+snp1.1:14.1 | P: Yassānusayā na santi keci, | S: They have no underlying tendencies at all, | T: The monk in whom ⏎ there are no obsessions
+snp1.1:14.2 | P: Mūlā ca akusalā samūhatāse; | S: and are rid of unskillful roots, | T: —the roots of unskillfulness totally destroyed—
+snp1.1:14.3 | P: So bhikkhu jahāti orapāraṁ, | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:14.4 | P: Urago jiṇṇamivattacaṁ purāṇaṁ. | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+
+## snp1.1:15.1–snp1.1:15.4 (snp)
+snp1.1:15.1 | P: Yassa darathajā na santi keci, | S: They have nothing born of distress at all | T: The monk in whom ⏎ there’s nothing born of disturbance
+snp1.1:15.2 | P: Oraṁ āgamanāya paccayāse; | S: to make them to return to the near shore. | T: that would lead him back to this shore,
+snp1.1:15.3 | P: So bhikkhu jahāti orapāraṁ, | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:15.4 | P: Urago jiṇṇamivattacaṁ purāṇaṁ. | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+
+## snp1.1:16.1–snp1.1:16.4 (snp)
+snp1.1:16.1 | P: Yassa vanathajā na santi keci, | S: No snarl grows in them at all, | T: The monk in whom ⏎ there’s nothing born of the underbrush
+snp1.1:16.2 | P: Vinibandhāya bhavāya hetukappā; | S: that would shackle them to a new life. | T: that would act as a cause ⏎ for binding him to becoming,
+snp1.1:16.3 | P: So bhikkhu jahāti orapāraṁ, | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:16.4 | P: Urago jiṇṇamivattacaṁ purāṇaṁ. | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+
+## snp1.1:17.1–snp1.1:17.4 (snp)
+snp1.1:17.1 | P: Yo nīvaraṇe pahāya pañca, | S: They’ve given up the five hindrances, | T: The monk who’s abandoned five hindrances,
+snp1.1:17.2 | P: Anigho tiṇṇakathaṅkatho visallo; | S: untroubled, rid of indecision, free of thorns. | T: who, untroubled, de-arrowed, ⏎ has crossed over doubt,
+snp1.1:17.3 | P: So bhikkhu jahāti orapāraṁ, | S: Such a mendicant sheds the near shore and the far, | T: sloughs off the near shore & far—
+snp1.1:17.4 | P: Urago jiṇṇamivattacaṁ purāṇanti. | S: as a serpent its old worn-out skin. | T: as a snake, its decrepit old skin.
+CONTEXT snp1.1:17.5 | P: Uragasuttaṁ paṭhamaṁ. | S: (none) | T: (none)
+
+## snp1.2:1.1–snp1.2:1.5 (snp)
+CONTEXT snp1.2:0.1 | P: Sutta Nipāta 1.2 | S: Anthology of Discourses 1.2 | T: (none)
+CONTEXT snp1.2:0.2 | P: Dhaniyasutta | S: The Wealthy Rancher | T: 1:2 Dhaniya the Cattleman
+snp1.2:1.1 | P: “Pakkodano duddhakhīrohamasmi, | S: “I’ve boiled my rice and drawn my milk,” | T: Dhaniya the cattleman: ⏎ “The rice is cooked, ⏎ my milking done.
+CONTEXT snp1.2:1.2 | P: (iti dhaniyo gopo) | S: said Dhaniya the rancher, | T: (none)
+snp1.2:1.3 | P: Anutīre mahiyā samānavāso; | S: “I stay with my family along the bank of the Mahī. | T: I live with my people ⏎ along the banks of the Mahi;
+snp1.2:1.4 | P: Channā kuṭi āhito gini, | S: My hut is roofed, my sacred fire kindled: | T: my hut is roofed, my fire lit:
+snp1.2:1.5 | P: Atha ce patthayasī pavassa deva”. | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, ⏎ go ahead & rain.”
+CONTEXT snp1.2:2.2 | P: (iti bhagavā) | S: said the Buddha, | T: (none)
+
+## snp1.2:2.1–snp1.2:2.5 (snp)
+snp1.2:2.1 | P: “Akkodhano vigatakhilohamasmi, | S: “I boil not with anger and have drawn out hard-heartedness,” | T: The Buddha: ⏎ “Free from anger, ⏎ my rigidity gone,
+CONTEXT snp1.2:2.2 | P: (iti bhagavā) | S: said the Buddha, | T: (none)
+snp1.2:2.3 | P: Anutīre mahiyekarattivāso; | S: “I stay for one night along the bank of the Mahī. | T: I live for one night ⏎ along the banks of the Mahi;
+snp1.2:2.4 | P: Vivaṭā kuṭi nibbuto gini, | S: My hut is wide open, my fire is quenched: | T: my hut’s roof is open, my fire out.
+snp1.2:2.5 | P: Atha ce patthayasī pavassa deva”. | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, ⏎ go ahead & rain.”
+CONTEXT snp1.2:3.2 | P: (iti dhaniyo gopo) | S: said Dhaniya, | T: (none)
+
+## snp1.2:3.1–snp1.2:3.5 (snp)
+snp1.2:3.1 | P: “Andhakamakasā na vijjare, | S: “No gadflies or mosquitoes are found,” | T: Dhaniya: ⏎ “No mosquitoes or gadflies ⏎ are to be found.
+CONTEXT snp1.2:3.2 | P: (iti dhaniyo gopo) | S: said Dhaniya, | T: (none)
+snp1.2:3.3 | P: Kacche rūḷhatiṇe caranti gāvo; | S: “cows graze on the lush meadow grass. | T: The cows range in the marshy meadow ⏎ where the grasses flourish.
+snp1.2:3.4 | P: Vuṭṭhimpi saheyyumāgataṁ, | S: They get by even when the rain comes: | T: They could stand the rain if it came:
+snp1.2:3.5 | P: Atha ce patthayasī pavassa deva”. | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, ⏎ go ahead & rain.”
+CONTEXT snp1.2:4.2 | P: (iti bhagavā) | S: said the Buddha, | T: (none)
+
+## snp1.2:4.1–snp1.2:4.5 (snp)
+snp1.2:4.1 | P: “Baddhāsi bhisī susaṅkhatā, | S: “I bound a raft and prepared it well,” | T: The Buddha: ⏎ “A raft, well-made, ⏎ has been lashed together.
+CONTEXT snp1.2:4.2 | P: (iti bhagavā) | S: said the Buddha, | T: (none)
+snp1.2:4.3 | P: Tiṇṇo pāragato vineyya oghaṁ; | S: “and with it I crossed over, went to the far shore, and dispelled the flood. | T: Having crossed over, ⏎ gone to the far shore, ⏎ I’ve subdued the flood.
+snp1.2:4.4 | P: Attho bhisiyā na vijjati, | S: Now I have no need for a raft: | T: No need for a raft ⏎ is to be found:
+snp1.2:4.5 | P: Atha ce patthayasī pavassa deva”. | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, ⏎ go ahead & rain.”
+CONTEXT snp1.2:5.2 | P: (iti dhaniyo gopo) | S: said Dhaniya, | T: (none)
+
+## snp1.2:5.1–snp1.2:5.5 (snp)
+snp1.2:5.1 | P: “Gopī mama assavā alolā, | S: “My wife is obedient, not wanton,” | T: Dhaniya: ⏎ “My wife is composed, not wanton,
+CONTEXT snp1.2:5.2 | P: (iti dhaniyo gopo) | S: said Dhaniya, | T: (none)
+snp1.2:5.3 | P: Dīgharattaṁ saṁvāsiyā manāpā; | S: “long have we lived together happily. | T: is charming, has lived with me long.
+snp1.2:5.4 | P: Tassā na suṇāmi kiñci pāpaṁ, | S: I hear nothing bad about her: | T: I hear no evil about her at all:
+snp1.2:5.5 | P: Atha ce patthayasī pavassa deva”. | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, ⏎ go ahead & rain.”
+CONTEXT snp1.2:6.2 | P: (iti bhagavā) | S: said the Buddha, | T: (none)
+
+## snp1.2:6.1–snp1.2:6.5 (snp)
+snp1.2:6.1 | P: “Cittaṁ mama assavaṁ vimuttaṁ, | S: “My mind is obedient and freed,” | T: The Buddha: ⏎ “My mind is composed, released,
+CONTEXT snp1.2:6.2 | P: (iti bhagavā) | S: said the Buddha, | T: (none)
+snp1.2:6.3 | P: Dīgharattaṁ paribhāvitaṁ sudantaṁ; | S: “long nurtured and well-tamed. | T: has long been nurtured, well tamed.
+snp1.2:6.4 | P: Pāpaṁ pana me na vijjati, | S: Nothing bad is found in me: | T: No evil is to be found in me:
+snp1.2:6.5 | P: Atha ce patthayasī pavassa deva”. | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, ⏎ go ahead & rain.”
+CONTEXT snp1.2:7.2 | P: (iti dhaniyo gopo) | S: said Dhaniya, | T: (none)
+
+## snp1.2:7.1–snp1.2:7.5 (snp)
+snp1.2:7.1 | P: “Attavetanabhatohamasmi, | S: “I am self-employed,” | T: Dhaniya: ⏎ “I support myself on my earnings.
+CONTEXT snp1.2:7.2 | P: (iti dhaniyo gopo) | S: said Dhaniya, | T: (none)
+snp1.2:7.3 | P: Puttā ca me samāniyā arogā; | S: “and my healthy children likewise. | T: My sons live in harmony, ⏎ free from disease.
+snp1.2:7.4 | P: Tesaṁ na suṇāmi kiñci pāpaṁ, | S: I hear nothing bad about them: | T: I hear no evil about them at all:
+snp1.2:7.5 | P: Atha ce patthayasī pavassa deva”. | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, ⏎ go ahead & rain.”
+CONTEXT snp1.2:8.2 | P: (iti bhagavā) | S: said the Buddha, | T: (none)
+
+## snp1.2:8.1–snp1.2:8.5 (snp)
+snp1.2:8.1 | P: “Nāhaṁ bhatakosmi kassaci, | S: “I am no one’s lackey,” | T: The Buddha: ⏎ “I’m in no one’s employ,
+CONTEXT snp1.2:8.2 | P: (iti bhagavā) | S: said the Buddha, | T: (none)
+snp1.2:8.3 | P: Nibbiṭṭhena carāmi sabbaloke; | S: “with what I have earned I wander the world. | T: I wander the whole world ⏎ on the reward [of my Awakening].
+snp1.2:8.4 | P: Attho bhatiyā na vijjati, | S: I have no need for wages: | T: No need for earnings ⏎ is to be found:
+snp1.2:8.5 | P: Atha ce patthayasī pavassa deva”. | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, ⏎ go ahead & rain.”
+CONTEXT snp1.2:9.2 | P: (iti dhaniyo gopo) | S: said Dhaniya, | T: (none)
+
+## snp1.2:9.1–snp1.2:9.5 (snp)
+snp1.2:9.1 | P: “Atthi vasā atthi dhenupā, | S: “I have heifers and sucklings,” | T: Dhaniya: ⏎ “There are cows, young bulls,
+CONTEXT snp1.2:9.2 | P: (iti dhaniyo gopo) | S: said Dhaniya, | T: (none)
+snp1.2:9.3 | P: Godharaṇiyo paveṇiyopi atthi; | S: “cows in calf and breeding cows. | T: cows in calf, & breeding cows,
+snp1.2:9.4 | P: Usabhopi gavampatīdha atthi, | S: I’ve also got a bull, captain of the herd here: | T: & a great bull, the leader of the herd:
+snp1.2:9.5 | P: Atha ce patthayasī pavassa deva”. | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, ⏎ go ahead & rain.”
+CONTEXT snp1.2:10.2 | P: (iti bhagavā) | S: said the Buddha, | T: (none)
+
+## snp1.2:10.1–snp1.2:10.5 (snp)
+snp1.2:10.1 | P: “Natthi vasā natthi dhenupā, | S: “I have no heifers or sucklings,” | T: The Buddha: ⏎ “There are no cows, no young bulls,
+CONTEXT snp1.2:10.2 | P: (iti bhagavā) | S: said the Buddha, | T: (none)
+snp1.2:10.3 | P: Godharaṇiyo paveṇiyopi natthi; | S: “no cows in calf or breeding cows. | T: no cows in calf or breeding cows,
+snp1.2:10.4 | P: Usabhopi gavampatīdha natthi, | S: I haven’t got a bull, captain of the herd here: | T: no great bull, the leader of the herd:
+snp1.2:10.5 | P: Atha ce patthayasī pavassa deva”. | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, ⏎ go ahead & rain.”
+CONTEXT snp1.2:11.2 | P: (iti dhaniyo gopo) | S: said Dhaniya, | T: (none)
+
+## snp1.2:11.1–snp1.2:11.5 (snp)
+snp1.2:11.1 | P: “Khilā nikhātā asampavedhī, | S: “The stakes are driven in, unshakable,” | T: Dhaniya: ⏎ “The stakes are dug-in, immovable.
+CONTEXT snp1.2:11.2 | P: (iti dhaniyo gopo) | S: said Dhaniya, | T: (none)
+snp1.2:11.3 | P: Dāmā muñjamayā navā susaṇṭhānā; | S: “The grass halters are new and well-woven, | T: The new muñja-grass halters, well-woven,
+snp1.2:11.4 | P: Na hi sakkhinti dhenupāpi chettuṁ, | S: not even the sucklings can break them: | T: not even young bulls could break:
+snp1.2:11.5 | P: Atha ce patthayasī pavassa deva”. | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, ⏎ go ahead & rain.”
+CONTEXT snp1.2:12.2 | P: (iti bhagavā) | S: said the Buddha, | T: (none)
+
+## snp1.2:12.1–snp1.2:12.5 (snp)
+snp1.2:12.1 | P: “Usabhoriva chetva bandhanāni, | S: “Like a bull I broke the bonds,” | T: The Buddha: ⏎ “Having broken my bonds ⏎ like a great bull,
+CONTEXT snp1.2:12.2 | P: (iti bhagavā) | S: said the Buddha, | T: (none)
+snp1.2:12.3 | P: Nāgo pūtilataṁva dālayitvā; | S: “like an elephant I snapped the vine. | T: like a great elephant ⏎ tearing a rotting vine,
+snp1.2:12.4 | P: Nāhaṁ punupessaṁ gabbhaseyyaṁ, | S: I will never lie in a womb again: | T: I never again ⏎ will lie in the womb:
+snp1.2:12.5 | P: Atha ce patthayasī pavassa deva”. | S: so rain forth, heavens, if you wish.” | T: So if you want, rain-god, ⏎ go ahead & rain.”
+
+## snp1.2:13.1–snp1.2:13.4 (snp) GATHERED; possible speaker requires a reader
+snp1.2:13.1 | P: Ninnañca thalañca pūrayanto, | S: Right then a vast cloud rained forth, | T: The great cloud rained down ⏎ straightaway, ⏎ filling the lowlands & high.
+snp1.2:13.2 | P: Mahāmegho pavassi tāvadeva; | S: soaking the uplands and valleys. | T: (none)
+snp1.2:13.3 | P: Sutvā devassa vassato, | S: Hearing the heavens rain down, | T: Hearing the rain-god pour down,
+snp1.2:13.4 | P: Imamatthaṁ dhaniyo abhāsatha. | S: Dhaniya said this: | T: Dhaniya said:
+
+## snp1.2:14.1–snp1.2:14.4 (snp)
+snp1.2:14.1 | P: “Lābhā vata no anappakā, | S: “It is no small gain for us | T: “How great our gain
+snp1.2:14.2 | P: Ye mayaṁ bhagavantaṁ addasāma; | S: that we have seen the Buddha. | T: that we’ve gazed ⏎ on the Blessed One!
+snp1.2:14.3 | P: Saraṇaṁ taṁ upema cakkhuma, | S: We come to you for refuge, Clear-eyed One. | T: We go to him, ⏎ the One with Eyes, ⏎ for refuge.
+snp1.2:14.4 | P: Satthā no hohi tuvaṁ mahāmuni. | S: O great sage, please be our Teacher. | T: May you be our teacher, Great Sage.
+
+## snp1.2:15.1–snp1.2:15.4 (snp)
+snp1.2:15.1 | P: Gopī ca ahañca assavā, | S: My wife and I, obedient, | T: My wife & I are composed.
+snp1.2:15.2 | P: Brahmacariyaṁ sugate carāmase; | S: shall lead the spiritual life under the Holy One. | T: Let’s follow the holy life ⏎ under the One Well-Gone.
+snp1.2:15.3 | P: Jātimaraṇassa pāragū, | S: Gone beyond birth and death, | T: Gone to the far shore ⏎ of aging & death,
+snp1.2:15.4 | P: Dukkhassantakarā bhavāmase”. | S: we shall make an end of suffering.” | T: let’s put an end ⏎ to suffering & stress.”
+CONTEXT snp1.2:16.2 | P: (iti māro pāpimā) | S: said Māra the Wicked, | T: (none)
+
+## snp1.2:16.1–snp1.2:16.5 (snp)
+snp1.2:16.1 | P: “Nandati puttehi puttimā, | S: “Children bring you delight!” | T: Māra: ⏎ “Those with children ⏎ delight ⏎ because of their children.
+CONTEXT snp1.2:16.2 | P: (iti māro pāpimā) | S: said Māra the Wicked, | T: (none)
+snp1.2:16.3 | P: Gomā gohi tatheva nandati; | S: “Cattle also bring you delight! | T: Those with cattle ⏎ delight ⏎ because of their cows.
+snp1.2:16.4 | P: Upadhī hi narassa nandanā, | S: For attachments are a man’s delight; | T: A person’s delight ⏎ comes from acquisitions,
+snp1.2:16.5 | P: Na hi so nandati yo nirūpadhi”. | S: without attachments there’s no delight.” | T: for a person with no acquisitions ⏎ doesn’t delight.”
+CONTEXT snp1.2:17.2 | P: (iti bhagavā) | S: said the Buddha, | T: (none)
+
+## snp1.2:17.1–snp1.2:17.5 (snp)
+snp1.2:17.1 | P: “Socati puttehi puttimā, | S: “Your children bring you sorrow,” | T: The Buddha: ⏎ “Those with children ⏎ grieve ⏎ precisely because of their children.
+CONTEXT snp1.2:17.2 | P: (iti bhagavā) | S: said the Buddha, | T: (none)
+snp1.2:17.3 | P: Gomā gohi tatheva socati; | S: “Your cattle also bring you sorrow. | T: Those with cattle ⏎ grieve ⏎ precisely because of their cows.
+snp1.2:17.4 | P: Upadhī hi narassa socanā, | S: For attachments are a man’s sorrow; | T: A person’s grief ⏎ comes from acquisitions,
+snp1.2:17.5 | P: Na hi so socati yo nirūpadhī”ti. | S: without attachments there are no sorrows.” | T: for a person with no acquisitions ⏎ doesn’t grieve.”
+CONTEXT snp1.2:17.6 | P: Dhaniyasuttaṁ dutiyaṁ. | S: (none) | T: (none)
+
+## snp1.3:1.1–snp1.3:1.4 (snp)
+CONTEXT snp1.3:0.1 | P: Sutta Nipāta 1.3 | S: Anthology of Discourses 1.3 | T: (none)
+CONTEXT snp1.3:0.2 | P: Khaggavisāṇasutta | S: The Horned Rhino | T: 1:3 A Rhinoceros
+snp1.3:1.1 | P: “Sabbesu bhūtesu nidhāya daṇḍaṁ, | S: When you’ve laid down violence toward all creatures, | T: Renouncing violence ⏎ for all living beings,
+snp1.3:1.2 | P: Aviheṭhayaṁ aññatarampi tesaṁ; | S: not harming even a single one, | T: harming not even one of them,
+snp1.3:1.3 | P: Na puttamiccheyya kuto sahāyaṁ, | S: don’t wish for a child, let alone a companion: | T: you would not wish for offspring, ⏎ so how a companion?
+snp1.3:1.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: Wander alone ⏎ like a rhinoceros.
+
+## snp1.3:2.1–snp1.3:2.4 (snp)
+snp1.3:2.1 | P: “Saṁsaggajātassa bhavanti snehā, | S: Those with close relationships have affection, | T: For a person by nature entangled ⏎ there are affections;
+snp1.3:2.2 | P: Snehanvayaṁ dukkhamidaṁ pahoti; | S: following which this pain arises. | T: on the heels of affection, this pain.
+snp1.3:2.3 | P: Ādīnavaṁ snehajaṁ pekkhamāno, | S: Seeing this danger born of affection, | T: Seeing the drawback born of affection,
+snp1.3:2.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:3.1–snp1.3:3.4 (snp)
+snp1.3:3.1 | P: “Mitte suhajje anukampamāno, | S: When feelings for friends and loved ones | T: One whose mind ⏎ is enmeshed in sympathy ⏎ for friends & companions,
+snp1.3:3.2 | P: Hāpeti atthaṁ paṭibaddhacitto; | S: are tied up in selfish love, you miss out on the goal. | T: neglects the goal.
+snp1.3:3.3 | P: Etaṁ bhayaṁ santhave pekkhamāno, | S: Seeing this peril in intimacy, | T: Seeing this danger in intimacy,
+snp1.3:3.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:4.1–snp1.3:4.4 (snp)
+snp1.3:4.1 | P: “Vaṁso visālova yathā visatto, | S: As a spreading bamboo gets entangled, | T: Like spreading bamboo, ⏎ entwined,
+snp1.3:4.2 | P: Puttesu dāresu ca yā apekkhā; | S: so does concern for partners and children. | T: is concern for offspring & spouses.
+snp1.3:4.3 | P: Vaṁsakkaḷīrova asajjamāno, | S: Like a bamboo shoot unobstructed, | T: Like a bamboo sprout, ⏎ unentangling,
+snp1.3:4.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:5.1–snp1.3:5.4 (snp)
+snp1.3:5.1 | P: “Migo araññamhi yathā abaddho, | S: As a wild deer loose in the forest | T: As a deer in the wilds, ⏎ unfettered,
+snp1.3:5.2 | P: Yenicchakaṁ gacchati gocarāya; | S: grazes wherever it wants, | T: goes for forage wherever it wants:
+snp1.3:5.3 | P: Viññū naro seritaṁ pekkhamāno, | S: a smart person looking for freedom would | T: The observant person, valuing freedom,
+snp1.3:5.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wanders alone ⏎ like a rhinoceros.
+
+## snp1.3:6.1–snp1.3:6.4 (snp)
+snp1.3:6.1 | P: “Āmantanā hoti sahāyamajjhe, | S: When among friends, whether staying in place | T: In the midst of companions ⏎ —when staying at home,
+snp1.3:6.2 | P: Vāse ṭhāne gamane cārikāya; | S: or going on a journey, you’re always on call. | T: when going out wandering— ⏎ you are prey to requests.
+snp1.3:6.3 | P: Anabhijjhitaṁ seritaṁ pekkhamāno, | S: Looking for the uncoveted freedom, | T: Valuing the freedom ⏎ that no one else covets,
+snp1.3:6.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:7.1–snp1.3:7.4 (snp)
+snp1.3:7.1 | P: “Khiḍḍā ratī hoti sahāyamajjhe, | S: Among friends you have fun and games, | T: There is sporting & love ⏎ in the midst of companions,
+snp1.3:7.2 | P: Puttesu ca vipulaṁ hoti pemaṁ; | S: and for children you are full of fondness. | T: & abundant love for offspring.
+snp1.3:7.3 | P: Piyavippayogaṁ vijigucchamāno, | S: Though loathe to depart from those you hold dear, | T: Feeling disgust ⏎ at the prospect of parting ⏎ from those who’d be dear,
+snp1.3:7.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:8.1–snp1.3:8.4 (snp)
+snp1.3:8.1 | P: “Cātuddiso appaṭigho ca hoti, | S: At ease in any quarter, unresisting, | T: Without resistance in all four directions,
+snp1.3:8.2 | P: Santussamāno itarītarena; | S: content with whatever comes your way; | T: content with whatever you get,
+snp1.3:8.3 | P: Parissayānaṁ sahitā achambhī, | S: prevailing over adversities, dauntless, | T: enduring troubles without panic,
+snp1.3:8.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:9.1–snp1.3:9.4 (snp)
+snp1.3:9.1 | P: “Dussaṅgahā pabbajitāpi eke, | S: Even some renunciates are hard to please, | T: They are hard to please, ⏎ some of those gone forth,
+snp1.3:9.2 | P: Atho gahaṭṭhā gharamāvasantā; | S: as are some layfolk dwelling at home. | T: as well as those living the household life.
+snp1.3:9.3 | P: Appossukko paraputtesu hutvā, | S: Don’t worry about others’ children, | T: Being unconcerned ⏎ with the offspring of others,
+snp1.3:9.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:10.1–snp1.3:10.4 (snp)
+snp1.3:10.1 | P: “Oropayitvā gihibyañjanāni, | S: Having shed the marks of the home life, | T: Cutting off the householder’s marks,
+snp1.3:10.2 | P: Sañchinnapatto yathā koviḷāro; | S: like the fallen leaves of the Shady Orchid Tree; | T: like a kovilara tree ⏎ that has shed its leaves,
+snp1.3:10.3 | P: Chetvāna vīro gihibandhanāni, | S: having cut the bonds of the home life, a hero would | T: the enlightened one, cutting all household ties,
+snp1.3:10.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wanders alone ⏎ like a rhinoceros.
+
+## snp1.3:11.1–snp1.3:11.4 (snp)
+snp1.3:11.1 | P: “Sace labhetha nipakaṁ sahāyaṁ, | S: If you find an alert companion, | T: If you gain an astute companion,
+snp1.3:11.2 | P: Saddhiṁ caraṁ sādhuvihāridhīraṁ; | S: an attentive friend to live happily together, | T: a fellow traveler, right-living, enlightened,
+snp1.3:11.3 | P: Abhibhuyya sabbāni parissayāni, | S: then, overcoming all adversities, | T: overcoming all troubles,
+snp1.3:11.4 | P: Careyya tenattamano satīmā”. | S: wander with them, joyful and mindful. | T: go with him, gratified, ⏎ mindful.
+
+## snp1.3:12.1–snp1.3:12.4 (snp)
+snp1.3:12.1 | P: “No ce labhetha nipakaṁ sahāyaṁ, | S: If you find no alert companion, | T: If you don’t gain an astute companion,
+snp1.3:12.2 | P: Saddhiṁ caraṁ sādhuvihāridhīraṁ; | S: an attentive friend to live happily together, | T: a fellow traveler, right-living & wise,
+snp1.3:12.3 | P: Rājāva raṭṭhaṁ vijitaṁ pahāya, | S: then, like a king who flees his conquered realm, | T: wander alone ⏎ like a king renouncing his kingdom,
+snp1.3:12.4 | P: Eko care mātaṅgaraññeva nāgo”. | S: wander alone like a tusker in the wilds. | T: like the elephant in the Mataṅga wilds, ⏎ [his herd].
+
+## snp1.3:13.1–snp1.3:13.4 (snp)
+snp1.3:13.1 | P: “Addhā pasaṁsāma sahāyasampadaṁ, | S: Clearly we praise the blessing of a friend, | T: We praise companionship ⏎ —yes!
+snp1.3:13.2 | P: Seṭṭhā samā sevitabbā sahāyā; | S: it’s good to be with friends your equal or better. | T: Those on a par, or better, ⏎ should be chosen as friends.
+snp1.3:13.3 | P: Ete aladdhā anavajjabhojī, | S: But failing to find them, eating blamelessly, | T: If they’re not to be found, ⏎ living faultlessly,
+snp1.3:13.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:14.1–snp1.3:14.4 (snp) GATHERED; unequal counts require a reader
+snp1.3:14.1 | P: “Disvā suvaṇṇassa pabhassarāni, | S: Though made of shining gold, well-finished by a smith, | T: Seeing radiant bracelets of gold, ⏎ well-made by a smith,
+snp1.3:14.2 | P: Kammāraputtena suniṭṭhitāni; | S: when two bracelets share the same arm | T: clinking, clashing, ⏎ two on an arm,
+snp1.3:14.3 | P: Saṅghaṭṭamānāni duve bhujasmiṁ, | S: they clash up against each other. Seeing this, | T: (none)
+snp1.3:14.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros,
+
+## snp1.3:15.1–snp1.3:15.4 (snp)
+snp1.3:15.1 | P: “Evaṁ dutīyena sahā mamassa, | S: Thinking, “So too, if I had a partner, | T: [Thinking:] ⏎ “In the same way, ⏎ if I were to live with another,
+snp1.3:15.2 | P: Vācābhilāpo abhisajjanā vā; | S: there’d be flattery or curses.” | T: there would be conversation or attachment.”
+snp1.3:15.3 | P: Etaṁ bhayaṁ āyatiṁ pekkhamāno, | S: Seeing this peril in the future, | T: Seeing this future danger,
+snp1.3:15.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:16.1–snp1.3:16.4 (snp)
+snp1.3:16.1 | P: “Kāmā hi citrā madhurā manoramā, | S: Sensual pleasures are diverse, sweet, delightful; | T: Because sensual pleasures, ⏎ elegant, honeyed, & charming,
+snp1.3:16.2 | P: Virūparūpena mathenti cittaṁ; | S: appearing in disguise they disturb the mind. | T: bewitch the mind with their manifold forms—
+snp1.3:16.3 | P: Ādīnavaṁ kāmaguṇesu disvā, | S: Seeing danger in sensual stimulations, | T: seeing this drawback in sensual strings—
+snp1.3:16.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:17.1–snp1.3:17.4 (snp)
+snp1.3:17.1 | P: “Ītī ca gaṇḍo ca upaddavo ca, | S: This is a calamity, a boil, a disaster, | T: “Calamity, tumor, misfortune,
+snp1.3:17.2 | P: Rogo ca sallañca bhayañca metaṁ; | S: an illness, a dart, and a danger for me. | T: disease, an arrow, a danger for me.”
+snp1.3:17.3 | P: Etaṁ bhayaṁ kāmaguṇesu disvā, | S: Seeing this peril in sensuality, | T: Seeing this danger in sensual strings,
+snp1.3:17.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:18.1–snp1.3:18.4 (snp)
+snp1.3:18.1 | P: “Sītañca uṇhañca khudaṁ pipāsaṁ, | S: Heat and cold, hunger and thirst, | T: Cold & heat, hunger & thirst,
+snp1.3:18.2 | P: Vātātape ḍaṁsasarīsape ca; | S: wind and sun, flies and reptiles: | T: wind & sun, horseflies & snakes:
+snp1.3:18.3 | P: Sabbānipetāni abhisambhavitvā, | S: having put up with all these things, | T: Enduring all these, without exception,
+snp1.3:18.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:19.1–snp1.3:19.4 (snp)
+snp1.3:19.1 | P: “Nāgova yūthāni vivajjayitvā, | S: As a full-grown elephant, lotus-fond, magnificent, | T: As a great white elephant, ⏎ with massive shoulders,
+snp1.3:19.2 | P: Sañjātakhandho padumī uḷāro; | S: forsaking the herd, | T: renouncing his herd,
+snp1.3:19.3 | P: Yathābhirantaṁ viharaṁ araññe, | S: stays as it pleases in the forest, | T: lives in the wilds wherever he wants,
+snp1.3:19.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:20.1–snp1.3:20.4 (snp)
+snp1.3:20.1 | P: “Aṭṭhānataṁ saṅgaṇikāratassa, | S: It’s impossible for one who delights in company | T: “There’s no way ⏎ that one delighting in company
+snp1.3:20.2 | P: Yaṁ phassaye sāmayikaṁ vimuttiṁ; | S: to experience even temporary freedom. | T: can touch even momentary release.”
+snp1.3:20.3 | P: Ādiccabandhussa vaco nisamma, | S: Heeding the speech of the Kinsman of the Sun, | T: Heeding the words ⏎ of the Kinsman of the Sun,
+snp1.3:20.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:21.1–snp1.3:21.4 (snp)
+snp1.3:21.1 | P: “Diṭṭhīvisūkāni upātivatto, | S: Thinking, “I have left twisted views behind, | T: Transcending the contortion of views,
+snp1.3:21.2 | P: Patto niyāmaṁ paṭiladdhamaggo; | S: reached the sure way, and gained the path; | T: the sure way attained, ⏎ the path gained,
+snp1.3:21.3 | P: Uppannañāṇomhi anaññaneyyo, | S: I’ve given rise to knowledge, and need no one to guide me”, | T: [realizing:] ⏎ “Unled by others, ⏎ I have knowledge arisen,”
+snp1.3:21.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:22.1–snp1.3:22.4 (snp)
+snp1.3:22.1 | P: “Nillolupo nikkuho nippipāso, | S: No greed, no guile, no thirst, no slur, | T: With no greed, no deceit, ⏎ no thirst, no hypocrisy—
+snp1.3:22.2 | P: Nimmakkho niddhantakasāvamoho; | S: dross and delusion is smelted off; | T: delusion & blemishes ⏎ blown away—
+snp1.3:22.3 | P: Nirāsayo sabbaloke bhavitvā, | S: free of hoping for anything in the world, | T: with no inclinations for all the world, ⏎ every world,
+snp1.3:22.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:23.1–snp1.3:23.4 (snp)
+snp1.3:23.1 | P: “Pāpaṁ sahāyaṁ parivajjayetha, | S: Avoid a wicked companion, | T: Avoid the evil companion
+snp1.3:23.2 | P: Anatthadassiṁ visame niviṭṭhaṁ; | S: blind to the good, habitually immoral. | T: disregarding the goal, ⏎ intent on the discordant way.
+snp1.3:23.3 | P: Sayaṁ na seve pasutaṁ pamattaṁ, | S: Don’t befriend the heedless and the hankering, but | T: Don’t associate yourself ⏎ with someone heedless & hankering.
+snp1.3:23.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: Wander alone ⏎ like a rhinoceros.
+
+## snp1.3:24.1–snp1.3:24.4 (snp)
+snp1.3:24.1 | P: “Bahussutaṁ dhammadharaṁ bhajetha, | S: Spend time with the learned who have memorized the teachings, | T: Consort with one who is learned, ⏎ who maintains the Dhamma,
+snp1.3:24.2 | P: Mittaṁ uḷāraṁ paṭibhānavantaṁ; | S: an eloquent and uplifting friend. | T: a great & quick-witted friend.
+snp1.3:24.3 | P: Aññāya atthāni vineyya kaṅkhaṁ, | S: When you understand the meanings and have dispelled doubt, | T: Knowing the meanings, ⏎ subdue your perplexity,
+snp1.3:24.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: [then] wander alone ⏎ like a rhinoceros.
+
+## snp1.3:25.1–snp1.3:25.4 (snp)
+snp1.3:25.1 | P: “Khiḍḍaṁ ratiṁ kāmasukhañca loke, | S: When you realize that worldly fun and games | T: Free from longing, finding no pleasure ⏎ in the world’s sport, ardor,
+snp1.3:25.2 | P: Analaṅkaritvā anapekkhamāno; | S: and pleasure are inadequate, unconcerned with them, | T: or sensual bliss,
+snp1.3:25.3 | P: Vibhūsanaṭṭhānā virato saccavādī, | S: as one unadorned, a speaker of truth, | T: abstaining from adornment, ⏎ speaking the truth,
+snp1.3:25.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:26.1–snp1.3:26.4 (snp)
+snp1.3:26.1 | P: “Puttañca dāraṁ pitarañca mātaraṁ, | S: Children, partner, father, mother, | T: Abandoning offspring, spouse, ⏎ father, mother,
+snp1.3:26.2 | P: Dhanāni dhaññāni ca bandhavāni; | S: wealth and grain and relatives: | T: riches, grain, relatives,
+snp1.3:26.3 | P: Hitvāna kāmāni yathodhikāni, | S: having given up sensual pleasures to this extent, | T: & sensual pleasures ⏎ altogether,
+snp1.3:26.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:27.1–snp1.3:27.4 (snp)
+snp1.3:27.1 | P: “Saṅgo eso parittamettha sokhyaṁ, | S: “This is a chain. Here there’s hardly any happiness, | T: “This is a bondage. ⏎ There’s little happiness here,
+snp1.3:27.2 | P: Appassādo dukkhamettha bhiyyo; | S: little gratification, and it’s full of drawbacks. | T: next to no enjoyment, ⏎ all the more suffering & pain.
+snp1.3:27.3 | P: Gaḷo eso iti ñatvā matīmā, | S: It’s a hook.” Knowing this, a thoughtful person would | T: This is a boil”: ⏎ Knowing this, circumspect,
+snp1.3:27.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:28.1–snp1.3:28.4 (snp)
+snp1.3:28.1 | P: “Sandālayitvāna saṁyojanāni, | S: Having burst apart the fetters, | T: Shattering fetters,
+snp1.3:28.2 | P: Jālaṁva bhetvā salilambucārī; | S: like a fish that tears the net and swims free, | T: like a fish in the water tearing a net,
+snp1.3:28.3 | P: Aggīva daḍḍhaṁ anivattamāno, | S: or a fire not returning to ground it has burned, | T: like a fire not coming back to what’s burnt,
+snp1.3:28.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:29.1–snp1.3:29.4 (snp)
+snp1.3:29.1 | P: “Okkhittacakkhu na ca pādalolo, | S: Eyes downcast, not footloose, | T: Eyes downcast, not footloose,
+snp1.3:29.2 | P: Guttindriyo rakkhitamānasāno; | S: senses guarded, mind protected, | T: senses guarded, with protected mind,
+snp1.3:29.3 | P: Anavassuto apariḍayhamāno, | S: not festering or burning with desire, | T: not soggy, not burning,
+snp1.3:29.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:30.1–snp1.3:30.4 (snp)
+snp1.3:30.1 | P: “Ohārayitvā gihibyañjanāni, | S: Having shed the marks of the home life, | T: Taking off the householder’s marks,
+snp1.3:30.2 | P: Sañchannapatto yathā pārichatto; | S: like the fallen leaves of the Orchid Tree, | T: like a coral tree ⏎ that has shed its leaves,
+snp1.3:30.3 | P: Kāsāyavattho abhinikkhamitvā, | S: and gone forth in the ocher robe, | T: going forth in the ochre robe,
+snp1.3:30.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:31.1–snp1.3:31.4 (snp)
+snp1.3:31.1 | P: “Rasesu gedhaṁ akaraṁ alolo, | S: Not wanton, nor rousing greed for tastes, | T: Showing no greed for flavors, not wanton,
+snp1.3:31.2 | P: Anaññaposī sapadānacārī; | S: providing for no other, wandering indiscriminately for alms, | T: going from house to house for alms
+snp1.3:31.3 | P: Kule kule appaṭibaddhacitto, | S: not attached to this family or that, | T: with mind unenmeshed in this family or that,
+snp1.3:31.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:32.1–snp1.3:32.4 (snp)
+snp1.3:32.1 | P: “Pahāya pañcāvaraṇāni cetaso, | S: When you’ve given up five mental obstacles, | T: Abandoning barriers to awareness,
+snp1.3:32.2 | P: Upakkilese byapanujja sabbe; | S: and cast aside all corruptions, | T: expelling all defilements—all—
+snp1.3:32.3 | P: Anissito chetva sinehadosaṁ, | S: and cut off affection and hate, being independent, | T: non-dependent, cutting aversion, ⏎ affection,
+snp1.3:32.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.

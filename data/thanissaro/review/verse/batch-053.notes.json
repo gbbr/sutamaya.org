@@ -1,0 +1,14 @@
+{
+  "batch": 53,
+  "versesRead": 59,
+  "rowsRead": 254,
+  "automaticFindings": 12,
+  "readerFindings": 62,
+  "unresolved": [],
+  "ruleCandidates": [
+    {
+      "key": "snp5.13:1–snp5.13:2",
+      "reason": "Verse 2 begins two translator lines early inside verse 1.5. Its start was restored at “the many gathered”, preserving the existing line order and all four occupied rows in each verse."
+    }
+  ]
+}

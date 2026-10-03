@@ -1,0 +1,156 @@
+# One unapplied verse finding
+Reported: snp4.9:3.1 starts: “‘I argue for this’
+The segmenter could not find this exact quoted start. Check exact words and source boundaries, preserve whole verse/order.
+VERSE snp4.9:2.1 snp4.9:2.2 snp4.9:2.3 snp4.9:2.4
+snp4.9:2.1 | P: “Etādisañce ratanaṁ na icchasi,  | S: “If you do not want a gem such as this,  | T: Māgandiya: ⏎ “If you don’t want ⏎ this gem of a woman, 
+snp4.9:2.2 | P: Nāriṁ narindehi bahūhi patthitaṁ;  | S: a lady desired by many lords of men,  | T: coveted ⏎ by many kings, 
+snp4.9:2.3 | P: Diṭṭhigataṁ sīlavataṁ nu jīvitaṁ,  | S: then what manner of theory, <j>precepts and vows, livelihood,  | T: then for what sort of viewpoint, ⏎ habit, practice, life, 
+snp4.9:2.4 | P: Bhavūpapattiñca vadesi kīdisaṁ”.  | S: and rebirth in a new life do you assert?”  | T: attainment of [further] becoming ⏎ do you argue?” 
+VERSE snp4.9:3.1 snp4.9:3.3 snp4.9:3.4 snp4.9:3.5
+snp4.9:3.1 | P: “Idaṁ vadāmīti na tassa hoti,  | S: “After judging among the teachings,”  | T: 
+snp4.9:3.3 | P: Dhammesu niccheyya samuggahītaṁ;  | S: “none have been adopted thinking, ‘I assert this.’  | T: “‘I argue for this’ ⏎ doesn’t occur to one ⏎ when considering what’s grasped ⏎ among doctrines. 
+snp4.9:3.4 | P: Passañca diṭṭhīsu anuggahāya,  | S: Seeing views without adopting any,  | T: Looking for what is ungrasped ⏎ with regard to views, 
+snp4.9:3.5 | P: Ajjhattasantiṁ pacinaṁ adassaṁ”.  | S: searching, I saw inner peace.”  | T: and detecting inner peace, ⏎ I saw.” 
+VERSE snp4.9:4.1 snp4.9:4.3 snp4.9:4.4 snp4.9:4.5
+snp4.9:4.1 | P: “Vinicchayā yāni pakappitāni,  | S: “O sage, you speak of judgments you have formed,”  | T: Māgandiya: ⏎ “Sage, you speak ⏎ of not grasping ⏎ at any theorized judgments. 
+snp4.9:4.3 | P: Te ve munī brūsi anuggahāya;  | S: “without having adopted any of those views.  | T: 
+snp4.9:4.4 | P: Ajjhattasantīti yametamatthaṁ,  | S: As to that matter of ‘inner peace’— | T: This ‘inner peace’: ⏎ What does it mean? 
+snp4.9:4.5 | P: Kathaṁ nu dhīrehi paveditaṁ taṁ”.  | S: how is that described by the attentive?”  | T: How is it, ⏎ by the enlightened, ⏎ proclaimed?” 
+snp4.9:3.1 starts: “‘I argue for this’
+snp4.9:3.3 starts: when considering what’s grasped
+snp4.9:3.4 starts: Looking for what is ungrasped
+snp4.9:3.5 starts: and detecting inner peace,
+snp4.9:4.1 starts: Māgandiya:
+snp4.9:4.3 starts: of not grasping
+snp4.9:4.4 starts: This ‘inner peace’:
+snp4.9:4.5 starts: How is it,
+SOURCE LINE 1: [Māgandiya, a brahman, offers his daughter to the Buddha, who replies:]
+SOURCE LINE 2: “On seeing [the daughters of Māra]
+SOURCE LINE 3: —Discontent, Craving, & Passion—
+SOURCE LINE 4: there wasn’t even the desire for sex.
+SOURCE LINE 5: So what would I want with this,
+SOURCE LINE 6: filled with urine & excrement?
+SOURCE LINE 7: I wouldn’t want to touch it
+SOURCE LINE 8: even with my foot.”
+SOURCE LINE 9: Māgandiya:
+SOURCE LINE 10: “If you don’t want
+SOURCE LINE 11: this gem of a woman, coveted
+SOURCE LINE 12: by many kings,
+SOURCE LINE 13: then for what sort of viewpoint,
+SOURCE LINE 14: habit, practice, life,
+SOURCE LINE 15: attainment of [further] becoming
+SOURCE LINE 16: do you argue?”
+SOURCE LINE 17: The Buddha:
+SOURCE LINE 18: “‘I argue for this’
+SOURCE LINE 19: doesn’t occur to one
+SOURCE LINE 20: when considering what’s grasped
+SOURCE LINE 21: among doctrines.
+SOURCE LINE 22: Looking for what is ungrasped
+SOURCE LINE 23: with regard to views,
+SOURCE LINE 24: and detecting inner peace,
+SOURCE LINE 25: I saw.”
+SOURCE LINE 26: Māgandiya:
+SOURCE LINE 27: “Sage, you speak
+SOURCE LINE 28: of not grasping
+SOURCE LINE 29: at any theorized judgments.
+SOURCE LINE 30: This ‘inner peace’:
+SOURCE LINE 31: What does it mean?
+SOURCE LINE 32: How is it,
+SOURCE LINE 33: by the enlightened,
+SOURCE LINE 34: proclaimed?”
+SOURCE LINE 35: The Buddha:
+SOURCE LINE 36: “He doesn’t speak of purity
+SOURCE LINE 37: in connection with view,
+SOURCE LINE 38: learning,
+SOURCE LINE 39: knowledge,
+SOURCE LINE 40: habit or practice.
+SOURCE LINE 41: Nor is it found by a person
+SOURCE LINE 42: through lack of view,
+SOURCE LINE 43: of learning,
+SOURCE LINE 44: of knowledge,
+SOURCE LINE 45: of habit or practice.
+SOURCE LINE 46: Letting these go, without grasping,
+SOURCE LINE 47: at peace,
+SOURCE LINE 48: independent,
+SOURCE LINE 49: one wouldn’t long for becoming.”
+SOURCE LINE 50: Māgandiya:
+SOURCE LINE 51: “Well, if he doesn’t speak of purity
+SOURCE LINE 52: in connection with view,
+SOURCE LINE 53: learning,
+SOURCE LINE 54: knowledge,
+SOURCE LINE 55: habit or practice.
+SOURCE LINE 56: and it isn’t found by a person
+SOURCE LINE 57: through lack of view,
+SOURCE LINE 58: of learning,
+SOURCE LINE 59: of knowledge,
+SOURCE LINE 60: of habit or practice,
+SOURCE LINE 61: it seems to me that this teaching’s
+SOURCE LINE 62: simply confused,
+SOURCE LINE 63: for some assume a purity
+SOURCE LINE 64: in terms of
+SOURCE LINE 65: —by means of—
+SOURCE LINE 66: a view.”
+SOURCE LINE 67: The Buddha:
+SOURCE LINE 68: “Asking questions
+SOURCE LINE 69: dependent on view,
+SOURCE LINE 70: you’re confused
+SOURCE LINE 71: by the things you have grasped.
+SOURCE LINE 72: And so you don’t glimpse
+SOURCE LINE 73: even
+SOURCE LINE 74: the slightest
+SOURCE LINE 75: notion
+SOURCE LINE 76: [of what I am saying].
+SOURCE LINE 77: That’s why you think
+SOURCE LINE 78: it’s confused.
+SOURCE LINE 79: Whoever supposes
+SOURCE LINE 80: ‘equal,’
+SOURCE LINE 81: ‘superior,’ or
+SOURCE LINE 82: ‘inferior,’
+SOURCE LINE 83: by that he’d dispute;
+SOURCE LINE 84: whereas to one unaffected
+SOURCE LINE 85: by these three,
+SOURCE LINE 86: ‘equal,’
+SOURCE LINE 87: ‘superior,’
+SOURCE LINE 88: do not occur.
+SOURCE LINE 89: Of what would the brahman say ‘true’
+SOURCE LINE 90: or ‘false,’
+SOURCE LINE 91: with whom would he dispute?
+SOURCE LINE 92: With whom would he join in dispute,
+SOURCE LINE 93: he in whom ‘equal,’ ‘unequal’ are not?
+SOURCE LINE 94: Having abandoned home,
+SOURCE LINE 95: living free from society,
+SOURCE LINE 96: the sage
+SOURCE LINE 97: in villages
+SOURCE LINE 98: creates no intimacies.
+SOURCE LINE 99: Remote from sensuality, not
+SOURCE LINE 100: preferring,
+SOURCE LINE 101: he wouldn’t engage with people
+SOURCE LINE 102: in quarrelsome debate.
+SOURCE LINE 103: Those things
+SOURCE LINE 104: aloof from which
+SOURCE LINE 105: he should go about in the world:
+SOURCE LINE 106: The Nāga
+SOURCE LINE 107: wouldn’t take them up
+SOURCE LINE 108: & argue for them.
+SOURCE LINE 109: As the prickly lotus
+SOURCE LINE 110: is unsmeared by water & mud,
+SOURCE LINE 111: so the sage,
+SOURCE LINE 112: an exponent of peace,
+SOURCE LINE 113: without greed,
+SOURCE LINE 114: is unsmeared by sensuality &
+SOURCE LINE 115: the world.
+SOURCE LINE 116: An attainer-of-knowledge isn’t measured
+SOURCE LINE 117: made proud
+SOURCE LINE 118: by views or what’s thought,
+SOURCE LINE 119: for he isn’t fashioned of them.
+SOURCE LINE 120: He wouldn’t be led
+SOURCE LINE 121: by action, learning;
+SOURCE LINE 122: doesn’t reach a conclusion
+SOURCE LINE 123: in any entrenchments.
+SOURCE LINE 124: For one dispassionate toward perception
+SOURCE LINE 125: there are no snares;
+SOURCE LINE 126: for one released by discernment,
+SOURCE LINE 127: no
+SOURCE LINE 128: delusions.
+SOURCE LINE 129: Those who grasp at perceptions & views
+SOURCE LINE 130: go about clashing in the world.”

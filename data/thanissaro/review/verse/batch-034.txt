@@ -1,0 +1,436 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## iti82:5.1–iti82:5.4 (iti) GATHERED; unequal counts require a reader
+CONTEXT iti82:4.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti82:4.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti82:5.1 | P: “Disvā vijitasaṅgāmaṁ, | S: “Seeing the winner of the battle— | T: Seeing he’s won the battle
+iti82:5.2 | P: sammāsambuddhasāvakaṁ; | S: a disciple of the Buddha, | T: –the disciple of the Rightly ⏎ Self-awakened One–
+iti82:5.3 | P: Devatāpi namassanti, | S: great of heart, intrepid— | T: even the devas pay homage ⏎ to this great one, thoroughly mature.
+iti82:5.4 | P: mahantaṁ vītasāradaṁ. | S: even the deities revere them: | T: (none)
+
+## iti82:6.1–iti82:6.4 (iti)
+iti82:6.1 | P: Namo te purisājañña, | S: ‘Homage to you, O thoroughbred! | T: “Homage to you, O thoroughbred man–
+iti82:6.2 | P: yo tvaṁ dujjayamajjhabhū; | S: You won a battle hard to win! | T: you who have won the hard victory,
+iti82:6.3 | P: Jetvāna maccuno senaṁ, | S: Having defeated the army of death, | T: defeating the army of Death,
+iti82:6.4 | P: vimokkhena anāvaraṁ. | S: your liberation is unhindered.’ | T: unhindered in ⏎ emancipation.”
+
+## iti82:7.1–iti82:7.4 (iti)
+iti82:7.1 | P: Iti hetaṁ namassanti, | S: And so the deities revere the one, | T: Thus they pay homage, the devas,
+iti82:7.2 | P: devatā pattamānasaṁ; | S: who has achieved their heart’s desire. | T: to one who has reached the heart’s goal,
+iti82:7.3 | P: Tañhi tassa na passanti, | S: For they see nothing in them by means of which | T: for they see in him no means
+iti82:7.4 | P: yena maccuvasaṁ vaje”ti. | S: they might fall under the sway of Death.” | T: that would bring him under Death’s sway.
+CONTEXT iti82:8.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti82:8.2 | P: Tatiyaṁ. | S: (none) | T: (none)
+
+## iti83:12.1–iti83:12.4 (iti) GATHERED; unequal counts require a reader
+CONTEXT iti83:11.1 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti83:11.2 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti83:12.1 | P: “Yadā devo devakāyā, | S: “When, with the fading of life, | T: When a deva passes away ⏎ from the company of devas ⏎ through his life-span’s ending,
+iti83:12.2 | P: cavati āyusaṅkhayā; | S: a god passes from the realm of the gods, | T: (none)
+iti83:12.3 | P: Tayo saddā niccharanti, | S: the gods utter three cries | T: three sounds sound forth
+iti83:12.4 | P: devānaṁ anumodataṁ. | S: of well-wishing: | T: –the devas’ encouragement.
+
+## iti83:13.1–iti83:13.4 (iti)
+iti83:13.1 | P: ‘Ito bho sugatiṁ gaccha, | S: ‘Go, worthy sir, from here to a good place, | T: ‘Go from here, ⏎ honorable sir, ⏎ to a good destination,
+iti83:13.2 | P: manussānaṁ sahabyataṁ; | S: in the company of humans. | T: to companionship ⏎ with human beings.
+iti83:13.3 | P: Manussabhūto saddhamme, | S: As a human being, gain supreme faith | T: On becoming a human being, ⏎ acquire a conviction ⏎ unsurpassed
+iti83:13.4 | P: labha saddhaṁ anuttaraṁ. | S: in the true teaching. | T: in True Dhamma.
+
+## iti83:14.1–iti83:14.4 (iti) GATHERED; unequal counts require a reader
+iti83:14.1 | P: Sā te saddhā niviṭṭhassa, | S: May that faith of yours be settled, | T: That conviction of yours ⏎ in True Dhamma, well-taught, ⏎ should be ⏎ settled,
+iti83:14.2 | P: mūlajātā patiṭṭhitā; | S: with roots planted deep, | T: rooted, ⏎ established,
+iti83:14.3 | P: Yāvajīvaṁ asaṁhīrā, | S: unfaltering all life long | T: –undestroyed ⏎ as long as you live.
+iti83:14.4 | P: saddhamme suppavedite. | S: in the true teaching so well proclaimed. | T: (none)
+
+## iti83:15.1–iti83:15.4 (iti)
+iti83:15.1 | P: Kāyaduccaritaṁ hitvā, | S: Having given up bad conduct | T: Having abandoned ⏎ bodily misconduct,
+iti83:15.2 | P: vacīduccaritāni ca; | S: by way of body, | T: verbal misconduct,
+iti83:15.3 | P: Manoduccaritaṁ hitvā, | S: speech, and mind, | T: mental misconduct,
+iti83:15.4 | P: yañcaññaṁ dosasañhitaṁ. | S: and whatever else is corrupt; | T: and whatever else is flawed;
+
+## iti83:16.1–iti83:16.4 (iti)
+iti83:16.1 | P: Kāyena kusalaṁ katvā, | S: and having done much good, | T: having done with the body what’s skillful,
+iti83:16.2 | P: vācāya kusalaṁ bahuṁ; | S: by way of body, | T: and much that is skillful with speech,
+iti83:16.3 | P: Manasā kusalaṁ katvā, | S: speech, and mind, | T: having done what’s skillful ⏎ with a heart
+iti83:16.4 | P: appamāṇaṁ nirūpadhiṁ. | S: limitless, free of attachments; | T: without limit, ⏎ with no acquisitions,
+
+## iti83:17.1–iti83:17.4 (iti)
+iti83:17.1 | P: Tato opadhikaṁ puññaṁ, | S: then, having made much worldly merit | T: then–having made much of the merit ⏎ that’s a ground for spontaneously arising [in heaven]
+iti83:17.2 | P: katvā dānena taṁ bahuṁ; | S: by giving gifts, | T: through giving–
+iti83:17.3 | P: Aññepi macce saddhamme, | S: establish other colleagues | T: establish other mortals
+iti83:17.4 | P: brahmacariye nivesaya’. | S: in the true teaching, the spiritual life.’ | T: in ⏎ True Dhamma & ⏎ the holy life.’
+
+## iti83:18.1–iti83:18.4 (iti)
+iti83:18.1 | P: Imāya anukampāya, | S: It is due to such sympathy | T: With this sympathy, the devas–
+iti83:18.2 | P: devā devaṁ yadā vidū; | S: that when the gods know a god | T: when they know a deva
+iti83:18.3 | P: Cavantaṁ anumodenti, | S: is due to pass away, they wish them well: | T: is passing away– ⏎ encourage him:
+iti83:18.4 | P: ehi deva punappunan”ti. | S: ‘Come back, god, again and again!’” | T: ‘Come back, deva, ⏎ again & again.’
+CONTEXT iti83:19.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti83:19.2 | P: Catutthaṁ. | S: (none) | T: (none)
+
+## iti84:5.1–iti84:5.4 (iti)
+CONTEXT iti84:4.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti84:4.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti84:5.1 | P: “Satthā hi loke paṭhamo mahesi, | S: “The Teacher is the first, the great seer, | T: The Teacher, ⏎ Great Seer, ⏎ is first in the world;
+iti84:5.2 | P: Tassanvayo sāvako bhāvitatto; | S: following whom is the evolved disciple, | T: following him, the disciple ⏎ with mind composed;
+iti84:5.3 | P: Athāparo pāṭipadopi sekho, | S: and then a trainee, a practitioner, | T: and then the erudite one ⏎ who follows the practice for one in training,
+iti84:5.4 | P: Bahussuto sīlavatūpapanno. | S: learned, with precepts and observances intact. | T: having entered into good habits, ⏎ practices.
+
+## iti84:6.1–iti84:6.4 (iti)
+iti84:6.1 | P: Ete tayo devamanussaseṭṭhā, | S: These three are first among gods and humans, | T: These three, chief ⏎ among beings divine & human,
+iti84:6.2 | P: Pabhaṅkarā dhammamudīrayantā; | S: beacons proclaiming the teaching! | T: giving light, proclaiming the Dhamma,
+iti84:6.3 | P: Apāpuranti amatassa dvāraṁ, | S: They fling open the door to freedom from death, | T: throw open the door to the Deathless,
+iti84:6.4 | P: Yogā pamocenti bahujjanaṁ te. | S: freeing many from yokes. | T: release many from bondage.
+
+## iti84:7.1–iti84:7.4 (iti)
+iti84:7.1 | P: Ye satthavāhena anuttarena, | S: Following the path so well taught | T: Those who follow the path,
+iti84:7.2 | P: Sudesitaṁ maggamanukkamanti; | S: by the unsurpassed caravan leader, | T: well-taught by the Caravan Leader ⏎ unsurpassed,
+iti84:7.3 | P: Idheva dukkhassa karonti antaṁ, | S: those who are diligent in the Holy One’s teaching | T: will put an end to stress ⏎ right here–
+iti84:7.4 | P: Ye appamattā sugatassa sāsane”ti. | S: make an end of suffering in this very life.” | T: those heeding the message ⏎ of the One Well-Gone.
+CONTEXT iti84:8.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti84:8.2 | P: Pañcamaṁ. | S: (none) | T: (none)
+
+## iti85:3.1–iti85:3.4 (iti)
+CONTEXT iti85:2.7 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti85:2.8 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti85:3.1 | P: “Asubhānupassī kāyasmiṁ, | S: “Observing the ugliness of the body, | T: Focusing on foulness ⏎ in the body,
+iti85:3.2 | P: ānāpāne paṭissato; | S: mindful of the breath, | T: mindful ⏎ of in-&-out breathing,
+iti85:3.3 | P: Sabbasaṅkhārasamathaṁ, | S: one always keen sees | T: seeing
+iti85:3.4 | P: passaṁ ātāpi sabbadā. | S: the stilling of all activities. | T: the pacification of all fabrications ⏎ –ardent ⏎ always:
+
+## iti85:4.1–iti85:4.4 (iti)
+iti85:4.1 | P: Sa ve sammaddaso bhikkhu, | S: That mendicant sees rightly, | T: he is a monk ⏎ who’s seen rightly.
+iti85:4.2 | P: yato tattha vimuccati; | S: and when freed in regards to that, | T: From that he is there released.
+iti85:4.3 | P: Abhiññāvosito santo, | S: that peaceful sage, with perfect insight, | T: A master of direct knowing, ⏎ at peace, ⏎ he is a sage
+iti85:4.4 | P: sa ve yogātigo munī”ti. | S: has truly slipped their yoke.” | T: gone beyond bonds.
+CONTEXT iti85:5.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti85:5.2 | P: Chaṭṭhaṁ. | S: (none) | T: (none)
+
+## iti86:3.1–iti86:3.4 (iti)
+CONTEXT iti86:2.3 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti86:2.4 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti86:3.1 | P: “Dhammārāmo dhammarato, | S: “Delighting in the teaching, enjoying the teaching, | T: Dhamma his dwelling, ⏎ Dhamma his delight,
+iti86:3.2 | P: dhammaṁ anuvicintayaṁ; | S: contemplating the teaching, | T: a monk pondering Dhamma,
+iti86:3.3 | P: Dhammaṁ anussaraṁ bhikkhu, | S: a mendicant who recollects the teaching | T: calling Dhamma to mind,
+iti86:3.4 | P: saddhammā na parihāyati. | S: doesn’t fall away from the true teaching. | T: doesn’t fall away ⏎ from true Dhamma.
+
+## iti86:4.1–iti86:4.4 (iti)
+iti86:4.1 | P: Caraṁ vā yadi vā tiṭṭhaṁ, | S: Whether walking or standing, | T: Whether ⏎ walking, ⏎ standing,
+iti86:4.2 | P: nisinno uda vā sayaṁ; | S: sitting or lying down, | T: sitting, or ⏎ lying down
+iti86:4.3 | P: Ajjhattaṁ samayaṁ cittaṁ, | S: with mind collected inside, | T: –his mind inwardly restrained–
+iti86:4.4 | P: santimevādhigacchatī”ti. | S: they attain only peace.” | T: he arrives ⏎ right at peace.
+CONTEXT iti86:5.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti86:5.2 | P: Sattamaṁ. | S: (none) | T: (none)
+
+## iti87:4.1–iti87:4.6 (iti)
+CONTEXT iti87:3.7 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti87:3.8 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti87:4.1 | P: “Tayo vitakke kusale vitakkaye, | S: “Think the three skillful thoughts, | T: Three skillful thoughts ⏎ should be thought,
+iti87:4.2 | P: Tayo pana akusale nirākare; | S: and get rid of the unskillful. | T: three unskillful thoughts ⏎ rejected.
+iti87:4.3 | P: Sa ve vitakkāni vicāritāni, | S: Quelling such thoughts and considerations, | T: Whoever stills thoughts & evaluations
+iti87:4.4 | P: Sameti vuṭṭhīva rajaṁ samūhataṁ; | S: like rain on the dust, | T: –as rain would, a cloud of dust–
+iti87:4.5 | P: Sa ve vitakkūpasamena cetasā, | S: with a heart calmed of thought, | T: through an awareness with thinking stilled,
+iti87:4.6 | P: Idheva so santipadaṁ samajjhagā”ti. | S: you’ll touch the state of peace right here.” | T: attains right here ⏎ the state ⏎ of peace.
+CONTEXT iti87:5.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti87:5.2 | P: Aṭṭhamaṁ. | S: (none) | T: (none)
+
+## iti88:3.1–iti88:3.4 (iti) GATHERED; equal counts: one line per row
+CONTEXT iti88:2.7 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti88:2.8 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti88:3.1 | P: “Anatthajanano lobho, | S: “Greed creates harm; | T: Greed causes harm.
+iti88:3.2 | P: lobho cittappakopano; | S: greed upsets the mind. | T: Greed provokes the mind.
+iti88:3.3 | P: Bhayamantarato jātaṁ, | S: That person doesn’t recognize | T: People don’t realize it ⏎ as a danger born from within.
+iti88:3.4 | P: taṁ jano nāvabujjhati. | S: the danger that arises within. | T: (none)
+AUTO iti88:3.1 starts: Greed causes harm.
+AUTO iti88:3.2 starts: Greed provokes the mind.
+AUTO iti88:3.3 starts: People don’t realize it
+AUTO iti88:3.4 starts: as a danger born from within.
+
+## iti88:4.1–iti88:4.4 (iti)
+iti88:4.1 | P: Luddho atthaṁ na jānāti, | S: A greedy person doesn’t know the good. | T: A person, when greedy, ⏎ doesn’t know his own welfare;
+iti88:4.2 | P: luddho dhammaṁ na passati; | S: A greedy person doesn’t see the truth. | T: when greedy, ⏎ doesn’t see Dhamma.
+iti88:4.3 | P: Andhatamaṁ tadā hoti, | S: When a person is beset by greed, | T: Overcome with greed,
+iti88:4.4 | P: yaṁ lobho sahate naraṁ. | S: only blind darkness is left. | T: he’s in the dark, blind.
+
+## iti88:5.1–iti88:5.4 (iti)
+iti88:5.1 | P: Yo ca lobhaṁ pahantvāna, | S: Those who have given up greed, | T: But when one, abandoning greed,
+iti88:5.2 | P: lobhaneyye na lubbhati; | S: don’t get greedy even when provoked. | T: feels no greed ⏎ for what would merit greed,
+iti88:5.3 | P: Lobho pahīyate tamhā, | S: Greed falls off them | T: greed gets shed from him–
+iti88:5.4 | P: udabindūva pokkharā. | S: like a drop from a lotus-leaf. | T: like a drop of water ⏎ off a lotus leaf.
+
+## iti88:6.1–iti88:6.4 (iti) GATHERED; equal counts: one line per row
+iti88:6.1 | P: Anatthajanano doso, | S: Hate creates harm; | T: Aversion causes harm.
+iti88:6.2 | P: doso cittappakopano; | S: hate upsets the mind. | T: Aversion provokes the mind.
+iti88:6.3 | P: Bhayamantarato jātaṁ, | S: That person doesn’t recognize | T: People don’t realize it ⏎ as a danger born from within.
+iti88:6.4 | P: taṁ jano nāvabujjhati. | S: the danger that arises within. | T: (none)
+AUTO iti88:6.1 starts: Aversion causes harm.
+AUTO iti88:6.2 starts: Aversion provokes the mind.
+AUTO iti88:6.3 starts: People don’t realize it
+AUTO iti88:6.4 starts: as a danger born from within.
+
+## iti88:7.1–iti88:7.4 (iti)
+iti88:7.1 | P: Duṭṭho atthaṁ na jānāti, | S: A hateful person doesn’t know the good. | T: A person, when aversive, ⏎ doesn’t know his own welfare;
+iti88:7.2 | P: duṭṭho dhammaṁ na passati; | S: A hateful person doesn’t see the truth. | T: when aversive, ⏎ doesn’t see Dhamma.
+iti88:7.3 | P: Andhatamaṁ tadā hoti, | S: When a person is beset by hate, | T: Overcome with aversion
+iti88:7.4 | P: yaṁ doso sahate naraṁ. | S: only blind darkness is left. | T: he’s in the dark, blind.
+
+## iti88:8.1–iti88:8.4 (iti)
+iti88:8.1 | P: Yo ca dosaṁ pahantvāna, | S: Those who have given up hate, | T: But when one, abandoning aversion,
+iti88:8.2 | P: dosaneyye na dussati; | S: don’t get angry even when provoked. | T: feels no aversion ⏎ for what would merit aversion,
+iti88:8.3 | P: Doso pahīyate tamhā, | S: Hate falls off them | T: aversion drops away from him–
+iti88:8.4 | P: tālapakkaṁva bandhanā. | S: like a ripe palmyra fruit from its stem. | T: like a palm leaf from its stem.
+
+## iti88:9.1–iti88:9.4 (iti) GATHERED; equal counts: one line per row
+iti88:9.1 | P: Anatthajanano moho, | S: Delusion creates harm; | T: Delusion causes harm.
+iti88:9.2 | P: moho cittappakopano; | S: delusion upsets the mind. | T: Delusion provokes the mind.
+iti88:9.3 | P: Bhayamantarato jātaṁ, | S: That person doesn’t recognize | T: People don’t realize it ⏎ as a danger born from within.
+iti88:9.4 | P: taṁ jano nāvabujjhati. | S: the danger that arises within. | T: (none)
+AUTO iti88:9.1 starts: Delusion causes harm.
+AUTO iti88:9.2 starts: Delusion provokes the mind.
+AUTO iti88:9.3 starts: People don’t realize it
+AUTO iti88:9.4 starts: as a danger born from within.
+
+## iti88:10.1–iti88:10.4 (iti)
+iti88:10.1 | P: Mūḷho atthaṁ na jānāti, | S: A deluded person doesn’t know the good. | T: A person, when deluded, ⏎ doesn’t know his own welfare;
+iti88:10.2 | P: mūḷho dhammaṁ na passati; | S: A deluded person doesn’t see the truth. | T: when deluded, ⏎ doesn’t see Dhamma.
+iti88:10.3 | P: Andhatamaṁ tadā hoti, | S: When a person is beset by delusion, | T: Overcome with delusion
+iti88:10.4 | P: yaṁ moho sahate naraṁ. | S: only blind darkness is left. | T: he’s in the dark, blind.
+
+## iti88:11.1–iti88:11.4 (iti)
+iti88:11.1 | P: Yo ca mohaṁ pahantvāna, | S: Those who have given up delusion, | T: But when one, abandoning delusion,
+iti88:11.2 | P: mohaneyye na muyhati; | S: don’t get deluded even when provoked. | T: feels no delusion ⏎ for what would merit delusion,
+iti88:11.3 | P: Mohaṁ vihanti so sabbaṁ, | S: They banish all delusion, | T: he disperses all delusion–
+iti88:11.4 | P: ādiccovudayaṁ taman”ti. | S: as the rising sun the dark.” | T: as the rising of the sun, the dark.
+CONTEXT iti88:12.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti88:12.2 | P: Navamaṁ. | S: (none) | T: (none)
+
+## iti89:3.1–iti89:3.4 (iti)
+CONTEXT iti89:2.7 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti89:2.8 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti89:3.1 | P: “Mā jātu koci lokasmiṁ, | S: “Let none of wicked desire | T: May no one in the world ⏎ ever
+iti89:3.2 | P: pāpiccho udapajjatha; | S: ever be reborn into this world. | T: be reborn ⏎ with evil desire.
+iti89:3.3 | P: Tadamināpi jānātha, | S: And by this too you should know | T: Know that ⏎ through that ⏎ evil desire,
+iti89:3.4 | P: pāpicchānaṁ yathā gati. | S: the place where those of corrupt wishes go. | T: his destination’s that ⏎ of all who have evil desires.
+
+## iti89:4.1–iti89:4.4 (iti) GATHERED; unequal counts require a reader
+iti89:4.1 | P: Paṇḍitoti samaññāto, | S: He once was considered astute, | T: I’ve heard how Devadatta, ⏎ –regarded as wise, composed, ⏎ incandescent with honor–
+iti89:4.2 | P: bhāvitattoti sammato; | S: deemed to be evolved, | T: (none)
+iti89:4.3 | P: Jalaṁva yasasā aṭṭhā, | S: his glory stood forth like a flame, | T: (none)
+iti89:4.4 | P: devadattoti vissuto. | S: the renowned Devadatta. | T: (none)
+
+## iti89:5.1–iti89:5.4 (iti) GATHERED; possible speaker requires a reader
+iti89:5.1 | P: So samānamanuciṇṇo, | S: Seduced by heedlessness, | T: in the thrall of heedlessness
+iti89:5.2 | P: āsajja naṁ tathāgataṁ; | S: he attacked the Realized One. | T: assaulted the Tathāgata
+iti89:5.3 | P: Avīcinirayaṁ patto, | S: He has fallen to Avīci hell, | T: and fell to the four-gated, fearful place: ⏎ Avīci, unmitigated hell.
+iti89:5.4 | P: catudvāraṁ bhayānakaṁ. | S: four-doored and terrifying. | T: (none)
+
+## iti89:6.1–iti89:6.4 (iti)
+iti89:6.1 | P: Aduṭṭhassa hi yo dubbhe, | S: When someone betrays the innocent, | T: Whoever plots against ⏎ one free of corruption
+iti89:6.2 | P: pāpakammaṁ akubbato; | S: who have done no wrong, | T: who’s done no evil deed:
+iti89:6.3 | P: Tameva pāpaṁ phusati, | S: their bad deeds impact the one | T: that evil touches him himself,
+iti89:6.4 | P: duṭṭhacittaṁ anādaraṁ. | S: with corrupt heart, lacking regard for others. | T: corrupted in mind, ⏎ disrespectful.
+
+## iti89:7.1–iti89:7.4 (iti)
+iti89:7.1 | P: Samuddaṁ visakumbhena, | S: One might think to pollute | T: Whoever might think
+iti89:7.2 | P: yo maññeyya padūsituṁ; | S: the ocean with a pot of poison, | T: of polluting the ocean ⏎ with a pot of poison,
+iti89:7.3 | P: Na so tena padūseyya, | S: but it wouldn’t work, | T: couldn’t succeed,
+iti89:7.4 | P: bhesmā hi udadhi mahā. | S: for the sea is terribly large. | T: for the mass of water is great.
+
+## iti89:8.1–iti89:8.4 (iti)
+iti89:8.1 | P: Evamevaṁ tathāgataṁ, | S: So too when someone attacks | T: So it is ⏎ when anyone attacks with abuse
+iti89:8.2 | P: yo vādena vihiṁsati; | S: with words the Realized One— | T: the Tathāgata
+iti89:8.3 | P: Sammaggataṁ santacittaṁ, | S: rightly comported, of peaceful mind— | T: –rightly-gone, ⏎ of peaceful mind–
+iti89:8.4 | P: vādo tamhi na rūhati. | S: the words don’t take. | T: for abuse doesn’t grow on him.
+
+## iti89:9.1–iti89:9.4 (iti) GATHERED; unequal counts require a reader
+iti89:9.1 | P: Tādisaṁ mittaṁ kubbetha, | S: The astute would befriend one like this, | T: A wise person should make friends, ⏎ should associate, ⏎ with a person like him–
+iti89:9.2 | P: tañca seveyya paṇḍito; | S: and follow them around. | T: (none)
+iti89:9.3 | P: Yassa maggānugo bhikkhu, | S: A mendicant who walks the path | T: whose path a monk can pursue
+iti89:9.4 | P: khayaṁ dukkhassa pāpuṇe”ti. | S: attains the ending of suffering.” | T: and reach the ending ⏎ of suffering & stress.
+CONTEXT iti89:10.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti89:10.2 | P: Dasamaṁ. | S: (none) | T: (none)
+
+## iti89:11.1–iti89:11.4 (iti)
+CONTEXT iti89:10.3 | P: Catuttho vaggo. | S: (none) | T: (none)
+CONTEXT iti89:11.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+iti89:11.1 | P: Vitakkāsakkārasadda, | S: (none) | T: (none)
+iti89:11.2 | P: cavanaloke asubhaṁ; | S: (none) | T: (none)
+iti89:11.3 | P: Dhammaandhakāramalaṁ, | S: (none) | T: (none)
+iti89:11.4 | P: devadattena te dasāti. | S: (none) | T: (none)
+
+## iti90:5.1–iti90:5.4 (iti) GATHERED; unequal counts require a reader
+CONTEXT iti90:4.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti90:4.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti90:5.1 | P: “Aggato ve pasannānaṁ, | S: “For those who, knowing the best teaching, | T: With ⏎ confidence, ⏎ realizing the supreme Dhamma ⏎ to be supreme;
+iti90:5.2 | P: aggaṁ dhammaṁ vijānataṁ; | S: base their confidence on the best— | T: (none)
+iti90:5.3 | P: Agge buddhe pasannānaṁ, | S: confident in the best Awakened One, | T: confidence in the supreme Buddha,
+iti90:5.4 | P: dakkhiṇeyye anuttare. | S: supremely worthy of a religious donation; | T: unsurpassed ⏎ in deserving offerings;
+
+## iti90:6.1–iti90:6.4 (iti)
+iti90:6.1 | P: Agge dhamme pasannānaṁ, | S: confident in the best teaching, | T: confidence in the supreme Dhamma,
+iti90:6.2 | P: virāgūpasame sukhe; | S: the bliss of fading and stilling; | T: the bliss of stilling, dispassion;
+iti90:6.3 | P: Agge saṅghe pasannānaṁ, | S: confident in the best Saṅgha, | T: confidence in the supreme Saṅgha,
+iti90:6.4 | P: puññakkhette anuttare. | S: the supreme field of merit— | T: unsurpassed ⏎ as a field of merit;
+
+## iti90:7.1–iti90:7.4 (iti)
+iti90:7.1 | P: Aggasmiṁ dānaṁ dadataṁ, | S: giving gifts to the best, | T: having given gifts to the supreme,
+iti90:7.2 | P: aggaṁ puññaṁ pavaḍḍhati; | S: the best of merit grows: | T: one develops supreme merit,
+iti90:7.3 | P: Aggaṁ āyu ca vaṇṇo ca, | S: the best lifespan, beauty, | T: supreme long life & beauty,
+iti90:7.4 | P: yaso kitti sukhaṁ balaṁ. | S: fame, reputation, happiness, and strength. | T: status, honor, ⏎ bliss, & strength.
+
+## iti90:8.1–iti90:8.4 (iti)
+iti90:8.1 | P: Aggassa dātā medhāvī, | S: An intelligent person gives to the best, | T: Having given to the supreme, ⏎ the wise person,
+iti90:8.2 | P: aggadhammasamāhito; | S: settled on the best teaching. | T: centered ⏎ in supreme Dhamma,
+iti90:8.3 | P: Devabhūto manusso vā, | S: When they become a god or human, | T: whether becoming a divine or human being,
+iti90:8.4 | P: aggappatto pamodatī”ti. | S: they rejoice at reaching the best.” | T: rejoices, ⏎ having attained the supreme.
+CONTEXT iti90:9.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti90:9.2 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## iti91:3.1–iti91:3.4 (iti)
+CONTEXT iti91:2.11 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti91:2.12 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti91:3.1 | P: “Gihibhogā parihīno, | S: “They’ve left behind the pleasures of the lay life, | T: He’s missed out ⏎ on the householder’s enjoyment
+iti91:3.2 | P: Sāmaññatthañca dubbhago; | S: and miss out on the goal of the ascetic life. | T: & the purpose of the contemplative life ⏎ –unfortunate man!
+iti91:3.3 | P: Paridhaṁsamāno pakireti, | S: Ruining it, they throw it away, | T: Ruining it, he throws it away,
+iti91:3.4 | P: Chavālātaṁva nassati. | S: and perish like a funeral firebrand. | T: perishes ⏎ like a firebrand used at a funeral.
+
+## iti91:4.1–iti91:4.4 (iti)
+iti91:4.1 | P: Kāsāvakaṇṭhā bahavo, | S: Many who wear a scrap of ocher cloth | T: (none)
+iti91:4.2 | P: pāpadhammā asaññatā; | S: are unrestrained and wicked. | T: (none)
+iti91:4.3 | P: Pāpā pāpehi kammehi, | S: Being wicked, they are reborn in hell | T: (none)
+iti91:4.4 | P: nirayaṁ te upapajjare. | S: due to their bad deeds. | T: (none)
+
+## iti91:5.1–iti91:5.4 (iti) GATHERED; unequal counts require a reader
+iti91:5.1 | P: Seyyo ayoguḷo bhutto, | S: It’d be better for the immoral and unrestrained | T: Better to eat an iron ball
+iti91:5.2 | P: tatto aggisikhūpamo; | S: to eat an iron ball, | T: –glowing, aflame–
+iti91:5.3 | P: Yañce bhuñjeyya dussīlo, | S: scorching, like a burning flame, | T: than that, unprincipled & ⏎ unrestrained, ⏎ he should eat the alms of the country.
+iti91:5.4 | P: raṭṭhapiṇḍamasaññato”ti. | S: than to eat the nation’s alms.” | T: (none)
+CONTEXT iti91:6.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti91:6.2 | P: Dutiyaṁ. | S: (none) | T: (none)
+
+## iti92:4.1–iti92:4.6 (iti) GATHERED; possible speaker requires a reader
+CONTEXT iti92:3.7 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti92:3.8 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti92:4.1 | P: “Anubandhopi ce assa, | S: “One full of desire and distress | T: Though following right behind, ⏎ ambitious, annoyed:
+iti92:4.2 | P: mahiccho ca vighātavā; | S: may follow close behind, | T: (none)
+iti92:4.3 | P: Ejānugo anejassa, | S: yet see how distant they are— | T: see how far he is!– ⏎ the perturbed ⏎ from the unperturbed,
+iti92:4.4 | P: nibbutassa anibbuto; | S: the stirred from the still, | T: (none)
+iti92:4.5 | P: Giddho so vītagedhassa, | S: the burning from the quenched, | T: the bound ⏎ from the Unbound,
+iti92:4.6 | P: passa yāvañca ārakā. | S: the greedy from the greedless. | T: the greedy one ⏎ from the one with no greed.
+
+## iti92:5.1–iti92:5.4 (iti)
+iti92:5.1 | P: Yo ca dhammamabhiññāya, | S: An astute person who has understood | T: But the wise person who, through
+iti92:5.2 | P: dhammamaññāya paṇḍito; | S: and directly known the teaching, | T: direct knowledge of Dhamma, ⏎ gnosis of Dhamma,
+iti92:5.3 | P: Rahadova nivāte ca, | S: grows calm, as unperturbed | T: grows still & unperturbed
+iti92:5.4 | P: anejo vūpasammati. | S: as a lake free of wind. | T: like a lake unruffled by wind:
+
+## iti92:6.1–iti92:6.4 (iti) GATHERED; unequal counts require a reader
+iti92:6.1 | P: Anejo so anejassa, | S: See how close they are— | T: see how close he is!– ⏎ the unperturbed to the unperturbed,
+iti92:6.2 | P: nibbutassa ca nibbuto; | S: the still to the still, | T: (none)
+iti92:6.3 | P: Agiddho vītagedhassa, | S: the quenched to the quenched, | T: the Unbound to the Unbound,
+iti92:6.4 | P: passa yāvañca santike”ti. | S: the greedless to the greedless.” | T: the greedless one ⏎ to the one with no greed.
+CONTEXT iti92:7.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti92:7.2 | P: Tatiyaṁ. | S: (none) | T: (none)
+
+## iti93:3.1–iti93:3.4 (iti)
+CONTEXT iti93:2.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti93:2.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti93:3.1 | P: “Rāgaggi dahati macce, | S: “The fire of greed burns a mortal, | T: The fire of passion burns in a mortal
+iti93:3.2 | P: ratte kāmesu mucchite; | S: lustful, infatuated by sensual pleasures; | T: delighting in, ⏎ smitten with ⏎ sensual desires;
+iti93:3.3 | P: Dosaggi pana byāpanne, | S: while, fallen in the fire of hate, | T: the fire of aversion, in a malevolent person
+iti93:3.4 | P: nare pāṇātipātino. | S: a person kills living creatures; | T: taking life;
+
+## iti93:4.1–iti93:4.4 (iti)
+iti93:4.1 | P: Mohaggi pana sammūḷhe, | S: and, bewildered by the fire of delusion, | T: the fire of delusion, in a bewildered person
+iti93:4.2 | P: ariyadhamme akovide; | S: they miss the teaching of the noble ones. | T: ignorant ⏎ of the noble teaching.
+iti93:4.3 | P: Ete aggī ajānantā, | S: Not recognizing these three fires, | T: Not understanding these fires,
+iti93:4.4 | P: sakkāyābhiratā pajā. | S: people are caught up in substantial reality. | T: people ⏎ –fond of self-identity– ⏎ unreleased from Māra’s shackles,
+
+## iti93:5.1–iti93:5.4 (iti) GATHERED; equal counts: one line per row
+iti93:5.1 | P: Te vaḍḍhayanti nirayaṁ, | S: They fill the ranks of hell, | T: swell the ranks of hell,
+iti93:5.2 | P: tiracchānañca yoniyo; | S: of birth as an animal, | T: the wombs of common animals,
+iti93:5.3 | P: Asuraṁ pettivisayaṁ, | S: or of titans and ghosts, | T: demons, ⏎ the realm of the hungry ghosts.
+iti93:5.4 | P: amuttā mārabandhanā. | S: not freed from Māra’s bonds. | T: (none)
+AUTO iti93:5.1 starts: swell the ranks of hell,
+AUTO iti93:5.2 starts: the wombs of common animals,
+AUTO iti93:5.3 starts: demons,
+AUTO iti93:5.4 starts: the realm of the hungry ghosts.
+
+## iti93:6.1–iti93:6.4 (iti)
+iti93:6.1 | P: Ye ca rattindivā yuttā, | S: But as to those committed day and night | T: While those who, day & night, ⏎ are devoted
+iti93:6.2 | P: sammāsambuddhasāsane; | S: to the teaching of the Buddha: | T: to the message ⏎ of the rightly self-awakened,
+iti93:6.3 | P: Te nibbāpenti rāgaggiṁ, | S: they extinguish the fire of greed, | T: put out the fire of passion,
+iti93:6.4 | P: niccaṁ asubhasaññino. | S: always perceiving ugliness; | T: constantly perceiving the foul.
+
+## iti93:7.1–iti93:7.4 (iti)
+iti93:7.1 | P: Dosaggiṁ pana mettāya, | S: while those supreme men | T: They, superlative people,
+iti93:7.2 | P: nibbāpenti naruttamā; | S: extinguish the fire of hate with love; | T: put out the fire of aversion ⏎ with good will,
+iti93:7.3 | P: Mohaggiṁ pana paññāya, | S: and the fire of delusion with the wisdom | T: and the fire of delusion ⏎ with the discernment
+iti93:7.4 | P: yāyaṁ nibbedhagāminī. | S: that leads to penetration. | T: leading ⏎ to penetration.
+
+## iti93:8.1–iti93:8.4 (iti) GATHERED; unequal counts require a reader
+iti93:8.1 | P: Te nibbāpetvā nipakā, | S: Having extinguished these fires, alert, | T: They, the masterful, untiring by night & day, ⏎ having put out [the fires],
+iti93:8.2 | P: rattindivamatanditā; | S: tireless all day and night, | T: (none)
+iti93:8.3 | P: Asesaṁ parinibbanti, | S: they become fully extinguished, | T: having, without remainder, ⏎ comprehended stress, ⏎ are, without remainder, ⏎ totally unbound.
+iti93:8.4 | P: asesaṁ dukkhamaccaguṁ. | S: completely transcending suffering. | T: (none)
+
+## iti93:9.1–iti93:9.4 (iti)
+iti93:9.1 | P: Ariyaddasā vedaguno, | S: Seers of the noble truths, knowledge masters, | T: They, the wise, with an attainer-of-wisdom’s ⏎ noble vision,
+iti93:9.2 | P: sammadaññāya paṇḍitā; | S: the astute, understanding rightly, | T: right gnosis,
+iti93:9.3 | P: Jātikkhayamabhiññāya, | S: directly know the ending of rebirth, | T: directly knowing ⏎ the ending of birth,
+iti93:9.4 | P: nāgacchanti punabbhavan”ti. | S: they come not back to future lives.” | T: come to no further becoming.
+CONTEXT iti93:10.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti93:10.2 | P: Catutthaṁ. | S: (none) | T: (none)
+
+## iti94:3.1–iti94:3.4 (iti)
+CONTEXT iti94:2.3 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti94:2.4 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti94:3.1 | P: “Sattasaṅgappahīnassa, | S: “For one who has given up seven chains, | T: For a monk who has abandoned ⏎ seven attachments
+iti94:3.2 | P: netticchinnassa bhikkhuno; | S: a mendicant who has cut the cord, | T: and cut the guide:
+iti94:3.3 | P: Vikkhīṇo jātisaṁsāro, | S: transmigration through births is finished, | T: the wandering-on in birth ⏎ is finished;
+iti94:3.4 | P: natthi tassa punabbhavo”ti. | S: there’ll be no more future lives for them.” | T: there is, for him, ⏎ no further becoming.
+CONTEXT iti94:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti94:4.2 | P: Pañcamaṁ. | S: (none) | T: (none)
+
+## iti95:3.1–iti95:3.6 (iti)
+CONTEXT iti95:2.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti95:2.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti95:3.1 | P: “Paccupaṭṭhitakāmā ca, | S: “Sensual pleasures that are simply present, | T: Devas whose pleasures are already provided,
+iti95:3.2 | P: ye devā vasavattino; | S: gods who control what is created by others, | T: those with control,
+iti95:3.3 | P: Nimmānaratino devā, | S: gods who love to create, | T: those who delight in creation,
+iti95:3.4 | P: ye caññe kāmabhogino; | S: and others who indulge in sensual pleasures— | T: and any others enjoying sensual pleasures
+iti95:3.5 | P: Itthabhāvaññathābhāvaṁ, | S: They go from this state to another, | T: in this state here ⏎ or anywhere else,
+iti95:3.6 | P: saṁsāraṁ nātivattare. | S: but don’t escape transmigration. | T: don’t go beyond ⏎ the wandering-on.
+
+## iti95:4.1–iti95:4.4 (iti)
+iti95:4.1 | P: Etamādīnavaṁ ñatvā, | S: Knowing this danger | T: Knowing this drawback
+iti95:4.2 | P: kāmabhogesu paṇḍito; | S: in sensual indulgence, an astute person | T: in sensual pleasures, the wise
+iti95:4.3 | P: Sabbe pariccaje kāme, | S: would forsake all sensual pleasures, | T: should abandon all sensual desires,
+iti95:4.4 | P: ye dibbā ye ca mānusā. | S: both human and heavenly. | T: whether human ⏎ or divine.
+
+## iti95:5.1–iti95:5.4 (iti) GATHERED; unequal counts require a reader
+iti95:5.1 | P: Piyarūpasātagadhitaṁ, | S: Having cut the stream so hard to pass, | T: Having cut the flow of greed ⏎ for lovely, alluring forms ⏎ so hard to transcend,
+iti95:5.2 | P: chetvā sotaṁ duraccayaṁ; | S: that’s tied to pleasant seeming things, | T: (none)
+iti95:5.3 | P: Asesaṁ parinibbanti, | S: they become fully extinguished, | T: having, without remainder, ⏎ comprehended stress, ⏎ they are, without remainder, ⏎ totally unbound.
+iti95:5.4 | P: asesaṁ dukkhamaccaguṁ. | S: completely transcending suffering. | T: (none)
+
+## iti95:6.1–iti95:6.4 (iti)
+iti95:6.1 | P: Ariyaddasā vedaguno, | S: Seers of the noble truths, knowledge masters, | T: They, the wise, with an attainer-of-wisdom’s ⏎ noble vision,
+iti95:6.2 | P: sammadaññāya paṇḍitā; | S: the astute, understanding rightly, | T: right gnosis,
+iti95:6.3 | P: Jātikkhayamabhiññāya, | S: directly know the ending of rebirth, | T: directly knowing the ending of birth,
+iti95:6.4 | P: nāgacchanti punabbhavan”ti. | S: they come not back to future lives.” | T: come to no further becoming.
+CONTEXT iti95:7.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti95:7.2 | P: Chaṭṭhaṁ. | S: (none) | T: (none)
+
+## iti96:3.1–iti96:3.4 (iti)
+CONTEXT iti96:2.4 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti96:2.5 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti96:3.1 | P: “Kāmayogena saṁyuttā, | S: “Yoked to both sensual pleasures | T: Tied by both ⏎ the yoke of sensuality
+iti96:3.2 | P: bhavayogena cūbhayaṁ; | S: and the desire to be reborn in a future life; | T: & the yoke of becoming,
+iti96:3.3 | P: Sattā gacchanti saṁsāraṁ, | S: sentient beings continue to transmigrate, | T: beings go to the wandering-on
+iti96:3.4 | P: jātimaraṇagāmino. | S: with ongoing birth and death. | T: leading to birth ⏎ & death.

@@ -5,12 +5,12 @@ dn33:3.3.11 starts: “And further, the monk has admirable friends,
 dn33:3.3.18 starts: And the fact that he is adept
 dn33:3.3.22 none
 dn33:3.3.24 starts: And the fact that he is content
-dn33:3.3.26 starts: “And further, the monk keeps his persistence
+# superseded: dn33:3.3.26 starts: “And further, the monk keeps his persistence
 an3.1:1.1 starts: I have heard that on one occasion
 an3.1:1.2 starts: on one occasion the Blessed One was
 an3.52:2.4 starts: With the world thus on fire with
 an3.52:5.3 starts: when you make merit while still alive:
-an3.52:5.4 none
+# superseded: an3.52:5.4 none
 an3.52:5.5 none
 an3.96:4.5 starts: He discerns as it has come to
 an3.96:4.6 starts: This is how a monk is consummate
@@ -23,11 +23,11 @@ iti48:2.6 none
 iti48:3.1 starts: He goes to hell, the one who
 iti48:3.2 starts: as does the one who, having done,
 iti48:3.3 starts: Both–low-acting people– there become equal: after death,
-iti48:3.4 none
-iti48:5.1 none
-iti48:5.2 starts: Better to eat an iron ball
-iti48:5.3 starts: –glowing, aflame– than that, unprincipled &
-iti48:5.4 starts: than that, unprincipled & unrestrained, you should
+# superseded: iti48:3.4 none
+# superseded: iti48:5.1 none
+# superseded: iti48:5.2 starts: Better to eat an iron ball
+# superseded: iti48:5.3 starts: –glowing, aflame– than that, unprincipled &
+# superseded: iti48:5.4 starts: than that, unprincipled & unrestrained, you should
 # superseded: snp4.6:7.1 starts: A monk, living withdrawn, enjoying a dwelling
 snp4.6:9.1 starts: As a water bead on a lotus
 snp4.6:9.2 starts: as water on a red lily,

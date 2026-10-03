@@ -21,7 +21,7 @@ iti108:4.2 starts: pliant, well-centered:
 # superseded: iti24:3.2 none
 iti31:3.3 starts: misconduct of mind,
 iti37:3.1 starts: Feeling urgency right here toward what should
-iti37:3.2 none
+# superseded: iti37:3.2 none
 iti37:4.3 starts: committed to awareness-tranquility,
 iti51:4.2 starts: free from acquisitions,
 iti60:3.3 starts: develop generosity, a life in tune,
@@ -32,7 +32,7 @@ iti65:4.1 starts: not having done what’s not skillful,
 iti65:4.2 starts: having done much that is,
 iti70:3.2 starts: I have seen beings who–
 iti70:4.1 starts: I have seen beings who–
-iti75:10.2 none
+# superseded: iti75:10.2 none
 iti75:10.4 starts: wealth attained through initiative,
 iti83:15.3 starts: mental misconduct,
 snp2.4:8.2 starts: refraining from intoxicants,
@@ -42,9 +42,9 @@ thag6.3:2.3 starts: doesn’t grow in the True Dhamma,
 thag6.3:3.3 starts: is far away from unbinding
 thag6.3:5.3 starts: grows in the True Dhamma,
 thig5.11:2.3 starts: Intent on tranquility of awareness,
-thig5.11:2.4 none
-thig5.11:2.5 none
-thig5.11:2.6 none
+# superseded: thig5.11:2.4 none
+# superseded: thig5.11:2.5 none
+# superseded: thig5.11:2.6 none
 sn22.84:7.7 starts: “What do you think, Tissa? In one
 sn22.84:7.8 starts: “No, lord.”
 sn22.84:8.1 starts: “Good, Tissa, good.
@@ -64,13 +64,13 @@ sn3.21:20.3 starts: Standing up, he bows down
 sn3.9:5.1 starts: Where goats, rams, & cattle
 sn3.9:5.2 starts: of various kinds are killed:
 sn3.9:5.3 starts: Those of right conduct, great seers,
-sn3.9:5.4 none
+# superseded: sn3.9:5.4 none
 sn3.9:6.1 starts: But sacrifices free from violence,
 sn3.9:6.2 starts: offered always in line with family custom,
 sn3.9:6.3 starts: where goats, rams, & cattle
 sn3.9:6.4 starts: of various kinds are not killed:
 sn3.9:6.5 starts: Those of right conduct, great seers,
-sn3.9:6.6 none
+# superseded: sn3.9:6.6 none
 sn35.245:7.3 starts: “The other would say,
 sn35.245:7.4 starts: ‘A riddle tree is red, my good
 sn35.245:7.8 starts: “The other would say,
@@ -90,7 +90,7 @@ sn52.10:2.6 starts: mind in & of itself…
 sn55.54:2.4 starts: “‘Be reassured, friend,
 sn55.54:2.5 starts: that you have verified confidence in the Dhamma:
 iti91:5.3 starts: than that, unprincipled & unrestrained,
-iti91:5.4 none
+# superseded: iti91:5.4 none
 an9.38:4.13 starts: I tell you, it isn’t through that sort
 # superseded: iti60:4.4 none
 # superseded: iti22:6.4 none
@@ -137,7 +137,7 @@ sn44.1:5.7 starts: both exists and does not exist after death…
 sn44.1:5.10 starts: neither exists nor does not exist after death,
 # superseded by complete answer introduction in codex-import-judgments.findings: sn44.1:5.11 starts: ‘That too has not been declared by
 sn44.1:5.12 starts: “The Tathāgata neither exists nor does not
-iti93:8.2 none
+# superseded: iti93:8.2 none
 iti93:8.3 starts: having, without remainder, comprehended stress,
-iti93:8.4 none
+# superseded: iti93:8.4 none
 iti93:8.1 starts: They, the masterful,

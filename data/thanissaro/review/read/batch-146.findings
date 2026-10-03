@@ -18,9 +18,9 @@ an2.62:3.3 none
 an2.62:3.4 starts: ‘I should correct an elder monk, I
 an2.62:3.5 starts: “‘If an elder monk were to correct
 an2.62:3.8 none
-an4.24:8.1 none
-an4.24:8.2 starts: “Whatever is seen or heard or sensed
-an4.24:8.3 starts: and fastened onto as true by others,
+# superseded: an4.24:8.1 none
+# superseded: an4.24:8.2 starts: “Whatever is seen or heard or sensed
+# superseded: an4.24:8.3 starts: and fastened onto as true by others,
 an6.42:1.2 starts: on one occasion the Blessed One, on
 an6.42:7.2 starts: The thought occurs to me, ‘Soon this
 an6.42:7.3 starts: ‘Soon this venerable one will center his

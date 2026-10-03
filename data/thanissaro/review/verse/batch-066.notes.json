@@ -1,0 +1,9 @@
+{
+  "batch": "066",
+  "versesRead": 60,
+  "rowsRead": 239,
+  "automaticFindings": 32,
+  "readerFindings": 8,
+  "unresolved": [],
+  "ruleCandidate": "thig14.1:1 and thig14.1:25 each have three source lines for four rows; existing blanks retained. Untranslated ud1.10 uddāna also retained."
+}

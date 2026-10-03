@@ -1,0 +1,17 @@
+{
+  "batch": 9,
+  "versesRead": 57,
+  "rowsRead": 246,
+  "automaticFindings": 0,
+  "readerFindings": 60,
+  "unresolved": [
+    {
+      "key": "sn3.19:7.1",
+      "reason": "Prose introduction precedes the stanza in this verse row; its relocation would require a non-verse/context key."
+    },
+    {
+      "key": "sn4.18:3.3",
+      "reason": "P rows 3–4 question about evil ripening has no English in batch009. Following stanza sn4.18:4 in batch010 starts correctly with happy living; question appears omitted rather than displaced."
+    }
+  ]
+}

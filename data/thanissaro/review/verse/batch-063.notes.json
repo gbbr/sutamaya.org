@@ -1,0 +1,9 @@
+{
+  "batch": "063",
+  "versesRead": 63,
+  "rowsRead": 264,
+  "automaticFindings": 12,
+  "readerFindings": 44,
+  "unresolved": [],
+  "ruleCandidate": "thig6.5:3 has three translator lines for four Pali rows; split the gathered first two lines and retain one blank without changing words or order."
+}

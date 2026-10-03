@@ -1,0 +1,17 @@
+# Additional current boundary context; only verse-line keys may change.
+VERSE snp4.9:1.3 | Role: <span class='verse-line'>{}</span> | P: Kimevidaṁ muttakarīsapuṇṇaṁ,  | S: What is this body full of piss and shit?  | T: So what would I want with this, ⏎ filled with urine & excrement? 
+VERSE snp4.9:1.4 | Role: <span class='verse-line'>{}</span></p> | P: Pādāpi naṁ samphusituṁ na icche”.  | S: I wouldn’t even want to touch it with my foot.”  | T: I wouldn’t want to touch it ⏎ even with my foot.” 
+VERSE snp4.9:2.1 | Role: <p><span class='verse-line'>{}</span> | P: “Etādisañce ratanaṁ na icchasi,  | S: “If you do not want a gem such as this,  | T: Māgandiya: ⏎ “If you don’t want ⏎ this gem of a woman, 
+VERSE snp4.9:2.2 | Role: <span class='verse-line'>{}</span> | P: Nāriṁ narindehi bahūhi patthitaṁ;  | S: a lady desired by many lords of men,  | T: coveted ⏎ by many kings, 
+VERSE snp4.9:2.3 | Role: <span class='verse-line'>{}</span> | P: Diṭṭhigataṁ sīlavataṁ nu jīvitaṁ,  | S: then what manner of theory, <j>precepts and vows, livelihood,  | T: then for what sort of viewpoint, ⏎ habit, practice, life, 
+VERSE snp4.9:2.4 | Role: <span class='verse-line'>{}</span></p> | P: Bhavūpapattiñca vadesi kīdisaṁ”.  | S: and rebirth in a new life do you assert?”  | T: attainment of [further] becoming ⏎ do you argue?” 
+VERSE snp4.9:3.1 | Role: <p><span class='verse-line'>{}</span> | P: “Idaṁ vadāmīti na tassa hoti,  | S: “After judging among the teachings,”  | T: 
+CONTEXT snp4.9:3.2 | Role: <span class='speaker'>{}</span> | P: (māgaṇḍiyāti bhagavā)  | S: said the Buddha to Māgaṇḍiya,  | T: The Buddha: 
+VERSE snp4.9:3.3 | Role: <span class='verse-line'>{}</span> | P: Dhammesu niccheyya samuggahītaṁ;  | S: “none have been adopted thinking, ‘I assert this.’  | T: “‘I argue for this’ ⏎ doesn’t occur to one ⏎ when considering what’s grasped ⏎ among doctrines. 
+VERSE snp4.9:3.4 | Role: <span class='verse-line'>{}</span> | P: Passañca diṭṭhīsu anuggahāya,  | S: Seeing views without adopting any,  | T: Looking for what is ungrasped ⏎ with regard to views, 
+VERSE snp4.9:3.5 | Role: <span class='verse-line'>{}</span></p> | P: Ajjhattasantiṁ pacinaṁ adassaṁ”.  | S: searching, I saw inner peace.”  | T: and detecting inner peace, ⏎ I saw.” 
+VERSE snp4.9:4.1 | Role: <p><span class='verse-line'>{}</span> | P: “Vinicchayā yāni pakappitāni,  | S: “O sage, you speak of judgments you have formed,”  | T: Māgandiya: ⏎ “Sage, you speak ⏎ of not grasping ⏎ at any theorized judgments. 
+CONTEXT snp4.9:4.2 | Role: <span class='speaker'>{}</span> | P: (iti māgaṇḍiyo)  | S: said Māgaṇḍiya,  | T: 
+VERSE snp4.9:4.3 | Role: <span class='verse-line'>{}</span> | P: Te ve munī brūsi anuggahāya;  | S: “without having adopted any of those views.  | T: 
+VERSE snp4.9:4.4 | Role: <span class='verse-line'>{}</span> | P: Ajjhattasantīti yametamatthaṁ,  | S: As to that matter of ‘inner peace’— | T: This ‘inner peace’: ⏎ What does it mean? 
+VERSE snp4.9:4.5 | Role: <span class='verse-line'>{}</span></p> | P: Kathaṁ nu dhīrehi paveditaṁ taṁ”.  | S: how is that described by the attentive?”  | T: How is it, ⏎ by the enlightened, ⏎ proclaimed?” 

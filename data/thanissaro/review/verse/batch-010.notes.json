@@ -1,0 +1,13 @@
+{
+  "batch": 10,
+  "versesRead": 52,
+  "rowsRead": 217,
+  "automaticFindings": 0,
+  "readerFindings": 12,
+  "unresolved": [
+    {
+      "key": "sn4.24:10.4",
+      "reason": "Narrative departure and brooding prose belonging to sn4.25:1.1 is appended to the verse without a translator line break; context row itself has no T. Cannot split inside that source line."
+    }
+  ]
+}

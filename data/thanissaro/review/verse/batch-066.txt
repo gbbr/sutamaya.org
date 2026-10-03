@@ -1,0 +1,456 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## thig13.5:26.1–thig13.5:26.4 (thig)
+thig13.5:26.1 | P: “Imaṁ passatha dhammaṭṭhaṁ, | S: “Look at this: Subhā the smith’s daughter, | T: See this Subhā, the goldsmith’s daughter,
+thig13.5:26.2 | P: subhaṁ kammāradhītaraṁ; | S: standing firm in the teaching. | T: standing firm in the Dhamma,
+thig13.5:26.3 | P: Anejaṁ upasampajja, | S: She has entered the imperturbable state, | T: entering the imperturbable state,
+thig13.5:26.4 | P: rukkhamūlamhi jhāyati. | S: meditating at the root of a tree. | T: doing jhāna at the foot of a tree.
+
+## thig13.5:27.1–thig13.5:27.4 (thig)
+thig13.5:27.1 | P: Ajjaṭṭhamī pabbajitā, | S: It’s just eight days since she went forth, | T: This is the eighth day of her going forth
+thig13.5:27.2 | P: saddhā saddhammasobhanā; | S: the faithful one, grace of the true teaching. | T: confident, beautiful through the true Dhamma.
+thig13.5:27.3 | P: Vinītuppalavaṇṇāya, | S: Guided by Uppalavaṇṇā, | T: Trained by Uppalavaṇṇā,
+thig13.5:27.4 | P: tevijjā maccuhāyinī. | S: she is master of the three knowledges, conqueror of death. | T: she’s a three-knowledge woman ⏎ who’s left death behind;
+
+## thig13.5:28.1–thig13.5:28.4 (thig)
+thig13.5:28.1 | P: Sāyaṁ bhujissā anaṇā, | S: This one is freed from slavery and debt, | T: freed from slavery, debtless,
+thig13.5:28.2 | P: bhikkhunī bhāvitindriyā; | S: a nun with faculties developed. | T: a nun with developed faculties,
+thig13.5:28.3 | P: Sabbayogavisaṁyuttā, | S: Unyoked from all yokes, | T: set loose from all ties,
+thig13.5:28.4 | P: katakiccā anāsavā”. | S: she has completed the task and is free of defilements.” | T: her task done, ⏎ effluent- free.
+
+## thig13.5:29.1–thig13.5:29.4 (thig)
+thig13.5:29.1 | P: Taṁ sakko devasaṅghena, | S: Thus did Sakka, lord of all creatures, | T: Sakka, lord of beings,
+thig13.5:29.2 | P: upasaṅkamma iddhiyā; | S: along with a host of gods, | T: with his community of devas,
+thig13.5:29.3 | P: Namassati bhūtapati, | S: having come by their psychic powers, | T: approaching her through supranormal power,
+thig13.5:29.4 | P: subhaṁ kammāradhītaranti. | S: honor Subhā, the smith’s daughter. | T: pays homage to her: ⏎ Subhā the goldsmith’s daughter.
+CONTEXT thig13.5:30.1 | P: … Subhā kammāradhītā therī …. | S: (none) | T: (none)
+CONTEXT thig13.5:31.1 | P: Vīsatinipāto niṭṭhito. | S: (none) | T: (none)
+
+## thig14.1:1.1–thig14.1:1.4 (thig)
+CONTEXT thig14.1:0.2 | P: Tiṁsanipāta | S: The Book of the Thirties | T: (none)
+CONTEXT thig14.1:0.3 | P: Subhājīvakambavanikātherīgāthā | S: Subhā of Jīvaka’s Mango Grove | T: Thig 14 Subhā & the Libertine
+thig14.1:1.1 | P: Jīvakambavanaṁ rammaṁ, | S: Going to the lovely mango grove | T: As Subhā the nun was going through Jīvaka’s delightful mango grove,
+thig14.1:1.2 | P: Gacchantiṁ bhikkhuniṁ subhaṁ; | S: of Jīvaka, the nun Subhā | T: (none)
+thig14.1:1.3 | P: Dhuttako sannivāresi, | S: was held up by a rascal. | T: a libertine (a goldsmith’s son) blocked her path,
+thig14.1:1.4 | P: Tamenaṁ abravī subhā. | S: Subhā said this to him: | T: so she said to him:
+
+## thig14.1:2.1–thig14.1:2.4 (thig)
+thig14.1:2.1 | P: “Kiṁ te aparādhitaṁ mayā, | S: “What harm have I done to you, | T: ‘What wrong have I done you
+thig14.1:2.2 | P: Yaṁ maṁ ovariyāna tiṭṭhasi; | S: that you stand in my way? | T: that you stand in my way?
+thig14.1:2.3 | P: Na hi pabbajitāya āvuso, | S: Respectable sir, it’s not proper that a man | T: It’s not proper, my friend,
+thig14.1:2.4 | P: Puriso samphusanāya kappati. | S: should touch a woman gone forth. | T: that a man should touch ⏎ a woman gone forth.
+
+## thig14.1:3.1–thig14.1:3.4 (thig) GATHERED; possible speaker requires a reader
+thig14.1:3.1 | P: Garuke mama satthusāsane, | S: This training was taught by the Holy One, | T: I respect the Master’s message, ⏎ the training pointed out by the One Well-Gone.
+thig14.1:3.2 | P: Yā sikkhā sugatena desitā; | S: it is a serious matter in my teacher’s instructions. | T: (none)
+thig14.1:3.3 | P: Parisuddhapadaṁ anaṅgaṇaṁ, | S: I am pure and rid of blemishes, | T: I am pure, without blemish:
+thig14.1:3.4 | P: Kiṁ maṁ ovariyāna tiṭṭhasi. | S: so why do you stand in my way? | T: Why do you stand in my way?
+
+## thig14.1:4.1–thig14.1:4.4 (thig)
+thig14.1:4.1 | P: Āvilacitto anāvilaṁ, | S: One whose mind is clouded against one unclouded; | T: You—your mind agitated, impassioned;
+thig14.1:4.2 | P: Sarajo vītarajaṁ anaṅgaṇaṁ; | S: one who is lustful against one free of lust; | T: I—unagitated, unimpassioned,
+thig14.1:4.3 | P: Sabbattha vimuttamānasaṁ, | S: unblemished, my heart is freed in every respect, | T: with a mind everywhere released:
+thig14.1:4.4 | P: Kiṁ maṁ ovariyāna tiṭṭhasi”. | S: so why do you stand in my way?” | T: Why do you stand in my way?’
+
+## thig14.1:5.1–thig14.1:5.4 (thig)
+thig14.1:5.1 | P: “Daharā ca apāpikā casi, | S: “You’re young and flawless— | T: ‘You are young & not bad-looking,
+thig14.1:5.2 | P: Kiṁ te pabbajjā karissati; | S: what will going-forth do for you? | T: what need do you have for going forth?
+thig14.1:5.3 | P: Nikkhipa kāsāyacīvaraṁ, | S: Throw away the ocher robe, | T: Throw off your ochre robe—
+thig14.1:5.4 | P: Ehi ramāma supupphite vane. | S: come and play in the blossom grove. | T: Come, let’s delight in the flowering grove.
+
+## thig14.1:6.1–thig14.1:6.4 (thig) GATHERED; equal counts: one line per row
+thig14.1:6.1 | P: Madhurañca pavanti sabbaso, | S: Everywhere, the scent of pollen wafts sweet, | T: A sweetness they exude everywhere, ⏎ the trees risen-up with their pollen.
+thig14.1:6.2 | P: Kusumarajena samuṭṭhitā dumā; | S: born of the flowering woods. | T: (none)
+thig14.1:6.3 | P: Paṭhamavasanto sukho utu, | S: The start of spring is a happy time— | T: The beginning of spring is a pleasant season—
+thig14.1:6.4 | P: Ehi ramāma supupphite vane. | S: come and play in the blossom grove. | T: Come, let’s delight in the flowering grove.
+AUTO thig14.1:6.1 starts: A sweetness they exude everywhere,
+AUTO thig14.1:6.2 starts: the trees risen-up with their pollen.
+AUTO thig14.1:6.3 starts: The beginning of spring is a pleasant season—
+AUTO thig14.1:6.4 starts: Come, let’s delight in the flowering grove.
+
+## thig14.1:7.1–thig14.1:7.4 (thig)
+thig14.1:7.1 | P: Kusumitasikharā ca pādapā, | S: And trees crested with flowers | T: The trees with their blossoming tips
+thig14.1:7.2 | P: Abhigajjantiva māluteritā; | S: cry out, as it were, in the gale. | T: moan, as it were, in the breeze:
+thig14.1:7.3 | P: Kā tuyhaṁ rati bhavissati, | S: But what kind of fun will you have | T: What delight will you have
+thig14.1:7.4 | P: Yadi ekā vanamogahissasi. | S: if you plunge into the woods all alone? | T: if you plunge into the grove alone?
+
+## thig14.1:8.1–thig14.1:8.4 (thig)
+thig14.1:8.1 | P: Vāḷamigasaṅghasevitaṁ, | S: Frequented by packs of predators, | T: Frequented by herds of wild beasts,
+thig14.1:8.2 | P: Kuñjaramattakareṇuloḷitaṁ; | S: and cow elephants aroused by rutting bulls; | T: disturbed by elephants rutting & aroused:
+thig14.1:8.3 | P: Asahāyikā gantumicchasi, | S: you wish to go without a friend | T: You want to go ⏎ unaccompanied
+thig14.1:8.4 | P: Rahitaṁ bhiṁsanakaṁ mahāvanaṁ. | S: to the deserted, awe-inspiring forest. | T: into the great, lonely, frightening grove?
+
+## thig14.1:9.1–thig14.1:9.4 (thig) GATHERED; equal counts: one line per row
+thig14.1:9.1 | P: Tapanīyakatāva dhītikā, | S: Like a doll made of glittering gold, | T: Like a doll made of gold, you will go about,
+thig14.1:9.2 | P: Vicarasi cittalateva accharā; | S: like a nymph wandering the park of bright vines, | T: like a goddess in the gardens of heaven.
+thig14.1:9.3 | P: Kāsikasukhumehi vaggubhi, | S: your matchless beauty will shine | T: With delicate, smooth Kāsī fabrics, ⏎ you will shine, O beauty without compare.
+thig14.1:9.4 | P: Sobhasī suvasanehi nūpame. | S: in graceful clothes of delicate Kāsian cloth. | T: (none)
+AUTO thig14.1:9.1 starts: Like a doll made of gold, you will
+AUTO thig14.1:9.2 starts: like a goddess in the gardens of heaven.
+AUTO thig14.1:9.3 starts: With delicate, smooth Kāsī fabrics,
+AUTO thig14.1:9.4 starts: you will shine, O beauty without compare.
+
+## thig14.1:10.1–thig14.1:10.4 (thig)
+thig14.1:10.1 | P: Ahaṁ tava vasānugo siyaṁ, | S: I’ll be under your sway, | T: I would gladly do your every bidding
+thig14.1:10.2 | P: Yadi viharemase kānanantare; | S: if we are to stay in the forest. | T: if we were to dwell in the glade.
+thig14.1:10.3 | P: Na hi matthi tayā piyattaro, | S: I love no creature more than you, | T: For there is no creature dearer to me
+thig14.1:10.4 | P: Pāṇo kinnarimandalocane. | S: O pixie with such captivating eyes. | T: than you, O nymph with the languid regard.
+
+## thig14.1:11.1–thig14.1:11.4 (thig)
+thig14.1:11.1 | P: Yadi me vacanaṁ karissasi, | S: Were you to take up my invitation— | T: If you do as I ask,
+thig14.1:11.2 | P: Sukhitā ehi agāramāvasa; | S: ‘Come, be happy, and live in a house’— | T: happy, come live in my house.
+thig14.1:11.3 | P: Pāsādanivātavāsinī, | S: you’ll stay in a longhouse sheltered from wind; | T: Dwelling in the calm of a palace,
+thig14.1:11.4 | P: Parikammaṁ te karontu nāriyo. | S: let the ladies look to your needs. | T: have women wait on you,
+
+## thig14.1:12.1–thig14.1:12.4 (thig)
+thig14.1:12.1 | P: Kāsikasukhumāni dhāraya, | S: Dressed in delicate Kāsian cloth, | T: wear delicate Kāsī fabrics,
+thig14.1:12.2 | P: Abhiropehi ca mālavaṇṇakaṁ; | S: put on your garlands and your cosmetics. | T: adorn yourself with garlands & creams.
+thig14.1:12.3 | P: Kañcanamaṇimuttakaṁ bahuṁ, | S: I’ll make all sorts of adornments for you, | T: I will make you many & varied ornaments
+thig14.1:12.4 | P: Vividhaṁ ābharaṇaṁ karomi te. | S: of lustrous gold and gems and pearls. | T: of gold, jewels, & pearls.
+
+## thig14.1:13.1–thig14.1:13.4 (thig) GATHERED; equal counts: one line per row
+thig14.1:13.1 | P: Sudhotarajapacchadaṁ subhaṁ, | S: Climb onto a costly bed, | T: Climb onto a costly bed, ⏎ scented with sandalwood carvings,
+thig14.1:13.2 | P: Gonakatūlikasanthataṁ navaṁ; | S: its coverlet so clean and nice, | T: with a well-washed coverlet, beautiful,
+thig14.1:13.3 | P: Abhiruha sayanaṁ mahārahaṁ, | S: with a new woolen mattress, | T: spread with a woolen quilt, brand new.
+thig14.1:13.4 | P: Candanamaṇḍitasāragandhikaṁ. | S: so fragrant, sprinkled with sandalwood. | T: (none)
+AUTO thig14.1:13.1 starts: Climb onto a costly bed,
+AUTO thig14.1:13.2 starts: scented with sandalwood carvings,
+AUTO thig14.1:13.3 starts: with a well-washed coverlet, beautiful,
+AUTO thig14.1:13.4 starts: spread with a woolen quilt, brand new.
+
+## thig14.1:14.1–thig14.1:14.4 (thig) GATHERED; equal counts: one line per row
+thig14.1:14.1 | P: Uppalaṁ cudakā samuggataṁ, | S: As a blue lily risen from the water | T: Like a blue lotus rising from the water
+thig14.1:14.2 | P: Yathā taṁ amanussasevitaṁ; | S: remains untouched by men, | T: where no human beings dwell,
+thig14.1:14.3 | P: Evaṁ tvaṁ brahmacārinī, | S: so too, O chaste and holy lady, | T: (none)
+thig14.1:14.4 | P: Sakesaṅgesu jaraṁ gamissasi”. | S: your limbs grow old unshared.” | T: you will go to old age with your limbs unseen, ⏎ if you stay as you are in the holy life.’
+AUTO thig14.1:14.1 starts: Like a blue lotus rising from the water
+AUTO thig14.1:14.2 starts: where no human beings dwell,
+AUTO thig14.1:14.3 starts: you will go to old age with your
+AUTO thig14.1:14.4 starts: if you stay as you are in the
+
+## thig14.1:15.1–thig14.1:15.4 (thig)
+thig14.1:15.1 | P: “Kiṁ te idha sārasammataṁ, | S: “This carcass is full of putrefaction, it swells | T: ‘What do you assume of any essence,
+thig14.1:15.2 | P: Kuṇapapūramhi susānavaḍḍhane; | S: the charnel ground, for its nature is to fall apart. | T: here in this cemetery grower, filled with corpses,
+thig14.1:15.3 | P: Bhedanadhamme kaḷevare, | S: What do you think is so essential in it | T: this body destined to break up?
+thig14.1:15.4 | P: Yaṁ disvā vimano udikkhasi”. | S: that you stare at me so crazily?” | T: What do you see when you look at me, ⏎ you who are out of your mind?’
+
+## thig14.1:16.1–thig14.1:16.4 (thig)
+thig14.1:16.1 | P: “Akkhīni ca tūriyāriva, | S: “Your eyes are like those of a doe, | T: ‘Your eyes are like those of a fawn,
+thig14.1:16.2 | P: Kinnariyāriva pabbatantare; | S: or a pixie in the mountains; | T: like those of a sprite in the mountains.
+thig14.1:16.3 | P: Tava me nayanāni dakkhiya, | S: seeing them, erotic delight | T: Seeing your eyes, my sensual delight
+thig14.1:16.4 | P: Bhiyyo kāmaratī pavaḍḍhati. | S: swells in me all the more. | T: grows all the more.
+
+## thig14.1:17.1–thig14.1:17.4 (thig)
+thig14.1:17.1 | P: Uppalasikharopamāni te, | S: Your eyes are like a blue lily’s bud | T: Like tips they are, of blue lotuses,
+thig14.1:17.2 | P: Vimale hāṭakasannibhe mukhe; | S: in your flawless face shining like coruscant gold. | T: in your golden face ⏎ —spotless:
+thig14.1:17.3 | P: Tava me nayanāni dakkhiya, | S: Seeing them, sensual excitement | T: Seeing your eyes, my sensual delight
+thig14.1:17.4 | P: Bhiyyo kāmaguṇo pavaḍḍhati. | S: swells in me all the more. | T: grows all the more.
+
+## thig14.1:18.1–thig14.1:18.4 (thig)
+thig14.1:18.1 | P: Api dūragatā saramhase, | S: Though you may wander far, I’ll still think of you, | T: Even if you should go far away, ⏎ I will think only of your
+thig14.1:18.2 | P: Āyatapamhe visuddhadassane; | S: with lashes so long and eyes so bright. | T: pure, ⏎ long-lashed gaze,
+thig14.1:18.3 | P: Na hi matthi tayā piyattaro, | S: I love no eyes more than yours, | T: for there is nothing dearer to me
+thig14.1:18.4 | P: Nayanā kinnarimandalocane”. | S: O pixie with such bashful eyes.” | T: than your eyes, O nymph with the languid regard.’
+
+## thig14.1:19.1–thig14.1:19.4 (thig)
+thig14.1:19.1 | P: “Apathena payātumicchasi, | S: “You’re setting out on the wrong road! | T: ‘You want to stray from the road,
+thig14.1:19.2 | P: Candaṁ kīḷanakaṁ gavesasi; | S: You’re looking to take the moon for your toy! | T: you want the moon as a plaything,
+thig14.1:19.3 | P: Meruṁ laṅghetumicchasi, | S: You’re trying to leap over Mount Meru! | T: you want to jump over Mount Sineru,
+thig14.1:19.4 | P: Yo tvaṁ buddhasutaṁ maggayasi. | S: You, who are hunting a child of the Buddha! | T: you who have designs on one born of the Buddha.
+
+## thig14.1:20.1–thig14.1:20.4 (thig)
+thig14.1:20.1 | P: Natthi hi loke sadevake, | S: For in this world with all its gods, | T: For there is nothing anywhere at all ⏎ in the cosmos with its devas,
+thig14.1:20.2 | P: Rāgo yatthapi dāni me siyā; | S: there will be no more lust anywhere in me. | T: that would be an object of passion for me.
+thig14.1:20.3 | P: Napi naṁ jānāmi kīriso, | S: I don’t even know what kind it could be, | T: I don’t even know what that passion would be,
+thig14.1:20.4 | P: Atha maggena hato samūlako. | S: it’s been smashed root and all by the path. | T: for it’s been killed, root & all, by the path.
+
+## thig14.1:21.1–thig14.1:21.4 (thig)
+thig14.1:21.1 | P: Iṅgālakuyāva ujjhito, | S: Cast out like sparks from fiery coals, | T: Like embers from a pit—scattered,
+thig14.1:21.2 | P: Visapattoriva aggito kato; | S: it’s worth no more than a bowl of poison. | T: like a bowl of poison—evaporated,
+thig14.1:21.3 | P: Napi naṁ passāmi kīriso, | S: I don’t even see what kind it could be, | T: I don’t even see what that passion would be,
+thig14.1:21.4 | P: Atha maggena hato samūlako. | S: it’s been smashed root and all by the path. | T: for it’s been killed, root & all, by the path.
+
+## thig14.1:22.1–thig14.1:22.4 (thig) GATHERED; equal counts: one line per row
+thig14.1:22.1 | P: Yassā siyā apaccavekkhitaṁ, | S: Well may you try to seduce the type of lady | T: Try to seduce one who hasn’t reflected on this,
+thig14.1:22.2 | P: Satthā vā anupāsito siyā; | S: who has not reflected on these things, | T: (none)
+thig14.1:22.3 | P: Tvaṁ tādisikaṁ palobhaya, | S: or who has never attended the Teacher: | T: or who has not followed the Master’s teaching.
+thig14.1:22.4 | P: Jānantiṁ so imaṁ vihaññasi. | S: but this is a lady who knows—now you’re in trouble! | T: But try it with this one who knows ⏎ and you suffer.
+AUTO thig14.1:22.1 starts: Try to seduce one who hasn’t reflected on
+AUTO thig14.1:22.2 starts: or who has not followed the Master’s teaching.
+AUTO thig14.1:22.3 starts: But try it with this one who knows
+AUTO thig14.1:22.4 starts: and you suffer.
+
+## thig14.1:23.1–thig14.1:23.4 (thig)
+thig14.1:23.1 | P: Mayhañhi akkuṭṭhavandite, | S: No matter if I am reviled or praised, | T: For in the midst of praise & blame,
+thig14.1:23.2 | P: Sukhadukkhe ca satī upaṭṭhitā; | S: or feel pleasure or pain: I stay mindful. | T: pleasure & pain, ⏎ my mindfulness stands firm.
+thig14.1:23.3 | P: Saṅkhatamasubhanti jāniya, | S: Knowing that conditions are ugly, | T: Knowing the unattractiveness ⏎ of things compounded,
+thig14.1:23.4 | P: Sabbattheva mano na limpati. | S: my mind clings to nothing. | T: my mind cleaves to nothing at all.
+
+## thig14.1:24.1–thig14.1:24.4 (thig)
+thig14.1:24.1 | P: Sāhaṁ sugatassa sāvikā, | S: I am a disciple of the Holy One, | T: I am a follower of the One Well-Gone,
+thig14.1:24.2 | P: Maggaṭṭhaṅgikayānayāyinī; | S: riding in the carriage of the eightfold path. | T: riding the vehicle of the eightfold way:
+thig14.1:24.3 | P: Uddhaṭasallā anāsavā, | S: The dart pulled out, free of defilements, | T: My arrow removed, effluent-free,
+thig14.1:24.4 | P: Suññāgāragatā ramāmahaṁ. | S: I’m happy to have reached an empty place. | T: I delight, having gone to an empty dwelling.
+
+## thig14.1:25.1–thig14.1:25.4 (thig)
+thig14.1:25.1 | P: Diṭṭhā hi mayā sucittitā, | S: I’ve seen brightly painted | T: For I have seen well-painted puppets,
+thig14.1:25.2 | P: Sombhā dārukapillakāni vā; | S: dolls and wooden puppets, | T: (none)
+thig14.1:25.3 | P: Tantīhi ca khīlakehi ca, | S: tied to sticks and strings, | T: hitched up with sticks & strings,
+thig14.1:25.4 | P: Vinibaddhā vividhaṁ panaccakā. | S: and made to dance in many ways. | T: made to dance in various ways.
+
+## thig14.1:26.1–thig14.1:26.4 (thig)
+thig14.1:26.1 | P: Tamhuddhaṭe tantikhīlake, | S: But when the sticks and strings are taken off— | T: When the sticks & strings are removed,
+thig14.1:26.2 | P: Vissaṭṭhe vikale parikrite; | S: loosed, disassembled, dismantled, | T: thrown away, scattered, shredded,
+thig14.1:26.3 | P: Na vindeyya khaṇḍaso kate, | S: irrecoverable, stripped to parts— | T: smashed into pieces, not to be found,
+thig14.1:26.4 | P: Kimhi tattha manaṁ nivesaye. | S: on what could the mind be fixed? | T: in what will the mind there make its home?
+
+## thig14.1:27.1–thig14.1:27.4 (thig)
+thig14.1:27.1 | P: Tathūpamā dehakāni maṁ, | S: That’s what my body is really like, | T: This body of mine, which is just like that,
+thig14.1:27.2 | P: Tehi dhammehi vinā na vattanti; | S: without those things it can’t go on. | T: when devoid of dhammas doesn’t function.
+thig14.1:27.3 | P: Dhammehi vinā na vattati, | S: This being so, | T: When, devoid of dhammas, it doesn’t function,
+thig14.1:27.4 | P: Kimhi tattha manaṁ nivesaye. | S: on what could the mind be fixed? | T: in what will the mind there make its home?
+
+## thig14.1:28.1–thig14.1:28.4 (thig)
+thig14.1:28.1 | P: Yathā haritālena makkhitaṁ, | S: It’s like when you saw a mural made | T: Like a mural you’ve seen,
+thig14.1:28.2 | P: Addasa cittikaṁ bhittiyā kataṁ; | S: by painting yellow orpiment on a wall, | T: painted on a wall, ⏎ smeared with yellow orpiment,
+thig14.1:28.3 | P: Tamhi te viparītadassanaṁ, | S: and your vision was deceived by that— | T: there your vision has been distorted,
+thig14.1:28.4 | P: Saññā mānusikā niratthikā. | S: the perception ‘human’ is pointless. | T: your perception of a human being—pointless.
+
+## thig14.1:29.1–thig14.1:29.4 (thig) GATHERED; equal counts: one line per row
+thig14.1:29.1 | P: Māyaṁ viya aggato kataṁ, | S: Like an illusion cast before you, | T: Like an evaporated mirage,
+thig14.1:29.2 | P: Supinanteva suvaṇṇapādapaṁ; | S: or a golden tree in a dream, | T: like a tree of gold in a dream,
+thig14.1:29.3 | P: Upagacchasi andha rittakaṁ, | S: you chase what is hollow, blind one, | T: like a magic show in the midst of a crowd— ⏎ you run blind after what is unreal.
+thig14.1:29.4 | P: Janamajjheriva rupparūpakaṁ. | S: like a painted doll among the people. | T: (none)
+AUTO thig14.1:29.1 starts: Like an evaporated mirage,
+AUTO thig14.1:29.2 starts: like a tree of gold in a dream,
+AUTO thig14.1:29.3 starts: like a magic show in the midst of
+AUTO thig14.1:29.4 starts: you run blind after what is unreal.
+
+## thig14.1:30.1–thig14.1:30.4 (thig)
+thig14.1:30.1 | P: Vaṭṭaniriva koṭarohitā, | S: Like a ball in a socket, | T: Resembling a ball of sealing wax, ⏎ set in a hollow,
+thig14.1:30.2 | P: Majjhe pubbuḷakā saassukā; | S: with a pupil in the middle, and tears, | T: with a bubble in the middle ⏎ and bathed with tears,
+thig14.1:30.3 | P: Pīḷakoḷikā cettha jāyati, | S: and mucus comes from there as well, | T: eye secretions are born there too:
+thig14.1:30.4 | P: Vividhā cakkhuvidhā ca piṇḍitā”. | S: different eye-parts are lumped together.” | T: The parts of the eye ⏎ are rolled all together ⏎ in various ways.’
+
+## thig14.1:31.1–thig14.1:31.4 (thig)
+thig14.1:31.1 | P: Uppāṭiya cārudassanā, | S: Having plucked it out, the fair-eyed lady | T: Plucking out her lovely eye,
+thig14.1:31.2 | P: Na ca pajjittha asaṅgamānasā; | S: was undismayed, unchained in mind. | T: with mind unattached ⏎ she felt no regret.
+thig14.1:31.3 | P: “Handa te cakkhuṁ harassu taṁ”, | S: “Come now, take this eye,” | T: ‘Here, take this eye. It’s yours.’
+thig14.1:31.4 | P: Tassa narassa adāsi tāvade. | S: she said, and gave it to the man right then. | T: Straightaway she gave it to him.
+
+## thig14.1:32.1–thig14.1:32.4 (thig)
+thig14.1:32.1 | P: Tassa ca viramāsi tāvade, | S: And right then he lost his lust, | T: Straightaway his passion faded right there,
+thig14.1:32.2 | P: Rāgo tattha khamāpayī ca naṁ; | S: and asked for her forgiveness: | T: and he begged her forgiveness:
+thig14.1:32.3 | P: “Sotthi siyā brahmacārinī, | S: “May you be well, O chaste and holy lady; | T: ‘Be well, follower of the holy life.
+thig14.1:32.4 | P: Na puno edisakaṁ bhavissati”. | S: such a thing will not happen again. | T: This sort of thing ⏎ won’t happen again.
+
+## thig14.1:33.1–thig14.1:33.4 (thig)
+thig14.1:33.1 | P: “Āsādiya edisaṁ janaṁ, | S: Attacking a person such as this | T: Harming a person like you
+thig14.1:33.2 | P: Aggiṁ pajjalitaṁva liṅgiya; | S: is like holding on to a blazing fire, | T: is like embracing a blazing fire.
+thig14.1:33.3 | P: Gaṇhiya āsīvisaṁ viya, | S: or grabbing a deadly viper! | T: It’s as if I have seized a poisonous snake.
+thig14.1:33.4 | P: Api nu sotthi siyā khamehi no”. | S: May you be well, please forgive me.” | T: So may you be well. Forgive me.’
+
+## thig14.1:34.1–thig14.1:34.4 (thig)
+thig14.1:34.1 | P: Muttā ca tato sā bhikkhunī, | S: When that nun was released | T: And released from there, the nun
+thig14.1:34.2 | P: Agamī buddhavarassa santikaṁ; | S: she went to the presence of the excellent Buddha. | T: went to the excellent Buddha’s presence.
+thig14.1:34.3 | P: Passiya varapuññalakkhaṇaṁ, | S: Seeing the one with excellent marks of merit, | T: When she saw the mark of his excellent merit,
+thig14.1:34.4 | P: Cakkhu āsi yathā purāṇakanti. | S: her eye became just as it was before. | T: her eye became ⏎ as it was before.
+CONTEXT thig14.1:35.1 | P: … Subhā jīvakambavanikā therī …. | S: (none) | T: (none)
+CONTEXT thig14.1:36.1 | P: Tiṁsanipāto niṭṭhito. | S: (none) | T: (none)
+
+## ud1.1:4.1–ud1.1:4.4 (ud)
+CONTEXT ud1.1:2.13 | P: Evametassa kevalassa dukkhakkhandhassa samudayo hotī”ti. | S: That is how this entire mass of suffering originates.” | T: Such is the origination of this entire mass of suffering & stress.
+CONTEXT ud1.1:3.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud1.1:4.1 | P: “Yadā have pātubhavanti dhammā, | S: “When things become clear | T: As phenomena grow clear
+ud1.1:4.2 | P: Ātāpino jhāyato brāhmaṇassa; | S: to the keen, meditating brahmin, | T: to the brahman–ardent, in jhāna–
+ud1.1:4.3 | P: Athassa kaṅkhā vapayanti sabbā, | S: his doubts are dispelled, | T: his doubts all vanish
+ud1.1:4.4 | P: Yato pajānāti sahetudhamman”ti. | S: since he understands each thing and its cause.” | T: when he discerns ⏎ a phenomenon with its cause.
+CONTEXT ud1.1:4.5 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## ud1.2:4.1–ud1.2:4.4 (ud)
+CONTEXT ud1.2:2.13 | P: Evametassa kevalassa dukkhakkhandhassa nirodho hotī”ti. | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this entire mass of suffering & stress.
+CONTEXT ud1.2:3.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud1.2:4.1 | P: “Yadā have pātubhavanti dhammā, | S: “When things become clear | T: As phenomena grow clear
+ud1.2:4.2 | P: Ātāpino jhāyato brāhmaṇassa; | S: to the keen, meditating brahmin, | T: to the brahman–ardent, in jhāna–
+ud1.2:4.3 | P: Athassa kaṅkhā vapayanti sabbā, | S: his doubts are dispelled, | T: his doubts all vanish
+ud1.2:4.4 | P: Yato khayaṁ paccayānaṁ avedī”ti. | S: since he’s known the end of conditions.” | T: when he penetrates the ending ⏎ of requisite conditions.
+CONTEXT ud1.2:4.5 | P: Dutiyaṁ. | S: (none) | T: (none)
+
+## ud1.3:5.1–ud1.3:5.4 (ud)
+CONTEXT ud1.3:3.12 | P: Evametassa kevalassa dukkhakkhandhassa nirodho hotī”ti. | S: That is how this entire mass of suffering ceases.” | T: Such is the cessation of this entire mass of suffering & stress.
+CONTEXT ud1.3:4.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud1.3:5.1 | P: “Yadā have pātubhavanti dhammā, | S: “When things become clear | T: As phenomena grow clear
+ud1.3:5.2 | P: Ātāpino jhāyato brāhmaṇassa; | S: to the keen, meditating brahmin, | T: to the brahman–ardent, in jhāna–
+ud1.3:5.3 | P: Vidhūpayaṁ tiṭṭhati mārasenaṁ, | S: he remains, scattering Māra’s army, | T: he stands, ⏎ routing Māra’s army,
+ud1.3:5.4 | P: Sūriyova obhāsayamantalikkhan”ti. | S: as the sun lights up the sky.” | T: as the sun, ⏎ illumining the sky.
+CONTEXT ud1.3:5.5 | P: Tatiyaṁ. | S: (none) | T: (none)
+
+## ud1.4:4.1–ud1.4:4.5 (ud)
+CONTEXT ud1.4:2.3 | P: “kittāvatā nu kho, bho gotama, brāhmaṇo hoti, katame ca pana brāhmaṇakaraṇā dhammā”ti? | S: “Worthy Gotama, how do you define a brahmin? And what are the things that make one a brahmin?” | T: “To what extent, Master Gotama, is one a brahman? And which are the qualities that make one a brahman?”
+CONTEXT ud1.4:3.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud1.4:4.1 | P: “Yo brāhmaṇo bāhitapāpadhammo, | S: “Any brahmin who has banished bad qualities— | T: Any brahman ⏎ who has banished evil qualities,
+ud1.4:4.2 | P: Nihuṁhuṅko nikkasāvo yatatto; | S: not murmuring the mystic syllable huṁ, unstained, self-controlled, | T: –not overbearing, ⏎ not stained, ⏎ his mind controlled–
+ud1.4:4.3 | P: Vedantagū vūsitabrahmacariyo, | S: a complete knowledge master who has completed the spiritual journey— | T: gone to the end of wisdom, ⏎ the holy life completed:
+ud1.4:4.4 | P: Dhammena so brahmavādaṁ vadeyya; | S: they may legitimately proclaim the divine doctrine; | T: Rightly would that brahman ⏎ speak the holy teaching.
+ud1.4:4.5 | P: Yassussadā natthi kuhiñci loke”ti. | S: who have no pretensions about anything in the world.” | T: He has no swelling of pride ⏎ anywhere in the world.
+CONTEXT ud1.4:4.6 | P: Catutthaṁ. | S: (none) | T: (none)
+
+## ud1.5:4.1–ud1.5:4.4 (ud)
+CONTEXT ud1.5:2.6 | P: “kittāvatā nu kho, bhante, brāhmaṇo hoti, katame ca pana brāhmaṇakaraṇā dhammā”ti? | S: “Sir, how do you define a brahmin? And what are the things that make one a brahmin?” | T: “To what extent, lord, is one a brahman? And which are the qualities that make one a brahman?”
+CONTEXT ud1.5:3.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud1.5:4.1 | P: “Bāhitvā pāpake dhamme, | S: “Having banished bad qualities, | T: Having banished evil qualities,
+ud1.5:4.2 | P: ye caranti sadā satā; | S: those who live always mindful, | T: those who go about ever mindful,
+ud1.5:4.3 | P: Khīṇasaṁyojanā buddhā, | S: with fetters ended, awakened, | T: awakened, their fetters ended:
+ud1.5:4.4 | P: te ve lokasmi brāhmaṇā”ti. | S: they are the world’s true brahmins.” | T: They, in the world, ⏎ are truly brahmans.
+CONTEXT ud1.5:4.5 | P: Pañcamaṁ. | S: (none) | T: (none)
+
+## ud1.6:4.1–ud1.6:4.4 (ud)
+CONTEXT ud1.6:2.4 | P: Addasā kho bhagavā āyasmantaṁ mahākassapaṁ rājagahe piṇḍāya carantaṁ yena daliddavisikhā kapaṇavisikhā pesakāravisikhā. | S: The Buddha saw him wandering for alms in the street markets of the poor, the destitute, and the embroiderers. | T: The Blessed One saw that Ven. Mahā Kassapa had gone into Rājagaha for alms along the streets of the poor, the streets of the indigent, the streets of the weavers.
+CONTEXT ud1.6:3.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud1.6:4.1 | P: “Anaññaposimaññātaṁ, | S: “The stranger, providing for no other, | T: Supporting no others, ⏎ unknown,
+ud1.6:4.2 | P: dantaṁ sāre patiṭṭhitaṁ; | S: tamed, consolidated in the core, | T: tamed, established ⏎ in what is essential,
+ud1.6:4.3 | P: Khīṇāsavaṁ vantadosaṁ, | S: with defilements ended and flaws purged: | T: effluents ended, ⏎ anger disgorged:
+ud1.6:4.4 | P: tamahaṁ brūmi brāhmaṇan”ti. | S: that’s who I declare a brahmin.” | T: He’s what I call ⏎ a brahman.
+CONTEXT ud1.6:4.5 | P: Chaṭṭhaṁ. | S: (none) | T: (none)
+
+## ud1.7:3.1–ud1.7:3.4 (ud)
+CONTEXT ud1.7:1.5 | P: “eso te, samaṇa, pisāco”ti. | S: “Now that’s a goblin for you, ascetic!” | T: That’s a goblin for you, contemplative!”
+CONTEXT ud1.7:2.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud1.7:3.1 | P: “Yadā sakesu dhammesu, | S: “When a brahmin gets over | T: When, ⏎ with regard to his own qualities, ⏎ a brahman is one
+ud1.7:3.2 | P: pāragū hoti brāhmaṇo; | S: their own issues, | T: who has gone beyond,
+ud1.7:3.3 | P: Atha etaṁ pisācañca, | S: they transcend this goblin | T: he transcends this goblin
+ud1.7:3.4 | P: pakkulañcātivattatī”ti. | S: and his havoc.” | T: and his pandemonium.
+CONTEXT ud1.7:3.5 | P: Sattamaṁ. | S: (none) | T: (none)
+
+## ud1.8:8.1–ud1.8:8.4 (ud)
+CONTEXT ud1.8:6.5 | P: Addasā kho bhagavā dibbena cakkhunā visuddhena atikkantamānusakena āyasmato saṅgāmajissa purāṇadutiyikāya evarūpaṁ vippakāraṁ. | S: With clairvoyance that is purified and superhuman, the Buddha saw how Saṅgāmaji’s former wife went back for the child. | T: The Blessed One–with his divine eye, purified and surpassing the human–saw Ven. Saṅgāmaji’s former wife misbehaving in that way.
+CONTEXT ud1.8:7.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud1.8:8.1 | P: “Āyantiṁ nābhinandati, | S: “When she came he was not glad, | T: At her coming, ⏎ he didn’t delight;
+ud1.8:8.2 | P: pakkamantiṁ na socati; | S: when she left he did not grieve. | T: at her leaving, ⏎ he didn’t grieve.
+ud1.8:8.3 | P: Saṅgā saṅgāmajiṁ muttaṁ, | S: Victorious in battle, freed from chains, | T: A victor in battle, freed from the tie:
+ud1.8:8.4 | P: tamahaṁ brūmi brāhmaṇan”ti. | S: that’s who I declare a brahmin.” | T: He’s what I call ⏎ a brahman.
+CONTEXT ud1.8:8.5 | P: Aṭṭhamaṁ. | S: (none) | T: (none)
+
+## ud1.9:4.1–ud1.9:4.4 (ud)
+CONTEXT ud1.9:2.2 | P: “iminā suddhī”ti. | S: (none) | T: (thinking,) “Through this there is purity.”
+CONTEXT ud1.9:3.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud1.9:4.1 | P: “Na udakena sucī hoti, | S: “Purity doesn’t come from water, | T: Not by water is one clean,
+ud1.9:4.2 | P: bahvettha nhāyatī jano; | S: no matter how many people bathe there. | T: though many people are bathing here.
+ud1.9:4.3 | P: Yamhi saccañca dhammo ca, | S: One who has truth and principle, | T: Whoever has truth ⏎ & rectitude:
+ud1.9:4.4 | P: so sucī so ca brāhmaṇo”ti. | S: they are pure, they are brahmins.” | T: He’s a clean one; ⏎ he, a brahman.
+CONTEXT ud1.9:4.5 | P: Navamaṁ. | S: (none) | T: (none)
+
+## ud1.10:14.1–ud1.10:14.2 (ud)
+CONTEXT ud1.10:12.6 | P: Parinibbuto, bhikkhave, bāhiyo dārucīriyo”ti. | S: Bāhiya of the Bark Cloth has become fully quenched.” | T: Bāhiya of the Bark-cloth, monks, is totally unbound.”
+CONTEXT ud1.10:13.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud1.10:14.1 | P: “Yattha āpo ca pathavī, | S: “Where water and earth, | T: Where water, earth,
+ud1.10:14.2 | P: tejo vāyo na gādhati; | S: fire and air have no footing— | T: fire, & wind ⏎ have no footing:
+
+## ud1.10:14.3–ud1.10:14.6 (ud)
+ud1.10:14.3 | P: Na tattha sukkā jotanti, | S: there no star does shine, | T: There the stars don’t shine,
+ud1.10:14.4 | P: ādicco nappakāsati; | S: nor does the sun shed its light; | T: the sun isn’t visible.
+ud1.10:14.5 | P: Na tattha candimā bhāti, | S: there the moon glows not, | T: There the moon doesn’t appear.
+ud1.10:14.6 | P: tamo tattha na vijjati. | S: yet no darkness is found. | T: There darkness is not found.
+
+## ud1.10:15.1–ud1.10:15.4 (ud)
+ud1.10:15.1 | P: Yadā ca attanāvedi, | S: And when a sage, a brahmin, finds understanding | T: And when a sage, ⏎ a brahman
+ud1.10:15.2 | P: muni monena brāhmaṇo; | S: through their own sagacity, | T: through sagacity, ⏎ has realized [this] for himself,
+ud1.10:15.3 | P: Atha rūpā arūpā ca, | S: then, from forms and formless, | T: then from form & formless,
+ud1.10:15.4 | P: sukhadukkhā pamuccatī”ti. | S: from pleasure and pain they are released.” | T: from bliss & pain, ⏎ he is freed.
+CONTEXT ud1.10:15.5 | P: Dasamaṁ. | S: (none) | T: (none)
+CONTEXT ud1.10:16.1 | P: Ayampi udāno vutto bhagavatā iti me sutanti. | S: This too is a heartfelt saying that was spoken by the Blessed One: that is what I heard. | T: (none)
+
+## ud1.10:17.1–ud1.10:17.4 (ud)
+CONTEXT ud1.10:16.2 | P: Bodhivaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT ud1.10:17.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+ud1.10:17.1 | P: Tayo bodhī ca huṁhuṅko, | S: (none) | T: (none)
+ud1.10:17.2 | P: brāhmaṇā kassapena ca; | S: (none) | T: (none)
+ud1.10:17.3 | P: Aja saṅgāma jaṭilā, | S: (none) | T: (none)
+ud1.10:17.4 | P: bāhiyenāti te dasāti. | S: (none) | T: (none)
+
+## ud2.1:5.1–ud2.1:5.4 (ud)
+CONTEXT ud2.1:3.2 | P: Atha kho mucalindo nāgarājā viddhaṁ vigatavalāhakaṁ devaṁ viditvā bhagavato kāyā bhoge viniveṭhetvā sakavaṇṇaṁ paṭisaṁharitvā māṇavakavaṇṇaṁ abhinimminitvā bhagavato purato aṭṭhāsi pañjaliko bhagavantaṁ namassamāno. | S: When he knew the heavens were clear and cloudless, Mucalinda unwrapped his coils from the Buddha’s body. Hiding his own form, he manifested in the form of a brahmin youth. He stood in front of the Buddha, venerating him with cupped palms. | T: Muccalinda the nāga king, realizing that the sky had cleared and was free of clouds, unraveled his coils from the body of the Blessed One, dropped his own appearance and, assuming the appearance of a young man, stood in front of the Blessed One with hands before his heart, paying homage.
+CONTEXT ud2.1:4.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud2.1:5.1 | P: “Sukho viveko tuṭṭhassa, | S: “Seclusion is happiness for the contented | T: Blissful is solitude ⏎ for one who’s content,
+ud2.1:5.2 | P: sutadhammassa passato; | S: who see the teaching they have learned. | T: who has heard the Dhamma, ⏎ who sees.
+ud2.1:5.3 | P: Abyāpajjaṁ sukhaṁ loke, | S: Kindness for the world is happiness | T: Blissful is non-affliction ⏎ with regard for the world,
+ud2.1:5.4 | P: pāṇabhūtesu saṁyamo. | S: for one who’d not harm a living creature. | T: restraint for living beings.
+
+## ud2.1:6.1–ud2.1:6.4 (ud)
+ud2.1:6.1 | P: Sukhā virāgatā loke, | S: Dispassion for the world is happiness | T: Blissful is dispassion ⏎ with regard for the world,
+ud2.1:6.2 | P: kāmānaṁ samatikkamo; | S: for one who has gone beyond sensual pleasures. | T: the overcoming of sensuality.
+ud2.1:6.3 | P: Asmimānassa yo vinayo, | S: But dispelling the conceit ‘I am’ | T: But the subduing of the conceit “I am”–
+ud2.1:6.4 | P: etaṁ ve paramaṁ sukhan”ti. | S: is truly the ultimate happiness.” | T: That is truly ⏎ the ultimate bliss.
+CONTEXT ud2.1:6.5 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## ud2.2:6.1–ud2.2:6.4 (ud)
+CONTEXT ud2.2:4.3 | P: dhammī vā kathā ariyo vā tuṇhībhāvo”ti. | S: discuss the teachings or keep noble silence.” | T: either Dhamma-talk or noble silence.”
+CONTEXT ud2.2:5.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud2.2:6.1 | P: “Yañca kāmasukhaṁ loke, | S: “Neither the pleasures of the senses, | T: Any sensual bliss in the world,
+ud2.2:6.2 | P: yañcidaṁ diviyaṁ sukhaṁ; | S: nor even divine happiness, | T: any heavenly bliss,
+ud2.2:6.3 | P: Taṇhakkhayasukhassete, | S: is worth even a sixteenth part | T: isn’t worth one sixteenth-sixteenth
+ud2.2:6.4 | P: kalaṁ nāgghanti soḷasin”ti. | S: of the happiness of craving’s end.” | T: of the bliss of the ending of craving.
+CONTEXT ud2.2:6.5 | P: Dutiyaṁ. | S: (none) | T: (none)
+
+## ud2.3:3.1–ud2.3:3.4 (ud) GATHERED; equal counts: one line per row
+CONTEXT ud2.3:1.5 | P: Addasā kho bhagavā sambahule kumārake antarā ca sāvatthiṁ antarā ca jetavanaṁ ahiṁ daṇḍena hanante. | S: He saw the boys hitting the snake. | T: He saw the large number of boys on the road between Sāvatthī & Jeta’s Grove hitting the snake with a stick.
+CONTEXT ud2.3:2.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud2.3:3.1 | P: “Sukhakāmāni bhūtāni, | S: “Creatures love happiness, | T: Whoever hits with a stick ⏎ beings desiring ease,
+ud2.3:3.2 | P: yo daṇḍena vihiṁsati; | S: so if you harm them with a stick | T: (none)
+ud2.3:3.3 | P: Attano sukhamesāno, | S: in search of your own happiness, | T: when he himself is looking for ease,
+ud2.3:3.4 | P: pecca so na labhate sukhaṁ. | S: after death you’ll find no happiness. | T: will meet with no ease after death.
+AUTO ud2.3:3.1 starts: Whoever hits with a stick
+AUTO ud2.3:3.2 starts: beings desiring ease,
+AUTO ud2.3:3.3 starts: when he himself is looking for ease,
+AUTO ud2.3:3.4 starts: will meet with no ease after death.
+
+## ud2.3:4.1–ud2.3:4.4 (ud) GATHERED; equal counts: one line per row
+ud2.3:4.1 | P: Sukhakāmāni bhūtāni, | S: Creatures love happiness, | T: Whoever doesn’t hit with a stick ⏎ beings desiring ease,
+ud2.3:4.2 | P: yo daṇḍena na hiṁsati; | S: so if you don’t harm them with a stick | T: (none)
+ud2.3:4.3 | P: Attano sukhamesāno, | S: in search of your own happiness, | T: when he himself is looking for ease,
+ud2.3:4.4 | P: pecca so labhate sukhan”ti. | S: after death you will find happiness.” | T: will meet with ease after death.
+CONTEXT ud2.3:4.5 | P: Tatiyaṁ. | S: (none) | T: (none)
+AUTO ud2.3:4.1 starts: Whoever doesn’t hit with a stick
+AUTO ud2.3:4.2 starts: beings desiring ease,
+AUTO ud2.3:4.3 starts: when he himself is looking for ease,
+AUTO ud2.3:4.4 starts: will meet with ease after death.
+
+## ud2.4:4.1–ud2.4:4.4 (ud)
+CONTEXT ud2.4:2.5 | P: Atha kho te, bhante, aññatitthiyā paribbājakā bhagavato sakkāraṁ asahamānā bhikkhusaṅghassa ca, gāme ca araññe ca bhikkhū disvā asabbhāhi pharusāhi vācāhi akkosanti paribhāsanti rosenti vihesantī”ti. | S: (none) | T: So the wanderers of other sects, unable to stand the veneration given to the Blessed One and the community of monks, on seeing monks in village or wilderness, insult, revile, irritate, & harass them with discourteous, abusive language.”
+CONTEXT ud2.4:3.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud2.4:4.1 | P: “Gāme araññe sukhadukkhaphuṭṭho, | S: “When struck by pleasure and pain in the village or wilderness, | T: When in contact with pleasure or pain ⏎ in village or wilderness,
+ud2.4:4.2 | P: Nevattato no parato dahetha; | S: regard it not as self or alien. | T: don’t take it as yours or as others’.
+ud2.4:4.3 | P: Phusanti phassā upadhiṁ paṭicca, | S: Contacts strike because of attachment; | T: Contacts make contact ⏎ dependent on a sense of acquisition.
+ud2.4:4.4 | P: Nirūpadhiṁ kena phuseyyu phassā”ti. | S: how would contacts strike one free of attachment?” | T: Where there’s no sense of acquisition, ⏎ contacts would make contact ⏎ with what?
+CONTEXT ud2.4:4.5 | P: Catutthaṁ. | S: (none) | T: (none)
+
+## ud2.5:4.1–ud2.5:4.4 (ud)
+CONTEXT ud2.5:2.1 | P: “Cirapaṭikāhaṁ, bhante, bhagavantaṁ dassanāya upasaṅkamitukāmo, api cāhaṁ kehici kehici kiccakaraṇīyehi byāvaṭo. Evāhaṁ nāsakkhiṁ bhagavantaṁ dassanāya upasaṅkamitun”ti. | S: “For a long time I’ve wanted to come and see the Buddha, but I wasn’t able, being prevented by my many duties and responsibilities.” | T: “For a long time, lord, have I wanted to come see the Blessed One, but being involved in one business affair after another, I have not been able to do so.”
+CONTEXT ud2.5:3.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud2.5:4.1 | P: “Sukhaṁ vata tassa na hoti kiñci, | S: “One who has nothing is happy indeed, | T: How blissful it is, for one who has nothing,
+ud2.5:4.2 | P: Saṅkhātadhammassa bahussutassa; | S: a learned person who has appraised the teaching. | T: who has mastered the Dhamma, ⏎ is learned.
+ud2.5:4.3 | P: Sakiñcanaṁ passa vihaññamānaṁ, | S: See how troubled are those with attachments, | T: See him suffering, one who has something,
+ud2.5:4.4 | P: Jano janasmiṁ paṭibandharūpo”ti. | S: a person bound tight to people.” | T: a person bound in body ⏎ with people.
+CONTEXT ud2.5:4.5 | P: Pañcamaṁ. | S: (none) | T: (none)
+
+## ud2.6:8.1–ud2.6:8.4 (ud)
+CONTEXT ud2.6:6.2 | P: Addasā kho bhagavā taṁ paribbājakaṁ dukkhāhi tibbāhi kharāhi kaṭukāhi vedanāhi phuṭṭhaṁ āvaṭṭamānaṁ parivaṭṭamānaṁ. | S: He saw the wanderer in agony. | T: He saw the wanderer rolling back & forth, suffering from fierce pains, sharp & severe.
+CONTEXT ud2.6:7.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud2.6:8.1 | P: “Sukhino vata ye akiñcanā, | S: “Oh! How happy are those with nothing! | T: How blissful it is, for one who has nothing.
+ud2.6:8.2 | P: Vedaguno hi janā akiñcanā; | S: Hence knowledge masters are people with nothing. | T: Attainers-of-wisdom ⏎ are people with nothing.
+ud2.6:8.3 | P: Sakiñcanaṁ passa vihaññamānaṁ, | S: See how troubled are those with attachments, | T: See him suffering, one who has something,
+ud2.6:8.4 | P: Jano janasmiṁ paṭibandhacitto”ti. | S: a person bound tight to people.” | T: a person bound in mind ⏎ with people.
+CONTEXT ud2.6:8.5 | P: Chaṭṭhaṁ. | S: (none) | T: (none)
+
+## ud2.7:5.1–ud2.7:5.4 (ud) GATHERED; unequal counts require a reader
+CONTEXT ud2.7:3.3 | P: Tena mayaṁ allavatthā allakesā idhūpasaṅkamantā divā divassā”ti. | S: That’s why we came here in the middle of the day with wet clothes and hair.” | T: This is why we have come here–our clothes wet, our hair wet–in the middle of the day.”
+CONTEXT ud2.7:4.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud2.7:5.1 | P: “Piyarūpassādagadhitāse, | S: “Hosts of gods and most human beings are bound | T: Tied down by the allure ⏎ of what seems dear, ⏎ hosts of devas, most human beings,
+ud2.7:5.2 | P: Devakāyā puthu manussā ca; | S: to what seems dear and pleasant. | T: (none)
+ud2.7:5.3 | P: Aghāvino parijunnā, | S: Gloomy and exhausted, | T: worn out with misery,
+ud2.7:5.4 | P: Maccurājassa vasaṁ gacchanti. | S: they fall under the sway of the King of Death. | T: fall under the sway ⏎ of the King of Death.

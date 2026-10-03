@@ -1,0 +1,434 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## snp3.4:11.1–snp3.4:11.4 (snp)
+snp3.4:11.1 | P: “Tasmātiha tvaṁ brāhmaṇa atthena, | S: “So then, brahmin, since you have approached me | T: The Buddha: ⏎ “Therefore, brahman, ⏎ as you are seeking your benefit,
+snp3.4:11.2 | P: Atthiko upasaṅkamma puccha; | S: as a seeker of the good, ask. | T: approach and ask.
+snp3.4:11.3 | P: Santaṁ vidhūmaṁ anīghaṁ nirāsaṁ, | S: Perhaps you may find here someone intelligent, | T: Perhaps you may find here
+snp3.4:11.4 | P: Appevidha abhivinde sumedhaṁ”. | S: peaceful, unclouded, untroubled, with no need for hope.” | T: one at peace, with no anger, ⏎ no desire, no affliction: ⏎ one with good wisdom.”
+
+## snp3.4:12.1–snp3.4:12.4 (snp)
+snp3.4:12.1 | P: “Yaññe ratohaṁ bho gotama, | S: “Worthy Gotama, I like to sacrifice | T: Sundarika: ⏎ “I delight in sacrifice,
+snp3.4:12.2 | P: Yaññaṁ yiṭṭhukāmo nāhaṁ pajānāmi; | S: and wish to perform a sacrifice. Please advise me, | T: I desire to sacrifice,
+snp3.4:12.3 | P: Anusāsatu maṁ bhavaṁ, | S: for I do not understand | T: but I don’t understand
+snp3.4:12.4 | P: Yattha hutaṁ ijjhate brūhi me taṁ”. | S: where an oblation is profitable; tell me this.” | T: where a sacrifice succeeds. ⏎ Teach me, sir. Tell me that.”
+CONTEXT snp3.4:13.1 | P: “Tena hi tvaṁ, brāhmaṇa, odahassu sotaṁ; dhammaṁ te desessāmi— | S: “Well then, brahmin, listen up, I will teach you the Dhamma. | T: The Buddha: ⏎ “In that case, brahman, lend ear. ⏎ I will teach you the Dhamma.
+
+## snp3.4:14.1–snp3.4:14.4 (snp)
+CONTEXT snp3.4:13.1 | P: “Tena hi tvaṁ, brāhmaṇa, odahassu sotaṁ; dhammaṁ te desessāmi— | S: “Well then, brahmin, listen up, I will teach you the Dhamma. | T: The Buddha: ⏎ “In that case, brahman, lend ear. ⏎ I will teach you the Dhamma.
+snp3.4:14.1 | P: Mā jātiṁ pucchī caraṇañca puccha, | S: Don’t ask about birth, ask about conduct; | T: Don’t inquire about birth. ⏎ Inquire about conduct.
+snp3.4:14.2 | P: Kaṭṭhā have jāyati jātavedo; | S: for the fire of Jātaveda is born from sticks. | T: As from wood, a fire is born,
+snp3.4:14.3 | P: Nīcākulīnopi munī dhitīmā, | S: A steadfast sage, even though from a low class family, | T: so a sage, even from lowly birth ⏎ —steadfast,
+snp3.4:14.4 | P: Ājāniyo hoti hirīnisedho. | S: is a thoroughbred checked by conscience. | T: restrained ⏎ through a sense of shame— ⏎ becomes a thoroughbred.
+
+## snp3.4:15.1–snp3.4:15.4 (snp)
+snp3.4:15.1 | P: Saccena danto damasā upeto, | S: Tamed by truth, fulfilled by taming, | T: One tamed by truth, ⏎ endowed with self-control,
+snp3.4:15.2 | P: Vedantagū vūsitabrahmacariyo; | S: a complete knowledge master who has completed the spiritual journey— | T: attained to the end of knowledge, ⏎ having fulfilled the holy life:
+snp3.4:15.3 | P: Kālena tamhi habyaṁ pavecche, | S: that is where a brahmin seeking merit | T: To him, at the right time,
+snp3.4:15.4 | P: Yo brāhmaṇo puññapekkho yajetha. | S: should bestow a timely oblation as sacrifice. | T: you should bestow an offering, ⏎ to him a brahman aiming at merit ⏎ should sacrifice.
+
+## snp3.4:16.1–snp3.4:16.4 (snp) GATHERED; possible speaker requires a reader
+snp3.4:16.1 | P: Ye kāme hitvā agahā caranti, | S: Those who have left sensuality behind, wandering homeless, | T: (none)
+snp3.4:16.2 | P: Susaññatattā tasaraṁva ujjuṁ; | S: self-controlled, straight as a shuttle— | T: Those with well-restrained minds, ⏎ straight as a shuttle:
+snp3.4:16.3 | P: Kālena tesu habyaṁ pavecche, | S: that is where a brahmin seeking merit | T: To them, at the right time,
+snp3.4:16.4 | P: Yo brāhmaṇo puññapekkho yajetha. | S: should bestow a timely oblation as sacrifice. | T: you should bestow an offering, ⏎ to them a brahman aiming at merit ⏎ should sacrifice.
+
+## snp3.4:17.1–snp3.4:17.4 (snp)
+snp3.4:17.1 | P: Ye vītarāgā susamāhitindriyā, | S: Those freed of greed, with senses stilled, | T: Those devoid of passion, ⏎ their faculties well-centered,
+snp3.4:17.2 | P: Candova rāhuggahaṇā pamuttā; | S: like the moon released from the eclipse— | T: released like the moon ⏎ from the grasp of an eclipse:
+snp3.4:17.3 | P: Kālena tesu habyaṁ pavecche, | S: that is where a brahmin seeking merit | T: To them, at the right time,
+snp3.4:17.4 | P: Yo brāhmaṇo puññapekkho yajetha. | S: should bestow a timely oblation as sacrifice. | T: you should bestow an offering, ⏎ to them a brahman aiming at merit ⏎ should sacrifice.
+
+## snp3.4:18.1–snp3.4:18.4 (snp)
+snp3.4:18.1 | P: Asajjamānā vicaranti loke, | S: They wander the world unobstructed, | T: Unattached, they wander in the world,
+snp3.4:18.2 | P: Sadā satā hitvā mamāyitāni; | S: always mindful, calling nothing their own— | T: always mindful, ⏎ abandoning possessiveness:
+snp3.4:18.3 | P: Kālena tesu habyaṁ pavecche, | S: that is where a brahmin seeking merit | T: To them, at the right time,
+snp3.4:18.4 | P: Yo brāhmaṇo puññapekkho yajetha. | S: should bestow a timely oblation as sacrifice. | T: you should bestow an offering, ⏎ to them a brahman aiming at merit ⏎ should sacrifice.
+
+## snp3.4:19.1–snp3.4:19.4 (snp)
+snp3.4:19.1 | P: Yo kāme hitvā abhibhuyyacārī, | S: Having left sensuality behind, wandering triumphant, | T: Who, abandoning sensuality, ⏎ wanders victorious,
+snp3.4:19.2 | P: Yo vedi jātīmaraṇassa antaṁ; | S: knowing the end of rebirth and death, | T: who knows the end ⏎ of birth & death,
+snp3.4:19.3 | P: Parinibbuto udakarahadova sīto, | S: quenched and cool as a lake: | T: totally unbound, cool ⏎ as a pool of water:
+snp3.4:19.4 | P: Tathāgato arahati pūraḷāsaṁ. | S: the Realized One is worthy of the sacrificial cake. | T: The Tathāgata deserves ⏎ the sacrificial cake.
+
+## snp3.4:20.1–snp3.4:20.4 (snp)
+snp3.4:20.1 | P: Samo samehi visamehi dūre, | S: Good among the good, far from the bad, | T: Consonant among the consonant, ⏎ far from the discordant,
+snp3.4:20.2 | P: Tathāgato hoti anantapañño; | S: the Realized One has infinite wisdom. | T: the Tathāgata of infinite discernment,
+snp3.4:20.3 | P: Anūpalitto idha vā huraṁ vā, | S: Unsullied in this life and the next: | T: not smeared here or beyond:
+snp3.4:20.4 | P: Tathāgato arahati pūraḷāsaṁ. | S: the Realized One is worthy of the sacrificial cake. | T: The Tathāgata deserves ⏎ the sacrificial cake.
+
+## snp3.4:21.1–snp3.4:21.5 (snp)
+snp3.4:21.1 | P: Yamhi na māyā vasati na māno, | S: In whom dwells no deceit or conceit, | T: In whom no deceptiveness dwells, ⏎ no conceit,
+snp3.4:21.2 | P: Yo vītalobho amamo nirāso; | S: rid of greed, unselfish, with no need for hope, | T: devoid of greed, un- ⏎ possessive, un- ⏎ desiring,
+snp3.4:21.3 | P: Paṇunnakodho abhinibbutatto, | S: with anger cast aside, quenched, | T: his anger dispelled, ⏎ his mind entirely unbound,
+snp3.4:21.4 | P: Yo brāhmaṇo sokamalaṁ ahāsi; | S: a brahmin rid of sorrow’s stain: | T: a brahman who has abandoned ⏎ the stain of grief:
+snp3.4:21.5 | P: Tathāgato arahati pūraḷāsaṁ. | S: the Realized One is worthy of the sacrificial cake. | T: The Tathāgata deserves ⏎ the sacrificial cake.
+
+## snp3.4:22.1–snp3.4:22.4 (snp)
+snp3.4:22.1 | P: Nivesanaṁ yo manaso ahāsi, | S: He has given up the mind’s home, | T: He has abandoned the homes of the mind,
+snp3.4:22.2 | P: Pariggahā yassa na santi keci; | S: and has no possessions at all. | T: has ⏎ no possessions at all,
+snp3.4:22.3 | P: Anupādiyāno idha vā huraṁ vā, | S: Not grasping to this life or the next: | T: no clinging here or beyond:
+snp3.4:22.4 | P: Tathāgato arahati pūraḷāsaṁ. | S: the Realized One is worthy of the sacrificial cake. | T: The Tathāgata deserves ⏎ the sacrificial cake.
+
+## snp3.4:23.1–snp3.4:23.4 (snp)
+snp3.4:23.1 | P: Samāhito yo udatāri oghaṁ, | S: Serene, he has crossed the flood, | T: Centered, he’s crossed ⏎ over the flood,
+snp3.4:23.2 | P: Dhammaṁ caññāsi paramāya diṭṭhiyā; | S: and has understood the teaching with ultimate view. | T: he knows the Dhamma ⏎ through the highest view,
+snp3.4:23.3 | P: Khīṇāsavo antimadehadhārī, | S: With defilements ended, bearing his final body: | T: effluents ended, bearing his last body:
+snp3.4:23.4 | P: Tathāgato arahati pūraḷāsaṁ. | S: the Realized One is worthy of the sacrificial cake. | T: The Tathāgata deserves ⏎ the sacrificial cake.
+
+## snp3.4:24.1–snp3.4:24.4 (snp)
+snp3.4:24.1 | P: Bhavāsavā yassa vacī kharā ca, | S: In whom desire to be reborn, and caustic speech | T: Whose effluent of becoming ⏎ and harsh speech
+snp3.4:24.2 | P: Vidhūpitā atthagatā na santi; | S: are cleared and ended, and are no more; | T: are destroyed, finished, do not exist—
+snp3.4:24.3 | P: Sa vedagū sabbadhi vippamutto, | S: that knowledge master, everywhere free: | T: he, an attainer-of-knowledge, ⏎ everywhere totally released:
+snp3.4:24.4 | P: Tathāgato arahati pūraḷāsaṁ. | S: the Realized One is worthy of the sacrificial cake. | T: The Tathāgata deserves ⏎ the sacrificial cake.
+
+## snp3.4:25.1–snp3.4:25.4 (snp)
+snp3.4:25.1 | P: Saṅgātigo yassa na santi saṅgā, | S: He has slipped his chains, he’s chained no more, | T: Gone beyond snares, ⏎ for whom there are no snares,
+snp3.4:25.2 | P: Yo mānasattesu amānasatto; | S: among those caught in conceit he is free of conceit; | T: who, among those attached to conceit, ⏎ is unattached to conceit,
+snp3.4:25.3 | P: Dukkhaṁ pariññāya sakhettavatthuṁ, | S: he has fully understood suffering with its field and ground: | T: comprehending stress ⏎ along with its field & its site:
+snp3.4:25.4 | P: Tathāgato arahati pūraḷāsaṁ. | S: the Realized One is worthy of the sacrificial cake. | T: The Tathāgata deserves ⏎ the sacrificial cake.
+
+## snp3.4:26.1–snp3.4:26.4 (snp)
+snp3.4:26.1 | P: Āsaṁ anissāya vivekadassī, | S: Not relying on hope, seeing seclusion, | T: Independent of desire, ⏎ seeing seclusion,
+snp3.4:26.2 | P: Paravediyaṁ diṭṭhimupātivatto; | S: well past the views proclaimed by others. | T: gone beyond the views known by others,
+snp3.4:26.3 | P: Ārammaṇā yassa na santi keci, | S: In him there are no supporting conditions at all: | T: who has ⏎ no supports ⏎ no mental objects ⏎ at all:
+snp3.4:26.4 | P: Tathāgato arahati pūraḷāsaṁ. | S: the Realized One is worthy of the sacrificial cake. | T: The Tathāgata deserves ⏎ the sacrificial cake.
+
+## snp3.4:27.1–snp3.4:27.4 (snp)
+snp3.4:27.1 | P: Paroparā yassa samecca dhammā, | S: He has comprehended all things, high and low, | T: In whom, having understood them, ⏎ phenomena from high to low
+snp3.4:27.2 | P: Vidhūpitā atthagatā na santi; | S: cleared them and ended them, so they are no more. | T: are destroyed, finished, do not exist—
+snp3.4:27.3 | P: Santo upādānakhaye vimutto, | S: Peaceful, freed in the ending of grasping: | T: at peace, released in the ending of clinging:
+snp3.4:27.4 | P: Tathāgato arahati pūraḷāsaṁ. | S: the Realized One is worthy of the sacrificial cake. | T: The Tathāgata deserves ⏎ the sacrificial cake.
+
+## snp3.4:28.1–snp3.4:28.4 (snp)
+snp3.4:28.1 | P: Saṁyojanaṁ jātikhayantadassī, | S: He sees the ending of rebirth’s fetter, | T: Seeing the end & ending ⏎ of fetters & birth,
+snp3.4:28.2 | P: Yopānudi rāgapathaṁ asesaṁ; | S: and has cast aside all manner of desire. | T: having dispelled the path of passion ⏎ without trace,
+snp3.4:28.3 | P: Suddho nidoso vimalo akāco, | S: Pure, stainless, immaculate, flawless: | T: pure, faultless, stainless, clear:
+snp3.4:28.4 | P: Tathāgato arahati pūraḷāsaṁ. | S: the Realized One is worthy of the sacrificial cake. | T: The Tathāgata deserves ⏎ the sacrificial cake.
+
+## snp3.4:29.1–snp3.4:29.4 (snp)
+snp3.4:29.1 | P: Yo attano attānaṁ nānupassati, | S: Not seeing himself in terms of a self, | T: Who doesn’t contemplate ⏎ self by means of self,
+snp3.4:29.2 | P: Samāhito ujjugato ṭhitatto; | S: he is stilled, sincere, and steadfast. | T: centered, straightened, ⏎ steadfast in mind,
+snp3.4:29.3 | P: Sa ve anejo akhilo akaṅkho, | S: Imperturbable, kind, wishless: | T: truly unperturbed, ⏎ free from rigidity, free ⏎ from doubt:
+snp3.4:29.4 | P: Tathāgato arahati pūraḷāsaṁ. | S: the Realized One is worthy of the sacrificial cake. | T: The Tathāgata deserves ⏎ the sacrificial cake.
+
+## snp3.4:30.1–snp3.4:30.6 (snp)
+snp3.4:30.1 | P: Mohantarā yassa na santi keci, | S: He harbors no delusions within at all, | T: Who has no conditions for delusion,
+snp3.4:30.2 | P: Sabbesu dhammesu ca ñāṇadassī; | S: he has insight into all things. | T: with knowledge & vision of all phenomena
+snp3.4:30.3 | P: Sarīrañca antimaṁ dhāreti, | S: He bears his final body, | T: he carries his last body,
+snp3.4:30.4 | P: Patto ca sambodhimanuttaraṁ sivaṁ; | S: attained to the state of grace, the supreme awakening. | T: having attained the unexcelled ⏎ self-awakening, auspicious—
+snp3.4:30.5 | P: Ettāvatā yakkhassa suddhi, | S: That’s how the purity of a spirit is defined: | T: to that extent is the purity of a spirit:
+snp3.4:30.6 | P: Tathāgato arahati pūraḷāsaṁ”. | S: the Realized One is worthy of the sacrificial cake.” | T: The Tathāgata deserves ⏎ the sacrificial cake.”
+
+## snp3.4:31.1–snp3.4:31.4 (snp)
+snp3.4:31.1 | P: “Hutañca mayhaṁ hutamatthu saccaṁ, | S: “Let my oblation be a true offering, | T: Sundarika: ⏎ “And may my offering ⏎ be a true offering
+snp3.4:31.2 | P: Yaṁ tādisaṁ vedagunaṁ alatthaṁ; | S: since I have found such a knowledge master! | T: from having obtained ⏎ an attainer-of-knowledge like you.
+snp3.4:31.3 | P: Brahmā hi sakkhi paṭigaṇhātu me bhagavā, | S: I see divinity in person! Accept my offering, Blessed One: | T: As Brahmā is my witness, ⏎ may the Blessed One accept,
+snp3.4:31.4 | P: Bhuñjatu me bhagavā pūraḷāsaṁ”. | S: please eat my sacrificial cake.” | T: may the Blessed One eat, ⏎ my sacrificial cake.”
+
+## snp3.4:32.1–snp3.4:32.4 (snp)
+snp3.4:32.1 | P: “Gāthābhigītaṁ me abhojaneyyaṁ, | S: “Food enchanted by a verse isn’t fit for me to eat. | T: The Buddha: ⏎ “What’s been chanted over with verses ⏎ shouldn’t be eaten by me.
+snp3.4:32.2 | P: Sampassataṁ brāhmaṇa nesa dhammo; | S: That’s not the principle of those who see, brahmin. | T: That’s not the nature, brahman, ⏎ of one who’s seen rightly.
+snp3.4:32.3 | P: Gāthābhigītaṁ panudanti buddhā, | S: The Buddhas cast aside things enchanted with verses. | T: What’s been chanted over with verses ⏎ Awakened Ones reject.
+snp3.4:32.4 | P: Dhamme satī brāhmaṇa vuttiresā. | S: Since there is such a principle, brahmin, that’s how they live. | T: That being their Dhamma, brahman, ⏎ this is their way of life.
+
+## snp3.4:33.1–snp3.4:33.4 (snp)
+snp3.4:33.1 | P: Aññena ca kevalinaṁ mahesiṁ, | S: Serve with other food and drink | T: Serve with other food & drink
+snp3.4:33.2 | P: Khīṇāsavaṁ kukkuccavūpasantaṁ; | S: the consummate one, the great seer, | T: a fully-perfected great seer,
+snp3.4:33.3 | P: Annena pānena upaṭṭhahassu, | S: with defilements ended and remorse stilled. | T: his effluents ended, ⏎ his anxiety stilled,
+snp3.4:33.4 | P: Khettañhi taṁ puññapekkhassa hoti”. | S: For he is the field for the seeker of merit.” | T: for that is the field ⏎ for one looking for merit.”
+
+## snp3.4:34.1–snp3.4:34.4 (snp)
+snp3.4:34.1 | P: “Sādhāhaṁ bhagavā tathā vijaññaṁ, | S: “Please, Blessed One, help me understand: | T: Sundarika: ⏎ “It’s well, Blessed One, how I understand
+snp3.4:34.2 | P: Yo dakkhiṇaṁ bhuñjeyya mādisassa; | S: now that I have found your teaching, | T: who should eat the offering of one like me,
+snp3.4:34.3 | P: Yaṁ yaññakāle pariyesamāno, | S: when I look for someone during a sacrifice, | T: whom I should seek at the time of sacrifice
+snp3.4:34.4 | P: Pappuyya tava sāsanaṁ”. | S: who should eat the religious donation of one like me?” | T: having received your advice.”
+
+## snp3.4:35.1–snp3.4:35.4 (snp) GATHERED; possible speaker requires a reader
+snp3.4:35.1 | P: “Sārambhā yassa vigatā, | S: “One who is rid of aggression, | T: The Buddha: ⏎ “Whose violence is fully gone,
+snp3.4:35.2 | P: Cittaṁ yassa anāvilaṁ; | S: whose mind is unclouded, | T: whose mind is limpid,
+snp3.4:35.3 | P: Vippamutto ca kāmehi, | S: who is liberated from sensual pleasures, | T: whose sloth is dispelled ⏎ —fully released from sensuality—
+snp3.4:35.4 | P: Thinaṁ yassa panūditaṁ. | S: and who has cast aside dullness. | T: (none)
+
+## snp3.4:36.1–snp3.4:36.4 (snp)
+snp3.4:36.1 | P: Sīmantānaṁ vinetāraṁ, | S: One who has erased perimeters and limits, | T: one who has subdued boundaries,
+snp3.4:36.2 | P: Jātimaraṇakovidaṁ; | S: expert in birth and death, | T: a master of birth & death,
+snp3.4:36.3 | P: Muniṁ moneyyasampannaṁ, | S: a sage, blessed with sagacity. | T: a sage consummate in sagacity:
+snp3.4:36.4 | P: Tādisaṁ yaññamāgataṁ. | S: When such a person comes to the sacrifice, | T: When one like this has come to the sacrifice,
+
+## snp3.4:37.1–snp3.4:37.4 (snp)
+snp3.4:37.1 | P: Bhakuṭiṁ vinayitvāna, | S: get rid of your scowl! | T: then, subduing scorn,
+snp3.4:37.2 | P: Pañjalikā namassatha; | S: Honor them with cupped palms, | T: with hands palm-to-palm ⏎ over the heart, ⏎ do homage.
+snp3.4:37.3 | P: Pūjetha annapānena, | S: and venerate them with food and drink, | T: Worship him with food & drink.
+snp3.4:37.4 | P: Evaṁ ijjhanti dakkhiṇā”. | S: and in this way your religious donation will succeed.” | T: In this way the offerings will succeed.”
+
+## snp3.4:38.1–snp3.4:38.4 (snp)
+snp3.4:38.1 | P: “Buddho bhavaṁ arahati pūraḷāsaṁ, | S: “The Buddha is worthy of the sacrificial cake, | T: Sundarika: ⏎ “Master, the Awakened One,
+snp3.4:38.2 | P: Puññakhettamanuttaraṁ; | S: he is the supreme field of merit, | T: field of merit ⏎ unexcelled in all the world,
+snp3.4:38.3 | P: Āyāgo sabbalokassa, | S: recipient of gifts from the whole world; | T: recipient for all the world ⏎ deserves the sacrificial cake.
+snp3.4:38.4 | P: Bhoto dinnaṁ mahapphalan”ti. | S: what’s given to the worthy one is very fruitful.” | T: A gift given to you, master, ⏎ bears great fruit.
+CONTEXT snp3.4:39.1 | P: Atha kho sundarikabhāradvājo brāhmaṇo bhagavantaṁ etadavoca: | S: Then the brahmin Bhāradvāja of Sundarikā said to the Buddha, | T: Then the brahman Sundarika Bhāradvāja said to the Blessed One,
+CONTEXT snp3.4:39.2 | P: “abhikkantaṁ, bho gotama, abhikkantaṁ, bho gotama. | S: “Excellent, worthy Gotama! Excellent! | T: “Magnificent, Master Gotama! Magnificent!
+
+## snp3.5:4.1–snp3.5:4.7 (snp)
+CONTEXT snp3.5:3.4 | P: dhammena bhoge pariyesitvā dhammaladdhehi bhogehi dhammādhigatehi ekassapi dadāti …pe… satassapi dadāti, bhiyyopi dadāti, bahuṁ so puññaṁ pasavatī”ti. | S: and with that legitimate wealth gives to one person, or up to a hundred people or even more, brims with much merit.” | T: and, having searched for wealth righteously, then—with wealth righteously gained, righteously acquired—gives to one, to two, three, four, five, six, seven, eight, nine, ten, twenty, thirty, forty, fifty, one hundred, and to more, produces much merit.”
+CONTEXT snp3.5:3.5 | P: Atha kho māgho māṇavo bhagavantaṁ gāthāya ajjhabhāsi— | S: Then Māgha addressed the Buddha in verse: | T: Then the young brahman Māgha addressed the Blessed One in verse:
+snp3.5:4.1 | P: “Pucchāmahaṁ gotamaṁ vadaññuṁ, | S: “I ask the bountiful Gotama,” | T: “I ask the magnanimous Gotama,
+CONTEXT snp3.5:4.2 | P: (iti māgho māṇavo) | S: said Māgha, | T: (none)
+snp3.5:4.3 | P: Kāsāyavāsiṁ agahaṁ carantaṁ; | S: “wearing an ochre robe, wandering homeless. | T: wearing ochre robes, wandering without home:
+snp3.5:4.4 | P: Yo yācayogo dānapati gahaṭṭho, | S: Suppose a lay donor who is committed to charity | T: When a householder responsive to requests, ⏎ a master of giving,
+snp3.5:4.5 | P: Puññatthiko yajati puññapekkho; | S: makes a sacrifice seeking merit, looking for merit, | T: makes a sacrifice in hopes of merit, ⏎ looking for merit,
+snp3.5:4.6 | P: Dadaṁ paresaṁ idha annapānaṁ, | S: giving food and drink to others here: | T: giving food & drink to others here,
+snp3.5:4.7 | P: Kathaṁ hutaṁ yajamānassa sujjhe”. | S: how is their offering purified?” | T: how is the offering purified ⏎ for the one making the sacrifice?”
+CONTEXT snp3.5:5.2 | P: (māghāti bhagavā) | S: replied the Buddha, | T: (none)
+
+## snp3.5:5.1–snp3.5:5.5 (snp)
+snp3.5:5.1 | P: “Yo yācayogo dānapati gahaṭṭho, | S: “Suppose a lay donor who is committed to charity,” | T: The Buddha: ⏎ “When a householder responsive to requests, ⏎ a master of giving,
+CONTEXT snp3.5:5.2 | P: (māghāti bhagavā) | S: replied the Buddha, | T: (none)
+snp3.5:5.3 | P: Puññatthiko yajati puññapekkho; | S: “makes a sacrifice seeking merit, looking for merit, | T: makes a sacrifice in hopes of merit, ⏎ looking for merit,
+snp3.5:5.4 | P: Dadaṁ paresaṁ idha annapānaṁ, | S: giving food and drink to others here: | T: giving food & drink to others here:
+snp3.5:5.5 | P: Ārādhaye dakkhiṇeyyebhi tādi”. | S: such a one would succeed due to those who are worthy of donations.” | T: Such a person achieves his aim ⏎ in terms of the recipient.”
+CONTEXT snp3.5:6.2 | P: (iti māgho māṇavo) | S: said Māgha, | T: (none)
+
+## snp3.5:6.1–snp3.5:6.5 (snp)
+snp3.5:6.1 | P: “Yo yācayogo dānapati gahaṭṭho, | S: “Suppose a lay donor who is committed to charity,” | T: Māgha: ⏎ “When a householder responsive to requests, ⏎ a master of giving,
+CONTEXT snp3.5:6.2 | P: (iti māgho māṇavo) | S: said Māgha, | T: (none)
+snp3.5:6.3 | P: Puññatthiko yajati puññapekkho; | S: “makes a sacrifice seeking merit, looking for merit, | T: makes a sacrifice in hopes of merit, ⏎ looking for merit,
+snp3.5:6.4 | P: Dadaṁ paresaṁ idha annapānaṁ, | S: giving food and drink to others here: | T: giving food & drink to others here:
+snp3.5:6.5 | P: Akkhāhi me bhagavā dakkhiṇeyye”. | S: explain to me who is worthy of donations.” | T: Point out to me the recipient.”
+
+## snp3.5:7.1–snp3.5:7.4 (snp)
+snp3.5:7.1 | P: “Ye ve asattā vicaranti loke, | S: “Those who wander the world unattached, | T: The Buddha: ⏎ “Those who, unadhering, ⏎ wander in the world,
+snp3.5:7.2 | P: Akiñcanā kevalino yatattā; | S: consummate, self-controlled, owning nothing: | T: having nothing, ⏎ fully accomplished, their minds restrained:
+snp3.5:7.3 | P: Kālena tesu habyaṁ pavecche, | S: that is where a brahmin seeking merit | T: To them, at the right time, ⏎ you should bestow an offering,
+snp3.5:7.4 | P: Yo brāhmaṇo puññapekkho yajetha. | S: should bestow a timely oblation as sacrifice. | T: to them a brahman aiming at merit ⏎ should sacrifice.
+
+## snp3.5:8.1–snp3.5:8.4 (snp)
+snp3.5:8.1 | P: Ye sabbasaṁyojanabandhanacchidā, | S: Those who have cut off all fetters and bonds, | T: Those who have cut all fetters & bonds,
+snp3.5:8.2 | P: Dantā vimuttā anīghā nirāsā; | S: tamed, liberated, untroubled, with no need for hope: | T: tamed, released, with ⏎ no afflictions, ⏎ no desires:
+snp3.5:8.3 | P: Kālena tesu habyaṁ pavecche, | S: that is where a brahmin seeking merit | T: To them, at the right time, ⏎ you should bestow an offering,
+snp3.5:8.4 | P: Yo brāhmaṇo puññapekkho yajetha. | S: should bestow a timely oblation as sacrifice. | T: to them a brahman aiming at merit ⏎ should sacrifice.
+
+## snp3.5:9.1–snp3.5:9.4 (snp)
+snp3.5:9.1 | P: Ye sabbasaṁyojanavippamuttā, | S: Those who are released from all fetters, | T: Those released from all fetters & bonds,
+snp3.5:9.2 | P: Dantā vimuttā anīghā nirāsā; | S: tamed, liberated, untroubled, with no need for hope: | T: tamed, released, with ⏎ no afflictions, ⏎ no desires:
+snp3.5:9.3 | P: Kālena tesu habyaṁ pavecche, | S: that is where a brahmin seeking merit | T: To them,
+snp3.5:9.4 | P: Yo brāhmaṇo puññapekkho yajetha. | S: should bestow a timely oblation as sacrifice. | T: at the right time, ⏎ you should bestow an offering.
+
+## snp3.5:10.1–snp3.5:10.4 (snp)
+snp3.5:10.1 | P: Rāgañca dosañca pahāya mohaṁ, | S: Having given up greed, hate, and delusion, | T: Having abandoned ⏎ passion, aversion, & delusion,
+snp3.5:10.2 | P: Khīṇāsavā vūsitabrahmacariyā; | S: with defilements ended, the spiritual journey completed: | T: their holy life fulfilled, ⏎ their effluents ended:
+snp3.5:10.3 | P: Kālena tesu habyaṁ pavecche, | S: that is where a brahmin seeking merit | T: To them,
+snp3.5:10.4 | P: Yo brāhmaṇo puññapekkho yajetha. | S: should bestow a timely oblation as sacrifice. | T: at the right time, ⏎ you should bestow an offering.
+
+## snp3.5:11.1–snp3.5:11.4 (snp)
+snp3.5:11.1 | P: Yesu na māyā vasati na māno, | S: Those in whom dwells no deceit or conceit, | T: Those in whom no deceptiveness dwells, ⏎ no conceit,
+snp3.5:11.2 | P: Khīṇāsavā vūsitabrahmacariyā; | S: with defilements ended, the spiritual journey completed: | T: their holy life fulfilled, ⏎ their effluents ended:
+snp3.5:11.3 | P: Kālena tesu habyaṁ pavecche, | S: that is where a brahmin seeking merit | T: To them,
+snp3.5:11.4 | P: Yo brāhmaṇo puññapekkho yajetha. | S: should bestow a timely oblation as sacrifice. | T: at the right time, ⏎ you should bestow an offering.
+
+## snp3.5:12.1–snp3.5:12.4 (snp)
+snp3.5:12.1 | P: Ye vītalobhā amamā nirāsā, | S: Those rid of greed, unselfish, with no need for hope, | T: Those devoid of greed, ⏎ unpossessive, undesiring,
+snp3.5:12.2 | P: Khīṇāsavā vūsitabrahmacariyā; | S: with defilements ended, the spiritual journey completed: | T: their holy life fulfilled, ⏎ their effluents ended:
+snp3.5:12.3 | P: Kālena tesu habyaṁ pavecche, | S: that is where a brahmin seeking merit | T: To them,
+snp3.5:12.4 | P: Yo brāhmaṇo puññapekkho yajetha. | S: should bestow a timely oblation as sacrifice. | T: at the right time, ⏎ you should bestow an offering.
+
+## snp3.5:13.1–snp3.5:13.4 (snp)
+snp3.5:13.1 | P: Ye ve na taṇhāsu upātipannā, | S: Those not fallen prey to cravings, | T: Those who aren’t prey to cravings,
+snp3.5:13.2 | P: Vitareyya oghaṁ amamā caranti; | S: who, having crossed the flood, live unselfishly: | T: who wander without possessiveness, ⏎ having crossed over the flood:
+snp3.5:13.3 | P: Kālena tesu habyaṁ pavecche, | S: that is where a brahmin seeking merit | T: To them,
+snp3.5:13.4 | P: Yo brāhmaṇo puññapekkho yajetha. | S: should bestow a timely oblation as sacrifice. | T: at the right time, ⏎ you should bestow an offering.
+
+## snp3.5:14.1–snp3.5:14.4 (snp)
+snp3.5:14.1 | P: Yesaṁ taṇhā natthi kuhiñci loke, | S: Those with no craving at all in the world | T: (none)
+snp3.5:14.2 | P: Bhavābhavāya idha vā huraṁ vā; | S: for any state of existence in this life or the next: | T: (none)
+snp3.5:14.3 | P: Kālena tesu habyaṁ pavecche, | S: that is where a brahmin seeking merit | T: (none)
+snp3.5:14.4 | P: Yo brāhmaṇo puññapekkho yajetha. | S: should bestow a timely oblation as sacrifice. | T: (none)
+
+## snp3.5:15.1–snp3.5:15.4 (snp)
+snp3.5:15.1 | P: Ye kāme hitvā agahā caranti, | S: Those who have left sensuality behind, wandering homeless, | T: Those who, having abandoned sensuality, ⏎ wander without home,
+snp3.5:15.2 | P: Susaññatattā tasaraṁva ujjuṁ; | S: self-controlled, straight as a shuttle: | T: their minds well-restrained, ⏎ straight as a shuttle:
+snp3.5:15.3 | P: Kālena tesu habyaṁ pavecche, | S: that is where a brahmin seeking merit | T: To them,
+snp3.5:15.4 | P: Yo brāhmaṇo puññapekkho yajetha. | S: should bestow a timely oblation as sacrifice. | T: at the right time, ⏎ you should bestow an offering.
+
+## snp3.5:16.1–snp3.5:16.4 (snp)
+snp3.5:16.1 | P: Ye vītarāgā susamāhitindriyā, | S: Those freed of greed, with senses stilled, | T: Those devoid of passion, ⏎ their faculties well-centered,
+snp3.5:16.2 | P: Candova rāhuggahaṇā pamuttā; | S: like the moon released from the eclipse: | T: released like the moon ⏎ from the grasp of an eclipse:
+snp3.5:16.3 | P: Kālena tesu habyaṁ pavecche, | S: that is where a brahmin seeking merit | T: To them,
+snp3.5:16.4 | P: Yo brāhmaṇo puññapekkho yajetha. | S: should bestow a timely oblation as sacrifice. | T: at the right time, ⏎ you should bestow an offering.
+
+## snp3.5:17.1–snp3.5:17.4 (snp)
+snp3.5:17.1 | P: Samitāvino vītarāgā akopā, | S: Those assuaged ones free of greed and anger, | T: Having calmed themselves, ⏎ those devoid of passion, unprovoked,
+snp3.5:17.2 | P: Yesaṁ gatī natthidha vippahāya; | S: for whom there are no destinies, being rid of them in this life: | T: who have no (future) destinations, ⏎ having abandoned them here:
+snp3.5:17.3 | P: Kālena tesu habyaṁ pavecche, | S: that is where a brahmin seeking merit | T: To them,
+snp3.5:17.4 | P: Yo brāhmaṇo puññapekkho yajetha. | S: should bestow a timely oblation as sacrifice. | T: at the right time, ⏎ you should bestow an offering.
+
+## snp3.5:18.1–snp3.5:18.4 (snp)
+snp3.5:18.1 | P: Jahitvā jātimaraṇaṁ asesaṁ, | S: They’ve given up rebirth and death completely, | T: Having abandoned birth & death ⏎ without trace,
+snp3.5:18.2 | P: Kathaṅkathiṁ sabbamupātivattā; | S: and have gone beyond all indecision: | T: they have escaped all perplexity:
+snp3.5:18.3 | P: Kālena tesu habyaṁ pavecche, | S: that is where a brahmin seeking merit | T: To them,
+snp3.5:18.4 | P: Yo brāhmaṇo puññapekkho yajetha. | S: should bestow a timely oblation as sacrifice. | T: at the right time, ⏎ you should bestow an offering.
+
+## snp3.5:19.1–snp3.5:19.4 (snp)
+snp3.5:19.1 | P: Ye attadīpā vicaranti loke, | S: Those who live as their own island, | T: They who, with themselves as refuge, ⏎ wander in the world,
+snp3.5:19.2 | P: Akiñcanā sabbadhi vippamuttā; | S: everywhere free, owning nothing: | T: having nothing, everywhere released:
+snp3.5:19.3 | P: Kālena tesu habyaṁ pavecche, | S: that is where a brahmin seeking merit | T: To them,
+snp3.5:19.4 | P: Yo brāhmaṇo puññapekkho yajetha. | S: should bestow a timely oblation as sacrifice. | T: at the right time, ⏎ you should bestow an offering.
+
+## snp3.5:20.1–snp3.5:20.4 (snp)
+snp3.5:20.1 | P: Ye hettha jānanti yathā tathā idaṁ, | S: Those here who know this to be true: | T: They who know here, as it really is—
+snp3.5:20.2 | P: Ayamantimā natthi punabbhavoti; | S: ‘This is my last life, there are no future lives’: | T: ‘This is the last birth, ⏎ there is no further becoming’:
+snp3.5:20.3 | P: Kālena tesu habyaṁ pavecche, | S: that is where a brahmin seeking merit | T: To them,
+snp3.5:20.4 | P: Yo brāhmaṇo puññapekkho yajetha. | S: should bestow a timely oblation as sacrifice. | T: at the right time, ⏎ you should bestow an offering.
+
+## snp3.5:21.1–snp3.5:21.4 (snp)
+snp3.5:21.1 | P: Yo vedagū jhānarato satīmā, | S: A knowledge master, loving absorption, mindful, | T: An attainer-of-knowledge, ⏎ delighting in jhāna, mindful,
+snp3.5:21.2 | P: Sambodhipatto saraṇaṁ bahūnaṁ; | S: who has reached awakening and is a refuge for many: | T: attained to self-awakening, ⏎ the refuge of many:
+snp3.5:21.3 | P: Kālena tamhi habyaṁ pavecche, | S: that is where a brahmin seeking merit | T: To him, at the right time, ⏎ you should bestow an offering,
+snp3.5:21.4 | P: Yo brāhmaṇo puññapekkho yajetha”. | S: should bestow a timely oblation as sacrifice.” | T: to him a brahman aiming at merit ⏎ should sacrifice.”
+CONTEXT snp3.5:22.2 | P: (iti māgho māṇavo) | S: said Māgha, | T: (none)
+
+## snp3.5:22.1–snp3.5:22.5 (snp)
+snp3.5:22.1 | P: “Addhā amoghā mama pucchanā ahu, | S: “Clearly my questions were not in vain!” | T: Māgha: ⏎ “Yes, my question was not in vain.
+CONTEXT snp3.5:22.2 | P: (iti māgho māṇavo) | S: said Māgha, | T: (none)
+snp3.5:22.3 | P: Akkhāsi me bhagavā dakkhiṇeyye; | S: “The Buddha has explained to me who is worthy of donations. | T: You, Blessed One, have pointed out the recipient.
+snp3.5:22.4 | P: Tvañhettha jānāsi yathā tathā idaṁ, | S: You are the one here who knows this to be true, | T: You know this here, as it really is,
+snp3.5:22.5 | P: Tathā hi te vidito esa dhammo. | S: for truly you understand this matter. | T: because this Dhamma has been experienced by you.
+
+## snp3.5:23.1–snp3.5:23.4 (snp)
+snp3.5:23.1 | P: Yo yācayogo dānapati gahaṭṭho, | S: Suppose a lay donor who is committed to charity | T: When a householder responsive to requests, ⏎ a master of giving,
+snp3.5:23.2 | P: Puññatthiko yajati puññapekkho; | S: makes a sacrifice seeking merit, looking for merit, | T: makes a sacrifice in hopes of merit, ⏎ looking for merit,
+snp3.5:23.3 | P: Dadaṁ paresaṁ idha annapānaṁ, | S: giving food and drink to others here: | T: giving food & drink to others here:
+snp3.5:23.4 | P: Akkhāhi me bhagavā yaññasampadaṁ”. | S: explain to me how to accomplish the sacrifice.” | T: Point out to me, Blessed One, ⏎ the consummation of the sacrifice.”
+CONTEXT snp3.5:24.2 | P: (māghāti bhagavā) | S: replied the Buddha, | T: Māgha, ⏎ said the Blessed One,
+
+## snp3.5:24.1–snp3.5:24.5 (snp)
+snp3.5:24.1 | P: “Yajassu yajamāno, | S: “Sacrifice, and while doing so,” | T: The Buddha: ⏎ “Sacrifice, and while sacrificing,
+CONTEXT snp3.5:24.2 | P: (māghāti bhagavā) | S: replied the Buddha, | T: Māgha, ⏎ said the Blessed One,
+snp3.5:24.3 | P: Sabbattha ca vippasādehi cittaṁ; | S: “be clear and confident in every way. | T: make your mind clear everywhere.
+snp3.5:24.4 | P: Ārammaṇaṁ yajamānassa yañño, | S: Sacrifice is the ground standing upon which | T: For one sacrificing, the sacrifice is the object, ⏎ the support. ⏎ Taking a stand there,
+snp3.5:24.5 | P: Ettha patiṭṭhāya jahāti dosaṁ. | S: the sacrificer sheds their flaws. | T: he abandons faults.
+
+## snp3.5:25.1–snp3.5:25.4 (snp) GATHERED; unequal counts require a reader
+snp3.5:25.1 | P: So vītarāgo pavineyya dosaṁ, | S: One free of greed, rid of anger, | T: He—devoid of passion, subduing aversion,
+snp3.5:25.2 | P: Mettaṁ cittaṁ bhāvayamappamāṇaṁ; | S: developing a heart of limitless love, | T: developing a mind of goodwill ⏎ immeasurable,
+snp3.5:25.3 | P: Rattindivaṁ satatamappamatto, | S: spreads that limitlessness in every direction, | T: day & night, continually heedful— ⏎ should pervade all the directions ⏎ immeasurably.”
+snp3.5:25.4 | P: Sabbā disā pharati appamaññaṁ”. | S: ever diligent day and night.” | T: (none)
+
+## snp3.5:26.1–snp3.5:26.6 (snp)
+snp3.5:26.1 | P: “Ko sujjhati muccati bajjhatī ca, | S: “Who is purified, freed, awake? | T: Māgha: ⏎ “Who is purified? Released? Bound?
+snp3.5:26.2 | P: Kenattanā gacchati brahmalokaṁ; | S: How can one go to the realm of divinity oneself? | T: By means of what mind does one go ⏎ to the Brahmā world?
+snp3.5:26.3 | P: Ajānato me muni brūhi puṭṭho, | S: I do not know, so please tell me when asked, | T: Say this, sage, when asked ⏎ by me who doesn’t know.
+snp3.5:26.4 | P: Bhagavā hi me sakkhi brahmajjadiṭṭho; | S: for the Buddha is the divinity I see in person today! | T: As the Blessed One is my witness, ⏎ I have seen Brahmā today,
+snp3.5:26.5 | P: Tuvañhi no brahmasamosi saccaṁ, | S: To us you are truly the equal of divinity. | T: for you are equal to Brahmā for us—it’s true!
+snp3.5:26.6 | P: Kathaṁ upapajjati brahmalokaṁ jutima”. | S: Brilliant One, how is one reborn in the realm of divinity?” | T: How, shining one, does one reappear ⏎ in the Brahmā world?”
+CONTEXT snp3.5:27.2 | P: (māghāti bhagavā) | S: replied the Buddha, | T: (none)
+
+## snp3.5:27.1–snp3.5:27.5 (snp)
+snp3.5:27.1 | P: “Yo yajati tividhaṁ yaññasampadaṁ, | S: “One who accomplishes the sacrifice with three modes,” | T: The Buddha: ⏎ “Whoever sacrifices ⏎ with the threefold sacrifice consummation,
+CONTEXT snp3.5:27.2 | P: (māghāti bhagavā) | S: replied the Buddha, | T: (none)
+snp3.5:27.3 | P: Ārādhaye dakkhiṇeyyebhi tādi; | S: “such a one would succeed due to those who are worthy of donations. | T: such a one would achieve his aim ⏎ in terms of the recipient.
+snp3.5:27.4 | P: Evaṁ yajitvā sammā yācayogo, | S: Sacrificing like this, one rightly committed to charity | T: Having thus sacrificed rightly, ⏎ one responsive to requests
+snp3.5:27.5 | P: Upapajjati brahmalokanti brūmī”ti. | S: is reborn in the realm of divinity, I say.” | T: reappears, I say, in the Brahmā world.”
+CONTEXT snp3.5:28.1 | P: Evaṁ vutte, māgho māṇavo bhagavantaṁ etadavoca: | S: When he had spoken, the student Māgha said to the Buddha, | T: When this was said, the young brahman Māgha said to the Blessed One:
+CONTEXT snp3.5:28.2 | P: “abhikkantaṁ, bho gotama …pe… | S: “Excellent, worthy Gotama! Excellent! … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear. I go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks.
+
+## snp3.6:8.1–snp3.6:8.5 (snp)
+CONTEXT snp3.6:7.3 | P: Sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdi. | S: When the greetings and polite conversation were over, he sat down to one side, | T: After an exchange of friendly greetings & courtesies, he sat to one side.
+CONTEXT snp3.6:7.4 | P: Ekamantaṁ nisinno kho sabhiyo paribbājako bhagavantaṁ gāthāya ajjhabhāsi— | S: and addressed the Buddha in verse: | T: As he was sitting there, he addressed the Blessed One in verse:
+snp3.6:8.1 | P: “Kaṅkhī vecikicchī āgamaṁ, | S: “I’ve come full of doubts and uncertainties,” | T: “Doubtful & uncertain, I have come
+CONTEXT snp3.6:8.2 | P: (iti sabhiyo) | S: said Sabhiya, | T: (none)
+snp3.6:8.3 | P: Pañhe pucchituṁ abhikaṅkhamāno; | S: “wishing to ask some questions. | T: desiring to ask questions.
+snp3.6:8.4 | P: Tesantakaro bhavāhi pañhe me puṭṭho, | S: Please solve them for me. | T: Put an end to them, ⏎ when asked them by me.
+snp3.6:8.5 | P: Anupubbaṁ anudhammaṁ byākarohi me”. | S: Answer my questions in turn, in accordance with the truth.” | T: Answer me one-by-one, ⏎ in line with the Dhamma.”
+CONTEXT snp3.6:9.2 | P: (iti bhagavā) | S: said the Buddha, | T: (none)
+
+## snp3.6:9.1–snp3.6:9.5 (snp)
+snp3.6:9.1 | P: “Dūrato āgatosi sabhiya, | S: “You have come from afar, Sabhiya,” | T: “Sabhiya,” said the Blessed One, ⏎ “you have come from afar,
+CONTEXT snp3.6:9.2 | P: (iti bhagavā) | S: said the Buddha, | T: (none)
+snp3.6:9.3 | P: Pañhe pucchituṁ abhikaṅkhamāno; | S: “wishing to ask some questions. | T: desiring to ask questions.
+snp3.6:9.4 | P: Tesantakaro bhavāmi pañhe te puṭṭho, | S: I shall solve them for you, | T: I will put an end to them, ⏎ when asked them by you.
+snp3.6:9.5 | P: Anupubbaṁ anudhammaṁ byākaromi te. | S: answering your questions in turn, in accordance with the truth. | T: I will answer you one-by-one, ⏎ in line with the Dhamma.”
+
+## snp3.6:10.1–snp3.6:10.4 (snp)
+snp3.6:10.1 | P: Puccha maṁ sabhiya pañhaṁ, | S: Ask me your question, Sabhiya, | T: (none)
+snp3.6:10.2 | P: Yaṁ kiñci manasicchasi; | S: whatever you want. | T: (none)
+snp3.6:10.3 | P: Tassa tasseva pañhassa, | S: I’ll solve each and every | T: (none)
+snp3.6:10.4 | P: Ahaṁ antaṁ karomi te”ti. | S: question you have.” | T: (none)
+CONTEXT snp3.6:11.1 | P: Atha kho sabhiyassa paribbājakassa etadahosi: | S: Then Sabhiya thought, | T: Then the thought occurred to Sabhiya the wanderer,
+CONTEXT snp3.6:11.2 | P: “acchariyaṁ vata bho, abbhutaṁ vata bho. | S: “Oh lord, how incredible, how amazing! | T: “Isn’t it amazing? Isn’t it astounding?—
+
+## snp3.6:12.1–snp3.6:12.5 (snp)
+CONTEXT snp3.6:11.3 | P: Yaṁ vatāhaṁ aññesu samaṇabrāhmaṇesu okāsakammamattampi nālatthaṁ taṁ me idaṁ samaṇena gotamena okāsakammaṁ katan”ti. | S: Where those other ascetics and brahmins didn’t even give me a chance, the Buddha has invited me.” | T: how even the leave, of which I didn’t receive even a little bit from other contemplatives & brahmans, has been granted to me by Gotama the contemplative.”
+CONTEXT snp3.6:11.4 | P: Attamano pamudito udaggo pītisomanassajāto bhagavantaṁ pañhaṁ apucchi— | S: Uplifted and elated, full of rapture and happiness, he asked this question. | T: Gratified, joyful, exultant, enraptured, & happy, he asked the Blessed One a question:
+snp3.6:12.1 | P: “Kiṁpattinamāhu bhikkhunaṁ, | S: “What must one attain to be called a mendicant?” | T: “Having attained what ⏎ is one said to be a monk?
+CONTEXT snp3.6:12.2 | P: (iti sabhiyo) | S: said Sabhiya, | T: (none)
+snp3.6:12.3 | P: Sorataṁ kena kathañca dantamāhu; | S: “How is one ‘gentle’, how said to be ‘tamed’? | T: In what way is one composed? ⏎ And how is one said to be tamed?
+snp3.6:12.4 | P: Buddhoti kathaṁ pavuccati, | S: How is one declared to be ‘awakened’? | T: How is one called ‘awakened’?
+snp3.6:12.5 | P: Puṭṭho me bhagavā byākarohi”. | S: May the Buddha please answer my question.” | T: Answer, Blessed One, when I’ve asked you.”
+CONTEXT snp3.6:13.2 | P: (sabhiyāti bhagavā) | S: said the Buddha to Sabhiya, | T: (none)
+
+## snp3.6:13.1–snp3.6:13.5 (snp) GATHERED; paragraph has speaker/context rows
+snp3.6:13.1 | P: “Pajjena katena attanā, | S: “When by the path they have walked themselves,” | T: The Buddha: ⏎ “Having gone to total unbinding, ⏎ having crossed over doubt, ⏎ by means of the path accomplished by himself,
+CONTEXT snp3.6:13.2 | P: (sabhiyāti bhagavā) | S: said the Buddha to Sabhiya, | T: (none)
+snp3.6:13.3 | P: Parinibbānagato vitiṇṇakaṅkho; | S: “they reach extinguishment, with doubt overcome; | T: (none)
+snp3.6:13.4 | P: Vibhavañca bhavañca vippahāya, | S: giving up desire for existence or nonexistence, | T: having abandoned becoming & non-becoming,
+snp3.6:13.5 | P: Vusitavā khīṇapunabbhavo sa bhikkhu. | S: their journey complete, their rebirths ended: that is a mendicant. | T: having fulfilled [the task], ⏎ further-becoming ended: ⏎ He is a monk.
+
+## snp3.6:14.1–snp3.6:14.4 (snp)
+snp3.6:14.1 | P: Sabbattha upekkhako satimā, | S: Equanimous toward everything, mindful, | T: Everywhere equanimous, mindful,
+snp3.6:14.2 | P: Na so hiṁsati kañci sabbaloke; | S: they don’t harm anyone in the world. | T: he harms no one in all the world.
+snp3.6:14.3 | P: Tiṇṇo samaṇo anāvilo, | S: An ascetic who has crossed over, unclouded, | T: A contemplative crossed over, limpid,
+snp3.6:14.4 | P: Ussadā yassa na santi sorato so. | S: who has no pretensions, is gentle. | T: he has no swellings: He is composed.
+
+## snp3.6:15.1–snp3.6:15.4 (snp)
+snp3.6:15.1 | P: Yassindriyāni bhāvitāni, | S: Their faculties have been developed | T: Whose faculties are developed,
+snp3.6:15.2 | P: Ajjhattaṁ bahiddhā ca sabbaloke; | S: inside and out in the whole world. | T: within & without, ⏎ with regard to all the world,
+snp3.6:15.3 | P: Nibbijjha imaṁ parañca lokaṁ, | S: Having pierced through this world and the next, | T: disenchanted with this world & the next,
+snp3.6:15.4 | P: Kālaṁ kaṅkhati bhāvito sa danto. | S: tamed, they await their time. | T: he awaits his time, developed: He’s tamed.
+
+## snp3.6:16.1–snp3.6:16.4 (snp) GATHERED; possible speaker requires a reader
+snp3.6:16.1 | P: Kappāni viceyya kevalāni, | S: They have examined the eons in their entirety, | T: Having evaluated all theories, ⏎ the wandering-on, ⏎ dying & reappearing,
+snp3.6:16.2 | P: Saṁsāraṁ dubhayaṁ cutūpapātaṁ; | S: and both sides of transmigration—passing away and rebirth. | T: (none)
+snp3.6:16.3 | P: Vigatarajamanaṅgaṇaṁ visuddhaṁ, | S: Rid of dust, unblemished, purified: | T: having done away with dust & blemish ⏎ —pure—
+snp3.6:16.4 | P: Pattaṁ jātikhayaṁ tamāhu buddhan”ti. | S: the one they call ‘awakened’ has attained the end of rebirth.” | T: he has attained the ending of birth: ⏎ He is called awakened.”
+CONTEXT snp3.6:17.1 | P: Atha kho sabhiyo paribbājako bhagavato bhāsitaṁ abhinanditvā anumoditvā attamano pamudito udaggo pītisomanassajāto bhagavantaṁ uttariṁ pañhaṁ apucchi— | S: And then, having approved and agreed with what the Buddha said, uplifted and elated, full of rapture and happiness, Sabhiya asked another question: | T: Then Sabhiya the wanderer—delighting in and approving of the Blessed One’s words—gratified, joyful, exultant, enraptured & happy, asked the Blessed One a further question:
+
+## snp3.6:18.1–snp3.6:18.5 (snp)
+CONTEXT snp3.6:17.1 | P: Atha kho sabhiyo paribbājako bhagavato bhāsitaṁ abhinanditvā anumoditvā attamano pamudito udaggo pītisomanassajāto bhagavantaṁ uttariṁ pañhaṁ apucchi— | S: And then, having approved and agreed with what the Buddha said, uplifted and elated, full of rapture and happiness, Sabhiya asked another question: | T: Then Sabhiya the wanderer—delighting in and approving of the Blessed One’s words—gratified, joyful, exultant, enraptured & happy, asked the Blessed One a further question:
+snp3.6:18.1 | P: “Kiṁpattinamāhu brāhmaṇaṁ, | S: “What must one attain to be called ‘brahmin’?” | T: “Having attained what ⏎ is one said to be a brahman?
+CONTEXT snp3.6:18.2 | P: (iti sabhiyo) | S: said Sabhiya. | T: (none)
+snp3.6:18.3 | P: Samaṇaṁ kena kathañca nhātakoti; | S: “Why is one an ‘ascetic’, and how a ‘bathed initiate’? | T: In what way is one a contemplative, ⏎ and how is one ‘washed’?
+snp3.6:18.4 | P: Nāgoti kathaṁ pavuccati, | S: How is one declared to be a ‘giant’? | T: How is one called a nāga?
+snp3.6:18.5 | P: Puṭṭho me bhagavā byākarohi”. | S: May the Buddha please answer my question.” | T: Answer, Blessed One, when I’ve asked you.”
+CONTEXT snp3.6:19.2 | P: (sabhiyāti bhagavā) | S: said the Buddha to Sabhiya, | T: (none)
+
+## snp3.6:19.1–snp3.6:19.5 (snp)
+snp3.6:19.1 | P: “Bāhitvā sabbapāpakāni, | S: “Having banished all bad things,” | T: The Buddha: ⏎ “Having banished all evils,
+CONTEXT snp3.6:19.2 | P: (sabhiyāti bhagavā) | S: said the Buddha to Sabhiya, | T: (none)
+snp3.6:19.3 | P: Vimalo sādhusamāhito ṭhitatto; | S: “immaculate, well-composed, steadfast, | T: well-centered, stainless, ⏎ firm in mind,
+snp3.6:19.4 | P: Saṁsāramaticca kevalī so, | S: consummate, they’ve left transmigration behind: | T: gone entirely beyond ⏎ the wandering-on,
+snp3.6:19.5 | P: Asito tādi pavuccate sa brahmā. | S: unattached, one such is called ‘brahmin’. | T: independent, Such: ⏎ He’s called a brahman.
+
+## snp3.6:20.1–snp3.6:20.4 (snp)
+snp3.6:20.1 | P: Samitāvi pahāya puññapāpaṁ, | S: An assuaged one who has given up good and evil, | T: Calmed, having abandoned ⏎ good & evil,
+snp3.6:20.2 | P: Virajo ñatvā imaṁ parañca lokaṁ; | S: stainless, understanding this world and the next, | T: dustless, having known ⏎ this world & the next,
+snp3.6:20.3 | P: Jātimaraṇaṁ upātivatto, | S: gone beyond rebirth and death: | T: gone beyond birth & death,
+snp3.6:20.4 | P: Samaṇo tādi pavuccate tathattā. | S: one such is rightly called ‘ascetic’. | T: he is truly called a contemplative— ⏎ Such.
+
+## snp3.6:21.1–snp3.6:21.4 (snp)
+snp3.6:21.1 | P: Ninhāya sabbapāpakāni, | S: Having washed off all bad things | T: Having washed off all evils
+snp3.6:21.2 | P: Ajjhattaṁ bahiddhā ca sabbaloke; | S: inside and out in the whole world, | T: within & without, in all the world,
+snp3.6:21.3 | P: Devamanussesu kappiyesu, | S: among gods and humans bound to creations, | T: with regard to the theories ⏎ of beings human & divine,
+snp3.6:21.4 | P: Kappaṁ neti tamāhu nhātakoti. | S: the one they call ‘washed’ does not return to creation. | T: he goes to no theory: ⏎ He’s said to be ‘washed.’
+
+## snp3.6:22.1–snp3.6:22.4 (snp)
+snp3.6:22.1 | P: Āguṁ na karoti kiñci loke, | S: They do nothing monstrous at all in the world, | T: He does no misdeed ⏎ at all in the world.
+snp3.6:22.2 | P: Sabbasaṁyoge visajja bandhanāni; | S: discarding all yokes and bonds, | T: Having escaped all fetters & bonds,
+snp3.6:22.3 | P: Sabbattha na sajjatī vimutto, | S: everywhere not stuck, freed: | T: freed, he’s everywhere un- ⏎ attached,
+snp3.6:22.4 | P: Nāgo tādi pavuccate tathattā”ti. | S: one such is rightly called ‘giant’.” | T: truly he’s called a nāga— ⏎ Such.”
+CONTEXT snp3.6:23.1 | P: Atha kho sabhiyo paribbājako …pe… bhagavantaṁ uttariṁ pañhaṁ apucchi— | S: And then Sabhiya asked another question: | T: Then Sabhiya the wanderer—delighting in and approving of the Blessed One’s words—gratified, joyful, exultant, enraptured, & happy, asked the Blessed One a further question:

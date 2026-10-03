@@ -1,0 +1,447 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## an4.90:6.1–an4.90:6.4 (an)
+CONTEXT an4.90:5.5 | P: Macalavaggo catuttho. | S: (none) | T: (none)
+CONTEXT an4.90:6.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an4.90:6.1 | P: Pāṇātipāto ca musā, | S: (none) | T: (none)
+an4.90:6.2 | P: avaṇṇakodhatamoṇatā; | S: (none) | T: (none)
+an4.90:6.3 | P: Putto saṁyojanañceva, | S: (none) | T: (none)
+an4.90:6.4 | P: diṭṭhi khandhena te dasāti. | S: (none) | T: (none)
+
+## an4.100:7.1–an4.100:7.4 (an)
+CONTEXT an4.100:6.6 | P: Asuravaggo pañcamo. | S: (none) | T: (none)
+CONTEXT an4.100:7.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an4.100:7.1 | P: Asuro tayo samādhī, | S: (none) | T: (none)
+an4.100:7.2 | P: chavālātena pañcamaṁ; | S: (none) | T: (none)
+an4.100:7.3 | P: Rāgo nisanti attahitaṁ, | S: (none) | T: (none)
+an4.100:7.4 | P: sikkhā potaliyena cāti. | S: (none) | T: (none)
+CONTEXT an4.100:7.5 | P: Dutiyo paṇṇāsako samatto. | S: (none) | T: (none)
+
+## an4.160:12.1–an4.160:12.4 (an)
+CONTEXT an4.160:11.7 | P: Indriyavaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT an4.160:12.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an4.160:12.1 | P: Indriyāni saddhā paññā, | S: (none) | T: (none)
+an4.160:12.2 | P: sati saṅkhānapañcamaṁ; | S: (none) | T: (none)
+an4.160:12.3 | P: Kappo rogo parihāni, | S: (none) | T: (none)
+an4.160:12.4 | P: bhikkhunī sugatena cāti. | S: (none) | T: (none)
+
+## an4.170:8.1–an4.170:8.4 (an)
+CONTEXT an4.170:7.3 | P: Paṭipadāvaggo dutiyo. | S: (none) | T: (none)
+CONTEXT an4.170:8.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an4.170:8.1 | P: Saṅkhittaṁ vitthārāsubhaṁ, | S: (none) | T: (none)
+an4.170:8.2 | P: Dve khamā ubhayena ca; | S: (none) | T: (none)
+an4.170:8.3 | P: Moggallāno sāriputto, | S: (none) | T: (none)
+an4.170:8.4 | P: Sasaṅkhāraṁ yuganaddhena cāti. | S: (none) | T: (none)
+
+## an4.200:19.1–an4.200:19.4 (an)
+CONTEXT an4.200:18.5 | P: Mahāvaggo pañcamo. | S: (none) | T: (none)
+CONTEXT an4.200:19.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an4.200:19.1 | P: Sotānugataṁ ṭhānaṁ, | S: (none) | T: (none)
+an4.200:19.2 | P: Bhaddiya sāmugiya vappa sāḷhā ca; | S: (none) | T: (none)
+an4.200:19.3 | P: Mallika attantāpo, | S: (none) | T: (none)
+an4.200:19.4 | P: Taṇhā pemena ca dasā teti. | S: (none) | T: (none)
+CONTEXT an4.200:19.5 | P: Catuttho mahāpaṇṇāsako samatto. | S: (none) | T: (none)
+
+## an5.20:2.1–an5.20:2.4 (an)
+CONTEXT an5.20:1.9 | P: Balavaggo dutiyo. | S: (none) | T: (none)
+CONTEXT an5.20:2.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an5.20:2.1 | P: Ananussutakūṭañca, | S: (none) | T: (none)
+an5.20:2.2 | P: saṅkhittaṁ vitthatena ca; | S: (none) | T: (none)
+an5.20:2.3 | P: Daṭṭhabbañca puna kūṭaṁ, | S: (none) | T: (none)
+an5.20:2.4 | P: cattāropi hitena cāti. | S: (none) | T: (none)
+
+## an5.30:5.1–an5.30:5.4 (an)
+CONTEXT an5.30:4.15 | P: Pañcaṅgikavaggo tatiyo. | S: (none) | T: (none)
+CONTEXT an5.30:5.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an5.30:5.1 | P: Dve agāravupakkilesā, | S: (none) | T: (none)
+an5.30:5.2 | P: Dussīlānuggahitena ca; | S: (none) | T: (none)
+an5.30:5.3 | P: Vimuttisamādhipañcaṅgikā, | S: (none) | T: (none)
+an5.30:5.4 | P: Caṅkamaṁ nāgitena cāti. | S: (none) | T: (none)
+
+## an5.31:9.1–an5.31:9.4 (an) GATHERED; equal counts: one line per row
+CONTEXT an5.31:8.1 | P: Idamavoca bhagavā. | S: That is what the Buddha said. | T: That is what the Blessed One said.
+CONTEXT an5.31:8.2 | P: Idaṁ vatvāna sugato athāparaṁ etadavoca satthā: | S: Then the Holy One, the Teacher, went on to say: | T: Having said it, the One Well-Gone, the Teacher, said further:
+an5.31:9.1 | P: “Yathāpi cando vimalo, | S: “The moon so immaculate, | T: Just as the moon, unblemished,
+an5.31:9.2 | P: gacchaṁ ākāsadhātuyā; | S: journeying across the dimension of space; | T: going through the property of space,
+an5.31:9.3 | P: Sabbe tārāgaṇe loke, | S: outshines with its radiance | T: outshines through brightness ⏎ all the constellations in the cosmos,
+an5.31:9.4 | P: ābhāya atirocati. | S: all the world’s stars. | T: (none)
+AUTO an5.31:9.1 starts: Just as the moon, unblemished,
+AUTO an5.31:9.2 starts: going through the property of space,
+AUTO an5.31:9.3 starts: outshines through brightness
+AUTO an5.31:9.4 starts: all the constellations in the cosmos,
+
+## an5.31:10.1–an5.31:10.4 (an)
+an5.31:10.1 | P: Tatheva sīlasampanno, | S: So too, a faithful individual, | T: in the same way, the person of conviction,
+an5.31:10.2 | P: saddho purisapuggalo; | S: perfect in ethics, | T: consummate in virtue,
+an5.31:10.3 | P: Sabbe maccharino loke, | S: outshines with their generosity | T: outshines through generosity
+an5.31:10.4 | P: cāgena atirocati. | S: all the world’s stingy people. | T: all misers in the world.
+
+## an5.31:11.1–an5.31:11.4 (an) GATHERED; unequal counts require a reader
+an5.31:11.1 | P: Yathāpi megho thanayaṁ, | S: The thundering rain cloud, | T: Just as a hundred-billowed, ⏎ lightning-garlanded, ⏎ thundering cloud,
+an5.31:11.2 | P: vijjumālī satakkaku; | S: its hundred peaks wreathed in lightning, | T: (none)
+an5.31:11.3 | P: Thalaṁ ninnañca pūreti, | S: pours down over the rich earth, | T: raining down on the wealth-bearing [earth], ⏎ fills the highlands and low,
+an5.31:11.4 | P: abhivassaṁ vasundharaṁ. | S: soaking the uplands and valleys. | T: (none)
+
+## an5.31:12.1–an5.31:12.4 (an) GATHERED; equal counts: one line per row
+an5.31:12.1 | P: Evaṁ dassanasampanno, | S: Even so, an astute person accomplished in vision, | T: just so does one consummate in vision,
+an5.31:12.2 | P: sammāsambuddhasāvako; | S: a disciple of the fully awakened Buddha, | T: a disciple of the rightly self-awakened one, ⏎ wise,
+an5.31:12.3 | P: Macchariṁ adhigaṇhāti, | S: surpasses a stingy person | T: excel the miser in five ways—
+an5.31:12.4 | P: pañcaṭhānehi paṇḍito. | S: in five respects: | T: (none)
+AUTO an5.31:12.1 starts: just so does one consummate in vision,
+AUTO an5.31:12.2 starts: a disciple of the rightly self-awakened one,
+AUTO an5.31:12.3 starts: wise,
+AUTO an5.31:12.4 starts: excel the miser in five ways—
+
+## an5.31:13.1–an5.31:13.4 (an)
+an5.31:13.1 | P: Āyunā yasasā ceva, | S: long life and fame, | T: in life-span, status,
+an5.31:13.2 | P: vaṇṇena ca sukhena ca; | S: beauty and happiness. | T: beauty, & pleasure—
+an5.31:13.3 | P: Sa ve bhogaparibyūḷho, | S: Lavished with riches, | T: and, having been strengthened by wealth,
+an5.31:13.4 | P: pecca sagge pamodatī”ti. | S: they depart to rejoice in heaven.” | T: after death, rejoices in heaven.
+CONTEXT an5.31:13.5 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## an5.34:8.1–an5.34:8.4 (an)
+CONTEXT an5.34:7.10 | P: “Evametaṁ, sīha, evametaṁ, sīha. | S: “That’s so true, Sīha! That’s so true! | T: “So it is, Sīha. So it is.
+CONTEXT an5.34:7.11 | P: Dāyako dānapati kāyassa bhedā paraṁ maraṇā sugatiṁ saggaṁ lokaṁ upapajjatīti. | S: When a giver’s body breaks up, after death, they’re reborn in a good place, a heavenly realm. | T: At the break-up of the body, after death, one who is generous, a master of giving, reappears in a good destination, a heavenly world.”
+an5.34:8.1 | P: Dadaṁ piyo hoti bhajanti naṁ bahū, | S: Giving, you’re loved and befriended by many people. | T: One who gives is dear. ⏎ People at large admire him.
+an5.34:8.2 | P: Kittiñca pappoti yaso ca vaḍḍhati; | S: You get a good reputation, and your fame grows. | T: He gains honor. His status grows.
+an5.34:8.3 | P: Amaṅkubhūto parisaṁ vigāhati, | S: A generous man enters an assembly | T: He enters an assembly unembarrassed.
+an5.34:8.4 | P: Visārado hoti naro amaccharī. | S: bold and self-assured. | T: He is confident—the unmiserly man.
+
+## an5.34:9.1–an5.34:9.4 (an)
+an5.34:9.1 | P: Tasmā hi dānāni dadanti paṇḍitā, | S: So an astute person, seeking happiness, would give gifts, | T: Therefore the wise give gifts. ⏎ Seeking bliss,
+an5.34:9.2 | P: Vineyya maccheramalaṁ sukhesino; | S: having driven out the stain of stinginess. | T: they would subdue the stain of miserliness.
+an5.34:9.3 | P: Te dīgharattaṁ tidive patiṭṭhitā, | S: They live long in the Third Heaven, | T: Established in the three-fold heavenly world, ⏎ they enjoy themselves long
+an5.34:9.4 | P: Devānaṁ sahabyagatā ramanti te. | S: enjoying the company of the gods. | T: in fellowship with the devas.
+
+## an5.34:10.1–an5.34:10.6 (an)
+an5.34:10.1 | P: Katāvakāsā katakusalā ito cutā, | S: Having taken the opportunity to do good, when they pass from here | T: Having made the opportunity for themselves, ⏎ having done what is skillful, ⏎ then when they fall from here
+an5.34:10.2 | P: Sayaṁpabhā anuvicaranti nandanaṁ; | S: they wander self-radiant in the Garden of Delight. | T: they fare on, self-radiant, in Nandana ⏎ [the garden of the devas].
+an5.34:10.3 | P: Te tattha nandanti ramanti modare, | S: There they delight, rejoice, and enjoy themselves, | T: There they delight, enjoy, are joyful,
+an5.34:10.4 | P: Samappitā kāmaguṇehi pañcahi; | S: provided with the five kinds of sensual stimulation. | T: replete with the five sensuality strands.
+an5.34:10.5 | P: Katvāna vākyaṁ asitassa tādino, | S: Having practiced the word of the unattached, the unaffected, | T: Having followed the words of the sage who is Such,
+an5.34:10.6 | P: Ramanti sagge sugatassa sāvakā”ti. | S: disciples of the Holy One rejoice in heaven.” | T: they enjoy themselves in heaven— ⏎ disciples of the One Well-Gone.
+CONTEXT an5.34:10.7 | P: Catutthaṁ. | S: (none) | T: (none)
+
+## an5.36:2.1–an5.36:2.4 (an)
+CONTEXT an5.36:1.7 | P: yāni tāni navasassāni navaphalāni tāni paṭhamaṁ sīlavantesu patiṭṭhāpeti. | S: Presenting the freshly harvested grains and fruits first to those who are ethical. | T: One sets the first fruits of field & orchard in front of those who are virtuous.
+CONTEXT an5.36:1.8 | P: Imāni kho, bhikkhave, pañca kāladānānīti. | S: These are the five timely gifts. | T: These are the five seasonable gifts.”
+an5.36:2.1 | P: Kāle dadanti sappaññā, | S: The wise give at the right time, | T: In the proper season they give— ⏎ those with discernment,
+an5.36:2.2 | P: vadaññū vītamaccharā; | S: being bountiful and rid of stinginess. | T: responsive, free from stinginess.
+an5.36:2.3 | P: Kālena dinnaṁ ariyesu, | S: A religious donation at the right time | T: Having been given in proper season,
+an5.36:2.4 | P: ujubhūtesu tādisu. | S: to the noble ones, upright and unaffected, | T: with hearts inspired by the noble ones
+
+## an5.36:3.1–an5.36:3.6 (an) GATHERED; equal counts: one line per row
+an5.36:3.1 | P: Vippasannamanā tassa, | S: given with a clear and confident mind, | T: —straightened, Such—
+an5.36:3.2 | P: vipulā hoti dakkhiṇā; | S: is indeed abundant. | T: their offering bears an abundance.
+an5.36:3.3 | P: Ye tattha anumodanti, | S: Those who rejoice at that, | T: Those who rejoice in that gift
+an5.36:3.4 | P: veyyāvaccaṁ karonti vā; | S: or do other services, | T: or give assistance,
+an5.36:3.5 | P: Na tena dakkhiṇā ūnā, | S: don’t miss out on the offering; | T: (none)
+an5.36:3.6 | P: tepi puññassa bhāgino. | S: they too have a share in the merit. | T: they, too, have a share of the merit, ⏎ and the offering isn’t depleted by that.
+AUTO an5.36:3.1 starts: —straightened, Such—
+AUTO an5.36:3.2 starts: their offering bears an abundance.
+AUTO an5.36:3.3 starts: Those who rejoice in that gift
+AUTO an5.36:3.4 starts: or give assistance,
+AUTO an5.36:3.5 starts: they, too, have a share of the merit,
+AUTO an5.36:3.6 starts: and the offering isn’t depleted by that.
+
+## an5.36:4.1–an5.36:4.4 (an) GATHERED; equal counts: one line per row
+an5.36:4.1 | P: Tasmā dade appaṭivānacitto, | S: So you should give without holding back, | T: So, with an unhesitant mind,
+an5.36:4.2 | P: Yattha dinnaṁ mahapphalaṁ; | S: where a gift is very fruitful. | T: one should give where the gift bears great fruit.
+an5.36:4.3 | P: Puññāni paralokasmiṁ, | S: The good deeds of sentient beings | T: Merit is what establishes ⏎ living beings in the next life.
+an5.36:4.4 | P: Patiṭṭhā honti pāṇinan”ti. | S: support them in the next world.” | T: (none)
+CONTEXT an5.36:4.5 | P: Chaṭṭhaṁ. | S: (none) | T: (none)
+AUTO an5.36:4.1 starts: So, with an unhesitant mind,
+AUTO an5.36:4.2 starts: one should give where the gift bears great
+AUTO an5.36:4.3 starts: Merit is what establishes
+AUTO an5.36:4.4 starts: living beings in the next life.
+
+## an5.37:2.1–an5.37:2.4 (an)
+CONTEXT an5.37:1.8 | P: paṭibhānaṁ datvā paṭibhānassa bhāgī hoti dibbassa vā mānusassa vā. | S: Giving eloquence, they are eloquent as a god or human. | T: Having given quick-wittedness, he/she has a share in quick-wittedness, either human or divine.
+CONTEXT an5.37:1.9 | P: Bhojanaṁ, bhikkhave, dadamāno dāyako paṭiggāhakānaṁ imāni pañca ṭhānāni detīti. | S: When a giver gives food, they give the recipients five things. | T: In giving a meal, the donor gives these five things to the recipient.”
+an5.37:2.1 | P: Āyudo balado dhīro, | S: Being attentive, one is a giver of life, strength, | T: The enlightened person giving life, strength,
+an5.37:2.2 | P: vaṇṇado paṭibhānado; | S: beauty, and eloquence. | T: beauty, quick-wittedness—
+an5.37:2.3 | P: Sukhassa dātā medhāvī, | S: An intelligent giver of happiness | T: the intelligent person, a giver of happiness—
+an5.37:2.4 | P: sukhaṁ so adhigacchati. | S: gains happiness in return. | T: attains happiness himself.
+
+## an5.37:3.1–an5.37:3.4 (an)
+an5.37:3.1 | P: Āyuṁ datvā balaṁ vaṇṇaṁ, | S: Giving life, strength, beauty, | T: Having given life, strength, beauty,
+an5.37:3.2 | P: sukhañca paṭibhānakaṁ; | S: happiness, and eloquence, | T: happiness, & quick-wittedness,
+an5.37:3.3 | P: Dīghāyu yasavā hoti, | S: they’re long-lived and famous | T: he has long life & status
+an5.37:3.4 | P: yattha yatthūpapajjatī”ti. | S: wherever they’re reborn.” | T: wherever he arises.
+CONTEXT an5.37:3.5 | P: Sattamaṁ. | S: (none) | T: (none)
+
+## an5.38:3.1–an5.38:3.4 (an)
+CONTEXT an5.38:2.1 | P: Seyyathāpi, bhikkhave, subhūmiyaṁ catumahāpathe mahānigrodho samantā pakkhīnaṁ paṭisaraṇaṁ hoti; | S: Suppose there was a great banyan tree at a level crossroads. It would become a refuge for birds from all around. | T: “Just as a large banyan tree, on level ground where four roads meet, is a haven for the birds all around,
+CONTEXT an5.38:2.2 | P: evamevaṁ kho, bhikkhave, saddho kulaputto bahuno janassa paṭisaraṇaṁ hoti bhikkhūnaṁ bhikkhunīnaṁ upāsakānaṁ upāsikānanti. | S: In the same way, a faithful gentleman becomes a refuge for many people—monks, nuns, laywomen, and laymen. | T: even so a lay person of conviction is a haven for many people: monks, nuns, male lay followers, & female lay followers.”
+an5.38:3.1 | P: Sākhāpattaphalūpeto, | S: With its branches, leaves, and fruit, | T: A massive tree ⏎ whose branches carry fruits & leaves,
+an5.38:3.2 | P: khandhimāva mahādumo; | S: a great tree with its strong trunk, | T: with trunks & roots
+an5.38:3.3 | P: Mūlavā phalasampanno, | S: firmly-rooted and fruit-bearing, | T: & an abundance of fruits:
+an5.38:3.4 | P: patiṭṭhā hoti pakkhinaṁ. | S: supports many birds. | T: There the birds find rest.
+
+## an5.38:4.1–an5.38:4.4 (an)
+an5.38:4.1 | P: Manorame āyatane, | S: It’s a lovely place, | T: In that delightful sphere
+an5.38:4.2 | P: sevanti naṁ vihaṅgamā; | S: frequented by the sky-soarers. | T: they make their home.
+an5.38:4.3 | P: Chāyaṁ chāyatthikā yanti, | S: Those that need shade go in the shade, | T: Those seeking shade ⏎ come to the shade,
+an5.38:4.4 | P: phalatthā phalabhojino. | S: those that need fruit enjoy the fruit. | T: those seeking fruit ⏎ find fruit to eat.
+
+## an5.38:5.1–an5.38:5.4 (an)
+an5.38:5.1 | P: Tatheva sīlasampannaṁ, | S: So too, a faithful individual | T: So with the person consummate
+an5.38:5.2 | P: saddhaṁ purisapuggalaṁ; | S: is perfect in ethics, | T: in virtue & conviction,
+an5.38:5.3 | P: Nivātavuttiṁ atthaddhaṁ, | S: placid in manner and amenable, | T: humble, sensitive,
+an5.38:5.4 | P: sorataṁ sakhilaṁ muduṁ. | S: gentle, courteous, and tender. | T: gentle, ⏎ delightful, & mild:
+
+## an5.38:6.1–an5.38:6.4 (an) GATHERED; unequal counts require a reader
+an5.38:6.1 | P: Vītarāgā vītadosā, | S: Those free of greed, freed of hate, | T: To him come those without effluent— ⏎ free from passion, ⏎ free from aversion,
+an5.38:6.2 | P: vītamohā anāsavā; | S: free of delusion, undefiled, | T: free from delusion—
+an5.38:6.3 | P: Puññakkhettāni lokasmiṁ, | S: fields of merit for the world, | T: the field of merit for the world.
+an5.38:6.4 | P: sevanti tādisaṁ naraṁ. | S: associate with such a person. | T: (none)
+
+## an5.38:7.1–an5.38:7.4 (an)
+an5.38:7.1 | P: Te tassa dhammaṁ desenti, | S: They teach them the Dhamma, | T: They teach him the Dhamma
+an5.38:7.2 | P: Sabbadukkhāpanūdanaṁ; | S: that casts aside all suffering. | T: that dispels all stress.
+an5.38:7.3 | P: Yaṁ so dhammaṁ idhaññāya, | S: Having understood this teaching, | T: And when he understands,
+an5.38:7.4 | P: Parinibbāti anāsavo”ti. | S: the undefiled one is fully extinguished.” | T: he is freed from effluents, ⏎ totally unbound.
+CONTEXT an5.38:7.5 | P: Aṭṭhamaṁ. | S: (none) | T: (none)
+
+## an5.41:7.1–an5.41:7.6 (an)
+CONTEXT an5.41:6.5 | P: ‘ye vata bhogānaṁ ādiyā te cāhaṁ ādiyāmi bhogā ca me abhivaḍḍhantī’ti. | S: ‘So, the riches I have obtained for these reasons are increasing.’ | T: ‘I have obtained the five benefits that can be obtained from wealth, and my wealth has increased,’
+CONTEXT an5.41:6.6 | P: Itissa hoti ubhayeneva avippaṭisāroti. | S: And so he has no regrets in both cases. | T: and he feels no remorse. So he feels no remorse in either case.”
+an5.41:7.1 | P: Bhuttā bhogā bhatā bhaccā, | S: ‘I’ve enjoyed my wealth, supporting those who depend on me; | T: ‘My wealth has been enjoyed, ⏎ my dependents supported,
+an5.41:7.2 | P: vitiṇṇā āpadāsu me; | S: I’ve overcome losses; | T: protected from calamities by me.
+an5.41:7.3 | P: Uddhaggā dakkhiṇā dinnā, | S: I’ve given uplifting religious donations; | T: I have given supreme offerings
+an5.41:7.4 | P: atho pañcabalīkatā; | S: and made the five spirit-offerings. | T: & performed the five oblations.
+an5.41:7.5 | P: Upaṭṭhitā sīlavanto, | S: I have looked after the ethical and | T: I have provided for the virtuous,
+an5.41:7.6 | P: saññatā brahmacārayo. | S: disciplined spiritual practitioners. | T: the restrained, ⏎ followers of the holy life.
+
+## an5.41:8.1–an5.41:8.4 (an) GATHERED; equal counts: one line per row
+an5.41:8.1 | P: Yadatthaṁ bhogaṁ iccheyya, | S: I’ve achieved the goal | T: For whatever aim a wise householder ⏎ would desire wealth, ⏎ that aim have I attained.
+an5.41:8.2 | P: paṇḍito gharamāvasaṁ; | S: for which an astute layperson | T: (none)
+an5.41:8.3 | P: So me attho anuppatto, | S: wishes to gain wealth. | T: (none)
+an5.41:8.4 | P: kataṁ ananutāpiyaṁ. | S: I don’t regret what I’ve done.’ | T: I have done what will not lead to future distress.’
+AUTO an5.41:8.1 starts: For whatever aim a wise householder
+AUTO an5.41:8.2 starts: would desire wealth,
+AUTO an5.41:8.3 starts: that aim have I attained.
+AUTO an5.41:8.4 starts: I have done what will not lead to
+
+## an5.41:9.1–an5.41:9.4 (an)
+an5.41:9.1 | P: Etaṁ anussaraṁ macco, | S: A mortal man who recollects this | T: When this is recollected by a mortal,
+an5.41:9.2 | P: ariyadhamme ṭhito naro; | S: stands firm in the teaching of the noble ones. | T: a person established ⏎ in the Dhamma of the noble ones,
+an5.41:9.3 | P: Idheva naṁ pasaṁsanti, | S: They’re praised in this life by the astute, | T: he is praised in this life
+an5.41:9.4 | P: pecca sagge pamodatī”ti. | S: and they depart to rejoice in heaven.” | T: and, after death, rejoices in heaven.
+CONTEXT an5.41:9.5 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## an5.43:9.1–an5.43:9.4 (an)
+CONTEXT an5.43:8.3 | P: Saggasaṁvattanikā hissa paṭipadā paṭipannā saggapaṭilābhāya saṁvattati. | S: For by practicing that way they gain heaven, | T: In so doing, he will attain rebirth in heaven.”
+CONTEXT an5.43:8.4 | P: So lābhī hoti saggānanti. | S: they are one who gains the heavens. | T: (none)
+an5.43:9.1 | P: Āyuṁ vaṇṇaṁ yasaṁ kittiṁ, | S: For one who desires lofty delights | T: Long life, beauty, status, honor,
+an5.43:9.2 | P: Saggaṁ uccākulīnataṁ; | S: again and again— | T: heaven, high birth:
+an5.43:9.3 | P: Ratiyo patthayānena, | S: long life, beauty, fame and reputation, | T: To those who delight ⏎ in aspiring for these things
+an5.43:9.4 | P: Uḷārā aparāparā. | S: heaven, and an eminent family— | T: in great measure, continuously,
+
+## an5.43:10.1–an5.43:10.4 (an) GATHERED; possible speaker requires a reader
+an5.43:10.1 | P: Appamādaṁ pasaṁsanti, | S: the astute praise diligence | T: the wise praise heedfulness
+an5.43:10.2 | P: puññakiriyāsu paṇḍitā; | S: in making merit. | T: in making merit.
+an5.43:10.3 | P: Appamatto ubho atthe, | S: Being diligent, an astute person | T: The wise person, heedful, ⏎ acquires a two-fold welfare:
+an5.43:10.4 | P: adhigaṇhāti paṇḍito. | S: secures both benefits: | T: (none)
+
+## an5.43:11.1–an5.43:11.4 (an)
+an5.43:11.1 | P: Diṭṭhe dhamme ca yo attho, | S: the benefit in this life, | T: welfare in this life &
+an5.43:11.2 | P: yo cattho samparāyiko; | S: and in lives to come. | T: welfare in the next.
+an5.43:11.3 | P: Atthābhisamayā dhīro, | S: An attentive one, comprehending the meaning, | T: By breaking through to his welfare
+an5.43:11.4 | P: paṇḍitoti pavuccatī”ti. | S: is said to be astute.” | T: he’s called enlightened, ⏎ wise.
+CONTEXT an5.43:11.5 | P: Tatiyaṁ. | S: (none) | T: (none)
+
+## an5.57:12.1–an5.57:12.4 (an) GATHERED; unequal counts require a reader
+CONTEXT an5.57:11.4 | P: So taṁ maggaṁ āsevati bhāveti bahulīkaroti. | S: They cultivate, develop, and make much of it. | T: He/she sticks with that path, develops it, cultivates it.
+CONTEXT an5.57:11.5 | P: Tassa taṁ maggaṁ āsevato bhāvayato bahulīkaroto saṁyojanāni sabbaso pahīyanti, anusayā byantīhontīti. | S: By doing so, they give up the fetters and eliminate the underlying tendencies. | T: As he/she sticks with that path, develops it, & cultivates it, the fetters are abandoned, the obsessions destroyed.”
+an5.57:12.1 | P: Byādhidhammā jarādhammā, | S: For others, sickness is natural, | T: “‘Subject to birth, subject to aging,
+an5.57:12.2 | P: atho maraṇadhammino; | S: and so are old age and death. | T: subject to death,
+an5.57:12.3 | P: Yathā dhammā tathā sattā, | S: Though this is how their nature is, | T: (none)
+an5.57:12.4 | P: jigucchanti puthujjanā. | S: ordinary people feel disgusted. | T: run-of-the-mill people ⏎ are repelled by those who suffer ⏎ from that to which they are subject.
+
+## an5.57:13.1–an5.57:13.4 (an)
+an5.57:13.1 | P: Ahañce taṁ jiguccheyyaṁ, | S: If I were to be disgusted | T: And if I were to be repelled
+an5.57:13.2 | P: evaṁ dhammesu pāṇisu; | S: with creatures whose nature is such, | T: by beings subject to these things,
+an5.57:13.3 | P: Na metaṁ patirūpassa, | S: it would not be appropriate for me, | T: it would not be fitting for me,
+an5.57:13.4 | P: mama evaṁ vihārino. | S: since my life is just the same. | T: living as they do.’
+
+## an5.57:14.1–an5.57:14.4 (an)
+an5.57:14.1 | P: Sohaṁ evaṁ viharanto, | S: Living in such a way, | T: As I maintained this attitude—
+an5.57:14.2 | P: ñatvā dhammaṁ nirūpadhiṁ; | S: I understood the truth without attachments. | T: knowing the Dhamma ⏎ without acquisitions—
+an5.57:14.3 | P: Ārogye yobbanasmiñca, | S: I mastered all vanities— | T: I overcame all intoxication
+an5.57:14.4 | P: jīvitasmiñca ye madā. | S: of health, of youth, | T: with health, youth,
+
+## an5.57:15.1–an5.57:15.4 (an)
+an5.57:15.1 | P: Sabbe made abhibhosmi, | S: and even of life— | T: & life
+an5.57:15.2 | P: Nekkhammaṁ daṭṭhu khemato; | S: seeing renunciation as sanctuary. | T: as one who sees ⏎ renunciation as rest.
+an5.57:15.3 | P: Tassa me ahu ussāho, | S: Zeal sprang up in me | T: For me, energy arose,
+an5.57:15.4 | P: Nibbānaṁ abhipassato. | S: as I looked to extinguishment. | T: unbinding was clearly seen.
+
+## an5.57:16.1–an5.57:16.4 (an) GATHERED; equal counts: one line per row
+an5.57:16.1 | P: Nāhaṁ bhabbo etarahi, | S: Now I’m unable | T: There’s now no way
+an5.57:16.2 | P: Kāmāni paṭisevituṁ; | S: to indulge in sensual pleasures; | T: I could partake of sensual pleasures.
+an5.57:16.3 | P: Anivatti bhavissāmi, | S: there’s no turning back, | T: (none)
+an5.57:16.4 | P: Brahmacariyaparāyaṇo”ti. | S: I’m committed to the spiritual life.” | T: Having followed the holy life, ⏎ I will not return.”
+CONTEXT an5.57:16.5 | P: Sattamaṁ. | S: (none) | T: (none)
+AUTO an5.57:16.1 starts: There’s now no way
+AUTO an5.57:16.2 starts: I could partake of sensual pleasures.
+AUTO an5.57:16.3 starts: Having followed the holy life,
+AUTO an5.57:16.4 starts: I will not return.”
+
+## an5.60:2.1–an5.60:2.4 (an)
+CONTEXT an5.60:1.6 | P: Nīvaraṇavaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT an5.60:2.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an5.60:2.1 | P: Āvaraṇaṁ rāsi aṅgāni, | S: (none) | T: (none)
+an5.60:2.2 | P: samayaṁ mātuputtikā; | S: (none) | T: (none)
+an5.60:2.3 | P: Upajjhā ṭhānā licchavi, | S: (none) | T: (none)
+an5.60:2.4 | P: kumārā aparā duveti. | S: (none) | T: (none)
+
+## an5.80:8.1–an5.80:8.4 (an)
+CONTEXT an5.80:7.5 | P: Yodhājīvavaggo tatiyo. | S: (none) | T: (none)
+CONTEXT an5.80:8.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an5.80:8.1 | P: Dve cetovimuttiphalā, | S: (none) | T: (none)
+an5.80:8.2 | P: dve ca dhammavihārino; | S: (none) | T: (none)
+an5.80:8.3 | P: Yodhājīvā ca dve vuttā, | S: (none) | T: (none)
+an5.80:8.4 | P: cattāro ca anāgatāti. | S: (none) | T: (none)
+
+## an5.110:2.1–an5.110:2.4 (an)
+CONTEXT an5.110:1.10 | P: Phāsuvihāravaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT an5.110:2.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an5.110:2.1 | P: Sārajjaṁ saṅkito coro, | S: (none) | T: (none)
+an5.110:2.2 | P: Sukhumālaṁ phāsu pañcamaṁ; | S: (none) | T: (none)
+an5.110:2.3 | P: Ānanda sīlāsekhā ca, | S: (none) | T: (none)
+an5.110:2.4 | P: Cātuddiso araññena cāti. | S: (none) | T: (none)
+
+## an5.130:3.1–an5.130:3.4 (an)
+CONTEXT an5.130:2.8 | P: Gilānavaggo tatiyo. | S: (none) | T: (none)
+CONTEXT an5.130:3.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an5.130:3.1 | P: Gilāno satisūpaṭṭhi, | S: (none) | T: (none)
+an5.130:3.2 | P: Dve upaṭṭhākā duvāyusā; | S: (none) | T: (none)
+an5.130:3.3 | P: Vapakāsasamaṇasukhā, | S: (none) | T: (none)
+an5.130:3.4 | P: Parikuppaṁ byasanena cāti. | S: (none) | T: (none)
+
+## an5.140:15.1–an5.140:15.4 (an)
+CONTEXT an5.140:14.3 | P: Rājavaggo catuttho. | S: (none) | T: (none)
+CONTEXT an5.140:15.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an5.140:15.1 | P: Cakkānuvattanā rājā, | S: (none) | T: (none)
+an5.140:15.2 | P: Yassaṁdisaṁ dve ceva patthanā; | S: (none) | T: (none)
+an5.140:15.3 | P: Appaṁsupati bhattādo, | S: (none) | T: (none)
+an5.140:15.4 | P: Akkhamo ca sotena cāti. | S: (none) | T: (none)
+
+## an5.170:5.1–an5.170:5.4 (an)
+CONTEXT an5.170:4.7 | P: Āghātavaggo dutiyo. | S: (none) | T: (none)
+CONTEXT an5.170:5.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an5.170:5.1 | P: Dve āghātavinayā, | S: (none) | T: (none)
+an5.170:5.2 | P: sākacchā sājīvato pañhaṁ; | S: (none) | T: (none)
+an5.170:5.3 | P: Pucchā nirodho codanā, | S: (none) | T: (none)
+an5.170:5.4 | P: sīlaṁ nisanti bhaddajīti. | S: (none) | T: (none)
+
+## an5.179:8.1–an5.179:8.4 (an) GATHERED; equal counts: one line per row
+CONTEXT an5.179:7.1 | P: Yaṁ kañci, sāriputta, jāneyyātha gihiṁ odātavasanaṁ—imesu pañcasu sikkhāpadesu saṁvutakammantaṁ, imesañca catunnaṁ ābhicetasikānaṁ diṭṭhadhammasukhavihārānaṁ nikāmalābhiṁ akicchalābhiṁ akasiralābhiṁ, so ākaṅkhamāno attanāva attānaṁ byākareyya: | S: You should know this, Sāriputta, about those white-clothed laypeople whose actions are restrained in the five precepts, and who get four blissful meditations in this life belonging to the higher mind when they want, without trouble or difficulty. They may, if they wish, declare of themselves: | T: “Sāriputta, when you know of a householder clothed in white, that he is restrained in terms of the five training rules and that he obtains at will, without difficulty, without hardship, four pleasant mental abidings in the here & now, then if he wants he may state about himself:
+CONTEXT an5.179:7.2 | P: ‘khīṇanirayomhi khīṇatiracchānayoni khīṇapettivisayo khīṇāpāyaduggativinipāto, sotāpannohamasmi avinipātadhammo niyato sambodhiparāyaṇo’ti. | S: ‘I’ve finished with rebirth in hell, the animal realm, and the ghost realm. I’ve finished with all places of loss, bad places, the underworld. I am a stream-enterer! I’m not liable to be reborn in the underworld, and am assured, destined for awakening.’ | T: ‘Hell is ended for me; animal wombs are ended; the state of the hungry ghosts is ended; planes of deprivation, the bad destinations, the lower realms are ended! I am a stream-winner, never again destined for the lower realms, certain, headed for self-awakening!’
+an5.179:8.1 | P: Nirayesu bhayaṁ disvā, | S: Seeing the peril in the hells, | T: “Seeing the danger in hells,
+an5.179:8.2 | P: pāpāni parivajjaye; | S: you should shun bad deeds. | T: the wise would shun evils, ⏎ would shun them,
+an5.179:8.3 | P: Ariyadhammaṁ samādāya, | S: Taking up the teaching of the noble ones, | T: taking on the noble Dhamma.
+an5.179:8.4 | P: paṇḍito parivajjaye. | S: an astute person should shun them. | T: (none)
+AUTO an5.179:8.1 starts: “Seeing the danger in hells,
+AUTO an5.179:8.2 starts: the wise would shun evils,
+AUTO an5.179:8.3 starts: would shun them,
+AUTO an5.179:8.4 starts: taking on the noble Dhamma.
+
+## an5.179:9.1–an5.179:9.4 (an)
+an5.179:9.1 | P: Na hiṁse pāṇabhūtāni, | S: You shouldn’t harm living beings, | T: You shouldn’t kill living beings
+an5.179:9.2 | P: vijjamāne parakkame; | S: so long as strength is found. | T: existing, striving;
+an5.179:9.3 | P: Musā ca na bhaṇe jānaṁ, | S: Nor should you knowingly speak falsehood, | T: (none)
+an5.179:9.4 | P: adinnaṁ na parāmase. | S: or take what is not given. | T: shouldn’t grasp what isn’t given.
+
+## an5.179:10.1–an5.179:10.4 (an)
+an5.179:10.1 | P: Sehi dārehi santuṭṭho, | S: Content with your own partners, | T: Content with your own wife,
+an5.179:10.2 | P: paradārañca ārame; | S: you should stay away from the partners of others. | T: don’t delight in the wives of others.
+an5.179:10.3 | P: Merayaṁ vāruṇiṁ jantu, | S: A personage shouldn’t drink wine or toddy, | T: You shouldn’t drink drinks, ⏎ distilled, fermented,
+an5.179:10.4 | P: na pive cittamohaniṁ. | S: as they confuse the mind. | T: that confuse the mind.
+
+## an5.179:11.1–an5.179:11.4 (an)
+an5.179:11.1 | P: Anussareyya sambuddhaṁ, | S: You should recollect the Buddha, | T: Recollect ⏎ the self-awakened one.
+an5.179:11.2 | P: dhammañcānuvitakkaye; | S: and reflect on the teaching. | T: Think often ⏎ of the Dhamma.
+an5.179:11.3 | P: Abyāpajjaṁ hitaṁ cittaṁ, | S: You should develop a harmless mind of welfare, | T: Develop a mind ⏎ useful, devoid of ill will,
+an5.179:11.4 | P: devalokāya bhāvaye. | S: which leads to the realms of gods. | T: for the sake of the heavenly world.
+
+## an5.179:12.1–an5.179:12.4 (an) GATHERED; unequal counts require a reader
+an5.179:12.1 | P: Upaṭṭhite deyyadhamme, | S: When suitable gifts to give are available | T: (none)
+an5.179:12.2 | P: puññatthassa jigīsato; | S: to someone who seeks and needs merit, | T: When hoping for merit,
+an5.179:12.3 | P: Santesu paṭhamaṁ dinnā, | S: a religious donation is abundant | T: (none)
+an5.179:12.4 | P: vipulā hoti dakkhiṇā. | S: if given first to the peaceful ones. | T: provide gifts first ⏎ to those peaceful ones, ideal, ⏎ to whom what is offered, given, ⏎ becomes abundant (in fruit).
+
+## an5.179:13.1–an5.179:13.4 (an)
+an5.179:13.1 | P: Santo have pavakkhāmi, | S: I will tell of the peaceful ones, | T: I will tell you of those peaceful ones,
+an5.179:13.2 | P: sāriputta suṇohi me; | S: Sāriputta, listen to me. | T: Sāriputta. ⏎ Listen to me.
+an5.179:13.3 | P: Iti kaṇhāsu setāsu, | S: Cows may be black or white, | T: In a herd of cattle, ⏎ whether black, white,
+an5.179:13.4 | P: rohiṇīsu harīsu vā. | S: red or tawny, | T: ruddy, brown,
+
+## an5.179:14.1–an5.179:14.4 (an)
+an5.179:14.1 | P: Kammāsāsu sarūpāsu, | S: mottled or uniform, | T: dappled, uniform,
+an5.179:14.2 | P: gosu pārevatāsu vā; | S: or pigeon-colored. | T: or pigeon gray:
+an5.179:14.3 | P: Yāsu kāsuci etāsu, | S: But when one is born among them, | T: If a bull is born—
+an5.179:14.4 | P: danto jāyati puṅgavo. | S: the bull that’s tamed— | T: tame,
+
+## an5.179:15.1–an5.179:15.4 (an)
+an5.179:15.1 | P: Dhorayho balasampanno, | S: a behemoth, powerful, | T: enduring, ⏎ consummate in strength,
+an5.179:15.2 | P: kalyāṇajavanikkamo; | S: well-paced in pulling forward— | T: & swift—
+an5.179:15.3 | P: Tameva bhāre yuñjanti, | S: they yoke the load just to him, | T: people yoke him to burdens,
+an5.179:15.4 | P: nāssa vaṇṇaṁ parikkhare. | S: regardless of his color. | T: regardless of his color.
+
+## an5.179:16.1–an5.179:16.4 (an)
+an5.179:16.1 | P: Evamevaṁ manussesu, | S: So it is for humans, | T: In the same way,
+an5.179:16.2 | P: yasmiṁ kismiñci jātiye; | S: wherever they may be born— | T: wherever one is born ⏎ among human beings—
+an5.179:16.3 | P: Khattiye brāhmaṇe vesse, | S: among aristocrats, brahmins, peasants, | T: noble warriors, brahmans, ⏎ merchants,
+an5.179:16.4 | P: sudde caṇḍālapukkuse. | S: menials, or corpse-workers and scavengers— | T: workers, ⏎ outcastes, or scavengers—
+
+## an5.179:17.1–an5.179:17.4 (an)
+an5.179:17.1 | P: Yāsu kāsuci etāsu, | S: but when one is born among them, | T: if one is
+an5.179:17.2 | P: danto jāyati subbato; | S: tamed, true to their vows. | T: tame, with good practices,
+an5.179:17.3 | P: Dhammaṭṭho sīlasampanno, | S: Firm in principle, accomplished in ethical conduct, | T: righteous, consummate in virtue,
+an5.179:17.4 | P: saccavādī hirīmano. | S: truthful, conscientious, | T: a speaker of truth, ⏎ with a sense of shame at heart,
+
+## an5.179:18.1–an5.179:18.4 (an)
+an5.179:18.1 | P: Pahīnajātimaraṇo, | S: they’ve given up birth and death, | T: one ⏎ who’s abandoned birth & death,
+an5.179:18.2 | P: brahmacariyassa kevalī; | S: and have completed the spiritual journey. | T: completed the holy life
+an5.179:18.3 | P: Pannabhāro visaṁyutto, | S: With burden put down, detached, | T: put down the burden,
+an5.179:18.4 | P: katakicco anāsavo. | S: they’ve completed the task and are free of defilements. | T: done the task ⏎ effluent-free,
+
+## an5.179:19.1–an5.179:19.4 (an)
+an5.179:19.1 | P: Pāragū sabbadhammānaṁ, | S: Gone beyond all things, | T: gone beyond all dhammas,
+an5.179:19.2 | P: anupādāya nibbuto; | S: they’re quenched by not grasping. | T: through lack of clinging unbound:
+an5.179:19.3 | P: Tasmiñca viraje khette, | S: In that flawless field, | T: Offerings to this spotless field
+an5.179:19.4 | P: vipulā hoti dakkhiṇā. | S: a religious donation is abundant. | T: bear an abundance of fruit.
+
+## an5.179:20.1–an5.179:20.4 (an)
+an5.179:20.1 | P: Bālā ca avijānantā, | S: Fools who don’t understand— | T: But fools, unknowing,
+an5.179:20.2 | P: dummedhā assutāvino; | S: unlearned simpletons— | T: dull, uninformed,
+an5.179:20.3 | P: Bahiddhā dadanti dānāni, | S: give their gifts to those outside, | T: give gifts outside
+an5.179:20.4 | P: na hi sante upāsare. | S: and don’t attend the peaceful ones. | T: and don’t come near the good.
+
+## an5.179:21.1–an5.179:21.4 (an)
+an5.179:21.1 | P: Ye ca sante upāsanti, | S: But those who do attend the peaceful ones— | T: While those who do come near the good
+an5.179:21.2 | P: sappaññe dhīrasammate; | S: wise, esteemed as attentive— | T: —regarded as enlightened, ⏎ discerning—
+an5.179:21.3 | P: Saddhā ca nesaṁ sugate, | S: and whose faith in the Holy One | T: whose conviction in the One Well-Gone
+an5.179:21.4 | P: mūlajātā patiṭṭhitā. | S: has roots planted deep, | T: has taken root, ⏎ is established:
+
+## an5.179:22.1–an5.179:22.4 (an)
+an5.179:22.1 | P: Devalokañca te yanti, | S: they go to the realm of the gods, | T: They go to the world of the devas
+an5.179:22.2 | P: kule vā idha jāyare; | S: or are born here in a good family. | T: or are reborn here in good family.
+an5.179:22.3 | P: Anupubbena nibbānaṁ, | S: Gradually those astute ones | T: Step by step
+an5.179:22.4 | P: adhigacchanti paṇḍitā”ti. | S: reach extinguishment.” | T: they reach ⏎ unbinding ⏎ : they ⏎ who are wise.”
+CONTEXT an5.179:22.5 | P: Navamaṁ. | S: (none) | T: (none)
+
+## an5.180:11.1–an5.180:11.4 (an)
+CONTEXT an5.180:10.6 | P: Upāsakavaggo tatiyo. | S: (none) | T: (none)
+CONTEXT an5.180:11.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an5.180:11.1 | P: Sārajjaṁ visārado nirayaṁ, | S: (none) | T: (none)
+an5.180:11.2 | P: Veraṁ caṇḍālapañcamaṁ; | S: (none) | T: (none)
+an5.180:11.3 | P: Pīti vaṇijjā rājāno, | S: (none) | T: (none)
+an5.180:11.4 | P: Gihī ceva gavesināti. | S: (none) | T: (none)

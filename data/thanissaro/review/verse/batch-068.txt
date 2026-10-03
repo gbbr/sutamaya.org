@@ -1,0 +1,390 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## ud5.8:6.1–ud5.8:6.4 (ud)
+CONTEXT ud5.8:4.5 | P: Ajja, bhante, devadatto saṅghaṁ bhindissati, uposathañca karissati saṅghakammāni cā”ti. | S: “Today, sir, Devadatta will split the Saṅgha. He will perform the sabbath and legal proceedings of the Saṅgha.” | T: Lord, today Devadatta will split the community. He will conduct the uposatha & community transactions [apart from the community].”
+CONTEXT ud5.8:5.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud5.8:6.1 | P: “Sukaraṁ sādhunā sādhu, | S: “It’s easy for the good to do good, | T: The good, for the good, is easy to do.
+ud5.8:6.2 | P: Sādhu pāpena dukkaraṁ; | S: but for the bad, doing good is hard. | T: The good, for the evil, is hard to do.
+ud5.8:6.3 | P: Pāpaṁ pāpena sukaraṁ, | S: For the bad, it’s easy to do bad, | T: Evil, for the evil, is easy to do.
+ud5.8:6.4 | P: Pāpamariyehi dukkaran”ti. | S: but for the noble ones, doing bad is hard.” | T: Evil, for the noble ones, is hard to do.
+CONTEXT ud5.8:6.5 | P: Aṭṭhamaṁ. | S: (none) | T: (none)
+
+## ud5.9:3.1–ud5.9:3.4 (ud)
+CONTEXT ud5.9:1.4 | P: Addasā kho bhagavā sambahule māṇavake avidūre sadhāyamānarūpe atikkante. | S: The Buddha saw them. | T: The Blessed One saw the large number of youths passing by as if jeering not far away.
+CONTEXT ud5.9:2.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud5.9:3.1 | P: “Parimuṭṭhā paṇḍitābhāsā, | S: “Dolts pretending to be astute, | T: False pundits, totally muddled,
+ud5.9:3.2 | P: vācāgocarabhāṇino; | S: they talk, their words out of bounds. | T: speaking in the range of mere words,
+ud5.9:3.3 | P: Yāvicchanti mukhāyāmaṁ, | S: They blab at will, their mouths agape, | T: babbling as much as they like:
+ud5.9:3.4 | P: yena nītā na taṁ vidū”ti. | S: and no one knows what leads them on.” | T: led on by what, ⏎ they don’t know.
+CONTEXT ud5.9:3.5 | P: Navamaṁ. | S: (none) | T: (none)
+
+## ud5.10:4.1–ud5.10:4.6 (ud)
+CONTEXT ud5.10:2.1 | P: Addasā kho bhagavā āyasmantaṁ cūḷapanthakaṁ avidūre nisinnaṁ pallaṅkaṁ ābhujitvā ujuṁ kāyaṁ paṇidhāya parimukhaṁ satiṁ upaṭṭhapetvā. | S: The Buddha saw him meditating there. | T: The Blessed One saw Ven. Cūḷa Panthaka sitting not far away, his legs crossed, his body held erect, with mindfulness established to the fore.
+CONTEXT ud5.10:3.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud5.10:4.1 | P: “Ṭhitena kāyena ṭhitena cetasā, | S: “Steady in body, steady in mind, | T: With steady body, ⏎ steady awareness,
+ud5.10:4.2 | P: Tiṭṭhaṁ nisinno uda vā sayāno; | S: standing, sitting or lying down: | T: –whether standing, sitting, or lying down–
+ud5.10:4.3 | P: Etaṁ satiṁ bhikkhu adhiṭṭhahāno, | S: a mendicant focusing on this mindfulness | T: a monk determined on mindfulness
+ud5.10:4.4 | P: Labhetha pubbāpariyaṁ visesaṁ; | S: gains an ever higher distinction. | T: gains one distinction ⏎ after another.
+ud5.10:4.5 | P: Laddhāna pubbāpariyaṁ visesaṁ, | S: And when they have done so, | T: Having gained one distinction ⏎ after another,
+ud5.10:4.6 | P: Adassanaṁ maccurājassa gacche”ti. | S: they vanish from the King of Death.” | T: he goes where the King of Death ⏎ can’t see.
+CONTEXT ud5.10:4.7 | P: Dasamaṁ. | S: (none) | T: (none)
+CONTEXT ud5.10:4.8 | P: Soṇavaggo pañcamo. | S: (none) | T: (none)
+
+## ud5.10:5.1–ud5.10:5.4 (ud)
+CONTEXT ud5.10:4.8 | P: Soṇavaggo pañcamo. | S: (none) | T: (none)
+CONTEXT ud5.10:5.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+ud5.10:5.1 | P: Piyo appāyukā kuṭṭhī, | S: (none) | T: (none)
+ud5.10:5.2 | P: kumārakā uposatho; | S: (none) | T: (none)
+ud5.10:5.3 | P: Soṇo ca revato bhedo, | S: (none) | T: (none)
+ud5.10:5.4 | P: sadhāya panthakena cāti. | S: (none) | T: (none)
+
+## ud6.1:17.1–ud6.1:17.4 (ud)
+CONTEXT ud6.1:15.2 | P: Ossaṭṭhe ca bhagavatā āyusaṅkhāre mahābhūmicālo ahosi bhiṁsanako lomahaṁso, devadundubhiyo ca phaliṁsu. | S: When he did so there was a great earthquake, awe-inspiring and hair-raising, and thunder cracked the sky. | T: And as the Blessed One relinquished the fabrications of life, there was a great earthquake, frightening & hair-raising, along with cracks of thunder.
+CONTEXT ud6.1:16.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud6.1:17.1 | P: “Tulamatulañca sambhavaṁ, | S: “Comparing the incomparable with the creation of prolonged life, | T: Comparing the incomparable ⏎ with coming-into-being,
+ud6.1:17.2 | P: Bhavasaṅkhāramavassaji muni; | S: the sage surrendered the life force. | T: the sage relinquished ⏎ the fabrication of becoming.
+ud6.1:17.3 | P: Ajjhattarato samāhito, | S: Happy inside, serene, | T: Inwardly joyful, ⏎ centered,
+ud6.1:17.4 | P: Abhindi kavacamivattasambhavan”ti. | S: he shattered self-creation like a suit of armor.” | T: he split his own ⏎ coming-into-being ⏎ like a coat of mail.
+CONTEXT ud6.1:17.5 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## ud6.2:10.1–ud6.2:10.4 (ud)
+CONTEXT ud6.2:8.3 | P: Idāni te, bhante, taṁ rajojallaṁ pavāhetvā sunhātā suvilittā kappitakesamassū odātavatthavasanā pañcahi kāmaguṇehi samappitā samaṅgibhūtā paricāressantī”ti. | S: Now—when they have rinsed off the dust and dirt, and are nicely bathed and anointed, with hair and beard dressed, and dressed in white—they will amuse themselves, supplied and provided with the five kinds of sensual stimulation.” | T: Now, when they have scrubbed off the dirt & mud, are well-bathed & well-perfumed, have trimmed their hair and beards, and have put on white clothes, they will go about endowed and provided with the five strings of sensuality.”
+CONTEXT ud6.2:9.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud6.2:10.1 | P: “Na vāyameyya sabbattha, | S: “Don’t strive in every situation, | T: One ⏎ should not make an effort everywhere,
+ud6.2:10.2 | P: nāññassa puriso siyā; | S: don’t become another’s man. | T: should not be another’s hireling,
+ud6.2:10.3 | P: Nāññaṁ nissāya jīveyya, | S: Don’t live depending on another, | T: should not live dependent on another,
+ud6.2:10.4 | P: dhammena na vaṇiṁ care”ti. | S: and don’t use the teaching to make money.” | T: should not go about ⏎ as a trader in the Dhamma.
+CONTEXT ud6.2:10.5 | P: Dutiyaṁ. | S: (none) | T: (none)
+
+## ud6.3:3.1–ud6.3:3.4 (ud)
+CONTEXT ud6.3:1.3 | P: Tena kho pana samayena bhagavā attano aneke pāpake akusale dhamme pahīne paccavekkhamāno nisinno hoti, aneke ca kusale dhamme bhāvanāpāripūriṁ gate. | S: Now at that time the Buddha was sitting reviewing his own giving up of many bad, unskillful qualities, and the many skillful qualities he had fully developed. | T: And on that occasion the Blessed One sat reflecting on the various evil, unskillful qualities that had been abandoned [in him] and on the various skillful qualities that had gone to the culmination of their development.
+CONTEXT ud6.3:2.1 | P: Atha kho bhagavā attano aneke pāpake akusale dhamme pahīne viditvā aneke ca kusale dhamme bhāvanāpāripūriṁ gate tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, knowing the many bad, unskillful qualities that he had given up and the many skillful qualities he had fully developed, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then as he realized the various evil, unskillful qualities that had been abandoned [in him] and the various skillful qualities that had gone to the culmination of their development, he on that occasion exclaimed:
+ud6.3:3.1 | P: “Ahu pubbe tadā nāhu, | S: “What was before then was not; | T: Before, it was, then it wasn’t.
+ud6.3:3.2 | P: nāhu pubbe tadā ahu; | S: what before was not then was. | T: Before, it wasn’t, then it was.
+ud6.3:3.3 | P: Na cāhu na ca bhavissati, | S: It never was, nor will it be, | T: It wasn’t, won’t be,
+ud6.3:3.4 | P: na cetarahi vijjatī”ti. | S: nor is it found today.” | T: & now isn’t to be found.
+CONTEXT ud6.3:3.5 | P: Tatiyaṁ. | S: (none) | T: (none)
+
+## ud6.4:33.1–ud6.4:33.4 (ud) GATHERED; unequal counts require a reader
+CONTEXT ud6.4:31.5 | P: nediso dhammo, ediso dhammo’”ti. | S: Such is not Truth, such is!’” | T: The Dhamma’s not like that, it’s like this.’”
+CONTEXT ud6.4:32.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud6.4:33.1 | P: “Imesu kira sajjanti, | S: “Some ascetics and brahmins, it seems, | T: With regard to these things ⏎ they’re attached– ⏎ some contemplatives & brahmans.
+ud6.4:33.2 | P: eke samaṇabrāhmaṇā; | S: cling to these things. | T: (none)
+ud6.4:33.3 | P: Viggayha naṁ vivadanti, | S: Arguing, they dispute, | T: They quarrel & fight–
+ud6.4:33.4 | P: janā ekaṅgadassino”ti. | S: the folk who see just one part.” | T: people seeing one side.
+CONTEXT ud6.4:33.5 | P: Catutthaṁ. | S: (none) | T: (none)
+
+## ud6.5:24.1–ud6.5:24.4 (ud) GATHERED; unequal counts require a reader
+CONTEXT ud6.5:22.5 | P: nediso dhammo, ediso dhammo’”ti. | S: (none) | T: The Dhamma’s not like that, it’s like this.’”
+CONTEXT ud6.5:23.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud6.5:24.1 | P: “Imesu kira sajjanti, | S: “Some ascetics and brahmins, it seems, | T: With regard to these things ⏎ they’re attached–
+ud6.5:24.2 | P: eke samaṇabrāhmaṇā; | S: cling to these things. | T: some contemplatives & brahmans.
+ud6.5:24.3 | P: Antarāva visīdanti, | S: They founder in mid-stream, | T: Not reaching the footing, ⏎ they sink in mid-stream.
+ud6.5:24.4 | P: appatvāva tamogadhan”ti. | S: without reaching that objective.” | T: (none)
+CONTEXT ud6.5:24.5 | P: Pañcamaṁ. | S: (none) | T: (none)
+
+## ud6.6:24.1–ud6.6:24.4 (ud) GATHERED; unequal counts require a reader
+CONTEXT ud6.6:22.5 | P: nediso dhammo, ediso dhammo’”ti. | S: (none) | T: The Dhamma’s not like that, it’s like this.’”
+CONTEXT ud6.6:23.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud6.6:24.1 | P: “Ahaṅkārapasutāyaṁ pajā, | S: “Folk are fixated on the I-maker, | T: People are intent on the idea of ⏎ ‘I-making’ ⏎ and attached to the idea of ⏎ ‘other-making.’
+ud6.6:24.2 | P: Paraṅkārūpasaṁhitā; | S: which is tied up with the other-maker. | T: (none)
+ud6.6:24.3 | P: Etadeke nābbhaññaṁsu, | S: There are some who do not realize this, | T: Some don’t realize this,
+ud6.6:24.4 | P: Na naṁ sallanti addasuṁ. | S: they do not see the dart. | T: nor do they see it as an arrow.
+
+## ud6.6:25.1–ud6.6:25.3 (ud)
+ud6.6:25.1 | P: Etañca sallaṁ paṭikacca passato, | S: But when they see this dart, | T: But to one who, ⏎ having extracted this arrow, ⏎ sees,
+ud6.6:25.2 | P: Ahaṁ karomīti na tassa hoti; | S: they do not think, ‘I make it’, | T: [the thought] ‘I am doing,’ doesn’t occur;
+ud6.6:25.3 | P: Paro karotīti na tassa hoti. | S: nor ‘another makes it’. | T: ‘Another is doing,’ doesn’t occur.
+
+## ud6.6:26.1–ud6.6:26.4 (ud)
+ud6.6:26.1 | P: Mānupetā ayaṁ pajā, | S: These folk are caught up in conceit, | T: This human race is ⏎ possessed by conceit
+ud6.6:26.2 | P: Mānaganthā mānavinibaddhā; | S: tied by conceit, shackled by conceit. | T: bound by conceit, ⏎ tied down by conceit.
+ud6.6:26.3 | P: Diṭṭhīsu sārambhakathā, | S: Vehemently defending their views, | T: Speaking hurtfully because of their views
+ud6.6:26.4 | P: Saṁsāraṁ nātivattatī”ti. | S: they don’t escape transmigration.” | T: they don’t go beyond ⏎ the wandering-on.
+CONTEXT ud6.6:26.5 | P: Chaṭṭhaṁ. | S: (none) | T: (none)
+
+## ud6.7:4.1–ud6.7:4.4 (ud)
+CONTEXT ud6.7:2.1 | P: Addasā kho bhagavā āyasmantaṁ subhūtiṁ avidūre nisinnaṁ pallaṅkaṁ ābhujitvā ujuṁ kāyaṁ paṇidhāya avitakkaṁ samādhiṁ samāpannaṁ. | S: The Buddha saw him meditating there. | T: The Blessed One saw Ven. Subhūti sitting not far away, his legs crossed, his body held erect, having attained a concentration free from directed thought.
+CONTEXT ud6.7:3.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud6.7:4.1 | P: “Yassa vitakkā vidhūpitā, | S: “In whom mental vibrations are cleared away, | T: Whose thoughts are ⏎ vaporized,
+ud6.7:4.2 | P: Ajjhattaṁ suvikappitā asesā; | S: internally clipped off entirely, | T: well-dealt-with ⏎ within, ⏎ without trace–
+ud6.7:4.3 | P: Taṁ saṅgamaticca arūpasaññī, | S: perceiving the formless, beyond chains, | T: going beyond that tie, ⏎ perceiving the formless,
+ud6.7:4.4 | P: Catuyogātigato na jātu metī”ti. | S: having overcome the four yokes, they never return.” | T: overcoming ⏎ four yokes, ⏎ one doesn’t go ⏎ to birth.
+CONTEXT ud6.7:4.5 | P: Sattamaṁ. | S: (none) | T: (none)
+
+## ud6.9:4.1–ud6.9:4.4 (ud)
+CONTEXT ud6.9:2.2 | P: Addasā kho bhagavā te sambahule adhipātake tesu telappadīpesu āpātaparipātaṁ anayaṁ āpajjante, byasanaṁ āpajjante, anayabyasanaṁ āpajjante. | S: The Buddha saw the moths coming to grief. | T: The Blessed One saw those flying insects, flying into & around those lamps, meeting their downfall, meeting their misfortune, meeting their downfall & misfortune in those oil lamps.
+CONTEXT ud6.9:3.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud6.9:4.1 | P: “Upātidhāvanti na sāramenti, | S: “Hastening by, they miss the essence, | T: Rushing headlong, ⏎ missing what’s essential,
+ud6.9:4.2 | P: Navaṁ navaṁ bandhanaṁ brūhayanti; | S: sprouting ever more new bonds. | T: bringing on one new bond ⏎ after another,
+ud6.9:4.3 | P: Patanti pajjotamivādhipātakā, | S: Like moths falling in the flame, | T: they fall, like insects into a flame:
+ud6.9:4.4 | P: Diṭṭhe sute itiheke niviṭṭhā”ti. | S: some have become fixed in what is seen or heard.” | T: those intent ⏎ on things seen, ⏎ things heard.
+CONTEXT ud6.9:4.5 | P: Navamaṁ. | S: (none) | T: (none)
+
+## ud6.10:5.1–ud6.10:5.4 (ud)
+CONTEXT ud6.10:3.3 | P: Tathāgatova dāni sakkato hoti garukato mānito pūjito apacito lābhī cīvarapiṇḍapātasenāsanagilānapaccayabhesajjaparikkhārānaṁ, bhikkhusaṅgho cā”ti. | S: Now only the Realized One is honored, respected, revered, venerated, and esteemed. And he receives robes, almsfood, lodgings, and medicines and supplies for the sick. And so does the mendicant Saṅgha.” | T: Now only the Tathāgata is worshipped, revered, honored, venerated, and given homage–a recipient of robes, alms food, lodgings, & medicinal requisites for the sick–along with the community of monks.”
+CONTEXT ud6.10:4.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud6.10:5.1 | P: “Obhāsati tāva so kimi, | S: “The glow-worm shines so long | T: The glowworm shines
+ud6.10:5.2 | P: Yāva na unnamate pabhaṅkaro; | S: as the beacon of the sun does not rise. | T: as long as the sun hasn’t risen.
+ud6.10:5.3 | P: Sa verocanamhi uggate, | S: But when the dazzling sun has come up, | T: But when that splendor rises,
+ud6.10:5.4 | P: Hatappabho hoti na cāpi bhāsati. | S: that light is erased and shines no more. | T: the glowworm’s light is destroyed. ⏎ It no longer shines.
+
+## ud6.10:6.1–ud6.10:6.4 (ud)
+ud6.10:6.1 | P: Evaṁ obhāsitameva takkikānaṁ, | S: So too the sophists shine bright | T: Likewise, sectarians shine
+ud6.10:6.2 | P: Yāva sammāsambuddhā loke nuppajjanti; | S: so long as the Buddhas don’t arise in the world. | T: as long as those rightly awakened ⏎ don’t appear in the world.
+ud6.10:6.3 | P: Na takkikā sujjhanti na cāpi sāvakā, | S: The sophists are not purified, nor are their disciples. | T: Those logicians aren’t purified, ⏎ nor are their disciples.
+ud6.10:6.4 | P: Duddiṭṭhī na dukkhā pamuccare”ti. | S: Having bad views, they are not freed from suffering.” | T: Those of bad views ⏎ aren’t released ⏎ from stress.
+CONTEXT ud6.10:6.5 | P: Dasamaṁ. | S: (none) | T: (none)
+CONTEXT ud6.10:7.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+
+## ud6.10:7.1–ud6.10:7.4 (ud)
+CONTEXT ud6.10:6.5 | P: Dasamaṁ. | S: (none) | T: (none)
+CONTEXT ud6.10:7.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+ud6.10:7.1 | P: Āyujaṭilavekkhaṇā, | S: (none) | T: (none)
+ud6.10:7.2 | P: tayo titthiyā subhūti; | S: (none) | T: (none)
+ud6.10:7.3 | P: Gaṇikā upāti navamo, | S: (none) | T: (none)
+ud6.10:7.4 | P: uppajjanti ca te dasāti. | S: (none) | T: (none)
+CONTEXT ud6.10:7.5 | P: Jaccandhavaggo chaṭṭho. | S: (none) | T: (none)
+
+## ud7.1:5.1–ud7.1:5.4 (ud)
+CONTEXT ud7.1:3.1 | P: Addasā kho bhagavā āyasmantaṁ lakuṇḍakabhaddiyaṁ āyasmatā sāriputtena anekapariyāyena dhammiyā kathāya sandassiyamānaṁ samādapiyamānaṁ samuttejiyamānaṁ sampahaṁsiyamānaṁ anupādāya āsavehi cittaṁ vimuttaṁ. | S: The Buddha saw what had happened. | T: The Blessed One saw that as Ven. Bhaddiya the Dwarf was–with a variety of approaches–being instructed, urged, roused, & encouraged by Ven. Sāriputta with Dhamma-talk, his mind, through lack of clinging/sustenance, was released from the effluents.
+CONTEXT ud7.1:4.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud7.1:5.1 | P: “Uddhaṁ adho sabbadhi vippamutto, | S: “Above, below, everywhere free, | T: Above, below, everywhere released,
+ud7.1:5.2 | P: Ayaṁhamasmīti anānupassī; | S: not contemplating ‘I am this’. | T: he doesn’t focus on “I am this.”
+ud7.1:5.3 | P: Evaṁ vimutto udatāri oghaṁ, | S: Freed like this, he has crossed the flood | T: Thus released, he crosses the flood
+ud7.1:5.4 | P: Atiṇṇapubbaṁ apunabbhavāyā”ti. | S: not crossed before, so as to not be reborn.” | T: not crossed before, ⏎ for the sake of no further becoming.
+CONTEXT ud7.1:5.5 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## ud7.2:4.1–ud7.2:4.4 (ud)
+CONTEXT ud7.2:2.1 | P: Addasā kho bhagavā āyasmantaṁ sāriputtaṁ āyasmantaṁ lakuṇḍakabhaddiyaṁ sekhaṁ maññamānaṁ bhiyyoso mattāya anekapariyāyena dhammiyā kathāya sandassentaṁ samādapentaṁ samuttejentaṁ sampahaṁsentaṁ. | S: The Buddha saw what was happening. | T: The Blessed One saw that Ven. Sāriputta was–with a variety of approaches–instructing, urging, rousing, & encouraging Ven. Bhaddiya the Dwarf with Dhamma-talk to an even greater extent, as he thought that Bhaddiya was still just a learner.
+CONTEXT ud7.2:3.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud7.2:4.1 | P: “Acchecchi vaṭṭaṁ byagā nirāsaṁ, | S: “They’ve cut the cycle, gone to the wishless; | T: He has cut the cycle, ⏎ has gone away ⏎ to freedom from longing.
+ud7.2:4.2 | P: Visukkhā saritā na sandati; | S: the streams are dried, they flow no more. | T: The dried-up stream ⏎ no longer flows.
+ud7.2:4.3 | P: Chinnaṁ vaṭṭaṁ na vattati, | S: Cut, the cycle no longer spins. | T: The cycle, cut, ⏎ no longer turns.
+ud7.2:4.4 | P: Esevanto dukkhassā”ti. | S: Just this is the end of suffering.” | T: This, just this, ⏎ is the end of stress.
+CONTEXT ud7.2:4.5 | P: Dutiyaṁ. | S: (none) | T: (none)
+
+## ud7.3:4.1–ud7.3:4.4 (ud)
+CONTEXT ud7.3:2.4 | P: “idha, bhante, sāvatthiyā manussā yebhuyyena kāmesu ativelaṁ sattā rattā giddhā gathitā mucchitā ajjhosannā sammattakajātā kāmesu viharantī”ti. | S: (none) | T: “Most of the people in Sāvatthī are excessively attached to sensual pleasures. They live infatuated with, greedy for, addicted to, fastened to, absorbed in sensual pleasures.”
+CONTEXT ud7.3:3.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud7.3:4.1 | P: “Kāmesu sattā kāmasaṅgasattā, | S: “Clinging to sensual pleasures, to the chains of the senses, | T: Attached to sensual pleasures, ⏎ attached to sensual ties,
+ud7.3:4.2 | P: Saṁyojane vajjamapassamānā; | S: blind to the faults of the fetters, | T: seeing no blame in the fetter,
+ud7.3:4.3 | P: Na hi jātu saṁyojanasaṅgasattā, | S: clinging to the chain of the fetters, | T: never will those attached to the fetter, the tie,
+ud7.3:4.4 | P: Oghaṁ tareyyuṁ vipulaṁ mahantan”ti. | S: they’ll never cross the flood so vast.” | T: cross over the flood ⏎ so great & wide.
+CONTEXT ud7.3:4.5 | P: Tatiyaṁ. | S: (none) | T: (none)
+
+## ud7.4:4.1–ud7.4:4.6 (ud)
+CONTEXT ud7.4:2.2 | P: Addasā kho bhagavā sāvatthiyā te manusse yebhuyyena kāmesu satte ratte giddhe gathite mucchite ajjhopanne andhīkate sammattakajāte kāmesu viharante. | S: He saw how attached the humans were. | T: He saw that most of the people in Sāvatthī were excessively attached to sensual pleasures, that they live infatuated with, greedy for, addicted to, fastened to, absorbed in sensual pleasures.
+CONTEXT ud7.4:3.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud7.4:4.1 | P: “Kāmandhā jālasañchannā, | S: “Blinded by sensual pleasures, wrapped in a net, | T: Blinded by sensuality ⏎ covered by the net,
+ud7.4:4.2 | P: Taṇhāchadanachāditā; | S: they are smothered over by craving; | T: veiled with the veil of craving,
+ud7.4:4.3 | P: Pamattabandhunā baddhā, | S: bound by the kinsman of the negligent, | T: bound by the Kinsman of the heedless,
+ud7.4:4.4 | P: Macchāva kumināmukhe; | S: like a fish caught in a funnel-net trap. | T: like fish in the mouth of a trap,
+ud7.4:4.5 | P: Jarāmaraṇamanventi, | S: They chase old age and death, | T: they go to aging & death,
+ud7.4:4.6 | P: Vaccho khīrapakova mātaran”ti. | S: like a suckling calf its mother.” | T: like a milk-drinking calf to its mother.
+CONTEXT ud7.4:4.7 | P: Catutthaṁ. | S: (none) | T: (none)
+
+## ud7.5:6.1–ud7.5:6.4 (ud)
+CONTEXT ud7.5:4.2 | P: Yassa catthāya kulaputtā sammadeva agārasmā anagāriyaṁ pabbajanti, tadanuttaraṁ—brahmacariyapariyosānaṁ diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja viharatī”ti. | S: And he has realized the supreme culmination of the spiritual path in this very life. He lives having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness.” | T: And by means of it he has reached & remains in the supreme goal of the holy life for which clansmen rightly go forth from home into homelessness, knowing & realizing it for himself right in the here-&-now.”
+CONTEXT ud7.5:5.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud7.5:6.1 | P: “Nelaṅgo setapacchādo, | S: “With faultless parts and white canopy, | T: Faultless, ⏎ canopied in white,
+ud7.5:6.2 | P: ekāro vattatī ratho; | S: the one-spoked chariot rolls on. | T: the single-spoked chariot rolls along.
+ud7.5:6.3 | P: Anīghaṁ passa āyantaṁ, | S: See it come, untroubled, | T: See him coming, untroubled:
+ud7.5:6.4 | P: chinnasotaṁ abandhanan”ti. | S: with stream cut, unbound.” | T: one whose stream is cut, ⏎ free from bonds.
+CONTEXT ud7.5:6.5 | P: Pañcamaṁ. | S: (none) | T: (none)
+
+## ud7.6:4.1–ud7.6:4.6 (ud) GATHERED; unequal counts require a reader
+CONTEXT ud7.6:2.1 | P: Addasā kho bhagavā āyasmantaṁ aññāsikoṇḍaññaṁ avidūre nisinnaṁ pallaṅkaṁ ābhujitvā ujuṁ kāyaṁ paṇidhāya taṇhāsaṅkhayavimuttiṁ paccavekkhamānaṁ. | S: The Buddha saw him meditating there. | T: The Blessed One saw Ven. Aññāta Koṇḍañña sitting not far away, his legs crossed, his body held erect, reflecting on [his] release through the total ending of craving.
+CONTEXT ud7.6:3.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud7.6:4.1 | P: “Yassa mūlaṁ chamā natthi, | S: “There is no root or ground or leaves for them, | T: For someone with no root, no soil, no leaves
+ud7.6:4.2 | P: paṇṇā natthi kuto latā; | S: so where would creepers sprout from? | T: –how creepers?
+ud7.6:4.3 | P: Taṁ dhīraṁ bandhanā muttaṁ, | S: That attentive one is released from bonds: | T: Who’s fit to criticize him?– ⏎ the enlightened one freed ⏎ from bonds.
+ud7.6:4.4 | P: ko taṁ ninditumarahati; | S: who is worthy to criticize them? | T: (none)
+ud7.6:4.5 | P: Devāpi naṁ pasaṁsanti, | S: Even the gods praise them, | T: Even devas praise him.
+ud7.6:4.6 | P: brahmunāpi pasaṁsito”ti. | S: and by the Divinity, too, they’re praised.” | T: Even by Brahmā he’s praised.
+CONTEXT ud7.6:4.7 | P: Chaṭṭhaṁ. | S: (none) | T: (none)
+
+## ud7.7:3.1–ud7.7:3.4 (ud) GATHERED; possible speaker requires a reader
+CONTEXT ud7.7:1.3 | P: Tena kho pana samayena bhagavā attano papañcasaññāsaṅkhāpahānaṁ paccavekkhamāno nisinno hoti. | S: Now at that time the Buddha was sitting reviewing his own giving up of the judgments driven by the proliferation of perceptions. | T: And on that occasion the Blessed One was sitting, contemplating his own abandoning of the perceptions & categories of objectification.
+CONTEXT ud7.7:2.1 | P: Atha kho bhagavā attano papañcasaññāsaṅkhāpahānaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding his own giving up of the judgments driven by the proliferation of perceptions, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then the Blessed One, realizing his own abandoning of the perceptions & categories of objectification, on that occasion exclaimed:
+ud7.7:3.1 | P: “Yassa papañcā ṭhiti ca natthi, | S: “There is no proliferation remaining in those | T: One who ⏎ has no objectifications, ⏎ no standing-place,
+ud7.7:3.2 | P: Sandānaṁ palighañca vītivatto; | S: who have passed beyond the halter and cross-bar. | T: who has gone beyond ⏎ the tether & cross-bar:
+ud7.7:3.3 | P: Taṁ nittaṇhaṁ muniṁ carantaṁ, | S: The sage who lives without craving | T: The world, even with its devas, ⏎ doesn’t look down on him– ⏎ he, going about without craving, ⏎ a sage.
+ud7.7:3.4 | P: Nāvajānāti sadevakopi loko”ti. | S: is never scorned by the world with its gods.” | T: (none)
+CONTEXT ud7.7:3.5 | P: Sattamaṁ. | S: (none) | T: (none)
+
+## ud7.8:4.1–ud7.8:4.6 (ud)
+CONTEXT ud7.8:2.1 | P: Addasā kho bhagavā āyasmantaṁ mahākaccānaṁ avidūre nisinnaṁ pallaṅkaṁ ābhujitvā ujuṁ kāyaṁ paṇidhāya kāyagatāya satiyā ajjhattaṁ parimukhaṁ sūpaṭṭhitāya. | S: The Buddha saw him meditating there. | T: The Blessed One saw Ven. Mahā Kaccāna sitting not far away, his legs crossed, his body held erect, having mindfulness immersed in the body well-established to the fore within.
+CONTEXT ud7.8:3.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud7.8:4.1 | P: “Yassa siyā sabbadā sati, | S: “Their mindfulness would always | T: If one were to have ⏎ mindfulness always
+ud7.8:4.2 | P: Satataṁ kāyagatā upaṭṭhitā; | S: be established in the body, constant: | T: established, continually ⏎ immersed in the body,
+ud7.8:4.3 | P: No cassa no ca me siyā, | S: ‘It might not be, and it might not be mine, | T: (thinking,) ⏎ “It should not be, ⏎ it should not be mine;
+ud7.8:4.4 | P: Na bhavissati na ca me bhavissati; | S: It will not be, and it will not be mine.’ | T: it will not be, ⏎ it will not be mine”–
+ud7.8:4.5 | P: Anupubbavihāri tattha so, | S: Meditating stage by stage on that, | T: there, ⏎ in that step-by-step dwelling,
+ud7.8:4.6 | P: Kāleneva tare visattikan”ti. | S: in time they’d cross over clinging.” | T: one in no long time ⏎ would cross over ⏎ attachment. In AN 10:29, the Buddha recommends this view as conducive to developing dispassion for becoming. However, in MN 106 he warns that it can lead to the refined equanimity of the dimension of neither perception nor non-perception, which can become an object of clinging. Only if that subtle clinging is detected can all clinging be abandoned. The Canon’s most extended discussion of this theme of meditation is in SN 22:55. See Appendix Two. For more on this topic, see The Paradox of Becoming, chapter 5.
+CONTEXT ud7.8:4.7 | P: Aṭṭhamaṁ. | S: (none) | T: (none)
+
+## ud7.9:7.1–ud7.9:7.4 (ud)
+CONTEXT ud7.9:5.7 | P: Pivatu bhagavā pānīyaṁ, pivatu sugato pānīyan”ti. | S: Drink the water, Blessed One! Drink the water, Holy One!” | T: Drink the water, O Blessed One! Drink the water, O One-Well-Gone!”
+CONTEXT ud7.9:6.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud7.9:7.1 | P: “Kiṁ kayirā udapānena, | S: “What difference would a well make | T: What need for a well
+ud7.9:7.2 | P: Āpā ce sabbadā siyuṁ; | S: if water is there all the time? | T: if there were waters always?
+ud7.9:7.3 | P: Taṇhāya mūlato chetvā, | S: Having cut off craving at the root, | T: Having cut craving ⏎ by the root,
+ud7.9:7.4 | P: Kissa pariyesanaṁ care”ti. | S: who would go out on a quest?” | T: one would go about searching ⏎ for what?
+CONTEXT ud7.9:7.5 | P: Navamaṁ. | S: (none) | T: (none)
+
+## ud7.10:5.1–ud7.10:5.6 (ud)
+CONTEXT ud7.10:3.2 | P: Sabbā tā, bhikkhave, upāsikāyo anipphalā kālaṅkatā”ti. | S: None of those laywomen died without some fruit of the practice.” | T: All of those female lay followers, monks, died not without [noble] fruit.”
+CONTEXT ud7.10:4.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud7.10:5.1 | P: “Mohasambandhano loko, | S: “The world is caught up in delusion, | T: Bound round with delusion, the world
+ud7.10:5.2 | P: bhabbarūpova dissati; | S: but is looked on as making sense. | T: only appears to be competent.
+ud7.10:5.3 | P: Upadhibandhano bālo, | S: The fool caught up in attachment | T: Bound with acquisitions, foolish,
+ud7.10:5.4 | P: tamasā parivārito; | S: is surrounded by darkness. | T: surrounded by darkness,
+ud7.10:5.5 | P: Sassatoriva khāyati, | S: It seems as if eternal, | T: it seems eternal,
+ud7.10:5.6 | P: passato natthi kiñcanan”ti. | S: but for one who sees, there is nothing.” | T: but for one who sees, ⏎ there is nothing.
+CONTEXT ud7.10:5.7 | P: Dasamaṁ. | S: (none) | T: (none)
+CONTEXT ud7.10:6.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+
+## ud7.10:6.1–ud7.10:6.4 (ud)
+CONTEXT ud7.10:5.7 | P: Dasamaṁ. | S: (none) | T: (none)
+CONTEXT ud7.10:6.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+ud7.10:6.1 | P: Dve bhaddiyā dve ca sattā, | S: (none) | T: (none)
+ud7.10:6.2 | P: lakuṇḍako taṇhākkhayo; | S: (none) | T: (none)
+ud7.10:6.3 | P: Papañcakhayo ca kaccāno, | S: (none) | T: (none)
+ud7.10:6.4 | P: udapānañca utenoti. | S: (none) | T: (none)
+CONTEXT ud7.10:6.5 | P: Cūḷavaggo sattamo. | S: (none) | T: (none)
+
+## ud8.2:3.1–ud8.2:3.4 (ud)
+CONTEXT ud8.2:1.4 | P: Tedha bhikkhū aṭṭhiṁ katvā manasi katvā sabbaṁ cetaso samannāharitvā ohitasotā dhammaṁ suṇanti. | S: And those mendicants were paying attention, applying the mind, concentrating wholeheartedly, and actively listening. | T: The monks–receptive, attentive, focusing their entire awareness, lending ear–listened to the Dhamma.
+CONTEXT ud8.2:2.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud8.2:3.1 | P: “Duddasaṁ anataṁ nāma, | S: “It’s hard to see what they call the ‘uninclined’, | T: It’s hard to see the unaffected,
+ud8.2:3.2 | P: na hi saccaṁ sudassanaṁ; | S: for the truth is not easy to see. | T: for the truth is not easily seen.
+ud8.2:3.3 | P: Paṭividdhā taṇhā jānato, | S: For one who has penetrated craving, | T: Craving is pierced
+ud8.2:3.4 | P: passato natthi kiñcanan”ti. | S: who knows and sees, there is nothing.” | T: in one who knows; ⏎ for one who sees, ⏎ there is nothing.
+CONTEXT ud8.2:3.5 | P: Dutiyaṁ. | S: (none) | T: (none)
+
+## ud8.5:8.1–ud8.5:8.4 (ud)
+CONTEXT ud8.5:7.2 | P: “āyāmānanda, yena kusinārā tenupasaṅkamissāmā”ti. | S: “Come, Ānanda, let’s go to Kusinārā.” | T: “Ānanda, we will go to Kusinarā.”
+CONTEXT ud8.5:7.3 | P: “Evaṁ, bhante”ti kho āyasmā ānando bhagavato paccassosi. | S: “Yes, sir,” Ānanda replied. | T: “As you say, lord,” Ven. Ānanda responded to the Blessed One.
+ud8.5:8.1 | P: Cundassa bhattaṁ bhuñjitvā, | S: I’ve heard that after eating | T: I have heard that, ⏎ on eating
+ud8.5:8.2 | P: kammārassāti me sutaṁ; | S: the meal of Cunda the smith, | T: Cunda the silversmith’s meal,
+ud8.5:8.3 | P: Ābādhaṁ samphusī dhīro, | S: the attentive one fell severely ill, | T: the enlightened one was touched by illness–
+ud8.5:8.4 | P: pabāḷhaṁ māraṇantikaṁ. | S: with pains, close to death. | T: fierce, deadly.
+
+## ud8.5:9.1–ud8.5:9.4 (ud) GATHERED; unequal counts require a reader
+ud8.5:9.1 | P: Bhuttassa ca sūkaramaddavena, | S: A severe sickness struck the Teacher | T: After he had eaten the pig-delicacy, ⏎ a fierce sickness arose in the Teacher.
+ud8.5:9.2 | P: Byādhippabāḷho udapādi satthuno; | S: who had eaten the pork on the turn. | T: (none)
+ud8.5:9.3 | P: Viriccamāno bhagavā avoca, | S: While still purging the Buddha said: | T: After being purged of it, ⏎ the Blessed One said,
+ud8.5:9.4 | P: “Gacchāmahaṁ kusināraṁ nagaran”ti. | S: “I’ll go to the citadel of Kusinārā.” | T: “To the city of Kusinarā ⏎ I will go.”
+CONTEXT ud8.5:10.1 | P: Atha kho bhagavā maggā okkamma yena aññataraṁ rukkhamūlaṁ tenupasaṅkami; upasaṅkamitvā āyasmantaṁ ānandaṁ āmantesi: | S: Then the Buddha left the road and went to the root of a certain tree, where he addressed Ānanda, | T: Then the Blessed One, going down from the road, went to a certain tree and, on arrival, said to Ven. Ānanda,
+CONTEXT ud8.5:10.2 | P: “iṅgha me tvaṁ, ānanda, catugguṇaṁ saṅghāṭiṁ paññāpehi; kilantosmi, ānanda, nisīdissāmī”ti. | S: “Go on then, Ānanda, fold my outer robe in four and spread it out for me. I am tired and will sit down.” | T: “Ānanda, please arrange my outer robe folded in four. I am tired. I will sit down.”
+
+## ud8.5:16.1–ud8.5:16.4 (ud) GATHERED; unequal counts require a reader
+CONTEXT ud8.5:15.2 | P: Atha kho bhagavā dakkhiṇena passena sīhaseyyaṁ kappesi pāde pādaṁ accādhāya sato sampajāno uṭṭhānasaññaṁ manasi karitvā. | S: And then the Buddha laid down in the lion’s posture—on the right side, placing one foot on top of the other—mindful and aware, and focused on the time of getting up. | T: The Blessed One, lying on his right side, took up the lion’s posture, placing one foot on top of the other–mindful, alert, and attending to the perception of getting up.
+CONTEXT ud8.5:15.3 | P: Āyasmā pana cundako tattheva bhagavato purato nisīdi. | S: But Cundaka sat down right there in front of the Buddha. | T: Ven. Cundaka sat in front of him.
+ud8.5:16.1 | P: Gantvāna buddho nadikaṁ kukudhaṁ, | S: Having gone to Kakutthā Creek, | T: The awakened one, ⏎ –having gone to the little Kukuṭa river
+ud8.5:16.2 | P: Acchodakaṁ sātudakaṁ vippasannaṁ; | S: whose water was transparent, sweet, and clear, | T: with its pristine, pleasing water, clear–
+ud8.5:16.3 | P: Ogāhi satthā sukilantarūpo, | S: the Teacher, being tired, plunged in, | T: the Teacher, seeming very tired, ⏎ the Tathāgata, unequalled in the world ⏎ went down,
+ud8.5:16.4 | P: Tathāgato appaṭimodha loke. | S: the Realized One, without compare in the world. | T: (none)
+
+## ud8.5:17.1–ud8.5:17.6 (ud)
+ud8.5:17.1 | P: Nhatvā ca pivitvā cudatāri satthā, | S: And after bathing and drinking the Teacher emerged. | T: bathed, drank, & came out.
+ud8.5:17.2 | P: Purakkhato bhikkhugaṇassa majjhe; | S: Before the group of mendicants, in the middle, the Buddha, | T: Honored, surrounded, ⏎ in the midst of the group of monks, ⏎ the Blessed One,
+ud8.5:17.3 | P: Satthā pavattā bhagavā idha dhamme, | S: the Teacher who rolled forth the present dispensation, | T: Teacher, ⏎ proceeding here in the Dhamma,
+ud8.5:17.4 | P: Upāgami ambavanaṁ mahesi; | S: the great seer went to the mango grove. | T: the great seer, ⏎ went to the mango grove.
+ud8.5:17.5 | P: Āmantayi cundakaṁ nāma bhikkhuṁ, | S: He addressed the mendicant named Cundaka: | T: He addressed the monk named Cundaka,
+ud8.5:17.6 | P: “Catugguṇaṁ santhara me nipajjaṁ”. | S: “Spread out my folded robe so I can lie down.” | T: “Spread it out, folded in four ⏎ for me to lie down.”
+
+## ud8.5:18.1–ud8.5:18.4 (ud)
+ud8.5:18.1 | P: So codito bhāvitattena cundo, | S: The evolved one urged Cunda, | T: Ordered by the One of developed mind,
+ud8.5:18.2 | P: Catugguṇaṁ santhari khippameva; | S: who quickly spread the folded robe. | T: Cundaka quickly set it out, folded in four.
+ud8.5:18.3 | P: Nipajji satthā sukilantarūpo, | S: The Teacher lay down so tired, | T: The Teacher lay down, seeming very tired,
+ud8.5:18.4 | P: Cundopi tattha pamukhe nisīdīti. | S: while Cunda sat there before him. | T: and Cundaka sat down there before him.
+CONTEXT ud8.5:19.1 | P: Atha kho bhagavā āyasmantaṁ ānandaṁ āmantesi: | S: Then the Buddha said to Venerable Ānanda, | T: Then the Blessed One addressed Ven. Ānanda,
+CONTEXT ud8.5:19.2 | P: “siyā kho panānanda, cundassa kammāraputtassa koci vippaṭisāraṁ upadaheyya: | S: “Now it may happen, Ānanda, that others may give rise to some regret for Cunda the smith: | T: “Ānanda, if anyone tries to incite remorse in Cunda the silversmith, saying,
+
+## ud8.5:23.1–ud8.5:23.4 (ud)
+CONTEXT ud8.5:21.2 | P: Cundassānanda, kammāraputtassa evaṁ vippaṭisāro paṭivinodetabbo”ti. | S: You should dispel remorse in Cunda the smith like this.” | T: In this way, Ānanda, Cunda the silversmith’s remorse should be allayed.”
+CONTEXT ud8.5:22.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud8.5:23.1 | P: “Dadato puññaṁ pavaḍḍhati, | S: “A giver’s merit grows; | T: For a person giving, ⏎ merit increases.
+ud8.5:23.2 | P: Saṁyamato veraṁ na cīyati; | S: enmity doesn’t build up when you have self-control. | T: For one self-restraining, ⏎ no animosity is amassed.
+ud8.5:23.3 | P: Kusalo ca jahāti pāpakaṁ, | S: A skillful person gives up bad things— | T: One who is skillful ⏎ leaves evil behind
+ud8.5:23.4 | P: Rāgadosamohakkhayā sanibbuto”ti. | S: with the end of greed, hate, and delusion, they’re quenched.” | T: and ⏎ –from the ending of ⏎ passion, ⏎ aversion, ⏎ delusion– ⏎ is totally unbound.
+CONTEXT ud8.5:23.5 | P: Pañcamaṁ. | S: (none) | T: (none)
+
+## ud8.6:22.1–ud8.6:22.4 (ud)
+CONTEXT ud8.6:21.1 | P: Atha kho sunidhavassakārā magadhamahāmattā bhagavantaṁ bhuttāviṁ onītapattapāṇiṁ aññataraṁ nīcaṁ āsanaṁ gahetvā ekamantaṁ nisīdiṁsu. | S: When the Buddha had eaten and washed his hand and bowl, Sunidha and Vassakāra took a low seat and sat to one side. | T: Then, when the Blessed One had finished his meal and rinsed his bowl & hands, Sunīdha & Vassakāra, taking a low seat, sat to one side.
+CONTEXT ud8.6:21.2 | P: Ekamantaṁ nisinne kho sunidhavassakāre magadhamahāmatte bhagavā imāhi gāthāhi anumodi: | S: The Buddha expressed his appreciation with these verses: | T: As they were sitting there, the Blessed One gave his approval with these verses:
+ud8.6:22.1 | P: “Yasmiṁ padese kappeti, | S: “In the place he makes his dwelling, | T: In whatever place ⏎ a wise person makes his dwelling,
+ud8.6:22.2 | P: vāsaṁ paṇḍitajātiyo; | S: having fed the astute | T: –there providing food
+ud8.6:22.3 | P: Sīlavantettha bhojetvā, | S: and the virtuous here, | T: for the virtuous,
+ud8.6:22.4 | P: saññate brahmacārayo. | S: the restrained spiritual practitioners, | T: the restrained, ⏎ leaders of the holy life–
+
+## ud8.6:23.1–ud8.6:23.4 (ud)
+ud8.6:23.1 | P: Yā tattha devatā āsuṁ, | S: he should dedicate an offering | T: he should dedicate that offering
+ud8.6:23.2 | P: tāsaṁ dakkhiṇamādise; | S: to the deities there. | T: to the devas there.
+ud8.6:23.3 | P: Tā pūjitā pūjayanti, | S: Venerated, they venerate him; | T: They, receiving honor, will honor him;
+ud8.6:23.4 | P: mānitā mānayanti naṁ. | S: honored, they honor him. | T: being respected, will show him respect.
+
+## ud8.6:24.1–ud8.6:24.4 (ud)
+ud8.6:24.1 | P: Tato naṁ anukampanti, | S: After that they have sympathy for him, | T: As a result, they will feel sympathy for him,
+ud8.6:24.2 | P: mātā puttaṁva orasaṁ; | S: like a mother for the child at her breast. | T: like that of a mother for her child, her son.
+ud8.6:24.3 | P: Devatānukampito poso, | S: A man beloved of the deities | T: A person with whom the devas sympathize
+ud8.6:24.4 | P: sadā bhadrāni passatī”ti. | S: always sees nice things.” | T: always meets with auspicious things.
+CONTEXT ud8.6:25.1 | P: Atha kho bhagavā sunidhavassakārānaṁ magadhamahāmattānaṁ imāhi gāthāhi anumoditvā uṭṭhāyāsanā pakkāmi. | S: When the Buddha had expressed his appreciation to Sunidha and Vassakāra with these verses, he rose from his seat and left. | T: Then the Blessed One, having given his approval to Sunīdha & Vassakāra with these verses, got up from his seat and left.
+CONTEXT ud8.6:26.1 | P: Tena kho pana samayena sunidhavassakārā magadhamahāmattā bhagavantaṁ piṭṭhito piṭṭhito anubandhā honti: | S: Sunidha and Vassakāra followed behind the Buddha, thinking, | T: And on that occasion, Sunīdha & Vassakāra followed right after the Blessed One, (thinking,)
+
+## ud8.6:30.1–ud8.6:30.4 (ud)
+CONTEXT ud8.6:28.1 | P: Addasā kho bhagavā te manusse appekacce nāvaṁ pariyesante, appekacce uḷumpaṁ pariyesante, appekacce kullaṁ bandhante apārā pāraṁ gantukāme. | S: He saw all those humans wanting to cross over. | T: He saw that some people were searching for boats, some were searching for floats, some were binding rafts in hopes of going from this shore to the other.
+CONTEXT ud8.6:29.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud8.6:30.1 | P: “Ye taranti aṇṇavaṁ saraṁ, | S: “Those who cross a deluge or stream | T: Those ⏎ who cross the foaming flood,
+ud8.6:30.2 | P: Setuṁ katvāna visajja pallalāni; | S: have built a bridge and left the marshes behind. | T: having made a bridge, avoiding the swamps
+ud8.6:30.3 | P: Kullañhi jano pabandhati, | S: While some people are still tying a raft, | T: –while people are binding rafts–
+ud8.6:30.4 | P: Tiṇṇā medhāvino janā”ti. | S: intelligent people have crossed over.” | T: have already crossed ⏎ : the wise.
+CONTEXT ud8.6:30.5 | P: Chaṭṭhaṁ. | S: (none) | T: (none)
+
+## ud8.7:5.1–ud8.7:5.4 (ud)
+CONTEXT ud8.7:3.4 | P: “idha mayhaṁ, bhante, tena panthena gacchantassa antarāmagge corā nikkhamitvā hatthehi ca pādehi ca ākoṭesuṁ, pattañca bhindiṁsu, saṅghāṭiñca vipphālesun”ti. | S: (none) | T: “Just now, lord, as I was going along that route, thieves jumped out in the middle of the road, pummeled me with their fists & feet, broke my bowl, and ripped my outer robe to shreds.”
+CONTEXT ud8.7:4.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud8.7:5.1 | P: “Saddhiṁ caramekato vasaṁ, | S: “Walking together, dwelling as one, | T: When traveling together, ⏎ mixed together
+ud8.7:5.2 | P: Misso aññajanena vedagū; | S: the knowledge master mixes with foolish folk. | T: with a person who doesn’t know, ⏎ an attainer-of-wisdom,
+ud8.7:5.3 | P: Vidvā pajahāti pāpakaṁ, | S: Knowing this, they give up wickedness, | T: on realizing that the person is evil, ⏎ abandons him
+ud8.7:5.4 | P: Koñco khīrapakova ninnagan”ti. | S: like a milk-drinking heron the water.” | T: as a milk-feeding heron, ⏎ a bog.
+CONTEXT ud8.7:5.5 | P: Sattamaṁ. | S: (none) | T: (none)
+
+## ud8.8:7.1–ud8.8:7.4 (ud)
+CONTEXT ud8.8:5.20 | P: yesaṁ natthi piyaṁ, natthi tesaṁ dukkhaṁ, asokā te virajā anupāyāsāti vadāmī”ti. | S: Those who have no loved ones have no suffering. They are free of sorrow, stains, and anguish I say.” | T: Those who have no dear ones have no sufferings. They are free from sorrow, free from stain, free from lamentation, I tell you.”
+CONTEXT ud8.8:6.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud8.8:7.1 | P: “Ye keci sokā paridevitā vā, | S: “All the sorrows and lamentations | T: The sorrows, lamentations,
+ud8.8:7.2 | P: Dukkhā va lokasmimanekarūpā; | S: and the countless forms of suffering in the world | T: the many kinds of suffering in the world,
+ud8.8:7.3 | P: Piyaṁ paṭiccappabhavanti ete, | S: occur because of those that we love; | T: exist dependent on something dear.
+ud8.8:7.4 | P: Piye asante na bhavanti ete. | S: without loved ones they do not occur. | T: They don’t exist ⏎ when there’s nothing dear.
+
+## ud8.8:8.1–ud8.8:8.4 (ud) GATHERED; unequal counts require a reader
+ud8.8:8.1 | P: Tasmā hi te sukhino vītasokā, | S: That’s why those who have no loved ones at all in the world | T: And thus blissful & sorrowless ⏎ are those for whom nothing ⏎ in the world is anywhere dear.
+ud8.8:8.2 | P: Yesaṁ piyaṁ natthi kuhiñci loke; | S: are happy and free of grief. | T: (none)
+ud8.8:8.3 | P: Tasmā asokaṁ virajaṁ patthayāno, | S: So aspiring to the sorrowless and stainless, | T: So one who aspires ⏎ to the stainless & sorrowless
+ud8.8:8.4 | P: Piyaṁ na kayirātha kuhiñci loke”ti. | S: have no loved ones in the world at all.” | T: shouldn’t make anything ⏎ dear ⏎ in the world ⏎ anywhere.
+CONTEXT ud8.8:8.5 | P: Aṭṭhamaṁ. | S: (none) | T: (none)
+
+## ud8.9:5.1–ud8.9:5.4 (ud)
+CONTEXT ud8.9:3.3 | P: evamevaṁ āyasmato dabbassa mallaputtassa vehāsaṁ abbhuggantvā ākāse antalikkhe pallaṅkena nisīditvā tejodhātuṁ samāpajjitvā vuṭṭhahitvā parinibbutassa sarīrassa jhāyamānassa ḍayhamānassa neva chārikā paññāyittha na masīti. | S: (none) | T: in the same way, when Dabba Mallaputta rose up into the air and, sitting cross-legged in the sky, in space, entered & emerged from the fire property and was totally unbound, his body burned and was consumed so that neither ashes nor soot could be discerned.
+CONTEXT ud8.9:4.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud8.9:5.1 | P: “Abhedi kāyo nirodhi saññā, | S: “The body is broken up, perception has ceased, | T: The body broke up, ⏎ perception ceased,
+ud8.9:5.2 | P: Vedanā sītibhaviṁsu sabbā; | S: all feelings have become cool; | T: feelings went cold ⏎ –all–
+ud8.9:5.3 | P: Vūpasamiṁsu saṅkhārā, | S: choices are stilled, | T: fabrications were stilled,
+ud8.9:5.4 | P: Viññāṇaṁ atthamāgamā”ti. | S: and consciousness come to an end.” | T: consciousness ⏎ has come to an end.
+CONTEXT ud8.9:5.5 | P: Navamaṁ. | S: (none) | T: (none)
+
+## ud8.10:4.1–ud8.10:4.4 (ud)
+CONTEXT ud8.10:2.3 | P: evamevaṁ kho, bhikkhave, dabbassa mallaputtassa vehāsaṁ abbhuggantvā ākāse antalikkhe pallaṅkena nisīditvā tejodhātuṁ samāpajjitvā vuṭṭhahitvā parinibbutassa sarīrassa jhāyamānassa ḍayhamānassa neva chārikā paññāyittha na masī”ti. | S: In the same way, when Dabba the Mallian rose into the air and, sitting cross-legged in midair, entered and withdrew from the fire element before becoming fully quenched, his body burning and combusting left neither ashes nor soot to be found.” | T: in the same way, when Dabba Mallaputta rose up into the air and, sitting cross-legged in the sky, in space, entered & emerged from the fire property and was totally unbound, his body burned and was consumed so that neither ashes nor soot could be discerned.”
+CONTEXT ud8.10:3.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+ud8.10:4.1 | P: “Ayoghanahatasseva, | S: “Just as the glow of iron struck | T: Just as the destination of a glowing fire
+ud8.10:4.2 | P: jalato jātavedaso; | S: by a hammer in the fire of Jātaveda | T: struck with a [blacksmith’s] iron hammer,
+ud8.10:4.3 | P: Anupubbūpasantassa, | S: gradually dissipates, | T: gradually growing calm,
+ud8.10:4.4 | P: yathā na ñāyate gati. | S: its destiny unknown; | T: isn’t known:

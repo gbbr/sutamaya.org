@@ -18,7 +18,7 @@ mn5:22-24.3 none
 mn5:22-24.5 starts: But it’s possible that the monks… nuns… men
 mn5:32.2 starts: “But as for those sons of good families
 snp4.14:2.1 starts: “He should put an entire stop to the
-snp4.14:2.3 none
+# superseded: snp4.14:2.3 none
 snp4.14:9.3 starts: shouldn’t covet anywhere any states of becoming,
-snp4.14:11.3 starts: should live in a noise-less abode.
-snp4.14:11.4 none
+# superseded: snp4.14:11.3 starts: should live in a noise-less abode.
+# superseded: snp4.14:11.4 none

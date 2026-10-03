@@ -1,0 +1,725 @@
+# Source-break correction review
+Source blocks below are the translator’s real lines. Existing app row boundaries are NOT necessarily source breaks.
+Correct only reviewed verse keys. Keep words and their order. A whole verse owns its translation; no literal Pali-row alignment.
+New cuts only at actual source block boundaries; quote owned first 6–8 words (shorter for short own lines).
+Name every occupied intended row in a recut stanza, and use key none only when actual English lines are fewer.
+CONTEXT rows read-only. Source-order interleavings and prose attachments may be impossible within this scope.
+
+## dn20:20.11
+Concern: Hārita Brahmā
+VERSE dn20:20.5 dn20:20.6 dn20:20.7 dn20:20.8
+dn20:20.5 | P: Sahassaṁ brahmalokānaṁ,  | S: Of a thousand realms of divinity,  | T: Great Brahmā, who stands over 1,000 Brahmā worlds, 
+dn20:20.6 | P: mahābrahmābhitiṭṭhati;  | S: the Great Divinity stands forth.  | T: 
+dn20:20.7 | P: Upapanno jutimanto,  | S: He has arisen, brilliant,  | T: who arose there spontaneously, effulgent: 
+dn20:20.8 | P: bhismākāyo yasassiso.  | S: his formidable body so glorious.  | T: Prestigious is he, with a terrifying body. 
+VERSE dn20:20.9 dn20:20.10 dn20:20.11 dn20:20.12
+dn20:20.9 | P: Dasettha issarā āguṁ,  | S: Ten Gods Almighty came there,  | T: And ten Brahmā sovereigns, each the lord of his own realm— 
+dn20:20.10 | P: paccekavasavattino;  | S: each one of them wielding power,  | T: 
+dn20:20.11 | P: Tesañca majjhato āga,  | S: and in the middle of them came  | T: and in their midst has come 
+dn20:20.12 | P: hārito parivārito.  | S: Hārita with his following.”  | T: Hārita Brahmā ⏎ surrounded by his retinue.” 
+VERSE dn20:21.1 dn20:21.2 dn20:21.3 dn20:21.4
+dn20:21.1 | P: Te ca sabbe abhikkante,  | S: When they had all come forth— | T: When all these devas with Indras & Brahmās had come, 
+dn20:21.2 | P: sainde deve sabrahmake;  | S: the gods with their Lord, and the divinities— | T: 
+dn20:21.3 | P: Mārasenā abhikkāmi,  | S: Māra’s army came forth too:  | T: Māra’s army came as well. 
+dn20:21.4 | P: passa kaṇhassa mandiyaṁ.  | S: see the stupidity of the Dark Lord!  | T: Now look at the Dark One’s foolishness! 
+VERSE dn20:21.5 dn20:21.6 dn20:21.7 dn20:21.8
+dn20:21.5 | P: ‘Etha gaṇhatha bandhatha,  | S: “Come, seize them and bind them,” he said,  | T: [He said:] “Come seize them! Bind them! 
+dn20:21.6 | P: rāgena baddhamatthu vo;  | S: “let them be bound by desire!  | T: Tie them down with passion! 
+dn20:21.7 | P: Samantā parivāretha,  | S: Surround them on all sides,  | T: Surround them on every side! 
+dn20:21.8 | P: mā vo muñcittha koci naṁ’.  | S: don’t let any escape!”  | T: Don’t let anyone at all escape!” 
+Current proposed starts:
+dn20:20.9 starts: And ten Brahmā sovereigns, each the lord of
+dn20:20.10 starts: and in their midst has come
+dn20:20.11 starts: Hārita Brahmā
+dn20:20.12 starts: surrounded by his retinue.”
+SOURCE sutta/dn/dn20.html
+SOURCE LINE 193 (vs): Subrahmā and Paramatta Brahmā,
+SOURCE LINE 194 (v): together with sons of the Powerful One,
+SOURCE LINE 195 (v): Sanaṅkumāra and Tissa:
+SOURCE LINE 196 (v): They too have come to the forest meeting.
+SOURCE LINE 197 (v): Great Brahmā, who stands over 1,000 Brahmā worlds,
+SOURCE LINE 198 (v): who arose there spontaneously, effulgent:
+SOURCE LINE 199 (v): Prestigious is he, with a terrifying body.
+SOURCE LINE 200 (v): And ten Brahmā sovereigns, each the lord of his own realm—
+SOURCE LINE 201 (v): and in their midst has come Hārita Brahmā
+SOURCE LINE 202 (v): surrounded by his retinue.”
+SOURCE LINE 203 (vs): When all these devas with Indras & Brahmās had come,
+SOURCE LINE 204 (v): Māra’s army came as well.
+SOURCE LINE 205 (v): Now look at the Dark One’s foolishness!
+SOURCE LINE 206 (v): [He said:] “Come seize them! Bind them!
+SOURCE LINE 207 (v): Tie them down with passion!
+SOURCE LINE 208 (v): Surround them on every side!
+SOURCE LINE 209 (v): Don’t let anyone at all escape!”
+SOURCE LINE 210 (v): Thus the great warlord urged on his dark army,
+SOURCE LINE 211 (v): slapping the ground with his hand,
+SOURCE LINE 212 (v): making a horrendous din, as when
+SOURCE LINE 213 (v): a storm cloud bursts with thunder,
+
+## an3.30:7.3
+Concern: grasps the words
+VERSE an3.30:6.1 an3.30:6.2 an3.30:6.3 an3.30:6.4
+an3.30:6.1 | P: Ucchaṅgapañño puriso,  | S: the individual with wisdom on their lap  | T: A man of lap discernment 
+an3.30:6.2 | P: seyyo etena vuccati;  | S: is better than that, it’s said;  | T: is said to be better than that one. 
+an3.30:6.3 | P: Abhikkhaṇampi ce hoti,  | S: but even if they frequently  | T: If he often goes in the presence of the monks, 
+an3.30:6.4 | P: gantā bhikkhūna santike.  | S: go into the mendicants’ presence,  | T: 
+VERSE an3.30:7.1 an3.30:7.2 an3.30:7.3 an3.30:7.4 an3.30:7.5 an3.30:7.6
+an3.30:7.1 | P: Ādiṁ kathāya majjhañca,  | S: such a person can only learn  | T: 
+an3.30:7.2 | P: pariyosānañca tādiso;  | S: the beginning, middle, and end  | T: 
+an3.30:7.3 | P: Nisinno āsane tasmiṁ,  | S: while sitting in that seat;  | T: while sitting in that seat, 
+an3.30:7.4 | P: uggahetvāna byañjanaṁ;  | S: but they’ve only grasped the phrasing,  | T: grasps the words ⏎ of the beginning, middle, & end of the talk, 
+an3.30:7.5 | P: Vuṭṭhito nappajānāti,  | S: for when they rise their understanding fails,  | T: but getting up, he doesn’t discern anything like that, 
+an3.30:7.6 | P: gahitaṁ hissa mussati.  | S: and what they’ve learned is lost.  | T: for he forgets what he had grasped. 
+VERSE an3.30:8.1 an3.30:8.2 an3.30:8.3 an3.30:8.4
+an3.30:8.1 | P: Puthupañño ca puriso,  | S: The person with widespread wisdom  | T: But a man of wide open discernment 
+an3.30:8.2 | P: seyyo etehi vuccati;  | S: is better than that, it’s said;  | T: is said to be better than those ones. 
+an3.30:8.3 | P: Abhikkhaṇampi ce hoti,  | S: and if they, too, frequently  | T: If he often goes in the presence of the monks, 
+an3.30:8.4 | P: gantā bhikkhūna santike.  | S: go into the mendicants’ presence,  | T: 
+VERSE an3.30:9.1 an3.30:9.2 an3.30:9.3 an3.30:9.4
+an3.30:9.1 | P: Ādiṁ kathāya majjhañca,  | S: one such can learn  | T: 
+an3.30:9.2 | P: pariyosānañca tādiso;  | S: the beginning, middle, and end  | T: 
+an3.30:9.3 | P: Nisinno āsane tasmiṁ,  | S: while sitting in that seat;  | T: while sitting in that seat, 
+an3.30:9.4 | P: uggahetvāna byañjanaṁ.  | S: and when they’ve grasped the phrasing,  | T: he grasps the words ⏎ of the beginning, middle, & end of the talk. 
+Current proposed starts:
+an3.30:7.1 none
+an3.30:7.2 starts: while sitting in that seat,
+an3.30:7.3 starts: grasps the words
+an3.30:7.4 starts: of the beginning, middle, & end of
+an3.30:7.5 starts: but getting up, he doesn’t discern anything
+an3.30:7.6 starts: for he forgets what he had grasped.
+an3.30:9.1 none
+an3.30:9.2 starts: while sitting in that seat,
+an3.30:9.3 starts: he grasps the words
+an3.30:9.4 starts: of the beginning, middle, & end of
+SOURCE sutta/an/an3/an3.30.html
+SOURCE LINE 1 (p): “Monks, there are these three types of persons to be found existing in the world. Which three? The person of upside down discernment, the person of lap discernment, and the person of wide-open discernment.
+SOURCE LINE 2 (p): “And which is the person of upside-down discernment? There is the case where a person, having gone to a monastery, often listens to the Dhamma in the presence of the monks. The monks teach him the Dhamma admirable in the beginning, admirable in the middle, admirable in the end. They expound the holy life both in its particulars & in its meaning, entirely perfect, surpassingly pure. He, while sitting in that seat, doesn’t attend to the beginning of that talk, doesn’t attend to the middle, doesn’t attend to the end. Having gotten up from that seat, he doesn’t attend to the beginning of that talk, doesn’t attend to the middle, doesn’t attend to the end. Just as when a pot is turned upside down, water poured there runs off and doesn’t stay; in the same way, there is the case where a person, having gone to a monastery, often listens to the Dhamma in the presence of the monks. The monks teach him the Dhamma admirable in the beginning, admirable in the middle, admirable in the end. They expound the holy life both in its particulars & in its meaning, entirely perfect, surpassingly pure. He, while sitting in that seat, doesn’t attend to the beginning of that talk, doesn’t attend to the middle, doesn’t attend to the end. Having gotten up from that seat, he doesn’t attend to the beginning of that talk, doesn’t attend to the middle, doesn’t attend to the end. This is called a person of upside down discernment.
+SOURCE LINE 3 (p): “And which is the person of lap discernment? There is the case where a person, having gone to a monastery, often listens to the Dhamma in the presence of the monks. The monks teach him the Dhamma admirable in the beginning, admirable in the middle, admirable in the end. They expound the holy life both in its particulars & in its meaning, entirely perfect, surpassingly pure. He, while sitting in that seat, attends to the beginning of that talk, attends to the middle, attends to the end. But having gotten up from that seat, he doesn’t attend to the beginning of that talk, doesn’t attend to the middle, doesn’t attend to the end. Just as when a person has various foods strewn over his lap—sesame seeds, husked rice, cakes, & jujubes—and when getting up, his mindfulness lapsed, he would scatter them; in the same way, there is the case where a person, having gone to a monastery, often listens to the Dhamma in the presence of the monks. The monks teach him the Dhamma admirable in the beginning, admirable in the middle, admirable in the end. They expound the holy life both in its particulars & in its meaning, entirely perfect, surpassingly pure. He, while sitting in that seat, attends to the beginning of that talk, attends to the middle, attends to the end. But having gotten up from that seat, he doesn’t attend to the beginning of that talk, doesn’t attend to the middle, doesn’t attend to the end. This is called a person of lap discernment.
+SOURCE LINE 4 (p): “And which is the person of wide open discernment? There is the case where a person, having gone to a monastery, often listens to the Dhamma in the presence of the monks. The monks teach him the Dhamma admirable in the beginning, admirable in the middle, admirable in the end. They expound the holy life both in its particulars & in its meaning, entirely perfect, surpassingly pure. He, while sitting in that seat, attends to the beginning of that talk, attends to the middle, attends to the end. And having gotten up from that seat, attends to the beginning of that talk, attends to the middle, attends to the end. Just as when a pot is set right side up, water poured there stays and doesn’t run off; in the same way, there is the case where a person, having gone to a monastery, often listens to the Dhamma in the presence of the monks. The monks teach him the Dhamma admirable in the beginning, admirable in the middle, admirable in the end. They expound the holy life both in its particulars & in its meaning, entirely perfect, surpassingly pure. He, while sitting in that seat, attends to the beginning of that talk, attends to the middle, attends to the end. And having gotten up from that seat, attends to the beginning of that talk, attends to the middle, attends to the end. This is called a person of wide open discernment.”
+SOURCE LINE 5 (vs): A man of upside down discernment—
+SOURCE LINE 6 (v): stupid, injudicious,
+SOURCE LINE 7 (v): even if he often goes in the presence of the monks,
+SOURCE LINE 8 (v): can’t grasp anything
+SOURCE LINE 9 (v): like the beginning, middle, or end of a talk,
+SOURCE LINE 10 (v): for discernment isn’t found in him.
+SOURCE LINE 11 (vs): A man of lap discernment
+SOURCE LINE 12 (v): is said to be better than that one.
+SOURCE LINE 13 (v): If he often goes in the presence of the monks,
+SOURCE LINE 14 (v): while sitting in that seat, grasps the words
+SOURCE LINE 15 (v): of the beginning, middle, & end of the talk,
+SOURCE LINE 16 (v): but getting up, he doesn’t discern anything like that,
+SOURCE LINE 17 (v): for he forgets what he had grasped.
+SOURCE LINE 18 (vs): But a man of wide open discernment
+SOURCE LINE 19 (v): is said to be better than those ones.
+SOURCE LINE 20 (v): If he often goes in the presence of the monks,
+SOURCE LINE 21 (v): while sitting in that seat, he grasps the words
+SOURCE LINE 22 (v): of the beginning, middle, & end of the talk.
+SOURCE LINE 23 (v): He remembers—the person of undivided mind,
+SOURCE LINE 24 (v): with the best of resolves.
+SOURCE LINE 25 (v): Practicing the Dhamma in line with the Dhamma,
+
+## an3.30:9.3
+Concern: he grasps the words
+VERSE an3.30:8.1 an3.30:8.2 an3.30:8.3 an3.30:8.4
+an3.30:8.1 | P: Puthupañño ca puriso,  | S: The person with widespread wisdom  | T: But a man of wide open discernment 
+an3.30:8.2 | P: seyyo etehi vuccati;  | S: is better than that, it’s said;  | T: is said to be better than those ones. 
+an3.30:8.3 | P: Abhikkhaṇampi ce hoti,  | S: and if they, too, frequently  | T: If he often goes in the presence of the monks, 
+an3.30:8.4 | P: gantā bhikkhūna santike.  | S: go into the mendicants’ presence,  | T: 
+VERSE an3.30:9.1 an3.30:9.2 an3.30:9.3 an3.30:9.4
+an3.30:9.1 | P: Ādiṁ kathāya majjhañca,  | S: one such can learn  | T: 
+an3.30:9.2 | P: pariyosānañca tādiso;  | S: the beginning, middle, and end  | T: 
+an3.30:9.3 | P: Nisinno āsane tasmiṁ,  | S: while sitting in that seat;  | T: while sitting in that seat, 
+an3.30:9.4 | P: uggahetvāna byañjanaṁ.  | S: and when they’ve grasped the phrasing,  | T: he grasps the words ⏎ of the beginning, middle, & end of the talk. 
+VERSE an3.30:10.1 an3.30:10.2 an3.30:10.3 an3.30:10.4
+an3.30:10.1 | P: Dhāreti seṭṭhasaṅkappo,  | S: they remember it with the best of intentions.  | T: He remembers—the person of undivided mind, ⏎ with the best of resolves. 
+an3.30:10.2 | P: Abyaggamānaso naro;  | S: That peaceful-hearted man,  | T: 
+an3.30:10.3 | P: Dhammānudhammappaṭipanno,  | S: practicing in line with the teaching,  | T: Practicing the Dhamma in line with the Dhamma, 
+an3.30:10.4 | P: Dukkhassantakaro siyā”ti.  | S: would make an end of suffering.”  | T: he’ll put an end ⏎ to suffering & stress. 
+VERSE an3.30:11.1 an3.30:11.2 an3.30:11.3 an3.30:11.4
+an3.30:11.1 | P: Samiddha gilāna saṅkhārā,  | S:  | T: 
+an3.30:11.2 | P: bahukārā vajirena ca;  | S:  | T: 
+an3.30:11.3 | P: Sevi jiguccha gūthabhāṇī,  | S:  | T: 
+an3.30:11.4 | P: andho ca avakujjatāti.  | S:  | T: 
+Current proposed starts:
+an3.30:9.1 none
+an3.30:9.2 starts: while sitting in that seat,
+an3.30:9.3 starts: he grasps the words
+an3.30:9.4 starts: of the beginning, middle, & end of
+an3.30:10.1 starts: He remembers—the person of undivided mind,
+an3.30:10.2 starts: with the best of resolves.
+an3.30:10.3 starts: Practicing the Dhamma in line with the
+an3.30:10.4 starts: he’ll put an end
+SOURCE sutta/an/an3/an3.30.html
+SOURCE LINE 1 (p): “Monks, there are these three types of persons to be found existing in the world. Which three? The person of upside down discernment, the person of lap discernment, and the person of wide-open discernment.
+SOURCE LINE 2 (p): “And which is the person of upside-down discernment? There is the case where a person, having gone to a monastery, often listens to the Dhamma in the presence of the monks. The monks teach him the Dhamma admirable in the beginning, admirable in the middle, admirable in the end. They expound the holy life both in its particulars & in its meaning, entirely perfect, surpassingly pure. He, while sitting in that seat, doesn’t attend to the beginning of that talk, doesn’t attend to the middle, doesn’t attend to the end. Having gotten up from that seat, he doesn’t attend to the beginning of that talk, doesn’t attend to the middle, doesn’t attend to the end. Just as when a pot is turned upside down, water poured there runs off and doesn’t stay; in the same way, there is the case where a person, having gone to a monastery, often listens to the Dhamma in the presence of the monks. The monks teach him the Dhamma admirable in the beginning, admirable in the middle, admirable in the end. They expound the holy life both in its particulars & in its meaning, entirely perfect, surpassingly pure. He, while sitting in that seat, doesn’t attend to the beginning of that talk, doesn’t attend to the middle, doesn’t attend to the end. Having gotten up from that seat, he doesn’t attend to the beginning of that talk, doesn’t attend to the middle, doesn’t attend to the end. This is called a person of upside down discernment.
+SOURCE LINE 3 (p): “And which is the person of lap discernment? There is the case where a person, having gone to a monastery, often listens to the Dhamma in the presence of the monks. The monks teach him the Dhamma admirable in the beginning, admirable in the middle, admirable in the end. They expound the holy life both in its particulars & in its meaning, entirely perfect, surpassingly pure. He, while sitting in that seat, attends to the beginning of that talk, attends to the middle, attends to the end. But having gotten up from that seat, he doesn’t attend to the beginning of that talk, doesn’t attend to the middle, doesn’t attend to the end. Just as when a person has various foods strewn over his lap—sesame seeds, husked rice, cakes, & jujubes—and when getting up, his mindfulness lapsed, he would scatter them; in the same way, there is the case where a person, having gone to a monastery, often listens to the Dhamma in the presence of the monks. The monks teach him the Dhamma admirable in the beginning, admirable in the middle, admirable in the end. They expound the holy life both in its particulars & in its meaning, entirely perfect, surpassingly pure. He, while sitting in that seat, attends to the beginning of that talk, attends to the middle, attends to the end. But having gotten up from that seat, he doesn’t attend to the beginning of that talk, doesn’t attend to the middle, doesn’t attend to the end. This is called a person of lap discernment.
+SOURCE LINE 4 (p): “And which is the person of wide open discernment? There is the case where a person, having gone to a monastery, often listens to the Dhamma in the presence of the monks. The monks teach him the Dhamma admirable in the beginning, admirable in the middle, admirable in the end. They expound the holy life both in its particulars & in its meaning, entirely perfect, surpassingly pure. He, while sitting in that seat, attends to the beginning of that talk, attends to the middle, attends to the end. And having gotten up from that seat, attends to the beginning of that talk, attends to the middle, attends to the end. Just as when a pot is set right side up, water poured there stays and doesn’t run off; in the same way, there is the case where a person, having gone to a monastery, often listens to the Dhamma in the presence of the monks. The monks teach him the Dhamma admirable in the beginning, admirable in the middle, admirable in the end. They expound the holy life both in its particulars & in its meaning, entirely perfect, surpassingly pure. He, while sitting in that seat, attends to the beginning of that talk, attends to the middle, attends to the end. And having gotten up from that seat, attends to the beginning of that talk, attends to the middle, attends to the end. This is called a person of wide open discernment.”
+SOURCE LINE 5 (vs): A man of upside down discernment—
+SOURCE LINE 6 (v): stupid, injudicious,
+SOURCE LINE 7 (v): even if he often goes in the presence of the monks,
+SOURCE LINE 8 (v): can’t grasp anything
+SOURCE LINE 9 (v): like the beginning, middle, or end of a talk,
+SOURCE LINE 10 (v): for discernment isn’t found in him.
+SOURCE LINE 11 (vs): A man of lap discernment
+SOURCE LINE 12 (v): is said to be better than that one.
+SOURCE LINE 13 (v): If he often goes in the presence of the monks,
+SOURCE LINE 14 (v): while sitting in that seat, grasps the words
+SOURCE LINE 15 (v): of the beginning, middle, & end of the talk,
+SOURCE LINE 16 (v): but getting up, he doesn’t discern anything like that,
+SOURCE LINE 17 (v): for he forgets what he had grasped.
+SOURCE LINE 18 (vs): But a man of wide open discernment
+SOURCE LINE 19 (v): is said to be better than those ones.
+SOURCE LINE 20 (v): If he often goes in the presence of the monks,
+SOURCE LINE 21 (v): while sitting in that seat, he grasps the words
+SOURCE LINE 22 (v): of the beginning, middle, & end of the talk.
+SOURCE LINE 23 (v): He remembers—the person of undivided mind,
+SOURCE LINE 24 (v): with the best of resolves.
+SOURCE LINE 25 (v): Practicing the Dhamma in line with the Dhamma,
+SOURCE LINE 26 (v): he’ll put an end
+SOURCE LINE 27 (v): to suffering & stress.
+
+## an4.50:10.4
+Concern: consent to gold & silver,
+VERSE an4.50:9.1 an4.50:9.2 an4.50:9.3 an4.50:9.4
+an4.50:9.1 | P: Rāgadosaparikkiṭṭhā,  | S: Some ascetics and brahmins  | T: Obscured by passion & aversion 
+an4.50:9.2 | P: eke samaṇabrāhmaṇā;  | S: are plagued by greed and hate;  | T: —some brahmans & contemplatives— 
+an4.50:9.3 | P: Avijjānivutā posā,  | S: men shrouded by ignorance,  | T: people entrenched in ignorance, 
+an4.50:9.4 | P: piyarūpābhinandino.  | S: enjoying things that seem pleasant.  | T: delighting in endearing forms, 
+VERSE an4.50:10.1 an4.50:10.2 an4.50:10.3 an4.50:10.4 an4.50:10.5 an4.50:10.6
+an4.50:10.1 | P: Suraṁ pivanti merayaṁ,  | S: Drinking beer and wine,  | T: drink alcohol & fermented liquor, 
+an4.50:10.2 | P: paṭisevanti methunaṁ;  | S: having sex,  | T: engage in sexual intercourse, ⏎ unwise, 
+an4.50:10.3 | P: Rajataṁ jātarūpañca,  | S: accepting currency and gold:  | T: consent to gold & silver, 
+an4.50:10.4 | P: sādiyanti aviddasū;  | S: they’re ignorant.  | T: 
+an4.50:10.5 | P: Micchājīvena jīvanti,  | S: Some ascetics and brahmins  | T: live by means of wrong livelihood ⏎ —some brahmans & contemplatives. 
+an4.50:10.6 | P: eke samaṇabrāhmaṇā.  | S: make a living the wrong way.  | T: 
+VERSE an4.50:11.1 an4.50:11.2 an4.50:11.3 an4.50:11.4 an4.50:11.5 an4.50:11.6
+an4.50:11.1 | P: Ete upakkilesā vuttā,  | S: These corruptions were spoken of  | T: These are said to be obscurations 
+an4.50:11.2 | P: buddhenādiccabandhunā;  | S: by the Buddha, Kinsman of the Sun.  | T: by the Awakened One, ⏎ kinsman of the Sun. 
+an4.50:11.3 | P: Yehi upakkilesehi,  | S: When corrupted by these,  | T: Because of these obscurations 
+an4.50:11.4 | P: eke samaṇabrāhmaṇā;  | S: some ascetics and brahmins  | T: some brahmans & contemplatives 
+an4.50:11.5 | P: Na tapanti na bhāsanti,  | S: don’t shine or glow.  | T: don’t glow, ⏎ don’t shine, 
+an4.50:11.6 | P: asuddhā sarajā magā.  | S: Impure, dirty creatures,  | T: are impure, ⏎ dusty, ⏎ dead. 
+VERSE an4.50:12.1 an4.50:12.2 an4.50:12.3 an4.50:12.4
+an4.50:12.1 | P: Andhakārena onaddhā,  | S: swathed in darkness,  | T: Covered with darkness, 
+an4.50:12.2 | P: taṇhādāsā sanettikā;  | S: bondservants of craving, full of attachments,  | T: slaves to craving, led on, 
+an4.50:12.3 | P: Vaḍḍhenti kaṭasiṁ ghoraṁ,  | S: swell the horrors of the charnel ground,  | T: they swell the terrible charnel ground, 
+an4.50:12.4 | P: ādiyanti punabbhavan”ti.  | S: taking up future lives.”  | T: they grab at further becoming. 
+Current proposed starts:
+an4.50:10.1 starts: drink alcohol & fermented liquor,
+an4.50:10.2 starts: engage in sexual intercourse,
+an4.50:10.3 starts: unwise,
+an4.50:10.4 starts: consent to gold & silver,
+an4.50:10.5 starts: live by means of wrong livelihood
+an4.50:10.6 starts: —some brahmans & contemplatives.
+SOURCE sutta/an/an4/an4.50.html
+SOURCE LINE 1 (p): “Monks, there are these four obscurations of the sun and moon, obscured by which the sun and moon don’t glow, don’t shine, don’t dazzle. Which four?
+SOURCE LINE 2 (p): “Clouds are an obscuration of the sun and moon, obscured by which the sun and moon don’t glow, don’t shine, don’t dazzle.
+SOURCE LINE 3 (p): “Fog is an obscuration.…
+SOURCE LINE 4 (p): “Smoke and dust is an obscuration.…
+SOURCE LINE 5 (p): “Rāhu, the king of the asuras [believed to be the cause of an eclipse] is an obscuration of the sun and moon, obscured by which the sun and moon don’t glow, don’t shine, don’t dazzle.
+SOURCE LINE 6 (p): “These are the four obscurations of the sun and moon, obscured by which the sun and moon don’t glow, don’t shine, don’t dazzle.
+SOURCE LINE 7 (p): “In the same way, there are four obscurations of contemplatives & brahmans, obscured by which some contemplatives & brahmans don’t glow, don’t shine, don’t dazzle. Which four?
+SOURCE LINE 8 (p): “There are some contemplatives & brahmans who drink alcohol and fermented liquor, who don’t refrain from drinking alcohol and fermented liquor. This is the first obscuration of contemplatives & brahmans, obscured by which some contemplatives & brahmans don’t glow, don’t shine, don’t dazzle.
+SOURCE LINE 9 (p): “There are some contemplatives & brahmans who engage in sexual intercourse, who don’t refrain from sexual intercourse. This is the second obscuration of contemplatives & brahmans, obscured by which some contemplatives & brahmans don’t glow, don’t shine, don’t dazzle.
+SOURCE LINE 10 (p): “There are some contemplatives & brahmans who consent to gold & silver, who don’t refrain from accepting gold & silver. This is the third obscuration of contemplatives & brahmans, obscured by which some contemplatives & brahmans don’t glow, don’t shine, don’t dazzle.
+SOURCE LINE 11 (p): “There are some contemplatives & brahmans who maintain life through wrong livelihood, who don’t refrain from wrong livelihood. This is the fourth obscuration of contemplatives & brahmans, obscured by which some contemplatives & brahmans don’t glow, don’t shine, don’t dazzle.
+SOURCE LINE 12 (p): “These are the four obscurations, obscured by which some contemplatives & brahmans don’t glow, don’t shine, don’t dazzle.”
+SOURCE LINE 13 (vs): Obscured by passion & aversion
+SOURCE LINE 14 (v): —some brahmans & contemplatives—
+SOURCE LINE 15 (v): people entrenched in ignorance,
+SOURCE LINE 16 (v): delighting in endearing forms,
+SOURCE LINE 17 (v): drink alcohol & fermented liquor,
+SOURCE LINE 18 (v): engage in sexual intercourse,
+SOURCE LINE 19 (v): unwise, consent to gold & silver,
+SOURCE LINE 20 (v): live by means of wrong livelihood
+SOURCE LINE 21 (v): —some brahmans & contemplatives.
+SOURCE LINE 22 (v): These are said to be obscurations
+SOURCE LINE 23 (v): by the Awakened One,
+SOURCE LINE 24 (v): kinsman of the Sun.
+SOURCE LINE 25 (vs): Because of these obscurations
+SOURCE LINE 26 (v): some brahmans & contemplatives
+SOURCE LINE 27 (v): don’t glow,
+SOURCE LINE 28 (v): don’t shine,
+SOURCE LINE 29 (v): are impure,
+SOURCE LINE 30 (v): dusty,
+SOURCE LINE 31 (v): dead.
+SOURCE LINE 32 (vs): Covered with darkness,
+SOURCE LINE 33 (v): slaves to craving, led on,
+SOURCE LINE 34 (v): they swell the terrible charnel ground,
+SOURCE LINE 35 (v): they grab at further becoming.
+
+## an6.43:16.2
+Concern: born & growing in the water,
+VERSE an6.43:15.1 an6.43:15.2 an6.43:15.3 an6.43:15.4
+an6.43:15.1 | P: Saṁyojanaṁ aṇuṁ thūlaṁ,  | S: Having severed all bonds,  | T: Having cut all bonds, 
+an6.43:15.2 | P: sabbaṁ chetvāna bandhanaṁ;  | S: fetters large and small,  | T: fetters tiny & large, 
+an6.43:15.3 | P: Yena yeneva gacchati,  | S: wherever he goes,  | T: wherever he goes, 
+an6.43:15.4 | P: anapekkhova gacchati.  | S: he goes without concern.  | T: he goes without longing. 
+VERSE an6.43:16.1 an6.43:16.2 an6.43:16.3 an6.43:16.4
+an6.43:16.1 | P: Yathāpi udake jātaṁ,  | S: A white lotus,  | T: Like a white lotus, 
+an6.43:16.2 | P: puṇḍarīkaṁ pavaḍḍhati;  | S: fragrant and delightful,  | T: 
+an6.43:16.3 | P: Nupalippati toyena,  | S: sprouts in water and grows there,  | T: born & growing in the water, 
+an6.43:16.4 | P: sucigandhaṁ manoramaṁ.  | S: but water does not stick to it.  | T: but not smeared by the water ⏎ —fragrant, delightful— 
+VERSE an6.43:17.1 an6.43:17.2 an6.43:17.3 an6.43:17.4
+an6.43:17.1 | P: Tatheva loke sujāto,  | S: Just so the Buddha is born in the world,  | T: even so the awakened one, ⏎ well-born in the world, 
+an6.43:17.2 | P: buddho loke viharati;  | S: and lives in the world,  | T: lives in the world, 
+an6.43:17.3 | P: Nupalippati lokena,  | S: but the world does not stick to him,  | T: but is not smeared by the world, 
+an6.43:17.4 | P: toyena padumaṁ yathā.  | S: as water does not stick to the lotus.  | T: like the lotus, by the water. 
+VERSE an6.43:18.1 an6.43:18.2 an6.43:18.3 an6.43:18.4
+an6.43:18.1 | P: Mahāginīva jalito,  | S: A great blazing fire  | T: A great blazing fire 
+an6.43:18.2 | P: anāhārūpasammati;  | S: dies down when the fuel runs out.  | T: unnourished grows calm, 
+an6.43:18.3 | P: Saṅkhāresūpasantesu,  | S: When the coals have gone out  | T: and though its embers exist 
+an6.43:18.4 | P: nibbutoti pavuccati.  | S: it’s said to be ‘quenched’.  | T: is described as unbound: 
+Current proposed starts:
+an6.43:16.1 starts: Like a white lotus,
+an6.43:16.2 starts: born & growing in the water,
+an6.43:16.3 starts: but not smeared by the water
+an6.43:16.4 starts: —fragrant, delightful—
+SOURCE sutta/an/an6/an6.43.html
+SOURCE LINE 50 (v): He eats what is blameless;
+SOURCE LINE 51 (v): doesn’t eat what is not;
+SOURCE LINE 52 (v): on gaining food & clothing,
+SOURCE LINE 53 (v): doesn’t store it up.
+SOURCE LINE 54 (v): Having cut all bonds,
+SOURCE LINE 55 (v): fetters tiny & large,
+SOURCE LINE 56 (v): wherever he goes,
+SOURCE LINE 57 (v): he goes without longing.
+SOURCE LINE 58 (v): Like a white lotus, born & growing in the water,
+SOURCE LINE 59 (v): but not smeared by the water
+SOURCE LINE 60 (v): —fragrant, delightful—
+SOURCE LINE 61 (v): even so the awakened one,
+SOURCE LINE 62 (v): well-born in the world, lives in the world,
+SOURCE LINE 63 (v): but is not smeared by the world,
+SOURCE LINE 64 (v): like the lotus, by the water.
+SOURCE LINE 65 (vs): A great blazing fire
+SOURCE LINE 66 (v): unnourished grows calm,
+SOURCE LINE 67 (v): and though its embers exist
+SOURCE LINE 68 (v): is described as unbound:
+SOURCE LINE 69 (v): Conveying an instructive meaning,
+SOURCE LINE 70 (v): this image is taught by the observant.
+SOURCE LINE 71 (v): Great nāgas will recognize
+SOURCE LINE 72 (v): the nāga as taught by the nāga
+
+## an7.64:22.3
+Concern: and do violence to himself,
+VERSE an7.64:21.1 an7.64:21.2 an7.64:21.3 an7.64:21.4
+an7.64:21.1 | P: Asinā hanti attānaṁ,  | S: Some kill themselves with swords,  | T: with a sword, 
+an7.64:21.2 | P: visaṁ khādanti mucchitā;  | S: some, distraught, take poison.  | T: taking poison, 
+an7.64:21.3 | P: Rajjuyā bajjha mīyanti,  | S: Some hang themselves with rope,  | T: hanging himself by a rope in a mountain glen. 
+an7.64:21.4 | P: pabbatāmapi kandare.  | S: or fling themselves down a mountain gorge.  | T: 
+VERSE an7.64:22.1 an7.64:22.2 an7.64:22.3 an7.64:22.4
+an7.64:22.1 | P: Bhūnahaccāni kammāni,  | S: When they commit deeds of baby-killing,  | T: Doing these deeds ⏎ that kill beings 
+an7.64:22.2 | P: attamāraṇiyāni ca;  | S: and killing themselves,  | T: and do violence to himself, 
+an7.64:22.3 | P: Karontā nāvabujjhanti,  | S: they don’t realize what they do,  | T: the angry person doesn’t realize he’s ruined. 
+an7.64:22.4 | P: kodhajāto parābhavo.  | S: for anger leads to their downfall.  | T: 
+VERSE an7.64:23.1 an7.64:23.2 an7.64:23.3 an7.64:23.4
+an7.64:23.1 | P: Itāyaṁ kodharūpena,  | S: The snare of death in the form of anger  | T: This snare of Māra, in the form of anger, 
+an7.64:23.2 | P: maccupāso guhāsayo;  | S: lies hidden in the heart.  | T: dwelling in the cave of the heart: 
+an7.64:23.3 | P: Taṁ damena samucchinde,  | S: You should cut it out by self-control,  | T: Cut it out with self-control, 
+an7.64:23.4 | P: paññāvīriyena diṭṭhiyā.  | S: by wisdom, energy, and right ideas.  | T: discernment, persistence, right view. 
+VERSE an7.64:24.1 an7.64:24.2 an7.64:24.3 an7.64:24.4
+an7.64:24.1 | P: Yathā metaṁ akusalaṁ,  | S: An astute person should cut out  | T: The wise would cut out 
+an7.64:24.2 | P: samucchindetha paṇḍito;  | S: this unskillful thing.  | T: each & every form of unskillfulness. 
+an7.64:24.3 | P: Tatheva dhamme sikkhetha,  | S: And they’d train in the teaching in just the same way,  | T: Train yourselves: 
+an7.64:24.4 | P: mā no dummaṅkuyaṁ ahu.  | S: not yielding to sulkiness.  | T: ‘May we not be blotted out.’ 
+Current proposed starts:
+an7.64:22.1 starts: Doing these deeds
+an7.64:22.2 starts: that kill beings
+an7.64:22.3 starts: and do violence to himself,
+an7.64:22.4 starts: the angry person doesn’t realize he’s ruined.
+SOURCE sutta/an/an7/an7.64.html
+SOURCE LINE 51 (v): can kill this giver of life.
+SOURCE LINE 52 (v): Like oneself, all beings hold themselves most dear,
+SOURCE LINE 53 (v): yet an angry person, deranged,
+SOURCE LINE 54 (v): can kill himself in many ways:
+SOURCE LINE 55 (v): with a sword, taking poison,
+SOURCE LINE 56 (v): hanging himself by a rope in a mountain glen.
+SOURCE LINE 57 (vs): Doing these deeds
+SOURCE LINE 58 (v): that kill beings and do violence to himself,
+SOURCE LINE 59 (v): the angry person doesn’t realize he’s ruined.
+SOURCE LINE 60 (vs): This snare of Māra, in the form of anger,
+SOURCE LINE 61 (v): dwelling in the cave of the heart:
+SOURCE LINE 62 (v): Cut it out with self-control,
+SOURCE LINE 63 (v): discernment, persistence, right view.
+SOURCE LINE 64 (v): The wise would cut out
+SOURCE LINE 65 (v): each & every form of unskillfulness.
+SOURCE LINE 66 (v): Train yourselves:
+SOURCE LINE 67 (v): ‘May we not be blotted out.’
+SOURCE LINE 68 (vs): Free from anger & untroubled,
+SOURCE LINE 69 (v): free from greed, without longing,
+SOURCE LINE 70 (v): tamed, your anger abandoned,
+SOURCE LINE 71 (v): effluent-free, you will be
+
+## dhp164:3
+Concern: noble:
+VERSE dhp163:1 dhp163:2 dhp163:3 dhp163:4
+dhp163:1 | P: Sukarāni asādhūni,  | S: It’s easy to do bad things  | T: They’re easy to do– 
+dhp163:2 | P: attano ahitāni ca;  | S: harmful to oneself,  | T: things of no good ⏎ & no use to yourself. 
+dhp163:3 | P: Yaṁ ve hitañca sādhuñca,  | S: but good things that are helpful  | T: What’s truly useful & good 
+dhp163:4 | P: taṁ ve paramadukkaraṁ.  | S: are the hardest things to do.  | T: is truly harder than hard to do. 
+VERSE dhp164:1 dhp164:2 dhp164:3 dhp164:4 dhp164:5 dhp164:6
+dhp164:1 | P: Yo sāsanaṁ arahataṁ,  | S: On account of wicked views— | T: The teaching of those who live the Dhamma, 
+dhp164:2 | P: ariyānaṁ dhammajīvinaṁ;  | S: scorning the guidance  | T: 
+dhp164:3 | P: Paṭikkosati dummedho,  | S: of the perfected ones,  | T: worthy ones, 
+dhp164:4 | P: diṭṭhiṁ nissāya pāpikaṁ;  | S: the noble ones living righteously— | T: noble: ⏎ whoever maligns it ⏎ –a dullard, ⏎ inspired by evil view– 
+dhp164:5 | P: Phalāni kaṭṭhakasseva,  | S: the idiot begets their own self’s demise,  | T: 
+dhp164:6 | P: attaghātāya phallati.  | S: like the bamboo bearing fruit.  | T: bears fruit for his own destruction, ⏎ like the fruiting of the bamboo. 
+VERSE dhp165:1 dhp165:2 dhp165:3 dhp165:4 dhp165:5 dhp165:6
+dhp165:1 | P: Attanā hi kataṁ pāpaṁ,  | S: For it is by oneself that evil’s done,  | T: Evil is done ⏎ by oneself, 
+dhp165:2 | P: attanā saṅkilissati;  | S: one is corrupted by oneself.  | T: by oneself is one defiled. 
+dhp165:3 | P: Attanā akataṁ pāpaṁ,  | S: It’s by oneself that evil’s not done,  | T: Evil is left undone ⏎ by oneself, 
+dhp165:4 | P: attanāva visujjhati;  | S: one is purified by oneself.  | T: by oneself is one cleansed. 
+dhp165:5 | P: Suddhī asuddhi paccattaṁ,  | S: Purity and impurity are personal matters,  | T: Purity & impurity are one’s own doing. 
+dhp165:6 | P: nāñño aññaṁ visodhaye.  | S: no one can purify another.  | T: No one purifies another. ⏎ No other purifies one. 
+VERSE dhp166:1 dhp166:2 dhp166:3 dhp166:4
+dhp166:1 | P: Attadatthaṁ paratthena,  | S: Never neglect what is good for yourself  | T: Don’t sacrifice your own welfare 
+dhp166:2 | P: bahunāpi na hāpaye;  | S: for the sake of another, however great.  | T: for that of another, ⏎ no matter how great. 
+dhp166:3 | P: Attadatthamabhiññāya,  | S: Knowing well what is good for yourself,  | T: Realizing your own true welfare, 
+dhp166:4 | P: sadatthapasuto siyā.  | S: be intent upon your heart’s goal.  | T: be intent on just that. 
+Current proposed starts:
+dhp164:1 starts: The teaching of those who live the
+dhp164:2 starts: worthy ones,
+dhp164:3 starts: noble:
+dhp164:4 starts: whoever maligns it
+dhp164:5 starts: bears fruit for his own destruction,
+dhp164:6 starts: like the fruiting of the bamboo.
+SOURCE sutta/kn/dhp/dhp157-166.html
+SOURCE LINE 31 (vs): When overspread by extreme vice–
+SOURCE LINE 32 (v): like a sal tree by a vine–
+SOURCE LINE 33 (v): you do to yourself
+SOURCE LINE 34 (v): what an enemy would wish.
+SOURCE LINE 35 (vs): They’re easy to do–
+SOURCE LINE 36 (v): things of no good
+SOURCE LINE 37 (v): & no use to yourself.
+SOURCE LINE 38 (v): What’s truly useful & good
+SOURCE LINE 39 (v): is truly harder than hard to do.
+SOURCE LINE 40 (vs): The teaching of those who live the Dhamma,
+SOURCE LINE 41 (v): worthy ones, noble:
+SOURCE LINE 42 (v): whoever maligns it
+SOURCE LINE 43 (v): –a dullard,
+SOURCE LINE 44 (v): inspired by evil view–
+SOURCE LINE 45 (v): bears fruit for his own destruction,
+SOURCE LINE 46 (v): like the fruiting of the bamboo.
+SOURCE LINE 47 (vs): Evil is done
+SOURCE LINE 48 (v): by oneself,
+SOURCE LINE 49 (v): by oneself is one defiled.
+SOURCE LINE 50 (v): Evil is left undone
+SOURCE LINE 51 (v): by oneself,
+SOURCE LINE 52 (v): by oneself is one cleansed.
+SOURCE LINE 53 (v): Purity & impurity are one’s own doing.
+SOURCE LINE 54 (v): No one purifies another.
+SOURCE LINE 55 (v): No other purifies one.
+SOURCE LINE 56 (vs): Don’t sacrifice your own welfare
+SOURCE LINE 57 (v): for that of another,
+SOURCE LINE 58 (v): no matter how great.
+SOURCE LINE 59 (v): Realizing your own true welfare,
+SOURCE LINE 60 (v): be intent on just that.
+
+## iti62:4.2
+Concern: from the ending
+VERSE iti62:3.1 iti62:3.2 iti62:3.3 iti62:3.4
+iti62:3.1 | P: “Sekhassa sikkhamānassa,  | S: “As a trainee trains,  | T: For a learner in training 
+iti62:3.2 | P: ujumaggānusārino;  | S: following the straight road,  | T: along the straight path: 
+iti62:3.3 | P: Khayasmiṁ paṭhamaṁ ñāṇaṁ,  | S: first they know about ending;  | T: first, the knowledge of ending; 
+iti62:3.4 | P: tato aññā anantarā.  | S: enlightenment follows without delay.  | T: then, immediately, ⏎ gnosis; 
+VERSE iti62:4.1 iti62:4.2 iti62:4.3 iti62:4.4
+iti62:4.1 | P: Tato aññāvimuttassa,  | S: Then the knowledge comes  | T: then, 
+iti62:4.2 | P: ñāṇaṁ ve hoti tādino;  | S: to such a one, freed through enlightenment,  | T: 
+iti62:4.3 | P: Akuppā me vimuttīti,  | S: with the end of the fetters of continued existence:  | T: from the ending ⏎ of the fetter–becoming– ⏎ there’s the knowledge, ⏎ the gnosis of one released ⏎ who is Such: 
+iti62:4.4 | P: bhavasaṁyojanakkhayā.  | S: ‘My freedom is unshakable.’  | T: ‘My release is unprovoked.’ 
+VERSE iti62:5.1 iti62:5.2 iti62:5.3 iti62:5.4
+iti62:5.1 | P: Sa ve indriyasampanno,  | S: Accomplished in the faculties,  | T: One consummate in these faculties, 
+iti62:5.2 | P: santo santipade rato;  | S: peaceful, in love with the state of peace,  | T: peaceful, ⏎ delighting in the peaceful state, 
+iti62:5.3 | P: Dhāreti antimaṁ dehaṁ,  | S: they bear their final body,  | T: bears his last body, 
+iti62:5.4 | P: jetvā māraṁ savāhinin”ti.  | S: having vanquished Māra with his legions.”  | T: having conquered Māra ⏎ along with his mount. 
+Current proposed starts:
+iti62:4.1 starts: then,
+iti62:4.2 starts: from the ending
+iti62:4.3 starts: there’s the knowledge,
+iti62:4.4 starts: ‘My release is unprovoked.’
+SOURCE sutta/kn/iti/vagga7/iti62.html
+SOURCE LINE 1 (p): This was said by the Blessed One, said by the Arahant, so I have heard: “Monks, there are these three faculties. Which three? The faculty of ‘I am about to know what is not yet finally known,’ the faculty of final knowledge, the faculty of one who has finally known. These are the three faculties.”
+SOURCE LINE 2 (vs): For a learner in training
+SOURCE LINE 3 (v): along the straight path:
+SOURCE LINE 4 (v): first, the knowledge of ending;
+SOURCE LINE 5 (v): then, immediately,
+SOURCE LINE 6 (v): gnosis;
+SOURCE LINE 7 (v): then, from the ending
+SOURCE LINE 8 (v): of the fetter–becoming–
+SOURCE LINE 9 (v): there’s the knowledge,
+SOURCE LINE 10 (v): the gnosis of one released
+SOURCE LINE 11 (v): who is Such:
+SOURCE LINE 12 (v): ‘My release is unprovoked.’
+SOURCE LINE 13 (vs): One consummate in these faculties,
+SOURCE LINE 14 (v): peaceful,
+SOURCE LINE 15 (v): delighting in the peaceful state,
+SOURCE LINE 16 (v): bears his last body,
+SOURCE LINE 17 (v): having conquered Māra
+SOURCE LINE 18 (v): along with his mount.
+
+## snp2.6:6.2
+Concern: full, used for many years,
+VERSE snp2.6:5.1 snp2.6:5.2 snp2.6:5.3 snp2.6:5.4
+snp2.6:5.1 | P: Vinipātaṁ samāpanno,  | S: Entering the underworld,  | T: Arriving at deprivation, 
+snp2.6:5.2 | P: gabbhā gabbhaṁ tamā tamaṁ;  | S: passing from womb to womb, <j>from darkness to darkness,  | T: from womb to womb, ⏎ from darkness to darkness, 
+snp2.6:5.3 | P: Sa ve tādisako bhikkhu,  | S: such a mendicant  | T: a monk of this sort, 
+snp2.6:5.4 | P: pecca dukkhaṁ nigacchati.  | S: falls into suffering after death.  | T: after death, ⏎ comes to suffering. 
+VERSE snp2.6:6.1 snp2.6:6.2 snp2.6:6.3 snp2.6:6.4
+snp2.6:6.1 | P: Gūthakūpo yathā assa,  | S: One such as that is  | T: Just like a cesspit, 
+snp2.6:6.2 | P: sampuṇṇo gaṇavassiko;  | S: like a sewer  | T: 
+snp2.6:6.3 | P: Yo ca evarūpo assa,  | S: brimful with years of filth  | T: full, used for many years, 
+snp2.6:6.4 | P: dubbisodho hi sāṅgaṇo.  | S: for it’s hard to clean one full of grime.  | T: one of this sort, befouled, ⏎ would be hard to clean. 
+VERSE snp2.6:7.1 snp2.6:7.2 snp2.6:7.3 snp2.6:7.4
+snp2.6:7.1 | P: Yaṁ evarūpaṁ jānātha,  | S: Mendicants, knowing that someone is like this,  | T: Monks, whoever you know ⏎ to be like this, 
+snp2.6:7.2 | P: bhikkhavo gehanissitaṁ;  | S: attached to the domestic life,  | T: depending on homes, 
+snp2.6:7.3 | P: Pāpicchaṁ pāpasaṅkappaṁ,  | S: of corrupt wishes and wicked intent,  | T: evil in his desires, ⏎ evil in his resolves, 
+snp2.6:7.4 | P: pāpaācāragocaraṁ.  | S: of bad behavior and alms-resort,  | T: evil in behavior & range, 
+VERSE snp2.6:8.1 snp2.6:8.2 snp2.6:8.3 snp2.6:8.4
+snp2.6:8.1 | P: Sabbe samaggā hutvāna,  | S: then having gathered in harmony,  | T: all of you, united, 
+snp2.6:8.2 | P: abhinibbajjiyātha naṁ;  | S: you should expel them.  | T: shun him. 
+snp2.6:8.3 | P: Kāraṇḍavaṁ niddhamatha,  | S: Throw out the trash!  | T: Sweep away the sweepings, 
+snp2.6:8.4 | P: kasambuṁ apakassatha.  | S: Get rid of the rubbish!  | T: throw away the trash, 
+Current proposed starts:
+snp2.6:6.1 starts: Just like a cesspit,
+snp2.6:6.2 starts: full, used for many years,
+snp2.6:6.3 starts: one of this sort, befouled,
+snp2.6:6.4 starts: would be hard to clean.
+SOURCE sutta/kn/snp/vagga2/snp2.6.html
+SOURCE LINE 15 (v): he, surrounded by ignorance,
+SOURCE LINE 16 (v): doesn’t know defilement
+SOURCE LINE 17 (v): to be the path
+SOURCE LINE 18 (v): that leads to hell.
+SOURCE LINE 19 (v): Arriving at deprivation,
+SOURCE LINE 20 (v): from womb to womb,
+SOURCE LINE 21 (v): from darkness to darkness,
+SOURCE LINE 22 (v): a monk of this sort, after death,
+SOURCE LINE 23 (v): comes to suffering.
+SOURCE LINE 24 (v): Just like a cesspit, full, used for many years,
+SOURCE LINE 25 (v): one of this sort, befouled,
+SOURCE LINE 26 (v): would be hard to clean.
+SOURCE LINE 27 (vs): Monks, whoever you know
+SOURCE LINE 28 (v): to be like this,
+SOURCE LINE 29 (v): depending on homes,
+SOURCE LINE 30 (v): evil in his desires,
+SOURCE LINE 31 (v): evil in his resolves,
+SOURCE LINE 32 (v): evil in behavior & range,
+SOURCE LINE 33 (v): all of you, united, shun him.
+SOURCE LINE 34 (vs): Sweep away the sweepings,
+SOURCE LINE 35 (v): throw away the trash,
+SOURCE LINE 36 (v): then remove the chaff:
+SOURCE LINE 37 (v): non-contemplatives
+SOURCE LINE 38 (v): who think they’re contemplatives.
+SOURCE LINE 39 (v): Having swept away those of evil desires, evil
+
+## snp3.6:47.3
+Concern: including Nāradas and Pabbatas—
+VERSE snp3.6:46.1 snp3.6:46.2 snp3.6:46.3 snp3.6:46.4
+snp3.6:46.1 | P: Upāyāsā ca te sabbe,  | S: All your distress  | T: Your despairs 
+snp3.6:46.2 | P: Viddhastā vinaḷīkatā;  | S: is blown away and mown down.  | T: are fallen down, cut from the stem. 
+snp3.6:46.3 | P: Sītibhūto damappatto,  | S: Cooled, tamed, steadfast:  | T: Cooled, attained to self-control, ⏎ steadfast, 
+snp3.6:46.4 | P: Dhitimā saccanikkamo.  | S: truth is your strength.  | T: enduring in truth: 
+VERSE snp3.6:47.1 snp3.6:47.2 snp3.6:47.3 snp3.6:47.4
+snp3.6:47.1 | P: Tassa te nāganāgassa,  | S: O giant among giants, O great hero,  | T: In your words, Nāga of nāgas, great hero, 
+snp3.6:47.2 | P: Mahāvīrassa bhāsato;  | S: when you are speaking  | T: 
+snp3.6:47.3 | P: Sabbe devānumodanti,  | S: all the gods rejoice,  | T: all devas—
+snp3.6:47.4 | P: Ubho nāradapabbatā.  | S: including both Nārada and Pabbata.  | T: including Nāradas and Pabbatas— ⏎ delight. 
+VERSE snp3.6:48.1 snp3.6:48.2 snp3.6:48.3 snp3.6:48.4
+snp3.6:48.1 | P: Namo te purisājañña,  | S: Homage to you, O thoroughbred!  | T: Homage to you, O thoroughbred man, 
+snp3.6:48.2 | P: Namo te purisuttama;  | S: Homage to you, supreme among men!  | T: Homage to you, O superlative man, 
+snp3.6:48.3 | P: Sadevakasmiṁ lokasmiṁ,  | S: In the world with its gods,  | T: in the world with its devas 
+snp3.6:48.4 | P: Natthi te paṭipuggalo.  | S: you have no rival.  | T: there’s no one to compare with you. 
+VERSE snp3.6:49.1 snp3.6:49.2 snp3.6:49.3 snp3.6:49.4
+snp3.6:49.1 | P: Tuvaṁ buddho tuvaṁ satthā,  | S: You are the Buddha, you are the Teacher,  | T: You : Awakened. ⏎ You : Teacher. 
+snp3.6:49.2 | P: Tuvaṁ mārābhibhū muni;  | S: you are the sage who has overcome Māra;  | T: You : Sage who has conquered Māra. 
+snp3.6:49.3 | P: Tuvaṁ anusaye chetvā,  | S: you have cut off the underlying tendencies,  | T: You : Having cut obsessions, 
+snp3.6:49.4 | P: Tiṇṇo tāresimaṁ pajaṁ.  | S: you’ve crossed over, and you bring humanity across.  | T: having crossed over, ⏎ bring this generation across. 
+Current proposed starts:
+snp3.6:47.1 starts: In your words, Nāga of nāgas, great hero,
+snp3.6:47.2 starts: all devas—
+snp3.6:47.3 starts: including Nāradas and Pabbatas—
+snp3.6:47.4 starts: delight.
+SOURCE sutta/kn/snp/vagga3/snp3.6.html
+SOURCE LINE 215 (vs): The doubt I had before,
+SOURCE LINE 216 (v): you have answered, One with Eyes.
+SOURCE LINE 217 (v): Yes, you are a sage, rightly
+SOURCE LINE 218 (v): self-awakened. You have
+SOURCE LINE 219 (v): no hindrances. Your despairs
+SOURCE LINE 220 (v): are fallen down, cut from the stem.
+SOURCE LINE 221 (v): Cooled, attained to self-control,
+SOURCE LINE 222 (v): steadfast, enduring in truth:
+SOURCE LINE 223 (v): In your words, Nāga of nāgas, great hero,
+SOURCE LINE 224 (v): all devas—including Nāradas and Pabbatas—
+SOURCE LINE 225 (v): delight.
+SOURCE LINE 226 (v): Homage to you, O thoroughbred man,
+SOURCE LINE 227 (v): Homage to you, O superlative man,
+SOURCE LINE 228 (v): in the world with its devas
+SOURCE LINE 229 (v): there’s no one to compare with you.
+SOURCE LINE 230 (v): You : Awakened.
+SOURCE LINE 231 (v): You : Teacher.
+SOURCE LINE 232 (v): You : Sage who has conquered Māra.
+SOURCE LINE 233 (v): You : Having cut obsessions,
+SOURCE LINE 234 (v): having crossed over,
+SOURCE LINE 235 (v): bring this generation across.
+SOURCE LINE 236 (v): Your acquisitions transcended,
+SOURCE LINE 237 (v): your effluents torn apart,
+
+## snp5.13:2.2
+Concern: hero,
+VERSE snp5.13:1.1 snp5.13:1.3 snp5.13:1.4 snp5.13:1.5
+snp5.13:1.1 | P: “Okañjahaṁ taṇhacchidaṁ anejaṁ,  | S: “I beseech you, the bastion-leaver, the craving-cutter, the imperturbable,”  | T: I entreat the one who has ⏎ abandoned home—cutting through craving, unperturbed; 
+snp5.13:1.3 | P: Nandiñjahaṁ oghatiṇṇaṁ vimuttaṁ;  | S: “the delight-leaver, the flood-crosser, the freed,  | T: abandoned delight—crossed over the flood, released; 
+snp5.13:1.4 | P: Kappañjahaṁ abhiyāce sumedhaṁ,  | S: the formulation-leaver, the intelligent.  | T: abandoned theory—very intelligent: 
+snp5.13:1.5 | P: Sutvāna nāgassa apanamissanti ito.  | S: Different people have gathered <j>from across the nations  | T: Having heard the Nāga, they will leave— ⏎ the many gathered ⏎ from many lands, 
+VERSE snp5.13:2.1 snp5.13:2.2 snp5.13:2.3 snp5.13:2.4
+snp5.13:2.1 | P: Nānājanā janapadehi saṅgatā,  | S: wishing to hear your word, O hero.  | T: hero, ⏎ in hopes of your words. 
+snp5.13:2.2 | P: Tava vīra vākyaṁ abhikaṅkhamānā;  | S: After hearing the spiritual giant <j>they will depart from here.  | T: 
+snp5.13:2.3 | P: Tesaṁ tuvaṁ sādhu viyākarohi,  | S: Please, sage, answer them clearly,  | T: So tell them, please, 
+snp5.13:2.4 | P: Tathā hi te vidito esa dhammo”.  | S: for truly you understand this matter.”  | T: how this Dhamma has ⏎ been known to you. 
+VERSE snp5.13:3.1 snp5.13:3.3 snp5.13:3.4 snp5.13:3.5
+snp5.13:3.1 | P: “Ādānataṇhaṁ vinayetha sabbaṁ,  | S: “Dispel all craving for attachments,”  | T: The Buddha: ⏎ Subdue craving & grasping—
+snp5.13:3.3 | P: Uddhaṁ adho tiriyañcāpi majjhe;  | S: “above, below, all round, between.  | T: all— ⏎ above, below, ⏎ across, in between. 
+snp5.13:3.4 | P: Yaṁ yañhi lokasmimupādiyanti,  | S: For whatever a personage grasps in the world,  | T: For whatever people cling to in the world, 
+snp5.13:3.5 | P: Teneva māro anveti jantuṁ.  | S: Māra pursues them right there.  | T: it’s through that ⏎ that Māra pursues them. 
+VERSE snp5.13:4.1 snp5.13:4.2 snp5.13:4.3 snp5.13:4.4
+snp5.13:4.1 | P: Tasmā pajānaṁ na upādiyetha,  | S: So let a mindful mendicant who understands  | T: So a monk, mindful, 
+snp5.13:4.2 | P: Bhikkhu sato kiñcanaṁ sabbaloke;  | S: not grasp anything in all the world,  | T: 
+snp5.13:4.3 | P: Ādānasatte iti pekkhamāno,  | S: observing that, in clinging to attachments,  | T: seeing these people ⏎ entangled in grasping 
+snp5.13:4.4 | P: Pajaṁ imaṁ maccudheyye visattan”ti.  | S: these people cling to the domain of death.”  | T: as entangled in Death’s realm, ⏎ should cling to nothing ⏎ in all the world, ⏎ every world. 
+Current proposed starts:
+snp5.13:1.1 starts: I entreat the one who has
+snp5.13:1.3 starts: abandoned delight—crossed over the flood, released;
+snp5.13:1.4 starts: abandoned theory—very intelligent:
+snp5.13:1.5 starts: Having heard the Nāga, they will leave—
+snp5.13:2.1 starts: the many gathered
+snp5.13:2.2 starts: hero,
+snp5.13:2.3 starts: So tell them, please,
+snp5.13:2.4 starts: how this Dhamma has
+snp5.13:4.1 starts: So a monk, mindful,
+snp5.13:4.2 starts: seeing these people
+snp5.13:4.3 starts: as entangled in Death’s realm,
+snp5.13:4.4 starts: should cling to nothing
+SOURCE sutta/kn/snp/vagga5/snp5.13.html
+SOURCE LINE 1 (vs): I entreat the one who has
+SOURCE LINE 2 (v): abandoned home—cutting through craving, unperturbed;
+SOURCE LINE 3 (v): abandoned delight—crossed over the flood, released;
+SOURCE LINE 4 (v): abandoned theory—very intelligent:
+SOURCE LINE 5 (v): Having heard the Nāga, they will leave—
+SOURCE LINE 6 (v): the many gathered
+SOURCE LINE 7 (v): from many lands, hero,
+SOURCE LINE 8 (v): in hopes of your words.
+SOURCE LINE 9 (v): So tell them, please,
+SOURCE LINE 10 (v): how this Dhamma has
+SOURCE LINE 11 (v): been known to you.
+SOURCE LINE 12 (spk): The Buddha:
+SOURCE LINE 13 (vs): Subdue craving & grasping—all—
+SOURCE LINE 14 (v): above, below,
+SOURCE LINE 15 (v): across, in between.
+SOURCE LINE 16 (v): For whatever people cling to in the world,
+SOURCE LINE 17 (v): it’s through that
+SOURCE LINE 18 (v): that Māra pursues them.
+SOURCE LINE 19 (vs): So a monk, mindful,
+SOURCE LINE 20 (v): seeing these people
+SOURCE LINE 21 (v): entangled in grasping
+SOURCE LINE 22 (v): as entangled in Death’s realm,
+SOURCE LINE 23 (v): should cling to nothing
+
+## thag15.2:12.2
+Concern: born & growing in the water,
+VERSE thag15.2:11.1 thag15.2:11.2 thag15.2:11.3 thag15.2:11.4
+thag15.2:11.1 | P: Saṁyojanaṁ aṇuṁ thūlaṁ,  | S: Having severed all bonds,  | T: Having cut all bonds, 
+thag15.2:11.2 | P: sabbaṁ chetvāna bandhanaṁ;  | S: fetters large and small,  | T: fetters tiny & large, 
+thag15.2:11.3 | P: Yena yeneva gacchati,  | S: wherever he goes,  | T: wherever he goes, 
+thag15.2:11.4 | P: anapekkhova gacchati.  | S: he goes without concern.  | T: he goes without longing. 
+VERSE thag15.2:12.1 thag15.2:12.2 thag15.2:12.3 thag15.2:12.4
+thag15.2:12.1 | P: Yathāpi udake jātaṁ,  | S: A white lotus,  | T: Like a white lotus, 
+thag15.2:12.2 | P: puṇḍarīkaṁ pavaḍḍhati;  | S: fragrant and delightful,  | T: 
+thag15.2:12.3 | P: Nopalippati toyena,  | S: sprouts in water and grows there,  | T: born & growing in the water, 
+thag15.2:12.4 | P: sucigandhaṁ manoramaṁ.  | S: but the water doesn’t cling to it.  | T: but not smeared by the water ⏎ —fragrant, delightful— 
+VERSE thag15.2:13.1 thag15.2:13.2 thag15.2:13.3 thag15.2:13.4
+thag15.2:13.1 | P: Tatheva ca loke jāto,  | S: Just so the Buddha is born in the world,  | T: even so the awakened one, ⏎ well-born in the world, 
+thag15.2:13.2 | P: buddho loke viharati;  | S: and lives in the world,  | T: lives in the world, 
+thag15.2:13.3 | P: Nopalippati lokena,  | S: but the world doesn’t stick to him,  | T: but is not smeared by the world, 
+thag15.2:13.4 | P: toyena padumaṁ yathā.  | S: as water does not stick to the lotus.  | T: like the lotus, by the water. 
+VERSE thag15.2:14.1 thag15.2:14.2 thag15.2:14.3 thag15.2:14.4
+thag15.2:14.1 | P: Mahāgini pajjalito,  | S: A great blazing fire  | T: A great blazing fire 
+thag15.2:14.2 | P: anāhāropasammati;  | S: dies down when the fuel runs out.  | T: unnourished grows calm, 
+thag15.2:14.3 | P: Aṅgāresu ca santesu,  | S: And when the coals have gone out  | T: and though its embers exist 
+thag15.2:14.4 | P: nibbutoti pavuccati.  | S: it’s said to be “quenched”.  | T: is described as unbound: 
+Current proposed starts:
+thag15.2:12.1 starts: Like a white lotus,
+thag15.2:12.2 starts: born & growing in the water,
+thag15.2:12.3 starts: but not smeared by the water
+thag15.2:12.4 starts: —fragrant, delightful—
+SOURCE sutta/kn/thag/thag15.2.html
+SOURCE LINE 40 (vs): He eats what is blameless;
+SOURCE LINE 41 (v): doesn’t eat what is not;
+SOURCE LINE 42 (v): on gaining food & clothing,
+SOURCE LINE 43 (v): doesn’t store it up.
+SOURCE LINE 44 (v): Having cut all bonds,
+SOURCE LINE 45 (v): fetters tiny & large,
+SOURCE LINE 46 (v): wherever he goes,
+SOURCE LINE 47 (v): he goes without longing.
+SOURCE LINE 48 (v): Like a white lotus, born & growing in the water,
+SOURCE LINE 49 (v): but not smeared by the water
+SOURCE LINE 50 (v): —fragrant, delightful—
+SOURCE LINE 51 (v): even so the awakened one,
+SOURCE LINE 52 (v): well-born in the world, lives in the world,
+SOURCE LINE 53 (v): but is not smeared by the world,
+SOURCE LINE 54 (v): like the lotus, by the water.
+SOURCE LINE 55 (vs): A great blazing fire
+SOURCE LINE 56 (v): unnourished grows calm,
+SOURCE LINE 57 (v): and though its embers exist
+SOURCE LINE 58 (v): is described as unbound:
+SOURCE LINE 59 (v): Conveying an instructive meaning,
+SOURCE LINE 60 (v): this image is taught by the observant.
+SOURCE LINE 61 (v): Great nāgas will recognize
+SOURCE LINE 62 (v): the nāga as taught by the nāga
+
+## thig6.7:1.2
+Concern: devote yourself to the goal
+VERSE thig6.7:1.1 thig6.7:1.2 thig6.7:1.3 thig6.7:1.4
+thig6.7:1.1 | P: “Gutte yadatthaṁ pabbajjā,  | S: Guttā, you have given up your child,  | T: [The Buddha admonished me:] ⏎ Guttā, 
+thig6.7:1.2 | P: hitvā puttaṁ vasuṁ piyaṁ;  | S: your wealth, and all that you love.  | T: 
+thig6.7:1.3 | P: Tameva anubrūhehi,  | S: Foster the goal for which you went forth;  | T: devote yourself to the goal ⏎ for which you went forth, ⏎ having discarded [hope] ⏎ for a dear son of your own. 
+thig6.7:1.4 | P: mā cittassa vasaṁ gami.  | S: do not fall under the mind’s control.  | T: Don’t fall under the sway ⏎ of the mind. 
+VERSE thig6.7:2.1 thig6.7:2.2 thig6.7:2.3 thig6.7:2.4
+thig6.7:2.1 | P: Cittena vañcitā sattā,  | S: Beings deceived by the mind,  | T: Hoodwinked by mind, ⏎ beings in love with Māra’s realm, 
+thig6.7:2.2 | P: mārassa visaye ratā;  | S: playing in Māra’s domain,  | T: 
+thig6.7:2.3 | P: Anekajātisaṁsāraṁ,  | S: ignorant, they journey on,  | T: roam 
+thig6.7:2.4 | P: sandhāvanti aviddasū.  | S: transmigrating through countless rebirths.  | T: through the many-birth wandering-on, ⏎ unknowing. 
+VERSE thig6.7:3.1 thig6.7:3.2 thig6.7:3.3 thig6.7:3.4
+thig6.7:3.1 | P: Kāmacchandañca byāpādaṁ,  | S: Sensual desire and ill will,  | T: Abandoning these lower fetters, nun— ⏎ sensual desire, ill will, 
+thig6.7:3.2 | P: sakkāyadiṭṭhimeva ca;  | S: and substantialist view;  | T: self-identity views, 
+thig6.7:3.3 | P: Sīlabbataparāmāsaṁ,  | S: misapprehension of precepts and observances,  | T: grasping at habits & practices, 
+thig6.7:3.4 | P: vicikicchañca pañcamaṁ.  | S: and doubt as the fifth.  | T: and uncertainty as the fifth— 
+Current proposed starts:
+thig6.7:1.1 starts: [The Buddha admonished me:]
+thig6.7:1.2 starts: devote yourself to the goal
+thig6.7:1.3 starts: having discarded [hope]
+thig6.7:1.4 starts: Don’t fall under the sway
+thig6.7:2.1 starts: Hoodwinked by mind,
+thig6.7:2.2 starts: beings in love with Māra’s realm,
+thig6.7:2.3 starts: roam
+thig6.7:2.4 starts: through the many-birth wandering-on,
+SOURCE sutta/kn/thig/thig6.7.html
+SOURCE LINE 1 (vs): [The Buddha admonished me:]
+SOURCE LINE 2 (v): Guttā, devote yourself to the goal
+SOURCE LINE 3 (v): for which you went forth,
+SOURCE LINE 4 (v): having discarded [hope]
+SOURCE LINE 5 (v): for a dear son of your own.
+SOURCE LINE 6 (v): Don’t fall under the sway
+SOURCE LINE 7 (v): of the mind.
+SOURCE LINE 8 (vs): Hoodwinked by mind,
+SOURCE LINE 9 (v): beings in love with Māra’s realm,
+SOURCE LINE 10 (v): roam
+SOURCE LINE 11 (v): through the many-birth wandering-on,
+SOURCE LINE 12 (v): unknowing.
+SOURCE LINE 13 (vs): Abandoning these lower fetters, nun—
+SOURCE LINE 14 (v): sensual desire, ill will,
+SOURCE LINE 15 (v): self-identity views,
+SOURCE LINE 16 (v): grasping at habits & practices,
+SOURCE LINE 17 (v): and uncertainty as the fifth—
+SOURCE LINE 18 (v): you won’t come
+SOURCE LINE 19 (v): to this again.
+SOURCE LINE 20 (vs): Forsaking passion, conceit,
+SOURCE LINE 21 (v): ignorance, & restlessness
+

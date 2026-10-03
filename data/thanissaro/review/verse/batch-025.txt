@@ -1,0 +1,408 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## dhp154:1–dhp154:6 (dhp)
+dhp154:1 | P: Gahakāraka diṭṭhosi, | S: I’ve seen you, house-builder! | T: House-builder, you’re seen!
+dhp154:2 | P: puna gehaṁ na kāhasi; | S: You won’t build a house again! | T: You will not build a house again.
+dhp154:3 | P: Sabbā te phāsukā bhaggā, | S: Your rafters are all broken, | T: All your rafters broken,
+dhp154:4 | P: gahakūṭaṁ visaṅkhataṁ; | S: your roof-peak demolished. | T: the ridge pole dismantled,
+dhp154:5 | P: Visaṅkhāragataṁ cittaṁ, | S: The mind, set on demolition, | T: immersed in dismantling, the mind
+dhp154:6 | P: taṇhānaṁ khayamajjhagā. | S: has reached the end of cravings. | T: has attained to the end of craving.
+CONTEXT dhp155:0 | P: Mahādhanaseṭṭhiputtavatthu | S: (none) | T: (none)
+
+## dhp155:1–dhp155:4 (dhp)
+CONTEXT dhp155:0 | P: Mahādhanaseṭṭhiputtavatthu | S: (none) | T: (none)
+dhp155:1 | P: Acaritvā brahmacariyaṁ, | S: When young they spurned the spiritual path | T: Neither living the chaste life
+dhp155:2 | P: aladdhā yobbane dhanaṁ; | S: and failed to earn any wealth. | T: nor gaining wealth in their youth,
+dhp155:3 | P: Jiṇṇakoñcāva jhāyanti, | S: Now they brood like old cranes | T: they waste away like old herons
+dhp155:4 | P: khīṇamaccheva pallale. | S: in a pond bereft of fish. | T: in a dried-up lake ⏎ depleted of fish.
+
+## dhp156:1–dhp156:4 (dhp)
+dhp156:1 | P: Acaritvā brahmacariyaṁ, | S: When young they spurned the spiritual path | T: Neither living the chaste life
+dhp156:2 | P: aladdhā yobbane dhanaṁ; | S: and failed to earn any wealth. | T: nor gaining wealth in their youth,
+dhp156:3 | P: Senti cāpātikhīṇāva, | S: Now they lie like spent arrows, | T: they lie around, ⏎ misfired from the bow,
+dhp156:4 | P: purāṇāni anutthunaṁ. | S: bemoaning over things past. | T: sighing over old times.
+CONTEXT dhp156:5 | P: Jarāvaggo ekādasamo. | S: (none) | T: (none)
+
+## dhp157:1–dhp157:4 (dhp) GATHERED; unequal counts require a reader
+CONTEXT dhp157:0.3 | P: Attavagga | S: 12. The Self | T: Dhp XII : Self
+CONTEXT dhp157:0.4 | P: Bodhirājakumāravatthu | S: (none) | T: (none)
+dhp157:1 | P: Attānañce piyaṁ jaññā, | S: If you knew your self as beloved, | T: If you hold yourself dear
+dhp157:2 | P: rakkheyya naṁ surakkhitaṁ; | S: you’d look after it so well. | T: then guard, guard yourself well.
+dhp157:3 | P: Tiṇṇaṁ aññataraṁ yāmaṁ, | S: In one of the night’s three watches, | T: The wise person would stay awake ⏎ nursing himself ⏎ in any of the three watches of the night, ⏎ the three stages of life.
+dhp157:4 | P: paṭijaggeyya paṇḍito. | S: an astute person would remain alert. | T: (none)
+CONTEXT dhp158:0 | P: Upanandasakyaputtattheravatthu | S: (none) | T: (none)
+
+## dhp158:1–dhp158:4 (dhp) GATHERED; unequal counts require a reader
+CONTEXT dhp158:0 | P: Upanandasakyaputtattheravatthu | S: (none) | T: (none)
+dhp158:1 | P: Attānameva paṭhamaṁ, | S: The astute would avoid being corrupted | T: (none)
+dhp158:2 | P: patirūpe nivesaye; | S: by first grounding themselves | T: First ⏎ he’d settle himself
+dhp158:3 | P: Athaññamanusāseyya, | S: in what is suitable, | T: in what is correct,
+dhp158:4 | P: na kilisseyya paṇḍito. | S: and then instructing others. | T: only then ⏎ teach others. ⏎ He wouldn’t stain his name ⏎ : he is wise.
+CONTEXT dhp159:0 | P: Padhānikatissattheravatthu | S: (none) | T: (none)
+
+## dhp159:1–dhp159:4 (dhp)
+CONTEXT dhp159:0 | P: Padhānikatissattheravatthu | S: (none) | T: (none)
+dhp159:1 | P: Attānañce tathā kayirā, | S: If one were to treat oneself | T: If you’d mold yourself
+dhp159:2 | P: yathāññamanusāsati; | S: as one instructs another, | T: the way you teach others,
+dhp159:3 | P: Sudanto vata dametha, | S: the well-tamed indeed would tame: | T: then, well-trained, ⏎ go ahead & tame–
+dhp159:4 | P: attā hi kira duddamo. | S: for the self, it seems, is hard to tame. | T: for, as they say, ⏎ what’s hard to tame is you ⏎ yourself.
+CONTEXT dhp160:0 | P: Kumārakassapamātuttherivatthu | S: (none) | T: (none)
+
+## dhp160:1–dhp160:4 (dhp)
+CONTEXT dhp160:0 | P: Kumārakassapamātuttherivatthu | S: (none) | T: (none)
+dhp160:1 | P: Attā hi attano nātho, | S: One is indeed the lord of oneself, | T: Your own self is ⏎ your own mainstay,
+dhp160:2 | P: ko hi nātho paro siyā; | S: for who else would be one’s lord? | T: for who else could your mainstay be?
+dhp160:3 | P: Attanā hi sudantena, | S: By means of a well-tamed self, | T: With you yourself well-trained
+dhp160:4 | P: nāthaṁ labhati dullabhaṁ. | S: one gains a lord that’s rare indeed. | T: you obtain the mainstay ⏎ hard to obtain.
+CONTEXT dhp161:0 | P: Mahākālaupāsakavatthu | S: (none) | T: (none)
+
+## dhp161:1–dhp161:4 (dhp)
+CONTEXT dhp161:0 | P: Mahākālaupāsakavatthu | S: (none) | T: (none)
+dhp161:1 | P: Attanā hi kataṁ pāpaṁ, | S: For the evil that is done by oneself, | T: The evil he himself has done
+dhp161:2 | P: Attajaṁ attasambhavaṁ; | S: born and produced in oneself, | T: –self-born, self-created–
+dhp161:3 | P: Abhimatthati dummedhaṁ, | S: grinds down a simpleton, | T: grinds down the dullard,
+dhp161:4 | P: Vajiraṁvasmamayaṁ maṇiṁ. | S: as diamond grinds a lesser gem. | T: as a diamond, a precious stone.
+CONTEXT dhp162:0 | P: Devadattavatthu | S: (none) | T: (none)
+
+## dhp162:1–dhp162:4 (dhp)
+CONTEXT dhp162:0 | P: Devadattavatthu | S: (none) | T: (none)
+dhp162:1 | P: Yassa accantadussilyaṁ, | S: One choked by immorality, | T: When overspread by extreme vice–
+dhp162:2 | P: māluvā sālamivotthataṁ; | S: as a sal tree by a creeper, | T: like a sal tree by a vine–
+dhp162:3 | P: Karoti so tathattānaṁ, | S: does to themselves | T: you do to yourself
+dhp162:4 | P: yathā naṁ icchatī diso. | S: what a foe only wishes. | T: what an enemy would wish.
+CONTEXT dhp163:0 | P: Saṅghabhedaparisakkanavatthu | S: (none) | T: (none)
+
+## dhp163:1–dhp163:4 (dhp)
+CONTEXT dhp163:0 | P: Saṅghabhedaparisakkanavatthu | S: (none) | T: (none)
+dhp163:1 | P: Sukarāni asādhūni, | S: It’s easy to do bad things | T: They’re easy to do–
+dhp163:2 | P: attano ahitāni ca; | S: harmful to oneself, | T: things of no good ⏎ & no use to yourself.
+dhp163:3 | P: Yaṁ ve hitañca sādhuñca, | S: but good things that are helpful | T: What’s truly useful & good
+dhp163:4 | P: taṁ ve paramadukkaraṁ. | S: are the hardest things to do. | T: is truly harder than hard to do.
+CONTEXT dhp164:0 | P: Kālattheravatthu | S: (none) | T: (none)
+
+## dhp164:1–dhp164:6 (dhp) GATHERED; possible speaker requires a reader
+CONTEXT dhp164:0 | P: Kālattheravatthu | S: (none) | T: (none)
+dhp164:1 | P: Yo sāsanaṁ arahataṁ, | S: On account of wicked views— | T: The teaching of those who live the Dhamma,
+dhp164:2 | P: ariyānaṁ dhammajīvinaṁ; | S: scorning the guidance | T: (none)
+dhp164:3 | P: Paṭikkosati dummedho, | S: of the perfected ones, | T: worthy ones,
+dhp164:4 | P: diṭṭhiṁ nissāya pāpikaṁ; | S: the noble ones living righteously— | T: noble: ⏎ whoever maligns it ⏎ –a dullard, ⏎ inspired by evil view–
+dhp164:5 | P: Phalāni kaṭṭhakasseva, | S: the idiot begets their own self’s demise, | T: (none)
+dhp164:6 | P: attaghātāya phallati. | S: like the bamboo bearing fruit. | T: bears fruit for his own destruction, ⏎ like the fruiting of the bamboo.
+CONTEXT dhp165:0 | P: Cūḷakālaupāsakavatthu | S: (none) | T: (none)
+
+## dhp165:1–dhp165:6 (dhp)
+CONTEXT dhp165:0 | P: Cūḷakālaupāsakavatthu | S: (none) | T: (none)
+dhp165:1 | P: Attanā hi kataṁ pāpaṁ, | S: For it is by oneself that evil’s done, | T: Evil is done ⏎ by oneself,
+dhp165:2 | P: attanā saṅkilissati; | S: one is corrupted by oneself. | T: by oneself is one defiled.
+dhp165:3 | P: Attanā akataṁ pāpaṁ, | S: It’s by oneself that evil’s not done, | T: Evil is left undone ⏎ by oneself,
+dhp165:4 | P: attanāva visujjhati; | S: one is purified by oneself. | T: by oneself is one cleansed.
+dhp165:5 | P: Suddhī asuddhi paccattaṁ, | S: Purity and impurity are personal matters, | T: Purity & impurity are one’s own doing.
+dhp165:6 | P: nāñño aññaṁ visodhaye. | S: no one can purify another. | T: No one purifies another. ⏎ No other purifies one.
+CONTEXT dhp166:0 | P: Attadatthattheravatthu | S: (none) | T: (none)
+
+## dhp166:1–dhp166:4 (dhp)
+CONTEXT dhp166:0 | P: Attadatthattheravatthu | S: (none) | T: (none)
+dhp166:1 | P: Attadatthaṁ paratthena, | S: Never neglect what is good for yourself | T: Don’t sacrifice your own welfare
+dhp166:2 | P: bahunāpi na hāpaye; | S: for the sake of another, however great. | T: for that of another, ⏎ no matter how great.
+dhp166:3 | P: Attadatthamabhiññāya, | S: Knowing well what is good for yourself, | T: Realizing your own true welfare,
+dhp166:4 | P: sadatthapasuto siyā. | S: be intent upon your heart’s goal. | T: be intent on just that.
+CONTEXT dhp166:5 | P: Attavaggo dvādasamo. | S: (none) | T: (none)
+
+## dhp167:1–dhp167:4 (dhp)
+CONTEXT dhp167:0.3 | P: Lokavagga | S: 13. The World | T: Dhp XIII : Worlds
+CONTEXT dhp167:0.4 | P: Daharabhikkhuvatthu | S: (none) | T: (none)
+dhp167:1 | P: Hīnaṁ dhammaṁ na seveyya, | S: Don’t resort to lowly things, | T: Don’t associate with lowly qualities.
+dhp167:2 | P: pamādena na saṁvase; | S: don’t abide in negligence, | T: Don’t consort with heedlessness.
+dhp167:3 | P: Micchādiṭṭhiṁ na seveyya, | S: don’t resort to wrong views, | T: Don’t associate with wrong views.
+dhp167:4 | P: na siyā lokavaḍḍhano. | S: don’t perpetuate the world. | T: Don’t busy yourself with the world.
+CONTEXT dhp168:0 | P: Suddhodanavatthu | S: (none) | T: (none)
+
+## dhp168:1–dhp168:4 (dhp)
+CONTEXT dhp168:0 | P: Suddhodanavatthu | S: (none) | T: (none)
+dhp168:1 | P: Uttiṭṭhe nappamajjeyya, | S: Get up, don’t be heedless, | T: Get up! Don’t be heedless.
+dhp168:2 | P: dhammaṁ sucaritaṁ care; | S: live by principle, with good conduct. | T: Live the Dhamma well.
+dhp168:3 | P: Dhammacārī sukhaṁ seti, | S: For one of good conduct sleeps at ease, | T: One who lives the Dhamma ⏎ sleeps with ease
+dhp168:4 | P: asmiṁ loke paramhi ca. | S: in this world and the next. | T: in this world & the next.
+
+## dhp169:1–dhp169:4 (dhp)
+dhp169:1 | P: Dhammaṁ care sucaritaṁ, | S: Live by principle, with good conduct, | T: Live the Dhamma well.
+dhp169:2 | P: na naṁ duccaritaṁ care; | S: don’t conduct yourself badly. | T: Don’t live it badly.
+dhp169:3 | P: Dhammacārī sukhaṁ seti, | S: For one of good conduct sleeps at ease, | T: One who lives the Dhamma ⏎ sleeps with ease
+dhp169:4 | P: asmiṁ loke paramhi ca. | S: in this world and the next. | T: in this world & the next.
+CONTEXT dhp170:0 | P: Pañcasatavipassakabhikkhuvatthu | S: (none) | T: (none)
+
+## dhp170:1–dhp170:4 (dhp)
+CONTEXT dhp170:0 | P: Pañcasatavipassakabhikkhuvatthu | S: (none) | T: (none)
+dhp170:1 | P: Yathā pubbuḷakaṁ passe, | S: Look upon the world | T: See it as a bubble,
+dhp170:2 | P: yathā passe marīcikaṁ; | S: as a bubble | T: see it as a mirage:
+dhp170:3 | P: Evaṁ lokaṁ avekkhantaṁ, | S: or a mirage, | T: one who regards the world this way
+dhp170:4 | P: maccurājā na passati. | S: then the King of Death won’t see you. | T: the King of Death doesn’t see.
+CONTEXT dhp171:0 | P: Abhayarājakumāravatthu | S: (none) | T: (none)
+
+## dhp171:1–dhp171:4 (dhp)
+CONTEXT dhp171:0 | P: Abhayarājakumāravatthu | S: (none) | T: (none)
+dhp171:1 | P: Etha passathimaṁ lokaṁ, | S: Come, see this world decked out | T: Come look at this world ⏎ all decked out
+dhp171:2 | P: cittaṁ rājarathūpamaṁ; | S: like a fancy royal chariot. | T: like a royal chariot,
+dhp171:3 | P: Yattha bālā visīdanti, | S: Here fools founder, | T: where fools plunge in,
+dhp171:4 | P: natthi saṅgo vijānataṁ. | S: but the discerning are not chained. | T: while those who know ⏎ don’t cling.
+CONTEXT dhp172:0 | P: Sammajjanattheravatthu | S: (none) | T: (none)
+
+## dhp172:1–dhp172:4 (dhp)
+CONTEXT dhp172:0 | P: Sammajjanattheravatthu | S: (none) | T: (none)
+dhp172:1 | P: Yo ca pubbe pamajjitvā, | S: He who once was heedless, | T: Who once was heedless,
+dhp172:2 | P: pacchā so nappamajjati; | S: but turned to heedfulness, | T: but later is not,
+dhp172:3 | P: Somaṁ lokaṁ pabhāseti, | S: shines upon this world | T: brightens the world
+dhp172:4 | P: abbhā muttova candimā. | S: like the moon freed from clouds. | T: like the moon set free from a cloud.
+CONTEXT dhp173:0 | P: Aṅgulimālattheravatthu | S: (none) | T: (none)
+
+## dhp173:1–dhp173:4 (dhp)
+CONTEXT dhp173:0 | P: Aṅgulimālattheravatthu | S: (none) | T: (none)
+dhp173:1 | P: Yassa pāpaṁ kataṁ kammaṁ, | S: Someone whose bad deed | T: His evil-done deed
+dhp173:2 | P: kusalena pidhīyati; | S: is supplanted by the good, | T: is replaced with skillfulness:
+dhp173:3 | P: Somaṁ lokaṁ pabhāseti, | S: shines upon this world, | T: he brightens the world
+dhp173:4 | P: abbhā muttova candimā. | S: like the moon freed from clouds. | T: like the moon set free from a cloud.
+CONTEXT dhp174:0 | P: Pesakāradhītāvatthu | S: (none) | T: (none)
+
+## dhp174:1–dhp174:4 (dhp) GATHERED; unequal counts require a reader
+CONTEXT dhp174:0 | P: Pesakāradhītāvatthu | S: (none) | T: (none)
+dhp174:1 | P: Andhabhūto ayaṁ loko, | S: Blind is the world, | T: Blinded this world–
+dhp174:2 | P: tanukettha vipassati; | S: few are those who clearly see. | T: how few here see clearly!
+dhp174:3 | P: Sakuṇo jālamuttova, | S: Only a handful go to heaven, | T: Just as birds who’ve escaped ⏎ from a net are ⏎ few, few ⏎ are the people ⏎ who make it to heaven.
+dhp174:4 | P: appo saggāya gacchati. | S: like a bird freed from a net. | T: (none)
+CONTEXT dhp175:0 | P: Tiṁsabhikkhuvatthu | S: (none) | T: (none)
+
+## dhp175:1–dhp175:4 (dhp)
+CONTEXT dhp175:0 | P: Tiṁsabhikkhuvatthu | S: (none) | T: (none)
+dhp175:1 | P: Haṁsādiccapathe yanti, | S: Swans fly by the sun’s path, | T: Swans fly the path of the sun;
+dhp175:2 | P: ākāse yanti iddhiyā; | S: psychic sages fly through space. | T: those with the power fly through space;
+dhp175:3 | P: Nīyanti dhīrā lokamhā, | S: The attentive leave the world, | T: the enlightened flee from the world,
+dhp175:4 | P: jetvā māraṁ savāhiniṁ. | S: having vanquished Māra with his legions. | T: having defeated the armies of Mara.
+CONTEXT dhp176:0 | P: Ciñcamāṇavikāvatthu | S: (none) | T: (none)
+
+## dhp176:1–dhp176:4 (dhp) GATHERED; possible speaker requires a reader
+CONTEXT dhp176:0 | P: Ciñcamāṇavikāvatthu | S: (none) | T: (none)
+dhp176:1 | P: Ekaṁ dhammaṁ atītassa, | S: When a personage, spurning the hereafter, | T: The person who tells a lie, ⏎ who transgresses in this one thing, ⏎ transcending concern for the world beyond:
+dhp176:2 | P: musāvādissa jantuno; | S: transgresses in just one thing— | T: (none)
+dhp176:3 | P: Vitiṇṇaparalokassa, | S: lying— | T: (none)
+dhp176:4 | P: natthi pāpaṁ akāriyaṁ. | S: there is no evil they would not do. | T: there’s no evil ⏎ he might not do.
+CONTEXT dhp177:0 | P: Asadisadānavatthu | S: (none) | T: (none)
+
+## dhp177:1–dhp177:4 (dhp)
+CONTEXT dhp177:0 | P: Asadisadānavatthu | S: (none) | T: (none)
+dhp177:1 | P: Na ve kadariyā devalokaṁ vajanti, | S: The miserly don’t ascend to heaven, | T: No misers go ⏎ to the world of the devas.
+dhp177:2 | P: Bālā have nappasaṁsanti dānaṁ; | S: it takes a fool to not praise giving. | T: Those who don’t praise giving ⏎ are fools.
+dhp177:3 | P: Dhīro ca dānaṁ anumodamāno, | S: The attentive celebrate giving, | T: The enlightened ⏎ express their approval for giving
+dhp177:4 | P: Teneva so hoti sukhī parattha. | S: and so find happiness in the hereafter. | T: and so find ease ⏎ in the world beyond.
+CONTEXT dhp178:0 | P: Anāthapiṇḍikaputtakālavatthu | S: (none) | T: (none)
+
+## dhp178:1–dhp178:4 (dhp) GATHERED; possible speaker requires a reader
+CONTEXT dhp178:0 | P: Anāthapiṇḍikaputtakālavatthu | S: (none) | T: (none)
+dhp178:1 | P: Pathabyā ekarajjena, | S: The fruit of stream-entry is better | T: Sole dominion over the earth,
+dhp178:2 | P: saggassa gamanena vā; | S: than being the one king of the earth, | T: (none)
+dhp178:3 | P: Sabbalokādhipaccena, | S: than going to heaven, | T: going to heaven,
+dhp178:4 | P: sotāpattiphalaṁ varaṁ. | S: than lordship over all the world. | T: lordship over all worlds: ⏎ the fruit of stream entry ⏎ excels them.
+CONTEXT dhp178:5 | P: Lokavaggo terasamo. | S: (none) | T: (none)
+
+## dhp179:1–dhp179:4 (dhp) GATHERED; possible speaker requires a reader
+CONTEXT dhp179:0.3 | P: Buddhavagga | S: 14. The Buddhas | T: Dhp XIV : Awakened
+CONTEXT dhp179:0.4 | P: Māradhītaravatthu | S: (none) | T: (none)
+dhp179:1 | P: Yassa jitaṁ nāvajīyati, | S: He whose victory may not be undone, | T: Whose conquest can’t be undone,
+dhp179:2 | P: Jitaṁ yassa noyāti koci loke; | S: a victory unrivaled in all the world; | T: whose conquest no one in the world ⏎ can reach;
+dhp179:3 | P: Taṁ buddhamanantagocaraṁ, | S: by what track would you trace that Buddha, | T: awakened, his pasture endless, ⏎ pathless: ⏎ by what path will you lead him astray?
+dhp179:4 | P: Apadaṁ kena padena nessatha. | S: who leaves no track in his infinite range? | T: (none)
+
+## dhp180:1–dhp180:4 (dhp) GATHERED; possible speaker requires a reader
+dhp180:1 | P: Yassa jālinī visattikā, | S: Of craving, the weaver, the clinger, he has none: | T: In whom there’s no craving ⏎ –the sticky ensnarer–
+dhp180:2 | P: Taṇhā natthi kuhiñci netave; | S: so where can he be traced? | T: to lead him anywherever at all;
+dhp180:3 | P: Taṁ buddhamanantagocaraṁ, | S: By what track would you trace that Buddha, | T: awakened, his pasture endless, ⏎ pathless: ⏎ by what path will you lead him astray?
+dhp180:4 | P: Apadaṁ kena padena nessatha. | S: who leaves no track in his infinite range? | T: (none)
+CONTEXT dhp181:0 | P: Devorohaṇavatthu | S: (none) | T: (none)
+
+## dhp181:1–dhp181:4 (dhp)
+CONTEXT dhp181:0 | P: Devorohaṇavatthu | S: (none) | T: (none)
+dhp181:1 | P: Ye jhānapasutā dhīrā, | S: The attentive intent on absorption, | T: They, the enlightened, intent on jhana,
+dhp181:2 | P: nekkhammūpasame ratā; | S: who love the peace of renunciation, | T: delighting in stilling ⏎ & renunciation,
+dhp181:3 | P: Devāpi tesaṁ pihayanti, | S: the Buddhas, ever mindful, | T: self-awakened & mindful:
+dhp181:4 | P: sambuddhānaṁ satīmataṁ. | S: are envied by even the gods. | T: even the devas ⏎ view them with envy.
+CONTEXT dhp182:0 | P: Erakapattanāgarājavatthu | S: (none) | T: (none)
+
+## dhp182:1–dhp182:4 (dhp)
+CONTEXT dhp182:0 | P: Erakapattanāgarājavatthu | S: (none) | T: (none)
+dhp182:1 | P: Kiccho manussapaṭilābho, | S: It’s hard to gain a human birth; | T: Hard the winning of a human birth.
+dhp182:2 | P: kicchaṁ maccāna jīvitaṁ; | S: the life of mortals is hard; | T: Hard the life of mortals.
+dhp182:3 | P: Kicchaṁ saddhammassavanaṁ, | S: it’s hard to hear the true teaching; | T: Hard the chance to hear the true Dhamma.
+dhp182:4 | P: kiccho buddhānamuppādo. | S: the arising of Buddhas is hard. | T: Hard the arising of Awakened Ones.
+CONTEXT dhp183:0 | P: Ānandattherapañhavatthu | S: (none) | T: (none)
+
+## dhp183:1–dhp183:4 (dhp)
+CONTEXT dhp183:0 | P: Ānandattherapañhavatthu | S: (none) | T: (none)
+dhp183:1 | P: Sabbapāpassa akaraṇaṁ, | S: Not to do any evil; | T: The non-doing ⏎ of any evil,
+dhp183:2 | P: kusalassa upasampadā; | S: to embrace the good; | T: the performance ⏎ of what’s skillful,
+dhp183:3 | P: Sacittapariyodapanaṁ, | S: to purify one’s mind: | T: the cleansing ⏎ of one’s own mind:
+dhp183:4 | P: etaṁ buddhāna sāsanaṁ. | S: this is the instruction of the Buddhas. | T: this is the teaching ⏎ of the Awakened.
+
+## dhp184:1–dhp184:4 (dhp)
+dhp184:1 | P: Khantī paramaṁ tapo titikkhā, | S: Patient acceptance is the ultimate fervor. | T: Patient endurance: ⏎ the foremost austerity.
+dhp184:2 | P: Nibbānaṁ paramaṁ vadanti buddhā; | S: Extinguishment is the ultimate, say the Buddhas. | T: Unbinding: ⏎ the foremost, ⏎ so say the Awakened.
+dhp184:3 | P: Na hi pabbajito parūpaghātī, | S: No true renunciate injures another, | T: He who injures another ⏎ is no contemplative.
+dhp184:4 | P: Na samaṇo hoti paraṁ viheṭhayanto. | S: nor does an ascetic hurt another. | T: He who mistreats another, ⏎ no monk.
+
+## dhp185:1–dhp185:6 (dhp)
+dhp185:1 | P: Anūpavādo anūpaghāto, | S: Not speaking ill nor doing harm; | T: Not disparaging, not injuring,
+dhp185:2 | P: Pātimokkhe ca saṁvaro; | S: restraint in the monastic code; | T: restraint ⏎ in line with the Patimokkha,
+dhp185:3 | P: Mattaññutā ca bhattasmiṁ, | S: moderation in eating; | T: moderation ⏎ in food,
+dhp185:4 | P: Pantañca sayanāsanaṁ; | S: staying in remote lodgings; | T: dwelling in seclusion,
+dhp185:5 | P: Adhicitte ca āyogo, | S: commitment to the higher mind— | T: commitment to the heightened mind:
+dhp185:6 | P: Etaṁ buddhāna sāsanaṁ. | S: this is the instruction of the Buddhas. | T: this is the teaching ⏎ of the Awakened.
+CONTEXT dhp186:0 | P: Anabhiratabhikkhuvatthu | S: (none) | T: (none)
+
+## dhp186:1–dhp186:4 (dhp) GATHERED; unequal counts require a reader
+CONTEXT dhp186:0 | P: Anabhiratabhikkhuvatthu | S: (none) | T: (none)
+dhp186:1 | P: Na kahāpaṇavassena, | S: Even if it were raining money, | T: Not even if it rained gold coins
+dhp186:2 | P: titti kāmesu vijjati; | S: you’d not be sated in sensual pleasures. | T: would we have our fill ⏎ of sensual pleasures.
+dhp186:3 | P: Appassādā dukhā kāmā, | S: An astute person understands that sensual pleasures | T: ‘Stressful, ⏎ they give little enjoyment’– ⏎ knowing this, the wise one
+dhp186:4 | P: iti viññāya paṇḍito. | S: offer little gratification and much suffering. | T: (none)
+
+## dhp187:1–dhp187:4 (dhp) GATHERED; unequal counts require a reader
+dhp187:1 | P: Api dibbesu kāmesu, | S: Thus they find no delight | T: finds no delight
+dhp187:2 | P: ratiṁ so nādhigacchati; | S: even in celestial pleasures. | T: even in heavenly sensual pleasures.
+dhp187:3 | P: Taṇhakkhayarato hoti, | S: A disciple of the fully awakened Buddha | T: He is ⏎ one who delights ⏎ in the ending of craving, ⏎ a disciple of the Rightly ⏎ Self-Awakened One.
+dhp187:4 | P: sammāsambuddhasāvako. | S: delights in the ending of craving. | T: (none)
+CONTEXT dhp188:0 | P: Aggidattabrāhmaṇavatthu | S: (none) | T: (none)
+
+## dhp188:1–dhp188:4 (dhp)
+CONTEXT dhp188:0 | P: Aggidattabrāhmaṇavatthu | S: (none) | T: (none)
+dhp188:1 | P: Bahuṁ ve saraṇaṁ yanti, | S: So many go for refuge | T: They go to many a refuge,
+dhp188:2 | P: pabbatāni vanāni ca; | S: to mountains and forest groves, | T: to mountains & forests,
+dhp188:3 | P: Ārāmarukkhacetyāni, | S: to shrines in tended parks; | T: to park & tree shrines:
+dhp188:4 | P: manussā bhayatajjitā. | S: those people are driven by fear. | T: people threatened with danger.
+
+## dhp189:1–dhp189:4 (dhp)
+dhp189:1 | P: Netaṁ kho saraṇaṁ khemaṁ, | S: But such refuge is no sanctuary, | T: That’s not the secure refuge,
+dhp189:2 | P: netaṁ saraṇamuttamaṁ; | S: it is no supreme refuge. | T: not the supreme refuge,
+dhp189:3 | P: Netaṁ saraṇamāgamma, | S: By going to that refuge, | T: that’s not the refuge, ⏎ having gone to which,
+dhp189:4 | P: sabbadukkhā pamuccati. | S: you’re not released from all suffering. | T: you gain release ⏎ from all suffering & stress.
+
+## dhp190:1–dhp190:4 (dhp) GATHERED; unequal counts require a reader
+dhp190:1 | P: Yo ca buddhañca dhammañca, | S: One gone for refuge to the Buddha, | T: But when, having gone ⏎ to the Buddha, Dhamma,
+dhp190:2 | P: saṅghañca saraṇaṁ gato; | S: to his teaching and to the Saṅgha, | T: & Sangha for refuge,
+dhp190:3 | P: Cattāri ariyasaccāni, | S: sees the four noble truths | T: you see with right discernment ⏎ the four noble truths–
+dhp190:4 | P: sammappaññāya passati. | S: with right understanding: | T: (none)
+
+## dhp191:1–dhp191:4 (dhp)
+dhp191:1 | P: Dukkhaṁ dukkhasamuppādaṁ, | S: suffering, suffering’s origin, | T: stress, ⏎ the cause of stress,
+dhp191:2 | P: dukkhassa ca atikkamaṁ; | S: suffering’s transcendence, | T: the transcending of stress,
+dhp191:3 | P: Ariyaṁ caṭṭhaṅgikaṁ maggaṁ, | S: and the noble eightfold path | T: & the noble eightfold path,
+dhp191:4 | P: dukkhūpasamagāminaṁ. | S: that leads to the stilling of suffering. | T: the way to the stilling of stress:
+
+## dhp192:1–dhp192:4 (dhp)
+dhp192:1 | P: Etaṁ kho saraṇaṁ khemaṁ, | S: Such refuge is a sanctuary, | T: that’s the secure refuge,
+dhp192:2 | P: etaṁ saraṇamuttamaṁ; | S: it is the supreme refuge. | T: that, the supreme refuge,
+dhp192:3 | P: Etaṁ saraṇamāgamma, | S: By going to that refuge, | T: that is the refuge, ⏎ having gone to which,
+dhp192:4 | P: sabbadukkhā pamuccati. | S: you’re released from all suffering. | T: you gain release ⏎ from all suffering & stress.
+CONTEXT dhp193:0 | P: Ānandattherapañhavatthu | S: (none) | T: (none)
+
+## dhp193:1–dhp193:4 (dhp)
+CONTEXT dhp193:0 | P: Ānandattherapañhavatthu | S: (none) | T: (none)
+dhp193:1 | P: Dullabho purisājañño, | S: It’s hard to find a thoroughbred man: | T: It’s hard to come by ⏎ a thoroughbred of a man.
+dhp193:2 | P: na so sabbattha jāyati; | S: they’re not born just anywhere. | T: It’s simply not true ⏎ that he’s born everywhere.
+dhp193:3 | P: Yattha so jāyati dhīro, | S: A family where that attentive one is born | T: Wherever he’s born, an enlightened one,
+dhp193:4 | P: taṁ kulaṁ sukhamedhati. | S: prospers in happiness. | T: the family prospers, ⏎ is happy.
+CONTEXT dhp194:0 | P: Sambahulabhikkhuvatthu | S: (none) | T: (none)
+
+## dhp194:1–dhp194:4 (dhp)
+CONTEXT dhp194:0 | P: Sambahulabhikkhuvatthu | S: (none) | T: (none)
+dhp194:1 | P: Sukho buddhānamuppādo, | S: Happy, the arising of Buddhas! | T: A blessing: the arising of Awakened Ones.
+dhp194:2 | P: sukhā saddhammadesanā; | S: Happy, the teaching of Dhamma! | T: A blessing: the teaching of true Dhamma.
+dhp194:3 | P: Sukhā saṅghassa sāmaggī, | S: Happy is the harmony of the Saṅgha, | T: A blessing: the concord of the Sangha.
+dhp194:4 | P: samaggānaṁ tapo sukho. | S: and the striving of the harmonious is happy. | T: The austerity of those in concord ⏎ is a blessing.
+CONTEXT dhp195:0 | P: Kassapadasabalassasuvaṇṇacetiyavatthu | S: (none) | T: (none)
+
+## dhp195:1–dhp195:4 (dhp)
+CONTEXT dhp195:0 | P: Kassapadasabalassasuvaṇṇacetiyavatthu | S: (none) | T: (none)
+dhp195:1 | P: Pūjārahe pūjayato, | S: When a person venerates the worthy— | T: If you worship those worthy of worship,
+dhp195:2 | P: buddhe yadi va sāvake; | S: the Buddha or his disciple, | T: –Awakened Ones or their disciples–
+dhp195:3 | P: Papañcasamatikkante, | S: who have transcended proliferation, | T: who’ve transcended ⏎ objectification,
+dhp195:4 | P: tiṇṇasokapariddave. | S: and have left behind grief and lamentation, | T: crossed over ⏎ lamentation ⏎ & grief,
+
+## dhp196:1–dhp196:4 (dhp) GATHERED; possible speaker requires a reader
+dhp196:1 | P: Te tādise pūjayato, | S: quenched, fearing nothing from any quarter— | T: who are unendangered, ⏎ fearless, ⏎ unbound:
+dhp196:2 | P: nibbute akutobhaye; | S: the merit of one venerating such as these, | T: there’s no measure for reckoning ⏎ that your merit’s
+dhp196:3 | P: Na sakkā puññaṁ saṅkhātuṁ, | S: cannot be calculated by anyone, | T: (none)
+dhp196:4 | P: imettamapi kenaci. | S: saying it is just this much. | T: ‘this much.’
+CONTEXT dhp196:5 | P: Buddhavaggo cuddasamo. | S: (none) | T: (none)
+CONTEXT dhp196:6 | P: Paṭhamabhāṇavāraṁ. | S: (none) | T: (none)
+
+## dhp197:1–dhp197:4 (dhp)
+CONTEXT dhp197:0.3 | P: Sukhavagga | S: 15. Happiness | T: Dhp XV : Happy
+CONTEXT dhp197:0.4 | P: Ñātikalahavūpasamanavatthu | S: (none) | T: (none)
+dhp197:1 | P: Susukhaṁ vata jīvāma, | S: Let us live so very happily, | T: How very happily we live,
+dhp197:2 | P: verinesu averino; | S: loving among the hostile. | T: free from hostility ⏎ among those who are hostile.
+dhp197:3 | P: Verinesu manussesu, | S: Among hostile humans, | T: Among hostile people,
+dhp197:4 | P: viharāma averino. | S: let us live with love. | T: free from hostility we dwell.
+
+## dhp198:1–dhp198:4 (dhp)
+dhp198:1 | P: Susukhaṁ vata jīvāma, | S: Let us live so very happily, | T: How very happily we live,
+dhp198:2 | P: āturesu anāturā; | S: healthy among the ailing. | T: free from misery ⏎ among those who are miserable.
+dhp198:3 | P: Āturesu manussesu, | S: Among ailing humans | T: Among miserable people,
+dhp198:4 | P: viharāma anāturā. | S: let us live healthily. | T: free from misery we dwell.
+
+## dhp199:1–dhp199:4 (dhp)
+dhp199:1 | P: Susukhaṁ vata jīvāma, | S: Let us live so very happily, | T: How very happily we live,
+dhp199:2 | P: ussukesu anussukā; | S: content among the greedy. | T: free from busyness ⏎ among those who are busy.
+dhp199:3 | P: Ussukesu manussesu, | S: Among greedy humans, | T: Among busy people,
+dhp199:4 | P: viharāma anussukā. | S: let us live content. | T: free from busyness we dwell.
+CONTEXT dhp200:0 | P: Māravatthu | S: (none) | T: (none)
+
+## dhp200:1–dhp200:4 (dhp)
+CONTEXT dhp200:0 | P: Māravatthu | S: (none) | T: (none)
+dhp200:1 | P: Susukhaṁ vata jīvāma, | S: Let us live so very happily, | T: How very happily we live,
+dhp200:2 | P: yesaṁ no natthi kiñcanaṁ; | S: we who have nothing. | T: we who have nothing.
+dhp200:3 | P: Pītibhakkhā bhavissāma, | S: We shall feed on rapture, | T: We will feed on rapture
+dhp200:4 | P: devā ābhassarā yathā. | S: like the gods of sublime luminosity. | T: like the Radiant gods.
+CONTEXT dhp201:0 | P: Kosalaraññoparājayavatthu | S: (none) | T: (none)
+
+## dhp201:1–dhp201:4 (dhp)
+CONTEXT dhp201:0 | P: Kosalaraññoparājayavatthu | S: (none) | T: (none)
+dhp201:1 | P: Jayaṁ veraṁ pasavati, | S: Victory breeds enmity; | T: Winning gives birth to hostility.
+dhp201:2 | P: dukkhaṁ seti parājito; | S: the defeated sleep badly. | T: Losing, one lies down in pain.
+dhp201:3 | P: Upasanto sukhaṁ seti, | S: The peaceful sleep at ease, | T: The calmed lie down with ease,
+dhp201:4 | P: hitvā jayaparājayaṁ. | S: having left victory and defeat behind. | T: having set ⏎ winning & losing ⏎ aside.
+CONTEXT dhp202:0 | P: Aññatarakuladārikāvatthu | S: (none) | T: (none)
+
+## dhp202:1–dhp202:4 (dhp)
+CONTEXT dhp202:0 | P: Aññatarakuladārikāvatthu | S: (none) | T: (none)
+dhp202:1 | P: Natthi rāgasamo aggi, | S: There is no fire like greed, | T: There’s no fire like passion,
+dhp202:2 | P: Natthi dosasamo kali; | S: no crime like hate, | T: no loss like anger,
+dhp202:3 | P: Natthi khandhasamā dukkhā, | S: no suffering like the aggregates, | T: no pain like the aggregates,
+dhp202:4 | P: Natthi santiparaṁ sukhaṁ. | S: no bliss beyond peace. | T: no ease other than peace.
+CONTEXT dhp203:0 | P: Ekaupāsakavatthu | S: (none) | T: (none)
+
+## dhp203:1–dhp203:4 (dhp)
+CONTEXT dhp203:0 | P: Ekaupāsakavatthu | S: (none) | T: (none)
+dhp203:1 | P: Jighacchāparamā rogā, | S: Hunger is the worst illness, | T: Hunger: the foremost illness.
+dhp203:2 | P: saṅkhāraparamā dukhā; | S: conditions are the worst suffering. | T: Fabrications: the foremost pain.
+dhp203:3 | P: Etaṁ ñatvā yathābhūtaṁ, | S: When one has known this as it is, | T: For one knowing this truth ⏎ as it has come to be,
+dhp203:4 | P: nibbānaṁ paramaṁ sukhaṁ. | S: extinguishment is the ultimate happiness. | T: Unbinding ⏎ is the foremost ease.
+CONTEXT dhp204:0 | P: Pasenadikosalavatthu | S: (none) | T: (none)
+
+## dhp204:1–dhp204:4 (dhp)
+CONTEXT dhp204:0 | P: Pasenadikosalavatthu | S: (none) | T: (none)
+dhp204:1 | P: Ārogyaparamā lābhā, | S: Health is the ultimate blessing; | T: Freedom from illness: the foremost good fortune.
+dhp204:2 | P: Santuṭṭhiparamaṁ dhanaṁ; | S: contentment, the ultimate wealth; | T: Contentment: the foremost wealth.
+dhp204:3 | P: Vissāsaparamā ñāti, | S: trust is the ultimate family; | T: Trust: the foremost kinship.
+dhp204:4 | P: Nibbānaṁ paramaṁ sukhaṁ. | S: extinguishment, the ultimate happiness. | T: Unbinding: the foremost ease.
+CONTEXT dhp205:0 | P: Tissattheravatthu | S: (none) | T: (none)
+
+## dhp205:1–dhp205:4 (dhp) GATHERED; unequal counts require a reader
+CONTEXT dhp205:0 | P: Tissattheravatthu | S: (none) | T: (none)
+dhp205:1 | P: Pavivekarasaṁ pitvā, | S: Having drunk the nectar of seclusion | T: Drinking the nourishment, ⏎ the flavor, ⏎ of seclusion & calm,
+dhp205:2 | P: rasaṁ upasamassa ca; | S: and the nectar of peace— | T: (none)
+dhp205:3 | P: Niddaro hoti nippāpo, | S: free of stress, free of evil, | T: one is freed from evil, devoid ⏎ of distress,
+dhp205:4 | P: dhammapītirasaṁ pivaṁ. | S: drink the joyous nectar of truth. | T: refreshed with the nourishment ⏎ of rapture in the Dhamma.
+CONTEXT dhp206:0 | P: Sakkavatthu | S: (none) | T: (none)

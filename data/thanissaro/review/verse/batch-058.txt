@@ -1,0 +1,455 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## thag9.1:6.1–thag9.1:6.4 (thag)
+thag9.1:6.1 | P: Yadā nadīnaṁ kusumākulānaṁ, | S: When sitting on a riverbank covered in flowers, | T: When, seated on the bank of rivers ⏎ covered with flowers,
+thag9.1:6.2 | P: Vicitta-vāneyya-vaṭaṁsakānaṁ; | S: garlanded with brightly colored forest plants, | T: garlanded with various forest plants,
+thag9.1:6.3 | P: Tīre nisinno sumanova jhāyati, | S: one is truly happy, practicing absorption: | T: happy at heart, he does jhāna,
+thag9.1:6.4 | P: Tato ratiṁ paramataraṁ na vindati. | S: there is no greater pleasure than this. | T: there’s no greater enjoyment than that.
+
+## thag9.1:7.1–thag9.1:7.4 (thag)
+thag9.1:7.1 | P: Yadā nisīthe rahitamhi kānane, | S: When it is midnight in a lonely forest, | T: When, at midnight in the secluded grove,
+thag9.1:7.2 | P: Deve gaḷantamhi nadanti dāṭhino; | S: and the lions roar as the heavens pour, | T: the devas drizzle, the fanged animals roar,
+thag9.1:7.3 | P: Bhikkhū ca pabbhāragatova jhāyati, | S: and a monk has gone to a mountain cave, practicing absorption: | T: and the monk, having gone to a cave, does jhāna,
+thag9.1:7.4 | P: Tato ratiṁ paramataraṁ na vindati. | S: there is no greater pleasure than this. | T: there’s no greater enjoyment than that.
+
+## thag9.1:8.1–thag9.1:8.4 (thag)
+thag9.1:8.1 | P: Yadā vitakke uparundhiyattano, | S: When one’s own thoughts have been cut off, | T: When, having kept his own thoughts in check,
+thag9.1:8.2 | P: Nagantare nagavivaraṁ samassito; | S: between the mountains, sheltered inside a cleft, | T: taking refuge in the mountains in a mountain fissure,
+thag9.1:8.3 | P: Vītaddaro vītakhilova jhāyati, | S: without stress or heartlessness, practicing absorption: | T: free from disturbance, free ⏎ from barrenness, ⏎ he does jhāna,
+thag9.1:8.4 | P: Tato ratiṁ paramataraṁ na vindati. | S: there is no greater pleasure than this. | T: there’s no greater enjoyment than that.
+
+## thag9.1:9.1–thag9.1:9.4 (thag)
+thag9.1:9.1 | P: Yadā sukhī malakhilasokanāsano, | S: When one is happy, destroyer of stains, heartlessness, and sorrow, | T: When, happy, ⏎ destroying stain, barrenness, grief,
+thag9.1:9.2 | P: Niraggaḷo nibbanatho visallo; | S: free of obstructions, snarls, and thorns, | T: free from door-bolts, free from underbrush, free ⏎ from arrows,
+thag9.1:9.3 | P: Sabbāsave byantikatova jhāyati, | S: and with all defilements annihilated, practicing absorption: | T: having put an end to all effluents, ⏎ he does jhāna,
+thag9.1:9.4 | P: Tato ratiṁ paramataraṁ na vindatī”ti. | S: there is no greater pleasure than this. | T: there’s no greater enjoyment than that.
+CONTEXT thag9.1:9.5 | P: … Bhūto thero … | S: (none) | T: (none)
+CONTEXT thag9.1:9.6 | P: Navakanipāto niṭṭhito. | S: (none) | T: (none)
+
+## thag9.1:10.1–thag9.1:10.4 (thag)
+CONTEXT thag9.1:9.6 | P: Navakanipāto niṭṭhito. | S: (none) | T: (none)
+CONTEXT thag9.1:10.0 | P: Tatruddānaṁ | S: (none) | T: (none)
+thag9.1:10.1 | P: Bhūto tathaddaso thero, | S: (none) | T: (none)
+thag9.1:10.2 | P: eko khaggavisāṇavā; | S: (none) | T: (none)
+thag9.1:10.3 | P: Navakamhi nipātamhi, | S: (none) | T: (none)
+thag9.1:10.4 | P: gāthāyopi imā navāti. | S: (none) | T: (none)
+
+## thag10.1:1.1–thag10.1:1.4 (thag)
+CONTEXT thag10.1:0.3 | P: Paṭhamavagga | S: Chapter One | T: (none)
+CONTEXT thag10.1:0.4 | P: Kāḷudāyittheragāthā | S: Kāḷudāyī | T: Thag 10:1 Kāludāyin
+thag10.1:1.1 | P: “Aṅgārino dāni dumā bhadante, | S: “The trees are now crimson, venerable sir, | T: Covered in embers now are the trees,
+thag10.1:1.2 | P: Phalesino chadanaṁ vippahāya; | S: they’ve shed their foliage, and are ready to fruit. | T: shedding their canopy, lord, in search of fruit.
+thag10.1:1.3 | P: Te accimantova pabhāsayanti, | S: They shine as if aflame; | T: As if flaring up, they glow.
+thag10.1:1.4 | P: Samayo mahāvīra bhāgī rasānaṁ. | S: great hero, this season is full of flavor. | T: The time, great hero, partakes of savors.
+
+## thag10.1:2.1–thag10.1:2.4 (thag)
+thag10.1:2.1 | P: Dumāni phullāni manoramāni, | S: The blossoming trees are delightful, | T: The trees in bloom, delightful,
+thag10.1:2.2 | P: Samantato sabbadisā pavanti; | S: wafting their scent all around, in all directions. | T: waft delights ⏎ all around, in all directions,
+thag10.1:2.3 | P: Pattaṁ pahāya phalamāsasānā, | S: They’ve shed their leaves and wish to fruit, | T: dropping their petals in hope of fruit.
+thag10.1:2.4 | P: Kālo ito pakkamanāya vīra. | S: hero, it is time to leave here. | T: Now, O hero, is the time to set forth.
+
+## thag10.1:3.1–thag10.1:3.4 (thag)
+thag10.1:3.1 | P: Nevātisītaṁ na panātiuṇhaṁ, | S: It is neither too hot nor too cold, | T: Neither too cold nor too hot:
+thag10.1:3.2 | P: Sukhā utu addhaniyā bhadante; | S: venerable sir, it’s a pleasant season for traveling. | T: pleasant the season, lord, fit for a journey.
+thag10.1:3.3 | P: Passantu taṁ sākiyā koḷiyā ca, | S: Let the Sākiyans and Koliyans see you, | T: Let them see you—the Sakyans & Koliyans—
+thag10.1:3.4 | P: Pacchāmukhaṁ rohiniyaṁ tarantaṁ. | S: heading west across the Rohiṇī river. | T: facing west, crossing in the Rohiṇī.
+
+## thag10.1:4.1–thag10.1:4.6 (thag)
+thag10.1:4.1 | P: Āsāya kasate khettaṁ, | S: In hope, the field is plowed; | T: In hope they plow the field.
+thag10.1:4.2 | P: bījaṁ āsāya vappati; | S: the seed is sown in hope; | T: In hope the seed is sown.
+thag10.1:4.3 | P: Āsāya vāṇijā yanti, | S: in hope, merchants travel the seas, | T: In hope do merchants go to sea,
+thag10.1:4.4 | P: samuddaṁ dhanahārakā; | S: carrying rich cargoes. | T: bringing back wealth.
+thag10.1:4.5 | P: Yāya āsāya tiṭṭhāmi, | S: The hope that I stand for: | T: Let the hope in which I stand bear fruit.
+thag10.1:4.6 | P: sā me āsā samijjhatu. | S: may it succeed! | T: (none)
+
+## thag10.1:5.1–thag10.1:5.4 (thag)
+thag10.1:5.1 | P: Punappunaṁ ceva vapanti bījaṁ, | S: Again and again, they sow the seed; | T: Again & again they sow the seed.
+thag10.1:5.2 | P: Punappunaṁ vassati devarājā; | S: again and again, the king of the heavens sends rain; | T: Again & again the deva-kings rain.
+thag10.1:5.3 | P: Punappunaṁ khettaṁ kasanti kassakā, | S: again and again, farmers plow the field; | T: Again & again farmers plow the fields.
+thag10.1:5.4 | P: Punappunaṁ dhaññamupeti raṭṭhaṁ. | S: again and again, grain is produced for the nation. | T: Again & again grain comes to the kingdom.
+
+## thag10.1:6.1–thag10.1:6.4 (thag)
+thag10.1:6.1 | P: Punappunaṁ yācanakā caranti, | S: Again and again, the beggars wander, | T: Again & again beggars wander.
+thag10.1:6.2 | P: Punappunaṁ dānapatī dadanti; | S: again and again, the donors give. | T: Again & again lords of giving give.
+thag10.1:6.3 | P: Punappunaṁ dānapatī daditvā, | S: Again and again, when the donors have given, | T: Again & again having given, the lords of giving
+thag10.1:6.4 | P: Punappunaṁ saggamupenti ṭhānaṁ. | S: again and again, they take their place in heaven. | T: again & again go to the heavenly place.
+
+## thag10.1:7.1–thag10.1:7.4 (thag)
+thag10.1:7.1 | P: Vīro have sattayugaṁ puneti, | S: A hero of vast wisdom purifies seven generations | T: Truly, an enlightened one of deep discernment ⏎ cleanses, back for seven generations,
+thag10.1:7.2 | P: Yasmiṁ kule jāyati bhūripañño; | S: of the family in which they’re born. | T: the family in which he’s born.
+thag10.1:7.3 | P: Maññāmahaṁ sakkati devadevo, | S: Sakya, I believe you’re the king of kings, | T: I would imagine you to be Sakka, the deva of devas
+thag10.1:7.4 | P: Tayā hi jāto muni saccanāmo. | S: since you fathered the one who is truly named a sage. | T: for you engendered a sage truly named.
+
+## thag10.1:8.1–thag10.1:8.4 (thag)
+thag10.1:8.1 | P: Suddhodano nāma pitā mahesino, | S: The father of the great seer is named Suddhodana; | T: Suddhodana is the name of the Great Seer’s father,
+thag10.1:8.2 | P: Buddhassa mātā pana māyanāmā; | S: and the Buddha’s mother is named Māyā. | T: and Māyā name of the Buddha’s mother
+thag10.1:8.3 | P: Yā bodhisattaṁ parihariya kucchinā, | S: Having borne the Bodhisatta in her belly, | T: who, having nurtured the bodhisatta with her womb,
+thag10.1:8.4 | P: Kāyassa bhedā tidivamhi modati. | S: she rejoices in the Third Heaven. | T: at the break-up of the body, rejoices in the threefold divine realm.
+
+## thag10.1:9.1–thag10.1:9.4 (thag)
+thag10.1:9.1 | P: Sā gotamī kālakatā ito cutā, | S: When she died and passed away from here, | T: She, Gotamī, having passed away, ⏎ having fallen away from here,
+thag10.1:9.2 | P: Dibbehi kāmehi samaṅgibhūtā; | S: she was blessed with heavenly sensual pleasures; | T: is now endowed with heavenly sensual pleasures.
+thag10.1:9.3 | P: Sā modati kāmaguṇehi pañcahi, | S: enjoying the five kinds of sensual stimulation. | T: She rejoices in the five strings of sensuality,
+thag10.1:9.4 | P: Parivāritā devagaṇehi tehi”. | S: Gotamī is surrounded by those hosts of gods.” | T: surrounded by those groups of devas.
+
+## thag10.1:10.1–thag10.1:10.4 (thag) GATHERED; unequal counts require a reader
+thag10.1:10.1 | P: “Buddhassa puttomhi asayhasāhino, | S: “I’m the son of the Buddha, the incomparable Aṅgīrasa, the unaffected, | T: I am the son of the Buddha, ⏎ who endures what is hard to endure— ⏎ Aṅgīrasa: incomparable, Such.
+thag10.1:10.2 | P: Aṅgīrasassappaṭimassa tādino; | S: the bearer of the unbearable. | T: (none)
+thag10.1:10.3 | P: Pitupitā mayhaṁ tuvaṁsi sakka, | S: You, Sakya, are my father’s father; | T: You, Sakka, are my father’s father.
+thag10.1:10.4 | P: Dhammena me gotama ayyakosī”ti. | S: Gotama, you are my grandfather in the Dhamma.” | T: In the Dhamma, Gotama, ⏎ you are my grandfather.
+CONTEXT thag10.1:10.5 | P: … Kāḷudāyī thero …. | S: (none) | T: (none)
+
+## thag10.2:1.1–thag10.2:1.4 (thag) GATHERED; unequal counts require a reader
+CONTEXT thag10.2:0.3 | P: Paṭhamavagga | S: Chapter One | T: (none)
+CONTEXT thag10.2:0.4 | P: Ekavihāriyattheragāthā | S: Ekavihāriya | T: Thag 10:2 Ekavihāriya—“Dwelling Alone”
+thag10.2:1.1 | P: “Purato pacchato vāpi, | S: If no one else is found | T: If, in front or behind, ⏎ there is no one else,
+thag10.2:1.2 | P: aparo ce na vijjati; | S: before or behind, | T: (none)
+thag10.2:1.3 | P: Atīva phāsu bhavati, | S: it’s extremely pleasant | T: it’s extremely pleasant
+thag10.2:1.4 | P: ekassa vasato vane. | S: to be dwelling alone in a forest grove. | T: for one staying alone ⏎ in the forest.
+
+## thag10.2:2.1–thag10.2:2.4 (thag)
+thag10.2:2.1 | P: Handa eko gamissāmi, | S: Come now, I’ll go alone | T: Come then! Alone ⏎ I will go
+thag10.2:2.2 | P: araññaṁ buddhavaṇṇitaṁ; | S: to the wilderness praised by the Buddha. | T: to the wilderness ⏎ praised by the Awakened One
+thag10.2:2.3 | P: Phāsu ekavihārissa, | S: It’s pleasant for a mendicant | T: pleasant for a resolute monk
+thag10.2:2.4 | P: pahitattassa bhikkhuno. | S: to be dwelling alone and resolute. | T: dwelling alone.
+
+## thag10.2:3.1–thag10.2:3.4 (thag)
+thag10.2:3.1 | P: Yogi-pītikaraṁ rammaṁ, | S: Alone and self-disciplined, | T: Alone, ⏎ astute in my goal,
+thag10.2:3.2 | P: mattakuñjarasevitaṁ; | S: I’ll quickly enter the delightful forest, | T: I’ll quickly enter the grove
+thag10.2:3.3 | P: Eko attavasī khippaṁ, | S: which gives joy to meditators, | T: —refreshing, ⏎ giving rapture ⏎ to meditators—
+thag10.2:3.4 | P: pavisissāmi kānanaṁ. | S: and is frequented by rutting elephants. | T: the haunt ⏎ of elephants in rut.
+
+## thag10.2:4.1–thag10.2:4.4 (thag)
+thag10.2:4.1 | P: Supupphite sītavane, | S: In the Cool Grove, so full of flowers, | T: When the Cool Forest’s in full flower,
+thag10.2:4.2 | P: sītale girikandare; | S: in a cool mountain cave, | T: in a cool mountain gorge,
+thag10.2:4.3 | P: Gattāni parisiñcitvā, | S: I’ll bathe my limbs | T: having bathed my limbs
+thag10.2:4.4 | P: caṅkamissāmi ekako. | S: and walk mindfully alone. | T: I’ll walk back & forth ⏎ alone.
+
+## thag10.2:5.1–thag10.2:5.4 (thag)
+thag10.2:5.1 | P: Ekākiyo adutiyo, | S: When will I dwell alone, | T: Ah, when will I dwell,
+thag10.2:5.2 | P: ramaṇīye mahāvane; | S: without a companion, | T: alone and free from companions,
+thag10.2:5.3 | P: Kadāhaṁ viharissāmi, | S: in the great wood, so delightful, | T: in the refreshing great forest—
+thag10.2:5.4 | P: katakicco anāsavo. | S: my task complete, free of defilements? | T: my task done, ⏎ effluent-free?
+
+## thag10.2:6.1–thag10.2:6.4 (thag) GATHERED; unequal counts require a reader
+thag10.2:6.1 | P: Evaṁ me kattukāmassa, | S: This is what I want to do: | T: As I desire to do this, ⏎ may my purpose succeed.
+thag10.2:6.2 | P: adhippāyo samijjhatu; | S: may my wish succeed! | T: (none)
+thag10.2:6.3 | P: Sādhayissāmahaṁyeva, | S: I’ll make it happen myself, | T: I myself ⏎ will bring it about.
+thag10.2:6.4 | P: nāñño aññassa kārako. | S: for no one can do another’s duty. | T: No one can do it ⏎ for anyone else.
+
+## thag10.2:7.1–thag10.2:7.4 (thag)
+thag10.2:7.1 | P: Esa bandhāmi sannāhaṁ, | S: Fastening my armor, | T: I myself ⏎ bind on my armor.
+thag10.2:7.2 | P: pavisissāmi kānanaṁ; | S: I’ll enter the forest. | T: I will enter the grove
+thag10.2:7.3 | P: Na tato nikkhamissāmi, | S: I won’t leave | T: and will not emerge
+thag10.2:7.4 | P: appatto āsavakkhayaṁ. | S: without attaining the end of defilements. | T: without having attained ⏎ the end of the effluents.
+
+## thag10.2:8.1–thag10.2:8.4 (thag)
+thag10.2:8.1 | P: Mālute upavāyante, | S: As the cool gale blows | T: While soft breezes blow— ⏎ cool,
+thag10.2:8.2 | P: sīte surabhigandhike; | S: with fragrant scent, | T: heavily, fragrantly scented—
+thag10.2:8.3 | P: Avijjaṁ dālayissāmi, | S: I’ll split ignorance apart, | T: I’ll make ignorance burst,
+thag10.2:8.4 | P: nisinno nagamuddhani. | S: sitting on the mountain-peak. | T: as I sit on a mountaintop.
+
+## thag10.2:9.1–thag10.2:9.4 (thag)
+thag10.2:9.1 | P: Vane kusumasañchanne, | S: In a forest grove covered with blossoms, | T: In the forest covered with blossoms
+thag10.2:9.2 | P: pabbhāre nūna sītale; | S: in a cave so very cool, | T: or perhaps on a cool hillside,
+thag10.2:9.3 | P: Vimuttisukhena sukhito, | S: I take pleasure in the Mountainfold, | T: blessed with the bliss of release,
+thag10.2:9.4 | P: ramissāmi giribbaje. | S: happy with the happiness of freedom. | T: on Giribbaja I’ll delight.
+
+## thag10.2:10.1–thag10.2:10.4 (thag)
+thag10.2:10.1 | P: Sohaṁ paripuṇṇasaṅkappo, | S: I’ve got all I wished for | T: I am now he ⏎ whose resolves are fulfilled
+thag10.2:10.2 | P: cando pannaraso yathā; | S: like the moon on the fifteenth day. | T: like the moon on a full-moon night.
+thag10.2:10.3 | P: Sabbāsavaparikkhīṇo, | S: With the utter ending of all defilements, | T: With effluents all ⏎ totally ended,
+thag10.2:10.4 | P: natthi dāni punabbhavo”ti. | S: now there’ll be no more future lives. | T: there is now no further becoming.
+CONTEXT thag10.2:10.5 | P: … Ekavihāriyo thero …. | S: (none) | T: (none)
+
+## thag10.5:1.1–thag10.5:1.4 (thag)
+CONTEXT thag10.5:0.3 | P: Paṭhamavagga | S: Chapter One | T: (none)
+CONTEXT thag10.5:0.4 | P: Kappattheragāthā | S: Kappa | T: Thag 10:5 Kappa
+thag10.5:1.1 | P: “Nānākulamalasampuṇṇo, | S: Filled with different kinds of dirt, | T: Full of the many clans of impurities,
+thag10.5:1.2 | P: mahāukkārasambhavo; | S: a great producer of dung, | T: the great manufacturer of excrement,
+thag10.5:1.3 | P: Candanikaṁva paripakkaṁ, | S: like a stagnant cesspool, | T: like a stagnant pool,
+thag10.5:1.4 | P: mahāgaṇḍo mahāvaṇo. | S: a big boil, a bad wound, | T: a great tumor, ⏎ great wound,
+
+## thag10.5:2.1–thag10.5:2.4 (thag)
+thag10.5:2.1 | P: Pubbaruhirasampuṇṇo, | S: full of pus and blood, | T: full of blood & lymph,
+thag10.5:2.2 | P: gūthakūpena gāḷhito; | S: sunk in a toilet-pit, | T: immersed in a cesspool,
+thag10.5:2.3 | P: Āpopaggharaṇo kāyo, | S: trickling with fluids, | T: trickling liquids,
+thag10.5:2.4 | P: sadā sandati pūtikaṁ. | S: this rotting body always oozes. | T: the body ⏎ is oozing foulness—always.
+
+## thag10.5:3.1–thag10.5:3.4 (thag)
+thag10.5:3.1 | P: Saṭṭhikaṇḍarasambandho, | S: Bound by sixty tendons, | T: Bound together with sixty sinews,
+thag10.5:3.2 | P: maṁsalepanalepito; | S: coated with a fleshy coating, | T: plastered with a stucco of muscle,
+thag10.5:3.3 | P: Cammakañcukasannaddho, | S: clothed in a jacket of skin, | T: wrapped in a jacket of skin,
+thag10.5:3.4 | P: pūtikāyo niratthako. | S: this rotting body is worthless. | T: this foul body is of no worth at all.
+
+## thag10.5:4.1–thag10.5:4.4 (thag) GATHERED; equal counts: one line per row
+thag10.5:4.1 | P: Aṭṭhisaṅghātaghaṭito, | S: Held together by a skeleton of bones, | T: Linked together with a chain of bones, ⏎ stitched together with tendon-threads,
+thag10.5:4.2 | P: nhārusuttanibandhano; | S: and bound by sinews; | T: (none)
+thag10.5:4.3 | P: Nekesaṁ saṅgatībhāvā, | S: it assumes postures | T: it produces its various postures,
+thag10.5:4.4 | P: kappeti iriyāpathaṁ. | S: due to a complex of many things. | T: from being hitched up together.
+AUTO thag10.5:4.1 starts: Linked together with a chain of bones,
+AUTO thag10.5:4.2 starts: stitched together with tendon-threads,
+AUTO thag10.5:4.3 starts: it produces its various postures,
+AUTO thag10.5:4.4 starts: from being hitched up together.
+
+## thag10.5:5.1–thag10.5:5.4 (thag)
+thag10.5:5.1 | P: Dhuvappayāto maraṇāya, | S: We set out in the certainty of death, | T: Headed surely to death,
+thag10.5:5.2 | P: maccurājassa santike; | S: in the presence of the King of Death; | T: in the presence of the King of Mortality,
+thag10.5:5.3 | P: Idheva chaḍḍayitvāna, | S: and having discarded the body right here, | T: the man who learns to discard it right here,
+thag10.5:5.4 | P: yenakāmaṅgamo naro. | S: a person goes where he likes. | T: goes wherever he wants.
+
+## thag10.5:6.1–thag10.5:6.4 (thag)
+thag10.5:6.1 | P: Avijjāya nivuto kāyo, | S: Shrouded by ignorance, | T: Covered with ignorance,
+thag10.5:6.2 | P: catuganthena ganthito; | S: tied by the four ties, | T: the body’s tied down with a four-fold tie,
+thag10.5:6.3 | P: Oghasaṁsīdano kāyo, | S: this body is sinking in the flood, | T: sunk in the floods,
+thag10.5:6.4 | P: anusayajālamotthato. | S: caught in the net of the underlying tendencies. | T: caught in the net of obsessions,
+
+## thag10.5:7.1–thag10.5:7.4 (thag)
+thag10.5:7.1 | P: Pañcanīvaraṇe yutto, | S: Yoked to the five hindrances, | T: conjoined with five hindrances,
+thag10.5:7.2 | P: vitakkena samappito; | S: afflicted by thought, | T: given over to thought,
+thag10.5:7.3 | P: Taṇhāmūlenānugato, | S: stuck to the root of craving, | T: accompanied with the root of craving,
+thag10.5:7.4 | P: mohacchādanachādito. | S: hidden by delusion: | T: roofed with delusion’s roofing.
+
+## thag10.5:8.1–thag10.5:8.4 (thag)
+thag10.5:8.1 | P: Evāyaṁ vattate kāyo, | S: that is how the body goes on, | T: That’s how the body functions,
+thag10.5:8.2 | P: kammayantena yantito; | S: propelled by the mechanism of deeds. | T: compelled by the compulsion of kamma,
+thag10.5:8.3 | P: Sampatti ca vipatyantā, | S: But existence ends in perishing; | T: but its attainment ends ⏎ in ruin.
+thag10.5:8.4 | P: nānābhāvo vipajjati. | S: separated, the body perishes. | T: Its many becomings go ⏎ to ruin.
+
+## thag10.5:9.1–thag10.5:9.4 (thag) GATHERED; equal counts: one line per row
+thag10.5:9.1 | P: Yemaṁ kāyaṁ mamāyanti, | S: Those blind, ordinary people | T: These who hold to this body as mine ⏎ —blind fools, people run-of-the-mill—
+thag10.5:9.2 | P: andhabālā puthujjanā; | S: who think of this body as theirs, | T: (none)
+thag10.5:9.3 | P: Vaḍḍhenti kaṭasiṁ ghoraṁ, | S: swell the horrors of the charnel ground, | T: fill the horrific cemetery,
+thag10.5:9.4 | P: ādiyanti punabbhavaṁ. | S: taking hold of future lives. | T: taking on further becoming.
+AUTO thag10.5:9.1 starts: These who hold to this body as mine
+AUTO thag10.5:9.2 starts: —blind fools, people run-of-the-mill—
+AUTO thag10.5:9.3 starts: fill the horrific cemetery,
+AUTO thag10.5:9.4 starts: taking on further becoming.
+
+## thag10.5:10.1–thag10.5:10.4 (thag)
+thag10.5:10.1 | P: Yemaṁ kāyaṁ vivajjenti, | S: The undefiled who shun this body | T: Those who stay uninvolved with this body
+thag10.5:10.2 | P: Gūthalittaṁva pannagaṁ; | S: like a serpent smeared with dung, | T: —as they would with a serpent ⏎ smeared with dung—
+thag10.5:10.3 | P: Bhavamūlaṁ vamitvāna, | S: having expelled the root of rebirth, | T: disgorging the root of becoming,
+thag10.5:10.4 | P: Parinibbissantināsavā”ti. | S: will be fully quenched. | T: will, without effluent, ⏎ totally unbind.
+CONTEXT thag10.5:10.5 | P: … Kappo thero …. | S: (none) | T: (none)
+
+## thag10.7:1.1–thag10.7:1.4 (thag)
+CONTEXT thag10.7:0.3 | P: Paṭhamavagga | S: Chapter One | T: (none)
+CONTEXT thag10.7:0.4 | P: (Apara) Gotamattheragāthā | S: Another Gotama | T: Thag 10:7 Gotama
+thag10.7:1.1 | P: “Vijāneyya sakaṁ atthaṁ, | S: You should understand your own goal, | T: You should know what’s to your benefit.
+thag10.7:1.2 | P: Avalokeyyātha pāvacanaṁ; | S: and consider the dispensation carefully, | T: You should take a good look ⏎ at the Buddha’s word
+thag10.7:1.3 | P: Yañcettha assa patirūpaṁ, | S: as well as what’s appropriate | T: & at what’s fitting here
+thag10.7:1.4 | P: Sāmaññaṁ ajjhupagatassa. | S: for one who has entered the ascetic life. | T: for one who has entered ⏎ on the contemplative life.
+
+## thag10.7:2.1–thag10.7:2.4 (thag)
+thag10.7:2.1 | P: Mittaṁ idha ca kalyāṇaṁ, | S: Good friendship in the community, | T: An admirable friend right here,
+thag10.7:2.2 | P: Sikkhā vipulaṁ samādānaṁ; | S: undertaking plenty of training, | T: undertaking the complete training,
+thag10.7:2.3 | P: Sussūsā ca garūnaṁ, | S: eagerness to learn from the teachers— | T: & obedience to teachers:
+thag10.7:2.4 | P: Etaṁ samaṇassa patirūpaṁ. | S: this is appropriate for an ascetic. | T: This is fitting ⏎ for a contemplative.
+
+## thag10.7:3.1–thag10.7:3.4 (thag)
+thag10.7:3.1 | P: Buddhesu sagāravatā, | S: Respect for the Buddha, | T: Respect for the Buddhas,
+thag10.7:3.2 | P: Dhamme apaciti yathābhūtaṁ; | S: reverence for the Dhamma as it really is, | T: honoring the Dhamma ⏎ as it has come to be,
+thag10.7:3.3 | P: Saṅghe ca cittikāro, | S: esteem for the Saṅgha— | T: & thinking highly of the Saṅgha:
+thag10.7:3.4 | P: Etaṁ samaṇassa patirūpaṁ. | S: this is appropriate for an ascetic. | T: This is fitting ⏎ for a contemplative.
+
+## thag10.7:4.1–thag10.7:4.4 (thag)
+thag10.7:4.1 | P: Ācāragocare yutto, | S: Commitment to good conduct and alms-resort, | T: Fitting behavior & range of association,
+thag10.7:4.2 | P: Ājīvo sodhito agārayho; | S: a livelihood that is pure and blameless, | T: a livelihood purified, blameless,
+thag10.7:4.3 | P: Cittassa ca saṇṭhapanaṁ, | S: and stilling the mind— | T: the establishing of the mind:
+thag10.7:4.4 | P: Etaṁ samaṇassa patirūpaṁ. | S: this is appropriate for an ascetic. | T: This is fitting ⏎ for a contemplative.
+
+## thag10.7:5.1–thag10.7:5.4 (thag)
+thag10.7:5.1 | P: Cārittaṁ atha vārittaṁ, | S: An impressive deportment in things that should be done, | T: Virtuous in what you do
+thag10.7:5.2 | P: Iriyāpathiyaṁ pasādaniyaṁ; | S: and in those better avoided; | T: & what you abstain from doing, ⏎ inspiring comportment,
+thag10.7:5.3 | P: Adhicitte ca āyogo, | S: commitment to the higher mind— | T: commitment to the heightened mind:
+thag10.7:5.4 | P: Etaṁ samaṇassa patirūpaṁ. | S: this is appropriate for an ascetic. | T: This is fitting ⏎ for a contemplative.
+
+## thag10.7:6.1–thag10.7:6.4 (thag)
+thag10.7:6.1 | P: Āraññakāni senāsanāni, | S: Wilderness lodgings, | T: Wilderness lodgings,
+thag10.7:6.2 | P: Pantāni appasaddāni; | S: remote and quiet, | T: secluded, with next-to-no noise,
+thag10.7:6.3 | P: Bhajitabbāni muninā, | S: fit for use by a sage— | T: right for sages to resort to:
+thag10.7:6.4 | P: Etaṁ samaṇassa patirūpaṁ. | S: this is appropriate for an ascetic. | T: This is fitting ⏎ for a contemplative.
+
+## thag10.7:7.1–thag10.7:7.4 (thag) GATHERED; possible speaker requires a reader
+thag10.7:7.1 | P: Sīlañca bāhusaccañca, | S: Ethics, learning, | T: Virtue, learning,
+thag10.7:7.2 | P: Dhammānaṁ pavicayo yathābhūtaṁ; | S: investigation of teachings in line with the truth, | T: investigating ⏎ phenomena, ⏎ mental qualities, ⏎ as they have come to be:
+thag10.7:7.3 | P: Saccānaṁ abhisamayo, | S: and penetration of the truths— | T: (none)
+thag10.7:7.4 | P: Etaṁ samaṇassa patirūpaṁ. | S: this is appropriate for an ascetic. | T: This is fitting ⏎ for a contemplative.
+
+## thag10.7:8.1–thag10.7:8.4 (thag)
+thag10.7:8.1 | P: Bhāveyya ca aniccanti, | S: Developing the perceptions | T: You should develop
+thag10.7:8.2 | P: Anattasaññaṁ asubhasaññañca; | S: of impermanence, non-self, and unattractiveness, | T: inconstancy, ⏎ the perception of not-self, ⏎ the perception of unattractiveness,
+thag10.7:8.3 | P: Lokamhi ca anabhiratiṁ, | S: and dissatisfaction with the whole world— | T: & distaste for the world:
+thag10.7:8.4 | P: Etaṁ samaṇassa patirūpaṁ. | S: this is appropriate for an ascetic. | T: This is fitting ⏎ for a contemplative.
+
+## thag10.7:9.1–thag10.7:9.4 (thag)
+thag10.7:9.1 | P: Bhāveyya ca bojjhaṅge, | S: Developing the awakening factors, | T: You should develop ⏎ the factors for awakening,
+thag10.7:9.2 | P: Iddhipādāni indriyāni balāni; | S: the bases for psychic power, the faculties and powers, | T: the bases for success, ⏎ the faculties,
+thag10.7:9.3 | P: Aṭṭhaṅgamaggamariyaṁ, | S: and the noble eightfold path— | T: & the noble eightfold path:
+thag10.7:9.4 | P: Etaṁ samaṇassa patirūpaṁ. | S: this is appropriate for an ascetic. | T: This is fitting ⏎ for a contemplative.
+
+## thag10.7:10.1–thag10.7:10.4 (thag)
+thag10.7:10.1 | P: Taṇhaṁ pajaheyya muni, | S: A sage should abandon craving, | T: A sage should abandon craving,
+thag10.7:10.2 | P: Samūlake āsave padāleyya; | S: defilements shattered, root and all, | T: should cut through the effluents, root & all,
+thag10.7:10.3 | P: Vihareyya vippamutto, | S: they should live liberated— | T: should dwell fully released:
+thag10.7:10.4 | P: Etaṁ samaṇassa patirūpan”ti. | S: this is appropriate for an ascetic. | T: This is fitting ⏎ for a contemplative.
+CONTEXT thag10.7:10.5 | P: … Gotamo thero … | S: (none) | T: (none)
+CONTEXT thag10.7:10.6 | P: Dasakanipāto niṭṭhito. | S: (none) | T: (none)
+
+## thag10.7:11.1–thag10.7:11.6 (thag)
+CONTEXT thag10.7:10.6 | P: Dasakanipāto niṭṭhito. | S: (none) | T: (none)
+CONTEXT thag10.7:11.0 | P: Tatruddānaṁ | S: (none) | T: (none)
+thag10.7:11.1 | P: Kāḷudāyī ca so thero, | S: (none) | T: (none)
+thag10.7:11.2 | P: ekavihārī ca kappino; | S: (none) | T: (none)
+thag10.7:11.3 | P: Cūḷapanthako kappo ca, | S: (none) | T: (none)
+thag10.7:11.4 | P: upaseno ca gotamo; | S: (none) | T: (none)
+thag10.7:11.5 | P: Sattime dasake therā, | S: (none) | T: (none)
+thag10.7:11.6 | P: gāthāyo cettha sattatīti. | S: (none) | T: (none)
+
+## thag11.1:1.1–thag11.1:1.4 (thag)
+CONTEXT thag11.1:0.3 | P: Paṭhamavagga | S: Chapter One | T: (none)
+CONTEXT thag11.1:0.4 | P: Saṅkiccattheragāthā | S: Saṅkicca | T: Thag 11 Saṅkicca
+thag11.1:1.1 | P: “Kiṁ tavattho vane tāta, | S: “What good does it do you to be in the grove, my dear? | T: What do you want in the woods, my boy,
+thag11.1:1.2 | P: ujjuhānova pāvuse; | S: You’re like a little bird in the monsoon! | T: like a bird exposed to the rain?
+thag11.1:1.3 | P: Verambhā ramaṇīyā te, | S: The city of Verambhā is nice for you— | T: Monsoons refresh you,
+thag11.1:1.4 | P: paviveko hi jhāyinaṁ”. | S: seclusion is for meditators.” | T: for seclusion is for those in jhāna.
+
+## thag11.1:2.1–thag11.1:2.4 (thag) GATHERED; equal counts: one line per row
+thag11.1:2.1 | P: “Yathā abbhāni verambho, | S: “Just as the wind in Verambhā | T: As the monsoon wind
+thag11.1:2.2 | P: vāto nudati pāvuse; | S: scatters the monsoon clouds as they pour down, | T: drives the clouds in the rainy season,
+thag11.1:2.3 | P: Saññā me abhikiranti, | S: so the city scatters | T: so thoughts concerned with seclusion ⏎ impel me.
+thag11.1:2.4 | P: vivekapaṭisaññutā. | S: my perception of seclusion.” | T: (none)
+AUTO thag11.1:2.1 starts: As the monsoon wind
+AUTO thag11.1:2.2 starts: drives the clouds in the rainy season,
+AUTO thag11.1:2.3 starts: so thoughts concerned with seclusion
+AUTO thag11.1:2.4 starts: impel me.
+
+## thag11.1:3.1–thag11.1:3.4 (thag)
+thag11.1:3.1 | P: Apaṇḍaro aṇḍasambhavo, | S: “It’s all black and born of an egg— | T: A black crow
+thag11.1:3.2 | P: Sīvathikāya niketacāriko; | S: the crow whose abode is the charnel ground | T: making its home in a charnel ground
+thag11.1:3.3 | P: Uppādayateva me satiṁ, | S: rouses my mindfulness, | T: inspires within me ⏎ mindfulness in—
+thag11.1:3.4 | P: Sandehasmiṁ virāganissitaṁ. | S: based on dispassion for the body.” | T: based on dispassion for— ⏎ the body.
+
+## thag11.1:4.1–thag11.1:4.4 (thag)
+thag11.1:4.1 | P: Yañca aññe na rakkhanti, | S: “He who is not guarded by others, | T: One whom others don’t guard,
+thag11.1:4.2 | P: yo ca aññe na rakkhati; | S: and who does not guard others, | T: who doesn’t guard others:
+thag11.1:4.3 | P: Sa ve bhikkhu sukhaṁ seti, | S: truly sleeps at ease, mendicant, | T: He is a monk ⏎ who lies down in ease,
+thag11.1:4.4 | P: kāmesu anapekkhavā. | S: unconcerned for sensual pleasures.” | T: unconcerned with sensual passions.
+
+## thag11.1:5.1–thag11.1:5.4 (thag)
+thag11.1:5.1 | P: Acchodikā puthusilā, | S: “The water’s clear and the rocks are broad, | T: With clear waters & ⏎ massive boulders,
+thag11.1:5.2 | P: gonaṅgulamigāyutā; | S: monkeys and deer are all around; | T: frequented by monkeys & ⏎ deer,
+thag11.1:5.3 | P: Ambusevālasañchannā, | S: festooned with dewy moss, | T: covered with moss & ⏎ water weeds:
+thag11.1:5.4 | P: te selā ramayanti maṁ. | S: these rocky crags delight me! | T: Those rocky crags ⏎ refresh me.
+
+## thag11.1:6.1–thag11.1:6.4 (thag)
+thag11.1:6.1 | P: Vasitaṁ me araññesu, | S: I’ve stayed in the wilderness, | T: I’ve lived in wildernesses,
+thag11.1:6.2 | P: kandarāsu guhāsu ca; | S: in caves and caverns | T: canyons, & caves,
+thag11.1:6.3 | P: Senāsanesu pantesu, | S: and remote lodgings | T: isolated dwellings
+thag11.1:6.4 | P: vāḷamiganisevite. | S: frequented by beasts of prey. | T: frequented by predator & prey,
+
+## thag11.1:7.1–thag11.1:7.4 (thag) GATHERED; possible speaker requires a reader
+thag11.1:7.1 | P: ‘Ime haññantu vajjhantu, | S: ‘May these beings be killed! | T: but never have I known ⏎ an ignoble, aversive resolve: ⏎ “May these beings ⏎ be destroyed, ⏎ be slaughtered, ⏎ fall into pain.”
+thag11.1:7.2 | P: dukkhaṁ pappontu pāṇino’; | S: May they be slaughtered! May they suffer!’— | T: (none)
+thag11.1:7.3 | P: Saṅkappaṁ nābhijānāmi, | S: I’m not aware of having any such | T: (none)
+thag11.1:7.4 | P: anariyaṁ dosasaṁhitaṁ. | S: ignoble, hateful thoughts. | T: (none)
+
+## thag11.1:8.1–thag11.1:8.4 (thag)
+thag11.1:8.1 | P: Pariciṇṇo mayā satthā, | S: I’ve served the Teacher | T: The Teacher has been served by me;
+thag11.1:8.2 | P: kataṁ buddhassa sāsanaṁ; | S: and fulfilled the Buddha’s instructions. | T: the Awakened One’s bidding, ⏎ done;
+thag11.1:8.3 | P: Ohito garuko bhāro, | S: The heavy burden is laid down, | T: the heavy load, laid down;
+thag11.1:8.4 | P: bhavanetti samūhatā. | S: the leash to existence is eradicated. | T: the guide to becoming, uprooted.
+
+## thag11.1:9.1–thag11.1:9.4 (thag) GATHERED; possible speaker requires a reader
+thag11.1:9.1 | P: Yassa catthāya pabbajito, | S: I’ve attained the goal | T: And the goal for which I went forth
+thag11.1:9.2 | P: agārasmānagāriyaṁ; | S: for the sake of which I went forth | T: (none)
+thag11.1:9.3 | P: So me attho anuppatto, | S: from the lay life to homelessness— | T: from home life into homelessness ⏎ I’ve reached:
+thag11.1:9.4 | P: sabbasaṁyojanakkhayo. | S: the ending of all fetters. | T: the end ⏎ of all fetters.
+
+## thag11.1:10.1–thag11.1:10.4 (thag)
+thag11.1:10.1 | P: Nābhinandāmi maraṇaṁ, | S: I don’t long for death; | T: I don’t delight in death,
+thag11.1:10.2 | P: nābhinandāmi jīvitaṁ; | S: I don’t long for life; | T: don’t delight in living.
+thag11.1:10.3 | P: Kālañca paṭikaṅkhāmi, | S: I await my time, | T: I await my time
+thag11.1:10.4 | P: nibbisaṁ bhatako yathā. | S: like a worker waiting for their wages. | T: as a worker his wage.
+
+## thag11.1:11.1–thag11.1:11.4 (thag)
+thag11.1:11.1 | P: Nābhinandāmi maraṇaṁ, | S: I don’t long for death; | T: I don’t delight in death,
+thag11.1:11.2 | P: nābhinandāmi jīvitaṁ; | S: I don’t long for life; | T: don’t delight in living.
+thag11.1:11.3 | P: Kālañca paṭikaṅkhāmi, | S: I await my time, | T: I await my time,
+thag11.1:11.4 | P: sampajāno patissato”ti. | S: aware and mindful.” | T: mindful, alert.
+CONTEXT thag11.1:11.5 | P: … Saṅkicco thero … | S: (none) | T: (none)
+CONTEXT thag11.1:11.6 | P: Ekādasakanipāto niṭṭhito. | S: (none) | T: (none)
+
+## thag11.1:12.1–thag11.1:12.4 (thag)
+CONTEXT thag11.1:11.6 | P: Ekādasakanipāto niṭṭhito. | S: (none) | T: (none)
+CONTEXT thag11.1:12.0 | P: Tatruddānaṁ | S: (none) | T: (none)
+thag11.1:12.1 | P: Saṅkiccathero ekova, | S: (none) | T: (none)
+thag11.1:12.2 | P: katakicco anāsavo; | S: (none) | T: (none)
+thag11.1:12.3 | P: Ekādasanipātamhi, | S: (none) | T: (none)
+thag11.1:12.4 | P: gāthā ekādaseva cāti. | S: (none) | T: (none)
+
+## thag12.1:1.1–thag12.1:1.4 (thag)
+CONTEXT thag12.1:0.3 | P: Paṭhamavagga | S: Chapter One | T: (none)
+CONTEXT thag12.1:0.4 | P: Sīlavattheragāthā | S: Sīlava | T: Thag 12:1 Sīlavat
+thag12.1:1.1 | P: “Sīlamevidha sikkhetha, | S: One should train just in ethical conduct, | T: Here master the virtue
+thag12.1:1.2 | P: asmiṁ loke susikkhitaṁ; | S: for in this world, when ethical conduct is | T: that in this world is well-mastered,
+thag12.1:1.3 | P: Sīlañhi sabbasampattiṁ, | S: cultivated and well-trained, | T: for virtue, when cultivated,
+thag12.1:1.4 | P: upanāmeti sevitaṁ. | S: it provides all success. | T: brings every consummation near.
+
+## thag12.1:2.1–thag12.1:2.4 (thag) GATHERED; possible speaker requires a reader
+thag12.1:2.1 | P: Sīlaṁ rakkheyya medhāvī, | S: Wishing for three kinds of happiness— | T: Wise, one should protect one’s virtue, ⏎ aspiring to three pleasures:
+thag12.1:2.2 | P: patthayāno tayo sukhe; | S: praise, prosperity, | T: praise, the gaining of wealth,
+thag12.1:2.3 | P: Pasaṁsaṁ vittilābhañca, | S: and to delight in heaven after passing away— | T: and—after death—rejoicing in heaven.
+thag12.1:2.4 | P: pecca sagge pamodanaṁ. | S: the wise would take care of their ethics. | T: (none)
+
+## thag12.1:3.1–thag12.1:3.4 (thag) GATHERED; equal counts: one line per row
+thag12.1:3.1 | P: Sīlavā hi bahū mitte, | S: The well-behaved have many friends, | T: The virtuous one, through restraint, ⏎ acquires many friends,
+thag12.1:3.2 | P: saññamenādhigacchati; | S: because of their self-restraint. | T: (none)
+thag12.1:3.3 | P: Dussīlo pana mittehi, | S: But one lacking ethics, of bad conduct, | T: while the unvirtuous one, practicing evil,
+thag12.1:3.4 | P: dhaṁsate pāpamācaraṁ. | S: drives away their friends. | T: from friends is estranged.
+AUTO thag12.1:3.1 starts: The virtuous one, through restraint,
+AUTO thag12.1:3.2 starts: acquires many friends,
+AUTO thag12.1:3.3 starts: while the unvirtuous one, practicing evil,
+AUTO thag12.1:3.4 starts: from friends is estranged.
+
+## thag12.1:4.1–thag12.1:4.4 (thag)
+thag12.1:4.1 | P: Avaṇṇañca akittiñca, | S: A man whose ethics are bad has | T: The unvirtuous person gains
+thag12.1:4.2 | P: dussīlo labhate naro; | S: ill-repute and infamy. | T: disrepute & dishonor;
+thag12.1:4.3 | P: Vaṇṇaṁ kittiṁ pasaṁsañca, | S: One who is ethical always has | T: the virtuous person, always,
+thag12.1:4.4 | P: sadā labhati sīlavā. | S: a good reputation, fame, and praise. | T: repute, honor, & praise.
+
+## thag12.1:5.1–thag12.1:5.4 (thag) GATHERED; possible speaker requires a reader
+thag12.1:5.1 | P: Ādi sīlaṁ patiṭṭhā ca, | S: Ethical conduct is the starting point and foundation; | T: Virtue is the beginning, the establishing,
+thag12.1:5.2 | P: kalyāṇānañca mātukaṁ; | S: the mother at the head | T: the mother of what is fine, ⏎ the foremost of all qualities:
+thag12.1:5.3 | P: Pamukhaṁ sabbadhammānaṁ, | S: of all good things: | T: (none)
+thag12.1:5.4 | P: tasmā sīlaṁ visodhaye. | S: that’s why you should purify your ethics. | T: Therefore virtue should be purified.
+
+## thag12.1:6.1–thag12.1:6.4 (thag)
+thag12.1:6.1 | P: Velā ca saṁvaraṁ sīlaṁ, | S: Ethics provide a boundary and a restraint, | T: Virtue is also control, restraint,
+thag12.1:6.2 | P: cittassa abhihāsanaṁ; | S: an enjoyment for the mind; | T: the delight of the mind,
+thag12.1:6.3 | P: Titthañca sabbabuddhānaṁ, | S: the ford where all the Buddhas cross over: | T: the ford of all Buddhas:
+thag12.1:6.4 | P: tasmā sīlaṁ visodhaye. | S: that’s why you should purify your ethics. | T: Therefore virtue should be purified.
+
+## thag12.1:7.1–thag12.1:7.4 (thag)
+thag12.1:7.1 | P: Sīlaṁ balaṁ appaṭimaṁ, | S: Ethics are the matchless power; | T: Virtue: an incomparable strength.
+thag12.1:7.2 | P: sīlaṁ āvudhamuttamaṁ; | S: ethics are the ultimate weapon; | T: Virtue: the ultimate weapon.
+thag12.1:7.3 | P: Sīlamābharaṇaṁ seṭṭhaṁ, | S: ethics are the best ornament; | T: Virtue: the highest adornment.
+thag12.1:7.4 | P: sīlaṁ kavacamabbhutaṁ. | S: ethics are a marvelous coat of armor. | T: Virtue: an astounding coat of mail.
+
+## thag12.1:8.1–thag12.1:8.4 (thag)
+thag12.1:8.1 | P: Sīlaṁ setu mahesakkho, | S: Ethics are a mighty bridge; | T: Virtue: an imposing bridge.
+thag12.1:8.2 | P: sīlaṁ gandho anuttaro; | S: ethics are the unsurpassed scent; | T: Virtue: an unexcelled fragrance.
+thag12.1:8.3 | P: Sīlaṁ vilepanaṁ seṭṭhaṁ, | S: ethics are the best perfume, | T: Virtue: the highest fragrant ointment
+thag12.1:8.4 | P: yena vāti disodisaṁ. | S: that float from place to place. | T: by which one wafts ⏎ this direction & that.
+
+## thag12.1:9.1–thag12.1:9.4 (thag)
+thag12.1:9.1 | P: Sīlaṁ sambalamevaggaṁ, | S: Ethics are the best provision; | T: Virtue: the supreme provision.
+thag12.1:9.2 | P: sīlaṁ pātheyyamuttamaṁ; | S: ethics are the unsurpassed supply for a journey; | T: Virtue: the ultimate food for the journey.
+thag12.1:9.3 | P: Sīlaṁ seṭṭho ativāho, | S: ethics are the best vehicle | T: Virtue: the highest vehicle
+thag12.1:9.4 | P: yena yāti disodisaṁ. | S: that take you from place to place. | T: by which one goes ⏎ this direction & that.

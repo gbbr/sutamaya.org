@@ -1,0 +1,423 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## sn5.7:4.1–sn5.7:4.4 (sn)
+sn5.7:4.1 | P: Sabbo ādīpito loko, | S: All the world is on fire, | T: The whole world is burning.
+sn5.7:4.2 | P: sabbo loko padhūpito; | S: all the world is smoldering, | T: The whole world is aflame.
+sn5.7:4.3 | P: Sabbo pajjālito loko, | S: all the world is ablaze, | T: The whole world is blazing.
+sn5.7:4.4 | P: sabbo loko pakampito. | S: all the world is rocking. | T: The whole world is shaken.
+
+## sn5.7:5.1–sn5.7:5.4 (sn)
+sn5.7:5.1 | P: Akampitaṁ apajjalitaṁ, | S: My mind adores that place | T: The unshaken, untrembling ⏎ —
+sn5.7:5.2 | P: aputhujjanasevitaṁ; | S: where Māra cannot go; | T: of which people run-of-the-mill ⏎ don’t partake,
+sn5.7:5.3 | P: Agati yattha mārassa, | S: it’s not shaking or burning, | T: where Māra’s ⏎ never been—
+sn5.7:5.4 | P: tattha me nirato mano”ti. | S: and not frequented by ordinary people.” | T: that’s where my heart ⏎ truly delights.”
+CONTEXT sn5.7:6.1 | P: Atha kho māro pāpimā “jānāti maṁ upacālā bhikkhunī”ti dukkhī dummano tatthevantaradhāyīti. | S: Then Māra the Wicked, thinking, “The nun Upacālā knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “Upacālā the nun knows me”—vanished right there.
+
+## sn5.8:2.1–sn5.8:2.4 (sn)
+CONTEXT sn5.8:1.5 | P: “kassa nu tvaṁ, bhikkhuni, pāsaṇḍaṁ rocesī”ti? | S: “Nun, whose creed do you approve of?” | T: “Whose philosophy do you approve of, nun?”
+CONTEXT sn5.8:1.6 | P: “Na khvāhaṁ, āvuso, kassaci pāsaṇḍaṁ rocemī”ti. | S: “I don’t approve anyone’s creed, sir.” | T: “I don’t approve of anyone’s philosophy, my friend.”
+sn5.8:2.1 | P: “Kaṁ nu uddissa muṇḍāsi, | S: “In whose name did you shave your head? | T: Māra: ⏎ “For whose sake ⏎ have you shaved your head?
+sn5.8:2.2 | P: Samaṇī viya dissasi; | S: You look like an ascetic, | T: You look like a contemplative
+sn5.8:2.3 | P: Na ca rocesi pāsaṇḍaṁ, | S: but you don’t approve any creed. | T: but don’t approve of a philosophy,
+sn5.8:2.4 | P: Kimiva carasi momūhā”ti. | S: Why do you wander as if lost?” | T: so why are you wandering here ⏎ confused?”
+
+## sn5.8:3.1–sn5.8:3.4 (sn)
+sn5.8:3.1 | P: “Ito bahiddhā pāsaṇḍā, | S: “Followers of other creeds | T: Sister Sīsupacālā: ⏎ “Outside philosophers
+sn5.8:3.2 | P: diṭṭhīsu pasīdanti te; | S: are confident in their views. | T: place ⏎ their confidence in views.
+sn5.8:3.3 | P: Na tesaṁ dhammaṁ rocemi, | S: But I don’t approve their teaching, | T: I don’t approve ⏎ of their teaching.
+sn5.8:3.4 | P: te dhammassa akovidā. | S: for they’re no experts in the Dhamma. | T: They’re not adept ⏎ in the Dhamma.
+
+## sn5.8:4.1–sn5.8:4.4 (sn)
+sn5.8:4.1 | P: Atthi sakyakule jāto, | S: But there is one born in the Sakyan clan, | T: But there is ⏎ the Awakened One, ⏎ born in the Sakyan clan,
+sn5.8:4.2 | P: buddho appaṭipuggalo; | S: the unrivaled Buddha, | T: a person without peer:
+sn5.8:4.3 | P: Sabbābhibhū māranudo, | S: vanquisher of all, dispeller of Māra, | T: all-conquering, ⏎ Māra’s subduer,
+sn5.8:4.4 | P: sabbatthamaparājito. | S: everywhere undefeated, | T: everywhere undefeated,
+
+## sn5.8:5.1–sn5.8:5.6 (sn)
+sn5.8:5.1 | P: Sabbattha mutto asito, | S: everywhere freed, and unattached, | T: everywhere freed, independent;
+sn5.8:5.2 | P: sabbaṁ passati cakkhumā; | S: the Clear-eyed One sees all. | T: endowed with an Eye ⏎ all-seeing,
+sn5.8:5.3 | P: Sabbakammakkhayaṁ patto, | S: He has attained the end of all deeds, | T: reaching the end of ⏎ all kamma—
+sn5.8:5.4 | P: vimutto upadhisaṅkhaye; | S: freed with the ending of attachments. | T: with the ending of acquisitions, ⏎ released.
+sn5.8:5.5 | P: So mayhaṁ bhagavā satthā, | S: That Blessed One is my Teacher, | T: He, that Blessed One, ⏎ is my teacher.
+sn5.8:5.6 | P: tassa rocemi sāsanan”ti. | S: and I approve his instruction.” | T: It’s in his Dhamma ⏎ that I delight.”
+CONTEXT sn5.8:6.1 | P: Atha kho māro pāpimā “jānāti maṁ sīsupacālā bhikkhunī”ti dukkhī dummano tatthevantaradhāyīti. | S: Then Māra the Wicked, thinking, “The nun Sīsupacālā knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “Sīsupacālā the nun knows me”—vanished right there.
+
+## sn5.9:2.1–sn5.9:2.4 (sn)
+CONTEXT sn5.9:1.4 | P: Atha kho māro pāpimā selāya bhikkhuniyā bhayaṁ chambhitattaṁ lomahaṁsaṁ uppādetukāmo …pe… | S: Then Māra the Wicked, wanting to make the nun Selā feel fear, terror, and goosebumps … | T: Then Māra the Evil One, wanting to arouse fear, horripilation, & terror in her, wanting to make her fall away from concentration,
+CONTEXT sn5.9:1.5 | P: selaṁ bhikkhuniṁ gāthāya ajjhabhāsi: | S: addressed her in verse: | T: approached her & addressed her in verse:
+sn5.9:2.1 | P: “Kenidaṁ pakataṁ bimbaṁ, | S: “Who created this puppet? | T: “By whom was this doll created?
+sn5.9:2.2 | P: kvanu bimbassa kārako; | S: Where is its maker? | T: Where is the doll’s maker?
+sn5.9:2.3 | P: Kvanu bimbaṁ samuppannaṁ, | S: Where has the puppet arisen? | T: Where has the doll originated?
+sn5.9:2.4 | P: kvanu bimbaṁ nirujjhatī”ti. | S: And where does it cease?” | T: Where does it cease?”
+CONTEXT sn5.9:3.1 | P: Atha kho selāya bhikkhuniyā etadahosi: | S: Then the nun Selā thought, | T: Then the thought occurred to Selā the nun:
+CONTEXT sn5.9:3.2 | P: “ko nu khvāyaṁ manusso vā amanusso vā gāthaṁ bhāsatī”ti? | S: “Who’s speaking this verse, a human or a non-human?” | T: “Now who has recited this verse—a human being or a non-human one?”
+
+## sn5.9:4.1–sn5.9:4.4 (sn)
+CONTEXT sn5.9:3.4 | P: “māro kho ayaṁ pāpimā mama bhayaṁ chambhitattaṁ lomahaṁsaṁ uppādetukāmo samādhimhā cāvetukāmo gāthaṁ bhāsatī”ti. | S: “This is Māra the Wicked, wanting to make me feel fear, terror, and goosebumps, wanting to make me fall away from immersion!” | T: “This is Māra the Evil One who has recited this verse wanting to arouse fear, horripilation, & terror in me, wanting to make me fall away from concentration.”
+CONTEXT sn5.9:3.5 | P: Atha kho selā bhikkhunī “māro ayaṁ pāpimā” iti viditvā māraṁ pāpimantaṁ gāthāhi paccabhāsi: | S: Then Selā, knowing that this was Māra the Wicked, replied to him in verse: | T: Then, having understood that “This is Māra the Evil One,” she replied to him in verses:
+sn5.9:4.1 | P: “Nayidaṁ attakataṁ bimbaṁ, | S: “This puppet isn’t self-made, | T: “This doll isn’t self-made,
+sn5.9:4.2 | P: nayidaṁ parakataṁ aghaṁ; | S: nor is this gloom made by another. | T: nor is this misery made by another.*
+sn5.9:4.3 | P: Hetuṁ paṭicca sambhūtaṁ, | S: It comes to be because of a cause, | T: In dependence on a cause ⏎ it comes into play.
+sn5.9:4.4 | P: hetubhaṅgā nirujjhati. | S: and ceases when the cause breaks up. | T: With the dissolution of the cause ⏎ it ceases.
+
+## sn5.9:5.1–sn5.9:5.4 (sn)
+sn5.9:5.1 | P: Yathā aññataraṁ bījaṁ, | S: It’s like a seed that’s sown | T: Just as a seed grows
+sn5.9:5.2 | P: khette vuttaṁ virūhati; | S: in a field; it grows | T: —when planted in a field—
+sn5.9:5.3 | P: Pathavīrasañcāgamma, | S: relying on both the soil’s nutrients | T: because of the soil’s savor
+sn5.9:5.4 | P: sinehañca tadūbhayaṁ. | S: as well as moisture. | T: together with moisture;
+
+## sn5.9:6.1–sn5.9:6.4 (sn)
+sn5.9:6.1 | P: Evaṁ khandhā ca dhātuyo, | S: In the same way the aggregates and elements | T: in the same way, these ⏎ aggregates, ⏎ properties,
+sn5.9:6.2 | P: cha ca āyatanā ime; | S: and these six sense fields | T: sense media
+sn5.9:6.3 | P: Hetuṁ paṭicca sambhūtā, | S: come to be because of a cause, | T: —in dependence on a cause— ⏎ come into play.
+sn5.9:6.4 | P: hetubhaṅgā nirujjhare”ti. | S: and cease when the cause breaks up.” | T: With the dissolution of the cause ⏎ they cease.”
+CONTEXT sn5.9:7.1 | P: Atha kho māro pāpimā “jānāti maṁ selā bhikkhunī”ti dukkhī dummano tatthevantaradhāyīti. | S: Then Māra the Wicked, thinking, “The nun Selā knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “Selā the nun knows me”—vanished right there. *Alternative reading: ⏎ This doll, this misery, ⏎ isn’t created.
+
+## sn5.10:2.1–sn5.10:2.4 (sn)
+CONTEXT sn5.10:1.4 | P: Andhavanaṁ ajjhogāhetvā aññatarasmiṁ rukkhamūle divāvihāraṁ nisīdi. | S: plunged deep into it, and sat at the root of a tree to meditate. | T: Having gone deep into the Grove of the Blind, she sat down at the foot of a tree for the day’s abiding.
+CONTEXT sn5.10:1.5 | P: Atha kho māro pāpimā vajirāya bhikkhuniyā bhayaṁ chambhitattaṁ lomahaṁsaṁ uppādetukāmo samādhimhā cāvetukāmo yena vajirā bhikkhunī tenupasaṅkami; upasaṅkamitvā vajiraṁ bhikkhuniṁ gāthāya ajjhabhāsi: | S: Then Māra the Wicked, wanting to make the nun Vajirā feel fear, terror, and goosebumps, wanting to make her fall away from immersion, went up to her and addressed her in verse: | T: Then Māra the Evil One, wanting to arouse fear, horripilation, & terror in her, wanting to make her fall away from concentration, approached her & addressed her in verse:
+sn5.10:2.1 | P: “Kenāyaṁ pakato satto, | S: “Who created this sentient being? | T: “By whom was this being created?
+sn5.10:2.2 | P: kuvaṁ sattassa kārako; | S: Where is its maker? | T: Where is the being’s maker?
+sn5.10:2.3 | P: Kuvaṁ satto samuppanno, | S: Where has the being arisen? | T: Where has the being originated?
+sn5.10:2.4 | P: kuvaṁ satto nirujjhatī”ti. | S: And where does it cease?” | T: Where does the being ⏎ cease?”
+CONTEXT sn5.10:3.1 | P: Atha kho vajirāya bhikkhuniyā etadahosi: | S: Then the nun Vajirā thought, | T: Then the thought occurred to Vajirā the nun:
+CONTEXT sn5.10:3.2 | P: “ko nu khvāyaṁ manusso vā amanusso vā gāthaṁ bhāsatī”ti? | S: “Who’s speaking this verse, a human or a non-human?” | T: “Now who has recited this verse—a human being or a non-human one?”
+
+## sn5.10:4.1–sn5.10:4.4 (sn)
+CONTEXT sn5.10:3.4 | P: “māro kho ayaṁ pāpimā mama bhayaṁ chambhitattaṁ lomahaṁsaṁ uppādetukāmo samādhimhā cāvetukāmo gāthaṁ bhāsatī”ti. | S: “This is Māra the Wicked, wanting to make me feel fear, terror, and goosebumps, wanting to make me fall away from immersion!” | T: “This is Māra the Evil One who has recited this verse wanting to arouse fear, horripilation, & terror in me, wanting to make me fall away from concentration.”
+CONTEXT sn5.10:3.5 | P: Atha kho vajirā bhikkhunī “māro ayaṁ pāpimā” iti viditvā, māraṁ pāpimantaṁ gāthāhi paccabhāsi: | S: Then Vajirā, knowing that this was Māra the Wicked, replied to him in verse: | T: Then, having understood that “This is Māra the Evil One,” she replied to him in verses:
+sn5.10:4.1 | P: “Kiṁ nu sattoti paccesi, | S: “Why do you believe there’s such a thing as a ‘sentient being’? | T: “What? Do you assume a ‘being,’
+sn5.10:4.2 | P: māra diṭṭhigataṁ nu te; | S: Māra, is this your theory? | T: Māra? ⏎ Do you take a position?
+sn5.10:4.3 | P: Suddhasaṅkhārapuñjoyaṁ, | S: This is just a pile of conditions, | T: This is purely a pile of fabrications.
+sn5.10:4.4 | P: nayidha sattupalabbhati. | S: you won’t find a sentient being here. | T: Here no being ⏎ can be pinned down.
+
+## sn5.10:5.1–sn5.10:5.4 (sn)
+sn5.10:5.1 | P: Yathā hi aṅgasambhārā, | S: When the parts are assembled | T: Just as when, with an assemblage of parts,
+sn5.10:5.2 | P: hoti saddo ratho iti; | S: we use the word ‘chariot’. | T: there’s the word, ⏎ chariot,
+sn5.10:5.3 | P: Evaṁ khandhesu santesu, | S: So too, when the aggregates are present | T: even so when aggregates are present,
+sn5.10:5.4 | P: hoti sattoti sammuti. | S: ‘sentient being’ is the convention we use. | T: there’s the convention of ⏎ a being.
+
+## sn5.10:6.1–sn5.10:6.4 (sn)
+sn5.10:6.1 | P: Dukkhameva hi sambhoti, | S: But it’s only suffering that comes to be, | T: For only stress is what comes to be;
+sn5.10:6.2 | P: dukkhaṁ tiṭṭhati veti ca; | S: lasts a while, then expires. | T: stress, what remains & falls away.
+sn5.10:6.3 | P: Nāññatra dukkhā sambhoti, | S: Naught but suffering comes to be, | T: Nothing but stress comes to be.
+sn5.10:6.4 | P: nāññaṁ dukkhā nirujjhatī”ti. | S: naught but suffering ceases.” | T: Nothing ceases but stress.”
+CONTEXT sn5.10:7.1 | P: Atha kho māro pāpimā “jānāti maṁ vajirā bhikkhunī”ti dukkhī dummano tatthevantaradhāyīti. | S: Then Māra the Wicked, thinking, “The nun Vajirā knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “Vajirā the nun knows me”—vanished right there.
+CONTEXT sn5.10:7.2 | P: Bhikkhunīvaggo paṭhamo. | S: (none) | T: (none)
+
+## sn5.10:8.1–sn5.10:8.5 (sn)
+CONTEXT sn5.10:7.2 | P: Bhikkhunīvaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT sn5.10:8.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn5.10:8.1 | P: Āḷavikā ca somā ca, | S: (none) | T: (none)
+sn5.10:8.2 | P: Gotamī vijayā saha; | S: (none) | T: (none)
+sn5.10:8.3 | P: Uppalavaṇṇā ca cālā, | S: (none) | T: (none)
+sn5.10:8.4 | P: Upacālā sīsupacālā ca; | S: (none) | T: (none)
+sn5.10:8.5 | P: Selā vajirāya te dasāti. | S: (none) | T: (none)
+CONTEXT sn5.10:8.6 | P: Bhikkhunīsaṁyuttaṁ samattaṁ. | S: The Linked Discourses on Nuns are complete. | T: (none)
+
+## sn6.1:2.1–sn6.1:2.4 (sn) GATHERED; unequal counts require a reader
+CONTEXT sn6.1:1.8 | P: Ahañceva kho pana dhammaṁ deseyyaṁ; pare ca me na ājāneyyuṁ; so mamassa kilamatho, sā mamassa vihesā”ti. | S: And if I were to teach this principle, others might not understand me, which would be wearying and troublesome for me.” | T: And if I were to teach the Dhamma and if others would not understand me, that would be tiresome for me, troublesome for me.”
+CONTEXT sn6.1:1.9 | P: Apissu bhagavantaṁ imā anacchariyā gāthāyo paṭibhaṁsu pubbe assutapubbā: | S: And then these verses, which were neither supernaturally inspired, nor learned before in the past, occurred to the Buddha: | T: Just then these verses, unspoken in the past, unheard before, occurred to the Blessed One:
+sn6.1:2.1 | P: “Kicchena me adhigataṁ, | S: “I’ve struggled hard to realize this, | T: “Enough now with teaching ⏎ what ⏎ only with difficulty ⏎ I reached.
+sn6.1:2.2 | P: halaṁ dāni pakāsituṁ; | S: there’s no need to reveal it now! | T: (none)
+sn6.1:2.3 | P: Rāgadosaparetehi, | S: Those mired in greed and hate | T: This Dhamma is not easily realized ⏎ by those overcome ⏎ with aversion & passion.
+sn6.1:2.4 | P: nāyaṁ dhammo susambudho. | S: can’t really understand this teaching. | T: (none)
+
+## sn6.1:3.1–sn6.1:3.4 (sn) GATHERED; unequal counts require a reader
+sn6.1:3.1 | P: Paṭisotagāmiṁ nipuṇaṁ, | S: It goes against the stream, subtle, | T: What is abstruse, subtle, ⏎ deep, ⏎ hard to see, ⏎ going against the flow—
+sn6.1:3.2 | P: gambhīraṁ duddasaṁ aṇuṁ; | S: deep, obscure, and very fine. | T: (none)
+sn6.1:3.3 | P: Rāgarattā na dakkhanti, | S: Those besotted by greed cannot see, | T: those delighting in passion,
+sn6.1:3.4 | P: tamokhandhena āvuṭā”ti. | S: for they’re cloaked in a mass of darkness.” | T: cloaked in the mass of darkness, ⏎ won’t see.”
+CONTEXT sn6.1:4.1 | P: Itiha bhagavato paṭisañcikkhato appossukkatāya cittaṁ namati, no dhammadesanāya. | S: And as the Buddha reflected like this, his mind inclined to remaining passive, not to teaching the Dhamma. | T: As the Blessed One reflected thus, his mind inclined to dwelling at ease, not to teaching the Dhamma.
+CONTEXT sn6.1:5.1 | P: Atha kho brahmuno sahampatissa bhagavato cetasā cetoparivitakkamaññāya etadahosi: | S: Then, knowing the Buddha’s train of thought, it occurred to the divinity Sahampati, | T: Then Brahmā Sahampati, having known with his own awareness the line of thinking in the Blessed One’s awareness, thought:
+
+## sn6.1:6.1–sn6.1:6.4 (sn)
+CONTEXT sn6.1:5.7 | P: Bhavissanti dhammassa aññātāro”ti. | S: There will be those who understand the teaching!” | T: There will be those who will understand the Dhamma.”
+CONTEXT sn6.1:5.8 | P: Idamavoca brahmā sahampati, idaṁ vatvā athāparaṁ etadavoca: | S: That is what the divinity Sahampati said. Then he went on to say: | T: That is what Brahmā Sahampati said. Having said that, he further said this:
+sn6.1:6.1 | P: “Pāturahosi magadhesu pubbe, | S: “Among the Magadhans there appeared in the past | T: “In the past ⏎ there appeared among the Magadhans
+sn6.1:6.2 | P: Dhammo asuddho samalehi cintito; | S: an impure teaching thought up by the stained. | T: an impure Dhamma ⏎ devised by the stained.
+sn6.1:6.3 | P: Apāpuretaṁ amatassa dvāraṁ, | S: Fling open the door to freedom from death! | T: Throw open the door to the Deathless!
+sn6.1:6.4 | P: Suṇantu dhammaṁ vimalenānubuddhaṁ. | S: Let them hear the teaching the immaculate one discovered. | T: Let them hear the Dhamma ⏎ realized by the Stainless One!
+
+## sn6.1:7.1–sn6.1:7.6 (sn)
+sn6.1:7.1 | P: Sele yathā pabbatamuddhaniṭṭhito, | S: Standing high on a rocky mountain, | T: Just as one standing on a rocky crag
+sn6.1:7.2 | P: Yathāpi passe janataṁ samantato; | S: you can see the people all around. | T: might see people ⏎ all around below,
+sn6.1:7.3 | P: Tathūpamaṁ dhammamayaṁ sumedha, | S: In just the same way, All-seer, so intelligent, | T: so, intelligent one, with all-around vision,
+sn6.1:7.4 | P: Pāsādamāruyha samantacakkhu; | S: having ascended the Temple of Truth, | T: ascend the palace ⏎ fashioned of Dhamma.
+sn6.1:7.5 | P: Sokāvatiṇṇaṁ janatamapetasoko, | S: rid of sorrow, look upon the people | T: Free from sorrow, behold the people
+sn6.1:7.6 | P: Avekkhassu jātijarābhibhūtaṁ. | S: swamped with sorrow, overcome by rebirth and old age. | T: submerged in sorrow, ⏎ oppressed by birth & aging.
+
+## sn6.1:8.1–sn6.1:8.4 (sn)
+sn6.1:8.1 | P: Uṭṭhehi vīra vijitasaṅgāma, | S: Rise, hero! Victor in battle, caravan leader, | T: Rise up, hero, victor in battle! ⏎ O Teacher,
+sn6.1:8.2 | P: Satthavāha anaṇa vicara loke; | S: wander the world free of debt. | T: wander without debt in the world.
+sn6.1:8.3 | P: Desassu bhagavā dhammaṁ, | S: Let the Blessed One teach the Dhamma! | T: Teach the Dhamma, O Blessed One:
+sn6.1:8.4 | P: Aññātāro bhavissantī”ti. | S: There will be those who understand!” | T: There will be those who will understand.”
+CONTEXT sn6.1:9.1 | P: Atha kho bhagavā brahmuno ca ajjhesanaṁ viditvā sattesu ca kāruññataṁ paṭicca buddhacakkhunā lokaṁ volokesi. | S: Then the Buddha, understanding the Divinity’s invitation, surveyed the world with the eye of a Buddha, out of his compassion for sentient beings. | T: Then the Blessed One, having understood Brahmā’s invitation, out of compassion for beings, surveyed the world with the eye of an Awakened One.
+CONTEXT sn6.1:9.2 | P: Addasā kho bhagavā buddhacakkhunā lokaṁ volokento satte apparajakkhe mahārajakkhe tikkhindriye mudindriye svākāre dvākāre suviññāpaye duviññāpaye, appekacce paralokavajjabhayadassāvine viharante, appekacce na paralokavajjabhayadassāvine viharante. | S: And the Buddha saw sentient beings with little dust in their eyes, and some with much dust in their eyes; with keen faculties and with weak faculties, with good qualities and with bad qualities, easy to teach and hard to teach. And some of them lived seeing the danger in the fault to do with the next world, while others did not. | T: As he did so, he saw beings with little dust in their eyes and those with much, those with keen faculties and those with dull, those with good attributes and those with bad, those easy to teach and those hard, some of them seeing disgrace & danger in the other world.
+
+## sn6.1:10.1–sn6.1:10.4 (sn)
+CONTEXT sn6.1:9.4 | P: evameva bhagavā buddhacakkhunā lokaṁ volokento addasa satte apparajakkhe mahārajakkhe tikkhindriye mudindriye svākāre dvākāre suviññāpaye duviññāpaye, appekacce paralokavajjabhayadassāvine viharante, appekacce na paralokavajjabhayadassāvine viharante. | S: In the same way, the Buddha saw sentient beings with little dust in their eyes, and some with much dust in their eyes; with keen faculties and with weak faculties, with good qualities and with bad qualities, easy to teach and hard to teach. And some of them lived seeing the danger in the fault to do with the next world, while others did not. | T: so too, surveying the world with the eye of an Awakened One, the Blessed One saw beings with little dust in their eyes and those with much, those with keen faculties and those with dull, those with good attributes and those with bad, those easy to teach and those hard, some of them seeing disgrace & danger in the other world.
+CONTEXT sn6.1:9.5 | P: Disvāna brahmānaṁ sahampatiṁ gāthāya paccabhāsi: | S: When he had seen this he replied in verse to the divinity Sahampati: | T: Having seen this, he answered Brahmā Sahampati in verse:
+sn6.1:10.1 | P: “Apārutā tesaṁ amatassa dvārā, | S: “Flung open are the doors to freedom from death! | T: “Open are the doors to the deathless.
+sn6.1:10.2 | P: Ye sotavanto pamuñcantu saddhaṁ; | S: Let those with ears to hear commit to faith. | T: Let those with ears show their conviction. ⏎ Let them show their conviction.
+sn6.1:10.3 | P: Vihiṁsasaññī paguṇaṁ na bhāsiṁ, | S: Thinking it would be troublesome, Divinity, I did not teach | T: Perceiving trouble, O Brahmā, ⏎ I did not tell people
+sn6.1:10.4 | P: Dhammaṁ paṇītaṁ manujesu brahme”ti. | S: the sophisticated, sublime Dhamma among mankind.” | T: the refined, ⏎ sublime Dhamma.”
+CONTEXT sn6.1:11.1 | P: Atha kho brahmā sahampati “katāvakāso khomhi bhagavatā dhammadesanāyā”ti bhagavantaṁ abhivādetvā padakkhiṇaṁ katvā tatthevantaradhāyīti. | S: Then the divinity Sahampati, knowing that his request for the Buddha to teach the Dhamma had been granted, bowed and respectfully circled the Buddha, keeping him on his right, before vanishing right there. | T: “Then Brahmā Sahampati, thinking, ‘I’m the one who created the opportunity for the teaching of the Dhamma by the Blessed One!’ bowed down to me and, circling me on the right, disappeared right there.
+
+## sn6.2:8.1–sn6.2:8.4 (sn)
+CONTEXT sn6.2:7.6 | P: Bhagavāpi, bhante, etarahi arahaṁ sammāsambuddho dhammaññeva sakkatvā garuṁ katvā upanissāya viharatū”ti. | S: May the Blessed One, who is the perfected one, the fully awakened Buddha at present, also honor and respect and rely on this same teaching.” | T: And let the Blessed One, who is at present the arahant, the Rightly Self-awakened One, dwell in dependence on the very Dhamma itself, honoring & respecting it.”
+CONTEXT sn6.2:7.7 | P: Idamavoca brahmā sahampati, idaṁ vatvā athāparaṁ etadavoca: | S: That is what the divinity Sahampati said. Then he went on to say: | T: That is what Brahmā Sahampati said. Having said that, he further said this:
+sn6.2:8.1 | P: “Ye ca atītā sambuddhā, | S: “All Buddhas in the past, | T: “Past Buddhas,
+sn6.2:8.2 | P: ye ca buddhā anāgatā; | S: the Buddhas of the future, | T: future Buddhas,
+sn6.2:8.3 | P: Yo cetarahi sambuddho, | S: and the Buddha at present— | T: & he who is the Buddha now,
+sn6.2:8.4 | P: bahūnaṁ sokanāsano. | S: destroyer of the sorrows of many— | T: removing the sorrow of many—
+
+## sn6.2:9.1–sn6.2:9.4 (sn) GATHERED; equal counts: one line per row
+sn6.2:9.1 | P: Sabbe saddhammagaruno, | S: respecting the true teaching | T: all have dwelt, ⏎ will dwell, he dwells, ⏎ revering the true Dhamma.
+sn6.2:9.2 | P: vihaṁsu viharanti ca; | S: they did live, they do live, | T: (none)
+sn6.2:9.3 | P: Tathāpi viharissanti, | S: and they also will live. | T: (none)
+sn6.2:9.4 | P: esā buddhāna dhammatā. | S: This is the nature of the Buddhas. | T: This, for Buddhas, is a natural law.
+AUTO sn6.2:9.1 starts: all have dwelt,
+AUTO sn6.2:9.2 starts: will dwell, he dwells,
+AUTO sn6.2:9.3 starts: revering the true Dhamma.
+AUTO sn6.2:9.4 starts: This, for Buddhas, is a natural law.
+
+## sn6.2:10.1–sn6.2:10.4 (sn)
+sn6.2:10.1 | P: Tasmā hi attakāmena, | S: Therefore someone who desires self-knowledge, | T: Therefore one who desires his own good,
+sn6.2:10.2 | P: mahattamabhikaṅkhatā; | S: and aspires to greatness themselves, | T: aspiring for greatness,
+sn6.2:10.3 | P: Saddhammo garukātabbo, | S: should respect the true teaching, | T: should respect the true Dhamma,
+sn6.2:10.4 | P: saraṁ buddhāna sāsanan”ti. | S: remembering the instructions of the Buddhas.” | T: recollecting the Buddhas’ Teaching.”
+
+## sn6.13:2.1–sn6.13:2.4 (sn)
+CONTEXT sn6.13:1.3 | P: Atha kho brahmā sahampati abhikkantāya rattiyā abhikkantavaṇṇo kevalakappaṁ andhakavindaṁ obhāsetvā yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ aṭṭhāsi. | S: Then, late at night, the glorious divinity Sahampati, lighting up the entirety of Andhakavinda, went up to the Buddha, bowed, stood to one side, | T: Then, Brahmā Sahampati in the far extreme of the night, his extreme radiance lighting up the entirety of Andhakavinda, went to the Blessed One and, on arrival, having bowed down to him, stood to one side.
+CONTEXT sn6.13:1.4 | P: Ekamantaṁ ṭhito kho brahmā sahampati bhagavato santike imā gāthāyo abhāsi: | S: and recited these verses in the Buddha’s presence: | T: As he was standing there, he recited these verses in the Blessed One’s presence:
+sn6.13:2.1 | P: “Sevetha pantāni senāsanāni, | S: “One should frequent secluded lodgings, | T: “Stay in isolated dwellings.
+sn6.13:2.2 | P: Careyya saṁyojanavippamokkhā; | S: and practice to be released from fetters. | T: Live for freedom from fetters.
+sn6.13:2.3 | P: Sace ratiṁ nādhigaccheyya tattha, | S: If you don’t find enjoyment there, | T: But if one doesn’t attain delight there,
+sn6.13:2.4 | P: Saṅghe vase rakkhitatto satīmā. | S: live in the Saṅgha, self-protected and mindful. | T: one should live with the Saṅgha, ⏎ mind protected, ⏎ mindful.
+
+## sn6.13:3.1–sn6.13:3.4 (sn)
+sn6.13:3.1 | P: Kulākulaṁ piṇḍikāya caranto, | S: Walking for alms from family to family, | T: Walking for alms ⏎ from family to family,
+sn6.13:3.2 | P: Indriyagutto nipako satimā; | S: with senses guarded, alert and mindful. | T: senses guarded, ⏎ masterful, mindful,
+sn6.13:3.3 | P: Sevetha pantāni senāsanāni, | S: One should frequent secluded lodgings, | T: stay in isolated dwellings.
+sn6.13:3.4 | P: Bhayā pamutto abhaye vimutto. | S: free of fear, freed in the fearless. | T: Freed from fear, ⏎ released in the fearless,
+
+## sn6.13:4.1–sn6.13:4.4 (sn)
+sn6.13:4.1 | P: Yattha bheravā sarīsapā, | S: Where dreadful reptiles slither, | T: where fearful snakes are,
+sn6.13:4.2 | P: Vijju sañcarati thanayati devo; | S: where the lightning flashes and the heavens thunder | T: lightning wanders, ⏎ the sky thunders,
+sn6.13:4.3 | P: Andhakāratimisāya rattiyā, | S: in the dark of the night; | T: in the thick darkness of night,
+sn6.13:4.4 | P: Nisīdi tattha bhikkhu vigatalomahaṁso. | S: there meditates a mendicant, free of goosebumps. | T: there sits the monk— ⏎ horripilation left behind.
+
+## sn6.13:5.1–sn6.13:5.4 (sn)
+sn6.13:5.1 | P: Idañhi jātu me diṭṭhaṁ, | S: For this is ever seen by me, | T: And this has actually been seen by me,
+sn6.13:5.2 | P: nayidaṁ itihītihaṁ; | S: it isn’t just the testament of hearsay. | T: it’s not hearsay, quotation marks.
+sn6.13:5.3 | P: Ekasmiṁ brahmacariyasmiṁ, | S: Within a single spiritual dispensation | T: In a single holy life,
+sn6.13:5.4 | P: sahassaṁ maccuhāyinaṁ. | S: there are a thousand conquerors of Death. | T: a thousand have left death behind.
+
+## sn6.13:6.1–sn6.13:6.4 (sn)
+sn6.13:6.1 | P: Bhiyyo pañcasatā sekkhā, | S: And of trainees, more than five hundred, | T: More in training, ⏎ five hundred plus
+sn6.13:6.2 | P: dasā ca dasadhā dasa; | S: and ten times ten tens, | T: ten times tenfold ten:
+sn6.13:6.3 | P: Sabbe sotasamāpannā, | S: are all stream-enterers, | T: All have attained the stream
+sn6.13:6.4 | P: atiracchānagāmino. | S: freed from rebirth in the animal realm. | T: that never leads to an animal birth.
+
+## sn6.13:7.1–sn6.13:7.4 (sn)
+sn6.13:7.1 | P: Athāyaṁ itarā pajā, | S: And as for the rest of folk | T: As for other people,
+sn6.13:7.2 | P: puññabhāgāti me mano; | S: who I think have shared in merit— | T: partaking of merit, ⏎ —so to my mind—
+sn6.13:7.3 | P: Saṅkhātuṁ nopi sakkomi, | S: I couldn’t even number them, | T: I cannot count them,
+sn6.13:7.4 | P: musāvādassa ottapan”ti. | S: for fear of speaking falsely.” | T: for fear of telling a falsehood.”
+
+## sn6.14:6.1–sn6.14:6.4 (sn)
+CONTEXT sn6.14:5.5 | P: yaṁ tvaṁ, brāhmaṇa, brahmaloke ṭhito sahassilokadhātuṁ sarena viññāpeyyāsī’ti. | S: Standing in the realm of divinity, make your voice heard throughout the thousandfold galaxy.’ | T: for you, while standing in the Brahmā world, to make your voice heard throughout the thousand-fold cosmos!’
+CONTEXT sn6.14:5.6 | P: ‘Evaṁ, bhante’ti kho, bhikkhave, abhibhū bhikkhu sikhissa bhagavato arahato sammāsambuddhassa paṭissutvā brahmaloke ṭhito imā gāthāyo abhāsi: | S: ‘Yes, sir,’ replied Abhibhū. Standing in the realm of divinity, he spoke this verse: | T: “Responding, ‘As you say, lord,’ to Sikhī the Blessed One, worthy & fully self-awakened, the monk Abhibhū, while standing in the Brahmā world, recited these verses:
+sn6.14:6.1 | P: ‘Ārambhatha nikkamatha, | S: ‘Rouse yourselves! Try harder! | T: ‘Rouse yourselves. ⏎ Go forth.
+sn6.14:6.2 | P: Yuñjatha buddhasāsane; | S: Devote yourselves to the teachings of the Buddha! | T: Commit yourselves ⏎ to the Awakened One’s bidding.
+sn6.14:6.3 | P: Dhunātha maccuno senaṁ, | S: Crush the army of Death, | T: Scatter the army of Death
+sn6.14:6.4 | P: Naḷāgāraṁva kuñjaro. | S: as an elephant a hut of reeds. | T: as an elephant would ⏎ a shed made of reeds.
+
+## sn6.14:7.1–sn6.14:7.4 (sn)
+sn6.14:7.1 | P: Yo imasmiṁ dhammavinaye, | S: Whoever shall meditate diligently | T: He who,
+sn6.14:7.2 | P: appamatto vihassati; | S: in this teaching and training, | T: in this Dhamma & Vinaya, ⏎ stays heedful,
+sn6.14:7.3 | P: Pahāya jātisaṁsāraṁ, | S: giving up transmigration through rebirths, | T: abandoning birth, ⏎ the wandering-on,
+sn6.14:7.4 | P: dukkhassantaṁ karissatī’ti. | S: will make an end of suffering.’ | T: will put an end ⏎ to suffering & stress.’
+CONTEXT sn6.14:8.1 | P: Atha kho, bhikkhave, sikhī ca bhagavā arahaṁ sammāsambuddho abhibhū ca bhikkhu brahmānañca brahmaparisañca brahmapārisajje ca saṁvejetvā— | S: Having inspired that divinity, his assembly, and his retinue with a sense of awe, | T: “Then—having struck terror in Brahmā, Brahmā’s retinue, & Brahmā’s assembly—Sikhī the Blessed One, worthy & fully self-awakened, & the monk Abhibhū—
+CONTEXT sn6.14:8.2 | P: seyyathāpi nāma …pe… tasmiṁ brahmaloke antarahitā aruṇavatiyā rājadhāniyā pāturahesuṁ. | S: as easily as a strong person would extend or contract their arm, Sikhī and Abhibhū vanished from that realm of divinity and appeared in Aruṇavatī. | T: just as a strong man might extend his flexed arm or flex his extended arm—disappeared from that Brahmā world and reappeared in the royal city of Aruṇavatī.
+
+## sn6.14:9.1–sn6.14:9.4 (sn)
+CONTEXT sn6.14:8.6 | P: ‘Yathā kathaṁ pana tumhe, bhikkhave, assuttha abhibhussa bhikkhuno brahmaloke ṭhitassa gāthāyo bhāsamānassā’ti? | S: ‘But what exactly did you hear?’ | T: “‘But what verses did you hear the monk Abhibhū reciting while standing in the Brahmā world?’
+CONTEXT sn6.14:8.7 | P: Evaṁ kho mayaṁ, bhante, assumha abhibhussa bhikkhuno brahmaloke ṭhitassa gāthāyo bhāsamānassa: | S: ‘This is what we heard, sir: | T: “‘Lord, we heard the monk Abhibhū reciting these verses while standing in the Brahmā world:
+sn6.14:9.1 | P: ‘Ārambhatha nikkamatha, | S: “Rouse yourselves! Try harder! | T: “Rouse yourselves. ⏎ Go forth.
+sn6.14:9.2 | P: yuñjatha buddhasāsane; | S: Devote yourselves to the teachings of the Buddha! | T: Commit yourselves ⏎ to the Awakened One’s bidding.
+sn6.14:9.3 | P: Dhunātha maccuno senaṁ, | S: Crush the army of Death, | T: Scatter the army of Death
+sn6.14:9.4 | P: naḷāgāraṁva kuñjaro. | S: as an elephant a hut of reeds. | T: as an elephant would ⏎ a shed made of reeds.
+
+## sn6.14:10.1–sn6.14:10.4 (sn)
+sn6.14:10.1 | P: Yo imasmiṁ dhammavinaye, | S: Whoever shall meditate diligently | T: He who,
+sn6.14:10.2 | P: appamatto vihassati; | S: in this teaching and training, | T: in this Dhamma & Vinaya, ⏎ stays heedful,
+sn6.14:10.3 | P: Pahāya jātisaṁsāraṁ, | S: giving up transmigration through rebirths, | T: abandoning birth, ⏎ the wandering-on,
+sn6.14:10.4 | P: dukkhassantaṁ karissatī’ti. | S: will make an end of suffering.” | T: will put an end ⏎ to suffering & stress.”
+CONTEXT sn6.14:11.1 | P: ‘Evaṁ kho mayaṁ, bhante, assumha abhibhussa bhikkhuno brahmaloke ṭhitassa gāthāyo bhāsamānassā’ti. | S: That’s what we heard, sir.’ | T: “‘These, lord, are the verses we heard the monk Abhibhū reciting while standing in the Brahmā world.’
+CONTEXT sn6.14:11.2 | P: ‘Sādhu sādhu, bhikkhave; | S: ‘Good, good, mendicants! | T: “‘Good, monks.
+
+## sn6.15:4.1–sn6.15:4.6 (sn)
+CONTEXT sn6.15:3.1 | P: Saññāvedayitanirodhā vuṭṭhahitvā nevasaññānāsaññāyatanaṁ samāpajji. Nevasaññānāsaññāyatanā vuṭṭhahitvā ākiñcaññāyatanaṁ samāpajji. Ākiñcaññāyatanā vuṭṭhahitvā viññāṇañcāyatanaṁ samāpajji. Viññāṇañcāyatanā vuṭṭhahitvā ākāsānañcāyatanaṁ samāpajji. Ākāsānañcāyatanā vuṭṭhahitvā catutthaṁ jhānaṁ samāpajji. Catutthā jhānā vuṭṭhahitvā tatiyaṁ jhānaṁ samāpajji. Tatiyā jhānā vuṭṭhahitvā dutiyaṁ jhānaṁ samāpajji. Dutiyā jhānā vuṭṭhahitvā paṭhamaṁ jhānaṁ samāpajji. Paṭhamā jhānā vuṭṭhahitvā dutiyaṁ jhānaṁ samāpajji. Dutiyā jhānā vuṭṭhahitvā tatiyaṁ jhānaṁ samāpajji. Tatiyā jhānā vuṭṭhahitvā catutthaṁ jhānaṁ samāpajji. Catutthā jhānā vuṭṭhahitvā samanantaraṁ bhagavā parinibbāyi. | S: Then he emerged from the cessation of perception and feeling and entered the dimension of neither perception nor non-perception. Emerging from that, he successively entered into and emerged from the dimension of nothingness, the dimension of infinite consciousness, the dimension of infinite space, the fourth absorption, the third absorption, the second absorption, and the first absorption. Emerging from that, he successively entered into and emerged from the second absorption and the third absorption. Then he entered the fourth absorption. Emerging from that the Buddha immediately became fully extinguished. | T: Then emerging from the cessation of perception & feeling, he entered the dimension of neither perception nor non-perception. Emerging from that, he entered the dimension of nothingness… the dimension of the infinitude of consciousness… the dimension of the infinitude of space… the fourth jhāna… the third… the second… the first jhāna. Emerging from the first jhāna he entered the second… the third… the fourth jhāna. Emerging from the fourth jhāna, he immediately totally unbound.
+CONTEXT sn6.15:3.2 | P: Parinibbute bhagavati saha parinibbānā brahmā sahampati imaṁ gāthaṁ abhāsi: | S: When the Buddha was fully quenched, along with the full extinguishment, the divinity Sahampati spoke this verse: | T: When the Blessed One totally unbound, simultaneously with the total unbinding, Sahampati Brahmā uttered this verse:
+sn6.15:4.1 | P: “Sabbeva nikkhipissanti, | S: “All creatures in this world | T: “All beings—all—in the world,
+sn6.15:4.2 | P: bhūtā loke samussayaṁ; | S: must lay down this bag of bones. | T: will cast off the bodily heap ⏎ in the world
+sn6.15:4.3 | P: Yattha etādiso satthā, | S: For even a Teacher such as this, | T: where a Teacher like this
+sn6.15:4.4 | P: loke appaṭipuggalo; | S: unrivaled in the world, | T: without peer in the world
+sn6.15:4.5 | P: Tathāgato balappatto, | S: the Realized One, attained to power, | T: the Tathāgata, with strength attained,
+sn6.15:4.6 | P: sambuddho parinibbuto”ti. | S: the Buddha was fully quenched.” | T: the Rightly Self-Awakened One, ⏎ has totally ⏎ unbound.”
+CONTEXT sn6.15:5.1 | P: Parinibbute bhagavati saha parinibbānā sakko devānamindo imaṁ gāthaṁ abhāsi: | S: When the Buddha was fully quenched, Sakka, lord of gods, spoke this verse: | T: When the Blessed One totally unbound, simultaneously with the total unbinding, Sakka, ruler of the gods, uttered this verse:
+
+## sn6.15:6.1–sn6.15:6.4 (sn)
+CONTEXT sn6.15:5.1 | P: Parinibbute bhagavati saha parinibbānā sakko devānamindo imaṁ gāthaṁ abhāsi: | S: When the Buddha was fully quenched, Sakka, lord of gods, spoke this verse: | T: When the Blessed One totally unbound, simultaneously with the total unbinding, Sakka, ruler of the gods, uttered this verse:
+sn6.15:6.1 | P: “Aniccā vata saṅkhārā, | S: “Oh! Conditions are impermanent, | T: “How inconstant are fabrications!
+sn6.15:6.2 | P: uppādavayadhammino; | S: their nature is to rise and fall; | T: Their nature: to arise & pass away.
+sn6.15:6.3 | P: Uppajjitvā nirujjhanti, | S: having arisen, they cease; | T: They disband as they are arising.
+sn6.15:6.4 | P: tesaṁ vūpasamo sukho”ti. | S: their settling is such bliss.” | T: Their total stilling is bliss.”
+CONTEXT sn6.15:7.1 | P: Parinibbute bhagavati saha parinibbānā āyasmā ānando imaṁ gāthaṁ abhāsi: | S: When the Buddha was fully quenched, Venerable Ānanda spoke this verse: | T: When the Blessed One totally unbound, simultaneously with the total unbinding, Ven. Ānanda uttered this verse:
+
+## sn6.15:8.1–sn6.15:8.4 (sn)
+CONTEXT sn6.15:7.1 | P: Parinibbute bhagavati saha parinibbānā āyasmā ānando imaṁ gāthaṁ abhāsi: | S: When the Buddha was fully quenched, Venerable Ānanda spoke this verse: | T: When the Blessed One totally unbound, simultaneously with the total unbinding, Ven. Ānanda uttered this verse:
+sn6.15:8.1 | P: “Tadāsi yaṁ bhiṁsanakaṁ, | S: “Then there was terror! | T: “It was awe-inspiring.
+sn6.15:8.2 | P: tadāsi lomahaṁsanaṁ; | S: Then they had goosebumps! | T: It was hair-raising
+sn6.15:8.3 | P: Sabbākāravarūpete, | S: When the Buddha, endowed with all fine qualities, | T: when, displaying the foremost ⏎ accomplishment in all things, ⏎ the Rightly Self-Awakened One
+sn6.15:8.4 | P: sambuddhe parinibbute”ti. | S: was fully quenched.” | T: totally unbound.”
+CONTEXT sn6.15:9.1 | P: Parinibbute bhagavati saha parinibbānā āyasmā anuruddho imā gāthāyo abhāsi: | S: When the Buddha was fully quenched, Venerable Anuruddha spoke this verse: | T: When the Blessed One totally unbound, simultaneously with the total unbinding, Ven. Anuruddha uttered this verse:
+
+## sn6.15:10.1–sn6.15:10.4 (sn)
+CONTEXT sn6.15:9.1 | P: Parinibbute bhagavati saha parinibbānā āyasmā anuruddho imā gāthāyo abhāsi: | S: When the Buddha was fully quenched, Venerable Anuruddha spoke this verse: | T: When the Blessed One totally unbound, simultaneously with the total unbinding, Ven. Anuruddha uttered this verse:
+sn6.15:10.1 | P: “Nāhu assāsapassāso, | S: “There was no more breathing | T: “He had no in-&-out breathing,
+sn6.15:10.2 | P: ṭhitacittassa tādino; | S: for the unaffected one of steady heart. | T: the one who was Such, the firm-minded one,
+sn6.15:10.3 | P: Anejo santimārabbha, | S: Imperturbable, committed to peace, | T: imperturbable ⏎ & bent on peace:
+sn6.15:10.4 | P: cakkhumā parinibbuto. | S: the Clear-eyed One was fully quenched. | T: the sage completing his span.
+
+## sn6.15:11.1–sn6.15:11.4 (sn) GATHERED; unequal counts require a reader
+sn6.15:11.1 | P: Asallīnena cittena, | S: He put up with painful feelings | T: With heart unbowed ⏎ he endured the pain.
+sn6.15:11.2 | P: vedanaṁ ajjhavāsayi; | S: without flinching. | T: (none)
+sn6.15:11.3 | P: Pajjotasseva nibbānaṁ, | S: The liberation of his heart | T: Like a flame’s unbinding ⏎ was the liberation ⏎ of awareness.”
+sn6.15:11.4 | P: vimokkho cetaso ahū”ti. | S: was like the extinguishing of a lamp.” | T: (none)
+CONTEXT sn6.15:11.5 | P: Dutiyo vaggo. | S: (none) | T: (none)
+CONTEXT sn6.15:12.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+
+## sn6.15:12.1–sn6.15:12.4 (sn)
+CONTEXT sn6.15:11.5 | P: Dutiyo vaggo. | S: (none) | T: (none)
+CONTEXT sn6.15:12.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn6.15:12.1 | P: Brahmāsanaṁ devadatto, | S: (none) | T: (none)
+sn6.15:12.2 | P: Andhakavindo aruṇavatī; | S: (none) | T: (none)
+sn6.15:12.3 | P: Parinibbānena ca desitaṁ, | S: (none) | T: (none)
+sn6.15:12.4 | P: Idaṁ brahmapañcakanti. | S: (none) | T: (none)
+CONTEXT sn6.15:12.5 | P: Brahmasaṁyuttaṁ samattaṁ. | S: The Linked Discourses on the Divinity are complete. | T: (none)
+
+## sn7.2:4.1–sn7.2:4.4 (sn)
+CONTEXT sn7.2:3.6 | P: ‘arahaṁ samaṇo gotamo’ti. | S: ‘the ascetic Gotama is a perfected one’. | T: ‘Gotama the contemplative is an arahant’—
+CONTEXT sn7.2:3.7 | P: Atha ca pana bhavaṁ gotamo kujjhatī”ti. | S: And yet he still gets angry.” | T: and yet still Master Gotama gets angry.”
+sn7.2:4.1 | P: “Akkodhassa kuto kodho, | S: “Whence anger for one free of anger, | T: The Buddha: ⏎ “Whence is there anger ⏎ for one free from anger,
+sn7.2:4.2 | P: dantassa samajīvino; | S: tamed, living justly, | T: tamed, ⏎ living in tune—
+sn7.2:4.3 | P: Sammadaññā vimuttassa, | S: freed by right knowledge, | T: one released through right knowing,
+sn7.2:4.4 | P: upasantassa tādino. | S: peaceful and unaffected? | T: calmed ⏎ & Such.
+
+## sn7.2:5.1–sn7.2:5.4 (sn) GATHERED; unequal counts require a reader
+sn7.2:5.1 | P: Tasseva tena pāpiyo, | S: When you get angry at an angry person | T: You make things worse ⏎ when you flare up ⏎ at someone who’s angry.
+sn7.2:5.2 | P: yo kuddhaṁ paṭikujjhati; | S: you just make things worse for yourself. | T: (none)
+sn7.2:5.3 | P: Kuddhaṁ appaṭikujjhanto, | S: When you don’t get angry at an angry person | T: Whoever doesn’t flare up ⏎ at someone who’s angry
+sn7.2:5.4 | P: saṅgāmaṁ jeti dujjayaṁ. | S: you win a battle hard to win. | T: wins a battle ⏎ hard to win.
+
+## sn7.2:6.1–sn7.2:6.4 (sn) GATHERED; equal counts: one line per row
+sn7.2:6.1 | P: Ubhinnamatthaṁ carati, | S: When you know that the other is angry, | T: You live for the good of both ⏎ —your own, the other’s— ⏎ when, knowing the other’s provoked,
+sn7.2:6.2 | P: attano ca parassa ca; | S: you act for the good of both | T: (none)
+sn7.2:6.3 | P: Paraṁ saṅkupitaṁ ñatvā, | S: yourself and the other | T: (none)
+sn7.2:6.4 | P: yo sato upasammati. | S: if you’re mindful and stay calm. | T: you mindfully grow calm.
+AUTO sn7.2:6.1 starts: You live for the good of both
+AUTO sn7.2:6.2 starts: —your own, the other’s—
+AUTO sn7.2:6.3 starts: when, knowing the other’s provoked,
+AUTO sn7.2:6.4 starts: you mindfully grow calm.
+
+## sn7.2:7.1–sn7.2:7.4 (sn)
+sn7.2:7.1 | P: Ubhinnaṁ tikicchantānaṁ, | S: People inexpert in the teaching | T: When you work the cure of both
+sn7.2:7.2 | P: attano ca parassa ca; | S: consider one who heals both | T: —your own, the other’s—
+sn7.2:7.3 | P: Janā maññanti bāloti, | S: oneself and the other | T: those who think you a fool
+sn7.2:7.4 | P: ye dhammassa akovidā”ti. | S: to be a fool.” | T: know nothing of Dhamma.”
+CONTEXT sn7.2:8.1 | P: Evaṁ vutte, akkosakabhāradvājo brāhmaṇo bhagavantaṁ etadavoca: | S: When he had spoken, Bhāradvāja the Rude said to the Buddha, | T: When this was said, the brahman Akkosaka Bhāradvāja said to the Blessed One,
+CONTEXT sn7.2:8.2 | P: “abhikkantaṁ, bho gotama …pe… | S: “Excellent, worthy Gotama! … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear.
+
+## sn7.6:2.1–sn7.6:2.4 (sn)
+CONTEXT sn7.6:1.3 | P: Sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdi. | S: When the greetings and polite conversation were over, he sat down to one side, | T: After this exchange of friendly greetings & courtesies, he sat to one side.
+CONTEXT sn7.6:1.4 | P: Ekamantaṁ nisinno kho jaṭābhāradvājo brāhmaṇo bhagavantaṁ gāthāya ajjhabhāsi: | S: and addressed the Buddha in verse: | T: As he was sitting there he addressed the Blessed One with a verse:
+sn7.6:2.1 | P: “Antojaṭā bahijaṭā, | S: “Tangled within, tangled without: | T: “A tangle within, ⏎ a tangle without,
+sn7.6:2.2 | P: Jaṭāya jaṭitā pajā; | S: these people are tangled in tangles. | T: people are entangled ⏎ in a tangle.
+sn7.6:2.3 | P: Taṁ taṁ gotama pucchāmi, | S: I ask you this, Gotama: | T: Gotama, I ask you this:
+sn7.6:2.4 | P: Ko imaṁ vijaṭaye jaṭan”ti. | S: who can untangle this tangle?” | T: Who can untangle this tangle?”
+
+## sn7.6:3.1–sn7.6:3.4 (sn)
+sn7.6:3.1 | P: “Sīle patiṭṭhāya naro sapañño, | S: “A wise person grounded in ethics, | T: The Buddha: ⏎ “A man established in virtue, ⏎ discerning,
+sn7.6:3.2 | P: Cittaṁ paññañca bhāvayaṁ; | S: developing the mind and wisdom, | T: developing discernment & mind,
+sn7.6:3.3 | P: Ātāpī nipako bhikkhu, | S: a keen and alert mendicant— | T: a monk ardent, astute:
+sn7.6:3.4 | P: So imaṁ vijaṭaye jaṭaṁ. | S: they can untangle this tangle. | T: He can untangle this tangle.
+
+## sn7.6:4.1–sn7.6:4.4 (sn)
+sn7.6:4.1 | P: Yesaṁ rāgo ca doso ca, | S: Those in whom greed, hate, and ignorance | T: Those whose ⏎ passion, ⏎ aversion, ⏎ & ignorance
+sn7.6:4.2 | P: avijjā ca virājitā; | S: have faded away; | T: have faded away,
+sn7.6:4.3 | P: Khīṇāsavā arahanto, | S: the perfected ones with defilements ended— | T: arahants, their effluents ended:
+sn7.6:4.4 | P: tesaṁ vijaṭitā jaṭā. | S: they have untangled the tangle. | T: For them the tangle’s untangled.
+
+## sn7.6:5.1–sn7.6:5.4 (sn) GATHERED; possible speaker requires a reader
+sn7.6:5.1 | P: Yattha nāmañca rūpañca, | S: Where name and form | T: Where name-&-form,
+sn7.6:5.2 | P: asesaṁ uparujjhati; | S: cease with no residue left behind; | T: (none)
+sn7.6:5.3 | P: Paṭighaṁ rūpasaññā ca, | S: as well as impingement and perception of form: | T: along with perception ⏎ of impingement & form, ⏎ totally stop without trace:
+sn7.6:5.4 | P: etthesā chijjate jaṭā”ti. | S: it’s here this tangle is cut.” | T: That’s where the tangle ⏎ is cut.”
+CONTEXT sn7.6:6.1 | P: Evaṁ vutte, jaṭābhāradvājo bhagavantaṁ etadavoca: | S: When he had spoken, Bhāradvāja of the Matted Hair said to the Buddha, | T: When this was said, the brahman Jaṭā Bhāradvāja said to the Blessed One,
+CONTEXT sn7.6:6.2 | P: “abhikkantaṁ, bho gotama …pe… | S: “Excellent, worthy Gotama! …” … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear. I go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks. Let me obtain the Going-forth in Master Gotama’s presence, let me obtain Acceptance.” Then the brahman Jaṭā Bhāradvāja received the Going-forth in the Blessed One’s presence, he gained the Acceptance. And not long after his Acceptance—dwelling alone, secluded, heedful, ardent, & resolute—he in no long time entered & remained in the supreme goal of the holy life, for which clansmen rightly go forth from home into homelessness, directly knowing & realizing it for himself in the here & now. He knew: “Birth is ended, the holy life fulfilled, the task done. There is nothing further for the sake of this world.”
+
+## sn7.12:2.1–sn7.12:2.4 (sn)
+CONTEXT sn7.12:1.5 | P: tatiyampi kho udayo brāhmaṇo bhagavato pattaṁ odanena pūretvā bhagavantaṁ etadavoca: | S: But when he had filled the Buddha’s bowl on the third day, he said to the Buddha, | T: Then a third time, [on the following day,] the Blessed One, having adjusted his under robe and carrying his bowl & outer robe, went to the home of the brahman Udaya. And a third time, the brahman Udaya, having filled the Blessed One’s bowl with rice, said to him,
+CONTEXT sn7.12:1.6 | P: “pakaṭṭhakoyaṁ samaṇo gotamo punappunaṁ āgacchatī”ti. | S: “This ascetic Gotama is such a drag! He keeps coming back again and again!” | T: “This pesky Gotama contemplative keeps coming again & again.”
+sn7.12:2.1 | P: “Punappunañceva vapanti bījaṁ, | S: “Again and again, they sow the seed; | T: The Buddha: ⏎ “Again & again they sow the seed.
+sn7.12:2.2 | P: Punappunaṁ vassati devarājā; | S: again and again, the king of the heavens sends rain; | T: Again & again the deva-kings rain.
+sn7.12:2.3 | P: Punappunaṁ khettaṁ kasanti kassakā, | S: again and again, farmers plough the field; | T: Again & again farmers plow the fields.
+sn7.12:2.4 | P: Punappunaṁ dhaññamupeti raṭṭhaṁ. | S: again and again, grain is produced for the nation. | T: Again & again grain comes to the kingdom.
+
+## sn7.12:3.1–sn7.12:3.4 (sn)
+sn7.12:3.1 | P: Punappunaṁ yācakā yācayanti, | S: Again and again, the beggars beg; | T: Again & again beggars wander.
+sn7.12:3.2 | P: Punappunaṁ dānapatī dadanti; | S: again and again, the donors give. | T: Again & again lords of giving give.
+sn7.12:3.3 | P: Punappunaṁ dānapatī daditvā, | S: Again and again, when the donors have given, | T: Again & again having given, the lords of giving
+sn7.12:3.4 | P: Punappunaṁ saggamupenti ṭhānaṁ. | S: again and again, they take their place in heaven. | T: again & again go to a heavenly place.
+
+## sn7.12:4.1–sn7.12:4.4 (sn)
+sn7.12:4.1 | P: Punappunaṁ khīranikā duhanti, | S: Again and again, dairy farmers milk; | T: Again & again dairy farmers draw milk.
+sn7.12:4.2 | P: Punappunaṁ vaccho upeti mātaraṁ; | S: again and again, a calf cleaves to its mother; | T: Again & again the calf goes to its mother.
+sn7.12:4.3 | P: Punappunaṁ kilamati phandati ca, | S: again and again, oppressing and intimidating, | T: Again & again one wearies & trembles.
+sn7.12:4.4 | P: Punappunaṁ gabbhamupeti mando. | S: that dullard returns to the womb again and again. | T: Again & again the dullard goes to the womb.
+
+## sn7.12:5.1–sn7.12:5.4 (sn)
+sn7.12:5.1 | P: Punappunaṁ jāyati mīyati ca, | S: Again and again, you’re reborn and die; | T: Again & again you take birth & die.
+sn7.12:5.2 | P: Punappunaṁ sivathikaṁ haranti; | S: again and again, you get carried to a charnel ground. | T: Again & again they carry you to the charnel ground.
+sn7.12:5.3 | P: Maggañca laddhā apunabbhavāya, | S: But when they’ve gained the path for no further rebirth, | T: But on gaining the path ⏎ to no again-becoming,
+sn7.12:5.4 | P: Na punappunaṁ jāyati bhūripañño”ti. | S: one of vast wisdom is not reborn again and again.” | T: you, deep in discernment, ⏎ don’t take birth ⏎ again & again.”
+CONTEXT sn7.12:6.1 | P: Evaṁ vutte, udayo brāhmaṇo bhagavantaṁ etadavoca: | S: When he had spoken, the brahmin Udaya said to the Buddha, | T: When this was said, the brahman Udaya said to the Blessed One,
+CONTEXT sn7.12:6.2 | P: “abhikkantaṁ, bho gotama …pe… | S: “Excellent, worthy Gotama … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear. I go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks.
+
+## sn7.14:2.1–sn7.14:2.4 (sn)
+CONTEXT sn7.14:1.6 | P: Te maṁ dārehi sampuccha gharā nikkhāmentī”ti. | S: At their wives’ bidding they expelled me from my house.” | T: at their wives’ instigation—threw me out of the house.”
+CONTEXT sn7.14:1.7 | P: “Tena hi tvaṁ, brāhmaṇa, imā gāthāyo pariyāpuṇitvā sabhāyaṁ mahājanakāye sannipatite puttesu ca sannisinnesu bhāsassu: | S: “Well then, brahmin, memorize these verses and recite them to your sons when you are all seated in the council hall with a large crowd. | T: “In that case, brahman, memorize these verses and then recite them when a large assembly of people have gathered in the town hall and your sons are sitting there, too.
+sn7.14:2.1 | P: ‘Yehi jātehi nandissaṁ, | S: ‘I was overjoyed when they were born, | T: “Those whose birth ⏎ I delighted in
+sn7.14:2.2 | P: yesañca bhavamicchisaṁ; | S: and wished prosperity for them. | T: —whose growth I desired—
+sn7.14:2.3 | P: Te maṁ dārehi sampuccha, | S: But at their wives’ bidding they chased me out, | T: at their wives’ instigation ⏎ have chased me away,
+sn7.14:2.4 | P: sāva vārenti sūkaraṁ. | S: like hounds after hogs. | T: as dogs would swine.
+
+## sn7.14:3.1–sn7.14:3.4 (sn)
+sn7.14:3.1 | P: Asantā kira maṁ jammā, | S: It turns out they’re wicked, those nasty men, | T: Wicked & vile,
+sn7.14:3.2 | P: tāta tātāti bhāsare; | S: though they called me their dear old Dad. | T: though they call me ‘Dad’:
+sn7.14:3.3 | P: Rakkhasā puttarūpena, | S: They’re monsters in the shape of sons, | T: demons in the disguise of sons
+sn7.14:3.4 | P: te jahanti vayogataṁ. | S: throwing me out as I’ve grown old. | T: who abandon me in old age.
+
+## sn7.14:4.1–sn7.14:4.4 (sn)
+sn7.14:4.1 | P: Assova jiṇṇo nibbhogo, | S: Like an old, useless horse | T: As an old horse ⏎ of no more use
+sn7.14:4.2 | P: khādanā apanīyati; | S: led away from its fodder, | T: is deprived of fodder,
+sn7.14:4.3 | P: Bālakānaṁ pitā thero, | S: the elderly father of those kids | T: so the elderly father ⏎ of those foolish boys
+sn7.14:4.4 | P: parāgāresu bhikkhati. | S: begs for alms at others’ homes. | T: begs at other people’s homes.

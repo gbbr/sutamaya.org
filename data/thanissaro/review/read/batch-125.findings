@@ -2,8 +2,8 @@ dn34:2.3.111 starts: • “Which ten dhammas should be directly known?
 an5.41:5.3 none
 an5.41:6.1 starts: “If it so happens that, when a
 an5.41:8.1 starts: For whatever aim a wise householder would
-an5.41:8.2 none
-an5.41:8.3 none
+# superseded: an5.41:8.2 none
+# superseded: an5.41:8.3 none
 mn86:1.1 starts: I have heard that on one occasion
 mn86:1.2 starts: on one occasion the Blessed One was
 mn86:3.3 starts: Cowherds, shepherds, & farmers saw him going
@@ -13,7 +13,7 @@ mn86:12.7 starts: Then the king’s fear, his terror, his
 mn86:18.20 starts: from those who advise endurance, forbearance,
 mn86:18.21 starts: who praise non-opposition,
 mn86:18.33 starts: But without blunt or bladed weapons I
-mn86:18.34 none
+# superseded: mn86:18.34 none
 mn86:18.59 starts: This has come well & not gone
 mn86:18.60 starts: it was not badly thought through for
 mn86:18.61 starts: From among well-analyzed qualities,

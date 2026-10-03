@@ -1,12 +1,12 @@
 sn10.8:7.1 none
 sn10.8:7.2 starts: a third time, the light vanished and
 sn10.8:9.3 starts: Go forward, householder! Go forward, householder! Going
-sn10.8:12.2 none
+# superseded: sn10.8:12.2 none
 snp3.8:9.3 starts: seeing neither end, you lament in vain.”
-snp3.8:9.4 none
+# superseded: snp3.8:9.4 none
 snp3.8:10.1 starts: If, by lamenting, —confused, harming yourself—
-snp3.8:10.2 none
-snp3.8:19.4 none
+# superseded: snp3.8:10.2 none
+# superseded: snp3.8:19.4 none
 an4.33:1.4 starts: Having looked all around the four directions,
 an4.33:1.5 starts: Having roared his lion’s roar three times,
 an4.33:6.4 starts: of the Worthy One, the one fully
@@ -19,7 +19,7 @@ an6.20:6.2 starts: there are evil, unskillful qualities unabandoned by
 an6.20:7.2 starts: there are no evil, unskillful qualities unabandoned
 an6.20:8.3 none
 an6.20:9.0 none
-snp2.11:7.4 none
+# superseded: snp2.11:7.4 none
 ud3.7:1.5 starts: To him, emerging from that concentration, the
 ud3.7:2.2 starts: But Ven. Mahā Kassapa, turning down those
 sn48.10:2.4 starts: for the sake of the abandoning of

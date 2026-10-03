@@ -1,0 +1,444 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## thig5.4:1.1–thig5.4:1.4 (thig)
+CONTEXT thig5.4:0.2 | P: Pañcakanipāta | S: The Book of the Fives | T: (none)
+CONTEXT thig5.4:0.3 | P: Sundarīnandātherīgāthā | S: Sundarīnandā | T: Thig 5:4 Nandā’s Vision
+thig5.4:1.1 | P: “Āturaṁ asuciṁ pūtiṁ, | S: “Nandā, see this bag of bones as | T: “Sick, putrid, unclean:
+thig5.4:1.2 | P: passa nande samussayaṁ; | S: diseased, filthy, and rotten. | T: look, Nandā, at this physical heap.
+thig5.4:1.3 | P: Asubhāya cittaṁ bhāvehi, | S: With mind unified and serene, | T: Through contemplation of the foul, ⏎ develop your mind,
+thig5.4:1.4 | P: ekaggaṁ susamāhitaṁ. | S: meditate on the ugly aspects of the body: | T: make it one, well-centered.
+
+## thig5.4:2.1–thig5.4:2.4 (thig)
+thig5.4:2.1 | P: Yathā idaṁ tathā etaṁ, | S: as this is, so is that, | T: As this [your body], so that.
+thig5.4:2.2 | P: yathā etaṁ tathā idaṁ; | S: as that is, so is this. | T: As that, so this.
+thig5.4:2.3 | P: Duggandhaṁ pūtikaṁ vāti, | S: A foul stink wafts from it, | T: It gives off a foul stench,
+thig5.4:2.4 | P: bālānaṁ abhinanditaṁ. | S: it is the fools’ delight.” | T: the delight of fools.”
+
+## thig5.4:3.1–thig5.4:3.4 (thig)
+thig5.4:3.1 | P: Evametaṁ avekkhantī, | S: Reflecting in such a way, | T: Considering it thus,
+thig5.4:3.2 | P: rattindivamatanditā; | S: tireless all day and night, | T: untiring, both day & night,
+thig5.4:3.3 | P: Tato sakāya paññāya, | S: having broken through | T: I, with my own discernment
+thig5.4:3.4 | P: abhinibbijjha dakkhisaṁ”. | S: with my own wisdom, I saw. | T: dissecting it, ⏎ saw.
+
+## thig5.4:4.1–thig5.4:4.4 (thig)
+thig5.4:4.1 | P: “Tassā me appamattāya, | S: Being diligent, | T: And as I, heedful,
+thig5.4:4.2 | P: vicinantiyā yoniso; | S: rationally investigating, | T: examined it aptly,
+thig5.4:4.3 | P: Yathābhūtaṁ ayaṁ kāyo, | S: I truly saw this body | T: this body—as it actually is— ⏎ was seen
+thig5.4:4.4 | P: diṭṭho santarabāhiro. | S: both inside and out. | T: inside & out.
+
+## thig5.4:5.1–thig5.4:5.4 (thig)
+thig5.4:5.1 | P: Atha nibbindahaṁ kāye, | S: Then, growing disillusioned with the body, | T: Then was I disenchanted with the body
+thig5.4:5.2 | P: ajjhattañca virajjahaṁ; | S: I became dispassionate within. | T: & dispassionate within:
+thig5.4:5.3 | P: Appamattā visaṁyuttā, | S: Diligent, detached, | T: Heedful, detached,
+thig5.4:5.4 | P: upasantāmhi nibbutā”ti. | S: I’m quenched and at peace. | T: calmed was I. ⏎ Unbound.
+CONTEXT thig5.4:6.1 | P: … Sundarīnandā therī …. | S: (none) | T: (none)
+
+## thig5.6:1.1–thig5.6:1.4 (thig)
+CONTEXT thig5.6:0.2 | P: Pañcakanipāta | S: The Book of the Fives | T: (none)
+CONTEXT thig5.6:0.3 | P: Mittākāḷītherīgāthā | S: Mittākāḷī | T: Thig 5:6 Mittakālī
+thig5.6:1.1 | P: “Saddhāya pabbajitvāna, | S: Having gone forth in faith | T: Going forth through conviction
+thig5.6:1.2 | P: agārasmānagāriyaṁ; | S: from the lay life to homelessness, | T: from home into homelessness,
+thig5.6:1.3 | P: Vicariṁhaṁ tena tena, | S: I wandered here and there, | T: I wandered this place & that,
+thig5.6:1.4 | P: lābhasakkāraussukā. | S: jealous of possessions and honors. | T: greedy for tribute & gains.
+
+## thig5.6:2.1–thig5.6:2.4 (thig)
+thig5.6:2.1 | P: Riñcitvā paramaṁ atthaṁ, | S: Neglecting the highest goal, | T: Missing out on the foremost goal,
+thig5.6:2.2 | P: hīnamatthaṁ asevihaṁ; | S: I pursued the lowest. | T: I pursued a lowly one.
+thig5.6:2.3 | P: Kilesānaṁ vasaṁ gantvā, | S: Under the sway of corruptions, | T: Under the sway of defilements,
+thig5.6:2.4 | P: sāmaññatthaṁ na bujjhihaṁ. | S: I never knew the goal of the ascetic life. | T: I didn’t awaken to the goal ⏎ of the contemplative life.
+
+## thig5.6:3.1–thig5.6:3.4 (thig) GATHERED; possible speaker requires a reader
+thig5.6:3.1 | P: Tassā me ahu saṁvego, | S: I was struck with a sense of urgency | T: Then, sitting in my dwelling, ⏎ I suddenly came to my senses:
+thig5.6:3.2 | P: nisinnāya vihārake; | S: as I was sitting in my hut: | T: (none)
+thig5.6:3.3 | P: Ummaggapaṭipannāmhi, | S: “I’m walking the wrong path, | T: I’m following a miserable path.
+thig5.6:3.4 | P: taṇhāya vasamāgatā. | S: under the sway of craving. | T: I’m under the sway of ⏎ craving.
+
+## thig5.6:4.1–thig5.6:4.4 (thig)
+thig5.6:4.1 | P: Appakaṁ jīvitaṁ mayhaṁ, | S: My life is short, | T: Next to nothing, my life,
+thig5.6:4.2 | P: jarā byādhi ca maddati; | S: trampled by old age and sickness. | T: crushed ⏎ by aging & illness.
+thig5.6:4.3 | P: Purāyaṁ bhijjati kāyo, | S: Before this body breaks apart, | T: Before the body breaks apart,
+thig5.6:4.4 | P: na me kālo pamajjituṁ. | S: there is no time for me to be careless.” | T: I have no time ⏎ for heedlessness.
+
+## thig5.6:5.1–thig5.6:5.4 (thig)
+thig5.6:5.1 | P: Yathābhūtamavekkhantī, | S: I examined in line with the truth | T: After watching, as it actually was,
+thig5.6:5.2 | P: khandhānaṁ udayabbayaṁ; | S: the rise and fall of the aggregates. | T: the arising-disbanding of aggregates,
+thig5.6:5.3 | P: Vimuttacittā uṭṭhāsiṁ, | S: I stood up with mind liberated, | T: I stood up with mind released,
+thig5.6:5.4 | P: kataṁ buddhassa sāsanan”ti. | S: having fulfilled the Buddha’s instructions. | T: the Awakened One’s bidding ⏎ done.
+CONTEXT thig5.6:6.1 | P: … Mittā kāḷī therī …. | S: (none) | T: (none)
+
+## thig5.8:1.1–thig5.8:1.4 (thig)
+CONTEXT thig5.8:0.2 | P: Pañcakanipāta | S: The Book of the Fives | T: (none)
+CONTEXT thig5.8:0.3 | P: Soṇātherīgāthā | S: Soṇā | T: Thig 5:8 Soṇā, Mother of Ten
+thig5.8:1.1 | P: “Dasa putte vijāyitvā, | S: I gave birth to ten sons | T: Ten children I bore
+thig5.8:1.2 | P: asmiṁ rūpasamussaye; | S: in this form, this bag of bones. | T: from this physical heap.
+thig5.8:1.3 | P: Tatohaṁ dubbalā jiṇṇā, | S: Then, when feeble and old, | T: Then weak from that, aged,
+thig5.8:1.4 | P: bhikkhuniṁ upasaṅkamiṁ. | S: I approached a nun. | T: I went to a nun.
+
+## thig5.8:2.1–thig5.8:2.4 (thig)
+thig5.8:2.1 | P: Sā me dhammamadesesi, | S: She taught me the Dhamma: | T: She taught me the Dhamma:
+thig5.8:2.2 | P: khandhāyatanadhātuyo; | S: the aggregates, sense fields, and elements. | T: aggregates, sense media, & properties.
+thig5.8:2.3 | P: Tassā dhammaṁ suṇitvāna, | S: When I heard her teaching, | T: Hearing her Dhamma,
+thig5.8:2.4 | P: kese chetvāna pabbajiṁ. | S: I shaved off my hair and went forth. | T: I cut off my hair & ordained.
+
+## thig5.8:3.1–thig5.8:3.4 (thig) GATHERED; equal counts: one line per row
+thig5.8:3.1 | P: Tassā me sikkhamānāya, | S: When I was a trainee nun, | T: Having purified the divine eye ⏎ while still a trainee,
+thig5.8:3.2 | P: dibbacakkhu visodhitaṁ; | S: my clairvoyance was clarified, | T: (none)
+thig5.8:3.3 | P: Pubbenivāsaṁ jānāmi, | S: and I knew my past lives, | T: I know my previous lives,
+thig5.8:3.4 | P: yattha me vusitaṁ pure. | S: the places I used to live. | T: where I lived in the past.
+AUTO thig5.8:3.1 starts: Having purified the divine eye
+AUTO thig5.8:3.2 starts: while still a trainee,
+AUTO thig5.8:3.3 starts: I know my previous lives,
+AUTO thig5.8:3.4 starts: where I lived in the past.
+
+## thig5.8:4.1–thig5.8:4.4 (thig)
+thig5.8:4.1 | P: Animittañca bhāvemi, | S: I meditate on the signless, | T: I develop the theme-less meditation,
+thig5.8:4.2 | P: ekaggā susamāhitā; | S: my mind unified and serene. | T: well-focused oneness.
+thig5.8:4.3 | P: Anantarāvimokkhāsiṁ, | S: I achieved the immediate liberation, | T: I gain the liberation of immediacy—
+thig5.8:4.4 | P: anupādāya nibbutā. | S: quenched by not grasping. | T: from lack of clinging, unbound.
+
+## thig5.8:5.1–thig5.8:5.4 (thig)
+thig5.8:5.1 | P: Pañcakkhandhā pariññātā, | S: The five aggregates are fully understood; | T: The five aggregates, comprehended,
+thig5.8:5.2 | P: tiṭṭhanti chinnamūlakā; | S: they remain, but their root is cut. | T: stand like a tree with its root cut through.
+thig5.8:5.3 | P: Dhi tavatthu jare jamme, | S: Curse you, wretched old age! | T: I spit on wretched birth ⏎ old age.
+thig5.8:5.4 | P: natthi dāni punabbhavo”ti. | S: now there’ll be no more future lives. | T: There is now no further becoming.
+CONTEXT thig5.8:6.1 | P: … Soṇā therī …. | S: (none) | T: (none)
+
+## thig5.10:1.1–thig5.10:1.4 (thig)
+CONTEXT thig5.10:0.2 | P: Pañcakanipāta | S: The Book of the Fives | T: (none)
+CONTEXT thig5.10:0.3 | P: Paṭācārātherīgāthā | S: Paṭācārā | T: Thig 5:10 Paṭācārā
+thig5.10:1.1 | P: “Naṅgalehi kasaṁ khettaṁ, | S: Plowing the fields, | T: [I thought:] ⏎ “Plowing the field with plows,
+thig5.10:1.2 | P: bījāni pavapaṁ chamā; | S: sowing seeds in the ground, | T: sowing the ground with seed,
+thig5.10:1.3 | P: Puttadārāni posentā, | S: providing for partners and children, | T: supporting their wives & children,
+thig5.10:1.4 | P: dhanaṁ vindanti māṇavā. | S: young men acquire wealth. | T: young men gather up wealth.
+
+## thig5.10:2.1–thig5.10:2.4 (thig) GATHERED; unequal counts require a reader
+thig5.10:2.1 | P: Kimahaṁ sīlasampannā, | S: I am accomplished in ethics, | T: So why is it that I, ⏎ consummate in virtue,
+thig5.10:2.2 | P: satthusāsanakārikā; | S: and I do the Teacher’s bidding, | T: a doer of the teacher’s bidding,
+thig5.10:2.3 | P: Nibbānaṁ nādhigacchāmi, | S: being neither lazy nor restless— | T: don’t gain unbinding? ⏎ I’m not lazy or proud.”
+thig5.10:2.4 | P: akusītā anuddhatā. | S: why then do I not achieve quenching? | T: (none)
+
+## thig5.10:3.1–thig5.10:3.4 (thig) GATHERED; unequal counts require a reader
+thig5.10:3.1 | P: Pāde pakkhālayitvāna, | S: Having washed my feet, | T: Washing my feet,
+thig5.10:3.2 | P: udakesu karomahaṁ; | S: I took note of the water, | T: I noticed ⏎ the ⏎ water.
+thig5.10:3.3 | P: Pādodakañca disvāna, | S: seeing the foot-washing water | T: And in watching it flow from high ⏎ to ⏎ low,
+thig5.10:3.4 | P: thalato ninnamāgataṁ. | S: flowing from high ground to low. | T: (none)
+
+## thig5.10:4.1–thig5.10:4.6 (thig)
+thig5.10:4.1 | P: Tato cittaṁ samādhesiṁ, | S: My mind became serene, | T: my heart was composed
+thig5.10:4.2 | P: assaṁ bhadraṁvajāniyaṁ; | S: like a fine thoroughbred steed. | T: like a fine thoroughbred steed.
+thig5.10:4.3 | P: Tato dīpaṁ gahetvāna, | S: Then, taking a lamp, | T: Then taking a lamp,
+thig5.10:4.4 | P: vihāraṁ pāvisiṁ ahaṁ; | S: I entered my dwelling, | T: I entered the hut,
+thig5.10:4.5 | P: Seyyaṁ olokayitvāna, | S: inspected the bed, | T: checked the bedding,
+thig5.10:4.6 | P: mañcakamhi upāvisiṁ. | S: and sat on my cot. | T: sat down on the bed.
+
+## thig5.10:5.1–thig5.10:5.4 (thig) GATHERED; possible speaker requires a reader
+thig5.10:5.1 | P: Tato sūciṁ gahetvāna, | S: Then, grabbing the pin, | T: And taking a pin,
+thig5.10:5.2 | P: vaṭṭiṁ okassayāmahaṁ; | S: I drew out the wick. | T: I pulled out the wick:
+thig5.10:5.3 | P: Padīpasseva nibbānaṁ, | S: The liberation of my heart | T: Like the flame’s unbinding ⏎ was the liberation ⏎ of awareness.
+thig5.10:5.4 | P: vimokkho ahu cetaso”ti. | S: was like the quenching of the lamp. | T: (none)
+CONTEXT thig5.10:6.1 | P: … Paṭācārā therī …. | S: (none) | T: (none)
+
+## thig5.11:1.1–thig5.11:1.4 (thig)
+CONTEXT thig5.11:0.2 | P: Pañcakanipāta | S: The Book of the Fives | T: (none)
+CONTEXT thig5.11:0.3 | P: Tiṁsamattātherīgāthā | S: Thirty Nuns | T: Thig 5:11 Paṭācārā’s Thirty Students
+thig5.11:1.1 | P: “Musalāni gahetvāna, | S: “Taking a pestle, | T: [Paṭācārā taught:] ⏎ “Taking the pestle,
+thig5.11:1.2 | P: dhaññaṁ koṭṭenti māṇavā; | S: young men pound grain. | T: young men grind the corn.
+thig5.11:1.3 | P: Puttadārāni posentā, | S: Providing for partners and children, | T: Supporting their wives & children,
+thig5.11:1.4 | P: dhanaṁ vindanti māṇavā. | S: young men acquire wealth. | T: they gather up wealth.
+
+## thig5.11:2.1–thig5.11:2.6 (thig) GATHERED; possible speaker requires a reader
+thig5.11:2.1 | P: Karotha buddhasāsanaṁ, | S: Do the Buddha’s bidding, | T: Do the Awakened One’s bidding,
+thig5.11:2.2 | P: yaṁ katvā nānutappati; | S: you won’t regret it. | T: which, having done, ⏎ you’ll have no regret.
+thig5.11:2.3 | P: Khippaṁ pādāni dhovitvā, | S: Having quickly washed your feet, | T: Intent on tranquility of awareness, ⏎ do the Awakened One’s bidding. ⏎ Quickly: ⏎ Having washed your feet, ⏎ go sit to one side.”
+thig5.11:2.4 | P: ekamante nisīdatha; | S: sit in a discreet place to meditate. | T: (none)
+thig5.11:2.5 | P: Cetosamathamanuyuttā, | S: Devoted to serenity of heart, | T: (none)
+thig5.11:2.6 | P: karotha buddhasāsanaṁ”. | S: do the Buddha’s bidding.” | T: (none)
+
+## thig5.11:3.1–thig5.11:3.6 (thig)
+thig5.11:3.1 | P: Tassā tā vacanaṁ sutvā, | S: After hearing her words, | T: Hearing these words,
+thig5.11:3.2 | P: paṭācārāya sāsanaṁ; | S: the instructions of Paṭācārā, | T: Paṭācārā’s bidding,
+thig5.11:3.3 | P: Pāde pakkhālayitvāna, | S: they washed their feet | T: they washed their feet
+thig5.11:3.4 | P: ekamantaṁ upāvisuṁ; | S: and retired to a discreet place. | T: and retired to one side.
+thig5.11:3.5 | P: Cetosamathamanuyuttā, | S: Devoted to serenity of heart, | T: Intent on tranquility of awareness,
+thig5.11:3.6 | P: akaṁsu buddhasāsanaṁ. | S: they did the Buddha’s bidding. | T: they did the Awakened One’s bidding.
+
+## thig5.11:4.1–thig5.11:4.6 (thig)
+thig5.11:4.1 | P: Rattiyā purime yāme, | S: In the first watch of the night, | T: In the first watch of the night,
+thig5.11:4.2 | P: pubbajātimanussaruṁ; | S: they recollected their past lives. | T: they recollected their previous lives.
+thig5.11:4.3 | P: Rattiyā majjhime yāme, | S: In the middle watch of the night, | T: In the middle watch,
+thig5.11:4.4 | P: dibbacakkhuṁ visodhayuṁ; | S: they purified their clairvoyance. | T: purified the divine eye.
+thig5.11:4.5 | P: Rattiyā pacchime yāme, | S: In the last watch of the night, | T: In the last,
+thig5.11:4.6 | P: tamokhandhaṁ padālayuṁ. | S: they shattered the mass of darkness. | T: burst the mass of darkness.
+
+## thig5.11:5.1–thig5.11:5.6 (thig) GATHERED; unequal counts require a reader
+thig5.11:5.1 | P: Uṭṭhāya pāde vandiṁsu, | S: They rose and paid homage at her feet: | T: Getting up, they bowed down to her feet.
+thig5.11:5.2 | P: “katā te anusāsanī; | S: “We have done your bidding; | T: “We have done your bidding.
+thig5.11:5.3 | P: Indaṁva devā tidasā, | S: we shall abide honoring you, | T: Like the thirty devas honoring Indra,
+thig5.11:5.4 | P: saṅgāme aparājitaṁ; | S: as the Thirty gods honor Indra, | T: (none)
+thig5.11:5.5 | P: Purakkhatvā vihassāma, | S: undefeated in battle. | T: unvanquished in battle,
+thig5.11:5.6 | P: tevijjāmha anāsavā”ti. | S: Masters of the three knowledges, we are free of defilements.” | T: we— ⏎ endowed with the three knowledges, ⏎ effluent-free— ⏎ will continue honoring you.”
+CONTEXT thig5.11:6.1 | P: Itthaṁ sudaṁ tiṁsamattā therī bhikkhuniyo paṭācārāya santike aññaṁ byākariṁsūti. | S: That is how thirty senior nuns declared their enlightenment in the presence of Paṭācārā. | T: (none)
+
+## thig5.12:1.1–thig5.12:1.4 (thig)
+CONTEXT thig5.12:0.2 | P: Pañcakanipāta | S: The Book of the Fives | T: (none)
+CONTEXT thig5.12:0.3 | P: Candātherīgāthā | S: Candā | T: Thig 5:12 Candā, the Beggar
+thig5.12:1.1 | P: “Duggatāhaṁ pure āsiṁ, | S: I used to be in a sorry state. | T: Before, I had fallen on evil times:
+thig5.12:1.2 | P: vidhavā ca aputtikā; | S: As a childless widow, | T: no husband, no children,
+thig5.12:1.3 | P: Vinā mittehi ñātīhi, | S: bereft of friends or relatives, | T: no relatives, friends,
+thig5.12:1.4 | P: bhattacoḷassa nādhigaṁ. | S: I got neither food nor clothes. | T: no way to obtain clothing & food.
+
+## thig5.12:2.1–thig5.12:2.4 (thig) GATHERED; equal counts: one line per row
+thig5.12:2.1 | P: Pattaṁ daṇḍañca gaṇhitvā, | S: I took a bowl and a staff | T: So, taking a staff & bowl in hand,
+thig5.12:2.2 | P: bhikkhamānā kulā kulaṁ; | S: and went begging from family to family. | T: begging for alms from house to house,
+thig5.12:2.3 | P: Sītuṇhena ca ḍayhantī, | S: For seven years I wandered, | T: feverish from the cold & heat, ⏎ I wandered for seven full years.
+thig5.12:2.4 | P: satta vassāni cārihaṁ. | S: burned by heat and cold. | T: (none)
+AUTO thig5.12:2.1 starts: So, taking a staff & bowl in hand,
+AUTO thig5.12:2.2 starts: begging for alms from house to house,
+AUTO thig5.12:2.3 starts: feverish from the cold & heat,
+AUTO thig5.12:2.4 starts: I wandered for seven full years.
+
+## thig5.12:3.1–thig5.12:3.4 (thig)
+thig5.12:3.1 | P: Bhikkhuniṁ puna disvāna, | S: Then I saw a nun | T: Then seeing a nun
+thig5.12:3.2 | P: annapānassa lābhiniṁ; | S: receiving food and drink. | T: obtaining food & drink,
+thig5.12:3.3 | P: Upasaṅkamma avocaṁ, | S: Approaching her, I said: | T: I approached her & said:
+thig5.12:3.4 | P: ‘pabbajjaṁ anagāriyaṁ’. | S: “Send me forth to homelessness.” | T: “Let me go forth ⏎ into homelessness.”
+
+## thig5.12:4.1–thig5.12:4.4 (thig)
+thig5.12:4.1 | P: Sā ca maṁ anukampāya, | S: Out of sympathy for me, | T: She, Paṭācārā, from sympathy,
+thig5.12:4.2 | P: pabbājesi paṭācārā; | S: Paṭācārā gave me the going forth. | T: let me go forth;
+thig5.12:4.3 | P: Tato maṁ ovaditvāna, | S: Then, having advised me, | T: then, exhorting me,
+thig5.12:4.4 | P: paramatthe niyojayi. | S: she urged me on to the ultimate goal. | T: urged me on to the highest goal.
+
+## thig5.12:5.1–thig5.12:5.4 (thig)
+thig5.12:5.1 | P: Tassāhaṁ vacanaṁ sutvā, | S: After hearing her words, | T: Hearing her words,
+thig5.12:5.2 | P: akāsiṁ anusāsaniṁ; | S: I did her bidding. | T: I did her bidding.
+thig5.12:5.3 | P: Amogho ayyāyovādo, | S: The lady’s advice was not in vain: | T: Her exhortation was not in vain.
+thig5.12:5.4 | P: tevijjāmhi anāsavā”ti. | S: master of the three knowledges, I am free of defilements. | T: Endowed with the three knowledges, ⏎ I’m effluent- free.
+CONTEXT thig5.12:6.1 | P: … Candā therī …. | S: (none) | T: (none)
+CONTEXT thig5.12:7.1 | P: Pañcakanipāto niṭṭhito. | S: (none) | T: (none)
+
+## thig6.1:1.1–thig6.1:1.4 (thig)
+CONTEXT thig6.1:0.2 | P: Chakkanipāta | S: The Book of the Sixes | T: (none)
+CONTEXT thig6.1:0.3 | P: Pañcasatamattātherīgāthā | S: Five Hundred Students of Paṭācārā | T: Thig 6:1 Paṭācārā’s 500 Students
+thig6.1:1.1 | P: “Yassa maggaṁ na jānāsi, | S: “One whose path you do not know, | T: [Paṭācārā recounts the Buddha’s words:] ⏎ “You don’t know ⏎ the path
+thig6.1:1.2 | P: āgatassa gatassa vā; | S: not whence they came nor where they went; | T: of his coming or going,
+thig6.1:1.3 | P: Taṁ kuto cāgataṁ sattaṁ, | S: though they came from who knows where, | T: that being who has come ⏎ from where?—
+thig6.1:1.4 | P: ‘mama putto’ti rodasi. | S: you mourn that being, crying, ‘Oh my son!’ | T: the one you lament as ‘my son.’
+
+## thig6.1:2.1–thig6.1:2.4 (thig)
+thig6.1:2.1 | P: Maggañca khossa jānāsi, | S: But one whose path you do know, | T: But when you know ⏎ the path
+thig6.1:2.2 | P: āgatassa gatassa vā; | S: whence they came or where they went; | T: of his coming or going,
+thig6.1:2.3 | P: Na naṁ samanusocesi, | S: that one you do not lament— | T: you don’t grieve after him,
+thig6.1:2.4 | P: evaṁdhammā hi pāṇino. | S: such is the nature of living creatures. | T: for that is the nature ⏎ of beings.
+
+## thig6.1:3.1–thig6.1:3.6 (thig)
+thig6.1:3.1 | P: Ayācito tatāgacchi, | S: Unasked he came, | T: Unasked, ⏎ he came from there.
+thig6.1:3.2 | P: nānuññāto ito gato; | S: he left without leave. | T: Without permission, ⏎ he went from here
+thig6.1:3.3 | P: Kutoci nūna āgantvā, | S: He must have come from somewhere, | T: —coming from where?—
+thig6.1:3.4 | P: vasitvā katipāhakaṁ; | S: and stayed who knows how many days. | T: having stayed a few days.
+thig6.1:3.5 | P: Itopi aññena gato, | S: He left from here by one road, | T: And coming one way from here,
+thig6.1:3.6 | P: tatopaññena gacchati. | S: he will go from there by another. | T: he goes yet another ⏎ from there.
+
+## thig6.1:4.1–thig6.1:4.4 (thig)
+thig6.1:4.1 | P: Peto manussarūpena, | S: Departing with the form of a human, | T: Dying in the human form,
+thig6.1:4.2 | P: saṁsaranto gamissati; | S: he will go on transmigrating. | T: he will go wandering on.
+thig6.1:4.3 | P: Yathāgato tathā gato, | S: As he came, so he went: | T: As he came, so he has gone—
+thig6.1:4.4 | P: kā tattha paridevanā”. | S: why weep over that?” | T: so what is there ⏎ to lament?”
+
+## thig6.1:5.1–thig6.1:5.4 (thig)
+thig6.1:5.1 | P: “Abbahī vata me sallaṁ, | S: “Oh! For you have plucked the arrow from me, | T: Pulling out ⏎ —completely out—
+thig6.1:5.2 | P: duddasaṁ hadayassitaṁ; | S: so hard to see, stuck in the heart. | T: the arrow so hard to see, ⏎ embedded in my heart,
+thig6.1:5.3 | P: Yā me sokaparetāya, | S: You’ve swept away the grief for my son, | T: he [the Buddha] expelled from me ⏎ —overcome with grief—
+thig6.1:5.4 | P: puttasokaṁ byapānudi. | S: in which I once was mired. | T: the grief ⏎ over my son.
+
+## thig6.1:6.1–thig6.1:6.4 (thig) GATHERED; unequal counts require a reader
+thig6.1:6.1 | P: Sājja abbūḷhasallāhaṁ, | S: Today I’ve plucked the arrow, | T: Today—with arrow removed,
+thig6.1:6.2 | P: Nicchātā parinibbutā; | S: I’m hungerless, quenched. | T: without hunger, entirely ⏎ unbound—
+thig6.1:6.3 | P: Buddhaṁ dhammañca saṅghañca, | S: I go for refuge to that sage, the Buddha, | T: to the Buddha, Dhamma, & Saṅgha I go, ⏎ for refuge to ⏎ the Sage.
+thig6.1:6.4 | P: Upemi saraṇaṁ muniṁ”. | S: to his teaching, and to the Saṅgha.” | T: (none)
+CONTEXT thig6.1:7.1 | P: Itthaṁ sudaṁ pañcasatamattā therī bhikkhuniyo … pe…. | S: That is how five hundred nuns declared their enlightenment. | T: (none)
+
+## thig6.2:1.1–thig6.2:1.4 (thig) GATHERED; unequal counts require a reader
+CONTEXT thig6.2:0.2 | P: Chakkanipāta | S: The Book of the Sixes | T: (none)
+CONTEXT thig6.2:0.3 | P: Vāseṭṭhītherīgāthā | S: Vāseṭṭhī | T: Thig 6:2 Vāsiṭṭhī the Madwoman
+thig6.2:1.1 | P: “Puttasokenahaṁ aṭṭā, | S: Struck down with grief for my son, | T: Overwhelmed with grief for my son—
+thig6.2:1.2 | P: khittacittā visaññinī; | S: deranged, out of my mind, | T: naked, demented, ⏎ my hair disheveled ⏎ my mind deranged—
+thig6.2:1.3 | P: Naggā pakiṇṇakesī ca, | S: nude, my hair flying, | T: (none)
+thig6.2:1.4 | P: tena tena vicārihaṁ. | S: I wandered here and there. | T: I went about here & there,
+
+## thig6.2:2.1–thig6.2:2.4 (thig) GATHERED; equal counts: one line per row
+thig6.2:2.1 | P: Vīthi saṅkārakūṭesu, | S: I lived on rubbish heaps, | T: living along the side of the road, ⏎ in cemeteries & heaps of trash,
+thig6.2:2.2 | P: susāne rathiyāsu ca; | S: in cemeteries and highways. | T: (none)
+thig6.2:2.3 | P: Acariṁ tīṇi vassāni, | S: For three years I wandered, | T: for three full years,
+thig6.2:2.4 | P: khuppipāsāsamappitā. | S: stricken by hunger and thirst. | T: afflicted with hunger & thirst.
+AUTO thig6.2:2.1 starts: living along the side of the road,
+AUTO thig6.2:2.2 starts: in cemeteries & heaps of trash,
+AUTO thig6.2:2.3 starts: for three full years,
+AUTO thig6.2:2.4 starts: afflicted with hunger & thirst.
+
+## thig6.2:3.1–thig6.2:3.4 (thig)
+thig6.2:3.1 | P: Athaddasāsiṁ sugataṁ, | S: Then I saw the Holy One | T: Then I saw ⏎ the One Well-Gone,
+thig6.2:3.2 | P: nagaraṁ mithilaṁ pati; | S: back at the city of Mithilā. | T: gone to the city of Mithilā:
+thig6.2:3.3 | P: Adantānaṁ dametāraṁ, | S: Tamer of the untamed, | T: tamer of those untamed,
+thig6.2:3.4 | P: sambuddhamakutobhayaṁ. | S: the Awakened One fears nothing from any quarter. | T: Self-Awakened, ⏎ with nothing to fear ⏎ from anything, anywhere.
+
+## thig6.2:4.1–thig6.2:4.4 (thig)
+thig6.2:4.1 | P: Sacittaṁ paṭiladdhāna, | S: Regaining my mind, | T: Regaining my mind,
+thig6.2:4.2 | P: vanditvāna upāvisiṁ; | S: I paid homage and sat down. | T: paying him homage, ⏎ I sat myself down.
+thig6.2:4.3 | P: So me dhammamadesesi, | S: Out of compassion | T: He,
+thig6.2:4.4 | P: anukampāya gotamo. | S: Gotama taught me the Dhamma. | T: Gotama, from sympathy ⏎ taught me the Dhamma.
+
+## thig6.2:5.1–thig6.2:5.4 (thig)
+thig6.2:5.1 | P: Tassa dhammaṁ suṇitvāna, | S: After hearing his teaching, | T: Hearing his Dhamma,
+thig6.2:5.2 | P: pabbajiṁ anagāriyaṁ; | S: I went forth to homelessness. | T: I went forth into homelessness.
+thig6.2:5.3 | P: Yuñjantī satthuvacane, | S: Applying myself to the Teacher’s words, | T: Applying myself to the Teacher’s words,
+thig6.2:5.4 | P: sacchākāsiṁ padaṁ sivaṁ. | S: I realized the state of grace. | T: I realized the state of auspicious bliss.
+
+## thig6.2:6.1–thig6.2:6.4 (thig)
+thig6.2:6.1 | P: Sabbe sokā samucchinnā, | S: All sorrows are cut off, | T: All griefs have been cut off,
+thig6.2:6.2 | P: pahīnā etadantikā; | S: given up, they end here. | T: abandoned, ⏎ brought to this end,
+thig6.2:6.3 | P: Pariññātā hi me vatthū, | S: I’ve fully understood the basis | T: for I’ve comprehended ⏎ the grounds
+thig6.2:6.4 | P: yato sokāna sambhavo”ti. | S: from which grief comes to be. | T: from which griefs ⏎ come into play.
+CONTEXT thig6.2:7.1 | P: … Vāseṭṭhī therī …. | S: (none) | T: (none)
+
+## thig6.3:1.1–thig6.3:1.4 (thig)
+CONTEXT thig6.3:0.2 | P: Chakkanipāta | S: The Book of the Sixes | T: (none)
+CONTEXT thig6.3:0.3 | P: Khemātherīgāthā | S: Khemā | T: Thig 6:3 Khemā
+thig6.3:1.1 | P: “Daharā tvaṁ rūpavatī, | S: “You’re so young and beautiful! | T: Māra: ⏎ “You, a beautiful young woman;
+thig6.3:1.2 | P: ahampi daharo yuvā; | S: I too am young, just a youth. | T: I, a young man, full of youth.
+thig6.3:1.3 | P: Pañcaṅgikena turiyena, | S: Come, Khemā, let us enjoy | T: Come, Khemā, ⏎ let’s enjoy ourselves
+thig6.3:1.4 | P: ehi kheme ramāmase”. | S: the music of a five-piece band.” | T: to the music of a five-piece band.”
+
+## thig6.3:2.1–thig6.3:2.4 (thig) GATHERED; possible speaker requires a reader
+thig6.3:2.1 | P: “Iminā pūtikāyena, | S: “This body is rotting, | T: Khemā: ⏎ “I’m disgusted, ashamed ⏎ of this putrid body— ⏎ disintegrating, dissolving.
+thig6.3:2.2 | P: āturena pabhaṅgunā; | S: ailing and frail, | T: (none)
+thig6.3:2.3 | P: Aṭṭiyāmi harāyāmi, | S: I’m horrified and repelled by it, | T: (none)
+thig6.3:2.4 | P: kāmataṇhā samūhatā. | S: and I’ve eradicated sensual craving. | T: Sensual craving ⏎ is rooted out.
+
+## thig6.3:3.1–thig6.3:3.4 (thig)
+thig6.3:3.1 | P: Sattisūlūpamā kāmā, | S: Sensual pleasures are like swords and spears; | T: Sensual pleasures ⏎ are like swords & spears;
+thig6.3:3.2 | P: khandhāsaṁ adhikuṭṭanā; | S: the aggregates are their chopping block. | T: the aggregates, ⏎ their executioner’s block.
+thig6.3:3.3 | P: Yaṁ ‘tvaṁ kāmaratiṁ’ brūsi, | S: What you call erotic delight | T: What you call sensual delight
+thig6.3:3.4 | P: ‘aratī’ dāni sā mama. | S: is now no delight for me. | T: is no delight for me.
+
+## thig6.3:4.1–thig6.3:4.4 (thig)
+thig6.3:4.1 | P: Sabbattha vihatā nandī, | S: Relishing is banished in every respect, | T: Everywhere enjoyment ⏎ is defeated;
+thig6.3:4.2 | P: tamokhandho padālito; | S: and the mass of darkness is shattered. | T: the mass of darkness, ⏎ burst.
+thig6.3:4.3 | P: Evaṁ jānāhi pāpima, | S: So know this, Wicked One: | T: So know, Evil One,
+thig6.3:4.4 | P: nihato tvamasi antaka. | S: you’re beaten, terminator!” | T: that you have been, ⏎ End-maker, ⏎ struck down.”
+
+## thig6.3:5.1–thig6.3:5.4 (thig)
+thig6.3:5.1 | P: Nakkhattāni namassantā, | S: “Worshiping the stars, | T: Paying homage to the zodiac stars,
+thig6.3:5.2 | P: aggiṁ paricaraṁ vane; | S: serving the sacred flame in a grove; | T: tending the fire in the forest,
+thig6.3:5.3 | P: Yathābhuccamajānantā, | S: failing to grasp the true nature of things, | T: not knowing it as it actually was,
+thig6.3:5.4 | P: bālā suddhimamaññatha. | S: foolish me, I thought this was purity. | T: fools, you conceived it ⏎ as purity.
+
+## thig6.3:6.1–thig6.3:6.4 (thig)
+thig6.3:6.1 | P: Ahañca kho namassantī, | S: But now I worship the Awakened One, | T: Whereas I ⏎ am one who pays homage ⏎ to the One Self-awakened,
+thig6.3:6.2 | P: sambuddhaṁ purisuttamaṁ; | S: supreme among men. | T: the utmost man.
+thig6.3:6.3 | P: Pamuttā sabbadukkhehi, | S: Doing the Teacher’s bidding, | T: I’m one who has done the Teacher’s bidding,
+thig6.3:6.4 | P: satthusāsanakārikā”ti. | S: I am released from all suffering.” | T: entirely released ⏎ from sufferings & stress.
+CONTEXT thig6.3:7.1 | P: … Khemā therī …. | S: (none) | T: (none)
+
+## thig6.4:1.1–thig6.4:1.4 (thig)
+CONTEXT thig6.4:0.2 | P: Chakkanipāta | S: The Book of the Sixes | T: (none)
+CONTEXT thig6.4:0.3 | P: Sujātātherīgāthā | S: Sujātā | T: Thig 6:4 Sujātā
+thig6.4:1.1 | P: “Alaṅkatā suvasanā, | S: I was adorned with jewelry and all dressed up, | T: Ornamented, well-dressed,
+thig6.4:1.2 | P: mālinī candanokkhitā; | S: with garlands, and sandalwood makeup piled on, | T: garlanded, sprinkled with sandalwood,
+thig6.4:1.3 | P: Sabbābharaṇasañchannā, | S: all covered over with decorations, | T: covered all over with jewelry,
+thig6.4:1.4 | P: dāsīgaṇapurakkhatā. | S: and surrounded by my maids. | T: surrounded by a group of slave-women,
+
+## thig6.4:2.1–thig6.4:2.4 (thig)
+thig6.4:2.1 | P: Annaṁ pānañca ādāya, | S: Taking food and drink, | T: taking food & drink,
+thig6.4:2.2 | P: khajjaṁ bhojjaṁ anappakaṁ; | S: staples and dainties in no small amount, | T: and not a little staple & non-staple food,
+thig6.4:2.3 | P: Gehato nikkhamitvāna, | S: I left my house | T: leaving the house,
+thig6.4:2.4 | P: uyyānamabhihārayiṁ. | S: and took myself to the park. | T: I fetched myself to the pleasure garden.
+
+## thig6.4:3.1–thig6.4:3.4 (thig)
+thig6.4:3.1 | P: Tattha ramitvā kīḷitvā, | S: I enjoyed myself there and played about, | T: Having enjoyed ourselves & played there,
+thig6.4:3.2 | P: āgacchantī sakaṁ gharaṁ; | S: and then, returning to my own house, | T: we headed back to our home.
+thig6.4:3.3 | P: Vihāraṁ daṭṭhuṁ pāvisiṁ, | S: I saw a monastic dwelling, | T: I saw in Sāketa a hall at the Añjana wood.
+thig6.4:3.4 | P: sākete añjanaṁ vanaṁ. | S: and so I entered the Añjana wood at Sāketa. | T: I entered.
+
+## thig6.4:4.1–thig6.4:4.4 (thig)
+thig6.4:4.1 | P: Disvāna lokapajjotaṁ, | S: Seeing the light of the world, | T: Seeing the light of the world,
+thig6.4:4.2 | P: vanditvāna upāvisiṁ; | S: I paid homage and sat down. | T: I, paying homage, sat nearby.
+thig6.4:4.3 | P: So me dhammamadesesi, | S: Out of compassion | T: He,
+thig6.4:4.4 | P: anukampāya cakkhumā. | S: the Clear-eyed One taught me the Dhamma. | T: the One with Eyes, ⏎ from sympathy, ⏎ taught me the Dhamma.
+
+## thig6.4:5.1–thig6.4:5.4 (thig)
+thig6.4:5.1 | P: Sutvā ca kho mahesissa, | S: When I heard the great seer, | T: Hearing the Great Seer,
+thig6.4:5.2 | P: saccaṁ sampaṭivijjhahaṁ; | S: I penetrated the truth. | T: I ⏎ fully penetrated ⏎ the truth.
+thig6.4:5.3 | P: Tattheva virajaṁ dhammaṁ, | S: Right there I found the stainless Dhamma, | T: Right there I touched the Dhamma, ⏎ dustless,
+thig6.4:5.4 | P: phusayiṁ amataṁ padaṁ. | S: the state free of death. | T: the deathless state.
+
+## thig6.4:6.1–thig6.4:6.4 (thig)
+thig6.4:6.1 | P: Tato viññātasaddhammā, | S: Then, having understood the true teaching, | T: Then, knowing the True Dhamma,
+thig6.4:6.2 | P: pabbajiṁ anagāriyaṁ; | S: I went forth to homelessness. | T: I went forth ⏎ into homelessness.
+thig6.4:6.3 | P: Tisso vijjā anuppattā, | S: I’ve attained the three knowledges; | T: The three knowledges ⏎ are attained.
+thig6.4:6.4 | P: amoghaṁ buddhasāsanan”ti. | S: the Buddha’s bidding was not in vain. | T: The Buddha’s bidding ⏎ is not in vain.
+CONTEXT thig6.4:7.1 | P: … Sujātā therī …. | S: (none) | T: (none)
+
+## thig6.5:1.1–thig6.5:1.4 (thig)
+CONTEXT thig6.5:0.2 | P: Chakkanipāta | S: The Book of the Sixes | T: (none)
+CONTEXT thig6.5:0.3 | P: Anopamātherīgāthā | S: Anopamā | T: Thig 6:5 Anopamā, the Millionaire’s Daughter
+thig6.5:1.1 | P: “Ucce kule ahaṁ jātā, | S: I was born into an eminent family, | T: Born in a high-ranking family
+thig6.5:1.2 | P: bahuvitte mahaddhane; | S: affluent and wealthy, | T: with much property, great wealth,
+thig6.5:1.3 | P: Vaṇṇarūpena sampannā, | S: endowed with a beautiful complexion and figure; | T: consummate in complexion & figure,
+thig6.5:1.4 | P: dhītā majjhassa atrajā. | S: Majjha’s true-born daughter. | T: I was the daughter of Majjha, the treasurer.
+
+## thig6.5:2.1–thig6.5:2.4 (thig)
+thig6.5:2.1 | P: Patthitā rājaputtehi, | S: I was sought by princes, | T: Kings’ sons sought for me,
+thig6.5:2.2 | P: seṭṭhiputtehi gijjhitā; | S: coveted by sons of the wealthy. | T: rich merchants’ sons ⏎ longed for me.
+thig6.5:2.3 | P: Pitu me pesayī dūtaṁ, | S: One sent a messenger to my father: | T: One of them sent my father a messenger,
+thig6.5:2.4 | P: detha mayhaṁ anopamaṁ. | S: “Give me Anopamā! | T: saying, “Give me Anopamā.
+
+## thig6.5:3.1–thig6.5:3.4 (thig) GATHERED; unequal counts require a reader
+thig6.5:3.1 | P: Yattakaṁ tulitā esā, | S: However much your daughter | T: (none)
+thig6.5:3.2 | P: tuyhaṁ dhītā anopamā; | S: Anopamā weighs, | T: (none)
+thig6.5:3.3 | P: Tato aṭṭhaguṇaṁ dassaṁ, | S: I’ll give you eight times that | T: I will give in return ⏎ eight times her weight
+thig6.5:3.4 | P: hiraññaṁ ratanāni ca. | S: in gold coin and gems.” | T: in jewels & gold.”
+
+## thig6.5:4.1–thig6.5:4.4 (thig)
+thig6.5:4.1 | P: Sāhaṁ disvāna sambuddhaṁ, | S: When I saw the Awakened One, | T: But I, having seen ⏎ the One Self-awakened,
+thig6.5:4.2 | P: lokajeṭṭhaṁ anuttaraṁ; | S: the world’s Elder, unsurpassed, | T: unsurpassed, excelling the world,
+thig6.5:4.3 | P: Tassa pādāni vanditvā, | S: I paid homage at his feet, | T: paid homage to his feet,
+thig6.5:4.4 | P: ekamantaṁ upāvisiṁ. | S: and withdrew to one side. | T: sat down to one side.
+
+## thig6.5:5.1–thig6.5:5.4 (thig)
+thig6.5:5.1 | P: So me dhammamadesesi, | S: Out of compassion, | T: He, Gotama, from sympathy,
+thig6.5:5.2 | P: anukampāya gotamo; | S: Gotama taught me the Dhamma. | T: taught me the Dhamma.
+thig6.5:5.3 | P: Nisinnā āsane tasmiṁ, | S: While sitting in that seat, | T: And as I sat in that very seat,
+thig6.5:5.4 | P: phusayiṁ tatiyaṁ phalaṁ. | S: I realized the third fruit. | T: I attained the third fruit ⏎ [of non-return.]
+
+## thig6.5:6.1–thig6.5:6.4 (thig)
+thig6.5:6.1 | P: Tato kesāni chetvāna, | S: Then, having shaved off my hair, | T: Then I cut off my hair,
+thig6.5:6.2 | P: pabbajiṁ anagāriyaṁ; | S: I went forth to homelessness. | T: and went forth into homelessness.
+thig6.5:6.3 | P: Ajja me sattamī ratti, | S: This is the seventh day | T: Today is the seventh day
+thig6.5:6.4 | P: yato taṇhā visositā”ti. | S: since my craving dried up. | T: since I made craving ⏎ wither away.
+CONTEXT thig6.5:7.1 | P: … Anopamā therī …. | S: (none) | T: (none)
+
+## thig6.6:1.1–thig6.6:1.4 (thig)
+CONTEXT thig6.6:0.2 | P: Chakkanipāta | S: The Book of the Sixes | T: (none)
+CONTEXT thig6.6:0.3 | P: Mahāpajāpatigotamītherīgāthā | S: Mahāpajāpati Gotamī | T: Thig 6:6 Mahāpajāpatī Gotamī
+thig6.6:1.1 | P: “Buddha vīra namo tyatthu, | S: Oh Buddha, my hero: homage to you! | T: Awakened! Hero! Homage to you,
+thig6.6:1.2 | P: sabbasattānamuttama; | S: Supreme among all beings, | T: highest of all beings—
+thig6.6:1.3 | P: Yo maṁ dukkhā pamocesi, | S: who released me from suffering, | T: you who’ve released me
+thig6.6:1.4 | P: aññañca bahukaṁ janaṁ. | S: and many other beings as well. | T: and many other people ⏎ from suffering!
+
+## thig6.6:2.1–thig6.6:2.4 (thig)
+thig6.6:2.1 | P: Sabbadukkhaṁ pariññātaṁ, | S: All suffering is fully understood; | T: I’ve comprehended all stress,
+thig6.6:2.2 | P: Hetutaṇhā visositā; | S: craving—its cause—is dried up; | T: dried up craving, the cause,
+thig6.6:2.3 | P: Bhāvito aṭṭhaṅgiko maggo, | S: the eightfold path has been developed; | T: developed the eightfold path,
+thig6.6:2.4 | P: Nirodho phusito mayā. | S: and cessation has been realized by me. | T: and touched cessation.
+
+## thig6.6:3.1–thig6.6:3.4 (thig)
+thig6.6:3.1 | P: Mātā putto pitā bhātā, | S: Previously I was a mother, a son, | T: Before I was mother, son,
+thig6.6:3.2 | P: ayyakā ca pure ahuṁ; | S: a father, a brother, and a grandmother. | T: father, brother, ⏎ grandmother.
+thig6.6:3.3 | P: Yathābhuccamajānantī, | S: Failing to grasp the true nature of things, | T: Not knowing things as they were,
+thig6.6:3.4 | P: saṁsariṁhaṁ anibbisaṁ. | S: I transmigrated without reward. | T: I wandered on ⏎ without respite.

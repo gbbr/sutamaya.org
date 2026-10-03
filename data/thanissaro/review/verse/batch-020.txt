@@ -1,0 +1,451 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## an5.200:7.1–an5.200:7.4 (an)
+CONTEXT an5.200:6.5 | P: Brāhmaṇavaggo pañcamo. | S: (none) | T: (none)
+CONTEXT an5.200:7.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an5.200:7.1 | P: Soṇo doṇo saṅgāravo, | S: (none) | T: (none)
+an5.200:7.2 | P: Kāraṇapālī ca piṅgiyānī; | S: (none) | T: (none)
+an5.200:7.3 | P: Supinā ca vassā vācā, | S: (none) | T: (none)
+an5.200:7.4 | P: Kulaṁ nissāraṇīyena cāti. | S: (none) | T: (none)
+CONTEXT an5.200:7.5 | P: Catuttho paṇṇāsako samatto. | S: (none) | T: (none)
+
+## an5.210:3.1–an5.210:3.4 (an)
+CONTEXT an5.210:2.6 | P: Kimilavaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT an5.210:3.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an5.210:3.1 | P: Kimilo dhammassavanaṁ, | S: (none) | T: (none)
+an5.210:3.2 | P: ājānīyo balaṁ khilaṁ; | S: (none) | T: (none)
+an5.210:3.3 | P: Vinibandhaṁ yāgu kaṭṭhaṁ, | S: (none) | T: (none)
+an5.210:3.4 | P: gītaṁ muṭṭhassatinā cāti. | S: (none) | T: (none)
+
+## an6.20:9.1–an6.20:9.4 (an)
+CONTEXT an6.20:8.3 | P: Sāraṇīyavaggo dutiyo. | S: (none) | T: (none)
+CONTEXT an6.20:9.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an6.20:9.1 | P: Dve sāraṇī nisāraṇīyaṁ, | S: (none) | T: (none)
+an6.20:9.2 | P: bhaddakaṁ anutappiyaṁ; | S: (none) | T: (none)
+an6.20:9.3 | P: Nakulaṁ soppamacchā ca, | S: (none) | T: (none)
+an6.20:9.4 | P: dve honti maraṇassatīti. | S: (none) | T: (none)
+
+## an6.37:6.1–an6.37:6.4 (an)
+CONTEXT an6.37:5.5 | P: ‘ettako puññābhisando kusalābhisando sukhassāhāro sovaggiko sukhavipāko saggasaṁvattaniko iṭṭhāya kantāya manāpāya hitāya sukhāya saṁvattatī’ti. | S: (none) | T: ‘just this much a bonanza of merit, a bonanza of what is skillful—a nutriment of bliss, heavenly, resulting in bliss, leading to heaven—that leads to what is desirable, pleasing, charming, beneficial, pleasant.’
+CONTEXT an6.37:5.6 | P: Atha kho asaṅkhyeyyo appameyyo mahāpuññakkhandhotveva saṅkhaṁ gacchatī”ti. | S: (none) | T: It is simply reckoned as a great mass of merit, incalculable, immeasurable.”
+an6.37:6.1 | P: “Pubbeva dānā sumano, | S: A good mood before giving, | T: Before giving, glad;
+an6.37:6.2 | P: dadaṁ cittaṁ pasādaye; | S: confidence while giving, | T: while giving, the mind is bright & clear;
+an6.37:6.3 | P: Datvā attamano hoti, | S: feeling uplifted after giving: | T: having given, one is gratified:
+an6.37:6.4 | P: esā yaññassa sampadā. | S: this is the perfect sacrifice. | T: This is the consummation of the sacrifice.
+
+## an6.37:7.1–an6.37:7.4 (an)
+an6.37:7.1 | P: Vītarāgā vītadosā, | S: Free of greed, free of hate, | T: Free of passion, free of aversion,
+an6.37:7.2 | P: vītamohā anāsavā; | S: free of delusion, undefiled; | T: free of delusion, without effluent:
+an6.37:7.3 | P: Khettaṁ yaññassa sampannaṁ, | S: this is the field for the perfect sacrifice, | T: the consummation of the field of the sacrifice,
+an6.37:7.4 | P: saññatā brahmacārayo. | S: the disciplined spiritual practitioners. | T: one restrained, leading the holy life.
+
+## an6.37:8.1–an6.37:8.4 (an)
+an6.37:8.1 | P: Sayaṁ ācamayitvāna, | S: After rinsing, | T: Having rinsed oneself,
+an6.37:8.2 | P: datvā sakehi pāṇibhi; | S: you give with your own hands. | T: having given with one’s own hands,
+an6.37:8.3 | P: Attano parato ceso, | S: This sacrifice is very fruitful | T: then—
+an6.37:8.4 | P: yañño hoti mahapphalo. | S: for both yourself and others. | T: because of oneself, ⏎ because of the other— ⏎ that is a sacrifice yielding great fruit.
+
+## an6.37:9.1–an6.37:9.4 (an)
+an6.37:9.1 | P: Evaṁ yajitvā medhāvī, | S: When an intelligent, faithful person, | T: Having given thus ⏎ —intelligent—
+an6.37:9.2 | P: saddho muttena cetasā; | S: sacrifices like this, with a mind of letting go, | T: a person of conviction, ⏎ with awareness released,
+an6.37:9.3 | P: Abyāpajjaṁ sukhaṁ lokaṁ, | S: that astute one is reborn | T: reappears ⏎ —wise—
+an6.37:9.4 | P: paṇḍito upapajjatī”ti. | S: in a happy, pleasing world.” | T: in a world of bliss ⏎ unalloyed.
+CONTEXT an6.37:9.5 | P: Sattamaṁ. | S: (none) | T: (none)
+
+## an6.42:12.1–an6.42:12.4 (an)
+CONTEXT an6.42:11.3 | P: Devatāvaggo catuttho. | S: (none) | T: (none)
+CONTEXT an6.42:12.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an6.42:12.1 | P: Sekhā dve aparihāni, | S: (none) | T: (none)
+an6.42:12.2 | P: Moggallāna vijjābhāgiyā; | S: (none) | T: (none)
+an6.42:12.3 | P: Vivādadānattakārī nidānaṁ, | S: (none) | T: (none)
+an6.42:12.4 | P: Kimiladārukkhandhena nāgitoti. | S: (none) | T: (none)
+
+## an6.43:5.1–an6.43:5.4 (an)
+CONTEXT an6.43:4.3 | P: api ca, udāyi, yo sadevake loke samārake sabrahmake sassamaṇabrāhmaṇiyā pajāya sadevamanussāya āguṁ na karoti kāyena vācāya manasā, tamahaṁ ‘nāgo’ti brūmīti. | S: ‘But Udāyī, one who does nothing monstrous by way of body, speech, and mind is who I call a “giant” in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans.’ | T: ‘But, Udāyin, whoever in this world with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & commonfolk, does no misdeed in body, speech, or mind: That’s whom I call a nāga.’
+CONTEXT an6.43:4.4 | P: Idañca panāhaṁ, bhante, bhagavatā subhāsitaṁ imāhi gāthāhi anumodāmi— | S: And I celebrate the well-spoken words of the Buddha with these verses: | T: And with these verses, lord, I will rejoice in what was well-said by the Blessed One:
+an6.43:5.1 | P: Manussabhūtaṁ sambuddhaṁ, | S: Awakened as a human being, | T: A human being, self-awakened,
+an6.43:5.2 | P: attadantaṁ samāhitaṁ; | S: self-tamed and immersed in samādhi, | T: his mind tamed, concentrated,
+an6.43:5.3 | P: Iriyamānaṁ brahmapathe, | S: following the spiritual path, | T: traveling along the Brahmā road,
+an6.43:5.4 | P: cittassūpasame rataṁ. | S: he loves peace of mind. | T: delighting in the stilling of the mind:
+
+## an6.43:6.1–an6.43:6.4 (an) GATHERED; equal counts: one line per row
+an6.43:6.1 | P: Yaṁ manussā namassanti, | S: Revered by people, | T: He, having gone beyond all dhammas, ⏎ to whom human beings pay homage,
+an6.43:6.2 | P: sabbadhammāna pāraguṁ; | S: gone beyond all things, | T: (none)
+an6.43:6.3 | P: Devāpi taṁ namassanti, | S: even the gods revere him; | T: the devas pay homage as well—
+an6.43:6.4 | P: iti me arahato sutaṁ. | S: so I’ve heard from the perfected one. | T: so I have heard from the Worthy One
+AUTO an6.43:6.1 starts: He, having gone beyond all dhammas,
+AUTO an6.43:6.2 starts: to whom human beings pay homage,
+AUTO an6.43:6.3 starts: the devas pay homage as well—
+AUTO an6.43:6.4 starts: so I have heard from the Worthy One
+
+## an6.43:7.1–an6.43:7.4 (an)
+an6.43:7.1 | P: Sabbasaṁyojanātītaṁ, | S: He has transcended all fetters | T: —to him, gone past all fetters,
+an6.43:7.2 | P: vanā nibbanamāgataṁ; | S: and escaped from entanglements. | T: gone from the forest to the clearing,
+an6.43:7.3 | P: Kāmehi nekkhammarataṁ, | S: Delighting to renounce sensual pleasures, | T: delighting in the renunciation of sensuality,
+an6.43:7.4 | P: muttaṁ selāva kañcanaṁ. | S: he’s freed like lustrous gold from stone. | T: released like gold from its ore.
+
+## an6.43:8.1–an6.43:8.4 (an)
+an6.43:8.1 | P: Sabbe accarucī nāgo, | S: That giant outshines all, | T: He, the nāga outshining all others,
+an6.43:8.2 | P: himavāññe siluccaye; | S: like the Himalaya beside other mountains. | T: as the Himalayas, rocky hills:
+an6.43:8.3 | P: Sabbesaṁ nāganāmānaṁ, | S: Of all those named ‘giant’, | T: Among all things named ‘nāga,’
+an6.43:8.4 | P: saccanāmo anuttaro. | S: he is truly named, supreme. | T: he, unexcelled, is truly named.
+
+## an6.43:9.1–an6.43:9.4 (an)
+an6.43:9.1 | P: Nāgaṁ vo kittayissāmi, | S: I shall extol the giant for you, | T: I will praise the nāga to you—
+an6.43:9.2 | P: na hi āguṁ karoti so; | S: for he does nothing monstrous. | T: for he does no misdeed.
+an6.43:9.3 | P: Soraccaṁ avihiṁsā ca, | S: Gentleness and harmlessness | T: Composure & harmlessness
+an6.43:9.4 | P: pādā nāgassa te duve. | S: are two feet of the giant. | T: are the nāga’s two feet.
+
+## an6.43:10.1–an6.43:10.4 (an)
+an6.43:10.1 | P: Tapo ca brahmacariyaṁ, | S: Fervor and chastity | T: Austerity & celibacy
+an6.43:10.2 | P: caraṇā nāgassa tyāpare; | S: are his two other feet. | T: are the nāga’s two other feet.
+an6.43:10.3 | P: Saddhāhattho mahānāgo, | S: Faith is the giant’s trunk, | T: Conviction is the great nāga’s trunk, ⏎ his hand;
+an6.43:10.4 | P: upekkhāsetadantavā. | S: and equanimity his white tusks. | T: equanimity, his white tusks.
+
+## an6.43:11.1–an6.43:11.4 (an)
+an6.43:11.1 | P: Sati gīvā siro paññā, | S: Mindfulness is his neck, his head is wisdom— | T: Mindfulness his neck; his head, ⏎ discernment,
+an6.43:11.2 | P: vīmaṁsā dhammacintanā; | S: inquiry and thinking about principles. | T: discrimination, ⏎ reflection on dhammas;
+an6.43:11.3 | P: Dhammakucchisamātapo, | S: His belly is the sacred hearth of the Dhamma, | T: Dhamma the balanced heat of his digestion;
+an6.43:11.4 | P: viveko tassa vāladhi. | S: and his tail is seclusion. | T: seclusion his tail.
+
+## an6.43:12.1–an6.43:12.4 (an)
+an6.43:12.1 | P: So jhāyī assāsarato, | S: Practicing absorption, enjoying the breath, | T: He, in jhāna, delighting in assurance,
+an6.43:12.2 | P: ajjhattaṁ susamāhito; | S: he is serene within. | T: inwardly well-concentrated,
+an6.43:12.3 | P: Gacchaṁ samāhito nāgo, | S: The giant is serene when walking, | T: the nāga, when going, is concentrated,
+an6.43:12.4 | P: ṭhito nāgo samāhito. | S: the giant is serene when standing, | T: when standing, the nāga is concentrated,
+
+## an6.43:13.1–an6.43:13.4 (an)
+an6.43:13.1 | P: Seyyaṁ samāhito nāgo, | S: the giant is serene when lying down, | T: when reclining, the nāga is concentrated,
+an6.43:13.2 | P: nisinnopi samāhito; | S: and when sitting, the giant is serene. | T: when sitting, the nāga is concentrated.
+an6.43:13.3 | P: Sabbattha saṁvuto nāgo, | S: The giant is restrained everywhere: | T: Everywhere he’s restrained, the nāga:
+an6.43:13.4 | P: esā nāgassa sampadā. | S: this is the accomplishment of the giant. | T: That is the nāga’s consummation.
+
+## an6.43:14.1–an6.43:14.4 (an)
+an6.43:14.1 | P: Bhuñjati anavajjāni, | S: He eats blameless things, | T: He eats what is blameless;
+an6.43:14.2 | P: sāvajjāni na bhuñjati; | S: he doesn’t eat blameworthy things. | T: doesn’t eat what is not;
+an6.43:14.3 | P: Ghāsamacchādanaṁ laddhā, | S: When he gets food and clothes, | T: on gaining food & clothing,
+an6.43:14.4 | P: sannidhiṁ parivajjayaṁ. | S: he avoids storing them up. | T: doesn’t store it up.
+
+## an6.43:15.1–an6.43:15.4 (an)
+an6.43:15.1 | P: Saṁyojanaṁ aṇuṁ thūlaṁ, | S: Having severed all bonds, | T: Having cut all bonds,
+an6.43:15.2 | P: sabbaṁ chetvāna bandhanaṁ; | S: fetters large and small, | T: fetters tiny & large,
+an6.43:15.3 | P: Yena yeneva gacchati, | S: wherever he goes, | T: wherever he goes,
+an6.43:15.4 | P: anapekkhova gacchati. | S: he goes without concern. | T: he goes without longing.
+
+## an6.43:16.1–an6.43:16.4 (an) GATHERED; equal counts: one line per row
+an6.43:16.1 | P: Yathāpi udake jātaṁ, | S: A white lotus, | T: Like a white lotus,
+an6.43:16.2 | P: puṇḍarīkaṁ pavaḍḍhati; | S: fragrant and delightful, | T: (none)
+an6.43:16.3 | P: Nupalippati toyena, | S: sprouts in water and grows there, | T: born & growing in the water,
+an6.43:16.4 | P: sucigandhaṁ manoramaṁ. | S: but water does not stick to it. | T: but not smeared by the water ⏎ —fragrant, delightful—
+AUTO an6.43:16.1 starts: Like a white lotus,
+AUTO an6.43:16.2 starts: born & growing in the water,
+AUTO an6.43:16.3 starts: but not smeared by the water
+AUTO an6.43:16.4 starts: —fragrant, delightful—
+
+## an6.43:17.1–an6.43:17.4 (an)
+an6.43:17.1 | P: Tatheva loke sujāto, | S: Just so the Buddha is born in the world, | T: even so the awakened one, ⏎ well-born in the world,
+an6.43:17.2 | P: buddho loke viharati; | S: and lives in the world, | T: lives in the world,
+an6.43:17.3 | P: Nupalippati lokena, | S: but the world does not stick to him, | T: but is not smeared by the world,
+an6.43:17.4 | P: toyena padumaṁ yathā. | S: as water does not stick to the lotus. | T: like the lotus, by the water.
+
+## an6.43:18.1–an6.43:18.4 (an)
+an6.43:18.1 | P: Mahāginīva jalito, | S: A great blazing fire | T: A great blazing fire
+an6.43:18.2 | P: anāhārūpasammati; | S: dies down when the fuel runs out. | T: unnourished grows calm,
+an6.43:18.3 | P: Saṅkhāresūpasantesu, | S: When the coals have gone out | T: and though its embers exist
+an6.43:18.4 | P: nibbutoti pavuccati. | S: it’s said to be ‘quenched’. | T: is described as unbound:
+
+## an6.43:19.1–an6.43:19.4 (an) GATHERED; equal counts: one line per row
+an6.43:19.1 | P: Atthassāyaṁ viññāpanī, | S: This simile is taught by the discerning | T: Conveying an instructive meaning, ⏎ this image is taught by the observant.
+an6.43:19.2 | P: upamā viññūhi desitā; | S: to express the meaning clearly. | T: (none)
+an6.43:19.3 | P: Viññassanti mahānāgā, | S: Great giants will understand | T: Great nāgas will recognize
+an6.43:19.4 | P: nāgaṁ nāgena desitaṁ. | S: what the giant taught the giant. | T: the nāga as taught by the nāga
+AUTO an6.43:19.1 starts: Conveying an instructive meaning,
+AUTO an6.43:19.2 starts: this image is taught by the observant.
+AUTO an6.43:19.3 starts: Great nāgas will recognize
+AUTO an6.43:19.4 starts: the nāga as taught by the nāga
+
+## an6.43:20.1–an6.43:20.4 (an)
+an6.43:20.1 | P: Vītarāgo vītadoso, | S: Free of greed, free of hate, | T: as free from passion, ⏎ free from aversion,
+an6.43:20.2 | P: Vītamoho anāsavo; | S: free of delusion, undefiled; | T: free from delusion, ⏎ effluent-free.
+an6.43:20.3 | P: Sarīraṁ vijahaṁ nāgo, | S: the giant, giving up his body, | T: His body discarded, the nāga
+an6.43:20.4 | P: Parinibbissati anāsavo”ti. | S: being undefiled, will be fully quenched.” | T: will totally unbind, ⏎ effluent-free.
+CONTEXT an6.43:20.5 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## an6.45:13.1–an6.45:13.4 (an)
+CONTEXT an6.45:12.1 | P: Sa kho so, bhikkhave, daliddo assako anāḷhiko kāyena duccaritaṁ caritvā vācāya duccaritaṁ caritvā manasā duccaritaṁ caritvā kāyassa bhedā paraṁ maraṇā nirayabandhane vā bajjhati tiracchānayonibandhane vā. | S: That poor, penniless person has done bad things by way of body, speech, and mind. When their body breaks up, after death, they’re trapped in the prison of hell or the animal realm. | T: “He—poor, destitute, & penniless, having engaged in misconduct by way of the body, misconduct by way of speech, & misconduct by way of the mind—on the break-up of the body, after death, is bound by the bond of hell or the bond of the animal womb.
+CONTEXT an6.45:12.2 | P: Nāhaṁ, bhikkhave, aññaṁ ekabandhanampi samanupassāmi evaṁdāruṇaṁ evaṅkaṭukaṁ evaṁantarāyakaraṁ anuttarassa yogakkhemassa adhigamāya, yathayidaṁ, bhikkhave, nirayabandhanaṁ vā tiracchānayonibandhanaṁ vāti. | S: I don’t see a single prison that’s as grim, as vicious, and such an obstacle to reaching the supreme sanctuary from the yoke as the prison of hell or the animal realm. | T: And I can imagine no one other bond so tormenting, so painful, so obstructive to the unexcelled rest from bondage, as the bond of hell or the bond of the animal womb.
+an6.45:13.1 | P: Dāliddiyaṁ dukkhaṁ loke, | S: Poverty is said to be suffering in the world, | T: “Poverty is called ⏎ suffering in the world;
+an6.45:13.2 | P: iṇādānañca vuccati; | S: and so is being in debt. | T: so, too, is getting into debt.
+an6.45:13.3 | P: Daliddo iṇamādāya, | S: A poor person who has fallen into debt | T: A poor person, in debt,
+an6.45:13.4 | P: bhuñjamāno vihaññati. | S: frets even when spending the loan. | T: partaking of sensuality, ⏎ suffers hardship.
+
+## an6.45:14.1–an6.45:14.4 (an)
+an6.45:14.1 | P: Tato anucaranti naṁ, | S: And then they’re prosecuted, | T: Then they hound him
+an6.45:14.2 | P: bandhanampi nigacchati; | S: or even thrown in jail. | T: and put him into bondage:
+an6.45:14.3 | P: Etañhi bandhanaṁ dukkhaṁ, | S: Such imprisonment is true suffering | T: the painful bond
+an6.45:14.4 | P: kāmalābhābhijappinaṁ. | S: for someone who prays for pleasure and possessions. | T: for one longing to gain ⏎ sensual pleasures.
+
+## an6.45:15.1–an6.45:15.4 (an)
+an6.45:15.1 | P: Tatheva ariyavinaye, | S: In the same way, in the Noble One’s training | T: Now, anyone with no conviction ⏎ in the discipline of the noble ones
+an6.45:15.2 | P: saddhā yassa na vijjati; | S: whoever has no faith, | T: —
+an6.45:15.3 | P: Ahirīko anottappī, | S: no conscience or prudence, | T: no sense of shame, ⏎ no sense of compunction—
+an6.45:15.4 | P: pāpakammavinibbayo. | S: contemplates bad deeds. | T: contemplating evil actions,
+
+## an6.45:16.1–an6.45:16.4 (an)
+an6.45:16.1 | P: Kāyaduccaritaṁ katvā, | S: After doing bad things | T: doing wrong
+an6.45:16.2 | P: vacīduccaritāni ca; | S: by way of body, | T: by way of body,
+an6.45:16.3 | P: Manoduccaritaṁ katvā, | S: speech, and mind, | T: wrong by way of speech, ⏎ & wrong by way of the mind,
+an6.45:16.4 | P: ‘mā maṁ jaññū’ti icchati. | S: they wish, ‘May no one find me out!’ | T: wants: ⏎ ‘May they not ⏎ know about me.’
+
+## an6.45:17.1–an6.45:17.4 (an)
+an6.45:17.1 | P: So saṁsappati kāyena, | S: Their behavior is creepy | T: He creeps along in body,
+an6.45:17.2 | P: vācāya uda cetasā; | S: by body, speech, and mind. | T: speech, or mind,
+an6.45:17.3 | P: Pāpakammaṁ pavaḍḍhento, | S: They pile up bad deeds | T: piling up evil actions,
+an6.45:17.4 | P: tattha tattha punappunaṁ. | S: on and on, life after life. | T: here & there, ⏎ again & again.
+
+## an6.45:18.1–an6.45:18.4 (an)
+an6.45:18.1 | P: So pāpakammo dummedho, | S: That simpleton evildoer, | T: He, ⏎ with evil actions, ⏎ his wisdom weak,
+an6.45:18.2 | P: jānaṁ dukkaṭamattano; | S: knowing their own misdeeds, | T: knowing his own wrong-doing, is
+an6.45:18.3 | P: Daliddo iṇamādāya, | S: is a poor person who has fallen into debt, | T: a poor person, in debt.
+an6.45:18.4 | P: bhuñjamāno vihaññati. | S: and frets even when spending the loan. | T: Partaking of sensuality, ⏎ he suffers hardship.
+
+## an6.45:19.1–an6.45:19.4 (an) GATHERED; equal counts: one line per row
+an6.45:19.1 | P: Tato anucaranti naṁ, | S: And when in village or wilderness | T: Then they hound him—
+an6.45:19.2 | P: saṅkappā mānasā dukhā; | S: they’re prosecuted | T: (none)
+an6.45:19.3 | P: Gāme vā yadi vāraññe, | S: by painful mental plans, | T: painful mental resolves
+an6.45:19.4 | P: yassa vippaṭisārajā. | S: which are born of remorse. | T: born of remorse— ⏎ at home or in the wilderness.
+AUTO an6.45:19.1 starts: Then they hound him—
+AUTO an6.45:19.2 starts: painful mental resolves
+AUTO an6.45:19.3 starts: born of remorse—
+AUTO an6.45:19.4 starts: at home or in the wilderness.
+
+## an6.45:20.1–an6.45:20.4 (an)
+an6.45:20.1 | P: So pāpakammo dummedho, | S: That simpleton evildoer, | T: He, ⏎ with evil actions, ⏎ his wisdom weak,
+an6.45:20.2 | P: jānaṁ dukkaṭamattano; | S: knowing their own misdeeds, | T: knowing his own wrong-doing,
+an6.45:20.3 | P: Yonimaññataraṁ gantvā, | S: goes to one of the animal realms, | T: goes to an animal womb
+an6.45:20.4 | P: niraye vāpi bajjhati. | S: or is trapped in hell. | T: or is bound in hell:
+
+## an6.45:21.1–an6.45:21.4 (an)
+an6.45:21.1 | P: Etañhi bandhanaṁ dukkhaṁ, | S: Such imprisonment is true suffering, | T: the painful bond
+an6.45:21.2 | P: yamhā dhīro pamuccati; | S: from which the attentive are released. | T: from which the enlightened ⏎ are freed.
+an6.45:21.3 | P: Dhammaladdhehi bhogehi, | S: With confident heart, they give | T: But one with confidence, ⏎ living at home, ⏎ making gifts
+an6.45:21.4 | P: dadaṁ cittaṁ pasādayaṁ. | S: with wealth that is properly earned. | T: of his belongings, ⏎ righteously-gained,
+
+## an6.45:22.1–an6.45:22.6 (an)
+an6.45:22.1 | P: Ubhayattha kaṭaggāho, | S: That faithful householder of discernment | T: (none)
+an6.45:22.2 | P: saddhassa gharamesino; | S: holds a winning hand on both counts: | T: wins both goals:
+an6.45:22.3 | P: Diṭṭhadhammahitatthāya, | S: welfare and benefit in this life, | T: advantage in the here & now,
+an6.45:22.4 | P: samparāyasukhāya ca; | S: and happiness in lives to come. | T: & happiness in the world beyond.
+an6.45:22.5 | P: Evametaṁ gahaṭṭhānaṁ, | S: This is how, for a householder, | T: The liberality of this householder
+an6.45:22.6 | P: cāgo puññaṁ pavaḍḍhati. | S: merit grows by generosity. | T: piles up merit.
+
+## an6.45:23.1–an6.45:23.4 (an) GATHERED; unequal counts require a reader
+an6.45:23.1 | P: Tatheva ariyavinaye, | S: In the same way, in the Noble One’s training, | T: Now, anyone with conviction ⏎ firmly established ⏎ in the discipline of the noble ones—
+an6.45:23.2 | P: saddhā yassa patiṭṭhitā; | S: whoever is grounded in faith, | T: (none)
+an6.45:23.3 | P: Hirīmano ca ottappī, | S: with conscience and prudence, | T: with a sense of shame, ⏎ of compunction,
+an6.45:23.4 | P: paññavā sīlasaṁvuto. | S: wise, and ethically restrained, | T: discerning ⏎ & restrained by virtue—
+
+## an6.45:24.1–an6.45:24.4 (an) GATHERED; equal counts: one line per row
+an6.45:24.1 | P: Eso kho ariyavinaye, | S: is said to live happily | T: is, in the discipline of the noble ones, ⏎ said to be living in ease.
+an6.45:24.2 | P: ‘sukhajīvī’ti vuccati; | S: in the Noble One’s training. | T: (none)
+an6.45:24.3 | P: Nirāmisaṁ sukhaṁ laddhā, | S: After gaining pleasure not of the flesh, | T: Gaining a pleasure not of the flesh,
+an6.45:24.4 | P: upekkhaṁ adhitiṭṭhati. | S: they concentrate on equanimity. | T: he determines on equanimity,
+AUTO an6.45:24.1 starts: is, in the discipline of the noble ones,
+AUTO an6.45:24.2 starts: said to be living in ease.
+AUTO an6.45:24.3 starts: Gaining a pleasure not of the flesh,
+AUTO an6.45:24.4 starts: he determines on equanimity,
+
+## an6.45:25.1–an6.45:25.4 (an)
+an6.45:25.1 | P: Pañca nīvaraṇe hitvā, | S: They give up the five hindrances, | T: abandoning the five hindrances
+an6.45:25.2 | P: niccaṁ āraddhavīriyo; | S: constantly energetic, | T: —persistence constantly aroused—
+an6.45:25.3 | P: Jhānāni upasampajja, | S: and enter the absorptions, | T: entering the jhānas:
+an6.45:25.4 | P: ekodi nipako sato. | S: unified, alert, and mindful. | T: unified, ⏎ mindful, ⏎ astute.
+
+## an6.45:26.1–an6.45:26.4 (an)
+an6.45:26.1 | P: Evaṁ ñatvā yathābhūtaṁ, | S: Truly knowing in this way | T: Knowing this ⏎ as it has come to be
+an6.45:26.2 | P: sabbasaṁyojanakkhaye; | S: regards the ending of all fetters, | T: in the total ending of all fetters,
+an6.45:26.3 | P: Sabbaso anupādāya, | S: by not grasping in any way, | T: through everywhere ⏎ not-clinging,
+an6.45:26.4 | P: sammā cittaṁ vimuccati. | S: their mind is rightly freed. | T: his mind is rightly released.
+
+## an6.45:27.1–an6.45:27.4 (an) GATHERED; possible speaker requires a reader
+an6.45:27.1 | P: Tassa sammā vimuttassa, | S: To that unaffected one, rightly freed | T: In him, Such, rightly released,
+an6.45:27.2 | P: ñāṇañce hoti tādino; | S: with the end of the fetters of continued existence, | T: there is the knowledge, ⏎ in the total ending ⏎ of the fetters of becoming:
+an6.45:27.3 | P: ‘Akuppā me vimuttī’ti, | S: the knowledge comes: | T: (none)
+an6.45:27.4 | P: bhavasaṁyojanakkhaye. | S: ‘My freedom is unshakable.’ | T: ‘My release ⏎ is unprovoked.’
+
+## an6.45:28.1–an6.45:28.4 (an)
+an6.45:28.1 | P: Etaṁ kho paramaṁ ñāṇaṁ, | S: This is the ultimate knowledge. | T: That is the highest knowledge
+an6.45:28.2 | P: etaṁ sukhamanuttaraṁ; | S: This is the supreme happiness. | T: that, the happiness unexcelled.
+an6.45:28.3 | P: Asokaṁ virajaṁ khemaṁ, | S: Sorrowless, stainless, secure: | T: Sorrowless, ⏎ dustless, ⏎ at rest,
+an6.45:28.4 | P: etaṁ ānaṇyamuttaman”ti. | S: this is the highest freedom from debt.” | T: that ⏎ is release from debt.”
+CONTEXT an6.45:28.5 | P: Tatiyaṁ. | S: (none) | T: (none)
+
+## an6.49:5.1–an6.49:5.4 (an) GATHERED; unequal counts require a reader
+CONTEXT an6.49:4.4 | P: Atha ca pana idhekacce moghapurisā hasamānakā maññe aññaṁ byākaronti. | S: But it seems that there are some futile men here who declare enlightenment as a joke. | T: Yet there are some worthless people who declare gnosis as if in jest.
+CONTEXT an6.49:4.5 | P: Te pacchā vighātaṁ āpajjantīti. | S: Later they will fall into distress. | T: They will fall into trouble afterwards.
+an6.49:5.1 | P: Na ussesu na omesu, | S: They don’t represent themselves | T: “Not as higher, lower, nor equal ⏎ do they refer to themselves.
+an6.49:5.2 | P: Samatte nopanīyare; | S: as being among superiors, inferiors, or equals. | T: (none)
+an6.49:5.3 | P: Khīṇā jāti vusitaṁ brahmacariyaṁ, | S: Rebirth is ended, the spiritual journey has been completed. | T: With birth ended, ⏎ the holy life fulfilled
+an6.49:5.4 | P: Caranti saṁyojanavippamuttā”ti. | S: They live freed from fetters.” | T: they go about ⏎ totally freed from fetters.”
+CONTEXT an6.49:5.5 | P: Sattamaṁ. | S: (none) | T: (none)
+
+## an6.55:18.1–an6.55:18.4 (an)
+CONTEXT an6.55:17.19 | P: manoviññeyyā dhammā manassa āpāthaṁ āgacchanti, nevassa cittaṁ pariyādiyanti. | S: (none) | T: Even if powerful ideas cognizable by the intellect come into the mental range of a monk whose mind is thus rightly released, his mind is neither overpowered nor even engaged.
+CONTEXT an6.55:17.20 | P: Amissīkatamevassa cittaṁ hoti ṭhitaṁ āneñjappattaṁ vayañcassānupassatīti. | S: Their mind is quite untainted. It is steady, imperturbable, observing disappearance. | T: Being still, having reached imperturbability, he focuses on their passing away.”
+an6.55:18.1 | P: Nekkhammaṁ adhimuttassa, | S: When you’re dedicated to renunciation | T: When one’s awareness is dedicated ⏎ to renunciation,
+an6.55:18.2 | P: pavivekañca cetaso; | S: and seclusion of the heart; | T: seclusion,
+an6.55:18.3 | P: Abyāpajjādhimuttassa, | S: when you’re dedicated to kindness | T: non-afflictiveness,
+an6.55:18.4 | P: upādānakkhayassa ca. | S: and the end of grasping; | T: the ending of clinging,
+
+## an6.55:19.1–an6.55:19.4 (an)
+an6.55:19.1 | P: Taṇhākkhayādhimuttassa, | S: when you’re dedicated to the ending of craving | T: the ending of craving,
+an6.55:19.2 | P: asammohañca cetaso; | S: and clarity of heart; | T: & non-deludedness,
+an6.55:19.3 | P: Disvā āyatanuppādaṁ, | S: and you’ve seen the arising of the senses, | T: seeing the arising of the sense media,
+an6.55:19.4 | P: sammā cittaṁ vimuccati. | S: your mind is rightly freed. | T: the mind is rightly released.
+
+## an6.55:20.1–an6.55:20.4 (an)
+an6.55:20.1 | P: Tassa sammā vimuttassa, | S: For that one, rightly freed, | T: For that monk, rightly released,
+an6.55:20.2 | P: santacittassa bhikkhuno; | S: a mendicant with peaceful mind, | T: his heart at peace,
+an6.55:20.3 | P: Katassa paṭicayo natthi, | S: there’s nothing to be improved, | T: there’s nothing to be done,
+an6.55:20.4 | P: karaṇīyaṁ na vijjati. | S: and nothing more to do. | T: nothing to add ⏎ to what’s done.
+
+## an6.55:21.1–an6.55:21.4 (an) GATHERED; equal counts: one line per row
+an6.55:21.1 | P: Selo yathā ekagghano, | S: As the wind cannot stir | T: As a single mass of rock isn’t moved by the wind,
+an6.55:21.2 | P: vātena na samīrati; | S: a solid mass of rock, | T: (none)
+an6.55:21.3 | P: Evaṁ rūpā rasā saddā, | S: so too sights, tastes, sounds, | T: even so all ⏎ forms, flavors, sounds,
+an6.55:21.4 | P: gandhā phassā ca kevalā. | S: smells, and touches—the lot— | T: aromas, contacts,
+AUTO an6.55:21.1 starts: As a single mass of rock isn’t moved
+AUTO an6.55:21.2 starts: even so all
+AUTO an6.55:21.3 starts: forms, flavors, sounds,
+AUTO an6.55:21.4 starts: aromas, contacts,
+
+## an6.55:22.1–an6.55:22.4 (an)
+an6.55:22.1 | P: Iṭṭhā dhammā aniṭṭhā ca, | S: and ideas, whether liked or disliked, | T: ideas desirable & not,
+an6.55:22.2 | P: nappavedhenti tādino; | S: don’t disturb the unaffected one. | T: have no effect on one who is Such.
+an6.55:22.3 | P: Ṭhitaṁ cittaṁ vippamuttaṁ, | S: Their mind is steady and free | T: The mind ⏎ —still, totally released—
+an6.55:22.4 | P: vayañcassānupassatī”ti. | S: as they observe fall.” | T: focuses on ⏎ their passing away.
+CONTEXT an6.55:22.5 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## an6.61:2.1–an6.61:2.4 (an)
+CONTEXT an6.61:1.3 | P: Tena kho pana samayena sambahulānaṁ therānaṁ bhikkhūnaṁ pacchābhattaṁ piṇḍapātapaṭikkantānaṁ maṇḍalamāḷe sannisinnānaṁ sannipatitānaṁ ayamantarākathā udapādi: | S: Now at that time, after the meal, on return from almsround, several senior mendicants sat together in the pavilion and this discussion came up among them, | T: And on that occasion a large number of elder monks, after the meal, on returning from their alms round, were sitting gathered together in the assembly hall when this discussion arose:
+CONTEXT an6.61:1.4 | P: “vuttamidaṁ, āvuso, bhagavatā pārāyane metteyyapañhe: | S: “Reverends, this was said by the Buddha in ‘The Way to the Far Shore’, in ‘The Questions of Metteyya’: | T: “It was said by the Blessed One in The Way to the Further Shore, in Metteyya’s Question [Snp5.3]:
+an6.61:2.1 | P: ‘Yo ubhonte viditvāna, | S: ‘The thoughtful one, knowing both ends, | T: ‘Whoever, a thinker, ⏎ knowing both sides,
+an6.61:2.2 | P: majjhe mantā na lippati; | S: is not stuck in the middle. | T: doesn’t adhere in between:
+an6.61:2.3 | P: Taṁ brūmi mahāpurisoti, | S: He is a great man, I declare; | T: He ⏎ I call a great person.
+an6.61:2.4 | P: sodha sibbinimaccagā’”ti. | S: he has escaped the seamstress here.’ | T: He ⏎ here has gone past ⏎ the seamstress.’
+CONTEXT an6.61:3.1 | P: “Katamo nu kho, āvuso, eko anto, katamo dutiyo anto, kiṁ majjhe, kā sibbinī”ti? | S: But what is one end? What’s the second end? What’s the middle? And who is the seamstress?” | T: “Which, friends, is the first side? Which is the second side? What is in-between? Who is the seamstress?”
+CONTEXT an6.61:3.2 | P: Evaṁ vutte, aññataro bhikkhu there bhikkhū etadavoca: | S: When this was said, one of the mendicants said to the senior mendicants: | T: When this was said, a monk said to the elder monks,
+
+## an6.61:11.1–an6.61:11.4 (an)
+CONTEXT an6.61:10.4 | P: “Kassa nu kho, bhante, subhāsitan”ti? | S: “Sir, who has spoken well?” | T: “Which of us, lord, has spoken well?”
+CONTEXT an6.61:10.5 | P: “Sabbesaṁ vo, bhikkhave, subhāsitaṁ pariyāyena, api ca yaṁ mayā sandhāya bhāsitaṁ pārāyane metteyyapañhe: | S: “Mendicants, you’ve all spoken well in a way. However, this is what I was referring to in ‘The Way to the Far Shore’, in ‘The Questions of Metteyya’ when I said: | T: “Monks, each of you has spoken well in his way, but as for what I intended when I said in The Way to the Further Shore, in Metteyya’s Question—
+an6.61:11.1 | P: ‘Yo ubhonte viditvāna, | S: ‘The thoughtful one, knowing both ends, | T: ‘Whoever, a thinker, ⏎ knowing both sides,
+an6.61:11.2 | P: majjhe mantā na lippati; | S: is not stuck in the middle. | T: doesn’t adhere in between:
+an6.61:11.3 | P: Taṁ brūmi mahāpurisoti, | S: He is a great man, I declare; | T: He ⏎ I call a great person.
+an6.61:11.4 | P: sodha sibbinimaccagā’ti. | S: he has escaped the seamstress here.’ | T: He ⏎ here has gone past ⏎ the seamstress’—
+CONTEXT an6.61:12.1 | P: Taṁ suṇātha, sādhukaṁ manasi karotha, bhāsissāmī”ti. | S: Listen and apply your mind well, I will speak.” | T: “Listen & pay close attention. I will speak.”
+CONTEXT an6.61:12.2 | P: “Evaṁ, bhante”ti kho therā bhikkhū bhagavato paccassosuṁ. | S: “Yes, sir,” they replied. | T: “As you say, lord,” the elder monks responded to the Blessed One.
+
+## an6.63:8.10–an6.63:8.14 (an)
+CONTEXT an6.63:8.8 | P: kāyaviññeyyā phoṭṭhabbā iṭṭhā kantā manāpā piyarūpā kāmūpasaṁhitā rajanīyā. | S: Touches known by the body, which are likable, desirable, agreeable, pleasant, sensual, and arousing. | T: tactile sensations cognizable via the body—agreeable, pleasing, charming, endearing, enticing, linked to sensual desire.
+CONTEXT an6.63:8.9 | P: Api ca kho, bhikkhave, nete kāmā kāmaguṇā nāmete ariyassa vinaye vuccanti— | S: However, these are not sensual pleasures. In the training of the Noble One they’re called ‘kinds of sensual stimulation’. | T: But these are not sensuality. They are called strings of sensuality in the discipline of the noble ones.
+an6.63:8.10 | P: Saṅkapparāgo purisassa kāmo, | S: Greedy intention is a person’s sensual pleasure. | T: The passion for his resolves is a man’s sensuality,
+an6.63:8.11 | P: Nete kāmā yāni citrāni loke; | S: The world’s pretty things aren’t sensual pleasures. | T: not the beautiful sensual pleasures ⏎ found in the world.
+an6.63:8.12 | P: Saṅkapparāgo purisassa kāmo, | S: Greedy intention is a person’s sensual pleasure. | T: The passion for his resolves is a man’s sensuality.
+an6.63:8.13 | P: Tiṭṭhanti citrāni tatheva loke; | S: The world’s pretty things stay just as they are, | T: The beauties remain as they are in the world,
+an6.63:8.14 | P: Athettha dhīrā vinayanti chandanti. | S: but the attentive remove desire for them. | T: while, in this regard, ⏎ the enlightened ⏎ subdue their desire.
+CONTEXT an6.63:9.1 | P: Katamo ca, bhikkhave, kāmānaṁ nidānasambhavo? | S: And what is the source of sensual pleasures? | T: “And what is the cause by which sensuality comes into play?
+CONTEXT an6.63:10.2 | P: Phasso, bhikkhave, kāmānaṁ nidānasambhavo. | S: Contact is their source. | T: Contact is the cause by which sensuality comes into play.
+
+## an6.74:3.1–an6.74:3.4 (an)
+CONTEXT an6.74:2.6 | P: Devatāvaggo sattamo. | S: (none) | T: (none)
+CONTEXT an6.74:3.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+an6.74:3.1 | P: Anāgāmi arahaṁ mittā, | S: (none) | T: (none)
+an6.74:3.2 | P: saṅgaṇikārāmadevatā; | S: (none) | T: (none)
+an6.74:3.3 | P: Samādhisakkhibhabbaṁ balaṁ, | S: (none) | T: (none)
+an6.74:3.4 | P: tajjhānā apare duveti. | S: (none) | T: (none)
+
+## an7.6:10.1–an7.6:10.4 (an)
+CONTEXT an7.6:8.3 | P: Idaṁ vuccati, bhikkhave, paññādhanaṁ. | S: This is called the wealth of wisdom. | T: This is called the treasure of discernment.
+CONTEXT an7.6:9.1 | P: Imāni kho, bhikkhave, sattadhanānīti. | S: These are the seven kinds of wealth. | T: These, monks, are the seven treasures.”
+an7.6:10.1 | P: Saddhādhanaṁ sīladhanaṁ, | S: Faith and ethical conduct are kinds of wealth, | T: The treasure of conviction, ⏎ the treasure of virtue,
+an7.6:10.2 | P: hirī ottappiyaṁ dhanaṁ; | S: as are conscience and prudence, | T: the treasure of a sense of shame & compunction,
+an7.6:10.3 | P: Sutadhanañca cāgo ca, | S: learning and generosity, | T: the treasure of listening, generosity,
+an7.6:10.4 | P: paññā ve sattamaṁ dhanaṁ. | S: and wisdom is the seventh kind of wealth. | T: & discernment as the seventh treasure.
+
+## an7.6:11.1–an7.6:11.4 (an)
+an7.6:11.1 | P: Yassa ete dhanā atthi, | S: When a woman or man | T: Whoever, man or woman, has these treasures
+an7.6:11.2 | P: itthiyā purisassa vā; | S: has these kinds of wealth, | T: (none)
+an7.6:11.3 | P: Adaliddoti taṁ āhu, | S: they’re said to be prosperous, | T: is said not to be poor,
+an7.6:11.4 | P: amoghaṁ tassa jīvitaṁ. | S: their life is not in vain. | T: has not lived in vain.
+
+## an7.6:12.1–an7.6:12.4 (an)
+an7.6:12.1 | P: Tasmā saddhañca sīlañca, | S: So let the wise devote themselves | T: So conviction & virtue,
+an7.6:12.2 | P: pasādaṁ dhammadassanaṁ; | S: to faith, ethical behavior, | T: faith & Dhamma-vision
+an7.6:12.3 | P: Anuyuñjetha medhāvī, | S: confidence, and insight into the teaching, | T: should be cultivated by the intelligent,
+an7.6:12.4 | P: saraṁ buddhāna sāsanan”ti. | S: remembering the instructions of the Buddhas.” | T: remembering the Buddhas’ instruction.
+CONTEXT an7.6:12.5 | P: Chaṭṭhaṁ. | S: (none) | T: (none)
+
+## an7.7:3.1–an7.7:3.4 (an)
+CONTEXT an7.7:2.9 | P: Saddhādhanaṁ, sīladhanaṁ, hirīdhanaṁ, ottappadhanaṁ, sutadhanaṁ, cāgadhanaṁ, paññādhanaṁ. | S: The wealth of faith, ethics, conscience, prudence, learning, generosity, and wisdom. | T: The treasure of conviction, the treasure of virtue, the treasure of a sense of shame, the treasure of a sense of compunction, the treasure of listening, the treasure of generosity, the treasure of discernment.
+CONTEXT an7.7:2.10 | P: Imāni kho, ugga, satta dhanāni asādhāraṇāni agginā udakena rājūhi corehi appiyehi dāyādehīti. | S: There are these seven kinds of wealth that fire, water, rulers, thieves, and unloved heirs can’t take a share of. | T: These, Ugga, are the seven treasures that are not open to fire, flood, kings, thieves, or hateful heirs.”
+an7.7:3.1 | P: Saddhādhanaṁ sīladhanaṁ, | S: Faith and ethical conduct are kinds of wealth, | T: The treasure of conviction, ⏎ the treasure of virtue,
+an7.7:3.2 | P: hirī ottappiyaṁ dhanaṁ; | S: as are conscience and prudence, | T: the treasure of a sense of shame & compunction,
+an7.7:3.3 | P: Sutadhanañca cāgo ca, | S: learning and generosity, | T: the treasure of listening, generosity,
+an7.7:3.4 | P: paññā ve sattamaṁ dhanaṁ. | S: and wisdom is the seventh kind of wealth. | T: & discernment as the seventh treasure:
+
+## an7.7:4.1–an7.7:4.4 (an) GATHERED; unequal counts require a reader
+an7.7:4.1 | P: Yassa ete dhanā atthi, | S: When a woman or man | T: Whoever, man or woman, has these treasures,
+an7.7:4.2 | P: itthiyā purisassa vā; | S: has these kinds of wealth, | T: (none)
+an7.7:4.3 | P: Sa ve mahaddhano loke, | S: they’re really rich in the world, | T: has great treasure in the world
+an7.7:4.4 | P: ajeyyo devamānuse. | S: invincible among gods and humans. | T: that no being, ⏎ human or divine, ⏎ can excel.
+
+## an7.7:5.1–an7.7:5.4 (an) GATHERED; unequal counts require a reader
+an7.7:5.1 | P: Tasmā saddhañca sīlañca, | S: So let the wise devote themselves | T: So conviction & virtue, faith & Dhamma-vision ⏎ should be cultivated by the intelligent,
+an7.7:5.2 | P: pasādaṁ dhammadassanaṁ; | S: to faith, ethical behavior, | T: (none)
+an7.7:5.3 | P: Anuyuñjetha medhāvī, | S: confidence, and insight into the teaching, | T: (none)
+an7.7:5.4 | P: saraṁ buddhāna sāsanan”ti. | S: remembering the instructions of the Buddhas.” | T: remembering the Buddhas’ instruction.
+CONTEXT an7.7:5.5 | P: Sattamaṁ. | S: (none) | T: (none)
+
+## an7.32:4.1–an7.32:4.4 (an)
+CONTEXT an7.32:3.7 | P: Idamavoca, bhikkhave, sā devatā. | S: (none) | T: “That is what that devatā said.
+CONTEXT an7.32:3.8 | P: Idaṁ vatvā maṁ abhivādetvā padakkhiṇaṁ katvā tatthevantaradhāyīti. | S: (none) | T: Having said it, she bowed down to me, circled me three times, and then disappeared right there.”
+an7.32:4.1 | P: Satthugaru dhammagaru, | S: “Respect for the Teacher and the teaching, | T: Respecting the Teacher ⏎ respecting the Dhamma,
+an7.32:4.2 | P: saṅghe ca tibbagāravo; | S: and keen respect for the Saṅgha; | T: and with fierce respect for the Saṅgha,
+an7.32:4.3 | P: Samādhigaru ātāpī, | S: respect for immersion, being energetic, | T: respecting concentration, ardent,
+an7.32:4.4 | P: sikkhāya tibbagāravo. | S: and keen respect for the training. | T: and with fierce respect for training,
+
+## an7.32:5.1–an7.32:5.4 (an)
+an7.32:5.1 | P: Appamādagaru bhikkhu, | S: A mendicant who respects diligence | T: a monk respecting heedfulness,
+an7.32:5.2 | P: paṭisanthāragāravo; | S: and hospitality | T: and with respect for hospitality
+an7.32:5.3 | P: Abhabbo parihānāya, | S: can’t decline, | T: —incapable of decline—
+an7.32:5.4 | P: nibbānasseva santike”ti. | S: and has drawn near to extinguishment.” | T: is right in the presence of unbinding.
+CONTEXT an7.32:5.5 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## an7.33:2.1–an7.33:2.4 (an)
+CONTEXT an7.33:1.6 | P: Idamavoca, bhikkhave, sā devatā. | S: That is what that deity said. | T: “That is what that devatā said.
+CONTEXT an7.33:1.7 | P: Idaṁ vatvā maṁ abhivādetvā padakkhiṇaṁ katvā tatthevantaradhāyīti. | S: Then he bowed and respectfully circled me, keeping me on his right side, before vanishing right there. | T: Having said it, she bowed down to me, circled me three times, and then disappeared right there.”
+an7.33:2.1 | P: Satthugaru dhammagaru, | S: One respectful of the Teacher and the teaching, | T: Respecting the Teacher ⏎ respecting the Dhamma,
+an7.33:2.2 | P: saṅghe ca tibbagāravo; | S: keenly respecting the Saṅgha; | T: and with fierce respect for the Saṅgha,
+an7.33:2.3 | P: Samādhigaru ātāpī, | S: respecting immersion, being energetic, | T: respecting concentration, ardent,
+an7.33:2.4 | P: sikkhāya tibbagāravo. | S: and keenly respecting the training; | T: and with fierce respect for training,
+
+## an7.33:3.1–an7.33:3.4 (an)
+an7.33:3.1 | P: Hiriottappasampanno, | S: endowed with conscience and prudence, | T: consummate in shame & compunction,
+an7.33:3.2 | P: sappatisso sagāravo; | S: reverential and respectful— | T: deferential, respectful
+an7.33:3.3 | P: Abhabbo parihānāya, | S: it is impossible for them to decline; | T: —incapable of decline—
+an7.33:3.4 | P: nibbānasseva santike”ti. | S: they have drawn near to extinguishment.” | T: one is right in the presence of unbinding.
+CONTEXT an7.33:3.5 | P: Dutiyaṁ. | S: (none) | T: (none)
+
+## an7.34:2.1–an7.34:2.4 (an)
+CONTEXT an7.34:1.6 | P: Idamavoca, bhikkhave, sā devatā. | S: That is what that deity said. | T: “That is what that devatā said.
+CONTEXT an7.34:1.7 | P: Idaṁ vatvā maṁ abhivādetvā padakkhiṇaṁ katvā tatthevantaradhāyīti. | S: Then he bowed and respectfully circled me, keeping me on his right side, before vanishing right there. | T: Having said it, she bowed down to me, circled me three times, and then disappeared right there.”
+an7.34:2.1 | P: Satthugaru dhammagaru, | S: Respect for the Teacher and the teaching, | T: Respecting the Teacher ⏎ respecting the Dhamma,
+an7.34:2.2 | P: saṅghe ca tibbagāravo; | S: and keen respect for the Saṅgha; | T: and with fierce respect for the Saṅgha,
+an7.34:2.3 | P: Samādhigaru ātāpī, | S: respecting immersion, being energetic, | T: respecting concentration, ardent,
+an7.34:2.4 | P: sikkhāya tibbagāravo. | S: and keen respect for the training. | T: and with fierce respect for training,

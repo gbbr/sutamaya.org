@@ -1,0 +1,13 @@
+{
+  "batch": 68,
+  "versesRead": 44,
+  "rowsRead": 187,
+  "automaticFindings": 0,
+  "readerFindings": 34,
+  "unresolved": [
+    {
+      "key": "ud7.8:4.6",
+      "reason": "Editorial explanation is appended inside the unbroken translator line beginning “attachment. In AN 10:29, the Buddha recommends this view”. It is outside the verse and cannot be separated at an allowed translator break without source-page boundary correction."
+    }
+  ]
+}

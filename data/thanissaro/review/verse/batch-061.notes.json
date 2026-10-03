@@ -1,0 +1,13 @@
+{
+  "batch": 61,
+  "versesRead": 71,
+  "rowsRead": 288,
+  "automaticFindings": 16,
+  "readerFindings": 38,
+  "unresolved": [
+    {
+      "key": "thag17.2:22.3–thag17.2:23.4",
+      "reason": "Translator gives the worker/wage ending of Pali verse 23 at 22.4, and the mindful/alert ending of Pali verse 22 at 23.4. Restoring both stanza identities would require reordering; source validation is needed."
+    }
+  ]
+}

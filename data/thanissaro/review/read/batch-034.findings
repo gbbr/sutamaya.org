@@ -19,10 +19,10 @@ iti100:6.1 starts: “There are these two kinds of mass-donations:
 iti100:6.2 starts: a mass-donation of material things & a mass-donation
 iti100:6.5 none
 iti100:7.1 starts: He who, unstinting, made the mass-donation of Dhamma,
-iti100:7.2 none
+# superseded: iti100:7.2 none
 iti101:2.7 starts: These are the four things that are next
 snp5.15:2.1 starts: I ask the Sakyan about the knowledge of
-snp5.15:2.4 none
+# superseded: snp5.15:2.4 none
 snp5.15:2.6 starts: How is he to be led further on?
 snp5.15:4.7 none
 an10.75:5.2 none

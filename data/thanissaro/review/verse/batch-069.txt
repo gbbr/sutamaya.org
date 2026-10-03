@@ -1,0 +1,43 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## ud8.10:5.1–ud8.10:5.4 (ud) GATHERED; unequal counts require a reader
+ud8.10:5.1 | P: Evaṁ sammāvimuttānaṁ, | S: in the same way, for the rightly released, | T: Even so, there’s no destination to describe ⏎ for those rightly released
+ud8.10:5.2 | P: kāmabandhoghatārinaṁ; | S: who have crossed the flood of sensual bonds, | T: –having crossed over the flood ⏎ of sensuality’s bond–
+ud8.10:5.3 | P: Paññāpetuṁ gati natthi, | S: there is no destination to describe— | T: (none)
+ud8.10:5.4 | P: pattānaṁ acalaṁ sukhan”ti. | S: they have found unshakable happiness.” | T: for those who’ve attained ⏎ unwavering bliss.
+CONTEXT ud8.10:5.5 | P: Dasamaṁ. | S: (none) | T: (none)
+CONTEXT ud8.10:5.6 | P: Pāṭaligāmiyavaggo aṭṭhamo. | S: (none) | T: (none)
+
+## ud8.10:6.1–ud8.10:6.4 (ud)
+CONTEXT ud8.10:5.6 | P: Pāṭaligāmiyavaggo aṭṭhamo. | S: (none) | T: (none)
+CONTEXT ud8.10:6.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+ud8.10:6.1 | P: Nibbānā caturo vuttā, | S: (none) | T: (none)
+ud8.10:6.2 | P: cundo pāṭaligāmiyā; | S: (none) | T: (none)
+ud8.10:6.3 | P: Dvidhāpatho visākhā ca, | S: (none) | T: (none)
+ud8.10:6.4 | P: dabbena saha te dasāti. | S: (none) | T: (none)
+CONTEXT ud8.10:7.0 | P: Udāne vaggānamuddānaṁ | S: (none) | T: (none)
+
+## ud8.10:7.1–ud8.10:7.4 (ud)
+CONTEXT ud8.10:7.0 | P: Udāne vaggānamuddānaṁ | S: (none) | T: (none)
+ud8.10:7.1 | P: Vaggamidaṁ paṭhamaṁ varabodhi, | S: (none) | T: (none)
+ud8.10:7.2 | P: Vaggamidaṁ dutiyaṁ mucalindo; | S: (none) | T: (none)
+ud8.10:7.3 | P: Nandakavaggavaro tatiyo tu, | S: (none) | T: (none)
+ud8.10:7.4 | P: Meghiyavaggavaro ca catuttho. | S: (none) | T: (none)
+
+## ud8.10:8.1–ud8.10:8.4 (ud)
+ud8.10:8.1 | P: Pañcamavaggavarantidha soṇo, | S: (none) | T: (none)
+ud8.10:8.2 | P: Chaṭṭhamavaggavaranti jaccandho; | S: (none) | T: (none)
+ud8.10:8.3 | P: Sattamavaggavaranti ca cūḷo, | S: (none) | T: (none)
+ud8.10:8.4 | P: Pāṭaligāmiyamaṭṭhamavaggo. | S: (none) | T: (none)
+
+## ud8.10:9.1–ud8.10:9.4 (ud)
+ud8.10:9.1 | P: Asītimanūnakasuttavaraṁ, | S: (none) | T: (none)
+ud8.10:9.2 | P: Vaggamidaṭṭhakaṁ suvibhattaṁ; | S: (none) | T: (none)
+ud8.10:9.3 | P: Dassitaṁ cakkhumatā vimalena, | S: (none) | T: (none)
+ud8.10:9.4 | P: Addhā hi taṁ udānamitīdamāhu. | S: (none) | T: (none)
+CONTEXT ud8.10:9.5 | P: Udānapāḷi niṭṭhitā. | S: The Heartfelt Sayings are finished. | T: (none)

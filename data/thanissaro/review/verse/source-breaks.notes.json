@@ -1,0 +1,26 @@
+{
+  "casesReviewed": 13,
+  "findings": 86,
+  "unresolved": [
+    {
+      "key": "snp3.6:46.1",
+      "reason": "Actual source line 219 is “no hindrances. Your despairs”. “no hindrances.” belongs to the preceding Pali verse, whose keys are not shown, while “Your despairs” begins verse 46 inside that source line. No true source boundary preserves both stanza identity and words/order in scope. No findings for verse 46 were emitted; its existing split at 46.4 (“enduring in truth:”) also lies within source line 222 “steadfast, enduring in truth:”.",
+      "withdrawRecommendation": "Withdraw any proposed finding starting snp3.6:46.1 at “Your despairs” or snp3.6:46.4 at “enduring in truth:” if present elsewhere. The packet lists no earlier proposed findings for verse 46; retain the corrected verse-47 findings and resolve the preceding source-line interleaving separately."
+    }
+  ],
+  "correctionsByCase": {
+    "dn20:20.11": "Verse 20.9–12 has three real source lines: Hārita stays on the midst line; row 12 is none.",
+    "an3.30:7.3": "Verse 7 has four real lines for six rows; while-sitting and grasps-the-words remain one line. Rows 5–6 are none.",
+    "an3.30:9.3": "Verse 9 has two real lines for four rows; while-sitting and he-grasps remain one line. Rows 3–4 are none. Existing verse-10 proposals remain valid.",
+    "an4.50:10.4": "Five real lines for six rows; unwise stays with consent. Row 6 is none.",
+    "an6.43:16.2": "Three real lines for four rows; the lotus and born/growing are inseparable. Also corrected shown verse 17 so well-born and lives remain on one source line.",
+    "an7.64:22.3": "Three real lines for four rows; that-kill-beings and do-violence remain one line. Also corrected shown verse 21 to two real lines: sword/taking-poison together, then hanging; rows 3–4 none.",
+    "dhp164:3": "Seven real lines for six rows; worthy-ones and noble remain one line, dullard and evil-view lines grouped in row 4.",
+    "iti62:4.2": "Six real lines over four rows; then/from-ending is indivisible. Row 1 holds source lines 7–8, row 2 line 9, row 3 lines 10–11, row 4 line 12.",
+    "snp2.6:6.2": "Three real lines for four rows; cesspit and full/used remain one line. Also corrected shown verse 5 to keep monk/after-death together and verse 8 to keep united/shun together.",
+    "snp3.6:47.3": "Three real lines for four rows: in-your-words, all-devas including Naradas/Pabbatas, delight. Row 4 none. Exact source em-dash joining is quoted in the second-row anchor. Neighboring verse 46 is unresolved separately.",
+    "snp5.13:2.2": "Preserved clean verse 1→2 boundary at the-many-gathered. Row 2.1 holds source lines 6–7, including from-many-lands/hero as one line; row 2.2 starts in-hopes. Also corrected shown verse 3 so grasping/all stay one line and row 3.3 starts above/below. Existing verse-4 proposals remain valid.",
+    "thag15.2:12.2": "Same three-line lotus stanza as AN 6.43; also corrected shown verse 13 to keep well-born/lives together.",
+    "thig6.7:1.2": "Speaker preface stays with the complete Gutta/devote line in row 1; row 2 starts for-which. Existing verse-2 proposals remain true source starts."
+  }
+}

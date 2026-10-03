@@ -1,0 +1,464 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## thig12.1:10.1–thig12.1:10.4 (thig) GATHERED; possible speaker requires a reader
+thig12.1:10.1 | P: “Kummaggapaṭipannaṁ maṁ, | S: “I have been on the wrong path, | T: The Brahman: ⏎ I’ve been following the miserable path, good lady,
+thig12.1:10.2 | P: ariyamaggaṁ samānayi; | S: and you’ve guided me to the noble path. | T: and now you’ve brought me ⏎ back to the noble.
+thig12.1:10.3 | P: Dakābhisecanā bhoti, | S: Madam, I give to you | T: I give you this robe for water-ablution.
+thig12.1:10.4 | P: imaṁ sāṭaṁ dadāmi te”. | S: this ablution cloth.” | T: (none)
+
+## thig12.1:11.1–thig12.1:11.4 (thig)
+thig12.1:11.1 | P: “Tuyheva sāṭako hotu, | S: “Keep the cloth for yourself, | T: Puṇṇikā: ⏎ Let the robe be yours.
+thig12.1:11.2 | P: nāhamicchāmi sāṭakaṁ; | S: I do not want it. | T: I don’t need it.
+thig12.1:11.3 | P: Sace bhāyasi dukkhassa, | S: If you fear suffering, | T: If you’re afraid of pain,
+thig12.1:11.4 | P: sace te dukkhamappiyaṁ. | S: if you don’t like suffering, | T: if you dislike pain,
+
+## thig12.1:12.1–thig12.1:12.4 (thig) GATHERED; equal counts: one line per row
+thig12.1:12.1 | P: Mākāsi pāpakaṁ kammaṁ, | S: then don’t do bad deeds | T: then don’t do any evil kamma,
+thig12.1:12.2 | P: āvi vā yadi vā raho; | S: either openly or in secret. | T: in open, in secret.
+thig12.1:12.3 | P: Sace ca pāpakaṁ kammaṁ, | S: If you should do a bad deed, | T: But if you do or will do ⏎ any evil kamma,
+thig12.1:12.4 | P: karissasi karosi vā. | S: or you’re doing one now, | T: (none)
+AUTO thig12.1:12.1 starts: then don’t do any evil kamma,
+AUTO thig12.1:12.2 starts: in open, in secret.
+AUTO thig12.1:12.3 starts: But if you do or will do
+AUTO thig12.1:12.4 starts: any evil kamma,
+
+## thig12.1:13.1–thig12.1:13.4 (thig)
+thig12.1:13.1 | P: Na te dukkhā pamutyatthi, | S: you won’t be freed from suffering, | T: you’ll gain no freedom from pain,
+thig12.1:13.2 | P: upeccāpi palāyato; | S: though you fly away and flee. | T: even if you fly up & hurry away.
+thig12.1:13.3 | P: Sace bhāyasi dukkhassa, | S: If you fear suffering, | T: If you’re afraid of pain,
+thig12.1:13.4 | P: sace te dukkhamappiyaṁ. | S: if you don’t like suffering, | T: if you dislike pain,
+
+## thig12.1:14.1–thig12.1:14.4 (thig)
+thig12.1:14.1 | P: Upehi saraṇaṁ buddhaṁ, | S: go for refuge to the Buddha, the unaffected, | T: go to the Awakened One for refuge,
+thig12.1:14.2 | P: dhammaṁ saṅghañca tādinaṁ; | S: to his teaching and to the Saṅgha. | T: go to the Dhamma & Saṅgha.
+thig12.1:14.3 | P: Samādiyāhi sīlāni, | S: Undertake the precepts, | T: Take on the precepts:
+thig12.1:14.4 | P: taṁ te atthāya hehiti”. | S: that will be good for you.” | T: That will lead to your liberation.
+
+## thig12.1:15.1–thig12.1:15.4 (thig)
+thig12.1:15.1 | P: “Upemi saraṇaṁ buddhaṁ, | S: “I go for refuge to the Buddha, the unaffected, | T: The Brahman: ⏎ I go to the Awakened One for refuge;
+thig12.1:15.2 | P: dhammaṁ saṅghañca tādinaṁ; | S: to his teaching and to the Saṅgha. | T: I go to the Dhamma & Saṅgha.
+thig12.1:15.3 | P: Samādiyāmi sīlāni, | S: I undertake the precepts, | T: I take on the precepts:
+thig12.1:15.4 | P: taṁ me atthāya hehiti. | S: that will be good for me. | T: That will lead to my liberation.
+
+## thig12.1:16.1–thig12.1:16.4 (thig)
+thig12.1:16.1 | P: Brahmabandhu pure āsiṁ, | S: I used to be brahmin only by kin, | T: Before, I was a kinsman to Brahmā;
+thig12.1:16.2 | P: ajjamhi saccabrāhmaṇo; | S: today I truly am a brahmin! | T: now, truly a brahman.
+thig12.1:16.3 | P: Tevijjo vedasampanno, | S: Master of the three knowledges, accomplished in wisdom, | T: I’m a three-knowledge man & safe, ⏎ consummate in knowledge,
+thig12.1:16.4 | P: sottiyo camhi nhātako”ti. | S: I’m a scholar, a bathed initiate.” | T: washed clean.
+CONTEXT thig12.1:17.1 | P: … Puṇṇā therī …. | S: (none) | T: (none)
+CONTEXT thig12.1:18.1 | P: Soḷasakanipāto niṭṭhito. | S: (none) | T: (none)
+
+## thig13.1:1.1–thig13.1:1.4 (thig)
+CONTEXT thig13.1:0.2 | P: Vīsatinipāta | S: The Book of the Twenties | T: (none)
+CONTEXT thig13.1:0.3 | P: Ambapālītherīgāthā | S: Ambapālī | T: Thig 13:1 Ambapālī
+thig13.1:1.1 | P: “Kāḷakā bhamaravaṇṇasādisā, | S: My hair was as black as bees, | T: Black was my hair ⏎ —the color of bees—
+thig13.1:1.2 | P: Vellitaggā mama muddhajā ahuṁ; | S: graced with curly tips; | T: & curled at the tips;
+thig13.1:1.3 | P: Te jarāya sāṇavākasādisā, | S: now old, it has become like hemp bark— | T: with age, it looked like coarse hemp.
+thig13.1:1.4 | P: Saccavādivacanaṁ anaññathā. | S: the word of the truthful one is confirmed. | T: The Truth-speaker’s word ⏎ doesn’t change.
+
+## thig13.1:2.1–thig13.1:2.4 (thig) GATHERED; unequal counts require a reader
+thig13.1:2.1 | P: Vāsitova surabhī karaṇḍako, | S: Crowned with flowers, | T: Fragrant, like a perfumed basket ⏎ filled with flowers: my coiffure.
+thig13.1:2.2 | P: Pupphapūra mama uttamaṅgajo; | S: my head was as fragrant as a perfume box; | T: (none)
+thig13.1:2.3 | P: Taṁ jarāyatha salomagandhikaṁ, | S: now old, it smells like dog fur— | T: With age it smelled musty, ⏎ like animal fur.
+thig13.1:2.4 | P: Saccavādivacanaṁ anaññathā. | S: the word of the truthful one is confirmed. | T: The Truth-speaker’s word ⏎ doesn’t change.
+
+## thig13.1:3.1–thig13.1:3.4 (thig)
+thig13.1:3.1 | P: Kānanaṁva sahitaṁ suropitaṁ, | S: My hair was as thick as a well-planted forest, | T: Thick & lush, like a well-tended grove,
+thig13.1:3.2 | P: Kocchasūcivicitaggasobhitaṁ; | S: it shone, parted with brush and pins; | T: made splendid, the tips elaborate ⏎ with comb & pin.
+thig13.1:3.3 | P: Taṁ jarāya viralaṁ tahiṁ tahiṁ, | S: now old, it’s patchy and sparse— | T: With age, it grew thin ⏎ & bald here & there.
+thig13.1:3.4 | P: Saccavādivacanaṁ anaññathā. | S: the word of the truthful one is confirmed. | T: The Truth-speaker’s word ⏎ doesn’t change.
+
+## thig13.1:4.1–thig13.1:4.4 (thig)
+thig13.1:4.1 | P: Kaṇhakhandhakasuvaṇṇamaṇḍitaṁ, | S: With plaits of black and ribbons of gold, | T: Adorned with gold & delicate pins,
+thig13.1:4.2 | P: Sobhate suveṇīhilaṅkataṁ; | S: it was so pretty, graced with braids; | T: it was splendid, ornamented with braids.
+thig13.1:4.3 | P: Taṁ jarāya khalitaṁ siraṁ kataṁ, | S: now old, my head’s gone bald— | T: Now, with age, ⏎ that head has gone bald.
+thig13.1:4.4 | P: Saccavādivacanaṁ anaññathā. | S: the word of the truthful one is confirmed. | T: The Truth-speaker’s word ⏎ doesn’t change.
+
+## thig13.1:5.1–thig13.1:5.4 (thig)
+thig13.1:5.1 | P: Cittakārasukatāva lekhikā, | S: My eyebrows used to look so nice, | T: Curved, as if well-drawn by an artist,
+thig13.1:5.2 | P: Sobhare su bhamukā pure mama; | S: like crescents painted by an artist; | T: my brows were once splendid.
+thig13.1:5.3 | P: Tā jarāya valibhippalambitā, | S: now old, they droop with wrinkles— | T: With age, they droop down in folds.
+thig13.1:5.4 | P: Saccavādivacanaṁ anaññathā. | S: the word of the truthful one is confirmed. | T: The Truth-speaker’s word ⏎ doesn’t change.
+
+## thig13.1:6.1–thig13.1:6.4 (thig)
+thig13.1:6.1 | P: Bhassarā surucirā yathā maṇī, | S: My eyes shone brilliant as gems, | T: Radiant, brilliant like jewels, ⏎ my eyes:
+thig13.1:6.2 | P: Nettahesumabhinīlamāyatā; | S: wide and indigo; | T: elongated, black—deep black.
+thig13.1:6.3 | P: Te jarāyabhihatā na sobhare, | S: ruined by age, they shine no more— | T: With age, they’re no longer splendid.
+thig13.1:6.4 | P: Saccavādivacanaṁ anaññathā. | S: the word of the truthful one is confirmed. | T: The Truth-speaker’s word ⏎ doesn’t change.
+
+## thig13.1:7.1–thig13.1:7.4 (thig)
+thig13.1:7.1 | P: Saṇhatuṅgasadisī ca nāsikā, | S: My nose was like a perfect peak, | T: Like a delicate peak, my nose
+thig13.1:7.2 | P: Sobhate su abhiyobbanaṁ pati; | S: lovely in my bloom of youth; | T: was splendid in the prime of my youth.
+thig13.1:7.3 | P: Sā jarāya upakūlitā viya, | S: now old, it’s shriveled like a pepper; | T: With age, it’s like a long pepper.
+thig13.1:7.4 | P: Saccavādivacanaṁ anaññathā. | S: the word of the truthful one is confirmed. | T: The Truth-speaker’s word ⏎ doesn’t change.
+
+## thig13.1:8.1–thig13.1:8.4 (thig) GATHERED; unequal counts require a reader
+thig13.1:8.1 | P: Kaṅkaṇaṁva sukataṁ suniṭṭhitaṁ, | S: My ear-lobes were so pretty, | T: Like bracelets—well-fashioned, well-finished— ⏎ my ears were once splendid.
+thig13.1:8.2 | P: Sobhare su mama kaṇṇapāḷiyo; | S: like lovingly crafted bracelets; | T: (none)
+thig13.1:8.3 | P: Tā jarāya valibhippalambitā, | S: now old, they droop with wrinkles— | T: With age, they droop down in folds.
+thig13.1:8.4 | P: Saccavādivacanaṁ anaññathā. | S: the word of the truthful one is confirmed. | T: The Truth-speaker’s word ⏎ doesn’t change.
+
+## thig13.1:9.1–thig13.1:9.4 (thig) GATHERED; unequal counts require a reader
+thig13.1:9.1 | P: Pattalīmakulavaṇṇasādisā, | S: My teeth used to be so pretty, | T: Like plantain buds in their color, ⏎ my teeth were once splendid.
+thig13.1:9.2 | P: Sobhare su dantā pure mama; | S: bright as a jasmine flower; | T: (none)
+thig13.1:9.3 | P: Te jarāya khaṇḍitā cāsitā, | S: now old, they’re broken and yellow— | T: With age, they’re broken & yellowed.
+thig13.1:9.4 | P: Saccavādivacanaṁ anaññathā. | S: the word of the truthful one is confirmed. | T: The Truth-speaker’s word ⏎ doesn’t change.
+
+## thig13.1:10.1–thig13.1:10.4 (thig)
+thig13.1:10.1 | P: Kānanamhi vanasaṇḍacārinī, | S: My singing was sweet as a cuckoo | T: Like that of a cuckoo in the dense jungle,
+thig13.1:10.2 | P: Kokilāva madhuraṁ nikūjihaṁ; | S: wandering in the forest groves; | T: flitting through deep forest thickets: ⏎ sweet was the tone of my voice.
+thig13.1:10.3 | P: Taṁ jarāya khalitaṁ tahiṁ tahiṁ, | S: now old, it’s patchy and croaking— | T: With age, it cracks here & there.
+thig13.1:10.4 | P: Saccavādivacanaṁ anaññathā. | S: the word of the truthful one is confirmed. | T: The Truth-speaker’s word ⏎ doesn’t change.
+
+## thig13.1:11.1–thig13.1:11.4 (thig)
+thig13.1:11.1 | P: Saṇhakamburiva suppamajjitā, | S: My neck used to be so pretty, | T: Smooth—
+thig13.1:11.2 | P: Sobhate su gīvā pure mama; | S: like a polished shell of conch; | T: like a conch shell well-polished— ⏎ my neck was once splendid.
+thig13.1:11.3 | P: Sā jarāya bhaggā vināmitā, | S: now old, it’s bowed and bent— | T: With age, it’s broken down, bent.
+thig13.1:11.4 | P: Saccavādivacanaṁ anaññathā. | S: the word of the truthful one is confirmed. | T: The Truth-speaker’s word ⏎ doesn’t change.
+
+## thig13.1:12.1–thig13.1:12.4 (thig) GATHERED; unequal counts require a reader
+thig13.1:12.1 | P: Vaṭṭapalighasadisopamā ubho, | S: My arms used to be so pretty, | T: Like rounded door-bars—both of them— ⏎ my arms were once splendid.
+thig13.1:12.2 | P: Sobhare su bāhā pure mama; | S: like rounded cross-bars; | T: (none)
+thig13.1:12.3 | P: Tā jarāya yatha pāṭalibbalitā, | S: with age, they wrinkle and sag as a patala tree— | T: With age, they’re like dried up pāṭalī trees.
+thig13.1:12.4 | P: Saccavādivacanaṁ anaññathā. | S: the word of the truthful one is confirmed. | T: The Truth-speaker’s word ⏎ doesn’t change.
+
+## thig13.1:13.1–thig13.1:13.4 (thig) GATHERED; unequal counts require a reader
+thig13.1:13.1 | P: Saṇhamuddikasuvaṇṇamaṇḍitā, | S: My hands used to be so pretty, | T: Adorned with gold & delicate rings, ⏎ my hands were once splendid.
+thig13.1:13.2 | P: Sobhare su hatthā pure mama; | S: graced with lovely golden rings; | T: (none)
+thig13.1:13.3 | P: Te jarāya yathā mūlamūlikā, | S: now old, they’re like red radishes— | T: With age, they’re like onions & tubers.
+thig13.1:13.4 | P: Saccavādivacanaṁ anaññathā. | S: the word of the truthful one is confirmed. | T: The Truth-speaker’s word ⏎ doesn’t change.
+
+## thig13.1:14.1–thig13.1:14.4 (thig) GATHERED; unequal counts require a reader
+thig13.1:14.1 | P: Pīnavaṭṭasahituggatā ubho, | S: My breasts were both once so pretty, | T: Swelling, round, firm, & high, ⏎ both my breasts were once splendid.
+thig13.1:14.2 | P: Sobhare su thanakā pure mama; | S: swelling, round, close-set, and perky; | T: (none)
+thig13.1:14.3 | P: Thevikīva lambanti nodakā, | S: now they droop like water bags— | T: In the drought of old age, they dangle ⏎ like empty old water bags.
+thig13.1:14.4 | P: Saccavādivacanaṁ anaññathā. | S: the word of the truthful one is confirmed. | T: The Truth-speaker’s word ⏎ doesn’t change.
+
+## thig13.1:15.1–thig13.1:15.4 (thig) GATHERED; unequal counts require a reader
+thig13.1:15.1 | P: Kañcanassa phalakaṁva sammaṭṭhaṁ, | S: My body used to be so pretty, | T: Like a sheet of gold, well-burnished, ⏎ my body was splendid.
+thig13.1:15.2 | P: Sobhate su kāyo pure mama; | S: like a polished slab of lustrous gold; | T: (none)
+thig13.1:15.3 | P: So valīhi sukhumāhi otato, | S: now it’s covered with delicate wrinkles— | T: Now it’s covered with very fine wrinkles.
+thig13.1:15.4 | P: Saccavādivacanaṁ anaññathā. | S: the word of the truthful one is confirmed. | T: The Truth-speaker’s word ⏎ doesn’t change.
+
+## thig13.1:16.1–thig13.1:16.4 (thig)
+thig13.1:16.1 | P: Nāgabhogasadisopamā ubho, | S: Both my thighs used to be so pretty, | T: Smooth in their lines,
+thig13.1:16.2 | P: Sobhare su ūrū pure mama; | S: like an elephant’s trunk; | T: like an elephant’s trunk, ⏎ both my thighs were once splendid.
+thig13.1:16.3 | P: Te jarāya yathā veḷunāḷiyo, | S: now old, they’re like bamboo— | T: With age, they’re like knotted bamboo.
+thig13.1:16.4 | P: Saccavādivacanaṁ anaññathā. | S: the word of the truthful one is confirmed. | T: The Truth-speaker’s word ⏎ doesn’t change.
+
+## thig13.1:17.1–thig13.1:17.4 (thig) GATHERED; unequal counts require a reader
+thig13.1:17.1 | P: Saṇhanūpurasuvaṇṇamaṇḍitā, | S: My calves used to be so pretty, | T: Adorned with gold & delicate anklets, ⏎ my calves were once splendid.
+thig13.1:17.2 | P: Sobhare su jaṅghā pure mama; | S: graced with cute golden anklets; | T: (none)
+thig13.1:17.3 | P: Tā jarāya tiladaṇḍakāriva, | S: now old, they’re like sesame sticks— | T: With age, they’re like sesame sticks.
+thig13.1:17.4 | P: Saccavādivacanaṁ anaññathā. | S: the word of the truthful one is confirmed. | T: The Truth-speaker’s word ⏎ doesn’t change.
+
+## thig13.1:18.1–thig13.1:18.4 (thig) GATHERED; unequal counts require a reader
+thig13.1:18.1 | P: Tūlapuṇṇasadisopamā ubho, | S: Both my feet used to be so pretty, | T: As if they were stuffed with soft cotton, ⏎ both my feet were once splendid.
+thig13.1:18.2 | P: Sobhare su pādā pure mama; | S: plump as if with cotton-wool; | T: (none)
+thig13.1:18.3 | P: Te jarāya phuṭitā valīmatā, | S: now old, they’re cracked and wrinkly— | T: With age, they’re shriveled & cracked.
+thig13.1:18.4 | P: Saccavādivacanaṁ anaññathā. | S: the word of the truthful one is confirmed. | T: The Truth-speaker’s word ⏎ doesn’t change.
+
+## thig13.1:19.1–thig13.1:19.4 (thig)
+thig13.1:19.1 | P: Ediso ahu ayaṁ samussayo, | S: This bag of bones once was such, | T: Such was this physical heap,
+thig13.1:19.2 | P: Jajjaro bahudukkhānamālayo; | S: but now it’s withered, home to so much pain; | T: now: decrepit, the home of pains, many pains.
+thig13.1:19.3 | P: Sopalepapatito jarāgharo, | S: like a house in decay with plaster crumbling— | T: A house with its plaster all fallen off.
+thig13.1:19.4 | P: Saccavādivacanaṁ anaññathā”. | S: the word of the truthful one is confirmed. | T: The Truth-speaker’s word ⏎ doesn’t change.
+CONTEXT thig13.1:20.1 | P: … Ambapālī therī …. | S: (none) | T: (none)
+
+## thig13.2:1.1–thig13.2:1.4 (thig)
+CONTEXT thig13.2:0.2 | P: Vīsatinipāta | S: The Book of the Twenties | T: (none)
+CONTEXT thig13.2:0.3 | P: Rohinītherīgāthā | S: Rohinī | T: Thig 13:2 Rohiṇī
+thig13.2:1.1 | P: “‘Samaṇā’ti bhoti supi, | S: “You fell asleep saying ‘ascetics’; | T: Rohiṇī’s father: ⏎ You go to sleep saying, ⏎ “Contemplatives.”
+thig13.2:1.2 | P: ‘samaṇā’ti pabujjhasi; | S: you woke up saying ‘ascetics’; | T: You wake up, ⏎ “Contemplatives.”
+thig13.2:1.3 | P: Samaṇāneva kittesi, | S: you only praise ascetics, madam— | T: You praise only ⏎ contemplatives.
+thig13.2:1.4 | P: samaṇī nūna bhavissasi. | S: surely you’ll become an ascetic. | T: No doubt you will be ⏎ a contemplative.
+
+## thig13.2:2.1–thig13.2:2.4 (thig) GATHERED; possible speaker requires a reader
+thig13.2:2.1 | P: Vipulaṁ annañca pānañca, | S: You provide ascetics | T: Abundant food & drink ⏎ you give to contemplatives.
+thig13.2:2.2 | P: samaṇānaṁ paveccasi; | S: with abundant food and drink. | T: (none)
+thig13.2:2.3 | P: Rohinī dāni pucchāmi, | S: I ask you now, Rohiṇī: | T: Now, Rohiṇī, I ask you:
+thig13.2:2.4 | P: kena te samaṇā piyā. | S: why do you like ascetics? | T: Why do you hold ⏎ contemplatives dear?
+
+## thig13.2:3.1–thig13.2:3.4 (thig)
+thig13.2:3.1 | P: Akammakāmā alasā, | S: They don’t like to work, they’re lazy, | T: They don’t like to work, ⏎ they’re lazy,
+thig13.2:3.2 | P: paradattūpajīvino; | S: they live on charity; | T: living off what’s given by others,
+thig13.2:3.3 | P: Āsaṁsukā sādukāmā, | S: always on the lookout, greedy for sweets— | T: full of hankerings, ⏎ wanting delicious things:
+thig13.2:3.4 | P: kena te samaṇā piyā”. | S: so why do you like ascetics?” | T: Why do you hold ⏎ contemplatives dear?
+
+## thig13.2:4.1–thig13.2:4.4 (thig)
+thig13.2:4.1 | P: “Cirassaṁ vata maṁ tāta, | S: “Dad, for a long time now | T: Rohiṇī: ⏎ For a long time, father,
+thig13.2:4.2 | P: samaṇānaṁ paripucchasi; | S: you’ve questioned me about ascetics. | T: you’ve quizzed me ⏎ about contemplatives.
+thig13.2:4.3 | P: Tesaṁ te kittayissāmi, | S: I shall extol for you | T: I’ll praise to you
+thig13.2:4.4 | P: paññāsīlaparakkamaṁ. | S: their wisdom, ethics, and vigor. | T: their ⏎ discernment, ⏎ virtue, ⏎ endeavor.
+
+## thig13.2:5.1–thig13.2:5.4 (thig) GATHERED; possible speaker requires a reader
+thig13.2:5.1 | P: Kammakāmā analasā, | S: They like to work, they’re not lazy; | T: They do like to work, ⏎ they’re not lazy.
+thig13.2:5.2 | P: kammaseṭṭhassa kārakā; | S: by giving up greed and hate, | T: They do the best work: ⏎ They abandon ⏎ passion & anger.
+thig13.2:5.3 | P: Rāgaṁ dosaṁ pajahanti, | S: they do the best kind of work— | T: (none)
+thig13.2:5.4 | P: tena me samaṇā piyā. | S: that’s why I like ascetics. | T: That’s why I hold ⏎ contemplatives dear.
+
+## thig13.2:6.1–thig13.2:6.4 (thig)
+thig13.2:6.1 | P: Tīṇi pāpassa mūlāni, | S: As for the three roots of evil, | T: They rid themselves ⏎ of the three evil roots,
+thig13.2:6.2 | P: dhunanti sucikārino; | S: by pure deeds they shake them off. | T: doing pure actions.
+thig13.2:6.3 | P: Sabbaṁ pāpaṁ pahīnesaṁ, | S: They have given up all wickedness— | T: All their evil’s ⏎ abandoned.
+thig13.2:6.4 | P: tena me samaṇā piyā. | S: that’s why I like ascetics. | T: That’s why I hold ⏎ contemplatives dear.
+
+## thig13.2:7.1–thig13.2:7.4 (thig)
+thig13.2:7.1 | P: Kāyakammaṁ suci nesaṁ, | S: Their bodily actions are pure; | T: Clean their bodily action,
+thig13.2:7.2 | P: vacīkammañca tādisaṁ; | S: their actions of speech likewise; | T: so is their verbal action.
+thig13.2:7.3 | P: Manokammaṁ suci nesaṁ, | S: their actions of mind are pure— | T: Clean their mental action:
+thig13.2:7.4 | P: tena me samaṇā piyā. | S: that’s why I like ascetics. | T: That’s why I hold ⏎ contemplatives dear.
+
+## thig13.2:8.1–thig13.2:8.4 (thig)
+thig13.2:8.1 | P: Vimalā saṅkhamuttāva, | S: Immaculate as a conch-shell, | T: Spotless, like mother of pearl,
+thig13.2:8.2 | P: suddhā santarabāhirā; | S: they’re pure inside and out, | T: pure within & without,
+thig13.2:8.3 | P: Puṇṇā sukkāna dhammānaṁ, | S: full of bright qualities— | T: perfect in clear qualities:
+thig13.2:8.4 | P: tena me samaṇā piyā. | S: that’s why I like ascetics. | T: That’s why I hold ⏎ contemplatives dear.
+
+## thig13.2:9.1–thig13.2:9.4 (thig)
+thig13.2:9.1 | P: Bahussutā dhammadharā, | S: They’re learned and memorize the teaching, | T: Learned, maintaining the Dhamma,
+thig13.2:9.2 | P: ariyā dhammajīvino; | S: noble, living righteously, | T: noble, living the Dhamma,
+thig13.2:9.3 | P: Atthaṁ dhammañca desenti, | S: teaching the text and its meaning: | T: they teach the goal ⏎ & the Dhamma:
+thig13.2:9.4 | P: tena me samaṇā piyā. | S: that’s why I like ascetics. | T: That’s why I hold ⏎ contemplatives dear.
+
+## thig13.2:10.1–thig13.2:10.4 (thig)
+thig13.2:10.1 | P: Bahussutā dhammadharā, | S: They’re learned and memorize the teaching, | T: Learned, maintaining the Dhamma,
+thig13.2:10.2 | P: ariyā dhammajīvino; | S: noble, living righteously, | T: noble, living the Dhamma,
+thig13.2:10.3 | P: Ekaggacittā satimanto, | S: unified in mind, and mindful— | T: with unified minds ⏎ & mindful:
+thig13.2:10.4 | P: tena me samaṇā piyā. | S: that’s why I like ascetics. | T: That’s why I hold ⏎ contemplatives dear.
+
+## thig13.2:11.1–thig13.2:11.4 (thig)
+thig13.2:11.1 | P: Dūraṅgamā satimanto, | S: Traveling afar, and mindful, | T: Traveling far, mindful,
+thig13.2:11.2 | P: mantabhāṇī anuddhatā; | S: thoughtful in counsel, not restless, | T: giving counsel unruffled,
+thig13.2:11.3 | P: Dukkhassantaṁ pajānanti, | S: they understand the end of suffering— | T: they discern the end ⏎ of suffering:
+thig13.2:11.4 | P: tena me samaṇā piyā. | S: that’s why I like ascetics. | T: That’s why I hold ⏎ contemplatives dear.
+
+## thig13.2:12.1–thig13.2:12.4 (thig)
+thig13.2:12.1 | P: Yasmā gāmā pakkamanti, | S: When they leave a village, | T: When they leave any village
+thig13.2:12.2 | P: na vilokenti kiñcanaṁ; | S: they don’t look back with longing, | T: they don’t turn to look back ⏎ at anything.
+thig13.2:12.3 | P: Anapekkhāva gacchanti, | S: but proceed without concern— | T: How free from concern ⏎ they go!
+thig13.2:12.4 | P: tena me samaṇā piyā. | S: that’s why I like ascetics. | T: That’s why I hold ⏎ contemplatives dear.
+
+## thig13.2:13.1–thig13.2:13.4 (thig)
+thig13.2:13.1 | P: Na te saṁ koṭṭhe openti, | S: They hoard no goods in storerooms, | T: They don’t store in a granary,
+thig13.2:13.2 | P: na kumbhiṁ na khaḷopiyaṁ; | S: nor in pots or baskets. | T: pot, ⏎ or basket.
+thig13.2:13.3 | P: Pariniṭṭhitamesānā, | S: They seek food prepared by others— | T: They hunt [only] ⏎ for what’s already cooked:
+thig13.2:13.4 | P: tena me samaṇā piyā. | S: that’s why I like ascetics. | T: That’s why I hold ⏎ contemplatives dear.
+
+## thig13.2:14.1–thig13.2:14.4 (thig)
+thig13.2:14.1 | P: Na te hiraññaṁ gaṇhanti, | S: They don’t receive gold coins, | T: They take neither silver,
+thig13.2:14.2 | P: na suvaṇṇaṁ na rūpiyaṁ; | S: or gold or silver; | T: nor gold, ⏎ nor money.
+thig13.2:14.3 | P: Paccuppannena yāpenti, | S: feeding on whatever comes that day, | T: They live off whatever is present:
+thig13.2:14.4 | P: tena me samaṇā piyā. | S: that’s why I like ascetics. | T: That’s why I hold ⏎ contemplatives dear.
+
+## thig13.2:15.1–thig13.2:15.4 (thig)
+thig13.2:15.1 | P: Nānākulā pabbajitā, | S: They have gone forth from different families, | T: Having gone forth ⏎ from different families
+thig13.2:15.2 | P: nānājanapadehi ca; | S: even different countries, | T: & from different countries,
+thig13.2:15.3 | P: Aññamaññaṁ piyāyanti, | S: and yet they all love one another— | T: still they hold ⏎ one another dear:
+thig13.2:15.4 | P: tena me samaṇā piyā”. | S: that’s why I like ascetics.” | T: That’s why I hold ⏎ contemplatives dear.
+
+## thig13.2:16.1–thig13.2:16.4 (thig)
+thig13.2:16.1 | P: “Atthāya vata no bhoti, | S: “Dear Rohinī, it was truly for our benefit | T: Rohiṇī’s father: ⏎ Rohiṇī, truly for our benefit
+thig13.2:16.2 | P: kule jātāsi rohinī; | S: that you were born in our family! | T: were you born in our family.
+thig13.2:16.3 | P: Saddhā buddhe ca dhamme ca, | S: You have faith and such keen respect | T: You have conviction ⏎ in the Buddha & Dhamma, ⏎ and strong respect
+thig13.2:16.4 | P: saṅghe ca tibbagāravā. | S: for the Buddha, his teaching, and the Saṅgha. | T: for the Saṅgha.
+
+## thig13.2:17.1–thig13.2:17.4 (thig)
+thig13.2:17.1 | P: Tuvaṁ hetaṁ pajānāsi, | S: For you understand this | T: You truly discern
+thig13.2:17.2 | P: puññakkhettaṁ anuttaraṁ; | S: supreme field of merit. | T: this field of merit ⏎ unexcelled.
+thig13.2:17.3 | P: Amhampi ete samaṇā, | S: These ascetics will henceforth | T: These contemplatives will receive
+thig13.2:17.4 | P: paṭigaṇhanti dakkhiṇaṁ. | S: receive our religious donation, too. | T: our offering, too,
+
+## thig13.2:18.1–thig13.2:18.4 (thig)
+thig13.2:18.1 | P: Patiṭṭhito hettha yañño, | S: For there we will place our sacrifice, | T: for here we’ll set up
+thig13.2:18.2 | P: vipulo no bhavissati”; | S: and it shall be abundant.” | T: our abundant sacrifice.
+thig13.2:18.3 | P: “Sace bhāyasi dukkhassa, | S: “If you fear suffering, | T: Rohiṇī: ⏎ If you’re afraid of pain,
+thig13.2:18.4 | P: sace te dukkhamappiyaṁ. | S: if you don’t like suffering, | T: if you dislike pain,
+
+## thig13.2:19.1–thig13.2:19.4 (thig)
+thig13.2:19.1 | P: Upehi saraṇaṁ buddhaṁ, | S: go for refuge to the Buddha, the unaffected, | T: go to the Buddha for refuge,
+thig13.2:19.2 | P: dhammaṁ saṅghañca tādinaṁ; | S: to his teaching and to the Saṅgha. | T: go to the Dhamma & Saṅgha.
+thig13.2:19.3 | P: Samādiyāhi sīlāni, | S: Undertake the precepts, | T: Take on the precepts:
+thig13.2:19.4 | P: taṁ te atthāya hehiti”. | S: that will be good for you.” | T: That will lead ⏎ to your benefit.
+
+## thig13.2:20.1–thig13.2:20.4 (thig)
+thig13.2:20.1 | P: “Upemi saraṇaṁ buddhaṁ, | S: “I go for refuge to the Buddha, the unaffected, | T: Rohiṇī’s father: ⏎ I go to the Buddha for refuge;
+thig13.2:20.2 | P: dhammaṁ saṅghañca tādinaṁ; | S: to his teaching and to the Saṅgha. | T: I go to the Dhamma & Saṅgha.
+thig13.2:20.3 | P: Samādiyāmi sīlāni, | S: I undertake the precepts, | T: I take on the precepts:
+thig13.2:20.4 | P: taṁ me atthāya hehiti. | S: that will be good for me. | T: That will lead ⏎ to my benefit.
+
+## thig13.2:21.1–thig13.2:21.4 (thig)
+thig13.2:21.1 | P: Brahmabandhu pure āsiṁ, | S: I used to be brahmin only by kin, | T: Before, I was a kinsman to Brahmā;
+thig13.2:21.2 | P: so idānimhi brāhmaṇo; | S: now I genuinely am a brahmin. | T: now, truly a brahman.
+thig13.2:21.3 | P: Tevijjo sottiyo camhi, | S: Master of the three knowledges, I’m a scholar, | T: I’m a three-knowledge man & safe,
+thig13.2:21.4 | P: vedagū camhi nhātako”. | S: a knowledge master, a bathed initiate.” | T: consummate in knowledge, ⏎ washed clean.
+CONTEXT thig13.2:22.1 | P: … Rohinī therī …. | S: (none) | T: (none)
+
+## thig13.5:1.1–thig13.5:1.4 (thig)
+CONTEXT thig13.5:0.2 | P: Vīsatinipāta | S: The Book of the Twenties | T: (none)
+CONTEXT thig13.5:0.3 | P: Subhākammāradhītutherīgāthā | S: Subhā, the Smith’s Daughter | T: Thig 13:5 Subhā the Goldsmith’s Daughter
+thig13.5:1.1 | P: “Daharāhaṁ suddhavasanā, | S: “I was so young, my clothes so fresh, | T: “I was a child, with clean clothes,
+thig13.5:1.2 | P: yaṁ pure dhammamassuṇiṁ; | S: at that time I heard the teaching. | T: when I first heard the Dhamma.
+thig13.5:1.3 | P: Tassā me appamattāya, | S: Being diligent, | T: And within me, heedful,
+thig13.5:1.4 | P: saccābhisamayo ahu. | S: I comprehended the truth; | T: was a break-through to the truth.
+
+## thig13.5:2.1–thig13.5:2.4 (thig)
+thig13.5:2.1 | P: Tatohaṁ sabbakāmesu, | S: and then I became profoundly dispassionate | T: Then I arrived ⏎ at an enormous dissatisfaction
+thig13.5:2.2 | P: bhusaṁ aratimajjhagaṁ; | S: toward all sensual pleasures. | T: with all sensuality.
+thig13.5:2.3 | P: Sakkāyasmiṁ bhayaṁ disvā, | S: Seeing fear in substantial reality, | T: Seeing the danger ⏎ in self-identity,
+thig13.5:2.4 | P: nekkhammameva pīhaye. | S: I longed for renunciation. | T: I longed only ⏎ for renunciation.
+
+## thig13.5:3.1–thig13.5:3.4 (thig)
+thig13.5:3.1 | P: Hitvānahaṁ ñātigaṇaṁ, | S: Giving up my family circle, | T: Leaving my circle of relatives,
+thig13.5:3.2 | P: dāsakammakarāni ca; | S: bonded servants and workers, | T: slaves, workers,
+thig13.5:3.3 | P: Gāmakhettāni phītāni, | S: and my flourishing village fields, | T: prosperous villages & fields,
+thig13.5:3.4 | P: ramaṇīye pamodite. | S: so delightful and pleasant, | T: delightful, enticing possessions,
+
+## thig13.5:4.1–thig13.5:4.4 (thig)
+thig13.5:4.1 | P: Pahāyahaṁ pabbajitā, | S: I went forth; | T: I went forth,
+thig13.5:4.2 | P: sāpateyyamanappakaṁ; | S: all that is no small wealth. | T: abandoning not-insignificant wealth.
+thig13.5:4.3 | P: Evaṁ saddhāya nikkhamma, | S: Now that I’ve renounced in faith like this, | T: Having gone out through conviction
+thig13.5:4.4 | P: saddhamme suppavedite. | S: in the true teaching so well proclaimed, | T: in the well-taught true Dhamma,
+
+## thig13.5:5.1–thig13.5:5.4 (thig) GATHERED; equal counts: one line per row
+thig13.5:5.1 | P: Netaṁ assa patirūpaṁ, | S: since I desire to have nothing, | T: it wouldn’t be proper for me— ⏎ aspiring to nothingness—
+thig13.5:5.2 | P: Ākiñcaññañhi patthaye; | S: it would not be appropriate | T: (none)
+thig13.5:5.3 | P: Yo jātarūpaṁ rajataṁ, | S: to take back gold and currency, | T: having cast off gold & silver ⏎ to take them back.
+thig13.5:5.4 | P: Chaḍḍetvā punarāgame. | S: having already got rid of them. | T: (none)
+AUTO thig13.5:5.1 starts: it wouldn’t be proper for me—
+AUTO thig13.5:5.2 starts: aspiring to nothingness—
+AUTO thig13.5:5.3 starts: having cast off gold & silver
+AUTO thig13.5:5.4 starts: to take them back.
+
+## thig13.5:6.1–thig13.5:6.4 (thig)
+thig13.5:6.1 | P: Rajataṁ jātarūpaṁ vā, | S: Currency or gold | T: Gold & silver
+thig13.5:6.2 | P: na bodhāya na santiyā; | S: doesn’t lead to peace and awakening. | T: don’t buy awakening, ⏎ don’t buy peace.
+thig13.5:6.3 | P: Netaṁ samaṇasāruppaṁ, | S: It doesn’t befit an ascetic; | T: This [gold] isn’t proper for contemplatives.
+thig13.5:6.4 | P: na etaṁ ariyaddhanaṁ. | S: it’s not the wealth of the noble ones; | T: This isn’t noble wealth.
+
+## thig13.5:7.1–thig13.5:7.4 (thig)
+thig13.5:7.1 | P: Lobhanaṁ madanañcetaṁ, | S: it’s greed and vanity, | T: This is ⏎ greediness, intoxication,
+thig13.5:7.2 | P: mohanaṁ rajavaḍḍhanaṁ; | S: confusion and growing decadence, | T: delusion, bondage to dust,
+thig13.5:7.3 | P: Sāsaṅkaṁ bahuāyāsaṁ, | S: dubious and troublesome— | T: suspicion, many troubles.
+thig13.5:7.4 | P: natthi cettha dhuvaṁ ṭhiti. | S: there is nothing lasting there. | T: There’s no lasting stability here.
+
+## thig13.5:8.1–thig13.5:8.4 (thig)
+thig13.5:8.1 | P: Ettha rattā pamattā ca, | S: Depraved and heedless, | T: It’s to this extent that many, many men ⏎ —heedless,
+thig13.5:8.2 | P: saṅkiliṭṭhamanā narā; | S: unenlightened folk, their hearts corrupt, | T: their hearts defiled—
+thig13.5:8.3 | P: Aññamaññena byāruddhā, | S: fight each other, | T: opposing one another,
+thig13.5:8.4 | P: puthu kubbanti medhagaṁ. | S: creating conflict. | T: create ⏎ conflicts,
+
+## thig13.5:9.1–thig13.5:9.4 (thig) GATHERED; unequal counts require a reader
+thig13.5:9.1 | P: Vadho bandho parikleso, | S: Killing, caging, misery, | T: murder, bondage, ⏎ calamity,
+thig13.5:9.2 | P: jāni sokapariddavo; | S: loss, grief, and lamentation; | T: loss, grief, & lamentation.
+thig13.5:9.3 | P: Kāmesu adhipannānaṁ, | S: those sunk in sensual pleasures | T: Many misfortunes are seen ⏎ for those head-over-heels in sensuality.
+thig13.5:9.4 | P: dissate byasanaṁ bahuṁ. | S: see many disastrous things. | T: (none)
+
+## thig13.5:10.1–thig13.5:10.4 (thig)
+thig13.5:10.1 | P: Taṁ maṁ ñātī amittāva, | S: My family, why do you urge me on | T: So, my relatives: ⏎ Why do you,
+thig13.5:10.2 | P: kiṁ vo kāmesu yuñjatha; | S: to pleasures, as if you were my enemies? | T: like enemies, ⏎ try to bind me to sensuality?
+thig13.5:10.3 | P: Jānātha maṁ pabbajitaṁ, | S: You know I’ve gone forth, | T: You know I’ve gone forth,
+thig13.5:10.4 | P: kāmesu bhayadassiniṁ. | S: seeing fear in sensual pleasures. | T: seeing the danger in sensuality.
+
+## thig13.5:11.1–thig13.5:11.4 (thig)
+thig13.5:11.1 | P: Na hiraññasuvaṇṇena, | S: It’s not due to gold, coined or uncoined, | T: Gold coin & bullion
+thig13.5:11.2 | P: parikkhīyanti āsavā; | S: that defilements come to an end. | T: can’t put an end to effluents.
+thig13.5:11.3 | P: Amittā vadhakā kāmā, | S: Sensual pleasures are enemies and killers, | T: Sensuality is an enemy, ⏎ a murderer,
+thig13.5:11.4 | P: sapattā sallabandhanā. | S: hostile forces that bind you to thorns. | T: hostile, arrows & bonds.
+
+## thig13.5:12.1–thig13.5:12.4 (thig)
+thig13.5:12.1 | P: Taṁ maṁ ñātī amittāva, | S: My family, why do you urge me on | T: So, my relatives: ⏎ Why do you,
+thig13.5:12.2 | P: kiṁ vo kāmesu yuñjatha; | S: to pleasures, as if you were my enemies? | T: like enemies, ⏎ try to bind me to sensuality?
+thig13.5:12.3 | P: Jānātha maṁ pabbajitaṁ, | S: You know I’ve gone forth, | T: You know I’ve gone forth
+thig13.5:12.4 | P: muṇḍaṁ saṅghāṭipārutaṁ. | S: shaven, wrapped in my outer robe. | T: with shaven head, wrapped in a patchwork cloak.
+
+## thig13.5:13.1–thig13.5:13.4 (thig)
+thig13.5:13.1 | P: Uttiṭṭhapiṇḍo uñcho ca, | S: Leftovers as gleanings, | T: Leftover alms-scraps, gleanings,
+thig13.5:13.2 | P: paṁsukūlañca cīvaraṁ; | S: and cast-off rags as robes— | T: a robe made from cast-off cloth:
+thig13.5:13.3 | P: Etaṁ kho mama sāruppaṁ, | S: that’s what’s fitting for me, | T: That’s what’s proper for me—
+thig13.5:13.4 | P: anagārūpanissayo. | S: the essentials of the homeless life. | T: the requisites of one with no home.
+
+## thig13.5:14.1–thig13.5:14.4 (thig)
+thig13.5:14.1 | P: Vantā mahesīhi kāmā, | S: Great seers expel sensual pleasures, | T: The great seers have rejected sensuality,
+thig13.5:14.2 | P: ye dibbā ye ca mānusā; | S: both human and heavenly. | T: both human & divine.
+thig13.5:14.3 | P: Khemaṭṭhāne vimuttā te, | S: Safe in their sanctuary, they are freed, | T: Released are they, ⏎ in the place of security.
+thig13.5:14.4 | P: pattā te acalaṁ sukhaṁ. | S: having found unshakable happiness. | T: Arrived are they, ⏎ in unshaken ease.
+
+## thig13.5:15.1–thig13.5:15.4 (thig)
+thig13.5:15.1 | P: Māhaṁ kāmehi saṅgacchiṁ, | S: May I not encounter sensual pleasures, | T: So may I not come into union ⏎ with sensuality,
+thig13.5:15.2 | P: yesu tāṇaṁ na vijjati; | S: for no shelter is found in them. | T: in which no shelter is found.
+thig13.5:15.3 | P: Amittā vadhakā kāmā, | S: Sensual pleasures are enemies and killers, | T: It’s an enemy, a murderer ⏎ —sensuality—
+thig13.5:15.4 | P: aggikkhandhūpamā dukhā. | S: as painful as a mass of fire. | T: painful, like a mass of flame.
+
+## thig13.5:16.1–thig13.5:16.4 (thig)
+thig13.5:16.1 | P: Paripantho esa bhayo, | S: This is a roadblock, a threat, | T: Greed: ⏎ an obstacle, fearful,
+thig13.5:16.2 | P: savighāto sakaṇṭako; | S: full of distress and thorns; | T: threatened, ⏎ full of thorns,
+thig13.5:16.3 | P: Gedho suvisamo ceso, | S: it is a blind spot, uneven, | T: very discordant,
+thig13.5:16.4 | P: mahanto mohanāmukho. | S: a great gateway to confusion. | T: a great cause of delusion.
+
+## thig13.5:17.1–thig13.5:17.4 (thig)
+thig13.5:17.1 | P: Upasaggo bhīmarūpo, | S: Hazardous and terrifying, | T: Sensuality: ⏎ a frightening attack,
+thig13.5:17.2 | P: kāmā sappasirūpamā; | S: sensual pleasures are like a cobra’s head, | T: like a snake’s head
+thig13.5:17.3 | P: Ye bālā abhinandanti, | S: where fools delight, | T: in which fools delight—
+thig13.5:17.4 | P: andhabhūtā puthujjanā. | S: the blind ordinary folk. | T: blinded, run-of-the-mill.
+
+## thig13.5:18.1–thig13.5:18.4 (thig) GATHERED; equal counts: one line per row
+thig13.5:18.1 | P: Kāmapaṅkena sattā hi, | S: Stuck in the swamp of sensuality, | T: Because many people in the world ⏎ are stuck in the mud of sensuality, ⏎ unknowing,
+thig13.5:18.2 | P: bahū loke aviddasū; | S: there are so many ignorant in the world. | T: (none)
+thig13.5:18.3 | P: Pariyantaṁ na jānanti, | S: They know nothing of the end | T: they don’t realize the ending of birth & death.
+thig13.5:18.4 | P: jātiyā maraṇassa ca. | S: of rebirth and death. | T: (none)
+AUTO thig13.5:18.1 starts: Because many people in the world
+AUTO thig13.5:18.2 starts: are stuck in the mud of sensuality,
+AUTO thig13.5:18.3 starts: unknowing,
+AUTO thig13.5:18.4 starts: they don’t realize the ending of birth &
+
+## thig13.5:19.1–thig13.5:19.4 (thig) GATHERED; equal counts: one line per row
+thig13.5:19.1 | P: Duggatigamanaṁ maggaṁ, | S: Because of sensual pleasures, | T: Many people follow the path ⏎ to bad destinations ⏎ because of sensuality,
+thig13.5:19.2 | P: manussā kāmahetukaṁ; | S: people jump right on to the path that goes to a bad place. | T: (none)
+thig13.5:19.3 | P: Bahuṁ ve paṭipajjanti, | S: So many walk the path | T: (none)
+thig13.5:19.4 | P: attano rogamāvahaṁ. | S: that brings disease onto themselves. | T: bringing disease on themselves.
+AUTO thig13.5:19.1 starts: Many people follow the path
+AUTO thig13.5:19.2 starts: to bad destinations
+AUTO thig13.5:19.3 starts: because of sensuality,
+AUTO thig13.5:19.4 starts: bringing disease on themselves.
+
+## thig13.5:20.1–thig13.5:20.4 (thig)
+thig13.5:20.1 | P: Evaṁ amittajananā, | S: That’s how sensual pleasures create enemies; | T: Thus sensuality creates enemies.
+thig13.5:20.2 | P: tāpanā saṅkilesikā; | S: they are so tormenting, so corrupting, | T: It burns, is defiled.
+thig13.5:20.3 | P: Lokāmisā bandhanīyā, | S: trapping beings with worldly pleasures of the flesh, | T: It’s the bait of the world,
+thig13.5:20.4 | P: kāmā maraṇabandhanā. | S: they are nothing less than the bonds of death. | T: constraining, the bondage of death,
+
+## thig13.5:21.1–thig13.5:21.4 (thig) GATHERED; possible speaker requires a reader
+thig13.5:21.1 | P: Ummādanā ullapanā, | S: Maddening, enticing, | T: maddening, deceptive,
+thig13.5:21.2 | P: kāmā cittappamaddino; | S: sensual pleasures derange the mind. | T: agitating the mind.
+thig13.5:21.3 | P: Sattānaṁ saṅkilesāya, | S: For the corruption of beings, | T: It’s a net cast by Māra ⏎ for the defilement of living beings:
+thig13.5:21.4 | P: khippaṁ mārena oḍḍitaṁ. | S: swiftly ensnared by Māra. | T: (none)
+
+## thig13.5:22.1–thig13.5:22.4 (thig)
+thig13.5:22.1 | P: Anantādīnavā kāmā, | S: Sensual pleasures are infinitely dangerous, | T: with endless drawbacks,
+thig13.5:22.2 | P: bahudukkhā mahāvisā; | S: they’re full of suffering, a terrible poison; | T: much pain, ⏎ great poison,
+thig13.5:22.3 | P: Appassādā raṇakarā, | S: offering little gratification, they’re makers of strife, | T: giving little enjoyment, creating conflict,
+thig13.5:22.4 | P: sukkapakkhavisosanā. | S: withering bright qualities away. | T: drying up the good side [of the mind].
+
+## thig13.5:23.1–thig13.5:23.4 (thig)
+thig13.5:23.1 | P: Sāhaṁ etādisaṁ katvā, | S: Since I’ve created so much ruination | T: I, having cast off much trouble like this
+thig13.5:23.2 | P: byasanaṁ kāmahetukaṁ; | S: because of sensual pleasures, | T: caused by sensuality,
+thig13.5:23.3 | P: Na taṁ paccāgamissāmi, | S: I will not relapse to them again, | T: will not return to it,
+thig13.5:23.4 | P: nibbānābhiratā sadā. | S: but will always delight in extinguishment. | T: as I always delight in unbinding.
+
+## thig13.5:24.1–thig13.5:24.4 (thig)
+thig13.5:24.1 | P: Raṇaṁ karitvā kāmānaṁ, | S: Having once made strife for the sake of sensual pleasures, | T: Doing battle with sensuality
+thig13.5:24.2 | P: sītibhāvābhikaṅkhinī; | S: now I am longing for that cool state. | T: in hopes of the cool state,
+thig13.5:24.3 | P: Appamattā vihassāmi, | S: I shall meditate diligently | T: I will stay heedful, finding delight
+thig13.5:24.4 | P: sabbasaṁyojanakkhaye. | S: for the ending of all fetters. | T: in the ending of fetters.
+
+## thig13.5:25.1–thig13.5:25.4 (thig) GATHERED; unequal counts require a reader
+thig13.5:25.1 | P: Asokaṁ virajaṁ khemaṁ, | S: Sorrowless, stainless, secure— | T: (none)
+thig13.5:25.2 | P: ariyaṭṭhaṅgikaṁ ujuṁ; | S: I follow that path, | T: I follow the path—
+thig13.5:25.3 | P: Taṁ maggaṁ anugacchāmi, | S: the straight noble eightfold way | T: eightfold, straight, ⏎ griefless, stainless, secure—
+thig13.5:25.4 | P: yena tiṇṇā mahesino”. | S: by which the seers have crossed over.” | T: over which great seers ⏎ have crossed.”

@@ -49,7 +49,7 @@ iti103:6.4 starts: stops, without trace,
 iti29:3.3 starts: when a monk has these
 iti29:3.4 none
 iti29:4.3 starts: he experiences ease:
-iti29:4.4 none
+# superseded: iti29:4.4 none
 iti31:3.1 starts: Having abandoned bodily misconduct, verbal misconduct,
 iti31:3.2 starts: verbal misconduct,
 # superseded: iti39:3.3 none
@@ -81,14 +81,14 @@ snp3.5:21.4 starts: to him a brahman aiming at merit should sacrifice.”
 snp3.8:16.1 starts: Even if a person lives
 snp3.8:16.2 starts: —or more—
 thag1.114:1.1 starts: For one heavy with bodily offenses,
-thag1.114:1.3 none
+# superseded: thag1.114:1.3 none
 thag2.36:1.5 starts: When one’s mind is developed like this, from where can there come to him suffering & stress?
 thag2.36:1.6 starts: from where can there come to him suffering & stress?
 thag3.15:2.3 starts: When one speaks without acting, the wise, they can tell.
 thag3.15:2.4 starts: the wise, they can tell.
 thag6.6:3.3 starts: If I were to renounce the training, what sort of death would I have?”
 thag6.6:3.4 starts: what sort of death would I have?”
-ud2.3:3.2 none
+# superseded: ud2.3:3.2 none
 ud2.3:3.3 starts: when he himself is looking for ease,
 ud2.3:3.4 starts: will meet with no ease after death.
 ud4.9:4.1 starts: For one who has crushed craving for becoming– the monk of peaceful mind–
@@ -101,14 +101,14 @@ ud5.6:6.3 starts: “It’s hard, Soṇa, the life-long, one-meal-a-day, sleepin
 ud5.6:6.4 starts: Please, right there as you are a householder, devote yourself to the message of the Awakened Ones and to the proper-time, one-meal-a-day, sleeping-alone holy life.”
 ud6.5:24.1 starts: With regard to these things they’re attached– some contemplatives & brahmans.
 ud6.5:24.2 starts: some contemplatives & brahmans.
-ud8.5:16.4 none
+# superseded: ud8.5:16.4 none
 ud8.5:17.1 starts: bathed, drank, & came out.
 sn1.17:3.1 starts: As a tortoise would draw its limbs into its shell, so a monk should— the thoughts of his heart.
 sn1.17:3.2 starts: so a monk should— the thoughts of his heart.
 sn10.12:6.5 starts: Passing from this world to the next world, how does one not grieve?”
 sn10.12:6.6 starts: how does one not grieve?”
 sn10.12:9.1 starts: Endowed with these four qualities, —truth, self-control, stamina, relinquishment— a householder of conviction,
-sn10.12:9.2 none
+# superseded: sn10.12:9.2 none
 sn12.25:11.1 starts: then either of one’s own accord one fabricates the bodily fabrication on account of which that pleasure & pain arise internally, or because of others one fabricates the bodily fabrication on account of which that pleasure & pain arise internally.
 sn12.25:11.3 starts: Either one fabricates alert the bodily fabrication on account of which that pleasure & pain arise internally, or one fabricates unalert the bodily fabrication on account of which that pleasure & pain arise internally.
 sn12.25:11.4 starts: or one fabricates unalert the bodily fabrication
@@ -143,7 +143,7 @@ sn27.8:1.7 starts: craving for ideas is a defilement of the mind.
 sn27.8:1.8 starts: When, with regard to these six bases, the defilements of awareness are abandoned, then the mind is inclined to renunciation. The mind fostered by renunciation feels malleable for the direct knowing of those qualities worth realizing.”
 sn3.9:5.1 starts: Where goats, rams, & cattle of various kinds are killed: Those of right conduct, great seers, don’t attend that sacrifice.
 sn3.9:5.3 starts: Those of right conduct, great seers, don’t attend that sacrifice.
-sn3.9:5.4 none
+# superseded: sn3.9:5.4 none
 sn35.74:13.1 starts: “Inconstant, lord.” “And is that which is inconstant easeful or stressful?” “Stressful, lord.” “And is it fitting to regard what is inconstant, stressful, subject to change as: ‘This is mine. This is my self. This is what I am’?” “No, lord.”
 sn35.74:14.1 starts: “And is that which is inconstant easeful or stressful?”
 sn35.95:36.2 starts: “Good, Māluṅkyaputta. Very good.
@@ -179,7 +179,7 @@ an7.15:4.9 starts: his persistence,
 an7.15:4.10 starts: his discernment don’t wane, but instead develop & remain.
 an7.36:4.3 starts: is a friend to be cultivated
 iti91:5.3 starts: than that, unprincipled & unrestrained,
-iti91:5.4 none
+# superseded: iti91:5.4 none
 iti102:5.3 starts: is there attained Unbinding,
 iti75:6.2 starts: to the miserable, nor to the homeless
 iti75:6.3 starts: does he share what he’s gained:
@@ -187,9 +187,9 @@ iti75:6.3 starts: does he share what he’s gained:
 thag1.114:1.2 starts: greedy for carcass pleasures while life is wasting away:
 ud2.3:3.1 starts: Whoever hits with a stick
 ud2.3:4.1 starts: Whoever doesn’t hit with a stick
-ud2.3:4.2 none
+# superseded: ud2.3:4.2 none
 ud5.6:5.4 starts: And so Soṇa Koṭikaṇṇa’s idea of going-forth subsided.
-sn10.12:9.3 none
+# superseded: sn10.12:9.3 none
 sn10.12:9.4 starts: on passing away, doesn’t grieve.
 sn12.25:11.2 starts: or because of others one fabricates the bodily fabrication
 sn12.65:4.15 starts: ‘Name-&-form doesn’t exist when what doesn’t exist?

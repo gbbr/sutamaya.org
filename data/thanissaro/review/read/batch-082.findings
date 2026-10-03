@@ -7,10 +7,10 @@ snp2.14:1.1 starts: I have heard that on one occasion
 snp2.14:1.2 starts: on one occasion the Blessed One was
 snp2.14:12.4 starts: That’s why they don’t wander at the
 snp2.14:18.1 starts: So a monk should stay unsmeared by
-snp2.14:18.2 none
+# superseded: snp2.14:18.2 none
 snp2.14:19.3 starts: since the entire monk-practice can’t be managed
-snp2.14:19.4 none
-snp2.14:20.2 none
+# superseded: snp2.14:19.4 none
+# superseded: snp2.14:20.2 none
 snp2.14:24.2 starts: should not take intoxicating drink, nor have
 snp2.14:24.3 starts: nor have others drink it, nor condone
 snp2.14:25.1 starts: For from intoxication, fools do evil things

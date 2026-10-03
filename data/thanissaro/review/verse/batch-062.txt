@@ -1,0 +1,432 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## thag18.1:2.1–thag18.1:2.4 (thag)
+thag18.1:2.1 | P: Na kulāni upabbaje muni, | S: A sage should not visit respectable families; | T: A sage shouldn’t visit families:
+thag18.1:2.2 | P: Vimano hoti samādhi dullabho; | S: it turns your mind, making it hard to get immersion. | T: one gets distracted; ⏎ concentration ⏎ is hard to gain.
+thag18.1:2.3 | P: So ussukko rasānugiddho, | S: If you’re eager and greedy for flavors, | T: He’s eager & greedy for flavors,
+thag18.1:2.4 | P: Atthaṁ riñcati yo sukhāvaho. | S: you’ll miss the goal that brings such happiness. | T: whoever misses the goal ⏎ that brings bliss.
+
+## thag18.1:3.1–thag18.1:3.4 (thag)
+thag18.1:3.1 | P: Paṅkoti hi naṁ avedayuṁ, | S: They know it really is a bog, | T: They know it’s a bog—
+thag18.1:3.2 | P: Yāyaṁ vandanapūjanā kulesu; | S: this homage and veneration in respectable families. | T: the reverence & veneration ⏎ of families—
+thag18.1:3.3 | P: Sukhumaṁ sallaṁ durubbahaṁ, | S: Honor is a subtle dart, hard to extract, | T: a subtle arrow, hard to extract.
+thag18.1:3.4 | P: Sakkāro kāpurisena dujjaho. | S: and hard for a reprobate to give up.” | T: Offerings are hard for a worthless man ⏎ to let go.
+
+## thag18.1:4.1–thag18.1:4.4 (thag) GATHERED; equal counts: one line per row
+thag18.1:4.1 | P: Senāsanamhā oruyha, | S: “I came down from my lodging | T: Coming down from my dwelling place,
+thag18.1:4.2 | P: nagaraṁ piṇḍāya pāvisiṁ; | S: and entered the city for alms. | T: I entered the city for alms,
+thag18.1:4.3 | P: Bhuñjantaṁ purisaṁ kuṭṭhiṁ, | S: I courteously stood by | T: stood courteously next to a leper ⏎ eating his meal.
+thag18.1:4.4 | P: sakkaccaṁ taṁ upaṭṭhahiṁ. | S: while a leper ate. | T: (none)
+AUTO thag18.1:4.1 starts: Coming down from my dwelling place,
+AUTO thag18.1:4.2 starts: I entered the city for alms,
+AUTO thag18.1:4.3 starts: stood courteously next to a leper
+AUTO thag18.1:4.4 starts: eating his meal.
+
+## thag18.1:5.1–thag18.1:5.4 (thag)
+thag18.1:5.1 | P: So me pakkena hatthena, | S: With his putrid hand | T: He, with his rotting hand,
+thag18.1:5.2 | P: ālopaṁ upanāmayi; | S: he offered me a morsel. | T: tossed me a morsel of food,
+thag18.1:5.3 | P: Ālopaṁ pakkhipantassa, | S: Putting the morsel in my bowl, | T: and as the morsel was dropping,
+thag18.1:5.4 | P: aṅguli cettha chijjatha. | S: his finger dropped off right there. | T: a finger fell off ⏎ right there.
+
+## thag18.1:6.1–thag18.1:6.4 (thag) GATHERED; unequal counts require a reader
+thag18.1:6.1 | P: Kuṭṭamūlañca nissāya, | S: Sitting by a wall, | T: Sitting next to a wall,
+thag18.1:6.2 | P: ālopaṁ taṁ abhuñjisaṁ; | S: I ate that lump of rice. | T: I ate that morsel of food,
+thag18.1:6.3 | P: Bhuñjamāne vā bhutte vā, | S: I did not feel any disgust | T: and neither while eating it, ⏎ nor having eaten, ⏎ did I feel ⏎ any disgust.
+thag18.1:6.4 | P: jegucchaṁ me na vijjati. | S: while eating or afterwards. | T: (none)
+
+## thag18.1:7.1–thag18.1:7.6 (thag) GATHERED; possible speaker requires a reader
+thag18.1:7.1 | P: Uttiṭṭhapiṇḍo āhāro, | S: Anyone who makes use of | T: Whoever has mastered ⏎ left-over scraps for food,
+thag18.1:7.2 | P: pūtimuttañca osadhaṁ; | S: leftovers for food, | T: (none)
+thag18.1:7.3 | P: Senāsanaṁ rukkhamūlaṁ, | S: rancid urine as medicine, | T: smelly urine for medicine,
+thag18.1:7.4 | P: paṁsukūlañca cīvaraṁ; | S: the root of a tree as lodging, | T: the foot of a tree for a dwelling,
+thag18.1:7.5 | P: Yassete abhisambhutvā, | S: and cast-off rags as robes, | T: cast-off rags for robes:
+thag18.1:7.6 | P: sa ve cātuddiso naro. | S: is at ease in any quarter.” | T: He is a man ⏎ of the four directions.
+
+## thag18.1:8.1–thag18.1:8.6 (thag) GATHERED; unequal counts require a reader
+thag18.1:8.1 | P: Yattha eke vihaññanti, | S: “Where some have fallen to ruin | T: Where some are exhausted
+thag18.1:8.2 | P: āruhantā siluccayaṁ; | S: while climbing the mountain, | T: climbing the mountain, ⏎ there
+thag18.1:8.3 | P: Tassa buddhassa dāyādo, | S: there Kassapa ascends; | T: (none)
+thag18.1:8.4 | P: sampajāno patissato; | S: an heir of the Buddha, | T: the Awakened One’s heir
+thag18.1:8.5 | P: Iddhibalenupatthaddho, | S: aware and mindful, | T: —mindful, alert,
+thag18.1:8.6 | P: kassapo abhirūhati. | S: owing to his psychic powers. | T: buoyed by his psychic power— ⏎ Kassapa climbs.
+
+## thag18.1:9.1–thag18.1:9.4 (thag)
+thag18.1:9.1 | P: Piṇḍapātapaṭikkanto, | S: Returning from almsround, | T: Returning from his alms round,
+thag18.1:9.2 | P: selamāruyha kassapo; | S: Kassapa ascends the mountain, | T: climbing the peak,
+thag18.1:9.3 | P: Jhāyati anupādāno, | S: and practices absorption without grasping, | T: Kassapa does jhāna ⏎ with no clinging,
+thag18.1:9.4 | P: pahīnabhayabheravo. | S: with fear and dread given up. | T: having abandoned terror ⏎ & fear.
+
+## thag18.1:10.1–thag18.1:10.4 (thag)
+thag18.1:10.1 | P: Piṇḍapātapaṭikkanto, | S: Returning from almsround, | T: Returning from his alms round,
+thag18.1:10.2 | P: selamāruyha kassapo; | S: Kassapa ascends the mountain, | T: climbing the peak,
+thag18.1:10.3 | P: Jhāyati anupādāno, | S: and practices absorption without grasping, | T: Kassapa does jhāna ⏎ with no clinging,
+thag18.1:10.4 | P: ḍayhamānesu nibbuto. | S: quenched amongst those who burn. | T: unbound ⏎ among those who burn.
+
+## thag18.1:11.1–thag18.1:11.4 (thag)
+thag18.1:11.1 | P: Piṇḍapātapaṭikkanto, | S: Returning from almsround, | T: Returning from his alms round,
+thag18.1:11.2 | P: selamāruyha kassapo; | S: Kassapa ascends the mountain, | T: climbing the peak,
+thag18.1:11.3 | P: Jhāyati anupādāno, | S: and practices absorption without grasping, | T: Kassapa does jhāna ⏎ with no clinging,
+thag18.1:11.4 | P: katakicco anāsavo. | S: his task completed, free of defilements.” | T: effluent-free, ⏎ his task done.
+
+## thag18.1:12.1–thag18.1:12.4 (thag)
+thag18.1:12.1 | P: Karerimālāvitatā, | S: “Strewn with garlands of the musk-rose tree, | T: Spread with garlands of vines,
+thag18.1:12.2 | P: bhūmibhāgā manoramā; | S: these regions are so delightful, so lovely, | T: places delighting the mind,
+thag18.1:12.3 | P: Kuñjarābhirudā rammā, | S: echoing with the trumpeting of elephants: | T: resounding with elephants, ⏎ appealing:
+thag18.1:12.4 | P: te selā ramayanti maṁ. | S: these rocky crags delight me! | T: Those rocky crags ⏎ refresh me.
+
+## thag18.1:13.1–thag18.1:13.4 (thag)
+thag18.1:13.1 | P: Nīlabbhavaṇṇā rucirā, | S: Glistening, they look like blue stormclouds, | T: The color of blue-dark clouds, ⏎ glistening,
+thag18.1:13.2 | P: vārisītā sucindharā; | S: with waters cool and streams so clear, | T: cooled with the waters ⏎ of clear-flowing streams
+thag18.1:13.3 | P: Indagopakasañchannā, | S: and covered all in ladybugs: | T: covered with ladybugs:
+thag18.1:13.4 | P: te selā ramayanti maṁ. | S: these rocky crags delight me! | T: Those rocky crags ⏎ refresh me.
+
+## thag18.1:14.1–thag18.1:14.4 (thag)
+thag18.1:14.1 | P: Nīlabbhakūṭasadisā, | S: Like the peak of a blue stormcloud, | T: Like the peaks of blue-dark clouds,
+thag18.1:14.2 | P: kūṭāgāravarūpamā; | S: or like a fine bungalow, lovely, | T: like excellent peaked-roof buildings,
+thag18.1:14.3 | P: Vāraṇābhirudā rammā, | S: echoing with the trumpeting of elephants: | T: resounding with tuskers, ⏎ appealing:
+thag18.1:14.4 | P: te selā ramayanti maṁ. | S: these rocky crags delight me! | T: Those rocky crags ⏎ refresh me.
+
+## thag18.1:15.1–thag18.1:15.4 (thag)
+thag18.1:15.1 | P: Abhivuṭṭhā rammatalā, | S: The rain comes down on the lovely flats, | T: Their lovely surfaces wet with rain,
+thag18.1:15.2 | P: nagā isibhi sevitā; | S: in the mountains frequented by seers. | T: mountains frequented ⏎ by seers
+thag18.1:15.3 | P: Abbhunnaditā sikhīhi, | S: Echoing with the cries of peacocks, | T: & echoing ⏎ with peacocks:
+thag18.1:15.4 | P: te selā ramayanti maṁ. | S: these rocky crags delight me! | T: Those rocky crags ⏎ refresh me.
+
+## thag18.1:16.1–thag18.1:16.4 (thag)
+thag18.1:16.1 | P: Alaṁ jhāyitukāmassa, | S: It’s enough for me, who loves absorption, | T: This is enough for me— ⏎ desiring to do jhāna,
+thag18.1:16.2 | P: pahitattassa me sato; | S: to remain resolute. | T: resolute, mindful;
+thag18.1:16.3 | P: Alaṁ me atthakāmassa, | S: It’s enough for me, | T: enough for me— ⏎ desiring the goal,
+thag18.1:16.4 | P: pahitattassa bhikkhuno. | S: a resolute monk who wants what’s best. | T: resolute, ⏎ a monk;
+
+## thag18.1:17.1–thag18.1:17.4 (thag)
+thag18.1:17.1 | P: Alaṁ me phāsukāmassa, | S: It’s enough for me, | T: enough for me—
+thag18.1:17.2 | P: pahitattassa bhikkhuno; | S: a resolute monk who loves comfort. | T: desiring comfort, ⏎ resolute, ⏎ trained;
+thag18.1:17.3 | P: Alaṁ me yogakāmassa, | S: It’s enough for me, | T: enough for me—
+thag18.1:17.4 | P: pahitattassa tādino. | S: resolute and unaffected, loving meditation. | T: desiring my duty, ⏎ resolute, ⏎ Such.
+
+## thag18.1:18.1–thag18.1:18.4 (thag)
+thag18.1:18.1 | P: Umāpupphena samānā, | S: Covered with flowers of flax, | T: Flax-flower blue,
+thag18.1:18.2 | P: gaganāvabbhachāditā; | S: like the welkin covered with stormclouds, | T: like the sky ⏎ covered over with clouds;
+thag18.1:18.3 | P: Nānādijagaṇākiṇṇā, | S: full of flocks of many different birds, | T: filled with flocks ⏎ of various birds:
+thag18.1:18.4 | P: te selā ramayanti maṁ. | S: these rocky crags delight me! | T: Those rocky crags ⏎ refresh me.
+
+## thag18.1:19.1–thag18.1:19.4 (thag)
+thag18.1:19.1 | P: Anākiṇṇā gahaṭṭhehi, | S: Empty of householders, | T: Uncrowded ⏎ by householders,
+thag18.1:19.2 | P: migasaṅghanisevitā; | S: frequented by herds of deer, | T: frequented ⏎ by herds of deer
+thag18.1:19.3 | P: Nānādijagaṇākiṇṇā, | S: full of flocks of many different birds, | T: filled with flocks ⏎ of various birds:
+thag18.1:19.4 | P: te selā ramayanti maṁ. | S: these rocky crags delight me! | T: Those rocky crags ⏎ refresh me.
+
+## thag18.1:20.1–thag18.1:20.4 (thag)
+thag18.1:20.1 | P: Acchodikā puthusilā, | S: The water’s clear and the rocks are broad, | T: With clear waters & ⏎ massive boulders,
+thag18.1:20.2 | P: gonaṅgulamigāyutā; | S: monkeys and deer are all around; | T: frequented by monkeys & ⏎ deer,
+thag18.1:20.3 | P: Ambusevālasañchannā, | S: festooned with dewy moss, | T: covered with moss & ⏎ water weeds:
+thag18.1:20.4 | P: te selā ramayanti maṁ. | S: these rocky crags delight me!” | T: Those rocky crags ⏎ refresh me.
+
+## thag18.1:21.1–thag18.1:21.4 (thag) GATHERED; unequal counts require a reader
+thag18.1:21.1 | P: Na pañcaṅgikena turiyena, | S: “Even the music of a five-piece band | T: There is no such pleasure for me ⏎ in the music of a five-piece band
+thag18.1:21.2 | P: Rati me hoti tādisī; | S: can never give such pleasure | T: (none)
+thag18.1:21.3 | P: Yathā ekaggacittassa, | S: as when, with unified mind, | T: as there is when my mind ⏎ is at one,
+thag18.1:21.4 | P: Sammā dhammaṁ vipassato. | S: you rightly discern the Dhamma.” | T: seeing the Dhamma ⏎ aright.
+
+## thag18.1:22.1–thag18.1:22.4 (thag)
+thag18.1:22.1 | P: Kammaṁ bahukaṁ na kāraye, | S: “Don’t get involved in lots of work, | T: One shouldn’t do lots of work,
+thag18.1:22.2 | P: Parivajjeyya janaṁ na uyyame; | S: avoid people, and don’t try to acquire things. | T: should avoid people, ⏎ shouldn’t busy oneself.
+thag18.1:22.3 | P: Ussukko so rasānugiddho, | S: If you’re eager and greedy for flavors, | T: He’s eager & greedy for flavors,
+thag18.1:22.4 | P: Atthaṁ riñcati yo sukhāvaho. | S: you’ll miss the goal that brings such happiness. | T: whoever misses the goal ⏎ that brings bliss.
+
+## thag18.1:23.1–thag18.1:23.4 (thag)
+thag18.1:23.1 | P: Kammaṁ bahukaṁ na kāraye, | S: Don’t get involved in lots of work, | T: One shouldn’t do lots of work,
+thag18.1:23.2 | P: Parivajjeyya anattaneyyametaṁ; | S: avoid what doesn’t lead to the goal. | T: should avoid ⏎ what doesn’t lead to the goal.
+thag18.1:23.3 | P: Kicchati kāyo kilamati, | S: The body gets worn out and fatigued, | T: The body gets wearied, ⏎ fatigued.
+thag18.1:23.4 | P: Dukkhito so samathaṁ na vindati. | S: and when you ache, you won’t find serenity.” | T: Aching, one finds ⏎ no tranquility.
+
+## thag18.1:24.1–thag18.1:24.4 (thag)
+thag18.1:24.1 | P: Oṭṭhappahatamattena, | S: “You won’t see yourself | T: Simply by flapping the mouth ⏎ one doesn’t see
+thag18.1:24.2 | P: attānampi na passati; | S: by merely reciting words, | T: even oneself.
+thag18.1:24.3 | P: Patthaddhagīvo carati, | S: wandering stiff-necked | T: One goes around stiff- ⏎ necked,
+thag18.1:24.4 | P: ahaṁ seyyoti maññati. | S: and thinking, ‘I’m better than them.’ | T: thinking, ‘I’m better ⏎ than they.’
+
+## thag18.1:25.1–thag18.1:25.4 (thag) GATHERED; possible speaker requires a reader
+thag18.1:25.1 | P: Aseyyo seyyasamānaṁ, | S: The fool is no better, | T: Not better, ⏎ he thinks himself better, ⏎ the fool:
+thag18.1:25.2 | P: bālo maññati attānaṁ; | S: but they think they are. | T: (none)
+thag18.1:25.3 | P: Na taṁ viññū pasaṁsanti, | S: The wise don’t praise | T: The wise don’t praise him,
+thag18.1:25.4 | P: patthaddhamānasaṁ naraṁ. | S: pompous people. | T: the stiff-necked man.
+
+## thag18.1:26.1–thag18.1:26.4 (thag)
+thag18.1:26.1 | P: Yo ca seyyohamasmīti, | S: Whoever does not waver | T: But whoever isn’t stirred
+thag18.1:26.2 | P: nāhaṁ seyyoti vā pana; | S: due to the discriminations— | T: by the modes of
+thag18.1:26.3 | P: Hīno taṁsadiso vāti, | S: ‘I am better’, ‘I’m not better’, | T: ‘I’m better, ⏎ not better.
+thag18.1:26.4 | P: vidhāsu na vikampati. | S: ‘I am worse’, or ‘I am the same’— | T: I’m worse. ⏎ I’m like that’;
+
+## thag18.1:27.1–thag18.1:27.4 (thag)
+thag18.1:27.1 | P: Paññavantaṁ tathā tādiṁ, | S: with such understanding, unaffected, | T: one who’s discerning, ⏎ who acts as he says,
+thag18.1:27.2 | P: sīlesu susamāhitaṁ; | S: steady in ethics, | T: well-centered ⏎ in virtues,
+thag18.1:27.3 | P: Cetosamathamanuttaṁ, | S: and devoted to serenity of mind: | T: committed to ⏎ tranquility of awareness,
+thag18.1:27.4 | P: tañce viññū pasaṁsare. | S: that is who the wise praise.” | T: he ⏎ is the one ⏎ the wise ⏎ would praise.
+
+## thag18.1:28.1–thag18.1:28.4 (thag)
+thag18.1:28.1 | P: Yassa sabrahmacārīsu, | S: “Whoever has no respect | T: One with no respect
+thag18.1:28.2 | P: gāravo nūpalabbhati; | S: for their spiritual companions | T: for his fellows in the holy life,
+thag18.1:28.3 | P: Ārakā hoti saddhammā, | S: is as far from the true teaching | T: is as far ⏎ from true Dhamma
+thag18.1:28.4 | P: nabhato puthavī yathā. | S: as the earth is from the sky. | T: as the earth ⏎ from the sky.
+
+## thag18.1:29.1–thag18.1:29.4 (thag)
+thag18.1:29.1 | P: Yesañca hiriottappaṁ, | S: Those whose conscience and prudence | T: But those whose sense of shame ⏎ & compunction
+thag18.1:29.2 | P: sadā sammā upaṭṭhitaṁ; | S: are always rightly established, | T: are always rightly established:
+thag18.1:29.3 | P: Virūḷhabrahmacariyā te, | S: thrive in the spiritual life; | T: They ⏎ have flourished in the holy life.
+thag18.1:29.4 | P: tesaṁ khīṇā punabbhavā. | S: for them, there are no future lives. | T: For them ⏎ there’s no further becoming.
+
+## thag18.1:30.1–thag18.1:30.4 (thag) GATHERED; unequal counts require a reader
+thag18.1:30.1 | P: Uddhato capalo bhikkhu, | S: When a mendicant who is haughty and fickle | T: A monk conceited & vain,
+thag18.1:30.2 | P: paṁsukūlena pāruto; | S: wears rags from the rubbish-heap, | T: even though clad ⏎ in a robe of cast-off rags,
+thag18.1:30.3 | P: Kapīva sīhacammena, | S: that doesn’t make them shine: | T: (none)
+thag18.1:30.4 | P: na so tenupasobhati. | S: they’re like a monkey in a lion skin. | T: like a monkey in a lion’s skin, ⏎ doesn’t shine because of it.
+
+## thag18.1:31.1–thag18.1:31.4 (thag)
+thag18.1:31.1 | P: Anuddhato acapalo, | S: But if they not restless or fickle, | T: But a monk not conceited ⏎ or vain,
+thag18.1:31.2 | P: nipako saṁvutindriyo; | S: alert, with senses restrained, | T: masterful, ⏎ his faculties restrained,
+thag18.1:31.3 | P: Sobhati paṁsukūlena, | S: then, wearing rags from the rubbish-heap, they shine | T: shines ⏎ because of his robe of cast-off rags,
+thag18.1:31.4 | P: sīhova girigabbhare. | S: like a lion in a mountain cave.” | T: like a lion ⏎ in the cleft of a mountain.
+
+## thag18.1:32.1–thag18.1:32.4 (thag)
+thag18.1:32.1 | P: Ete sambahulā devā, | S: “These many gods | T: These many devas,
+thag18.1:32.2 | P: iddhimanto yasassino; | S: powerful and glorious, | T: powerful, prestigious
+thag18.1:32.3 | P: Dasadevasahassāni, | S: all 10,000 of them, | T: —10,000 devas—
+thag18.1:32.4 | P: sabbe te brahmakāyikā. | S: belong to the host of the Divinity. | T: all of Brahmā’s retinue,
+
+## thag18.1:33.1–thag18.1:33.4 (thag)
+thag18.1:33.1 | P: Dhammasenāpatiṁ vīraṁ, | S: They stand with cupped palms | T: stand with their hands over their hearts,
+thag18.1:33.2 | P: mahājhāyiṁ samāhitaṁ; | S: honoring Sāriputta, | T: paying homage to Sāriputta,
+thag18.1:33.3 | P: Sāriputtaṁ namassantā, | S: the General of the Dhamma, the hero, | T: the Dhamma-general, ⏎ enlightened,
+thag18.1:33.4 | P: tiṭṭhanti pañjalīkatā. | S: the serene great meditator: | T: centered, ⏎ great master of jhāna, ⏎ [saying:]
+
+## thag18.1:34.1–thag18.1:34.4 (thag)
+thag18.1:34.1 | P: ‘Namo te purisājañña, | S: ‘Homage to you, O thoroughbred! | T: ‘Homage to you, O thoroughbred man.
+thag18.1:34.2 | P: namo te purisuttama; | S: Homage to you, supreme among men! | T: Homage to you, O superlative man—
+thag18.1:34.3 | P: Yassa te nābhijānāma, | S: We don’t understand | T: of whom we have no direct knowledge
+thag18.1:34.4 | P: yampi nissāya jhāyati. | S: the basis of your absorption. | T: even of that ⏎ in dependence on which ⏎ you do jhāna.
+
+## thag18.1:35.1–thag18.1:35.4 (thag) GATHERED; possible speaker requires a reader
+thag18.1:35.1 | P: Accheraṁ vata buddhānaṁ, | S: The profound domain of the Buddhas | T: ‘How very amazing: ⏎ the awakened ones’ ⏎ very own deep range—
+thag18.1:35.2 | P: gambhīro gocaro sako; | S: is truly amazing. | T: (none)
+thag18.1:35.3 | P: Ye mayaṁ nābhijānāma, | S: We don’t understand, | T: of which we have no direct knowledge,
+thag18.1:35.4 | P: vālavedhisamāgatā’. | S: though we’ve gathered here to split hairs.’ | T: though we have come ⏎ as hair-splitting archers.’
+
+## thag18.1:36.1–thag18.1:36.4 (thag) GATHERED; unequal counts require a reader
+thag18.1:36.1 | P: Taṁ tathā devakāyehi, | S: When he saw the host of gods | T: (none)
+thag18.1:36.2 | P: pūjitaṁ pūjanārahaṁ; | S: paying homage to Sāriputta— | T: Seeing Sāriputta,
+thag18.1:36.3 | P: Sāriputtaṁ tadā disvā, | S: who is truly worthy of homage— | T: a man worthy of worship, ⏎ worshipped by deva retinues,
+thag18.1:36.4 | P: kappinassa sitaṁ ahu. | S: Kappina smiled.” | T: Kappina ⏎ smiled.
+
+## thag18.1:37.1–thag18.1:37.4 (thag)
+thag18.1:37.1 | P: Yāvatā buddhakhettamhi, | S: “As far as the range of the Buddha extends, | T: As far as this buddha-field extends
+thag18.1:37.2 | P: ṭhapayitvā mahāmuniṁ; | S: apart from the great sage himself, | T: —except for the great sage himself—
+thag18.1:37.3 | P: Dhutaguṇe visiṭṭhohaṁ, | S: I am distinguished in austerities, | T: I’m the one ⏎ outstanding ⏎ in ascetic qualities.
+thag18.1:37.4 | P: sadiso me na vijjati. | S: no equal to me is found. | T: There’s no one else ⏎ like me.
+
+## thag18.1:38.1–thag18.1:38.4 (thag)
+thag18.1:38.1 | P: Pariciṇṇo mayā satthā, | S: I’ve served the Teacher | T: The Teacher has been served by me;
+thag18.1:38.2 | P: kataṁ buddhassa sāsanaṁ; | S: and fulfilled the Buddha’s instructions. | T: the Awakened One’s bidding, ⏎ done;
+thag18.1:38.3 | P: Ohito garuko bhāro, | S: The heavy burden is laid down, | T: the heavy load, laid down;
+thag18.1:38.4 | P: natthi dāni punabbhavo. | S: now there’ll be no more future lives.” | T: the guide to becoming, uprooted.
+
+## thag18.1:39.1–thag18.1:39.6 (thag)
+thag18.1:39.1 | P: Na cīvare na sayane, | S: “Like a lotus flower | T: Neither to robe,
+thag18.1:39.2 | P: bhojane nupalimpati; | S: to which water will not stick, | T: nor dwelling, ⏎ nor food
+thag18.1:39.3 | P: Gotamo anappameyyo, | S: Gotama the immeasurable is unstained | T: does he cling: ⏎ Gotama,
+thag18.1:39.4 | P: muḷālapupphaṁ vimalaṁva; | S: by robes, lodgings, or food. | T: like a lotus unspotted
+thag18.1:39.5 | P: Ambunā nekkhammaninno, | S: He inclines to renunciation, | T: by water, inclining ⏎ to renunciation,
+thag18.1:39.6 | P: tibhavābhinissaṭo. | S: and has escaped the three states of existence. | T: detached ⏎ from the three planes of becoming.
+
+## thag18.1:40.1–thag18.1:40.4 (thag)
+thag18.1:40.1 | P: Satipaṭṭhānagīvo so, | S: The great sage’s neck is mindfulness meditation; | T: He, ⏎ the great sage, ⏎ has the establishings of mindfulness ⏎ as his neck,
+thag18.1:40.2 | P: saddhāhattho mahāmuni; | S: faith is his hands, and wisdom his head. | T: conviction ⏎ as hands, ⏎ discernment ⏎ as head.
+thag18.1:40.3 | P: Paññāsīso mahāñāṇī, | S: Having great knowledge, | T: Having great knowledge,
+thag18.1:40.4 | P: sadā carati nibbuto”ti. | S: he always wanders, quenched.” | T: he goes about ⏎ always unbound.
+CONTEXT thag18.1:40.5 | P: … Mahākassapo thero … | S: (none) | T: (none)
+CONTEXT thag18.1:40.6 | P: Cattālīsanipāto niṭṭhito. | S: The Book of the Forties is finished. | T: (none)
+
+## thag18.1:41.1–thag18.1:41.4 (thag)
+CONTEXT thag18.1:40.6 | P: Cattālīsanipāto niṭṭhito. | S: The Book of the Forties is finished. | T: (none)
+CONTEXT thag18.1:41.0 | P: Tatruddānaṁ | S: (none) | T: (none)
+thag18.1:41.1 | P: Cattālīsanipātamhi, | S: (none) | T: (none)
+thag18.1:41.2 | P: mahākassapasavhayo; | S: (none) | T: (none)
+thag18.1:41.3 | P: Ekova thero gāthāyo, | S: (none) | T: (none)
+thag18.1:41.4 | P: cattālīsa duvepi cāti. | S: (none) | T: (none)
+
+## thig1.1:1.1–thig1.1:1.4 (thig)
+CONTEXT thig1.1:0.3 | P: Aññatarātherīgāthā | S: An Unnamed Nun (1st) | T: Thig 1:1 An Anonymous Nun
+CONTEXT thig1.1:1.0 | P: Namo tassa Bhagavato Arahato Sammāsambuddhassa. | S: Homage to him, the blessed one, the perfected one, the fully awakened Buddha! | T: (none)
+thig1.1:1.1 | P: “Sukhaṁ supāhi therike, | S: Sleep softly, little nun, | T: Sleep, little therī, sleep comfortably,
+thig1.1:1.2 | P: Katvā coḷena pārutā; | S: wrapped in the cloth you sewed yourself; | T: wrapped in the robe you’ve made,
+thig1.1:1.3 | P: Upasanto hi te rāgo, | S: for your desire has been quelled, | T: for your passion is stilled—
+thig1.1:1.4 | P: Sukkhaḍākaṁ va kumbhiyan”ti. | S: like vegetables boiled dry in a pot. | T: like a pot of pickled greens ⏎ boiled dry.
+CONTEXT thig1.1:2.1 | P: Itthaṁ sudaṁ aññatarā therī apaññātā bhikkhunī gāthaṁ abhāsitthāti. | S: That is how this verse was recited by a certain unnamed nun. | T: (none)
+
+## thig1.3:1.1–thig1.3:1.4 (thig)
+CONTEXT thig1.3:0.2 | P: Ekakanipāta | S: The Book of the Ones | T: (none)
+CONTEXT thig1.3:0.3 | P: Puṇṇātherīgāthā | S: Puṇṇā | T: Thig 1:3 Puṇṇā
+thig1.3:1.1 | P: “Puṇṇe pūrassu dhammehi, | S: Puṇṇā, be filled with good qualities, | T: Puṇṇā, grow full with good qualities
+thig1.3:1.2 | P: Cando pannaraseriva; | S: like the moon on the fifteenth day. | T: like the moon on the fifteenth day.
+thig1.3:1.3 | P: Paripuṇṇāya paññāya, | S: When your wisdom is full, | T: With discernment at total fullness,
+thig1.3:1.4 | P: Tamokhandhaṁ padālayā”ti. | S: shatter the mass of darkness. | T: burst ⏎ the mass ⏎ of darkness.
+CONTEXT thig1.3:2.1 | P: Itthaṁ sudaṁ puṇṇā therī gāthaṁ abhāsitthāti. | S: That is how this verse was recited by the senior nun Puṇṇā. | T: (none)
+
+## thig1.11:1.1–thig1.11:1.6 (thig) GATHERED; possible speaker requires a reader
+CONTEXT thig1.11:0.2 | P: Ekakanipāta | S: The Book of the Ones | T: (none)
+CONTEXT thig1.11:0.3 | P: Muttātherīgāthā | S: Muttā (2nd) | T: Thig 1:11 Muttā
+thig1.11:1.1 | P: “Sumuttā sādhumuttāmhi, | S: I’m well freed, so very well freed, | T: So freed! So thoroughly freed am I!—
+thig1.11:1.2 | P: tīhi khujjehi muttiyā; | S: freed from the three things that humped me: | T: from three crooked things set free:
+thig1.11:1.3 | P: Udukkhalena musalena, | S: the mortar, the pestle, | T: from mortar, pestle,
+thig1.11:1.4 | P: patinā khujjakena ca; | S: and my humpbacked husband. | T: & crooked old husband.
+thig1.11:1.5 | P: Muttāmhi jātimaraṇā, | S: I’m freed from birth and death; | T: Having uprooted the craving ⏎ that leads to becoming, ⏎ I’m from aging & death set free.
+thig1.11:1.6 | P: bhavanetti samūhatā”ti. | S: the leash to existence is eradicated. | T: (none)
+CONTEXT thig1.11:2.1 | P: … Muttā therī …. | S: (none) | T: (none)
+
+## thig1.17:1.1–thig1.17:1.6 (thig)
+CONTEXT thig1.17:0.2 | P: Ekakanipāta | S: The Book of the Ones | T: (none)
+CONTEXT thig1.17:0.3 | P: Dhammātherīgāthā | S: Dhammā | T: Thig 1:17 Dhammā
+thig1.17:1.1 | P: “Piṇḍapātaṁ caritvāna, | S: I wandered for alms | T: Wandering for alms—
+thig1.17:1.2 | P: daṇḍamolubbha dubbalā; | S: though feeble, leaning on a staff. | T: weak, leaning on a staff,
+thig1.17:1.3 | P: Vedhamānehi gattehi, | S: My limbs wobbled | T: with trembling limbs—
+thig1.17:1.4 | P: tattheva nipatiṁ chamā; | S: and I fell to the ground right there. | T: I fell down right there on the ground.
+thig1.17:1.5 | P: Disvā ādīnavaṁ kāye, | S: Seeing the danger of the body, | T: Seeing the drawbacks of the body,
+thig1.17:1.6 | P: atha cittaṁ vimucci me”ti. | S: my mind was freed. | T: my mind was then ⏎ set free.
+CONTEXT thig1.17:2.1 | P: … Dhammā therī …. | S: (none) | T: (none)
+
+## thig2.3:1.1–thig2.3:1.4 (thig)
+CONTEXT thig2.3:0.2 | P: Dukanipāta | S: The Book of the Twos | T: (none)
+CONTEXT thig2.3:0.3 | P: Sumaṅgalamātātherīgāthā | S: Sumaṅgala’s Mother | T: Thig 2:3 Sumaṅgala’s Mother
+thig2.3:1.1 | P: “Sumuttikā sumuttikā, | S: I’m well freed, well freed, | T: So freed! So freed!
+thig2.3:1.2 | P: Sādhumuttikāmhi musalassa; | S: so very well freed from the pestle! | T: So thoroughly freed am I— ⏎ from my pestle,
+thig2.3:1.3 | P: Ahiriko me chattakaṁ vāpi, | S: My shameless husband was most certainly a mushroom, | T: my shameless husband ⏎ & his sun-shade making,
+thig2.3:1.4 | P: Ukkhalikā me deḍḍubhaṁ vāti. | S: my mortar wafted like an eel. | T: my moldy old pot ⏎ with its water-snake smell.
+
+## thig2.3:2.1–thig2.3:2.4 (thig)
+thig2.3:2.1 | P: Rāgañca ahaṁ dosañca, | S: Greed and hate sizzle and hiss | T: Aversion & passion
+thig2.3:2.2 | P: Cicciṭi cicciṭīti vihanāmi; | S: as I squelch them. | T: I cut with a chop.
+thig2.3:2.3 | P: Sā rukkhamūlamupagamma, | S: Having gone to the root of a tree, | T: Having come to the foot of a tree,
+thig2.3:2.4 | P: Aho sukhanti sukhato jhāyāmī”ti. | S: I meditate happily, thinking, “Oh, what bliss!” | T: I do jhāna, from the bliss thinking: ⏎ “What bliss!”
+CONTEXT thig2.3:3.1 | P: … Sumaṅgalamātā therī …. | S: (none) | T: (none)
+
+## thig2.4:1.1–thig2.4:1.4 (thig)
+CONTEXT thig2.4:0.2 | P: Dukanipāta | S: The Book of the Twos | T: (none)
+CONTEXT thig2.4:0.3 | P: Aḍḍhakāsitherīgāthā | S: Aḍḍhakāsi | T: Thig 2:4 Aḍḍhkāsī
+thig2.4:1.1 | P: “Yāva kāsijanapado, | S: The price for my services | T: All of the Kāsi countryside:
+thig2.4:1.2 | P: suṅko me tatthako ahu; | S: amounted to the nation of Kāsi. | T: My fee was equal to that.
+thig2.4:1.3 | P: Taṁ katvā negamo agghaṁ, | S: By setting that price, | T: Having made that my price,
+thig2.4:1.4 | P: aḍḍhenagghaṁ ṭhapesi maṁ. | S: the townsfolk made me priceless. | T: the town set me as priceless in price.
+
+## thig2.4:2.1–thig2.4:2.6 (thig)
+thig2.4:2.1 | P: Atha nibbindahaṁ rūpe, | S: Then, growing disillusioned with my form, | T: But then I became disenchanted with my body, ⏎ and—disenchanted—
+thig2.4:2.2 | P: nibbindañca virajjahaṁ; | S: I became dispassionate. | T: dispassionate:
+thig2.4:2.3 | P: Mā puna jātisaṁsāraṁ, | S: Don’t journey on and on, | T: “May I not run again & again
+thig2.4:2.4 | P: sandhāveyyaṁ punappunaṁ; | S: transmigrating through rebirths! | T: through birth & the wandering-on.”
+thig2.4:2.5 | P: Tisso vijjā sacchikatā, | S: I’ve realized the three knowledges, | T: The three knowledges ⏎ have been realized.
+thig2.4:2.6 | P: kataṁ buddhassa sāsanan”ti. | S: and fulfilled the Buddha’s instructions. | T: The Buddha’s bidding ⏎ done.
+CONTEXT thig2.4:3.1 | P: … Aḍḍhakāsi therī …. | S: (none) | T: (none)
+
+## thig3.2:1.1–thig3.2:1.4 (thig)
+CONTEXT thig3.2:0.2 | P: Tikanipāta | S: The Book of the Threes | T: (none)
+CONTEXT thig3.2:0.3 | P: Uttamātherīgāthā | S: Uttamā | T: Thig 3:2 Uttamā
+thig3.2:1.1 | P: “Catukkhattuṁ pañcakkhattuṁ, | S: Four or five times | T: Four times, five,
+thig3.2:1.2 | P: vihārā upanikkhamiṁ; | S: I left my dwelling. | T: I ran amok from my dwelling,
+thig3.2:1.3 | P: Aladdhā cetaso santiṁ, | S: I had failed to find peace of heart, | T: having gained no peace of awareness,
+thig3.2:1.4 | P: citte avasavattinī. | S: or any control over my mind. | T: my thoughts out of control.
+
+## thig3.2:2.1–thig3.2:2.4 (thig)
+thig3.2:2.1 | P: Sā bhikkhuniṁ upagacchiṁ, | S: I approached a nun | T: So I went to a trustworthy nun.
+thig3.2:2.2 | P: yā me saddhāyikā ahu; | S: in whom I had faith. | T: (none)
+thig3.2:2.3 | P: Sā me dhammamadesesi, | S: She taught me the Dhamma: | T: She taught me the Dhamma:
+thig3.2:2.4 | P: khandhāyatanadhātuyo. | S: the aggregates, sense fields, and elements. | T: aggregates, sense media, properties.
+
+## thig3.2:3.1–thig3.2:3.6 (thig)
+thig3.2:3.1 | P: Tassā dhammaṁ suṇitvāna, | S: When I had heard her teaching, | T: Hearing the Dhamma,
+thig3.2:3.2 | P: Yathā maṁ anusāsi sā; | S: in accordance with her instructions, | T: I did as she said.
+thig3.2:3.3 | P: Sattāhaṁ ekapallaṅkena, | S: I sat cross-legged for seven days without moving, | T: For seven days I sat in one spot,
+thig3.2:3.4 | P: Nisīdiṁ pītisukhasamappitā; | S: given over to rapture and bliss. | T: absorbed in rapture & bliss.
+thig3.2:3.5 | P: Aṭṭhamiyā pāde pasāresiṁ, | S: On the eighth day I stretched out my feet, | T: On the eighth, I stretched out my legs,
+thig3.2:3.6 | P: Tamokhandhaṁ padāliyā”ti. | S: having shattered the mass of darkness. | T: having burst the mass ⏎ of darkness.
+CONTEXT thig3.2:4.1 | P: … Uttamā therī …. | S: (none) | T: (none)
+
+## thig3.4:1.1–thig3.4:1.4 (thig)
+CONTEXT thig3.4:0.2 | P: Tikanipāta | S: The Book of the Threes | T: (none)
+CONTEXT thig3.4:0.3 | P: Dantikātherīgāthā | S: Dantikā | T: Thig 3:4 Dantikā & the Elephant
+thig3.4:1.1 | P: “Divāvihārā nikkhamma, | S: Leaving my day’s meditation | T: Coming out from my day’s abiding
+thig3.4:1.2 | P: gijjhakūṭamhi pabbate; | S: on Vulture’s Peak Mountain, | T: on Vulture Peak Mountain,
+thig3.4:1.3 | P: Nāgaṁ ogāhamuttiṇṇaṁ, | S: I saw an elephant on the riverbank | T: I saw on the bank of the river ⏎ an elephant
+thig3.4:1.4 | P: nadītīramhi addasaṁ. | S: having just come up from his bath. | T: emerged from its plunge.
+
+## thig3.4:2.1–thig3.4:2.4 (thig)
+thig3.4:2.1 | P: Puriso aṅkusamādāya, | S: A man, taking a pole with a hook, | T: A man holding a hook
+thig3.4:2.2 | P: ‘dehi pādan’ti yācati; | S: asked the elephant, “Give me your foot.” | T: requested: ⏎ “Give me your foot.”
+thig3.4:2.3 | P: Nāgo pasārayī pādaṁ, | S: The elephant presented his foot, | T: The elephant ⏎ extended its foot.
+thig3.4:2.4 | P: puriso nāgamāruhi. | S: and the man mounted him. | T: The man ⏎ got up on the elephant.
+
+## thig3.4:3.1–thig3.4:3.4 (thig)
+thig3.4:3.1 | P: Disvā adantaṁ damitaṁ, | S: Seeing a wild beast so tamed, | T: Seeing what was untrained now tamed
+thig3.4:3.2 | P: manussānaṁ vasaṁ gataṁ; | S: submitting to human control, | T: brought under human control,
+thig3.4:3.3 | P: Tato cittaṁ samādhesiṁ, | S: my mind became serene: | T: with that I centered my mind—
+thig3.4:3.4 | P: khalu tāya vanaṁ gatā”ti. | S: that is why I’ve gone to the forest! | T: why I’d gone to the woods ⏎ in the first place.
+CONTEXT thig3.4:4.1 | P: … Dantikā therī …. | S: (none) | T: (none)
+
+## thig3.5:1.1–thig3.5:1.6 (thig)
+CONTEXT thig3.5:0.2 | P: Tikanipāta | S: The Book of the Threes | T: (none)
+CONTEXT thig3.5:0.3 | P: Ubbiritherīgāthā | S: Ubbirī | T: Thig 3:5 Ubbiri
+thig3.5:1.1 | P: “Amma jīvāti vanamhi kandasi, | S: “You cry ‘Live, my dear mother!’ in the forest. | T: [Ubbiri recalls the Buddha’s words:] ⏎ “‘Jīva, my daughter,’ ⏎ you cry in the woods.
+thig3.5:1.2 | P: Attānaṁ adhigaccha ubbiri; | S: Ubbirī, get a hold of yourself! | T: Come to your senses, Ubbiri.
+thig3.5:1.3 | P: Cullāsītisahassāni, | S: Eighty-four thousand people, | T: 84,000
+thig3.5:1.4 | P: Sabbā jīvasanāmikā; | S: all named ‘Live’, | T: all named Jīva
+thig3.5:1.5 | P: Etamhāḷāhane daḍḍhā, | S: have been burnt in this funeral ground: | T: have been burned in that charnel ground.
+thig3.5:1.6 | P: Tāsaṁ kamanusocasi”. | S: which one do you grieve for?” | T: For which of them do you grieve?”
+
+## thig3.5:2.1–thig3.5:2.4 (thig)
+thig3.5:2.1 | P: “Abbahī vata me sallaṁ, | S: “Oh! For you have plucked the arrow from me, | T: Pulling out ⏎ —completely out— ⏎ the arrow
+thig3.5:2.2 | P: duddasaṁ hadayassitaṁ; | S: so hard to see, stuck in the heart. | T: so hard to see, ⏎ embedded in my heart,
+thig3.5:2.3 | P: Yaṁ me sokaparetāya, | S: You’ve swept away the grief for my daughter | T: he expelled from me ⏎ —overcome with grief— ⏎ the grief
+thig3.5:2.4 | P: dhītusokaṁ byapānudi. | S: in which I once was mired. | T: over my daughter.
+
+## thig3.5:3.1–thig3.5:3.4 (thig) GATHERED; unequal counts require a reader
+thig3.5:3.1 | P: Sājja abbūḷhasallāhaṁ, | S: Today I’ve plucked the arrow, | T: Today—with arrow removed,
+thig3.5:3.2 | P: Nicchātā parinibbutā; | S: I’m hungerless, quenched. | T: without hunger, entirely ⏎ unbound—
+thig3.5:3.3 | P: Buddhaṁ dhammañca saṅghañca, | S: I go for refuge to that sage, the Buddha, | T: to the Buddha, Dhamma, & Saṅgha I go, ⏎ for refuge to ⏎ the Sage.
+thig3.5:3.4 | P: Upemi saraṇaṁ munin”ti. | S: to his teaching, and to the Saṅgha.” | T: (none)
+CONTEXT thig3.5:4.1 | P: … Ubbirī therī …. | S: (none) | T: (none)
+
+## thig5.2:1.1–thig5.2:1.4 (thig)
+CONTEXT thig5.2:0.2 | P: Pañcakanipāta | S: The Book of the Fives | T: (none)
+CONTEXT thig5.2:0.3 | P: Vimalātherīgāthā | S: Vimalā, the Former Courtesan | T: Thig 5:2 Vimalā, the Former Courtesan
+thig5.2:1.1 | P: “Mattā vaṇṇena rūpena, | S: Intoxicated by my appearance, | T: Intoxicated with my complexion
+thig5.2:1.2 | P: sobhaggena yasena ca; | S: my figure, my beauty, my fame, | T: figure, beauty, & fame;
+thig5.2:1.3 | P: Yobbanena cupatthaddhā, | S: and owing to my youth, | T: haughty with youth,
+thig5.2:1.4 | P: aññāsamatimaññihaṁ. | S: I looked down on others. | T: I despised other women.
+
+## thig5.2:2.1–thig5.2:2.4 (thig)
+thig5.2:2.1 | P: Vibhūsetvā imaṁ kāyaṁ, | S: I adorned this body | T: Adorning this body
+thig5.2:2.2 | P: sucittaṁ bālalāpanaṁ; | S: all pretty, lamented by fools, | T: embellished to delude foolish men,
+thig5.2:2.3 | P: Aṭṭhāsiṁ vesidvāramhi, | S: and stood at the brothel door, | T: I stood at the door to the brothel:
+thig5.2:2.4 | P: luddo pāsamivoḍḍiya. | S: like a hunter setting a snare. | T: a hunter with snare laid out.
+
+## thig5.2:3.1–thig5.2:3.4 (thig)
+thig5.2:3.1 | P: Piḷandhanaṁ vidaṁsentī, | S: I stripped for them, | T: I showed off my ornaments,
+thig5.2:3.2 | P: guyhaṁ pakāsikaṁ bahuṁ; | S: revealing my many hidden treasures. | T: and revealed many a private part.
+thig5.2:3.3 | P: Akāsiṁ vividhaṁ māyaṁ, | S: Creating an intricate illusion, | T: I worked my manifold magic,
+thig5.2:3.4 | P: ujjagghantī bahuṁ janaṁ. | S: I laughed, teasing those men. | T: laughing out loud at the crowd.
+
+## thig5.2:4.1–thig5.2:4.4 (thig)
+thig5.2:4.1 | P: Sājja piṇḍaṁ caritvāna, | S: Today, having wandered for alms, | T: Today,
+thig5.2:4.2 | P: muṇḍā saṅghāṭipārutā; | S: my head shaven, wearing the outer robe, | T: wrapped in a double cloak, ⏎ my head shaven, ⏎ having wandered for alms,
+thig5.2:4.3 | P: Nisinnā rukkhamūlamhi, | S: I sat at the root of a tree to meditate; | T: I sit at the foot of a tree
+thig5.2:4.4 | P: avitakkassa lābhinī. | S: I’ve gained freedom from thought. | T: and attain the state of no-thought.
+
+## thig5.2:5.1–thig5.2:5.4 (thig)
+thig5.2:5.1 | P: Sabbe yogā samucchinnā, | S: All yokes are severed, | T: All ties—
+thig5.2:5.2 | P: ye dibbā ye ca mānusā; | S: both human and heavenly. | T: human & divine—have been cut.
+thig5.2:5.3 | P: Khepetvā āsave sabbe, | S: Having wiped out all defilements, | T: Having cast off all ⏎ effluents,
+thig5.2:5.4 | P: sītibhūtāmhi nibbutā”ti. | S: I have become cooled and quenched. | T: cooled am I. Unbound.
+CONTEXT thig5.2:6.1 | P: … Vimalā purāṇagaṇikā therī …. | S: (none) | T: (none)

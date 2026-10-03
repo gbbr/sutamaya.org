@@ -1,0 +1,14 @@
+{
+  "batch": "064",
+  "versesRead": 66,
+  "rowsRead": 268,
+  "automaticFindings": 0,
+  "readerFindings": 36,
+  "unresolved": [
+    {
+      "key": "thig6.7:3.1",
+      "reason": "The translator line “Abandoning these lower fetters, nun—” translates thig6.7:4.1–4.3 but precedes stanza 3’s fetter list; stanza 4’s remaining translation follows the list. Stanza identities are interleaved and cannot be restored by whole-line cuts while retaining source order."
+    }
+  ],
+  "ruleCandidate": "thig12.1:3 has three speech lines for four rows; its speaker label is not a spare verse line, so the existing blank is retained."
+}

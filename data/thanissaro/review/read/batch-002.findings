@@ -1,13 +1,13 @@
-dhp256:2 none
+# superseded: dhp256:2 none
 dhp256:3 starts: The wise one, weighing both the
 dhp256:4 starts: right judgment & wrong,
 iti10:2.1 starts: “Monks, one who has not fully known & fully
 iti10:2.2 none
-an1.33:1.1 starts: unguarded,
-an1.33:1.2 none
-an1.35:1.1 starts: unprotected,
-an1.35:1.2 none
-an1.37:1.1 starts: unrestrained—
+# superseded: an1.33:1.1 starts: unguarded,
+# superseded: an1.33:1.2 none
+# superseded: an1.35:1.1 starts: unprotected,
+# superseded: an1.35:1.2 none
+# superseded: an1.37:1.1 starts: unrestrained—
 an1.37:1.2 none
 sn15.14:1.2 starts: There the Blessed One said:
 sn15.14:1.3 none

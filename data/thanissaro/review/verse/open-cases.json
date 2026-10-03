@@ -1,0 +1,58 @@
+[
+  {
+    "key": "sn3.19:7.1",
+    "reason": "Prose introduction precedes the stanza in this verse row; its relocation would require a non-verse/context key."
+  },
+  {
+    "key": "sn4.18:3.3",
+    "reason": "P rows 3–4 question about evil ripening has no English in batch009. Following stanza sn4.18:4 in batch010 starts correctly with happy living; question appears omitted rather than displaced."
+  },
+  {
+    "key": "sn4.24:10.4",
+    "reason": "Narrative departure and brooding prose belonging to sn4.25:1.1 is appended to the verse without a translator line break; context row itself has no T. Cannot split inside that source line."
+  },
+  {
+    "key": "an3.39:10.3",
+    "reason": "Translator interlaces adjacent stanza content: “I overcame all intoxication” (11.1) precedes “with health, youth, & life” (10.3–10.4). Restoring both stanza identities would require reordering translator lines."
+  },
+  {
+    "key": "an4.19:4.1",
+    "reason": "This verse row begins with the full four-ways-of-not-going-off-course prose, corresponding to CONTEXT an4.19:2.3–2.4. Moving the verse start to “If you don’t—” would require changing read-only CONTEXT boundaries to avoid attaching the prose to the preceding verse."
+  },
+  {
+    "key": "an5.36:3.1",
+    "reason": "T —straightened, Such— belongs to prior stanza Pali2.4 ujubhūtesu tādisu. T2.4 with hearts inspired by the noble ones mixes current3.1 vippasannamanā with prior2.3 ariyesu. Own line and ordering prevent a compliant boundary-only repair; AUTO3.1 withheld, remaining AUTO retained."
+  },
+  {
+    "key": "an5.57:14.3",
+    "reason": "T I overcame all intoxication belongs to next stanza15.1 Sabbe made abhibhosmi; T15.1 & life completes prior stanza14.4. Translator order interleaves stanza concepts, preventing a repair using whole lines without reordering."
+  },
+  {
+    "key": "an6.45:21.3",
+    "reason": "T living at home is next stanza22.2 gharamesino, brought forward before current21.3–21.4 giving righteously gained belongings. Translator order interleaves identities; whole-line boundary changes cannot restore both without reordering. Leave source wording/order intact."
+  },
+  {
+    "key": "an8.54:18.2",
+    "reason": "T have been declared by the one / who is truly named belongs to previous stanza17.3 Akkhātā saccanāmena, but follows current18.1–18.2 both-life wording. Translator order interleaves identities; recuts only spread whole lines and preserve order, leaving inseparable source identity issue."
+  },
+  {
+    "key": "snp3.1:6.4",
+    "reason": "Source-order interleaving: “Mindful, his eyes downcast,” translates the beginning of verse 7, but occurs before “looking only a plow-length before him.”, the end of verse 6, in T row snp3.1:6.4. Restoring both stanza identities requires reordering source lines, so these lines were preserved and the four existing verse-7 lines were spread over its four rows."
+  },
+  {
+    "key": "snp3.12:25.1",
+    "reason": "Translator puts “Knowing that” (26.1) before the feelings list of verse 25, with “is stressful” after it. Whole-stanza separation requires reordering; only internal whole-line distribution is proposed."
+  },
+  {
+    "key": "thag17.2:22.3",
+    "reason": "Translator gives the worker/wage ending of Pali verse 23 at 22.4, and the mindful/alert ending of Pali verse 22 at 23.4. Restoring both stanza identities would require reordering; source validation is needed."
+  },
+  {
+    "key": "thig6.7:3.1",
+    "reason": "The translator line “Abandoning these lower fetters, nun—” translates thig6.7:4.1–4.3 but precedes stanza 3’s fetter list; stanza 4’s remaining translation follows the list. Stanza identities are interleaved and cannot be restored by whole-line cuts while retaining source order."
+  },
+  {
+    "key": "ud7.8:4.6",
+    "reason": "Editorial explanation is appended inside the unbroken translator line beginning “attachment. In AN 10:29, the Buddha recommends this view”. It is outside the verse and cannot be separated at an allowed translator break without source-page boundary correction."
+  }
+]

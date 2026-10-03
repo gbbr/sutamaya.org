@@ -1,0 +1,13 @@
+{
+  "versesRead": 3966,
+  "verseRows": 16558,
+  "batchesRead": 69,
+  "activeRoundFindings": 3069,
+  "passingGroups": 661,
+  "passingFindings": 1105,
+  "othersAlreadySo": 10727,
+  "changedKeysInTrial": 1744,
+  "sourceMovedStartsChecked": 1100,
+  "sourcePreservedStarts": 1948,
+  "problems": []
+}

@@ -1,8 +1,8 @@
 """Checks a review round's changes to a translation against a commit, the last one by default.
 
-Lists the verse lines it changed that aren't whole lines of the translator's pages, and the Pali
-lines it newly hides from the reader, by the reveal rule in data/upstream/README.md's "Building
-them into the app".
+Lists the verse lines it changed that aren't whole lines of the translator's pages, the Pali lines
+it newly hides from the reader, and every Pali line still hidden in the verses he translates, by
+the reveal rule in data/upstream/README.md's "Building them into the app".
 
     python3 scripts/segmenter/check-round.py <translator> [--base <revision>]
 """
@@ -19,6 +19,11 @@ LINE_END = re.compile(r'<br\s*/?>|</(?:p|h[1-6]|li|div|blockquote|dd|dt|tr)>', r
 MARKER = re.compile(r"<a\b[^>]*class=['\"][^'\"]*(?:ref|footnote)[^'\"]*['\"][^>]*>.*?</a>"
                     r"|<span\b[^>]*class=['\"][^'\"]*\bfn\b[^'\"]*['\"][^>]*>.*?</span>", re.I | re.S)
 TAG = re.compile(r'<[^>]+>')
+# A verse he shortens to "…" or gives only as a note pointing elsewhere, whose Pali stays hidden.
+SHORTENED = re.compile(r'…|\.\.\.|<a href|\[\d|identical|repeats', re.I)
+# A <pre> block, whose lines end at its newlines.
+PRE = re.compile(r'<pre\b.*?</pre>', re.I | re.S)
+PARAGRAPH_START = re.compile(r'<(?:p|h[1-6]|li|blockquote)\b')
 
 
 def clean(line):
@@ -29,21 +34,30 @@ def source_lines(translator):
     """Returns every line of the translator's pages."""
     lines = set()
     for page in (ROOT / 'data/upstream' / translator / 'sutta').rglob('*.html'):
-        for line in LINE_END.split(MARKER.sub('', page.read_text())):
+        text = PRE.sub(lambda pre: pre.group(0).replace('\n', '<br>'), page.read_text())
+        for line in LINE_END.split(MARKER.sub('', text)):
             line = clean(html.unescape(TAG.sub('', line)))
             if line:
                 lines.add(line)
     return lines
 
 
-def paragraph(key):
-    doc, seg = key.split(':', 1)
-    return doc + ':' + seg.split('.', 1)[0]
+def paragraphs(pali, markup):
+    """Returns each line's paragraph, from the Pali's markup where there is any (the line keys make
+    each of the Dhammapada's verse lines a paragraph of its own), else from the key."""
+    if not markup:
+        return {key: key.split(':', 1)[0] + ':' + key.split(':', 1)[1].split('.', 1)[0] for key in pali}
+    out, n = {}, 0
+    for key in pali:
+        n += bool(PARAGRAPH_START.search(markup.get(key, '')))
+        out[key] = n
+    return out
 
 
-def hidden(pali, english):
+def hidden(pali, english, markup):
     """Returns the Pali lines the reader never sees: a line with no English joins the line above
     in its paragraph when it is alone, and is hidden otherwise."""
+    paragraph = paragraphs(pali, markup)
     out, above, pending = set(), None, None
     for key, text in pali.items():
         if key.split(':', 1)[1].split('.', 1)[0] == '0':
@@ -53,7 +67,7 @@ def hidden(pali, english):
             above, pending = key, None
         elif text.strip():
             out.update([pending] if pending else [])
-            joins = above is not None and paragraph(key) == paragraph(above)
+            joins = above is not None and paragraph[key] == paragraph[above]
             if not joins:
                 out.add(key)
             above, pending = None, key if joins else None
@@ -73,24 +87,33 @@ def main():
     lines = source_lines(translator)
     covered = set(json.loads((ROOT / f'data/{translator}/covered.json').read_text()))
     suffix = f'_translation-en-{translator}.json'
-    partial, newly_hidden, shown, changed = [], [], 0, 0
+    partial, newly_hidden, shown, changed, verse_hidden = [], [], 0, 0, []
     for path in sorted((ROOT / f'data/{translator}/sutta').rglob(f'*{suffix}')):
         relative = path.relative_to(ROOT)
-        old, new = at(base, relative), json.loads(path.read_text())
-        if old is None or old == new:
-            continue
+        new = json.loads(path.read_text())
         inner = path.relative_to(ROOT / f'data/{translator}/sutta')
         pali = json.loads((ROOT / 'data/pali/sutta' / str(inner).replace(suffix, '_root-pli-ms.json')).read_text())
         markup_path = ROOT / 'data/html/pli/ms/sutta' / str(inner).replace(suffix, '_html.json')
         markup = json.loads(markup_path.read_text()) if markup_path.exists() else {}
+        # Hidden lines of the verses he translates.
+        paragraph, order = paragraphs(pali, markup), list(pali)
+        english = {}
+        for key in pali:
+            english[paragraph[key]] = english.get(paragraph[key], '') + new.get(key, '')
+        verse_hidden += sorted((key for key in hidden(pali, new, markup) - covered
+                                if 'verse-line' in markup.get(key, '')
+                                and english[paragraph[key]].strip()
+                                and not SHORTENED.search(english[paragraph[key]])), key=order.index)
+        old = at(base, relative)
+        if old is None or old == new:
+            continue
         keys = [key for key in new if new[key] != old.get(key)]
         changed += len(keys)
         for key in keys:
             if 'verse-line' in markup.get(key, ''):
                 partial += [(key, line) for line in map(clean, new[key].split('\n'))
                             if line and line not in lines]
-        before, after = hidden(pali, old), hidden(pali, new)
-        order = list(pali)
+        before, after = hidden(pali, old, markup), hidden(pali, new, markup)
         newly_hidden += sorted(after - before - covered, key=order.index)
         shown += len(before - after)
 
@@ -100,6 +123,9 @@ def main():
         print(f'  {key}: {line}')
     print(f'{shown} Pali lines newly shown; {len(newly_hidden)} newly hidden, outside covered.json')
     for key in newly_hidden:
+        print(f'  {key}')
+    print(f'{len(verse_hidden)} Pali lines hidden in the verses he translates, in the whole translation')
+    for key in verse_hidden:
         print(f'  {key}')
 
 

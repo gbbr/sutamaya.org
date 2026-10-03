@@ -1,0 +1,2187 @@
+[
+  {
+    "file": "data/thanissaro/review/codex-read/batch-005.findings",
+    "finding": "an5.57:12.2 starts: subject to aging, subject to death, run-of-the-mill",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-009.findings",
+    "finding": "sn10.12:9.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-011.findings",
+    "finding": "sn3.9:5.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-011.findings",
+    "finding": "sn3.9:5.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-011.findings",
+    "finding": "sn3.9:6.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-011.findings",
+    "finding": "sn3.9:6.3 starts: But sacrifices free from violence, offered always",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-019.findings",
+    "finding": "an10.118:7.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-029.findings",
+    "finding": "an7.64:22.2 starts: and do violence to himself,",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/fullread-mn/batch-002.findings",
+    "finding": "mn102:12.9 starts: With regard to that—fabricated, gross—there is still",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/fullread-mn/batch-002.findings",
+    "finding": "mn102:12.10 starts: Knowing that, seeing the escape from it,",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-import-exceptions.findings",
+    "finding": "sn3.9:5.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-import-exceptions.findings",
+    "finding": "sn3.9:6.6 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-import-judgments.findings",
+    "finding": "sn10.12:9.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-import-judgments.findings",
+    "finding": "sn3.9:5.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-import-judgments.findings",
+    "finding": "sn10.12:9.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/flagged-001.findings",
+    "finding": "an1.39:1.1 starts: 39. “I don’t envision a single thing that—",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/flagged-001.findings",
+    "finding": "an1.76:1.1 starts: 77. “Next to nothing, monks, is loss of",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/flagged-002.findings",
+    "finding": "sn9.3:2.2 starts: undiscerning, unaware.",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/flagged-005.findings",
+    "finding": "an1.33:1.2 starts: The mind, when unguarded leads to great harm.”",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/flagged-005.findings",
+    "finding": "an1.35:1.2 starts: The mind, when unprotected leads to great harm.”",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-002.findings",
+    "finding": "dhp256:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-002.findings",
+    "finding": "an1.33:1.1 starts: unguarded,",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-002.findings",
+    "finding": "an1.33:1.2 none",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-002.findings",
+    "finding": "an1.35:1.1 starts: unprotected,",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-002.findings",
+    "finding": "an1.35:1.2 none",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-002.findings",
+    "finding": "an1.37:1.1 starts: unrestrained—",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-004.findings",
+    "finding": "dhp266:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-004.findings",
+    "finding": "dhp42:1 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-004.findings",
+    "finding": "dhp42:3 starts: Whatever an enemy might do",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-004.findings",
+    "finding": "dhp42:4 starts: to an enemy, or a foe to a foe,",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-006.findings",
+    "finding": "sn1.42:3.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-023.findings",
+    "finding": "dhp249:6 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-023.findings",
+    "finding": "dhp259:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-023.findings",
+    "finding": "dhp76:3 starts: Stay with this sort of sage. For the one who stays",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-023.findings",
+    "finding": "sn10.12:10.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-026.findings",
+    "finding": "mn82:25.18 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-026.findings",
+    "finding": "mn82:42.36 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-026.findings",
+    "finding": "mn82:42.38 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-032.findings",
+    "finding": "iti84:7.3 starts: those heeding the message of the One Well-Gone.",
+    "reason": "pre-existing unapplied verse request; replaced by this review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-032.findings",
+    "finding": "iti84:7.4 starts: will put an end to stress right here–",
+    "reason": "pre-existing unapplied verse request; replaced by this review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-040.findings",
+    "finding": "an4.35:6.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-040.findings",
+    "finding": "sn3.1:6.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-040.findings",
+    "finding": "sn3.1:6.6 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-040.findings",
+    "finding": "sn3.1:8.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-040.findings",
+    "finding": "sn3.1:10.6 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-041.findings",
+    "finding": "an4.19:2.1 starts: “There are these four ways of not",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-041.findings",
+    "finding": "an4.19:2.4 starts: These are the four ways of not",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-041.findings",
+    "finding": "an4.19:4.1 starts: If you don’t— through desire, aversion, delusion,",
+    "reason": "pre-existing unapplied verse request; replaced by this review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-043.findings",
+    "finding": "sn9.3:2.2 starts: undiscerning, unaware. He hears— he doesn’t understand.",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-043.findings",
+    "finding": "sn9.3:2.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-044.findings",
+    "finding": "sn9.14:2.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-044.findings",
+    "finding": "sn9.14:3.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-044.findings",
+    "finding": "sn9.14:5.1 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-044.findings",
+    "finding": "sn3.9:6.1 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-044.findings",
+    "finding": "sn3.9:6.2 starts: But sacrifices free from violence, offered always",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-044.findings",
+    "finding": "sn3.9:6.6 starts: Those of right conduct, great seers, attend",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-048.findings",
+    "finding": "sn7.2:5.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-048.findings",
+    "finding": "sn11.5:11.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-048.findings",
+    "finding": "sn11.5:13.1 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-048.findings",
+    "finding": "sn11.5:13.2 starts: When you work the cure of both",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-048.findings",
+    "finding": "sn11.5:13.3 starts: —your own, the other’s—",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-048.findings",
+    "finding": "sn11.5:13.4 starts: those who think you a fool know",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-053.findings",
+    "finding": "sn3.11:9.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-058.findings",
+    "finding": "an3.67:8.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-063.findings",
+    "finding": "an5.31:11.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-064.findings",
+    "finding": "sn2.25:6.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-069.findings",
+    "finding": "an3.34:14.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-072.findings",
+    "finding": "sn6.15:11.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-072.findings",
+    "finding": "sn6.15:11.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-072.findings",
+    "finding": "an7.7:5.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-081.findings",
+    "finding": "dn16:5.27.8 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-081.findings",
+    "finding": "dn16:6.10.20 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-083.findings",
+    "finding": "an3.39:12.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-083.findings",
+    "finding": "an6.45:23.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-083.findings",
+    "finding": "an6.45:24.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-085.findings",
+    "finding": "sn8.4:3.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-086.findings",
+    "finding": "dn20:20.11 starts: and in their midst has come Hārita Brahmā",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-086.findings",
+    "finding": "dn20:20.12 starts: Hārita Brahmā surrounded by his retinue.”",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-086.findings",
+    "finding": "an4.45:7.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-087.findings",
+    "finding": "sn2.22:4.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-089.findings",
+    "finding": "an3.48:5.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-089.findings",
+    "finding": "sn2.17:2.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-093.findings",
+    "finding": "dn22:11.2 starts: When feeling a pleasant feeling, he discerns,",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-100.findings",
+    "finding": "an5.38:6.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-102.findings",
+    "finding": "an8.54:15.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-103.findings",
+    "finding": "sn22.95:12.1 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-103.findings",
+    "finding": "sn22.95:14.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-104.findings",
+    "finding": "mn26:19.9 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-104.findings",
+    "finding": "mn26:25.19 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-107.findings",
+    "finding": "mn85:43.9 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-107.findings",
+    "finding": "mn85:49.20 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-109.findings",
+    "finding": "sn10.8:12.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-110.findings",
+    "finding": "sn6.1:2.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-111.findings",
+    "finding": "sn3.24:7.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-111.findings",
+    "finding": "sn3.24:8.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-111.findings",
+    "finding": "sn3.24:9.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-118.findings",
+    "finding": "sn7.17:2.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-125.findings",
+    "finding": "an5.41:8.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-125.findings",
+    "finding": "an5.41:8.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-125.findings",
+    "finding": "mn86:18.34 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-128.findings",
+    "finding": "dn33:2.2.59 starts: is deceitful & pretentious… is envious & selfish…",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-129.findings",
+    "finding": "dn33:3.1.140 starts: • “Eight worldly conditions:",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-129.findings",
+    "finding": "dn33:3.1.141 starts: gain, loss, status, disgrace, censure, praise, pleasure, pain.",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-130.findings",
+    "finding": "dn33:3.3.26 starts: “And further, the monk keeps his persistence",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-130.findings",
+    "finding": "an3.52:5.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-136.findings",
+    "finding": "an3.40:5.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-137.findings",
+    "finding": "an4.55:4.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-146.findings",
+    "finding": "an4.24:8.1 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-146.findings",
+    "finding": "an4.24:8.2 starts: “Whatever is seen or heard or sensed",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-146.findings",
+    "finding": "an4.24:8.3 starts: and fastened onto as true by others,",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-147.findings",
+    "finding": "sn2.26:6.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-151.findings",
+    "finding": "mn49:9.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-152.findings",
+    "finding": "an4.28:7.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-153.findings",
+    "finding": "sn35.240:3.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-158.findings",
+    "finding": "an6.43:6.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-159.findings",
+    "finding": "an3.128:6.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-160.findings",
+    "finding": "sn1.20:28.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-167.findings",
+    "finding": "an3.35:8.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-193.findings",
+    "finding": "an4.34:5.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-193.findings",
+    "finding": "an4.42:4.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-201.findings",
+    "finding": "dhp9:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-201.findings",
+    "finding": "dhp10:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-201.findings",
+    "finding": "dhp105:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-201.findings",
+    "finding": "dhp114:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-201.findings",
+    "finding": "dhp114:3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-201.findings",
+    "finding": "dhp114:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-201.findings",
+    "finding": "dhp123:1 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp134:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp174:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp176:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp176:3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp179:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp180:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp186:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp187:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp219:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp30:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp221:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp245:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp245:3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp245:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp252:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp267:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp268:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp270:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp270:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp296:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp297:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp298:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp299:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp300:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp300:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp301:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp301:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-202.findings",
+    "finding": "dhp306:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-203.findings",
+    "finding": "dhp43:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-203.findings",
+    "finding": "dhp43:3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-203.findings",
+    "finding": "dhp43:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-203.findings",
+    "finding": "dhp53:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-203.findings",
+    "finding": "dhp60:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-203.findings",
+    "finding": "dhp64:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread/batch-003.findings",
+    "finding": "dhp256:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread/batch-004.findings",
+    "finding": "dhp112:3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread/batch-006.findings",
+    "finding": "an1.39:1.1 starts: 39. “I don’t envision a single thing that—",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread/batch-006.findings",
+    "finding": "dhp107:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread/batch-007.findings",
+    "finding": "mn102:12.9 starts: With regard to that—fabricated, gross—there is",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread/batch-007.findings",
+    "finding": "mn102:12.10 starts: Knowing that, seeing the escape from it,",
+    "reason": "pre-existing unapplied request; preserve baseline outside verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread/batch-010.findings",
+    "finding": "dhp110:3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread/batch-010.findings",
+    "finding": "dhp111:3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread/batch-011.findings",
+    "finding": "dhp81:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread/batch-018.findings",
+    "finding": "sn10.12:7.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread/batch-019.findings",
+    "finding": "dhp76:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread/batch-021.findings",
+    "finding": "an3.30:10.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread-codex/batch-003.findings",
+    "finding": "an3.39:8.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread-codex/batch-011.findings",
+    "finding": "sn22.95:12.2 starts: When bereft of these",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread-codex/batch-011.findings",
+    "finding": "sn22.95:12.3 starts: it lies thrown away,",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/audit5/batch-002.findings",
+    "finding": "snp4.7:1.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/audit5/batch-002.findings",
+    "finding": "snp4.7:10.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/audit5/batch-002.findings",
+    "finding": "snp4.7:10.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-003.findings",
+    "finding": "iti91:5.1 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-003.findings",
+    "finding": "iti91:5.2 starts: Better to eat an iron ball",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-003.findings",
+    "finding": "iti91:5.3 starts: –glowing, aflame–",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-004.findings",
+    "finding": "iti75:6.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-004.findings",
+    "finding": "iti75:10.2 starts: Having rightly amassed wealth attained through initiative,",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-004.findings",
+    "finding": "iti75:10.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-004.findings",
+    "finding": "iti75:10.4 starts: attained through initiative, he satisfies rightly with food",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-005.findings",
+    "finding": "iti35:3.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-005.findings",
+    "finding": "iti36:3.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-005.findings",
+    "finding": "thag1.114:1.3 starts: greedy for carcass pleasures while life is",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-008.findings",
+    "finding": "ud6.5:24.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-008.findings",
+    "finding": "iti111:10.6 starts: continually resolute.",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-009.findings",
+    "finding": "iti41:5.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-010.findings",
+    "finding": "iti83:12.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-010.findings",
+    "finding": "snp5.6:4.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-011.findings",
+    "finding": "iti104:3.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-013.findings",
+    "finding": "thig5.11:2.5 starts: Intent on tranquility of awareness, do the Awakened",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-014.findings",
+    "finding": "iti88:3.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-014.findings",
+    "finding": "iti88:6.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/codex-read/batch-014.findings",
+    "finding": "iti88:9.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-audit5.findings",
+    "finding": "snp4.7:1.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-import-exceptions.findings",
+    "finding": "iti37:3.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-import-exceptions.findings",
+    "finding": "iti75:10.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-import-exceptions.findings",
+    "finding": "thig5.11:2.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-import-exceptions.findings",
+    "finding": "thig5.11:2.5 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-import-exceptions.findings",
+    "finding": "thig5.11:2.6 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-import-exceptions.findings",
+    "finding": "iti91:5.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-import-exceptions.findings",
+    "finding": "iti93:8.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-import-exceptions.findings",
+    "finding": "iti93:8.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-import-judgments.findings",
+    "finding": "iti29:4.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-import-judgments.findings",
+    "finding": "thag1.114:1.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-import-judgments.findings",
+    "finding": "ud2.3:3.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-import-judgments.findings",
+    "finding": "ud8.5:16.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-import-judgments.findings",
+    "finding": "iti91:5.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/codex-import-judgments.findings",
+    "finding": "ud2.3:4.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/flagged-001.findings",
+    "finding": "iti98:6.1 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/flagged-001.findings",
+    "finding": "iti98:6.2 starts: Both for those who proclaim it and those",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/flagged-001.findings",
+    "finding": "snp1.11:13.2 starts: filled with various carcasses,",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/flagged-001.findings",
+    "finding": "snp3.1:7.1 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/flagged-001.findings",
+    "finding": "snp3.1:7.2 starts: This one’s not like one from a",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/hand/verse-positional.findings",
+    "finding": "snp4.7:10.3 starts: —one who’s crossed over the flood.”",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-009.findings",
+    "finding": "iti91:5.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-009.findings",
+    "finding": "iti91:5.4 starts: than that, unprincipled &",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-014.findings",
+    "finding": "iti95:5.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-016.findings",
+    "finding": "snp5.16:4.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-031.findings",
+    "finding": "snp5.18:5.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-032.findings",
+    "finding": "iti98:6.1 starts: those heeding the message of the One Well-Gone.",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-032.findings",
+    "finding": "iti98:6.2 starts: Both for those who proclaim it and those",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-032.findings",
+    "finding": "iti82:5.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-032.findings",
+    "finding": "snp1.9:12.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-032.findings",
+    "finding": "snp1.9:13.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-034.findings",
+    "finding": "iti100:7.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-034.findings",
+    "finding": "snp5.15:2.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-035.findings",
+    "finding": "iti92:4.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-035.findings",
+    "finding": "iti92:4.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-035.findings",
+    "finding": "iti92:6.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-041.findings",
+    "finding": "thag12.1:2.3 starts: and—after death—rejoicing in heaven.",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-041.findings",
+    "finding": "thag12.1:2.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-041.findings",
+    "finding": "thag2.47:1.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-041.findings",
+    "finding": "thag4.4:4.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-041.findings",
+    "finding": "thag6.12:2.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-041.findings",
+    "finding": "thag6.9:1.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-045.findings",
+    "finding": "thag16.1:3.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-045.findings",
+    "finding": "thag16.1:4.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-045.findings",
+    "finding": "thag16.1:15.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-047.findings",
+    "finding": "snp4.16:6.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-047.findings",
+    "finding": "snp4.16:16.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-048.findings",
+    "finding": "thag11.1:2.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-048.findings",
+    "finding": "thag11.1:7.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-048.findings",
+    "finding": "thag11.1:7.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-048.findings",
+    "finding": "thag17.2:11.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-048.findings",
+    "finding": "thag17.2:13.3 starts: Stay with this sort of sage. For",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-048.findings",
+    "finding": "thag17.2:13.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-048.findings",
+    "finding": "thag17.2:24.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-048.findings",
+    "finding": "thag17.2:31.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-048.findings",
+    "finding": "thag17.2:31.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-053.findings",
+    "finding": "snp1.11:7.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-053.findings",
+    "finding": "snp1.11:10.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-053.findings",
+    "finding": "snp1.11:11.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-053.findings",
+    "finding": "snp1.11:12.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-053.findings",
+    "finding": "snp1.11:13.2 starts: filled with various carcasses, oozing out here",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-053.findings",
+    "finding": "snp1.11:13.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-053.findings",
+    "finding": "snp1.11:14.2 starts: to exalt himself or disparage another—",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-053.findings",
+    "finding": "snp2.9:3.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-053.findings",
+    "finding": "snp2.9:6.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-053.findings",
+    "finding": "thig7.3:3.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-053.findings",
+    "finding": "thig7.3:3.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-054.findings",
+    "finding": "thig13.1:2.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-054.findings",
+    "finding": "thig13.1:8.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-054.findings",
+    "finding": "thig13.1:12.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-054.findings",
+    "finding": "thig13.1:14.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-054.findings",
+    "finding": "thig13.1:15.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-054.findings",
+    "finding": "snp3.6:13.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-054.findings",
+    "finding": "snp3.6:16.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-055.findings",
+    "finding": "ud6.4:33.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-055.findings",
+    "finding": "snp5.8:2.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-061.findings",
+    "finding": "snp2.3:4.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-061.findings",
+    "finding": "thag7.1:2.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-063.findings",
+    "finding": "snp1.10:10.6 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-063.findings",
+    "finding": "snp1.10:11.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-063.findings",
+    "finding": "snp1.10:13.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-066.findings",
+    "finding": "iti90:5.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-069.findings",
+    "finding": "snp4.8:4.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-070.findings",
+    "finding": "thig5.10:3.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-070.findings",
+    "finding": "ud3.10:9.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-070.findings",
+    "finding": "ud4.3:8.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-082.findings",
+    "finding": "snp2.14:18.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-082.findings",
+    "finding": "snp2.14:19.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-082.findings",
+    "finding": "snp2.14:20.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-083.findings",
+    "finding": "thag3.9:2.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-083.findings",
+    "finding": "thig6.3:2.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-086.findings",
+    "finding": "snp3.5:25.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-088.findings",
+    "finding": "snp4.9:3.1 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-088.findings",
+    "finding": "snp4.9:11.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-089.findings",
+    "finding": "thig13.5:5.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-089.findings",
+    "finding": "thig13.5:9.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-089.findings",
+    "finding": "thig13.5:18.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-089.findings",
+    "finding": "thig13.5:19.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-089.findings",
+    "finding": "thig13.5:19.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-089.findings",
+    "finding": "thig13.5:21.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-090.findings",
+    "finding": "snp3.9:23.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-090.findings",
+    "finding": "snp3.9:60.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-090.findings",
+    "finding": "snp3.9:61.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-090.findings",
+    "finding": "snp3.9:65.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-091.findings",
+    "finding": "snp3.1:7.1 starts: Mindful, his eyes downcast,",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-091.findings",
+    "finding": "snp3.1:7.2 starts: This one’s not like one from a",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-091.findings",
+    "finding": "snp3.1:15.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-091.findings",
+    "finding": "thag10.2:6.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-092.findings",
+    "finding": "snp3.7:25.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-092.findings",
+    "finding": "ud8.8:8.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-092.findings",
+    "finding": "snp5.1:29.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-092.findings",
+    "finding": "snp5.1:41.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-092.findings",
+    "finding": "thig14.1:9.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-092.findings",
+    "finding": "thig14.1:29.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-098.findings",
+    "finding": "snp2.12:5.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-101.findings",
+    "finding": "thag18.1:6.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-101.findings",
+    "finding": "thag18.1:25.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-101.findings",
+    "finding": "thag18.1:35.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-106.findings",
+    "finding": "snp5.19:2.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-106.findings",
+    "finding": "snp5.19:2.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-106.findings",
+    "finding": "snp5.19:2.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-106.findings",
+    "finding": "snp5.19:8.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-106.findings",
+    "finding": "snp5.19:10.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-106.findings",
+    "finding": "thag4.8:1.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-109.findings",
+    "finding": "snp3.8:9.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-109.findings",
+    "finding": "snp3.8:10.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-109.findings",
+    "finding": "snp3.8:19.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-109.findings",
+    "finding": "snp2.11:7.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-110.findings",
+    "finding": "snp3.11:8.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-110.findings",
+    "finding": "snp3.11:41.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-117.findings",
+    "finding": "snp3.3:6.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-130.findings",
+    "finding": "iti48:3.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-130.findings",
+    "finding": "iti48:5.1 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-130.findings",
+    "finding": "iti48:5.2 starts: Better to eat an iron ball",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-130.findings",
+    "finding": "iti48:5.3 starts: –glowing, aflame– than that, unprincipled &",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-130.findings",
+    "finding": "iti48:5.4 starts: than that, unprincipled & unrestrained, you should",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-131.findings",
+    "finding": "thig5.6:3.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-131.findings",
+    "finding": "thig5.8:3.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-132.findings",
+    "finding": "snp4.14:2.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-132.findings",
+    "finding": "snp4.14:11.3 starts: should live in a noise-less abode.",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-132.findings",
+    "finding": "snp4.14:11.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-135.findings",
+    "finding": "snp3.12:5.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-135.findings",
+    "finding": "snp3.12:7.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-135.findings",
+    "finding": "snp3.12:25.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-135.findings",
+    "finding": "snp3.12:26.6 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-135.findings",
+    "finding": "snp3.12:36.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-139.findings",
+    "finding": "snp4.12:9.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-144.findings",
+    "finding": "thig6.2:1.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-147.findings",
+    "finding": "thag16.4:5.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-147.findings",
+    "finding": "thag16.4:16.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-147.findings",
+    "finding": "thag16.4:23.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-148.findings",
+    "finding": "snp1.6:2.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-149.findings",
+    "finding": "snp3.4:7.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-151.findings",
+    "finding": "snp1.7:7.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-151.findings",
+    "finding": "snp1.7:18.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-151.findings",
+    "finding": "snp1.7:19.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-151.findings",
+    "finding": "snp1.7:26.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-152.findings",
+    "finding": "snp4.13:3.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-152.findings",
+    "finding": "snp4.13:13.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-152.findings",
+    "finding": "snp4.15:18.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-154.findings",
+    "finding": "thag13.1:5.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-155.findings",
+    "finding": "snp4.10:11.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-155.findings",
+    "finding": "snp4.10:12.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-155.findings",
+    "finding": "snp4.10:12.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-156.findings",
+    "finding": "ud4.8:12.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-156.findings",
+    "finding": "ud4.8:14.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-159.findings",
+    "finding": "snp2.8:1.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-159.findings",
+    "finding": "snp2.8:1.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-159.findings",
+    "finding": "snp2.8:3.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-159.findings",
+    "finding": "snp2.8:6.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-159.findings",
+    "finding": "snp4.5:7.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-169.findings",
+    "finding": "snp1.8:7.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-169.findings",
+    "finding": "thig13.2:2.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-169.findings",
+    "finding": "thig13.2:5.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-170.findings",
+    "finding": "snp2.1:9.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-203.findings",
+    "finding": "dhp336:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-203.findings",
+    "finding": "dhp338:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-203.findings",
+    "finding": "dhp338:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-203.findings",
+    "finding": "dhp341:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-203.findings",
+    "finding": "dhp342:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-203.findings",
+    "finding": "dhp373:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-203.findings",
+    "finding": "dhp373:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-203.findings",
+    "finding": "dhp380:2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-203.findings",
+    "finding": "snp1.12:11.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-204.findings",
+    "finding": "snp4.3:6.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-204.findings",
+    "finding": "thag1.118:1.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-204.findings",
+    "finding": "thag1.31:1.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-204.findings",
+    "finding": "thag10.7:7.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-204.findings",
+    "finding": "thag2.37:1.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread/batch-002.findings",
+    "finding": "thag1.1:4.3 starts: my mind, well-centered, released.",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread/batch-009.findings",
+    "finding": "iti89:9.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread/batch-012.findings",
+    "finding": "iti21:5.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread/batch-013.findings",
+    "finding": "iti75:7.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread/batch-013.findings",
+    "finding": "iti75:10.2 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread/batch-019.findings",
+    "finding": "dhp396:4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread/batch-019.findings",
+    "finding": "snp5.6:8.5 starts: Knowing it as a bond in the world,",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread-codex/batch-004.findings",
+    "finding": "snp5.1:12.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread-codex/batch-008.findings",
+    "finding": "snp1.9:14.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread-codex/batch-017.findings",
+    "finding": "thag18.1:8.3 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/reread-codex/batch-019.findings",
+    "finding": "snp3.7:18.4 none",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-002.findings",
+    "finding": "dn20:20.11 starts: Hārita Brahmā",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-002.findings",
+    "finding": "dn20:20.12 starts: surrounded by his retinue.”",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-016.findings",
+    "finding": "an3.30:7.1 none",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-016.findings",
+    "finding": "an3.30:7.2 starts: while sitting in that seat,",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-016.findings",
+    "finding": "an3.30:7.3 starts: grasps the words",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-016.findings",
+    "finding": "an3.30:7.4 starts: of the beginning, middle, & end of",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-016.findings",
+    "finding": "an3.30:7.5 starts: but getting up, he doesn’t discern anything",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-016.findings",
+    "finding": "an3.30:7.6 starts: for he forgets what he had grasped.",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-016.findings",
+    "finding": "an3.30:9.1 none",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-016.findings",
+    "finding": "an3.30:9.2 starts: while sitting in that seat,",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-016.findings",
+    "finding": "an3.30:9.3 starts: he grasps the words",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-016.findings",
+    "finding": "an3.30:9.4 starts: of the beginning, middle, & end of",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-018.findings",
+    "finding": "an4.50:10.4 starts: consent to gold & silver,",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-018.findings",
+    "finding": "an4.50:10.5 starts: live by means of wrong livelihood",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-018.findings",
+    "finding": "an4.50:10.6 starts: —some brahmans & contemplatives.",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-020.findings",
+    "finding": "an6.43:16.2 starts: born & growing in the water,",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-020.findings",
+    "finding": "an6.43:16.3 starts: but not smeared by the water",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-020.findings",
+    "finding": "an6.43:16.4 starts: —fragrant, delightful—",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-021.findings",
+    "finding": "an7.64:22.3 starts: and do violence to himself,",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-021.findings",
+    "finding": "an7.64:22.4 starts: the angry person doesn’t realize he’s ruined.",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-025.findings",
+    "finding": "dhp164:3 starts: noble:",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-025.findings",
+    "finding": "dhp164:4 starts: whoever maligns it",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-033.findings",
+    "finding": "iti62:4.2 starts: from the ending",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-033.findings",
+    "finding": "iti62:4.3 starts: there’s the knowledge,",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-040.findings",
+    "finding": "snp2.6:6.2 starts: full, used for many years,",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-040.findings",
+    "finding": "snp2.6:6.3 starts: one of this sort, befouled,",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-040.findings",
+    "finding": "snp2.6:6.4 starts: would be hard to clean.",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-044.findings",
+    "finding": "snp3.6:47.3 starts: including Nāradas and Pabbatas—",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-044.findings",
+    "finding": "snp3.6:47.4 starts: delight.",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-053.findings",
+    "finding": "snp5.13:2.2 starts: hero,",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-060.findings",
+    "finding": "thag15.2:12.2 starts: born & growing in the water,",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-060.findings",
+    "finding": "thag15.2:12.3 starts: but not smeared by the water",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-060.findings",
+    "finding": "thag15.2:12.4 starts: —fragrant, delightful—",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-064.findings",
+    "finding": "thig6.7:1.2 starts: devote yourself to the goal",
+    "reason": "source-line validation correction in source-breaks.findings"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-061.findings",
+    "finding": "snp2.6:8.3 starts: Sweep away the sweepings, throw away the",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/read/batch-061.findings",
+    "finding": "snp2.6:8.4 starts: throw away the trash, then remove the",
+    "reason": "contradicted by whole-verse review"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-048.findings",
+    "finding": "snp4.9:3.1 starts: “‘I argue for this’",
+    "reason": "source-line validation correction in unapplied.findings"
+  },
+  {
+    "file": "data/thanissaro/review/verse/batch-048.findings",
+    "finding": "snp4.9:3.3 starts: when considering what’s grasped",
+    "reason": "withdrawn after speaker-context review; preserve baseline across nonverse interruption"
+  }
+]

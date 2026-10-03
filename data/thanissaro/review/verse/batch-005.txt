@@ -1,0 +1,426 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## mn85:49.24–mn85:49.27 (mn)
+CONTEXT mn85:49.23 | P: ‘Yathā kho tvaṁ, āvuso, paṭijānāsi arahasi anantajino’ti. | S: ‘According to what you claim, reverend, you ought to be the Infinite Victor.’ | T: “‘From your claims, my friend, you must be an infinite conqueror.’
+mn85:49.24 | P: ‘Mādisā ve jinā honti, | S: ‘The victors are those who, like me, | T: “‘Conquerors are those like me
+mn85:49.25 | P: ye pattā āsavakkhayaṁ; | S: have reached the ending of defilements. | T: who have reached effluents’ end.
+mn85:49.26 | P: Jitā me pāpakā dhammā, | S: I have conquered bad qualities, Upaka— | T: I’ve conquered evil qualities,
+mn85:49.27 | P: tasmāhamupaka jino’ti. | S: that’s why I’m a victor.’ | T: and so, Upaka, I’m a conqueror.’
+CONTEXT mn85:49.28 | P: Evaṁ vutte, rājakumāra, upako ājīvako ‘hupeyyapāvuso’ti vatvā sīsaṁ okampetvā ummaggaṁ gahetvā pakkāmi. | S: When I had spoken, Upaka said: ‘If you say so, reverend.’ Shaking his head, he took a wrong turn and left. | T: “When this was said, Upaka said, ‘May it be so, my friend,’ and—shaking his head, taking a side-road—he left.
+CONTEXT mn85:50.1 | P: Atha khvāhaṁ, rājakumāra, anupubbena cārikaṁ caramāno yena bārāṇasī isipatanaṁ migadāyo yena pañcavaggiyā bhikkhū tenupasaṅkamiṁ. | S: Traveling stage by stage, I arrived at Varanasi, and went to see the group of five mendicants in the deer park at Isipatana. | T: “Then, wandering by stages, I arrived at Bārāṇasī, at the Deer Park in Isipatana, to where the group of five monks were staying.
+
+## mn86:6.2–mn86:6.5 (mn)
+CONTEXT mn86:5.14 | P: Yannūnāhaṁ imaṁ samaṇaṁ puccheyyan”ti. | S: Why don’t I ask him about this?” | T: Why don’t I question him?”
+CONTEXT mn86:6.1 | P: Atha kho coro aṅgulimālo bhagavantaṁ gāthāya ajjhabhāsi: | S: Then he addressed the Buddha in verse: | T: So Aṅgulimāla the bandit addressed this verse to the Blessed One:
+mn86:6.2 | P: “Gacchaṁ vadesi samaṇa ṭhitomhi, | S: “While walking, ascetic, you say ‘I’ve stopped.’ | T: “While walking, contemplative, ⏎ you say, ‘I have stopped.’
+mn86:6.3 | P: Mamañca brūsi ṭhitamaṭṭhitoti; | S: And I have stopped, but you tell me I’ve not. | T: But when I have stopped ⏎ you say I haven’t.
+mn86:6.4 | P: Pucchāmi taṁ samaṇa etamatthaṁ, | S: I’m asking you this, ascetic: | T: I ask you the meaning of this:
+mn86:6.5 | P: Kathaṁ ṭhito tvaṁ ahamaṭṭhitomhī”ti. | S: how is it you’ve stopped and I have not?” | T: How have you stopped? ⏎ How haven’t I?”
+
+## mn86:6.6–mn86:6.9 (mn)
+mn86:6.6 | P: “Ṭhito ahaṁ aṅgulimāla sabbadā, | S: “Aṅgulimāla, I have forever stopped— | T: The Buddha: ⏎ “I have stopped, Aṅgulimāla, ⏎ once & for all,
+mn86:6.7 | P: Sabbesu bhūtesu nidhāya daṇḍaṁ; | S: I’ve laid aside violence toward all creatures. | T: having cast off violence ⏎ toward all living beings.
+mn86:6.8 | P: Tuvañca pāṇesu asaññatosi, | S: But you can’t stop yourself from harming living creatures; | T: You, though, ⏎ are unrestrained toward beings.
+mn86:6.9 | P: Tasmā ṭhitohaṁ tuvamaṭṭhitosī”ti. | S: that’s why I’ve stopped, but you have not.” | T: That’s how I’ve stopped ⏎ and you haven’t.”
+
+## mn86:6.10–mn86:6.13 (mn)
+mn86:6.10 | P: “Cirassaṁ vata me mahito mahesī, | S: “Oh, at long last a renowned great seer, | T: Aṅgulimāla: ⏎ “At long last a greatly revered great seer
+mn86:6.11 | P: Mahāvanaṁ pāpuṇi saccavādī; | S: an ascetic has followed me into this deep wood. | T: for my sake ⏎ has come to the great forest.
+mn86:6.12 | P: Sohaṁ carissāmi pahāya pāpaṁ, | S: Now that I’ve heard your verse on Dhamma, | T: Having heard your verse ⏎ in line with the Dhamma,
+mn86:6.13 | P: Sutvāna gāthaṁ tava dhammayuttaṁ”. | S: I shall live without evil.” | T: I will go about ⏎ having abandoned evil.”
+
+## mn86:6.14–mn86:6.17 (mn)
+mn86:6.14 | P: Itveva coro asimāvudhañca, | S: With these words, the bandit hurled his sword and weapons | T: So saying, the bandit ⏎ hurled his sword & weapons
+mn86:6.15 | P: Sobbhe papāte narake akiri; | S: down a cliff into an abyss. | T: over a cliff ⏎ into a chasm, ⏎ a pit.
+mn86:6.16 | P: Avandi coro sugatassa pāde, | S: He venerated the Holy One’s feet, | T: Then the bandit paid homage ⏎ to the feet of the One Well-Gone,
+mn86:6.17 | P: Tattheva naṁ pabbajjaṁ ayāci. | S: and requested the going forth right away. | T: and right there requested the Going-forth.
+
+## mn86:6.18–mn86:6.21 (mn)
+mn86:6.18 | P: Buddho ca kho kāruṇiko mahesi, | S: Then the Buddha, the compassionate great seer, | T: The Awakened One, ⏎ the compassionate great seer,
+mn86:6.19 | P: Yo satthā lokassa sadevakassa; | S: the Teacher of the world with its gods, | T: the teacher of the world, along with its devas,
+mn86:6.20 | P: “Tamehi bhikkhū”ti tadā avoca, | S: said to him, “Come, monk!” | T: said to him then: ⏎ “Come, bhikkhu.”
+mn86:6.21 | P: Eseva tassa ahu bhikkhubhāvoti. | S: And with that he became a monk. | T: That in itself ⏎ was bhikkhuhood for him.
+CONTEXT mn86:7.1 | P: Atha kho bhagavā āyasmatā aṅgulimālena pacchāsamaṇena yena sāvatthi tena cārikaṁ pakkāmi. | S: Then the Buddha set out for Sāvatthī with Venerable Aṅgulimāla as his second monk. | T: Then the Blessed One set out wandering toward Sāvatthī with Ven. Aṅgulimāla as his attendant monk.
+CONTEXT mn86:7.2 | P: Anupubbena cārikaṁ caramāno yena sāvatthi tadavasari. | S: Traveling stage by stage, he arrived at Sāvatthī, | T: After wandering by stages he reached Sāvatthī,
+
+## mn86:18.3–mn86:18.6 (mn)
+CONTEXT mn86:18.1 | P: Atha kho āyasmā aṅgulimālo rahogato paṭisallīno vimuttisukhaṁ paṭisaṁvedi; | S: Later, Venerable Aṅgulimāla was experiencing the bliss of release while in private retreat. | T: Then Ven. Aṅgulimāla, having gone alone into seclusion, experienced the bliss of release.
+CONTEXT mn86:18.2 | P: tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: On that occasion he expressed this heartfelt sentiment: | T: At that time he exclaimed:
+mn86:18.3 | P: “Yo pubbeva pamajjitvā, | S: “He who once was heedless, | T: Who once was heedless,
+mn86:18.4 | P: pacchā so nappamajjati; | S: but turned to heedfulness, | T: but later is not,
+mn86:18.5 | P: Somaṁ lokaṁ pabhāseti, | S: shines upon this world, | T: brightens the world
+mn86:18.6 | P: abbhā muttova candimā. | S: like the moon freed from clouds. | T: like the moon set free from a cloud.
+
+## mn86:18.7–mn86:18.10 (mn)
+mn86:18.7 | P: Yassa pāpaṁ kataṁ kammaṁ, | S: Someone whose bad deed | T: His evil-done deed
+mn86:18.8 | P: kusalena pidhīyati; | S: is supplanted by the good, | T: is replaced with skillfulness:
+mn86:18.9 | P: Somaṁ lokaṁ pabhāseti, | S: shines upon this world, | T: he brightens the world
+mn86:18.10 | P: abbhā muttova candimā. | S: like the moon freed from clouds. | T: like the moon set free from a cloud.
+
+## mn86:18.11–mn86:18.14 (mn)
+mn86:18.11 | P: Yo have daharo bhikkhu, | S: A young mendicant | T: Whatever young monk
+mn86:18.12 | P: yuñjati buddhasāsane; | S: devoted to the Buddha’s teaching, | T: devotes himself ⏎ to the Buddha’s bidding:
+mn86:18.13 | P: Somaṁ lokaṁ pabhāseti, | S: shines upon this world, | T: he brightens the world
+mn86:18.14 | P: abbhā muttova candimā. | S: like the moon freed from clouds. | T: like the moon set free from a cloud.
+
+## mn86:18.15–mn86:18.18 (mn)
+mn86:18.15 | P: Disā hi me dhammakathaṁ suṇantu, | S: May even my enemies hear a Dhamma talk! | T: May even my enemies ⏎ hear talk of the Dhamma.
+mn86:18.16 | P: Disā hi me yuñjantu buddhasāsane; | S: May even my enemies devote themselves to the Buddha’s teaching! | T: May even my enemies ⏎ devote themselves ⏎ to the Buddha’s bidding.
+mn86:18.17 | P: Disā hi me te manujā bhajantu, | S: May even my enemies associate with those good men | T: May even my enemies ⏎ associate with those people ⏎ who—peaceful, good—
+mn86:18.18 | P: Ye dhammamevādapayanti santo. | S: who establish others in the Dhamma! | T: get others to accept the Dhamma.
+
+## mn86:18.19–mn86:18.22 (mn)
+mn86:18.19 | P: Disā hi me khantivādānaṁ, | S: May even my enemies hear Dhamma at the right time, | T: May even my enemies ⏎ hear the Dhamma time & again
+mn86:18.20 | P: avirodhappasaṁsīnaṁ; | S: from those who teach acceptance, | T: from those who advise ⏎ endurance, ⏎ forbearance,
+mn86:18.21 | P: Suṇantu dhammaṁ kālena, | S: praising acquiescence; | T: who praise non-opposition,
+mn86:18.22 | P: tañca anuvidhīyantu. | S: and may they follow that path! | T: and may they follow it.
+
+## mn86:18.23–mn86:18.26 (mn)
+mn86:18.23 | P: Na hi jātu so mamaṁ hiṁse, | S: For then they’d never wish harm | T: For surely he wouldn’t harm me,
+mn86:18.24 | P: aññaṁ vā pana kiñci naṁ; | S: upon myself or others. | T: or anyone else;
+mn86:18.25 | P: Pappuyya paramaṁ santiṁ, | S: Having arrived at ultimate peace, | T: he would attain the ⏎ foremost peace,
+mn86:18.26 | P: rakkheyya tasathāvare. | S: they’d look after creatures firm and frail. | T: would protect the ⏎ feeble & firm.
+
+## mn86:18.27–mn86:18.30 (mn)
+mn86:18.27 | P: Udakañhi nayanti nettikā, | S: For while irrigators guide water, | T: Irrigators guide the water.
+mn86:18.28 | P: Usukārā namayanti tejanaṁ; | S: fletchers bend arrows straight, | T: Fletchers shape the arrow shaft.
+mn86:18.29 | P: Dāruṁ namayanti tacchakā, | S: and carpenters bend timber straight, | T: Carpenters shape ⏎ the wood.
+mn86:18.30 | P: Attānaṁ damayanti paṇḍitā. | S: the astute tame themselves. | T: The wise control ⏎ themselves.
+
+## mn86:18.31–mn86:18.34 (mn) GATHERED; equal counts: one line per row
+mn86:18.31 | P: Daṇḍeneke damayanti, | S: Some tame by using the rod, | T: Some tame with a blunt stick,
+mn86:18.32 | P: aṅkusehi kasāhi ca; | S: some with goads, and some with whips. | T: with hooks, & with whips
+mn86:18.33 | P: Adaṇḍena asatthena, | S: But the unaffected one tamed me | T: But without blunt or bladed weapons ⏎ I was tamed by the one who is Such.
+mn86:18.34 | P: ahaṁ dantomhi tādinā. | S: without rod or sword. | T: (none)
+AUTO mn86:18.31 starts: Some tame with a blunt stick,
+AUTO mn86:18.32 starts: with hooks, & with whips
+AUTO mn86:18.33 starts: But without blunt or bladed weapons
+AUTO mn86:18.34 starts: I was tamed by the one who is
+
+## mn86:18.35–mn86:18.38 (mn)
+mn86:18.35 | P: Ahiṁsakoti me nāmaṁ, | S: My name is ‘Harmless’, | T: “Doer of No Harm” is my name,
+mn86:18.36 | P: hiṁsakassa pure sato; | S: though I used to be harmful. | T: but I used to be a doer of harm.
+mn86:18.37 | P: Ajjāhaṁ saccanāmomhi, | S: The name I bear today is true, | T: Today I am true to my name,
+mn86:18.38 | P: na naṁ hiṁsāmi kiñci naṁ. | S: for I do no harm to anyone. | T: for I harm no one at all.
+
+## mn86:18.39–mn86:18.42 (mn)
+mn86:18.39 | P: Coro ahaṁ pure āsiṁ, | S: I used to be a bandit, | T: A bandit ⏎ I used to be,
+mn86:18.40 | P: aṅgulimāloti vissuto; | S: the notorious Aṅgulimāla. | T: renowned as Aṅgulimāla.
+mn86:18.41 | P: Vuyhamāno mahoghena, | S: Swept away in a great flood, | T: Swept along by a great flood,
+mn86:18.42 | P: buddhaṁ saraṇamāgamaṁ. | S: I went to the Buddha as a refuge. | T: I went to the Buddha as refuge.
+
+## mn86:18.43–mn86:18.46 (mn)
+mn86:18.43 | P: Lohitapāṇi pure āsiṁ, | S: I used to have blood on my hands, | T: Bloody-handed ⏎ I used to be,
+mn86:18.44 | P: aṅgulimāloti vissuto; | S: the notorious Aṅgulimāla. | T: renowned as Aṅgulimāla.
+mn86:18.45 | P: Saraṇagamanaṁ passa, | S: See the refuge I’ve found— | T: See my going for refuge!
+mn86:18.46 | P: bhavanetti samūhatā. | S: the leash to existence is eradicated. | T: Uprooted is [craving], ⏎ the guide to becoming.
+
+## mn86:18.47–mn86:18.50 (mn)
+mn86:18.47 | P: Tādisaṁ kammaṁ katvāna, | S: I’ve done many of the sort of deeds | T: Having done the type of kamma
+mn86:18.48 | P: bahuṁ duggatigāminaṁ; | S: that lead to a bad destination. | T: that would lead to many ⏎ bad destinations,
+mn86:18.49 | P: Phuṭṭho kammavipākena, | S: The result of my deeds has already struck me, | T: touched by the fruit of (that) kamma,
+mn86:18.50 | P: aṇaṇo bhuñjāmi bhojanaṁ. | S: so I enjoy my food free of debt. | T: unindebted, I eat my food.
+
+## mn86:18.51–mn86:18.54 (mn) GATHERED; unequal counts require a reader
+mn86:18.51 | P: Pamādamanuyuñjanti, | S: Fools and simpletons | T: They’re addicted to heedlessness ⏎ —dullards, fools—
+mn86:18.52 | P: bālā dummedhino janā; | S: devote themselves to negligence. | T: (none)
+mn86:18.53 | P: Appamādañca medhāvī, | S: But the wise protect diligence | T: while one who is wise ⏎ cherishes heedfulness
+mn86:18.54 | P: dhanaṁ seṭṭhaṁva rakkhati. | S: as their best treasure. | T: as his highest wealth.
+
+## mn86:18.55–mn86:18.58 (mn)
+mn86:18.55 | P: Mā pamādamanuyuñjetha, | S: Don’t devote yourself to negligence, | T: Don’t give way to heedlessness
+mn86:18.56 | P: mā kāmarati santhavaṁ; | S: or delight in erotic intimacy. | T: or to intimacy ⏎ with sensual delight—
+mn86:18.57 | P: Appamatto hi jhāyanto, | S: For if you’re diligent and practice absorption, | T: for a heedful person, ⏎ absorbed in jhāna,
+mn86:18.58 | P: pappoti vipulaṁ sukhaṁ. | S: you’ll attain abundant happiness. | T: attains an abundant bliss.
+
+## mn86:18.59–mn86:18.62 (mn)
+mn86:18.59 | P: Svāgataṁ nāpagataṁ, | S: It was welcome, not unwelcome, | T: This has come well & not gone away,
+mn86:18.60 | P: nayidaṁ dummantitaṁ mama; | S: the advice I got was good. | T: it was not badly thought through for me.
+mn86:18.61 | P: Saṁvibhattesu dhammesu, | S: Of the well-explained teachings, | T: From among well-analyzed qualities,
+mn86:18.62 | P: yaṁ seṭṭhaṁ tadupāgamaṁ. | S: I arrived at the best. | T: I have obtained ⏎ the best.
+
+## mn86:18.63–mn86:18.66 (mn)
+mn86:18.63 | P: Svāgataṁ nāpagataṁ, | S: It was welcome, not unwelcome, | T: This has come well & not gone away,
+mn86:18.64 | P: nayidaṁ dummantitaṁ mama; | S: the advice I got was good. | T: it was not badly thought through for me.
+mn86:18.65 | P: Tisso vijjā anuppattā, | S: I’ve attained the three knowledges | T: The three knowledges ⏎ have been attained;
+mn86:18.66 | P: kataṁ buddhassa sāsanan”ti. | S: and fulfilled the Buddha’s instructions.” | T: the Buddha’s bidding, ⏎ done.
+CONTEXT mn86:18.67 | P: Aṅgulimālasuttaṁ niṭṭhitaṁ chaṭṭhaṁ. | S: (none) | T: (none)
+
+## mn90:19.1–mn90:19.6 (mn)
+CONTEXT mn90:18.3 | P: Rājavaggo niṭṭhito catuttho. | S: (none) | T: (none)
+CONTEXT mn90:19.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+mn90:19.1 | P: Ghaṭikāro raṭṭhapālo, | S: (none) | T: (none)
+mn90:19.2 | P: maghadevo madhuriyaṁ; | S: (none) | T: (none)
+mn90:19.3 | P: Bodhi aṅgulimālo ca, | S: (none) | T: (none)
+mn90:19.4 | P: piyajātaṁ bāhitikaṁ; | S: (none) | T: (none)
+mn90:19.5 | P: Dhammacetiyasuttañca, | S: (none) | T: (none)
+mn90:19.6 | P: dasamaṁ kaṇṇakatthalaṁ. | S: (none) | T: (none)
+
+## mn91:29.8–mn91:29.11 (mn)
+CONTEXT mn91:29.6 | P: kosohite ca vatthaguyhe pahūtajivhatāya ca. | S: whether the private parts are sheathed in a foreskin, and the largeness of the tongue. | T: (none)
+CONTEXT mn91:29.7 | P: Atha kho brahmāyu brāhmaṇo bhagavantaṁ gāthāhi ajjhabhāsi: | S: Then Brahmāyu addressed the Buddha in verse: | T: (none)
+mn91:29.8 | P: “Ye me dvattiṁsāti sutā, | S: “I have learned of the thirty-two | T: (none)
+mn91:29.9 | P: mahāpurisalakkhaṇā; | S: marks of a great man. | T: (none)
+mn91:29.10 | P: Duve tesaṁ na passāmi, | S: There are two that I don’t see | T: (none)
+mn91:29.11 | P: bhoto kāyasmiṁ gotama. | S: on the body of the worthy Gotama. | T: (none)
+
+## mn91:29.12–mn91:29.15 (mn)
+mn91:29.12 | P: Kacci kosohitaṁ bhoto, | S: Are the private parts sheathed in a foreskin, | T: (none)
+mn91:29.13 | P: vatthaguyhaṁ naruttama; | S: O supreme man? | T: (none)
+mn91:29.14 | P: Nārīsamānasavhayā, | S: Though called by a word of the feminine gender, | T: (none)
+mn91:29.15 | P: kacci jivhā na dassakā. | S: perhaps your tongue is a manly one? | T: (none)
+
+## mn91:29.16–mn91:29.19 (mn)
+mn91:29.16 | P: Kacci pahūtajivhosi, | S: Perhaps your tongue is large, | T: (none)
+mn91:29.17 | P: yathā taṁ jāniyāmase; | S: as we have been informed. | T: (none)
+mn91:29.18 | P: Ninnāmayetaṁ pahūtaṁ, | S: Please stick it out in its full extent, | T: (none)
+mn91:29.19 | P: kaṅkhaṁ vinaya no ise. | S: and so, O seer, dispel my doubt. | T: (none)
+
+## mn91:29.20–mn91:29.23 (mn)
+mn91:29.20 | P: Diṭṭhadhammahitatthāya, | S: For my welfare and benefit in this life, | T: (none)
+mn91:29.21 | P: samparāyasukhāya ca; | S: and happiness in lives to come. | T: (none)
+mn91:29.22 | P: Katāvakāsā pucchāma, | S: And I ask you to grant the opportunity | T: (none)
+mn91:29.23 | P: yaṁ kiñci abhipatthitan”ti. | S: to ask whatever I desire.” | T: (none)
+CONTEXT mn91:30.1 | P: Atha kho bhagavato etadahosi: | S: Then it occurred to the Buddha, | T: (none)
+CONTEXT mn91:30.2 | P: “passati kho me ayaṁ brahmāyu brāhmaṇo dvattiṁsamahāpurisalakkhaṇāni, yebhuyyena ṭhapetvā dve. | S: “Brahmāyu sees all the marks except two, | T: (none)
+
+## mn91:31.1–mn91:31.4 (mn)
+CONTEXT mn91:30.6 | P: Atha kho bhagavā jivhaṁ ninnāmetvā ubhopi kaṇṇasotāni anumasi paṭimasi; ubhopi nāsikasotāni anumasi paṭimasi; kevalampi nalāṭamaṇḍalaṁ jivhāya chādesi. | S: And he stuck out his tongue and stroked back and forth on his ear holes and nostrils, and covered his entire forehead with his tongue. | T: (none)
+CONTEXT mn91:30.7 | P: Atha kho bhagavā brahmāyuṁ brāhmaṇaṁ gāthāhi paccabhāsi: | S: Then the Buddha replied to Brahmāyu in verse: | T: (none)
+mn91:31.1 | P: “Ye te dvattiṁsāti sutā, | S: “The thirty-two marks of a great man | T: (none)
+mn91:31.2 | P: mahāpurisalakkhaṇā; | S: that you have learned | T: (none)
+mn91:31.3 | P: Sabbe te mama kāyasmiṁ, | S: are all found on my body: | T: (none)
+mn91:31.4 | P: mā te kaṅkhāhu brāhmaṇa. | S: so do not doubt, brahmin. | T: (none)
+
+## mn91:31.5–mn91:31.8 (mn)
+mn91:31.5 | P: Abhiññeyyaṁ abhiññātaṁ, | S: I have known what should be known, | T: (none)
+mn91:31.6 | P: bhāvetabbañca bhāvitaṁ; | S: and developed what should be developed, | T: (none)
+mn91:31.7 | P: Pahātabbaṁ pahīnaṁ me, | S: and given up what should be given up: | T: (none)
+mn91:31.8 | P: tasmā buddhosmi brāhmaṇa. | S: and so, brahmin, I am a Buddha. | T: (none)
+
+## mn91:31.9–mn91:31.12 (mn)
+mn91:31.9 | P: Diṭṭhadhammahitatthāya, | S: For your welfare and benefit in this life, | T: (none)
+mn91:31.10 | P: samparāyasukhāya ca; | S: and happiness in lives to come: | T: (none)
+mn91:31.11 | P: Katāvakāso pucchassu, | S: I grant you the opportunity | T: (none)
+mn91:31.12 | P: yaṁ kiñci abhipatthitan”ti. | S: to ask whatever you desire.” | T: (none)
+CONTEXT mn91:32.1 | P: Atha kho brahmāyussa brāhmaṇassa etadahosi: | S: Then Brahmāyu thought: | T: (none)
+CONTEXT mn91:32.2 | P: “katāvakāso khomhi samaṇena gotamena. | S: “My request has been granted. | T: (none)
+
+## mn91:32.10–mn91:32.13 (mn)
+CONTEXT mn91:32.8 | P: Yannūnāhaṁ samaṇaṁ gotamaṁ samparāyikaṁyeva atthaṁ puccheyyan”ti. | S: Why don’t I ask the ascetic Gotama about the benefit that specifically applies to lives to come?” | T: (none)
+CONTEXT mn91:32.9 | P: Atha kho brahmāyu brāhmaṇo bhagavantaṁ gāthāhi ajjhabhāsi: | S: So Brahmāyu addressed the Buddha in verse: | T: (none)
+mn91:32.10 | P: “Kathaṁ kho brāhmaṇo hoti, | S: “How do you become a brahmin? | T: (none)
+mn91:32.11 | P: kathaṁ bhavati vedagū; | S: And how do you become a knowledge master? | T: (none)
+mn91:32.12 | P: Tevijjo bho kathaṁ hoti, | S: How a master of the three knowledges? | T: (none)
+mn91:32.13 | P: sotthiyo kinti vuccati. | S: And how is one called a scholar? | T: (none)
+
+## mn91:32.14–mn91:32.17 (mn)
+mn91:32.14 | P: Arahaṁ bho kathaṁ hoti, | S: How do you become a perfected one? | T: (none)
+mn91:32.15 | P: kathaṁ bhavati kevalī; | S: And how a consummate one? | T: (none)
+mn91:32.16 | P: Muni ca bho kathaṁ hoti, | S: How do you become a sage? | T: (none)
+mn91:32.17 | P: buddho kinti pavuccatī”ti. | S: And how is one declared to be awakened?” | T: (none)
+CONTEXT mn91:33.1 | P: Atha kho bhagavā brahmāyuṁ brāhmaṇaṁ gāthāhi paccabhāsi: | S: Then the Buddha replied to Brahmāyu in verse: | T: (none)
+
+## mn91:33.2–mn91:33.5 (mn)
+CONTEXT mn91:33.1 | P: Atha kho bhagavā brahmāyuṁ brāhmaṇaṁ gāthāhi paccabhāsi: | S: Then the Buddha replied to Brahmāyu in verse: | T: (none)
+mn91:33.2 | P: “Pubbenivāsaṁ yo vedi, | S: “One who knows their past lives, | T: (none)
+mn91:33.3 | P: saggāpāyañca passati; | S: sees heaven and places of loss, | T: (none)
+mn91:33.4 | P: Atho jātikkhayaṁ patto, | S: and has attained the end of rebirth: | T: (none)
+mn91:33.5 | P: abhiññā vosito muni. | S: such a sage has perfect insight. | T: (none)
+
+## mn91:33.6–mn91:33.11 (mn)
+mn91:33.6 | P: Cittaṁ visuddhaṁ jānāti, | S: They know their mind is pure, | T: (none)
+mn91:33.7 | P: muttaṁ rāgehi sabbaso; | S: completely freed from greed; | T: (none)
+mn91:33.8 | P: Pahīnajātimaraṇo, | S: they’ve given up birth and death, | T: (none)
+mn91:33.9 | P: brahmacariyassa kevalī; | S: and have completed the spiritual journey. | T: (none)
+mn91:33.10 | P: Pāragū sabbadhammānaṁ, | S: Gone beyond all things, | T: (none)
+mn91:33.11 | P: buddho tādī pavuccatī”ti. | S: such a one is declared to be awakened.” | T: (none)
+CONTEXT mn91:34.1 | P: Evaṁ vutte, brahmāyu brāhmaṇo uṭṭhāyāsanā ekaṁsaṁ uttarāsaṅgaṁ karitvā bhagavato pādesu sirasā nipatitvā bhagavato pādāni mukhena ca paricumbati, pāṇīhi ca parisambāhati, nāmañca sāveti: | S: When he said this, Brahmāyu got up from his seat and arranged his robe over one shoulder. He bowed with his head to the Buddha’s feet, caressing them and covering them with kisses, and pronounced his name: | T: (none)
+CONTEXT mn91:34.2 | P: “brahmāyu ahaṁ, bho gotama, brāhmaṇo; | S: “I am the brahmin Brahmāyu, worthy Gotama! | T: (none)
+
+## mn110:26.1–mn110:26.4 (mn)
+CONTEXT mn110:25.4 | P: Devadahavaggo niṭṭhito paṭhamo. | S: (none) | T: (none)
+CONTEXT mn110:26.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+mn110:26.1 | P: Devadahaṁ pañcattayaṁ, | S: (none) | T: (none)
+mn110:26.2 | P: Kinti sāma sunakkhattaṁ; | S: (none) | T: (none)
+mn110:26.3 | P: Sappāya gaṇa gopaka— | S: (none) | T: (none)
+mn110:26.4 | P: Mahāpuṇṇa cūḷapuṇṇañcāti. | S: (none) | T: (none)
+
+## mn128:6.1–mn128:6.4 (mn)
+CONTEXT mn128:5.1 | P: Atha kho bhagavā pubbaṇhasamayaṁ nivāsetvā pattacīvaramādāya kosambiṁ piṇḍāya pāvisi. | S: Then the Buddha robed up in the morning and, taking his bowl and robe, entered Kosambī for alms. | T: Then, early in the morning, the Blessed One—having adjusted his under robe and carrying his bowl & robes—went into Kosambī for alms.
+CONTEXT mn128:5.2 | P: Kosambiyaṁ piṇḍāya caritvā pacchābhattaṁ piṇḍapātapaṭikkanto senāsanaṁ saṁsāmetvā pattacīvaramādāya ṭhitakova imā gāthā abhāsi: | S: After the meal, on his return from almsround, he set his lodgings in order. Taking his bowl and robe, he recited these verses while standing right there: | T: Having gone for alms in Kosambī, after the meal, returning from his almsround, having set his dwelling in order, taking his bowl & robes, he recited these verses while standing:
+mn128:6.1 | P: “Puthusaddo samajano, | S: “Many voices shout at once, | T: Loud-voiced ⏎ on a par with people at large,
+mn128:6.2 | P: na bālo koci maññatha; | S: yet no one thinks that they’re the fool. | T: no one considers himself ⏎ a fool.
+mn128:6.3 | P: Saṅghasmiṁ bhijjamānasmiṁ, | S: Even as the Saṅgha splits, | T: Though the Saṅgha is splitting,
+mn128:6.4 | P: nāññaṁ bhiyyo amaññaruṁ. | S: they think no better of the other. | T: they don’t consider ⏎ anything else more.
+
+## mn128:6.5–mn128:6.8 (mn)
+mn128:6.5 | P: Parimuṭṭhā paṇḍitābhāsā, | S: Dolts pretending to be astute, | T: Completely forgotten: ⏎ the words of the wise
+mn128:6.6 | P: vācāgocarabhāṇino; | S: they talk, their words out of bounds. | T: declaring the right range of speech.
+mn128:6.7 | P: Yāvicchanti mukhāyāmaṁ, | S: They blab at will, their mouths agape, | T: Mouth-stretching ⏎ as far as they want,
+mn128:6.8 | P: yena nītā na taṁ vidū. | S: and not one knows what leads them on. | T: led on where, by what, ⏎ they don’t know.
+
+## mn128:6.9–mn128:6.12 (mn)
+mn128:6.9 | P: Akkocchi maṁ avadhi maṁ, | S: ‘They abused me, they hit me! | T: ‘He insulted me, ⏎ hit me,
+mn128:6.10 | P: ajini maṁ ahāsi me; | S: They beat me, they robbed me!’ | T: beat me, ⏎ robbed me’:
+mn128:6.11 | P: Ye ca taṁ upanayhanti, | S: For those bearing such a grudge, | T: For those who brood on this,
+mn128:6.12 | P: veraṁ tesaṁ na sammati. | S: hatred is never laid to rest. | T: hostility isn’t stilled.
+
+## mn128:6.13–mn128:6.16 (mn)
+mn128:6.13 | P: Akkocchi maṁ avadhi maṁ, | S: ‘They abused me, they hit me! | T: ‘He insulted me, ⏎ hit me,
+mn128:6.14 | P: ajini maṁ ahāsi me; | S: They beat me, they robbed me!’ | T: beat me, ⏎ robbed me’:
+mn128:6.15 | P: Ye ca taṁ nupanayhanti, | S: For those who bear no such grudge, | T: For those who don’t brood on this,
+mn128:6.16 | P: veraṁ tesūpasammati. | S: hatred is laid to rest. | T: hostility is stilled.
+
+## mn128:6.17–mn128:6.20 (mn) GATHERED; possible speaker requires a reader
+mn128:6.17 | P: Na hi verena verāni, | S: For never is hatred | T: Hostilities aren’t stilled ⏎ through hostility, ⏎ regardless.
+mn128:6.18 | P: sammantīdha kudācanaṁ; | S: laid to rest by hate, | T: (none)
+mn128:6.19 | P: Averena ca sammanti, | S: it’s laid to rest by love: | T: Hostilities are stilled ⏎ through non-hostility:
+mn128:6.20 | P: esa dhammo sanantano. | S: this is an ancient teaching. | T: This, an unending truth.
+
+## mn128:6.21–mn128:6.24 (mn)
+mn128:6.21 | P: Pare ca na vijānanti, | S: When others do not understand, | T: Unlike those who don’t realize
+mn128:6.22 | P: mayamettha yamāmase; | S: let us, who do understand this, | T: that we’re here on the verge ⏎ of perishing,
+mn128:6.23 | P: Ye ca tattha vijānanti, | S: restrain ourselves in this regard; | T: those who do:
+mn128:6.24 | P: tato sammanti medhagā. | S: for that is how conflicts are laid to rest. | T: Their quarrels are stilled.
+
+## mn128:6.25–mn128:6.29 (mn)
+mn128:6.25 | P: Aṭṭhicchinnā pāṇaharā, | S: Breakers of bones and takers of life, | T: Bone-breakers, killers,
+mn128:6.26 | P: gavassadhanahārino; | S: thieves of cattle, horses, wealth, | T: cattle thieves, robbers,
+mn128:6.27 | P: Raṭṭhaṁ vilumpamānānaṁ, | S: those who plunder the nation: | T: those who plunder the nation:
+mn128:6.28 | P: tesampi hoti saṅgati; | S: even they can come together, | T: Even they have their fellowship.
+mn128:6.29 | P: Kasmā tumhākaṁ no siyā. | S: so why can’t you? | T: Why shouldn’t you have yours?
+
+## mn128:6.30–mn128:6.33 (mn)
+mn128:6.30 | P: Sace labhetha nipakaṁ sahāyaṁ, | S: If you find an alert companion, | T: If you gain a mature companion—
+mn128:6.31 | P: Saddhiṁ caraṁ sādhuvihāri dhīraṁ; | S: an attentive friend to live happily together, | T: a fellow traveler, ⏎ right-living, ⏎ enlightened—
+mn128:6.32 | P: Abhibhuyya sabbāni parissayāni, | S: then, overcoming all adversities, | T: overcoming all dangers
+mn128:6.33 | P: Careyya tenattamano satīmā. | S: wander with them, joyful and mindful. | T: go with him, ⏎ gratified, ⏎ mindful.
+
+## mn128:6.34–mn128:6.37 (mn)
+mn128:6.34 | P: No ce labhetha nipakaṁ sahāyaṁ, | S: If you find no alert companion, | T: If you don’t gain a mature companion—
+mn128:6.35 | P: Saddhiṁ caraṁ sādhuvihāri dhīraṁ; | S: no attentive friend to live happily together, | T: a fellow traveler, ⏎ right-living, ⏎ enlightened—
+mn128:6.36 | P: Rājāva raṭṭhaṁ vijitaṁ pahāya, | S: then, like a king who flees his conquered realm, | T: go alone like a king renouncing his kingdom,
+mn128:6.37 | P: Eko care mātaṅgaraññeva nāgo. | S: wander alone like a tusker in the wilds. | T: like the elephant in the Mātaṅga wilds, his herd.
+
+## mn128:6.38–mn128:6.41 (mn)
+mn128:6.38 | P: Ekassa caritaṁ seyyo, | S: It’s better to wander alone, | T: Going alone is better,
+mn128:6.39 | P: Natthi bāle sahāyatā; | S: there’s no fellowship with fools. | T: there’s no companionship with a fool.
+mn128:6.40 | P: Eko care na ca pāpāni kayirā, | S: Wander alone and do no wrong, | T: Go alone, ⏎ doing no evil,
+mn128:6.41 | P: Appossukko mātaṅgaraññeva nāgo”ti. | S: at ease like a tusker in the wilds.” | T: at peace, ⏎ like the elephant in the Mātaṅga wilds.
+CONTEXT mn128:7.1 | P: Atha kho bhagavā ṭhitakova imā gāthā bhāsitvā yena bālakaloṇakāragāmo tenupasaṅkami. | S: After speaking these verses while standing, the Buddha went to the village of the child salt-miners, | T: Having recited these verses while standing, the Blessed One went to Bālakaloṇakāraka Village.
+CONTEXT mn128:7.2 | P: Tena kho pana samayena āyasmā bhagu bālakaloṇakāragāme viharati. | S: where Venerable Bhagu was staying at the time. | T: Now, on that occasion Ven. Bhagu was staying near Bālakaloṇakāraka Village.
+
+## mn130:16.3–mn130:16.6 (mn)
+CONTEXT mn130:16.1 | P: Tamenaṁ, bhikkhave, nirayapālā mahāniraye pakkhipanti. | S: The wardens of hell toss them into the Great Hell. | T: “Then the hell-wardens throw him into the Great Hell.
+CONTEXT mn130:16.2 | P: So kho pana, bhikkhave, mahānirayo— | S: Now, about that Great Hell: | T: And as to the Great Hell, monks:
+mn130:16.3 | P: Catukkaṇṇo catudvāro, | S: ‘Four are its corners, four its doors, | T: It’s four-cornered & has four gates
+mn130:16.4 | P: vibhatto bhāgaso mito; | S: neatly divided section by section. | T: set in the middle of each side.
+mn130:16.5 | P: Ayopākārapariyanto, | S: Surrounded by an iron wall, | T: It’s surrounded by an iron fortress wall
+mn130:16.6 | P: ayasā paṭikujjito. | S: of iron is its roof. | T: and roofed with iron.
+
+## mn130:16.7–mn130:16.10 (mn)
+mn130:16.7 | P: Tassa ayomayā bhūmi, | S: The ground is even made of iron, | T: Its floor is made of red-hot iron,
+mn130:16.8 | P: jalitā tejasāyutā; | S: it burns with fierce fire. | T: heated, fully blazing.
+mn130:16.9 | P: Samantā yojanasataṁ, | S: The heat forever radiates | T: It stands always, spreading 100 leagues all around.
+mn130:16.10 | P: pharitvā tiṭṭhati sabbadā. | S: a hundred leagues around.’ | T: (none)
+CONTEXT mn130:17.1 | P: Tassa kho pana, bhikkhave, mahānirayassa puratthimāya bhittiyā acci uṭṭhahitvā pacchimāya bhittiyā paṭihaññati, pacchimāya bhittiyā acci uṭṭhahitvā puratthimāya bhittiyā paṭihaññati, uttarāya bhittiyā acci uṭṭhahitvā dakkhiṇāya bhittiyā paṭihaññati, dakkhiṇāya bhittiyā acci uṭṭhahitvā uttarāya bhittiyā paṭihaññati, heṭṭhā acci uṭṭhahitvā upari paṭihaññati, uparito acci uṭṭhahitvā heṭṭhā paṭihaññati. | S: Now in the Great Hell, flames surge out of the walls and crash into the opposite wall: from east to west, from west to east, from north to south, from south to north, from bottom to top, from top to bottom. | T: “The flame that leaps from the eastern wall of the Great Hell strikes the western wall. The flame that leaps from the western wall strikes the eastern wall. The flame that leaps from the northern wall strikes the southern wall. The flame that leaps from the southern wall strikes the northern wall. The flame that leaps from the bottom strikes the top. The flame that leaps from the top strikes the bottom.
+CONTEXT mn130:17.2 | P: So tattha dukkhā tibbā kharā kaṭukā vedanā vedeti, na ca tāva kālaṁ karoti yāva na taṁ pāpakammaṁ byantīhoti. | S: And there they suffer painful, sharp, severe, acute feelings—but they don’t die until that bad deed is eliminated. | T: There he feels painful, racking, piercing feelings, yet he does not die as long as his evil kamma is not exhausted.
+
+## mn130:30.3–mn130:30.6 (mn)
+CONTEXT mn130:30.1 | P: Idamavoca bhagavā. | S: That is what the Buddha said. | T: That is what the Blessed One said.
+CONTEXT mn130:30.2 | P: Idaṁ vatvāna sugato athāparaṁ etadavoca satthā: | S: Then the Holy One, the Teacher, went on to say: | T: Having said that, the One Well-Gone, the Teacher, said further:
+mn130:30.3 | P: “Coditā devadūtehi, | S: “When warned by the gods’ messengers, | T: Warned by the deva messengers,
+mn130:30.4 | P: ye pamajjanti māṇavā; | S: those sons of Manu who are negligent | T: those youths who are heedless
+mn130:30.5 | P: Te dīgharattaṁ socanti, | S: sorrow for a long time | T: grieve for a long, long time—
+mn130:30.6 | P: hīnakāyūpagā narā. | S: when they go to that wretched place. | T: people entering a lower state.
+
+## mn130:30.7–mn130:30.10 (mn) GATHERED; unequal counts require a reader
+mn130:30.7 | P: Ye ca kho devadūtehi, | S: When warned by the gods’ messengers, | T: But those here who are good, ⏎ people of integrity, ⏎ when warned by the deva messengers
+mn130:30.8 | P: santo sappurisā idha; | S: the good and true persons here | T: (none)
+mn130:30.9 | P: Coditā nappamajjanti, | S: never neglect | T: aren’t heedless
+mn130:30.10 | P: ariyadhamme kudācanaṁ. | S: the teaching of the Noble One. | T: of the noble Dhamma—ever.
+
+## mn130:30.11–mn130:30.14 (mn)
+mn130:30.11 | P: Upādāne bhayaṁ disvā, | S: Seeing the danger in grasping, | T: Seeing danger in clinging,
+mn130:30.12 | P: jātimaraṇasambhave; | S: the origin of birth and death, | T: in the coming-into-play ⏎ of birth & death,
+mn130:30.13 | P: Anupādā vimuccanti, | S: the unattached are freed | T: they are released from lack of clinging,
+mn130:30.14 | P: jātimaraṇasaṅkhaye. | S: with the ending of birth and death. | T: in the ending ⏎ of birth & death.
+
+## mn130:30.15–mn130:30.18 (mn)
+mn130:30.15 | P: Te khemappattā sukhino, | S: Happy, they’ve come to a safe place, | T: They, happy, arriving at safety,
+mn130:30.16 | P: diṭṭhadhammābhinibbutā; | S: quenched in this very life. | T: fully unbound in the here & now,
+mn130:30.17 | P: Sabbaverabhayātītā, | S: They’ve gone beyond all enmities and fears, | T: having gone beyond ⏎ all animosity & danger
+mn130:30.18 | P: sabbadukkhaṁ upaccagun”ti. | S: and risen above all suffering.” | T: have escaped ⏎ all suffering & stress.
+CONTEXT mn130:30.19 | P: Devadūtasuttaṁ niṭṭhitaṁ dasamaṁ. | S: (none) | T: (none)
+CONTEXT mn130:30.20 | P: Suññatavaggo niṭṭhito tatiyo. | S: (none) | T: (none)
+
+## mn130:31.1–mn130:31.5 (mn)
+CONTEXT mn130:30.20 | P: Suññatavaggo niṭṭhito tatiyo. | S: (none) | T: (none)
+CONTEXT mn130:31.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+mn130:31.1 | P: Dvidhāva suññatā hoti, | S: (none) | T: (none)
+mn130:31.2 | P: Abbhutadhammabākulaṁ; | S: (none) | T: (none)
+mn130:31.3 | P: Aciravatabhūmijanāmo, | S: (none) | T: (none)
+mn130:31.4 | P: Anuruddhupakkilesaṁ; | S: (none) | T: (none)
+mn130:31.5 | P: Bālapaṇḍito devadūtañca te dasāti. | S: (none) | T: (none)
+
+## mn131:3.1–mn131:3.4 (mn)
+CONTEXT mn131:2.3 | P: “Evaṁ, bhante”ti kho te bhikkhū bhagavato paccassosuṁ. | S: “Yes, sir,” they replied. | T: “As you say, lord,” the monks responded to him.
+CONTEXT mn131:2.4 | P: Bhagavā etadavoca: | S: The Buddha said this: | T: The Blessed One said:
+mn131:3.1 | P: “Atītaṁ nānvāgameyya, | S: “Don’t run back to the past, | T: You shouldn’t chase after the past
+mn131:3.2 | P: nappaṭikaṅkhe anāgataṁ; | S: don’t anticipate the future. | T: or place expectations on the future.
+mn131:3.3 | P: Yadatītaṁ pahīnaṁ taṁ, | S: What’s past is left behind, | T: What is past ⏎ is left behind.
+mn131:3.4 | P: appattañca anāgataṁ. | S: the future has not arrived; | T: The future ⏎ is as yet unreached.
+
+## mn131:3.5–mn131:3.8 (mn)
+mn131:3.5 | P: Paccuppannañca yo dhammaṁ, | S: and any present phenomenon | T: Whatever quality is present
+mn131:3.6 | P: Tattha tattha vipassati; | S: you clearly discern in every case. | T: you clearly see right there, ⏎ right there.
+mn131:3.7 | P: Asaṁhīraṁ asaṅkuppaṁ, | S: The unfaltering, the unshakable: | T: Not taken in, ⏎ unshaken,
+mn131:3.8 | P: Taṁ vidvā manubrūhaye. | S: having known that, foster it. | T: that’s how you develop the heart.
+
+## mn131:3.9–mn131:3.12 (mn)
+mn131:3.9 | P: Ajjeva kiccamātappaṁ, | S: Today’s the day to keenly work— | T: Ardently doing ⏎ what should be done today,
+mn131:3.10 | P: ko jaññā maraṇaṁ suve; | S: who knows, tomorrow may bring death! | T: for—who knows?— tomorrow ⏎ death.
+mn131:3.11 | P: Na hi no saṅgaraṁ tena, | S: For there is no bargain to be struck | T: There is no bargaining
+mn131:3.12 | P: mahāsenena maccunā. | S: with Death and his mighty horde. | T: with Mortality & his mighty horde.
+
+## mn131:3.13–mn131:3.16 (mn)
+mn131:3.13 | P: Evaṁvihāriṁ ātāpiṁ, | S: One who keenly meditates like this, | T: Whoever lives thus ardently,
+mn131:3.14 | P: ahorattamatanditaṁ; | S: tireless all night and day: | T: relentlessly ⏎ both day & night,
+mn131:3.15 | P: Taṁ ve bhaddekarattoti, | S: that’s who has one fine night— | T: has truly had an auspicious day:
+mn131:3.16 | P: santo ācikkhate muni. | S: so declares the peaceful sage. | T: So says the Peaceful Sage.
+CONTEXT mn131:4.1 | P: Kathañca, bhikkhave, atītaṁ anvāgameti? | S: And how do you run back to the past? | T: “And how, monks, does one chase after the past?
+CONTEXT mn131:4.2 | P: ‘Evaṁrūpo ahosiṁ atītamaddhānan’ti tattha nandiṁ samanvāneti, ‘evaṁvedano ahosiṁ atītamaddhānan’ti tattha nandiṁ samanvāneti, ‘evaṁsañño ahosiṁ atītamaddhānan’ti tattha nandiṁ samanvāneti, ‘evaṁsaṅkhāro ahosiṁ atītamaddhānan’ti tattha nandiṁ samanvāneti, ‘evaṁviññāṇo ahosiṁ atītamaddhānan’ti tattha nandiṁ samanvāneti— | S: You muster delight there, thinking: ‘I had such form in the past.’ … ‘I had such feeling … perception … choice … consciousness in the past.’ | T: One gets carried away with the delight of ‘In the past I had such a form [body]’ … ‘In the past I had such a feeling’ … ‘In the past I had such a perception’ … ‘In the past I had such a fabrication’ … ‘In the past I had such a consciousness.’
+
+## mn131:10.1–mn131:10.4 (mn)
+CONTEXT mn131:9.7 | P: na viññāṇaṁ attato samanupassati, na viññāṇavantaṁ vā attānaṁ, na attani vā viññāṇaṁ, na viññāṇasmiṁ vā attānaṁ— | S: consciousness as self, self as having consciousness, consciousness in self, or self in consciousness. | T: “He/she does not see consciousness as self, or self as possessing consciousness, or consciousness as in self, or self as in consciousness.
+CONTEXT mn131:9.8 | P: evaṁ kho, bhikkhave, paccuppannesu dhammesu na saṁhīrati. | S: That’s how you don’t falter amid presently arisen phenomena. | T: This is called not being taken in with regard to present qualities.
+mn131:10.1 | P: Atītaṁ nānvāgameyya, | S: ‘Don’t run back to the past, | T: You shouldn’t chase after the past
+mn131:10.2 | P: nappaṭikaṅkhe anāgataṁ; | S: don’t anticipate the future. | T: or place expectations on the future.
+mn131:10.3 | P: Yadatītaṁ pahīnaṁ taṁ, | S: What’s past is left behind, | T: What is past ⏎ is left behind.
+mn131:10.4 | P: appattañca anāgataṁ. | S: the future has not arrived; | T: The future ⏎ is as yet unreached.
+
+## mn131:10.5–mn131:10.8 (mn)
+mn131:10.5 | P: Paccuppannañca yo dhammaṁ, | S: and any present phenomenon | T: Whatever quality is present
+mn131:10.6 | P: tattha tattha vipassati; | S: you clearly discern in every case. | T: you clearly see right there, ⏎ right there.
+mn131:10.7 | P: Asaṁhīraṁ asaṅkuppaṁ, | S: The unfaltering, the unshakable: | T: Not taken in, ⏎ unshaken,
+mn131:10.8 | P: taṁ vidvā manubrūhaye. | S: having known that, foster it. | T: that’s how you develop the heart.
+
+## mn131:10.9–mn131:10.12 (mn)
+mn131:10.9 | P: Ajjeva kiccamātappaṁ, | S: Today’s the day to keenly work— | T: Ardently doing ⏎ what should be done today,
+mn131:10.10 | P: ko jaññā maraṇaṁ suve; | S: who knows, tomorrow may bring death! | T: for—who knows?— tomorrow ⏎ death.
+mn131:10.11 | P: Na hi no saṅgaraṁ tena, | S: For there is no bargain to be struck | T: There is no bargaining
+mn131:10.12 | P: mahāsenena maccunā. | S: with Death and his mighty horde. | T: with Mortality & his mighty horde.
+
+## mn131:10.13–mn131:10.16 (mn)
+mn131:10.13 | P: Evaṁvihāriṁ ātāpiṁ, | S: One who keenly meditates like this, | T: Whoever lives thus ardently,
+mn131:10.14 | P: ahorattamatanditaṁ; | S: tireless all night and day: | T: relentlessly ⏎ both day & night,
+mn131:10.15 | P: Taṁ ve bhaddekarattoti, | S: that’s who has one fine night— | T: has truly had an auspicious day:
+mn131:10.16 | P: santo ācikkhate munīti. | S: so declares the peaceful sage.’ | T: So says the Peaceful Sage.
+CONTEXT mn131:11.1 | P: ‘Bhaddekarattassa vo, bhikkhave, uddesañca vibhaṅgañca desessāmī’ti— | S: And that’s what I meant when I said: ‘I shall teach you the summary recital and the analysis of the one who has one fine night.’” | T: “‘Monks, I will teach you the summary & exposition of one who has had an auspicious day’: Thus it was said,
+CONTEXT mn131:11.2 | P: iti yaṁ taṁ vuttaṁ idametaṁ paṭicca vuttan”ti. | S: (none) | T: and in reference to this was it said.”

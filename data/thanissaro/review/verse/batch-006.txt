@@ -1,0 +1,410 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## mn133:5.1–mn133:5.4 (mn)
+CONTEXT mn133:4.17 | P: “Evaṁ, bhante”ti kho āyasmā samiddhi bhagavato paccassosi. | S: “Yes, sir,” Samiddhi replied. | T: “As you say, lord,” Ven. Samiddhi responded to the Blessed One.
+CONTEXT mn133:4.18 | P: Bhagavā etadavoca: | S: The Buddha said this: | T: The Blessed One said:
+mn133:5.1 | P: “Atītaṁ nānvāgameyya, | S: “Don’t run back to the past, | T: “You shouldn’t chase after the past
+mn133:5.2 | P: nappaṭikaṅkhe anāgataṁ; | S: don’t anticipate the future. | T: or place expectations on the future.
+mn133:5.3 | P: Yadatītaṁ pahīnaṁ taṁ, | S: What’s past is left behind, | T: What is past ⏎ is left behind.
+mn133:5.4 | P: appattañca anāgataṁ. | S: the future has not arrived; | T: The future ⏎ is as yet unreached.
+
+## mn133:5.5–mn133:5.8 (mn)
+mn133:5.5 | P: Paccuppannañca yo dhammaṁ, | S: and any present phenomenon | T: Whatever quality is present
+mn133:5.6 | P: tattha tattha vipassati; | S: you clearly discern in every case. | T: you clearly see right there, ⏎ right there.
+mn133:5.7 | P: Asaṁhīraṁ asaṅkuppaṁ, | S: The unfaltering, the unshakable: | T: Not taken in, ⏎ unshaken,
+mn133:5.8 | P: taṁ vidvā manubrūhaye. | S: having known that, foster it. | T: that’s how you develop the heart.
+
+## mn133:5.9–mn133:5.12 (mn)
+mn133:5.9 | P: Ajjeva kiccamātappaṁ, | S: Today’s the day to keenly work— | T: Ardently doing ⏎ what should be done today,
+mn133:5.10 | P: ko jaññā maraṇaṁ suve; | S: who knows, tomorrow may bring death! | T: for—who knows?— tomorrow ⏎ death.
+mn133:5.11 | P: Na hi no saṅgaraṁ tena, | S: For there is no bargain to be struck | T: There is no bargaining
+mn133:5.12 | P: mahāsenena maccunā. | S: with Death and his mighty horde. | T: with Mortality & his mighty horde.
+
+## mn133:5.13–mn133:5.16 (mn)
+mn133:5.13 | P: Evaṁvihāriṁ ātāpiṁ, | S: One who keenly meditates like this, | T: Whoever lives thus ardently,
+mn133:5.14 | P: ahorattamatanditaṁ; | S: tireless all night and day: | T: relentlessly ⏎ both day & night,
+mn133:5.15 | P: Taṁ ve bhaddekarattoti, | S: that’s who has one fine night— | T: has truly had an auspicious day:
+mn133:5.16 | P: santo ācikkhate munī”ti. | S: so declares the peaceful sage.” | T: So says the Peaceful Sage.”
+CONTEXT mn133:6.1 | P: Idamavoca bhagavā; | S: That is what the Buddha said. | T: That is what the Blessed One said.
+CONTEXT mn133:6.2 | P: idaṁ vatvāna sugato uṭṭhāyāsanā vihāraṁ pāvisi. | S: When he had spoken, the Holy One rose from his seat and entered his dwelling. | T: Having said it, the One Well-Gone got up from his seat and went into his dwelling.
+
+## mn133:7.3–mn133:7.6 (mn)
+CONTEXT mn133:7.1 | P: Atha kho tesaṁ bhikkhūnaṁ, acirapakkantassa bhagavato, etadahosi: | S: Soon after the Buddha left, those mendicants considered, | T: Then, not long after the Blessed One had left, this thought occurred to the monks:
+CONTEXT mn133:7.2 | P: “idaṁ kho no, āvuso, bhagavā saṅkhittena uddesaṁ uddisitvā vitthārena atthaṁ avibhajitvā uṭṭhāyāsanā vihāraṁ paviṭṭho: | S: “The Buddha gave this brief summary recital, then entered his dwelling without explaining the meaning in detail. … | T: “This brief statement the Blessed One made, after which he went into his dwelling without analyzing the detailed meaning—
+mn133:7.3 | P: ‘Atītaṁ nānvāgameyya, | S: (none) | T: ‘You shouldn’t chase after the past
+mn133:7.4 | P: nappaṭikaṅkhe anāgataṁ; | S: (none) | T: or place expectations on the future.
+mn133:7.5 | P: Yadatītaṁ pahīnaṁ taṁ, | S: (none) | T: What is past ⏎ is left behind.
+mn133:7.6 | P: appattañca anāgataṁ. | S: (none) | T: The future ⏎ is as yet unreached.
+
+## mn133:7.7–mn133:7.10 (mn)
+mn133:7.7 | P: Paccuppannañca yo dhammaṁ, | S: (none) | T: Whatever quality is present
+mn133:7.8 | P: tattha tattha vipassati; | S: (none) | T: you clearly see right there, ⏎ right there.
+mn133:7.9 | P: Asaṁhīraṁ asaṅkuppaṁ, | S: (none) | T: Not taken in, ⏎ unshaken,
+mn133:7.10 | P: taṁ vidvā manubrūhaye. | S: (none) | T: that’s how you develop the heart.
+
+## mn133:7.11–mn133:7.14 (mn)
+mn133:7.11 | P: Ajjeva kiccamātappaṁ, | S: (none) | T: Ardently doing ⏎ what should be done today,
+mn133:7.12 | P: ko jaññā maraṇaṁ suve; | S: (none) | T: for—who knows?— tomorrow ⏎ death.
+mn133:7.13 | P: Na hi no saṅgaraṁ tena, | S: (none) | T: There is no bargaining
+mn133:7.14 | P: mahāsenena maccunā. | S: (none) | T: with Mortality & his mighty horde.
+
+## mn133:7.15–mn133:7.18 (mn)
+mn133:7.15 | P: Evaṁvihāriṁ ātāpiṁ, | S: (none) | T: Whoever lives thus ardently,
+mn133:7.16 | P: ahorattamatanditaṁ; | S: (none) | T: relentlessly ⏎ both day & night,
+mn133:7.17 | P: Taṁ ve bhaddekarattoti, | S: (none) | T: has truly had an auspicious day:
+mn133:7.18 | P: santo ācikkhate munī’ti. | S: (none) | T: So says the Peaceful Sage’:
+CONTEXT mn133:7.19 | P: Ko nu kho imassa bhagavatā saṅkhittena uddesassa uddiṭṭhassa vitthārena atthaṁ avibhattassa vitthārena atthaṁ vibhajeyyā”ti? | S: Who can explain in detail the meaning of this brief summary given by the Buddha?” | T: “Now who might analyze the unanalyzed detailed meaning of this brief statement?”
+CONTEXT mn133:7.20 | P: Atha kho tesaṁ bhikkhūnaṁ etadahosi: | S: Then those mendicants thought: | T: Then the thought occurred to them,
+
+## mn133:7.27–mn133:7.30 (mn)
+CONTEXT mn133:7.25 | P: Sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdiṁsu. Ekamantaṁ nisinnā kho te bhikkhū āyasmantaṁ mahākaccānaṁ etadavocuṁ: | S: When the greetings and polite conversation were over, they sat down to one side. They told him what had happened, and said: | T: After an exchange of friendly greetings & courtesies, they sat to one side. As they were sitting there, they [told him what had happened, and added,]
+CONTEXT mn133:7.26 | P: “idaṁ kho no, āvuso kaccāna, bhagavā saṅkhittena uddesaṁ uddisitvā vitthārena atthaṁ avibhajitvā uṭṭhāyāsanā vihāraṁ paviṭṭho: | S: (none) | T: (none)
+mn133:7.27 | P: ‘Atītaṁ nānvāgameyya, | S: (none) | T: (none)
+mn133:7.28 | P: …pe… | S: (none) | T: (none)
+mn133:7.29 | P: Taṁ ve bhaddekarattoti, | S: (none) | T: (none)
+mn133:7.30 | P: santo ācikkhate munī’ti. | S: (none) | T: (none)
+CONTEXT mn133:7.31 | P: Tesaṁ no, āvuso kaccāna, amhākaṁ, acirapakkantassa bhagavato, etadahosi— | S: (none) | T: (none)
+CONTEXT mn133:7.32 | P: idaṁ kho no, āvuso, bhagavā saṅkhittena uddesaṁ uddisitvā vitthārena atthaṁ avibhajitvā uṭṭhāyāsanā vihāraṁ paviṭṭho: | S: (none) | T: (none)
+
+## mn133:7.33–mn133:7.36 (mn)
+CONTEXT mn133:7.31 | P: Tesaṁ no, āvuso kaccāna, amhākaṁ, acirapakkantassa bhagavato, etadahosi— | S: (none) | T: (none)
+CONTEXT mn133:7.32 | P: idaṁ kho no, āvuso, bhagavā saṅkhittena uddesaṁ uddisitvā vitthārena atthaṁ avibhajitvā uṭṭhāyāsanā vihāraṁ paviṭṭho: | S: (none) | T: (none)
+mn133:7.33 | P: ‘Atītaṁ nānvāgameyya, | S: (none) | T: (none)
+mn133:7.34 | P: …pe… | S: (none) | T: (none)
+mn133:7.35 | P: Taṁ ve bhaddekarattoti, | S: (none) | T: (none)
+mn133:7.36 | P: santo ācikkhate munī’ti. | S: (none) | T: (none)
+CONTEXT mn133:8.1 | P: Ko nu kho imassa bhagavatā saṅkhittena uddesassa uddiṭṭhassa vitthārena atthaṁ avibhattassa vitthārena atthaṁ vibhajeyyāti? | S: (none) | T: (none)
+CONTEXT mn133:8.2 | P: Tesaṁ no, āvuso kaccāna, amhākaṁ etadahosi: | S: (none) | T: (none)
+
+## mn133:12.2–mn133:12.5 (mn)
+CONTEXT mn133:11.3 | P: Āyasmā mahākaccāno etadavoca: | S: Venerable Mahākaccāna said this: | T: Ven. Mahā Kaccāna said this:
+CONTEXT mn133:12.1 | P: “Yaṁ kho no, āvuso, bhagavā saṅkhittena uddesaṁ uddisitvā vitthārena atthaṁ avibhajitvā uṭṭhāyāsanā vihāraṁ paviṭṭho: | S: “Reverends, the Buddha gave this brief summary recital, then entered his dwelling without explaining the meaning in detail: | T: “Concerning the brief statement the Blessed One made, after which he entered his dwelling without analyzing the detailed meaning—
+mn133:12.2 | P: ‘Atītaṁ nānvāgameyya, | S: ‘Don’t run back to the past … | T: ‘You shouldn’t chase after the past
+mn133:12.3 | P: …pe… | S: (none) | T: or place expectations on the future. ⏎ What is past ⏎ is left behind. ⏎ The future ⏎ is as yet unreached. ⏎ Whatever quality is present ⏎ you clearly see right there, ⏎ right there. ⏎ Not taken in, ⏎ unshaken, ⏎ that’s how you develop the heart. ⏎ Ardently doing ⏎ what should be done today, ⏎ for—who knows?— tomorrow ⏎ death. ⏎ There is no bargaining ⏎ with Mortality & his mighty horde. ⏎ Whoever lives thus ardently, ⏎ relentlessly ⏎ both day & night,
+mn133:12.4 | P: Taṁ ve bhaddekarattoti, | S: that’s who has one fine night— | T: has truly had an auspicious day:
+mn133:12.5 | P: santo ācikkhate munī’ti. | S: so declares the peaceful sage.’ | T: So says the Peaceful Sage’:
+CONTEXT mn133:12.6 | P: Imassa kho ahaṁ, āvuso, bhagavatā saṅkhittena uddesassa uddiṭṭhassa vitthārena atthaṁ avibhattassa evaṁ vitthārena atthaṁ ājānāmi— | S: And this is how I understand the detailed meaning of this summary recital. | T: “I understand the detailed meaning to be this:
+CONTEXT mn133:13.1 | P: Kathañca, āvuso, atītaṁ anvāgameti? | S: And how do you run back to the past? | T: “And how, friends, does one chase after the past?
+
+## mn133:19.2–mn133:19.5 (mn)
+CONTEXT mn133:18.12 | P: evaṁ kho, āvuso, paccuppannesu dhammesu na saṁhīrati. | S: That’s how you don’t falter amid presently arisen phenomena. | T: This is how one isn’t taken in with regard to present qualities.
+CONTEXT mn133:19.1 | P: Yaṁ kho no, āvuso, bhagavā saṅkhittena uddesaṁ uddisitvā vitthārena atthaṁ avibhajitvā uṭṭhāyāsanā vihāraṁ paviṭṭho: | S: This is how I understand the detailed meaning of that brief summary recital given by the Buddha. | T: “So, concerning the brief statement the Blessed One made, after which he entered his dwelling without analyzing the detailed meaning—
+mn133:19.2 | P: ‘Atītaṁ nānvāgameyya, | S: (none) | T: ‘You shouldn’t chase after the past
+mn133:19.3 | P: …pe… | S: (none) | T: or place expectations on the future. ⏎ What is past ⏎ is left behind. ⏎ The future ⏎ is as yet unreached. ⏎ Whatever quality is present ⏎ you clearly see right there, ⏎ right there. ⏎ Not taken in, ⏎ unshaken, ⏎ that’s how you develop the heart. ⏎ Ardently doing ⏎ what should be done today, ⏎ for—who knows?— tomorrow ⏎ death. ⏎ There is no bargaining ⏎ with Mortality & his mighty horde. ⏎ Whoever lives thus ardently, ⏎ relentlessly ⏎ both day & night,
+mn133:19.4 | P: Taṁ ve bhaddekarattoti, | S: (none) | T: has truly had an auspicious day:
+mn133:19.5 | P: santo ācikkhate munī’ti. | S: (none) | T: So says the Peaceful Sage’—
+CONTEXT mn133:19.6 | P: Imassa kho ahaṁ, āvuso, bhagavatā saṅkhittena uddesassa uddiṭṭhassa vitthārena atthaṁ avibhattassa evaṁ vitthārena atthaṁ ājānāmi. | S: (none) | T: this is how I understand the detailed meaning.
+CONTEXT mn133:19.7 | P: Ākaṅkhamānā ca pana tumhe āyasmanto bhagavantaṁyeva upasaṅkamitvā etamatthaṁ paṭipuccheyyātha, | S: If you wish, you may go to the Buddha and ask him about this. | T: Now, friends, if you wish, having gone to the Blessed One, question him about this matter.
+
+## mn133:20.3–mn133:20.6 (mn)
+CONTEXT mn133:20.1 | P: Atha kho te bhikkhū āyasmato mahākaccānassa bhāsitaṁ abhinanditvā anumoditvā uṭṭhāyāsanā yena bhagavā tenupasaṅkamiṁsu; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ nisīdiṁsu. Ekamantaṁ nisinnā kho te bhikkhū bhagavantaṁ etadavocuṁ: | S: Then those mendicants, approving and agreeing with what Mahākaccāna said, rose from their seats and went to the Buddha, bowed, sat down to one side, and told him what had happened, adding: | T: Then the monks, delighting in & approving of Ven. Mahā Kaccāna’s words, rose from their seats and went to the Blessed One. On arrival, having bowed down to him, they sat to one side. As they were sitting there, they [told him what had happened after he had gone into his dwelling, and ended by saying,]
+CONTEXT mn133:20.2 | P: “yaṁ kho no, bhante, bhagavā saṅkhittena uddesaṁ uddisitvā vitthārena atthaṁ avibhajitvā uṭṭhāyāsanā vihāraṁ paviṭṭho: | S: (none) | T: (none)
+mn133:20.3 | P: ‘Atītaṁ nānvāgameyya, | S: (none) | T: (none)
+mn133:20.4 | P: …pe… | S: (none) | T: (none)
+mn133:20.5 | P: Taṁ ve bhaddekarattoti, | S: (none) | T: (none)
+mn133:20.6 | P: santo ācikkhate munī’ti. | S: (none) | T: (none)
+CONTEXT mn133:20.7 | P: Tesaṁ no, bhante, amhākaṁ, acirapakkantassa bhagavato, etadahosi: | S: (none) | T: (none)
+CONTEXT mn133:20.8 | P: ‘idaṁ kho no, āvuso, bhagavā saṅkhittena uddesaṁ uddisitvā vitthārena atthaṁ avibhajitvā uṭṭhāyāsanā vihāraṁ paviṭṭho: | S: (none) | T: (none)
+
+## mn133:20.9–mn133:20.12 (mn)
+CONTEXT mn133:20.7 | P: Tesaṁ no, bhante, amhākaṁ, acirapakkantassa bhagavato, etadahosi: | S: (none) | T: (none)
+CONTEXT mn133:20.8 | P: ‘idaṁ kho no, āvuso, bhagavā saṅkhittena uddesaṁ uddisitvā vitthārena atthaṁ avibhajitvā uṭṭhāyāsanā vihāraṁ paviṭṭho: | S: (none) | T: (none)
+mn133:20.9 | P: “Atītaṁ nānvāgameyya, | S: (none) | T: (none)
+mn133:20.10 | P: nappaṭikaṅkhe anāgataṁ; | S: (none) | T: (none)
+mn133:20.11 | P: Yadatītaṁ pahīnaṁ taṁ, | S: (none) | T: (none)
+mn133:20.12 | P: appattañca anāgataṁ. | S: (none) | T: (none)
+
+## mn133:20.13–mn133:20.16 (mn)
+mn133:20.13 | P: Paccuppannañca yo dhammaṁ, | S: (none) | T: (none)
+mn133:20.14 | P: tattha tattha vipassati; | S: (none) | T: (none)
+mn133:20.15 | P: Asaṁhīraṁ asaṅkuppaṁ, | S: (none) | T: (none)
+mn133:20.16 | P: taṁ vidvā manubrūhaye. | S: (none) | T: (none)
+
+## mn133:20.17–mn133:20.20 (mn)
+mn133:20.17 | P: Ajjeva kiccamātappaṁ, | S: (none) | T: (none)
+mn133:20.18 | P: ko jaññā maraṇaṁ suve; | S: (none) | T: (none)
+mn133:20.19 | P: Na hi no saṅgaraṁ tena, | S: (none) | T: (none)
+mn133:20.20 | P: mahāsenena maccunā. | S: (none) | T: (none)
+
+## mn133:20.21–mn133:20.24 (mn)
+mn133:20.21 | P: Evaṁvihāriṁ ātāpiṁ, | S: (none) | T: (none)
+mn133:20.22 | P: ahorattamatanditaṁ; | S: (none) | T: (none)
+mn133:20.23 | P: Taṁ ve bhaddekarattoti, | S: (none) | T: (none)
+mn133:20.24 | P: santo ācikkhate munī”ti. | S: (none) | T: (none)
+CONTEXT mn133:20.25 | P: Ko nu kho imassa bhagavatā saṅkhittena uddesassa uddiṭṭhassa vitthārena atthaṁ avibhattassa vitthārena atthaṁ vibhajeyyā’ti? | S: (none) | T: (none)
+CONTEXT mn133:20.26 | P: Tesaṁ no, bhante, amhākaṁ etadahosi: | S: (none) | T: (none)
+
+## mn143:17.3–mn143:17.6 (mn)
+CONTEXT mn143:17.1 | P: Atha kho anāthapiṇḍiko devaputto abhikkantāya rattiyā abhikkantavaṇṇo kevalakappaṁ jetavanaṁ obhāsetvā yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ aṭṭhāsi. | S: Then, late at night, the glorious godling Anāthapiṇḍika, lighting up the entire Jeta’s Grove, went up to the Buddha, bowed, stood to one side, | T: Then Anāthapiṇḍika the deva’s son, in the far extreme of the night, his extreme radiance lighting up the entirety of Jeta’s Grove, went to the Blessed One and, on arrival, having bowed down to him, stood to one side.
+CONTEXT mn143:17.2 | P: Ekamantaṁ ṭhito kho anāthapiṇḍiko devaputto bhagavantaṁ gāthāhi ajjhabhāsi: | S: and addressed the Buddha in verse: | T: As he was standing there, he addressed the Blessed One with this verse:
+mn143:17.3 | P: “Idañhi taṁ jetavanaṁ, | S: “This is indeed that Jeta’s Grove, | T: This blessed Jeta’s Grove,
+mn143:17.4 | P: isisaṅghanisevitaṁ; | S: frequented by the Saṅgha of seers, | T: home to the community of seers,
+mn143:17.5 | P: Āvutthaṁ dhammarājena, | S: where the King of Dhamma stayed: | T: where there dwells the Dhamma King:
+mn143:17.6 | P: pītisañjananaṁ mama. | S: it brings me joy! | T: the source of rapture for me.
+
+## mn143:17.7–mn143:17.10 (mn)
+mn143:17.7 | P: Kammaṁ vijjā ca dhammo ca, | S: Deeds, knowledge, and principle; | T: Action, clear-knowing, & mental qualities,
+mn143:17.8 | P: sīlaṁ jīvitamuttamaṁ; | S: ethical conduct, an excellent livelihood; | T: virtue, the highest (way of) life:
+mn143:17.9 | P: Etena maccā sujjhanti, | S: by these are mortals purified, | T: Through this are mortals purified,
+mn143:17.10 | P: na gottena dhanena vā. | S: not by clan or wealth. | T: not through clan or wealth.
+
+## mn143:17.11–mn143:17.14 (mn)
+mn143:17.11 | P: Tasmā hi paṇḍito poso, | S: That’s why an astute person, | T: Thus the wise,
+mn143:17.12 | P: sampassaṁ atthamattano; | S: seeing what’s good for themselves, | T: seeing their own benefit,
+mn143:17.13 | P: Yoniso vicine dhammaṁ, | S: would examine the teaching rationally, | T: investigating the Dhamma appropriately,
+mn143:17.14 | P: evaṁ tattha visujjhati. | S: that’s how they become purified in that. | T: should purify themselves right there.
+
+## mn143:17.15–mn143:17.18 (mn) GATHERED; possible speaker requires a reader
+mn143:17.15 | P: Sāriputtova paññāya, | S: Sāriputta is full of wisdom, | T: As for Sāriputta:
+mn143:17.16 | P: sīlena upasamena ca; | S: ethics, and peace. | T: (none)
+mn143:17.17 | P: Yopi pāraṅgato bhikkhu, | S: Even a mendicant who has crossed over | T: Any monk who has gone beyond,
+mn143:17.18 | P: etāvaparamo siyā”ti. | S: might at best equal him.” | T: at best can only equal him ⏎ in discernment, virtue, & calm.
+CONTEXT mn143:18.1 | P: Idamavoca anāthapiṇḍiko devaputto. | S: That is what the godling Anāthapiṇḍika said, | T: That is what Anāthapiṇḍika the deva’s son said.
+CONTEXT mn143:18.2 | P: Samanuñño satthā ahosi. | S: and the Teacher concurred. | T: The Teacher approved.
+
+## mn143:19.4–mn143:19.7 (mn)
+CONTEXT mn143:19.2 | P: “imaṁ, bhikkhave, rattiṁ aññataro devaputto abhikkantāya rattiyā abhikkantavaṇṇo kevalakappaṁ jetavanaṁ obhāsetvā yenāhaṁ tenupasaṅkami; upasaṅkamitvā maṁ abhivādetvā ekamantaṁ aṭṭhāsi. | S: (none) | T: “Last night, monks, a certain deva’s son in the far extreme of the night, his extreme radiance lighting up the entirety of Jeta’s Grove, came to me and, on arrival, having bowed down to me, stood to one side.
+CONTEXT mn143:19.3 | P: Ekamantaṁ ṭhito kho so devaputto maṁ gāthāhi ajjhabhāsi: | S: (none) | T: As he was standing there, he addressed me with this verse:
+mn143:19.4 | P: ‘Idañhi taṁ jetavanaṁ, | S: (none) | T: This blessed Jeta’s Grove,
+mn143:19.5 | P: isisaṅghanisevitaṁ; | S: (none) | T: home to the community of seers,
+mn143:19.6 | P: Āvutthaṁ dhammarājena, | S: (none) | T: where there dwells the Dhamma King:
+mn143:19.7 | P: pītisañjananaṁ mama. | S: (none) | T: the source of rapture for me.
+
+## mn143:19.8–mn143:19.11 (mn)
+mn143:19.8 | P: Kammaṁ vijjā ca dhammo ca, | S: (none) | T: Action, clear-knowing, & mental qualities,
+mn143:19.9 | P: sīlaṁ jīvitamuttamaṁ; | S: (none) | T: virtue, the highest (way of) life:
+mn143:19.10 | P: Etena maccā sujjhanti, | S: (none) | T: Through this are mortals purified,
+mn143:19.11 | P: na gottena dhanena vā. | S: (none) | T: not through clan or wealth.
+
+## mn143:19.12–mn143:19.15 (mn)
+mn143:19.12 | P: Tasmā hi paṇḍito poso, | S: (none) | T: Thus the wise,
+mn143:19.13 | P: sampassaṁ atthamattano; | S: (none) | T: seeing their own benefit,
+mn143:19.14 | P: Yoniso vicine dhammaṁ, | S: (none) | T: investigating the Dhamma appropriately,
+mn143:19.15 | P: evaṁ tattha visujjhati. | S: (none) | T: should purify themselves right there.
+
+## mn143:19.16–mn143:19.19 (mn) GATHERED; possible speaker requires a reader
+mn143:19.16 | P: Sāriputtova paññāya, | S: (none) | T: As for Sāriputta:
+mn143:19.17 | P: sīlena upasamena ca; | S: (none) | T: (none)
+mn143:19.18 | P: Yopi pāraṅgato bhikkhu, | S: (none) | T: Any monk who has gone beyond,
+mn143:19.19 | P: etāvaparamo siyā’ti. | S: (none) | T: at best can only equal him ⏎ in discernment, virtue, & calm.
+CONTEXT mn143:19.20 | P: Idamavoca, bhikkhave, so devaputto. | S: (none) | T: “That is what the deva’s son said.
+CONTEXT mn143:19.21 | P: ‘Samanuñño me satthā’ti maṁ abhivādetvā padakkhiṇaṁ katvā tatthevantaradhāyī”ti. | S: (none) | T: And (thinking,) ‘The Teacher has approved of me,’ he bowed down to me, circled me three times, and then disappeared right there.”
+
+## mn152:19.1–mn152:19.6 (mn)
+CONTEXT mn152:18.6 | P: Saḷāyatanavaggo niṭṭhito pañcamo. | S: (none) | T: (none)
+CONTEXT mn152:19.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+mn152:19.1 | P: Anāthapiṇḍiko channo, | S: (none) | T: (none)
+mn152:19.2 | P: puṇṇo nandakarāhulā; | S: (none) | T: (none)
+mn152:19.3 | P: Chachakkaṁ saḷāyatanikaṁ, | S: (none) | T: (none)
+mn152:19.4 | P: nagaravindeyyasuddhikā; | S: (none) | T: (none)
+mn152:19.5 | P: Indriyabhāvanā cāpi, | S: (none) | T: (none)
+mn152:19.6 | P: vaggo ovādapañcamoti. | S: (none) | T: (none)
+CONTEXT mn152:20.0 | P: Idaṁ vaggānamuddānaṁ | S: (none) | T: (none)
+
+## mn152:20.1–mn152:20.4 (mn)
+CONTEXT mn152:20.0 | P: Idaṁ vaggānamuddānaṁ | S: (none) | T: (none)
+mn152:20.1 | P: Devadahonupado ca, | S: (none) | T: (none)
+mn152:20.2 | P: Suññato ca vibhaṅgako; | S: (none) | T: (none)
+mn152:20.3 | P: Saḷāyatanoti vaggā, | S: (none) | T: (none)
+mn152:20.4 | P: Uparipaṇṇāsake ṭhitāti. | S: (none) | T: (none)
+CONTEXT mn152:20.5 | P: Uparipaṇṇāsakaṁ samattaṁ. | S: (none) | T: (none)
+CONTEXT mn152:20.6 | P: Tīhi paṇṇāsakehi paṭimaṇḍito sakalo | S: (none) | T: (none)
+
+## sn1.1:2.1–sn1.1:2.4 (sn)
+CONTEXT sn1.1:1.8 | P: yadāsvāhaṁ, āvuso, āyūhāmi tadāssu nibbuyhāmi. | S: When I swam, I was swept away. | T: (none)
+CONTEXT sn1.1:1.9 | P: Evaṁ khvāhaṁ, āvuso, appatiṭṭhaṁ anāyūhaṁ oghamatarin”ti. | S: That’s how I crossed the flood neither standing nor swimming.” | T: And so I crossed over the flood without pushing forward, without staying in place.”
+sn1.1:2.1 | P: “Cirassaṁ vata passāmi, | S: “After a long time I see | T: The devatā: ⏎ “At long last I see
+sn1.1:2.2 | P: brāhmaṇaṁ parinibbutaṁ; | S: a brahmin fully quenched. | T: a brahman, totally unbound,
+sn1.1:2.3 | P: Appatiṭṭhaṁ anāyūhaṁ, | S: Neither standing nor swimming, | T: who ⏎ without pushing forward, ⏎ without staying in place,
+sn1.1:2.4 | P: tiṇṇaṁ loke visattikan”ti. | S: he’s crossed over clinging to the world.” | T: has crossed over ⏎ the entanglements ⏎ of the world.”
+CONTEXT sn1.1:3.1 | P: Idamavoca sā devatā. | S: That is what that deity said, | T: That is what the devatā said.
+CONTEXT sn1.1:3.2 | P: Samanuñño satthā ahosi. | S: and the Teacher concurred. | T: The Teacher approved.
+
+## sn1.7:2.1–sn1.7:2.4 (sn)
+CONTEXT sn1.7:1.1 | P: Sāvatthinidānaṁ. | S: At Sāvatthī. | T: (none)
+CONTEXT sn1.7:1.2 | P: Ekamantaṁ ṭhitā kho sā devatā bhagavato santike imaṁ gāthaṁ abhāsi: | S: Standing to one side, that deity spoke this verse in the Buddha’s presence: | T: Standing to one side, a devatā addressed the Blessed One with a verse:
+sn1.7:2.1 | P: “Yesaṁ dhammā appaṭividitā, | S: “Those have not deciphered the teachings | T: “Those in whom ⏎ phenomena are unpenetrated,
+sn1.7:2.2 | P: Paravādesu nīyare; | S: may be led astray by the doctrines of others. | T: who may be led ⏎ by the teachings of others:
+sn1.7:2.3 | P: Suttā te nappabujjhanti, | S: Asleep, they have not woken up: | T: Asleep are they; ⏎ they haven’t awakened.
+sn1.7:2.4 | P: Kālo tesaṁ pabujjhitun”ti. | S: it is time for them to wake!” | T: It’s time for them ⏎ to awaken.”
+
+## sn1.7:3.1–sn1.7:3.4 (sn)
+sn1.7:3.1 | P: “Yesaṁ dhammā suppaṭividitā, | S: “Those who have well deciphered the teachings | T: The Buddha: ⏎ “Those in whom ⏎ phenomena are well-penetrated,
+sn1.7:3.2 | P: Paravādesu na nīyare; | S: won’t be led astray by the doctrines of others. | T: may not be led ⏎ by the teachings of others.
+sn1.7:3.3 | P: Te sambuddhā sammadaññā, | S: They have woken up, they rightly know, | T: Awakened ⏎ through right knowing,
+sn1.7:3.4 | P: Caranti visame saman”ti. | S: smoothly they walk in the rough.” | T: they go among the discordant ⏎ harmoniously.”
+
+## sn1.8:2.1–sn1.8:2.4 (sn)
+CONTEXT sn1.8:1.1 | P: Sāvatthinidānaṁ. | S: At Sāvatthī. | T: (none)
+CONTEXT sn1.8:1.2 | P: Ekamantaṁ ṭhitā kho sā devatā bhagavato santike imaṁ gāthaṁ abhāsi: | S: Standing to one side, that deity spoke this verse in the Buddha’s presence: | T: Like the similar sutta SN 1:7, this sutta offers evidence in support of the translation, “awakened” for the Pali term, Buddha. The verses draw a direct connection between two words derived from the same root: the adjective sambuddha, a variant of buddha, and the verb pābujjhati, which in context clearly means to awaken from sleep. Standing to one side, a devatā addressed the Blessed One with a verse:
+sn1.8:2.1 | P: “Yesaṁ dhammā susammuṭṭhā, | S: “Those who are very confused about the teachings | T: “Those for whom ⏎ phenomena are thoroughly confused,
+sn1.8:2.2 | P: paravādesu nīyare; | S: may be led astray by the doctrines of others. | T: who may be led ⏎ by the teachings of others:
+sn1.8:2.3 | P: Suttā te nappabujjhanti, | S: Asleep, they have not woken up: | T: Asleep are they; ⏎ they haven’t awakened.
+sn1.8:2.4 | P: kālo tesaṁ pabujjhitun”ti. | S: it is time for them to wake!” | T: It’s time for them ⏎ to awaken.”
+
+## sn1.8:3.1–sn1.8:3.4 (sn)
+sn1.8:3.1 | P: “Yesaṁ dhammā asammuṭṭhā, | S: “Those who are unconfused about the teachings, | T: The Buddha: ⏎ “Those for whom ⏎ phenomena are not confused,
+sn1.8:3.2 | P: paravādesu na nīyare; | S: won’t be led astray by the doctrines of others. | T: may not be led ⏎ by the teachings of others.
+sn1.8:3.3 | P: Te sambuddhā sammadaññā, | S: They have woken up, they rightly know, | T: Awakened ⏎ through right knowing,
+sn1.8:3.4 | P: caranti visame saman”ti. | S: smoothly they walk in the rough.” | T: they go among the discordant ⏎ harmoniously.”
+
+## sn1.9:2.1–sn1.9:2.4 (sn)
+CONTEXT sn1.9:1.1 | P: Sāvatthinidānaṁ. | S: At Sāvatthī. | T: (none)
+CONTEXT sn1.9:1.2 | P: Ekamantaṁ ṭhitā kho sā devatā bhagavato santike imaṁ gāthaṁ abhāsi: | S: Standing to one side, that deity spoke this verse in the Buddha’s presence: | T: Standing to one side, a devatā addressed the Blessed One with a verse:
+sn1.9:2.1 | P: “Na mānakāmassa damo idhatthi, | S: “One fond of conceit can’t be tamed, | T: “Here there’s no taming ⏎ for one fond of conceit,
+sn1.9:2.2 | P: Na monamatthi asamāhitassa; | S: no sage is lacking immersion. | T: no sagacity ⏎ for one unconcentrated.
+sn1.9:2.3 | P: Eko araññe viharaṁ pamatto, | S: Living negligent alone in the wilderness, | T: One dwelling alone in the wilderness ⏎ heedlessly
+sn1.9:2.4 | P: Na maccudheyyassa tareyya pāran”ti. | S: they can’t cross beyond Death’s dominion.” | T: won’t cross over beyond ⏎ Deaths’ realm.
+
+## sn1.9:3.1–sn1.9:3.4 (sn)
+sn1.9:3.1 | P: “Mānaṁ pahāya susamāhitatto, | S: “Having given up conceit, serene within oneself, | T: The Buddha: ⏎ “Abandoning conceit, ⏎ his mind well-concentrated,
+sn1.9:3.2 | P: Sucetaso sabbadhi vippamutto; | S: with a good heart, everywhere free; | T: well-aware, everywhere ⏎ released,
+sn1.9:3.3 | P: Eko araññe viharaṁ appamatto, | S: living diligent alone in the wilderness, | T: one dwelling alone in the wilderness ⏎ heedfully:
+sn1.9:3.4 | P: Sa maccudheyyassa tareyya pāran”ti. | S: they cross beyond Death’s dominion.” | T: He will cross over beyond ⏎ Death’s realm.
+
+## sn1.10:2.1–sn1.10:2.4 (sn)
+CONTEXT sn1.10:1.1 | P: Sāvatthinidānaṁ. | S: At Sāvatthī. | T: (none)
+CONTEXT sn1.10:1.2 | P: Ekamantaṁ ṭhitā kho sā devatā bhagavantaṁ gāthāya ajjhabhāsi: | S: Standing to one side, that deity addressed the Buddha in verse: | T: Standing to one side, a devatā addressed the Blessed One with a verse:
+sn1.10:2.1 | P: “Araññe viharantānaṁ, | S: “Living in the wilderness, | T: “Living in the wilderness,
+sn1.10:2.2 | P: santānaṁ brahmacārinaṁ; | S: peaceful spiritual practitioners | T: staying peaceful, remaining chaste,
+sn1.10:2.3 | P: Ekabhattaṁ bhuñjamānānaṁ, | S: eat just one meal a day: | T: eating just one meal a day:
+sn1.10:2.4 | P: kena vaṇṇo pasīdatī”ti. | S: so why is their complexion so clear?” | T: why are their faces ⏎ so bright & serene?”
+
+## sn1.10:3.1–sn1.10:3.4 (sn)
+sn1.10:3.1 | P: “Atītaṁ nānusocanti, | S: “They don’t grieve for the past, | T: The Buddha: ⏎ “They don’t sorrow over the past,
+sn1.10:3.2 | P: nappajappanti nāgataṁ; | S: nor do they pray for the future; | T: don’t long for the future.
+sn1.10:3.3 | P: Paccuppannena yāpenti, | S: they feed on whatever comes that day, | T: They survive on the present.
+sn1.10:3.4 | P: tena vaṇṇo pasīdati. | S: that’s why their complexion’s so clear. | T: That’s why their faces ⏎ are bright & serene.
+
+## sn1.10:4.1–sn1.10:4.4 (sn)
+sn1.10:4.1 | P: Anāgatappajappāya, | S: Because they pray for the future, | T: From longing for the future,
+sn1.10:4.2 | P: atītassānusocanā; | S: and grieve for the past, | T: from sorrowing over the past,
+sn1.10:4.3 | P: Etena bālā sussanti, | S: fools wither away, | T: fools wither away
+sn1.10:4.4 | P: naḷova harito luto”ti. | S: like a green reed mowed down.” | T: like a green reed cut down.”
+CONTEXT sn1.10:4.5 | P: Naḷavaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT sn1.10:5.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+
+## sn1.10:5.1–sn1.10:5.6 (sn)
+CONTEXT sn1.10:4.5 | P: Naḷavaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT sn1.10:5.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn1.10:5.1 | P: Oghaṁ nimokkhaṁ upaneyyaṁ, | S: (none) | T: (none)
+sn1.10:5.2 | P: Accenti katichindi ca; | S: (none) | T: (none)
+sn1.10:5.3 | P: Jāgaraṁ appaṭividitā, | S: (none) | T: (none)
+sn1.10:5.4 | P: Susammuṭṭhā mānakāminā; | S: (none) | T: (none)
+sn1.10:5.5 | P: Araññe dasamo vutto, | S: (none) | T: (none)
+sn1.10:5.6 | P: Vaggo tena pavuccati. | S: (none) | T: (none)
+
+## sn1.17:1.1–sn1.17:1.4 (sn) GATHERED; unequal counts require a reader
+CONTEXT sn1.17:0.2 | P: 2. Nandanavagga | S: 2. The Garden of Delight | T: (none)
+CONTEXT sn1.17:0.3 | P: Dukkarasutta | S: Hard to Do | T: Hard to Do
+sn1.17:1.1 | P: “Dukkaraṁ duttitikkhañca, | S: “Hard to do, hard to endure, | T: For the inexperienced, ⏎ the contemplative life is ⏎ hard to do, ⏎ hard to endure,
+sn1.17:1.2 | P: abyattena ca sāmaññaṁ; | S: is the ascetic life for the inept, | T: (none)
+sn1.17:1.3 | P: Bahūhi tattha sambādhā, | S: for it has many narrow passes | T: for many are the confinements there
+sn1.17:1.4 | P: yattha bālo visīdatī”ti. | S: where the fool founders.” | T: in which a fool sinks.
+
+## sn1.17:2.1–sn1.17:2.4 (sn)
+sn1.17:2.1 | P: “Katihaṁ careyya sāmaññaṁ, | S: “How many days could an ascetic live | T: How many days can you follow ⏎ the contemplative life
+sn1.17:2.2 | P: cittañce na nivāraye; | S: without controlling the mind? | T: if you don’t block the mind?
+sn1.17:2.3 | P: Pade pade visīdeyya, | S: They’d founder with each step, | T: Step by step you’d sink
+sn1.17:2.4 | P: saṅkappānaṁ vasānugoti. | S: under the sway of thoughts. | T: under the sway of your resolves.
+
+## sn1.17:3.1–sn1.17:3.4 (sn)
+sn1.17:3.1 | P: Kummova aṅgāni sake kapāle, | S: A mendicant should collect their thoughts | T: As a tortoise would draw ⏎ its limbs ⏎ into its shell,
+sn1.17:3.2 | P: Samodahaṁ bhikkhu manovitakke; | S: as a tortoise draws its limbs into its shell. | T: so a monk should— ⏎ the thoughts of his heart.
+sn1.17:3.3 | P: Anissito aññamaheṭhayāno, | S: Independent, not disturbing others, | T: Independent, not mistreating others,
+sn1.17:3.4 | P: Parinibbuto nūpavadeyya kañcī”ti. | S: quenched: they wouldn’t blame anyone.” | T: totally unbound, ⏎ he shouldn’t disparage ⏎ anyone at all.
+
+## sn1.18:1.1–sn1.18:1.4 (sn) GATHERED; equal counts: one line per row
+CONTEXT sn1.18:0.2 | P: 2. Nandanavagga | S: 2. The Garden of Delight | T: (none)
+CONTEXT sn1.18:0.3 | P: Hirīsutta | S: Conscience | T: Shame
+sn1.18:1.1 | P: “Hirīnisedho puriso, | S: “Can a person constrained by conscience | T: “Who in the world ⏎ is a man constrained by shame,
+sn1.18:1.2 | P: koci lokasmiṁ vijjati; | S: be found in the world, | T: (none)
+sn1.18:1.3 | P: Yo nindaṁ apabodhati, | S: who is cognizant of blame, | T: who awakens to censure
+sn1.18:1.4 | P: asso bhadro kasāmivā”ti. | S: like a fine horse of the whip?” | T: like a fine stallion to the whip?”
+AUTO sn1.18:1.1 starts: “Who in the world
+AUTO sn1.18:1.2 starts: is a man constrained by shame,
+AUTO sn1.18:1.3 starts: who awakens to censure
+AUTO sn1.18:1.4 starts: like a fine stallion to the whip?”
+
+## sn1.18:2.1–sn1.18:2.4 (sn)
+sn1.18:2.1 | P: “Hirīnisedhā tanuyā, | S: “Few are those constrained by conscience, | T: “Those restrained by shame ⏎ are rare—
+sn1.18:2.2 | P: ye caranti sadā satā; | S: who live always mindful. | T: those who go through life ⏎ always mindful.
+sn1.18:2.3 | P: Antaṁ dukkhassa pappuyya, | S: Having reached the end of suffering, | T: Having reached the end ⏎ of suffering & stress,
+sn1.18:2.4 | P: caranti visame saman”ti. | S: smoothly they walk in the rough.” | T: they go among the discordant ⏎ harmoniously.”
+
+## sn1.20:2.1–sn1.20:2.4 (sn)
+CONTEXT sn1.20:1.4 | P: Tapode gattāni parisiñcitvā paccuttaritvā ekacīvaro aṭṭhāsi gattāni pubbāpayamāno. | S: When he had bathed and emerged from the water he stood in one robe drying his limbs. | T: Having bathed his limbs and gotten out of the springs, he stood wearing only his lower robe, letting his limbs dry.
+CONTEXT sn1.20:1.5 | P: Atha kho aññatarā devatā abhikkantāya rattiyā abhikkantavaṇṇā kevalakappaṁ tapodaṁ obhāsetvā yena āyasmā samiddhi tenupasaṅkami; upasaṅkamitvā vehāsaṁ ṭhitā āyasmantaṁ samiddhiṁ gāthāya ajjhabhāsi: | S: Then, late at night, a glorious deity, lighting up the entire hot springs, went up to Samiddhi, and, standing in the air, addressed him in verse: | T: Then a certain devatā, in the far extreme of the night, her extreme radiance lighting up the entire Tapodā Hot Springs, went to Ven. Samiddhi. On arrival, while standing in the air, she addressed him with this verse:
+sn1.20:2.1 | P: “Abhutvā bhikkhasi bhikkhu, | S: “Mendicant, you seek alms before you eat; | T: “Without having enjoyed ⏎ (sensual pleasures), ⏎ you go for alms, monk.
+sn1.20:2.2 | P: na hi bhutvāna bhikkhasi; | S: you don’t seek alms after eating. | T: You don’t go for alms ⏎ after having enjoyed.
+sn1.20:2.3 | P: Bhutvāna bhikkhu bhikkhassu, | S: But you should eat first, then seek alms: | T: Having enjoyed, monk, ⏎ then go for alms.
+sn1.20:2.4 | P: mā taṁ kālo upaccagā”ti. | S: don’t let the time pass you by.” | T: Don’t let time pass you by.”
+
+## sn1.20:3.1–sn1.20:3.4 (sn)
+sn1.20:3.1 | P: “Kālaṁ vohaṁ na jānāmi, | S: “I actually don’t know the time; | T: Ven. Samiddhi: ⏎ “I don’t know my time.
+sn1.20:3.2 | P: channo kālo na dissati; | S: it’s hidden and unseen. | T: My time ⏎ is hidden. ⏎ It can’t be seen.
+sn1.20:3.3 | P: Tasmā abhutvā bhikkhāmi, | S: That’s why I seek alms before eating, | T: That’s why, not having enjoyed, ⏎ I go for alms:
+sn1.20:3.4 | P: mā maṁ kālo upaccagā”ti. | S: so that the time may not pass me by!” | T: Don’t let my time pass me by.”
+CONTEXT sn1.20:4.1 | P: Atha kho sā devatā pathaviyaṁ patiṭṭhahitvā āyasmantaṁ samiddhiṁ etadavoca: | S: Then that deity landed on the ground and said to Samiddhi, | T: Then the devatā, coming down to earth, said to Ven. Samiddhi,
+CONTEXT sn1.20:4.2 | P: “daharo tvaṁ, bhikkhu, pabbajito susu kāḷakeso, bhadrena yobbanena samannāgato, paṭhamena vayasā, anikkīḷitāvī kāmesu. | S: “You’ve gone forth while young, mendicant. With pristine black hair, you’re blessed with youth, in the prime of life, and you’ve never flirted with sensual pleasures. | T: “You have gone forth while young, monk—black-haired, endowed with the blessings of youth in the first stage of life—without having played with sensuality.
+
+## sn1.20:10.1–sn1.20:10.4 (sn)
+CONTEXT sn1.20:9.2 | P: Tapode gattāni parisiñcitvā paccuttaritvā ekacīvaro aṭṭhāsiṁ gattāni pubbāpayamāno. | S: (none) | T: (none)
+CONTEXT sn1.20:9.3 | P: Atha kho, bhante, aññatarā devatā abhikkantāya rattiyā abhikkantavaṇṇā kevalakappaṁ tapodaṁ obhāsetvā yenāhaṁ tenupasaṅkami; upasaṅkamitvā vehāsaṁ ṭhitā imāya gāthāya ajjhabhāsi: | S: (none) | T: (none)
+sn1.20:10.1 | P: ‘Abhutvā bhikkhasi bhikkhu, | S: (none) | T: (none)
+sn1.20:10.2 | P: na hi bhutvāna bhikkhasi; | S: (none) | T: (none)
+sn1.20:10.3 | P: Bhutvāna bhikkhu bhikkhassu, | S: (none) | T: (none)
+sn1.20:10.4 | P: mā taṁ kālo upaccagā’ti. | S: (none) | T: (none)
+CONTEXT sn1.20:11.1 | P: Evaṁ vutte, ahaṁ, bhante, taṁ devataṁ gāthāya paccabhāsiṁ: | S: (none) | T: (none)
+
+## sn1.20:12.1–sn1.20:12.4 (sn)
+CONTEXT sn1.20:11.1 | P: Evaṁ vutte, ahaṁ, bhante, taṁ devataṁ gāthāya paccabhāsiṁ: | S: (none) | T: (none)
+sn1.20:12.1 | P: ‘Kālaṁ vohaṁ na jānāmi, | S: (none) | T: (none)
+sn1.20:12.2 | P: channo kālo na dissati; | S: (none) | T: (none)
+sn1.20:12.3 | P: Tasmā abhutvā bhikkhāmi, | S: (none) | T: (none)
+sn1.20:12.4 | P: mā maṁ kālo upaccagā’ti. | S: (none) | T: (none)
+CONTEXT sn1.20:13.1 | P: Atha kho, bhante, sā devatā pathaviyaṁ patiṭṭhahitvā maṁ etadavoca: | S: (none) | T: (none)
+CONTEXT sn1.20:13.2 | P: ‘daharo tvaṁ, bhikkhu, pabbajito susu kāḷakeso, bhadrena yobbanena samannāgato, paṭhamena vayasā, anikkīḷitāvī kāmesu. | S: (none) | T: (none)
+
+## sn1.20:20.1–sn1.20:20.4 (sn)
+CONTEXT sn1.20:18.2 | P: “puccha, bhikkhu, puccha, bhikkhu, yamahaṁ anuppattā”ti. | S: “Ask, mendicant, ask! For I have arrived.” | T: “Ask, monk! Ask! I’ve gotten through.”
+CONTEXT sn1.20:19.1 | P: Atha kho bhagavā taṁ devataṁ gāthāhi ajjhabhāsi: | S: Then the Buddha addressed the deity in verse: | T: Then the Blessed One recited this verse to the devatā:
+sn1.20:20.1 | P: “Akkheyyasaññino sattā, | S: “Sentient beings who perceive the communicable, | T: “Perceiving in terms of signs, beings
+sn1.20:20.2 | P: akkheyyasmiṁ patiṭṭhitā; | S: become established in the communicable. | T: take a stand on signs.
+sn1.20:20.3 | P: Akkheyyaṁ apariññāya, | S: Not understanding the communicable, | T: Not fully comprehending signs, they
+sn1.20:20.4 | P: yogamāyanti maccuno. | S: they fall under the yoke of Death. | T: come into the bonds ⏎ of death.
+
+## sn1.20:21.1–sn1.20:21.4 (sn)
+sn1.20:21.1 | P: Akkheyyañca pariññāya, | S: But having fully understood the communicable, | T: But fully comprehending signs, one
+sn1.20:21.2 | P: Akkhātāraṁ na maññati; | S: they don’t conceive a communicator, | T: doesn’t suppose ⏎ a signifier.
+sn1.20:21.3 | P: Tañhi tassa na hotīti, | S: for they have nothing | T: Yet nothing exists for him
+sn1.20:21.4 | P: Yena naṁ vajjā na tassa atthi; | S: by which they might be described. | T: by which one would say, ⏎ ‘To him no thought occurs.’
+CONTEXT sn1.20:21.5 | P: Sace vijānāsi vadehi yakkhā”ti. | S: Tell me if you understand, spirit.” | T: If you know this, spirit, then say so.”
+CONTEXT sn1.20:22.1 | P: “Na khvāhaṁ, bhante, imassa bhagavatā saṅkhittena bhāsitassa vitthārena atthaṁ ājānāmi. | S: “I don’t understand the detailed meaning of the Buddha’s brief statement. | T: “I don’t understand, lord, the detailed meaning of the Blessed One’s brief statement.
+
+## sn1.20:23.1–sn1.20:23.4 (sn)
+CONTEXT sn1.20:22.1 | P: “Na khvāhaṁ, bhante, imassa bhagavatā saṅkhittena bhāsitassa vitthārena atthaṁ ājānāmi. | S: “I don’t understand the detailed meaning of the Buddha’s brief statement. | T: “I don’t understand, lord, the detailed meaning of the Blessed One’s brief statement.
+CONTEXT sn1.20:22.2 | P: Sādhu me, bhante, bhagavā tathā bhāsatu yathāhaṁ imassa bhagavatā saṅkhittena bhāsitassa vitthārena atthaṁ jāneyyan”ti. | S: Please teach me this matter so I can understand the detailed meaning.” | T: It would be good if the Blessed One would speak in such a way that I would understand the detailed meaning of the Blessed One’s brief statement.”
+sn1.20:23.1 | P: “Samo visesī uda vā nihīno, | S: “If you think that ‘I’m equal, | T: The Buddha: ⏎ “Whoever supposes ⏎ ‘equal,’
+sn1.20:23.2 | P: Yo maññatī so vivadetha tena; | S: special, or worse’, you’ll dispute about that. | T: ‘superior,’ or ⏎ ‘inferior,’ ⏎ by that he’d dispute.
+sn1.20:23.3 | P: Tīsu vidhāsu avikampamāno, | S: Unwavering in the face of the three discriminations, | T: Whereas to one unaffected by these three,
+sn1.20:23.4 | P: Samo visesīti na tassa hoti; | S: they have no thought, ‘I’m equal or special’. | T: ‘equal’ ⏎ ‘superior’ ⏎ do not occur.
+CONTEXT sn1.20:23.5 | P: Sace vijānāsi vadehi yakkhā”ti. | S: Tell me if you understand, spirit.” | T: If you know this, spirit, then say so.”
+CONTEXT sn1.20:24.1 | P: “Imassapi khvāhaṁ, bhante, bhagavatā saṅkhittena bhāsitassa na vitthārena atthaṁ ājānāmi. | S: “I don’t understand the detailed meaning of the Buddha’s brief statement. | T: “I don’t understand, lord, the detailed meaning of the Blessed One’s brief statement.
+
+## sn1.20:25.1–sn1.20:25.6 (sn)
+CONTEXT sn1.20:24.1 | P: “Imassapi khvāhaṁ, bhante, bhagavatā saṅkhittena bhāsitassa na vitthārena atthaṁ ājānāmi. | S: “I don’t understand the detailed meaning of the Buddha’s brief statement. | T: “I don’t understand, lord, the detailed meaning of the Blessed One’s brief statement.
+CONTEXT sn1.20:24.2 | P: Sādhu me, bhante, bhagavā tathā bhāsatu yathāhaṁ imassa bhagavatā saṅkhittena bhāsitassa vitthārena atthaṁ jāneyyan”ti. | S: Please teach me this matter so I can understand the detailed meaning.” | T: It would be good if the Blessed One would speak in such a way that I would understand the detailed meaning of the Blessed One’s brief statement.”
+sn1.20:25.1 | P: “Pahāsi saṅkhaṁ na vimānamajjhagā, | S: “They gave up judgment without falling into conceit; | T: The Buddha: ⏎ “Having ⏎ shed classifications, ⏎ gone beyond conceit,
+sn1.20:25.2 | P: Acchecchi taṇhaṁ idha nāmarūpe; | S: craving for name and form was cut off right here. | T: he has here ⏎ cut ⏎ through craving ⏎ for name ⏎ & form:
+sn1.20:25.3 | P: Taṁ chinnaganthaṁ anighaṁ nirāsaṁ, | S: They cut the ties, untroubled, with no need for hope. | T: This one— ⏎ his bonds cut through, ⏎ free ⏎ from trouble, ⏎ from longing—
+sn1.20:25.4 | P: Pariyesamānā nājjhagamuṁ; | S: Though gods and humans search for them | T: though they search,
+sn1.20:25.5 | P: Devā manussā idha vā huraṁ vā, | S: in this life or the next, they never find them, | T: they can’t find him, ⏎ human beings & devas, ⏎ here & beyond,
+sn1.20:25.6 | P: Saggesu vā sabbanivesanesu. | S: not in heaven nor in any abode. | T: in heaven ⏎ or any abode.
+CONTEXT sn1.20:26.1 | P: Sace vijānāsi vadehi yakkhā”ti. | S: Tell me if you understand, spirit.” | T: If you know this, spirit, then say so.”
+CONTEXT sn1.20:27.1 | P: “Imassa khvāhaṁ, bhante, bhagavatā saṅkhittena bhāsitassa evaṁ vitthārena atthaṁ ājānāmi— | S: “This is how I understand the detailed meaning of the Buddha’s brief statement: | T: “Lord, here’s how I understand the detailed meaning of the Blessed One’s brief statement:

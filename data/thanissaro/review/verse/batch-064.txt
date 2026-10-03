@@ -1,0 +1,435 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## thig6.6:4.1–thig6.6:4.4 (thig)
+thig6.6:4.1 | P: Diṭṭho hi me so bhagavā, | S: Since I have seen the Blessed One, | T: But now that I’ve seen the Blessed One,
+thig6.6:4.2 | P: antimoyaṁ samussayo; | S: this bag of bones is my last. | T: this is my last body-heap.
+thig6.6:4.3 | P: Vikkhīṇo jātisaṁsāro, | S: Transmigration through births is finished, | T: Birth & wandering-on ⏎ are totally ended.
+thig6.6:4.4 | P: natthi dāni punabbhavo. | S: now there’ll be no more future lives. | T: There is now ⏎ no further becoming.
+
+## thig6.6:5.1–thig6.6:5.4 (thig)
+thig6.6:5.1 | P: Āraddhavīriye pahitatte, | S: I see the disciples in harmony, | T: I see the disciples gathered,
+thig6.6:5.2 | P: Niccaṁ daḷhaparakkame; | S: energetic and resolute, | T: their persistence aroused, ⏎ resolute,
+thig6.6:5.3 | P: Samagge sāvake passe, | S: always staunchly vigorous— | T: constant ⏎ in strong exertion:
+thig6.6:5.4 | P: Esā buddhāna vandanā. | S: this is homage to the Buddhas! | T: This is the worship of the Buddhas.
+
+## thig6.6:6.1–thig6.6:6.4 (thig)
+thig6.6:6.1 | P: Bahūnaṁ vata atthāya, | S: It was truly for the benefit of many | T: Truly for the benefit of the many
+thig6.6:6.2 | P: Māyā janayi gotamaṁ; | S: that Māyā gave birth to Gotama. | T: did Māyā give birth to Gotama,
+thig6.6:6.3 | P: Byādhimaraṇatunnānaṁ, | S: He swept away the mass of suffering | T: thrusting away the mass of pain
+thig6.6:6.4 | P: Dukkhakkhandhaṁ byapānudī”ti. | S: for those stricken by sickness and death. | T: of those mired in illness & death.
+CONTEXT thig6.6:7.1 | P: … Mahāpajāpatigotamī therī …. | S: (none) | T: (none)
+
+## thig6.7:1.1–thig6.7:1.4 (thig) GATHERED; unequal counts require a reader
+CONTEXT thig6.7:0.2 | P: Chakkanipāta | S: The Book of the Sixes | T: (none)
+CONTEXT thig6.7:0.3 | P: Guttātherīgāthā | S: Guttā | T: Thig 6:7 Guttā
+thig6.7:1.1 | P: “Gutte yadatthaṁ pabbajjā, | S: Guttā, you have given up your child, | T: [The Buddha admonished me:] ⏎ Guttā,
+thig6.7:1.2 | P: hitvā puttaṁ vasuṁ piyaṁ; | S: your wealth, and all that you love. | T: (none)
+thig6.7:1.3 | P: Tameva anubrūhehi, | S: Foster the goal for which you went forth; | T: devote yourself to the goal ⏎ for which you went forth, ⏎ having discarded [hope] ⏎ for a dear son of your own.
+thig6.7:1.4 | P: mā cittassa vasaṁ gami. | S: do not fall under the mind’s control. | T: Don’t fall under the sway ⏎ of the mind.
+
+## thig6.7:2.1–thig6.7:2.4 (thig) GATHERED; unequal counts require a reader
+thig6.7:2.1 | P: Cittena vañcitā sattā, | S: Beings deceived by the mind, | T: Hoodwinked by mind, ⏎ beings in love with Māra’s realm,
+thig6.7:2.2 | P: mārassa visaye ratā; | S: playing in Māra’s domain, | T: (none)
+thig6.7:2.3 | P: Anekajātisaṁsāraṁ, | S: ignorant, they journey on, | T: roam
+thig6.7:2.4 | P: sandhāvanti aviddasū. | S: transmigrating through countless rebirths. | T: through the many-birth wandering-on, ⏎ unknowing.
+
+## thig6.7:3.1–thig6.7:3.4 (thig)
+thig6.7:3.1 | P: Kāmacchandañca byāpādaṁ, | S: Sensual desire and ill will, | T: Abandoning these lower fetters, nun— ⏎ sensual desire, ill will,
+thig6.7:3.2 | P: sakkāyadiṭṭhimeva ca; | S: and substantialist view; | T: self-identity views,
+thig6.7:3.3 | P: Sīlabbataparāmāsaṁ, | S: misapprehension of precepts and observances, | T: grasping at habits & practices,
+thig6.7:3.4 | P: vicikicchañca pañcamaṁ. | S: and doubt as the fifth. | T: and uncertainty as the fifth—
+
+## thig6.7:4.1–thig6.7:4.4 (thig)
+thig6.7:4.1 | P: Saṁyojanāni etāni, | S: O nun, when you have given up | T: (none)
+thig6.7:4.2 | P: pajahitvāna bhikkhunī; | S: these lower fetters, | T: (none)
+thig6.7:4.3 | P: Orambhāgamanīyāni, | S: you won’t come back | T: you won’t come
+thig6.7:4.4 | P: nayidaṁ punarehisi. | S: to this world again. | T: to this again.
+
+## thig6.7:5.1–thig6.7:5.4 (thig)
+thig6.7:5.1 | P: Rāgaṁ mānaṁ avijjañca, | S: And when you’re rid of desire, | T: Forsaking passion,
+thig6.7:5.2 | P: uddhaccañca vivajjiya; | S: conceit, ignorance, and restlessness, | T: conceit, ⏎ ignorance, & restlessness
+thig6.7:5.3 | P: Saṁyojanāni chetvāna, | S: having cut the fetters, | T: —cutting through [all] the fetters—
+thig6.7:5.4 | P: dukkhassantaṁ karissasi. | S: you’ll make an end to suffering. | T: you will make an end ⏎ of suffering & stress.
+
+## thig6.7:6.1–thig6.7:6.4 (thig)
+thig6.7:6.1 | P: Khepetvā jātisaṁsāraṁ, | S: Having wiped out transmigration, | T: Discarding birth & wandering-on,
+thig6.7:6.2 | P: pariññāya punabbhavaṁ; | S: and fully understood rebirth, | T: comprehending further becoming,
+thig6.7:6.3 | P: Diṭṭheva dhamme nicchātā, | S: hungerless in this very life, | T: free from hunger ⏎ in the right-here-&-now
+thig6.7:6.4 | P: upasantā carissatī”ti. | S: you will live at peace. | T: you will go about ⏎ totally calmed.
+CONTEXT thig6.7:7.1 | P: … Guttā therī …. | S: (none) | T: (none)
+
+## thig6.8:1.1–thig6.8:1.4 (thig)
+CONTEXT thig6.8:0.2 | P: Chakkanipāta | S: The Book of the Sixes | T: (none)
+CONTEXT thig6.8:0.3 | P: Vijayātherīgāthā | S: Vijayā | T: Thig 6:8 Vijayā
+thig6.8:1.1 | P: “Catukkhattuṁ pañcakkhattuṁ, | S: Four or five times | T: Four times, five,
+thig6.8:1.2 | P: vihārā upanikkhamiṁ; | S: I left my dwelling; | T: I ran amok from my dwelling,
+thig6.8:1.3 | P: Aladdhā cetaso santiṁ, | S: I had failed to find peace of heart, | T: having gained no peace of awareness,
+thig6.8:1.4 | P: citte avasavattinī. | S: or any control over my mind. | T: my thoughts out of control.
+
+## thig6.8:2.1–thig6.8:2.4 (thig)
+thig6.8:2.1 | P: Bhikkhuniṁ upasaṅkamma, | S: I approached a nun | T: So, approaching a nun,
+thig6.8:2.2 | P: sakkaccaṁ paripucchahaṁ; | S: and politely questioned her. | T: I cross-questioned her attentively.
+thig6.8:2.3 | P: Sā me dhammamadesesi, | S: She taught me the Dhamma: | T: She taught me the Dhamma:
+thig6.8:2.4 | P: dhātuāyatanāni ca. | S: the elements and sense fields, | T: aggregates, sense media, properties,
+
+## thig6.8:3.1–thig6.8:3.4 (thig)
+thig6.8:3.1 | P: Cattāri ariyasaccāni, | S: the four noble truths, | T: four noble truths,
+thig6.8:3.2 | P: indriyāni balāni ca; | S: the faculties and the powers, | T: five faculties,
+thig6.8:3.3 | P: Bojjhaṅgaṭṭhaṅgikaṁ maggaṁ, | S: the awakening factors, and the eightfold path | T: seven factors for awakening, ⏎ the eightfold path
+thig6.8:3.4 | P: uttamatthassa pattiyā. | S: for the attainment of the highest goal. | T: for attaining the highest goal.
+
+## thig6.8:4.1–thig6.8:4.4 (thig)
+thig6.8:4.1 | P: Tassāhaṁ vacanaṁ sutvā, | S: After hearing her words, | T: Hearing her words,
+thig6.8:4.2 | P: karontī anusāsaniṁ; | S: I did her bidding. | T: I did her bidding.
+thig6.8:4.3 | P: Rattiyā purime yāme, | S: In the first watch of the night, | T: In the first watch of the night,
+thig6.8:4.4 | P: pubbajātimanussariṁ. | S: I recollected my past lives. | T: I remembered past lives.
+
+## thig6.8:5.1–thig6.8:5.4 (thig)
+thig6.8:5.1 | P: Rattiyā majjhime yāme, | S: In the middle watch of the night, | T: In the second watch of the night,
+thig6.8:5.2 | P: dibbacakkhuṁ visodhayiṁ; | S: I purified my clairvoyance. | T: I purified the divine eye.
+thig6.8:5.3 | P: Rattiyā pacchime yāme, | S: In the last watch of the night, | T: In the third watch of the night,
+thig6.8:5.4 | P: tamokhandhaṁ padālayiṁ. | S: I shattered the mass of darkness. | T: I burst the mass of darkness.
+
+## thig6.8:6.1–thig6.8:6.4 (thig)
+thig6.8:6.1 | P: Pītisukhena ca kāyaṁ, | S: I then meditated pervading my body | T: Then I stayed, suffusing my body
+thig6.8:6.2 | P: Pharitvā vihariṁ tadā; | S: with rapture and bliss. | T: with rapture & pleasure.
+thig6.8:6.3 | P: Sattamiyā pāde pasāresiṁ, | S: On the seventh day I stretched out my feet, | T: On the seventh day, I stretched out my legs,
+thig6.8:6.4 | P: Tamokhandhaṁ padāliyā”ti. | S: having shattered the mass of darkness. | T: having burst the mass ⏎ of darkness.
+CONTEXT thig6.8:7.1 | P: … Vijayā therī …. | S: (none) | T: (none)
+CONTEXT thig6.8:8.1 | P: Chakkanipāto niṭṭhito. | S: (none) | T: (none)
+
+## thig7.2:1.1–thig7.2:1.4 (thig) GATHERED; possible speaker requires a reader
+CONTEXT thig7.2:0.2 | P: Sattakanipāta | S: The Book of the Sevens | T: (none)
+CONTEXT thig7.2:0.3 | P: Cālātherīgāthā | S: Cālā | T: Thig 7:2 Cālā
+thig7.2:1.1 | P: “Satiṁ upaṭṭhapetvāna, | S: “As a nun with developed faculties, | T: Cālā: ⏎ Having established mindfulness, ⏎ a nun with developed faculties,
+thig7.2:1.2 | P: bhikkhunī bhāvitindriyā; | S: having established mindfulness, | T: (none)
+thig7.2:1.3 | P: Paṭivijjhi padaṁ santaṁ, | S: I penetrated that peaceful state, | T: I ⏎ penetrated the peaceful state:
+thig7.2:1.4 | P: saṅkhārūpasamaṁ sukhaṁ”. | S: the blissful stilling of conditions.” | T: stilling-of-fabrications bliss.
+
+## thig7.2:2.1–thig7.2:2.4 (thig)
+thig7.2:2.1 | P: “Kaṁ nu uddissa muṇḍāsi, | S: “In whose name did you shave your head? | T: Māra: ⏎ “For whose sake ⏎ have you shaved your head?
+thig7.2:2.2 | P: samaṇī viya dissasi; | S: You look like an ascetic, | T: You look like a contemplative
+thig7.2:2.3 | P: Na ca rocesi pāsaṇḍe, | S: but you don’t approve any creed. | T: but don’t approve of a philosophy,
+thig7.2:2.4 | P: kimidaṁ carasi momuhā”. | S: Why do you wander as if lost?” | T: so why are you wandering here ⏎ confused?”
+
+## thig7.2:3.1–thig7.2:3.4 (thig)
+thig7.2:3.1 | P: “Ito bahiddhā pāsaṇḍā, | S: “Followers of other creeds | T: Cālā: ⏎ “Outside philosophers place
+thig7.2:3.2 | P: diṭṭhiyo upanissitā; | S: rely on their views. | T: their confidence in views.
+thig7.2:3.3 | P: Na te dhammaṁ vijānanti, | S: They don’t understand the Dhamma, | T: They don’t know the Dhamma.
+thig7.2:3.4 | P: na te dhammassa kovidā. | S: for they’re no experts in the Dhamma. | T: They’re not adept in the Dhamma.
+
+## thig7.2:4.1–thig7.2:4.4 (thig)
+thig7.2:4.1 | P: Atthi sakyakule jāto, | S: But there is one born in the Sakyan clan, | T: But there is ⏎ the Awakened One, ⏎ born in the Sakyan clan,
+thig7.2:4.2 | P: buddho appaṭipuggalo; | S: the unrivaled Buddha; | T: a person without peer.
+thig7.2:4.3 | P: So me dhammamadesesi, | S: he taught me the Dhamma | T: He taught me the Dhamma
+thig7.2:4.4 | P: diṭṭhīnaṁ samatikkamaṁ. | S: for going beyond views. | T: for the transcending of views:
+
+## thig7.2:5.1–thig7.2:5.4 (thig)
+thig7.2:5.1 | P: Dukkhaṁ dukkhasamuppādaṁ, | S: Suffering, suffering’s origin, | T: stress, ⏎ the co-arising of stress,
+thig7.2:5.2 | P: Dukkhassa ca atikkamaṁ; | S: suffering’s transcendence, | T: the overcoming of stress,
+thig7.2:5.3 | P: Ariyaṁ caṭṭhaṅgikaṁ maggaṁ, | S: and the noble eightfold path | T: & the noble eightfold path
+thig7.2:5.4 | P: Dukkhūpasamagāminaṁ. | S: that leads to the stilling of suffering. | T: leading to the stilling of stress.
+
+## thig7.2:6.1–thig7.2:6.4 (thig)
+thig7.2:6.1 | P: Tassāhaṁ vacanaṁ sutvā, | S: After hearing his words, | T: Having heard his words,
+thig7.2:6.2 | P: vihariṁ sāsane ratā; | S: I happily did his bidding. | T: I dwell, delighting ⏎ in his bidding.
+thig7.2:6.3 | P: Tisso vijjā anuppattā, | S: I’ve attained the three knowledges | T: The three knowledges ⏎ are attained;
+thig7.2:6.4 | P: kataṁ buddhassa sāsanaṁ. | S: and fulfilled the Buddha’s instructions. | T: the Buddha’s bidding, ⏎ done.
+
+## thig7.2:7.1–thig7.2:7.4 (thig)
+thig7.2:7.1 | P: Sabbattha vihatā nandī, | S: Relishing is banished in every respect, | T: Everywhere enjoyment ⏎ is defeated;
+thig7.2:7.2 | P: tamokhandho padālito; | S: and the mass of darkness is shattered. | T: the mass of darkness, ⏎ burst.
+thig7.2:7.3 | P: Evaṁ jānāhi pāpima, | S: So know this, Wicked One: | T: So know, Evil One,
+thig7.2:7.4 | P: nihato tvamasi antaka”. | S: you’re beaten, terminator!” | T: that you have been, ⏎ End-maker, ⏎ struck down.
+CONTEXT thig7.2:8.1 | P: … Cālā therī …. | S: (none) | T: (none)
+
+## thig7.3:1.1–thig7.3:1.4 (thig) GATHERED; possible speaker requires a reader
+CONTEXT thig7.3:0.2 | P: Sattakanipāta | S: The Book of the Sevens | T: (none)
+CONTEXT thig7.3:0.3 | P: Upacālātherīgāthā | S: Upacālā | T: Thig 7:3 Upacālā
+thig7.3:1.1 | P: “Satimatī cakkhumatī, | S: “A nun with faculties developed, | T: Upacālā: ⏎ Having mindfulness, having an eye that sees, ⏎ a nun with developed faculties,
+thig7.3:1.2 | P: bhikkhunī bhāvitindriyā; | S: mindful, seeing clearly, | T: (none)
+thig7.3:1.3 | P: Paṭivijjhi padaṁ santaṁ, | S: I penetrated that peaceful state, | T: I ⏎ penetrated the peaceful state
+thig7.3:1.4 | P: akāpurisasevitaṁ”. | S: which reprobates do not cultivate.” | T: of which worthless people ⏎ don’t partake.
+
+## thig7.3:2.1–thig7.3:2.4 (thig)
+thig7.3:2.1 | P: “Kiṁ nu jātiṁ na rocesi, | S: “Why don’t you approve of rebirth? | T: Māra: ⏎ Why don’t you approve of birth?
+thig7.3:2.2 | P: jāto kāmāni bhuñjati; | S: When you’re born, you get to enjoy sensual pleasures. | T: One who is born ⏎ enjoys sensual pleasures.
+thig7.3:2.3 | P: Bhuñjāhi kāmaratiyo, | S: Enjoy erotic delights; | T: Enjoy sensual delight!
+thig7.3:2.4 | P: māhu pacchānutāpinī”. | S: don’t regret it later.” | T: Don’t later burn with regret.
+
+## thig7.3:3.1–thig7.3:3.4 (thig) GATHERED; possible speaker requires a reader
+thig7.3:3.1 | P: “Jātassa maraṇaṁ hoti, | S: “Death comes to those who are born; | T: Upacālā: ⏎ For one who is born ⏎ there’s death,
+thig7.3:3.2 | P: hatthapādāna chedanaṁ; | S: and when born they fall into suffering: | T: the cutting-off of hands & feet, ⏎ binding, flogging, torment. ⏎ One who’s born incurs pain.
+thig7.3:3.3 | P: Vadhabandhapariklesaṁ, | S: the chopping off of hands and feet, | T: (none)
+thig7.3:3.4 | P: jāto dukkhaṁ nigacchati. | S: killing, caging, misery. | T: (none)
+
+## thig7.3:4.1–thig7.3:4.4 (thig) GATHERED; possible speaker requires a reader
+thig7.3:4.1 | P: Atthi sakyakule jāto, | S: But there is one born in the Sakyan clan, | T: But there is ⏎ the Rightly Awakened One, ⏎ the undefeated one, ⏎ born in the Sakyan clan.
+thig7.3:4.2 | P: sambuddho aparājito; | S: awakened and undefeated. | T: (none)
+thig7.3:4.3 | P: So me dhammamadesesi, | S: He taught me the Dhamma | T: He taught me the Dhamma
+thig7.3:4.4 | P: jātiyā samatikkamaṁ. | S: for transcending rebirth: | T: for the transcending of birth:
+
+## thig7.3:5.1–thig7.3:5.4 (thig)
+thig7.3:5.1 | P: Dukkhaṁ dukkhasamuppādaṁ, | S: suffering, suffering’s origin, | T: stress, ⏎ the co-arising of stress,
+thig7.3:5.2 | P: dukkhassa ca atikkamaṁ; | S: suffering’s transcendence, | T: the overcoming of stress,
+thig7.3:5.3 | P: Ariyaṁ caṭṭhaṅgikaṁ maggaṁ, | S: and the noble eightfold path | T: & the noble eightfold path
+thig7.3:5.4 | P: dukkhūpasamagāminaṁ. | S: that leads to the stilling of suffering. | T: leading to the stilling of stress.
+
+## thig7.3:6.1–thig7.3:6.4 (thig)
+thig7.3:6.1 | P: Tassāhaṁ vacanaṁ sutvā, | S: After hearing his words, | T: Having heard his words,
+thig7.3:6.2 | P: vihariṁ sāsane ratā; | S: I happily did his bidding. | T: I dwell, delighting ⏎ in his bidding.
+thig7.3:6.3 | P: Tisso vijjā anuppattā, | S: I’ve attained the three knowledges | T: The three knowledges ⏎ are attained;
+thig7.3:6.4 | P: kataṁ buddhassa sāsanaṁ. | S: and fulfilled the Buddha’s instructions. | T: the Buddha’s bidding, ⏎ done.
+
+## thig7.3:7.1–thig7.3:7.4 (thig)
+thig7.3:7.1 | P: Sabbattha vihatā nandī, | S: Relishing is banished in every respect, | T: Everywhere enjoyment ⏎ is defeated;
+thig7.3:7.2 | P: tamokhandho padālito; | S: and the mass of darkness is shattered. | T: the mass of darkness, ⏎ burst.
+thig7.3:7.3 | P: Evaṁ jānāhi pāpima, | S: So know this, Wicked One: | T: So know, Evil One,
+thig7.3:7.4 | P: nihato tvamasi antaka”. | S: you’re beaten, terminator!” | T: that you have been, ⏎ End-maker, ⏎ struck down.
+CONTEXT thig7.3:8.1 | P: … Upacālā therī …. | S: (none) | T: (none)
+CONTEXT thig7.3:9.1 | P: Sattakanipāto niṭṭhito. | S: (none) | T: (none)
+
+## thig8.1:1.1–thig8.1:1.4 (thig)
+CONTEXT thig8.1:0.2 | P: Aṭṭhakanipāta | S: The Book of the Eights | T: (none)
+CONTEXT thig8.1:0.3 | P: Sīsūpacālātherīgāthā | S: Sīsūpacālā | T: Thig 8 Sīsūpacālā
+thig8.1:1.1 | P: “Bhikkhunī sīlasampannā, | S: “A nun accomplished in ethics, | T: Sīsūpacālā: ⏎ A nun, consummate in virtue,
+thig8.1:1.2 | P: indriyesu susaṁvutā; | S: her sense faculties well-restrained, | T: her faculties well-restrained,
+thig8.1:1.3 | P: Adhigacche padaṁ santaṁ, | S: would realize the peaceful state, | T: will reach the state of peace,
+thig8.1:1.4 | P: asecanakamojavaṁ”. | S: so delectable and nutritious.” | T: a nourishment ⏎ that never cloys.
+
+## thig8.1:2.1–thig8.1:2.6 (thig)
+thig8.1:2.1 | P: “Tāvatiṁsā ca yāmā ca, | S: “There are the gods of the thirty-three, and those of Yama; | T: Māra: ⏎ The Devas of the Thirty-three, ⏎ the Hours,
+thig8.1:2.2 | P: tusitā cāpi devatā; | S: also the Joyful Deities, | T: the Contented,
+thig8.1:2.3 | P: Nimmānaratino devā, | S: the gods who love to create, | T: devas who delight in creation,
+thig8.1:2.4 | P: ye devā vasavattino; | S: and the gods who control what is created by others. | T: & devas in control:
+thig8.1:2.5 | P: Tattha cittaṁ paṇīdhehi, | S: Set your heart on such places, | T: Direct your mind there
+thig8.1:2.6 | P: yattha te vusitaṁ pure”. | S: where you used to live.” | T: where you lived before.
+
+## thig8.1:3.1–thig8.1:3.4 (thig)
+thig8.1:3.1 | P: “Tāvatiṁsā ca yāmā ca, | S: “The gods of the thirty-three, and those of Yama; | T: Sīsūpacālā: ⏎ The Devas of the Thirty-three, ⏎ the Hours,
+thig8.1:3.2 | P: tusitā cāpi devatā; | S: also the Joyful Deities, | T: the Contented,
+thig8.1:3.3 | P: Nimmānaratino devā, | S: the gods who love to create, | T: devas who delight in creation,
+thig8.1:3.4 | P: ye devā vasavattino. | S: and the gods who control what is created by others— | T: & devas in control:
+
+## thig8.1:4.1–thig8.1:4.4 (thig)
+thig8.1:4.1 | P: Kālaṁ kālaṁ bhavābhavaṁ, | S: time after time, life after life, | T: Time & again, ⏎ from becoming to becoming,
+thig8.1:4.2 | P: sakkāyasmiṁ purakkhatā; | S: are governed by substantial reality. | T: surrounded by self-identity,
+thig8.1:4.3 | P: Avītivattā sakkāyaṁ, | S: They haven’t passed beyond substantial reality, | T: not having gone beyond self-identity,
+thig8.1:4.4 | P: jātimaraṇasārino. | S: those who transmigrate through birth and death. | T: they flow to birth & death.
+
+## thig8.1:5.1–thig8.1:5.4 (thig)
+thig8.1:5.1 | P: Sabbo ādīpito loko, | S: All the world is on fire, | T: The whole world is burning.
+thig8.1:5.2 | P: sabbo loko padīpito; | S: all the world is alight, | T: The whole world is aflame.
+thig8.1:5.3 | P: Sabbo pajjalito loko, | S: all the world is ablaze, | T: The whole world is blazing.
+thig8.1:5.4 | P: sabbo loko pakampito. | S: all the world is rocking. | T: The whole world is shaken.
+
+## thig8.1:6.1–thig8.1:6.4 (thig) GATHERED; unequal counts require a reader
+thig8.1:6.1 | P: Akampiyaṁ atuliyaṁ, | S: The Buddha taught me the Dhamma, | T: The unshaken, incomparable ⏎ —the Dhamma the Buddha taught to me,
+thig8.1:6.2 | P: aputhujjanasevitaṁ; | S: unshakable, incomparable, | T: (none)
+thig8.1:6.3 | P: Buddho dhammamadesesi, | S: not frequented by ordinary people; | T: of which people run-of-the-mill ⏎ don’t partake—
+thig8.1:6.4 | P: tattha me nirato mano. | S: my mind adores that place. | T: that’s where my heart ⏎ truly delights.
+
+## thig8.1:7.1–thig8.1:7.4 (thig)
+thig8.1:7.1 | P: Tassāhaṁ vacanaṁ sutvā, | S: After hearing his words, | T: Having heard his words,
+thig8.1:7.2 | P: vihariṁ sāsane ratā; | S: I happily did his bidding. | T: I dwell, delighting ⏎ in his bidding.
+thig8.1:7.3 | P: Tisso vijjā anuppattā, | S: I’ve attained the three knowledges, | T: The three knowledges ⏎ are attained;
+thig8.1:7.4 | P: kataṁ buddhassa sāsanaṁ. | S: and fulfilled the Buddha’s instructions. | T: the Buddha’s bidding, ⏎ done.
+
+## thig8.1:8.1–thig8.1:8.4 (thig)
+thig8.1:8.1 | P: Sabbattha vihatā nandī, | S: Relishing is banished in every respect, | T: Everywhere enjoyment ⏎ is defeated;
+thig8.1:8.2 | P: tamokhandho padālito; | S: and the mass of darkness is shattered. | T: the mass of darkness, ⏎ burst.
+thig8.1:8.3 | P: Evaṁ jānāhi pāpima, | S: So know this, Wicked One: | T: So know, Evil One,
+thig8.1:8.4 | P: nihato tvamasi antaka”. | S: you’re beaten, terminator!” | T: that you have been, ⏎ End-maker, ⏎ struck down.
+CONTEXT thig8.1:9.1 | P: … Sīsūpacālā therī …. | S: (none) | T: (none)
+CONTEXT thig8.1:10.1 | P: Aṭṭhakanipāto niṭṭhito. | S: (none) | T: (none)
+
+## thig9.1:1.1–thig9.1:1.4 (thig)
+CONTEXT thig9.1:0.2 | P: Navakanipāta | S: The Book of the Nines | T: (none)
+CONTEXT thig9.1:0.3 | P: Vaḍḍhamātutherīgāthā | S: Vaḍḍha’s Mother | T: Thig 9 Vaḍḍha’s Mother
+thig9.1:1.1 | P: “Mā su te vaḍḍha lokamhi, | S: “Vaḍḍha, please never ever | T: Vaḍḍha’s Mother: ⏎ Vaḍḍha, don’t have any
+thig9.1:1.2 | P: vanatho āhu kudācanaṁ; | S: get snarled in the world. | T: underbrush-lust ⏎ ever, in the world, at all.
+thig9.1:1.3 | P: Mā puttaka punappunaṁ, | S: My child, do not partake | T: Don’t, my little son,
+thig9.1:1.4 | P: ahu dukkhassa bhāgimā. | S: in suffering again and again. | T: have a share in suffering ⏎ again & again.
+
+## thig9.1:2.1–thig9.1:2.4 (thig)
+thig9.1:2.1 | P: Sukhañhi vaḍḍha munayo, | S: For happy dwell the sages, Vaḍḍha, | T: For happy are sages, Vaḍḍha,
+thig9.1:2.2 | P: anejā chinnasaṁsayā; | S: unstirred, their doubts cut off, | T: unperturbed, with doubt cut through.
+thig9.1:2.3 | P: Sītibhūtā damappattā, | S: cooled and tamed, | T: Having become cool and self-controlled,
+thig9.1:2.4 | P: viharanti anāsavā. | S: and free of defilements. | T: they dwell effluent-free.
+
+## thig9.1:3.1–thig9.1:3.4 (thig)
+thig9.1:3.1 | P: Tehānuciṇṇaṁ isībhi, | S: Vaḍḍha, foster the path | T: Foster the path,
+thig9.1:3.2 | P: maggaṁ dassanapattiyā; | S: that the seers have walked, | T: pursued by seers,
+thig9.1:3.3 | P: Dukkhassantakiriyāya, | S: for the attainment of vision, | T: for the attainment of vision,
+thig9.1:3.4 | P: tvaṁ vaḍḍha anubrūhaya”. | S: and for making an end of suffering.” | T: for the ending of stress.
+
+## thig9.1:4.1–thig9.1:4.4 (thig) GATHERED; possible speaker requires a reader
+thig9.1:4.1 | P: “Visāradāva bhaṇasi, | S: “Mother, you speak with such assurance | T: Vaḍḍha: ⏎ Undaunted, mother, ⏎ you speak this matter to me.
+thig9.1:4.2 | P: etamatthaṁ janetti me; | S: to me on this matter. | T: (none)
+thig9.1:4.3 | P: Maññāmi nūna māmike, | S: My dear mom, I can’t help thinking | T: I suspect that now in you
+thig9.1:4.4 | P: vanatho te na vijjati”. | S: that no snarls are found in you.” | T: no underbrush ⏎ is found.
+
+## thig9.1:5.1–thig9.1:5.4 (thig) GATHERED; possible speaker requires a reader
+thig9.1:5.1 | P: “Ye keci vaḍḍha saṅkhārā, | S: “Vaḍḍha, not a jot or a skerrick | T: Vaḍḍha’s Mother: ⏎ Whatever fabrications
+thig9.1:5.2 | P: hīnā ukkaṭṭhamajjhimā; | S: of snarl is found in me | T: (none)
+thig9.1:5.3 | P: Aṇūpi aṇumattopi, | S: for any conditions at all, | T: (none)
+thig9.1:5.4 | P: vanatho me na vijjati. | S: whether low, high, or middling. | T: are lowly, middling, or exalted: ⏎ No underbrush for them in me ⏎ —not a bit, not the least little bit— ⏎ is found.
+
+## thig9.1:6.1–thig9.1:6.4 (thig)
+thig9.1:6.1 | P: Sabbe me āsavā khīṇā, | S: All defilements are ended for me, | T: All effluents are ended for me—
+thig9.1:6.2 | P: appamattassa jhāyato; | S: meditating and diligent. | T: heedful, doing jhāna.
+thig9.1:6.3 | P: Tisso vijjā anuppattā, | S: I’ve attained the three knowledges | T: The three knowledges ⏎ are attained;
+thig9.1:6.4 | P: kataṁ buddhassa sāsanaṁ”. | S: and fulfilled the Buddha’s instructions.” | T: the Buddha’s bidding, ⏎ done.
+
+## thig9.1:7.1–thig9.1:7.4 (thig)
+thig9.1:7.1 | P: “Uḷāraṁ vata me mātā, | S: “Oh so excellent was the goad | T: Vaḍḍha: ⏎ With what a vast goad
+thig9.1:7.2 | P: patodaṁ samavassari; | S: my mother spurred me with! | T: my mother poked me—
+thig9.1:7.3 | P: Paramatthasañhitā gāthā, | S: Owing to her compassion, she spoke | T: because of her sympathy—
+thig9.1:7.4 | P: yathāpi anukampikā. | S: verses on the ultimate goal. | T: verses connected to the ultimate goal.
+
+## thig9.1:8.1–thig9.1:8.4 (thig)
+thig9.1:8.1 | P: Tassāhaṁ vacanaṁ sutvā, | S: On hearing her words, | T: Having heard her words—
+thig9.1:8.2 | P: anusiṭṭhiṁ janettiyā; | S: advised by my mother, | T: my mother’s instruction—
+thig9.1:8.3 | P: Dhammasaṁvegamāpādiṁ, | S: I was struck with righteous urgency | T: Dhamma-saṁvega arose
+thig9.1:8.4 | P: yogakkhemassa pattiyā. | S: for the sake of sanctuary from the yoke. | T: for attaining rest from the yoke.
+
+## thig9.1:9.1–thig9.1:9.4 (thig)
+thig9.1:9.1 | P: Sohaṁ padhānapahitatto, | S: Striving, resolute, | T: Resolute in exertion,
+thig9.1:9.2 | P: rattindivamatandito; | S: tireless all day and night, | T: relentlessly, both day & night,
+thig9.1:9.3 | P: Mātarā codito santo, | S: urged on by my mother, | T: I, roused by my mother,
+thig9.1:9.4 | P: aphusiṁ santimuttamaṁ”. | S: I realized supreme peace. | T: touched ⏎ the highest peace.
+CONTEXT thig9.1:10.1 | P: … Vaḍḍhamātā therī …. | S: (none) | T: (none)
+CONTEXT thig9.1:11.1 | P: Navakanipāto niṭṭhito. | S: (none) | T: (none)
+
+## thig10.1:1.1–thig10.1:1.4 (thig)
+CONTEXT thig10.1:0.2 | P: Ekādasakanipāta | S: The Book of the Elevens | T: (none)
+CONTEXT thig10.1:0.3 | P: Kisāgotamītherīgāthā | S: Kisāgotamī | T: Thig 10 Kīsā Gotamī
+thig10.1:1.1 | P: “Kalyāṇamittatā muninā, | S: “Pointing out how the world works, | T: Having admirable friends
+thig10.1:1.2 | P: lokaṁ ādissa vaṇṇitā; | S: the sages have praised good friendship. | T: has been praised by the Sage ⏎ with reference to the world.
+thig10.1:1.3 | P: Kalyāṇamitte bhajamāno, | S: Associating with good friends, | T: Associating with an admirable friend
+thig10.1:1.4 | P: api bālo paṇḍito assa. | S: even a fool becomes astute. | T: even a fool ⏎ becomes wise.
+
+## thig10.1:2.1–thig10.1:2.4 (thig)
+thig10.1:2.1 | P: Bhajitabbā sappurisā, | S: Associate with true persons, | T: People of integrity ⏎ should be associated with.
+thig10.1:2.2 | P: Paññā tathā vaḍḍhati bhajantānaṁ; | S: for that is how wisdom grows. | T: In that way discernment grows.
+thig10.1:2.3 | P: Bhajamāno sappurise, | S: Should you associate with true persons, | T: Associating with people of integrity
+thig10.1:2.4 | P: Sabbehipi dukkhehi pamucceyya. | S: you would be freed from all suffering. | T: one would be released from all suffering & stress,
+
+## thig10.1:3.1–thig10.1:3.4 (thig)
+thig10.1:3.1 | P: Dukkhañca vijāneyya, | S: And you would understand suffering, | T: would know stress,
+thig10.1:3.2 | P: Dukkhassa ca samudayaṁ nirodhaṁ; | S: its origin and cessation, | T: the origination of stress, ⏎ cessation
+thig10.1:3.3 | P: Aṭṭhaṅgikañca maggaṁ, | S: the eightfold path, | T: & the eightfold path:
+thig10.1:3.4 | P: Cattāripi ariyasaccāni”. | S: and so the four noble truths.” | T: the four noble truths.
+
+## thig10.1:4.1–thig10.1:4.4 (thig)
+thig10.1:4.1 | P: “Dukkho itthibhāvo, | S: “‘A woman’s life is painful,’ | T: Stressful, painful, is the woman’s state:
+thig10.1:4.2 | P: Akkhāto purisadammasārathinā; | S: explained the Buddha, guide for those fit to train, | T: So says the tamer of tamable people.
+thig10.1:4.3 | P: Sapattikampi hi dukkhaṁ, | S: ‘and for a co-wife it’s especially so. | T: Being a co-wife is painful.
+thig10.1:4.4 | P: Appekaccā sakiṁ vijātāyo. | S: After giving birth just once, | T: Some, on giving birth once,
+
+## thig10.1:5.1–thig10.1:5.4 (thig)
+thig10.1:5.1 | P: Galake api kantanti, | S: some women even cut their own throat, | T: slit their throats.
+thig10.1:5.2 | P: Sukhumāliniyo visāni khādanti; | S: while delicate ladies take poison. | T: Others, of delicate constitution, ⏎ take poison.
+thig10.1:5.3 | P: Janamārakamajjhagatā, | S: Being guilty of killing a person, | T: In the midst of a breech-birth
+thig10.1:5.4 | P: Ubhopi byasanāni anubhonti”. | S: they both undergo ruin.’” | T: both [mother & child] suffer destruction.
+
+## thig10.1:6.1–thig10.1:6.4 (thig)
+thig10.1:6.1 | P: “Upavijaññā gacchantī, | S: “I was on the road, near to giving birth, | T: Going along, about to give birth,
+thig10.1:6.2 | P: addasāhaṁ patiṁ mataṁ; | S: when I saw my husband dead. | T: I saw my husband dead.
+thig10.1:6.3 | P: Panthamhi vijāyitvāna, | S: I gave birth there on the road | T: Giving birth in the road,
+thig10.1:6.4 | P: appattāva sakaṁ gharaṁ. | S: before I’d reached my own house. | T: I hadn’t reached ⏎ my own home.
+
+## thig10.1:7.1–thig10.1:7.4 (thig)
+thig10.1:7.1 | P: Dve puttā kālakatā, | S: My two children have died, | T: Two children deceased,
+thig10.1:7.2 | P: Patī ca panthe mato kapaṇikāya; | S: and on the road my husband lies dead—oh woe is me! | T: my husband dead in the road ⏎ —miserable me!
+thig10.1:7.3 | P: Mātā pitā ca bhātā, | S: Mother, father, and brother | T: My mother, father, & brother
+thig10.1:7.4 | P: Ḍayhanti ca ekacitakāyaṁ”. | S: all burning up on the same pyre.” | T: were burning on a single pyre.
+
+## thig10.1:8.1–thig10.1:8.4 (thig)
+thig10.1:8.1 | P: “Khīṇakulīne kapaṇe, | S: “Oh woe is you whose family is lost, | T: “Your family all gone, miserable,
+thig10.1:8.2 | P: Anubhūtaṁ te dukhaṁ aparimāṇaṁ; | S: the suffering you have undergone has no measure; | T: you’ve suffered pain without measure.
+thig10.1:8.3 | P: Assū ca te pavattaṁ, | S: you have been shedding tears | T: Your tears have flowed
+thig10.1:8.4 | P: Bahūni ca jātisahassāni. | S: for many thousands of lives.” | T: for many thousands of lives.”
+
+## thig10.1:9.1–thig10.1:9.4 (thig)
+thig10.1:9.1 | P: Vasitā susānamajjhe, | S: “While staying in the charnel ground, | T: Then I saw, ⏎ in the midst of the charnel ground,
+thig10.1:9.2 | P: Athopi khāditāni puttamaṁsāni; | S: I saw my son’s flesh being eaten. | T: the muscles of sons being chewed.
+thig10.1:9.3 | P: Hatakulikā sabbagarahitā, | S: With my family destroyed, condemned by all, | T: With family killed, ⏎ despised by all,
+thig10.1:9.4 | P: Matapatikā amatamadhigacchiṁ. | S: and my husband dead, I realized freedom from death. | T: my husband dead, ⏎ I reached the deathless.
+
+## thig10.1:10.1–thig10.1:10.4 (thig)
+thig10.1:10.1 | P: Bhāvito me maggo, | S: I’ve developed the noble eightfold path | T: I’ve developed this path, ⏎ noble, eightfold,
+thig10.1:10.2 | P: Ariyo aṭṭhaṅgiko amatagāmī; | S: leading to freedom from death. | T: going to the deathless.
+thig10.1:10.3 | P: Nibbānaṁ sacchikataṁ, | S: I’ve realized extinguishment, | T: Having realized unbinding,
+thig10.1:10.4 | P: Dhammādāsaṁ avekkhiṁhaṁ. | S: as seen in the mirror of the Dhamma. | T: I’ve gazed in the mirror of Dhamma.
+
+## thig10.1:11.1–thig10.1:11.4 (thig)
+thig10.1:11.1 | P: Ahamamhi kantasallā, | S: I’ve plucked out the dart, | T: I’ve extracted the arrow,
+thig10.1:11.2 | P: Ohitabhārā katañhi karaṇīyaṁ; | S: laid down the burden, and done what needed to be done.” | T: put down the burden, ⏎ done the task.
+thig10.1:11.3 | P: Kisā gotamī therī, | S: The senior nun Kisāgotamī, | T: I, Kīsā Gotamī Therī,
+thig10.1:11.4 | P: Vimuttacittā imaṁ bhaṇī”ti. | S: her mind released, said this. | T: my heart well released, ⏎ have said this.
+CONTEXT thig10.1:12.1 | P: … Kisā gotamī therī …. | S: (none) | T: (none)
+CONTEXT thig10.1:13.1 | P: Ekādasakanipāto niṭṭhito. | S: (none) | T: (none)
+
+## thig12.1:1.1–thig12.1:1.4 (thig)
+CONTEXT thig12.1:0.2 | P: Soḷasakanipāta | S: The Book of the Sixteens | T: (none)
+CONTEXT thig12.1:0.3 | P: Puṇṇātherīgāthā | S: Puṇṇikā | T: Thig 12 Puṇṇikā & the Brahman
+thig12.1:1.1 | P: “Udahārī ahaṁ sīte, | S: “I used to be a water-carrier. Even when it was cold, | T: Puṇṇikā: ⏎ I’m a water-carrier, cold,
+thig12.1:1.2 | P: sadā udakamotariṁ; | S: I would always plunge into the water, | T: always going down to the water
+thig12.1:1.3 | P: Ayyānaṁ daṇḍabhayabhītā, | S: afraid of my masters’ beatings, | T: from fear of my mistresses’ beatings,
+thig12.1:1.4 | P: vācādosabhayaṭṭitā. | S: harassed by fear of abuse and anger. | T: harassed by their anger & words.
+
+## thig12.1:2.1–thig12.1:2.4 (thig)
+thig12.1:2.1 | P: Kassa brāhmaṇa tvaṁ bhīto, | S: Brahmin, what are you afraid of, | T: But you, brahman, ⏎ what do you fear
+thig12.1:2.2 | P: sadā udakamotari; | S: that you always plunge into the water, | T: that you’re always going down to the water
+thig12.1:2.3 | P: Vedhamānehi gattehi, | S: your limbs trembling | T: with shivering limbs,
+thig12.1:2.4 | P: sītaṁ vedayase bhusaṁ”. | S: in the freezing cold?” | T: feeling great cold?
+
+## thig12.1:3.1–thig12.1:3.4 (thig) GATHERED; possible speaker requires a reader
+thig12.1:3.1 | P: “Jānantī vata maṁ bhoti, | S: “Oh, but you already know, | T: The Brahman: ⏎ Puṇṇikā, surely you know.
+thig12.1:3.2 | P: puṇṇike paripucchasi; | S: Madam Puṇṇikā, when you ask me: | T: You’re asking one doing skillful kamma
+thig12.1:3.3 | P: Karontaṁ kusalaṁ kammaṁ, | S: I am doing good deeds, | T: (none)
+thig12.1:3.4 | P: rundhantaṁ katapāpakaṁ. | S: to ward off the wickedness I have done. | T: & warding off evil.
+
+## thig12.1:4.1–thig12.1:4.4 (thig)
+thig12.1:4.1 | P: Yo ca vuḍḍho daharo vā, | S: Whosoever young or old | T: Whoever, young or old,
+thig12.1:4.2 | P: pāpakammaṁ pakubbati; | S: performs a wicked deed, | T: does evil kamma
+thig12.1:4.3 | P: Dakābhisecanā sopi, | S: by ablution in water they are | T: is, through water ablution,
+thig12.1:4.4 | P: pāpakammā pamuccati”. | S: released from their wicked deed.” | T: from evil kamma set free.
+
+## thig12.1:5.1–thig12.1:5.4 (thig)
+thig12.1:5.1 | P: “Ko nu te idamakkhāsi, | S: “Who on earth told you this, | T: Puṇṇikā: ⏎ Who taught you this
+thig12.1:5.2 | P: ajānantassa ajānako; | S: one ignoramus to another: | T: —the ignorant to the ignorant—
+thig12.1:5.3 | P: Dakābhisecanā nāma, | S: ‘Actually, by ablution in water one is | T: ‘One, through water ablution,
+thig12.1:5.4 | P: pāpakammā pamuccati. | S: released from a wicked deed.’ | T: is from evil kamma set free’?
+
+## thig12.1:6.1–thig12.1:6.4 (thig)
+thig12.1:6.1 | P: Saggaṁ nūna gamissanti, | S: Would not they all go to heaven, then: | T: In that case, they’d all go to heaven:
+thig12.1:6.2 | P: sabbe maṇḍūkakacchapā; | S: all the frogs and the turtles, | T: all the frogs, turtles,
+thig12.1:6.3 | P: Nāgā ca susumārā ca, | S: dragons, dolphins, | T: serpents, crocodiles,
+thig12.1:6.4 | P: ye caññe udake carā. | S: and other water-dwellers too? | T: & anything else that lives in the water.
+
+## thig12.1:7.1–thig12.1:7.6 (thig)
+thig12.1:7.1 | P: Orabbhikā sūkarikā, | S: Butchers of sheep and pigs, | T: Sheep-butchers, pork-butchers,
+thig12.1:7.2 | P: macchikā migabandhakā; | S: fishermen, animal trappers, | T: fishermen, trappers,
+thig12.1:7.3 | P: Corā ca vajjhaghātā ca, | S: bandits, executioners, | T: thieves, executioners,
+thig12.1:7.4 | P: ye caññe pāpakammino; | S: and others of evil deeds: | T: & any other evil doers,
+thig12.1:7.5 | P: Dakābhisecanā tepi, | S: by ablution in water they too would be | T: would, through water ablution,
+thig12.1:7.6 | P: pāpakammā pamuccare. | S: released from their wicked deeds. | T: be from evil kamma set free.
+
+## thig12.1:8.1–thig12.1:8.4 (thig)
+thig12.1:8.1 | P: Sace imā nadiyo te, | S: If these rivers had carried away | T: If these rivers could carry off
+thig12.1:8.2 | P: pāpaṁ pubbe kataṁ vahuṁ; | S: your bad deeds in the past, | T: the evil kamma you’ve done in the past,
+thig12.1:8.3 | P: Puññampimā vaheyyuṁ te, | S: they would also carry away your good deeds, | T: they’d carry off your merit as well,
+thig12.1:8.4 | P: tena tvaṁ paribāhiro. | S: from which you’d be prevented. | T: and then you’d be ⏎ completely deprived.
+
+## thig12.1:9.1–thig12.1:9.4 (thig)
+thig12.1:9.1 | P: Yassa brāhmaṇa tvaṁ bhīto, | S: Brahmin, the thing that you are afraid of, | T: Whatever it is that you fear,
+thig12.1:9.2 | P: sadā udakamotari; | S: when you always plunge into the water, | T: that you’re always going down to the water,
+thig12.1:9.3 | P: Tameva brahme mā kāsi, | S: do not do that very thing, | T: don’t do it.
+thig12.1:9.4 | P: mā te sītaṁ chaviṁ hane”. | S: don’t let the cold harm your skin.” | T: Don’t let the cold hurt your skin.”

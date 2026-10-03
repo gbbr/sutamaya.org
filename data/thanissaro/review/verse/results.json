@@ -1,0 +1,785 @@
+{
+  "versesRead": 3966,
+  "verseRows": 16558,
+  "batches": 69,
+  "openBoundaryCases": [
+    {
+      "key": "sn3.19:7.1",
+      "reason": "prose/editorial attachment outside scope: Source block 7 is the prose introduction; the verse starts at block 8. Removing that introduction from verse 7 requires a non-verse boundary change.",
+      "evidence": "open-cases.notes.json"
+    },
+    {
+      "key": "sn4.24:10.4",
+      "reason": "prose/editorial attachment outside scope: The last verse line is source block 55; block 56 is the following narrative. The source does provide a break, but ending the verse there requires changing the following non-verse ownership.",
+      "evidence": "open-cases.notes.json"
+    },
+    {
+      "key": "an3.39:10.3",
+      "reason": "source-order interleaving: Source block 23, “I overcame all intoxication”, belongs to Pali stanza 11 but precedes block 24, “with health, youth, & life”, belonging to stanza 10. Block 24 is one source line, so its existing cut before “& life” is also invalid. No ordered complete-stanza cut exists.",
+      "evidence": "open-cases.notes.json"
+    },
+    {
+      "key": "an4.19:4.1",
+      "reason": "prose/editorial attachment outside scope: Source block 11 is the prose list of four ways not to go astray; stanza 4 begins at block 12. Moving the prose out of stanza 4 requires a non-verse key; leaving it in stanza 3 would attach it to another verse.",
+      "evidence": "open-cases.notes.json"
+    },
+    {
+      "key": "an5.36:3.1",
+      "reason": "source-order interleaving: Source block 6 combines stanza 3’s inspired hearts with stanza 2’s noble recipients in one line, followed by stanza 2’s “—straightened, Such—” at block 7. Stanza 3’s remaining offering lines follow at 8–12; whole-line cuts cannot give both stanzas their own translation.",
+      "evidence": "open-cases.notes.json"
+    },
+    {
+      "key": "an5.57:14.3",
+      "reason": "source-order interleaving: Source block 28, “I overcame all intoxication”, belongs to Pali stanza 15 but precedes stanza 14’s intoxication list in block 29. “with health, youth, & life” is one source line, so the current cut before “& life” is invalid; an ordered complete-stanza repair is impossible.",
+      "evidence": "open-cases.notes.json"
+    },
+    {
+      "key": "an6.45:21.3",
+      "reason": "source-order interleaving: Stanza 22’s householder description at block 68, “living at home,” precedes stanza 21’s gift and righteous-wealth lines at 69–70. Block 69 is the whole line “making gifts of his belongings,”, also ruling out the current internal cut before “of his belongings,”. Complete ownership requires reordering.",
+      "evidence": "open-cases.notes.json"
+    },
+    {
+      "key": "an8.54:18.2",
+      "reason": "source-order interleaving: The both-life wording in source block 28 translates stanza 18’s opening before blocks 29–30 translate stanza 17’s declaration by the truly named one. Blocks 25–30 therefore interleave the two stanza identities; no contiguous ordered cut restores both.",
+      "evidence": "open-cases.notes.json"
+    },
+    {
+      "key": "snp3.1:6.4",
+      "reason": "source-order interleaving: Source block 23, “Mindful, his eyes downcast,”, translates stanza 7’s opening before block 24 finishes stanza 6 with the plow-length gaze. Moving either boundary cannot restore both complete stanzas without reordering.",
+      "evidence": "open-cases.notes.json"
+    },
+    {
+      "key": "snp3.12:25.1",
+      "reason": "source-order interleaving: Stanza 26’s “Knowing that” at source block 109 precedes stanza 25’s feelings list at 110–113, while the rest of stanza 26 follows at 114–125. Its opening and remainder surround the other stanza, preventing complete ownership by ordered cuts.",
+      "evidence": "open-cases.notes.json"
+    },
+    {
+      "key": "thag17.2:22.3",
+      "reason": "source-order interleaving: Source blocks 109–112 put Pali stanza 23’s time/wage ending first; blocks 113–116 put stanza 22’s mindful/alert ending second. The source thus reverses the distinguishing endings. The supplied Pali stanza 22 body-laying line is also rendered as awaiting time. Boundaries alone cannot restore both identities.",
+      "evidence": "open-cases.notes.json"
+    },
+    {
+      "key": "thig6.7:3.1",
+      "reason": "source-order interleaving: Source block 13 translates stanza 4’s abandoning-the-lower-fetters opening before stanza 3’s list at 14–17; stanza 4’s result follows at 18–19. Its two parts surround stanza 3, so no ordered whole-line cut restores both.",
+      "evidence": "open-cases.notes.json"
+    },
+    {
+      "key": "ud7.8:4.6",
+      "reason": "prose/editorial attachment outside scope: The actual source separates verse-ending “attachment.” (block 16) from editorial paragraphs 17–19. Thus the displayed unbroken app line is not a true source line, but excluding the commentary still needs an end boundary or non-verse attachment unavailable to this verse-start-only review.",
+      "evidence": "open-cases.notes.json"
+    },
+    {
+      "key": "snp3.6:46.1",
+      "reason": "Actual source line 219 is “no hindrances. Your despairs”. “no hindrances.” belongs to the preceding Pali verse, whose keys are not shown, while “Your despairs” begins verse 46 inside that source line. No true source boundary preserves both stanza identity and words/order in scope. No findings for verse 46 were emitted; its existing split at 46.4 (“enduring in truth:”) also lies within source line 222 “steadfast, enduring in truth:”.",
+      "withdrawRecommendation": "Withdraw any proposed finding starting snp3.6:46.1 at “Your despairs” or snp3.6:46.4 at “enduring in truth:” if present elsewhere. The packet lists no earlier proposed findings for verse 46; retain the corrected verse-47 findings and resolve the preceding source-line interleaving separately.",
+      "evidence": "source-breaks.notes.json"
+    },
+    {
+      "key": "snp4.9:3.1",
+      "reason": "unapplied-context.txt confirms that snp4.9:3.2 is a read-only speaker row containing source line 17 (The Buddha:), between empty verse row 3.1 and speech row 3.3. Source lines 18–19 cannot occupy row 3.1 without crossing that speaker and changing source order. The alternative speaker start would itself change nonverse context. Withdraw row 3.1 and the proposed row 3.3 start at source line 20: moving row 3.3 later would assign source lines 18–19 to the intervening nonverse speaker row. Retain current row 3.3 speech and leave the structurally unavailable row 3.1 documented as unresolved; no false fewer-line none finding or invented break is used.",
+      "evidence": "unapplied.notes.json"
+    }
+  ],
+  "confirmedOmissions": [
+    {
+      "key": "sn4.18:3.3",
+      "reason": "omitted translation: The source goes directly from the two demerit lines (6–7) to the next stanza (8–11). No English line translates the question in Pali 3.3–3.4; the two empty rows are legitimate omissions.",
+      "evidence": "open-cases.notes.json"
+    }
+  ],
+  "readerUsage": {
+    "firstReaders": 3,
+    "sourceReviewReaders": 3,
+    "effort": "high",
+    "tokenTotals": "not exposed by available tools"
+  },
+  "status": "copied to translations working tree; checks passed; no commit",
+  "englishRowsChanged": 1744,
+  "notesRowsChanged": 82,
+  "changedSuttaFiles": 317,
+  "changedNotesFiles": 37,
+  "judging": {
+    "groups": 150,
+    "counts": {
+      "better": 148,
+      "same": 2,
+      "worse": 0
+    },
+    "byJudge": [
+      {
+        "judge": "judge-001",
+        "counts": {
+          "better": 48,
+          "same": 2
+        }
+      },
+      {
+        "judge": "judge-002",
+        "counts": {
+          "better": 50
+        }
+      },
+      {
+        "judge": "judge-003",
+        "counts": {
+          "better": 50
+        }
+      }
+    ],
+    "worseStopThreshold": 6,
+    "status": "accepted"
+  },
+  "checks": {
+    "upstream": "1430 pages; 0 differ; 13 references and 6 heading numbers expected",
+    "integrity": "0 problems",
+    "plainReproducesKeptCutsAndTexts": true,
+    "cross3": "0 lines / 0 stretches",
+    "lists2": "0 lines / 0 stretches",
+    "sourcePagesUnchanged": true,
+    "changedKeysWithinReviewedVerses": true,
+    "repositoryUpstream": "1430 pages; 0 differ",
+    "repositoryIntegrity": "0 problems",
+    "protectedFilesUnchanged": true,
+    "otherTranslatorAndExistingUnchangedFilesPreserved": true
+  },
+  "preExistingUnappliedRequests": [
+    "an1.33:1.1",
+    "an1.33:1.2",
+    "an1.35:1.1",
+    "an1.35:1.2",
+    "an1.37:1.1",
+    "an1.39:1.1",
+    "an1.76:1.1",
+    "an4.19:2.1",
+    "an4.19:2.4",
+    "an4.19:4.1",
+    "dn22:11.2",
+    "dn33:2.2.59",
+    "dn33:3.1.140",
+    "dn33:3.1.141",
+    "dn33:3.3.26",
+    "iti84:7.3",
+    "iti84:7.4",
+    "mn102:12.10",
+    "mn102:12.9"
+  ],
+  "usage": {
+    "highEffortReaders": 3,
+    "highEffortBlindJudges": 3,
+    "tokenTotals": "not exposed by available tools",
+    "startedUtc": "2026-10-03T11:26:46.912478+00:00",
+    "checkedUtc": "2026-10-03T12:39:38.775814+00:00",
+    "completedUtc": "2026-10-03T12:42:31.261414+00:00",
+    "elapsedMinutes": 75.7
+  },
+  "automation": {
+    "initialCandidateVerses": 147,
+    "explicitNewlineCertifiedVerses": 97,
+    "sourceBreakReviewRequiredVerses": 50,
+    "certified": [
+      {
+        "key": "dn20:5.13",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "dn20:22.5",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "mn26:25.18",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "mn49:9.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "mn85:49.19",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "mn86:18.31",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "sn1.18:1.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "sn2.17:2.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "sn2.23:2.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "sn3.1:10.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "sn6.2:9.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "sn7.2:6.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "sn9.14:2.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "sn10.4:4.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "sn11.5:12.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "sn11.24:4.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "sn21.6:2.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "an3.39:12.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "an3.48:5.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "an4.32:4.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "an5.31:9.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "an5.36:4.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "an5.41:8.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "an6.43:6.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "an6.43:19.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "an6.45:24.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "an7.36:4.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "an8.30:23.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "an8.54:15.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "dhp13:1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "dhp14:1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "dhp78:1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "dhp105:1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "dhp112:1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "dhp143:1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "dhp219:1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "iti88:3.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "iti88:6.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "iti88:9.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "iti93:5.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "snp1.7:27.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "snp1.8:7.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "snp1.9:13.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "snp1.11:7.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "snp2.1:7.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "snp2.1:9.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "snp2.3:4.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "snp2.11:7.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "snp2.13:7.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "snp2.14:18.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "snp3.1:13.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "snp3.2:9.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "snp3.7:16.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "snp3.9:65.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "snp5.1:41.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "snp5.18:4.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "snp5.18:7.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "snp5.18:8.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag1.33:1.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag2.47:1.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag3.15:1.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag6.3:1.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag6.3:2.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag6.3:3.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag6.3:4.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag6.3:5.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag6.3:6.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag6.6:4.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag6.10:1.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag6.12:3.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag10.5:4.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag10.5:9.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag11.1:2.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag12.1:3.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag12.2:7.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag13.1:5.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag15.2:15.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag16.1:8.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag16.1:12.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag16.1:14.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag16.7:1.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag16.8:13.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag17.2:24.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag17.2:29.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag17.2:31.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thag18.1:4.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thig5.8:3.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thig5.12:2.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thig6.2:2.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thig12.1:12.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thig13.5:5.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thig13.5:19.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thig14.1:6.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thig14.1:9.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "thig14.1:29.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "ud2.3:3.1",
+        "reason": "equal counts: one line per row"
+      },
+      {
+        "key": "ud2.3:4.1",
+        "reason": "equal counts: one line per row"
+      }
+    ],
+    "deferred": [
+      {
+        "key": "dn16:4.38.7",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "dn20:20.9",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "sn11.5:13.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "sn11.14:6.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "sn22.95:12.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "sn55.26:22.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "an3.67:8.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "an4.24:8.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "an4.50:10.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "an4.52:7.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "an5.31:12.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "an5.36:3.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "an5.57:16.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "an5.179:8.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "an6.43:16.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "an6.45:19.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "an6.55:21.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "an7.36:2.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "an7.64:22.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "dhp131:1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "dhp132:1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "dhp247:1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "dhp260:1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "dhp262:1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "dhp316:1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "dhp335:1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "dhp377:1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "snp1.9:14.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "snp2.6:6.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "snp2.7:9.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "snp2.7:19.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "snp2.7:26.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "snp2.12:13.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "snp2.14:8.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "snp2.14:17.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "snp2.14:20.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "snp3.6:47.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "snp3.8:4.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "snp3.10:11.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "snp4.8:10.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "snp4.14:11.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "thag6.6:1.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "thag7.1:5.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "thag13.1:12.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "thag15.2:12.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "thag16.4:23.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "thig13.5:18.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "thig14.1:13.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "thig14.1:14.1",
+        "reason": "moving an old app row cut requires source-break review"
+      },
+      {
+        "key": "thig14.1:22.1",
+        "reason": "moving an old app row cut requires source-break review"
+      }
+    ],
+    "scriptSha256": "ab6029561973dd401f01ad178d709b473b5bf8fd92b9b32fd1958e2cc5445f77",
+    "rule": "equal English/Pali counts, no speaker/heading; each moved start is an explicit translator newline; old app row cuts require source validation",
+    "certifiedCandidateFindings": 404,
+    "generatorValidation": {
+      "verses": 3966,
+      "verseRows": 16558,
+      "batches": 69,
+      "gathered": 710,
+      "certifiedAutomaticVerses": 97
+    },
+    "certifiedChangedStarts": 113,
+    "certifiedUnchangedStarts": 291
+  },
+  "changedAppTexts": 317
+}

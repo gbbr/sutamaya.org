@@ -1,0 +1,14 @@
+{
+  "batch": 20,
+  "versesRead": 61,
+  "rowsRead": 247,
+  "automaticFindings": 24,
+  "readerFindings": 24,
+  "unresolved": [
+    {
+      "key": "an6.45:21.3",
+      "reason": "T living at home is next stanza22.2 gharamesino, brought forward before current21.3–21.4 giving righteously gained belongings. Translator order interleaves identities; whole-line boundary changes cannot restore both without reordering. Leave source wording/order intact."
+    }
+  ],
+  "ruleCandidate": "AN6.45:15.2 held only an em dash while15.1 gathered two source lines; moving whole second line into15.2 fills the wordless row. AN7.7:5 has three source lines for four rows, so one row remains empty."
+}

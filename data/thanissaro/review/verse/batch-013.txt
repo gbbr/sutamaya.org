@@ -1,0 +1,431 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## sn10.8:12.1–sn10.8:12.4 (sn) GATHERED; possible speaker requires a reader
+CONTEXT sn10.8:11.6 | P: Atha kho anāthapiṇḍiko gahapati, nāmena maṁ bhagavā ālapatīti, haṭṭho udaggo tattheva bhagavato pādesu sirasā nipatitvā bhagavantaṁ etadavoca: | S: Then Anāthapiṇḍika thought, “The Buddha calls me by name!” Smiling and elated, he bowed with his head to the Buddha’s feet and said to him, | T: Then Anāthapiṇḍika, (thinking,) “The Blessed One is calling me by my given name!” threw himself down right there at the Blessed One’s feet and said to him,
+CONTEXT sn10.8:11.7 | P: “kacci, bhante, bhagavā sukhamasayitthā”ti? | S: “Sir, I trust the Buddha slept well?” | T: “Lord, I hope the Blessed One has slept in ease.”
+sn10.8:12.1 | P: “Sabbadā ve sukhaṁ seti, | S: “A brahmin who is fully quenched | T: The Buddha: ⏎ “Always, always, ⏎ he sleeps in ease: ⏎ the brahman totally unbound,
+sn10.8:12.2 | P: brāhmaṇo parinibbuto; | S: always sleeps at ease. | T: (none)
+sn10.8:12.3 | P: Yo na limpati kāmesu, | S: Sensual pleasures slip off them, | T: who doesn’t adhere ⏎ to sensual pleasures,
+sn10.8:12.4 | P: sītibhūto nirūpadhi. | S: they’re cooled, free of attachments. | T: who’s without acquisitions ⏎ & cooled.
+
+## sn10.8:13.1–sn10.8:13.4 (sn)
+sn10.8:13.1 | P: Sabbā āsattiyo chetvā, | S: Since they’ve cut off all clinging, | T: Having ⏎ cut all ties
+sn10.8:13.2 | P: vineyya hadaye daraṁ; | S: and removed the stress from the heart, | T: & subdued fear in the heart,
+sn10.8:13.3 | P: Upasanto sukhaṁ seti, | S: the peaceful sleep at ease, | T: calmed, ⏎ he sleeps in ease,
+sn10.8:13.4 | P: santiṁ pappuyya cetasā”ti. | S: having found peace of mind.” | T: having reached peace ⏎ of awareness.”
+
+## sn10.12:2.1–sn10.12:2.4 (sn)
+CONTEXT sn10.12:1.24 | P: “Na khvāhaṁ taṁ, āvuso, passāmi sadevake loke samārake sabrahmake sassamaṇabrāhmaṇiyā pajāya sadevamanussāya, yo me cittaṁ vā khipeyya hadayaṁ vā phāleyya, pādesu vā gahetvā pāragaṅgāya khipeyya. | S: “I don’t see anyone in this world with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans who could do that to me. | T: “My friend, I see no one in the cosmos with its devas, Māras & Brahmās, its contemplatives & brahmans, its royalty & commonfolk, who could possess my mind or rip open my heart or, grabbing me by the feet, hurl me across the Ganges.
+CONTEXT sn10.12:1.25 | P: Api ca tvaṁ, āvuso, puccha yadā kaṅkhasī”ti (…). | S: But anyway, ask what you wish.” | T: But nevertheless, ask me what you wish.”
+sn10.12:2.1 | P: “Kiṁsūdha vittaṁ purisassa seṭṭhaṁ, | S: “What’s a person’s best wealth? | T: Āḷavaka: ⏎ “What is a person’s highest wealth?
+sn10.12:2.2 | P: Kiṁsu suciṇṇaṁ sukhamāvahāti; | S: What brings happiness when practiced well? | T: What, when well-practiced, brings bliss?
+sn10.12:2.3 | P: Kiṁsu have sādutaraṁ rasānaṁ, | S: What’s the sweetest taste of all? | T: What is the highest of savors?
+sn10.12:2.4 | P: Kathaṁjīviṁ jīvitamāhu seṭṭhan”ti. | S: The one they say has the best life: how do they live?” | T: Living in what way ⏎ is one’s life called the best?”
+
+## sn10.12:3.1–sn10.12:3.4 (sn)
+sn10.12:3.1 | P: “Saddhīdha vittaṁ purisassa seṭṭhaṁ, | S: “Faith here is a person’s best wealth. | T: The Buddha: ⏎ “Conviction is a person’s highest wealth.
+sn10.12:3.2 | P: Dhammo suciṇṇo sukhamāvahāti; | S: The teaching brings happiness when practiced well. | T: Dhamma, well-practiced, brings bliss.
+sn10.12:3.3 | P: Saccaṁ have sādutaraṁ rasānaṁ, | S: Truth is the sweetest taste of all. | T: Truth is the highest of savors.
+sn10.12:3.4 | P: Paññājīviṁ jīvitamāhu seṭṭhan”ti. | S: The one they say has the best life lives by wisdom.” | T: Living with discernment, ⏎ one’s life is called best.”
+
+## sn10.12:4.1–sn10.12:4.4 (sn)
+sn10.12:4.1 | P: “Kathaṁsu tarati oghaṁ, | S: “How do you cross the flood? | T: Āḷavaka: ⏎ “How does one cross over the flood?
+sn10.12:4.2 | P: kathaṁsu tarati aṇṇavaṁ; | S: How do you cross the deluge? | T: How cross over the sea?
+sn10.12:4.3 | P: Kathaṁsu dukkhamacceti, | S: How do you get over suffering? | T: How does one overcome suffering & stress?
+sn10.12:4.4 | P: kathaṁsu parisujjhatī”ti. | S: How do you get purified?” | T: How is a person purified?”
+
+## sn10.12:5.1–sn10.12:5.4 (sn)
+sn10.12:5.1 | P: “Saddhāya tarati oghaṁ, | S: “By faith you cross the flood, | T: The Buddha: ⏎ “Through conviction one crosses over the flood.
+sn10.12:5.2 | P: appamādena aṇṇavaṁ; | S: and by diligence the deluge. | T: Through heedfulness, the sea.
+sn10.12:5.3 | P: Vīriyena dukkhamacceti, | S: By energy you get past suffering, | T: Through persistence one overcomes ⏎ suffering & stress.
+sn10.12:5.4 | P: paññāya parisujjhatī”ti. | S: and you’re purified by wisdom.” | T: Through discernment a person is purified.”
+
+## sn10.12:6.1–sn10.12:6.6 (sn)
+sn10.12:6.1 | P: “Kathaṁsu labhate paññaṁ, | S: “How do you get wisdom? | T: Āḷavaka: ⏎ “How does one gain discernment?
+sn10.12:6.2 | P: kathaṁsu vindate dhanaṁ; | S: How do you earn wealth? | T: How does one find wealth?
+sn10.12:6.3 | P: Kathaṁsu kittiṁ pappoti, | S: How do you get a good reputation? | T: How does one attain honor?
+sn10.12:6.4 | P: kathaṁ mittāni ganthati; | S: How do you hold on to friends? | T: How bind friends to oneself?
+sn10.12:6.5 | P: Asmā lokā paraṁ lokaṁ, | S: How do the departed not grieve | T: Passing from this world ⏎ to ⏎ the next world,
+sn10.12:6.6 | P: kathaṁ pecca na socatī”ti. | S: when passing from this world to the next?” | T: how does one not grieve?”
+
+## sn10.12:7.1–sn10.12:7.4 (sn) GATHERED; possible speaker requires a reader
+sn10.12:7.1 | P: “Saddahāno arahataṁ, | S: “One who is diligent and discerning | T: The Buddha: ⏎ “Convinced of the arahants’ Dhamma ⏎ for attaining unbinding, ⏎ —heedful, observant—
+sn10.12:7.2 | P: dhammaṁ nibbānapattiyā; | S: gains wisdom by wanting to learn, | T: one listening well ⏎ gains discernment.
+sn10.12:7.3 | P: Sussūsaṁ labhate paññaṁ, | S: having faith in the perfected ones, | T: (none)
+sn10.12:7.4 | P: appamatto vicakkhaṇo. | S: and the teaching for becoming extinguished. | T: (none)
+
+## sn10.12:8.1–sn10.12:8.6 (sn) GATHERED; unequal counts require a reader
+sn10.12:8.1 | P: Patirūpakārī dhuravā, | S: Being responsible, acting appropriately, | T: Doing what’s fitting, ⏎ enduring burdens,
+sn10.12:8.2 | P: uṭṭhātā vindate dhanaṁ; | S: and working hard you earn wealth. | T: one with initiative ⏎ finds wealth.
+sn10.12:8.3 | P: Saccena kittiṁ pappoti, | S: Truthfulness wins you a good reputation. | T: Through truth ⏎ one attains honor.
+sn10.12:8.4 | P: dadaṁ mittāni ganthati; | S: You hold on to friends by giving. | T: Giving ⏎ binds friends to oneself.
+sn10.12:8.5 | P: Asmā lokā paraṁ lokaṁ, | S: That’s how the departed do not grieve | T: (none)
+sn10.12:8.6 | P: evaṁ pecca na socati. | S: when passing from this world to the next. | T: (none)
+
+## sn10.12:9.1–sn10.12:9.4 (sn) GATHERED; unequal counts require a reader
+sn10.12:9.1 | P: Yassete caturo dhammā, | S: A faithful householder of discernment | T: Endowed with these four qualities, ⏎ —truth, ⏎ self-control, ⏎ stamina, ⏎ relinquishment— ⏎ a householder of conviction,
+sn10.12:9.2 | P: saddhassa gharamesino; | S: who possesses these four qualities | T: (none)
+sn10.12:9.3 | P: Saccaṁ dhammo dhiti cāgo, | S: does not grieve after passing away: | T: (none)
+sn10.12:9.4 | P: sa ve pecca na socati. | S: truth, principle, steadfastness, and generosity. | T: on passing away, doesn’t grieve.
+
+## sn10.12:10.1–sn10.12:10.4 (sn) GATHERED; unequal counts require a reader
+sn10.12:10.1 | P: Iṅgha aññepi pucchassu, | S: Go ahead, ask others as well, | T: Now, go ask others,
+sn10.12:10.2 | P: puthū samaṇabrāhmaṇe; | S: there are many ascetics and brahmins. | T: common brahmans & contemplatives,
+sn10.12:10.3 | P: Yadi saccā dhammā cāgā, | S: See whether anything better is found | T: if anything better than ⏎ truth, ⏎ self-control, ⏎ stamina, ⏎ & relinquishment ⏎ here can be found.”
+sn10.12:10.4 | P: khantyā bhiyyodha vijjatī”ti. | S: than truth, principle, generosity, and patience.” | T: (none)
+
+## sn10.12:11.1–sn10.12:11.4 (sn)
+sn10.12:11.1 | P: “Kathaṁ nu dāni puccheyyaṁ, | S: “Why now would I question | T: Āḷavaka: ⏎ “How could I go ask
+sn10.12:11.2 | P: puthū samaṇabrāhmaṇe; | S: the many ascetics and brahmins? | T: common brahmans & contemplatives?—
+sn10.12:11.3 | P: Yohaṁ ajja pajānāmi, | S: Today I understand | T: now that today I understand
+sn10.12:11.4 | P: yo attho samparāyiko. | S: what’s good for lives to come. | T: what benefits ⏎ the next life.
+
+## sn10.12:12.1–sn10.12:12.4 (sn)
+sn10.12:12.1 | P: Atthāya vata me buddho, | S: It was truly for my benefit | T: It was truly for my well-being
+sn10.12:12.2 | P: vāsāyāḷavimāgamā; | S: that the Buddha came to stay at Āḷavī. | T: that the Awakened One came ⏎ to stay in Āḷavī.
+sn10.12:12.3 | P: Yohaṁ ajja pajānāmi, | S: Today I understand | T: Today I understand
+sn10.12:12.4 | P: yattha dinnaṁ mahapphalaṁ. | S: where a gift is very fruitful. | T: where what is given ⏎ bears great fruit.
+
+## sn10.12:13.1–sn10.12:13.4 (sn)
+sn10.12:13.1 | P: So ahaṁ vicarissāmi, | S: I myself will journey | T: I’ll wander
+sn10.12:13.2 | P: Gāmā gāmaṁ purā puraṁ; | S: village to village, town to town, | T: from village to village, ⏎ town to town,
+sn10.12:13.3 | P: Namassamāno sambuddhaṁ, | S: paying homage to the Buddha, | T: paying homage to the Self-awakened One
+sn10.12:13.4 | P: Dhammassa ca sudhammatan”ti. | S: and the clear rightness of the teaching!” | T: & the true rightness of the Dhamma.”
+CONTEXT sn10.12:13.5 | P: Indakavaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT sn10.12:14.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+
+## sn10.12:14.1–sn10.12:14.4 (sn)
+CONTEXT sn10.12:13.5 | P: Indakavaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT sn10.12:14.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn10.12:14.1 | P: Indako sakka sūci ca, | S: (none) | T: (none)
+sn10.12:14.2 | P: Maṇibhaddo ca sānu ca; | S: (none) | T: (none)
+sn10.12:14.3 | P: Piyaṅkara punabbasu sudatto ca, | S: (none) | T: (none)
+sn10.12:14.4 | P: Dve sukkā cīraāḷavīti dvādasa. | S: (none) | T: (none)
+CONTEXT sn10.12:14.5 | P: Yakkhasaṁyuttaṁ samattaṁ. | S: The Linked Discourses with Native Spirits are complete. | T: (none)
+
+## sn11.3:13.1–sn11.3:13.4 (sn)
+CONTEXT sn11.3:12.3 | P: Idamavoca bhagavā. | S: That is what the Buddha said. | T: This is what the Blessed One said.
+CONTEXT sn11.3:12.4 | P: Idaṁ vatvāna sugato athāparaṁ etadavoca satthā: | S: Then the Holy One, the Teacher, went on to say: | T: Having said this, the One Well-Gone, the Teacher, further said this:
+sn11.3:13.1 | P: “Araññe rukkhamūle vā, | S: “In the wilderness, at a tree’s root, | T: “In wilderness, monks, ⏎ at the foot of a tree,
+sn11.3:13.2 | P: suññāgāreva bhikkhavo; | S: or an empty hut, O mendicants, | T: or in an empty dwelling,
+sn11.3:13.3 | P: Anussaretha sambuddhaṁ, | S: recollect the Buddha, | T: recollect the Buddha:
+sn11.3:13.4 | P: bhayaṁ tumhāka no siyā. | S: and no fear will come to you. | T: You will have no fear.
+
+## sn11.3:14.1–sn11.3:14.4 (sn)
+sn11.3:14.1 | P: No ce buddhaṁ sareyyātha, | S: If you can’t recollect the Buddha— | T: If you don’t recall the Buddha—
+sn11.3:14.2 | P: lokajeṭṭhaṁ narāsabhaṁ; | S: the eldest in the world, the captain of men— | T: chief of the world, ⏎ the bull of men—
+sn11.3:14.3 | P: Atha dhammaṁ sareyyātha, | S: then recollect the teaching, | T: then recollect the Dhamma,
+sn11.3:14.4 | P: niyyānikaṁ sudesitaṁ. | S: emancipating, well taught. | T: leading out, ⏎ well taught.
+
+## sn11.3:15.1–sn11.3:15.4 (sn)
+sn11.3:15.1 | P: No ce dhammaṁ sareyyātha, | S: If you can’t recollect the teaching— | T: If you don’t recall the Dhamma—
+sn11.3:15.2 | P: niyyānikaṁ sudesitaṁ; | S: emancipating, well taught— | T: leading out, ⏎ well taught—
+sn11.3:15.3 | P: Atha saṅghaṁ sareyyātha, | S: then recollect the Saṅgha, | T: then recollect the Saṅgha,
+sn11.3:15.4 | P: puññakkhettaṁ anuttaraṁ. | S: the supreme field of merit. | T: the field of merit ⏎ unexcelled.
+
+## sn11.3:16.1–sn11.3:16.4 (sn) GATHERED; unequal counts require a reader
+sn11.3:16.1 | P: Evaṁ buddhaṁ sarantānaṁ, | S: Thus recollecting the Buddha, | T: For those who have thus recalled ⏎ the Buddha,
+sn11.3:16.2 | P: Dhammaṁ saṅghañca bhikkhavo; | S: the teaching, and the Saṅgha, mendicants, | T: Dhamma, ⏎ & Saṅgha, monks,
+sn11.3:16.3 | P: Bhayaṁ vā chambhitattaṁ vā, | S: fear and terror | T: there will be ⏎ no terror, ⏎ horripilation, ⏎ or fear.”
+sn11.3:16.4 | P: Lomahaṁso na hessatī”ti. | S: and goosebumps will be no more.” | T: (none)
+
+## sn11.5:2.1–sn11.5:2.4 (sn) GATHERED; unequal counts require a reader
+CONTEXT sn11.5:1.12 | P: Bhaṇa, vepacitti, gāthan’ti. | S: Recite a verse.’ | T: You say a verse.’
+CONTEXT sn11.5:1.13 | P: Evaṁ vutte, bhikkhave, vepacitti asurindo imaṁ gāthaṁ abhāsi: | S: So Vepacitti spoke this verse: | T: “When this was said, Vepacitti recited this verse:
+sn11.5:2.1 | P: ‘Bhiyyo bālā pabhijjeyyuṁ, | S: ‘Fools would vent even more | T: ‘Fools would flare up even more ⏎ if there were no constraints.
+sn11.5:2.2 | P: no cassa paṭisedhako; | S: if there’s no one to put a stop to them. | T: (none)
+sn11.5:2.3 | P: Tasmā bhusena daṇḍena, | S: So an intelligent person should stop | T: Thus an enlightened one ⏎ should restrain the fool
+sn11.5:2.4 | P: dhīro bālaṁ nisedhaye’ti. | S: a fool with forceful punishment.’ | T: with a heavy stick.’
+CONTEXT sn11.5:3.1 | P: Bhāsitāya kho pana, bhikkhave, vepacittinā asurindena gāthāya asurā anumodiṁsu, devā tuṇhī ahesuṁ. | S: The titans applauded Vepacitti’s verse, while the gods kept silent. | T: “When Vepacitti had said this verse, the asuras applauded but the devas were silent.
+CONTEXT sn11.5:3.2 | P: Atha kho, bhikkhave, vepacitti asurindo sakkaṁ devānamindaṁ etadavoca: | S: Then Vepacitti said to Sakka, | T: So Vepacitti said to Sakka,
+
+## sn11.5:4.1–sn11.5:4.4 (sn)
+CONTEXT sn11.5:3.3 | P: ‘bhaṇa, devānaminda, gāthan’ti. | S: ‘Lord of gods, recite a verse!’ | T: ‘Say a verse, deva-king!’
+CONTEXT sn11.5:3.4 | P: Evaṁ vutte, bhikkhave, sakko devānamindo imaṁ gāthaṁ abhāsi: | S: So Sakka spoke this verse: | T: “When this was said, Sakka recited this verse:
+sn11.5:4.1 | P: ‘Etadeva ahaṁ maññe, | S: ‘I think that this is the only way | T: ‘This, I think,
+sn11.5:4.2 | P: bālassa paṭisedhanaṁ; | S: to put a stop to a fool, | T: is the only constraint for a fool:
+sn11.5:4.3 | P: Paraṁ saṅkupitaṁ ñatvā, | S: when you know that the other is upset, | T: When, knowing the other’s provoked,
+sn11.5:4.4 | P: yo sato upasammatī’ti. | S: be mindful and stay calm.’ | T: you mindfully grow calm.’
+CONTEXT sn11.5:5.1 | P: Bhāsitāya kho pana, bhikkhave, sakkena devānamindena gāthāya, devā anumodiṁsu, asurā tuṇhī ahesuṁ. | S: The gods applauded Sakka’s verse, while the titans kept silent. | T: “When Sakka had said this verse, the devas applauded but the asuras were silent.
+CONTEXT sn11.5:5.2 | P: Atha kho, bhikkhave, sakko devānamindo vepacittiṁ asurindaṁ etadavoca: | S: Then Sakka said to Vepacitti, | T: So Sakka said to Vepacitti,
+
+## sn11.5:6.1–sn11.5:6.6 (sn)
+CONTEXT sn11.5:5.3 | P: ‘bhaṇa, vepacitti, gāthan’ti. | S: ‘Vepacitti, recite a verse!’ | T: ‘Say a verse, Vepacitti!’
+CONTEXT sn11.5:5.4 | P: Evaṁ vutte, bhikkhave, vepacitti asurindo imaṁ gāthaṁ abhāsi: | S: So Vepacitti spoke this verse: | T: “When this was said, Vepacitti recited this verse:
+sn11.5:6.1 | P: ‘Etadeva titikkhāya, | S: ‘In this mere endurance, Vāsava, | T: ‘Vāsava ,
+sn11.5:6.2 | P: vajjaṁ passāmi vāsava; | S: I see a flaw. | T: I see a fault ⏎ in this very forbearance:
+sn11.5:6.3 | P: Yadā naṁ maññati bālo, | S: When a fool thinks, | T: When the fool thinks,
+sn11.5:6.4 | P: bhayā myāyaṁ titikkhati; | S: “He endures me out of fear,” | T: “He’s forbearing ⏎ out of fear of me,”
+sn11.5:6.5 | P: Ajjhāruhati dummedho, | S: the simpleton will go after you even harder, | T: the idiot pursues you even more—
+sn11.5:6.6 | P: gova bhiyyo palāyinan’ti. | S: like a cow chasing someone who runs away.’ | T: as a bull, someone who runs away.’
+CONTEXT sn11.5:7.1 | P: Bhāsitāya kho pana, bhikkhave, vepacittinā asurindena gāthāya asurā anumodiṁsu, devā tuṇhī ahesuṁ. | S: The titans applauded Vepacitti’s verse, while the gods kept silent. | T: “When Vepacitti had said this verse, the asuras applauded but the devas were silent.
+CONTEXT sn11.5:7.2 | P: Atha kho, bhikkhave, vepacitti asurindo sakkaṁ devānamindaṁ etadavoca: | S: Then Vepacitti said to Sakka, | T: So Vepacitti said to Sakka,
+
+## sn11.5:8.1–sn11.5:8.4 (sn)
+CONTEXT sn11.5:7.3 | P: ‘bhaṇa, devānaminda, gāthan’ti. | S: ‘Lord of gods, recite a verse!’ | T: ‘Say a verse, deva-king!’
+CONTEXT sn11.5:7.4 | P: Evaṁ vutte, bhikkhave, sakko devānamindo imā gāthāyo abhāsi: | S: So Sakka spoke this verse: | T: “When this was said, Sakka recited this verse:
+sn11.5:8.1 | P: ‘Kāmaṁ maññatu vā mā vā, | S: ‘Let him think this if he wishes, or not— | T: ‘It doesn’t matter ⏎ whether he thinks,
+sn11.5:8.2 | P: bhayā myāyaṁ titikkhati; | S: “He endures me out of fear.” | T: “He’s forbearing ⏎ out of fear of me.”
+sn11.5:8.3 | P: Sadatthaparamā atthā, | S: For the highest goal, one’s own, | T: One’s own true good ⏎ is the foremost good.
+sn11.5:8.4 | P: khantyā bhiyyo na vijjati. | S: naught better than patience is found. | T: Nothing better ⏎ than patience ⏎ is found.
+
+## sn11.5:9.1–sn11.5:9.4 (sn)
+sn11.5:9.1 | P: Yo have balavā santo, | S: When a strong person | T: Whoever, when strong,
+sn11.5:9.2 | P: dubbalassa titikkhati; | S: endures a weakling, | T: is forbearing ⏎ to one who is weak:
+sn11.5:9.3 | P: Tamāhu paramaṁ khantiṁ, | S: they call that the ultimate patience, | T: that’s the foremost patience.
+sn11.5:9.4 | P: niccaṁ khamati dubbalo. | S: for a weakling must always be patient. | T: The weak must constantly endure.
+
+## sn11.5:10.1–sn11.5:10.4 (sn) GATHERED; possible speaker requires a reader
+sn11.5:10.1 | P: Abalaṁ taṁ balaṁ āhu, | S: The strength of folly | T: They call that strength ⏎ no strength at all: ⏎ whoever’s strength ⏎ is the strength of a fool.
+sn11.5:10.2 | P: yassa bālabalaṁ balaṁ; | S: is really just weakness, they say. | T: (none)
+sn11.5:10.3 | P: Balassa dhammaguttassa, | S: But no one can challenge a person | T: There’s no reproach
+sn11.5:10.4 | P: paṭivattā na vijjati. | S: who’s strong, guarded by the teaching. | T: for one who is strong, ⏎ guarding—guarded by—Dhamma.
+
+## sn11.5:11.1–sn11.5:11.4 (sn) GATHERED; unequal counts require a reader
+sn11.5:11.1 | P: Tasseva tena pāpiyo, | S: When you get angry at an angry person | T: You make things worse ⏎ when you flare up ⏎ at someone who’s angry.
+sn11.5:11.2 | P: yo kuddhaṁ paṭikujjhati; | S: you just make things worse for yourself. | T: (none)
+sn11.5:11.3 | P: Kuddhaṁ appaṭikujjhanto, | S: When you don’t get angry at an angry person | T: Whoever doesn’t flare up ⏎ at someone who’s angry
+sn11.5:11.4 | P: saṅgāmaṁ jeti dujjayaṁ. | S: you win a battle hard to win. | T: wins a battle ⏎ hard to win.
+
+## sn11.5:12.1–sn11.5:12.4 (sn) GATHERED; equal counts: one line per row
+sn11.5:12.1 | P: Ubhinnamatthaṁ carati, | S: When you know that the other is angry, | T: You live for the good of both ⏎ —your own, the other’s— ⏎ when, knowing the other’s provoked,
+sn11.5:12.2 | P: attano ca parassa ca; | S: you act for the good of both | T: (none)
+sn11.5:12.3 | P: Paraṁ saṅkupitaṁ ñatvā, | S: yourself and the other | T: (none)
+sn11.5:12.4 | P: yo sato upasammati. | S: if you’re mindful and stay calm. | T: you mindfully grow calm.
+AUTO sn11.5:12.1 starts: You live for the good of both
+AUTO sn11.5:12.2 starts: —your own, the other’s—
+AUTO sn11.5:12.3 starts: when, knowing the other’s provoked,
+AUTO sn11.5:12.4 starts: you mindfully grow calm.
+
+## sn11.5:13.1–sn11.5:13.4 (sn) GATHERED; equal counts: one line per row
+sn11.5:13.1 | P: Ubhinnaṁ tikicchantānaṁ, | S: People inexpert in the teaching | T: (none)
+sn11.5:13.2 | P: attano ca parassa ca; | S: consider one who heals both | T: When you work the cure of both
+sn11.5:13.3 | P: Janā maññanti bāloti, | S: oneself and the other | T: —your own, the other’s—
+sn11.5:13.4 | P: ye dhammassa akovidā’ti. | S: to be a fool.’ | T: those who think you a fool ⏎ know nothing of Dhamma.’
+CONTEXT sn11.5:14.1 | P: Bhāsitāsu kho pana, bhikkhave, sakkena devānamindena gāthāsu, devā anumodiṁsu, asurā tuṇhī ahesuṁ. | S: The gods applauded Sakka’s verses, while the titans kept silent. | T: “When Sakka had said this verse, the devas applauded but the asuras were silent.
+CONTEXT sn11.5:14.2 | P: Atha kho, bhikkhave, devānañca asurānañca pārisajjā etadavocuṁ: | S: Then the panel of judges consisting of both gods and titans said this, | T: Then the deva & asura panel of judges said,
+AUTO sn11.5:13.1 starts: When you work the cure of both
+AUTO sn11.5:13.2 starts: —your own, the other’s—
+AUTO sn11.5:13.3 starts: those who think you a fool
+AUTO sn11.5:13.4 starts: know nothing of Dhamma.’
+
+## sn11.14:4.1–sn11.14:4.4 (sn)
+CONTEXT sn11.14:3.5 | P: So aññe deve atirocati vaṇṇena ceva yasasā cā’ti. | S: Here they outshine the other gods in beauty and glory.’ | T: There he outshines the other devas in beauty & in rank.’
+CONTEXT sn11.14:3.6 | P: Atha kho, bhikkhave, sakko devānamindo deve tāvatiṁse anunayamāno tāyaṁ velāyaṁ imā gāthāyo abhāsi: | S: Then Sakka, lord of gods, guiding the gods of the thirty-three, spoke this verse: | T: “Then, conciliating the devas of the Thirty-three, Sakka the deva-king on that occasion recited these verses:
+sn11.14:4.1 | P: ‘Yassa saddhā tathāgate, | S: ‘Whoever has faith in the Realized One, | T: ‘One whose conviction in the Tathāgata
+sn11.14:4.2 | P: acalā suppatiṭṭhitā; | S: unwavering and well grounded; | T: is well-established, unshakable;
+sn11.14:4.3 | P: Sīlañca yassa kalyāṇaṁ, | S: whose ethical conduct is good, | T: whose virtue is admirable,
+sn11.14:4.4 | P: ariyakantaṁ pasaṁsitaṁ. | S: praised and loved by the noble ones; | T: appealing to the noble ones, praised;
+
+## sn11.14:5.1–sn11.14:5.4 (sn)
+sn11.14:5.1 | P: Saṅghe pasādo yassatthi, | S: who has confidence in the Saṅgha, | T: who has confidence in the Saṅgha,
+sn11.14:5.2 | P: ujubhūtañca dassanaṁ; | S: and correct view: | T: & vision made straight:
+sn11.14:5.3 | P: Adaliddoti taṁ āhu, | S: they’re said to be prosperous, | T: “Not poor,” they say of him.
+sn11.14:5.4 | P: amoghaṁ tassa jīvitaṁ. | S: their life is not in vain. | T: Not in vain his life.
+
+## sn11.14:6.1–sn11.14:6.4 (sn) GATHERED; equal counts: one line per row
+sn11.14:6.1 | P: Tasmā saddhañca sīlañca, | S: So let the wise devote themselves | T: (none)
+sn11.14:6.2 | P: pasādaṁ dhammadassanaṁ; | S: to faith, ethical behaviour, | T: So conviction & virtue,
+sn11.14:6.3 | P: Anuyuñjetha medhāvī, | S: confidence, and insight into the teaching, | T: confidence & Dhamma-vision ⏎ should be cultivated by the intelligent,
+sn11.14:6.4 | P: saraṁ buddhāna sāsanan’”ti. | S: remembering the instructions of the Buddhas.’” | T: remembering the Buddhas’ teachings.’”
+AUTO sn11.14:6.1 starts: So conviction & virtue,
+AUTO sn11.14:6.2 starts: confidence & Dhamma-vision
+AUTO sn11.14:6.3 starts: should be cultivated by the intelligent,
+AUTO sn11.14:6.4 starts: remembering the Buddhas’ teachings.’”
+
+## sn11.15:2.1–sn11.15:2.4 (sn)
+CONTEXT sn11.15:1.2 | P: Atha kho sakko devānamindo yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ aṭṭhāsi. Ekamantaṁ ṭhito kho sakko devānamindo bhagavantaṁ etadavoca: | S: And then Sakka, lord of gods, went up to the Buddha, bowed, stood to one side, and said to him, | T: Then Sakka the deva-king went to the Blessed One and, on arrival, having bowed down to him, stood to one side. As he was standing there, he said to the Blessed One,
+CONTEXT sn11.15:1.3 | P: “kiṁ nu kho, bhante, bhūmirāmaṇeyyakan”ti? | S: “Sir, what is a delightful place?” | T: “What, lord, is a delightful place?”
+sn11.15:2.1 | P: “Ārāmacetyā vanacetyā, | S: “Shrines in parks and forests, | T: The Buddha: ⏎ “Park shrines, forest shrines,
+sn11.15:2.2 | P: pokkharañño sunimmitā; | S: well-made lotus ponds, | T: well-constructed lotus ponds
+sn11.15:2.3 | P: Manussarāmaṇeyyassa, | S: are not worth a sixteenth part | T: aren’t worth one-sixteenth
+sn11.15:2.4 | P: kalaṁ nāgghanti soḷasiṁ. | S: of a delightful human being. | T: of a delightful human being.
+
+## sn11.15:3.1–sn11.15:3.4 (sn) GATHERED; possible speaker requires a reader
+sn11.15:3.1 | P: Gāme vā yadi vāraññe, | S: Whether in village or wilderness, | T: In village or wilds,
+sn11.15:3.2 | P: Ninne vā yadi vā thale; | S: in a valley or the uplands, | T: valley, plateau:
+sn11.15:3.3 | P: Yattha arahanto viharanti, | S: wherever the perfected ones live | T: that place is delightful ⏎ where arahants dwell.”
+sn11.15:3.4 | P: Taṁ bhūmirāmaṇeyyakan”ti. | S: is a delightful place.” | T: (none)
+
+## sn11.22:4.1–sn11.22:4.4 (sn)
+CONTEXT sn11.22:3.4 | P: Dubbaṇṇataro ceva hutvā okoṭimakataro ca tatthevantaradhāyīti. | S: until eventually it vanished right there. | T: Then, having become uglier & more misshapen, he disappeared right there.
+CONTEXT sn11.22:3.5 | P: Atha kho, bhikkhave, sakko devānamindo sake āsane nisīditvā deve tāvatiṁse anunayamāno tāyaṁ velāyaṁ imā gāthāyo abhāsi: | S: Then Sakka, lord of gods, guiding the gods of the thirty-three, spoke this verse: | T: “Then Sakka the deva-king, sitting down on his seat & conciliating the devas of the Thirthy-three, on that occasion recited these verses:
+sn11.22:4.1 | P: ‘Na sūpahatacittomhi, | S: ‘My mind isn’t easily upset; | T: “‘I’m not easily upset in mind,
+sn11.22:4.2 | P: nāvattena suvānayo; | S: I’m not easily drawn into the maelstrom. | T: nor easily led into a whirl.
+sn11.22:4.3 | P: Na vo cirāhaṁ kujjhāmi, | S: I don’t get angry for long, | T: I don’t get angry for long.
+sn11.22:4.4 | P: kodho mayi nāvatiṭṭhati. | S: anger doesn’t last in me. | T: Anger doesn’t persist in me.
+
+## sn11.22:5.1–sn11.22:5.4 (sn)
+sn11.22:5.1 | P: Kuddhāhaṁ na pharusaṁ brūmi, | S: When I do get angry I don’t speak harshly, | T: When angry, I don’t speak harshly
+sn11.22:5.2 | P: Na ca dhammāni kittaye; | S: nor do I advertise my own virtues. | T: or insist on my virtues.
+sn11.22:5.3 | P: Sanniggaṇhāmi attānaṁ, | S: I carefully restrain myself | T: I keep myself well under control
+sn11.22:5.4 | P: Sampassaṁ atthamattano’”ti. | S: out of regard for my own welfare.’” | T: with an eye to my own good.’”
+
+## sn11.24:4.1–sn11.24:4.6 (sn) GATHERED; equal counts: one line per row
+CONTEXT sn11.24:2.6 | P: ime kho, bhikkhave, dve paṇḍitā. | S: These are the two who are astute. | T: These two are wise people.
+CONTEXT sn11.24:3.1 | P: Bhūtapubbaṁ, bhikkhave, sakko devānamindo sudhammāyaṁ sabhāyaṁ deve tāvatiṁse anunayamāno tāyaṁ velāyaṁ imaṁ gāthaṁ abhāsi: | S: Once upon a time, mendicants, Sakka, lord of gods, guiding the gods of the thirty-three, spoke this verse: | T: “Once, monks, Sakka the deva-king, having conciliated the devas of the Thirty-three in the Sudhamma assembly hall, on that occasion recited this verse:
+sn11.24:4.1 | P: ‘Kodho vo vasamāyātu, | S: ‘Control your anger; | T: “‘Bring your anger under control.
+sn11.24:4.2 | P: Mā ca mittehi vo jarā; | S: don’t let friendships decay. | T: Don’t let friendships decay.
+sn11.24:4.3 | P: Agarahiyaṁ mā garahittha, | S: Don’t blame the blameless, | T: Don’t blame the blameless.
+sn11.24:4.4 | P: Mā ca bhāsittha pesuṇaṁ; | S: and don’t backbite. | T: Don’t speak divisively,
+sn11.24:4.5 | P: Atha pāpajanaṁ kodho, | S: For anger crushes bad people | T: for anger, like a mountain avalanche, ⏎ crushes evil people.’”
+sn11.24:4.6 | P: Pabbatovābhimaddatī’”ti. | S: like a mountain.’” | T: (none)
+AUTO sn11.24:4.1 starts: “‘Bring your anger under control.
+AUTO sn11.24:4.2 starts: Don’t let friendships decay.
+AUTO sn11.24:4.3 starts: Don’t blame the blameless.
+AUTO sn11.24:4.4 starts: Don’t speak divisively,
+AUTO sn11.24:4.5 starts: for anger, like a mountain avalanche,
+AUTO sn11.24:4.6 starts: crushes evil people.’”
+
+## sn12.10:8.1–sn12.10:8.4 (sn)
+CONTEXT sn12.10:7.6 | P: Buddhavaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT sn12.10:8.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn12.10:8.1 | P: Desanā vibhaṅgapaṭipadā ca, | S: (none) | T: (none)
+sn12.10:8.2 | P: Vipassī sikhī ca vessabhū; | S: (none) | T: (none)
+sn12.10:8.3 | P: Kakusandho koṇāgamano kassapo, | S: (none) | T: (none)
+sn12.10:8.4 | P: Mahāsakyamuni ca gotamoti. | S: (none) | T: (none)
+
+## sn12.20:6.1–sn12.20:6.6 (sn)
+CONTEXT sn12.20:5.11 | P: Āhāravaggo dutiyo. | S: (none) | T: (none)
+CONTEXT sn12.20:6.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn12.20:6.1 | P: Āhāraṁ phagguno ceva, | S: (none) | T: (none)
+sn12.20:6.2 | P: Dve ca samaṇabrāhmaṇā; | S: (none) | T: (none)
+sn12.20:6.3 | P: Kaccānagotta dhammakathikaṁ, | S: (none) | T: (none)
+sn12.20:6.4 | P: Acelaṁ timbarukena ca; | S: (none) | T: (none)
+sn12.20:6.5 | P: Bālapaṇḍitato ceva, | S: (none) | T: (none)
+sn12.20:6.6 | P: Dasamo paccayena cāti. | S: (none) | T: (none)
+
+## sn12.31:2.1–sn12.31:2.4 (sn)
+CONTEXT sn12.31:1.2 | P: Tatra kho bhagavā āyasmantaṁ sāriputtaṁ āmantesi: | S: Then the Buddha said to Venerable Sāriputta, | T: There he addressed Ven. Sāriputta,
+CONTEXT sn12.31:1.3 | P: “vuttamidaṁ, sāriputta, pārāyane ajitapañhe: | S: “Sāriputta, this was said in ‘The Way to the Far Shore’, in ‘The Questions of Ajita’: | T: “Sāriputta, it is said in Ajita’s Question in the Way to the Further Shore [Snp5.2]:
+sn12.31:2.1 | P: ‘Ye ca saṅkhātadhammāse, | S: ‘There are those who have appraised the teaching, | T: ‘Those here who have fathomed the Dhamma,
+sn12.31:2.2 | P: ye ca sekkhā puthū idha; | S: and many kinds of trainees here. | T: those who are learners, ⏎ those who are run-of-the-mill:
+sn12.31:2.3 | P: Tesaṁ me nipako iriyaṁ, | S: Now you, being alert, are asked | T: When you, dear sir, astute, ⏎ are asked this,
+sn12.31:2.4 | P: puṭṭho pabrūhi mārisā’ti. | S: to tell me their behavior, good fellow.’ | T: tell me their manner of life.’
+CONTEXT sn12.31:3.1 | P: Imassa nu kho, sāriputta, saṅkhittena bhāsitassa kathaṁ vitthārena attho daṭṭhabbo”ti? | S: How should we see the detailed meaning of this brief statement?” | T: How is the detailed meaning of this brief statement to be understood?”
+CONTEXT sn12.31:3.2 | P: Evaṁ vutte, āyasmā sāriputto tuṇhī ahosi. | S: When he said this, Sāriputta kept silent. | T: When this was said, Ven. Sāriputta remained silent.
+
+## sn12.31:5.1–sn12.31:5.4 (sn)
+CONTEXT sn12.31:4.3 | P: Tatiyampi kho bhagavā āyasmantaṁ sāriputtaṁ āmantesi: | S: For a third time … | T: A third time the Blessed One addressed Ven. Sāriputta,
+CONTEXT sn12.31:4.4 | P: “vuttamidaṁ, sāriputta, pārāyane ajitapañhe: | S: (none) | T: “Sāriputta, it is said in Ajita’s Question in the Way to the Further Shore:
+sn12.31:5.1 | P: ‘Ye ca saṅkhātadhammāse, | S: (none) | T: ‘Those here who have fathomed the Dhamma,
+sn12.31:5.2 | P: ye ca sekkhā puthū idha; | S: (none) | T: those who are learners, ⏎ those who are run-of-the-mill:
+sn12.31:5.3 | P: Tesaṁ me nipako iriyaṁ, | S: (none) | T: When you, dear sir, astute,
+sn12.31:5.4 | P: puṭṭho pabrūhi mārisā’ti. | S: (none) | T: are asked this, ⏎ tell me their manner of life.’
+CONTEXT sn12.31:6.1 | P: Imassa nu kho, sāriputta, saṅkhittena bhāsitassa kathaṁ vitthārena attho daṭṭhabbo”ti? | S: (none) | T: How is the detailed meaning of this brief statement to be understood?”
+CONTEXT sn12.31:6.2 | P: Tatiyampi kho āyasmā sāriputto tuṇhī ahosi. | S: Sāriputta kept silent. | T: A third time, Ven. Sāriputta remained silent.
+
+## sn12.31:9.1–sn12.31:9.4 (sn)
+CONTEXT sn12.31:8.8 | P: Evaṁ kho, bhante, saṅkhātadhammo hoti. | S: In this way one has appraised the teaching. | T: This is how one is a person who has fathomed the Dhamma.
+CONTEXT sn12.31:8.9 | P: Iti kho, bhante, yaṁ taṁ vuttaṁ pārāyane ajitapañhe: | S: Sir, regarding what was said in ‘The Way to the Far Shore’, in ‘The Questions of Ajita’: | T: “It is in this way, lord, that I understand the detailed meaning of the brief statement in Ajita’s Question in the Way to the Further Shore:
+sn12.31:9.1 | P: ‘Ye ca saṅkhātadhammāse, | S: ‘There are those who have appraised the teaching, | T: ‘Those here who have fathomed the Dhamma,
+sn12.31:9.2 | P: ye ca sekkhā puthū idha; | S: and many kinds of trainees here. | T: those who are learners, ⏎ those who are run-of-the-mill:
+sn12.31:9.3 | P: Tesaṁ me nipako iriyaṁ, | S: Now you, being alert, are asked | T: When you, dear sir, astute, ⏎ are asked this,
+sn12.31:9.4 | P: puṭṭho pabrūhi mārisā’ti. | S: to tell me their behavior, good fellow.’ | T: tell me their manner of life.’”
+CONTEXT sn12.31:10.1 | P: Imassa khvāhaṁ, bhante, saṅkhittena bhāsitassa evaṁ vitthārena atthaṁ ājānāmī”ti. | S: This is how I understand the detailed meaning of what was said in brief.” | T: (none)
+CONTEXT sn12.31:11.1 | P: “Sādhu sādhu, sāriputta, bhūtamidanti, sāriputta, yathābhūtaṁ sammappaññāya passati. | S: “Good, good, Sāriputta! (The Buddha repeated all of Sāriputta’s explanation, concluding:) | T: “Excellent, Sāriputta. Excellent. One sees with right discernment as it has come to be that ‘this has come into being.’
+
+## sn12.31:13.1–sn12.31:13.4 (sn) GATHERED; possible speaker requires a reader
+CONTEXT sn12.31:12.8 | P: Evaṁ kho, sāriputta, saṅkhātadhammo hoti. | S: (none) | T: This is how one is a person who was fathomed the Dhamma.
+CONTEXT sn12.31:12.9 | P: Iti kho, sāriputta, yaṁ taṁ vuttaṁ pārāyane ajitapañhe: | S: (none) | T: “It is in this way that the detailed meaning of the brief statement in Ajita’s Question in the Way to the Further Shore is to be understood:
+sn12.31:13.1 | P: ‘Ye ca saṅkhātadhammāse, | S: (none) | T: Those here who have fathomed the Dhamma,
+sn12.31:13.2 | P: ye ca sekkhā puthū idha; | S: (none) | T: those who are learners, ⏎ those who are run-of-the-mill:
+sn12.31:13.3 | P: Tesaṁ me nipako iriyaṁ, | S: (none) | T: When you, dear sir, astute, ⏎ are asked this, ⏎ tell me their manner of life.”
+sn12.31:13.4 | P: puṭṭho pabrūhi mārisā’ti. | S: (none) | T: (none)
+CONTEXT sn12.31:14.1 | P: Imassa kho, sāriputta, saṅkhittena bhāsitassa evaṁ vitthārena attho daṭṭhabbo”ti. | S: This is how to see the detailed meaning of what was said in brief.” | T: (none)
+CONTEXT sn12.31:14.2 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## sn12.70:30.1–sn12.70:30.6 (sn)
+CONTEXT sn12.70:29.6 | P: Mahāvaggo sattamo. | S: (none) | T: (none)
+CONTEXT sn12.70:30.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn12.70:30.1 | P: Dve assutavatā vuttā, | S: (none) | T: (none)
+sn12.70:30.2 | P: puttamaṁsena cāparaṁ; | S: (none) | T: (none)
+sn12.70:30.3 | P: Atthirāgo ca nagaraṁ, | S: (none) | T: (none)
+sn12.70:30.4 | P: sammasaṁ naḷakalāpiyaṁ; | S: (none) | T: (none)
+sn12.70:30.5 | P: Kosambī upayanti ca, | S: (none) | T: (none)
+sn12.70:30.6 | P: dasamo susimena cāti. | S: (none) | T: (none)
+
+## sn15.10:4.1–sn15.10:4.4 (sn)
+CONTEXT sn15.10:3.1 | P: Idamavoca bhagavā. | S: That is what the Buddha said. | T: That is what the Blessed One said.
+CONTEXT sn15.10:3.2 | P: Idaṁ vatvāna sugato athāparaṁ etadavoca satthā: | S: Then the Holy One, the Teacher, went on to say: | T: Having said that, the One Well-gone, the Teacher, said further:
+sn15.10:4.1 | P: “Ekassekena kappena, | S: “If the bones of a single individual | T: “The accumulation ⏎ of a single person’s ⏎ bones
+sn15.10:4.2 | P: puggalassaṭṭhisañcayo; | S: for a single eon were gathered up, | T: for an eon
+sn15.10:4.3 | P: Siyā pabbatasamo rāsi, | S: they’d make a pile the size of a mountain: | T: would be a heap ⏎ on a par with the mountain,
+sn15.10:4.4 | P: iti vuttaṁ mahesinā. | S: so said the great seer. | T: so said the Great Seer.
+
+## sn15.10:5.1–sn15.10:5.4 (sn)
+sn15.10:5.1 | P: So kho panāyaṁ akkhāto, | S: And this is declared to be | T: (He declared this to be
+sn15.10:5.2 | P: vepullo pabbato mahā; | S: as big as Mount Vepulla, | T: the great Mount Vepulla
+sn15.10:5.3 | P: Uttaro gijjhakūṭassa, | S: higher than the Vulture’s Peak | T: to the north of Vulture’s Peak
+sn15.10:5.4 | P: magadhānaṁ giribbaje. | S: in the Mountainfold of the Magadhans. | T: in the mountain-ring ⏎ of the Magadhans.)
+
+## sn15.10:6.1–sn15.10:6.6 (sn)
+sn15.10:6.1 | P: Yato ca ariyasaccāni, | S: But then, with right understanding, | T: But when that person sees ⏎ with right discernment
+sn15.10:6.2 | P: sammappaññāya passati; | S: one sees the noble truths— | T: the four noble truths—
+sn15.10:6.3 | P: Dukkhaṁ dukkhasamuppādaṁ, | S: suffering, suffering’s origin, | T: stress, ⏎ the cause of stress,
+sn15.10:6.4 | P: dukkhassa ca atikkamaṁ; | S: suffering’s transcendence, | T: the transcending of stress,
+sn15.10:6.5 | P: Ariyaṁ caṭṭhaṅgikaṁ maggaṁ, | S: and the noble eightfold path | T: & the noble eightfold path,
+sn15.10:6.6 | P: dukkhūpasamagāminaṁ. | S: that leads to the stilling of suffering. | T: the way to the stilling of stress—
+
+## sn15.10:7.1–sn15.10:7.4 (sn) GATHERED; unequal counts require a reader
+sn15.10:7.1 | P: Sa sattakkhattuṁparamaṁ, | S: After roaming on seven times at most, | T: having wandered on ⏎ seven times at most,
+sn15.10:7.2 | P: sandhāvitvāna puggalo; | S: that individual | T: then,
+sn15.10:7.3 | P: Dukkhassantakaro hoti, | S: makes an end of suffering, | T: with the ending of all fetters, ⏎ he makes an end ⏎ of stress.”
+sn15.10:7.4 | P: sabbasaṁyojanakkhayā”ti. | S: with the ending of all fetters.” | T: (none)
+CONTEXT sn15.10:7.5 | P: Dasamaṁ. | S: (none) | T: (none)
+CONTEXT sn15.10:7.6 | P: Paṭhamo vaggo. | S: (none) | T: (none)
+
+## sn15.10:8.1–sn15.10:8.4 (sn)
+CONTEXT sn15.10:7.6 | P: Paṭhamo vaggo. | S: (none) | T: (none)
+CONTEXT sn15.10:8.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn15.10:8.1 | P: Tiṇakaṭṭhañca pathavī, | S: (none) | T: (none)
+sn15.10:8.2 | P: assu khīrañca pabbataṁ; | S: (none) | T: (none)
+sn15.10:8.3 | P: Sāsapā sāvakā gaṅgā, | S: (none) | T: (none)
+sn15.10:8.4 | P: daṇḍo ca puggalena cāti. | S: (none) | T: (none)
+
+## sn16.13:6.1–sn16.13:6.6 (sn)
+CONTEXT sn16.13:5.6 | P: Kassapavaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT sn16.13:6.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn16.13:6.1 | P: Santuṭṭhañca anottappī, | S: (none) | T: (none)
+sn16.13:6.2 | P: candūpamaṁ kulūpakaṁ; | S: (none) | T: (none)
+sn16.13:6.3 | P: Jiṇṇaṁ tayo ca ovādā, | S: (none) | T: (none)
+sn16.13:6.4 | P: jhānābhiññā upassayaṁ; | S: (none) | T: (none)
+sn16.13:6.5 | P: Cīvaraṁ paraṁmaraṇaṁ, | S: (none) | T: (none)
+sn16.13:6.6 | P: saddhammappatirūpakanti. | S: (none) | T: (none)
+CONTEXT sn16.13:6.7 | P: Kassapasaṁyuttaṁ samattaṁ. | S: The Linked Discourses with Kassapa are complete. | T: (none)
+
+## sn20.12:2.1–sn20.12:2.4 (sn)
+CONTEXT sn20.12:1.10 | P: Opammavaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT sn20.12:2.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn20.12:2.1 | P: Kūṭaṁ nakhasikhaṁ kulaṁ, | S: (none) | T: (none)
+sn20.12:2.2 | P: okkhā satti dhanuggaho; | S: (none) | T: (none)
+sn20.12:2.3 | P: Āṇi kaliṅgaro nāgo, | S: (none) | T: (none)
+sn20.12:2.4 | P: biḷāro dve siṅgālakāti. | S: (none) | T: (none)
+CONTEXT sn20.12:2.5 | P: Opammasaṁyuttaṁ samattaṁ. | S: The Linked Discourses with similes are complete. | T: (none)
+
+## sn21.3:6.1–sn21.3:6.4 (sn) GATHERED; possible speaker requires a reader
+CONTEXT sn21.3:5.2 | P: evameva kho mayaṁ āyasmato sāriputtassa yāvadeva upanikkhepanamattāya. | S: (none) | T: are we when placed next to Ven. Sāriputta,
+CONTEXT sn21.3:5.3 | P: Āyasmā hi sāriputto bhagavatā anekapariyāyena thomito vaṇṇito pasattho: | S: Venerable Sāriputta has been commended, complimented, and praised by the Buddha: | T: for in many ways has Ven. Sāriputta been lauded, praised, & extolled by the Blessed One:
+sn21.3:6.1 | P: ‘Sāriputtova paññāya, | S: ‘Sāriputta is full of wisdom, | T: ‘As for Sāriputta:
+sn21.3:6.2 | P: sīlena upasamena ca; | S: ethics, and peace. | T: (none)
+sn21.3:6.3 | P: Yopi pāraṅgato bhikkhu, | S: Even a mendicant who has crossed over | T: Any monk who has gone beyond,
+sn21.3:6.4 | P: etāvaparamo siyā’”ti. | S: might at best equal him.’” | T: at best can only equal him ⏎ in discernment, virtue, & calm.’”
+CONTEXT sn21.3:7.1 | P: Itiha te ubho mahānāgā aññamaññassa subhāsitaṁ sulapitaṁ samanumodiṁsūti. | S: And so these two spiritual giants agreed with each other’s fine words. | T: In this way did each of these two great beings [nāga] approve of what was well-stated and well-expressed by the other.
+CONTEXT sn21.3:7.2 | P: Tatiyaṁ. | S: (none) | T: (none)
+
+## sn21.6:2.1–sn21.6:2.4 (sn) GATHERED; equal counts: one line per row
+CONTEXT sn21.6:1.9 | P: Idamavoca bhagavā …pe… | S: That is what the Buddha said. | T: That is what the Blessed One said.
+CONTEXT sn21.6:1.10 | P: satthā: | S: Then the Holy One, the Teacher, went on to say: | T: Having said that, the One Well-Gone, the Teacher, said further:
+sn21.6:2.1 | P: “Haṁsā koñcā mayūrā ca, | S: “Geese, herons, and peacocks, | T: Swans, cranes, & peacocks,
+sn21.6:2.2 | P: hatthayo pasadā migā; | S: elephants and spotted deer— | T: elephants & spotted antelope
+sn21.6:2.3 | P: Sabbe sīhassa bhāyanti, | S: though their bodies are not equal, | T: all fear the lion ⏎ (though) in body there’s no comparison.
+sn21.6:2.4 | P: natthi kāyasmiṁ tulyatā. | S: they all fear the lion. | T: (none)
+AUTO sn21.6:2.1 starts: Swans, cranes, & peacocks,
+AUTO sn21.6:2.2 starts: elephants & spotted antelope
+AUTO sn21.6:2.3 starts: all fear the lion
+AUTO sn21.6:2.4 starts: (though) in body there’s no comparison.

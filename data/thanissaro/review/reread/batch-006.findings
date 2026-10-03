@@ -39,9 +39,9 @@ an6.17:4.5 starts: “Good, monks.
 an6.17:4.6 starts: I, too, have never seen or heard of
 an1.31:1.1 none
 an1.31:1.2 none
-an1.39:1.1 starts: 39. “I don’t envision a single thing that—
+# superseded: an1.39:1.1 starts: 39. “I don’t envision a single thing that—
 dhp107:1 starts: You could, for a hundred years, live in
-dhp107:2 none
+# superseded: dhp107:2 none
 dhp249:2 starts: in line with conviction.
 iti9:3.5 starts: Letting go,
 iti9:3.6 starts: they never come to this world again.

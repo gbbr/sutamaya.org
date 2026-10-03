@@ -1,0 +1,404 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## sn35.95:33.1–sn35.95:33.6 (sn)
+sn35.95:33.1 | P: Yathāssa phusato phassaṁ, | S: Even as you sense a touch | T: (none)
+sn35.95:33.2 | P: sevato cāpi vedanaṁ; | S: and get familiar with how it feels, | T: (none)
+sn35.95:33.3 | P: Khīyati nopacīyati, | S: you wear away, you don’t heap up: | T: (none)
+sn35.95:33.4 | P: evaṁ so caratī sato; | S: that’s how to live mindfully. | T: (none)
+sn35.95:33.5 | P: Evaṁ apacinato dukkhaṁ, | S: Eroding suffering like this, | T: (none)
+sn35.95:33.6 | P: santike nibbāna vuccati. | S: you’re said to be in the presence of extinguishment. | T: (none)
+
+## sn35.95:34.1–sn35.95:34.4 (sn)
+sn35.95:34.1 | P: Na so rajjati dhammesu, | S: There’s no desire for ideas | T: Not impassioned with ideas
+sn35.95:34.2 | P: dhammaṁ ñatvā paṭissato; | S: when you know an idea with mindfulness. | T: —knowing an idea with mindfulness firm—
+sn35.95:34.3 | P: Virattacitto vedeti, | S: Experiencing it with a mind free of desire, | T: dispassioned in mind, ⏎ one knows
+sn35.95:34.4 | P: tañca nājjhosa tiṭṭhati. | S: you don’t keep clinging to it. | T: and doesn’t remain fastened on it.
+
+## sn35.95:35.1–sn35.95:35.6 (sn)
+sn35.95:35.1 | P: Yathāssa jānato dhammaṁ, | S: Even as you know an idea | T: While one is knowing an idea
+sn35.95:35.2 | P: Sevato cāpi vedanaṁ; | S: and get familiar with how it feels, | T: —and even experiencing feeling—
+sn35.95:35.3 | P: Khīyati nopacīyati, | S: you wear away, you don’t heap up: | T: it falls away and doesn’t accumulate.
+sn35.95:35.4 | P: Evaṁ so caratī sato; | S: that’s how to live mindfully. | T: Thus one fares mindfully.
+sn35.95:35.5 | P: Evaṁ apacinato dukkhaṁ, | S: Eroding suffering like this, | T: Thus not amassing stress,
+sn35.95:35.6 | P: Santike nibbāna vuccatī’ti. | S: you’re said to be in the presence of extinguishment.’ | T: one is said to be ⏎ in the presence of unbinding.
+CONTEXT sn35.95:36.1 | P: Imassa khvāhaṁ, bhante, bhagavatā saṅkhittena bhāsitassa evaṁ vitthārena atthaṁ ājānāmī”ti. | S: That’s how I understand the detailed meaning of the Buddha’s brief statement.” | T: “It’s in this way, lord, that I understand in detail the meaning of what the Blessed One said in brief.”
+CONTEXT sn35.95:36.2 | P: “Sādhu sādhu, mālukyaputta. | S: “Good, good, Māluṅkyaputta! | T: “Good, Māluṅkyaputta. Very good.
+
+## sn35.95:37.1–sn35.95:37.4 (sn)
+CONTEXT sn35.95:36.2 | P: “Sādhu sādhu, mālukyaputta. | S: “Good, good, Māluṅkyaputta! | T: “Good, Māluṅkyaputta. Very good.
+CONTEXT sn35.95:36.3 | P: Sādhu kho tvaṁ, mālukyaputta, mayā saṅkhittena bhāsitassa vitthārena atthaṁ ājānāsi: | S: It’s good that you understand the detailed meaning of what I’ve said in brief like this.” And he repeated the verses in full. | T: It’s good that you understand in detail this way the meaning of what I said in brief.”
+sn35.95:37.1 | P: ‘Rūpaṁ disvā sati muṭṭhā, | S: (none) | T: [The Buddha then repeats the verses.]
+sn35.95:37.2 | P: Piyaṁ nimittaṁ manasi karoto; | S: (none) | T: (none)
+sn35.95:37.3 | P: Sārattacitto vedeti, | S: (none) | T: (none)
+sn35.95:37.4 | P: Tañca ajjhosa tiṭṭhati. | S: (none) | T: (none)
+
+## sn35.95:38.1–sn35.95:38.6 (sn)
+sn35.95:38.1 | P: Tassa vaḍḍhanti vedanā, | S: (none) | T: (none)
+sn35.95:38.2 | P: anekā rūpasambhavā; | S: (none) | T: (none)
+sn35.95:38.3 | P: Abhijjhā ca vihesā ca, | S: (none) | T: (none)
+sn35.95:38.4 | P: cittamassūpahaññati; | S: (none) | T: (none)
+sn35.95:38.5 | P: Evaṁ ācinato dukkhaṁ, | S: (none) | T: (none)
+sn35.95:38.6 | P: ārā nibbāna vuccati. | S: (none) | T: (none)
+CONTEXT sn35.95:38.7 | P: …pe… | S: (none) | T: (none)
+
+## sn35.95:39.1–sn35.95:39.4 (sn)
+CONTEXT sn35.95:38.7 | P: …pe… | S: (none) | T: (none)
+sn35.95:39.1 | P: Na so rajjati dhammesu, | S: (none) | T: (none)
+sn35.95:39.2 | P: dhammaṁ ñatvā paṭissato; | S: (none) | T: (none)
+sn35.95:39.3 | P: Virattacitto vedeti, | S: (none) | T: (none)
+sn35.95:39.4 | P: tañca nājjhosa tiṭṭhati. | S: (none) | T: (none)
+
+## sn35.95:40.1–sn35.95:40.6 (sn)
+sn35.95:40.1 | P: Yathāssa vijānato dhammaṁ, | S: (none) | T: (none)
+sn35.95:40.2 | P: Sevato cāpi vedanaṁ; | S: (none) | T: (none)
+sn35.95:40.3 | P: Khīyati nopacīyati, | S: (none) | T: (none)
+sn35.95:40.4 | P: Evaṁ so caratī sato; | S: (none) | T: (none)
+sn35.95:40.5 | P: Evaṁ apacinato dukkhaṁ, | S: (none) | T: (none)
+sn35.95:40.6 | P: Santike nibbāna vuccatī’ti. | S: (none) | T: (none)
+CONTEXT sn35.95:41.1 | P: Imassa kho, mālukyaputta, mayā saṅkhittena bhāsitassa evaṁ vitthārena attho daṭṭhabbo”ti. | S: “This is how to see the detailed meaning of what I said in brief.” | T: “It’s in this way, Māluṅkyaputta, that the meaning of what I said in brief should be regarded in detail.”
+CONTEXT sn35.95:42.1 | P: Atha kho āyasmā mālukyaputto bhagavato bhāsitaṁ abhinanditvā anumoditvā uṭṭhāyāsanā bhagavantaṁ abhivādetvā padakkhiṇaṁ katvā pakkāmi. | S: And then Venerable Māluṅkyaputta approved and agreed with what the Buddha said. He got up from his seat, bowed and respectfully circled the Buddha, keeping him on his right, before leaving. | T: Then Ven. Māluṅkyaputta, having been admonished by the admonishment from the Blessed One, got up from his seat and bowed down to the Blessed One, circled around him, keeping the Blessed One to his right side, and left.
+
+## sn35.136:2.1–sn35.136:2.4 (sn)
+CONTEXT sn35.136:1.18 | P: Idamavoca bhagavā. | S: That is what the Buddha said. | T: (none)
+CONTEXT sn35.136:1.19 | P: Idaṁ vatvāna sugato athāparaṁ etadavoca satthā: | S: Then the Holy One, the Teacher, went on to say: | T: (none)
+sn35.136:2.1 | P: “Rūpā saddā rasā gandhā, | S: “Sights, sounds, tastes, smells, | T: “All sights, sounds, aromas, flavors,
+sn35.136:2.2 | P: phassā dhammā ca kevalā; | S: touches and ideas, the lot of them— | T: tactile sensations, & ideas
+sn35.136:2.3 | P: Iṭṭhā kantā manāpā ca, | S: they’re likable, desirable, and pleasurable | T: that are welcome, ⏎ appealing, ⏎ agreeable—
+sn35.136:2.4 | P: yāvatatthīti vuccati. | S: as long as you can say that they exist. | T: as long as they’re said ⏎ to exist,
+
+## sn35.136:3.1–sn35.136:3.4 (sn)
+sn35.136:3.1 | P: Sadevakassa lokassa, | S: For all the world with its gods, | T: are supposed by the world ⏎ together with its devas
+sn35.136:3.2 | P: ete vo sukhasammatā; | S: this is what they deem happiness. | T: to be bliss.
+sn35.136:3.3 | P: Yattha cete nirujjhanti, | S: And where they cease | T: But when they cease,
+sn35.136:3.4 | P: taṁ tesaṁ dukkhasammataṁ. | S: is deemed as suffering for them. | T: that’s supposed by them ⏎ to be stress.
+
+## sn35.136:4.1–sn35.136:4.4 (sn) GATHERED; unequal counts require a reader
+sn35.136:4.1 | P: Sukhaṁ diṭṭhamariyebhi, | S: The noble ones have seen that happiness | T: The stopping of self-identity ⏎ is viewed by the noble ones ⏎ as bliss.
+sn35.136:4.2 | P: sakkāyassa nirodhanaṁ; | S: is the cessation of substantial reality. | T: (none)
+sn35.136:4.3 | P: Paccanīkamidaṁ hoti, | S: This insight by those who see | T: This, when seen,
+sn35.136:4.4 | P: sabbalokena passataṁ. | S: contradicts the whole world. | T: runs counter ⏎ to the whole world.
+
+## sn35.136:5.1–sn35.136:5.4 (sn)
+sn35.136:5.1 | P: Yaṁ pare sukhato āhu, | S: What others say is happiness | T: What others say is blissful,
+sn35.136:5.2 | P: tadariyā āhu dukkhato; | S: the noble ones say is suffering. | T: the noble ones say is stress.
+sn35.136:5.3 | P: Yaṁ pare dukkhato āhu, | S: What others say is suffering | T: What others say is stressful,
+sn35.136:5.4 | P: tadariyā sukhato vidū. | S: the noble ones know as happiness. | T: the noble know as bliss.
+
+## sn35.136:6.1–sn35.136:6.4 (sn)
+sn35.136:6.1 | P: Passa dhammaṁ durājānaṁ, | S: See, this teaching is hard to understand, | T: See the Dhamma, hard to understand!
+sn35.136:6.2 | P: sammūḷhettha aviddasu; | S: it confuses the ignorant. | T: Here those who don’t know ⏎ are confused.
+sn35.136:6.3 | P: Nivutānaṁ tamo hoti, | S: There is darkness for the shrouded; | T: For those who are veiled, ⏎ it’s darkness,
+sn35.136:6.4 | P: andhakāro apassataṁ. | S: blackness for those who don’t see. | T: blindness ⏎ for those who don’t see.
+
+## sn35.136:7.1–sn35.136:7.4 (sn)
+sn35.136:7.1 | P: Satañca vivaṭaṁ hoti, | S: But the good are open; | T: But for the good it’s blatant,
+sn35.136:7.2 | P: āloko passatāmiva; | S: like light for those who see. | T: like light for those who see.
+sn35.136:7.3 | P: Santike na vijānanti, | S: Though close, they do not understand, | T: Though in its very presence, ⏎ they don’t understand it—
+sn35.136:7.4 | P: maggā dhammassa akovidā. | S: the seekers inexpert in the teaching. | T: dumb animals, unadept in the Dhamma.
+
+## sn35.136:8.1–sn35.136:8.4 (sn)
+sn35.136:8.1 | P: Bhavarāgaparetebhi, | S: They’re mired in desire for continued existence, | T: It’s not easy ⏎ for those overcome ⏎ by passion for becoming,
+sn35.136:8.2 | P: bhavarāgānusārībhi; | S: flowing along the stream of lives, | T: flowing along ⏎ in the stream of becoming,
+sn35.136:8.3 | P: Māradheyyānupannehi, | S: mired in Māra’s dominion: | T: falling under Māra’s sway,
+sn35.136:8.4 | P: nāyaṁ dhammo susambudho. | S: this teaching isn’t easy for them to understand. | T: to wake up ⏎ to this Dhamma.
+
+## sn35.136:9.1–sn35.136:9.4 (sn)
+sn35.136:9.1 | P: Ko nu aññatra mariyebhi, | S: Who, apart from the noble ones, | T: Who, apart from the noble,
+sn35.136:9.2 | P: Padaṁ sambuddhumarahati; | S: is qualified to understand this state? | T: is worthy to wake up ⏎ to this state?—
+sn35.136:9.3 | P: Yaṁ padaṁ sammadaññāya, | S: Having rightly understood this state, | T: the state that, ⏎ through rightly knowing it,
+sn35.136:9.4 | P: Parinibbanti anāsavā”ti. | S: the undefiled are fully extinguished.” | T: they totally unbind, ⏎ effluent-free.”
+CONTEXT sn35.136:9.5 | P: Tatiyaṁ. | S: (none) | T: (none)
+
+## sn35.228:3.1–sn35.228:3.4 (sn)
+CONTEXT sn35.228:2.11 | P: Idamavoca …pe… | S: That is what the Buddha said. | T: That is what the Blessed One said.
+CONTEXT sn35.228:2.12 | P: satthā: | S: Then the Holy One, the Teacher, went on to say: | T: When the One Well-gone had said that, he—the Teacher—said further:
+sn35.228:3.1 | P: “Yo imaṁ samuddaṁ sagāhaṁ sarakkhasaṁ, | S: “A knowledge master who’s crossed the ocean so hard to cross, | T: Whoever crosses over this ocean,
+sn35.228:3.2 | P: Saūmiṁ sāvaṭṭaṁ sabhayaṁ duttaraṁ accatari; | S: with its saltwater crocodiles and monsters, its waves, whirlpools, and dangers; | T: with its danger of sharks, demons, waves, ⏎ so very hard to cross
+sn35.228:3.3 | P: Sa vedagū vusitabrahmacariyo, | S: they’ve completed the spiritual journey and gone to the end of the world, | T: is called: ⏎ an attainer of wisdom ⏎ who has lived the holy life, ⏎ one who’s attained the end of the cosmos,
+sn35.228:3.4 | P: Lokantagū pāragatoti vuccatī”ti. | S: they’re called ‘one who has gone beyond’.” | T: one gone beyond.
+CONTEXT sn35.228:3.5 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## sn35.229:3.1–sn35.229:3.4 (sn) GATHERED; unequal counts require a reader
+CONTEXT sn35.229:2.2 | P: Ayaṁ vuccati, bhikkhave, ariyassa vinaye samuddo. | S: This is called the ocean in the training of the Noble One. | T: These are called the ocean in the discipline of the noble ones.
+CONTEXT sn35.229:2.3 | P: Etthāyaṁ sadevako loko samārako sabrahmako sassamaṇabrāhmaṇī pajā sadevamanussā yebhuyyena samunnā tantākulakajātā kulagaṇṭhikajātā muñjapabbajabhūtā apāyaṁ duggatiṁ vinipātaṁ saṁsāraṁ nātivattatīti. | S: And it’s here that this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, gods and humans—is for the most part sunk. It’s become tangled like string, knotted like a ball of thread, and matted like rushes and reeds, and it doesn’t escape the places of loss, the bad places, the underworld, transmigration. | T: Here this cosmos—with its devas, Māras, & Brahmās, this generation with its contemplatives & brahmans, its royalty & commonfolk—is, for the most part, submerged, like a tangled skein, a knotted ball of string, like matted rushes & reeds, and doesn’t go beyond the plane of deprivation, the bad destination, the lower realm, the wandering-on.
+sn35.229:3.1 | P: Yassa rāgo ca doso ca, | S: Those in whom greed, hate, and ignorance | T: Whoever has become dispassionate ⏎ to passion, aversion, & ignorance,
+sn35.229:3.2 | P: Avijjā ca virājitā; | S: have faded away; | T: (none)
+sn35.229:3.3 | P: So imaṁ samuddaṁ sagāhaṁ sarakkhasaṁ, | S: have crossed the ocean so hard to cross, | T: crosses over this ocean, ⏎ with its danger of sharks, demons,
+sn35.229:3.4 | P: Saūmibhayaṁ duttaraṁ accatari. | S: with its saltwater crocodiles and monsters, its waves and dangers. | T: waves, ⏎ so very hard to cross.
+
+## sn35.229:4.1–sn35.229:4.4 (sn)
+sn35.229:4.1 | P: Saṅgātigo maccujaho nirupadhi, | S: They’ve slipped their chains, given up death, and have no attachments. | T: He’s one who has ⏎ overcome ties, ⏎ forsaken death,
+sn35.229:4.2 | P: Pahāsi dukkhaṁ apunabbhavāya; | S: They’ve given up suffering, so there are no more future lives. | T: abandoned suffering & stress, ⏎ is acquisition-free ⏎ with no further becoming.
+sn35.229:4.3 | P: Atthaṅgato so na puneti, | S: They’ve disappeared, and cannot be measured; | T: Having gone to his end, he ⏎ has no measure,
+sn35.229:4.4 | P: Amohayī maccurājanti brūmī”ti. | S: and they’ve confounded the King of Death, I say.” | T: has bewildered, I tell you, ⏎ Death’s king.
+CONTEXT sn35.229:4.5 | P: Dutiyaṁ. | S: (none) | T: (none)
+
+## sn35.240:3.1–sn35.240:3.4 (sn) GATHERED; possible speaker requires a reader
+CONTEXT sn35.240:2.14 | P: Yato tumhe, bhikkhave, indriyesu guttadvārā viharissatha, atha tumhehipi māro pāpimā nibbijja pakkamissati, otāraṁ alabhamāno— | S: When you live with your sense doors guarded, Māra will leave you disappointed, since he can’t find a vulnerability, | T: “When you dwell with the doors to your senses well-guarded, Māra, not getting any opportunity, will lose interest and leave,
+CONTEXT sn35.240:2.15 | P: kummamhāva siṅgāloti. | S: just like the jackal left the tortoise. | T: just as the jackal did with the turtle.”
+sn35.240:3.1 | P: Kummova aṅgāni sake kapāle, | S: A mendicant should collect their thoughts | T: Like a turtle with its limbs withdrawn in its shell, ⏎ so the monk, the thoughts of the heart:
+sn35.240:3.2 | P: Samodahaṁ bhikkhu manovitakke; | S: as a tortoise draws its limbs into its shell. | T: (none)
+sn35.240:3.3 | P: Anissito aññamaheṭhayāno, | S: Independent, not disturbing others, | T: Not dependent, harming no others,
+sn35.240:3.4 | P: Parinibbuto nūpavadeyya kañcī”ti. | S: quenched: they wouldn’t blame anyone.” | T: totally unbound, he would berate no one.
+CONTEXT sn35.240:3.5 | P: Tatiyaṁ. | S: (none) | T: (none)
+
+## sn35.248:8.1–sn35.248:8.4 (sn)
+CONTEXT sn35.248:7.6 | P: Āsīvisavaggo catuttho. | S: (none) | T: (none)
+CONTEXT sn35.248:8.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn35.248:8.1 | P: Āsīviso ratho kummo, | S: (none) | T: (none)
+sn35.248:8.2 | P: dve dārukkhandhā avassuto; | S: (none) | T: (none)
+sn35.248:8.3 | P: Dukkhadhammā kiṁsukā vīṇā, | S: (none) | T: (none)
+sn35.248:8.4 | P: chappāṇā yavakalāpīti. | S: (none) | T: (none)
+CONTEXT sn35.248:8.5 | P: Saḷāyatanavagge catutthapaṇṇāsako samatto. | S: (none) | T: (none)
+CONTEXT sn35.248:9.0 | P: Tassa vagguddānaṁ | S: (none) | T: (none)
+
+## sn35.248:9.1–sn35.248:9.4 (sn)
+CONTEXT sn35.248:8.5 | P: Saḷāyatanavagge catutthapaṇṇāsako samatto. | S: (none) | T: (none)
+CONTEXT sn35.248:9.0 | P: Tassa vagguddānaṁ | S: (none) | T: (none)
+sn35.248:9.1 | P: Nandikkhayo saṭṭhinayo, | S: (none) | T: (none)
+sn35.248:9.2 | P: samuddo uragena ca; | S: (none) | T: (none)
+sn35.248:9.3 | P: Catupaṇṇāsakā ete, | S: (none) | T: (none)
+sn35.248:9.4 | P: nipātesu pakāsitāti. | S: (none) | T: (none)
+CONTEXT sn35.248:9.5 | P: Saḷāyatanasaṁyuttaṁ samattaṁ. | S: The Linked Discourses on the six sense fields are complete. | T: (none)
+
+## sn36.4:2.1–sn36.4:2.4 (sn)
+CONTEXT sn36.4:1.8 | P: Sutavā ca kho, bhikkhave, ariyasāvako sārīrikāya dukkhāya vedanāya phuṭṭho samāno neva socati, na kilamati, na paridevati, na urattāḷiṁ kandati, na sammohaṁ āpajjati. | S: When a learned noble disciple experiences painful physical feelings they don’t sorrow or wail or lament, beating their breast and falling into confusion. | T: “When a well-instructed disciple of the noble ones is touched by a painful bodily feeling, he does not sorrow, grieve, or lament, does not beat his breast or become distraught.
+CONTEXT sn36.4:1.9 | P: Ayaṁ vuccati, bhikkhave, ‘sutavā ariyasāvako pātāle paccuṭṭhāsi, gādhañca ajjhagā’ti. | S: They’re called a learned noble disciple who has stood up in the abyss and found a footing. | T: This is called a well-instructed disciple of the noble ones who has risen up out of the bottomless chasm, whose foothold is gained.”
+sn36.4:2.1 | P: Yo etā nādhivāseti, | S: If you can’t abide | T: Whoever can’t endure them
+sn36.4:2.2 | P: uppannā vedanā dukhā; | S: those painful physical feelings | T: once they’ve arisen— ⏎ painful bodily feelings
+sn36.4:2.3 | P: Sārīrikā pāṇaharā, | S: that arise and sap your vitality; | T: that could kill living beings—
+sn36.4:2.4 | P: yāhi phuṭṭho pavedhati. | S: if you tremble at their touch, | T: who trembles at their touch,
+
+## sn36.4:3.1–sn36.4:3.4 (sn)
+sn36.4:3.1 | P: Akkandati parodati, | S: weeping and wailing, | T: who cries & wails,
+sn36.4:3.2 | P: dubbalo appathāmako; | S: a weakling lacking strength— | T: a weakling with no resilience:
+sn36.4:3.3 | P: Na so pātāle paccuṭṭhāsi, | S: you won’t stand up in the abyss | T: He hasn’t risen up ⏎ out of the bottomless chasm
+sn36.4:3.4 | P: atho gādhampi nājjhagā. | S: and find a footing. | T: or even gained ⏎ a foothold.
+
+## sn36.4:4.1–sn36.4:4.6 (sn)
+sn36.4:4.1 | P: Yo cetā adhivāseti, | S: If you can endure | T: Whoever endures them
+sn36.4:4.2 | P: uppannā vedanā dukhā; | S: those painful physical feelings | T: once they’ve arisen— ⏎ painful bodily feelings
+sn36.4:4.3 | P: Sārīrikā pāṇaharā, | S: that arise and sap your vitality; | T: that could kill living beings—
+sn36.4:4.4 | P: yāhi phuṭṭho na vedhati; | S: if you don’t tremble at their touch— | T: who doesn’t tremble at their touch:
+sn36.4:4.5 | P: Sa ve pātāle paccuṭṭhāsi, | S: you stand up in the abyss | T: He’s risen up ⏎ out of the bottomless chasm;
+sn36.4:4.6 | P: atho gādhampi ajjhagā”ti. | S: and find a footing.” | T: his foothold is gained.
+CONTEXT sn36.4:4.7 | P: Catutthaṁ. | S: (none) | T: (none)
+
+## sn36.6:4.1–sn36.6:4.4 (sn)
+CONTEXT sn36.6:3.18 | P: Ayaṁ vuccati, bhikkhave, ‘sutavā ariyasāvako visaññutto jātiyā jarāya maraṇena sokehi paridevehi dukkhehi domanassehi upāyāsehi, visaññutto dukkhasmā’ti vadāmi. | S: They’re called a learned noble disciple who is detached from rebirth, old age, and death, from sorrow, lamentation, pain, sadness, and distress. They are detached from suffering, I say. | T: This is called a well-instructed disciple of the noble ones disjoined from birth, aging, & death; from sorrows, lamentations, pains, distresses, & despairs. He is disjoined, I tell you, from suffering & stress.
+CONTEXT sn36.6:3.19 | P: Ayaṁ kho, bhikkhave, viseso, ayaṁ adhippayāso, idaṁ nānākaraṇaṁ sutavato ariyasāvakassa assutavatā puthujjanenāti. | S: This is the difference between a learned noble disciple and an unlearned ordinary person. | T: “This is the difference, this the distinction, this the distinguishing factor between the well-instructed disciple of the noble ones and the uninstructed run-of-the-mill person.”
+sn36.6:4.1 | P: Na vedanaṁ vedayati sapañño, | S: A wise and learned person does not not feel | T: The discerning person, learned, ⏎ doesn’t sense a (mental) feeling
+sn36.6:4.2 | P: Sukhampi dukkhampi bahussutopi; | S: the feeling of pleasure and pain. | T: of pleasure or pain:
+sn36.6:4.3 | P: Ayañca dhīrassa puthujjanena, | S: This is the great difference of skill | T: This is the difference in skillfulness
+sn36.6:4.4 | P: Mahā viseso kusalassa hoti. | S: between the attentive one and the ordinary. | T: between the sage ⏎ & the person run-of-the-mill.
+
+## sn36.6:5.1–sn36.6:5.4 (sn)
+sn36.6:5.1 | P: Saṅkhātadhammassa bahussutassa, | S: A learned person who has appraised the teaching | T: For a learned person ⏎ who has fathomed the Dhamma,
+sn36.6:5.2 | P: Vipassato lokamimaṁ parañca; | S: discerns this world and the next. | T: clearly seeing this world & the next,
+sn36.6:5.3 | P: Iṭṭhassa dhammā na mathenti cittaṁ, | S: Desirable things don’t disturb their mind, | T: desirable things don’t charm the mind,
+sn36.6:5.4 | P: Aniṭṭhato no paṭighātameti. | S: nor are they repelled by the undesirable. | T: undesirable ones bring no resistance.
+
+## sn36.6:6.1–sn36.6:6.4 (sn)
+sn36.6:6.1 | P: Tassānurodhā athavā virodhā, | S: Both favoring and opposing | T: His acceptance ⏎ & rejection
+sn36.6:6.2 | P: Vidhūpitā atthagatā na santi; | S: are cleared and ended, and are no more. | T: are scattered, ⏎ gone to their end, ⏎ do not exist.
+sn36.6:6.3 | P: Padañca ñatvā virajaṁ asokaṁ, | S: Knowing the stainless, sorrowless state, | T: Knowing the dustless, sorrowless state,
+sn36.6:6.4 | P: Sammā pajānāti bhavassa pāragū”ti. | S: they who have gone beyond rebirth understand rightly.” | T: he discerns rightly, ⏎ has gone, beyond becoming, ⏎ to the Further Shore.
+CONTEXT sn36.6:6.5 | P: Chaṭṭhaṁ. | S: (none) | T: (none)
+
+## sn36.21:5.1–sn36.21:5.4 (sn)
+CONTEXT sn36.21:4.2 | P: “abhikkantaṁ, bho gotama, abhikkantaṁ, bho gotama …pe… | S: “Excellent, worthy Gotama! Excellent! … | T: "Magnificent, lord! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to point out the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has the Blessed One—through many lines of reasoning—made the Dhamma clear. I go to the Blessed One for refuge, to the Dhamma, & to the Saṅgha of monks.
+CONTEXT sn36.21:4.3 | P: upāsakaṁ maṁ bhavaṁ gotamo dhāretu ajjatagge pāṇupetaṁ saraṇaṁ gatan”ti. | S: From this day forth, may the worthy Gotama remember me as a lay follower who has gone for refuge for life.” | T: May the Blessed One remember me as a lay follower who has gone for refuge from this day forward, for life."
+sn36.21:5.1 | P: “Pittaṁ semhañca vāto ca, | S: “Bile, phlegm, and wind, | T: “Bile, phlegm, wind,
+sn36.21:5.2 | P: Sannipātā utūni ca; | S: their conjunction, and the weather, | T: a combination, Season,
+sn36.21:5.3 | P: Visamaṁ opakkamikaṁ, | S: not taking care of yourself, exertion, | T: uneven, harsh treatment,
+sn36.21:5.4 | P: Kammavipākena aṭṭhamī”ti. | S: and the result of deeds is the eighth.” | T: and through the result of kamma as the eighth.”
+CONTEXT sn36.21:5.5 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## sn36.31:13.1–sn36.31:13.4 (sn)
+CONTEXT sn36.31:12.4 | P: Aṭṭhasatapariyāyavaggo tatiyo. | S: (none) | T: (none)
+CONTEXT sn36.31:13.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn36.31:13.1 | P: Sīvakaaṭṭhasataṁ bhikkhu, | S: (none) | T: (none)
+sn36.31:13.2 | P: pubbe ñāṇañca bhikkhunā; | S: (none) | T: (none)
+sn36.31:13.3 | P: Samaṇabrāhmaṇā tīṇi, | S: (none) | T: (none)
+sn36.31:13.4 | P: suddhikañca nirāmisanti. | S: (none) | T: (none)
+CONTEXT sn36.31:13.5 | P: Vedanāsaṁyuttaṁ samattaṁ. | S: The Linked Discourses on feelings are complete. | T: (none)
+
+## sn37.34:2.1–sn37.34:2.4 (sn)
+CONTEXT sn37.34:1.3 | P: Saddhāya vaḍḍhati, sīlena vaḍḍhati, sutena vaḍḍhati, cāgena vaḍḍhati, paññāya vaḍḍhati— | S: She grows in faith, ethics, learning, generosity, and wisdom. | T: “She grows in terms of conviction. “She grows in terms of virtue. “She grows in terms of learning. “She grows in terms of generosity. “She grows in terms of discernment.
+CONTEXT sn37.34:1.4 | P: imehi kho, bhikkhave, pañcahi vaḍḍhīhi vaḍḍhamānā ariyasāvikā ariyāya vaḍḍhiyā vaḍḍhati, sārādāyinī ca hoti, varādāyinī ca kāyassāti. | S: A female noble disciple who grows in these five ways grows nobly, taking on what is essential and excellent in this life. | T: “Growing in terms of these five types of growth, the female disciple of the noble ones grows in the noble growth. She grasps hold of what is essential and what is excellent in the body.”
+sn37.34:2.1 | P: Saddhāya sīlena ca yādha vaḍḍhati, | S: When she grows in faith and ethics, | T: She grows in conviction & virtue,
+sn37.34:2.2 | P: Paññāya cāgena sutena cūbhayaṁ; | S: wisdom, and both generosity and learning— | T: discernment, generosity, & learning:
+sn37.34:2.3 | P: Sā tādisī sīlavatī upāsikā, | S: a virtuous laywoman such as she | T: A virtuous female lay disciple such as this
+sn37.34:2.4 | P: Ādīyati sāramidheva attano”ti. | S: takes on what is essential for herself in this life.” | T: takes hold of the essence right here within herself.
+CONTEXT sn37.34:2.5 | P: Dasamaṁ. | S: (none) | T: (none)
+CONTEXT sn37.34:2.6 | P: Balavaggo tatiyo. | S: (none) | T: (none)
+
+## sn37.34:3.1–sn37.34:3.4 (sn)
+CONTEXT sn37.34:2.6 | P: Balavaggo tatiyo. | S: (none) | T: (none)
+CONTEXT sn37.34:3.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn37.34:3.1 | P: Visāradā pasayha abhibhuyya, | S: (none) | T: (none)
+sn37.34:3.2 | P: Ekaṁ aṅgena pañcamaṁ; | S: (none) | T: (none)
+sn37.34:3.3 | P: Nāsenti hetu ṭhānañca, | S: (none) | T: (none)
+sn37.34:3.4 | P: Visārado vaḍḍhinā dasāti. | S: (none) | T: (none)
+CONTEXT sn37.34:3.5 | P: Mātugāmasaṁyuttaṁ samattaṁ. | S: The Linked Discourses on ladies are complete. | T: (none)
+
+## sn38.16:2.1–sn38.16:2.7 (sn)
+CONTEXT sn38.16:1.10 | P: Jambukhādakasaṁyuttaṁ samattaṁ. | S: The Linked Discourses with Jambukhādaka are complete. | T: (none)
+CONTEXT sn38.16:2.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn38.16:2.1 | P: Nibbānaṁ arahattañca, | S: (none) | T: (none)
+sn38.16:2.2 | P: dhammavādī kimatthiyaṁ; | S: (none) | T: (none)
+sn38.16:2.3 | P: Assāso paramassāso, | S: (none) | T: (none)
+sn38.16:2.4 | P: vedanā āsavāvijjā; | S: (none) | T: (none)
+sn38.16:2.5 | P: Taṇhā oghā upādānaṁ, | S: (none) | T: (none)
+sn38.16:2.6 | P: bhavo dukkhañca sakkāyo. | S: (none) | T: (none)
+sn38.16:2.7 | P: Imasmiṁ dhammavinaye dukkaranti. | S: (none) | T: (none)
+
+## sn41.10:4.1–sn41.10:4.4 (sn)
+CONTEXT sn41.10:3.12 | P: Cittavaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT sn41.10:4.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn41.10:4.1 | P: Saṁyojanaṁ dve isidattā, | S: (none) | T: (none)
+sn41.10:4.2 | P: Mahako kāmabhūpi ca; | S: (none) | T: (none)
+sn41.10:4.3 | P: Godatto ca nigaṇṭho ca, | S: (none) | T: (none)
+sn41.10:4.4 | P: Acelena gilānadassananti. | S: (none) | T: (none)
+CONTEXT sn41.10:4.5 | P: Cittasaṁyuttaṁ samattaṁ. | S: The Linked Discourses on Citta the Householder are complete. | T: (none)
+
+## sn43.11:2.1–sn43.11:2.6 (sn)
+CONTEXT sn43.11:1.8 | P: Asaṅkhatasaṁyuttassa paṭhamo vaggo. | S: (none) | T: (none)
+CONTEXT sn43.11:2.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn43.11:2.1 | P: Kāyo samatho savitakko, | S: (none) | T: (none)
+sn43.11:2.2 | P: suññato satipaṭṭhānā; | S: (none) | T: (none)
+sn43.11:2.3 | P: Sammappadhānā iddhipādā, | S: (none) | T: (none)
+sn43.11:2.4 | P: indriyabalabojjhaṅgā; | S: (none) | T: (none)
+sn43.11:2.5 | P: Maggena ekādasamaṁ, | S: (none) | T: (none)
+sn43.11:2.6 | P: Tassuddānaṁ pavuccati. | S: (none) | T: (none)
+
+## sn43.44:2.1–sn43.44:2.4 (sn)
+CONTEXT sn43.44:1.14 | P: Dutiyo vaggo. | S: (none) | T: (none)
+CONTEXT sn43.44:2.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn43.44:2.1 | P: Asaṅkhataṁ anataṁ anāsavaṁ, | S: (none) | T: (none)
+sn43.44:2.2 | P: Saccañca pāraṁ nipuṇaṁ sududdasaṁ; | S: (none) | T: (none)
+sn43.44:2.3 | P: Ajajjaraṁ dhuvaṁ apalokitaṁ, | S: (none) | T: (none)
+sn43.44:2.4 | P: Anidassanaṁ nippapañca santaṁ. | S: (none) | T: (none)
+
+## sn43.44:3.1–sn43.44:3.4 (sn)
+sn43.44:3.1 | P: Amataṁ paṇītañca sivañca khemaṁ, | S: (none) | T: (none)
+sn43.44:3.2 | P: Taṇhākkhayo acchariyañca abbhutaṁ; | S: (none) | T: (none)
+sn43.44:3.3 | P: Anītikaṁ anītikadhammaṁ, | S: (none) | T: (none)
+sn43.44:3.4 | P: Nibbānametaṁ sugatena desitaṁ. | S: (none) | T: (none)
+
+## sn43.44:4.1–sn43.44:4.4 (sn)
+sn43.44:4.1 | P: Abyābajjho virāgo ca, | S: (none) | T: (none)
+sn43.44:4.2 | P: suddhi mutti anālayo; | S: (none) | T: (none)
+sn43.44:4.3 | P: Dīpo leṇañca tāṇañca, | S: (none) | T: (none)
+sn43.44:4.4 | P: saraṇañca parāyananti. | S: (none) | T: (none)
+CONTEXT sn43.44:4.5 | P: Asaṅkhatasaṁyuttaṁ samattaṁ. | S: The Linked Discourses on the unconditioned are complete. | T: (none)
+
+## sn44.11:4.1–sn44.11:4.5 (sn)
+CONTEXT sn44.11:3.20 | P: Abyākatavaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT sn44.11:4.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn44.11:4.1 | P: Khemātherī anurādho, | S: (none) | T: (none)
+sn44.11:4.2 | P: sāriputtoti koṭṭhiko; | S: (none) | T: (none)
+sn44.11:4.3 | P: Moggallāno ca vaccho ca, | S: (none) | T: (none)
+sn44.11:4.4 | P: kutūhalasālānando; | S: (none) | T: (none)
+sn44.11:4.5 | P: Sabhiyo ekādasamanti. | S: (none) | T: (none)
+CONTEXT sn44.11:4.6 | P: Abyākatasaṁyuttaṁ samattaṁ. | S: The Linked Discourses on undeclared questions are complete. | T: (none)
+CONTEXT sn44.11:5.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+
+## sn44.11:5.1–sn44.11:5.5 (sn)
+CONTEXT sn44.11:4.6 | P: Abyākatasaṁyuttaṁ samattaṁ. | S: The Linked Discourses on undeclared questions are complete. | T: (none)
+CONTEXT sn44.11:5.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn44.11:5.1 | P: Saḷāyatanavedanā, | S: (none) | T: (none)
+sn44.11:5.2 | P: mātugāmo jambukhādako; | S: (none) | T: (none)
+sn44.11:5.3 | P: Sāmaṇḍako moggallāno, | S: (none) | T: (none)
+sn44.11:5.4 | P: citto gāmaṇi saṅkhataṁ; | S: (none) | T: (none)
+sn44.11:5.5 | P: Abyākatanti dasadhāti. | S: (none) | T: (none)
+CONTEXT sn44.11:5.6 | P: Saḷāyatanavaggo catuttho. | S: (none) | T: (none)
+CONTEXT sn44.11:5.7 | P: Saḷāyatanavaggasaṁyuttapāḷi niṭṭhitā. | S: The Book of the Six Sense Fields is finished. | T: (none)
+
+## sn45.4:8.1–sn45.4:8.4 (sn)
+CONTEXT sn45.4:6.3 | P: Idamavoca bhagavā. | S: That is what the Buddha said. | T: That is what the Blessed One said.
+CONTEXT sn45.4:7.1 | P: Idaṁ vatvāna sugato athāparaṁ etadavoca satthā: | S: Then the Holy One, the Teacher, went on to say: | T: Having said that, the One Well-Gone, the Teacher, said further:
+sn45.4:8.1 | P: “Yassa saddhā ca paññā ca, | S: “Of which the qualities of faith and wisdom | T: One with the qualities ⏎ of conviction & discernment
+sn45.4:8.2 | P: Dhammā yuttā sadā dhuraṁ; | S: are always yoked to the shaft; | T: always yoked to its shaft,
+sn45.4:8.3 | P: Hirī īsā mano yottaṁ, | S: conscience its draft-pole, mind its strap, | T: shame its pole, the heart its yoke-tie,
+sn45.4:8.4 | P: Sati ārakkhasārathi. | S: mindfulness its careful driver; | T: mindfulness the protective charioteer,
+
+## sn45.4:9.1–sn45.4:9.4 (sn)
+sn45.4:9.1 | P: Ratho sīlaparikkhāro, | S: the chariot equipped with ethics, | T: virtue the chariot-accessories,
+sn45.4:9.2 | P: jhānakkho cakkavīriyo; | S: its axle absorption, energy its wheel; | T: jhāna the axle, persistence the wheels,
+sn45.4:9.3 | P: Upekkhā dhurasamādhi, | S: equanimity and immersion its draft-pole, | T: equanimity the balance of the yoke,
+sn45.4:9.4 | P: anicchā parivāraṇaṁ. | S: desirelessness its upholstery; | T: hungerless-ness its upholstery,
+
+## sn45.4:10.1–sn45.4:10.4 (sn)
+sn45.4:10.1 | P: Abyāpādo avihiṁsā, | S: of which good will, harmlessness, | T: non-ill will, harmlessness,
+sn45.4:10.2 | P: viveko yassa āvudhaṁ; | S: and seclusion are its weaponry; | T: & seclusion its weapons,
+sn45.4:10.3 | P: Titikkhā cammasannāho, | S: endurance, its shield and armor: | T: patience its armor & shield:
+sn45.4:10.4 | P: yogakkhemāya vattati. | S: to sanctuary from the yoke it rolls— | T: It rolls to security from bondage.
+
+## sn45.4:11.1–sn45.4:11.4 (sn)
+sn45.4:11.1 | P: Etadattani sambhūtaṁ, | S: this, originating in oneself, | T: Coming into play ⏎ from within oneself:
+sn45.4:11.2 | P: brahmayānaṁ anuttaraṁ; | S: is the supreme divine vehicle. | T: the sublime vehicle unsurpassed.
+sn45.4:11.3 | P: Niyyanti dhīrā lokamhā, | S: The attentive leave the world in it, | T: They, the enlightened, leave the world.
+sn45.4:11.4 | P: aññadatthu jayaṁ jayan”ti. | S: sure of winning the victory.” | T: They, absolutely, win victory.
+CONTEXT sn45.4:11.5 | P: Catutthaṁ. | S: (none) | T: (none)
+
+## sn45.62:2.1–sn45.62:2.4 (sn)
+CONTEXT sn45.62:1.7 | P: Sūriyapeyyālaṁ. | S: (none) | T: (none)
+CONTEXT sn45.62:2.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn45.62:2.1 | P: Kalyāṇamittaṁ sīlañca, | S: (none) | T: (none)
+sn45.62:2.2 | P: chando ca attasampadā; | S: (none) | T: (none)
+sn45.62:2.3 | P: Diṭṭhi ca appamādo ca, | S: (none) | T: (none)
+sn45.62:2.4 | P: yoniso bhavati sattamaṁ. | S: (none) | T: (none)
+
+## sn46.30:6.1–sn46.30:6.4 (sn)
+CONTEXT sn46.30:5.5 | P: Udāyivaggo tatiyo. | S: (none) | T: (none)
+CONTEXT sn46.30:6.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn46.30:6.1 | P: Bodhāya desanā ṭhānā, | S: (none) | T: (none)
+sn46.30:6.2 | P: ayoniso cāparihānī; | S: (none) | T: (none)
+sn46.30:6.3 | P: Khayo nirodho nibbedho, | S: (none) | T: (none)
+sn46.30:6.4 | P: ekadhammo udāyināti. | S: (none) | T: (none)
+
+## sn46.56:8.1–sn46.56:8.4 (sn)
+CONTEXT sn46.56:7.8 | P: Sākacchavaggo chaṭṭho. | S: (none) | T: (none)
+CONTEXT sn46.56:8.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn46.56:8.1 | P: Āhārā pariyāyamaggi, | S: (none) | T: (none)
+sn46.56:8.2 | P: mettaṁ saṅgāravena ca; | S: (none) | T: (none)
+sn46.56:8.3 | P: Abhayo pucchito pañhaṁ, | S: (none) | T: (none)
+sn46.56:8.4 | P: gijjhakūṭamhi pabbateti. | S: (none) | T: (none)
+
+## sn47.10:11.1–sn47.10:11.4 (sn)
+CONTEXT sn47.10:10.4 | P: Ambapālivaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT sn47.10:11.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn47.10:11.1 | P: Ambapāli sato bhikkhu, | S: (none) | T: (none)
+sn47.10:11.2 | P: Sālā kusalarāsi ca; | S: (none) | T: (none)
+sn47.10:11.3 | P: Sakuṇagghi makkaṭo sūdo, | S: (none) | T: (none)
+sn47.10:11.4 | P: Gilāno bhikkhunupassayoti. | S: (none) | T: (none)
+
+## sn47.20:4.1–sn47.20:4.4 (sn)
+CONTEXT sn47.20:3.8 | P: Nālandavaggo dutiyo. | S: (none) | T: (none)
+CONTEXT sn47.20:4.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn47.20:4.1 | P: Mahāpuriso nālandaṁ, | S: (none) | T: (none)
+sn47.20:4.2 | P: Cundo celañca bāhiyo; | S: (none) | T: (none)
+sn47.20:4.3 | P: Uttiyo ariyo brahmā, | S: (none) | T: (none)
+sn47.20:4.4 | P: Sedakaṁ janapadena cāti. | S: (none) | T: (none)
+
+## sn47.40:4.1–sn47.40:4.4 (sn)
+CONTEXT sn47.40:3.6 | P: Ananussutavaggo catuttho. | S: (none) | T: (none)
+CONTEXT sn47.40:4.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn47.40:4.1 | P: Ananussutaṁ virāgo, | S: (none) | T: (none)
+sn47.40:4.2 | P: viraddho bhāvanā sati; | S: (none) | T: (none)
+sn47.40:4.3 | P: Aññā chandaṁ pariññāya, | S: (none) | T: (none)
+sn47.40:4.4 | P: bhāvanā vibhaṅgena cāti. | S: (none) | T: (none)
+
+## sn48.10:6.1–sn48.10:6.4 (sn)
+CONTEXT sn48.10:5.7 | P: Suddhikavaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT sn48.10:6.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn48.10:6.1 | P: Suddhikañceva dve sotā, | S: (none) | T: (none)
+sn48.10:6.2 | P: arahantā apare duve; | S: (none) | T: (none)
+sn48.10:6.3 | P: Samaṇabrāhmaṇā daṭṭhabbaṁ, | S: (none) | T: (none)
+sn48.10:6.4 | P: vibhaṅgā apare duveti. | S: (none) | T: (none)

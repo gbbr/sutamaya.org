@@ -1,0 +1,408 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## sn4.18:4.1–sn4.18:4.4 (sn)
+sn4.18:4.1 | P: Susukhaṁ vata jīvāma, | S: Let us live so very happily, | T: How very happily we live,
+sn4.18:4.2 | P: yesaṁ no natthi kiñcanaṁ; | S: we who have nothing. | T: we who have nothing.
+sn4.18:4.3 | P: Pītibhakkhā bhavissāma, | S: We shall feed on rapture, | T: We will feed on rapture
+sn4.18:4.4 | P: devā ābhassarā yathā”ti. | S: like the gods of sublime luminosity.” | T: like the Radiant devas.”
+CONTEXT sn4.18:5.1 | P: Atha kho māro pāpimā “jānāti maṁ bhagavā, jānāti maṁ sugato”ti dukkhī dummano tatthevantaradhāyīti. | S: Then Māra the Wicked, thinking, “The Buddha knows me! The Holy One knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “The Blessed One knows me; the One Well-gone knows me”—vanished right there.
+
+## sn4.19:4.1–sn4.19:4.4 (sn)
+CONTEXT sn4.19:3.9 | P: taveva, pāpima, mano, tava dhammā, tava manosamphassaviññāṇāyatanaṁ. | S: mind, yours are ideas, yours is the field of mind contact consciousness. | T: Yours alone is the intellect, Evil One. Yours are ideas, yours is the dimension of consciousness & contact at the intellect.
+CONTEXT sn4.19:3.10 | P: Yattha ca kho, pāpima, natthi mano, natthi dhammā, natthi manosamphassaviññāṇāyatanaṁ, agati tava tattha, pāpimā”ti. | S: Where there is no mind, no ideas, no mind contact consciousness—you have no place there, Wicked One!” | T: Where no intellect exists, no ideas exist, no dimension of consciousness & contact at the intellect exists: There, Evil One, you cannot go.”
+sn4.19:4.1 | P: “Yaṁ vadanti mama yidanti, | S: “The things they call ‘mine’, | T: Māra: ⏎ “Of what they say, ⏎ ‘This is mine’;
+sn4.19:4.2 | P: ye vadanti mamanti ca; | S: and those who say ‘it’s mine’: | T: and those who say, ⏎ ‘Mine’:
+sn4.19:4.3 | P: Ettha ce te mano atthi, | S: if your mind remains there, | T: If your intellect’s here,
+sn4.19:4.4 | P: na me samaṇa mokkhasī”ti. | S: you won’t escape me, ascetic!” | T: contemplative, ⏎ you can’t escape ⏎ from me.”
+
+## sn4.19:5.1–sn4.19:5.4 (sn)
+sn4.19:5.1 | P: “Yaṁ vadanti na taṁ mayhaṁ, | S: “The things they speak of aren’t mine; | T: The Buddha: ⏎ “What they speak of ⏎ isn’t mine,
+sn4.19:5.2 | P: ye vadanti na te ahaṁ; | S: I’m not someone who speaks like that. | T: and I’m not one of those ⏎ who speak it.
+sn4.19:5.3 | P: Evaṁ pāpima jānāhi, | S: So know this, Wicked One: | T: Know this, Evil One:
+sn4.19:5.4 | P: na me maggampi dakkhasī”ti. | S: you won’t even see the path I take.” | T: You won’t even see ⏎ my tracks.”
+CONTEXT sn4.19:6.1 | P: Atha kho māro pāpimā …pe… tatthevantaradhāyīti. | S: Then Māra … vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “The Blessed One knows me; the One Well-Gone knows me”—vanished right there.
+
+## sn4.20:3.1–sn4.20:3.4 (sn)
+CONTEXT sn4.20:2.5 | P: “Bhagavatā kho, bhante, cattāro iddhipādā bhāvitā bahulīkatā yānīkatā vatthukatā anuṭṭhitā paricitā susamāraddhā. | S: “The Blessed One, sir, has developed and cultivated the four bases for psychic power, made them a vehicle and a basis, kept them up, consolidated them, and properly implemented them. | T: “Lord, the Blessed One has developed the four bases of power, pursued them, given them a means of transport, given them a grounding, steadied them, consolidated them, and undertaken them well.
+CONTEXT sn4.20:2.6 | P: Ākaṅkhamāno ca, bhante, bhagavā himavantaṁ pabbatarājaṁ suvaṇṇaṁ tveva adhimucceyya suvaṇṇañca panassā”ti. | S: If he wished, the Blessed One need only determine that the Himalaya, king of mountains, was gold, and it would turn into gold.” | T: If he wanted to, he could resolve on the Himalayas, king of mountains, as gold, and it would become a mountain of gold.”
+sn4.20:3.1 | P: “Pabbatassa suvaṇṇassa, | S: “Take a golden mountain, | T: The Buddha: ⏎ “The entirety ⏎ of a mountain of gold,
+sn4.20:3.2 | P: jātarūpassa kevalo; | S: entirely of native gold, and double it— | T: of solid bullion: ⏎ Even twice that
+sn4.20:3.3 | P: Dvittāva nālamekassa, | S: it’s still not enough for one! | T: wouldn’t suffice ⏎ for one person.
+sn4.20:3.4 | P: iti vidvā samañcare. | S: Knowing this, live a moral life. | T: Knowing this, ⏎ live evenly, ⏎ in tune with the contemplative life.
+
+## sn4.20:4.1–sn4.20:4.4 (sn)
+sn4.20:4.1 | P: Yo dukkhamaddakkhi yatonidānaṁ, | S: When a personage has seen where suffering comes from | T: When you see stress, ⏎ and from where it comes,
+sn4.20:4.2 | P: Kāmesu so jantu kathaṁ nameyya; | S: how could they incline toward sensual pleasures? | T: how can you incline ⏎ to sensuality?
+sn4.20:4.3 | P: Upadhiṁ viditvā saṅgoti loke, | S: Realizing that attachment is a chain in the world, | T: Knowing acquisition ⏎ to be a bond in the world,
+sn4.20:4.4 | P: Tasseva jantu vinayāya sikkhe”ti. | S: a personage would train to remove it.” | T: train for ⏎ its subduing.”
+CONTEXT sn4.20:5.1 | P: Atha kho māro pāpimā “jānāti maṁ bhagavā, jānāti maṁ sugato”ti dukkhī dummano tatthevantaradhāyīti. | S: Then Māra the Wicked, thinking, “The Buddha knows me! The Holy One knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “The Blessed One knows me; the One Well-Gone knows me”—vanished right there.
+CONTEXT sn4.20:5.2 | P: Dutiyo vaggo. | S: (none) | T: (none)
+
+## sn4.20:6.1–sn4.20:6.4 (sn)
+CONTEXT sn4.20:5.2 | P: Dutiyo vaggo. | S: (none) | T: (none)
+CONTEXT sn4.20:6.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn4.20:6.1 | P: Pāsāṇo sīho sakalikaṁ, | S: (none) | T: (none)
+sn4.20:6.2 | P: Patirūpañca mānasaṁ; | S: (none) | T: (none)
+sn4.20:6.3 | P: Pattaṁ āyatanaṁ piṇḍaṁ, | S: (none) | T: (none)
+sn4.20:6.4 | P: Kassakaṁ rajjena te dasāti. | S: (none) | T: (none)
+
+## sn4.21:4.1–sn4.21:4.4 (sn)
+CONTEXT sn4.21:3.2 | P: Māro eso pāpimā tumhākaṁ vicakkhukammāya āgato”ti. | S: That was Māra the Wicked who came to pull the wool over your eyes!” | T: That was Māra the Evil One, come to blind you.”
+CONTEXT sn4.21:3.3 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ gāthaṁ abhāsi: | S: Then, understanding this matter, on that occasion the Buddha spoke this verse: | T: Then, on realizing the significance of that, the Blessed One on that occasion spoke these verses:
+sn4.21:4.1 | P: “Yo dukkhamaddakkhi yatonidānaṁ, | S: “When a personage has seen where suffering comes from | T: One who has seen the cause ⏎ from which suffering comes:
+sn4.21:4.2 | P: Kāmesu so jantu kathaṁ nameyya; | S: how could they incline toward sensual pleasures? | T: How could that person ⏎ incline to sensuality?
+sn4.21:4.3 | P: Upadhiṁ viditvā saṅgoti loke, | S: Realizing that attachment is a chain in the world, | T: Having realized ⏎ that acquisition is a tie ⏎ in the world,
+sn4.21:4.4 | P: Tasseva jantu vinayāya sikkhe”ti. | S: a personage would train to remove it.” | T: a person should train ⏎ to subdue ⏎ just that.
+
+## sn4.24:2.1–sn4.24:2.5 (sn)
+CONTEXT sn4.24:1.3 | P: Tena kho pana samayena māro pāpimā sattavassāni bhagavantaṁ anubandho hoti otārāpekkho otāraṁ alabhamāno. | S: Now at that time Māra the Wicked had been pursuing the Buddha for seven years hoping to find a vulnerability without success. | T: And at that time, Māra the Evil One had been following the Blessed One for seven years, looking for an opening, but unable to find one.
+CONTEXT sn4.24:1.4 | P: Atha kho māro pāpimā yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ gāthāya ajjhabhāsi: | S: Then Māra the Wicked went up to the Buddha and addressed him in verse: | T: Then Māra the Evil One went to the Blessed One and addressed him in verse:
+sn4.24:2.1 | P: “Sokāvatiṇṇo nu vanamhi jhāyasi, | S: “Are you swamped by sorrow that you meditate in the forest? | T: “Practicing jhāna in the forest— ⏎ are you overcome with grief?
+sn4.24:2.2 | P: Vittaṁ nu jīno uda patthayāno; | S: Have you lost a fortune, or do you long for one? | T: Have you lost, ⏎ or do you desire, wealth?
+sn4.24:2.3 | P: Āguṁ nu gāmasmimakāsi kiñci, | S: Or perhaps you’ve committed some crime in the village? | T: Have you done something ⏎ blameworthy in the village?
+sn4.24:2.4 | P: Kasmā janena na karosi sakkhiṁ; | S: Why don’t you get too close to people? | T: Is it because ⏎ you become intimate with people,
+sn4.24:2.5 | P: Sakkhī na sampajjati kenaci te”ti. | S: And why does no one get close to you?” | T: but intimacy doesn’t prosper for you ⏎ with anyone at all?”
+
+## sn4.24:3.1–sn4.24:3.4 (sn)
+sn4.24:3.1 | P: “Sokassa mūlaṁ palikhāya sabbaṁ, | S: “I’ve dug out the root of sorrow completely. | T: The Buddha: ⏎ “Having dug up all the root of grief,
+sn4.24:3.2 | P: Anāgu jhāyāmi asocamāno; | S: I practice absorption free of guilt or sorrow. | T: blameless, I practice jhāna not grieving.
+sn4.24:3.3 | P: Chetvāna sabbaṁ bhavalobhajappaṁ, | S: I’ve cut off all greed and muttered prayer for future lives. | T: Defeating all greed, all ⏎ yearning for becoming,
+sn4.24:3.4 | P: Anāsavo jhāyāmi pamattabandhū”ti. | S: Undefiled, I practice absorption, O kinsman of the negligent!” | T: I, without effluent, practice jhāna— ⏎ you, Kinsman of the Heedless.”
+
+## sn4.24:4.1–sn4.24:4.4 (sn)
+sn4.24:4.1 | P: “Yaṁ vadanti mama yidanti, | S: “The things they call ‘mine’, | T: Māra: ⏎ “Of whatever they say, ⏎ ‘This is mine,’
+sn4.24:4.2 | P: ye vadanti mamanti ca; | S: and those who say ‘it’s mine’: | T: and whoever says, ‘mine,’
+sn4.24:4.3 | P: Ettha ce te mano atthi, | S: if your mind remains there, | T: if your heart is here,
+sn4.24:4.4 | P: na me samaṇa mokkhasī”ti. | S: you won’t escape me, ascetic!” | T: contemplative, you’re not free from me.”
+
+## sn4.24:5.1–sn4.24:5.4 (sn)
+sn4.24:5.1 | P: “Yaṁ vadanti na taṁ mayhaṁ, | S: “The things they speak of aren’t mine; | T: The Buddha: ⏎ “Of whatever they speak, ⏎ it’s not mine.
+sn4.24:5.2 | P: ye vadanti na te ahaṁ; | S: I’m not someone who speaks like that. | T: And whoever speaks ⏎ they are not me.
+sn4.24:5.3 | P: Evaṁ pāpima jānāhi, | S: So know this, Wicked One: | T: Know that, Evil One.
+sn4.24:5.4 | P: na me maggampi dakkhasī”ti. | S: you won’t even see the path I take.” | T: You can’t even see my tracks.”
+
+## sn4.24:6.1–sn4.24:6.4 (sn)
+sn4.24:6.1 | P: “Sace maggaṁ anubuddhaṁ, | S: “If you’ve discovered the path | T: Māra: ⏎ “If the path has been awakened to—
+sn4.24:6.2 | P: khemaṁ amatagāminaṁ; | S: that’s safe, and leads to freedom from death, | T: secure, leading to the deathless—
+sn4.24:6.3 | P: Apehi gaccha tvameveko, | S: go and walk that path alone— | T: then go away! Go alone!
+sn4.24:6.4 | P: kimaññamanusāsasī”ti. | S: why teach it to anyone else?” | T: What’s the use of instructing others?”
+
+## sn4.24:7.1–sn4.24:7.4 (sn)
+sn4.24:7.1 | P: “Amaccudheyyaṁ pucchanti, | S: “Those crossing to the far shore | T: The Buddha: ⏎ “People seeking the far side
+sn4.24:7.2 | P: ye janā pāragāmino; | S: ask what’s beyond the domain of Death. | T: ask about the deathless realm.
+sn4.24:7.3 | P: Tesāhaṁ puṭṭho akkhāmi, | S: When I’m asked, I explain to them | T: Asked by them, I explain
+sn4.24:7.4 | P: yaṁ saccaṁ taṁ nirūpadhin”ti. | S: the truth without attachments.” | T: the truth that’s acquisition-free.”
+CONTEXT sn4.24:8.1 | P: “Seyyathāpi, bhante, gāmassa vā nigamassa vā avidūre pokkharaṇī. | S: “Sir, suppose there was a lotus pond not far from a town or village, | T: Māra: “Suppose, lord, that not far from a village or town was a pond.
+CONTEXT sn4.24:8.2 | P: Tatrassa kakkaṭako. | S: and a crab lived there. | T: There in it was a crab.
+
+## sn4.24:9.1–sn4.24:9.4 (sn)
+CONTEXT sn4.24:8.7 | P: Abhabbo dānāhaṁ, bhante, puna bhagavantaṁ upasaṅkamituṁ yadidaṁ otārāpekkho”ti. | S: Now I’m not able to approach the Buddha again in hopes of finding a vulnerability.” | T: Now I’m unable to approach the Blessed One, looking for an opening.”
+CONTEXT sn4.24:8.8 | P: Atha kho māro pāpimā bhagavato santike imā nibbejanīyā gāthāyo abhāsi: | S: Then Māra the Wicked recited these verses of disappointment in the Buddha’s presence: | T: Then Māra the Evil One recited these verses of dejection in the Blessed One’s presence:
+sn4.24:9.1 | P: “Medavaṇṇañca pāsāṇaṁ, | S: “A crow once circled a stone | T: “A crow circled a stone
+sn4.24:9.2 | P: vāyaso anupariyagā; | S: that looked like a lump of fat. | T: the color of fat—
+sn4.24:9.3 | P: Apettha muduṁ vindema, | S: ‘Perhaps I’ll find something tender,’ it thought, | T: ‘Perhaps I’ll find something tender here,
+sn4.24:9.4 | P: api assādanā siyā. | S: ‘perhaps there’s something tasty.’ | T: Maybe there’s something tasty’
+
+## sn4.24:10.1–sn4.24:10.4 (sn)
+sn4.24:10.1 | P: Aladdhā tattha assādaṁ, | S: But finding nothing tasty, | T: —but not getting anything tasty there,
+sn4.24:10.2 | P: vāyasetto apakkame; | S: the crow left that place. | T: the crow went away.
+sn4.24:10.3 | P: Kākova selamāsajja, | S: Like the crow that pecked the stone, | T: Like a crow attacking the rock,
+sn4.24:10.4 | P: nibbijjāpema gotamā”ti. | S: I leave Gotama disappointed.” | T: I weary myself with Gotama.” Then Māra the Evil One, having recited these verses of dejection in the Blessed One’s presence, left that place and sat on the ground not far from the Blessed One, silent, abashed, with his shoulders drooping, his head down, brooding, at a loss for words, drawing in the dirt with a stick.
+
+## sn4.25:2.1–sn4.25:2.6 (sn)
+CONTEXT sn4.25:1.1 | P: Atha kho māro pāpimā bhagavato santike imā nibbejanīyā gāthāyo abhāsitvā tamhā ṭhānā apakkamma bhagavato avidūre pathaviyaṁ pallaṅkena nisīdi tuṇhībhūto maṅkubhūto pattakkhandho adhomukho pajjhāyanto appaṭibhāno kaṭṭhena bhūmiṁ vilikhanto. | S: And then Māra the Wicked, after reciting these verses of disillusionment in the Buddha’s presence, left that place. He sat cross-legged on the ground not far from the Buddha, silent, dismayed, shoulders drooping, downcast, depressed, with nothing to say, scratching the ground with a stick. | T: (none)
+CONTEXT sn4.25:1.2 | P: Atha kho taṇhā ca arati ca ragā ca māradhītaro yena māro pāpimā tenupasaṅkamiṁsu; upasaṅkamitvā māraṁ pāpimantaṁ gāthāya ajjhabhāsiṁsu: | S: Then Māra’s daughters Craving, Malignancy, and Lust went up to Māra the Wicked, and addressed him in verse: | T: Then Māra’s daughters—Craving, Discontent, & Passion—went to Māra the Evil One and, on arrival, addressed him in verse:
+sn4.25:2.1 | P: “Kenāsi dummano tāta, | S: “Why so downhearted, dad? | T: “Why are you depressed, Daddy?
+sn4.25:2.2 | P: purisaṁ kaṁ nu socasi; | S: What man are you upset about? | T: For which man do you grieve?
+sn4.25:2.3 | P: Mayaṁ taṁ rāgapāsena, | S: We’ll catch him with the snare of lust, | T: We—having bound him
+sn4.25:2.4 | P: āraññamiva kuñjaraṁ; | S: like an elephant in the wild. | T: like a wilderness elephant
+sn4.25:2.5 | P: Bandhitvā ānayissāma, | S: We’ll tie him up and bring him back— | T: with a snare of passion— ⏎ will bring him to you.
+sn4.25:2.6 | P: vasago te bhavissatī”ti. | S: he’ll fall under your sway!” | T: Under your power he’ll be.”
+
+## sn4.25:3.1–sn4.25:3.4 (sn)
+sn4.25:3.1 | P: “Arahaṁ sugato loke, | S: “In this world he is the perfected one, the Holy One. | T: Māra: ⏎ “An arahant, well-gone in the world,
+sn4.25:3.2 | P: na rāgena suvānayo; | S: He’s not easily seduced by lust. | T: isn’t easily brought in by passion.
+sn4.25:3.3 | P: Māradheyyaṁ atikkanto, | S: He has slipped free of Māra’s dominion; | T: He’s gone beyond Māra’s sway:
+sn4.25:3.4 | P: tasmā socāmahaṁ bhusan”ti. | S: that’s why I’m so upset.” | T: That’s why I’m so violently sad.”
+CONTEXT sn4.25:4.1 | P: Atha kho taṇhā ca arati ca ragā ca māradhītaro yena bhagavā tenupasaṅkamiṁsu; upasaṅkamitvā bhagavantaṁ etadavocuṁ: | S: Then Māra’s daughters Craving, Malignancy, and Lust went up to the Buddha, and said to him, | T: Then Māra’s daughters—Craving, Discontent, & Passion—went to the Blessed One and, on arrival, said to him,
+CONTEXT sn4.25:4.2 | P: “pāde te, samaṇa, paricāremā”ti. | S: “We serve at your feet, ascetic.” | T: “We serve you at your feet, contemplative.”
+
+## sn4.25:10.1–sn4.25:10.4 (sn)
+CONTEXT sn4.25:9.6 | P: Atha kho taṇhā ca arati ca ragā ca māradhītaro ekamantaṁ apakkamma etadavocuṁ: | S: Then Craving, Malignancy, and Lust withdrew to one side and said, | T: Then Māra’s daughters—Craving, Discontent, & Passion—went off to one side and said,
+CONTEXT sn4.25:9.7 | P: “saccaṁ kira no pitā avoca: | S: “What our father said is true: | T: “Wow, it’s true what our father said:
+sn4.25:10.1 | P: ‘Arahaṁ sugato loke, | S: ‘In this world he is the perfected one, the Holy One. | T: ‘An arahant, well-gone in the world,
+sn4.25:10.2 | P: na rāgena suvānayo; | S: He’s not easily seduced by lust. | T: isn’t easily brought in by passion.
+sn4.25:10.3 | P: Māradheyyaṁ atikkanto, | S: He has slipped free of Māra’s dominion; | T: He’s gone beyond Māra’s sway:
+sn4.25:10.4 | P: tasmā socāmahaṁ bhusan’ti. | S: that’s why I’m so upset.’ | T: That’s why I’m so violently sad.’
+CONTEXT sn4.25:11.1 | P: Yañhi mayaṁ samaṇaṁ vā brāhmaṇaṁ vā avītarāgaṁ iminā upakkamena upakkameyyāma hadayaṁ vāssa phaleyya, uṇhaṁ lohitaṁ vā mukhato uggaccheyya, ummādaṁ vā pāpuṇeyya cittakkhepaṁ vā. | S: For if we had come on to any ascetic or brahmin like this who was not free of lust, his heart would explode, or he’d spew hot blood from his mouth, or he’d go mad or lose his mind. | T: “Any contemplative or brahman who hadn’t gone beyond passion, if we were to approach him with this approach: His heart would split or he would cough up hot blood or he would go mad, out of his mind.
+CONTEXT sn4.25:11.2 | P: Seyyathā vā pana naḷo harito luto ussussati visussati milāyati; | S: He’d dry up, wither away, and shrivel up like a green reed that was mowed down.” | T: Just as a green reed cut down would dry out, wither, & fade,
+
+## sn4.25:13.1–sn4.25:13.5 (sn)
+CONTEXT sn4.25:12.1 | P: Atha kho taṇhā ca arati ca ragā ca māradhītaro yena bhagavā tenupasaṅkamiṁsu; upasaṅkamitvā ekamantaṁ aṭṭhaṁsu. | S: Then Māra’s daughters Craving, Malignancy, and Lust went up to the Buddha, and stood to one side. | T: Then Māra’s daughters—Craving, Discontent, & Passion—went to the Blessed One and, on arrival, stood to one side.
+CONTEXT sn4.25:12.2 | P: Ekamantaṁ ṭhitā kho taṇhā māradhītā bhagavantaṁ gāthāya ajjhabhāsi: | S: Māra’s daughter Craving addressed the Buddha in verse: | T: As she was standing there, Māra’s daughter Craving addressed the Blessed One with verses:
+sn4.25:13.1 | P: “Sokāvatiṇṇo nu vanamhi jhāyasi, | S: “Are you swamped by sorrow that you meditate in the forest? | T: “Practicing jhāna in the forest— ⏎ are you overcome with grief?
+sn4.25:13.2 | P: Vittaṁ nu jīno uda patthayāno; | S: Have you lost a fortune, or do you long for one? | T: Have you lost, ⏎ or do you desire, wealth?
+sn4.25:13.3 | P: Āguṁ nu gāmasmimakāsi kiñci, | S: Or perhaps you’ve committed some crime in the village? | T: Have you done something ⏎ blameworthy in the village?
+sn4.25:13.4 | P: Kasmā janena na karosi sakkhiṁ; | S: Why don’t you get too close to people? | T: Is it because ⏎ you become intimate people,
+sn4.25:13.5 | P: Sakkhī na sampajjati kenaci te”ti. | S: And why does no one get close to you?” | T: but intimacy doesn’t prosper for you ⏎ with anyone at all?”
+
+## sn4.25:14.1–sn4.25:14.5 (sn)
+sn4.25:14.1 | P: “Atthassa pattiṁ hadayassa santiṁ, | S: “I’ve reached the goal, peace of heart. | T: The Buddha: ⏎ “Having attained the goal— ⏎ peace of the heart—
+sn4.25:14.2 | P: Jetvāna senaṁ piyasātarūpaṁ; | S: Having conquered the army of the likable and pleasant, | T: having defeated the army ⏎ of forms endearing & alluring,
+sn4.25:14.3 | P: Ekohaṁ jhāyaṁ sukhamanubodhiṁ, | S: alone, practicing absorption, I awakened to bliss. | T: practicing jhāna alone, ⏎ I awakened to bliss.
+sn4.25:14.4 | P: Tasmā janena na karomi sakkhiṁ; | S: That’s why I don’t get too close to people, | T: That’s why I don’t become intimate ⏎ with people,
+sn4.25:14.5 | P: Sakkhī na sampajjati kenaci me”ti. | S: and no one gets too close to me.” | T: why intimacy doesn’t prosper with me ⏎ when made by anyone at all.”
+CONTEXT sn4.25:15.1 | P: Atha kho arati māradhītā bhagavantaṁ gāthāya ajjhabhāsi: | S: Then Māra’s daughter Malignancy addressed the Buddha in verse: | T: Then Māra’s daughter Discontent addressed the Blessed One in verse:
+
+## sn4.25:16.1–sn4.25:16.4 (sn) GATHERED; unequal counts require a reader
+CONTEXT sn4.25:15.1 | P: Atha kho arati māradhītā bhagavantaṁ gāthāya ajjhabhāsi: | S: Then Māra’s daughter Malignancy addressed the Buddha in verse: | T: Then Māra’s daughter Discontent addressed the Blessed One in verse:
+sn4.25:16.1 | P: “Kathaṁvihārībahulodha bhikkhu, | S: “How does a mendicant who has crossed five floods | T: “How does a monk here often dwell, ⏎ who has crossed the five floods
+sn4.25:16.2 | P: Pañcoghatiṇṇo atarīdha chaṭṭhaṁ; | S: usually meditate here while crossing the sixth? | T: and also the sixth?
+sn4.25:16.3 | P: Kathaṁ jhāyiṁ bahulaṁ kāmasaññā, | S: How do they usually practice absorption so that sensual perceptions | T: How, while cultivating jhāna, ⏎ does he keep perceptions of sensuality far away?”
+sn4.25:16.4 | P: Paribāhirā honti aladdha yo tan”ti. | S: are blocked out and don’t get hold of them?” | T: (none)
+
+## sn4.25:17.1–sn4.25:17.4 (sn)
+sn4.25:17.1 | P: “Passaddhakāyo suvimuttacitto, | S: “With tranquil body and mind well freed, | T: The Buddha: ⏎ “Calmed in body, ⏎ well released in mind,
+sn4.25:17.2 | P: Asaṅkharāno satimā anoko; | S: without making choices, mindful, homeless; | T: without fabrications, ⏎ mindful, homeless,
+sn4.25:17.3 | P: Aññāya dhammaṁ avitakkajhāyī, | S: understanding the teaching, they practice absorption without placing the mind; | T: having known the Dhamma, ⏎ practicing jhāna without directed thought,
+sn4.25:17.4 | P: Na kuppati na sarati na thino. | S: they’re not shaking or drifting or rigid. | T: he’s not provoked, ⏎ doesn’t flow, isn’t slothful:
+
+## sn4.25:18.1–sn4.25:18.4 (sn)
+sn4.25:18.1 | P: Evaṁvihārībahulodha bhikkhu, | S: That’s how a mendicant who has crossed five floods | T: Like this ⏎ a monk here often dwells, ⏎ who has crossed the five floods
+sn4.25:18.2 | P: Pañcoghatiṇṇo atarīdha chaṭṭhaṁ; | S: usually meditates here while crossing the sixth. | T: and also the sixth.
+sn4.25:18.3 | P: Evaṁ jhāyiṁ bahulaṁ kāmasaññā, | S: That’s how they usually practice absorption so that sensual perceptions | T: Cultivating jhāna like this, ⏎ he keeps perceptions of sensuality
+sn4.25:18.4 | P: Paribāhirā honti aladdha yo tan”ti. | S: are blocked out and don’t get hold of them.” | T: far away.”
+CONTEXT sn4.25:19.1 | P: Atha kho ragā māradhītā bhagavato santike gāthāya ajjhabhāsi: | S: Then Māra’s daughter Lust addressed the Buddha in verse: | T: Then Māra’s daughter Passion addressed the Blessed One in verse:
+
+## sn4.25:20.1–sn4.25:20.4 (sn)
+CONTEXT sn4.25:19.1 | P: Atha kho ragā māradhītā bhagavato santike gāthāya ajjhabhāsi: | S: Then Māra’s daughter Lust addressed the Buddha in verse: | T: Then Māra’s daughter Passion addressed the Blessed One in verse:
+sn4.25:20.1 | P: “Acchejja taṇhaṁ gaṇasaṅghacārī, | S: “He lives with his community after cutting off craving, | T: “Cutting off craving, ⏎ practicing with a group:
+sn4.25:20.2 | P: Addhā carissanti bahū ca saddhā; | S: and many of the faithful will cross over for sure. | T: Yes, many & faithful ⏎ they’ll fare.
+sn4.25:20.3 | P: Bahuṁ vatāyaṁ janataṁ anoko, | S: Alas, this homeless one will snatch many men away, | T: O, how this homeless one, ⏎ having snatched them
+sn4.25:20.4 | P: Acchejja nessati maccurājassa pāran”ti. | S: and lead them past the King of Death!” | T: from the King of Death, ⏎ will lead a great crowd away.”
+
+## sn4.25:21.1–sn4.25:21.4 (sn)
+sn4.25:21.1 | P: “Nayanti ve mahāvīrā, | S: “The great heroes they lead | T: The Buddha: ⏎ “The Tathāgatas, great heroes, ⏎ do lead
+sn4.25:21.2 | P: saddhammena tathāgatā; | S: by means of the true teaching. | T: with the true Dhamma.
+sn4.25:21.3 | P: Dhammena nayamānānaṁ, | S: When the Realized Ones are leading by the teaching, | T: For those who know, ⏎ leading by Dhamma,
+sn4.25:21.4 | P: kā usūyā vijānatan”ti. | S: how could anyone who knows be jealous?” | T: what’s the jealousy?”
+CONTEXT sn4.25:22.1 | P: Atha kho taṇhā ca arati ca ragā ca māradhītaro yena māro pāpimā tenupasaṅkamiṁsu. | S: Then Māra’s daughters Craving, Malignancy, and Lust went up to Māra the Wicked. | T: Then Māra’s daughters—Craving, Discontent, & Passion—went to Māra the Evil One.
+CONTEXT sn4.25:22.2 | P: Addasā kho māro pāpimā taṇhañca aratiñca ragañca māradhītaro dūratova āgacchantiyo. | S: Māra the Wicked saw them coming off in the distance, | T: He saw them coming from afar and, on seeing them,
+
+## sn4.25:23.1–sn4.25:23.4 (sn)
+CONTEXT sn4.25:22.2 | P: Addasā kho māro pāpimā taṇhañca aratiñca ragañca māradhītaro dūratova āgacchantiyo. | S: Māra the Wicked saw them coming off in the distance, | T: He saw them coming from afar and, on seeing them,
+CONTEXT sn4.25:22.3 | P: Disvāna gāthāhi ajjhabhāsi: | S: and addressed them in verse: | T: addressed them with verses:
+sn4.25:23.1 | P: “Bālā kumudanāḷehi, | S: “Fools! You drill into a mountain | T: “Fools! ⏎ Cleave a mountain
+sn4.25:23.2 | P: pabbataṁ abhimatthatha; | S: with lotus stalks! | T: with a lily-stalk.
+sn4.25:23.3 | P: Giriṁ nakhena khanatha, | S: You dig up a hill with your nails! | T: Dig up a crag ⏎ with your fingernails.
+sn4.25:23.4 | P: ayo dantehi khādatha. | S: You chew iron with your teeth! | T: Chew on iron ⏎ with your teeth.
+
+## sn4.25:24.1–sn4.25:24.4 (sn)
+sn4.25:24.1 | P: Selaṁva sirasūhacca, | S: You seek a footing in the abyss, as it were, | T: Raising a rock
+sn4.25:24.2 | P: pātāle gādhamesatha; | S: while lifting a rock with your head! | T: above your head, ⏎ go over a cliff, ⏎ into a pit.
+sn4.25:24.3 | P: Khāṇuṁva urasāsajja, | S: After attacking a stump with your breast, as it were, | T: Like striking your chest ⏎ on a stump—
+sn4.25:24.4 | P: nibbijjāpetha gotamā”ti. | S: you leave Gotama disappointed.” | T: you weary yourselves with Gotama.”
+
+## sn4.25:25.1–sn4.25:25.4 (sn)
+sn4.25:25.1 | P: “Daddallamānā āgañchuṁ, | S: They came dazzling— | T: Blazing they came—
+sn4.25:25.2 | P: taṇhā ca aratī ragā; | S: Craving, Malignancy, and Lust. | T: Craving, Discontent, & Passion—
+sn4.25:25.3 | P: Tā tattha panudī satthā, | S: But the Teacher brushed them off right there, | T: but the Teacher blew them off,
+sn4.25:25.4 | P: tūlaṁ bhaṭṭhaṁva māluto”ti. | S: like the gale, a fallen tuft. | T: like the wind, a fallen tuft of cotton.
+CONTEXT sn4.25:25.5 | P: Tatiyo vaggo. | S: (none) | T: (none)
+CONTEXT sn4.25:26.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+
+## sn4.25:26.1–sn4.25:26.4 (sn)
+CONTEXT sn4.25:25.5 | P: Tatiyo vaggo. | S: (none) | T: (none)
+CONTEXT sn4.25:26.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn4.25:26.1 | P: Sambahulā samiddhi ca, | S: (none) | T: (none)
+sn4.25:26.2 | P: Godhikaṁ sattavassāni; | S: (none) | T: (none)
+sn4.25:26.3 | P: Dhītaraṁ desitaṁ buddha, | S: (none) | T: (none)
+sn4.25:26.4 | P: Seṭṭhena imaṁ mārapañcakanti. | S: (none) | T: (none)
+CONTEXT sn4.25:26.5 | P: Mārasaṁyuttaṁ samattaṁ. | S: The Linked Discourses with Māra are complete. | T: (none)
+
+## sn5.1:2.1–sn5.1:2.4 (sn)
+CONTEXT sn5.1:1.4 | P: Sāvatthiyaṁ piṇḍāya caritvā pacchābhattaṁ piṇḍapātapaṭikkantā yena andhavanaṁ tenupasaṅkami vivekatthinī. | S: She wandered for alms in Sāvatthī. After the meal, on her return from almsround, she went to the Dark Forest seeking seclusion. | T: When she had gone for alms in Sāvatthī and had returned from her alms round, after her meal she went to the Grove of the Blind, aiming at seclusion.
+CONTEXT sn5.1:1.5 | P: Atha kho māro pāpimā āḷavikāya bhikkhuniyā bhayaṁ chambhitattaṁ lomahaṁsaṁ uppādetukāmo vivekamhā cāvetukāmo yena āḷavikā bhikkhunī tenupasaṅkami; upasaṅkamitvā āḷavikaṁ bhikkhuniṁ gāthāya ajjhabhāsi: | S: Then Māra the Wicked, wanting to make the nun Āḷavikā feel fear, terror, and goosebumps, wanting to make her fall away from seclusion, went up to her and addressed her in verse: | T: Then Māra the Evil One, wanting to arouse fear, horripilation, & terror in her, wanting to make her fall away from concentration, approached her & addressed her in verse:
+sn5.1:2.1 | P: “Natthi nissaraṇaṁ loke, | S: “There’s no escape in the world, | T: “There’s no ⏎ escape ⏎ in the world,
+sn5.1:2.2 | P: kiṁ vivekena kāhasi; | S: so what will seclusion do for you? | T: so what are you trying to do ⏎ with seclusion?
+sn5.1:2.3 | P: Bhuñjassu kāmaratiyo, | S: Enjoy erotic delights; | T: Enjoy sensual delights.
+sn5.1:2.4 | P: māhu pacchānutāpinī”ti. | S: don’t regret it later.” | T: Don’t be someone ⏎ who later regrets.”
+CONTEXT sn5.1:3.1 | P: Atha kho āḷavikāya bhikkhuniyā etadahosi: | S: Then the nun Āḷavikā thought, | T: Then the thought occurred to Āḷavikā the nun:
+CONTEXT sn5.1:3.2 | P: “ko nu khvāyaṁ manusso vā amanusso vā gāthaṁ bhāsatī”ti? | S: “Who’s speaking this verse, a human or a non-human?” | T: “Now who has recited this verse—a human being or a non-human one?”
+
+## sn5.1:4.1–sn5.1:4.4 (sn)
+CONTEXT sn5.1:3.4 | P: “māro kho ayaṁ pāpimā mama bhayaṁ chambhitattaṁ lomahaṁsaṁ uppādetukāmo vivekamhā cāvetukāmo gāthaṁ bhāsatī”ti. | S: “This is Māra the Wicked, wanting to make me feel fear, terror, and goosebumps, wanting to make me fall away from seclusion!” | T: “This is Māra the Evil One who has recited this verse wanting to arouse fear, horripilation, & terror in me, wanting to make me fall away from seclusion.”
+CONTEXT sn5.1:3.5 | P: Atha kho āḷavikā bhikkhunī “māro ayaṁ pāpimā” iti viditvā māraṁ pāpimantaṁ gāthāhi paccabhāsi: | S: Then Āḷavikā, knowing that this was Māra the Wicked, replied to him in verse: | T: Then, having understood that “This is Māra the Evil One,” she replied to him in verses:
+sn5.1:4.1 | P: “Atthi nissaraṇaṁ loke, | S: “There is an escape in the world, | T: “There is ⏎ an escape in the world,
+sn5.1:4.2 | P: paññāya me suphussitaṁ; | S: and I’ve personally experienced it with wisdom. | T: well touched by me ⏎ with discernment—
+sn5.1:4.3 | P: Pamattabandhu pāpima, | S: O Wicked One, kinsman of the negligent, | T: something that you, ⏎ you Evil One, ⏎ kinsman of the heedless,
+sn5.1:4.4 | P: na tvaṁ jānāsi taṁ padaṁ. | S: you don’t know that state. | T: don’t know.
+
+## sn5.1:5.1–sn5.1:5.4 (sn)
+sn5.1:5.1 | P: Sattisūlūpamā kāmā, | S: Sensual pleasures are like swords and spears; | T: Sensual pleasures ⏎ are like swords & spears;
+sn5.1:5.2 | P: khandhāsaṁ adhikuṭṭanā; | S: the aggregates are their chopping block. | T: the aggregates, ⏎ their executioner’s block.
+sn5.1:5.3 | P: Yaṁ tvaṁ kāmaratiṁ brūsi, | S: What you call erotic delight | T: What you call sensual delight
+sn5.1:5.4 | P: arati mayha sā ahū”ti. | S: is now no delight for me.” | T: is no delight for me.”
+CONTEXT sn5.1:6.1 | P: Atha kho māro pāpimā “jānāti maṁ āḷavikā bhikkhunī”ti dukkhī dummano tatthevantaradhāyīti. | S: Then Māra the Wicked, thinking, “The nun Āḷavikā knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “Āḷavikā the nun knows me”—vanished right there.
+
+## sn5.2:2.1–sn5.2:2.4 (sn)
+CONTEXT sn5.2:1.4 | P: Andhavanaṁ ajjhogāhetvā aññatarasmiṁ rukkhamūle divāvihāraṁ nisīdi. | S: plunged deep into it, and sat at the root of a tree to meditate. | T: Having gone deep into the Grove of the Blind, she sat down at the foot of a tree for the day’s abiding.
+CONTEXT sn5.2:1.5 | P: Atha kho māro pāpimā somāya bhikkhuniyā bhayaṁ chambhitattaṁ lomahaṁsaṁ uppādetukāmo samādhimhā cāvetukāmo yena somā bhikkhunī tenupasaṅkami; upasaṅkamitvā somaṁ bhikkhuniṁ gāthāya ajjhabhāsi: | S: Then Māra the Wicked, wanting to make the nun Somā feel fear, terror, and goosebumps, wanting to make her fall away from immersion, went up to her and addressed her in verse: | T: Then Māra the Evil One, wanting to arouse fear, horripilation, & terror in her, wanting to make her fall away from concentration, approached her & addressed her in verse:
+sn5.2:2.1 | P: “Yaṁ taṁ isīhi pattabbaṁ, | S: “That state’s very challenging; | T: “That ⏎ which is ⏎ to be attained by seers
+sn5.2:2.2 | P: ṭhānaṁ durabhisambhavaṁ; | S: it’s for the sages to attain. | T: —the place so very hard to reach— ⏎ women ⏎ can’t
+sn5.2:2.3 | P: Na taṁ dvaṅgulapaññāya, | S: With her two-inch wisdom, | T: —with their two-inch discernment—
+sn5.2:2.4 | P: sakkā pappotumitthiyā”ti. | S: it’s not possible for a woman.” | T: attain.”
+CONTEXT sn5.2:3.1 | P: Atha kho somāya bhikkhuniyā etadahosi: | S: Then the nun Somā thought, | T: Then the thought occurred to Somā the nun:
+CONTEXT sn5.2:3.2 | P: “ko nu khvāyaṁ manusso vā amanusso vā gāthaṁ bhāsatī”ti? | S: “Who’s speaking this verse, a human or a non-human?” | T: “Now who has recited this verse—a human being or a non-human one?”
+
+## sn5.2:4.1–sn5.2:4.4 (sn)
+CONTEXT sn5.2:3.4 | P: “māro kho ayaṁ pāpimā mama bhayaṁ chambhitattaṁ lomahaṁsaṁ uppādetukāmo samādhimhā cāvetukāmo gāthaṁ bhāsatī”ti. | S: “This is Māra the Wicked, wanting to make me feel fear, terror, and goosebumps, wanting to make me fall away from immersion!” | T: “This is Māra the Evil One who has recited this verse wanting to arouse fear, horripilation, & terror in me, wanting to make me fall away from concentration.”
+CONTEXT sn5.2:3.5 | P: Atha kho somā bhikkhunī “māro ayaṁ pāpimā” iti viditvā māraṁ pāpimantaṁ gāthāhi paccabhāsi: | S: Then Somā, knowing that this was Māra the Wicked, replied to him in verse: | T: Then, having understood that “This is Māra the Evil One,” she replied to him in verses:
+sn5.2:4.1 | P: “Itthibhāvo kiṁ kayirā, | S: “What difference does womanhood make | T: “What ⏎ difference ⏎ does being a woman make
+sn5.2:4.2 | P: cittamhi susamāhite; | S: when the mind is serene, | T: when the mind’s well-centered,
+sn5.2:4.3 | P: Ñāṇamhi vattamānamhi, | S: and knowledge is present | T: when knowledge is progressing,
+sn5.2:4.4 | P: sammā dhammaṁ vipassato. | S: as you rightly discern the Dhamma. | T: seeing clearly, rightly, ⏎ into the Dhamma.
+
+## sn5.2:5.1–sn5.2:5.4 (sn)
+sn5.2:5.1 | P: Yassa nūna siyā evaṁ, | S: Surely someone who might think: | T: Anyone who thinks
+sn5.2:5.2 | P: Itthāhaṁ purisoti vā; | S: ‘I am woman’, or ‘I am man’, | T: ‘I’m a woman’ ⏎ or ‘a man’
+sn5.2:5.3 | P: Kiñci vā pana aññasmi, | S: or ‘I am’ anything at all, | T: or ‘Am I anything at all?’—
+sn5.2:5.4 | P: Taṁ māro vattumarahatī”ti. | S: is fit for Māra to address.” | T: that’s who Māra’s ⏎ fit to address.”
+CONTEXT sn5.2:6.1 | P: Atha kho māro pāpimā “jānāti maṁ somā bhikkhunī”ti dukkhī dummano tatthevantaradhāyīti. | S: Then Māra the Wicked, thinking, “The nun Somā knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “Somā the nun knows me”—vanished right there.
+
+## sn5.3:2.1–sn5.3:2.4 (sn)
+CONTEXT sn5.3:1.4 | P: Andhavanaṁ ajjhogāhetvā aññatarasmiṁ rukkhamūle divāvihāraṁ nisīdi. | S: plunged deep into it, and sat at the root of a tree to meditate. | T: Having gone deep into the Grove of the Blind, she sat down at the foot of a tree for the day’s abiding.
+CONTEXT sn5.3:1.5 | P: Atha kho māro pāpimā kisāgotamiyā bhikkhuniyā bhayaṁ chambhitattaṁ lomahaṁsaṁ uppādetukāmo samādhimhā cāvetukāmo yena kisāgotamī bhikkhunī tenupasaṅkami; upasaṅkamitvā kisāgotamiṁ bhikkhuniṁ gāthāya ajjhabhāsi: | S: Then Māra the Wicked, wanting to make the nun Kisāgotamī feel fear, terror, and goosebumps, wanting to make her fall away from immersion, went up to her and addressed her in verse: | T: Then Māra the Evil One, wanting to arouse fear, horripilation, & terror in her, wanting to make her fall away from concentration, approached her & addressed her in verse:
+sn5.3:2.1 | P: “Kiṁ nu tvaṁ mataputtāva, | S: “Why do you sit alone and cry | T: “Why, ⏎ with your sons killed, ⏎ do you sit all alone,
+sn5.3:2.2 | P: ekamāsi rudammukhī; | S: as if your children have died? | T: your face in tears?
+sn5.3:2.3 | P: Vanamajjhagatā ekā, | S: You’ve come to the woods all alone— | T: All alone, ⏎ immersed in the midst of the forest,
+sn5.3:2.4 | P: purisaṁ nu gavesasī”ti. | S: are you looking for a man?” | T: are you looking ⏎ for a man?”
+CONTEXT sn5.3:3.1 | P: Atha kho kisāgotamiyā bhikkhuniyā etadahosi: | S: Then the nun Kisāgotamī thought, | T: Then the thought occurred to Kisā Gotamī the nun:
+CONTEXT sn5.3:3.2 | P: “ko nu khvāyaṁ manusso vā amanusso vā gāthaṁ bhāsatī”ti? | S: “Who’s speaking this verse, a human or a non-human?” | T: “Now who has recited this verse—a human being or a non-human one?”
+
+## sn5.3:5.1–sn5.3:5.4 (sn)
+CONTEXT sn5.3:3.4 | P: “māro kho ayaṁ pāpimā mama bhayaṁ chambhitattaṁ lomahaṁsaṁ uppādetukāmo samādhimhā cāvetukāmo gāthaṁ bhāsatī”ti. | S: “This is Māra the Wicked, wanting to make me feel fear, terror, and goosebumps, wanting to make me fall away from immersion!” | T: “This is Māra the Evil One who has recited this verse wanting to arouse fear, horripilation, & terror in me, wanting to make me fall away from concentration.”
+CONTEXT sn5.3:4.1 | P: Atha kho kisāgotamī bhikkhunī “māro ayaṁ pāpimā” iti viditvā māraṁ pāpimantaṁ gāthāhi paccabhāsi: | S: Then Kisāgotamī, knowing that this was Māra the Wicked, replied to him in verse: | T: Then, having understood that “This is Māra the Evil One,” she replied to him in verses:
+sn5.3:5.1 | P: “Accantaṁ mataputtāmhi, | S: “I’ve got over the death of children, | T: “I’ve gotten past ⏎ the killing of sons,
+sn5.3:5.2 | P: purisā etadantikā; | S: and I’m finished with men. | T: have made that the end ⏎ to (my search for) men.
+sn5.3:5.3 | P: Na socāmi na rodāmi, | S: I don’t grieve or lament, | T: I don’t grieve, ⏎ I don’t weep—
+sn5.3:5.4 | P: na taṁ bhāyāmi āvuso. | S: and I’m not afraid of you, sir! | T: and I’m not afraid of you, ⏎ my friend.
+
+## sn5.3:6.1–sn5.3:6.4 (sn)
+sn5.3:6.1 | P: Sabbattha vihatā nandī, | S: Relishing is banished in every respect, | T: It’s everywhere destroyed—delight.
+sn5.3:6.2 | P: tamokkhandho padālito; | S: and the mass of darkness is shattered. | T: The mass of darkness is shattered.
+sn5.3:6.3 | P: Jetvāna maccuno senaṁ, | S: I’ve defeated the army of death, | T: Having defeated the army of death,
+sn5.3:6.4 | P: viharāmi anāsavā”ti. | S: and live without defilements.” | T: free ⏎ of effluents ⏎ I dwell.”
+CONTEXT sn5.3:7.1 | P: Atha kho māro pāpimā “jānāti maṁ kisāgotamī bhikkhunī”ti dukkhī dummano tatthevantaradhāyīti. | S: Then Māra the Wicked, thinking, “The nun Kisāgotamī knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “Kisā Gotamī the nun knows me”—vanished right there.
+
+## sn5.4:2.1–sn5.4:2.4 (sn)
+CONTEXT sn5.4:1.3 | P: aññatarasmiṁ rukkhamūle divāvihāraṁ nisīdi. | S: and sat at the root of a tree for the day’s meditation. | T: she sat down at the foot of a tree for the day’s abiding.
+CONTEXT sn5.4:1.4 | P: Atha kho māro pāpimā vijayāya bhikkhuniyā bhayaṁ chambhitattaṁ lomahaṁsaṁ uppādetukāmo samādhimhā cāvetukāmo yena vijayā bhikkhunī tenupasaṅkami; upasaṅkamitvā vijayaṁ bhikkhuniṁ gāthāya ajjhabhāsi: | S: Then Māra the Wicked, wanting to make the nun Vijayā feel fear, terror, and goosebumps, wanting to make her fall away from immersion, went up to her and addressed her in verse: | T: Then Māra the Evil One, wanting to arouse fear, horripilation, & terror in her, wanting to make her fall away from concentration, approached her & addressed her in verse:
+sn5.4:2.1 | P: “Daharā tvaṁ rūpavatī, | S: “You’re so young and beautiful, | T: “You, a beautiful young woman.
+sn5.4:2.2 | P: ahañca daharo susu; | S: and I’m a youth in my prime. | T: I, a young man.
+sn5.4:2.3 | P: Pañcaṅgikena turiyena, | S: Come, my lady, let us enjoy | T: Come, my lady, ⏎ let’s enjoy ourselves
+sn5.4:2.4 | P: ehayyebhiramāmase”ti. | S: the music of a five-piece band.” | T: to the music of a five-piece band.”
+CONTEXT sn5.4:3.1 | P: Atha kho vijayāya bhikkhuniyā etadahosi: | S: Then the nun Vijayā thought, | T: Then the thought occurred to Vijayā the nun:
+CONTEXT sn5.4:3.2 | P: “ko nu khvāyaṁ manusso vā amanusso vā gāthaṁ bhāsatī”ti? | S: “Who’s speaking this verse, a human or a non-human?” | T: “Now who has recited this verse—a human being or a non-human one?”
+
+## sn5.4:4.1–sn5.4:4.4 (sn)
+CONTEXT sn5.4:3.4 | P: “māro kho ayaṁ pāpimā mama bhayaṁ chambhitattaṁ lomahaṁsaṁ uppādetukāmo samādhimhā cāvetukāmo gāthaṁ bhāsatī”ti. | S: “This is Māra the Wicked, wanting to make me feel fear, terror, and goosebumps, wanting to make me fall away from immersion!” | T: “This is Māra the Evil One who has recited this verse wanting to arouse fear, horripilation, & terror in me, wanting to make me fall away from concentration.”
+CONTEXT sn5.4:3.5 | P: Atha kho vijayā bhikkhunī “māro ayaṁ pāpimā” iti viditvā māraṁ pāpimantaṁ gāthāhi paccabhāsi: | S: Then Vijayā, knowing that this was Māra the Wicked, replied to him in verse: | T: Then, having understood that “This is Māra the Evil One,” she replied to him in verses:
+sn5.4:4.1 | P: “Rūpā saddā rasā gandhā, | S: “Sights, sounds, tastes, smells, | T: “Lovely sights, sounds, ⏎ smells, tastes,
+sn5.4:4.2 | P: phoṭṭhabbā ca manoramā; | S: and touches so delightful. | T: & tactile sensations
+sn5.4:4.3 | P: Niyyātayāmi tuyheva, | S: I hand them right back to you, Māra, | T: I leave to ⏎ you, Māra.
+sn5.4:4.4 | P: māra nāhaṁ tenatthikā. | S: for I have no use for them. | T: I ⏎ have no need ⏎ for them.
+
+## sn5.4:5.1–sn5.4:5.4 (sn) GATHERED; unequal counts require a reader
+sn5.4:5.1 | P: Iminā pūtikāyena, | S: This body is rotting, | T: I’m disgusted, ashamed ⏎ of this putrid body—
+sn5.4:5.2 | P: bhindanena pabhaṅgunā; | S: decaying and frail. | T: disintegrating, dissolving.
+sn5.4:5.3 | P: Aṭṭīyāmi harāyāmi, | S: I’m horrified and repelled by it, | T: (none)
+sn5.4:5.4 | P: kāmataṇhā samūhatā. | S: and I’ve eradicated sensual craving. | T: Sensual craving ⏎ is rooted out.
+
+## sn5.4:6.1–sn5.4:6.4 (sn)
+sn5.4:6.1 | P: Ye ca rūpūpagā sattā, | S: There are beings in the realm of luminous form, | T: Beings who have come to form,
+sn5.4:6.2 | P: ye ca arūpaṭṭhāyino; | S: and others stuck in the formless. | T: & those with a share in the formless,
+sn5.4:6.3 | P: Yā ca santā samāpatti, | S: I’ve destroyed the darkness | T: & the peaceful attainments:
+sn5.4:6.4 | P: sabbattha vihato tamo”ti. | S: regarding all such peaceful attainments.” | T: their darkness ⏎ is completely destroyed.”
+CONTEXT sn5.4:7.1 | P: Atha kho māro pāpimā “jānāti maṁ vijayā bhikkhunī”ti dukkhī dummano tatthevantaradhāyīti. | S: Then Māra the Wicked, thinking, “The nun Vijayā knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “Vijayā the nun knows me”—vanished right there.
+
+## sn5.5:2.1–sn5.5:2.4 (sn)
+CONTEXT sn5.5:1.3 | P: aññatarasmiṁ supupphitasālarukkhamūle aṭṭhāsi. | S: and stood at the root of a sal tree in full flower. | T: Having gone deep into the Grove of the Blind, she stood at the root of a flowering Sal tree.
+CONTEXT sn5.5:1.4 | P: Atha kho māro pāpimā uppalavaṇṇāya bhikkhuniyā bhayaṁ chambhitattaṁ lomahaṁsaṁ uppādetukāmo samādhimhā cāvetukāmo yena uppalavaṇṇā bhikkhunī tenupasaṅkami; upasaṅkamitvā uppalavaṇṇaṁ bhikkhuniṁ gāthāya ajjhabhāsi: | S: Then Māra the Wicked, wanting to make the nun Uppalavaṇṇā feel fear, terror, and goosebumps, wanting to make her fall away from immersion, went up to her and addressed her in verse: | T: Then Māra the Evil One, wanting to arouse fear, horripilation, & terror in her, wanting to make her fall away from concentration, approached her & addressed her in verse:
+sn5.5:2.1 | P: “Supupphitaggaṁ upagamma bhikkhuni, | S: “You’ve come to this sal tree all crowned with flowers, | T: “You’ve come, nun, ⏎ to this Sal tree ⏎ with its fine flowering crest,
+sn5.5:2.2 | P: Ekā tuvaṁ tiṭṭhasi sālamūle; | S: and stand at its root all alone, O nun. | T: and stand alone ⏎ at its root,
+sn5.5:2.3 | P: Na catthi te dutiyā vaṇṇadhātu, | S: Your beauty is second to none— | T: with no one ⏎ to match you in beauty.
+sn5.5:2.4 | P: Bāle na tvaṁ bhāyasi dhuttakānan”ti. | S: silly girl, aren’t you afraid of rascals?” | T: In your foolishness, ⏎ aren’t you afraid ⏎ of rape?”
+CONTEXT sn5.5:3.1 | P: Atha kho uppalavaṇṇāya bhikkhuniyā etadahosi: | S: Then the nun Uppalavaṇṇā thought, | T: Then the thought occurred to Uppalavaṇṇā the nun:
+CONTEXT sn5.5:3.2 | P: “ko nu khvāyaṁ manusso vā amanusso vā gāthaṁ bhāsatī”ti? | S: “Who’s speaking this verse, a human or a non-human?” | T: “Now who has recited this verse—a human being or a non-human one?”
+
+## sn5.5:4.1–sn5.5:4.4 (sn) GATHERED; unequal counts require a reader
+CONTEXT sn5.5:3.4 | P: “māro kho ayaṁ pāpimā mama bhayaṁ chambhitattaṁ lomahaṁsaṁ uppādetukāmo samādhimhā cāvetukāmo gāthaṁ bhāsatī”ti. | S: “This is Māra the Wicked, wanting to make me feel fear, terror, and goosebumps, wanting to make me fall away from immersion!” | T: “This is Māra the Evil One who has recited this verse wanting to arouse fear, horripilation, & terror in me, wanting to make me fall away from concentration.”
+CONTEXT sn5.5:3.5 | P: Atha kho uppalavaṇṇā bhikkhunī “māro ayaṁ pāpimā” iti viditvā māraṁ pāpimantaṁ gāthāhi paccabhāsi: | S: Then Uppalavaṇṇā, knowing that this was Māra the Wicked, replied to him in verse: | T: Then, having understood that “This is Māra the Evil One,” she replied to him in verses:
+sn5.5:4.1 | P: “Sataṁ sahassānipi dhuttakānaṁ, | S: “Even if 100,000 rascals like you | T: “If even a hundred-thousand rapists ⏎ came across me like this,
+sn5.5:4.2 | P: Idhāgatā tādisakā bhaveyyuṁ; | S: were to come here, | T: (none)
+sn5.5:4.3 | P: Lomaṁ na iñjāmi na santasāmi, | S: I’d stir not a hair nor panic. | T: I wouldn’t stir a hair. ⏎ I’d feel no terror,
+sn5.5:4.4 | P: Na māra bhāyāmi tamekikāpi. | S: I’m not scared of you, Māra, even alone. | T: and I’m not afraid of you, Māra, ⏎ even alone like this.
+
+## sn5.5:5.1–sn5.5:5.4 (sn)
+sn5.5:5.1 | P: Esā antaradhāyāmi, | S: I’ll vanish, | T: Here—I disappear.
+sn5.5:5.2 | P: kucchiṁ vā pavisāmi te; | S: or I’ll enter your belly; | T: I slip into your belly
+sn5.5:5.3 | P: Pakhumantarikāyampi, | S: I could stand between your eyebrows | T: or stand between your eyebrows,
+sn5.5:5.4 | P: tiṭṭhantiṁ maṁ na dakkhasi. | S: and you still wouldn’t see me. | T: and you ⏎ don’t see me.
+
+## sn5.5:6.1–sn5.5:6.4 (sn)
+sn5.5:6.1 | P: Cittasmiṁ vasībhūtāmhi, | S: I’m the master of my own mind, | T: I have mastery ⏎ over the mind,
+sn5.5:6.2 | P: iddhipādā subhāvitā; | S: I’ve developed the bases of psychic power well. | T: have well-developed ⏎ the bases of power.
+sn5.5:6.3 | P: Sabbabandhanamuttāmhi, | S: I’m free from all bonds, | T: I’m released from all bonds,
+sn5.5:6.4 | P: na taṁ bhāyāmi āvuso”ti. | S: and I’m not afraid of you, sir!” | T: and not afraid of you, ⏎ my friend.”
+CONTEXT sn5.5:7.1 | P: Atha kho māro pāpimā “jānāti maṁ uppalavaṇṇā bhikkhunī”ti dukkhī dummano tatthevantaradhāyīti. | S: Then Māra the Wicked, thinking, “The nun Uppalavaṇṇā knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “Uppalavaṇṇā the nun knows me”—vanished right there.
+
+## sn5.6:2.1–sn5.6:2.4 (sn)
+CONTEXT sn5.6:1.5 | P: “kiṁ nu tvaṁ, bhikkhuni, na rocesī”ti? | S: “Nun, what don’t you approve of?” | T: “What is it that you don’t approve of, nun?”
+CONTEXT sn5.6:1.6 | P: “Jātiṁ khvāhaṁ, āvuso, na rocemī”ti. | S: “I don’t approve of rebirth, sir.” | T: “I don’t approve of birth, my friend.”
+sn5.6:2.1 | P: “Kiṁ nu jātiṁ na rocesi, | S: “Why don’t you approve of rebirth? | T: Māra: ⏎ “Why don’t you approve of birth?
+sn5.6:2.2 | P: jāto kāmāni bhuñjati; | S: When you’re born, you get to enjoy sensual pleasures. | T: One who is born ⏎ enjoys sensual pleasures.
+sn5.6:2.3 | P: Ko nu taṁ idamādapayi, | S: Who put this idea in your head: | T: Who on earth ⏎ ever persuaded you:
+sn5.6:2.4 | P: jātiṁ mā roca bhikkhunī”ti. | S: ‘Nun, don’t approve of rebirth’?” | T: ‘Nun, don’t approve of birth’?”
+
+## sn5.6:3.1–sn5.6:3.4 (sn)
+sn5.6:3.1 | P: “Jātassa maraṇaṁ hoti, | S: “Death comes to those who are born, | T: Sister Cālā: ⏎ “For one who is born ⏎ there’s death.
+sn5.6:3.2 | P: jāto dukkhāni phussati; | S: when you’re born you undergo sufferings— | T: One who is born ⏎ sees pain.
+sn5.6:3.3 | P: Bandhaṁ vadhaṁ pariklesaṁ, | S: killing, caging, misery— | T: It’s a binding, a flogging, a torment.
+sn5.6:3.4 | P: tasmā jātiṁ na rocaye. | S: that’s why you shouldn’t approve of rebirth. | T: That’s why one shouldn’t approve ⏎ of birth.
+
+## sn5.6:4.1–sn5.6:4.4 (sn)
+sn5.6:4.1 | P: Buddho dhammamadesesi, | S: The Buddha taught me the Dhamma | T: The Awakened One taught me the Dhamma
+sn5.6:4.2 | P: jātiyā samatikkamaṁ; | S: for transcending rebirth, | T: —the overcoming of birth—
+sn5.6:4.3 | P: Sabbadukkhappahānāya, | S: for giving up all suffering; | T: for the abandoning of all pain,
+sn5.6:4.4 | P: so maṁ sacce nivesayi. | S: he settled me in the truth. | T: he established me in ⏎ the truth.
+
+## sn5.6:5.1–sn5.6:5.4 (sn)
+sn5.6:5.1 | P: Ye ca rūpūpagā sattā, | S: There are beings in the realm of luminous form, | T: But beings who have come to form
+sn5.6:5.2 | P: ye ca arūpaṭṭhāyino; | S: and others stuck in the formless. | T: & those with a share in the formless,
+sn5.6:5.3 | P: Nirodhaṁ appajānantā, | S: Not understanding cessation, | T: if they don’t discern cessation,
+sn5.6:5.4 | P: āgantāro punabbhavan”ti. | S: they return in future lives.” | T: return to becoming-again.”
+CONTEXT sn5.6:6.1 | P: Atha kho māro pāpimā “jānāti maṁ cālā bhikkhunī”ti dukkhī dummano tatthevantaradhāyīti. | S: Then Māra the Wicked, thinking, “The nun Cālā knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “Cālā the nun knows me”—vanished right there.
+
+## sn5.7:2.1–sn5.7:2.6 (sn)
+CONTEXT sn5.7:1.5 | P: “kattha nu tvaṁ, bhikkhuni, uppajjitukāmā”ti? | S: “Nun, where do you want to be reborn?” | T: “Where do you want to reappear [be reborn], nun?”
+CONTEXT sn5.7:1.6 | P: “Na khvāhaṁ, āvuso, katthaci uppajjitukāmā”ti. | S: “I don’t want to be reborn anywhere, sir.” | T: “I don’t want to reappear anywhere, my friend.”
+sn5.7:2.1 | P: “Tāvatiṁsā ca yāmā ca, | S: “There are the gods of the thirty-three, and those of Yama; | T: Māra: ⏎ “The Devas of the Thirty-three, ⏎ the Hours,
+sn5.7:2.2 | P: tusitā cāpi devatā; | S: also the Joyful Deities, | T: the Contented,
+sn5.7:2.3 | P: Nimmānaratino devā, | S: the gods who love to create, | T: devas who delight in creation,
+sn5.7:2.4 | P: ye devā vasavattino; | S: and the gods who control what is created by others. | T: & devas in control:
+sn5.7:2.5 | P: Tattha cittaṁ paṇidhehi, | S: Set your heart on such places, | T: Direct your mind there
+sn5.7:2.6 | P: ratiṁ paccanubhossasī”ti. | S: and you’ll undergo delight.” | T: and it will enjoy ⏎ delight.”
+
+## sn5.7:3.1–sn5.7:3.6 (sn)
+sn5.7:3.1 | P: “Tāvatiṁsā ca yāmā ca, | S: “The gods of the thirty-three, and those of Yama; | T: Sister Upacālā: ⏎ “The Devas of the Thirty-three, ⏎ the Hours,
+sn5.7:3.2 | P: tusitā cāpi devatā; | S: also the Joyful Deities, | T: the Contented,
+sn5.7:3.3 | P: Nimmānaratino devā, | S: the gods who love to create, | T: devas who delight in creation,
+sn5.7:3.4 | P: ye devā vasavattino; | S: and the gods who control what is created by others— | T: & devas in control:
+sn5.7:3.5 | P: Kāmabandhanabaddhā te, | S: they’re bound with the bonds of sensuality; | T: They are bound ⏎ with the bonds of sensuality;
+sn5.7:3.6 | P: enti māravasaṁ puna. | S: they fall under your sway again. | T: they come again ⏎ under Māra’s sway.

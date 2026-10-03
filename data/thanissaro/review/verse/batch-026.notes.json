@@ -1,0 +1,24 @@
+{
+  "batch": 26,
+  "versesRead": 54,
+  "rowsRead": 227,
+  "automaticFindings": 8,
+  "readerFindings": 66,
+  "unresolved": [],
+  "ruleCandidates": [
+    {
+      "keys": [
+        "dhp228",
+        "dhp229"
+      ],
+      "reason": "Two opening lines of dhp229 start prematurely in dhp228; recut across the reviewed stanza boundary."
+    },
+    {
+      "keys": [
+        "dhp249",
+        "dhp250"
+      ],
+      "reason": "Opening of dhp250 starts prematurely in dhp249; recut across the reviewed stanza boundary."
+    }
+  ]
+}

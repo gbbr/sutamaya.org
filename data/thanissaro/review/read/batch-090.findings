@@ -32,7 +32,7 @@ snp3.9:18.3 starts: Their distinguishing markings are made by nature,
 snp3.9:18.4 starts: for their species differ, one from another.
 snp3.9:20.3 starts: not through face or nose, not through
 snp3.9:20.4 starts: not through mouth or lips,
-snp3.9:23.2 none
+# superseded: snp3.9:23.2 none
 # superseded: snp3.9:23.3 starts: but their identification is described in terms
 snp3.9:32.5 starts: But someone with nothing, who clings to
 snp3.9:40.3 starts: living with no home, with next to
@@ -42,11 +42,11 @@ snp3.9:48.2 starts: for both merit & evil—
 snp3.9:52.3 starts: his cravings, becomings, totally gone:
 snp3.9:53.3 starts: from all bonds unshackled:
 snp3.9:60.1 starts: For this is a convention in the world:
-snp3.9:60.2 none
-snp3.9:61.2 none
+# superseded: snp3.9:60.2 none
+# superseded: snp3.9:61.2 none
 snp3.9:61.3 starts: those who don’t know say that one
 snp3.9:61.4 starts: that one is a brahman by birth.
-snp3.9:65.2 none
+# superseded: snp3.9:65.2 none
 snp3.9:65.3 starts: seeing dependent co-arising,
 dn11:2.3 none
 dn11:2.4 none

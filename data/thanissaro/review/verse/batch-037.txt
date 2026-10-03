@@ -1,0 +1,438 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## snp1.3:33.1–snp1.3:33.4 (snp)
+snp1.3:33.1 | P: “Vipiṭṭhikatvāna sukhaṁ dukhañca, | S: When you’ve put pleasure and pain behind you, | T: Turning your back on pleasure & pain,
+snp1.3:33.2 | P: Pubbeva ca somanassadomanassaṁ; | S: and former happiness and sadness, | T: as earlier with sorrow & joy,
+snp1.3:33.3 | P: Laddhānupekkhaṁ samathaṁ visuddhaṁ, | S: and gained equanimity serene and pure, | T: attaining pure ⏎ equanimity, ⏎ tranquility,
+snp1.3:33.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:34.1–snp1.3:34.4 (snp)
+snp1.3:34.1 | P: “Āraddhaviriyo paramatthapattiyā, | S: With energy roused to reach the ultimate goal, | T: With persistence aroused ⏎ for the highest goal’s attainment,
+snp1.3:34.2 | P: Alīnacitto akusītavutti; | S: not sluggish in mind or lazy, | T: with mind unsmeared, not lazy in action,
+snp1.3:34.3 | P: Daḷhanikkamo thāmabalūpapanno, | S: vigorous, strong and powerful, | T: firm in effort, with steadfastness & strength arisen,
+snp1.3:34.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:35.1–snp1.3:35.4 (snp)
+snp1.3:35.1 | P: “Paṭisallānaṁ jhānamariñcamāno, | S: Not neglecting retreat and absorption, | T: Not neglecting seclusion, jhāna,
+snp1.3:35.2 | P: Dhammesu niccaṁ anudhammacārī; | S: always living in line with the teaching, | T: constantly living the Dhamma ⏎ in line with the Dhamma,
+snp1.3:35.3 | P: Ādīnavaṁ sammasitā bhavesu, | S: comprehending the danger in rebirths, | T: comprehending the danger ⏎ in states of becoming,
+snp1.3:35.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:36.1–snp1.3:36.4 (snp)
+snp1.3:36.1 | P: “Taṇhakkhayaṁ patthayamappamatto, | S: One whose aim is the ending of craving— | T: Intent on the ending of craving
+snp1.3:36.2 | P: Aneḷamūgo sutavā satīmā; | S: diligent, clever, learned, mindful, resolute— | T: & heedful, ⏎ neither drooling nor dumb, ⏎ but learned, mindful,
+snp1.3:36.3 | P: Saṅkhātadhammo niyato padhānavā, | S: who has appraised the teaching and is assured, destined for awakening, should | T: —having reckoned the Dhamma— ⏎ certain & striving,
+snp1.3:36.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:37.1–snp1.3:37.4 (snp)
+snp1.3:37.1 | P: “Sīhova saddesu asantasanto, | S: Like a lion not startled by sounds, | T: Unstartled, like a lion at sounds.
+snp1.3:37.2 | P: Vātova jālamhi asajjamāno; | S: like wind not caught in a net, | T: Unsnared, like the wind in a net.
+snp1.3:37.3 | P: Padumaṁva toyena alippamāno, | S: like water not sticking to a lotus, | T: Unsmeared, like a lotus in water:
+snp1.3:37.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: Wander alone ⏎ like a rhinoceros.
+
+## snp1.3:38.1–snp1.3:38.4 (snp)
+snp1.3:38.1 | P: “Sīho yathā dāṭhabalī pasayha, | S: Like the fierce-fanged lion, king of beasts, | T: Like a lion—forceful, strong in fang,
+snp1.3:38.2 | P: Rājā migānaṁ abhibhuyya cārī; | S: who wanders as conqueror and victor, | T: living as a conqueror, the king of beasts—
+snp1.3:38.3 | P: Sevetha pantāni senāsanāni, | S: you should frequent remote lodgings, and | T: resort to a solitary dwelling.
+snp1.3:38.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: Wander alone ⏎ like a rhinoceros.
+
+## snp1.3:39.1–snp1.3:39.4 (snp)
+snp1.3:39.1 | P: “Mettaṁ upekkhaṁ karuṇaṁ vimuttiṁ, | S: In time, cultivate freedom through | T: At the right time consorting ⏎ with the release through
+snp1.3:39.2 | P: Āsevamāno muditañca kāle; | S: love, compassion, rejoicing, and equanimity. | T: goodwill, ⏎ compassion, ⏎ empathetic joy, ⏎ equanimity,
+snp1.3:39.3 | P: Sabbena lokena avirujjhamāno, | S: Not upset by anything in the world, | T: unobstructed by all the world, ⏎ any world,
+snp1.3:39.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:40.1–snp1.3:40.4 (snp)
+snp1.3:40.1 | P: “Rāgañca dosañca pahāya mohaṁ, | S: Having given up greed, hate, and delusion, | T: Having let go of passion, ⏎ aversion, ⏎ delusion;
+snp1.3:40.2 | P: Sandālayitvāna saṁyojanāni; | S: having burst apart the fetters, | T: having shattered the fetters;
+snp1.3:40.3 | P: Asantasaṁ jīvitasaṅkhayamhi, | S: unafraid at the end of life, | T: unfazed at the ending of life,
+snp1.3:40.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: wander alone ⏎ like a rhinoceros.
+
+## snp1.3:41.1–snp1.3:41.4 (snp)
+snp1.3:41.1 | P: “Bhajanti sevanti ca kāraṇatthā, | S: They befriend you and serve you for their own sake; | T: People follow & associate ⏎ for a motive.
+snp1.3:41.2 | P: Nikkāraṇā dullabhā ajja mittā; | S: these days it’s hard to find friends lacking ulterior motive. | T: Friends without a motive these days ⏎ are rare.
+snp1.3:41.3 | P: Attaṭṭhapaññā asucī manussā, | S: Impure folk cleverly profit themselves— | T: They’re shrewd for their own ends, & impure.
+snp1.3:41.4 | P: Eko care khaggavisāṇakappo”. | S: live alone like a horned rhino. | T: Wander alone ⏎ like a rhinoceros.
+CONTEXT snp1.3:41.5 | P: Khaggavisāṇasuttaṁ tatiyaṁ. | S: (none) | T: (none)
+
+## snp1.4:5.1–snp1.4:5.4 (snp)
+CONTEXT snp1.4:3.4 | P: ‘ahampi kho, brāhmaṇa, kasāmi ca vapāmi ca; kasitvā ca vapitvā ca bhuñjāmī’”ti. | S: ‘I too plough and sow, brahmin, and then I eat.’” | T: ‘I, too, brahman, plow & sow. Having plowed & sown, I eat.’”
+CONTEXT snp1.4:4.1 | P: Atha kho kasibhāradvājo brāhmaṇo bhagavantaṁ gāthāya ajjhabhāsi: | S: Then Bhāradvāja the Farmer addressed the Buddha in verse: | T: Then Kasi Bhāradvāja addressed the Blessed One with a verse:
+snp1.4:5.1 | P: “Kassako paṭijānāsi, | S: “You claim to be a farmer, | T: You claim to be a plowman,
+snp1.4:5.2 | P: na ca passāma te kasiṁ; | S: but I don’t see you farming. | T: but we don’t see your plowing.
+snp1.4:5.3 | P: Kasiṁ no pucchito brūhi, | S: Tell me your farming when asked, | T: Being asked, tell us about your plowing
+snp1.4:5.4 | P: yathā jānemu te kasiṁ”. | S: so I can recognize your farming.” | T: so that we may know your plowing.
+
+## snp1.4:6.1–snp1.4:6.4 (snp)
+snp1.4:6.1 | P: “Saddhā bījaṁ tapo vuṭṭhi, | S: “Faith is my seed, fervor my rain, | T: The Buddha: ⏎ Conviction’s my seed, ⏎ austerity my rain,
+snp1.4:6.2 | P: paññā me yuganaṅgalaṁ; | S: and wisdom is my yoke and plough. | T: discernment my yoke & plow,
+snp1.4:6.3 | P: Hirī īsā mano yottaṁ, | S: Conscience is my draft-pole, mind my strap, | T: shame my pole, ⏎ mind my yoke-tie,
+snp1.4:6.4 | P: sati me phālapācanaṁ. | S: mindfulness my plowshare and goad. | T: mindfulness my plowshare & goad.
+
+## snp1.4:7.1–snp1.4:7.4 (snp)
+snp1.4:7.1 | P: Kāyagutto vacīgutto, | S: Guarded in body and speech, | T: Guarded in body, ⏎ guarded in speech,
+snp1.4:7.2 | P: āhāre udare yato; | S: I restrict my intake of food. | T: restrained in terms of belly & food,
+snp1.4:7.3 | P: Saccaṁ karomi niddānaṁ, | S: I use truth as my scythe, | T: I make truth a weeding-hook,
+snp1.4:7.4 | P: soraccaṁ me pamocanaṁ. | S: and gentleness is my release. | T: and composure my unyoking.
+
+## snp1.4:8.1–snp1.4:8.4 (snp)
+snp1.4:8.1 | P: Vīriyaṁ me dhuradhorayhaṁ, | S: Energy is my harnessed beast, | T: Persistence, my beast of burden,
+snp1.4:8.2 | P: yogakkhemādhivāhanaṁ; | S: transporting me to sanctuary from the yoke. | T: bearing me toward rest from the yoke,
+snp1.4:8.3 | P: Gacchati anivattantaṁ, | S: Without turning back, it goes | T: takes me, without turning back,
+snp1.4:8.4 | P: yattha gantvā na socati. | S: to where there is no sorrow. | T: to where, having gone, ⏎ one doesn’t grieve.
+
+## snp1.4:9.1–snp1.4:9.4 (snp)
+snp1.4:9.1 | P: Evamesā kasī kaṭṭhā, | S: That’s how to do the farming | T: That’s how my plowing is plowed.
+snp1.4:9.2 | P: Sā hoti amatapphalā; | S: that has freedom from death as its fruit. | T: It has ⏎ as its fruit ⏎ the deathless.
+snp1.4:9.3 | P: Etaṁ kasiṁ kasitvāna, | S: When you finish this farming | T: Having plowed this plowing,
+snp1.4:9.4 | P: Sabbadukkhā pamuccatī”ti. | S: you’re released from all suffering.” | T: one is unyoked ⏎ from all suffering ⏎ & stress.
+CONTEXT snp1.4:10.1 | P: Atha kho kasibhāradvājo brāhmaṇo mahatiyā kaṁsapātiyā pāyasaṁ vaḍḍhetvā bhagavato upanāmesi: | S: Then Bhāradvāja the Farmer poured milk-rice in a large bronze cup and presented it to the Buddha: | T: Then Kasi Bhāradvāja, having heaped up milk-rice in a large bronze serving bowl, offered it to the Blessed One, [saying,]
+CONTEXT snp1.4:10.2 | P: “bhuñjatu bhavaṁ gotamo pāyasaṁ. | S: “May the worthy Gotama eat the milk-rice! | T: “May Master Gotama eat [this] milk-rice.
+
+## snp1.4:11.1–snp1.4:11.4 (snp)
+CONTEXT snp1.4:10.3 | P: Kassako bhavaṁ; | S: The worthy one is a farmer. | T: The master is a plowman,
+CONTEXT snp1.4:10.4 | P: yañhi bhavaṁ gotamo amatapphalaṁ kasiṁ kasatī”ti. | S: For the worthy Gotama does the farming that has freedom from death as its fruit.” | T: for the Master Gotama plows the plowing that has as its fruit the deathless.”
+snp1.4:11.1 | P: “Gāthābhigītaṁ me abhojaneyyaṁ, | S: “Food enchanted by a verse isn’t fit for me to eat. | T: The Buddha: ⏎ What’s been chanted over with verses ⏎ shouldn’t be eaten by me.
+snp1.4:11.2 | P: Sampassataṁ brāhmaṇa nesa dhammo; | S: That’s not the principle of those who see, brahmin. | T: That’s not the nature, brahman, ⏎ of one who’s seen rightly.
+snp1.4:11.3 | P: Gāthābhigītaṁ panudanti buddhā, | S: The Buddhas cast aside things enchanted with verses. | T: What’s been chanted over with verses ⏎ Awakened Ones reject.
+snp1.4:11.4 | P: Dhamme satī brāhmaṇa vuttiresā. | S: Since there is such a principle, brahmin, that’s how they live. | T: That being their Dhamma, brahman, ⏎ this is their way of life.
+
+## snp1.4:12.1–snp1.4:12.4 (snp)
+snp1.4:12.1 | P: Aññena ca kevalinaṁ mahesiṁ, | S: Serve with other food and drink | T: Serve with other food & drink
+snp1.4:12.2 | P: Khīṇāsavaṁ kukkuccavūpasantaṁ; | S: the consummate one, the great seer, | T: a fully-perfected great seer,
+snp1.4:12.3 | P: Annena pānena upaṭṭhahassu, | S: with defilements ended and remorse stilled. | T: his effluents ended, ⏎ his anxiety stilled,
+snp1.4:12.4 | P: Khettaṁ hi taṁ puññapekkhassa hotī”ti. | S: For he is the field for the seeker of merit.” | T: for that is the field ⏎ for one looking for merit.
+CONTEXT snp1.4:13.1 | P: “Atha kassa cāhaṁ, bho gotama, imaṁ pāyasaṁ dammī”ti? | S: “Then, worthy Gotama, to whom should I give the milk-rice?” | T: “Then to whom, Master Gotama, should I give this milk-rice?”
+CONTEXT snp1.4:13.2 | P: “Na khvāhaṁ taṁ, brāhmaṇa, passāmi sadevake loke samārake sabrahmake sassamaṇabrāhmaṇiyā pajāya sadevamanussāya, yassa so pāyaso bhutto sammā pariṇāmaṁ gaccheyya, aññatra tathāgatassa vā tathāgatasāvakassa vā. | S: “Brahmin, I don’t see anyone in this world—with its gods, Māras, and divinities, this population with its ascetics and brahmins, its gods and humans—who can properly digest this milk-rice, except the Realized One or one of his disciples. | T: “Brahman, I don’t see that person in this world—with its devas, Māras, & Brahmās, in this generation with its contemplatives & brahmans, its royalty & commonfolk—by whom this milk-rice, having been eaten, would be rightly digested, aside from a Tathāgata or a Tathāgata’s disciple.
+
+## snp1.5:1.1–snp1.5:1.5 (snp)
+CONTEXT snp1.5:0.1 | P: Sutta Nipāta 1.5 | S: Anthology of Discourses 1.5 | T: (none)
+CONTEXT snp1.5:0.2 | P: Cundasutta | S: With Cunda | T: 1:5 Cunda
+snp1.5:1.1 | P: “Pucchāmi muniṁ pahūtapaññaṁ, | S: “I ask the sage abounding in wisdom,” | T: Cunda the smith: ⏎ I ask the sage of abundant discernment,
+CONTEXT snp1.5:1.2 | P: (iti cundo kammāraputto) | S: said Cunda the smith, | T: (none)
+snp1.5:1.3 | P: Buddhaṁ dhammassāmiṁ vītataṇhaṁ; | S: “the Buddha, master of the teaching, free of craving, | T: awakened, lord of the Dhamma, free ⏎ of craving,
+snp1.5:1.4 | P: Dvipaduttamaṁ sārathīnaṁ pavaraṁ, | S: best of men, excellent charioteer, please tell me this: | T: supreme ⏎ among two-legged beings, ⏎ best ⏎ of charioteers:
+snp1.5:1.5 | P: Kati loke samaṇā tadiṅgha brūhi”. | S: how many ascetics are there in the world?” | T: How many contemplatives ⏎ are there in the world? ⏎ Please tell me.
+CONTEXT snp1.5:2.2 | P: (cundāti bhagavā) | S: said the Buddha to Cunda, | T: (none)
+
+## snp1.5:2.1–snp1.5:2.5 (snp)
+snp1.5:2.1 | P: “Caturo samaṇā na pañcamatthi, | S: “There are four ascetics, not a fifth.” | T: The Buddha: ⏎ Four contemplatives, there is no fifth.
+CONTEXT snp1.5:2.2 | P: (cundāti bhagavā) | S: said the Buddha to Cunda, | T: (none)
+snp1.5:2.3 | P: Te te āvikaromi sakkhipuṭṭho; | S: “Being asked to bear witness, I will explain them to you: | T: Being asked in person, I disclose them to you:
+snp1.5:2.4 | P: Maggajino maggadesako ca, | S: the path-victor, the path-teacher, | T: the path-victor, the path-explainer,
+snp1.5:2.5 | P: Magge jīvati yo ca maggadūsī”. | S: the path-liver, and the path-wrecker.” | T: one who lives by the path, ⏎ and the path-corrupter.
+CONTEXT snp1.5:3.2 | P: (iti cundo kammāraputto) | S: said Cunda the smith, | T: (none)
+
+## snp1.5:3.1–snp1.5:3.5 (snp)
+snp1.5:3.1 | P: “Kaṁ maggajinaṁ vadanti buddhā, | S: “Who is a path-victor according to the Buddhas?” | T: Cunda: ⏎ Whom do the awakened call ⏎ the path-victor?
+CONTEXT snp1.5:3.2 | P: (iti cundo kammāraputto) | S: said Cunda the smith, | T: (none)
+snp1.5:3.3 | P: Maggakkhāyī kathaṁ atulyo hoti; | S: “and how is one an unequaled explainer of the path? | T: How is one unequaled ⏎ in pointing out the path?
+snp1.5:3.4 | P: Magge jīvati me brūhi puṭṭho, | S: Tell me when asked about one who lives the path, | T: When asked, tell me about ⏎ the one who lives by the path.
+snp1.5:3.5 | P: Atha me āvikarohi maggadūsiṁ”. | S: then declare the path-wrecker.” | T: Then disclose the path-corrupter to me.
+
+## snp1.5:4.1–snp1.5:4.4 (snp)
+snp1.5:4.1 | P: “Yo tiṇṇakathaṅkatho visallo, | S: “Rid of indecision, free of thorns, | T: The Buddha: ⏎ Whoever, de-arrowed, ⏎ has crossed over doubt,
+snp1.5:4.2 | P: Nibbānābhirato anānugiddho; | S: delighting in extinguishment, not fawning, | T: is refreshed in unbinding, ⏎ devoid of greed,
+snp1.5:4.3 | P: Lokassa sadevakassa netā, | S: a guide for the world with its gods. | T: a guide to the world along with its devas:
+snp1.5:4.4 | P: Tādiṁ maggajinaṁ vadanti buddhā. | S: The Buddhas say one such is victor of the path. | T: The awakened call such a person ⏎ path-victor.
+
+## snp1.5:5.1–snp1.5:5.4 (snp)
+snp1.5:5.1 | P: Paramaṁ paramanti yodha ñatvā, | S: Knowing the ultimate as ultimate, | T: Whoever here knowing ⏎ the foremost as foremost,
+snp1.5:5.2 | P: Akkhāti vibhajate idheva dhammaṁ; | S: they explain and analyze the teaching right here. | T: who points out, ⏎ who analyzes the Dhamma right here,
+snp1.5:5.3 | P: Taṁ kaṅkhachidaṁ muniṁ anejaṁ, | S: That sage unstirred, with doubt cut off, | T: he, the cutter of doubt, the sage unperturbed,
+snp1.5:5.4 | P: Dutiyaṁ bhikkhunamāhu maggadesiṁ. | S: is the second mendicant, I say, the teacher of the path. | T: is called the second of monks: ⏎ path-explainer.
+
+## snp1.5:6.1–snp1.5:6.4 (snp) GATHERED; possible speaker requires a reader
+snp1.5:6.1 | P: Yo dhammapade sudesite, | S: Living restrained and mindful on the path | T: Whoever lives by the path, ⏎ the Dhamma-way well-explained, ⏎ restrained, mindful,
+snp1.5:6.2 | P: Magge jīvati saññato satīmā; | S: of the well-taught passage of teaching, | T: (none)
+snp1.5:6.3 | P: Anavajjapadāni sevamāno, | S: cultivating blameless states, | T: partaking of blameless ways,
+snp1.5:6.4 | P: Tatiyaṁ bhikkhunamāhu maggajīviṁ. | S: is the third mendicant, I say, the path-liver. | T: is called the third of monks: ⏎ with the path as his life.
+
+## snp1.5:7.1–snp1.5:7.4 (snp)
+snp1.5:7.1 | P: Chadanaṁ katvāna subbatānaṁ, | S: Dressed like one true to their vows, | T: Making a façade of good practices,
+snp1.5:7.2 | P: Pakkhandī kuladūsako pagabbho; | S: pushy, rude, a corrupter of families, | T: brash, reckless, a corrupter of families,
+snp1.5:7.3 | P: Māyāvī asaññato palāpo, | S: devious, unrestrained, chaff, | T: idle, deceitful, unrestrained,
+snp1.5:7.4 | P: Patirūpena caraṁ sa maggadūsī. | S: the path-wrecker’s life is a sham. | T: & going about as a counterfeit: ⏎ He is a path-corrupter.
+
+## snp1.5:8.1–snp1.5:8.6 (snp)
+snp1.5:8.1 | P: Ete ca paṭivijjhi yo gahaṭṭho, | S: A layperson who gets this, | T: And when any householder
+snp1.5:8.2 | P: Sutavā ariyasāvako sapañño; | S: a learned, wise noble disciple, | T: —an instructed disciple of the noble ones, ⏎ discerning— ⏎ understands these,
+snp1.5:8.3 | P: Sabbe netādisāti ñatvā, | S: knows that ‘They are not all like that one’. | T: knowing, “Not all are like that one,”
+snp1.5:8.4 | P: Iti disvā na hāpeti tassa saddhā; | S: So when they see them they don’t lose their faith. | T: seeing one like that ⏎ doesn’t kill his conviction.
+snp1.5:8.5 | P: Kathaṁ hi duṭṭhena asampaduṭṭhaṁ, | S: For how could one equate them— | T: For how would one equate
+snp1.5:8.6 | P: Suddhaṁ asuddhena samaṁ kareyyā”ti. | S: the corrupt with the uncorrupt, the pure with the impure?” | T: the corrupt with the uncorrupt, ⏎ the impure with the pure?
+CONTEXT snp1.5:8.7 | P: Cundasuttaṁ pañcamaṁ. | S: (none) | T: (none)
+
+## snp1.6:2.1–snp1.6:2.4 (snp) GATHERED; possible speaker requires a reader
+CONTEXT snp1.6:1.3 | P: Atha kho aññatarā devatā abhikkantāya rattiyā abhikkantavaṇṇā kevalakappaṁ jetavanaṁ obhāsetvā yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ aṭṭhāsi. | S: Then, late at night, a glorious deity, lighting up the entire Jeta’s Grove, went up to the Buddha, bowed, and stood to one side. | T: Then a certain deva, in the far extreme of the night, her extreme radiance lighting up the entirety of Jeta’s Grove, went to the Blessed One. On arrival, having bowed down to him, she stood to one side.
+CONTEXT snp1.6:1.4 | P: Ekamantaṁ ṭhitā kho sā devatā bhagavantaṁ gāthāya ajjhabhāsi: | S: Standing to one side, that deity addressed the Buddha in verse: | T: As she was standing there, she addressed him with a verse:
+snp1.6:2.1 | P: “Parābhavantaṁ purisaṁ, | S: “We ask Gotama | T: About the man in decline ⏎ we ask Gotama,
+snp1.6:2.2 | P: mayaṁ pucchāma gotama; | S: about a man’s downfall. | T: (none)
+snp1.6:2.3 | P: Bhavantaṁ puṭṭhumāgamma, | S: We have come to ask you, sir: | T: having come to question the Blessed One:
+snp1.6:2.4 | P: kiṁ parābhavato mukhaṁ”. | S: what leads to downfall?” | T: What is the way leading to decline?
+
+## snp1.6:3.1–snp1.6:3.4 (snp)
+snp1.6:3.1 | P: “Suvijāno bhavaṁ hoti, | S: “It’s easy to understand success, | T: The Buddha: ⏎ Easily known is the one of good prospects;
+snp1.6:3.2 | P: suvijāno parābhavo; | S: understanding downfall is just as easy. | T: easily known, the one in decline.
+snp1.6:3.3 | P: Dhammakāmo bhavaṁ hoti, | S: One who loves the teaching succeeds, | T: The one of good prospects ⏎ loves the Dhamma,
+snp1.6:3.4 | P: dhammadessī parābhavo”. | S: but a hater of the teaching meets their downfall.” | T: the one in decline ⏎ detests it.
+
+## snp1.6:4.1–snp1.6:4.4 (snp)
+snp1.6:4.1 | P: “Iti hetaṁ vijānāma, | S: “We understand what you’re saying, | T: The deva: ⏎ We know, indeed, that that is so.
+snp1.6:4.2 | P: paṭhamo so parābhavo; | S: this is the first downfall. | T: That’s the first one in decline.
+snp1.6:4.3 | P: Dutiyaṁ bhagavā brūhi, | S: Tell us the second, Blessed One: | T: May the Blessed One tell the second:
+snp1.6:4.4 | P: kiṁ parābhavato mukhaṁ”. | S: what leads to downfall?” | T: What is the way leading to decline?
+
+## snp1.6:5.1–snp1.6:5.4 (snp)
+snp1.6:5.1 | P: “Asantassa piyā honti, | S: “The bad are dear to him, | T: The Buddha: ⏎ The wicked are dear to him,
+snp1.6:5.2 | P: sante na kurute piyaṁ; | S: he has no love for the good. | T: the good he doesn’t hold dear.
+snp1.6:5.3 | P: Asataṁ dhammaṁ roceti, | S: He believes the teaching of the bad; | T: He approves of the ideas of the wicked:
+snp1.6:5.4 | P: taṁ parābhavato mukhaṁ”. | S: and that leads to his downfall.” | T: That is the way leading to decline.
+
+## snp1.6:6.1–snp1.6:6.4 (snp)
+snp1.6:6.1 | P: “Iti hetaṁ vijānāma, | S: “We understand what you’re saying, | T: The deva: ⏎ We know, indeed, that that is so.
+snp1.6:6.2 | P: dutiyo so parābhavo; | S: this is the second downfall. | T: That’s the second one in decline.
+snp1.6:6.3 | P: Tatiyaṁ bhagavā brūhi, | S: Tell us the third, Blessed One: | T: May the Blessed One tell the third:
+snp1.6:6.4 | P: kiṁ parābhavato mukhaṁ”. | S: what leads to downfall?” | T: What is the way leading to decline?
+
+## snp1.6:7.1–snp1.6:7.4 (snp)
+snp1.6:7.1 | P: “Niddāsīlī sabhāsīlī, | S: “Fond of sleep, fond of company, | T: The Buddha: ⏎ Prone to sleep, prone to company,
+snp1.6:7.2 | P: anuṭṭhātā ca yo naro; | S: a man who does no work; | T: the man with no initiative,
+snp1.6:7.3 | P: Alaso kodhapaññāṇo, | S: he’s lazy, marked by anger, | T: lazy & known for his anger:
+snp1.6:7.4 | P: taṁ parābhavato mukhaṁ”. | S: and that leads to his downfall.” | T: That is the way leading to decline.
+
+## snp1.6:8.1–snp1.6:8.4 (snp)
+snp1.6:8.1 | P: “Iti hetaṁ vijānāma, | S: “We understand what you’re saying, | T: The deva: ⏎ We know, indeed, that that is so.
+snp1.6:8.2 | P: tatiyo so parābhavo; | S: this is the third downfall. | T: That’s the third one in decline.
+snp1.6:8.3 | P: Catutthaṁ bhagavā brūhi, | S: Tell us the fourth, Blessed One: | T: May the Blessed One tell the fourth:
+snp1.6:8.4 | P: kiṁ parābhavato mukhaṁ”. | S: what leads to downfall?” | T: What is the way leading to decline?
+
+## snp1.6:9.1–snp1.6:9.4 (snp)
+snp1.6:9.1 | P: “Yo mātaraṁ pitaraṁ vā, | S: “Though able, he does not look after | T: The Buddha: ⏎ Though capable, one doesn’t support
+snp1.6:9.2 | P: jiṇṇakaṁ gatayobbanaṁ; | S: his mother and father | T: one’s mother or father
+snp1.6:9.3 | P: Pahu santo na bharati, | S: when elderly, past their prime, | T: —old, their youth over & done:
+snp1.6:9.4 | P: taṁ parābhavato mukhaṁ”. | S: and that leads to his downfall.” | T: That is the way leading to decline.
+
+## snp1.6:10.1–snp1.6:10.4 (snp)
+snp1.6:10.1 | P: “Iti hetaṁ vijānāma, | S: “We understand what you’re saying, | T: The deva: ⏎ We know, indeed, that that is so.
+snp1.6:10.2 | P: catuttho so parābhavo; | S: this is the fourth downfall. | T: That’s the fourth one in decline.
+snp1.6:10.3 | P: Pañcamaṁ bhagavā brūhi, | S: Tell us the fifth, Blessed One: | T: May the Blessed One tell the fifth:
+snp1.6:10.4 | P: kiṁ parābhavato mukhaṁ”. | S: what leads to downfall?” | T: What is the way leading to decline?
+
+## snp1.6:11.1–snp1.6:11.4 (snp) GATHERED; possible speaker requires a reader
+snp1.6:11.1 | P: “Yo brāhmaṇaṁ samaṇaṁ vā, | S: “He deceives with lies | T: The Buddha: ⏎ Whoever deceives with a lie
+snp1.6:11.2 | P: Aññaṁ vāpi vanibbakaṁ; | S: ascetics and brahmins | T: a brahman, contemplative, ⏎ or other mendicant:
+snp1.6:11.3 | P: Musāvādena vañceti, | S: and other supplicants, | T: (none)
+snp1.6:11.4 | P: Taṁ parābhavato mukhaṁ”. | S: and that leads to his downfall.” | T: That is the way leading to decline.
+
+## snp1.6:12.1–snp1.6:12.4 (snp)
+snp1.6:12.1 | P: “Iti hetaṁ vijānāma, | S: “We understand what you’re saying, | T: The deva: ⏎ We know, indeed, that that is so.
+snp1.6:12.2 | P: Pañcamo so parābhavo; | S: this is the fifth downfall. | T: That’s the fifth one in decline.
+snp1.6:12.3 | P: Chaṭṭhamaṁ bhagavā brūhi, | S: Tell us the sixth, Blessed One: | T: May the Blessed One tell the sixth:
+snp1.6:12.4 | P: Kiṁ parābhavato mukhaṁ”. | S: what leads to downfall?” | T: What is the way leading to decline?
+
+## snp1.6:13.1–snp1.6:13.4 (snp)
+snp1.6:13.1 | P: “Pahūtavitto puriso, | S: “A man with plenty of wealth, | T: The Buddha: ⏎ The man of great wealth,
+snp1.6:13.2 | P: Sahirañño sabhojano; | S: including gold coin and food, | T: with gold & food,
+snp1.6:13.3 | P: Eko bhuñjati sādūni, | S: eats delicacies alone, | T: enjoys his luxuries alone:
+snp1.6:13.4 | P: Taṁ parābhavato mukhaṁ”. | S: and that leads to his downfall.” | T: That is the way leading to decline.
+
+## snp1.6:14.1–snp1.6:14.4 (snp)
+snp1.6:14.1 | P: “Iti hetaṁ vijānāma, | S: “We understand what you’re saying, | T: The deva: ⏎ We know, indeed, that that is so.
+snp1.6:14.2 | P: Chaṭṭhamo so parābhavo; | S: this is the sixth downfall. | T: That’s the sixth one in decline.
+snp1.6:14.3 | P: Sattamaṁ bhagavā brūhi, | S: Tell us the seventh, Blessed One: | T: May the Blessed One tell the seventh:
+snp1.6:14.4 | P: Kiṁ parābhavato mukhaṁ”. | S: what leads to downfall?” | T: What is the way leading to decline?
+
+## snp1.6:15.1–snp1.6:15.4 (snp)
+snp1.6:15.1 | P: “Jātitthaddho dhanatthaddho, | S: “Vain of birth, wealth, | T: The Buddha: ⏎ The man proud of his birth, ⏎ proud of his wealth,
+snp1.6:15.2 | P: Gottatthaddho ca yo naro; | S: and clan, a man | T: proud of his clan,
+snp1.6:15.3 | P: Saññātiṁ atimaññeti, | S: looks down on his own family, | T: despises his own relatives:
+snp1.6:15.4 | P: Taṁ parābhavato mukhaṁ”. | S: and that leads to his downfall.” | T: That is the way leading to decline.
+
+## snp1.6:16.1–snp1.6:16.4 (snp)
+snp1.6:16.1 | P: “Iti hetaṁ vijānāma, | S: “We understand what you’re saying, | T: The deva: ⏎ We know, indeed, that that is so.
+snp1.6:16.2 | P: Sattamo so parābhavo; | S: this is the seventh downfall. | T: That’s the seventh one in decline.
+snp1.6:16.3 | P: Aṭṭhamaṁ bhagavā brūhi, | S: Tell us the eighth, Blessed One: | T: May the Blessed One tell the eighth:
+snp1.6:16.4 | P: Kiṁ parābhavato mukhaṁ”. | S: what leads to downfall?” | T: What is the way leading to decline?
+
+## snp1.6:17.1–snp1.6:17.4 (snp)
+snp1.6:17.1 | P: “Itthidhutto surādhutto, | S: “In womanizing, drinking, | T: The Buddha: ⏎ The man debauched with women, ⏎ debauched in drink,
+snp1.6:17.2 | P: Akkhadhutto ca yo naro; | S: and gambling, a man | T: debauched in gambling,
+snp1.6:17.3 | P: Laddhaṁ laddhaṁ vināseti, | S: wastes all that he has earned, | T: squanders his earnings:
+snp1.6:17.4 | P: Taṁ parābhavato mukhaṁ”. | S: and that leads to his downfall.” | T: That is the way leading to decline.
+
+## snp1.6:18.1–snp1.6:18.4 (snp)
+snp1.6:18.1 | P: “Iti hetaṁ vijānāma, | S: “We understand what you’re saying, | T: The deva: ⏎ We know, indeed, that that is so.
+snp1.6:18.2 | P: Aṭṭhamo so parābhavo; | S: this is the eighth downfall. | T: That’s the eighth one in decline.
+snp1.6:18.3 | P: Navamaṁ bhagavā brūhi, | S: Tell us the ninth, Blessed One: | T: May the Blessed One tell the ninth:
+snp1.6:18.4 | P: Kiṁ parābhavato mukhaṁ”. | S: what leads to downfall?” | T: What is the way leading to decline?
+
+## snp1.6:19.1–snp1.6:19.4 (snp)
+snp1.6:19.1 | P: “Sehi dārehi asantuṭṭho, | S: “Not content with his own partners, | T: The Buddha: ⏎ One uncontent with his own wives,
+snp1.6:19.2 | P: Vesiyāsu padussati; | S: he debauches himself with prostitutes, | T: misbehaves with prostitutes
+snp1.6:19.3 | P: Dussati paradāresu, | S: and with others’ partners, | T: & the wives of others:
+snp1.6:19.4 | P: Taṁ parābhavato mukhaṁ”. | S: and that leads to his downfall.” | T: That is the way leading to decline.
+
+## snp1.6:20.1–snp1.6:20.4 (snp)
+snp1.6:20.1 | P: “Iti hetaṁ vijānāma, | S: “We understand what you’re saying, | T: The deva: ⏎ We know, indeed, that that is so.
+snp1.6:20.2 | P: Navamo so parābhavo; | S: this is the ninth downfall. | T: That’s the ninth one in decline.
+snp1.6:20.3 | P: Dasamaṁ bhagavā brūhi, | S: Tell us the tenth, Blessed One: | T: May the Blessed One tell the tenth:
+snp1.6:20.4 | P: Kiṁ parābhavato mukhaṁ”. | S: what leads to downfall?” | T: What is the way leading to decline?
+
+## snp1.6:21.1–snp1.6:21.4 (snp)
+snp1.6:21.1 | P: “Atītayobbano poso, | S: “A man well past his prime | T: The Buddha: ⏎ His youth past,
+snp1.6:21.2 | P: Āneti timbarutthaniṁ; | S: marries a girl with budding breasts; | T: a man takes a young woman ⏎ with timbara-fruit breasts,
+snp1.6:21.3 | P: Tassā issā na supati, | S: he cannot sleep for jealousy, | T: and, jealous of her, doesn’t sleep:
+snp1.6:21.4 | P: Taṁ parābhavato mukhaṁ”. | S: and that leads to his downfall.” | T: That is the way leading to decline.
+
+## snp1.6:22.1–snp1.6:22.4 (snp)
+snp1.6:22.1 | P: “Iti hetaṁ vijānāma, | S: “We understand what you’re saying, | T: The deva: ⏎ We know, indeed, that that is so.
+snp1.6:22.2 | P: Dasamo so parābhavo; | S: this is the tenth downfall. | T: That’s the tenth one in decline.
+snp1.6:22.3 | P: Ekādasamaṁ bhagavā brūhi, | S: Tell us the eleventh, Blessed One: | T: May the Blessed One tell the eleventh:
+snp1.6:22.4 | P: Kiṁ parābhavato mukhaṁ”. | S: what leads to downfall?” | T: What is the way leading to decline?
+
+## snp1.6:23.1–snp1.6:23.4 (snp) GATHERED; possible speaker requires a reader
+snp1.6:23.1 | P: “Itthiṁ soṇḍiṁ vikiraṇiṁ, | S: “He places in authority | T: The Buddha: ⏎ To place in authority
+snp1.6:23.2 | P: Purisaṁ vāpi tādisaṁ; | S: a woman or a man | T: a woman given to drink & squandering ⏎ or a man of that sort:
+snp1.6:23.3 | P: Issariyasmiṁ ṭhapeti, | S: who’s a drunkard and a wastrel, | T: (none)
+snp1.6:23.4 | P: Taṁ parābhavato mukhaṁ”. | S: and that leads to his downfall.” | T: That is the way leading to decline.
+
+## snp1.6:24.1–snp1.6:24.4 (snp)
+snp1.6:24.1 | P: “Iti hetaṁ vijānāma, | S: “We understand what you’re saying, | T: The deva: ⏎ We know, indeed, that that is so.
+snp1.6:24.2 | P: Ekādasamo so parābhavo; | S: this is the eleventh downfall. | T: That’s the eleventh one in decline.
+snp1.6:24.3 | P: Dvādasamaṁ bhagavā brūhi, | S: Tell us the twelfth, Blessed One: | T: May the Blessed One tell the twelfth:
+snp1.6:24.4 | P: Kiṁ parābhavato mukhaṁ”. | S: what leads to downfall?” | T: What is the way leading to decline?
+
+## snp1.6:25.1–snp1.6:25.4 (snp)
+snp1.6:25.1 | P: “Appabhogo mahātaṇho, | S: “A man of little wealth and strong craving, | T: The Buddha: ⏎ One of meager means ⏎ but great craving,
+snp1.6:25.2 | P: Khattiye jāyate kule; | S: born into an aristocratic family, | T: born into a noble family,
+snp1.6:25.3 | P: So ca rajjaṁ patthayati, | S: sets his sights on kingship, | T: who aspires to kingship:
+snp1.6:25.4 | P: Taṁ parābhavato mukhaṁ. | S: and that leads to his downfall. | T: That is the way leading to decline.
+
+## snp1.6:26.1–snp1.6:26.4 (snp)
+snp1.6:26.1 | P: Ete parābhave loke, | S: Seeing these downfalls in the world, | T: Contemplating ⏎ these ones in decline ⏎ in the world,
+snp1.6:26.2 | P: Paṇḍito samavekkhiya; | S: an astute and noble person, | T: the wise one,
+snp1.6:26.3 | P: Ariyo dassanasampanno, | S: accomplished in vision, | T: consummate in noble view,
+snp1.6:26.4 | P: Sa lokaṁ bhajate sivan”ti. | S: will enjoy a world of grace.” | T: heads to a world ⏎ auspicious.
+CONTEXT snp1.6:26.5 | P: Parābhavasuttaṁ chaṭṭhaṁ. | S: (none) | T: (none)
+
+## snp1.7:4.1–snp1.7:4.4 (snp)
+CONTEXT snp1.7:3.6 | P: “Evaṁ, bho”ti kho aggikabhāradvājo brāhmaṇo bhagavato paccassosi. | S: “Yes, worthy sir,” Bhāradvāja the Fire-Worshiper replied. | T: “As you say, master,” the brahman Aggika Bhāradvāja responded to the Blessed One.
+CONTEXT snp1.7:3.7 | P: Bhagavā etadavoca: | S: The Buddha said this: | T: The Blessed One said:
+snp1.7:4.1 | P: “Kodhano upanāhī ca, | S: “Irritable and acrimonious, | T: Whatever man is angry, resentful,
+snp1.7:4.2 | P: pāpamakkhī ca yo naro; | S: wicked and offensive, | T: evil, merciless,
+snp1.7:4.3 | P: Vipannadiṭṭhi māyāvī, | S: a man deficient in view, deceitful: | T: deceitful, and defective in his views:
+snp1.7:4.4 | P: taṁ jaññā vasalo iti. | S: know him as a lowlife. | T: He should be known as ‘outcaste.’
+
+## snp1.7:5.1–snp1.7:5.4 (snp)
+snp1.7:5.1 | P: Ekajaṁ vā dvijaṁ vāpi, | S: He harms living creatures | T: Whoever here harms a living being
+snp1.7:5.2 | P: yodha pāṇaṁ vihiṁsati; | S: born of womb or of egg, | T: once-born or twice-born,
+snp1.7:5.3 | P: Yassa pāṇe dayā natthi, | S: and has no kindness for creatures: | T: who has no sympathy for a living being:
+snp1.7:5.4 | P: taṁ jaññā vasalo iti. | S: know him as a lowlife. | T: He should be known as ‘outcaste.’
+
+## snp1.7:6.1–snp1.7:6.4 (snp)
+snp1.7:6.1 | P: Yo hanti parirundhati, | S: He destroys and devastates | T: Whoever destroys or besieges
+snp1.7:6.2 | P: gāmāni nigamāni ca; | S: villages and towns, | T: villages or towns,
+snp1.7:6.3 | P: Niggāhako samaññāto, | S: a notorious oppressor: | T: a notorious oppressor:
+snp1.7:6.4 | P: taṁ jaññā vasalo iti. | S: know him as a lowlife. | T: He should be known as ‘outcaste.’
+
+## snp1.7:7.1–snp1.7:7.4 (snp) GATHERED; possible speaker requires a reader
+snp1.7:7.1 | P: Gāme vā yadi vā raññe, | S: Whether in village or wilderness, | T: Whoever, from village or wilderness,
+snp1.7:7.2 | P: yaṁ paresaṁ mamāyitaṁ; | S: he steals what belongs to others, | T: takes in a manner of theft ⏎ what others claim as ‘mine’:
+snp1.7:7.3 | P: Theyyā adinnamādeti, | S: taking what has not been given: | T: (none)
+snp1.7:7.4 | P: taṁ jaññā vasalo iti. | S: know him as a lowlife. | T: He should be known as ‘outcaste.’
+
+## snp1.7:8.1–snp1.7:8.4 (snp)
+snp1.7:8.1 | P: Yo have iṇamādāya, | S: Having fallen into debt, | T: Whoever, actually incurring a debt,
+snp1.7:8.2 | P: cujjamāno palāyati; | S: when pressed to pay up he flees, saying | T: when pressed to pay, evades, ⏎ (saying,)
+snp1.7:8.3 | P: Na hi te iṇamatthīti, | S: ‘I don’t owe you anything!’: | T: ‘I’m in no debt to you’:
+snp1.7:8.4 | P: taṁ jaññā vasalo iti. | S: know him as a lowlife. | T: He should be known as ‘outcaste.’
+
+## snp1.7:9.1–snp1.7:9.4 (snp)
+snp1.7:9.1 | P: Yo ve kiñcikkhakamyatā, | S: Wanting some item or other, | T: Whoever, desiring whatever-the-thing,
+snp1.7:9.2 | P: panthasmiṁ vajantaṁ janaṁ; | S: he attacks a person in the street | T: strikes a person going along a road,
+snp1.7:9.3 | P: Hantvā kiñcikkhamādeti, | S: and takes it: | T: to take whatever-the-thing:
+snp1.7:9.4 | P: taṁ jaññā vasalo iti. | S: know him as a lowlife. | T: He should be known as ‘outcaste.’
+
+## snp1.7:10.1–snp1.7:10.4 (snp)
+snp1.7:10.1 | P: Attahetu parahetu, | S: For his own sake or the sake of another, | T: Whatever man, for his own sake, ⏎ the sake of another,
+snp1.7:10.2 | P: dhanahetu ca yo naro; | S: or for the sake of wealth, a man | T: or the sake of wealth,
+snp1.7:10.3 | P: Sakkhipuṭṭho musā brūti, | S: tells a lie when asked to bear witness: | T: tells a lie when asked to bear witness:
+snp1.7:10.4 | P: taṁ jaññā vasalo iti. | S: know him as a lowlife. | T: He should be known as ‘outcaste.’
+
+## snp1.7:11.1–snp1.7:11.4 (snp)
+snp1.7:11.1 | P: Yo ñātīnaṁ sakhīnaṁ vā, | S: He is spied among the partners | T: Whoever misbehaves
+snp1.7:11.2 | P: dāresu paṭidissati; | S: of relatives and friends, | T: with the wives of relatives or friends,
+snp1.7:11.3 | P: Sāhasā sampiyena vā, | S: by force or seduction: | T: by force or with their consent:
+snp1.7:11.4 | P: taṁ jaññā vasalo iti. | S: know him as a lowlife. | T: He should be known as ‘outcaste.’
+
+## snp1.7:12.1–snp1.7:12.4 (snp)
+snp1.7:12.1 | P: Yo mātaraṁ pitaraṁ vā, | S: Though able, he does not look after | T: Whoever, though capable, doesn’t support
+snp1.7:12.2 | P: jiṇṇakaṁ gatayobbanaṁ; | S: his mother and father | T: his mother or father
+snp1.7:12.3 | P: Pahu santo na bharati, | S: when elderly, past their prime: | T: —old, their youth over & done:
+snp1.7:12.4 | P: taṁ jaññā vasalo iti. | S: know him as a lowlife. | T: He should be known as ‘outcaste.’
+
+## snp1.7:13.1–snp1.7:13.4 (snp)
+snp1.7:13.1 | P: Yo mātaraṁ pitaraṁ vā, | S: He hits or verbally abuses | T: Whoever strikes ⏎ and reviles with his speech
+snp1.7:13.2 | P: Bhātaraṁ bhaginiṁ sasuṁ; | S: his mother or father, | T: mother or father,
+snp1.7:13.3 | P: Hanti roseti vācāya, | S: brother, sister, or mother-in-law: | T: sister or brother, ⏎ or mother-in-law:
+snp1.7:13.4 | P: Taṁ jaññā vasalo iti. | S: know him as a lowlife. | T: He should be known as ‘outcaste.’
+
+## snp1.7:14.1–snp1.7:14.4 (snp)
+snp1.7:14.1 | P: Yo atthaṁ pucchito santo, | S: When asked about the good, | T: Whoever, asked about what’s beneficial,
+snp1.7:14.2 | P: Anatthamanusāsati; | S: he teaches what is bad, | T: teaches what’s not
+snp1.7:14.3 | P: Paṭicchannena manteti, | S: giving secretive advice: | T: and gives counsel concealing some points:
+snp1.7:14.4 | P: Taṁ jaññā vasalo iti. | S: know him as a lowlife. | T: He should be known as ‘outcaste.’
+
+## snp1.7:15.1–snp1.7:15.4 (snp)
+snp1.7:15.1 | P: Yo katvā pāpakaṁ kammaṁ, | S: Having done a bad deed, he wishes, | T: Whoever, doing an evil deed, ⏎ wishes,
+snp1.7:15.2 | P: Mā maṁ jaññāti icchati; | S: ‘May no one find me out!’ | T: ‘May I not be known,’
+snp1.7:15.3 | P: Yo paṭicchannakammanto, | S: His deeds are underhand: | T: acting in hiding:
+snp1.7:15.4 | P: Taṁ jaññā vasalo iti. | S: know him as a lowlife. | T: He should be known as ‘outcaste.’
+
+## snp1.7:16.1–snp1.7:16.4 (snp)
+snp1.7:16.1 | P: Yo ve parakulaṁ gantvā, | S: When visiting another family | T: Whoever, having gone to another’s house,
+snp1.7:16.2 | P: Bhutvāna sucibhojanaṁ; | S: he eats their delicious food, | T: being offered pure food,
+snp1.7:16.3 | P: Āgataṁ nappaṭipūjeti, | S: but does not return the honor: | T: doesn’t honor (the host) in return ⏎ when he comes (to one’s house):
+snp1.7:16.4 | P: Taṁ jaññā vasalo iti. | S: know him as a lowlife. | T: He should be known as ‘outcaste.’
+
+## snp1.7:17.1–snp1.7:17.4 (snp)
+snp1.7:17.1 | P: Yo brāhmaṇaṁ samaṇaṁ vā, | S: He deceives with lies | T: Whoever deceives with a lie
+snp1.7:17.2 | P: Aññaṁ vāpi vanibbakaṁ; | S: ascetics and brahmins | T: a brahman, contemplative,
+snp1.7:17.3 | P: Musāvādena vañceti, | S: and other supplicants: | T: or other mendicant:
+snp1.7:17.4 | P: Taṁ jaññā vasalo iti. | S: know him as a lowlife. | T: He should be known as ‘outcaste.’
+
+## snp1.7:18.1–snp1.7:18.4 (snp) GATHERED; possible speaker requires a reader
+snp1.7:18.1 | P: Yo brāhmaṇaṁ samaṇaṁ vā, | S: When time comes to offer a meal | T: Whoever, when a brahman or contemplative ⏎ appears at mealtime,
+snp1.7:18.2 | P: Bhattakāle upaṭṭhite; | S: to brahmins or ascetics, | T: (none)
+snp1.7:18.3 | P: Roseti vācā na ca deti, | S: he abuses them and does not give: | T: reviles him with speech and doesn’t give:
+snp1.7:18.4 | P: Taṁ jaññā vasalo iti. | S: know him as a lowlife. | T: He should be known as ‘outcaste.’
+
+## snp1.7:19.1–snp1.7:19.4 (snp) GATHERED; possible speaker requires a reader
+snp1.7:19.1 | P: Asataṁ yodha pabrūti, | S: He talks about what never happened, | T: Whoever, wrapped in delusion, ⏎ speaks here what is untrue,
+snp1.7:19.2 | P: Mohena paliguṇṭhito; | S: being wrapped up in delusion, | T: (none)
+snp1.7:19.3 | P: Kiñcikkhaṁ nijigīsāno, | S: chasing after some item or other: | T: greedy for whatever-the-thing:
+snp1.7:19.4 | P: Taṁ jaññā vasalo iti. | S: know him as a lowlife. | T: He should be known as ‘outcaste.’
+
+## snp1.7:20.1–snp1.7:20.4 (snp)
+snp1.7:20.1 | P: Yo cattānaṁ samukkaṁse, | S: He extols himself | T: Whoever exalts himself
+snp1.7:20.2 | P: Pare ca mavajānāti; | S: and disparages others, | T: and disparages others,
+snp1.7:20.3 | P: Nihīno sena mānena, | S: brought down by his pride: | T: debased by his own pride:
+snp1.7:20.4 | P: Taṁ jaññā vasalo iti. | S: know him as a lowlife. | T: He should be known as ‘outcaste.’
+
+## snp1.7:21.1–snp1.7:21.4 (snp)
+snp1.7:21.1 | P: Rosako kadariyo ca, | S: He’s a bully and a miser, | T: Angry, mean,
+snp1.7:21.2 | P: Pāpiccho maccharī saṭho; | S: of corrupt wishes, stingy, and devious, | T: evil in his desires, ⏎ miserly, dishonest,
+snp1.7:21.3 | P: Ahiriko anottappī, | S: shameless, imprudent: | T: devoid of shame & compunction:
+snp1.7:21.4 | P: Taṁ jaññā vasalo iti. | S: know him as a lowlife. | T: He should be known as ‘outcaste.’
+
+## snp1.7:22.1–snp1.7:22.4 (snp)
+snp1.7:22.1 | P: Yo buddhaṁ paribhāsati, | S: He insults the Buddha | T: Whoever heaps verbal abuse ⏎ on an Awakened One
+snp1.7:22.2 | P: Atha vā tassa sāvakaṁ; | S: or his disciple, | T: or his disciple,
+snp1.7:22.3 | P: Paribbājaṁ gahaṭṭhaṁ vā, | S: whether lay or renunciate: | T: wanderer or householder:
+snp1.7:22.4 | P: Taṁ jaññā vasalo iti. | S: know him as a lowlife. | T: He should be known as ‘outcaste.’

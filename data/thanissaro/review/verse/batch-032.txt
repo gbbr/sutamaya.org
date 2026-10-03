@@ -1,0 +1,399 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## iti40:4.1–iti40:4.4 (iti)
+iti40:4.1 | P: Yato ca hoti pāpiccho, | S: Since one of corrupt wishes is | T: And when a person of evil desires
+iti40:4.2 | P: ahirīko anādaro; | S: unconscientious, lacking regard for others, | T: lacks shame & respect,
+iti40:4.3 | P: Tato pāpaṁ pasavati, | S: they brim with much wickedness, | T: evil comes from that,
+iti40:4.4 | P: apāyaṁ tena gacchati. | S: which sends them to a place of loss. | T: and by that he goes ⏎ to deprivation.
+
+## iti40:5.1–iti40:5.4 (iti)
+iti40:5.1 | P: Tasmā chandañca lobhañca, | S: Therefore, dispelling desire | T: So cleansing away
+iti40:5.2 | P: avijjañca virājayaṁ; | S: and greed and ignorance, | T: ignorance, desire, & greed,
+iti40:5.3 | P: Vijjaṁ uppādayaṁ bhikkhu, | S: a mendicant arousing knowledge | T: a monk giving rise to clear knowing
+iti40:5.4 | P: sabbā duggatiyo jahe”ti. | S: would abandon all bad destinies.” | T: would abandon all bad destinations.
+CONTEXT iti40:6.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti40:6.2 | P: Tatiyaṁ. | S: (none) | T: (none)
+
+## iti41:3.1–iti41:3.4 (iti)
+CONTEXT iti41:2.7 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti41:2.8 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti41:3.1 | P: “Paññāya parihānena, | S: “See the world with its gods, | T: Look at the world ⏎ –including its heavenly beings:
+iti41:3.2 | P: passa lokaṁ sadevakaṁ; | S: bereft of wisdom, | T: deprived of discernment,
+iti41:3.3 | P: Niviṭṭhaṁ nāmarūpasmiṁ, | S: habituated to name and form, | T: making an abode in name-&-form,
+iti41:3.4 | P: idaṁ saccanti maññati. | S: imagining this is truth. | T: it conceives that ‘This is the truth.’
+
+## iti41:4.1–iti41:4.4 (iti)
+iti41:4.1 | P: Paññā hi seṭṭhā lokasmiṁ, | S: Wisdom is best in the world, | T: The best discernment in the world
+iti41:4.2 | P: yāyaṁ nibbedhagāminī; | S: as it leads to penetration, | T: is what leads ⏎ to penetration,
+iti41:4.3 | P: Yāya sammā pajānāti, | S: through which one rightly understands | T: for it rightly discerns
+iti41:4.4 | P: jātibhavaparikkhayaṁ. | S: the ending of rebirth and continued existence. | T: the total ending of birth & becoming.
+
+## iti41:5.1–iti41:5.4 (iti) GATHERED; possible speaker requires a reader
+iti41:5.1 | P: Tesaṁ devā manussā ca, | S: Gods and humans envy them, | T: Human & heavenly beings ⏎ hold them dear:
+iti41:5.2 | P: sambuddhānaṁ satīmataṁ; | S: the Buddhas, ever mindful, | T: those who are ⏎ self-awakened, ⏎ mindful,
+iti41:5.3 | P: Pihayanti hāsapaññānaṁ, | S: of laughing wisdom, | T: bearing their last bodies ⏎ with joyful discernment.
+iti41:5.4 | P: sarīrantimadhārinan”ti. | S: bearing their final body.” | T: (none)
+CONTEXT iti41:6.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti41:6.2 | P: Catutthaṁ. | S: (none) | T: (none)
+
+## iti42:3.1–iti42:3.4 (iti)
+CONTEXT iti42:2.7 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti42:2.8 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti42:3.1 | P: “Yesañce hiriottappaṁ, | S: “Those in whom conscience and prudence | T: Those in whom ⏎ shame & compunction
+iti42:3.2 | P: sabbadā ca na vijjati; | S: are never found at all, | T: are not always found
+iti42:3.3 | P: Vokkantā sukkamūlā te, | S: have lost their bright roots, | T: have strayed ⏎ from the bright root,
+iti42:3.4 | P: jātimaraṇagāmino. | S: and fare on in birth and death. | T: are headed ⏎ to birth & death.
+
+## iti42:4.1–iti42:4.4 (iti)
+iti42:4.1 | P: Yesañca hiriottappaṁ, | S: Those in whom conscience and prudence | T: But those in whom ⏎ shame & compunction
+iti42:4.2 | P: sadā sammā upaṭṭhitā; | S: are always rightly established, | T: always are rightly established,
+iti42:4.3 | P: Virūḷhabrahmacariyā te, | S: thrive in the spiritual life; | T: who are mature in the holy life:
+iti42:4.4 | P: santo khīṇapunabbhavā”ti. | S: being at peace, they will not be reborn again.” | T: they are calm, ⏎ their further becoming ⏎ ended.
+CONTEXT iti42:5.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti42:5.2 | P: Pañcamaṁ. | S: (none) | T: (none)
+
+## iti43:3.1–iti43:3.4 (iti)
+CONTEXT iti43:2.4 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti43:2.5 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti43:3.1 | P: “Jātaṁ bhūtaṁ samuppannaṁ, | S: “What’s reborn, produced, and arisen, | T: The born, become, produced,
+iti43:3.2 | P: kataṁ saṅkhatamaddhuvaṁ; | S: made, conditioned, not lasting, | T: made, fabricated, impermanent,
+iti43:3.3 | P: Jarāmaraṇasaṅghāṭaṁ, | S: wrapped in old age and death, | T: fabricated of aging & death,
+iti43:3.4 | P: roganīḷaṁ pabhaṅguraṁ. | S: frail, a nest of disease, | T: a nest of illnesses, perishing,
+
+## iti43:4.1–iti43:4.4 (iti)
+iti43:4.1 | P: Āhāranettippabhavaṁ, | S: whose inception is the leash to food: | T: come-into-being through nourishment ⏎ and the guide [that is craving]–
+iti43:4.2 | P: nālaṁ tadabhinandituṁ; | S: that’s not fit to delight in. | T: is unfit for delight.
+iti43:4.3 | P: Tassa nissaraṇaṁ santaṁ, | S: The escape from that is peaceful, | T: The escape from that ⏎ is ⏎ peaceful,
+iti43:4.4 | P: atakkāvacaraṁ dhuvaṁ. | S: beyond the scope of logic, everlasting, | T: permanent, ⏎ a sphere beyond conjecture,
+
+## iti43:5.1–iti43:5.4 (iti)
+iti43:5.1 | P: Ajātaṁ asamuppannaṁ, | S: where nothing is reborn or arisen, | T: unborn, unproduced,
+iti43:5.2 | P: asokaṁ virajaṁ padaṁ; | S: the sorrowless, stainless state, | T: the sorrowless, stainless state,
+iti43:5.3 | P: Nirodho dukkhadhammānaṁ, | S: the cessation of all painful things, | T: the cessation of stressful qualities,
+iti43:5.4 | P: saṅkhārūpasamo sukho”ti. | S: the blissful stilling of conditions.” | T: stilling-of-fabrications bliss.
+CONTEXT iti43:6.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti43:6.2 | P: Chaṭṭhaṁ. | S: (none) | T: (none)
+
+## iti44:5.1–iti44:5.6 (iti)
+CONTEXT iti44:4.6 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti44:4.7 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti44:5.1 | P: “Duve imā cakkhumatā pakāsitā, | S: “These two elements of extinguishment have been revealed | T: These two ⏎ proclaimed ⏎ by the one with vision, ⏎ Unbinding properties
+iti44:5.2 | P: Nibbānadhātū anissitena tādinā; | S: by the Clear-eyed One, the unattached, the unaffected. | T: the one independent, ⏎ the one who is Such:
+iti44:5.3 | P: Ekā hi dhātu idha diṭṭhadhammikā, | S: One element pertains to this life— | T: one property, here in this life,
+iti44:5.4 | P: Saupādisesā bhavanettisaṅkhayā; | S: that with residue though the leash to existence has ended; | T: with fuel remaining ⏎ from the destruction of [craving], ⏎ the guide to becoming,
+iti44:5.5 | P: Anupādisesā pana samparāyikā, | S: and that with no residue, which pertains to what follows this life, | T: and that with no fuel remaining, ⏎ after this life,
+iti44:5.6 | P: Yamhi nirujjhanti bhavāni sabbaso. | S: where all states of existence cease. | T: in which all becoming ⏎ totally ceases.
+
+## iti44:6.1–iti44:6.4 (iti)
+iti44:6.1 | P: Ye etadaññāya padaṁ asaṅkhataṁ, | S: Those who have fully understood the unconditioned state— | T: Those who know ⏎ this unfabricated state,
+iti44:6.2 | P: Vimuttacittā bhavanettisaṅkhayā; | S: their minds freed, the leash to existence ended— | T: their minds released ⏎ through the destruction of [craving], ⏎ the guide to becoming,
+iti44:6.3 | P: Te dhammasārādhigamā khaye ratā, | S: attained to the heart of the Dhamma, they delight in ending, | T: they, attaining the Dhamma’s heartwood, ⏎ delighting in ending,
+iti44:6.4 | P: Pahaṁsu te sabbabhavāni tādino”ti. | S: the unaffected ones have given up all states of existence.” | T: have abandoned all becoming: ⏎ they, the Such.
+CONTEXT iti44:7.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti44:7.2 | P: Sattamaṁ. | S: (none) | T: (none)
+
+## iti45:3.1–iti45:3.4 (iti)
+CONTEXT iti45:2.4 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti45:2.5 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti45:3.1 | P: “Ye santacittā nipakā, | S: “With minds at peace, alert, | T: Those with calm minds– ⏎ masterful,
+iti45:3.2 | P: satimanto ca jhāyino; | S: mindful and meditative, | T: mindful, ⏎ absorbed in jhāna–
+iti45:3.3 | P: Sammā dhammaṁ vipassanti, | S: they rightly discern the Dhamma, | T: clearly see Dhamma rightly,
+iti45:3.4 | P: kāmesu anapekkhino. | S: unconcerned for sensual pleasures. | T: not intent on sensual pleasures.
+
+## iti45:4.1–iti45:4.4 (iti)
+iti45:4.1 | P: Appamādaratā santā, | S: Delighting in diligence, peaceful, | T: Delighting in heedfulness, ⏎ calm,
+iti45:4.2 | P: pamāde bhayadassino; | S: seeing fear in negligence, | T: seeing danger in heedlessness,
+iti45:4.3 | P: Abhabbā parihānāya, | S: such a one can’t decline, | T: they ⏎ –incapable of falling away–
+iti45:4.4 | P: nibbānasseva santike”ti. | S: and has drawn near to extinguishment.” | T: are right in the presence of Unbinding.
+CONTEXT iti45:5.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti45:5.2 | P: Aṭṭhamaṁ. | S: (none) | T: (none)
+
+## iti46:3.1–iti46:3.4 (iti)
+CONTEXT iti46:2.4 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti46:2.5 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti46:3.1 | P: “Paripuṇṇasikkhaṁ apahānadhammaṁ, | S: “The training fulfilled, not liable to decline, | T: Complete in the training, ⏎ not subject to falling away,
+iti46:3.2 | P: Paññuttaraṁ jātikhayantadassiṁ; | S: overseen by wisdom, seer of rebirth’s end; | T: one with discernment ⏎ uppermost, ⏎ seeing the stopping, the ending of birth:
+iti46:3.3 | P: Taṁ ve muniṁ antimadehadhāriṁ, | S: that sage bears their final body; | T: that sage ⏎ bears his last body,
+iti46:3.4 | P: Mārañjahaṁ brūmi jarāya pāraguṁ. | S: they have disposed of Māra, I declare, and gone beyond old age. | T: has shaken off Māra, I tell you, ⏎ has gone beyond aging.
+
+## iti46:4.1–iti46:4.4 (iti)
+iti46:4.1 | P: Tasmā sadā jhānaratā samāhitā, | S: Therefore be always enjoying absorption, immersed in samādhi, | T: So, always ⏎ delighting in jhāna, ⏎ centered,
+iti46:4.2 | P: Ātāpino jātikhayantadassino; | S: energetic, seers of rebirth’s end. | T: ardent, ⏎ seeing the stopping, the ending of birth,
+iti46:4.3 | P: Māraṁ sasenaṁ abhibhuyya bhikkhavo, | S: Having overcome Māra and his armies, mendicants, | T: conquering Māra, along with his armies, ⏎ monks,
+iti46:4.4 | P: Bhavatha jātimaraṇassa pāragā”ti. | S: go beyond birth and death.” | T: be gone-beyond aging & death.
+CONTEXT iti46:5.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti46:5.2 | P: Navamaṁ. | S: (none) | T: (none)
+
+## iti47:3.1–iti47:3.4 (iti)
+CONTEXT iti47:2.4 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti47:2.5 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti47:3.1 | P: “Jāgarantā suṇāthetaṁ, | S: “Listen up, wakeful ones! | T: Those who are wakeful, listen to this!
+iti47:3.2 | P: ye suttā te pabujjhatha; | S: And those asleep, wake up! | T: Those who are sleeping, wake up!
+iti47:3.3 | P: Suttā jāgaritaṁ seyyo, | S: Wakefulness is better than sleep, | T: Wakefulness is better than sleep.
+iti47:3.4 | P: natthi jāgarato bhayaṁ. | S: the wakeful have nothing to fear. | T: For those who are wakeful, ⏎ there’s no danger, no fear.
+
+## iti47:4.1–iti47:4.4 (iti)
+iti47:4.1 | P: Yo jāgaro ca satimā sampajāno, | S: Those who are wakeful, mindful and aware, | T: Whoever is wakeful, ⏎ mindful, alert,
+iti47:4.2 | P: Samāhito mudito vippasanno ca; | S: immersed in samādhi, joyful and clear, | T: centered, sensitive, ⏎ calm, & clear,
+iti47:4.3 | P: Kālena so sammā dhammaṁ parivīmaṁsamāno, | S: rightly investigating the Dhamma in good time, | T: rightly exploring the Dhamma ⏎ at appropriate times,
+iti47:4.4 | P: Ekodibhūto vihane tamaṁ so. | S: at one, would banish the darkness. | T: he–on becoming unified– ⏎ could shatter the darkness.
+
+## iti47:5.1–iti47:5.4 (iti)
+iti47:5.1 | P: Tasmā have jāgariyaṁ bhajetha, | S: That’s why you should apply yourself to wakefulness. | T: So be devoted to wakefulness.
+iti47:5.2 | P: Ātāpī bhikkhu nipako jhānalābhī; | S: A keen and alert mendicant, possessing absorption, | T: The ardent monk ⏎ –masterful, acquiring jhāna,
+iti47:5.3 | P: Saṁyojanaṁ jātijarāya chetvā, | S: having cut the fetter of birth and old age, | T: cutting the fetter of birth & aging–
+iti47:5.4 | P: Idheva sambodhimanuttaraṁ phuse”ti. | S: would experience supreme awakening in this very life.” | T: touches right here ⏎ a self-awakening un- ⏎ surpassed.
+CONTEXT iti47:6.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti47:6.2 | P: Dasamaṁ. | S: (none) | T: (none)
+
+## iti48:3.1–iti48:3.4 (iti) GATHERED; possible speaker requires a reader
+CONTEXT iti48:2.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti48:2.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti48:3.1 | P: “Abhūtavādī nirayaṁ upeti, | S: “A liar goes to hell, | T: He goes to hell, ⏎ the one who asserts ⏎ what didn’t take place,
+iti48:3.2 | P: Yo vāpi katvā na karomi cāha; | S: as does one who denies what they did. | T: as does the one ⏎ who, having done, ⏎ says, ‘I didn’t.’
+iti48:3.3 | P: Ubhopi te pecca samā bhavanti, | S: Both are equal in the hereafter, | T: Both–low-acting people– ⏎ there become equal: ⏎ after death, in the world beyond.
+iti48:3.4 | P: Nihīnakammā manujā parattha. | S: those men of base deeds. | T: (none)
+
+## iti48:4.1–iti48:4.4 (iti)
+iti48:4.1 | P: Kāsāvakaṇṭhā bahavo, | S: Many who wear a scrap of ocher cloth | T: An ochre robe tied ’round their necks, ⏎ many with evil qualities
+iti48:4.2 | P: pāpadhammā asaññatā; | S: are unrestrained and wicked. | T: –unrestrained, evil–
+iti48:4.3 | P: Pāpā pāpehi kammehi, | S: Being wicked, they are reborn in hell | T: rearise,
+iti48:4.4 | P: nirayaṁ te upapajjare. | S: due to their bad deeds. | T: because of their evil acts, ⏎ in hell.
+
+## iti48:5.1–iti48:5.4 (iti) GATHERED; unequal counts require a reader
+iti48:5.1 | P: Seyyo ayoguḷo bhutto, | S: It’d be better for the immoral and unrestrained | T: (none)
+iti48:5.2 | P: tatto aggisikhūpamo; | S: to eat an iron ball, | T: Better to eat an iron ball
+iti48:5.3 | P: Yañce bhuñjeyya dussīlo, | S: scorching, like a burning flame, | T: –glowing, aflame–
+iti48:5.4 | P: raṭṭhapiṇḍamasaññato”ti. | S: than to eat the nation’s alms.” | T: than that, unprincipled & ⏎ unrestrained, ⏎ you should eat the alms of the country.
+CONTEXT iti48:6.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti48:6.2 | P: Ekādasamaṁ. | S: (none) | T: (none)
+
+## iti49:6.1–iti49:6.4 (iti)
+CONTEXT iti49:5.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti49:5.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti49:6.1 | P: “Ye bhūtaṁ bhūtato disvā, | S: “Those who see what has come to be as having come to be, | T: Those, having seen ⏎ what’s come to be ⏎ as what’s come to be,
+iti49:6.2 | P: bhūtassa ca atikkamaṁ; | S: and see the transcendence of what has come to be, | T: and what’s gone beyond ⏎ what’s come to be,
+iti49:6.3 | P: Yathābhūte vimuccanti, | S: are freed in accord with the truth, | T: are released in line ⏎ with what’s come to be,
+iti49:6.4 | P: bhavataṇhā parikkhayā. | S: with the ending of craving for continued existence. | T: through the exhaustion of craving ⏎ for becoming.
+
+## iti49:7.1–iti49:7.4 (iti)
+iti49:7.1 | P: Sa ve bhūtapariñño so, | S: They completely understand what has come to be, | T: If they’ve comprehended ⏎ what’s come to be,
+iti49:7.2 | P: vītataṇho bhavābhave; | S: rid of craving for rebirth in this or that state. | T: and are free from the craving ⏎ for becoming & non-,
+iti49:7.3 | P: Bhūtassa vibhavā bhikkhu, | S: When what has come to be ceases to be, | T: with the non-becoming ⏎ of what’s come to be,
+iti49:7.4 | P: nāgacchati punabbhavan”ti. | S: a mendicant does not come back to future lives.” | T: monks come ⏎ to no further becoming.
+CONTEXT iti49:8.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti49:8.2 | P: Dvādasamaṁ. | S: (none) | T: (none)
+
+## iti49:9.1–iti49:9.4 (iti)
+CONTEXT iti49:8.3 | P: Dutiyo vaggo. | S: (none) | T: (none)
+CONTEXT iti49:9.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+iti49:9.1 | P: Dve indriyā dve tapanīyā, | S: (none) | T: (none)
+iti49:9.2 | P: sīlena apare duve; | S: (none) | T: (none)
+iti49:9.3 | P: Anottāpī kuhanā dve ca, | S: (none) | T: (none)
+iti49:9.4 | P: saṁvejanīyena te dasa. | S: (none) | T: (none)
+
+## iti49:10.1–iti49:10.6 (iti)
+iti49:10.1 | P: Vitakkā desanā vijjā, | S: (none) | T: (none)
+iti49:10.2 | P: paññā dhammena pañcamaṁ; | S: (none) | T: (none)
+iti49:10.3 | P: Ajātaṁ dhātusallānaṁ, | S: (none) | T: (none)
+iti49:10.4 | P: sikkhā jāgariyena ca; | S: (none) | T: (none)
+iti49:10.5 | P: Apāyadiṭṭhiyā ceva, | S: (none) | T: (none)
+iti49:10.6 | P: bāvīsati pakāsitāti. | S: (none) | T: (none)
+CONTEXT iti49:10.7 | P: Dukanipāto niṭṭhito. | S: (none) | T: (none)
+
+## iti50:3.1–iti50:3.4 (iti) GATHERED; unequal counts require a reader
+CONTEXT iti50:2.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti50:2.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti50:3.1 | P: “Lobho doso ca moho ca, | S: “When greed, hate, and delusion, | T: Greed, aversion, delusion destroy
+iti50:3.2 | P: purisaṁ pāpacetasaṁ; | S: have arisen inside oneself, | T: the self-same person of evil mind
+iti50:3.3 | P: Hiṁsanti attasambhūtā, | S: they harm a person of wicked heart, | T: (none)
+iti50:3.4 | P: tacasāraṁva samphalan”ti. | S: as a bamboo is destroyed by its own fruit.” | T: from whom they are born, ⏎ like the fruiting ⏎ of the bamboo.
+CONTEXT iti50:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti50:4.2 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## iti51:3.1–iti51:3.4 (iti)
+CONTEXT iti51:2.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti51:2.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti51:3.1 | P: “Rūpadhātuṁ pariññāya, | S: “Comprehending the realm of luminous form, | T: Comprehending the property of form,
+iti51:3.2 | P: āruppesu asaṇṭhitā; | S: not stuck in the formless, | T: not taking a stance in the formless,
+iti51:3.3 | P: Nirodhe ye vimuccanti, | S: those who are released in cessation, | T: those released in cessation
+iti51:3.4 | P: te janā maccuhāyino. | S: they are conquerors of death. | T: are people who’ve left death behind.
+
+## iti51:4.1–iti51:4.6 (iti)
+iti51:4.1 | P: Kāyena amataṁ dhātuṁ, | S: Having directly experienced the element free of death, | T: Having touched with his body ⏎ the deathless ⏎ property
+iti51:4.2 | P: phusayitvā nirūpadhiṁ; | S: free of attachments; | T: free ⏎ from acquisitions,
+iti51:4.3 | P: Upadhippaṭinissaggaṁ, | S: having realized relinquishment | T: having realized the relinquishing
+iti51:4.4 | P: sacchikatvā anāsavo; | S: of attachments, the undefiled | T: of acquisitions, ⏎ effluent-free,
+iti51:4.5 | P: Deseti sammāsambuddho, | S: fully awakened Buddha teaches | T: the Rightly ⏎ Self-awakened One ⏎ teaches
+iti51:4.6 | P: asokaṁ virajaṁ padan”ti. | S: the sorrowless, stainless state.” | T: the state ⏎ with ⏎ no sorrow, ⏎ no dust.
+CONTEXT iti51:5.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti51:5.2 | P: Dutiyaṁ. | S: (none) | T: (none)
+
+## iti52:3.1–iti52:3.4 (iti)
+CONTEXT iti52:2.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti52:2.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti52:3.1 | P: “Samāhito sampajāno, | S: “Stilled, aware, | T: Centered, ⏎ alert,
+iti52:3.2 | P: sato buddhassa sāvako; | S: a mindful disciple of the Buddha | T: mindful, ⏎ the Awakened One’s ⏎ disciple
+iti52:3.3 | P: Vedanā ca pajānāti, | S: understands feelings, | T: discerns feelings,
+iti52:3.4 | P: vedanānañca sambhavaṁ. | S: the cause of feelings, | T: how feelings come into play,
+
+## iti52:4.1–iti52:4.4 (iti)
+iti52:4.1 | P: Yattha cetā nirujjhanti, | S: where they cease, | T: where they cease,
+iti52:4.2 | P: maggañca khayagāminaṁ; | S: and the path that leads to their ending. | T: & the path to their ending.
+iti52:4.3 | P: Vedanānaṁ khayā bhikkhu, | S: With the ending of feelings, a mendicant | T: With the ending of feelings, a monk
+iti52:4.4 | P: nicchāto parinibbuto”ti. | S: is hungerless, quenched.” | T: free from hunger ⏎ is totally unbound.
+CONTEXT iti52:5.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti52:5.2 | P: Tatiyaṁ. | S: (none) | T: (none)
+
+## iti53:3.1–iti53:3.4 (iti)
+CONTEXT iti53:2.9 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti53:2.10 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti53:3.1 | P: “Yo sukhaṁ dukkhato adda, | S: “A mendicant who sees pleasure as pain, | T: Whoever sees ⏎ pleasure as stress,
+iti53:3.2 | P: Dukkhamaddakkhi sallato; | S: and suffering as a dart, | T: sees pain as an arrow,
+iti53:3.3 | P: Adukkhamasukhaṁ santaṁ, | S: and that peaceful, neutral feeling | T: sees peaceful neither pleasure nor pain
+iti53:3.4 | P: Adakkhi naṁ aniccato. | S: as impermanent | T: as inconstant:
+
+## iti53:4.1–iti53:4.4 (iti)
+iti53:4.1 | P: Sa ve sammaddaso bhikkhu, | S: sees rightly. | T: he is a monk ⏎ who’s seen rightly.
+iti53:4.2 | P: yato tattha vimuccati; | S: And when freed in regards to that, | T: From that he is there released.
+iti53:4.3 | P: Abhiññāvosito santo, | S: that peaceful sage, with perfect insight, | T: A master of direct knowing, ⏎ at peace, ⏎ he is a sage
+iti53:4.4 | P: sa ve yogātigo munī”ti. | S: has truly slipped their yokes.” | T: gone beyond bonds.
+CONTEXT iti53:5.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti53:5.2 | P: Catutthaṁ. | S: (none) | T: (none)
+
+## iti54:3.1–iti54:3.4 (iti)
+CONTEXT iti54:2.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti54:2.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti54:3.1 | P: “Samāhito sampajāno, | S: “Stilled, aware, | T: Centered, ⏎ alert,
+iti54:3.2 | P: sato buddhassa sāvako; | S: a mindful disciple of the Buddha | T: mindful, ⏎ the Awakened One’s ⏎ disciple
+iti54:3.3 | P: Esanā ca pajānāti, | S: understands searches, | T: discerns searches,
+iti54:3.4 | P: esanānañca sambhavaṁ. | S: the cause of searches, | T: how searches come into play,
+
+## iti54:4.1–iti54:4.4 (iti)
+iti54:4.1 | P: Yattha cetā nirujjhanti, | S: where they cease, | T: where they cease,
+iti54:4.2 | P: maggañca khayagāminaṁ; | S: and the path that leads to their ending. | T: & the path to their ending.
+iti54:4.3 | P: Esanānaṁ khayā bhikkhu, | S: With the ending of searches, a mendicant | T: With the ending of searches, a monk
+iti54:4.4 | P: nicchāto parinibbuto”ti. | S: is hungerless, quenched.” | T: free from hunger ⏎ is totally unbound.
+CONTEXT iti54:5.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti54:5.2 | P: Pañcamaṁ. | S: (none) | T: (none)
+
+## iti55:3.1–iti55:3.4 (iti)
+CONTEXT iti55:2.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti55:2.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti55:3.1 | P: “Kāmesanā bhavesanā, | S: “The search for sensual pleasures, for continued existence, | T: Sensuality-search, becoming-search,
+iti55:3.2 | P: brahmacariyesanā saha; | S: and the search for a spiritual path; | T: together with the holy-life search–
+iti55:3.3 | P: Iti saccaparāmāso, | S: the holding tight to the thought, ‘this is the truth’, | T: i.e., grasping at ‘such is the truth’
+iti55:3.4 | P: diṭṭhiṭṭhānā samussayā. | S: and the mass of grounds for views— | T: based on an accumulation ⏎ of viewpoints:
+
+## iti55:4.1–iti55:4.6 (iti) GATHERED; unequal counts require a reader
+iti55:4.1 | P: Sabbarāgavirattassa, | S: for one detached from all lusts, | T: through the relinquishing of searches ⏎ & the abolishing of viewpoints ⏎ of one dispassionate to ⏎ all passion,
+iti55:4.2 | P: taṇhakkhayavimuttino; | S: freed by the ending of craving, | T: and released in the ending ⏎ of craving,
+iti55:4.3 | P: Esanā paṭinissaṭṭhā, | S: that searching has been relinquished, | T: (none)
+iti55:4.4 | P: diṭṭhiṭṭhānā samūhatā; | S: and those grounds for views eradicated. | T: (none)
+iti55:4.5 | P: Esanānaṁ khayā bhikkhu, | S: With the ending of searches, a mendicant | T: through the ending of searches, the monk
+iti55:4.6 | P: nirāso akathaṅkathī”ti. | S: is free of hope and indecision.” | T: is without perplexity, free ⏎ of longing.
+CONTEXT iti55:5.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti55:5.2 | P: Chaṭṭhaṁ. | S: (none) | T: (none)
+
+## iti56:3.1–iti56:3.4 (iti)
+CONTEXT iti56:2.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti56:2.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti56:3.1 | P: “Samāhito sampajāno, | S: “Stilled, aware, | T: Centered, ⏎ alert,
+iti56:3.2 | P: sato buddhassa sāvako; | S: a mindful disciple of the Buddha | T: mindful, ⏎ the Awakened One’s ⏎ disciple
+iti56:3.3 | P: Āsave ca pajānāti, | S: understands defilements, | T: discerns effluents,
+iti56:3.4 | P: āsavānañca sambhavaṁ. | S: the cause of defilements, | T: how effluents come into play,
+
+## iti56:4.1–iti56:4.4 (iti)
+iti56:4.1 | P: Yattha cetā nirujjhanti, | S: where they cease, | T: where they cease,
+iti56:4.2 | P: maggañca khayagāminaṁ; | S: and the path that leads to their ending. | T: & the path to their ending.
+iti56:4.3 | P: Āsavānaṁ khayā bhikkhu, | S: With the ending of defilements, a mendicant | T: With the ending of effluents, a monk
+iti56:4.4 | P: nicchāto parinibbuto”ti. | S: is hungerless, quenched.” | T: free from hunger ⏎ is totally unbound.
+CONTEXT iti56:5.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti56:5.2 | P: Sattamaṁ. | S: (none) | T: (none)
+
+## iti57:3.1–iti57:3.6 (iti)
+CONTEXT iti57:2.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti57:2.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti57:3.1 | P: “Yassa kāmāsavo khīṇo, | S: “One who has ended the defilement of sensuality, | T: His effluent of sensuality ⏎ ended,
+iti57:3.2 | P: avijjā ca virājitā; | S: whose ignorance has faded away, | T: his ignorance ⏎ faded away,
+iti57:3.3 | P: Bhavāsavo parikkhīṇo, | S: and whose desire to be reborn is finished— | T: his effluent of becoming ⏎ exhausted:
+iti57:3.4 | P: vippamutto nirūpadhi; | S: liberated, free of attachments, | T: one totally released, acquisition-free,
+iti57:3.5 | P: Dhāreti antimaṁ dehaṁ, | S: they bear their final body, | T: bears his last body,
+iti57:3.6 | P: jetvā māraṁ savāhinin”ti. | S: having vanquished Māra with his legions.” | T: having conquered Māra ⏎ along with his mount.
+CONTEXT iti57:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti57:4.2 | P: Aṭṭhamaṁ. | S: (none) | T: (none)
+
+## iti58:3.1–iti58:3.6 (iti)
+CONTEXT iti58:2.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti58:2.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti58:3.1 | P: “Taṇhāyogena saṁyuttā, | S: “Bound by craving, minds full of desire | T: Bound with the bondage of craving, ⏎ their minds smitten
+iti58:3.2 | P: rattacittā bhavābhave; | S: for rebirth in this or that state, | T: with becoming & non-,
+iti58:3.3 | P: Te yogayuttā mārassa, | S: yoked by Māra’s yoke, these people | T: they are bound with the bondage of Māra–
+iti58:3.4 | P: ayogakkhemino janā; | S: find no sanctuary from the yoke. | T: people with no safety from bondage,
+iti58:3.5 | P: Sattā gacchanti saṁsāraṁ, | S: Sentient beings continue to transmigrate, | T: beings going through the wandering-on,
+iti58:3.6 | P: jātīmaraṇagāmino. | S: with ongoing birth and death. | T: headed for birth & death.
+
+## iti58:4.1–iti58:4.4 (iti) GATHERED; unequal counts require a reader
+iti58:4.1 | P: Ye ca taṇhaṁ pahantvāna, | S: Those who have given up craving, | T: While those who’ve abandoned craving,
+iti58:4.2 | P: vītataṇhā bhavābhave; | S: rid of craving for rebirth in this or that state, | T: free from the craving for becoming & non-,
+iti58:4.3 | P: Te ve pāraṅgatā loke, | S: they in this world have truly crossed over, | T: (none)
+iti58:4.4 | P: ye pattā āsavakkhayan”ti. | S: having reached the ending of defilements.” | T: reaching the ending of effluents, ⏎ though in the world, ⏎ have gone beyond.
+CONTEXT iti58:5.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti58:5.2 | P: Navamaṁ. | S: (none) | T: (none)
+
+## iti59:3.1–iti59:3.4 (iti) GATHERED; possible speaker requires a reader
+CONTEXT iti59:2.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti59:2.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti59:3.1 | P: “Sīlaṁ samādhi paññā ca, | S: “Whoever has well developed | T: Virtue, concentration, discernment: ⏎ one in whom these are well-developed,
+iti59:3.2 | P: yassa ete subhāvitā; | S: ethics, immersion, and wisdom | T: (none)
+iti59:3.3 | P: Atikkamma māradheyyaṁ, | S: has slipped free of Māra’s dominion | T: passing beyond Māra’s domain,
+iti59:3.4 | P: ādiccova virocatī”ti. | S: and dazzles like the sun.” | T: shines ⏎ like the sun.
+CONTEXT iti59:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti59:4.2 | P: Dasamaṁ. | S: (none) | T: (none)
+
+## iti59:5.1–iti59:5.4 (iti)
+CONTEXT iti59:4.3 | P: Paṭhamo vaggo. | S: (none) | T: (none)
+CONTEXT iti59:5.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+iti59:5.1 | P: Mūladhātu atha vedanā duve, | S: (none) | T: (none)
+iti59:5.2 | P: Esanā ca duve āsavā duve; | S: (none) | T: (none)
+iti59:5.3 | P: Taṇhāto ca atha māradheyyato, | S: (none) | T: (none)
+iti59:5.4 | P: Vaggamāhu paṭhamanti muttamanti. | S: (none) | T: (none)
+
+## iti60:3.1–iti60:3.4 (iti)
+CONTEXT iti60:2.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti60:2.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti60:3.1 | P: “Puññameva so sikkheyya, | S: “One should practice only good deeds, | T: Train in acts of merit
+iti60:3.2 | P: āyataggaṁ sukhudrayaṁ; | S: whose happy outcome stretches ahead. | T: that yield the foremost profit of bliss–
+iti60:3.3 | P: Dānañca samacariyañca, | S: Giving and moral conduct, | T: develop generosity, ⏎ a life in tune,
+iti60:3.4 | P: mettacittañca bhāvaye. | S: developing a mind of love: | T: a mind of good will.
+
+## iti60:4.1–iti60:4.4 (iti)
+iti60:4.1 | P: Ete dhamme bhāvayitvā, | S: having developed these | T: Developing these
+iti60:4.2 | P: tayo sukhasamuddaye; | S: three things yielding happiness, | T: three things ⏎ that bring about bliss,
+iti60:4.3 | P: Abyābajjhaṁ sukhaṁ lokaṁ, | S: that astute one is reborn | T: the wise reappear ⏎ in a world of bliss
+iti60:4.4 | P: paṇḍito upapajjatī”ti. | S: in a happy, pleasing world.” | T: unalloyed.
+CONTEXT iti60:5.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti60:5.2 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## iti61:3.1–iti61:3.4 (iti)
+CONTEXT iti61:2.5 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti61:2.6 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti61:3.1 | P: “Maṁsacakkhu dibbacakkhu, | S: “The eye of flesh, the clairvoyant eye, | T: The eye of flesh, ⏎ the eye divine,
+iti61:3.2 | P: paññācakkhu anuttaraṁ; | S: the supreme eye of wisdom: | T: the eye of discernment ⏎ unsurpassed:
+iti61:3.3 | P: Etāni tīṇi cakkhūni, | S: these three eyes | T: these three eyes
+iti61:3.4 | P: akkhāsi purisuttamo. | S: were taught by the supreme person. | T: were taught ⏎ by the Superlative Person.
+
+## iti61:4.1–iti61:4.6 (iti)
+iti61:4.1 | P: Maṁsacakkhussa uppādo, | S: The arising of the eye of flesh | T: The arising of the eye of flesh
+iti61:4.2 | P: maggo dibbassa cakkhuno; | S: is the path to the clairvoyant eye. | T: is the path to the eye divine.
+iti61:4.3 | P: Yato ñāṇaṁ udapādi, | S: When knowledge arises— | T: When knowledge arises,
+iti61:4.4 | P: paññācakkhu anuttaraṁ; | S: the supreme eye of wisdom— | T: the eye of discernment unsurpassed:
+iti61:4.5 | P: Yassa cakkhussa paṭilābhā, | S: one who gains that eye | T: whoever gains this eye
+iti61:4.6 | P: sabbadukkhā pamuccatī”ti. | S: is released from all suffering.” | T: is–from all suffering & stress– ⏎ released.
+CONTEXT iti61:5.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti61:5.2 | P: Dutiyaṁ. | S: (none) | T: (none)

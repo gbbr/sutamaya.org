@@ -28,16 +28,16 @@ snp1.7:1.1 starts: I have heard that on one occasion
 snp1.7:1.2 starts: on one occasion the Blessed One was
 snp1.7:3.4 starts: It would be good if Master Gotama
 snp1.7:6.4 starts: He should be known as ‘outcaste.’
-snp1.7:7.3 none
+# superseded: snp1.7:7.3 none
 snp1.7:7.4 starts: He should be known as ‘outcaste.’
 snp1.7:12.3 starts: —old, their youth over & done:
 snp1.7:17.3 starts: or other mendicant: He should be known
 snp1.7:17.4 starts: He should be known as ‘outcaste.’
-snp1.7:18.2 none
-snp1.7:19.2 none
+# superseded: snp1.7:18.2 none
+# superseded: snp1.7:19.2 none
 snp1.7:26.3 starts: They came into his service, many noble
-snp1.7:26.4 none
+# superseded: snp1.7:26.4 none
 mn49:1.1 starts: I have heard that on one occasion
 mn49:1.2 starts: on one occasion the Blessed One was
 mn49:4.4 starts: Where one takes birth, ages, dies, falls
-mn49:9.3 none
+# superseded: mn49:9.3 none

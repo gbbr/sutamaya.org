@@ -1,0 +1,449 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## snp3.8:14.1–snp3.8:14.4 (snp)
+snp3.8:14.1 | P: Aññepi passa gamine, | S: See, too, other folk departing, | T: Look at others ⏎ going along, ⏎ people arriving
+snp3.8:14.2 | P: Yathākammupage nare; | S: passing on according to their deeds; | T: in line with their actions:
+snp3.8:14.3 | P: Maccuno vasamāgamma, | S: fallen under the sway of death, | T: falling under the sway of death,
+snp3.8:14.4 | P: Phandantevidha pāṇino. | S: beings flounder while still here. | T: beings simply ⏎ shivering here.
+
+## snp3.8:15.1–snp3.8:15.4 (snp)
+snp3.8:15.1 | P: Yena yena hi maññanti, | S: For however they imagine it, | T: For however they imagine it,
+snp3.8:15.2 | P: Tato taṁ hoti aññathā; | S: it turns out to be something else. | T: it always turns out ⏎ other than that.
+snp3.8:15.3 | P: Etādiso vinābhāvo, | S: Such is separation: | T: That’s the type of (their) separation.
+snp3.8:15.4 | P: Passa lokassa pariyāyaṁ. | S: see the way of the world! | T: See the way of the world.
+
+## snp3.8:16.1–snp3.8:16.4 (snp)
+snp3.8:16.1 | P: Api vassasataṁ jīve, | S: Even if a human lives | T: Even if a person lives a century
+snp3.8:16.2 | P: Bhiyyo vā pana māṇavo; | S: a hundred years or more, | T: —or more—
+snp3.8:16.3 | P: Ñātisaṅghā vinā hoti, | S: they are parted from their family circle, | T: he’s parted ⏎ from his community of relatives,
+snp3.8:16.4 | P: Jahāti idha jīvitaṁ. | S: they leave this life behind. | T: he abandons his life ⏎ right here.
+
+## snp3.8:17.1–snp3.8:17.4 (snp)
+snp3.8:17.1 | P: Tasmā arahato sutvā, | S: Therefore, having learned from the Perfected One, | T: So, having heard the arahant,
+snp3.8:17.2 | P: Vineyya paridevitaṁ; | S: dispel lamentation. | T: subduing lamentation,
+snp3.8:17.3 | P: Petaṁ kālaṅkataṁ disvā, | S: Seeing the dead and departed, think: | T: seeing the dead one whose time is done, ⏎ [think,]
+snp3.8:17.4 | P: Neso labbhā mayā iti. | S: “I cannot escape this.” | T: “I can’t fetch him back.”
+
+## snp3.8:18.1–snp3.8:18.6 (snp)
+snp3.8:18.1 | P: Yathā saraṇamādittaṁ, | S: As one would extinguish | T: Just as one would put out
+snp3.8:18.2 | P: Vārinā parinibbaye; | S: a blazing refuge with water, | T: a burning refuge ⏎ with water,
+snp3.8:18.3 | P: Evampi dhīro sapañño, | S: so too an attentive one—a wise, | T: so does the enlightened one— ⏎ discerning,
+snp3.8:18.4 | P: Paṇḍito kusalo naro; | S: astute, and skilled person— | T: skillful, ⏎ & wise—
+snp3.8:18.5 | P: Khippamuppatitaṁ sokaṁ, | S: would swiftly blow away grief that comes up, | T: blow away any arisen grief,
+snp3.8:18.6 | P: Vāto tūlaṁva dhaṁsaye. | S: like the wind a tuft of cotton. | T: like the wind, a bit of cotton fluff.
+
+## snp3.8:19.1–snp3.8:19.4 (snp) GATHERED; possible speaker requires a reader
+snp3.8:19.1 | P: Paridevaṁ pajappañca, | S: One who seeks their own happiness | T: Seeking your own happiness,
+snp3.8:19.2 | P: Domanassañca attano; | S: would pluck out the dart from themselves— | T: you should pull out your own arrow:
+snp3.8:19.3 | P: Attano sukhamesāno, | S: the wailing and praying, | T: your own ⏎ lamentation, ⏎ longing, ⏎ & sorrow.
+snp3.8:19.4 | P: Abbahe sallamattano. | S: and sadness inside. | T: (none)
+
+## snp3.8:20.1–snp3.8:20.4 (snp)
+snp3.8:20.1 | P: Abbūḷhasallo asito, | S: With dart plucked out, unattached, | T: With arrow pulled out, ⏎ independent,
+snp3.8:20.2 | P: santiṁ pappuyya cetaso; | S: having found peace of mind, | T: attaining peace of awareness,
+snp3.8:20.3 | P: Sabbasokaṁ atikkanto, | S: overcoming all sorrow, | T: all grief transcended,
+snp3.8:20.4 | P: asoko hoti nibbutoti. | S: one is sorrowless and quenched. | T: griefless you are ⏎ unbound.
+CONTEXT snp3.8:20.5 | P: Sallasuttaṁ aṭṭhamaṁ. | S: (none) | T: (none)
+
+## snp3.9:6.1–snp3.9:6.4 (snp)
+CONTEXT snp3.9:5.2 | P: Sammodanīyaṁ kathaṁ sāraṇīyaṁ vītisāretvā ekamantaṁ nisīdiṁsu. | S: When the greetings and polite conversation were over, they sat down to one side, | T: After an exchange of friendly greetings & courtesies, they sat to one side. As they were sitting there,
+CONTEXT snp3.9:5.3 | P: Ekamantaṁ nisinno kho vāseṭṭho māṇavo bhagavantaṁ gāthāhi ajjhabhāsi: | S: and Vāseṭṭha addressed the Buddha in verse: | T: the young brahman Vāseṭṭha addressed the Blessed One in verses:
+snp3.9:6.1 | P: “Anuññātapaṭiññātā, | S: “We’re both authorized masters | T: Master, we’re acknowledged & self-proclaimed
+snp3.9:6.2 | P: tevijjā mayamasmubho; | S: of the three Vedas. | T: as masters of the three knowledges:
+snp3.9:6.3 | P: Ahaṁ pokkharasātissa, | S: I’m a student of Pokkharasāti, | T: I, a student of Pokkharasāti,
+snp3.9:6.4 | P: tārukkhassāyaṁ māṇavo. | S: and he of Tārukkha. | T: this one, of Tārukka.
+
+## snp3.9:7.1–snp3.9:7.4 (snp)
+snp3.9:7.1 | P: Tevijjānaṁ yadakkhātaṁ, | S: We’re fully qualified | T: Whatever is taught ⏎ by masters of the three knowledges,
+snp3.9:7.2 | P: Tatra kevalinosmase; | S: in all the Vedic experts teach. | T: in that we are adept—
+snp3.9:7.3 | P: Padakasma veyyākaraṇā, | S: As philologists and grammarians, | T: grammarians & philologists,
+snp3.9:7.4 | P: Jappe ācariyasādisā. | S: we match our tutors in recitation. | T: on a par with our teachers in recitation.
+
+## snp3.9:8.1–snp3.9:8.6 (snp)
+snp3.9:8.1 | P: Tesaṁ no jātivādasmiṁ, | S: We have a dispute | T: We have a dispute,
+snp3.9:8.2 | P: vivādo atthi gotama; | S: regarding genealogy. | T: Gotama, ⏎ on the topic of birth.
+snp3.9:8.3 | P: Jātiyā brāhmaṇo hoti, | S: For Bhāradvāja says that | T: Bhāradvāja says that
+snp3.9:8.4 | P: bhāradvājo iti bhāsati; | S: one is a brahmin due to birth, | T: one is a brahman ⏎ through birth,
+snp3.9:8.5 | P: Ahañca kammunā brūmi, | S: but I declare it’s because of one’s deeds. | T: I say through action.
+snp3.9:8.6 | P: evaṁ jānāhi cakkhuma. | S: Oh Clear-eyed One, know this as our debate. | T: Know this, One with Eyes.
+
+## snp3.9:9.1–snp3.9:9.4 (snp)
+snp3.9:9.1 | P: Te na sakkoma saññāpetuṁ, | S: Since neither of us was able | T: Neither of us can win over the other.
+snp3.9:9.2 | P: aññamaññaṁ mayaṁ ubho; | S: to convince the other, | T: (none)
+snp3.9:9.3 | P: Bhavantaṁ puṭṭhumāgamhā, | S: we’ve come to ask you, sir, | T: We come, asking the master
+snp3.9:9.4 | P: sambuddhaṁ iti vissutaṁ. | S: renowned as the awakened one. | T: reputed to be self-awakened.
+
+## snp3.9:10.1–snp3.9:10.4 (snp) GATHERED; unequal counts require a reader
+snp3.9:10.1 | P: Candaṁ yathā khayātītaṁ, | S: As people honor with cupped palms | T: As people going ⏎ with hands palm-to-palm over the heart ⏎ pay homage, venerating
+snp3.9:10.2 | P: pecca pañjalikā janā; | S: the moon on the cusp of waxing, | T: the moon when it’s just past new,
+snp3.9:10.3 | P: Vandamānā namassanti, | S: bowing, they revere | T: (none)
+snp3.9:10.4 | P: evaṁ lokasmi gotamaṁ. | S: Gotama in the world. | T: in the same way in the world, Gotama,
+
+## snp3.9:11.1–snp3.9:11.6 (snp)
+snp3.9:11.1 | P: Cakkhuṁ loke samuppannaṁ, | S: We ask this of Gotama, | T: we ask Gotama,
+snp3.9:11.2 | P: mayaṁ pucchāma gotamaṁ; | S: the Eye arisen in the world: | T: the Eye arisen in the world:
+snp3.9:11.3 | P: Jātiyā brāhmaṇo hoti, | S: is one a brahmin due to birth, | T: Is one a brahman through birth
+snp3.9:11.4 | P: udāhu bhavati kammunā; | S: or else because of deeds? | T: or is it through action?
+snp3.9:11.5 | P: Ajānataṁ no pabrūhi, | S: We don’t know, please tell us, | T: Tell us, who don’t know,
+snp3.9:11.6 | P: yathā jānemu brāhmaṇaṁ”. | S: so we can recognize a brahmin.” | T: how we might know a brahman.”
+CONTEXT snp3.9:12.2 | P: (vāseṭṭhāti bhagavā) | S: said the Buddha, | T: (none)
+
+## snp3.9:12.1–snp3.9:12.5 (snp)
+snp3.9:12.1 | P: “Tesaṁ vo ahaṁ byakkhissaṁ, | S: “I shall explain to you,” | T: The Buddha: ⏎ “I will answer you
+CONTEXT snp3.9:12.2 | P: (vāseṭṭhāti bhagavā) | S: said the Buddha, | T: (none)
+snp3.9:12.3 | P: Anupubbaṁ yathātathaṁ; | S: “accurately and in sequence, | T: step-by-step ⏎ as it really is.
+snp3.9:12.4 | P: Jātivibhaṅgaṁ pāṇānaṁ, | S: the taxonomy of living creatures, | T: Animals are divided by nature,
+snp3.9:12.5 | P: Aññamaññā hi jātiyo. | S: for species are indeed diverse. | T: for their species differ, one from another.
+
+## snp3.9:13.1–snp3.9:13.4 (snp)
+snp3.9:13.1 | P: Tiṇarukkhepi jānātha, | S: Know the grass and trees, | T: You know grasses & trees,
+snp3.9:13.2 | P: na cāpi paṭijānare; | S: though they lack self-awareness. | T: even though they don’t proclaim themselves:
+snp3.9:13.3 | P: Liṅgaṁ jātimayaṁ tesaṁ, | S: They’re defined by birth, | T: Their distinguishing markings are made by nature,
+snp3.9:13.4 | P: aññamaññā hi jātiyo. | S: for species are indeed diverse. | T: for their species differ, one from another.
+
+## snp3.9:14.1–snp3.9:14.4 (snp)
+snp3.9:14.1 | P: Tato kīṭe paṭaṅge ca, | S: Next there are bugs that crawl or fly, | T: Then beetles & moths,
+snp3.9:14.2 | P: yāva kunthakipillike; | S: and so on, to ants and termites. | T: down to white ants:
+snp3.9:14.3 | P: Liṅgaṁ jātimayaṁ tesaṁ, | S: They’re defined by birth, | T: Their distinguishing markings are made by nature,
+snp3.9:14.4 | P: aññamaññā hi jātiyo. | S: for species are indeed diverse. | T: for their species differ, one from another.
+
+## snp3.9:15.1–snp3.9:15.4 (snp)
+snp3.9:15.1 | P: Catuppadepi jānātha, | S: Know the quadrupeds, too, | T: You know four-footed beasts,
+snp3.9:15.2 | P: Khuddake ca mahallake; | S: both small and large. | T: small & large:
+snp3.9:15.3 | P: Liṅgaṁ jātimayaṁ tesaṁ, | S: They’re defined by birth, | T: Their distinguishing markings are made by nature,
+snp3.9:15.4 | P: Aññamaññā hi jātiyo. | S: for species are indeed diverse. | T: for their species differ, one from another.
+
+## snp3.9:16.1–snp3.9:16.4 (snp)
+snp3.9:16.1 | P: Pādūdarepi jānātha, | S: Know, too, the long-backed snakes, | T: You know belly-footed, long-backed snakes:
+snp3.9:16.2 | P: Urage dīghapiṭṭhike; | S: crawling on their bellies. | T: (none)
+snp3.9:16.3 | P: Liṅgaṁ jātimayaṁ tesaṁ, | S: They’re defined by birth, | T: Their distinguishing markings are made by nature,
+snp3.9:16.4 | P: Aññamaññā hi jātiyo. | S: for species are indeed diverse. | T: for their species differ, one from another.
+
+## snp3.9:17.1–snp3.9:17.4 (snp)
+snp3.9:17.1 | P: Tato macchepi jānātha, | S: Next know the fish, | T: Then you know fish in the water,
+snp3.9:17.2 | P: Odake vārigocare; | S: whose habitat is the water. | T: with water their range:
+snp3.9:17.3 | P: Liṅgaṁ jātimayaṁ tesaṁ, | S: They’re defined by birth, | T: Their distinguishing markings are made by nature,
+snp3.9:17.4 | P: Aññamaññā hi jātiyo. | S: for species are indeed diverse. | T: for their species differ, one from another.
+
+## snp3.9:18.1–snp3.9:18.4 (snp)
+snp3.9:18.1 | P: Tato pakkhīpi jānātha, | S: Next know the birds, | T: Then you know birds,
+snp3.9:18.2 | P: Pattayāne vihaṅgame; | S: winged chariots in flight. | T: with wings as their vehicles, ⏎ coursing through the sky:
+snp3.9:18.3 | P: Liṅgaṁ jātimayaṁ tesaṁ, | S: They’re defined by birth, | T: Their distinguishing markings are made by nature,
+snp3.9:18.4 | P: Aññamaññā hi jātiyo. | S: for species are indeed diverse. | T: for their species differ, one from another.
+
+## snp3.9:19.1–snp3.9:19.4 (snp)
+snp3.9:19.1 | P: Yathā etāsu jātīsu, | S: While the differences between these species | T: While these species ⏎ have many distinguishing marks
+snp3.9:19.2 | P: Liṅgaṁ jātimayaṁ puthu; | S: are defined by birth, | T: made by nature,
+snp3.9:19.3 | P: Evaṁ natthi manussesu, | S: the differences between humans | T: human beings don’t ⏎ have many distinguishing marks
+snp3.9:19.4 | P: Liṅgaṁ jātimayaṁ puthu. | S: are not defined by birth. | T: made by nature:
+
+## snp3.9:20.1–snp3.9:20.4 (snp)
+snp3.9:20.1 | P: Na kesehi na sīsena, | S: Not by hair nor by head, | T: not through hair or head
+snp3.9:20.2 | P: Na kaṇṇehi na akkhibhi; | S: not by ear nor by eye, | T: not through ears or eyes,
+snp3.9:20.3 | P: Na mukhena na nāsāya, | S: not by mouth nor by nose, | T: not through face or nose,
+snp3.9:20.4 | P: Na oṭṭhehi bhamūhi vā. | S: not by lips nor by eyebrow, | T: not through mouth or lips,
+
+## snp3.9:21.1–snp3.9:21.4 (snp)
+snp3.9:21.1 | P: Na gīvāya na aṁsehi, | S: not by shoulder nor by neck, | T: not through neck or shoulders,
+snp3.9:21.2 | P: Na udarena na piṭṭhiyā; | S: not by belly nor by back, | T: not through belly or back,
+snp3.9:21.3 | P: Na soṇiyā na urasā, | S: not by buttocks nor by breast, | T: not through buttocks or chest,
+snp3.9:21.4 | P: Na sambādhe na methune. | S: not by groin nor by genitals, | T: not through groin or intercourse,
+
+## snp3.9:22.1–snp3.9:22.6 (snp)
+snp3.9:22.1 | P: Na hatthehi na pādehi, | S: not by hands nor by feet, | T: not through hands or feet,
+snp3.9:22.2 | P: Nāṅgulīhi nakhehi vā; | S: not by fingers nor by nails, | T: not through fingers or nails,
+snp3.9:22.3 | P: Na jaṅghāhi na ūrūhi, | S: not by knees nor by thighs, | T: not through calves or thighs,
+snp3.9:22.4 | P: Na vaṇṇena sarena vā; | S: not by color nor by voice: | T: not through complexion or voice.
+snp3.9:22.5 | P: Liṅgaṁ jātimayaṁ neva, | S: none of these are defined by birth | T: Their distinguishing mark is not made by nature
+snp3.9:22.6 | P: Yathā aññāsu jātisu. | S: as it is for other species. | T: as it is for other species.
+
+## snp3.9:23.1–snp3.9:23.4 (snp) GATHERED; possible speaker requires a reader
+snp3.9:23.1 | P: Paccattañca sarīresu, | S: In specific human bodies | T: In human beings that’s not found ⏎ individually in their bodies,
+snp3.9:23.2 | P: Manussesvetaṁ na vijjati; | S: you can’t find such distinctions. | T: (none)
+snp3.9:23.3 | P: Vokārañca manussesu, | S: The distinctions among humans | T: but their identification is described
+snp3.9:23.4 | P: Samaññāya pavuccati. | S: are spoken of by convention. | T: in terms of convention:
+
+## snp3.9:24.1–snp3.9:24.4 (snp)
+snp3.9:24.1 | P: Yo hi koci manussesu, | S: Anyone among humans | T: Whoever, among human beings,
+snp3.9:24.2 | P: Gorakkhaṁ upajīvati; | S: who lives off keeping cattle: | T: makes a living by guarding cows,
+snp3.9:24.3 | P: Evaṁ vāseṭṭha jānāhi, | S: know them, Vāseṭṭha, | T: you know him thus, Vāseṭṭha,
+snp3.9:24.4 | P: Kassako so na brāhmaṇo. | S: as a farmer, not a brahmin. | T: as a farmer, not as a brahman.
+
+## snp3.9:25.1–snp3.9:25.4 (snp)
+snp3.9:25.1 | P: Yo hi koci manussesu, | S: Anyone among humans | T: Whoever, among human beings,
+snp3.9:25.2 | P: Puthusippena jīvati; | S: who lives off various professions: | T: makes a living through various crafts,
+snp3.9:25.3 | P: Evaṁ vāseṭṭha jānāhi, | S: know them, Vāseṭṭha, | T: you know him thus, Vāseṭṭha,
+snp3.9:25.4 | P: Sippiko so na brāhmaṇo. | S: as a professional, not a brahmin. | T: as a craftsman, not as a brahman.
+
+## snp3.9:26.1–snp3.9:26.4 (snp)
+snp3.9:26.1 | P: Yo hi koci manussesu, | S: Anyone among humans | T: Whoever, among human beings,
+snp3.9:26.2 | P: Vohāraṁ upajīvati; | S: who lives off trade: | T: makes a living through trade,
+snp3.9:26.3 | P: Evaṁ vāseṭṭha jānāhi, | S: know them, Vāseṭṭha, | T: you know him thus, Vāseṭṭha,
+snp3.9:26.4 | P: Vāṇijo so na brāhmaṇo. | S: as a trader, not a brahmin. | T: as a merchant, not as a brahman.
+
+## snp3.9:27.1–snp3.9:27.4 (snp)
+snp3.9:27.1 | P: Yo hi koci manussesu, | S: Anyone among humans | T: Whoever, among human beings,
+snp3.9:27.2 | P: Parapessena jīvati; | S: who lives off serving others: | T: makes a living by serving others,
+snp3.9:27.3 | P: Evaṁ vāseṭṭha jānāhi, | S: know them, Vāseṭṭha, | T: you know him thus, Vāseṭṭha,
+snp3.9:27.4 | P: Pessiko so na brāhmaṇo. | S: as a servant, not a brahmin. | T: as a servant, not as a brahman.
+
+## snp3.9:28.1–snp3.9:28.4 (snp)
+snp3.9:28.1 | P: Yo hi koci manussesu, | S: Anyone among humans | T: Whoever, among human beings,
+snp3.9:28.2 | P: Adinnaṁ upajīvati; | S: who lives off stealing: | T: makes a living through stealing,
+snp3.9:28.3 | P: Evaṁ vāseṭṭha jānāhi, | S: know them, Vāseṭṭha, | T: you know him thus, Vāseṭṭha:
+snp3.9:28.4 | P: Coro eso na brāhmaṇo. | S: as a bandit, not a brahmin. | T: This is a thief, not a brahman.
+
+## snp3.9:29.1–snp3.9:29.4 (snp)
+snp3.9:29.1 | P: Yo hi koci manussesu, | S: Anyone among humans | T: Whoever, among human beings,
+snp3.9:29.2 | P: Issatthaṁ upajīvati; | S: who lives off archery: | T: makes a living through arrow & sword,
+snp3.9:29.3 | P: Evaṁ vāseṭṭha jānāhi, | S: know them, Vāseṭṭha, | T: you know him thus, Vāseṭṭha,
+snp3.9:29.4 | P: Yodhājīvo na brāhmaṇo. | S: as a warrior, not a brahmin. | T: as a soldier, not as a brahman.
+
+## snp3.9:30.1–snp3.9:30.4 (snp)
+snp3.9:30.1 | P: Yo hi koci manussesu, | S: Anyone among humans | T: Whoever, among human beings,
+snp3.9:30.2 | P: Porohiccena jīvati; | S: who lives off priesthood: | T: makes a living through priesthood,
+snp3.9:30.3 | P: Evaṁ vāseṭṭha jānāhi, | S: know them, Vāseṭṭha, | T: you know him thus, Vāseṭṭha,
+snp3.9:30.4 | P: Yājako eso na brāhmaṇo. | S: as a sacrificer, not a brahmin. | T: as a sacrificer, not as a brahman.
+
+## snp3.9:31.1–snp3.9:31.4 (snp)
+snp3.9:31.1 | P: Yo hi koci manussesu, | S: Anyone among humans | T: Whoever, among human beings,
+snp3.9:31.2 | P: Gāmaṁ raṭṭhañca bhuñjati; | S: who taxes village and nation, | T: makes a living partaking of city & state,
+snp3.9:31.3 | P: Evaṁ vāseṭṭha jānāhi, | S: know them, Vāseṭṭha, | T: you know him thus, Vāseṭṭha,
+snp3.9:31.4 | P: Rājā eso na brāhmaṇo. | S: as a ruler, not a brahmin. | T: as a king, not as a brahman.
+
+## snp3.9:32.1–snp3.9:32.6 (snp) GATHERED; possible speaker requires a reader
+snp3.9:32.1 | P: Na cāhaṁ brāhmaṇaṁ brūmi, | S: I don’t call someone a brahmin | T: I don’t call one a brahman
+snp3.9:32.2 | P: Yonijaṁ mattisambhavaṁ; | S: after the mother’s womb they’re born from. | T: for being born of a mother ⏎ or sprung from a womb.
+snp3.9:32.3 | P: Bhovādi nāma so hoti, | S: If they still have attachments, | T: He’s called a ‘bho-sayer’ ⏎ if he has anything at all.
+snp3.9:32.4 | P: Sace hoti sakiñcano; | S: they’re just someone who says ‘worthy’. | T: (none)
+snp3.9:32.5 | P: Akiñcanaṁ anādānaṁ, | S: Having nothing, taking nothing: | T: But someone with nothing, ⏎ who clings to no thing:
+snp3.9:32.6 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:33.1–snp3.9:33.4 (snp)
+snp3.9:33.1 | P: Sabbasaṁyojanaṁ chetvā, | S: Having cut off all fetters | T: Having cut every fetter,
+snp3.9:33.2 | P: Yo ve na paritassati; | S: they have no anxiety; | T: he doesn’t get ruffled.
+snp3.9:33.3 | P: Saṅgātigaṁ visaṁyuttaṁ, | S: they’ve slipped their chains and are detached: | T: Beyond attachment, ⏎ unshackled:
+snp3.9:33.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:34.1–snp3.9:34.4 (snp)
+snp3.9:34.1 | P: Chetvā naddhiṁ varattañca, | S: They’ve cut the strap and harness, | T: Having cut the strap & thong,
+snp3.9:34.2 | P: Sandānaṁ sahanukkamaṁ; | S: the halter and bridle too; | T: cord & bridle,
+snp3.9:34.3 | P: Ukkhittapalighaṁ buddhaṁ, | S: with cross-bar lifted, they’re awakened: | T: having thrown off the bar, ⏎ awakened:
+snp3.9:34.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:35.1–snp3.9:35.4 (snp) GATHERED; possible speaker requires a reader
+snp3.9:35.1 | P: Akkosaṁ vadhabandhañca, | S: Abuse, killing, caging: | T: He endures—unangered— ⏎ insult, assault, & imprisonment.
+snp3.9:35.2 | P: Aduṭṭho yo titikkhati; | S: they endure these without anger. | T: (none)
+snp3.9:35.3 | P: Khantībalaṁ balānīkaṁ, | S: Patience is their powerful army: | T: His army is strength; ⏎ his strength, forbearance:
+snp3.9:35.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:36.1–snp3.9:36.4 (snp)
+snp3.9:36.1 | P: Akkodhanaṁ vatavantaṁ, | S: Not irritable or pretentious, | T: Free from anger,
+snp3.9:36.2 | P: Sīlavantaṁ anussadaṁ; | S: dutiful in precepts and observances, | T: duties observed, ⏎ principled, with no overbearing pride,
+snp3.9:36.3 | P: Dantaṁ antimasārīraṁ, | S: tamed, bearing their final body: | T: trained, a ‘last-body’:
+snp3.9:36.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:37.1–snp3.9:37.4 (snp)
+snp3.9:37.1 | P: Vāri pokkharapatteva, | S: Like water from a lotus leaf, | T: Like water on a lotus leaf,
+snp3.9:37.2 | P: Āraggeriva sāsapo; | S: like a mustard seed off the point of a pin, | T: a mustard seed on the tip of an awl,
+snp3.9:37.3 | P: Yo na limpati kāmesu, | S: sensual pleasures slip off them: | T: he doesn’t adhere to sensual pleasures:
+snp3.9:37.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:38.1–snp3.9:38.4 (snp)
+snp3.9:38.1 | P: Yo dukkhassa pajānāti, | S: They understand for themselves | T: He discerns right here, ⏎ for himself, ⏎ on his own,
+snp3.9:38.2 | P: Idheva khayamattano; | S: the end of suffering in this life; | T: his own ⏎ ending of stress.
+snp3.9:38.3 | P: Pannabhāraṁ visaṁyuttaṁ, | S: with burden put down, detached: | T: Unshackled, his burden laid down:
+snp3.9:38.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:39.1–snp3.9:39.4 (snp)
+snp3.9:39.1 | P: Gambhīrapaññaṁ medhāviṁ, | S: Deep in wisdom, intelligent, | T: Wise, deeply ⏎ discerning, astute
+snp3.9:39.2 | P: Maggāmaggassa kovidaṁ; | S: expert in the path and what is not the path; | T: as to what is the path ⏎ & what’s not;
+snp3.9:39.3 | P: Uttamatthamanuppattaṁ, | S: arrived at the highest goal: | T: his ultimate goal attained:
+snp3.9:39.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:40.1–snp3.9:40.4 (snp)
+snp3.9:40.1 | P: Asaṁsaṭṭhaṁ gahaṭṭhehi, | S: Mixing with neither | T: Uncontaminated
+snp3.9:40.2 | P: Anāgārehi cūbhayaṁ; | S: householders nor the homeless; | T: by householders ⏎ & houseless ones alike;
+snp3.9:40.3 | P: Anokasārimappicchaṁ, | S: a migrant with no bastion, few in wishes: | T: living with no home, ⏎ with next to no wants:
+snp3.9:40.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:41.1–snp3.9:41.4 (snp)
+snp3.9:41.1 | P: Nidhāya daṇḍaṁ bhūtesu, | S: They’ve laid aside violence | T: Having put aside violence
+snp3.9:41.2 | P: Tasesu thāvaresu ca; | S: against creatures firm and frail; | T: against beings fearful or firm,
+snp3.9:41.3 | P: Yo na hanti na ghāteti, | S: not killing or making others kill: | T: he neither kills nor ⏎ gets others to kill:
+snp3.9:41.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:42.1–snp3.9:42.4 (snp)
+snp3.9:42.1 | P: Aviruddhaṁ viruddhesu, | S: Not fighting among those who fight, | T: Unopposing among opposition,
+snp3.9:42.2 | P: Attadaṇḍesu nibbutaṁ; | S: quenched among those who have taken up arms, | T: unbound among the armed,
+snp3.9:42.3 | P: Sādānesu anādānaṁ, | S: not grasping among those who grasp: | T: unclinging among those who cling:
+snp3.9:42.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:43.1–snp3.9:43.4 (snp)
+snp3.9:43.1 | P: Yassa rāgo ca doso ca, | S: They’ve discarded greed and hate, | T: His passion, aversion,
+snp3.9:43.2 | P: Māno makkho ca pātito; | S: along with conceit and contempt, | T: conceit, & contempt, ⏎ have fallen away—
+snp3.9:43.3 | P: Sāsaporiva āraggā, | S: like a mustard seed off the point of a pin: | T: like a mustard seed ⏎ from the tip of an awl:
+snp3.9:43.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:44.1–snp3.9:44.4 (snp)
+snp3.9:44.1 | P: Akakkasaṁ viññāpaniṁ, | S: The words they utter | T: He would say
+snp3.9:44.2 | P: Giraṁ saccamudīraye; | S: are polished, informative, and true, | T: what’s ⏎ non-grating, ⏎ instructive, ⏎ true—
+snp3.9:44.3 | P: Yāya nābhisaje kañci, | S: and don’t offend anyone: | T: abusing no one:
+snp3.9:44.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:45.1–snp3.9:45.4 (snp) GATHERED; possible speaker requires a reader
+snp3.9:45.1 | P: Yodha dīghaṁ va rassaṁ vā, | S: They don’t steal anything in the world, | T: Here in the world ⏎ he takes nothing not-given
+snp3.9:45.2 | P: Aṇuṁ thūlaṁ subhāsubhaṁ; | S: long or short, | T: —long, short, ⏎ large, small, ⏎ attractive, not:
+snp3.9:45.3 | P: Loke adinnaṁ nādiyati, | S: tiny or huge, beautiful or ugly: | T: (none)
+snp3.9:45.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:46.1–snp3.9:46.4 (snp)
+snp3.9:46.1 | P: Āsā yassa na vijjanti, | S: They have no hope | T: His longing
+snp3.9:46.2 | P: Asmiṁ loke paramhi ca; | S: for this world or the next; | T: for this ⏎ & for the next world ⏎ can’t be found;
+snp3.9:46.3 | P: Nirāsāsaṁ visaṁyuttaṁ, | S: with no need for hope, detached: | T: free from longing, unshackled:
+snp3.9:46.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:47.1–snp3.9:47.4 (snp)
+snp3.9:47.1 | P: Yassālayā na vijjanti, | S: They have no clinging, | T: His attachments, ⏎ his homes, ⏎ can’t be found.
+snp3.9:47.2 | P: Aññāya akathaṅkathī; | S: knowledge has freed them of indecision, | T: He, through knowing, ⏎ is unperplexed,
+snp3.9:47.3 | P: Amatogadhamanuppattaṁ, | S: they’ve arrived at the objective, freedom from death: | T: has reached a footing ⏎ in the deathless:
+snp3.9:47.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:48.1–snp3.9:48.4 (snp)
+snp3.9:48.1 | P: Yodha puññañca pāpañca, | S: They’ve escaped clinging | T: He has gone ⏎ beyond attachment here
+snp3.9:48.2 | P: Ubho saṅgamupaccagā; | S: to both good and bad deeds; | T: for both merit & evil—
+snp3.9:48.3 | P: Asokaṁ virajaṁ suddhaṁ, | S: sorrowless, stainless, pure: | T: sorrowless, dustless, & pure:
+snp3.9:48.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:49.1–snp3.9:49.4 (snp)
+snp3.9:49.1 | P: Candaṁva vimalaṁ suddhaṁ, | S: Pure as the spotless moon, | T: Spotless, pure like the moon
+snp3.9:49.2 | P: Vippasannamanāvilaṁ; | S: clear and unclouded, | T: —limpid & calm—
+snp3.9:49.3 | P: Nandībhavaparikkhīṇaṁ, | S: they’ve ended relish for rebirth: | T: his delights, his becomings, ⏎ totally gone:
+snp3.9:49.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:50.1–snp3.9:50.6 (snp)
+snp3.9:50.1 | P: Yomaṁ palipathaṁ duggaṁ, | S: They’ve got past this grueling swamp | T: He has made his way past ⏎ this hard-going path:
+snp3.9:50.2 | P: Saṁsāraṁ mohamaccagā; | S: of delusion, transmigration. | T: delusion, wandering-on.
+snp3.9:50.3 | P: Tiṇṇo pāraṅgato jhāyī, | S: Meditating in stillness, free of indecision, | T: He’s crossed over, ⏎ has gone beyond, ⏎ is free from want, ⏎ from perplexity,
+snp3.9:50.4 | P: Anejo akathaṅkathī; | S: they have crossed over to the far shore. | T: absorbed in jhāna,
+snp3.9:50.5 | P: Anupādāya nibbuto, | S: They’re quenched by not grasping: | T: through no-clinging ⏎ unbound:
+snp3.9:50.6 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:51.1–snp3.9:51.4 (snp)
+snp3.9:51.1 | P: Yodha kāme pahantvāna, | S: They’ve given up sensual pleasures, | T: Whoever, abandoning sensual passions here,
+snp3.9:51.2 | P: Anāgāro paribbaje; | S: and have gone forth from lay life; | T: would go forth from home—
+snp3.9:51.3 | P: Kāmabhavaparikkhīṇaṁ, | S: they’ve ended rebirth in the sensual realm: | T: his sensual passions, becomings, ⏎ totally gone:
+snp3.9:51.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:52.1–snp3.9:52.4 (snp)
+snp3.9:52.1 | P: Yodha taṇhaṁ pahantvāna, | S: They’ve given up craving, | T: Whoever, abandoning craving here,
+snp3.9:52.2 | P: Anāgāro paribbaje; | S: and have gone forth from lay life; | T: would go forth from home—
+snp3.9:52.3 | P: Taṇhābhavaparikkhīṇaṁ, | S: they’ve ended craving to be reborn: | T: his cravings, becomings, ⏎ totally gone:
+snp3.9:52.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:53.1–snp3.9:53.4 (snp)
+snp3.9:53.1 | P: Hitvā mānusakaṁ yogaṁ, | S: They’ve thrown off the human yoke, | T: Having left behind ⏎ the human bond,
+snp3.9:53.2 | P: Dibbaṁ yogaṁ upaccagā; | S: and slipped out of the heavenly yoke; | T: having made his way past ⏎ the divine,
+snp3.9:53.3 | P: Sabbayogavisaṁyuttaṁ, | S: unyoked from all yokes: | T: from all bonds unshackled:
+snp3.9:53.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:54.1–snp3.9:54.4 (snp)
+snp3.9:54.1 | P: Hitvā ratiñca aratiṁ, | S: Giving up desire and discontent, | T: Having left behind ⏎ delight & displeasure,
+snp3.9:54.2 | P: Sītibhūtaṁ nirūpadhiṁ; | S: they’re cooled and free of attachments; | T: cooled, with no acquisitions—
+snp3.9:54.3 | P: Sabbalokābhibhuṁ vīraṁ, | S: a hero, master of the whole world: | T: a hero who has conquered ⏎ all the world, ⏎ every world:
+snp3.9:54.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:55.1–snp3.9:55.4 (snp)
+snp3.9:55.1 | P: Cutiṁ yo vedi sattānaṁ, | S: They know the passing away | T: He knows in every way ⏎ beings’ passing away,
+snp3.9:55.2 | P: Upapattiñca sabbaso; | S: and rebirth of all beings; | T: and their re- ⏎ arising;
+snp3.9:55.3 | P: Asattaṁ sugataṁ buddhaṁ, | S: unattached, holy, awakened: | T: unattached, awakened, ⏎ well-gone:
+snp3.9:55.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:56.1–snp3.9:56.4 (snp) GATHERED; possible speaker requires a reader
+snp3.9:56.1 | P: Yassa gatiṁ na jānanti, | S: Gods, centaurs, and humans | T: He whose course they don’t know ⏎ —devas, gandhabbas, & human beings—
+snp3.9:56.2 | P: Devā gandhabbamānusā; | S: don’t know their destiny; | T: (none)
+snp3.9:56.3 | P: Khīṇāsavaṁ arahantaṁ, | S: the perfected ones with defilements ended: | T: his effluents ended, an arahant:
+snp3.9:56.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:57.1–snp3.9:57.4 (snp)
+snp3.9:57.1 | P: Yassa pure ca pacchā ca, | S: They have nothing before or after, | T: He who has nothing ⏎ —in front, behind,
+snp3.9:57.2 | P: Majjhe ca natthi kiñcanaṁ; | S: or even in between. | T: in between—
+snp3.9:57.3 | P: Akiñcanaṁ anādānaṁ, | S: Having nothing, taking nothing: | T: the one with nothing ⏎ who clings to no thing:
+snp3.9:57.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:58.1–snp3.9:58.4 (snp)
+snp3.9:58.1 | P: Usabhaṁ pavaraṁ vīraṁ, | S: Captain of the herd, excellent hero, | T: A splendid bull, conqueror, ⏎ hero,
+snp3.9:58.2 | P: Mahesiṁ vijitāvinaṁ; | S: great seer and victor; | T: great seer—
+snp3.9:58.3 | P: Anejaṁ nhātakaṁ buddhaṁ, | S: unstirred, washed, awakened: | T: free from want, ⏎ awakened, washed:
+snp3.9:58.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:59.1–snp3.9:59.4 (snp)
+snp3.9:59.1 | P: Pubbenivāsaṁ yo vedi, | S: They who know their past lives, | T: He knows his former lives.
+snp3.9:59.2 | P: Saggāpāyañca passati; | S: see heaven and places of loss, | T: He sees heavens & states of woe,
+snp3.9:59.3 | P: Atho jātikkhayaṁ patto, | S: and have attained the ending of rebirth, | T: has attained the ending of birth:
+snp3.9:59.4 | P: Tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: He’s what I call ⏎ a brahman.
+
+## snp3.9:60.1–snp3.9:60.4 (snp) GATHERED; possible speaker requires a reader
+snp3.9:60.1 | P: Samaññā hesā lokasmiṁ, | S: For name and clan are formulated | T: For this is a convention in the world: ⏎ the name & clan determined,
+snp3.9:60.2 | P: Nāmagottaṁ pakappitaṁ; | S: as mere convention in the world. | T: (none)
+snp3.9:60.3 | P: Sammuccā samudāgataṁ, | S: Produced by mutual agreement, | T: come into being from common consent,
+snp3.9:60.4 | P: Tattha tattha pakappitaṁ. | S: they’re formulated in each case. | T: here & there determined.
+
+## snp3.9:61.1–snp3.9:61.4 (snp) GATHERED; unequal counts require a reader
+snp3.9:61.1 | P: Dīgharattamanusayitaṁ, | S: For a long time this misconception | T: Taking a position unknowingly ⏎ for a long time obsessively,
+snp3.9:61.2 | P: Diṭṭhigatamajānataṁ; | S: has prejudiced those who don’t understand. | T: (none)
+snp3.9:61.3 | P: Ajānantā no pabruvanti, | S: Ignorant, they declare | T: those who don’t know ⏎ say
+snp3.9:61.4 | P: Jātiyā hoti brāhmaṇo. | S: that one is a brahmin by birth. | T: that one is a brahman by birth.
+
+## snp3.9:62.1–snp3.9:62.4 (snp)
+snp3.9:62.1 | P: Na jaccā brāhmaṇo hoti, | S: You’re not a brahmin by birth, | T: Not by birth is one a brahman,
+snp3.9:62.2 | P: Na jaccā hoti abrāhmaṇo; | S: nor by birth a non-brahmin. | T: not by birth a non-brahman.
+snp3.9:62.3 | P: Kammunā brāhmaṇo hoti, | S: You’re a brahmin by your deeds, | T: By action is one a brahman.
+snp3.9:62.4 | P: Kammunā hoti abrāhmaṇo. | S: and by deeds a non-brahmin. | T: By action one is a non-brahman.
+
+## snp3.9:63.1–snp3.9:63.4 (snp)
+snp3.9:63.1 | P: Kassako kammunā hoti, | S: You’re a farmer by your deeds, | T: By action is one a farmer.
+snp3.9:63.2 | P: Sippiko hoti kammunā; | S: by deeds you’re a professional; | T: By action one is a craftsman.
+snp3.9:63.3 | P: Vāṇijo kammunā hoti, | S: you’re a trader by your deeds, | T: By action is one a merchant.
+snp3.9:63.4 | P: Pessiko hoti kammunā. | S: by deeds are you a servant; | T: By action one is a servant.
+
+## snp3.9:64.1–snp3.9:64.4 (snp)
+snp3.9:64.1 | P: Coropi kammunā hoti, | S: you’re a bandit by your deeds, | T: By action is one a thief.
+snp3.9:64.2 | P: Yodhājīvopi kammunā; | S: by deeds you’re a warrior; | T: By action one is a soldier.
+snp3.9:64.3 | P: Yājako kammunā hoti, | S: you’re a sacrificer by your deeds, | T: By action is one a sacrificer.
+snp3.9:64.4 | P: Rājāpi hoti kammunā. | S: by deeds you’re a ruler. | T: By action one is a king.
+
+## snp3.9:65.1–snp3.9:65.4 (snp) GATHERED; equal counts: one line per row
+snp3.9:65.1 | P: Evametaṁ yathābhūtaṁ, | S: In this way the astute regard deeds | T: The wise see action in this way ⏎ as it has come to be,
+snp3.9:65.2 | P: Kammaṁ passanti paṇḍitā; | S: in accord with truth. | T: (none)
+snp3.9:65.3 | P: Paṭiccasamuppādadassā, | S: Seeing dependent origination, | T: seeing dependent co-arising,
+snp3.9:65.4 | P: Kammavipākakovidā. | S: they’re expert in deeds and their results. | T: cognizant of action’s results.
+AUTO snp3.9:65.1 starts: The wise see action in this way
+AUTO snp3.9:65.2 starts: as it has come to be,
+AUTO snp3.9:65.3 starts: seeing dependent co-arising,
+AUTO snp3.9:65.4 starts: cognizant of action’s results.
+
+## snp3.9:66.1–snp3.9:66.4 (snp)
+snp3.9:66.1 | P: Kammunā vattati loko, | S: Deeds make the world go on, | T: Through action the world rolls on.
+snp3.9:66.2 | P: Kammunā vattati pajā; | S: deeds make people go on; | T: People roll on through action.
+snp3.9:66.3 | P: Kammanibandhanā sattā, | S: sentient beings are bound by deeds, | T: In action are beings held bound together,
+snp3.9:66.4 | P: Rathassāṇīva yāyato. | S: like a moving chariot’s linchpin. | T: as in a linchpin, ⏎ a chariot traveling along.
+
+## snp3.9:67.1–snp3.9:67.4 (snp)
+snp3.9:67.1 | P: Tapena brahmacariyena, | S: By fervor and spiritual practice, | T: Through austerity, the holy life,
+snp3.9:67.2 | P: Saṁyamena damena ca; | S: by restraint and by self-control: | T: through restraint & self-control:
+snp3.9:67.3 | P: Etena brāhmaṇo hoti, | S: that’s how to become a brahmin, | T: That’s how one is a brahman.
+snp3.9:67.4 | P: Etaṁ brāhmaṇamuttamaṁ. | S: this is the supreme brahmin. | T: That’s a brahman ⏎ unexcelled.
+
+## snp3.9:68.1–snp3.9:68.4 (snp)
+snp3.9:68.1 | P: Tīhi vijjāhi sampanno, | S: Accomplished in the three knowledges, | T: Consummate in the three knowledges,
+snp3.9:68.2 | P: santo khīṇapunabbhavo; | S: peaceful, with rebirth ended, | T: further-becoming ended, at peace:
+snp3.9:68.3 | P: Evaṁ vāseṭṭha jānāhi, | S: know them, Vāseṭṭha, | T: Know, Vāseṭṭha:
+snp3.9:68.4 | P: brahmā sakko vijānatan”ti. | S: as the Divinity and Sakka to the wise.” | T: That’s Brahmā, that’s Sakka, ⏎ for those who directly know.”
+CONTEXT snp3.9:69.1 | P: Evaṁ vutte, vāseṭṭhabhāradvājā māṇavā bhagavantaṁ etadavocuṁ: | S: When he had spoken, Vāseṭṭha and Bhāradvāja said to him, | T: When this was said, the young brahmans Vāseṭṭha & Bhāradvāja said to the Blessed One:
+CONTEXT snp3.9:69.2 | P: “abhikkantaṁ, bho gotama …pe… | S: “Excellent, worthy Gotama! Excellent! … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear. We go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks.

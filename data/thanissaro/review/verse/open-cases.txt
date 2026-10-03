@@ -1,0 +1,689 @@
+# Source ownership review: previously unresolved cases
+Source blocks below are the translator’s real lines. Existing app row boundaries are NOT necessarily source breaks.
+Correct only reviewed verse keys. Keep words and their order. A whole verse owns its translation; no literal Pali-row alignment.
+New cuts only at actual source block boundaries; quote owned first 6–8 words (shorter for short own lines).
+Name every occupied intended row in a recut stanza, and use key none only when actual English lines are fewer.
+CONTEXT rows read-only. Source-order interleavings and prose attachments may be impossible within this scope.
+
+## sn3.19:7.1
+Concern: Prose introduction precedes the stanza in this verse row; its relocation would require a non-verse/context key.
+VERSE sn3.19:7.1 sn3.19:7.2 sn3.19:7.3 sn3.19:7.4
+sn3.19:7.1 | P: “Amanussaṭṭhāne udakaṁva sītaṁ,  | S: As cool water in an uninhabited region  | T: That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further: ⏎ “Like water ⏎ in a haunted place 
+sn3.19:7.2 | P: Tadapeyyamānaṁ parisosameti;  | S: evaporates when not drunk;  | T: that, without being imbibed, ⏎ dries up: 
+sn3.19:7.3 | P: Evaṁ dhanaṁ kāpuriso labhitvā,  | S: so too when a reprobate acquires wealth,  | T: Such is the wealth ⏎ acquired by a worthless man 
+sn3.19:7.4 | P: Nevattanā bhuñjati no dadāti.  | S: they neither use it themselves nor give it away.  | T: who neither enjoys it himself ⏎ nor gives. 
+VERSE sn3.19:8.1 sn3.19:8.2 sn3.19:8.3 sn3.19:8.4
+sn3.19:8.1 | P: Dhīro ca viññū adhigamma bhoge,  | S: When the attentive and sensible acquire wealth,  | T: But one enlightened & knowing, ⏎ on acquiring wealth, 
+sn3.19:8.2 | P: So bhuñjati kiccakaro ca hoti;  | S: they use it, being dutiful.  | T: enjoys it & performs his duties. 
+sn3.19:8.3 | P: So ñātisaṅghaṁ nisabho bharitvā,  | S: That boss, having supported the family unit,  | T: He, a bull among men, ⏎ having supported his kin 
+sn3.19:8.4 | P: Anindito saggamupeti ṭhānan”ti.  | S: blameless, goes to a heavenly place.”  | T: without blame, ⏎ without blame ⏎ goes to the land of heaven.” 
+Current proposed starts:
+SOURCE sutta/sn/sn3/sn3.19.html
+SOURCE LINE 3 (p): “That’s the way it is, great king. That’s the way it is. When a person of no integrity acquires lavish wealth, he doesn’t provide for his own pleasure & satisfaction, nor for the pleasure & satisfaction of his parents, nor for the pleasure & satisfaction of his wife & children; nor for the pleasure & satisfaction of his slaves, servants, & assistants; nor for the pleasure & satisfaction of his friends. He doesn’t institute for contemplatives & brahmans offerings of supreme aim, heavenly, resulting in happiness, leading to heaven. When his wealth isn’t properly put to use, kings make off with it, or thieves make off with it, or fire burns it, or water sweeps it away, or hateful heirs make off with it. Thus his wealth, not properly put to use, goes to waste and not to any good use.
+SOURCE LINE 4 (p): “Just as with a pond in a place haunted by non-human beings, with clear water, cool water, fresh water, clean, with good fords, delightful: No people would draw water from it or drink it or bathe in it or apply it to their needs. And so that water, not properly put to use, would go to waste and not to any good use. In the same way, when a person of no integrity acquires lavish wealth… his wealth, not properly put to use, goes to waste and not to any good use.
+SOURCE LINE 5 (p): “But when a person of integrity acquires lavish wealth, he provides for his own pleasure & satisfaction, for the pleasure & satisfaction of his parents, the pleasure & satisfaction of his wife & children; the pleasure & satisfaction of his slaves, servants, & assistants; and the pleasure & satisfaction of his friends. He institutes for contemplatives & brahmans offerings of supreme aim, heavenly, resulting in happiness, leading to heaven. When his wealth is properly put to use, kings don’t make off with it, thieves don’t make off with it, fire doesn’t burn it, water doesn’t sweep it away, and hateful heirs don’t make off with it. Thus his wealth, properly put to use, goes to a good use and not to waste.
+SOURCE LINE 6 (p): “Just as with a pond not far from a town or village, with clear water, cool water, fresh water, clean, with good fords, delightful. People would draw water from it or drink it or bathe in it or apply it to their needs. And so that water, properly put to use, would go to a good use and not to waste. In the same way, when a person of integrity acquires lavish wealth… his wealth, properly put to use, goes to a good use and not to waste.”
+SOURCE LINE 7 (p): That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further:
+SOURCE LINE 8 (vs): “Like water
+SOURCE LINE 9 (v): in a haunted place
+SOURCE LINE 10 (v): that, without being imbibed,
+SOURCE LINE 11 (v): dries up:
+SOURCE LINE 14 (v): who neither enjoys it himself
+SOURCE LINE 15 (v): nor gives.
+SOURCE LINE 16 (vs): But one enlightened & knowing,
+SOURCE LINE 17 (v): on acquiring wealth,
+SOURCE LINE 18 (v): enjoys it & performs his duties.
+SOURCE LINE 19 (v): He, a bull among men,
+SOURCE LINE 20 (v): having supported his kin
+SOURCE LINE 21 (v): without blame,
+SOURCE LINE 22 (v): without blame
+
+## sn4.18:3.3
+Concern: P rows 3–4 question about evil ripening has no English in batch009. Following stanza sn4.18:4 in batch010 starts correctly with happy living; question appears omitted rather than displaced.
+VERSE sn4.18:3.1 sn4.18:3.2 sn4.18:3.3 sn4.18:3.4
+sn4.18:3.1 | P: “Apuññaṁ pasavi māro,  | S: “Māra has produced wickedness  | T: The Buddha: ⏎ “You’ve produced demerit, Evil One, 
+sn4.18:3.2 | P: āsajja naṁ tathāgataṁ;  | S: in attacking the Realized One.  | T: insulting the Tathāgata. 
+sn4.18:3.3 | P: Kiṁ nu maññasi pāpima,  | S: Wicked One, do you imagine that  | T: 
+sn4.18:3.4 | P: na me pāpaṁ vipaccati.  | S: your wickedness won’t bear fruit?  | T: 
+VERSE sn4.18:4.1 sn4.18:4.2 sn4.18:4.3 sn4.18:4.4
+sn4.18:4.1 | P: Susukhaṁ vata jīvāma,  | S: Let us live so very happily,  | T: How very happily we live, 
+sn4.18:4.2 | P: yesaṁ no natthi kiñcanaṁ;  | S: we who have nothing.  | T: we who have nothing. 
+sn4.18:4.3 | P: Pītibhakkhā bhavissāma,  | S: We shall feed on rapture,  | T: We will feed on rapture 
+sn4.18:4.4 | P: devā ābhassarā yathā”ti.  | S: like the gods of sublime luminosity.”  | T: like the Radiant devas.” 
+Current proposed starts:
+SOURCE sutta/sn/sn4/sn4.18.html
+SOURCE LINE 3 (p): “So was it you, Evil One, who arranged that I didn’t get alms?”
+SOURCE LINE 4 (p): “In that case, lord, let the Blessed One go into Pañcasālā a second time. I’ll arrange that you get alms.”
+SOURCE LINE 5 (spk): The Buddha:
+SOURCE LINE 6 (vs): “You’ve produced demerit, Evil One,
+SOURCE LINE 7 (v): insulting the Tathāgata.
+SOURCE LINE 8 (vs): How very happily we live,
+SOURCE LINE 9 (v): we who have nothing.
+SOURCE LINE 10 (v): We will feed on rapture
+SOURCE LINE 11 (v): like the Radiant devas.”
+SOURCE LINE 12 (p): Then Māra the Evil One—sad & dejected at realizing, “The Blessed One knows me; the One Well-gone knows me”—vanished right there.
+
+## sn4.24:10.4
+Concern: Narrative departure and brooding prose belonging to sn4.25:1.1 is appended to the verse without a translator line break; context row itself has no T. Cannot split inside that source line.
+VERSE sn4.24:9.1 sn4.24:9.2 sn4.24:9.3 sn4.24:9.4
+sn4.24:9.1 | P: “Medavaṇṇañca pāsāṇaṁ,  | S: “A crow once circled a stone  | T: “A crow circled a stone 
+sn4.24:9.2 | P: vāyaso anupariyagā;  | S: that looked like a lump of fat.  | T: the color of fat— 
+sn4.24:9.3 | P: Apettha muduṁ vindema,  | S: ‘Perhaps I’ll find something tender,’ it thought,  | T: ‘Perhaps I’ll find something tender here, 
+sn4.24:9.4 | P: api assādanā siyā.  | S: ‘perhaps there’s something tasty.’  | T: Maybe there’s something tasty’ 
+VERSE sn4.24:10.1 sn4.24:10.2 sn4.24:10.3 sn4.24:10.4
+sn4.24:10.1 | P: Aladdhā tattha assādaṁ,  | S: But finding nothing tasty,  | T: —but not getting anything tasty there, 
+sn4.24:10.2 | P: vāyasetto apakkame;  | S: the crow left that place.  | T: the crow went away. 
+sn4.24:10.3 | P: Kākova selamāsajja,  | S: Like the crow that pecked the stone,  | T: Like a crow attacking the rock, 
+sn4.24:10.4 | P: nibbijjāpema gotamā”ti.  | S: I leave Gotama disappointed.”  | T: I weary myself with Gotama.” Then Māra the Evil One, having recited these verses of dejection in the Blessed One’s presence, left that place and sat on the ground not far from the Blessed One, silent, abashed, with his shoulders drooping, his head down, brooding, at a loss for words, drawing in the dirt with a stick. 
+Current proposed starts:
+SOURCE sutta/sn/sn4/sn4.24.html
+SOURCE LINE 44 (spk): Māra:
+SOURCE LINE 45 (p): “Suppose, lord, that not far from a village or town was a pond. There in it was a crab. Then a number of boys & girls, leaving the village or town, would go to the pond and, on arrival, would take the crab out of the water and place it on the ground. And whenever the crab extended a leg, the boys or girls would cut it off, break it, and smash it with sticks or stones right there, so that the crab—with all its legs cut off, broken, & smashed—would be unable to get back in the pond as before.
+SOURCE LINE 46 (p): “In the same way, whatever writhings, tricks, & contortions [there are], the Blessed One has cut them off, broken them, and smashed them all. Now I’m unable to approach the Blessed One, looking for an opening.”
+SOURCE LINE 47 (p): Then Māra the Evil One recited these verses of dejection in the Blessed One’s presence:
+SOURCE LINE 48 (vs): “A crow circled a stone
+SOURCE LINE 49 (v): the color of fat—
+SOURCE LINE 50 (v): ‘Perhaps I’ll find something tender here,
+SOURCE LINE 51 (v): Maybe there’s something tasty’
+SOURCE LINE 52 (v): —but not getting anything tasty there,
+SOURCE LINE 53 (v): the crow went away.
+SOURCE LINE 54 (v): Like a crow attacking the rock,
+SOURCE LINE 55 (v): I weary myself with Gotama.”
+SOURCE LINE 56 (p): Then Māra the Evil One, having recited these verses of dejection in the Blessed One’s presence, left that place and sat on the ground not far from the Blessed One, silent, abashed, with his shoulders drooping, his head down, brooding, at a loss for words, drawing in the dirt with a stick.
+
+## an3.39:10.3
+Concern: Translator interlaces adjacent stanza content: “I overcame all intoxication” (11.1) precedes “with health, youth, & life” (10.3–10.4). Restoring both stanza identities would require reordering translator lines.
+VERSE an3.39:9.1 an3.39:9.2 an3.39:9.3 an3.39:9.4
+an3.39:9.1 | P: Ahañce taṁ jiguccheyyaṁ,  | S: If I were to be disgusted  | T: And if I were to be repelled 
+an3.39:9.2 | P: evaṁdhammesu pāṇisu;  | S: with creatures whose nature is such,  | T: by beings subject to these things, 
+an3.39:9.3 | P: Na metaṁ patirūpassa,  | S: it would not be appropriate for me,  | T: it would not be fitting for me, 
+an3.39:9.4 | P: mama evaṁ vihārino.  | S: since my life is just the same.  | T: living as they do.’ 
+VERSE an3.39:10.1 an3.39:10.2 an3.39:10.3 an3.39:10.4
+an3.39:10.1 | P: Sohaṁ evaṁ viharanto,  | S: Living in such a way,  | T: As I maintained this attitude— 
+an3.39:10.2 | P: ñatvā dhammaṁ nirūpadhiṁ;  | S: I understood the truth without attachments.  | T: knowing the Dhamma ⏎ without acquisitions— 
+an3.39:10.3 | P: Ārogye yobbanasmiñca,  | S: I mastered all vanities— | T: I overcame all intoxication 
+an3.39:10.4 | P: jīvitasmiñca ye madā.  | S: of health, of youth,  | T: with health, youth, 
+VERSE an3.39:11.1 an3.39:11.2 an3.39:11.3 an3.39:11.4
+an3.39:11.1 | P: Sabbe made abhibhosmi,  | S: and even of life— | T: & life 
+an3.39:11.2 | P: Nekkhamme daṭṭhu khemataṁ;  | S: seeing renunciation as sanctuary.  | T: as one who sees ⏎ renunciation as rest. 
+an3.39:11.3 | P: Tassa me ahu ussāho,  | S: Zeal sprang up in me  | T: For me, energy arose, 
+an3.39:11.4 | P: Nibbānaṁ abhipassato.  | S: as I looked to extinguishment.  | T: unbinding was clearly seen. 
+VERSE an3.39:12.1 an3.39:12.2 an3.39:12.3 an3.39:12.4
+an3.39:12.1 | P: Nāhaṁ bhabbo etarahi,  | S: Now I’m unable  | T: There’s now no way 
+an3.39:12.2 | P: Kāmāni paṭisevituṁ;  | S: to indulge in sensual pleasures;  | T: I could partake of sensual pleasures. 
+an3.39:12.3 | P: Anivatti bhavissāmi,  | S: there’s no turning back,  | T: Having followed the holy life, ⏎ I will not return. 
+an3.39:12.4 | P: Brahmacariyaparāyaṇo”ti.  | S: I’m committed to the spiritual life.”  | T: 
+Current proposed starts:
+an3.39:12.1 starts: There’s now no way
+an3.39:12.2 starts: I could partake of sensual pleasures.
+an3.39:12.3 starts: Having followed the holy life,
+an3.39:12.4 starts: I will not return.
+SOURCE sutta/an/an3/an3.39.html
+SOURCE LINE 1 (p): “Monks, I lived in refinement, utmost refinement, total refinement. My father even had lotus ponds made in our palace: one where red lotuses bloomed, one where white lotuses bloomed, one where blue lotuses bloomed, all for my sake. I used no sandalwood that was not from Vārāṇasī. My turban was from Vārāṇasī, as were my tunic, my lower garments, & my outer cloak. A white sunshade was held over me day & night to protect me from cold, heat, dust, dirt, & dew.
+SOURCE LINE 2 (p): “I had three palaces: one for the cold season, one for the hot season, one for the rainy season. During the four months of the rainy season I was entertained in the rainy-season palace by minstrels without a single man among them, and I did not once come down from the palace. Whereas the servants, workers, & retainers in other people’s homes are fed meals of lentil soup & broken rice, in my father’s home the servants, workers, & retainers were fed wheat, rice, & meat.
+SOURCE LINE 3 (p): “Even though I was endowed with such fortune, such total refinement, the thought occurred to me: ‘When an untaught, run-of-the-mill person, himself subject to aging, not beyond aging, sees another who is aged, he is repelled, ashamed, & disgusted, oblivious to himself that he too is subject to aging, not beyond aging. If I—who am subject to aging, not beyond aging—were to be repelled, ashamed, & disgusted on seeing another person who is aged, that would not be fitting for me.’ As I noticed this, the (typical) young person’s intoxication with youth entirely dropped away.
+SOURCE LINE 4 (p): “Even though I was endowed with such fortune, such total refinement, the thought occurred to me: ‘When an untaught, run-of-the-mill person, himself subject to illness, not beyond illness, sees another who is ill, he is repelled, ashamed, & disgusted, oblivious to himself that he too is subject to illness, not beyond illness. And if I—who am subject to illness, not beyond illness—were to be repelled, ashamed, & disgusted on seeing another person who is ill, that would not be fitting for me.’ As I noticed this, the healthy person’s intoxication with health entirely dropped away.
+SOURCE LINE 5 (p): “Even though I was endowed with such fortune, such total refinement, the thought occurred to me: ‘When an untaught, run-of-the-mill person, himself subject to death, not beyond death, sees another who is dead, he is repelled, ashamed, & disgusted, oblivious to himself that he too is subject to death, not beyond death. And if I—who am subject to death, not beyond death—were to be repelled, ashamed, & disgusted on seeing another person who is dead, that would not be fitting for me.’ As I noticed this, the living person’s intoxication with life entirely dropped away.
+SOURCE LINE 6 (p): “Monks, there are these three forms of intoxication. Which three? Intoxication with youth, intoxication with health, intoxication with life.
+SOURCE LINE 7 (p): “Drunk with the intoxication of youth, an uninstructed, run-of-the-mill person engages in bodily misconduct, verbal misconduct, & mental misconduct. Having engaged in bodily misconduct, verbal misconduct, & mental misconduct, he—on the break-up of the body, after death—reappears in the plane of deprivation, the bad destination, the lower realms, in hell.
+SOURCE LINE 8 (p): “Drunk with the intoxication of health, an uninstructed, run-of-the-mill person engages in bodily misconduct, verbal misconduct, & mental misconduct. Having engaged in bodily misconduct, verbal misconduct, & mental misconduct, he—on the break-up of the body, after death—reappears in the plane of deprivation, the bad destination, the lower realms, in hell.
+SOURCE LINE 9 (p): “Drunk with the intoxication of life, an uninstructed, run-of-the-mill person engages in bodily misconduct, verbal misconduct, & mental misconduct. Having engaged in bodily misconduct, verbal misconduct, & mental misconduct, he—on the break-up of the body, after death—reappears in the plane of deprivation, the bad destination, the lower realms, in hell.
+SOURCE LINE 10 (p): “Drunk with the intoxication of youth, a monk leaves the training and returns to the lower life. Drunk with the intoxication of health, a monk leaves the training and returns to the lower life. Drunk with the intoxication of life, a monk leaves the training and returns to the lower life.”
+SOURCE LINE 11 (vs): ‘Subject to birth, subject to aging,
+SOURCE LINE 12 (v): subject to death,
+SOURCE LINE 13 (v): run-of-the-mill people
+SOURCE LINE 14 (v): are repelled by those who suffer
+SOURCE LINE 15 (v): from that to which they are subject.
+SOURCE LINE 16 (v): And if I were to be repelled
+SOURCE LINE 17 (v): by beings subject to these things,
+SOURCE LINE 18 (v): it would not be fitting for me,
+SOURCE LINE 19 (v): living as they do.’
+SOURCE LINE 20 (vs): As I maintained this attitude—
+SOURCE LINE 21 (v): knowing the Dhamma
+SOURCE LINE 22 (v): without acquisitions—
+SOURCE LINE 23 (v): I overcame all intoxication
+SOURCE LINE 24 (v): with health, youth, & life
+SOURCE LINE 25 (v): as one who sees
+SOURCE LINE 26 (v): renunciation as rest.
+SOURCE LINE 27 (vs): For me, energy arose,
+SOURCE LINE 28 (v): unbinding was clearly seen.
+SOURCE LINE 29 (v): There’s now no way
+SOURCE LINE 30 (v): I could partake of sensual pleasures.
+SOURCE LINE 31 (v): Having followed the holy life,
+SOURCE LINE 32 (v): I will not return.
+
+## an4.19:4.1
+Concern: This verse row begins with the full four-ways-of-not-going-off-course prose, corresponding to CONTEXT an4.19:2.3–2.4. Moving the verse start to “If you don’t—” would require changing read-only CONTEXT boundaries to avoid attaching the prose to the preceding verse.
+VERSE an4.19:3.1 an4.19:3.2 an4.19:3.3 an4.19:3.4
+an4.19:3.1 | P: Chandā dosā bhayā mohā,  | S: If you act against the teaching  | T: If you— 
+an4.19:3.2 | P: yo dhammaṁ ativattati;  | S: out of favoritism, hostility, cowardice, or stupidity,  | T: through desire, ⏎ aversion, ⏎ delusion, ⏎ fear— ⏎ transgress the Dhamma, 
+an4.19:3.3 | P: Nihīyati tassa yaso,  | S: your fame fades away,  | T: your honor wanes, 
+an4.19:3.4 | P: kāḷapakkheva candimā.  | S: like the moon in the waning fortnight.  | T: as in the dark fortnight, ⏎ the moon. 
+VERSE an4.19:4.1 an4.19:4.2 an4.19:4.3 an4.19:4.4
+an4.19:4.1 | P: Chandā dosā bhayā mohā,  | S: If you don’t act against the teaching  | T: “There are these four ways of not going off course. Which four? One doesn’t go off course through desire. One doesn’t go off course through aversion. One doesn’t go off course through delusion. One doesn’t go off course through fear. These are the four ways of not going off course.” ⏎ If you don’t— 
+an4.19:4.2 | P: yo dhammaṁ nātivattati;  | S: out of favoritism, hostility, cowardice, and stupidity,  | T: through desire, ⏎ aversion, ⏎ delusion, ⏎ fear— ⏎ transgress the Dhamma, 
+an4.19:4.3 | P: Āpūrati tassa yaso,  | S: your fame swells,  | T: your honor waxes, 
+an4.19:4.4 | P: sukkapakkheva candimā”ti.  | S: like the moon in the waxing fortnight.”  | T: as in the bright fortnight, ⏎ the moon. 
+Current proposed starts:
+SOURCE sutta/an/an4/an4.19.html
+SOURCE LINE 1 (p): “There are these four ways of going off course. Which four? One goes off course through desire. One goes off course through aversion. One goes off course through delusion. One goes off course through fear. These are the four ways of going off course.”
+SOURCE LINE 2 (vs): If you—
+SOURCE LINE 3 (v): through desire,
+SOURCE LINE 4 (v): aversion,
+SOURCE LINE 5 (v): delusion,
+SOURCE LINE 6 (v): fear—
+SOURCE LINE 7 (v): transgress the Dhamma,
+SOURCE LINE 8 (v): your honor wanes,
+SOURCE LINE 9 (v): as in the dark fortnight,
+SOURCE LINE 10 (v): the moon.
+SOURCE LINE 11 (p): “There are these four ways of not going off course. Which four? One doesn’t go off course through desire. One doesn’t go off course through aversion. One doesn’t go off course through delusion. One doesn’t go off course through fear. These are the four ways of not going off course.”
+SOURCE LINE 12 (vs): If you don’t—
+SOURCE LINE 13 (v): through desire,
+SOURCE LINE 14 (v): aversion,
+SOURCE LINE 15 (v): delusion,
+SOURCE LINE 16 (v): fear—
+SOURCE LINE 17 (v): transgress the Dhamma,
+SOURCE LINE 18 (v): your honor waxes,
+SOURCE LINE 19 (v): as in the bright fortnight,
+SOURCE LINE 20 (v): the moon.
+
+## an5.36:3.1
+Concern: T —straightened, Such— belongs to prior stanza Pali2.4 ujubhūtesu tādisu. T2.4 with hearts inspired by the noble ones mixes current3.1 vippasannamanā with prior2.3 ariyesu. Own line and ordering prevent a compliant boundary-only repair; AUTO3.1 withheld, remaining AUTO retained.
+VERSE an5.36:2.1 an5.36:2.2 an5.36:2.3 an5.36:2.4
+an5.36:2.1 | P: Kāle dadanti sappaññā,  | S: The wise give at the right time,  | T: In the proper season they give— ⏎ those with discernment, 
+an5.36:2.2 | P: vadaññū vītamaccharā;  | S: being bountiful and rid of stinginess.  | T: responsive, free from stinginess. 
+an5.36:2.3 | P: Kālena dinnaṁ ariyesu,  | S: A religious donation at the right time  | T: Having been given in proper season, 
+an5.36:2.4 | P: ujubhūtesu tādisu.  | S: to the noble ones, upright and unaffected,  | T: with hearts inspired by the noble ones 
+VERSE an5.36:3.1 an5.36:3.2 an5.36:3.3 an5.36:3.4 an5.36:3.5 an5.36:3.6
+an5.36:3.1 | P: Vippasannamanā tassa,  | S: given with a clear and confident mind,  | T: —straightened, Such— 
+an5.36:3.2 | P: vipulā hoti dakkhiṇā;  | S: is indeed abundant.  | T: their offering bears an abundance. 
+an5.36:3.3 | P: Ye tattha anumodanti,  | S: Those who rejoice at that,  | T: Those who rejoice in that gift 
+an5.36:3.4 | P: veyyāvaccaṁ karonti vā;  | S: or do other services,  | T: or give assistance, 
+an5.36:3.5 | P: Na tena dakkhiṇā ūnā,  | S: don’t miss out on the offering;  | T: 
+an5.36:3.6 | P: tepi puññassa bhāgino.  | S: they too have a share in the merit.  | T: they, too, have a share of the merit, ⏎ and the offering isn’t depleted by that. 
+VERSE an5.36:4.1 an5.36:4.2 an5.36:4.3 an5.36:4.4
+an5.36:4.1 | P: Tasmā dade appaṭivānacitto,  | S: So you should give without holding back,  | T: So, with an unhesitant mind, 
+an5.36:4.2 | P: Yattha dinnaṁ mahapphalaṁ;  | S: where a gift is very fruitful.  | T: one should give where the gift bears great fruit. 
+an5.36:4.3 | P: Puññāni paralokasmiṁ,  | S: The good deeds of sentient beings  | T: Merit is what establishes ⏎ living beings in the next life. 
+an5.36:4.4 | P: Patiṭṭhā honti pāṇinan”ti.  | S: support them in the next world.”  | T: 
+Current proposed starts:
+an5.36:3.2 starts: their offering bears an abundance.
+an5.36:3.3 starts: Those who rejoice in that gift
+an5.36:3.4 starts: or give assistance,
+an5.36:3.5 starts: they, too, have a share of the merit,
+an5.36:3.6 starts: and the offering isn’t depleted by that.
+an5.36:4.1 starts: So, with an unhesitant mind,
+an5.36:4.2 starts: one should give where the gift bears great
+an5.36:4.3 starts: Merit is what establishes
+an5.36:4.4 starts: living beings in the next life.
+SOURCE sutta/an/an5/an5.36.html
+SOURCE LINE 1 (p): “There are these five seasonable gifts. Which five? One gives to a newcomer. One gives to one going away. One gives to one who is ill. One gives in time of famine. One sets the first fruits of field & orchard in front of those who are virtuous. These are the five seasonable gifts.”
+SOURCE LINE 2 (vs): In the proper season they give—
+SOURCE LINE 3 (v): those with discernment,
+SOURCE LINE 4 (v): responsive, free from stinginess.
+SOURCE LINE 5 (v): Having been given in proper season,
+SOURCE LINE 6 (v): with hearts inspired by the noble ones
+SOURCE LINE 7 (v): —straightened, Such—
+SOURCE LINE 8 (v): their offering bears an abundance.
+SOURCE LINE 9 (v): Those who rejoice in that gift
+SOURCE LINE 10 (v): or give assistance,
+SOURCE LINE 11 (v): they, too, have a share of the merit,
+SOURCE LINE 12 (v): and the offering isn’t depleted by that.
+SOURCE LINE 13 (v): So, with an unhesitant mind,
+SOURCE LINE 14 (v): one should give where the gift bears great fruit.
+SOURCE LINE 15 (v): Merit is what establishes
+SOURCE LINE 16 (v): living beings in the next life.
+
+## an5.57:14.3
+Concern: T I overcame all intoxication belongs to next stanza15.1 Sabbe made abhibhosmi; T15.1 & life completes prior stanza14.4. Translator order interleaves stanza concepts, preventing a repair using whole lines without reordering.
+VERSE an5.57:13.1 an5.57:13.2 an5.57:13.3 an5.57:13.4
+an5.57:13.1 | P: Ahañce taṁ jiguccheyyaṁ,  | S: If I were to be disgusted  | T: And if I were to be repelled 
+an5.57:13.2 | P: evaṁ dhammesu pāṇisu;  | S: with creatures whose nature is such,  | T: by beings subject to these things, 
+an5.57:13.3 | P: Na metaṁ patirūpassa,  | S: it would not be appropriate for me,  | T: it would not be fitting for me, 
+an5.57:13.4 | P: mama evaṁ vihārino.  | S: since my life is just the same.  | T: living as they do.’ 
+VERSE an5.57:14.1 an5.57:14.2 an5.57:14.3 an5.57:14.4
+an5.57:14.1 | P: Sohaṁ evaṁ viharanto,  | S: Living in such a way,  | T: As I maintained this attitude— 
+an5.57:14.2 | P: ñatvā dhammaṁ nirūpadhiṁ;  | S: I understood the truth without attachments.  | T: knowing the Dhamma ⏎ without acquisitions— 
+an5.57:14.3 | P: Ārogye yobbanasmiñca,  | S: I mastered all vanities— | T: I overcame all intoxication 
+an5.57:14.4 | P: jīvitasmiñca ye madā.  | S: of health, of youth,  | T: with health, youth, 
+VERSE an5.57:15.1 an5.57:15.2 an5.57:15.3 an5.57:15.4
+an5.57:15.1 | P: Sabbe made abhibhosmi,  | S: and even of life— | T: & life 
+an5.57:15.2 | P: Nekkhammaṁ daṭṭhu khemato;  | S: seeing renunciation as sanctuary.  | T: as one who sees ⏎ renunciation as rest. 
+an5.57:15.3 | P: Tassa me ahu ussāho,  | S: Zeal sprang up in me  | T: For me, energy arose, 
+an5.57:15.4 | P: Nibbānaṁ abhipassato.  | S: as I looked to extinguishment.  | T: unbinding was clearly seen. 
+VERSE an5.57:16.1 an5.57:16.2 an5.57:16.3 an5.57:16.4
+an5.57:16.1 | P: Nāhaṁ bhabbo etarahi,  | S: Now I’m unable  | T: There’s now no way 
+an5.57:16.2 | P: Kāmāni paṭisevituṁ;  | S: to indulge in sensual pleasures;  | T: I could partake of sensual pleasures. 
+an5.57:16.3 | P: Anivatti bhavissāmi,  | S: there’s no turning back,  | T: 
+an5.57:16.4 | P: Brahmacariyaparāyaṇo”ti.  | S: I’m committed to the spiritual life.”  | T: Having followed the holy life, ⏎ I will not return.” 
+Current proposed starts:
+an5.57:16.1 starts: There’s now no way
+an5.57:16.2 starts: I could partake of sensual pleasures.
+an5.57:16.3 starts: Having followed the holy life,
+an5.57:16.4 starts: I will not return.”
+SOURCE sutta/an/an5/an5.57.html
+SOURCE LINE 6 (p): “‘I am the owner of actions [kamma], heir to actions, born of actions, related through actions, and have actions as my arbitrator. Whatever I do, for good or for evil, to that will I fall heir’.…
+SOURCE LINE 7 (p): “These are the five facts that one should reflect on often, whether one is a woman or a man, lay or ordained.
+SOURCE LINE 8 (p): “Now, based on what line of reasoning should one often reflect… that ‘I am subject to aging, have not gone beyond aging’? There are beings who are intoxicated with a (typical) youth’s intoxication with youth. Because of that intoxication with youth, they conduct themselves in a bad way in body…in speech…and in mind. But when they often reflect on that fact, that youth’s intoxication with youth will either be entirely abandoned or grow weaker.…
+SOURCE LINE 9 (p): “Now, based on what line of reasoning should one often reflect… that ‘I am subject to illness, have not gone beyond illness’? There are beings who are intoxicated with a (typical) healthy person’s intoxication with health. Because of that intoxication with health, they conduct themselves in a bad way in body…in speech…and in mind. But when they often reflect on that fact, that healthy person’s intoxication with health will either be entirely abandoned or grow weaker.…
+SOURCE LINE 10 (p): “Now, based on what line of reasoning should one often reflect… that ‘I am subject to death, have not gone beyond death’? There are beings who are intoxicated with a (typical) living person’s intoxication with life. Because of that intoxication with life, they conduct themselves in a bad way in body…in speech…and in mind. But when they often reflect on that fact, that living person’s intoxication with life will either be entirely abandoned or grow weaker.…
+SOURCE LINE 11 (p): “Now, based on what line of reasoning should one often reflect… that ‘I will grow different, separate from all that is dear & appealing to me’? There are beings who feel desire & passion for the things they find dear & appealing. Because of that passion, they conduct themselves in a bad way in body…in speech…and in mind. But when they often reflect on that fact, that desire & passion for the things they find dear & appealing will either be entirely abandoned or grow weaker.…
+SOURCE LINE 12 (p): “Now, based on what line of reasoning should one often reflect… that ‘I am the owner of actions, heir to actions, born of actions, related through actions, and have actions as my arbitrator. Whatever I do, for good or for evil, to that will I fall heir’? There are beings who conduct themselves in a bad way in body… in speech…and in mind. But when they often reflect on that fact, that bad conduct in body, speech, & mind will either be entirely abandoned or grow weaker.…
+SOURCE LINE 13 (p): “Now, a disciple of the noble ones considers this: ‘I am not the only one subject to aging, who has not gone beyond aging. To the extent that there is the coming & going, passing away & rearising of beings, all beings are subject to aging, have not gone beyond aging.’ When he/she often reflects on this, the (factors of the) path take birth. He/she sticks with that path, develops it, cultivates it. As he/she sticks with that path, develops it, & cultivates it, the fetters are abandoned, the obsessions destroyed.
+SOURCE LINE 14 (p): “Further, a disciple of the noble ones considers this: ‘I am not the only one subject to illness, who has not gone beyond illness’.… ‘I am not the only one subject to death, who has not gone beyond death’.… ‘I am not the only one who will grow different, separate from all that is dear & appealing to me’.…
+SOURCE LINE 17 (v): subject to death,
+SOURCE LINE 18 (v): run-of-the-mill people
+SOURCE LINE 19 (v): are repelled by those who suffer
+SOURCE LINE 20 (v): from that to which they are subject.
+SOURCE LINE 21 (v): And if I were to be repelled
+SOURCE LINE 22 (v): by beings subject to these things,
+SOURCE LINE 23 (v): it would not be fitting for me,
+SOURCE LINE 24 (v): living as they do.’
+SOURCE LINE 25 (vs): As I maintained this attitude—
+SOURCE LINE 26 (v): knowing the Dhamma
+SOURCE LINE 27 (v): without acquisitions—
+SOURCE LINE 28 (v): I overcame all intoxication
+SOURCE LINE 29 (v): with health, youth, & life
+SOURCE LINE 30 (v): as one who sees
+SOURCE LINE 31 (v): renunciation as rest.
+SOURCE LINE 32 (vs): For me, energy arose,
+SOURCE LINE 33 (v): unbinding was clearly seen.
+SOURCE LINE 34 (v): There’s now no way
+SOURCE LINE 35 (v): I could partake of sensual pleasures.
+SOURCE LINE 36 (v): Having followed the holy life,
+SOURCE LINE 37 (v): I will not return.”
+
+## an6.45:21.3
+Concern: T living at home is next stanza22.2 gharamesino, brought forward before current21.3–21.4 giving righteously gained belongings. Translator order interleaves identities; whole-line boundary changes cannot restore both without reordering. Leave source wording/order intact.
+VERSE an6.45:20.1 an6.45:20.2 an6.45:20.3 an6.45:20.4
+an6.45:20.1 | P: So pāpakammo dummedho,  | S: That simpleton evildoer,  | T: He, ⏎ with evil actions, ⏎ his wisdom weak, 
+an6.45:20.2 | P: jānaṁ dukkaṭamattano;  | S: knowing their own misdeeds,  | T: knowing his own wrong-doing, 
+an6.45:20.3 | P: Yonimaññataraṁ gantvā,  | S: goes to one of the animal realms,  | T: goes to an animal womb 
+an6.45:20.4 | P: niraye vāpi bajjhati.  | S: or is trapped in hell.  | T: or is bound in hell: 
+VERSE an6.45:21.1 an6.45:21.2 an6.45:21.3 an6.45:21.4
+an6.45:21.1 | P: Etañhi bandhanaṁ dukkhaṁ,  | S: Such imprisonment is true suffering,  | T: the painful bond 
+an6.45:21.2 | P: yamhā dhīro pamuccati;  | S: from which the attentive are released.  | T: from which the enlightened ⏎ are freed. 
+an6.45:21.3 | P: Dhammaladdhehi bhogehi,  | S: With confident heart, they give  | T: But one with confidence, ⏎ living at home, ⏎ making gifts 
+an6.45:21.4 | P: dadaṁ cittaṁ pasādayaṁ.  | S: with wealth that is properly earned.  | T: of his belongings, ⏎ righteously-gained, 
+VERSE an6.45:22.1 an6.45:22.2 an6.45:22.3 an6.45:22.4 an6.45:22.5 an6.45:22.6
+an6.45:22.1 | P: Ubhayattha kaṭaggāho,  | S: That faithful householder of discernment  | T: 
+an6.45:22.2 | P: saddhassa gharamesino;  | S: holds a winning hand on both counts:  | T: wins both goals: 
+an6.45:22.3 | P: Diṭṭhadhammahitatthāya,  | S: welfare and benefit in this life,  | T: advantage in the here & now, 
+an6.45:22.4 | P: samparāyasukhāya ca;  | S: and happiness in lives to come.  | T: & happiness in the world beyond. 
+an6.45:22.5 | P: Evametaṁ gahaṭṭhānaṁ,  | S: This is how, for a householder,  | T: The liberality of this householder 
+an6.45:22.6 | P: cāgo puññaṁ pavaḍḍhati.  | S: merit grows by generosity.  | T: piles up merit. 
+VERSE an6.45:23.1 an6.45:23.2 an6.45:23.3 an6.45:23.4
+an6.45:23.1 | P: Tatheva ariyavinaye,  | S: In the same way, in the Noble One’s training,  | T: Now, anyone with conviction ⏎ firmly established ⏎ in the discipline of the noble ones— 
+an6.45:23.2 | P: saddhā yassa patiṭṭhitā;  | S: whoever is grounded in faith,  | T: 
+an6.45:23.3 | P: Hirīmano ca ottappī,  | S: with conscience and prudence,  | T: with a sense of shame, ⏎ of compunction, 
+an6.45:23.4 | P: paññavā sīlasaṁvuto.  | S: wise, and ethically restrained,  | T: discerning ⏎ & restrained by virtue— 
+Current proposed starts:
+an6.45:23.1 starts: Now, anyone with conviction
+an6.45:23.2 starts: firmly established
+an6.45:23.3 starts: with a sense of shame,
+an6.45:23.4 starts: discerning
+SOURCE sutta/an/an6/an6.45.html
+SOURCE LINE 24 (v): partaking of sensuality,
+SOURCE LINE 25 (v): suffers hardship.
+SOURCE LINE 26 (v): Then they hound him
+SOURCE LINE 27 (v): and put him into bondage:
+SOURCE LINE 28 (v): the painful bond
+SOURCE LINE 29 (v): for one longing to gain
+SOURCE LINE 30 (v): sensual pleasures.
+SOURCE LINE 31 (vs): Now, anyone with no conviction
+SOURCE LINE 32 (v): in the discipline of the noble ones
+SOURCE LINE 46 (v): again & again.
+SOURCE LINE 47 (v): He,
+SOURCE LINE 48 (v): with evil actions,
+SOURCE LINE 49 (v): his wisdom weak,
+SOURCE LINE 50 (v): knowing his own wrong-doing, is
+SOURCE LINE 51 (v): a poor person, in debt.
+SOURCE LINE 52 (v): Partaking of sensuality,
+SOURCE LINE 53 (v): he suffers hardship.
+SOURCE LINE 54 (vs): Then they hound him—
+SOURCE LINE 57 (v): at home or in the wilderness.
+SOURCE LINE 58 (v): He,
+SOURCE LINE 59 (v): with evil actions,
+SOURCE LINE 60 (v): his wisdom weak,
+SOURCE LINE 61 (v): knowing his own wrong-doing,
+SOURCE LINE 62 (v): goes to an animal womb
+SOURCE LINE 63 (v): or is bound in hell:
+SOURCE LINE 64 (v): the painful bond
+SOURCE LINE 65 (v): from which the enlightened
+SOURCE LINE 66 (v): are freed.
+SOURCE LINE 67 (vs): But one with confidence,
+SOURCE LINE 68 (v): living at home,
+SOURCE LINE 69 (v): making gifts of his belongings,
+SOURCE LINE 70 (v): righteously-gained,
+SOURCE LINE 71 (v): wins both goals:
+SOURCE LINE 72 (v): advantage in the here & now,
+SOURCE LINE 73 (v): & happiness in the world beyond.
+SOURCE LINE 74 (v): The liberality of this householder
+SOURCE LINE 75 (v): piles up merit.
+SOURCE LINE 76 (vs): Now, anyone with conviction
+SOURCE LINE 77 (v): firmly established
+SOURCE LINE 78 (v): in the discipline of the noble ones—
+SOURCE LINE 79 (v): with a sense of shame,
+
+## an8.54:18.2
+Concern: T have been declared by the one / who is truly named belongs to previous stanza17.3 Akkhātā saccanāmena, but follows current18.1–18.2 both-life wording. Translator order interleaves identities; recuts only spread whole lines and preserve order, leaving inseparable source identity issue.
+VERSE an8.54:17.1 an8.54:17.2 an8.54:17.3 an8.54:17.4
+an8.54:17.1 | P: Iccete aṭṭha dhammā ca,  | S: And so these eight qualities  | T: Thus for one who seeks the household life, ⏎ these eight qualities— 
+an8.54:17.2 | P: saddhassa gharamesino;  | S: of a faithful householder of discernment  | T: 
+an8.54:17.3 | P: Akkhātā saccanāmena,  | S: are declared by the one who is truly named  | T: 
+an8.54:17.4 | P: ubhayattha sukhāvahā.  | S: to lead to happiness in both spheres,  | T: leading to welfare & happiness 
+VERSE an8.54:18.1 an8.54:18.2 an8.54:18.3 an8.54:18.4
+an8.54:18.1 | P: Diṭṭhadhammahitatthāya,  | S: welfare and benefit in this life,  | T: 
+an8.54:18.2 | P: samparāyasukhāya ca;  | S: and happiness in lives to come.  | T: both in this life & in lives to come— ⏎ have been declared by the one ⏎ who is truly named. 
+an8.54:18.3 | P: Evametaṁ gahaṭṭhānaṁ,  | S: This is how, for a householder,  | T: And this is how, for householders, 
+an8.54:18.4 | P: cāgo puññaṁ pavaḍḍhatī”ti.  | S: merit grows by generosity.”  | T: generosity & merit increase.” 
+Current proposed starts:
+an8.54:17.1 starts: Thus for one who seeks the household life,
+an8.54:17.2 starts: these eight qualities—
+an8.54:17.3 none
+an8.54:17.4 starts: leading to welfare & happiness
+an8.54:18.1 starts: both in this life & in lives to
+an8.54:18.2 starts: have been declared by the one
+an8.54:18.3 starts: And this is how, for householders,
+an8.54:18.4 starts: generosity & merit increase.”
+SOURCE sutta/an/an8/an8.54.html
+SOURCE LINE 21 (v): consummate in virtue,
+SOURCE LINE 22 (v): magnanimous, free of selfishness,
+SOURCE LINE 23 (v): constantly clears the path
+SOURCE LINE 24 (v): to security in the lives to come.
+SOURCE LINE 25 (v): Thus for one who seeks the household life,
+SOURCE LINE 26 (v): these eight qualities—
+SOURCE LINE 27 (v): leading to welfare & happiness
+SOURCE LINE 28 (v): both in this life & in lives to come—
+SOURCE LINE 29 (v): have been declared by the one
+SOURCE LINE 30 (v): who is truly named.
+SOURCE LINE 31 (v): And this is how, for householders,
+SOURCE LINE 32 (v): generosity & merit increase.”
+
+## snp3.1:6.4
+Concern: Source-order interleaving: “Mindful, his eyes downcast,” translates the beginning of verse 7, but occurs before “looking only a plow-length before him.”, the end of verse 6, in T row snp3.1:6.4. Restoring both stanza identities requires reordering source lines, so these lines were preserved and the four existing verse-7 lines were spread over its four rows.
+VERSE snp3.1:5.1 snp3.1:5.2 snp3.1:5.3 snp3.1:5.4
+snp3.1:5.1 | P: Tamaddasā bimbisāro,  | S: Bimbisāra saw him  | T: King Bimbisāra, standing in his palace, saw him, 
+snp3.1:5.2 | P: pāsādasmiṁ patiṭṭhito;  | S: while standing atop his longhouse.  | T: 
+snp3.1:5.3 | P: Disvā lakkhaṇasampannaṁ,  | S: Noticing that he was endowed with marks,  | T: and on seeing him, consummate in marks, 
+snp3.1:5.4 | P: imamatthaṁ abhāsatha.  | S: he said the following:  | T: said this: 
+VERSE snp3.1:6.1 snp3.1:6.2 snp3.1:6.3 snp3.1:6.4
+snp3.1:6.1 | P: “Imaṁ bhonto nisāmetha,  | S: ‘Pay heed, sirs, to this one,  | T: “Look at this one, sirs. 
+snp3.1:6.2 | P: abhirūpo brahā suci;  | S: handsome, majestic, radiant;  | T: How handsome, stately, pure! 
+snp3.1:6.3 | P: Caraṇena ca sampanno,  | S: accomplished in deportment,  | T: How consummate his demeanor! 
+snp3.1:6.4 | P: yugamattañca pekkhati.  | S: he looks just a plough’s length in front.  | T: Mindful, his eyes downcast, ⏎ looking only a plow-length before him. 
+VERSE snp3.1:7.1 snp3.1:7.2 snp3.1:7.3 snp3.1:7.4
+snp3.1:7.1 | P: Okkhittacakkhu satimā,  | S: Eyes downcast, mindful,  | T: 
+snp3.1:7.2 | P: nāyaṁ nīcakulāmiva;  | S: unlike one from a low family.  | T: This one’s not like one ⏎ from a lowly lineage: 
+snp3.1:7.3 | P: Rājadūtābhidhāvantu,  | S: Let the king’s messengers run out,  | T: Have the royal messengers hurry 
+snp3.1:7.4 | P: kuhiṁ bhikkhu gamissati”.  | S: and find where the mendicant will go.’  | T: to see where this monk will go.” 
+VERSE snp3.1:8.1 snp3.1:8.2 snp3.1:8.3 snp3.1:8.4
+snp3.1:8.1 | P: Te pesitā rājadūtā,  | S: The messengers sent out  | T: They—the messengers dispatched— 
+snp3.1:8.2 | P: piṭṭhito anubandhisuṁ;  | S: followed right behind, thinking  | T: followed behind him. 
+snp3.1:8.3 | P: Kuhiṁ gamissati bhikkhu,  | S: ‘Where will the mendicant go?  | T: “Where will this monk go? 
+snp3.1:8.4 | P: kattha vāso bhavissati.  | S: Where shall he find a place to stay?’  | T: Where will his dwelling place be?” 
+Current proposed starts:
+snp3.1:7.1 starts: This one’s not like one
+snp3.1:7.2 starts: from a lowly lineage:
+snp3.1:7.3 starts: Have the royal messengers hurry
+snp3.1:7.4 starts: to see where this monk will go.”
+SOURCE sutta/kn/snp/vagga3/snp3.1.html
+SOURCE LINE 13 (v): Then he, the Buddha, went to Rājagaha,
+SOURCE LINE 14 (v): the mountain fortress of the Magadhans,
+SOURCE LINE 15 (v): and wandered for alms,
+SOURCE LINE 16 (v): teeming with the foremost marks.
+SOURCE LINE 17 (v): King Bimbisāra, standing in his palace, saw him,
+SOURCE LINE 18 (v): and on seeing him, consummate in marks,
+SOURCE LINE 19 (v): said this:
+SOURCE LINE 20 (v): “Look at this one, sirs.
+SOURCE LINE 21 (v): How handsome, stately, pure!
+SOURCE LINE 22 (v): How consummate his demeanor!
+SOURCE LINE 23 (v): Mindful, his eyes downcast,
+SOURCE LINE 24 (v): looking only a plow-length before him.
+SOURCE LINE 25 (v): This one’s not like one
+SOURCE LINE 26 (v): from a lowly lineage:
+SOURCE LINE 27 (v): Have the royal messengers hurry
+SOURCE LINE 28 (v): to see where this monk will go.”
+SOURCE LINE 29 (vs): They—the messengers dispatched—
+SOURCE LINE 30 (v): followed behind him.
+SOURCE LINE 31 (v): “Where will this monk go?
+SOURCE LINE 32 (v): Where will his dwelling place be?”
+SOURCE LINE 33 (v): As he went from house to house—
+SOURCE LINE 34 (v): well-restrained, his sense-doors guarded,
+SOURCE LINE 35 (v): mindful, alert—
+SOURCE LINE 36 (v): his bowl filled quickly.
+SOURCE LINE 55 (v): and on arrival sat down.
+SOURCE LINE 56 (v): Sitting there,
+SOURCE LINE 57 (v): he exchanged courteous greetings,
+SOURCE LINE 58 (v): and after giving friendly greetings,
+SOURCE LINE 59 (v): said this:
+SOURCE LINE 60 (v): “Young you are, and youthful,
+SOURCE LINE 61 (v): in the first stage of youth,
+SOURCE LINE 62 (v): consummate in stature & coloring
+SOURCE LINE 63 (v): like a noble-warrior by birth.
+
+## snp3.12:25.1
+Concern: Translator puts “Knowing that” (26.1) before the feelings list of verse 25, with “is stressful” after it. Whole-stanza separation requires reordering; only internal whole-line distribution is proposed.
+VERSE snp3.12:23.1 snp3.12:23.2 snp3.12:23.3 snp3.12:23.4
+snp3.12:23.1 | P: Ye ca phassaṁ pariññāya,  | S: But those who completely understand contact,  | T: While those who comprehend contact, 
+snp3.12:23.2 | P: Aññāyupasame ratā;  | S: who, understanding, delight in peace;  | T: delighting in stilling through discernment, 
+snp3.12:23.3 | P: Te ve phassābhisamayā,  | S: by comprehending contact  | T: they, by breaking through contact, 
+snp3.12:23.4 | P: Nicchātā parinibbutāti.  | S: they are hungerless, quenched.”  | T: free from hunger, ⏎ are totally unbound. 
+VERSE snp3.12:25.1 snp3.12:25.2 snp3.12:25.3 snp3.12:25.4
+snp3.12:25.1 | P: “Sukhaṁ vā yadi vā dukkhaṁ,  | S: “Whether it’s pleasant or painful,  | T: “Knowing that ⏎ whatever is felt— ⏎ pleasure, pain, ⏎ neither pleasure nor pain, 
+snp3.12:25.2 | P: Adukkhamasukhaṁ saha;  | S: as well as what’s neutral,  | T: 
+snp3.12:25.3 | P: Ajjhattañca bahiddhā ca,  | S: whatever there is that is felt  | T: 
+snp3.12:25.4 | P: Yaṁ kiñci atthi veditaṁ.  | S: internally and externally:  | T: within or without— 
+VERSE snp3.12:26.1 snp3.12:26.2 snp3.12:26.3 snp3.12:26.4 snp3.12:26.5 snp3.12:26.6
+snp3.12:26.1 | P: Etaṁ dukkhanti ñatvāna,  | S: having known, ‘this is suffering,  | T: is stressful; 
+snp3.12:26.2 | P: Mosadhammaṁ palokinaṁ;  | S: deceptive, breaking apart’,  | T: seeing ⏎ its deceptive nature, ⏎ its dissolving, 
+snp3.12:26.3 | P: Phussa phussa vayaṁ passaṁ,  | S: seeing feelings vanish with every contact,  | T: its passing away ⏎ at each contact, ⏎ each ⏎ contact, 
+snp3.12:26.4 | P: Evaṁ tattha vijānati;  | S: that’s how they understand them.  | T: he knows it right there: 
+snp3.12:26.5 | P: Vedanānaṁ khayā bhikkhu,  | S: With the ending of feelings, a mendicant  | T: With just the ending of feeling, ⏎ there is no stress ⏎ coming into play. 
+snp3.12:26.6 | P: Nicchāto parinibbutoti.  | S: is hungerless, quenched.”  | T: 
+VERSE snp3.12:28.1 snp3.12:28.2 snp3.12:28.3 snp3.12:28.4
+snp3.12:28.1 | P: “Taṇhādutiyo puriso,  | S: “Craving is a person’s partner  | T: “With craving his companion, a man 
+snp3.12:28.2 | P: Dīghamaddhāna saṁsaraṁ;  | S: as they transmigrate on this long journey.  | T: wanders on a long, long time. 
+snp3.12:28.3 | P: Itthabhāvaññathābhāvaṁ,  | S: They go from this state to another,  | T: Neither in this state here ⏎ nor anywhere else 
+snp3.12:28.4 | P: Saṁsāraṁ nātivattati.  | S: but don’t escape transmigration.  | T: does he go beyond ⏎ the wandering- on. 
+Current proposed starts:
+snp3.12:25.1 starts: “Knowing that
+snp3.12:25.2 starts: pleasure, pain,
+snp3.12:25.3 starts: neither pleasure nor pain,
+snp3.12:25.4 starts: within or without—
+snp3.12:26.1 starts: is stressful;
+snp3.12:26.2 starts: seeing
+snp3.12:26.3 starts: its passing away
+snp3.12:26.4 starts: he knows it right there:
+snp3.12:26.5 starts: With just the ending of feeling,
+snp3.12:26.6 starts: there is no stress
+SOURCE sutta/kn/snp/vagga3/snp3.12.html
+SOURCE LINE 98 (v): flowing along in the stream of becoming,
+SOURCE LINE 99 (v): following a miserable path,
+SOURCE LINE 100 (v): the ending of fetters
+SOURCE LINE 101 (v): is far away.
+SOURCE LINE 102 (v): While those who comprehend contact,
+SOURCE LINE 103 (v): delighting in stilling through discernment,
+SOURCE LINE 104 (v): they, by breaking through contact,
+SOURCE LINE 105 (v): free from hunger,
+SOURCE LINE 106 (v): are totally unbound.
+SOURCE LINE 107 (p): “Now, if there are any who ask, ‘Would there be the right contemplation of dualities in yet another way?’ they should be told, ‘There would.’ How would that be? ‘Whatever stress comes into play is all from feeling as a requisite condition’: This is one contemplation. ‘From the remainderless fading & cessation of that very feeling, there is no coming into play of stress’: This is a second contemplation. For a monk rightly contemplating this duality in this way—heedful, ardent, & resolute—one of two fruits can be expected: either gnosis right here-&-now, or—if there be any remnant of clinging-sustenance—non-return.”
+SOURCE LINE 108 (p): That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further:
+SOURCE LINE 109 (vs): “Knowing that
+SOURCE LINE 110 (v): whatever is felt—
+SOURCE LINE 111 (v): pleasure, pain,
+SOURCE LINE 112 (v): neither pleasure nor pain,
+SOURCE LINE 113 (v): within or without—
+SOURCE LINE 114 (v): is stressful;
+SOURCE LINE 115 (v): seeing
+SOURCE LINE 116 (v): its deceptive nature,
+SOURCE LINE 117 (v): its dissolving,
+SOURCE LINE 118 (v): its passing away
+SOURCE LINE 119 (v): at each contact,
+SOURCE LINE 120 (v): each
+SOURCE LINE 121 (v): contact,
+SOURCE LINE 122 (v): he knows it right there:
+SOURCE LINE 123 (v): With just the ending of feeling,
+SOURCE LINE 124 (v): there is no stress
+SOURCE LINE 125 (v): coming into play.
+SOURCE LINE 126 (p): “Now, if there are any who ask, ‘Would there be the right contemplation of dualities in yet another way?’ they should be told, ‘There would.’ How would that be? ‘Whatever stress comes into play is all from craving as a requisite condition’: This is one contemplation. ‘From the remainderless fading & cessation of that very craving, there is no coming into play of stress’: This is a second contemplation. For a monk rightly contemplating this duality in this way—heedful, ardent, & resolute—one of two fruits can be expected: either gnosis right here-&-now, or—if there be any remnant of clinging-sustenance—non-return.”
+SOURCE LINE 127 (p): That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further:
+SOURCE LINE 128 (vs): “With craving his companion, a man
+SOURCE LINE 129 (v): wanders on a long, long time.
+SOURCE LINE 130 (v): Neither in this state here
+SOURCE LINE 131 (v): nor anywhere else
+SOURCE LINE 132 (v): does he go beyond
+SOURCE LINE 133 (v): the wandering- on.
+SOURCE LINE 263 (v): They, through breaking through
+SOURCE LINE 264 (v): to the truth,
+SOURCE LINE 265 (v): hunger-free,
+SOURCE LINE 266 (v): are totally unbound.
+SOURCE LINE 267 (p): “Now, if there are any who ask, ‘Would there be the right contemplation of dualities in yet another way?’ they should be told, ‘There would.’ How would that be? ‘Whatever is considered as “This is bliss” by the world with its devas, Māras, & Brahmās, by this generation with its contemplatives & brahmans, its royalty & commonfolk, is rightly seen as it has come to be with right discernment by the noble ones as “This is stressful”’: This is one contemplation. ‘Whatever is considered as “This is stressful” by the world with its devas, Māras, & Brahmās, by this generation with its contemplatives & brahmans, its royalty & commonfolk, is rightly seen as it has come to be with right discernment by the noble ones as “This is bliss”’: This is a second contemplation. For a monk rightly contemplating this duality in this way—heedful, ardent, & resolute—one of two fruits can be expected: either gnosis right here-&-now, or—if there be any remnant of clinging-sustenance—non-return.”
+SOURCE LINE 268 (p): That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further:
+SOURCE LINE 269 (vs): “All sights, sounds, smells, tastes,
+SOURCE LINE 270 (v): tactile sensations, & ideas
+SOURCE LINE 271 (v): that are welcome,
+SOURCE LINE 286 (v): runs counter
+SOURCE LINE 287 (v): to the whole world.
+SOURCE LINE 288 (vs): What others say is blissful,
+SOURCE LINE 289 (v): the noble ones say is stress.
+SOURCE LINE 290 (v): What others say is stressful,
+SOURCE LINE 291 (v): the noble know as bliss.
+SOURCE LINE 292 (v): See the Dhamma, hard to understand!
+SOURCE LINE 293 (v): Here those who don’t know
+SOURCE LINE 294 (v): are confused.
+
+## thag17.2:22.3
+Concern: Translator gives the worker/wage ending of Pali verse 23 at 22.4, and the mindful/alert ending of Pali verse 22 at 23.4. Restoring both stanza identities would require reordering; source validation is needed.
+VERSE thag17.2:21.1 thag17.2:21.2 thag17.2:21.3 thag17.2:21.4
+thag17.2:21.1 | P: “Anaṅgaṇassa posassa,  | S: “To the man who has not a blemish,  | T: To a person without blemish, 
+thag17.2:21.2 | P: niccaṁ sucigavesino;  | S: who is always seeking purity,  | T: in constant quest of what’s pure, 
+thag17.2:21.3 | P: Vālaggamattaṁ pāpassa,  | S: even a hair-tip of evil  | T: a hair-tip of evil 
+thag17.2:21.4 | P: abbhamattaṁva khāyati.  | S: seems as big as a stormcloud.”  | T: seems a storm cloud. 
+VERSE thag17.2:22.1 thag17.2:22.2 thag17.2:22.3 thag17.2:22.4
+thag17.2:22.1 | P: Nābhinandāmi maraṇaṁ,  | S: “I don’t long for death;  | T: I don’t delight in death, 
+thag17.2:22.2 | P: nābhinandāmi jīvitaṁ;  | S: I don’t long for life;  | T: don’t delight in living. 
+thag17.2:22.3 | P: Nikkhipissaṁ imaṁ kāyaṁ,  | S: I will lay down this body,  | T: I await my time 
+thag17.2:22.4 | P: sampajāno patissato.  | S: aware and mindful.  | T: like a worker his wage. 
+VERSE thag17.2:23.1 thag17.2:23.2 thag17.2:23.3 thag17.2:23.4
+thag17.2:23.1 | P: Nābhinandāmi maraṇaṁ,  | S: I don’t long for death;  | T: I don’t delight in death, 
+thag17.2:23.2 | P: nābhinandāmi jīvitaṁ;  | S: I don’t long for life;  | T: don’t delight in living. 
+thag17.2:23.3 | P: Kālañca paṭikaṅkhāmi,  | S: I await my time,  | T: I await my time, 
+thag17.2:23.4 | P: nibbisaṁ bhatako yathā”.  | S: like a worker waiting for their wages.”  | T: mindful, alert. 
+VERSE thag17.2:24.1 thag17.2:24.2 thag17.2:24.3 thag17.2:24.4
+thag17.2:24.1 | P: “Ubhayena midaṁ maraṇameva,  | S: “Both what came before and what follows after  | T: On either side is death, ⏎ it’s not non-death, ahead or behind. 
+thag17.2:24.2 | P: Nāmaraṇaṁ pacchā vā pure vā;  | S: are nothing but death, not freedom from death.  | T: 
+thag17.2:24.3 | P: Paṭipajjatha mā vinassatha,  | S: Practice, don’t perish— | T: Practice, don’t perish. 
+thag17.2:24.4 | P: Khaṇo vo mā upaccagā.  | S: don’t let the moment pass you by.  | T: Don’t let the moment pass you by. 
+Current proposed starts:
+thag17.2:24.1 starts: On either side is death,
+thag17.2:24.2 starts: it’s not non-death, ahead or behind.
+thag17.2:24.3 starts: Practice, don’t perish.
+thag17.2:24.4 starts: Don’t let the moment pass you by.
+SOURCE sutta/kn/thag/thag17.2.html
+SOURCE LINE 101 (v): is unwavering, well-settled,
+SOURCE LINE 102 (v): so a monk whose delusion is ended
+SOURCE LINE 103 (v): doesn’t quiver—
+SOURCE LINE 104 (v): just like a mountain.
+SOURCE LINE 105 (vs): To a person without blemish,
+SOURCE LINE 106 (v): in constant quest of what’s pure,
+SOURCE LINE 107 (v): a hair-tip of evil
+SOURCE LINE 108 (v): seems a storm cloud.
+SOURCE LINE 109 (vs): I don’t delight in death,
+SOURCE LINE 110 (v): don’t delight in living.
+SOURCE LINE 111 (v): I await my time
+SOURCE LINE 112 (v): like a worker his wage.
+SOURCE LINE 113 (v): I don’t delight in death,
+SOURCE LINE 114 (v): don’t delight in living.
+SOURCE LINE 115 (v): I await my time,
+SOURCE LINE 116 (v): mindful, alert.
+SOURCE LINE 117 (vs): On either side is death,
+SOURCE LINE 118 (v): it’s not non-death, ahead or behind.
+SOURCE LINE 119 (v): Practice, don’t perish.
+SOURCE LINE 120 (v): Don’t let the moment pass you by.
+SOURCE LINE 121 (vs): As a frontier fortress is guarded
+SOURCE LINE 122 (v): within & without,
+SOURCE LINE 123 (v): you should safeguard yourselves.
+SOURCE LINE 124 (v): Don’t let the moment
+
+## thig6.7:3.1
+Concern: The translator line “Abandoning these lower fetters, nun—” translates thig6.7:4.1–4.3 but precedes stanza 3’s fetter list; stanza 4’s remaining translation follows the list. Stanza identities are interleaved and cannot be restored by whole-line cuts while retaining source order.
+VERSE thig6.7:2.1 thig6.7:2.2 thig6.7:2.3 thig6.7:2.4
+thig6.7:2.1 | P: Cittena vañcitā sattā,  | S: Beings deceived by the mind,  | T: Hoodwinked by mind, ⏎ beings in love with Māra’s realm, 
+thig6.7:2.2 | P: mārassa visaye ratā;  | S: playing in Māra’s domain,  | T: 
+thig6.7:2.3 | P: Anekajātisaṁsāraṁ,  | S: ignorant, they journey on,  | T: roam 
+thig6.7:2.4 | P: sandhāvanti aviddasū.  | S: transmigrating through countless rebirths.  | T: through the many-birth wandering-on, ⏎ unknowing. 
+VERSE thig6.7:3.1 thig6.7:3.2 thig6.7:3.3 thig6.7:3.4
+thig6.7:3.1 | P: Kāmacchandañca byāpādaṁ,  | S: Sensual desire and ill will,  | T: Abandoning these lower fetters, nun— ⏎ sensual desire, ill will, 
+thig6.7:3.2 | P: sakkāyadiṭṭhimeva ca;  | S: and substantialist view;  | T: self-identity views, 
+thig6.7:3.3 | P: Sīlabbataparāmāsaṁ,  | S: misapprehension of precepts and observances,  | T: grasping at habits & practices, 
+thig6.7:3.4 | P: vicikicchañca pañcamaṁ.  | S: and doubt as the fifth.  | T: and uncertainty as the fifth— 
+VERSE thig6.7:4.1 thig6.7:4.2 thig6.7:4.3 thig6.7:4.4
+thig6.7:4.1 | P: Saṁyojanāni etāni,  | S: O nun, when you have given up  | T: 
+thig6.7:4.2 | P: pajahitvāna bhikkhunī;  | S: these lower fetters,  | T: 
+thig6.7:4.3 | P: Orambhāgamanīyāni,  | S: you won’t come back  | T: you won’t come 
+thig6.7:4.4 | P: nayidaṁ punarehisi.  | S: to this world again.  | T: to this again. 
+VERSE thig6.7:5.1 thig6.7:5.2 thig6.7:5.3 thig6.7:5.4
+thig6.7:5.1 | P: Rāgaṁ mānaṁ avijjañca,  | S: And when you’re rid of desire,  | T: Forsaking passion, 
+thig6.7:5.2 | P: uddhaccañca vivajjiya;  | S: conceit, ignorance, and restlessness,  | T: conceit, ⏎ ignorance, & restlessness 
+thig6.7:5.3 | P: Saṁyojanāni chetvāna,  | S: having cut the fetters,  | T: —cutting through [all] the fetters— 
+thig6.7:5.4 | P: dukkhassantaṁ karissasi.  | S: you’ll make an end to suffering.  | T: you will make an end ⏎ of suffering & stress. 
+Current proposed starts:
+thig6.7:2.1 starts: Hoodwinked by mind,
+thig6.7:2.2 starts: beings in love with Māra’s realm,
+thig6.7:2.3 starts: roam
+thig6.7:2.4 starts: through the many-birth wandering-on,
+SOURCE sutta/kn/thig/thig6.7.html
+SOURCE LINE 6 (v): Don’t fall under the sway
+SOURCE LINE 7 (v): of the mind.
+SOURCE LINE 8 (vs): Hoodwinked by mind,
+SOURCE LINE 9 (v): beings in love with Māra’s realm,
+SOURCE LINE 10 (v): roam
+SOURCE LINE 11 (v): through the many-birth wandering-on,
+SOURCE LINE 12 (v): unknowing.
+SOURCE LINE 13 (vs): Abandoning these lower fetters, nun—
+SOURCE LINE 14 (v): sensual desire, ill will,
+SOURCE LINE 15 (v): self-identity views,
+SOURCE LINE 16 (v): grasping at habits & practices,
+SOURCE LINE 17 (v): and uncertainty as the fifth—
+SOURCE LINE 18 (v): you won’t come
+SOURCE LINE 19 (v): to this again.
+SOURCE LINE 20 (vs): Forsaking passion, conceit,
+SOURCE LINE 21 (v): ignorance, & restlessness
+SOURCE LINE 22 (v): —cutting through [all] the fetters—
+SOURCE LINE 23 (v): you will make an end
+SOURCE LINE 24 (v): of suffering & stress.
+SOURCE LINE 25 (vs): Discarding birth & wandering-on,
+SOURCE LINE 26 (v): comprehending further becoming,
+
+## ud7.8:4.6
+Concern: Editorial explanation is appended inside the unbroken translator line beginning “attachment. In AN 10:29, the Buddha recommends this view”. It is outside the verse and cannot be separated at an allowed translator break without source-page boundary correction.
+VERSE ud7.8:4.1 ud7.8:4.2 ud7.8:4.3 ud7.8:4.4 ud7.8:4.5 ud7.8:4.6
+ud7.8:4.1 | P: “Yassa siyā sabbadā sati,  | S: “Their mindfulness would always  | T: If one were to have ⏎ mindfulness always 
+ud7.8:4.2 | P: Satataṁ kāyagatā upaṭṭhitā;  | S: be established in the body, constant:  | T: established, continually ⏎ immersed in the body, 
+ud7.8:4.3 | P: No cassa no ca me siyā,  | S: ‘It might not be, and it might not be mine,  | T: (thinking,) ⏎ “It should not be, ⏎ it should not be mine; 
+ud7.8:4.4 | P: Na bhavissati na ca me bhavissati;  | S: It will not be, and it will not be mine.’  | T: it will not be, ⏎ it will not be mine”– 
+ud7.8:4.5 | P: Anupubbavihāri tattha so,  | S: Meditating stage by stage on that,  | T: there, ⏎ in that step-by-step dwelling, 
+ud7.8:4.6 | P: Kāleneva tare visattikan”ti.  | S: in time they’d cross over clinging.”  | T: one in no long time ⏎ would cross over ⏎ attachment. In AN 10:29, the Buddha recommends this view as conducive to developing dispassion for becoming. However, in MN 106 he warns that it can lead to the refined equanimity of the dimension of neither perception nor non-perception, which can become an object of clinging. Only if that subtle clinging is detected can all clinging be abandoned. The Canon’s most extended discussion of this theme of meditation is in SN 22:55. See Appendix Two. For more on this topic, see The Paradox of Becoming, chapter 5. 
+Current proposed starts:
+SOURCE sutta/kn/ud/vagga7/ud7.8.html
+SOURCE LINE 1 (p): I have heard that on one occasion the Blessed One was staying near Sāvatthī at Jeta’s Grove, Anāthapiṇḍika’s monastery. Now at that time Ven. Mahā Kaccāna was sitting not far from the Blessed One, his legs crossed, his body held erect, having mindfulness immersed in the body well-established to the fore within. The Blessed One saw Ven. Mahā Kaccāna sitting not far away, his legs crossed, his body held erect, having mindfulness immersed in the body well-established to the fore within.
+SOURCE LINE 2 (p): Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+SOURCE LINE 3 (vs): If one were to have
+SOURCE LINE 4 (v): mindfulness always
+SOURCE LINE 5 (v): established, continually
+SOURCE LINE 6 (v): immersed in the body,
+SOURCE LINE 7 (v): (thinking,)
+SOURCE LINE 8 (v): “It should not be,
+SOURCE LINE 9 (v): it should not be mine;
+SOURCE LINE 10 (v): it will not be,
+SOURCE LINE 11 (v): it will not be mine”–
+SOURCE LINE 12 (v): there,
+SOURCE LINE 13 (v): in that step-by-step dwelling,
+SOURCE LINE 14 (v): one in no long time
+SOURCE LINE 15 (v): would cross over
+SOURCE LINE 16 (v): attachment.
+SOURCE LINE 17 (p): In AN 10:29, the Buddha recommends this view as conducive to developing dispassion for becoming. However, in MN 106 he warns that it can lead to the refined equanimity of the dimension of neither perception nor non-perception, which can become an object of clinging. Only if that subtle clinging is detected can all clinging be abandoned.
+SOURCE LINE 18 (p): The Canon’s most extended discussion of this theme of meditation is in SN 22:55. See Appendix Two.
+SOURCE LINE 19 (p): For more on this topic, see The Paradox of Becoming, chapter 5.
+

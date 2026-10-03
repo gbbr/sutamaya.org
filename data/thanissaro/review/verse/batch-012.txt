@@ -1,0 +1,424 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## sn7.14:5.1–sn7.14:5.4 (sn)
+sn7.14:5.1 | P: Daṇḍova kira me seyyo, | S: Even my staff is better | T: My staff serves me better
+sn7.14:5.2 | P: yañce puttā anassavā; | S: than those disobedient sons, | T: than those disobedient sons.
+sn7.14:5.3 | P: Caṇḍampi goṇaṁ vāreti, | S: for it wards off a wild bull, | T: It fends off ⏎ ferocious bulls
+sn7.14:5.4 | P: atho caṇḍampi kukkuraṁ. | S: and even a wild dog. | T: & ferocious curs.
+
+## sn7.14:6.1–sn7.14:6.4 (sn)
+sn7.14:6.1 | P: Andhakāre pure hoti, | S: It goes before me in the dark; | T: In the dark it goes before me;
+sn7.14:6.2 | P: gambhīre gādhamedhati; | S: in deep waters it finds a footing. | T: down steep slopes, it gives support.
+sn7.14:6.3 | P: Daṇḍassa ānubhāvena, | S: By the wonderful power of this staff, | T: Through the power of my staff,
+sn7.14:6.4 | P: khalitvā patitiṭṭhatī’”ti. | S: when I stumble, I stand firm again.’” | T: when I stumble ⏎ I still stand firm.”
+CONTEXT sn7.14:7.1 | P: Atha kho so brāhmaṇamahāsālo bhagavato santike imā gāthāyo pariyāpuṇitvā sabhāyaṁ mahājanakāye sannipatite puttesu ca sannisinnesu abhāsi: | S: Having memorized those verses in the Buddha’s presence, the brahmin recited them to his sons when they were all seated in the council hall with a large crowd. … | T: Then the very rich brahman, having memorized these verses in the presence of the Blessed One, recited them when a large assembly of people had gathered in the town hall and his sons were sitting there, too:
+
+## sn7.14:8.1–sn7.14:8.4 (sn)
+CONTEXT sn7.14:7.1 | P: Atha kho so brāhmaṇamahāsālo bhagavato santike imā gāthāyo pariyāpuṇitvā sabhāyaṁ mahājanakāye sannipatite puttesu ca sannisinnesu abhāsi: | S: Having memorized those verses in the Buddha’s presence, the brahmin recited them to his sons when they were all seated in the council hall with a large crowd. … | T: Then the very rich brahman, having memorized these verses in the presence of the Blessed One, recited them when a large assembly of people had gathered in the town hall and his sons were sitting there, too:
+sn7.14:8.1 | P: “Yehi jātehi nandissaṁ, | S: (none) | T: “Those whose birth ⏎ I delighted in
+sn7.14:8.2 | P: yesañca bhavamicchisaṁ; | S: (none) | T: —whose growth I desired—
+sn7.14:8.3 | P: Te maṁ dārehi sampuccha, | S: (none) | T: at their wives’ instigation ⏎ have chased me away,
+sn7.14:8.4 | P: sāva vārenti sūkaraṁ. | S: (none) | T: as dogs would swine.
+
+## sn7.14:9.1–sn7.14:9.4 (sn)
+sn7.14:9.1 | P: Asantā kira maṁ jammā, | S: (none) | T: Wicked & vile,
+sn7.14:9.2 | P: tāta tātāti bhāsare; | S: (none) | T: though they call me ‘Dad’:
+sn7.14:9.3 | P: Rakkhasā puttarūpena, | S: (none) | T: demons in the disguise of sons
+sn7.14:9.4 | P: te jahanti vayogataṁ. | S: (none) | T: who abandon me in old age.
+
+## sn7.14:10.1–sn7.14:10.4 (sn)
+sn7.14:10.1 | P: Assova jiṇṇo nibbhogo, | S: (none) | T: As an old horse ⏎ of no more use
+sn7.14:10.2 | P: khādanā apanīyati; | S: (none) | T: is deprived of fodder,
+sn7.14:10.3 | P: Bālakānaṁ pitā thero, | S: (none) | T: so the elderly father ⏎ of those foolish boys
+sn7.14:10.4 | P: parāgāresu bhikkhati. | S: (none) | T: begs at other people’s homes.
+
+## sn7.14:11.1–sn7.14:11.4 (sn)
+sn7.14:11.1 | P: Daṇḍova kira me seyyo, | S: (none) | T: My staff serves me better
+sn7.14:11.2 | P: yañce puttā anassavā; | S: (none) | T: than those disobedient sons.
+sn7.14:11.3 | P: Caṇḍampi goṇaṁ vāreti, | S: (none) | T: It fends off ⏎ ferocious bulls
+sn7.14:11.4 | P: atho caṇḍampi kukkuraṁ. | S: (none) | T: & ferocious curs.
+
+## sn7.14:12.1–sn7.14:12.4 (sn)
+sn7.14:12.1 | P: Andhakāre pure hoti, | S: (none) | T: In the dark it goes before me;
+sn7.14:12.2 | P: gambhīre gādhamedhati; | S: (none) | T: down steep slopes, it gives support.
+sn7.14:12.3 | P: Daṇḍassa ānubhāvena, | S: (none) | T: Through the power of my staff,
+sn7.14:12.4 | P: khalitvā patitiṭṭhatī”ti. | S: (none) | T: when I stumble ⏎ I still stand firm.”
+CONTEXT sn7.14:13.1 | P: Atha kho naṁ brāhmaṇamahāsālaṁ puttā gharaṁ netvā nhāpetvā paccekaṁ dussayugena acchādesuṁ. | S: Then the brahmin’s sons led him back home, bathed him, and each clothed him with a fine pair of garments. | T: Then the brahman’s sons, having led him home, bathed him, and each provided him in a pair of cloths.
+CONTEXT sn7.14:13.2 | P: Atha kho so brāhmaṇamahāsālo ekaṁ dussayugaṁ ādāya yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavatā saddhiṁ sammodi. | S: Then the brahmin, taking one pair of garments, went to the Buddha and exchanged greetings with him. | T: So the brahman, taking one pair of cloths, went to the Blessed One and, on arrival, exchanged courteous greetings with him.
+
+## sn7.16:2.1–sn7.16:2.4 (sn)
+CONTEXT sn7.16:1.7 | P: Atha kho paccanīkasāto brāhmaṇo yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ caṅkamantaṁ etadavoca: | S: Then the brahmin Contraphile went up to the Buddha, and said to him as he was walking, | T: So the brahman Paccanikasāta went to the Blessed One and, following behind the Blessed One as he was doing walking meditation, said to him,
+CONTEXT sn7.16:1.8 | P: “bhaṇa samaṇadhamman”ti. | S: “Ascetic, preach the Dhamma.” | T: “Speak Dhamma, contemplative.”
+sn7.16:2.1 | P: “Na paccanīkasātena, | S: “Fine words aren’t easy to understand | T: The Buddha: ⏎ “What’s well-spoken ⏎ isn’t easy to understand
+sn7.16:2.2 | P: suvijānaṁ subhāsitaṁ; | S: by a lover of contradiction, | T: by one who enjoys contradiction,
+sn7.16:2.3 | P: Upakkiliṭṭhacittena, | S: whose mind is tainted | T: who’s defiled in mind,
+sn7.16:2.4 | P: sārambhabahulena ca. | S: and full of aggression. | T: intent on confrontation.
+
+## sn7.16:3.1–sn7.16:3.4 (sn)
+sn7.16:3.1 | P: Yo ca vineyya sārambhaṁ, | S: But when you’ve dispelled aggression, | T: But whoever has subdued confrontation
+sn7.16:3.2 | P: appasādañca cetaso; | S: and your suspicious mind, | T: & suspicion in his awareness,
+sn7.16:3.3 | P: Āghātaṁ paṭinissajja, | S: and you’ve got rid of resentment, | T: who has relinquished hatred:
+sn7.16:3.4 | P: sa ve jaññā subhāsitan”ti. | S: then you’ll understand fine words.” | T: He will understand ⏎ what’s well-said.”
+CONTEXT sn7.16:4.1 | P: Evaṁ vutte, paccanīkasāto brāhmaṇo bhagavantaṁ etadavoca: | S: When he had spoken, the brahmin Contraphile said to the Buddha, | T: When this was said, the brahman Paccanikasāta said to the Blessed One,
+CONTEXT sn7.16:4.2 | P: “abhikkantaṁ, bho gotama, abhikkantaṁ, bho gotama …pe… | S: “Excellent, worthy Gotama! Excellent! … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear. I go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks.
+
+## sn7.17:2.1–sn7.17:2.4 (sn) GATHERED; unequal counts require a reader
+CONTEXT sn7.17:1.6 | P: Ayaṁ samaṇo gotamo kiṁ kārāpento ramatī”ti? | S: I wonder what the ascetic Gotama enjoys having done?” | T: But what does this contemplative take delight in getting done?”
+CONTEXT sn7.17:1.7 | P: Atha kho navakammikabhāradvājo brāhmaṇo yena bhagavā tenupasaṅkami. upasaṅkamitvā bhagavantaṁ gāthāya ajjhabhāsi: | S: Then Bhāradvāja the Builder went up to the Buddha and addressed him in verse: | T: So he went to the Blessed One and on arrival recited this verse:
+sn7.17:2.1 | P: “Ke nu kammantā karīyanti, | S: “What kind of works are done by you, | T: “What jobs are getting done,
+sn7.17:2.2 | P: bhikkhu sālavane tava; | S: a mendicant in the sal jungle? | T: monk in the Sal forest?
+sn7.17:2.3 | P: Yadekako araññasmiṁ, | S: How do you find enjoyment | T: Alone in the wilderness, ⏎ in what does Gotama ⏎ find delight?”
+sn7.17:2.4 | P: ratiṁ vindati gotamo”ti. | S: alone in the wilderness, Gotama?” | T: (none)
+
+## sn7.17:3.1–sn7.17:3.4 (sn)
+sn7.17:3.1 | P: “Na me vanasmiṁ karaṇīyamatthi, | S: “There’s nothing I need do in the jungle; | T: The Buddha: ⏎ “I have no work ⏎ to do in the forest.
+sn7.17:3.2 | P: Ucchinnamūlaṁ me vanaṁ visūkaṁ; | S: my jungle’s cut at the root, it’s withered away. | T: The forest of restless dancing about ⏎ I’ve cut ⏎ at the root.
+sn7.17:3.3 | P: Svāhaṁ vane nibbanatho visallo, | S: Free of snarls and thorns in the jungle, | T: Though in the forest, I’m ⏎ deforested, ⏎ de-arrowed.
+sn7.17:3.4 | P: Eko rame aratiṁ vippahāyā”ti. | S: I enjoy solitude, having given up discontent.” | T: I delight alone, ⏎ discontent cast away.”
+CONTEXT sn7.17:4.1 | P: Evaṁ vutte, navakammikabhāradvājo brāhmaṇo bhagavantaṁ etadavoca: | S: When he had spoken, the brahmin Bhāradvāja the Builder said to the Buddha, | T: When this was said, the brahman Navakammika Bhāradvāja said to the Blessed One:
+CONTEXT sn7.17:4.2 | P: “abhikkantaṁ, bho gotama …pe… | S: “Excellent, worthy Gotama … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear.
+
+## sn7.18:2.1–sn7.18:2.4 (sn)
+CONTEXT sn7.18:1.6 | P: Addasā kho bhagavantaṁ tasmiṁ vanasaṇḍe nisinnaṁ pallaṅkaṁ ābhujitvā ujuṁ kāyaṁ paṇidhāya parimukhaṁ satiṁ upaṭṭhapetvā. | S: where he saw the Buddha sitting down cross-legged, his body set straight, and mindfulness brought to the present. | T: On arrival, he saw the Blessed One sitting in the grove—his legs folded crosswise, his body set straight, mindfulness established to the fore.
+CONTEXT sn7.18:1.7 | P: Disvāna yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ gāthāya ajjhabhāsi: | S: He went up to the Buddha and addressed him in verse: | T: On seeing him, he went to the Blessed One and, on arrival, addressed him in verse:
+sn7.18:2.1 | P: “Gambhīrarūpe bahubherave vane, | S: “Deep in the jungle so full of terrors, | T: “In the deep-looking forest, ⏎ teeming with terrors,
+sn7.18:2.2 | P: Suññaṁ araññaṁ vijanaṁ vigāhiya; | S: you’ve plunged into the empty, desolate wilderness. | T: having plunged into the wilderness ⏎ —desolate, empty—
+sn7.18:2.3 | P: Aniñjamānena ṭhitena vaggunā, | S: Still, steady, and graceful: | T: unflinchingly, steadfastly, compellingly,
+sn7.18:2.4 | P: Sucārurūpaṁ vata bhikkhu jhāyasi. | S: how beautifully you meditate, mendicant! | T: you practice jhāna, monk: ⏎ How very lovely you look!
+
+## sn7.18:3.1–sn7.18:3.4 (sn)
+sn7.18:3.1 | P: Na yattha gītaṁ napi yattha vāditaṁ, | S: Where there is no song or music, | T: Where no song is sung, ⏎ where no music is played,
+sn7.18:3.2 | P: Eko araññe vanavassito muni; | S: a lonely sage resorts to the wilderness. | T: alone in the wilderness: ⏎ the forest-dwelling sage.
+sn7.18:3.3 | P: Accherarūpaṁ paṭibhāti maṁ idaṁ, | S: This strikes me as an amazing thing, | T: This looks amazing to me—
+sn7.18:3.4 | P: Yadekako pītimano vane vase. | S: that you dwell so joyfully alone in the jungle. | T: that you live alone in the forest ⏎ with rapturous mind.
+
+## sn7.18:4.1–sn7.18:4.4 (sn)
+sn7.18:4.1 | P: Maññāmahaṁ lokādhipatisahabyataṁ, | S: I suppose you wish to be reborn in the company | T: I suppose it’s in longing
+sn7.18:4.2 | P: Ākaṅkhamāno tidivaṁ anuttaraṁ; | S: of the supreme world-sovereign of the Third Heaven. | T: for the three heavens unexcelled, ⏎ in the company of the ruling lord of the worlds,
+sn7.18:4.3 | P: Kasmā bhavaṁ vijanamaraññamassito, | S: Is that why you resort to the desolate wilderness, | T: that, staying here in the wilderness, desolate,
+sn7.18:4.4 | P: Tapo idha kubbasi brahmapattiyā”ti. | S: to practice fervor for attaining divinity?” | T: you practice austerities ⏎ for attaining Brahmā.”
+
+## sn7.18:5.1–sn7.18:5.4 (sn)
+sn7.18:5.1 | P: “Yā kāci kaṅkhā abhinandanā vā, | S: “Any wishes and hopes that are always attached | T: The Buddha: ⏎ “Whatever the longings or delights ⏎ attached—always—
+sn7.18:5.2 | P: Anekadhātūsu puthū sadāsitā; | S: to the many and various realms— | T: to various levels of being,
+sn7.18:5.3 | P: Aññāṇamūlappabhavā pajappitā, | S: the prayers sprung from the root of unknowing— | T: or yearnings born ⏎ from the root of unknowing:
+sn7.18:5.4 | P: Sabbā mayā byantikatā samūlikā. | S: I’ve eliminated them all down to the root. | T: I’ve destroyed them all, ⏎ down to the root.
+
+## sn7.18:6.1–sn7.18:6.4 (sn)
+sn7.18:6.1 | P: Svāhaṁ akaṅkho asito anūpayo, | S: So I’m wishless, unattached, uninvolved; | T: I— ⏎ without longing, ⏎ unattached, ⏎ uninvolved,
+sn7.18:6.2 | P: Sabbesu dhammesu visuddhadassano; | S: amongst all things, my vision is clear. | T: with purified vision ⏎ with regard to all things,
+sn7.18:6.3 | P: Pappuyya sambodhimanuttaraṁ sivaṁ, | S: I’ve attained the state of grace, the supreme awakening; | T: having reached self-awakening, ⏎ sublime, unexcelled—
+sn7.18:6.4 | P: Jhāyāmahaṁ brahma raho visārado”ti. | S: I meditate alone, brahmin, and self-assured.” | T: practice jhāna hidden from Brahmā, ⏎ matured.”
+CONTEXT sn7.18:7.1 | P: Evaṁ vutte, bhāradvājagotto brāhmaṇo bhagavantaṁ etadavoca: | S: When he had spoken, Bhāradvāja said to the Buddha, | T: (none)
+CONTEXT sn7.18:7.2 | P: “abhikkantaṁ, bho gotama, abhikkantaṁ, bho gotama …pe… | S: “Excellent, worthy Gotama! Excellent! … | T: (none)
+
+## sn8.4:2.1–sn8.4:2.4 (sn)
+CONTEXT sn8.4:1.3 | P: Tena kho pana samayena āyasmato vaṅgīsassa anabhirati uppannā hoti, rāgo cittaṁ anuddhaṁseti. | S: And at that time Venerable Vaṅgīsa became dissatisfied, as lust infected his mind. | T: Now at that time dissatisfaction (with the celibate life) had arisen in Ven. Vaṅgīsa. Lust invaded his mind.
+CONTEXT sn8.4:1.4 | P: Atha kho āyasmā vaṅgīso āyasmantaṁ ānandaṁ gāthāya ajjhabhāsi: | S: Then he addressed Ānanda in verse: | T: So he addressed Ven. Ānanda with this verse:
+sn8.4:2.1 | P: “Kāmarāgena ḍayhāmi, | S: “I’ve got a burning desire for pleasure; | T: “With sensual lust I burn.
+sn8.4:2.2 | P: cittaṁ me pariḍayhati; | S: My mind is on fire! | T: My mind is on fire.
+sn8.4:2.3 | P: Sādhu nibbāpanaṁ brūhi, | S: Please, out of compassion, Gotama, | T: Please, Gotama, from compassion,
+sn8.4:2.4 | P: anukampāya gotamā”ti. | S: tell me how to quench the flames.” | T: tell me how ⏎ to put it out.”
+
+## sn8.4:3.1–sn8.4:3.4 (sn) GATHERED; unequal counts require a reader
+sn8.4:3.1 | P: “Saññāya vipariyesā, | S: “Your mind is on fire | T: Ven. Ānanda: ⏎ “From distorted perception ⏎ your mind is on fire.
+sn8.4:3.2 | P: cittaṁ te pariḍayhati; | S: because of a perversion of perception. | T: (none)
+sn8.4:3.3 | P: Nimittaṁ parivajjehi, | S: Turn away from the feature of things | T: Shun the theme of the beautiful
+sn8.4:3.4 | P: subhaṁ rāgūpasaṁhitaṁ. | S: that’s attractive, provoking lust. | T: accompanied by lust.
+
+## sn8.4:4.1–sn8.4:4.4 (sn)
+sn8.4:4.1 | P: Saṅkhāre parato passa, | S: See all conditioned phenomena as alien, | T: See mental fabrications as other,
+sn8.4:4.2 | P: dukkhato mā ca attato; | S: as suffering and not-self. | T: as stress, ⏎ & not-self.
+sn8.4:4.3 | P: Nibbāpehi mahārāgaṁ, | S: Extinguish the great fire of lust, | T: Extinguish your great lust.
+sn8.4:4.4 | P: mā ḍayhittho punappunaṁ. | S: don’t burn up again and again. | T: Don’t keep burning again & again.
+
+## sn8.4:5.1–sn8.4:5.4 (sn)
+sn8.4:5.1 | P: Asubhāya cittaṁ bhāvehi, | S: With mind unified and serene, | T: Develop the mind ⏎ —well-centered & one—
+sn8.4:5.2 | P: ekaggaṁ susamāhitaṁ; | S: meditate on the ugly aspects of the body. | T: in the foul, ⏎ through the foul.
+sn8.4:5.3 | P: Sati kāyagatā tyatthu, | S: With mindfulness immersed in the body, | T: Have your mindfulness ⏎ immersed in the body.
+sn8.4:5.4 | P: nibbidābahulo bhava. | S: be full of disillusionment. | T: Be one who pursues ⏎ disenchantment.
+
+## sn8.4:6.1–sn8.4:6.4 (sn)
+sn8.4:6.1 | P: Animittañca bhāvehi, | S: Meditate on the signless, | T: Develop the theme-less.
+sn8.4:6.2 | P: mānānusayamujjaha; | S: give up the underlying tendency to conceit; | T: Cast out conceit.
+sn8.4:6.3 | P: Tato mānābhisamayā, | S: and when you comprehend conceit, | T: Then, from breaking through ⏎ conceit,
+sn8.4:6.4 | P: upasanto carissasī”ti. | S: you will live at peace.” | T: you will go on your way, ⏎ at peace.”
+
+## sn9.1:2.1–sn9.1:2.4 (sn)
+CONTEXT sn9.1:1.3 | P: Tena kho pana samayena so bhikkhu divāvihāragato pāpake akusale vitakke vitakketi gehanissite. | S: Now at that time that mendicant, during their day’s meditation, was thinking bad, unskillful thoughts to do with the domestic life. | T: Now at that time, as he had gone to spend the day (in the grove), he was thinking unskillful thoughts, connected with the household life.
+CONTEXT sn9.1:1.4 | P: Atha kho yā tasmiṁ vanasaṇḍe adhivatthā devatā tassa bhikkhuno anukampikā atthakāmā taṁ bhikkhuṁ saṁvejetukāmā yena so bhikkhu tenupasaṅkami; upasaṅkamitvā taṁ bhikkhuṁ gāthāhi ajjhabhāsi: | S: The deity haunting that forest had sympathy for that mendicant, and wanted what’s best for them. So they approached that mendicant wanting to stir them up, and addressed them in verse: | T: Then the devatā inhabiting the forest grove, feeling sympathy for the monk, desiring his benefit, desiring to bring him to his senses, approached him and addressed him with this verse:
+sn9.1:2.1 | P: “Vivekakāmosi vanaṁ paviṭṭho, | S: “You entered the woods desiring seclusion, | T: “Desiring seclusion ⏎ you’ve entered the forest,
+sn9.1:2.2 | P: Atha te mano niccharatī bahiddhā; | S: yet your mind strays to outward things. | T: and yet your mind ⏎ goes running outside.
+sn9.1:2.3 | P: Jano janasmiṁ vinayassu chandaṁ, | S: As a person, dispel the desire for people; | T: You, a person: ⏎ subdue your desire for people.
+sn9.1:2.4 | P: Tato sukhī hohisi vītarāgo. | S: then you’ll be happy, free of greed. | T: Then you’ll be happy, free ⏎ from passion.
+
+## sn9.1:3.1–sn9.1:3.4 (sn)
+sn9.1:3.1 | P: Aratiṁ pajahāsi sato, | S: Give up discontent; be mindful; | T: Dispel discontent, ⏎ be mindful.
+sn9.1:3.2 | P: Bhavāsi sataṁ taṁ sārayāmase; | S: let us remind you to be mindful. | T: Let me remind you ⏎ of that which is good—
+sn9.1:3.3 | P: Pātālarajo hi duttaro, | S: The dusty abyss is so hard to cross; | T: for the dust ⏎ of the regions below ⏎ is hard to transcend.
+sn9.1:3.4 | P: Mā taṁ kāmarajo avāhari. | S: don’t let sensual dust drag you down. | T: Don’t let the dust ⏎ of the sensual ⏎ pull ⏎ you ⏎ down.
+
+## sn9.1:4.1–sn9.1:4.4 (sn)
+sn9.1:4.1 | P: Sakuṇo yathā paṁsukunthito, | S: Just as a bird strewn with dirt | T: As a bird ⏎ spattered with dirt
+sn9.1:4.2 | P: Vidhunaṁ pātayati sitaṁ rajaṁ; | S: sheds that clingy dust with a shake; | T: sheds the adhering dust with a shake,
+sn9.1:4.3 | P: Evaṁ bhikkhu padhānavā satimā, | S: so too, an energetic, mindful mendicant | T: so a monk ⏎ —energetic & mindful—
+sn9.1:4.4 | P: Vidhunaṁ pātayati sitaṁ rajan”ti. | S: sheds that clingy dust with a shake.” | T: sheds the adhering dust.”
+CONTEXT sn9.1:5.1 | P: Atha kho so bhikkhu tāya devatāya saṁvejito saṁvegamāpādīti. | S: Impelled by that deity, that mendicant was struck with a sense of urgency. | T: The monk, chastened by the devatā, came to his senses.
+
+## sn9.3:2.1–sn9.3:2.4 (sn) GATHERED; possible speaker requires a reader
+CONTEXT sn9.3:1.2 | P: Tena kho pana samayena āyasmā kassapagotto divāvihāragato aññataraṁ chetaṁ ovadati. | S: Now at that time Venerable Kassapagotta, having withdrawn for his day’s meditation, tried to advise a nimrod. | T: Now at that time, as he had gone to spend the day (in the grove), he was exhorting a certain hunter.
+CONTEXT sn9.3:1.3 | P: Atha kho yā tasmiṁ vanasaṇḍe adhivatthā devatā āyasmantaṁ kassapagottaṁ saṁvejetukāmā yenāyasmā kassapagotto tenupasaṅkami; upasaṅkamitvā āyasmantaṁ kassapagottaṁ gāthāhi ajjhabhāsi: | S: Then the deity haunting that forest approached Kassapagotta wanting to stir him up, and recited these verses: | T: Then the devatā inhabiting the forest grove, feeling sympathy for Ven. Kassapa Gotta, desiring his benefit, desiring to bring him to his senses, approached him and recited verses:
+sn9.3:2.1 | P: “Giriduggacaraṁ chetaṁ, | S: “A nimrod wandering the rugged hills | T: “This monk strikes me as stupid: ⏎ at the wrong time, ⏎ exhorting a hunter, ⏎ roaming through the rugged mountains,
+sn9.3:2.2 | P: appapaññaṁ acetasaṁ; | S: is unintelligent, unthinking. | T: undiscerning, unaware.
+sn9.3:2.3 | P: Akāle ovadaṁ bhikkhu, | S: It’s a waste of time to advise him, mendicant; | T: (none)
+sn9.3:2.4 | P: mandova paṭibhāti maṁ. | S: he strikes me as a dullard. | T: (none)
+
+## sn9.3:3.1–sn9.3:3.4 (sn)
+sn9.3:3.1 | P: Suṇāti na vijānāti, | S: He listens without understanding, | T: He hears— he doesn’t understand.
+sn9.3:3.2 | P: Āloketi na passati; | S: looks without seeing. | T: He looks— he doesn’t see.
+sn9.3:3.3 | P: Dhammasmiṁ bhaññamānasmiṁ, | S: Though the teaching is spoken, | T: While Dhamma is being spoken,
+sn9.3:3.4 | P: Atthaṁ bālo na bujjhati. | S: the fool doesn’t get it. | T: the fool doesn’t awaken to the meaning.
+
+## sn9.3:4.1–sn9.3:4.4 (sn)
+sn9.3:4.1 | P: Sacepi dasa pajjote, | S: Even if you lit ten lamps | T: Even if you were to bring ⏎ ten lamps,
+sn9.3:4.2 | P: dhārayissasi kassapa; | S: and brought them to him, Kassapa, | T: Kassapa,
+sn9.3:4.3 | P: Neva dakkhati rūpāni, | S: he wouldn’t see anything, | T: he still wouldn’t see forms,
+sn9.3:4.4 | P: cakkhu hissa na vijjatī”ti. | S: for he has no eyes to see.” | T: for his eyes can’t be found.”
+CONTEXT sn9.3:5.1 | P: Atha kho āyasmā kassapagotto tāya devatāya saṁvejito saṁvegamāpādīti. | S: Impelled by that deity, Venerable Kassapagotta was struck with a sense of urgency. | T: Then Ven. Kassapa Gotta, chastened by the devatā, came to his senses.
+
+## sn9.4:2.1–sn9.4:2.4 (sn)
+CONTEXT sn9.4:1.2 | P: Atha kho te bhikkhū vassaṁvuṭṭhā temāsaccayena cārikaṁ pakkamiṁsu. | S: Then after completing the three months of the rainy season residence, those mendicants set out wandering. | T: Then, at the end of the Rains, they left to go on a three-month wandering tour.
+CONTEXT sn9.4:1.3 | P: Atha kho yā tasmiṁ vanasaṇḍe adhivatthā devatā te bhikkhū apassantī paridevamānā tāyaṁ velāyaṁ imaṁ gāthaṁ abhāsi: | S: Not seeing those mendicants, the deity haunting that forest cried. And on that occasion they spoke this verse: | T: And at that time, the devatā living in that forest grove, lamenting from not seeing those monks, recited this verse:
+sn9.4:2.1 | P: “Arati viya mejja khāyati, | S: “Dissatisfaction, it seems to me today, | T: “Today it’s as if discontent ⏎ is displayed to me,
+sn9.4:2.2 | P: Bahuke disvāna vivitte āsane; | S: seeing so many vacated seats. | T: as I see many empty seats.
+sn9.4:2.3 | P: Te cittakathā bahussutā, | S: They were so learned, such brilliant speakers! | T: They, brilliant speakers, learned:
+sn9.4:2.4 | P: Kome gotamasāvakā gatā”ti. | S: Where have these disciples of Gotama gone?” | T: Where have those disciples ⏎ of Gotama gone?”
+CONTEXT sn9.4:3.1 | P: Evaṁ vutte, aññatarā devatā taṁ devataṁ gāthāya paccabhāsi: | S: When they had spoken, another deity replied with this verse: | T: When this was said, another devatā recited a verse for that devatā:
+
+## sn9.4:4.1–sn9.4:4.4 (sn)
+CONTEXT sn9.4:3.1 | P: Evaṁ vutte, aññatarā devatā taṁ devataṁ gāthāya paccabhāsi: | S: When they had spoken, another deity replied with this verse: | T: When this was said, another devatā recited a verse for that devatā:
+sn9.4:4.1 | P: “Māgadhaṁ gatā kosalaṁ gatā, | S: “They’ve gone to Magadha, they’ve gone to Kosala, | T: “They’ve gone to Magadha, ⏎ gone to Kosala,
+sn9.4:4.2 | P: Ekacciyā pana vajjibhūmiyā; | S: and some are in the Vajjian lands. | T: & some to the land of the Vajjians.
+sn9.4:4.3 | P: Magā viya asaṅgacārino, | S: Like deer that wander free of ties, | T: Like deer, wandering free from ties,
+sn9.4:4.4 | P: Aniketā viharanti bhikkhavo”ti. | S: the mendicants live with no abode.” | T: the monks dwell without home.”
+
+## sn9.5:2.1–sn9.5:2.4 (sn)
+CONTEXT sn9.5:1.2 | P: Tena kho pana samayena āyasmā ānando ativelaṁ gihisaññattibahulo viharati. | S: Now at that time Ānanda was spending too much time persuading lay people. | T: Now at that time, he was spending too much time devoted to instructing laypeople.
+CONTEXT sn9.5:1.3 | P: Atha kho yā tasmiṁ vanasaṇḍe adhivatthā devatā āyasmato ānandassa anukampikā atthakāmā āyasmantaṁ ānandaṁ saṁvejetukāmā yenāyasmā ānando tenupasaṅkami; upasaṅkamitvā āyasmantaṁ ānandaṁ gāthāya ajjhabhāsi: | S: Then the deity haunting that forest had sympathy for Ānanda, wanting what’s best for him. So they approached him wanting to stir him up, and recited these verses: | T: Then the devatā inhabiting the forest grove, feeling sympathy for Ven. Ānanda, desiring his benefit, desiring to bring him to his senses, approached him and recited a verse:
+sn9.5:2.1 | P: “Rukkhamūlagahanaṁ pasakkiya, | S: “You’ve left for the jungle, the root of a tree, | T: “Going to the bower ⏎ at the root of a tree,
+sn9.5:2.2 | P: Nibbānaṁ hadayasmiṁ opiya; | S: having laid extinguishment in your heart. | T: placing ⏎ unbinding ⏎ in your heart,
+sn9.5:2.3 | P: Jhāya gotama mā pamādo, | S: Meditate, Gotama, don’t be negligent! | T: do jhāna, Gotama, ⏎ & don’t be heedless.
+sn9.5:2.4 | P: Kiṁ te biḷibiḷikā karissatī”ti. | S: What use is this hullabaloo to you?” | T: What use is this ⏎ chitter-chatter ⏎ to you?”
+CONTEXT sn9.5:3.1 | P: Atha kho āyasmā ānando tāya devatāya saṁvejito saṁvegamāpādīti. | S: Impelled by that deity, Venerable Ānanda was struck with a sense of urgency. | T: Then Ven. Ānanda, chastened by the devatā, came to his senses.
+
+## sn9.6:2.1–sn9.6:2.6 (sn)
+CONTEXT sn9.6:1.1 | P: Ekaṁ samayaṁ āyasmā anuruddho kosalesu viharati aññatarasmiṁ vanasaṇḍe. | S: At one time Venerable Anuruddha was staying in the land of the Kosalans in a certain forest grove. | T: I have heard that on one occasion Ven. Anuruddha was staying among the Kosalans in a forest grove.
+CONTEXT sn9.6:1.2 | P: Atha kho aññatarā tāvatiṁsakāyikā devatā jālinī nāma āyasmato anuruddhassa purāṇadutiyikā yenāyasmā anuruddho tenupasaṅkami; upasaṅkamitvā āyasmantaṁ anuruddhaṁ gāthāya ajjhabhāsi: | S: Then a certain deity of the company of the thirty-three named Penelope had been Anuruddha’s partner in a former life. She went up to Anuruddha, and recited these verses: | T: Now at that time, a devatā from the retinue of the heaven of the Thirty-three named Jālinī, one of Ven. Anuruddha’s former consorts, went to him and, on arrival, addressed him with this verse:
+sn9.6:2.1 | P: “Tattha cittaṁ paṇidhehi, | S: “Set your heart there, | T: “Direct your mind
+sn9.6:2.2 | P: yattha te vusitaṁ pure; | S: where you used to live: | T: to where you used to live,
+sn9.6:2.3 | P: Tāvatiṁsesu devesu, | S: among the gods of the thirty-three, | T: among the Devas of the Thirty-three,
+sn9.6:2.4 | P: sabbakāmasamiddhisu; | S: whose every desire is granted! | T: empowered ⏎ with all sensual pleasures.
+sn9.6:2.5 | P: Purakkhato parivuto, | S: At the fore of a retinue | T: Honored, surrounded
+sn9.6:2.6 | P: devakaññāhi sobhasī”ti. | S: of divine maidens, you’ll shine!” | T: by deva maidens, ⏎ you ⏎ will shine.”
+
+## sn9.6:3.1–sn9.6:3.4 (sn)
+sn9.6:3.1 | P: “Duggatā devakaññāyo, | S: “Divine maidens are in a sorry state, | T: Ven. Anuruddha: ⏎ “They’ve gone astray, ⏎ deva maidens
+sn9.6:3.2 | P: sakkāyasmiṁ patiṭṭhitā; | S: stuck in substantial reality. | T: established in self-identity.
+sn9.6:3.3 | P: Te cāpi duggatā sattā, | S: And those beings too are in a sorry state, | T: And they’ve gone astray, ⏎ those beings
+sn9.6:3.4 | P: devakaññāhi patthitā”ti. | S: who are attached to divine maidens.” | T: with deva maidens ⏎ as their aim.”
+
+## sn9.6:4.1–sn9.6:4.4 (sn)
+sn9.6:4.1 | P: “Na te sukhaṁ pajānanti, | S: “They don’t know pleasure | T: Jālinī: ⏎ “They don’t know bliss
+sn9.6:4.2 | P: ye na passanti nandanaṁ; | S: who don’t see the Garden of Delight! | T: who haven’t seen Nandana,
+sn9.6:4.3 | P: Āvāsaṁ naradevānaṁ, | S: It’s the abode of lordly gods, | T: abode of the eminent devas,
+sn9.6:4.4 | P: tidasānaṁ yasassinan”ti. | S: the glorious host of Thirty!” | T: glorious, ⏎ of the Thirty-three.”
+
+## sn9.6:5.1–sn9.6:5.6 (sn)
+sn9.6:5.1 | P: “Na tvaṁ bāle vijānāsi, | S: “Fool, don’t you understand | T: Ven. Anuruddha: ⏎ “You fool, don’t you know
+sn9.6:5.2 | P: yathā arahataṁ vaco; | S: the saying of the perfected ones: | T: the arahants’ maxim?—
+sn9.6:5.3 | P: Aniccā sabbasaṅkhārā, | S: All conditions are impermanent, | T: ‘How inconstant are fabrications!
+sn9.6:5.4 | P: uppādavayadhammino; | S: their nature is to rise and fall; | T: Their nature: to arise & pass away.
+sn9.6:5.5 | P: Uppajjitvā nirujjhanti, | S: having arisen, they cease; | T: They disband as they are arising.
+sn9.6:5.6 | P: tesaṁ vūpasamo sukho. | S: their settling is such bliss. | T: Their total stilling is bliss.’
+
+## sn9.6:6.1–sn9.6:6.4 (sn)
+sn9.6:6.1 | P: Natthi dāni punāvāso, | S: O Penelope, weaver of the web— | T: Jālinī,
+sn9.6:6.2 | P: devakāyasmi jālini; | S: there are no more abodes for me in the heavenly host. | T: there is now ⏎ in deva company ⏎ no further abode ⏎ (for me).
+sn9.6:6.3 | P: Vikkhīṇo jātisaṁsāro, | S: Transmigration through births is finished, | T: With the utter ending ⏎ of wandering on in birth,
+sn9.6:6.4 | P: natthi dāni punabbhavo”ti. | S: now there’ll be no more future lives.” | T: there is now ⏎ no further becoming.”
+
+## sn9.9:2.1–sn9.9:2.4 (sn)
+CONTEXT sn9.9:1.2 | P: Tena kho pana samayena vesāliyaṁ vajjiputtako sabbaratticāro hoti. | S: Now at that time the Vajjis were holding an all-night event in Vesālī. | T: And on that occasion an all-night festival was being held in Vesālī.
+CONTEXT sn9.9:1.3 | P: Atha kho so bhikkhu vesāliyā tūriyatāḷitavāditanigghosasaddaṁ sutvā paridevamāno tāyaṁ velāyaṁ imaṁ gāthaṁ abhāsi: | S: Then that mendicant, complaining at the noise of musical instruments being beaten and played, on that occasion spoke this verse: | T: The monk—lamenting as he heard the resounding din of wind music, string music, & gongs coming from Vesālī, on that occasion recited this verse:
+sn9.9:2.1 | P: “Ekakā mayaṁ araññe viharāma, | S: “We dwell alone in the wilderness, | T: “I live in the wilderness ⏎ all alone
+sn9.9:2.2 | P: Apaviddhaṁva vanasmiṁ dārukaṁ; | S: like a log dumped in the forest. | T: like a log cast away in the forest.
+sn9.9:2.3 | P: Etādisikāya rattiyā, | S: On a night like this, | T: On a night like this,
+sn9.9:2.4 | P: Ko su nāmamhehi pāpiyo”ti. | S: who’s worse off than me?” | T: who could there be ⏎ more miserable ⏎ than me?”
+CONTEXT sn9.9:3.1 | P: Atha kho yā tasmiṁ vanasaṇḍe adhivatthā devatā tassa bhikkhuno anukampikā atthakāmā taṁ bhikkhuṁ saṁvejetukāmā yena so bhikkhu tenupasaṅkami; upasaṅkamitvā taṁ bhikkhuṁ gāthāya ajjhabhāsi: | S: The deity haunting that forest had sympathy for that mendicant, and wanted what’s best for them. So they approached that mendicant wanting to stir them up, and addressed them in verse: | T: Then the devatā inhabiting the forest grove, feeling sympathy for the monk, desiring his benefit, desiring to bring him to his senses, approached him and addressed him with this verse:
+
+## sn9.9:4.1–sn9.9:4.4 (sn)
+CONTEXT sn9.9:3.1 | P: Atha kho yā tasmiṁ vanasaṇḍe adhivatthā devatā tassa bhikkhuno anukampikā atthakāmā taṁ bhikkhuṁ saṁvejetukāmā yena so bhikkhu tenupasaṅkami; upasaṅkamitvā taṁ bhikkhuṁ gāthāya ajjhabhāsi: | S: The deity haunting that forest had sympathy for that mendicant, and wanted what’s best for them. So they approached that mendicant wanting to stir them up, and addressed them in verse: | T: Then the devatā inhabiting the forest grove, feeling sympathy for the monk, desiring his benefit, desiring to bring him to his senses, approached him and addressed him with this verse:
+sn9.9:4.1 | P: “Ekakova tvaṁ araññe viharasi, | S: “You dwell alone in the wilderness, | T: “As you live in the wilderness all alone
+sn9.9:4.2 | P: Apaviddhaṁva vanasmiṁ dārukaṁ; | S: like a log dumped in the forest. | T: like a log cast away in the forest,
+sn9.9:4.3 | P: Tassa te bahukā pihayanti, | S: Lots of people are jealous of you, | T: many are those who envy you,
+sn9.9:4.4 | P: Nerayikā viya saggagāminan”ti. | S: like beings in hell of those going to heaven.” | T: as hell-beings do, ⏎ those headed for heaven.”
+CONTEXT sn9.9:5.1 | P: Atha kho so bhikkhu tāya devatāya saṁvejito saṁvegamāpādīti. | S: Impelled by that deity, that mendicant was struck with a sense of urgency. | T: The monk, chastened by the devatā, came to his senses.
+
+## sn9.11:2.1–sn9.11:2.4 (sn)
+CONTEXT sn9.11:1.3 | P: kāmavitakkaṁ, byāpādavitakkaṁ, vihiṁsāvitakkaṁ. | S: sensual, malicious, and cruel thoughts. | T: thoughts of sensuality, thoughts of ill will, thoughts of doing harm.
+CONTEXT sn9.11:1.4 | P: Atha kho yā tasmiṁ vanasaṇḍe adhivatthā devatā tassa bhikkhuno anukampikā atthakāmā taṁ bhikkhuṁ saṁvejetukāmā yena so bhikkhu tenupasaṅkami; upasaṅkamitvā taṁ bhikkhuṁ gāthāhi ajjhabhāsi: | S: The deity haunting that forest had sympathy for that mendicant, and wanted what’s best for them. So they approached that mendicant wanting to stir them up, and addressed them in verse: | T: Then the devatā inhabiting the forest grove, feeling sympathy for the monk, desiring his benefit, desiring to bring him to his senses, approached him and addressed him with this verse:
+sn9.11:2.1 | P: “Ayoniso manasikārā, | S: “Because of irrational application of mind, | T: “From inappropriate attention
+sn9.11:2.2 | P: so vitakkehi khajjasi; | S: you’re consumed by your thoughts. | T: you’re being chewed by your thoughts.
+sn9.11:2.3 | P: Ayoniso paṭinissajja, | S: When you’ve given up irrationality, | T: Relinquishing what’s inappropriate,
+sn9.11:2.4 | P: yoniso anucintaya. | S: make sure your thoughts are rational. | T: contemplate ⏎ appropriately.
+
+## sn9.11:3.1–sn9.11:3.6 (sn)
+sn9.11:3.1 | P: Satthāraṁ dhammamārabbha, | S: Thinking about the Teacher, the teaching, | T: Keeping your mind on the Teacher, ⏎ the Dhamma,
+sn9.11:3.2 | P: saṅghaṁ sīlāni attano; | S: the Saṅgha, and your own ethics, | T: the Saṅgha, your virtues,
+sn9.11:3.3 | P: Adhigacchasi pāmojjaṁ, | S: you’ll find gladness, | T: you will arrive at ⏎ joy,
+sn9.11:3.4 | P: pītisukhamasaṁsayaṁ; | S: and rapture and bliss as well, no doubt. | T: rapture, ⏎ pleasure ⏎ without doubt.
+sn9.11:3.5 | P: Tato pāmojjabahulo, | S: And when you’re full of joy, | T: Then, saturated ⏎ with joy,
+sn9.11:3.6 | P: dukkhassantaṁ karissasī”ti. | S: you’ll make an end to suffering.” | T: you will put an end ⏎ to suffering & stress.”
+CONTEXT sn9.11:4.1 | P: Atha kho so bhikkhu tāya devatāya saṁvejito saṁvegamāpādīti. | S: Impelled by that deity, that mendicant was struck with a sense of urgency. | T: The monk, chastened by the devatā, came to his senses.
+
+## sn9.14:2.1–sn9.14:2.4 (sn) GATHERED; equal counts: one line per row
+CONTEXT sn9.14:1.2 | P: Tena kho pana samayena so bhikkhu pacchābhattaṁ piṇḍapātapaṭikkanto pokkharaṇiṁ ogāhetvā padumaṁ upasiṅghati. | S: Now at that time, after the meal, on their return from almsround, that mendicant plunged into a lotus pond and sniffed a pink lotus. | T: Now at that time, after his meal, returning from his almsround, he went down to a lotus pond and sniffed a red lotus.
+CONTEXT sn9.14:1.3 | P: Atha kho yā tasmiṁ vanasaṇḍe adhivatthā devatā tassa bhikkhuno anukampikā atthakāmā taṁ bhikkhuṁ saṁvejetukāmā yena so bhikkhu tenupasaṅkami; upasaṅkamitvā taṁ bhikkhuṁ gāthāya ajjhabhāsi: | S: The deity haunting that forest had sympathy for that mendicant, and wanted what’s best for them. So they approached that mendicant wanting to stir them up, and addressed them in verse: | T: Then the devatā inhabiting the forest grove, feeling sympathy for the monk, desiring his benefit, desiring to bring him to his senses, approached him and addressed him with this verse:
+sn9.14:2.1 | P: “Yametaṁ vārijaṁ pupphaṁ, | S: “This water flower has not been given. | T: “You sniff this water-born flower ⏎ that hasn’t been given to you.
+sn9.14:2.2 | P: adinnaṁ upasiṅghasi; | S: When you sniff it, | T: (none)
+sn9.14:2.3 | P: Ekaṅgametaṁ theyyānaṁ, | S: this is one factor of theft. | T: This, dear sir, is a factor of stealing.
+sn9.14:2.4 | P: gandhatthenosi mārisā”ti. | S: Good fellow, you are a thief of scent!” | T: You are a thief of a scent.”
+AUTO sn9.14:2.1 starts: “You sniff this water-born flower
+AUTO sn9.14:2.2 starts: that hasn’t been given to you.
+AUTO sn9.14:2.3 starts: This, dear sir, is a factor of stealing.
+AUTO sn9.14:2.4 starts: You are a thief of a scent.”
+
+## sn9.14:3.1–sn9.14:3.4 (sn) GATHERED; possible speaker requires a reader
+sn9.14:3.1 | P: “Na harāmi na bhañjāmi, | S: “I do not take, nor do I break; | T: The monk: ⏎ “I don’t take, don’t damage.
+sn9.14:3.2 | P: ārā siṅghāmi vārijaṁ; | S: I sniff the water flower from afar. | T: I sniff at the lotus ⏎ from far away.
+sn9.14:3.3 | P: Atha kena nu vaṇṇena, | S: So how do you explain why | T: So why do you call me ⏎ a thief of a scent?
+sn9.14:3.4 | P: gandhatthenoti vuccati. | S: you call me a thief of scent? | T: (none)
+
+## sn9.14:4.1–sn9.14:4.4 (sn) GATHERED; possible speaker requires a reader
+sn9.14:4.1 | P: Yvāyaṁ bhisāni khanati, | S: Why don’t you accuse someone | T: One who ⏎ digs up the stalks,
+sn9.14:4.2 | P: puṇḍarīkāni bhañjati; | S: who does such vandalizing | T: (none)
+sn9.14:4.3 | P: Evaṁ ākiṇṇakammanto, | S: as digging up the roots, | T: (none)
+sn9.14:4.4 | P: kasmā eso na vuccatī”ti. | S: or breaking off the flowers?” | T: damages flowers, ⏎ one of such ruthless behavior: ⏎ why don’t you say it of him?”
+
+## sn9.14:5.1–sn9.14:5.4 (sn) GATHERED; possible speaker requires a reader
+sn9.14:5.1 | P: “Ākiṇṇaluddo puriso, | S: “I have nothing to say | T: (none)
+sn9.14:5.2 | P: dhāticelaṁva makkhito; | S: to a person who is a crude vandal, | T: The devatā: ⏎ “A person ruthless & grasping,
+sn9.14:5.3 | P: Tasmiṁ me vacanaṁ natthi, | S: soiled like a used nappy. | T: smeared like a nursing diaper: ⏎ to him ⏎ I have nothing to say.
+sn9.14:5.4 | P: tvañcārahāmi vattave. | S: You’re the one who deserves to be spoken to. | T: It’s you ⏎ to whom I should speak.
+
+## sn9.14:6.1–sn9.14:6.4 (sn)
+sn9.14:6.1 | P: Anaṅgaṇassa posassa, | S: To the man who has not a blemish, | T: To a person unblemished,
+sn9.14:6.2 | P: niccaṁ sucigavesino; | S: who is always seeking purity, | T: constantly searching for purity,
+sn9.14:6.3 | P: Vālaggamattaṁ pāpassa, | S: even a hair-tip of evil | T: a hair-tip’s worth of evil
+sn9.14:6.4 | P: abbhāmattaṁva khāyatī”ti. | S: seems as big as a stormcloud.” | T: seems as large ⏎ as a cloud.”
+
+## sn9.14:7.1–sn9.14:7.4 (sn)
+sn9.14:7.1 | P: “Addhā maṁ yakkha jānāsi, | S: “Indeed, O spirit, you understand me, | T: The monk: ⏎ “Yes, yakkha, you understand me
+sn9.14:7.2 | P: atho me anukampasi; | S: and you empathize with me. | T: and show me sympathy.
+sn9.14:7.3 | P: Punapi yakkha vajjāsi, | S: Please speak to me again, | T: Warn me again, yakkha,
+sn9.14:7.4 | P: yadā passasi edisan”ti. | S: whenever you see something like this.” | T: whenever again ⏎ you see something like this.”
+
+## sn9.14:8.1–sn9.14:8.4 (sn)
+sn9.14:8.1 | P: “Neva taṁ upajīvāma, | S: “We are no dependent of yours, | T: The devatā: ⏎ “I don’t depend on you ⏎ for my living
+sn9.14:8.2 | P: napi te bhatakāmhase; | S: nor are we your servant. | T: nor am I ⏎ your hired hand.
+sn9.14:8.3 | P: Tvameva bhikkhu jāneyya, | S: You yourself should know, mendicant, | T: You, monk, ⏎ you yourself should know
+sn9.14:8.4 | P: yena gaccheyya suggatin”ti. | S: the way that leads to a good place.” | T: how to go to the good destination.”
+CONTEXT sn9.14:9.1 | P: Atha kho so bhikkhu tāya devatāya saṁvejito saṁvegamāpādīti. | S: Impelled by that deity, that mendicant was struck with a sense of urgency. | T: The monk, chastened by the devatā, came to his senses.
+CONTEXT sn9.14:9.2 | P: Vanavaggo paṭhamo. | S: (none) | T: (none)
+
+## sn9.14:10.1–sn9.14:10.4 (sn)
+CONTEXT sn9.14:9.2 | P: Vanavaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT sn9.14:10.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn9.14:10.1 | P: Vivekaṁ upaṭṭhānañca, | S: (none) | T: (none)
+sn9.14:10.2 | P: Kassapagottena sambahulā; | S: (none) | T: (none)
+sn9.14:10.3 | P: Ānando anuruddho ca, | S: (none) | T: (none)
+sn9.14:10.4 | P: Nāgadattañca kulagharaṇī. | S: (none) | T: (none)
+
+## sn9.14:11.1–sn9.14:11.4 (sn)
+sn9.14:11.1 | P: Vajjiputto ca vesālī, | S: (none) | T: (none)
+sn9.14:11.2 | P: Sajjhāyena ayoniso; | S: (none) | T: (none)
+sn9.14:11.3 | P: Majjhanhikālamhi pākatindriya— | S: (none) | T: (none)
+sn9.14:11.4 | P: Padumapupphena cuddasa bhaveti. | S: (none) | T: (none)
+CONTEXT sn9.14:11.5 | P: Vanasaṁyuttaṁ samattaṁ. | S: The Linked Discourses in the Forest are complete. | T: (none)
+
+## sn10.4:2.1–sn10.4:2.4 (sn)
+CONTEXT sn10.4:1.1 | P: Ekaṁ samayaṁ bhagavā magadhesu viharati maṇimālike cetiye maṇibhaddassa yakkhassa bhavane. | S: At one time the Buddha was staying in the land of the Magadhans at the Maṇimālika Shrine, the haunt of the native spirit Maṇibhadda. | T: On one occasion the Blessed One was staying among the Magadhans at the Jewel-stand Shrine, the haunt of the yakkha-spirit, Maṇibhadda [Auspicious Jewel].
+CONTEXT sn10.4:1.2 | P: Atha kho maṇibhaddo yakkho yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavato santike imaṁ gāthaṁ abhāsi: | S: Then the native spirit Maṇibhadda went up to the Buddha, and spoke this verse in the Buddha’s presence: | T: Then Maṇibhadda the yakkha-spirit went to the Blessed One and, on arrival, recited this verse:
+sn10.4:2.1 | P: “Satīmato sadā bhaddaṁ, | S: “It’s always auspicious for the mindful; | T: “It’s always auspicious for one who is mindful.
+sn10.4:2.2 | P: satimā sukhamedhati; | S: the mindful prosper in happiness. | T: The mindful one prospers happily—always.
+sn10.4:2.3 | P: Satīmato suve seyyo, | S: Each new day is better for the mindful, | T: The mindful one grows better each day
+sn10.4:2.4 | P: verā ca parimuccatī”ti. | S: and they are freed from enmity.” | T: and is totally freed from animosity.”
+
+## sn10.4:3.1–sn10.4:3.4 (sn)
+sn10.4:3.1 | P: “Satīmato sadā bhaddaṁ, | S: “It’s always auspicious for the mindful; | T: The Buddha: ⏎ “It’s always auspicious for one who is mindful.
+sn10.4:3.2 | P: satimā sukhamedhati; | S: the mindful prosper in happiness. | T: The mindful one prospers happily always.
+sn10.4:3.3 | P: Satīmato suve seyyo, | S: Each new day is better for the mindful, | T: The mindful one grows better each day
+sn10.4:3.4 | P: verā na parimuccati. | S: but they’re not freed from enmity. | T: but isn’t totally freed from animosity.
+
+## sn10.4:4.1–sn10.4:4.4 (sn) GATHERED; equal counts: one line per row
+sn10.4:4.1 | P: Yassa sabbamahorattaṁ, | S: But someone whose mind delights in harmlessness, | T: Whoever’s heart, all day, all night, ⏎ delights in harmlessness
+sn10.4:4.2 | P: ahiṁsāya rato mano; | S: all day and all night, | T: (none)
+sn10.4:4.3 | P: Mettaṁso sabbabhūtesu, | S: with love for all living creatures— | T: with goodwill for all beings
+sn10.4:4.4 | P: veraṁ tassa na kenacī”ti. | S: they have no enmity for anyone.” | T: has no animosity with anyone at all.
+AUTO sn10.4:4.1 starts: Whoever’s heart, all day, all night,
+AUTO sn10.4:4.2 starts: delights in harmlessness
+AUTO sn10.4:4.3 starts: with goodwill for all beings
+AUTO sn10.4:4.4 starts: has no animosity with anyone at all.
+
+## sn10.8:2.1–sn10.8:2.6 (sn)
+CONTEXT sn10.8:1.11 | P: Atha kho anāthapiṇḍikassa gahapatissa nagaramhā nikkhamantassa āloko antaradhāyi, andhakāro pāturahosi, bhayaṁ chambhitattaṁ lomahaṁso udapādi, tatova puna nivattitukāmo ahosi. | S: But as he was leaving the city, light vanished and darkness appeared to him. He felt fear, terror, and goosebumps, and wanted to turn back. | T: When Anāthapiṇḍika the householder had left the city, the light vanished and darkness appeared. Fear, terror, & horripilation arose, and because of that he wanted to turn back.
+CONTEXT sn10.8:1.12 | P: Atha kho sivako yakkho antarahito saddamanussāvesi: | S: Then the invisible spirit Sivaka called out: | T: Then Sivaka the yakkha-spirit, invisible, proclaimed:
+sn10.8:2.1 | P: “Sataṁ hatthī sataṁ assā, | S: “A hundred elephants, a hundred horses, | T: “A hundred elephants, ⏎ a hundred horses,
+sn10.8:2.2 | P: Sataṁ assatarīrathā; | S: a hundred mule-drawn chariots, | T: a hundred mule-drawn carts,
+sn10.8:2.3 | P: Sataṁ kaññāsahassāni, | S: a hundred thousand maidens | T: a hundred-thousand maidens
+sn10.8:2.4 | P: Āmukkamaṇikuṇḍalā; | S: bedecked with jeweled earrings: | T: adorned with jewels & earrings
+sn10.8:2.5 | P: Ekassa padavītihārassa, | S: these are not worth a sixteenth part | T: aren’t worth one-sixteenth
+sn10.8:2.6 | P: Kalaṁ nāgghanti soḷasiṁ. | S: of a single forward stride! | T: of one step forward.
+
+## sn10.8:3.1–sn10.8:3.4 (sn)
+sn10.8:3.1 | P: Abhikkama gahapati, | S: Forward, householder! | T: Go forward, householder!
+sn10.8:3.2 | P: abhikkama gahapati; | S: Forward, householder! | T: Go forward, householder!
+sn10.8:3.3 | P: Abhikkamanaṁ te seyyo, | S: Going forward is better for you, | T: Going forward is better for you,
+sn10.8:3.4 | P: no paṭikkamanan”ti. | S: not turning back!” | T: not back!”
+CONTEXT sn10.8:4.1 | P: Atha kho anāthapiṇḍikassa gahapatissa andhakāro antaradhāyi, āloko pāturahosi, yaṁ ahosi bhayaṁ chambhitattaṁ lomahaṁso, so paṭippassambhi. | S: Then darkness vanished and light appeared to Anāthapiṇḍika. His fear, terror, and goosebumps settled down. | T: The darkness then vanished for Anāthapiṇḍika and the light appeared. The fear, terror, & horripilation he had felt subsided.
+CONTEXT sn10.8:4.2 | P: Dutiyampi kho anāthapiṇḍikassa gahapatissa āloko antaradhāyi, andhakāro pāturahosi, bhayaṁ chambhitattaṁ lomahaṁso udapādi, tatova puna nivattitukāmo ahosi. | S: But for a second time, light vanished and darkness appeared to him. … | T: For a second time…
+
+## sn10.8:5.1–sn10.8:5.3 (sn)
+CONTEXT sn10.8:4.2 | P: Dutiyampi kho anāthapiṇḍikassa gahapatissa āloko antaradhāyi, andhakāro pāturahosi, bhayaṁ chambhitattaṁ lomahaṁso udapādi, tatova puna nivattitukāmo ahosi. | S: But for a second time, light vanished and darkness appeared to him. … | T: For a second time…
+CONTEXT sn10.8:4.3 | P: Dutiyampi kho sivako yakkho antarahito saddamanussāvesi: | S: For a second time the invisible spirit Sivaka called out … | T: (none)
+sn10.8:5.1 | P: “Sataṁ hatthī sataṁ assā, | S: (none) | T: (none)
+sn10.8:5.2 | P: …pe… | S: (none) | T: (none)
+sn10.8:5.3 | P: Kalaṁ nāgghanti soḷasiṁ. | S: (none) | T: (none)
+
+## sn10.8:6.1–sn10.8:6.4 (sn)
+sn10.8:6.1 | P: Abhikkama gahapati, | S: (none) | T: (none)
+sn10.8:6.2 | P: abhikkama gahapati; | S: (none) | T: (none)
+sn10.8:6.3 | P: Abhikkamanaṁ te seyyo, | S: “… Going forward is better for you, | T: (none)
+sn10.8:6.4 | P: no paṭikkamanan”ti. | S: not turning back!” | T: (none)
+CONTEXT sn10.8:7.1 | P: Atha kho anāthapiṇḍikassa gahapatissa andhakāro antaradhāyi, āloko pāturahosi, yaṁ ahosi bhayaṁ chambhitattaṁ lomahaṁso, so paṭippassambhi. | S: Then darkness vanished and light appeared to Anāthapiṇḍika. His fear, terror, and goosebumps settled down. | T: (none)
+CONTEXT sn10.8:7.2 | P: Tatiyampi kho anāthapiṇḍikassa gahapatissa āloko antaradhāyi, andhakāro pāturahosi, bhayaṁ chambhitattaṁ lomahaṁso udapādi, tatova puna nivattitukāmo ahosi. | S: But for a third time, light vanished and darkness appeared to him. … | T: a third time, the light vanished and darkness appeared. Fear, terror, & horripilation arose, and because of that Anāthapiṇḍika wanted to turn back.
+
+## sn10.8:8.1–sn10.8:8.3 (sn)
+CONTEXT sn10.8:7.2 | P: Tatiyampi kho anāthapiṇḍikassa gahapatissa āloko antaradhāyi, andhakāro pāturahosi, bhayaṁ chambhitattaṁ lomahaṁso udapādi, tatova puna nivattitukāmo ahosi. | S: But for a third time, light vanished and darkness appeared to him. … | T: a third time, the light vanished and darkness appeared. Fear, terror, & horripilation arose, and because of that Anāthapiṇḍika wanted to turn back.
+CONTEXT sn10.8:7.3 | P: Tatiyampi kho sivako yakkho antarahito saddamanussāvesi: | S: For a third time the invisible spirit Sivaka called out … | T: Then for a third time, Sivaka the yakkha-spirit, invisible, proclaimed:
+sn10.8:8.1 | P: “Sataṁ hatthī sataṁ assā, | S: (none) | T: “A hundred elephants, ⏎ a hundred horses, ⏎ a hundred mule-drawn carts, ⏎ a hundred-thousand maidens
+sn10.8:8.2 | P: …pe… | S: (none) | T: adorned with jewels & earrings
+sn10.8:8.3 | P: Kalaṁ nāgghanti soḷasiṁ. | S: (none) | T: aren’t worth one-sixteenth ⏎ of one step forward.
+
+## sn10.8:9.1–sn10.8:9.4 (sn)
+sn10.8:9.1 | P: Abhikkama gahapati, | S: (none) | T: Go forward, householder!
+sn10.8:9.2 | P: abhikkama gahapati; | S: (none) | T: Go forward, householder!
+sn10.8:9.3 | P: Abhikkamanaṁ te seyyo, | S: “… Going forward is better for you, | T: Going forward is better for you,
+sn10.8:9.4 | P: no paṭikkamanan”ti. | S: not turning back!” | T: not back!”
+CONTEXT sn10.8:10.1 | P: Atha kho anāthapiṇḍikassa gahapatissa andhakāro antaradhāyi, āloko pāturahosi, yaṁ ahosi bhayaṁ chambhitattaṁ lomahaṁso, so paṭippassambhi. | S: Then darkness vanished and light appeared to Anāthapiṇḍika. His fear, terror, and goosebumps settled down. | T: The darkness then vanished for Anāthapiṇḍika and the light appeared. The fear, terror, & horripilation he had felt subsided.
+CONTEXT sn10.8:10.2 | P: Atha kho anāthapiṇḍiko gahapati yena sītavanaṁ yena bhagavā tenupasaṅkami. | S: Then the householder Anāthapiṇḍika went to the Cool Grove and approached the Buddha. | T: So Anāthapiṇḍika went to the Cool Forest.

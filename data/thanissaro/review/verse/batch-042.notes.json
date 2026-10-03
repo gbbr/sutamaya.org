@@ -1,0 +1,19 @@
+{
+  "batch": 42,
+  "versesRead": 70,
+  "rowsRead": 277,
+  "automaticFindings": 12,
+  "readerFindings": 32,
+  "unresolved": [
+    {
+      "key": "snp3.1:6.4–snp3.1:7.1",
+      "reason": "Source-order interleaving: “Mindful, his eyes downcast,” translates the beginning of verse 7, but occurs before “looking only a plow-length before him.”, the end of verse 6, in T row snp3.1:6.4. Restoring both stanza identities requires reordering source lines, so these lines were preserved and the four existing verse-7 lines were spread over its four rows."
+    }
+  ],
+  "ruleCandidates": [
+    {
+      "key": "snp2.14:28–snp2.14:29",
+      "reason": "Restored the boundary at the existing line “the observant person”: preceding “with clear & confident mind,” belongs to verse 28 (pasannamānaso). This clean one-line shift preserves translator order; both verses now occupy all four rows."
+    }
+  ]
+}

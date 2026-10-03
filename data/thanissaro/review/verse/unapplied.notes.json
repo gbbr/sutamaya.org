@@ -1,0 +1,32 @@
+{
+  "batch": "unapplied",
+  "versesRead": 4,
+  "rowsRead": 14,
+  "automaticFindings": 0,
+  "readerFindings": 2,
+  "withdrawal": [
+    "snp4.9:3.1",
+    "snp4.9:3.3"
+  ],
+  "withdrawnFindings": [
+    {
+      "key": "snp4.9:3.1",
+      "starts": "“‘I argue for this’"
+    },
+    {
+      "key": "snp4.9:3.1",
+      "starts": "The Buddha:"
+    },
+    {
+      "key": "snp4.9:3.3",
+      "starts": "when considering what’s grasped"
+    }
+  ],
+  "unresolved": [
+    {
+      "key": "snp4.9:3.1",
+      "reason": "unapplied-context.txt confirms that snp4.9:3.2 is a read-only speaker row containing source line 17 (The Buddha:), between empty verse row 3.1 and speech row 3.3. Source lines 18–19 cannot occupy row 3.1 without crossing that speaker and changing source order. The alternative speaker start would itself change nonverse context. Withdraw row 3.1 and the proposed row 3.3 start at source line 20: moving row 3.3 later would assign source lines 18–19 to the intervening nonverse speaker row. Retain current row 3.3 speech and leave the structurally unavailable row 3.1 documented as unresolved; no false fewer-line none finding or invented break is used."
+    }
+  ],
+  "decision": "Withdraw both first-row anchors and the companion snp4.9:3.3 recut. Keep existing verse/source order and read-only speaker. Rows 3.4 and 3.5 have unchanged starts at source lines 22 and 24; these retained findings require no redistribution."
+}

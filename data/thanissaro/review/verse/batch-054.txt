@@ -1,0 +1,405 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## snp5.19:24.1–snp5.19:24.4 (snp)
+snp5.19:24.1 | P: Pabbajjapadhānasubhāsitanāmo, | S: (none) | T: (none)
+snp5.19:24.2 | P: Pūraḷāso punadeva māgho ca; | S: (none) | T: (none)
+snp5.19:24.3 | P: Sabhiyaṁ keṇiyameva sallanāmo, | S: (none) | T: (none)
+snp5.19:24.4 | P: Vāseṭṭhavaro kālikopi ca. | S: (none) | T: (none)
+
+## snp5.19:25.1–snp5.19:25.4 (snp)
+snp5.19:25.1 | P: Nālakasuttavaro suvibhatto, | S: (none) | T: (none)
+snp5.19:25.2 | P: Taṁ anupassī tathā punadeva; | S: (none) | T: (none)
+snp5.19:25.3 | P: Dvādasasuttadharo tatiyamhi, | S: (none) | T: (none)
+snp5.19:25.4 | P: Suyyati vaggavaro mahānāmo. | S: (none) | T: (none)
+
+## snp5.19:26.1–snp5.19:26.4 (snp)
+snp5.19:26.1 | P: Kāmaguhaṭṭhakaduṭṭhakanāmā, | S: (none) | T: (none)
+snp5.19:26.2 | P: Suddhavaro paramaṭṭhakanāmo; | S: (none) | T: (none)
+snp5.19:26.3 | P: Jarā mettiyavaro suvibhatto, | S: (none) | T: (none)
+snp5.19:26.4 | P: Pasūramāgaṇḍiyā purābhedo. | S: (none) | T: (none)
+
+## snp5.19:27.1–snp5.19:27.4 (snp)
+snp5.19:27.1 | P: Kalahavivādo ubho viyuhā ca, | S: (none) | T: (none)
+snp5.19:27.2 | P: Tuvaṭakaattadaṇḍasāriputtā; | S: (none) | T: (none)
+snp5.19:27.3 | P: Soḷasasuttadharo catutthamhi, | S: (none) | T: (none)
+snp5.19:27.4 | P: Aṭṭhakavaggavaroti tamāhu. | S: (none) | T: (none)
+
+## snp5.19:28.1–snp5.19:28.4 (snp)
+snp5.19:28.1 | P: Magadhe janapade ramaṇīye, | S: (none) | T: (none)
+snp5.19:28.2 | P: Desavare katapuññanivese; | S: (none) | T: (none)
+snp5.19:28.3 | P: Pāsāṇakacetiyavare suvibhatte, | S: (none) | T: (none)
+snp5.19:28.4 | P: Vasi bhagavā gaṇaseṭṭho. | S: (none) | T: (none)
+
+## snp5.19:29.1–snp5.19:29.5 (snp)
+snp5.19:29.1 | P: Ubhayavāsamāgatiyamhi, | S: (none) | T: (none)
+snp5.19:29.2 | P: Dvādasayojaniyā parisāya; | S: (none) | T: (none)
+snp5.19:29.3 | P: Soḷasabrāhmaṇānaṁ kira puṭṭho, | S: (none) | T: (none)
+snp5.19:29.4 | P: Pucchāya soḷasapañhakammiyā; | S: (none) | T: (none)
+snp5.19:29.5 | P: Nippakāsayi dhammamadāsi. | S: (none) | T: (none)
+
+## snp5.19:30.1–snp5.19:30.6 (snp)
+snp5.19:30.1 | P: Atthapakāsakabyañjanapuṇṇaṁ, | S: (none) | T: (none)
+snp5.19:30.2 | P: Dhammamadesesi parakhemajaniyaṁ; | S: (none) | T: (none)
+snp5.19:30.3 | P: Lokahitāya jino dvipadaggo, | S: (none) | T: (none)
+snp5.19:30.4 | P: Suttavaraṁ bahudhammavicitraṁ; | S: (none) | T: (none)
+snp5.19:30.5 | P: Sabbakilesapamocanahetuṁ, | S: (none) | T: (none)
+snp5.19:30.6 | P: Desayi suttavaraṁ dvipadaggo. | S: (none) | T: (none)
+
+## snp5.19:31.1–snp5.19:31.4 (snp)
+snp5.19:31.1 | P: Byañjanamatthapadaṁ samayuttaṁ, | S: (none) | T: (none)
+snp5.19:31.2 | P: Akkharasaññitaopamagāḷhaṁ; | S: (none) | T: (none)
+snp5.19:31.3 | P: Lokavicāraṇañāṇapabhaggaṁ, | S: (none) | T: (none)
+snp5.19:31.4 | P: Desayi suttavaraṁ dvipadaggo. | S: (none) | T: (none)
+
+## snp5.19:32.1–snp5.19:32.5 (snp)
+snp5.19:32.1 | P: Rāgamale amalaṁ vimalaggaṁ, | S: (none) | T: (none)
+snp5.19:32.2 | P: Dosamale amalaṁ vimalaggaṁ; | S: (none) | T: (none)
+snp5.19:32.3 | P: Mohamale amalaṁ vimalaggaṁ, | S: (none) | T: (none)
+snp5.19:32.4 | P: Lokavicāraṇañāṇapabhaggaṁ; | S: (none) | T: (none)
+snp5.19:32.5 | P: Desayi suttavaraṁ dvipadaggo. | S: (none) | T: (none)
+
+## snp5.19:33.1–snp5.19:33.4 (snp)
+snp5.19:33.1 | P: Klesamale amalaṁ vimalaggaṁ, | S: (none) | T: (none)
+snp5.19:33.2 | P: Duccaritamale amalaṁ vimalaggaṁ; | S: (none) | T: (none)
+snp5.19:33.3 | P: Lokavicāraṇañāṇapabhaggaṁ, | S: (none) | T: (none)
+snp5.19:33.4 | P: Desayi suttavaraṁ dvipadaggo. | S: (none) | T: (none)
+
+## snp5.19:34.1–snp5.19:34.4 (snp)
+snp5.19:34.1 | P: Āsavabandhanayogākilesaṁ, | S: (none) | T: (none)
+snp5.19:34.2 | P: Nīvaraṇāni ca tīṇi malāni; | S: (none) | T: (none)
+snp5.19:34.3 | P: Tassa kilesapamocanahetuṁ, | S: (none) | T: (none)
+snp5.19:34.4 | P: Desayi suttavaraṁ dvipadaggo. | S: (none) | T: (none)
+
+## snp5.19:35.1–snp5.19:35.4 (snp)
+snp5.19:35.1 | P: Nimmalasabbakilesapanūdaṁ, | S: (none) | T: (none)
+snp5.19:35.2 | P: Rāgavirāgamanejamasokaṁ; | S: (none) | T: (none)
+snp5.19:35.3 | P: Santapaṇītasududdasadhammaṁ, | S: (none) | T: (none)
+snp5.19:35.4 | P: Desayi suttavaraṁ dvipadaggo. | S: (none) | T: (none)
+
+## snp5.19:36.1–snp5.19:36.4 (snp)
+snp5.19:36.1 | P: Rāgañca dosakamabhañjitasantaṁ, | S: (none) | T: (none)
+snp5.19:36.2 | P: Yonicatuggatipañcaviññāṇaṁ; | S: (none) | T: (none)
+snp5.19:36.3 | P: Taṇhāratacchadanatāṇalatāpamokkhaṁ, | S: (none) | T: (none)
+snp5.19:36.4 | P: Desayi suttavaraṁ dvipadaggo. | S: (none) | T: (none)
+
+## snp5.19:37.1–snp5.19:37.4 (snp)
+snp5.19:37.1 | P: Gambhīraduddasasaṇhanipuṇaṁ, | S: (none) | T: (none)
+snp5.19:37.2 | P: Paṇḍitavedaniyaṁ nipuṇatthaṁ; | S: (none) | T: (none)
+snp5.19:37.3 | P: Lokavicāraṇañāṇapabhaggaṁ, | S: (none) | T: (none)
+snp5.19:37.4 | P: Desayi suttavaraṁ dvipadaggo. | S: (none) | T: (none)
+
+## snp5.19:38.1–snp5.19:38.4 (snp)
+snp5.19:38.1 | P: Navaṅgakusumamālagīveyyaṁ, | S: (none) | T: (none)
+snp5.19:38.2 | P: Indriyajhānavimokkhavibhattaṁ; | S: (none) | T: (none)
+snp5.19:38.3 | P: Aṭṭhaṅgamaggadharaṁ varayānaṁ, | S: (none) | T: (none)
+snp5.19:38.4 | P: Desayi suttavaraṁ dvipadaggo. | S: (none) | T: (none)
+
+## snp5.19:39.1–snp5.19:39.4 (snp)
+snp5.19:39.1 | P: Somupamaṁ vimalaṁ parisuddhaṁ, | S: (none) | T: (none)
+snp5.19:39.2 | P: Aṇṇavamūpamaratanasucittaṁ; | S: (none) | T: (none)
+snp5.19:39.3 | P: Pupphasamaṁ ravimūpamatejaṁ, | S: (none) | T: (none)
+snp5.19:39.4 | P: Desayi suttavaraṁ dvipadaggo. | S: (none) | T: (none)
+
+## snp5.19:40.1–snp5.19:40.4 (snp)
+snp5.19:40.1 | P: Khemasivaṁ sukhasītalasantaṁ, | S: (none) | T: (none)
+snp5.19:40.2 | P: Maccutatāṇaparaṁ paramatthaṁ; | S: (none) | T: (none)
+snp5.19:40.3 | P: Tassa sunibbutadassanahetuṁ, | S: (none) | T: (none)
+snp5.19:40.4 | P: Desayi suttavaraṁ dvipadaggoti. | S: (none) | T: (none)
+CONTEXT snp5.19:40.5 | P: Suttanipātapāḷi samattā. | S: The Anthology of Discourses is completed. | T: (none)
+
+## thag1.1:1.1–thag1.1:1.4 (thag)
+CONTEXT thag1.1:1.0.1 | P: Nidānagāthā | S: Background | T: (none)
+CONTEXT thag1.1:1.0.2 | P: Namo tassa Bhagavato Arahato Sammāsambuddhassa. | S: Homage to him, the blessed one, the perfected one, the fully awakened Buddha! | T: (none)
+thag1.1:1.1 | P: Sīhānaṁva nadantānaṁ, | S: Like the lions of mighty fang | T: (none)
+thag1.1:1.2 | P: dāṭhīnaṁ girigabbhare; | S: who roar in mountain caves— | T: (none)
+thag1.1:1.3 | P: Suṇātha bhāvitattānaṁ, | S: hear now from those who’ve practiced well | T: (none)
+thag1.1:1.4 | P: gāthā atthūpanāyikā. | S: their own verses about themselves. | T: (none)
+
+## thag1.1:2.1–thag1.1:2.4 (thag)
+thag1.1:2.1 | P: Yathānāmā yathāgottā, | S: What their name, and what their clan, | T: (none)
+thag1.1:2.2 | P: yathādhammavihārino; | S: and how they lived by the teaching; | T: (none)
+thag1.1:2.3 | P: Yathādhimuttā sappaññā, | S: how dedicated were those wise ones, | T: (none)
+thag1.1:2.4 | P: vihariṁsu atanditā. | S: as they meditated tirelessly. | T: (none)
+
+## thag1.1:3.1–thag1.1:3.4 (thag)
+thag1.1:3.1 | P: Tattha tattha vipassitvā, | S: Clearly discerning in every case, | T: (none)
+thag1.1:3.2 | P: phusitvā accutaṁ padaṁ; | S: they reached the state that does not pass. | T: (none)
+thag1.1:3.3 | P: Katantaṁ paccavekkhantā, | S: Reviewing their completed task, | T: (none)
+thag1.1:3.4 | P: imamatthamabhāsisuṁ. | S: they spoke about it in these words. | T: (none)
+CONTEXT thag1.1:4.0 | P: Subhūtittheragāthā | S: Subhūti | T: (none)
+
+## thag1.1:4.1–thag1.1:4.4 (thag) GATHERED; unequal counts require a reader
+CONTEXT thag1.1:4.0 | P: Subhūtittheragāthā | S: Subhūti | T: (none)
+thag1.1:4.1 | P: “Channā me kuṭikā sukhā nivātā, | S: My hut is roofed and pleasant, sheltered from the wind: | T: My hut is roofed, comfortable, ⏎ free of drafts;
+thag1.1:4.2 | P: Vassa deva yathāsukhaṁ; | S: so rain, heavens, as you please! | T: (none)
+thag1.1:4.3 | P: Cittaṁ me susamāhitaṁ vimuttaṁ, | S: My mind is serene and freed, | T: my mind, well-centered, ⏎ released.
+thag1.1:4.4 | P: Ātāpī viharāmi vassa devā”ti. | S: I practice wholeheartedly: so rain, heavens! | T: I remain ardent. ⏎ So, rain-deva. ⏎ Go ahead & rain.
+CONTEXT thag1.1:4.5 | P: Itthaṁ sudaṁ āyasmā subhūtitthero gāthaṁ abhāsitthāti. | S: That is how this verse was recited by the senior venerable Subhūti. | T: (none)
+
+## thag1.2:1.1–thag1.2:1.4 (thag)
+CONTEXT thag1.2:0.3 | P: Paṭhamavagga | S: Chapter One | T: (none)
+CONTEXT thag1.2:0.4 | P: Mahākoṭṭhikattheragāthā | S: Mahākoṭṭhita | T: Thag 1:2 Mahā Koṭṭhita
+thag1.2:1.1 | P: “Upasanto uparato, | S: Calm and still, | T: Calmed, restrained,
+thag1.2:1.2 | P: mantabhāṇī anuddhato; | S: thoughtful in counsel, not restless— | T: giving counsel unruffled,
+thag1.2:1.3 | P: Dhunāti pāpake dhamme, | S: he shakes off bad qualities | T: he shakes off evil qualities—
+thag1.2:1.4 | P: dumapattaṁva māluto”ti. | S: as the gale shakes leaves off a tree. | T: as the breeze, ⏎ a leaf from a tree.
+CONTEXT thag1.2:1.5 | P: Itthaṁ sudaṁ āyasmā mahākoṭṭhiko thero gāthaṁ abhāsitthāti. | S: That is how this verse was recited by the senior venerable Mahākoṭṭhita. | T: (none)
+
+## thag1.3:1.1–thag1.3:1.4 (thag)
+CONTEXT thag1.3:0.3 | P: Paṭhamavagga | S: Chapter One | T: (none)
+CONTEXT thag1.3:0.4 | P: Kaṅkhārevatattheragāthā | S: Revata the Doubter | T: Thag 1:3 Kaṅkhā (Doubting) Revata
+thag1.3:1.1 | P: “Paññaṁ imaṁ passa tathāgatānaṁ, | S: See this wisdom of the Realized Ones! | T: See this: ⏎ the discernment ⏎ of the Tathāgatas,
+thag1.3:1.2 | P: Aggi yathā pajjalito nisīthe; | S: Like a fire blazing in the night, | T: like a fire ablaze in the night,
+thag1.3:1.3 | P: Ālokadā cakkhudadā bhavanti, | S: giving light, giving vision, | T: giving light, giving eyes,
+thag1.3:1.4 | P: Ye āgatānaṁ vinayanti kaṅkhan”ti. | S: they dispel the doubt of those who’ve come. | T: to those who come, ⏎ subduing their doubt.
+CONTEXT thag1.3:1.5 | P: Itthaṁ sudaṁ āyasmā kaṅkhārevato thero gāthaṁ abhāsitthāti. | S: That is how this verse was recited by the senior venerable Revata the Doubter. | T: (none)
+
+## thag1.5:1.1–thag1.5:1.4 (thag)
+CONTEXT thag1.5:0.3 | P: Paṭhamavagga | S: Chapter One | T: (none)
+CONTEXT thag1.5:0.4 | P: Dabbattheragāthā | S: Dabba | T: Thag 1:6 Dabba (“Capable”)
+thag1.5:1.1 | P: “Yo duddamiyo damena danto, | S: Once hard to tame, now tamed himself; | T: Whoever, ⏎ hard to tame, ⏎ has been tamed by taming,
+thag1.5:1.2 | P: Dabbo santusito vitiṇṇakaṅkho; | S: proficient, content, with doubt overcome; | T: —capable, contented, ⏎ crossed over doubt,
+thag1.5:1.3 | P: Vijitāvī apetabheravo hi, | S: victorious since his fears have vanished: | T: victorious, as his fears ⏎ are dispersed:
+thag1.5:1.4 | P: Dabbo so parinibbuto ṭhitatto”ti. | S: Dabba is steadfast, and has become fully quenched. | T: He is capable, ⏎ unbound, ⏎ steadfast in mind.
+CONTEXT thag1.5:1.5 | P: Itthaṁ sudaṁ āyasmā dabbo thero gāthaṁ abhāsitthāti. | S: That is how this verse was recited by the senior venerable Dabba. | T: (none)
+
+## thag1.7:1.1–thag1.7:1.4 (thag)
+CONTEXT thag1.7:0.3 | P: Paṭhamavagga | S: Chapter One | T: (none)
+CONTEXT thag1.7:0.4 | P: Bhalliyattheragāthā | S: Bhalliya | T: Thag 1:7 Bhalliya
+thag1.7:1.1 | P: “Yopānudī maccurājassa senaṁ, | S: He has cast aside the army of the King of Death, | T: Who scatters the troops ⏎ of the King of Death—
+thag1.7:1.2 | P: Naḷasetuṁva sudubbalaṁ mahogho; | S: as a fragile bridge of reeds by a great flood. | T: as a great flood, ⏎ a very weak bridge made of reeds—
+thag1.7:1.3 | P: Vijitāvī apetabheravo hi, | S: Victorious since his fears have vanished: | T: is victorious, ⏎ for his fears are dispersed.
+thag1.7:1.4 | P: Danto so parinibbuto ṭhitatto”ti. | S: tame and steadfast, he has become quenched. | T: He’s tamed, ⏎ unbound, ⏎ steadfast in mind.
+CONTEXT thag1.7:1.5 | P: Itthaṁ sudaṁ āyasmā bhalliyo thero gāthaṁ abhāsitthāti. | S: That is how this verse was recited by the senior venerable Bhalliya. | T: (none)
+
+## thag1.10:1.1–thag1.10:1.4 (thag)
+CONTEXT thag1.10:0.3 | P: Paṭhamavagga | S: Chapter One | T: (none)
+CONTEXT thag1.10:0.4 | P: Puṇṇamāsattheragāthā | S: Puṇṇamāsa (1st) | T: Thag 1:10 Puṇṇamāsa
+thag1.10:1.1 | P: “Vihari apekkhaṁ idha vā huraṁ vā, | S: A knowledge master, peaceful and self-controlled, | T: Whoever, ⏎ a master of knowing, ⏎ contented, ⏎ restrained in mind,
+thag1.10:1.2 | P: Yo vedagū samito yatatto; | S: is rid of concern for this world and the world beyond. | T: destroys longing for here & beyond,
+thag1.10:1.3 | P: Sabbesu dhammesu anūpalitto, | S: Unsullied in the midst of all things, | T: unsmeared with regard to all dhammas,
+thag1.10:1.4 | P: Lokassa jaññā udayabbayañcā”ti. | S: they’d know the arising and passing of the world. | T: would know the arising-&-disbanding ⏎ of the world.
+CONTEXT thag1.10:1.5 | P: Itthaṁ sudaṁ āyasmā puṇṇamāso thero gāthaṁ abhāsitthāti. | S: That is how this verse was recited by the senior venerable Puṇṇamāsa. | T: (none)
+CONTEXT thag1.10:1.6 | P: vaggo paṭhamo. | S: (none) | T: (none)
+
+## thag1.10:2.1–thag1.10:2.6 (thag)
+CONTEXT thag1.10:1.6 | P: vaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT thag1.10:2.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+thag1.10:2.1 | P: Subhūti koṭṭhiko thero, | S: (none) | T: (none)
+thag1.10:2.2 | P: kaṅkhārevatasammato; | S: (none) | T: (none)
+thag1.10:2.3 | P: Mantāṇiputto dabbo ca, | S: (none) | T: (none)
+thag1.10:2.4 | P: sītavaniyo ca bhalliyo; | S: (none) | T: (none)
+thag1.10:2.5 | P: Vīro pilindavaccho ca, | S: (none) | T: (none)
+thag1.10:2.6 | P: puṇṇamāso tamonudoti. | S: (none) | T: (none)
+
+## thag1.13:1.1–thag1.13:1.4 (thag)
+CONTEXT thag1.13:0.3 | P: Dutiyavagga | S: Chapter Two | T: (none)
+CONTEXT thag1.13:0.4 | P: Vanavacchattheragāthā | S: Vanavaccha (1st) | T: Thag 1:13 Vanavaccha
+thag1.13:1.1 | P: “Nīlabbhavaṇṇā rucirā, | S: Glistening, they look like blue stormclouds, | T: The color of blue-dark clouds, ⏎ glistening,
+thag1.13:1.2 | P: sītavārī sucindharā; | S: with waters cool and streams so clear, | T: cooled with the waters ⏎ of clear-flowing streams
+thag1.13:1.3 | P: Indagopakasañchannā, | S: and covered all in ladybugs: | T: covered with ladybugs:
+thag1.13:1.4 | P: te selā ramayanti man”ti. | S: these rocky crags delight me! | T: Those rocky crags ⏎ refresh me.
+CONTEXT thag1.13:1.5 | P: … Vanavaccho thero …. | S: (none) | T: (none)
+
+## thag1.14:1.1–thag1.14:1.6 (thag)
+CONTEXT thag1.14:0.3 | P: Dutiyavagga | S: Chapter Two | T: (none)
+CONTEXT thag1.14:0.4 | P: Sivakasāmaṇeragāthā | S: The Novice Sivaka | T: Thag 1:14 Vanavaccha’s pupil
+thag1.14:1.1 | P: “Upajjhāyo maṁ avaca, | S: My mentor said to me: | T: My preceptor said to me:
+thag1.14:1.2 | P: ito gacchāma sīvaka; | S: “Let’s leave here, Sīvaka.” | T: Let’s go from here, Sīvaka.
+thag1.14:1.3 | P: Gāme me vasati kāyo, | S: My body lives in the village, | T: My body stays in the village;
+thag1.14:1.4 | P: araññaṁ me gato mano; | S: but my mind has gone to the wilderness. | T: my mind has gone to the wilds.
+thag1.14:1.5 | P: Semānakopi gacchāmi, | S: I go there even when lying down— | T: Even though lying down, ⏎ I go.
+thag1.14:1.6 | P: natthi saṅgo vijānatan”ti. | S: you can’t chain those who know. | T: There’s no tying down ⏎ one who knows.
+CONTEXT thag1.14:1.7 | P: … Vanavacchassa therassa (siviko) sāmaṇero …. | S: (none) | T: (none)
+
+## thag1.16:1.1–thag1.16:1.6 (thag) GATHERED; unequal counts require a reader
+CONTEXT thag1.16:0.3 | P: Dutiyavagga | S: Chapter Two | T: (none)
+CONTEXT thag1.16:0.4 | P: Belaṭṭhasīsattheragāthā | S: Belaṭṭhasīsa | T: Thag 1:16 Belaṭṭhasīsa
+thag1.16:1.1 | P: “Yathāpi bhaddo ājañño, | S: Just as a fine thoroughbred | T: Just as a fine thoroughbred steed,
+thag1.16:1.2 | P: naṅgalāvattanī sikhī; | S: proceeds with ease, | T: with swishing tail & mane ⏎ runs with next-to-no effort,
+thag1.16:1.3 | P: Gacchati appakasirena, | S: tail and mane flying in the wind; | T: (none)
+thag1.16:1.4 | P: evaṁ rattindivā mama; | S: so my days and nights | T: so my days & nights
+thag1.16:1.5 | P: Gacchanti appakasirena, | S: proceed with ease, | T: run with next-to-no effort
+thag1.16:1.6 | P: sukhe laddhe nirāmise”ti. | S: full of joy not of the flesh. | T: now that I’ve gained a pleasure ⏎ not of the flesh.
+CONTEXT thag1.16:1.7 | P: … Belaṭṭhasīso thero …. | S: (none) | T: (none)
+
+## thag1.18:1.1–thag1.18:1.6 (thag)
+CONTEXT thag1.18:0.3 | P: Dutiyavagga | S: Chapter Two | T: (none)
+CONTEXT thag1.18:0.4 | P: Siṅgālapituttheragāthā | S: Sigāla’s Father | T: Thag 1:18 Siṅgālapitar
+thag1.18:1.1 | P: “Ahu buddhassa dāyādo, | S: There was an heir of the Buddha, | T: There was an heir to the One Awakened,
+thag1.18:1.2 | P: bhikkhu bhesakaḷāvane; | S: a monk in Bhesakaḷā forest, | T: a monk in the Bhesakaḷā forest,
+thag1.18:1.3 | P: Kevalaṁ aṭṭhisaññāya, | S: who suffused the entire earth | T: who suffused this whole earth
+thag1.18:1.4 | P: apharī pathaviṁ imaṁ; | S: with the perception of bones. | T: with the perception of ⏎ “bones.”
+thag1.18:1.5 | P: Maññehaṁ kāmarāgaṁ so, | S: I think he will quickly | T: Quickly, I’d say,
+thag1.18:1.6 | P: khippameva pahissatī”ti. | S: get rid of sensual desire. | T: he abandoned ⏎ sensual passion.
+CONTEXT thag1.18:1.7 | P: … Siṅgālapitā thero …. | S: (none) | T: (none)
+
+## thag1.21:1.1–thag1.21:1.4 (thag)
+CONTEXT thag1.21:0.3 | P: Tatiyavagga | S: Chapter Three | T: (none)
+CONTEXT thag1.21:0.4 | P: Nigrodhattheragāthā | S: Nigrodha | T: Thag 1:21 Nigrodha
+thag1.21:1.1 | P: “Nāhaṁ bhayassa bhāyāmi, | S: I’m not afraid of fear, | T: I’m not afraid ⏎ of danger, ⏎ of fear.
+thag1.21:1.2 | P: Satthā no amatassa kovido; | S: for our teacher is expert in freedom from death. | T: Our Teacher’s adept ⏎ in the deathless.
+thag1.21:1.3 | P: Yattha bhayaṁ nāvatiṭṭhati, | S: Mendicants advance by the path | T: Where danger, where fear ⏎ do not remain: ⏎ That’s the path
+thag1.21:1.4 | P: Tena maggena vajanti bhikkhavo”ti. | S: where no fear remains. | T: by which the monks go.
+CONTEXT thag1.21:1.5 | P: … Nigrodho thero …. | S: (none) | T: (none)
+
+## thag1.22:1.1–thag1.22:1.4 (thag)
+CONTEXT thag1.22:0.3 | P: Tatiyavagga | S: Chapter Three | T: (none)
+CONTEXT thag1.22:0.4 | P: Cittakattheragāthā | S: Cittaka | T: Thag 1:22 Cittaka
+thag1.22:1.1 | P: “Nīlā sugīvā sikhino, | S: Crested peacocks with beautiful blue necks | T: Peacocks, ⏎ crested, blue, with gorgeous necks,
+thag1.22:1.2 | P: Morā kārambhiyaṁ abhinadanti; | S: cry out in Karaṁvī. | T: cry out ⏎ in the Kāraṁvī woods,
+thag1.22:1.3 | P: Te sītavātakīḷitā, | S: Stirred by a cool breeze, | T: thrilled by the cold wind.
+thag1.22:1.4 | P: Suttaṁ jhāyaṁ nibodhentī”ti. | S: they wake the sleeper to practice absorption. | T: They awaken the sleeper ⏎ to meditate.
+CONTEXT thag1.22:1.5 | P: … Cittako thero …. | S: (none) | T: (none)
+
+## thag1.23:1.1–thag1.23:1.6 (thag) GATHERED; unequal counts require a reader
+CONTEXT thag1.23:0.3 | P: Tatiyavagga | S: Chapter Three | T: (none)
+CONTEXT thag1.23:0.4 | P: Gosālattheragāthā | S: Gosāla | T: Thag 1:23 Gosāla
+thag1.23:1.1 | P: “Ahaṁ kho veḷugumbasmiṁ, | S: I’ll eat honey and milk-rice | T: I—having eaten honey-rice ⏎ in a bamboo patch
+thag1.23:1.2 | P: bhutvāna madhupāyasaṁ; | S: in Veḷugumba. | T: (none)
+thag1.23:1.3 | P: Padakkhiṇaṁ sammasanto, | S: And then, dexterously probing | T: and rightly grasping
+thag1.23:1.4 | P: khandhānaṁ udayabbayaṁ; | S: the rise and fall of the aggregates, | T: the aggregates’ ⏎ arising-disbanding—
+thag1.23:1.5 | P: Sānuṁ paṭigamissāmi, | S: I’ll return to my forest hill | T: will return to the hillside,
+thag1.23:1.6 | P: vivekamanubrūhayan”ti. | S: and foster seclusion. | T: intent ⏎ on seclusion.
+CONTEXT thag1.23:1.7 | P: … Gosālo thero …. | S: (none) | T: (none)
+
+## thag1.25:1.1–thag1.25:1.4 (thag) GATHERED; possible speaker requires a reader
+CONTEXT thag1.25:0.3 | P: Tatiyavagga | S: Chapter Three | T: (none)
+CONTEXT thag1.25:0.4 | P: Nandiyattheragāthā | S: Nandiya | T: Thag 1:25 Nandiya (to Māra)
+thag1.25:1.1 | P: “Obhāsajātaṁ phalagaṁ, | S: Dark One, after attacking such a monk— | T: Like splendor, his mind, ⏎ continually fruitful:
+thag1.25:1.2 | P: cittaṁ yassa abhiṇhaso; | S: one who has arrived at the fruit, | T: (none)
+thag1.25:1.3 | P: Tādisaṁ bhikkhumāsajja, | S: and whose mind is always full of light— | T: Attack a monk like that,
+thag1.25:1.4 | P: kaṇha dukkhaṁ nigacchasī”ti. | S: you’ll fall into suffering. | T: you Dark One, ⏎ and you’ll fall ⏎ into pain.
+CONTEXT thag1.25:1.5 | P: … Nandiyo thero …. | S: (none) | T: (none)
+
+## thag1.26:1.1–thag1.26:1.4 (thag)
+CONTEXT thag1.26:0.3 | P: Tatiyavagga | S: Chapter Three | T: (none)
+CONTEXT thag1.26:0.4 | P: Abhayattheragāthā | S: Abhaya | T: Thag 1:26 Abhaya
+thag1.26:1.1 | P: “Sutvā subhāsitaṁ vācaṁ, | S: Having heard the fine words | T: Hearing the well-spoken words
+thag1.26:1.2 | P: buddhassādiccabandhuno; | S: of the Buddha, Kinsman of the Sun, | T: of the Awakened One, ⏎ Kinsman of the Sun,
+thag1.26:1.3 | P: Paccabyadhiṁ hi nipuṇaṁ, | S: I penetrated the subtle truth, | T: I pierced what is subtle—
+thag1.26:1.4 | P: vālaggaṁ usunā yathā”ti. | S: like a hair-tip with an arrow. | T: as if, with an arrow, ⏎ the tip of a horse-tail hair.
+CONTEXT thag1.26:1.5 | P: … Abhayo thero …. | S: (none) | T: (none)
+
+## thag1.29:1.1–thag1.29:1.4 (thag) GATHERED; unequal counts require a reader
+CONTEXT thag1.29:0.3 | P: Tatiyavagga | S: Chapter Three | T: (none)
+CONTEXT thag1.29:0.4 | P: Hāritattheragāthā | S: Hārita (1st) | T: Thag 1:29 Hārita
+thag1.29:1.1 | P: “Samunnamayamattānaṁ, | S: Straighten yourself, | T: Hārita, ⏎ raise yourself up- ⏎ right ⏎ and, straightening your mind
+thag1.29:1.2 | P: usukārova tejanaṁ; | S: like a fletcher an arrow. | T: —like a fletcher, an arrow—
+thag1.29:1.3 | P: Cittaṁ ujuṁ karitvāna, | S: When your mind is upright, Hārita, | T: (none)
+thag1.29:1.4 | P: avijjaṁ bhinda hāritā”ti. | S: break ignorance to bits! | T: shatter ignorance ⏎ to bits.
+CONTEXT thag1.29:1.5 | P: … Hārito thero …. | S: (none) | T: (none)
+
+## thag1.31:1.1–thag1.31:1.4 (thag) GATHERED; unequal counts require a reader
+CONTEXT thag1.31:0.3 | P: Catutthavagga | S: Chapter Four | T: (none)
+CONTEXT thag1.31:0.4 | P: Gahvaratīriyattheragāthā | S: Gahvaratīriya | T: Thag 1:31 Gahuratīriya
+thag1.31:1.1 | P: “Phuṭṭho ḍaṁsehi makasehi, | S: Pestered by flies and mosquitoes | T: Touched by gnats & mosquitoes,
+thag1.31:1.2 | P: araññasmiṁ brahāvane; | S: in the wilds, the formidable forest, | T: in the wilds, the great forest,
+thag1.31:1.3 | P: Nāgo saṅgāmasīseva, | S: one should mindfully endure, | T: like a nāga elephant ⏎ at the head of a battle, ⏎ mindful, ⏎ he acquiesces to that.
+thag1.31:1.4 | P: sato tatrādhivāsaye”ti. | S: like an elephant at the head of the battle. | T: (none)
+CONTEXT thag1.31:1.5 | P: … Gahvaratīriyo thero …. | S: (none) | T: (none)
+
+## thag1.32:1.1–thag1.32:1.4 (thag)
+CONTEXT thag1.32:0.3 | P: Catutthavagga | S: Chapter Four | T: (none)
+CONTEXT thag1.32:0.4 | P: Suppiyattheragāthā | S: Suppiya | T: Thag 1:32 Suppiya
+thag1.32:1.1 | P: “Ajaraṁ jīramānena, | S: I’ll swap old age for the unaging, | T: I’ll make a trade: ⏎ aging for the ageless,
+thag1.32:1.2 | P: tappamānena nibbutiṁ; | S: burning for quenching— | T: burning for the unbound—
+thag1.32:1.3 | P: Nimiyaṁ paramaṁ santiṁ, | S: the ultimate peace, | T: the highest peace,
+thag1.32:1.4 | P: yogakkhemaṁ anuttaran”ti. | S: the supreme sanctuary from the yoke. | T: the unexcelled rest ⏎ from the yoke.
+CONTEXT thag1.32:1.5 | P: … Suppiyo thero …. | S: (none) | T: (none)
+
+## thag1.33:1.1–thag1.33:1.4 (thag) GATHERED; equal counts: one line per row
+CONTEXT thag1.33:0.3 | P: Catutthavagga | S: Chapter Four | T: (none)
+CONTEXT thag1.33:0.4 | P: Sopākattheragāthā | S: Sopāka (1st) | T: Thag 1:33 Sopāka
+thag1.33:1.1 | P: “Yathāpi ekaputtasmiṁ, | S: Just as a mother would be good | T: Just as one would be good
+thag1.33:1.2 | P: piyasmiṁ kusalī siyā; | S: to her beloved only child; | T: to one’s dear only child,
+thag1.33:1.3 | P: Evaṁ sabbesu pāṇesu, | S: so, to creatures all and everywhere, | T: one should be good to all creatures ⏎ everywhere.
+thag1.33:1.4 | P: sabbattha kusalo siyā”ti. | S: let one be good. | T: (none)
+CONTEXT thag1.33:1.5 | P: … Sopāko thero …. | S: (none) | T: (none)
+AUTO thag1.33:1.1 starts: Just as one would be good
+AUTO thag1.33:1.2 starts: to one’s dear only child,
+AUTO thag1.33:1.3 starts: one should be good to all creatures
+AUTO thag1.33:1.4 starts: everywhere.
+
+## thag1.39:1.1–thag1.39:1.4 (thag)
+CONTEXT thag1.39:0.3 | P: Catutthavagga | S: Chapter Four | T: (none)
+CONTEXT thag1.39:0.4 | P: Tissattheragāthā | S: Tissa (1st) | T: Thag 1:39 Tissa
+thag1.39:1.1 | P: “Sattiyā viya omaṭṭho, | S: Like they’re struck by a sword, | T: As if struck by a sword,
+thag1.39:1.2 | P: ḍayhamānova matthake; | S: like their head was on fire, | T: as if his head were on fire,
+thag1.39:1.3 | P: Kāmarāgappahānāya, | S: a mendicant should wander mindful | T: a monk should live the wandering life ⏎ —mindful—
+thag1.39:1.4 | P: sato bhikkhu paribbaje”ti. | S: to give up sensual desire. | T: for the abandoning of sensual passion.
+CONTEXT thag1.39:1.5 | P: … Tisso thero …. | S: (none) | T: (none)
+
+## thag1.41:1.1–thag1.41:1.4 (thag)
+CONTEXT thag1.41:0.3 | P: Pañcamavagga | S: Chapter Five | T: (none)
+CONTEXT thag1.41:0.4 | P: Sirivaḍḍhattheragāthā | S: Sirivaḍḍha | T: Thag 1:41 Sirivaḍḍha
+thag1.41:1.1 | P: “Vivaramanupatanti vijjutā, | S: Lightning flashes down | T: Lightning lands
+thag1.41:1.2 | P: Vebhārassa ca paṇḍavassa ca; | S: on the cleft of Vebhāra and Paṇḍava. | T: on the cleft ⏎ between Vebhāra & Paṇḍava,
+thag1.41:1.3 | P: Nagavivaragato ca jhāyati, | S: But in the mountain cleft he is absorbed in jhāna— | T: but, ⏎ having gone to the cleft in the mountains, ⏎ he’s absorbed in jhāna—
+thag1.41:1.4 | P: Putto appaṭimassa tādino”ti. | S: the son of the Buddha, inimitable and unaffected. | T: the son ⏎ of the one without compare, ⏎ the one who is Such.
+CONTEXT thag1.41:1.5 | P: … Sirivaḍḍho thero …. | S: (none) | T: (none)
+
+## thag1.43:1.1–thag1.43:1.8 (thag) GATHERED; possible speaker requires a reader
+CONTEXT thag1.43:0.3 | P: Pañcamavagga | S: Chapter Five | T: (none)
+CONTEXT thag1.43:0.4 | P: Sumaṅgalattheragāthā | S: Sumaṅgala | T: Thag 1:43 Sumaṅgala
+thag1.43:1.1 | P: “Sumuttiko sumuttiko, | S: Well freed! Well freed! | T: So freed! So freed!
+thag1.43:1.2 | P: Sāhu sumuttikomhi tīhi khujjakehi; | S: I’m very well freed from three crooked things: | T: So thoroughly freed am I ⏎ from three crooked things:
+thag1.43:1.3 | P: Asitāsu mayā naṅgalāsu mayā, | S: my sickles, my ploughs, | T: my sickles, my shovels, my plows.
+thag1.43:1.4 | P: Khuddakuddālāsu mayā. | S: and my little hoes. | T: (none)
+thag1.43:1.5 | P: Yadipi idhameva idhameva, | S: Even if they were here, right here— | T: Even if they were here, ⏎ right here,
+thag1.43:1.6 | P: Atha vāpi alameva alameva; | S: I’d be done with them, done! | T: I’d be done with them, ⏎ done.
+thag1.43:1.7 | P: Jhāya sumaṅgala jhāya sumaṅgala, | S: Practice absorption Sumaṅgala! Practice absorption Sumaṅgala! | T: Do jhāna, Sumaṅgala. ⏎ Do jhāna, Sumaṅgala.
+thag1.43:1.8 | P: Appamatto vihara sumaṅgalā”ti. | S: Stay heedful, Sumaṅgala! | T: Sumaṅgala, stay heedful.
+CONTEXT thag1.43:1.9 | P: … Sumaṅgalo thero …. | S: (none) | T: (none)
+
+## thag1.49:1.1–thag1.49:1.4 (thag)
+CONTEXT thag1.49:0.3 | P: Pañcamavagga | S: Chapter Five | T: (none)
+CONTEXT thag1.49:0.4 | P: Rāmaṇeyyakattheragāthā | S: Rāmaṇeyyaka | T: Thag 1:49 Rāmaṇeyyaka
+thag1.49:1.1 | P: “Cihacihābhinadite, | S: Even with all the sounds, | T: Even with all the whistles & whistling,
+thag1.49:1.2 | P: sippikābhirutehi ca; | S: the chirping and cheeping of the birds, | T: the calls of the birds,
+thag1.49:1.3 | P: Na me taṁ phandati cittaṁ, | S: my mind doesn’t flounder, | T: this, my mind, doesn’t waver,
+thag1.49:1.4 | P: ekattanirataṁ hi me”ti. | S: for I’m devoted to oneness. | T: for my delight is in ⏎ oneness.
+CONTEXT thag1.49:1.5 | P: … Rāmaṇeyyako thero …. | S: (none) | T: (none)
+
+## thag1.50:1.1–thag1.50:1.4 (thag)
+CONTEXT thag1.50:0.3 | P: Pañcamavagga | S: Chapter Five | T: (none)
+CONTEXT thag1.50:0.4 | P: Vimalattheragāthā | S: Vimala (1st) | T: Thag 1:50 Vimala
+thag1.50:1.1 | P: “Dharaṇī ca siñcati vāti, | S: The celestial lake Dharaṇī pours, the heavenly gale blows, | T: The earth’s sprinkled ⏎ with rain, wind ⏎ is blowing,
+thag1.50:1.2 | P: Māluto vijjutā carati nabhe; | S: and lightning flashes across the sky! | T: lightning ⏎ wanders the sky,
+thag1.50:1.3 | P: Upasamanti vitakkā, | S: But my thoughts are stilled, | T: but my thoughts are stilled,
+thag1.50:1.4 | P: Cittaṁ susamāhitaṁ mamā”ti. | S: my mind is serene. | T: well-centered ⏎ my mind.
+CONTEXT thag1.50:1.5 | P: … Vimalo thero … | S: (none) | T: (none)
+CONTEXT thag1.50:1.6 | P: vaggo pañcamo. | S: (none) | T: (none)
+
+## thag1.50:2.1–thag1.50:2.6 (thag)
+CONTEXT thag1.50:1.6 | P: vaggo pañcamo. | S: (none) | T: (none)
+CONTEXT thag1.50:2.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+thag1.50:2.1 | P: Sirīvaḍḍho revato thero, | S: (none) | T: (none)
+thag1.50:2.2 | P: sumaṅgalo sānusavhayo; | S: (none) | T: (none)
+thag1.50:2.3 | P: Ramaṇīyavihārī ca, | S: (none) | T: (none)
+thag1.50:2.4 | P: samiddhiujjayasañjayā; | S: (none) | T: (none)
+thag1.50:2.5 | P: Rāmaṇeyyo ca so thero, | S: (none) | T: (none)
+thag1.50:2.6 | P: vimalo ca raṇañjahoti. | S: (none) | T: (none)
+
+## thag1.56:1.1–thag1.56:1.4 (thag)
+CONTEXT thag1.56:0.3 | P: Chaṭṭhavagga | S: Chapter Six | T: (none)
+CONTEXT thag1.56:0.4 | P: Kuṭivihārittheragāthā | S: Kuṭivihārin (1st) | T: Thag 1:56 Kuṭivihārin (1)
+thag1.56:1.1 | P: “Ko kuṭikāyaṁ bhikkhu kuṭikāyaṁ, | S: “Who is in this hut?” “A monk is in this hut, | T: Who’s in the hut? ⏎ A monk’s in the hut—
+thag1.56:1.2 | P: Vītarāgo susamāhitacitto; | S: free of lust, his mind serene. | T: free from passion, ⏎ with well-centered mind.
+thag1.56:1.3 | P: Evaṁ jānāhi āvuso, | S: Reverend, you should know this: | T: Know this, my friend:
+thag1.56:1.4 | P: Amoghā te kuṭikā katā”ti. | S: your hut wasn’t built in vain.” | T: The hut you built ⏎ wasn’t wasted.
+CONTEXT thag1.56:1.5 | P: … Kuṭivihāritthero …. | S: (none) | T: (none)
+
+## thag1.57:1.1–thag1.57:1.4 (thag)
+CONTEXT thag1.57:0.3 | P: Chaṭṭhavagga | S: Chapter Six | T: (none)
+CONTEXT thag1.57:0.4 | P: Dutiyakuṭivihārittheragāthā | S: Kuṭivihārin (2nd) | T: Thag 1:57 Kuṭivihārin (2)
+thag1.57:1.1 | P: “Ayamāhu purāṇiyā kuṭi, | S: This was your old hut, | T: This was your old hut,
+thag1.57:1.2 | P: Aññaṁ patthayase navaṁ kuṭiṁ; | S: but you still want a new hut. | T: and you aspire to another, ⏎ new hut.
+thag1.57:1.3 | P: Āsaṁ kuṭiyā virājaya, | S: Let go of hope for a hut, monk! | T: Discard your hope for a hut, monk.
+thag1.57:1.4 | P: Dukkhā bhikkhu puna navā kuṭī”ti. | S: A new hut will only bring more suffering. | T: A new hut will be ⏎ painful all over again.
+CONTEXT thag1.57:1.5 | P: … Dutiyakuṭivihāritthero …. | S: (none) | T: (none)

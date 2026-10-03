@@ -1,0 +1,9 @@
+{
+  "batch": "050",
+  "versesRead": 69,
+  "rowsRead": 279,
+  "automaticFindings": 4,
+  "readerFindings": 44,
+  "unresolved": [],
+  "ruleCandidate": "snp4.13:20.4 contains source alternate renderings separated by ::; retained intact. Untranslated uddāna stanzas and the three-line snp5.1:3 preserve their existing blanks."
+}

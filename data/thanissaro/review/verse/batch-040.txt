@@ -1,0 +1,455 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## snp2.4:2.1–snp2.4:2.4 (snp)
+CONTEXT snp2.4:1.3 | P: Atha kho aññatarā devatā abhikkantāya rattiyā abhikkantavaṇṇā kevalakappaṁ jetavanaṁ obhāsetvā yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ aṭṭhāsi. | S: Then, late at night, a glorious deity, lighting up the entire Jeta’s Grove, went up to the Buddha, bowed, and stood to one side. | T: Then a certain deva, in the far extreme of the night, her extreme radiance lighting up the entirety of Jeta’s Grove, went to the Blessed One. On arrival, having bowed down to him, she stood to one side.
+CONTEXT snp2.4:1.4 | P: Ekamantaṁ ṭhitā kho sā devatā bhagavantaṁ gāthāya ajjhabhāsi: | S: That deity addressed the Buddha in verse: | T: As she was standing there, she addressed him with a verse.
+snp2.4:2.1 | P: “Bahū devā manussā ca, | S: “Many gods and humans | T: “Many devas & human beings
+snp2.4:2.2 | P: maṅgalāni acintayuṁ; | S: have thought about blessings | T: give thought to protection,
+snp2.4:2.3 | P: Ākaṅkhamānā sotthānaṁ, | S: desiring well-being: | T: desiring well-being.
+snp2.4:2.4 | P: brūhi maṅgalamuttamaṁ”. | S: declare the highest blessing.” | T: Tell, then, the highest protection.”
+
+## snp2.4:3.1–snp2.4:3.4 (snp)
+snp2.4:3.1 | P: “Asevanā ca bālānaṁ, | S: “Not to fraternize with fools, | T: The Buddha: ⏎ “Not consorting with fools,
+snp2.4:3.2 | P: paṇḍitānañca sevanā; | S: but to fraternize with the wise, | T: consorting with the wise,
+snp2.4:3.3 | P: Pūjā ca pūjaneyyānaṁ, | S: and honoring those worthy of honor: | T: paying homage to those worthy of homage:
+snp2.4:3.4 | P: etaṁ maṅgalamuttamaṁ. | S: this is the highest blessing. | T: This is the highest protection.
+
+## snp2.4:4.1–snp2.4:4.4 (snp)
+snp2.4:4.1 | P: Patirūpadesavāso ca, | S: Living in a suitable region, | T: Living in a civilized land,
+snp2.4:4.2 | P: pubbe ca katapuññatā; | S: having made merit in the past, | T: having made merit in the past,
+snp2.4:4.3 | P: Attasammāpaṇidhi ca, | S: being rightly resolved in oneself, | T: directing oneself rightly:
+snp2.4:4.4 | P: etaṁ maṅgalamuttamaṁ. | S: this is the highest blessing. | T: This is the highest protection.
+
+## snp2.4:5.1–snp2.4:5.4 (snp)
+snp2.4:5.1 | P: Bāhusaccañca sippañca, | S: Education and a craft, | T: Broad knowledge, skill,
+snp2.4:5.2 | P: vinayo ca susikkhito; | S: discipline and training, | T: well-mastered discipline,
+snp2.4:5.3 | P: Subhāsitā ca yā vācā, | S: and well-spoken speech: | T: well-spoken words:
+snp2.4:5.4 | P: etaṁ maṅgalamuttamaṁ. | S: this is the highest blessing. | T: This is the highest protection.
+
+## snp2.4:6.1–snp2.4:6.4 (snp)
+snp2.4:6.1 | P: Mātāpitu upaṭṭhānaṁ, | S: Caring for mother and father, | T: Support for one’s mother & father,
+snp2.4:6.2 | P: puttadārassa saṅgaho; | S: kindness to children and partners, | T: assistance to one’s wife and children,
+snp2.4:6.3 | P: Anākulā ca kammantā, | S: and unstressful work: | T: consistency in one’s work:
+snp2.4:6.4 | P: etaṁ maṅgalamuttamaṁ. | S: this is the highest blessing. | T: This is the highest protection.
+
+## snp2.4:7.1–snp2.4:7.4 (snp)
+snp2.4:7.1 | P: Dānañca dhammacariyā ca, | S: Giving and righteous conduct, | T: Generosity, living in rectitude,
+snp2.4:7.2 | P: ñātakānañca saṅgaho; | S: kindness to relatives, | T: assistance to one’s relatives,
+snp2.4:7.3 | P: Anavajjāni kammāni, | S: blameless deeds: | T: deeds that are blameless:
+snp2.4:7.4 | P: etaṁ maṅgalamuttamaṁ. | S: this is the highest blessing. | T: This is the highest protection.
+
+## snp2.4:8.1–snp2.4:8.4 (snp)
+snp2.4:8.1 | P: Āratī viratī pāpā, | S: Desisting and abstaining from evil, | T: Avoiding, abstaining from evil;
+snp2.4:8.2 | P: majjapānā ca saṁyamo; | S: avoiding drinking liquor, | T: refraining from intoxicants,
+snp2.4:8.3 | P: Appamādo ca dhammesu, | S: diligence in good qualities: | T: being heedful of mental qualities:
+snp2.4:8.4 | P: etaṁ maṅgalamuttamaṁ. | S: this is the highest blessing. | T: This is the highest protection.
+
+## snp2.4:9.1–snp2.4:9.4 (snp)
+snp2.4:9.1 | P: Gāravo ca nivāto ca, | S: Respect and placidity, | T: Respect, humility,
+snp2.4:9.2 | P: santuṭṭhi ca kataññutā; | S: contentment and gratitude, | T: contentment, gratitude,
+snp2.4:9.3 | P: Kālena dhammassavanaṁ, | S: and timely listening to the teaching: | T: hearing the Dhamma on timely occasions:
+snp2.4:9.4 | P: etaṁ maṅgalamuttamaṁ. | S: this is the highest blessing. | T: This is the highest protection.
+
+## snp2.4:10.1–snp2.4:10.4 (snp)
+snp2.4:10.1 | P: Khantī ca sovacassatā, | S: Patience, being easy to admonish, | T: Patience, being easy to instruct,
+snp2.4:10.2 | P: samaṇānañca dassanaṁ; | S: the sight of ascetics, | T: seeing contemplatives,
+snp2.4:10.3 | P: Kālena dhammasākacchā, | S: and timely discussion of the teaching: | T: discussing the Dhamma on timely occasions:
+snp2.4:10.4 | P: etaṁ maṅgalamuttamaṁ. | S: this is the highest blessing. | T: This is the highest protection.
+
+## snp2.4:11.1–snp2.4:11.4 (snp)
+snp2.4:11.1 | P: Tapo ca brahmacariyañca, | S: Fervor and chastity | T: Austerity, celibacy,
+snp2.4:11.2 | P: Ariyasaccāna dassanaṁ; | S: seeing the noble truths, | T: seeing the noble truths,
+snp2.4:11.3 | P: Nibbānasacchikiriyā ca, | S: and realization of extinguishment: | T: realizing unbinding:
+snp2.4:11.4 | P: Etaṁ maṅgalamuttamaṁ. | S: this is the highest blessing. | T: This is the highest protection.
+
+## snp2.4:12.1–snp2.4:12.4 (snp)
+snp2.4:12.1 | P: Phuṭṭhassa lokadhammehi, | S: Though touched by worldly conditions, | T: A mind that, when touched ⏎ by the ways of the world,
+snp2.4:12.2 | P: Cittaṁ yassa na kampati; | S: their mind does not tremble; | T: is unshaken,
+snp2.4:12.3 | P: Asokaṁ virajaṁ khemaṁ, | S: sorrowless, stainless, secure: | T: sorrowless, dustless, at rest:
+snp2.4:12.4 | P: Etaṁ maṅgalamuttamaṁ. | S: this is the highest blessing. | T: This is the highest protection.
+
+## snp2.4:13.1–snp2.4:13.4 (snp)
+snp2.4:13.1 | P: Etādisāni katvāna, | S: Having completed these things, | T: When acting in this way,
+snp2.4:13.2 | P: Sabbattha maparājitā; | S: undefeated everywhere; | T: everywhere undefeated,
+snp2.4:13.3 | P: Sabbattha sotthiṁ gacchanti, | S: everywhere they go in safety: | T: people go everywhere in well-being:
+snp2.4:13.4 | P: Taṁ tesaṁ maṅgalamuttaman”ti. | S: this is their highest blessing.” | T: This is their highest protection.”
+CONTEXT snp2.4:13.5 | P: Maṅgalasuttaṁ catutthaṁ. | S: (none) | T: (none)
+
+## snp2.5:5.1–snp2.5:5.4 (snp)
+CONTEXT snp2.5:4.2 | P: Api ca tvaṁ, āvuso, puccha yadākaṅkhasī”ti. | S: But anyway, ask what you wish.” | T: But nevertheless, ask me what you wish.”
+CONTEXT snp2.5:4.3 | P: Atha kho sūcilomo yakkho bhagavantaṁ gāthāya ajjhabhāsi: | S: Then Spiky addressed the Buddha in verse: | T: So Suciloma the yakkha addressed the Blessed One in verse:
+snp2.5:5.1 | P: “Rāgo ca doso ca kutonidānā, | S: “Where do greed and hate come from? | T: Passion & aversion ⏎ come from what cause?
+snp2.5:5.2 | P: Aratī ratī lomahaṁso kutojā; | S: From where spring discontent, desire, and terror? | T: Displeasure, delight, ⏎ horripilation ⏎ are born from what?
+snp2.5:5.3 | P: Kuto samuṭṭhāya manovitakkā, | S: Where do the mind’s thoughts originate, | T: Arising from what ⏎ do thoughts fling the mind around,
+snp2.5:5.4 | P: Kumārakā dhaṅkamivossajanti”. | S: like a crow let loose by boys.” | T: as boys, a (captive) crow?
+
+## snp2.5:6.1–snp2.5:6.4 (snp)
+snp2.5:6.1 | P: “Rāgo ca doso ca itonidānā, | S: “Greed and hate come from here; | T: The Buddha: ⏎ Passion & aversion ⏎ come from this as a cause;
+snp2.5:6.2 | P: Aratī ratī lomahaṁso itojā; | S: from here spring discontent, desire, and terror; | T: displeasure, delight, ⏎ horripilation ⏎ are born from this;
+snp2.5:6.3 | P: Ito samuṭṭhāya manovitakkā, | S: here’s where the mind’s thoughts originate, | T: arising from this ⏎ thoughts fling the mind around,
+snp2.5:6.4 | P: Kumārakā dhaṅkamivossajanti. | S: like a crow let loose by boys. | T: as boys, a (captive) crow:
+
+## snp2.5:7.1–snp2.5:7.4 (snp)
+snp2.5:7.1 | P: Snehajā attasambhūtā, | S: Born of affection, originating in oneself, | T: They’re born from affection ⏎ arisen from the mind, ⏎ from oneself,
+snp2.5:7.2 | P: Nigrodhasseva khandhajā; | S: like prop roots sprouting from a banyan; | T: like the trunk-born (shoots) ⏎ of a banyan tree,
+snp2.5:7.3 | P: Puthū visattā kāmesu, | S: the many kinds of attachment to sensual pleasures | T: thick, attached to sensuality,
+snp2.5:7.4 | P: Māluvāva vitatāvane. | S: are like camel’s foot creeper creeping through the woods. | T: like a māluva vine spread in a forest.
+
+## snp2.5:8.1–snp2.5:8.4 (snp)
+snp2.5:8.1 | P: Ye naṁ pajānanti yatonidānaṁ, | S: Those who understand where they come from | T: Those who discern where it’s born
+snp2.5:8.2 | P: Te naṁ vinodenti suṇohi yakkha; | S: dispel them—listen up, spirit! | T: drive it out—listen, yakkha!
+snp2.5:8.3 | P: Te duttaraṁ oghamimaṁ taranti, | S: They cross this flood so hard to cross, | T: They cross over this flood, ⏎ so hard to cross,
+snp2.5:8.4 | P: Atiṇṇapubbaṁ apunabbhavāyā”ti. | S: not crossed before, so as to not be reborn.” | T: never crossed before, ⏎ for the sake of no further becoming.
+CONTEXT snp2.5:8.5 | P: Sūcilomasuttaṁ pañcamaṁ. | S: (none) | T: (none)
+
+## snp2.6:1.1–snp2.6:1.4 (snp)
+CONTEXT snp2.6:0.1 | P: Sutta Nipāta 2.6 | S: Anthology of Discourses 2.6 | T: (none)
+CONTEXT snp2.6:0.2 | P: Kapilasutta (dhammacariyasutta) | S: A Righteous Life | T: 2:6 The Dhamma Life
+snp2.6:1.1 | P: Dhammacariyaṁ brahmacariyaṁ, | S: A righteous life, a spiritual life, | T: Living the Dhamma life, ⏎ living the holy life:
+snp2.6:1.2 | P: Etadāhu vasuttamaṁ; | S: they call this the supreme treasure. | T: This, they say, is the highest power.
+snp2.6:1.3 | P: Pabbajitopi ce hoti, | S: But if someone goes forth | T: But if, having gone forth
+snp2.6:1.4 | P: Agārā anagāriyaṁ. | S: from the lay life to homelessness | T: from home into homelessness,
+
+## snp2.6:2.1–snp2.6:2.4 (snp)
+snp2.6:2.1 | P: So ce mukharajātiko, | S: who is of scurrilous character, | T: you are harsh-mouthed,
+snp2.6:2.2 | P: vihesābhirato mago; | S: a beast and a bully, | T: delighting in injury, a stupid beast,
+snp2.6:2.3 | P: Jīvitaṁ tassa pāpiyo, | S: their life gets worse, | T: your life is more evil.
+snp2.6:2.4 | P: rajaṁ vaḍḍheti attano. | S: as poison grows inside them. | T: You increase your own dust.
+
+## snp2.6:3.1–snp2.6:3.4 (snp)
+snp2.6:3.1 | P: Kalahābhirato bhikkhu, | S: A mendicant who loves to quarrel, | T: A monk delighting in quarrels,
+snp2.6:3.2 | P: Mohadhammena āvuto; | S: wrapped in delusion, | T: shrouded under delusion,
+snp2.6:3.3 | P: Akkhātampi na jānāti, | S: doesn’t even know what’s been explained | T: doesn’t know the Dhamma
+snp2.6:3.4 | P: Dhammaṁ buddhena desitaṁ. | S: in the Dhamma taught by the Buddha. | T: even when proclaimed by the Awakened One.
+
+## snp2.6:4.1–snp2.6:4.4 (snp)
+snp2.6:4.1 | P: Vihesaṁ bhāvitattānaṁ, | S: Harassing those who are evolved, | T: Injuring those developed in mind,
+snp2.6:4.2 | P: avijjāya purakkhato; | S: governed by ignorance, | T: he, surrounded by ignorance,
+snp2.6:4.3 | P: Saṅkilesaṁ na jānāti, | S: they don’t know that corruption | T: doesn’t know defilement
+snp2.6:4.4 | P: maggaṁ nirayagāminaṁ. | S: is the path that leads to hell. | T: to be the path ⏎ that leads to hell.
+
+## snp2.6:5.1–snp2.6:5.4 (snp)
+snp2.6:5.1 | P: Vinipātaṁ samāpanno, | S: Entering the underworld, | T: Arriving at deprivation,
+snp2.6:5.2 | P: gabbhā gabbhaṁ tamā tamaṁ; | S: passing from womb to womb, from darkness to darkness, | T: from womb to womb, ⏎ from darkness to darkness,
+snp2.6:5.3 | P: Sa ve tādisako bhikkhu, | S: such a mendicant | T: a monk of this sort,
+snp2.6:5.4 | P: pecca dukkhaṁ nigacchati. | S: falls into suffering after death. | T: after death, ⏎ comes to suffering.
+
+## snp2.6:6.1–snp2.6:6.4 (snp) GATHERED; equal counts: one line per row
+snp2.6:6.1 | P: Gūthakūpo yathā assa, | S: One such as that is | T: Just like a cesspit,
+snp2.6:6.2 | P: sampuṇṇo gaṇavassiko; | S: like a sewer | T: (none)
+snp2.6:6.3 | P: Yo ca evarūpo assa, | S: brimful with years of filth | T: full, used for many years,
+snp2.6:6.4 | P: dubbisodho hi sāṅgaṇo. | S: for it’s hard to clean one full of grime. | T: one of this sort, befouled, ⏎ would be hard to clean.
+AUTO snp2.6:6.1 starts: Just like a cesspit,
+AUTO snp2.6:6.2 starts: full, used for many years,
+AUTO snp2.6:6.3 starts: one of this sort, befouled,
+AUTO snp2.6:6.4 starts: would be hard to clean.
+
+## snp2.6:7.1–snp2.6:7.4 (snp)
+snp2.6:7.1 | P: Yaṁ evarūpaṁ jānātha, | S: Mendicants, knowing that someone is like this, | T: Monks, whoever you know ⏎ to be like this,
+snp2.6:7.2 | P: bhikkhavo gehanissitaṁ; | S: attached to the domestic life, | T: depending on homes,
+snp2.6:7.3 | P: Pāpicchaṁ pāpasaṅkappaṁ, | S: of corrupt wishes and wicked intent, | T: evil in his desires, ⏎ evil in his resolves,
+snp2.6:7.4 | P: pāpaācāragocaraṁ. | S: of bad behavior and alms-resort, | T: evil in behavior & range,
+
+## snp2.6:8.1–snp2.6:8.4 (snp)
+snp2.6:8.1 | P: Sabbe samaggā hutvāna, | S: then having gathered in harmony, | T: all of you, united,
+snp2.6:8.2 | P: abhinibbajjiyātha naṁ; | S: you should expel them. | T: shun him.
+snp2.6:8.3 | P: Kāraṇḍavaṁ niddhamatha, | S: Throw out the trash! | T: Sweep away the sweepings,
+snp2.6:8.4 | P: kasambuṁ apakassatha. | S: Get rid of the rubbish! | T: throw away the trash,
+
+## snp2.6:9.1–snp2.6:9.4 (snp)
+snp2.6:9.1 | P: Tato palāpe vāhetha, | S: And sweep away the scraps— | T: then remove the chaff:
+snp2.6:9.2 | P: Assamaṇe samaṇamānine; | S: they’re not ascetics, they just think they are. | T: non-contemplatives ⏎ who think they’re contemplatives.
+snp2.6:9.3 | P: Niddhamitvāna pāpicche, | S: When you’ve thrown out those of corrupt wishes, | T: Having swept away those of evil desires,
+snp2.6:9.4 | P: Pāpaācāragocare. | S: of bad behavior and alms-resort, | T: evil ⏎ in behavior & range,
+
+## snp2.6:10.1–snp2.6:10.4 (snp)
+snp2.6:10.1 | P: Suddhā suddhehi saṁvāsaṁ, | S: dwell in communion, ever mindful, | T: then pure, affiliate mindfully
+snp2.6:10.2 | P: Kappayavho patissatā; | S: the pure with the pure. | T: with the pure.
+snp2.6:10.3 | P: Tato samaggā nipakā, | S: Then in harmony, alert, | T: Then, united, astute,
+snp2.6:10.4 | P: Dukkhassantaṁ karissathāti. | S: you’ll make an end of suffering. | T: you will put an end ⏎ to suffering & stress.
+CONTEXT snp2.6:10.5 | P: Dhammacariyasuttaṁ chaṭṭhaṁ. | S: (none) | T: (none)
+
+## snp2.7:2.1–snp2.7:2.4 (snp)
+CONTEXT snp2.7:1.9 | P: “Evaṁ, bho”ti kho te brāhmaṇamahāsālā bhagavato paccassosuṁ. | S: “Yes, worthy sir,” they replied. | T: “As you say, master,” the brahmans of great means responded to the Blessed One.
+CONTEXT snp2.7:1.10 | P: Bhagavā etadavoca: | S: The Buddha said this: | T: The Blessed One said:
+snp2.7:2.1 | P: “Isayo pubbakā āsuṁ, | S: “The ancient seers used to be | T: Seers, before,
+snp2.7:2.2 | P: saññatattā tapassino; | S: restrained and austere. | T: were austere ⏎ & restrained in mind.
+snp2.7:2.3 | P: Pañca kāmaguṇe hitvā, | S: Having given up the five sensual stimuli, | T: Abandoning the five strings of sensuality,
+snp2.7:2.4 | P: attadatthamacārisuṁ. | S: they lived for their own true good. | T: they practiced for their own benefit.
+
+## snp2.7:3.1–snp2.7:3.4 (snp)
+snp2.7:3.1 | P: Na pasū brāhmaṇānāsuṁ, | S: Brahmins used to own no cattle, | T: They had no cattle,
+snp2.7:3.2 | P: na hiraññaṁ na dhāniyaṁ; | S: nor gold coin or grain. | T: no gold, ⏎ no wealth.
+snp2.7:3.3 | P: Sajjhāyadhanadhaññāsuṁ, | S: Chanting was their money and grain, | T: They had study ⏎ as their wealth.
+snp2.7:3.4 | P: brahmaṁ nidhimapālayuṁ. | S: which they guarded as a gift from god. | T: They protected the Brahmā treasure.
+
+## snp2.7:4.1–snp2.7:4.4 (snp) GATHERED; possible speaker requires a reader
+snp2.7:4.1 | P: Yaṁ nesaṁ pakataṁ āsi, | S: Food was prepared for them | T: They did not despise what was prepared for them:
+snp2.7:4.2 | P: dvārabhattaṁ upaṭṭhitaṁ; | S: and left beside their doors. | T: food set at doors,
+snp2.7:4.3 | P: Saddhāpakatamesānaṁ, | S: People believed that food prepared in faith | T: prepared out of conviction ⏎ for those who seek.
+snp2.7:4.4 | P: dātave tadamaññisuṁ. | S: should be given to them. | T: (none)
+
+## snp2.7:5.1–snp2.7:5.4 (snp) GATHERED; unequal counts require a reader
+snp2.7:5.1 | P: Nānārattehi vatthehi, | S: With colorful clothes, | T: (none)
+snp2.7:5.2 | P: sayanehāvasathehi ca; | S: lodgings and houses, | T: (none)
+snp2.7:5.3 | P: Phītā janapadā raṭṭhā, | S: prosperous nations and countries | T: Prosperous lands & kingdoms
+snp2.7:5.4 | P: te namassiṁsu brāhmaṇe. | S: honored those brahmins. | T: honored brahmans with multi-colored clothes, ⏎ bedding, & dwellings.
+
+## snp2.7:6.1–snp2.7:6.4 (snp)
+snp2.7:6.1 | P: Avajjhā brāhmaṇā āsuṁ, | S: Brahmins used to be inviolable and | T: Brahmans
+snp2.7:6.2 | P: ajeyyā dhammarakkhitā; | S: invincible, protected by principle. | T: protecting their principles, ⏎ protected by law, ⏎ were not to be violated, ⏎ not to be beaten.
+snp2.7:6.3 | P: Na ne koci nivāresi, | S: No one ever turned them away | T: No one could block them
+snp2.7:6.4 | P: kuladvāresu sabbaso. | S: from the doors of families. | T: from the doors of any home.
+
+## snp2.7:7.1–snp2.7:7.4 (snp)
+snp2.7:7.1 | P: Aṭṭhacattālīsaṁ vassāni, | S: For forty-eight years | T: For 48 years (young brahmans)
+snp2.7:7.2 | P: (komāra) Brahmacariyaṁ cariṁsu te; | S: they led the spiritual life. | T: followed the holy life.
+snp2.7:7.3 | P: Vijjācaraṇapariyeṭṭhiṁ, | S: The brahmins of old pursued | T: Brahmans of old practiced the search
+snp2.7:7.4 | P: Acaruṁ brāhmaṇā pure. | S: their quest for knowledge and conduct. | T: for knowledge & conduct.
+
+## snp2.7:8.1–snp2.7:8.4 (snp)
+snp2.7:8.1 | P: Na brāhmaṇā aññamagamuṁ, | S: Brahmins never transgressed with another, | T: Brahmans went to no other (caste),
+snp2.7:8.2 | P: napi bhariyaṁ kiṇiṁsu te; | S: nor did they purchase a wife. | T: nor did they buy their wives.
+snp2.7:8.3 | P: Sampiyeneva saṁvāsaṁ, | S: They lived together in love, | T: Living together from mutual love,
+snp2.7:8.4 | P: saṅgantvā samarocayuṁ. | S: joining together by mutual consent. | T: having come together, they found joy together.
+
+## snp2.7:9.1–snp2.7:9.4 (snp) GATHERED; equal counts: one line per row
+snp2.7:9.1 | P: Aññatra tamhā samayā, | S: Brahmins never approached their wives for sex | T: Aside from the time
+snp2.7:9.2 | P: utuveramaṇiṁ pati; | S: during the time outside | T: (none)
+snp2.7:9.3 | P: Antarā methunaṁ dhammaṁ, | S: the fertile phase of the menstrual cycle | T: (none)
+snp2.7:9.4 | P: nāssu gacchanti brāhmaṇā. | S: after menstruation. | T: after menstruation, ⏎ brahmans didn’t engage ⏎ in copulation.
+AUTO snp2.7:9.1 starts: Aside from the time
+AUTO snp2.7:9.2 starts: after menstruation,
+AUTO snp2.7:9.3 starts: brahmans didn’t engage
+AUTO snp2.7:9.4 starts: in copulation.
+
+## snp2.7:10.1–snp2.7:10.4 (snp)
+snp2.7:10.1 | P: Brahmacariyañca sīlañca, | S: They praised chastity and morality, | T: They praised: ⏎ the holy life, virtue,
+snp2.7:10.2 | P: ajjavaṁ maddavaṁ tapaṁ; | S: integrity, tenderness, and fervor, | T: being straightforward, mild, austere,
+snp2.7:10.3 | P: Soraccaṁ avihiṁsañca, | S: gentleness and harmlessness, | T: composed, harmless,
+snp2.7:10.4 | P: khantiñcāpi avaṇṇayuṁ. | S: and also patience. | T: enduring.
+
+## snp2.7:11.1–snp2.7:11.4 (snp)
+snp2.7:11.1 | P: Yo nesaṁ paramo āsi, | S: He who was supreme among them, | T: The foremost brahman among them,
+snp2.7:11.2 | P: Brahmā daḷhaparakkamo; | S: godlike, staunchly vigorous, | T: firm in perseverance,
+snp2.7:11.3 | P: Sa vāpi methunaṁ dhammaṁ, | S: did not engage in sex | T: didn’t engage in copulation
+snp2.7:11.4 | P: Supinantepi nāgamā. | S: even in a dream. | T: even in a dream.
+
+## snp2.7:12.1–snp2.7:12.4 (snp)
+snp2.7:12.1 | P: Tassa vattamanusikkhantā, | S: Training in line with their duties, | T: Those imitating his practice
+snp2.7:12.2 | P: Idheke viññujātikā; | S: many smart people here | T: (none)
+snp2.7:12.3 | P: Brahmacariyañca sīlañca, | S: praised chastity and morality, | T: praised the holy life, virtue,
+snp2.7:12.4 | P: Khantiñcāpi avaṇṇayuṁ. | S: and also patience. | T: & endurance.
+
+## snp2.7:13.1–snp2.7:13.4 (snp)
+snp2.7:13.1 | P: Taṇḍulaṁ sayanaṁ vatthaṁ, | S: They begged for rice, | T: They asked for rice,
+snp2.7:13.2 | P: Sappitelañca yāciya; | S: bedding, clothes, ghee, and oil. | T: bedding, cloth, ⏎ butter & oil.
+snp2.7:13.3 | P: Dhammena samodhānetvā, | S: Having collected them legitimately, | T: Having collected all that ⏎ in line with rectitude,
+snp2.7:13.4 | P: Tato yaññamakappayuṁ. | S: they arranged a sacrifice. | T: from that ⏎ they performed the sacrifice.
+
+## snp2.7:14.1–snp2.7:14.6 (snp) GATHERED; unequal counts require a reader
+snp2.7:14.1 | P: Upaṭṭhitasmiṁ yaññasmiṁ, | S: But they slew no cows | T: And in setting up the sacrifice, ⏎ they didn’t harm cows.
+snp2.7:14.2 | P: Nāssu gāvo haniṁsu te; | S: while serving at the sacrifice. | T: (none)
+snp2.7:14.3 | P: Yathā mātā pitā bhātā, | S: Like a mother, father, or brother, | T: “Like a mother, father, ⏎ brother,
+snp2.7:14.4 | P: Aññe vāpi ca ñātakā; | S: or some other relative, | T: or other relative,
+snp2.7:14.5 | P: Gāvo no paramā mittā, | S: cows are our best friends, | T: cows are our foremost friends.
+snp2.7:14.6 | P: Yāsu jāyanti osadhā. | S: the fonts of medicine. | T: From them comes medicine.
+
+## snp2.7:15.1–snp2.7:15.4 (snp)
+snp2.7:15.1 | P: Annadā baladā cetā, | S: They give food and strength, | T: They give food, strength,
+snp2.7:15.2 | P: Vaṇṇadā sukhadā tathā; | S: and beauty and happiness. | T: beauty, & happiness.”
+snp2.7:15.3 | P: Etamatthavasaṁ ñatvā, | S: Knowing these benefits, | T: Knowing this line of reasoning,
+snp2.7:15.4 | P: Nāssu gāvo haniṁsu te. | S: they slew no cows. | T: they didn’t harm cows.
+
+## snp2.7:16.1–snp2.7:16.6 (snp) GATHERED; unequal counts require a reader
+snp2.7:16.1 | P: Sukhumālā mahākāyā, | S: The brahmins were delicate and tall, | T: Delicate, with large bodies,
+snp2.7:16.2 | P: Vaṇṇavanto yasassino; | S: beautiful and glorious. | T: beautiful, prestigious,
+snp2.7:16.3 | P: Brāhmaṇā sehi dhammehi, | S: They were keen on all the duties | T: brahmans were committed to standards ⏎ of what should & shouldn’t be done ⏎ in line with their principles.
+snp2.7:16.4 | P: Kiccākiccesu ussukā; | S: according to their teachings. | T: (none)
+snp2.7:16.5 | P: Yāva loke avattiṁsu, | S: So long as they continued in the world, | T: As long as this lasted in the world,
+snp2.7:16.6 | P: Sukhamedhitthayaṁ pajā. | S: people flourished happily. | T: humanity prospered in happiness.
+
+## snp2.7:17.1–snp2.7:17.4 (snp)
+snp2.7:17.1 | P: Tesaṁ āsi vipallāso, | S: But perversion crept into them | T: But a perversion came among them.
+snp2.7:17.2 | P: Disvāna aṇuto aṇuṁ; | S: little by little when they saw | T: Seeing, little by little,
+snp2.7:17.3 | P: Rājino ca viyākāraṁ, | S: the transformation of the king | T: the splendor of kings—
+snp2.7:17.4 | P: Nāriyo samalaṅkatā. | S: and the ladies in all their finery. | T: women well-ornamented,
+
+## snp2.7:18.1–snp2.7:18.4 (snp)
+snp2.7:18.1 | P: Rathe cājaññasaṁyutte, | S: Their chariots were harnessed with thoroughbreds, | T: chariots yoked to thoroughbreds,
+snp2.7:18.2 | P: Sukate cittasibbane; | S: well-made with bright canopies, | T: well-made, with elaborate embroideries,
+snp2.7:18.3 | P: Nivesane nivese ca, | S: and their homes and houses | T: houses & homes,
+snp2.7:18.4 | P: Vibhatte bhāgaso mite. | S: were neatly divided section by section. | T: well-proportioned, planned & laid out
+
+## snp2.7:19.1–snp2.7:19.4 (snp) GATHERED; equal counts: one line per row
+snp2.7:19.1 | P: Gomaṇḍalaparibyūḷhaṁ, | S: They were lavished with herds of cattle, | T: lavish human wealth, ⏎ surrounded by circles of cows,
+snp2.7:19.2 | P: Nārīvaragaṇāyutaṁ; | S: and furnished with bevies of lovely ladies. | T: joined with groups of excellent women—
+snp2.7:19.3 | P: Uḷāraṁ mānusaṁ bhogaṁ, | S: This extravagant human wealth | T: (none)
+snp2.7:19.4 | P: Abhijjhāyiṁsu brāhmaṇā. | S: was coveted by the brahmins. | T: the brahmans grew greedy.
+AUTO snp2.7:19.1 starts: lavish human wealth,
+AUTO snp2.7:19.2 starts: surrounded by circles of cows,
+AUTO snp2.7:19.3 starts: joined with groups of excellent women—
+AUTO snp2.7:19.4 starts: the brahmans grew greedy.
+
+## snp2.7:20.1–snp2.7:20.5 (snp)
+snp2.7:20.1 | P: Te tattha mante ganthetvā, | S: They compiled hymns to that end, | T: Having composed chants there,
+snp2.7:20.2 | P: Okkākaṁ tadupāgamuṁ; | S: approached King Okkāka and said, | T: they went up to Okkāka.
+snp2.7:20.3 | P: Pahūtadhanadhaññosi, | S: ‘You have plenty of money and grain. | T: “You have much wealth & grain.
+snp2.7:20.4 | P: Yajassu bahu te vittaṁ; | S: Sacrifice! For you have much treasure. | T: Sacrifice! Much is your property!
+snp2.7:20.5 | P: Yajassu bahu te dhanaṁ. | S: Sacrifice! For you have much money.’ | T: Sacrifice! Much is your wealth!”
+
+## snp2.7:21.1–snp2.7:21.6 (snp) GATHERED; possible speaker requires a reader
+snp2.7:21.1 | P: Tato ca rājā saññatto, | S: Persuaded by the brahmins, | T: (none)
+snp2.7:21.2 | P: Brāhmaṇehi rathesabho; | S: the king, chief of charioteers, performed | T: Then the king, lord of charioteers, ⏎ induced by the brahmans, ⏎ having performed these sacrifices—
+snp2.7:21.3 | P: Assamedhaṁ purisamedhaṁ, | S: horse sacrifice, human sacrifice, | T: the horse sacrifice, the human sacrifice,
+snp2.7:21.4 | P: Sammāpāsaṁ vājapeyyaṁ niraggaḷaṁ; | S: the sacrifices of the ‘casting of the yoke-pin’, the ‘royal soma drinking’, and the ‘unimpeded’. | T: sammāpāsa, vājapeyya, & niraggaḷa—
+snp2.7:21.5 | P: Ete yāge yajitvāna, | S: When he had carried out these sacrifices, | T: (none)
+snp2.7:21.6 | P: Brāhmaṇānamadā dhanaṁ. | S: he gave riches to the brahmins. | T: gave the brahmans wealth:
+
+## snp2.7:22.1–snp2.7:22.4 (snp)
+snp2.7:22.1 | P: Gāvo sayanañca vatthañca, | S: There were cattle, bedding, and clothes, | T: cows, bedding, clothes,
+snp2.7:22.2 | P: Nāriyo samalaṅkatā; | S: and ladies in all their finery; | T: women adorned,
+snp2.7:22.3 | P: Rathe cājaññasaṁyutte, | S: chariots harnessed with thoroughbreds, | T: chariots yoked to thoroughbreds,
+snp2.7:22.4 | P: Sukate cittasibbane. | S: well-made with bright canopies; | T: well-made, with elaborate embroideries,
+
+## snp2.7:23.1–snp2.7:23.4 (snp)
+snp2.7:23.1 | P: Nivesanāni rammāni, | S: and lovely homes, | T: Having had delightful homes,
+snp2.7:23.2 | P: Suvibhattāni bhāgaso; | S: nicely divided section by section. | T: well-proportioned,
+snp2.7:23.3 | P: Nānādhaññassa pūretvā, | S: Having furnished them with different grains, | T: filled throughout ⏎ with various grains,
+snp2.7:23.4 | P: Brāhmaṇānamadā dhanaṁ. | S: he gave riches to the brahmins. | T: he gave the brahmans wealth.
+
+## snp2.7:24.1–snp2.7:24.6 (snp)
+snp2.7:24.1 | P: Te ca tattha dhanaṁ laddhā, | S: When they got hold of that wealth, | T: And they, receiving the wealth there,
+snp2.7:24.2 | P: Sannidhiṁ samarocayuṁ; | S: they arranged to store it up. | T: found joy together in hoarding it.
+snp2.7:24.3 | P: Tesaṁ icchāvatiṇṇānaṁ, | S: Falling under the sway of desire, | T: Overcome by desire,
+snp2.7:24.4 | P: Bhiyyo taṇhā pavaḍḍhatha; | S: their craving grew and grew. | T: their craving grew more.
+snp2.7:24.5 | P: Te tattha mante ganthetvā, | S: They compiled hymns to that end, | T: Having composed chants there,
+snp2.7:24.6 | P: Okkākaṁ puna mupāgamuṁ. | S: approached King Okkāka once more and said, | T: they went up to Okkāka again.
+
+## snp2.7:25.1–snp2.7:25.6 (snp)
+snp2.7:25.1 | P: Yathā āpo ca pathavī ca, | S: ‘Like water and earth, | T: “Like water & earth,
+snp2.7:25.2 | P: Hiraññaṁ dhanadhāniyaṁ; | S: gold coin, riches, and grain, | T: gold, wealth, & grain,
+snp2.7:25.3 | P: Evaṁ gāvo manussānaṁ, | S: are cows for humankind, | T: are cows to human beings.
+snp2.7:25.4 | P: Parikkhāro so hi pāṇinaṁ; | S: as they are essential for creatures. | T: This is a requisite for beings.
+snp2.7:25.5 | P: Yajassu bahu te vittaṁ, | S: Sacrifice! For you have much treasure. | T: Sacrifice! Much is your property!
+snp2.7:25.6 | P: Yajassu bahu te dhanaṁ. | S: Sacrifice! For you have much money.’ | T: Sacrifice! Much is your wealth!”
+
+## snp2.7:26.1–snp2.7:26.4 (snp) GATHERED; equal counts: one line per row
+snp2.7:26.1 | P: Tato ca rājā saññatto, | S: Persuaded by the brahmins, | T: (none)
+snp2.7:26.2 | P: Brāhmaṇehi rathesabho; | S: the king, chief of charioteers, | T: Then the king, lord of charioteers, ⏎ induced by the brahmans, ⏎ killed in a sacrifice
+snp2.7:26.3 | P: Nekā satasahassiyo, | S: had many hundred thousand cows | T: many hundred-thousands of cows.
+snp2.7:26.4 | P: Gāvo yaññe aghātayi. | S: slain at the sacrifice. | T: (none)
+AUTO snp2.7:26.1 starts: Then the king, lord of charioteers,
+AUTO snp2.7:26.2 starts: induced by the brahmans,
+AUTO snp2.7:26.3 starts: killed in a sacrifice
+AUTO snp2.7:26.4 starts: many hundred-thousands of cows.
+
+## snp2.7:27.1–snp2.7:27.6 (snp) GATHERED; unequal counts require a reader
+snp2.7:27.1 | P: Na pādā na visāṇena, | S: Neither with feet nor with horns | T: (none)
+snp2.7:27.2 | P: Nāssu hiṁsanti kenaci; | S: do cows harm anyone at all. | T: The cows—
+snp2.7:27.3 | P: Gāvo eḷakasamānā, | S: Cows meek as lambs | T: meek like sheep,
+snp2.7:27.4 | P: Soratā kumbhadūhanā; | S: supply buckets of milk. | T: giving milk by the bucket— ⏎ hadn’t, ⏎ with their hooves or horns or ⏎ anything else, done ⏎ anyone ⏎ any harm.
+snp2.7:27.5 | P: Tā visāṇe gahetvāna, | S: But taking them by the horns, | T: But the king, ⏎ grabbing them by the horns,
+snp2.7:27.6 | P: Rājā satthena ghātayi. | S: the king slew them with a sword. | T: killed them with a knife.
+
+## snp2.7:28.1–snp2.7:28.4 (snp)
+snp2.7:28.1 | P: Tato devā pitaro ca, | S: At that the gods and the ancestors, | T: Then the devas, the Fathers,
+snp2.7:28.2 | P: Indo asurarakkhasā; | S: with Indra, the titans and monsters, | T: Indra, and rakkhasas
+snp2.7:28.3 | P: Adhammo iti pakkanduṁ, | S: roared out: ‘This is a crime against nature!’ | T: cried out, ⏎ “An injustice!”
+snp2.7:28.4 | P: Yaṁ satthaṁ nipatī gave. | S: as the sword fell on the cows. | T: when the knife fell on the cows.
+
+## snp2.7:29.1–snp2.7:29.4 (snp)
+snp2.7:29.1 | P: Tayo rogā pure āsuṁ, | S: There used to be three kinds of illness: | T: Three were the diseases before then:
+snp2.7:29.2 | P: Icchā anasanaṁ jarā; | S: greed, starvation, and old age. | T: desire, hunger, & aging.
+snp2.7:29.3 | P: Pasūnañca samārambhā, | S: But due to the slaughter of cows, | T: But from violence against cattle
+snp2.7:29.4 | P: Aṭṭhānavutimāgamuṁ. | S: this grew to be ninety-eight. | T: came ninety-eight.
+
+## snp2.7:30.1–snp2.7:30.4 (snp)
+snp2.7:30.1 | P: Eso adhammo daṇḍānaṁ, | S: This crime of the rods | T: This injustice of violence
+snp2.7:30.2 | P: Okkanto purāṇo ahu; | S: is of ancient descent. | T: has come down as ancient.
+snp2.7:30.3 | P: Adūsikāyo haññanti, | S: Killing innocent creatures, | T: The innocent are killed;
+snp2.7:30.4 | P: Dhammā dhaṁsanti yājakā. | S: the sacrificers forsake righteousness. | T: the sacrificers fall away ⏎ from the Dhamma.
+
+## snp2.7:31.1–snp2.7:31.4 (snp)
+snp2.7:31.1 | P: Evameso aṇudhammo, | S: And that is how this mean old practice | T: This tradition—ancient, vile—
+snp2.7:31.2 | P: Porāṇo viññugarahito; | S: was criticized by sensible people. | T: is criticized by the observant.
+snp2.7:31.3 | P: Yattha edisakaṁ passati, | S: Wherever they see such a thing, | T: Where people see such a thing,
+snp2.7:31.4 | P: Yājakaṁ garahatī jano. | S: folk criticize the sacrificer. | T: they criticize the sacrificer.
+
+## snp2.7:32.1–snp2.7:32.4 (snp)
+snp2.7:32.1 | P: Evaṁ dhamme viyāpanne, | S: With righteousness gone, | T: With the Dhamma perishing in this way,
+snp2.7:32.2 | P: Vibhinnā suddavessikā; | S: peasants and menials were split, | T: merchants are split from workers,
+snp2.7:32.3 | P: Puthū vibhinnā khattiyā, | S: as were many aristocrats, | T: noble warriors are split far apart,
+snp2.7:32.4 | P: Patiṁ bhariyāvamaññatha. | S: and wives looked down on their husbands. | T: the wife despises the husband.
+
+## snp2.7:33.1–snp2.7:33.4 (snp)
+snp2.7:33.1 | P: Khattiyā brahmabandhū ca, | S: Aristocrats and brahmins only by kin, | T: Noble warriors, kinsman of Brahmā,
+snp2.7:33.2 | P: Ye caññe gottarakkhitā; | S: and others protected by their clan, | T: and any others protected by clan,
+snp2.7:33.3 | P: Jātivādaṁ nirākatvā, | S: neglecting their genealogy, | T: repudiating the doctrine of their birth,
+snp2.7:33.4 | P: Kāmānaṁ vasamanvagun”ti. | S: fell under the sway of sensual pleasures.” | T: fall ⏎ under sensuality’s ⏎ sway.
+CONTEXT snp2.7:34.1 | P: Evaṁ vutte, te brāhmaṇamahāsālā bhagavantaṁ etadavocuṁ: | S: When he had spoken, those well-to-do brahmins said to the Buddha, | T: When this was said, those brahmans of great means said to the Blessed One:
+CONTEXT snp2.7:34.2 | P: “abhikkantaṁ, bho gotama …pe… | S: “Excellent, worthy Gotama! Excellent! … | T: “Magnificent, Master Gotama! Magnificent! Just as if he were to place upright what was overturned, to reveal what was hidden, to show the way to one who was lost, or to carry a lamp into the dark so that those with eyes could see forms, in the same way has Master Gotama—through many lines of reasoning—made the Dhamma clear. We go to Master Gotama for refuge, to the Dhamma, & to the Saṅgha of monks.
+
+## snp2.8:1.1–snp2.8:1.4 (snp) GATHERED; possible speaker requires a reader
+CONTEXT snp2.8:0.1 | P: Sutta Nipāta 2.8 | S: Anthology of Discourses 2.8 | T: (none)
+CONTEXT snp2.8:0.2 | P: Dhamma (nāvā) sutta | S: The Boat | T: 2:8 A Boat
+snp2.8:1.1 | P: Yasmā hi dhammaṁ puriso vijaññā, | S: If you would learn the teaching from someone, | T: Because: ⏎ When you honor ⏎ —as the devas, Indra— ⏎ one from whom ⏎ you might learn the Dhamma,
+snp2.8:1.2 | P: Indaṁva naṁ devatā pūjayeyya; | S: honor them as the gods honor Indra. | T: (none)
+snp2.8:1.3 | P: So pūjito tasmi pasannacitto, | S: Then they will have confidence in you, | T: he, learned, honored, ⏎ confident in you, ⏎ shows you the Dhamma.
+snp2.8:1.4 | P: Bahussuto pātukaroti dhammaṁ. | S: and being learned, they reveal the teaching. | T: (none)
+
+## snp2.8:2.1–snp2.8:2.4 (snp) GATHERED; unequal counts require a reader
+snp2.8:2.1 | P: Tadaṭṭhikatvāna nisamma dhīro, | S: Heeding well, an attentive one, | T: You, enlightened, heedful, ⏎ befriending a teacher like that,
+snp2.8:2.2 | P: Dhammānudhammaṁ paṭipajjamāno; | S: practicing in line with that teaching | T: practicing the Dhamma ⏎ in line with the Dhamma, ⏎ pondering, ⏎ giving it priority,
+snp2.8:2.3 | P: Viññū vibhāvī nipuṇo ca hoti, | S: grows intelligent, discerning, and subtle | T: become ⏎ knowledgeable, ⏎ clear-minded, ⏎ subtle.
+snp2.8:2.4 | P: Yo tādisaṁ bhajati appamatto. | S: through diligently sticking close to such a person. | T: (none)
+
+## snp2.8:3.1–snp2.8:3.4 (snp) GATHERED; unequal counts require a reader
+snp2.8:3.1 | P: Khuddañca bālaṁ upasevamāno, | S: But associating with a petty fool | T: But if you consort with a piddling fool
+snp2.8:3.2 | P: Anāgatatthañca usūyakañca; | S: who falls short of the goal, jealous, | T: who’s envious, ⏎ hasn’t come to the goal,
+snp2.8:3.3 | P: Idheva dhammaṁ avibhāvayitvā, | S: then unable to discern the teaching in this life, | T: you’ll go to death ⏎ without ⏎ having cleared up ⏎ the Dhamma right here, ⏎ with ⏎ your doubts unresolved.
+snp2.8:3.4 | P: Avitiṇṇakaṅkho maraṇaṁ upeti. | S: one proceeds to death still plagued by doubts. | T: (none)
+
+## snp2.8:4.1–snp2.8:4.4 (snp)
+snp2.8:4.1 | P: Yathā naro āpagamotaritvā, | S: It’s like a man who has plunged into a river, | T: Like a man gone down to a river—
+snp2.8:4.2 | P: Mahodakaṁ salilaṁ sīghasotaṁ; | S: a rushing torrent in spate. | T: turbulent, flooding, swift-flowing—
+snp2.8:4.3 | P: So vuyhamāno anusotagāmī, | S: As they are swept away downstream, | T: and swept away in the current:
+snp2.8:4.4 | P: Kiṁ so pare sakkhati tārayetuṁ. | S: how could they help others across? | T: How can he help others across?
+
+## snp2.8:5.1–snp2.8:5.4 (snp)
+snp2.8:5.1 | P: Tatheva dhammaṁ avibhāvayitvā, | S: Just so, one unable to discern the teaching, | T: Even so: ⏎ He who hasn’t ⏎ cleared up the Dhamma,
+snp2.8:5.2 | P: Bahussutānaṁ anisāmayatthaṁ; | S: who hasn’t studied the meaning under the learned, | T: attended to the meaning ⏎ of what the learned say,
+snp2.8:5.3 | P: Sayaṁ ajānaṁ avitiṇṇakaṅkho, | S: not knowing it oneself, still plagued by doubts, | T: crossed over his own doubts:
+snp2.8:5.4 | P: Kiṁ so pare sakkhati nijjhapetuṁ. | S: how could they help others to contemplate? | T: How can he get others ⏎ to comprehend?
+
+## snp2.8:6.1–snp2.8:6.4 (snp) GATHERED; unequal counts require a reader
+snp2.8:6.1 | P: Yathāpi nāvaṁ daḷhamāruhitvā, | S: But one who has embarked on a strong boat | T: But as one who’s embarked ⏎ on a sturdy boat,
+snp2.8:6.2 | P: Phiyena rittena samaṅgibhūto; | S: equipped with rudder and oar, | T: with rudder & oars,
+snp2.8:6.3 | P: So tāraye tattha bahūpi aññe, | S: would bring many others across there | T: would—thoughtful, skillful, ⏎ knowing the needed techniques— ⏎ carry many others across,
+snp2.8:6.4 | P: Tatrūpayaññū kusalo mutīmā. | S: with skill, care, and thoughtfulness. | T: (none)
+
+## snp2.8:7.1–snp2.8:7.4 (snp)
+snp2.8:7.1 | P: Evampi yo vedagu bhāvitatto, | S: So too one who understands—a knowledge master, | T: even so ⏎ an attainer-of-knowledge,
+snp2.8:7.2 | P: Bahussuto hoti avedhadhammo; | S: evolved, learned, and unflappable— | T: learned, ⏎ developed in mind, unwavering
+snp2.8:7.3 | P: So kho pare nijjhapaye pajānaṁ, | S: can help others to contemplate, | T: can get other people to comprehend—
+snp2.8:7.4 | P: Sotāvadhānūpanisūpapanne. | S: so long as they are prepared to listen carefully. | T: when the conditions have arisen ⏎ for them to lend ear.
+
+## snp2.8:8.1–snp2.8:8.4 (snp)
+snp2.8:8.1 | P: Tasmā have sappurisaṁ bhajetha, | S: That’s why you should spend time with a true person, | T: So: ⏎ You should befriend ⏎ a person of integrity—
+snp2.8:8.2 | P: Medhāvinañceva bahussutañca; | S: intelligent and learned. | T: learned, intelligent.
+snp2.8:8.3 | P: Aññāya atthaṁ paṭipajjamāno, | S: Having understood the meaning, putting it into practice, | T: Practicing so ⏎ as to know the goal,
+snp2.8:8.4 | P: Viññātadhammo sa sukhaṁ labhethāti. | S: one who understands the teaching would find happiness. | T: when you’ve experienced the Dhamma, ⏎ you get bliss.
+CONTEXT snp2.8:8.5 | P: Nāvāsuttaṁ aṭṭhamaṁ. | S: (none) | T: (none)
+
+## snp2.9:1.1–snp2.9:1.4 (snp)
+CONTEXT snp2.9:0.1 | P: Sutta Nipāta 2.9 | S: Anthology of Discourses 2.9 | T: (none)
+CONTEXT snp2.9:0.2 | P: Kiṁsīlasutta | S: What Morality? | T: 2:9 With What Virtue?
+snp2.9:1.1 | P: “Kiṁsīlo kiṁsamācāro, | S: “With what morality, what conduct, | T: “With what virtue, ⏎ what behavior,
+snp2.9:1.2 | P: kāni kammāni brūhayaṁ; | S: fostering what deeds, | T: nurturing what actions,
+snp2.9:1.3 | P: Naro sammā niviṭṭhassa, | S: would a person lay the foundations right, | T: would a person become rightly based
+snp2.9:1.4 | P: uttamatthañca pāpuṇe”. | S: and reach the highest goal?” | T: and attain the ultimate goal?”

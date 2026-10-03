@@ -22,8 +22,14 @@ a rule can't decide.
    line above it. The rounds are in `review/skipped/`.
 2. **Verse**: in every collection, each verse's English sits in its own verse, in order, spread
    over its Pali lines as far as the translator's line breaks allow (see "Building them into the
-   app"). The rounds are in `review/verse/`. Bodhi's is done, every verse in MN, SN, AN and Thag
-   (his DN texts have none).
+   app"). The rounds are in `review/verse/`. Both translators' rounds are done: Bodhi's every
+   verse in MN, SN, AN and Thag (his DN texts have none), Ṭhānissaro's every verse in his ten
+   books. What's left:
+   - the Pali lines still hidden in a verse he translates, which `check-round.py` lists: mostly
+     a verse whose first Pali line has none of his lines, or a run of bare lines at its end. His
+     lines move whole, up or apart, and any left over go into `covered.json`;
+   - fifteen places in Ṭhānissaro where his lines interleave neighbouring verses, or the fix
+     needs a prose line (`data/thanissaro/review/verse/results.json`).
 3. **Source mapping**: Bodhi's eight shared SN 45 pages (45.42–48 through 45.92–96)
    are each saved once under their full span, with their English spread once over both app texts
    by their Pali (`data/bodhi/review/source-mapping-final/`).
@@ -34,10 +40,12 @@ a rule can't decide.
    the numbering evidence in `data/thanissaro/review/codex-read/source-ranges.json`.
 4. **Teach the segmenter**: the patterns items 1–3 settle become rules it applies to new texts,
    checked against the reviews' own answers, and the steps in "Reviewing new and revised texts"
-   shrink to what the rules leave. Verse starts from what Bodhi's round settled: the translator's
-   lines are never cut, a verse with as many of his lines as Pali lines takes one on each
-   (`scripts/segmenter/review-bodhi-verse.py` already does this), and only a line whose wording
-   crosses into the next verse needs a reader to say which verse it sits in.
+   shrink to what the rules leave. Verse starts from what the verse rounds settled: the
+   translator's lines are never cut, his first line sits on the verse's first Pali line, a verse
+   with as many of his lines as Pali lines takes one on each (both review scripts already do
+   this), the rest are spread so that no Pali line is hidden, and only a line whose wording
+   crosses into the next verse needs a reader to say which verse it sits in. The evidence for
+   Ṭhānissaro is in `data/thanissaro/review/verse/automation.json`.
 5. **A fresh audit** once the rest is done, drawn as `review/audit5/draw.py` draws, with a new
    seed.
 
@@ -151,9 +159,8 @@ dhammatalks.org revises its translations and adds new ones; Bodhi's change rarel
 4. **Segment**: `node scripts/segmenter/segment-translations.mjs thanissaro` (or `bodhi`). A new
    text comes out with the segmenter's own cuts. A revised one keeps every settled cut that still
    fits, and the run names those that don't.
-5. **Review** the new and revised texts, as "Reviewing new and revised texts" says. For Bodhi,
-   include their Pali verse paragraphs in the verse check; a revised source line break can change
-   a settled cut even when the words stay the same.
+5. **Review** the new and revised texts, as "Reviewing new and revised texts" says, their verse
+   included: a revised line break can change a settled cut even when the words stay the same.
 
 ## Segmenting
 
@@ -195,11 +202,14 @@ names them, as their files here are named. Bodhi's shared SN 45 pages are review
 app texts: a common formula stays where it is first translated, each listed variant sits on its
 own Pali line, and the final full passage sits on the terminal sutta's Pali.
 
-Bodhi's verse goes through rounds of its own: `python3 scripts/segmenter/review-bodhi-verse.py
---out data/bodhi/review/<folder>` writes packets with every Pali verse row, Sujato's context and
-Bodhi's text at his own line breaks. It spreads a verse with as many of his lines as Pali lines
-itself; readers place the rest, keeping each of his lines whole and in order, and a finding that
-contradicts an earlier one, a hand fix included, marks it superseded.
+Verse goes through rounds of its own. `python3 scripts/segmenter/review-bodhi-verse.py` and
+`review-verse-thanissaro.py`, with `--out data/<translator>/review/<folder>`, write packets with
+every Pali verse row, Sujato's context and the translation at the translator's own line breaks.
+The script spreads a verse with as many of his lines as Pali lines itself, moving a start only
+at one of his line breaks; readers place the rest, keeping each of his lines whole and in order.
+A finding that contradicts an earlier one marks it superseded, and one that overrides a hand fix
+goes into `review/hand/verse-review.findings`. A place where his lines interleave neighbouring
+verses, or where the fix needs a prose line, is recorded for a later round rather than forced.
 
 Every round keeps to these:
 
@@ -221,7 +231,8 @@ Every round keeps to these:
 - **`python3 scripts/segmenter/check-round.py <translator>`** checks what the round changed since
   the last commit: every verse line it moved must still be a whole line of the translator's page,
   and each Pali line it newly hides is either repetition the English abbreviates, which stays
-  hidden, or content the English above renders, which goes into `covered.json`.
+  hidden, or content the English above renders, which goes into `covered.json`. It also lists
+  every Pali line still hidden in a verse he translates, which the round fixes before it ends.
 
 1. **Unsure cuts**: `put cuts --items 1.0`. Sonnet answers each cut, and Opus answers the same cuts
    on its own. `keep-agreed cuts` keeps what the two agree on. The rest goes to Opus once more, with
@@ -290,9 +301,11 @@ Once segmenting is done, the app's build takes these translations in. What it mu
 - Lines pair with the Pali, not one to one with Sujato's, and a line Sujato leaves empty can hold
   text:
   - **prose**: a sentence spanning several Pali lines sits on the first and leaves the rest empty;
-  - **verse**: the translator's lines are spread over the verse's Pali lines in order, at his own
-    line breaks, the way Sujato's are. A line needn't translate the Pali it sits on; the verse
-    must. The English never matches the Pali line for line, and the Pali's line keys never change.
+  - **verse**: the translator's lines are spread over the verse's Pali lines in order, each kept
+    whole as he prints it, the way Sujato's are: his first line on the verse's first Pali line,
+    and every Pali line showing under one of his. A line needn't translate the Pali it sits on;
+    the verse must. The English never matches the Pali line for line, and the Pali's line keys
+    never change.
 - The Pali under an English line follows the rule for Sujato's lines ([docs/corpus.md](../../docs/corpus.md)'s
   "A segment"): a lone empty line in its paragraph joins the line above, and a run of two or more
   stays hidden, since most runs are repetitions the translator abbreviates. The exception is the
@@ -300,7 +313,11 @@ Once segmenting is done, the app's build takes these translations in. What it mu
   list whole in one sentence (AN 8.46:1.5–1.7): they join it too. A repetition the English
   abbreviates or compresses is never covered, even where the English mentions it, and a doubtful
   line isn't either: a missing entry only hides Pali, while a wrong one puts repetition under a
-  line. The rest of a sutta given in excerpt (Ṭhānissaro's DN 21, DN 26,
+  line. In a verse he translates, every Pali line the rule would hide is covered, unless he
+  shortens the verse to "…", which leaves the rest of its Pali hidden like other repetition.
+  A verse he gives only as a note, as in Bodhi's AN 4.56 ("The verses are identical with those
+  of AN 4.55"), stays hidden too: the note's link takes the reader to the verse. The rest of a
+  sutta given in excerpt (Ṭhānissaro's DN 21, DN 26,
   MN 54 and MN 91) shows under no line. The paragraphs come from the
   Pali's markup (`data/html`), not the line keys, which make each of the Dhammapada's verse lines
   a paragraph of its own.

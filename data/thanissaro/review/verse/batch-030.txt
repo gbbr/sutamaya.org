@@ -1,0 +1,384 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## dhp421:1–dhp421:4 (dhp)
+CONTEXT dhp421:0 | P: Dhammadinnāttherīvatthu | S: (none) | T: (none)
+dhp421:1 | P: Yassa pure ca pacchā ca, | S: They have nothing before or after, | T: He who has nothing ⏎ –in front, behind,
+dhp421:2 | P: majjhe ca natthi kiñcanaṁ; | S: or even in between. | T: in between–
+dhp421:3 | P: Akiñcanaṁ anādānaṁ, | S: Having nothing, taking nothing: | T: the one with nothing ⏎ who clings to no thing:
+dhp421:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp422:0 | P: Aṅgulimālattheravatthu | S: (none) | T: (none)
+
+## dhp422:1–dhp422:4 (dhp)
+CONTEXT dhp422:0 | P: Aṅgulimālattheravatthu | S: (none) | T: (none)
+dhp422:1 | P: Usabhaṁ pavaraṁ vīraṁ, | S: Captain of the herd, excellent hero, | T: A splendid bull, conqueror, ⏎ hero,
+dhp422:2 | P: mahesiṁ vijitāvinaṁ; | S: great seer and victor; | T: great seer–
+dhp422:3 | P: Anejaṁ nhātakaṁ buddhaṁ, | S: unstirred, washed, awakened: | T: free from want, ⏎ awakened, washed:
+dhp422:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp423:0 | P: Devahitabrāhmaṇavatthu | S: (none) | T: (none)
+
+## dhp423:1–dhp423:6 (dhp) GATHERED; possible speaker requires a reader
+CONTEXT dhp423:0 | P: Devahitabrāhmaṇavatthu | S: (none) | T: (none)
+dhp423:1 | P: Pubbenivāsaṁ yo vedi, | S: One who knows their past lives, | T: He knows ⏎ his former lives.
+dhp423:2 | P: saggāpāyañca passati; | S: sees heaven and places of loss, | T: He sees ⏎ heavens & states of woe,
+dhp423:3 | P: Atho jātikkhayaṁ patto, | S: and has attained the end of rebirth; | T: has attained ⏎ the ending of birth,
+dhp423:4 | P: abhiññāvosito muni; | S: a sage of perfect insight | T: is a sage ⏎ who has mastered full-knowing, ⏎ his mastery totally mastered:
+dhp423:5 | P: Sabbavositavosānaṁ, | S: at the summit of spiritual perfection: | T: (none)
+dhp423:6 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp423:7 | P: Brāhmaṇavaggo chabbīsatimo. | S: (none) | T: (none)
+CONTEXT dhp423:8 | P: Ettāvatā sabbapaṭhame yamakavagge cuddasa vatthūni, appamādavagge nava, cittavagge nava, pupphavagge dvādasa, bālavagge pannarasa, paṇḍitavagge ekādasa, arahantavagge dasa, sahassavagge cuddasa, pāpavagge dvādasa, daṇḍavagge ekādasa, jarāvagge nava, attavagge dasa, lokavagge ekādasa, buddhavagge nava, sukhavagge aṭṭha, piyavagge nava, kodhavagge aṭṭha, malavagge dvādasa, dhammaṭṭhavagge dasa, maggavagge dvādasa, pakiṇṇakavagge nava, nirayavagge nava, nāgavagge aṭṭha, taṇhāvagge dvādasa, bhikkhuvagge dvādasa, brāhmaṇavagge cattālīsāti pañcādhikāni tīṇi vatthusatāni. | S: (none) | T: (none)
+
+## dhp423:9–dhp423:12 (dhp)
+CONTEXT dhp423:7 | P: Brāhmaṇavaggo chabbīsatimo. | S: (none) | T: (none)
+CONTEXT dhp423:8 | P: Ettāvatā sabbapaṭhame yamakavagge cuddasa vatthūni, appamādavagge nava, cittavagge nava, pupphavagge dvādasa, bālavagge pannarasa, paṇḍitavagge ekādasa, arahantavagge dasa, sahassavagge cuddasa, pāpavagge dvādasa, daṇḍavagge ekādasa, jarāvagge nava, attavagge dasa, lokavagge ekādasa, buddhavagge nava, sukhavagge aṭṭha, piyavagge nava, kodhavagge aṭṭha, malavagge dvādasa, dhammaṭṭhavagge dasa, maggavagge dvādasa, pakiṇṇakavagge nava, nirayavagge nava, nāgavagge aṭṭha, taṇhāvagge dvādasa, bhikkhuvagge dvādasa, brāhmaṇavagge cattālīsāti pañcādhikāni tīṇi vatthusatāni. | S: (none) | T: (none)
+dhp423:9 | P: Satevīsacatussatā, | S: (none) | T: (none)
+dhp423:10 | P: catusaccavibhāvinā; | S: (none) | T: (none)
+dhp423:11 | P: Satattayañca vatthūnaṁ, | S: (none) | T: (none)
+dhp423:12 | P: pañcādhikaṁ samuṭṭhitāti. | S: (none) | T: (none)
+CONTEXT dhp423:13 | P: Dhammapade vaggānamuddānaṁ | S: (none) | T: (none)
+
+## dhp423:14–dhp423:17 (dhp)
+CONTEXT dhp423:13 | P: Dhammapade vaggānamuddānaṁ | S: (none) | T: (none)
+dhp423:14 | P: Yamakappamādo cittaṁ, | S: (none) | T: (none)
+dhp423:15 | P: pupphaṁ bālena paṇḍito; | S: (none) | T: (none)
+dhp423:16 | P: Arahanto sahassañca, | S: (none) | T: (none)
+dhp423:17 | P: pāpaṁ daṇḍena te dasa. | S: (none) | T: (none)
+
+## dhp423:18–dhp423:21 (dhp)
+dhp423:18 | P: Jarā attā ca loko ca, | S: (none) | T: (none)
+dhp423:19 | P: buddho sukhaṁ piyena ca; | S: (none) | T: (none)
+dhp423:20 | P: Kodho malañca dhammaṭṭho, | S: (none) | T: (none)
+dhp423:21 | P: maggavaggena vīsati. | S: (none) | T: (none)
+
+## dhp423:22–dhp423:25 (dhp)
+dhp423:22 | P: Pakiṇṇaṁ nirayo nāgo, | S: (none) | T: (none)
+dhp423:23 | P: taṇhā bhikkhu ca brāhmaṇo; | S: (none) | T: (none)
+dhp423:24 | P: Ete chabbīsati vaggā, | S: (none) | T: (none)
+dhp423:25 | P: desitādiccabandhunā. | S: (none) | T: (none)
+CONTEXT dhp423:26 | P: Gāthānamuddānaṁ | S: (none) | T: (none)
+
+## dhp423:27–dhp423:30 (dhp)
+CONTEXT dhp423:26 | P: Gāthānamuddānaṁ | S: (none) | T: (none)
+dhp423:27 | P: Yamake vīsati gāthā, | S: (none) | T: (none)
+dhp423:28 | P: appamādamhi dvādasa; | S: (none) | T: (none)
+dhp423:29 | P: Ekādasa cittavagge, | S: (none) | T: (none)
+dhp423:30 | P: pupphavaggamhi soḷasa. | S: (none) | T: (none)
+
+## dhp423:31–dhp423:34 (dhp)
+dhp423:31 | P: Bāle ca soḷasa gāthā, | S: (none) | T: (none)
+dhp423:32 | P: paṇḍitamhi catuddasa; | S: (none) | T: (none)
+dhp423:33 | P: Arahante dasa gāthā, | S: (none) | T: (none)
+dhp423:34 | P: sahasse honti soḷasa. | S: (none) | T: (none)
+
+## dhp423:35–dhp423:38 (dhp)
+dhp423:35 | P: Terasa pāpavaggamhi, | S: (none) | T: (none)
+dhp423:36 | P: daṇḍamhi dasa satta ca; | S: (none) | T: (none)
+dhp423:37 | P: Ekādasa jarā vagge, | S: (none) | T: (none)
+dhp423:38 | P: attavaggamhi tā dasa. | S: (none) | T: (none)
+
+## dhp423:39–dhp423:42 (dhp)
+dhp423:39 | P: Dvādasa lokavaggamhi, | S: (none) | T: (none)
+dhp423:40 | P: buddhavaggamhi ṭhārasa; | S: (none) | T: (none)
+dhp423:41 | P: Sukhe ca piyavagge ca, | S: (none) | T: (none)
+dhp423:42 | P: gāthāyo honti dvādasa. | S: (none) | T: (none)
+
+## dhp423:43–dhp423:46 (dhp)
+dhp423:43 | P: Cuddasa kodhavaggamhi, | S: (none) | T: (none)
+dhp423:44 | P: malavaggekavīsati; | S: (none) | T: (none)
+dhp423:45 | P: Sattarasa ca dhammaṭṭhe, | S: (none) | T: (none)
+dhp423:46 | P: maggavagge sattarasa. | S: (none) | T: (none)
+
+## dhp423:47–dhp423:50 (dhp)
+dhp423:47 | P: Pakiṇṇe soḷasa gāthā, | S: (none) | T: (none)
+dhp423:48 | P: niraye nāge ca cuddasa; | S: (none) | T: (none)
+dhp423:49 | P: Chabbīsa taṇhāvaggamhi, | S: (none) | T: (none)
+dhp423:50 | P: tevīsa bhikkhuvaggikā. | S: (none) | T: (none)
+
+## dhp423:51–dhp423:56 (dhp)
+dhp423:51 | P: Ekatālīsagāthāyo, | S: (none) | T: (none)
+dhp423:52 | P: brāhmaṇe vaggamuttame; | S: (none) | T: (none)
+dhp423:53 | P: Gāthāsatāni cattāri, | S: (none) | T: (none)
+dhp423:54 | P: tevīsa ca punāpare; | S: (none) | T: (none)
+dhp423:55 | P: Dhammapade nipātamhi, | S: (none) | T: (none)
+dhp423:56 | P: desitādiccabandhunāti. | S: (none) | T: (none)
+CONTEXT dhp423:57 | P: Dhammapadapāḷi samattā. | S: The Sayings of the Dhamma are complete. | T: (none)
+
+## iti1:3.1–iti1:3.6 (iti)
+CONTEXT iti1:2.6 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: This is the meaning of what the Blessed One said.
+CONTEXT iti1:2.7 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: So with regard to this it was said:
+iti1:3.1 | P: “Yena lobhena luddhāse, | S: “When overcome by greed | T: The greed with which
+iti1:3.2 | P: sattā gacchanti duggatiṁ; | S: beings go to a bad place. | T: beings go to a bad destination, ⏎ coveting:
+iti1:3.3 | P: Taṁ lobhaṁ sammadaññāya, | S: Having rightly understood that greed, | T: from rightly knowing that greed,
+iti1:3.4 | P: pajahanti vipassino; | S: the discerning give it up. | T: those who see clearly ⏎ let go.
+iti1:3.5 | P: Pahāya na punāyanti, | S: Once they’ve given it up, | T: Letting go,
+iti1:3.6 | P: imaṁ lokaṁ kudācanan”ti. | S: they never return to this world.” | T: they never come to this world ⏎ again.
+CONTEXT iti1:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: This, too, was the meaning of what was said by the Blessed One, so I have heard.
+CONTEXT iti1:4.2 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## iti2:3.1–iti2:3.6 (iti) GATHERED; possible speaker requires a reader
+CONTEXT iti2:2.6 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti2:2.7 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti2:3.1 | P: “Yena dosena duṭṭhāse, | S: “When overcome by hate | T: The aversion with which
+iti2:3.2 | P: sattā gacchanti duggatiṁ; | S: beings go to a bad place. | T: beings go to a bad destination, ⏎ upset:
+iti2:3.3 | P: Taṁ dosaṁ sammadaññāya, | S: Having rightly understood that hate, | T: from rightly knowing that aversion,
+iti2:3.4 | P: pajahanti vipassino; | S: the discerning give it up. | T: those who see clearly ⏎ let go.
+iti2:3.5 | P: Pahāya na punāyanti, | S: Once they’ve given it up, | T: Letting go, ⏎ they never come to this world ⏎ again.
+iti2:3.6 | P: imaṁ lokaṁ kudācanan”ti. | S: they never return to this world.” | T: (none)
+CONTEXT iti2:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti2:4.2 | P: Dutiyaṁ. | S: (none) | T: (none)
+
+## iti3:3.1–iti3:3.6 (iti) GATHERED; possible speaker requires a reader
+CONTEXT iti3:2.6 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti3:2.7 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti3:3.1 | P: “Yena mohena mūḷhāse, | S: “When overcome by delusion | T: The delusion with which
+iti3:3.2 | P: sattā gacchanti duggatiṁ; | S: beings go to a bad place. | T: beings go to a bad destination, ⏎ confused:
+iti3:3.3 | P: Taṁ mohaṁ sammadaññāya, | S: Having rightly understood that delusion, | T: from rightly knowing that delusion,
+iti3:3.4 | P: pajahanti vipassino; | S: the discerning give it up. | T: those who see clearly ⏎ let go.
+iti3:3.5 | P: Pahāya na punāyanti, | S: Once they’ve given it up, | T: Letting go, ⏎ they never come to this world ⏎ again.
+iti3:3.6 | P: imaṁ lokaṁ kudācanan”ti. | S: they never return to this world.” | T: (none)
+CONTEXT iti3:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti3:4.2 | P: Tatiyaṁ. | S: (none) | T: (none)
+
+## iti4:3.1–iti4:3.6 (iti) GATHERED; possible speaker requires a reader
+CONTEXT iti4:2.6 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti4:2.7 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti4:3.1 | P: “Yena kodhena kuddhāse, | S: “When overcome by anger | T: The anger with which
+iti4:3.2 | P: sattā gacchanti duggatiṁ; | S: beings go to a bad place. | T: beings go to a bad destination, ⏎ enraged:
+iti4:3.3 | P: Taṁ kodhaṁ sammadaññāya, | S: Having rightly understood that anger, | T: from rightly knowing that anger,
+iti4:3.4 | P: pajahanti vipassino; | S: the discerning give it up. | T: those who see clearly ⏎ let go.
+iti4:3.5 | P: Pahāya na punāyanti, | S: Once they’ve given it up, | T: Letting go, ⏎ they never come to this world ⏎ again.
+iti4:3.6 | P: imaṁ lokaṁ kudācanan”ti. | S: they never return to this world.” | T: (none)
+CONTEXT iti4:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti4:4.2 | P: Catutthaṁ. | S: (none) | T: (none)
+
+## iti5:3.1–iti5:3.6 (iti) GATHERED; possible speaker requires a reader
+CONTEXT iti5:2.6 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti5:2.7 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti5:3.1 | P: “Yena makkhena makkhāse, | S: “When overcome by disdain | T: The contempt with which
+iti5:3.2 | P: sattā gacchanti duggatiṁ; | S: beings go to a bad place. | T: beings go to a bad destination, ⏎ disdainful:
+iti5:3.3 | P: Taṁ makkhaṁ sammadaññāya, | S: Having rightly understood that disdain, | T: from rightly knowing that contempt,
+iti5:3.4 | P: pajahanti vipassino; | S: the discerning give it up. | T: those who see clearly ⏎ let go.
+iti5:3.5 | P: Pahāya na punāyanti, | S: Once they’ve given it up, | T: Letting go, ⏎ they never come to this world ⏎ again.
+iti5:3.6 | P: imaṁ lokaṁ kudācanan”ti. | S: they never return to this world.” | T: (none)
+CONTEXT iti5:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti5:4.2 | P: Pañcamaṁ. | S: (none) | T: (none)
+
+## iti6:3.1–iti6:3.6 (iti) GATHERED; possible speaker requires a reader
+CONTEXT iti6:2.6 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti6:2.7 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti6:3.1 | P: “Yena mānena mattāse, | S: “Drunk on conceit, | T: The conceit with which
+iti6:3.2 | P: sattā gacchanti duggatiṁ; | S: beings go to a bad place. | T: beings go to a bad destination, ⏎ proud:
+iti6:3.3 | P: Taṁ mānaṁ sammadaññāya, | S: Having rightly understood that conceit, | T: from rightly knowing that conceit,
+iti6:3.4 | P: pajahanti vipassino; | S: the discerning give it up. | T: those who see clearly ⏎ let go.
+iti6:3.5 | P: Pahāya na punāyanti, | S: Once they’ve given it up, | T: Letting go, ⏎ they never come to this world ⏎ again.
+iti6:3.6 | P: imaṁ lokaṁ kudācanan”ti. | S: they never return to this world.” | T: (none)
+CONTEXT iti6:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti6:4.2 | P: Chaṭṭhaṁ. | S: (none) | T: (none)
+
+## iti7:3.1–iti7:3.4 (iti)
+CONTEXT iti7:2.3 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti7:2.4 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti7:3.1 | P: “Yo sabbaṁ sabbato ñatvā, | S: “Those who know the all as all, | T: Knowing the All ⏎ from all around,
+iti7:3.2 | P: sabbatthesu na rajjati; | S: are not attracted to anything. | T: not stirred by passion ⏎ in all places:
+iti7:3.3 | P: Sa ve sabbapariññā so, | S: They completely understand all, | T: he, having comprehended ⏎ the All,
+iti7:3.4 | P: sabbadukkhamupaccagā”ti. | S: and have risen above all suffering.” | T: has gone beyond ⏎ all stress.
+CONTEXT iti7:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti7:4.2 | P: Sattamaṁ. | S: (none) | T: (none)
+
+## iti8:3.1–iti8:3.4 (iti)
+CONTEXT iti8:2.3 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti8:2.4 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti8:3.1 | P: “Mānupetā ayaṁ pajā, | S: “These folk are caught up in conceit, | T: People are ⏎ possessed by conceit
+iti8:3.2 | P: mānaganthā bhave ratā; | S: tied by conceit, delighting in existence. | T: bound with conceit ⏎ delighted with becoming.
+iti8:3.3 | P: Mānaṁ aparijānantā, | S: Not completely understanding conceit, | T: Not comprehending conceit,
+iti8:3.4 | P: āgantāro punabbhavaṁ. | S: they return in future lives. | T: they come to further becoming.
+
+## iti8:4.1–iti8:4.4 (iti)
+iti8:4.1 | P: Ye ca mānaṁ pahantvāna, | S: Those who have given up conceit, | T: But those who, letting go of conceit,
+iti8:4.2 | P: vimuttā mānasaṅkhaye; | S: freed with the ending of conceit, | T: are, in its destruction, released,
+iti8:4.3 | P: Te mānaganthābhibhuno, | S: vanquishers of the tie of conceit, | T: conquering the bond of conceit,
+iti8:4.4 | P: sabbadukkhamupaccagun”ti. | S: have risen above all suffering.” | T: go beyond ⏎ all bonds.
+CONTEXT iti8:5.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti8:5.2 | P: Aṭṭhamaṁ. | S: (none) | T: (none)
+
+## iti9:3.1–iti9:3.6 (iti)
+CONTEXT iti9:2.3 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti9:2.4 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti9:3.1 | P: “Yena lobhena luddhāse, | S: “When overcome by greed | T: The greed with which
+iti9:3.2 | P: sattā gacchanti duggatiṁ; | S: beings go to a bad place. | T: beings go to a bad destination, ⏎ coveting:
+iti9:3.3 | P: Taṁ lobhaṁ sammadaññāya, | S: Having rightly understood that greed, | T: from rightly knowing that greed,
+iti9:3.4 | P: pajahanti vipassino; | S: the discerning give it up. | T: those who see clearly ⏎ let go.
+iti9:3.5 | P: Pahāya na punāyanti, | S: Once they’ve given it up, | T: Letting go,
+iti9:3.6 | P: imaṁ lokaṁ kudācanan”ti. | S: they never return to this world.” | T: they never come to this world ⏎ again.
+CONTEXT iti9:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti9:4.2 | P: Navamaṁ. | S: (none) | T: (none)
+
+## iti10:3.1–iti10:3.6 (iti)
+CONTEXT iti10:2.3 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti10:2.4 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti10:3.1 | P: “Yena dosena duṭṭhāse, | S: “When overcome by hate | T: (none)
+iti10:3.2 | P: sattā gacchanti duggatiṁ; | S: beings go to a bad place. | T: (none)
+iti10:3.3 | P: Taṁ dosaṁ sammadaññāya, | S: Having rightly understood that hate, | T: (none)
+iti10:3.4 | P: pajahanti vipassino; | S: the discerning give it up. | T: (none)
+iti10:3.5 | P: Pahāya na punāyanti, | S: Once they’ve given it up, | T: (none)
+iti10:3.6 | P: imaṁ lokaṁ kudācanan”ti. | S: they never return to this world.” | T: (none)
+CONTEXT iti10:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti10:4.2 | P: Dasamaṁ. | S: (none) | T: (none)
+
+## iti10:5.1–iti10:5.4 (iti)
+CONTEXT iti10:4.3 | P: Pāṭibhogavaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT iti10:5.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+iti10:5.1 | P: Rāgadosā atha moho, | S: (none) | T: (none)
+iti10:5.2 | P: Kodhamakkhā mānaṁ sabbaṁ; | S: (none) | T: (none)
+iti10:5.3 | P: Mānato rāgadosā puna dve, | S: (none) | T: (none)
+iti10:5.4 | P: Pakāsitā vaggamāhu paṭhamanti. | S: (none) | T: (none)
+
+## iti11:3.1–iti11:3.6 (iti)
+CONTEXT iti11:2.3 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti11:2.4 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti11:3.1 | P: “Yena mohena mūḷhāse, | S: “When overcome by delusion | T: (none)
+iti11:3.2 | P: sattā gacchanti duggatiṁ; | S: beings go to a bad place. | T: (none)
+iti11:3.3 | P: Taṁ mohaṁ sammadaññāya, | S: Having rightly understood that delusion, | T: (none)
+iti11:3.4 | P: pajahanti vipassino; | S: the discerning give it up. | T: (none)
+iti11:3.5 | P: Pahāya na punāyanti, | S: Once they’ve given it up, | T: (none)
+iti11:3.6 | P: imaṁ lokaṁ kudācanan”ti. | S: they never return to this world.” | T: (none)
+CONTEXT iti11:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti11:4.2 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## iti12:3.1–iti12:3.6 (iti)
+CONTEXT iti12:2.3 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti12:2.4 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti12:3.1 | P: “Yena kodhena kuddhāse, | S: “When overcome by anger | T: (none)
+iti12:3.2 | P: sattā gacchanti duggatiṁ; | S: beings go to a bad place. | T: (none)
+iti12:3.3 | P: Taṁ kodhaṁ sammadaññāya, | S: Having rightly understood that anger, | T: (none)
+iti12:3.4 | P: pajahanti vipassino; | S: the discerning give it up. | T: (none)
+iti12:3.5 | P: Pahāya na punāyanti, | S: Once they’ve given it up, | T: (none)
+iti12:3.6 | P: imaṁ lokaṁ kudācanan”ti. | S: they never return to this world.” | T: (none)
+CONTEXT iti12:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti12:4.2 | P: Dutiyaṁ. | S: (none) | T: (none)
+
+## iti13:3.1–iti13:3.6 (iti)
+CONTEXT iti13:2.3 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti13:2.4 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti13:3.1 | P: “Yena makkhena makkhāse, | S: “When overcome by disdain | T: [The verses for these discourses are identical with those for §§2—5.]
+iti13:3.2 | P: sattā gacchanti duggatiṁ; | S: beings go to a bad place. | T: (none)
+iti13:3.3 | P: Taṁ makkhaṁ sammadaññāya, | S: Having rightly understood that disdain, | T: (none)
+iti13:3.4 | P: pajahanti vipassino; | S: the discerning give it up. | T: (none)
+iti13:3.5 | P: Pahāya na punāyanti, | S: Once they’ve given it up, | T: (none)
+iti13:3.6 | P: imaṁ lokaṁ kudācanan”ti. | S: they never return to this world.” | T: (none)
+CONTEXT iti13:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti13:4.2 | P: Tatiyaṁ. | S: (none) | T: (none)
+
+## iti14:3.1–iti14:3.4 (iti) GATHERED; unequal counts require a reader
+CONTEXT iti14:2.3 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti14:2.4 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti14:3.1 | P: “Natthañño ekadhammopi, | S: “There is no other thing | T: No one other thing
+iti14:3.2 | P: yenevaṁ nivutā pajā; | S: that shrouds people like ignorance. | T: so hinders people
+iti14:3.3 | P: Saṁsaranti ahorattaṁ, | S: Veiled by delusion, | T: (none)
+iti14:3.4 | P: yathā mohena āvutā. | S: they transmigrate day and night. | T: that they wander on, day & night, ⏎ as when they’re obstructed ⏎ by delusion.
+
+## iti14:4.1–iti14:4.4 (iti)
+iti14:4.1 | P: Ye ca mohaṁ pahantvāna, | S: Those who have given up delusion, | T: But those who, letting go of delusion,
+iti14:4.2 | P: tamokhandhaṁ padālayuṁ; | S: shattering the mass of darkness, | T: shatter the mass of darkness,
+iti14:4.3 | P: Na te puna saṁsaranti, | S: wander no more, | T: wander no further.
+iti14:4.4 | P: hetu tesaṁ na vijjatī”ti. | S: the root is not found in them.” | T: Their cause isn’t found.
+CONTEXT iti14:5.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti14:5.2 | P: Catutthaṁ. | S: (none) | T: (none)
+
+## iti15:3.1–iti15:3.4 (iti)
+CONTEXT iti15:2.3 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti15:2.4 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti15:3.1 | P: “Taṇhādutiyo puriso, | S: “Craving is a person’s partner | T: With craving his companion, a man
+iti15:3.2 | P: dīghamaddhāna saṁsaraṁ; | S: as they transmigrate on this long journey. | T: wanders on a long, long time.
+iti15:3.3 | P: Itthabhāvaññathābhāvaṁ, | S: They go from this state to another, | T: Neither in this state here ⏎ nor anywhere else
+iti15:3.4 | P: saṁsāraṁ nātivattati. | S: but don’t escape transmigration. | T: does he go beyond ⏎ the wandering-on.
+
+## iti15:4.1–iti15:4.4 (iti)
+iti15:4.1 | P: Etamādīnavaṁ ñatvā, | S: Knowing this danger, | T: Knowing this drawback–
+iti15:4.2 | P: Taṇhaṁ dukkhassa sambhavaṁ; | S: that craving is the cause of suffering— | T: that craving brings stress into play–
+iti15:4.3 | P: Vītataṇho anādāno, | S: rid of craving, free of grasping, | T: free from craving, ⏎ devoid of clinging,
+iti15:4.4 | P: Sato bhikkhu paribbaje”ti. | S: a mendicant would wander mindful.” | T: mindful, the monk ⏎ lives the mendicant life.
+CONTEXT iti15:5.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti15:5.2 | P: Pañcamaṁ. | S: (none) | T: (none)
+
+## iti16:3.1–iti16:3.6 (iti)
+CONTEXT iti16:2.3 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti16:2.4 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti16:3.1 | P: “Yonisomanasikāro, | S: “There is nothing so helpful | T: Appropriate attention
+iti16:3.2 | P: dhammo sekhassa bhikkhuno; | S: for a trainee mendicant | T: as a quality ⏎ of a monk in training:
+iti16:3.3 | P: Natthañño evaṁ bahukāro, | S: aspiring for the ultimate goal | T: nothing else ⏎ does so much
+iti16:3.4 | P: uttamatthassa pattiyā; | S: as rational application of mind. | T: for attaining the superlative goal.
+iti16:3.5 | P: Yoniso padahaṁ bhikkhu, | S: Striving rationally, a mendicant | T: A monk, striving appropriately,
+iti16:3.6 | P: khayaṁ dukkhassa pāpuṇe”ti. | S: attains the end of suffering.” | T: attains the ending of stress.
+CONTEXT iti16:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti16:4.2 | P: Chaṭṭhaṁ. | S: (none) | T: (none)
+
+## iti17:3.1–iti17:3.6 (iti)
+CONTEXT iti17:2.3 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti17:2.4 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti17:3.1 | P: “Kalyāṇamitto yo bhikkhu, | S: “A mendicant with good friends | T: A monk who’s a friend ⏎ to admirable people ⏎ –
+iti17:3.2 | P: sappatisso sagāravo; | S: is reverential and respectful | T: who’s reverential, respectful,
+iti17:3.3 | P: Karaṁ mittānaṁ vacanaṁ, | S: when their friends are speaking, | T: doing what his friends advise–
+iti17:3.4 | P: sampajāno patissato; | S: aware and mindful. | T: mindful, alert,
+iti17:3.5 | P: Pāpuṇe anupubbena, | S: Gradually they would attain | T: attains step by step
+iti17:3.6 | P: sabbasaṁyojanakkhayan”ti. | S: the ending of all fetters.” | T: the ending of all fetters.
+CONTEXT iti17:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti17:4.2 | P: Sattamaṁ. | S: (none) | T: (none)
+
+## iti18:3.1–iti18:3.6 (iti)
+CONTEXT iti18:2.6 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti18:2.7 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti18:3.1 | P: “Āpāyiko nerayiko, | S: “A schismatic remains for the eon | T: Doomed for an eon
+iti18:3.2 | P: Kappaṭṭho saṅghabhedako; | S: in a place of loss, in hell. | T: to deprivation, ⏎ to hell:
+iti18:3.3 | P: Vaggārāmo adhammaṭṭho, | S: Taking a stand against the teaching, | T: one who has split the Saṅgha.
+iti18:3.4 | P: Yogakkhemā padhaṁsati; | S: favoring factions, they ruin their sanctuary. | T: Delighting in factions, ⏎ unjudicious– ⏎ he’s barred ⏎ from safety from bondage.
+iti18:3.5 | P: Saṅghaṁ samaggaṁ bhetvāna, | S: After causing schism in a harmonious Saṅgha, | T: Having split a Saṅgha in concord,
+iti18:3.6 | P: Kappaṁ nirayamhi paccatī”ti. | S: they burn in hell for an eon.” | T: he cooks for an eon ⏎ in hell.
+CONTEXT iti18:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti18:4.2 | P: Aṭṭhamaṁ. | S: (none) | T: (none)
+
+## iti19:3.1–iti19:3.6 (iti)
+CONTEXT iti19:2.6 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti19:2.7 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti19:3.1 | P: “Sukhā saṅghassa sāmaggī, | S: “A Saṅgha in harmony is happy, | T: Blissful is concord in the Saṅgha.
+iti19:3.2 | P: samaggānañcanuggaho; | S: as is support for those in harmony. | T: One who assists in concord– ⏎ delighting in concord,
+iti19:3.3 | P: Samaggarato dhammaṭṭho, | S: Taking a stand on the teaching, | T: judicious–
+iti19:3.4 | P: yogakkhemā na dhaṁsati; | S: favoring harmony, they ruin no sanctuary. | T: isn’t barred from safety from bondage.
+iti19:3.5 | P: Saṅghaṁ samaggaṁ katvāna, | S: After creating harmony in the Saṅgha, | T: Having brought concord to the Saṅgha,
+iti19:3.6 | P: kappaṁ saggamhi modatī”ti. | S: they rejoice in heaven for an eon.” | T: he rejoices for an eon ⏎ in heaven.
+CONTEXT iti19:4.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti19:4.2 | P: Navamaṁ. | S: (none) | T: (none)
+
+## iti20:3.1–iti20:3.4 (iti)
+CONTEXT iti20:2.6 | P: Etamatthaṁ bhagavā avoca. | S: The Buddha spoke this matter. | T: (none)
+CONTEXT iti20:2.7 | P: Tatthetaṁ iti vuccati: | S: On this it is said: | T: (none)
+iti20:3.1 | P: “Paduṭṭhacittaṁ ñatvāna, | S: “Knowing an individual’s | T: Knowing the case
+iti20:3.2 | P: ekaccaṁ idha puggalaṁ; | S: corrupted mind, | T: of a corrupt-minded person,
+iti20:3.3 | P: Etamatthañca byākāsi, | S: the Buddha explained this matter | T: the One Awakened explained its meaning
+iti20:3.4 | P: buddho bhikkhūna santike. | S: in the mendicants’ presence. | T: in the presence of the monks.
+
+## iti20:4.1–iti20:4.4 (iti)
+iti20:4.1 | P: Imamhi cāyaṁ samaye, | S: If that individual | T: If that person
+iti20:4.2 | P: kālaṁ kayirātha puggalo; | S: were to die at this time, | T: were to die at this instant,
+iti20:4.3 | P: Nirayaṁ upapajjeyya, | S: they’d be reborn in hell, | T: he’d reappear in hell
+iti20:4.4 | P: cittaṁ hissa padūsitaṁ. | S: for their mind is corrupted. | T: because his mind is corrupt–
+
+## iti20:5.1–iti20:5.4 (iti) GATHERED; unequal counts require a reader
+iti20:5.1 | P: Yathā haritvā nikkhipeyya, | S: That sort is cast down as surely | T: (none)
+iti20:5.2 | P: evamevaṁ tathāvidho; | S: as if they’d been carried off and put there. | T: as if he were carried off ⏎ and placed there.
+iti20:5.3 | P: Cetopadosahetu hi, | S: For corruption of mind is the reason | T: It’s because of corrupt-mindedness
+iti20:5.4 | P: sattā gacchanti duggatin”ti. | S: sentient beings go to a bad place.” | T: that beings go ⏎ to a bad destination.
+CONTEXT iti20:6.1 | P: Ayampi attho vutto bhagavatā, iti me sutanti. | S: This too is a matter that was spoken by the Blessed One: that is what I heard. | T: (none)
+CONTEXT iti20:6.2 | P: Dasamaṁ. | S: (none) | T: (none)
+
+## iti20:7.1–iti20:7.4 (iti)
+CONTEXT iti20:6.3 | P: Dutiyo vaggo. | S: (none) | T: (none)
+CONTEXT iti20:7.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+iti20:7.1 | P: Moho kodho atha makkho, | S: (none) | T: (none)
+iti20:7.2 | P: Vijjā taṇhā sekhaduve ca; | S: (none) | T: (none)
+iti20:7.3 | P: Bhedo sāmaggipuggalo, | S: (none) | T: (none)
+iti20:7.4 | P: Vaggamāhu dutiyanti vuccatīti. | S: (none) | T: (none)

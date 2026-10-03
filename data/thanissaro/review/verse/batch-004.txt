@@ -1,0 +1,418 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## mn26:25.14–mn26:25.17 (mn)
+mn26:25.14 | P: Ahañhi arahā loke, | S: For in this world, I am the perfected one; | T: For I am an arahant in the world;
+mn26:25.15 | P: ahaṁ satthā anuttaro; | S: I am the supreme Teacher. | T: I, the unexcelled teacher.
+mn26:25.16 | P: Ekomhi sammāsambuddho, | S: I alone am fully awakened, | T: I, alone, am rightly self-awakened.
+mn26:25.17 | P: sītibhūtosmi nibbuto. | S: cooled, quenched. | T: Cooled am I, unbound.
+
+## mn26:25.18–mn26:25.21 (mn) GATHERED; equal counts: one line per row
+mn26:25.18 | P: Dhammacakkaṁ pavattetuṁ, | S: I am going to the city of Kāsi | T: To set rolling the wheel of Dhamma ⏎ I go to the city of Kāsi.
+mn26:25.19 | P: Gacchāmi kāsinaṁ puraṁ; | S: to roll forth the Wheel of Dhamma. | T: (none)
+mn26:25.20 | P: Andhībhūtasmiṁ lokasmiṁ, | S: In this world that is so blind, | T: In a world become blind,
+mn26:25.21 | P: Āhañchaṁ amatadundubhin’ti. | S: I’ll beat the drum of freedom from death!’ | T: I beat the drum of the deathless.’
+CONTEXT mn26:25.22 | P: ‘Yathā kho tvaṁ, āvuso, paṭijānāsi, arahasi anantajino’ti. | S: ‘According to what you claim, reverend, you ought to be the Infinite Victor.’ | T: “‘From your claims, my friend, you must be an infinite conqueror.’
+AUTO mn26:25.18 starts: To set rolling the wheel of Dhamma
+AUTO mn26:25.19 starts: I go to the city of Kāsi.
+AUTO mn26:25.20 starts: In a world become blind,
+AUTO mn26:25.21 starts: I beat the drum of the deathless.’
+
+## mn26:25.23–mn26:25.26 (mn)
+CONTEXT mn26:25.22 | P: ‘Yathā kho tvaṁ, āvuso, paṭijānāsi, arahasi anantajino’ti. | S: ‘According to what you claim, reverend, you ought to be the Infinite Victor.’ | T: “‘From your claims, my friend, you must be an infinite conqueror.’
+mn26:25.23 | P: ‘Mādisā ve jinā honti, | S: ‘The victors are those who, like me, | T: “‘Conquerors are those like me
+mn26:25.24 | P: ye pattā āsavakkhayaṁ; | S: have reached the ending of defilements. | T: who have reached effluents’ end.
+mn26:25.25 | P: Jitā me pāpakā dhammā, | S: I have conquered bad qualities, Upaka— | T: I’ve conquered evil qualities,
+mn26:25.26 | P: tasmāhamupaka jino’ti. | S: that’s why I’m a victor.’ | T: and so, Upaka, I’m a conqueror.’
+CONTEXT mn26:25.27 | P: Evaṁ vutte, bhikkhave, upako ājīvako ‘hupeyyapāvuso’ti vatvā sīsaṁ okampetvā ummaggaṁ gahetvā pakkāmi. | S: When I had spoken, Upaka said: ‘If you say so, reverend.’ Shaking his head, he took a wrong turn and left. | T: “When this was said, Upaka said, ‘May it be so, my friend,’ and—shaking his head, taking a side-road—he left.
+CONTEXT mn26:26.1 | P: Atha khvāhaṁ, bhikkhave, anupubbena cārikaṁ caramāno yena bārāṇasī isipatanaṁ migadāyo yena pañcavaggiyā bhikkhū tenupasaṅkamiṁ. | S: Traveling stage by stage, I arrived at Varanasi, and went to see the group of five mendicants in the deer park at Isipatana. | T: “Then, wandering by stages, I arrived at Bārāṇasī, at the Deer Park in Isipatana, to where the group of five monks were staying.
+
+## mn30:25.1–mn30:25.4 (mn)
+CONTEXT mn30:24.5 | P: Opammavaggo niṭṭhito tatiyo. | S: (none) | T: (none)
+CONTEXT mn30:25.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+mn30:25.1 | P: Moḷiyaphaggunariṭṭhañca nāmo, | S: (none) | T: (none)
+mn30:25.2 | P: Andhavane kathipuṇṇaṁ nivāpo; | S: (none) | T: (none)
+mn30:25.3 | P: Rāsikaṇerumahāgajanāmo, | S: (none) | T: (none)
+mn30:25.4 | P: Sārūpamo puna piṅgalakoccho. | S: (none) | T: (none)
+
+## mn40:15.1–mn40:15.4 (mn)
+CONTEXT mn40:14.7 | P: Mahāyamakavaggo niṭṭhito catuttho. | S: (none) | T: (none)
+CONTEXT mn40:15.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+mn40:15.1 | P: Giñjakasālavanaṁ pariharituṁ, | S: (none) | T: (none)
+mn40:15.2 | P: Paññavato puna saccakanisedho; | S: (none) | T: (none)
+mn40:15.3 | P: Mukhavaṇṇapasīdanatāpindo, | S: (none) | T: (none)
+mn40:15.4 | P: Kevaṭṭaassapurajaṭilena. | S: (none) | T: (none)
+
+## mn49:9.1–mn49:9.4 (mn) GATHERED; equal counts: one line per row
+CONTEXT mn49:8.11 | P: Yathākathaṁ pana me tvaṁ, mārisa, gatiñca pajānāsi, jutiñca pajānāsi: | S: ‘But in what way do you understand my range and my light?’ | T: “‘Well, monk, how do you discern my sphere, how do you discern my splendor:
+CONTEXT mn49:8.12 | P: “evaṁ mahiddhiko bako brahmā, evaṁ mahānubhāvo bako brahmā, evaṁ mahesakkho bako brahmā”’ti? | S: (none) | T: “Baka Brahmā has this much great power. Baka Brahmā has this much great might. Baka Brahmā has this much great influence”?’
+mn49:9.1 | P: ‘Yāvatā candimasūriyā, | S: ‘A galaxy extends a thousand times as far | T: “‘As far as suns & moons revolve, ⏎ shining, illuminating the directions, ⏎ over a thousand-fold world
+mn49:9.2 | P: Pariharanti disā bhanti virocanā; | S: as the moon and sun revolve | T: (none)
+mn49:9.3 | P: Tāva sahassadhā loko, | S: and the dazzling ones light up the quarters. | T: (none)
+mn49:9.4 | P: Ettha te vattate vaso. | S: And there you wield your power. | T: your control holds sway.
+AUTO mn49:9.1 starts: “‘As far as suns & moons revolve,
+AUTO mn49:9.2 starts: shining, illuminating the directions,
+AUTO mn49:9.3 starts: over a thousand-fold world
+AUTO mn49:9.4 starts: your control holds sway.
+
+## mn49:9.5–mn49:9.8 (mn)
+mn49:9.5 | P: Paroparañca jānāsi, | S: You know the high and low, | T: There you know those above & below,
+mn49:9.6 | P: atho rāgavirāginaṁ; | S: the passionate and dispassionate, | T: those with lust & those without,
+mn49:9.7 | P: Itthabhāvaññathābhāvaṁ, | S: and the coming and going of sentient beings | T: the state of what is as it is, ⏎ the state of what becomes otherwise,
+mn49:9.8 | P: sattānaṁ āgatiṁ gatinti. | S: from this realm to another. | T: the coming & going of beings.
+CONTEXT mn49:9.9 | P: Evaṁ kho te ahaṁ, brahme, gatiñca pajānāmi jutiñca pajānāmi: | S: That’s how I understand your range and your light. | T: “‘That, Brahmā, is how I discern your sphere, that is how I discern your splendor:
+CONTEXT mn49:9.10 | P: “evaṁ mahiddhiko bako brahmā, evaṁ mahānubhāvo bako brahmā, evaṁ mahesakkho bako brahmā”ti. | S: (none) | T: “Baka Brahmā has this much great power. Baka Brahmā has this much great might. Baka Brahmā has this much great influence.”
+
+## mn49:25.1–mn49:25.2 (mn)
+CONTEXT mn49:23.3 | P: Atha kho ahameva tayā bhiyyo’ti. | S: Rather, I know more than you.’ | T: I am actually superior to you.’
+CONTEXT mn49:24.1 | P: ‘Sace kho, mārisa, sabbassa sabbattena ananubhūtaṁ, tadabhiññāya mā heva te rittakameva ahosi, tucchakameva ahosīti. | S: ‘Well, good fellow, if you have directly known that which does not fall within the scope of experience characterized by all, may that not be vacuous and hollow for you! | T: “‘If, good sir, you have directly known the extent of what has not been experienced through the allness of the all, may it not turn out to be actually vain and void for you.’
+mn49:25.1 | P: Viññāṇaṁ anidassanaṁ | S: Consciousness where no form appears, | T: “‘Consciousness without surface,
+mn49:25.2 | P: anantaṁ sabbato pabhaṁ. | S: infinite, radiant all-round. | T: endless, radiant all around,
+CONTEXT mn49:25.3 | P: Taṁ pathaviyā pathavattena ananubhūtaṁ, āpassa āpattena ananubhūtaṁ, tejassa tejattena ananubhūtaṁ, vāyassa vāyattena ananubhūtaṁ, bhūtānaṁ bhūtattena ananubhūtaṁ, devānaṁ devattena ananubhūtaṁ, pajāpatissa pajāpatittena ananubhūtaṁ, brahmānaṁ brahmattena ananubhūtaṁ, ābhassarānaṁ ābhassarattena ananubhūtaṁ, subhakiṇhānaṁ subhakiṇhattena ananubhūtaṁ, vehapphalānaṁ vehapphalattena ananubhūtaṁ, abhibhussa abhibhuttena ananubhūtaṁ, sabbassa sabbattena ananubhūtaṁ. | S: That is what does not fall within the scope of experience characterized by earth, water, fire, air, creatures, gods, the Progenitor, the Divinity, the gods of sublime luminosity, the gods of universal beauty, the gods of abundant fruit, the Vanquisher, and the all. | T: has not been experienced through the earthness of earth… the liquidity of liquid… the fieriness of fire… the windiness of wind… the allness of the all.’
+CONTEXT mn49:26.1 | P: Handa carahi te, mārisa, passa antaradhāyāmī’ti. | S: Come then, good fellow, see me vanish from you!’ | T: “‘Well then, good sir, I will disappear from you.’
+
+## mn49:27.1–mn49:27.4 (mn)
+CONTEXT mn49:26.9 | P: ‘ettāvatā brahmā ca brahmaparisā ca brahmapārisajjā ca saddañca me sossanti, na ca maṁ dakkhantī’ti. | S: my voice would extend so that divinity, his assembly, and his retinue would hear me, but they would not see me. | T: Brahmā, the Brahmā assembly, and the attendants of the Brahmā assembly heard my voice but did not see me.
+CONTEXT mn49:26.10 | P: Antarahito imaṁ gāthaṁ abhāsiṁ: | S: And while vanished I spoke this verse: | T: Having disappeared, I recited this verse:
+mn49:27.1 | P: ‘Bhavevāhaṁ bhayaṁ disvā, | S: ‘Seeing the danger in existence— | T: ‘Having seen ⏎ danger ⏎ right in becoming,
+mn49:27.2 | P: bhavañca vibhavesinaṁ; | S: that life in any existence will cease to be— | T: and becoming ⏎ in searching for non-becoming,
+mn49:27.3 | P: Bhavaṁ nābhivadiṁ kiñci, | S: I didn’t affirm any kind of existence, | T: I didn’t affirm ⏎ any kind of becoming,
+mn49:27.4 | P: nandiñca na upādiyin’ti. | S: and didn’t grasp at relishing.’ | T: or cling to any delight.’
+CONTEXT mn49:28.1 | P: Atha kho, bhikkhave, brahmā ca brahmaparisā ca brahmapārisajjā ca acchariyabbhutacittajātā ahesuṁ: | S: Then the Divinity, his assembly, and his retinue, their minds full of wonder and amazement, thought, | T: “Then in Brahmā, the Brahmā assembly, and the attendants of the Brahmā assembly there arose a sense of amazement & astonishment:
+CONTEXT mn49:28.2 | P: ‘acchariyaṁ vata bho, abbhutaṁ vata bho. | S: ‘Oh lord, how incredible, how amazing! | T: ‘How amazing! How astounding!
+
+## mn53:25.3–mn53:25.6 (mn)
+CONTEXT mn53:25.1 | P: Ayaṁ vuccati, mahānāma, ariyasāvako vijjāsampanno itipi caraṇasampanno itipi vijjācaraṇasampanno itipi. | S: This noble disciple is said to be ‘accomplished in knowledge’, and also ‘accomplished in conduct’, and also ‘accomplished in knowledge and conduct’. | T: “This, Mahānāma, is called a disciple of the noble ones who is consummate in clear-knowing, consummate in conduct, consummate in clear-knowing & conduct.
+CONTEXT mn53:25.2 | P: Brahmunāpesā, mahānāma, sanaṅkumārena gāthā bhāsitā: | S: And the divinity Sanaṅkumāra also spoke this verse: | T: And by the Brahmā Sanaṅkumāra this verse was said:
+mn53:25.3 | P: ‘Khattiyo seṭṭho janetasmiṁ, | S: ‘The aristocrat is best among people | T: ‘The noble warrior is the best among people
+mn53:25.4 | P: ye gottapaṭisārino; | S: who take clan as the standard. | T: when judging by clan.
+mn53:25.5 | P: Vijjācaraṇasampanno, | S: But one accomplished in knowledge and conduct | T: But a person consummate ⏎ in clear-knowing & conduct,
+mn53:25.6 | P: so seṭṭho devamānuse’ti. | S: is best among gods and humans.’ | T: is the best of beings ⏎ human & divine.’
+CONTEXT mn53:25.7 | P: Sā kho panesā, mahānāma, brahmunā sanaṅkumārena gāthā sugītā no duggītā, subhāsitā no dubbhāsitā, atthasaṁhitā no anatthasaṁhitā, anumatā bhagavatā”ti. | S: And that verse was well sung by the Divinity Sanaṅkumāra, not poorly sung; well spoken, not poorly spoken, beneficial, not harmful, and it was approved by the Buddha.” | T: “This verse was well-sung by the Brahmā Sanaṅkumāra, not ill-sung; well-said, not ill-said; connected with the goal, not unconnected with the goal. It was endorsed by the Blessed One.”
+CONTEXT mn53:26.1 | P: Atha kho bhagavā uṭṭhahitvā āyasmantaṁ ānandaṁ āmantesi: | S: Then the Buddha got up and said to Venerable Ānanda, | T: Then the Blessed One got up and said to Ven. Ānanda,
+
+## mn56:29.3–mn56:29.8 (mn)
+CONTEXT mn56:29.1 | P: Evaṁ vutte, upāli gahapati uṭṭhāyāsanā ekaṁsaṁ uttarāsaṅgaṁ karitvā yena bhagavā tenañjaliṁ paṇāmetvā nigaṇṭhaṁ nāṭaputtaṁ etadavoca: | S: When he had spoken, the householder Upāli rose from his seat, arranged his robe over one shoulder, raised his cupped palms in the direction of the Buddha, and said to the Jain Ñātika, | T: When this was said, Upāli the householder—rising from his seat, arranging his upper robe over one shoulder, and placing his hands palm-to-palm over his heart toward the Blessed One—said to the Nigaṇṭha Nāṭaputta:
+CONTEXT mn56:29.2 | P: “tena hi, bhante, suṇohi yassāhaṁ sāvako”ti: | S: “Well then, sir, hear whose disciple I am: | T: “In that case, venerable sir, listen to whose disciple I am.”
+mn56:29.3 | P: “Dhīrassa vigatamohassa, | S: The attentive one, free of delusion, | T: Of the enlightened, devoid-of–delusion,
+mn56:29.4 | P: Pabhinnakhīlassa vijitavijayassa; | S: with hard-heartedness dissolved, victor in battle; | T: barrenness-broken winner of victory—
+mn56:29.5 | P: Anīghassa susamacittassa, | S: he’s untroubled and very even-minded, | T: free from oppression, harmonious-minded,
+mn56:29.6 | P: Vuddhasīlassa sādhupaññassa; | S: with the virtue of an elder and the wisdom of a saint, | T: advanced in virtue, excellent in discernment,
+mn56:29.7 | P: Vesamantarassa vimalassa, | S: immaculate in the midst of it all: | T: poisons-crossed-over, stainless:
+mn56:29.8 | P: Bhagavato tassa sāvakohamasmi. | S: he is the Buddha, and I am his disciple. | T: Of that Blessed One, I’m a disciple.
+
+## mn56:29.9–mn56:29.14 (mn)
+mn56:29.9 | P: Akathaṅkathissa tusitassa, | S: He has no indecision, he’s content, | T: Of the perplexity-free, contented,
+mn56:29.10 | P: Vantalokāmisassa muditassa; | S: joyful, he has spat out the world’s bait; | T: baits-of-the-world-disgorged, empathetic,
+mn56:29.11 | P: Katasamaṇassa manujassa, | S: he has completed the ascetic’s task as a man, | T: completed-contemplative person;
+mn56:29.12 | P: Antimasārīrassa narassa; | S: a man who bears his final body; | T: the bearing-his-last-body man—
+mn56:29.13 | P: Anopamassa virajassa, | S: he’s beyond compare, he’s stainless: | T: incomparable, spotless:
+mn56:29.14 | P: Bhagavato tassa sāvakohamasmi. | S: he is the Buddha, and I am his disciple. | T: Of that Blessed One, I’m a disciple.
+
+## mn56:29.15–mn56:29.20 (mn)
+mn56:29.15 | P: Asaṁsayassa kusalassa, | S: He’s free of doubt, he’s skillful, | T: Of the free-from-doubt, skillful
+mn56:29.16 | P: Venayikassa sārathivarassa; | S: he’s a trainer, an excellent charioteer; | T: discipliner; the foremost leader;
+mn56:29.17 | P: Anuttarassa ruciradhammassa, | S: supreme, with brilliant qualities, | T: the unexcelled, splendid-in-qualities,
+mn56:29.18 | P: Nikkaṅkhassa pabhāsakassa; | S: confident, his light shines forth; | T: free-from-incertitude maker of light;
+mn56:29.19 | P: Mānacchidassa vīrassa, | S: he has cut off conceit, he’s a hero: | T: the conceit-cut-through hero:
+mn56:29.20 | P: Bhagavato tassa sāvakohamasmi. | S: he is the Buddha, and I am his disciple. | T: Of that Blessed One, I’m a disciple.
+
+## mn56:29.21–mn56:29.26 (mn)
+mn56:29.21 | P: Nisabhassa appameyyassa, | S: The boss bull, immeasurable, | T: Of the bull—immeasurable,
+mn56:29.22 | P: Gambhīrassa monapattassa; | S: profound, sagacious; | T: deep, attained to sagacity;
+mn56:29.23 | P: Khemaṅkarassa vedassa, | S: he is the maker of sanctuary, knowledgeable, | T: the provider-of-safety knower—
+mn56:29.24 | P: Dhammaṭṭhassa saṁvutattassa; | S: firm in principle and restrained; | T: Dhamma-established, well-restrained in mind,
+mn56:29.25 | P: Saṅgātigassa muttassa, | S: he has slipped his chains and is liberated: | T: gone beyond bonds, released:
+mn56:29.26 | P: Bhagavato tassa sāvakohamasmi. | S: he is the Buddha, and I am his disciple. | T: Of that Blessed One, I’m a disciple.
+
+## mn56:29.27–mn56:29.32 (mn)
+mn56:29.27 | P: Nāgassa pantasenassa, | S: He’s a giant, living remotely, | T: Of the nāga living in remote dwellings;
+mn56:29.28 | P: Khīṇasaṁyojanassa muttassa; | S: he’s ended the fetters and is liberated; | T: the fetters-ended, released,
+mn56:29.29 | P: Paṭimantakassa dhonassa, | S: he’s skilled in debate and cleansed, | T: amiable speaker—purifed,
+mn56:29.30 | P: Pannadhajassa vītarāgassa; | S: with banner lowered, desireless; | T: banner laid down, devoid of passion,
+mn56:29.31 | P: Dantassa nippapañcassa, | S: he’s tamed, and doesn’t proliferate: | T: tamed, objectification-free:
+mn56:29.32 | P: Bhagavato tassa sāvakohamasmi. | S: he is the Buddha, and I am his disciple. | T: Of that Blessed One, I’m a disciple.
+
+## mn56:29.33–mn56:29.38 (mn)
+mn56:29.33 | P: Isisattamassa akuhassa, | S: He is the seventh seer, free of deceit, | T: Of the truest seer; the free-from-deceit,
+mn56:29.34 | P: Tevijjassa brahmapattassa; | S: with three knowledges, he has attained to divinity, | T: triple-knowledge, attained-to-Brahmā,
+mn56:29.35 | P: Nhātakassa padakassa, | S: he has bathed, he knows philology, | T: cleansed, well versed,
+mn56:29.36 | P: Passaddhassa viditavedassa; | S: he’s tranquil, he understands what is known; | T: calm, knowledge-discoverer;
+mn56:29.37 | P: Purindadassa sakkassa, | S: he is Sakka the Able, Purindada the Firstgiver: | T: Sakka, the ancient giver:
+mn56:29.38 | P: Bhagavato tassa sāvakohamasmi. | S: he is the Buddha, and I am his disciple. | T: Of that Blessed One, I’m a disciple.
+
+## mn56:29.39–mn56:29.44 (mn)
+mn56:29.39 | P: Ariyassa bhāvitattassa, | S: The Noble One, evolved, | T: Of the noble, developed-in-mind,
+mn56:29.40 | P: Pattipattassa veyyākaraṇassa; | S: he has attained the goal and explains it; | T: attainment-attained explainer—
+mn56:29.41 | P: Satimato vipassissa, | S: he is mindful, discerning, | T: mindful, clear-seeing,
+mn56:29.42 | P: Anabhinatassa no apanatassa; | S: neither leaning forward nor pulling back, | T: not bent forward, not bent back,
+mn56:29.43 | P: Anejassa vasippattassa, | S: he’s unstirred, attained to mastery: | T: unperturbed, mastery-attained:
+mn56:29.44 | P: Bhagavato tassa sāvakohamasmi. | S: he is the Buddha, and I am his disciple. | T: Of that Blessed One, I’m a disciple.
+
+## mn56:29.45–mn56:29.50 (mn)
+mn56:29.45 | P: Samuggatassa jhāyissa, | S: Transcendent, he practices absorption, | T: Of the path-completed, absorbed-in-jhāna,
+mn56:29.46 | P: Ananugatantarassa suddhassa; | S: no inner thoughts arising, he is pure, | T: uninfluenced-within, pure,
+mn56:29.47 | P: Asitassa hitassa, | S: independent and fearless; | T: independent, fearless,
+mn56:29.48 | P: Pavivittassa aggappattassa; | S: secluded, he has reached the peak, | T: living-secluded, attained-to-the-summit,
+mn56:29.49 | P: Tiṇṇassa tārayantassa, | S: crossed over, he helps others across: | T: crossed-over one leading others across:
+mn56:29.50 | P: Bhagavato tassa sāvakohamasmi. | S: he is the Buddha, and I am his disciple. | T: Of that Blessed One, I’m a disciple.
+
+## mn56:29.51–mn56:29.56 (mn)
+mn56:29.51 | P: Santassa bhūripaññassa, | S: He’s peaceful, his wisdom is vast, | T: Of the peaceful, deeply-discerning,
+mn56:29.52 | P: Mahāpaññassa vītalobhassa; | S: with great wisdom, he’s free of greed; | T: greatly-discerning, free-from-greed,
+mn56:29.53 | P: Tathāgatassa sugatassa, | S: he is the Realized One, the Holy One, | T: One Truly Gone—well-gone,
+mn56:29.54 | P: Appaṭipuggalassa asamassa; | S: unrivaled, unequaled, | T: without rival, without peer,
+mn56:29.55 | P: Visāradassa nipuṇassa, | S: self-assured, and subtle: | T: mature, subtle:
+mn56:29.56 | P: Bhagavato tassa sāvakohamasmi. | S: he is the Buddha, and I am his disciple. | T: Of that Blessed One, I’m a disciple.
+
+## mn56:29.57–mn56:29.62 (mn)
+mn56:29.57 | P: Taṇhacchidassa buddhassa, | S: He has cut off craving and is awakened, | T: Of the craving-cut-through, awakened,
+mn56:29.58 | P: Vītadhūmassa anupalittassa; | S: free of fuming, unsullied; | T: unsmoky, unsmeared,
+mn56:29.59 | P: Āhuneyyassa yakkhassa, | S: a mighty spirit worthy of offerings, | T: worthy-of-gifts spirit,
+mn56:29.60 | P: Uttamapuggalassa atulassa; | S: best of men, inestimable, | T: the highest person without equal—
+mn56:29.61 | P: Mahato yasaggapattassa, | S: grand, he has reached the peak of glory: | T: great, attained to the summit of prestige:
+mn56:29.62 | P: Bhagavato tassa sāvakohamasmī”ti. | S: he is the Buddha, and I am his disciple.” | T: Of that Blessed One, I’m a disciple.
+CONTEXT mn56:30.1 | P: “Kadā saññūḷhā pana te, gahapati, ime samaṇassa gotamassa vaṇṇā”ti? | S: “But when did you compose these praises of the ascetic Gotama’s beautiful qualities, householder?” | T: “Householder, when did you compose these praises of Gotama the contemplative?”
+CONTEXT mn56:30.2 | P: “Seyyathāpi, bhante, nānāpupphānaṁ mahāpuppharāsi, tamenaṁ dakkho mālākāro vā mālākārantevāsī vā vicittaṁ mālaṁ gantheyya; | S: “Sir, suppose there was a large heap of many different flowers. A deft garland-maker or their apprentice could tie them into a colorful garland. | T: “Venerable sir, it’s as if there were a great heap of flowers—many kinds of flowers—and from them a dexterous garland-maker or garland-maker’s apprentice were to tie together a multi-colored garland.
+
+## mn60:58.1–mn60:58.4 (mn)
+CONTEXT mn60:57.7 | P: Gahapativaggo niṭṭhito paṭhamo. | S: (none) | T: (none)
+CONTEXT mn60:58.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+mn60:58.1 | P: Kandaranāgarasekhavato ca, | S: (none) | T: (none)
+mn60:58.2 | P: Potaliyo puna jīvakabhacco; | S: (none) | T: (none)
+mn60:58.3 | P: Upālidamatho kukkuraabhayo, | S: (none) | T: (none)
+mn60:58.4 | P: Bahuvedanīyāpaṇṇakato dasamo. | S: (none) | T: (none)
+
+## mn70:28.1–mn70:28.4 (mn)
+CONTEXT mn70:27.12 | P: Bhikkhuvaggo niṭṭhito dutiyo. | S: (none) | T: (none)
+CONTEXT mn70:28.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+mn70:28.1 | P: Kuñjara rāhula sassataloko, | S: (none) | T: (none)
+mn70:28.2 | P: Mālukyaputto ca bhaddāli nāmo; | S: (none) | T: (none)
+mn70:28.3 | P: Khudda dijātha sahampatiyācaṁ, | S: (none) | T: (none)
+mn70:28.4 | P: Nāḷaka raññikiṭāgirināmo. | S: (none) | T: (none)
+
+## mn75:19.2–mn75:19.5 (mn)
+CONTEXT mn75:18.6 | P: Atha kho, māgaṇḍiya, ye hi keci samaṇā vā brāhmaṇā vā vigatapipāsā ajjhattaṁ vūpasantacittā vihāsuṁ vā viharanti vā viharissanti vā sabbe te kāmānaṁyeva samudayañca atthaṅgamañca assādañca ādīnavañca nissaraṇañca yathābhūtaṁ viditvā kāmataṇhaṁ pahāya kāmapariḷāhaṁ paṭivinodetvā vigatapipāsā ajjhattaṁ vūpasantacittā vihāsuṁ vā viharanti vā viharissanti vā”ti. | S: On the contrary, all the ascetics or brahmins of the past, future, or present who live rid of thirst, their minds settled internally, do so after truly understanding the origin, ending, gratification, drawback, and escape of sensual pleasures, and after giving up craving and dispelling passion for sensual pleasures.” | T: But whatever contemplatives or brahmans who have dwelt or will dwell or are dwelling free from thirst, their minds inwardly at peace, all have done so having realized—as it has come to be—the origination, the disappearance, the allure, the drawbacks, & the escape from sensuality, having abandoned sensual craving and removed sensual fever.”
+CONTEXT mn75:19.1 | P: Atha kho bhagavā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then on that occasion the Buddha expressed this heartfelt sentiment: | T: Then at that moment the Blessed One exclaimed,
+mn75:19.2 | P: “Ārogyaparamā lābhā, | S: “Health is the ultimate blessing; | T: “Freedom from disease: the foremost good fortune.
+mn75:19.3 | P: nibbānaṁ paramaṁ sukhaṁ; | S: extinguishment, the ultimate happiness. | T: Unbinding: the foremost ease.
+mn75:19.4 | P: Aṭṭhaṅgiko ca maggānaṁ, | S: Of paths, the ultimate is eightfold— | T: The eightfold: the foremost of paths
+mn75:19.5 | P: khemaṁ amatagāminan”ti. | S: it’s safe, and leads to freedom from death.” | T: going to the ⏎ deathless, ⏎ secure.”
+CONTEXT mn75:19.6 | P: Evaṁ vutte, māgaṇḍiyo paribbājako bhagavantaṁ etadavoca: | S: When he said this, Māgaṇḍiya said to him, | T: When this was said, Māgaṇḍiya the wanderer said to the Blessed One,
+CONTEXT mn75:19.7 | P: “acchariyaṁ, bho gotama, abbhutaṁ, bho gotama. | S: “It’s incredible, worthy Gotama, it’s amazing! | T: “It’s amazing, Master Gotama. It’s astounding,
+
+## mn75:21.4–mn75:21.7 (mn)
+CONTEXT mn75:21.2 | P: ‘ārogyaparamā lābhā, nibbānaṁ paramaṁ sukhan’ti. | S: ‘Health is the ultimate blessing; extinguishment, the ultimate happiness.’ | T: “Freedom from disease: the foremost good fortune. ⏎ Unbinding: the foremost ease.
+CONTEXT mn75:21.3 | P: Pubbakehesā, māgaṇḍiya, arahantehi sammāsambuddhehi gāthā bhāsitā: | S: For this verse was recited by the perfected ones, fully awakened Buddhas of the past: | T: This verse was stated by earlier worthy ones, rightly self-awakened:
+mn75:21.4 | P: ‘Ārogyaparamā lābhā, | S: ‘Health is the ultimate blessing; | T: “Freedom from disease: the foremost good fortune.
+mn75:21.5 | P: nibbānaṁ paramaṁ sukhaṁ; | S: extinguishment, the ultimate happiness. | T: Unbinding: the foremost ease.
+mn75:21.6 | P: Aṭṭhaṅgiko ca maggānaṁ, | S: Of paths, the ultimate is eightfold— | T: The eightfold: the foremost of paths
+mn75:21.7 | P: khemaṁ amatagāminan’ti. | S: it’s safe, and leads to freedom from death.’ | T: going to the ⏎ deathless, ⏎ secure.’
+CONTEXT mn75:21.8 | P: Sā etarahi anupubbena puthujjanagāthā. | S: These days it has gradually become a verse used by ordinary people. | T: “But now it has gradually become a verse of run-of-the-mill people.
+CONTEXT mn75:21.9 | P: Ayaṁ kho pana, māgaṇḍiya, kāyo rogabhūto gaṇḍabhūto sallabhūto aghabhūto ābādhabhūto, so tvaṁ imaṁ kāyaṁ rogabhūtaṁ gaṇḍabhūtaṁ sallabhūtaṁ aghabhūtaṁ ābādhabhūtaṁ: | S: But Māgaṇḍiya, this body is a disease, a boil, a dart, a gloom, an affliction. Yet you say of this body: | T: “This body, Māgaṇḍiya, is a disease, a cancer, an arrow, painful, an affliction. And yet you say, with reference to this body which is a disease, a cancer, an arrow, painful, an affliction:
+
+## mn82:25.1–mn82:25.4 (mn)
+CONTEXT mn82:24.5 | P: Atha kho āyasmato raṭṭhapālassa pitā āyasmantaṁ raṭṭhapālaṁ paṇītena khādanīyena bhojanīyena sahatthā santappesi sampavāresi. | S: Then Raṭṭhapāla’s father served and satisfied Venerable Raṭṭhapāla with his own hands with delicious fresh and cooked foods. | T: So, with his own hands, Ven. Raṭṭhapāla’s father served and satisfied him with exquisite staple and non-staple foods.
+CONTEXT mn82:24.6 | P: Atha kho āyasmā raṭṭhapālo bhuttāvī onītapattapāṇī ṭhitakova imā gāthā abhāsi: | S: When he had eaten and washed his hand and bowl, he spoke this verse while standing right there: | T: When he had finished his meal and rinsed his bowl & hands, Ven. Raṭṭhapāla stood up and recited these verses:
+mn82:25.1 | P: “Passa cittīkataṁ bimbaṁ, | S: “See this fancy puppet, | T: Look at the image beautified,
+mn82:25.2 | P: arukāyaṁ samussitaṁ; | S: a body built of sores, | T: a heap of festering wounds, shored up:
+mn82:25.3 | P: Āturaṁ bahusaṅkappaṁ, | S: diseased, obsessed over, | T: ill, but the object ⏎ of many resolves,
+mn82:25.4 | P: yassa natthi dhuvaṁ ṭhiti. | S: in which nothing lasts at all. | T: where there is nothing ⏎ lasting or sure.
+
+## mn82:25.5–mn82:25.8 (mn)
+mn82:25.5 | P: Passa cittīkataṁ rūpaṁ, | S: See this fancy figure, | T: Look at the form beautified
+mn82:25.6 | P: maṇinā kuṇḍalena ca; | S: with its gems and earrings; | T: with earrings & gems:
+mn82:25.7 | P: Aṭṭhi tacena onaddhaṁ, | S: it is bones swathed in skin, | T: a skeleton wrapped in skin,
+mn82:25.8 | P: saha vatthebhi sobhati. | S: made pretty by its clothes. | T: made attractive with clothes.
+
+## mn82:25.9–mn82:25.12 (mn)
+mn82:25.9 | P: Alattakakatā pādā, | S: Rouged feet | T: Feet reddened with henna,
+mn82:25.10 | P: mukhaṁ cuṇṇakamakkhitaṁ; | S: and powdered face | T: a face smeared with powder:
+mn82:25.11 | P: Alaṁ bālassa mohāya, | S: may be enough to beguile a fool, | T: enough to deceive a fool,
+mn82:25.12 | P: no ca pāragavesino. | S: but not a seeker of the far shore. | T: but not a seeker for the further shore.
+
+## mn82:25.13–mn82:25.16 (mn)
+mn82:25.13 | P: Aṭṭhāpadakatā kesā, | S: Hair in eight braids | T: Hair plaited in eight pleats,
+mn82:25.14 | P: nettā añjanamakkhitā; | S: and eyeshadow | T: eyes smeared with unguent:
+mn82:25.15 | P: Alaṁ bālassa mohāya, | S: may be enough to beguile a fool, | T: enough to deceive a fool,
+mn82:25.16 | P: no ca pāragavesino. | S: but not a seeker of the far shore. | T: but not a seeker for the further shore.
+
+## mn82:25.17–mn82:25.20 (mn) GATHERED; possible speaker requires a reader
+mn82:25.17 | P: Añjanīva navā cittā, | S: A rotting body all adorned | T: Like a newly painted unguent pot— ⏎ a putrid body adorned:
+mn82:25.18 | P: pūtikāyo alaṅkato; | S: like a freshly painted makeup box | T: (none)
+mn82:25.19 | P: Alaṁ bālassa mohāya, | S: may be enough to beguile a fool, | T: enough to deceive a fool,
+mn82:25.20 | P: no ca pāragavesino. | S: but not a seeker of the far shore. | T: but not a seeker for the further shore.
+
+## mn82:25.21–mn82:25.24 (mn)
+mn82:25.21 | P: Odahi migavo pāsaṁ, | S: The hunter laid his snare, | T: The hunter set out the snares
+mn82:25.22 | P: nāsadā vākaraṁ migo; | S: but the deer didn’t spring the trap. | T: but the deer didn’t go near the trap.
+mn82:25.23 | P: Bhutvā nivāpaṁ gacchāma, | S: I’ve eaten the bait and now I go, | T: Having eaten the bait, ⏎ I go,
+mn82:25.24 | P: kandante migabandhake”ti. | S: leaving the trapper to lament.” | T: leaving the hunters ⏎ to weep.
+CONTEXT mn82:26.1 | P: Atha kho āyasmā raṭṭhapālo ṭhitakova imā gāthā bhāsitvā yena rañño korabyassa migacīraṁ tenupasaṅkami; upasaṅkamitvā aññatarasmiṁ rukkhamūle divāvihāraṁ nisīdi. | S: Then Raṭṭhapāla, having spoke this verse while standing, went to King Koravya’s deer range and sat at the root of a tree for the day’s meditation. | T: After reciting these verses while standing, Ven. Raṭṭhapāla went to King Koravya’s Migācīra. On arrival, he sat down in the shade of a tree for the day’s abiding.
+CONTEXT mn82:27.1 | P: Atha kho rājā korabyo migavaṁ āmantesi: | S: Then King Koravya addressed his gamekeeper, | T: Then King Koravya said to his gamekeeper:
+
+## mn82:42.3–mn82:42.6 (mn)
+CONTEXT mn82:42.1 | P: Idamavoca āyasmā raṭṭhapālo. | S: That is what Venerable Raṭṭhapāla said. | T: That is what Ven. Raṭṭhapāla said.
+CONTEXT mn82:42.2 | P: Idaṁ vatvā athāparaṁ etadavoca: | S: Then he went on to say: | T: Having said that, he further said this:
+mn82:42.3 | P: “Passāmi loke sadhane manusse, | S: “I see rich humans in the world who, | T: I see in the world ⏎ people with wealth
+mn82:42.4 | P: Laddhāna vittaṁ na dadanti mohā; | S: because of delusion, give not the wealth they’ve earned. | T: who, from delusion, ⏎ don’t make a gift ⏎ of the treasure they’ve gained.
+mn82:42.5 | P: Luddhā dhanaṁ sannicayaṁ karonti, | S: Greedily, they hoard their riches, | T: Greedy, they stash it away,
+mn82:42.6 | P: Bhiyyova kāme abhipatthayanti. | S: yearning for ever more sensual pleasures. | T: hoping for even more ⏎ sensual pleasures.
+
+## mn82:42.7–mn82:42.10 (mn)
+mn82:42.7 | P: Rājā pasayhā pathaviṁ vijitvā, | S: A king who conquered the earth by force, | T: A king who, by force, ⏎ has conquered the world
+mn82:42.8 | P: Sasāgarantaṁ mahimāvasanto; | S: ruling the land from sea to sea, | T: and rules over the earth ⏎ to the edge of the sea,
+mn82:42.9 | P: Oraṁ samuddassa atittarūpo, | S: unsatisfied with the near shore of the ocean, | T: dissatisfied with the ocean’s near shore,
+mn82:42.10 | P: Pāraṁ samuddassapi patthayetha. | S: would still yearn for the further shore. | T: longs for the ocean’s ⏎ far shore as well.
+
+## mn82:42.11–mn82:42.14 (mn)
+mn82:42.11 | P: Rājā ca aññe ca bahū manussā, | S: Not just the king, but others too, | T: Kings & others ⏎ —plenty of people—
+mn82:42.12 | P: Avītataṇhā maraṇaṁ upenti; | S: reach death not rid of craving. | T: go to death with craving ⏎ unabated.
+mn82:42.13 | P: Ūnāva hutvāna jahanti dehaṁ, | S: They leave the body still wanting, | T: Unsated, ⏎ they leave the body behind,
+mn82:42.14 | P: Kāmehi lokamhi na hatthi titti. | S: for in this world sensual pleasures never satisfy. | T: having not had enough ⏎ of the world’s sensual pleasures.
+
+## mn82:42.15–mn82:42.18 (mn)
+mn82:42.15 | P: Kandanti naṁ ñātī pakiriya kese, | S: Relatives lament, their hair disheveled, | T: One’s relatives weep ⏎ & pull out their hair.
+mn82:42.16 | P: Ahovatā no amarāti cāhu; | S: saying ‘Ah! Alas! They’re not immortal!’ | T: ‘Oh woe, our loved one is dead,’ they cry.
+mn82:42.17 | P: Vatthena naṁ pārutaṁ nīharitvā, | S: They take out the body wrapped in a shroud, | T: Carrying him off, ⏎ wrapped in a piece of cloth,
+mn82:42.18 | P: Citaṁ samādāya tatoḍahanti. | S: heap up a pyre, and burn it there. | T: they place him ⏎ on a pyre, ⏎ then set him on fire.
+
+## mn82:42.19–mn82:42.22 (mn) GATHERED; unequal counts require a reader
+mn82:42.19 | P: So ḍayhati sūlehi tujjamāno, | S: It’s poked with stakes while being burnt, | T: So he burns, poked with sticks,
+mn82:42.20 | P: Ekena vatthena pahāya bhoge; | S: in just a single cloth, all wealth gone. | T: in just one piece of cloth, ⏎ leaving all his possessions behind.
+mn82:42.21 | P: Na mīyamānassa bhavanti tāṇā, | S: Relatives, friends, and companions | T: They are not shelters for one who has died— ⏎ not relatives, ⏎ friends, ⏎ or companions.
+mn82:42.22 | P: Ñātīdha mittā atha vā sahāyā. | S: can’t help you when you’re dying. | T: (none)
+
+## mn82:42.23–mn82:42.26 (mn)
+mn82:42.23 | P: Dāyādakā tassa dhanaṁ haranti, | S: Heirs take your riches, | T: His heirs take over his wealth,
+mn82:42.24 | P: Satto pana gacchati yena kammaṁ; | S: while beings fare on according to their deeds. | T: while the being goes on, ⏎ in line with his kamma.
+mn82:42.25 | P: Na mīyamānaṁ dhanamanveti kiñci, | S: Riches don’t follow you when you die; | T: No wealth at all ⏎ follows the dead one—
+mn82:42.26 | P: Puttā ca dārā ca dhanañca raṭṭhaṁ. | S: nor do children, wife, wealth, nor kingdom. | T: not children, wives, ⏎ dominion, or riches.
+
+## mn82:42.27–mn82:42.30 (mn)
+mn82:42.27 | P: Na dīghamāyuṁ labhate dhanena, | S: Longevity isn’t gained by riches, | T: Long life ⏎ can’t be gotten with wealth,
+mn82:42.28 | P: Na cāpi vittena jaraṁ vihanti; | S: nor does wealth banish old age; | T: nor aging ⏎ warded off with treasure.
+mn82:42.29 | P: Appaṁ hidaṁ jīvitamāhu dhīrā, | S: for the attentive say this life is short, | T: The wise say this life ⏎ is next to nothing—
+mn82:42.30 | P: Asassataṁ vippariṇāmadhammaṁ. | S: it’s perishable and not eternal. | T: impermanent, ⏎ subject to change.
+
+## mn82:42.31–mn82:42.34 (mn)
+mn82:42.31 | P: Aḍḍhā daliddā ca phusanti phassaṁ, | S: The rich and the poor feel its touch; | T: The rich & the poor ⏎ touch the touch of Death.
+mn82:42.32 | P: Bālo ca dhīro ca tatheva phuṭṭho; | S: the fool and the attentive one feel it too. | T: The foolish & wise ⏎ are touched by it, too.
+mn82:42.33 | P: Bālo ca bālyā vadhitova seti, | S: But the fool lies stricken by their own folly, | T: But while fools lie as if slain by their folly,
+mn82:42.34 | P: Dhīro ca na vedhati phassaphuṭṭho. | S: while the attentive don’t tremble at the touch. | T: the wise don’t tremble ⏎ when touched by the touch.
+
+## mn82:42.35–mn82:42.38 (mn) GATHERED; unequal counts require a reader
+mn82:42.35 | P: Tasmā hi paññāva dhanena seyyo, | S: Therefore wisdom’s much better than wealth, | T: Thus the discernment by which ⏎ one attains to mastery, ⏎ is better than wealth—
+mn82:42.36 | P: Yāya vosānamidhādhigacchati; | S: since by wisdom you reach consummation in this life. | T: (none)
+mn82:42.37 | P: Abyositattā hi bhavābhavesu, | S: But if because of delusion you don’t reach consummation, | T: for those who haven’t reached mastery ⏎ go from becomings to becomings, ⏎ out of delusion, ⏎ doing bad deeds.
+mn82:42.38 | P: Pāpāni kammāni karonti mohā. | S: you’ll do evil deeds in life after life. | T: (none)
+
+## mn82:42.39–mn82:42.42 (mn)
+mn82:42.39 | P: Upeti gabbhañca parañca lokaṁ, | S: One who enters a womb and the world beyond, | T: One goes to a womb ⏎ & to the next world,
+mn82:42.40 | P: Saṁsāramāpajja paramparāya; | S: will transmigrate from one life to the next. | T: falling into the wandering on ⏎ —one thing ⏎ after another—
+mn82:42.41 | P: Tassappapañño abhisaddahanto, | S: While someone of little wisdom, placing faith in them, | T: while those of weak discernment, ⏎ trusting in one,
+mn82:42.42 | P: Upeti gabbhañca parañca lokaṁ. | S: also enters a womb and the world beyond. | T: also go to a womb ⏎ & to the next world.
+
+## mn82:42.43–mn82:42.46 (mn)
+mn82:42.43 | P: Coro yathā sandhimukhe gahito, | S: As a bandit caught in a window | T: Just as an evil thief ⏎ caught at the break-in
+mn82:42.44 | P: Sakammunā haññati pāpadhammo; | S: is punished for his own bad deeds; | T: is destroyed ⏎ by his own act,
+mn82:42.45 | P: Evaṁ pajā pecca paramhi loke, | S: so after departing, in the world beyond, | T: so evil people ⏎ —after dying, in the next world—
+mn82:42.46 | P: Sakammunā haññati pāpadhammo. | S: people are punished for their own bad deeds. | T: are destroyed ⏎ by their own acts.
+
+## mn82:42.47–mn82:42.50 (mn)
+mn82:42.47 | P: Kāmāhi citrā madhurā manoramā, | S: Sensual pleasures are diverse, sweet, delightful; | T: Sensual pleasures— ⏎ variegated, ⏎ enticing, ⏎ sweet—
+mn82:42.48 | P: Virūparūpena mathenti cittaṁ; | S: appearing in disguise they disturb the mind. | T: in various ways disturb the mind.
+mn82:42.49 | P: Ādīnavaṁ kāmaguṇesu disvā, | S: Seeing danger in sensual stimulations, | T: Seeing the drawbacks in sensual strings:
+mn82:42.50 | P: Tasmā ahaṁ pabbajitomhi rāja. | S: I went forth, O King. | T: that’s why, O king, I went forth.
+
+## mn82:42.51–mn82:42.54 (mn)
+mn82:42.51 | P: Dumapphalāneva patanti māṇavā, | S: As fruit falls from a tree, so the sons of Manu fall, | T: Just like fruits, people fall
+mn82:42.52 | P: Daharā ca vuḍḍhā ca sarīrabhedā; | S: young and old, when the body breaks up. | T: —young & old— ⏎ at the break-up of the body.
+mn82:42.53 | P: Etampi disvā pabbajitomhi rāja, | S: Seeing this, too, I went forth, O King; | T: Knowing this, O king, ⏎ I went forth.
+mn82:42.54 | P: Apaṇṇakaṁ sāmaññameva seyyo”ti. | S: it’s a sure bet that the ascetic life is better.” | T: The contemplative life is better ⏎ for sure.
+CONTEXT mn82:42.55 | P: Raṭṭhapālasuttaṁ niṭṭhitaṁ dutiyaṁ. | S: (none) | T: (none)
+
+## mn85:43.8–mn85:43.11 (mn) GATHERED; unequal counts require a reader
+CONTEXT mn85:43.6 | P: Ahañceva kho pana dhammaṁ deseyyaṁ, pare ca me na ājāneyyuṁ, so mamassa kilamatho, sā mamassa vihesā’ti. | S: And if I were to teach this principle, others might not understand me, which would be wearying and troublesome for me.’ | T: And if I were to teach the Dhamma and others would not understand me, that would be tiresome for me, troublesome for me.’
+CONTEXT mn85:43.7 | P: Apissu maṁ, rājakumāra, imā anacchariyā gāthāyo paṭibhaṁsu pubbe assutapubbā: | S: And then these verses, which were neither supernaturally inspired, nor learned before in the past, occurred to me: | T: “Just then these verses, unspoken in the past, unheard before, occurred to me:
+mn85:43.8 | P: ‘Kicchena me adhigataṁ, | S: ‘I’ve struggled hard to realize this, | T: ‘Enough now with teaching ⏎ what ⏎ only with difficulty ⏎ I reached.
+mn85:43.9 | P: halaṁ dāni pakāsituṁ; | S: there’s no need to reveal it now! | T: (none)
+mn85:43.10 | P: Rāgadosaparetehi, | S: Those mired in greed and hate | T: This Dhamma is not easily realized ⏎ by those overcome ⏎ with aversion & passion.
+mn85:43.11 | P: nāyaṁ dhammo susambudho. | S: can’t really understand this teaching. | T: (none)
+
+## mn85:43.12–mn85:43.15 (mn)
+mn85:43.12 | P: Paṭisotagāmiṁ nipuṇaṁ, | S: It goes against the stream, subtle, | T: What is abstruse, subtle,
+mn85:43.13 | P: gambhīraṁ duddasaṁ aṇuṁ; | S: deep, obscure, and very fine. | T: deep, ⏎ hard to see, ⏎ going against the flow—
+mn85:43.14 | P: Rāgarattā na dakkhanti, | S: Those besotted by greed cannot see, | T: those delighting in passion,
+mn85:43.15 | P: tamokhandhena āvuṭā’ti. | S: for they’re cloaked in a mass of darkness.’ | T: cloaked in the mass of darkness, ⏎ won’t see.’
+CONTEXT mn85:43.16 | P: Itiha me, rājakumāra, paṭisañcikkhato appossukkatāya cittaṁ namati no dhammadesanāya. | S: So, as I reflected like this, my mind inclined to remaining passive, not to teaching the Dhamma. | T: “As I reflected thus, my mind inclined to dwelling at ease, not to teaching the Dhamma.
+CONTEXT mn85:44.1 | P: Atha kho, rājakumāra, brahmuno sahampatissa mama cetasā cetoparivitakkamaññāya etadahosi: | S: Then the divinity Sahampati, knowing my train of thought, thought, | T: “Then Brahmā Sahampati, having known with his own awareness the line of thinking in my awareness, thought:
+
+## mn85:44.10–mn85:44.13 (mn)
+CONTEXT mn85:44.8 | P: Idamavoca, rājakumāra, brahmā sahampati; | S: That is what the divinity Sahampati said. | T: “That is what Brahmā Sahampati said.
+CONTEXT mn85:44.9 | P: idaṁ vatvā athāparaṁ etadavoca: | S: Then he went on to say: | T: Having said that, he further said this:
+mn85:44.10 | P: ‘Pāturahosi magadhesu pubbe, | S: ‘Among the Magadhans there appeared in the past | T: ‘In the past ⏎ there appeared among the Magadhans
+mn85:44.11 | P: Dhammo asuddho samalehi cintito; | S: an impure teaching thought up by the stained. | T: an impure Dhamma ⏎ devised by the stained.
+mn85:44.12 | P: Apāpuretaṁ amatassa dvāraṁ, | S: Fling open the door to freedom from death! | T: Throw open the door to the deathless!
+mn85:44.13 | P: Suṇantu dhammaṁ vimalenānubuddhaṁ. | S: Let them hear the teaching the immaculate one discovered. | T: Let them hear the Dhamma ⏎ realized by the Stainless One!
+
+## mn85:44.14–mn85:44.17 (mn)
+mn85:44.14 | P: Sele yathā pabbatamuddhaniṭṭhito, | S: Standing high on a rocky mountain, | T: Just as one standing on a rocky crag
+mn85:44.15 | P: Yathāpi passe janataṁ samantato; | S: you can see the people all around. | T: might see people ⏎ all around below,
+mn85:44.16 | P: Tathūpamaṁ dhammamayaṁ sumedha, | S: In just the same way, All-seer, so intelligent, | T: so, intelligent one, with all-around vision,
+mn85:44.17 | P: Pāsādamāruyha samantacakkhu. | S: having ascended the Temple of Truth, | T: ascend the palace ⏎ fashioned of Dhamma.
+
+## mn85:44.18–mn85:44.23 (mn)
+mn85:44.18 | P: Sokāvatiṇṇaṁ janatamapetasoko, | S: rid of sorrow, look upon the people | T: Free from sorrow, behold the people
+mn85:44.19 | P: Avekkhassu jātijarābhibhūtaṁ; | S: swamped with sorrow, overcome by rebirth and old age. | T: submerged in sorrow, ⏎ oppressed by birth & aging.
+mn85:44.20 | P: Uṭṭhehi vīra vijitasaṅgāma, | S: Rise, hero! Victor in battle, caravan leader, | T: Rise up, hero, victor in battle! ⏎ O Teacher,
+mn85:44.21 | P: Satthavāha aṇaṇa vicara loke; | S: wander the world free of debt. | T: wander without debt in the world.
+mn85:44.22 | P: Desassu bhagavā dhammaṁ, | S: Let the Blessed One teach the Dhamma! | T: Teach the Dhamma, O Blessed One:
+mn85:44.23 | P: Aññātāro bhavissantī’ti. | S: There will be those who understand!’ | T: There will be those who will understand.’
+CONTEXT mn85:45.1 | P: Atha khvāhaṁ, rājakumāra, brahmuno ca ajjhesanaṁ viditvā sattesu ca kāruññataṁ paṭicca buddhacakkhunā lokaṁ volokesiṁ. | S: Then, understanding the Divinity’s invitation, I surveyed the world with the eye of a Buddha, because of my compassion for sentient beings. | T: “Then, having understood Brahmā’s invitation, out of compassion for beings, I surveyed the world with the eye of an Awakened One.
+CONTEXT mn85:45.2 | P: Addasaṁ kho ahaṁ, rājakumāra, buddhacakkhunā lokaṁ volokento satte apparajakkhe mahārajakkhe tikkhindriye mudindriye svākāre dvākāre suviññāpaye duviññāpaye appekacce paralokavajjabhayadassāvine viharante, appekacce na paralokavajjabhayadassāvine viharante. | S: And I saw sentient beings with little dust in their eyes, and some with much dust in their eyes; with keen faculties and with weak faculties, with good qualities and with bad qualities, easy to teach and hard to teach. And some of them lived seeing the danger in the fault to do with the next world, while others did not. | T: As I did so, I saw beings with little dust in their eyes and those with much, those with keen faculties and those with dull, those with good attributes and those with bad, those easy to teach and those hard, some of them seeing disgrace & danger in the other world.
+
+## mn85:45.6–mn85:45.9 (mn)
+CONTEXT mn85:45.4 | P: evameva kho ahaṁ, rājakumāra; buddhacakkhunā lokaṁ volokento addasaṁ satte apparajakkhe mahārajakkhe tikkhindriye mudindriye svākāre dvākāre suviññāpaye duviññāpaye, appekacce paralokavajjabhayadassāvine viharante, appekacce na paralokavajjabhayadassāvine viharante. | S: In the same way, I saw sentient beings with little dust in their eyes, and some with much dust in their eyes. | T: so too, surveying the world with the eye of an Awakened One, I saw beings with little dust in their eyes and those with much, those with keen faculties and those with dull, those with good attributes and those with bad, those easy to teach and those hard, some of them seeing disgrace & danger in the other world.
+CONTEXT mn85:45.5 | P: Atha khvāhaṁ, rājakumāra, brahmānaṁ sahampatiṁ gāthāya paccabhāsiṁ: | S: Then I replied in verse to the divinity Sahampati: | T: “Having seen this, I answered Brahmā Sahampati in verse:
+mn85:45.6 | P: ‘Apārutā tesaṁ amatassa dvārā, | S: ‘Flung open are the doors to freedom from death! | T: ‘Open are the doors to the deathless.
+mn85:45.7 | P: Ye sotavanto pamuñcantu saddhaṁ; | S: Let those with ears to hear commit to faith. | T: Let those with ears show their conviction.
+mn85:45.8 | P: Vihiṁsasaññī paguṇaṁ na bhāsiṁ, | S: Thinking it would be troublesome, Divinity, I did not teach | T: Perceiving trouble, O Brahmā, ⏎ I did not tell people
+mn85:45.9 | P: Dhammaṁ paṇītaṁ manujesu brahme’ti. | S: the sophisticated, sublime Dhamma among mankind.’ | T: the refined, ⏎ sublime Dhamma.’
+CONTEXT mn85:45.10 | P: Atha kho, rājakumāra, brahmā sahampati ‘katāvakāso khomhi bhagavatā dhammadesanāyā’ti maṁ abhivādetvā padakkhiṇaṁ katvā tatthevantaradhāyi. | S: Then the divinity Sahampati, knowing that his request for me to teach the Dhamma had been granted, bowed and respectfully circled me, keeping me on his right, before vanishing right there. | T: “Then Brahmā Sahampati, thinking, ‘I’m the one who created the opportunity for the teaching of the Dhamma by the Blessed One!’ bowed down to me and, circling me on the right, vanished right there.
+CONTEXT mn85:46.1 | P: Tassa mayhaṁ, rājakumāra, etadahosi: | S: Then it occurred to me, | T: “Then the thought occurred to me,
+
+## mn85:49.7–mn85:49.10 (mn)
+CONTEXT mn85:49.5 | P: Kaṁsi tvaṁ, āvuso, uddissa pabbajito? Ko vā te satthā? Kassa vā tvaṁ dhammaṁ rocesī’ti? | S: In whose name have you gone forth, reverend? Who is your Teacher? Whose teaching do you believe in?’ | T: On whose account have you gone forth? Who is your teacher? In whose Dhamma do you delight?’
+CONTEXT mn85:49.6 | P: Evaṁ vutte, ahaṁ, rājakumāra, upakaṁ ājīvakaṁ gāthāhi ajjhabhāsiṁ: | S: I replied to Upaka in verse: | T: “When this was said, I replied to Upaka the Ājīvaka in verses:
+mn85:49.7 | P: ‘Sabbābhibhū sabbavidūhamasmi, | S: ‘I am the vanquisher of all, the knower of all, | T: ‘All-vanquishing, ⏎ all-knowing am I,
+mn85:49.8 | P: Sabbesu dhammesu anūpalitto; | S: unsullied in the midst of all things. | T: with regard to all things, ⏎ unadhering.
+mn85:49.9 | P: Sabbañjaho taṇhākkhaye vimutto, | S: I’ve given up all, freed in the ending of craving. | T: All-abandoning, ⏎ released in the ending of craving:
+mn85:49.10 | P: Sayaṁ abhiññāya kamuddiseyyaṁ. | S: Since I know for myself, whose follower should I be? | T: having fully known on my own, ⏎ to whom should I point as my teacher?
+
+## mn85:49.11–mn85:49.14 (mn)
+mn85:49.11 | P: Na me ācariyo atthi, | S: I have no tutor. | T: I have no teacher,
+mn85:49.12 | P: sadiso me na vijjati; | S: There is no one like me. | T: and one like me can’t be found.
+mn85:49.13 | P: Sadevakasmiṁ lokasmiṁ, | S: In the world with its gods, | T: In the world with its devas,
+mn85:49.14 | P: natthi me paṭipuggalo. | S: I have no rival. | T: I have no counterpart.
+
+## mn85:49.15–mn85:49.18 (mn)
+mn85:49.15 | P: Ahañhi arahā loke, | S: For in this world, I am the perfected one; | T: For I am a Worthy One in the world;
+mn85:49.16 | P: ahaṁ satthā anuttaro; | S: I am the supreme Teacher. | T: I, the unexcelled teacher.
+mn85:49.17 | P: Ekomhi sammāsambuddho, | S: I alone am fully awakened, | T: I, alone, am rightly self-awakened.
+mn85:49.18 | P: sītibhūtosmi nibbuto. | S: cooled, quenched. | T: Cooled am I, unbound.
+
+## mn85:49.19–mn85:49.22 (mn) GATHERED; equal counts: one line per row
+mn85:49.19 | P: Dhammacakkaṁ pavattetuṁ, | S: I am going to the city of Kāsi | T: To set rolling the wheel of Dhamma ⏎ I go to the city of Kāsi.
+mn85:49.20 | P: Gacchāmi kāsinaṁ puraṁ; | S: to roll forth the Wheel of Dhamma. | T: (none)
+mn85:49.21 | P: Andhībhūtasmiṁ lokasmiṁ, | S: In this world that is so blind, | T: In a world become blind,
+mn85:49.22 | P: Āhañchaṁ amatadundubhin’ti. | S: I’ll beat the drum of freedom from death!’ | T: I beat the drum of the deathless.’
+CONTEXT mn85:49.23 | P: ‘Yathā kho tvaṁ, āvuso, paṭijānāsi arahasi anantajino’ti. | S: ‘According to what you claim, reverend, you ought to be the Infinite Victor.’ | T: “‘From your claims, my friend, you must be an infinite conqueror.’
+AUTO mn85:49.19 starts: To set rolling the wheel of Dhamma
+AUTO mn85:49.20 starts: I go to the city of Kāsi.
+AUTO mn85:49.21 starts: In a world become blind,
+AUTO mn85:49.22 starts: I beat the drum of the deathless.’

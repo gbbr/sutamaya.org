@@ -1,0 +1,411 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## dn11:85.11–dn11:85.16 (dn)
+CONTEXT dn11:85.9 | P: ‘kattha nu kho, bhante, ime cattāro mahābhūtā aparisesā nirujjhanti, seyyathidaṁ—pathavīdhātu āpodhātu tejodhātu vāyodhātū’ti? | S: “Sir, where do these four principal states cease without remainder, namely, the elements of earth, water, fire, and air?” | T: Where do these four great elements—the earth property, the liquid property, the fire property, and the wind property—cease without trace?
+CONTEXT dn11:85.10 | P: Evañca kho eso, bhikkhu, pañho pucchitabbo: | S: This is how the question should be asked: | T: Instead, the question should be asked like this:
+dn11:85.11 | P: ‘Kattha āpo ca pathavī, | S: “Where do water and earth, | T: “‘Where do water, earth,
+dn11:85.12 | P: tejo vāyo na gādhati; | S: fire and air have no footing; | T: fire, & wind ⏎ have no footing?
+dn11:85.13 | P: Kattha dīghañca rassañca, | S: where long and short, | T: Where are long & short,
+dn11:85.14 | P: aṇuṁ thūlaṁ subhāsubhaṁ; | S: tiny and huge, beautiful and ugly? | T: coarse & fine, ⏎ fair & foul,
+dn11:85.15 | P: Kattha nāmañca rūpañca, | S: Where do name and form | T: name & form
+dn11:85.16 | P: asesaṁ uparujjhatī’ti. | S: cease no residue left behind?” | T: brought to a stop without trace?
+CONTEXT dn11:85.17 | P: Tatra veyyākaraṇaṁ bhavati: | S: And the answer to that is: | T: “‘And the answer to that is:
+
+## dn11:85.18–dn11:85.19 (dn)
+CONTEXT dn11:85.17 | P: Tatra veyyākaraṇaṁ bhavati: | S: And the answer to that is: | T: “‘And the answer to that is:
+dn11:85.18 | P: ‘Viññāṇaṁ anidassanaṁ, | S: “‘Consciousness where no form appears, | T: “‘Consciousness without surface,
+dn11:85.19 | P: anantaṁ sabbatopabhaṁ; | S: infinite, radiant all-round.’ | T: without end, ⏎ luminous all around:
+
+## dn11:85.20–dn11:85.23 (dn)
+dn11:85.20 | P: Ettha āpo ca pathavī, | S: Here water and earth, | T: Here water, earth,
+dn11:85.21 | P: tejo vāyo na gādhati. | S: fire and air have no footing; | T: fire, & wind ⏎ have no footing.
+dn11:85.22 | P: Ettha dīghañca rassañca, | S: here long and short, | T: Here long & short,
+dn11:85.23 | P: aṇuṁ thūlaṁ subhāsubhaṁ; | S: tiny and huge, beautiful and ugly. | T: coarse & fine, ⏎ fair & foul,
+
+## dn11:85.24–dn11:85.27 (dn)
+dn11:85.24 | P: Ettha nāmañca rūpañca, | S: Here name and form | T: here name & form
+dn11:85.25 | P: asesaṁ uparujjhati; | S: cease with no residue left behind— | T: are all brought to a stop without trace.
+dn11:85.26 | P: Viññāṇassa nirodhena, | S: with the cessation of consciousness, | T: With the cessation of (the aggregate of) consciousness
+dn11:85.27 | P: etthetaṁ uparujjhatī’”ti. | S: here they cease.”’” | T: each is here brought to a stop.’”
+CONTEXT dn11:85.28 | P: Idamavoca bhagavā. | S: That is what the Buddha said. | T: That is what the Blessed One said.
+CONTEXT dn11:85.29 | P: Attamano kevaṭṭo gahapatiputto bhagavato bhāsitaṁ abhinandīti. | S: Satisfied, the householder Kevaḍḍha approved what the Buddha said. | T: Gratified, Kevaṭṭa the householder delighted in the Blessed One’s words.
+
+## dn16:1.31.2–dn16:1.31.5 (dn)
+CONTEXT dn16:1.30.5 | P: Atha kho sunidhavassakārā magadhamahāmattā bhagavantaṁ bhuttāviṁ onītapattapāṇiṁ aññataraṁ nīcaṁ āsanaṁ gahetvā ekamantaṁ nisīdiṁsu. | S: When the Buddha had eaten and washed his hand and bowl, Sunidha and Vassakāra took a low seat and sat to one side. | T: Then, when the Blessed One had finished his meal and had rinsed his bowl & hands, Sunidha & Vassakāra, taking a low seat, sat to one side.
+CONTEXT dn16:1.31.1 | P: Ekamantaṁ nisinne kho sunidhavassakāre magadhamahāmatte bhagavā imāhi gāthāhi anumodi: | S: The Buddha expressed his appreciation with these verses: | T: As they were sitting there, the Blessed One gave his approval with these verses:
+dn16:1.31.2 | P: “Yasmiṁ padese kappeti, | S: “In the place he makes his dwelling, | T: In whatever place ⏎ a wise person makes his dwelling,
+dn16:1.31.3 | P: vāsaṁ paṇḍitajātiyo; | S: having fed the astute | T: —there providing food
+dn16:1.31.4 | P: Sīlavantettha bhojetvā, | S: and the virtuous here, | T: for the virtuous,
+dn16:1.31.5 | P: saññate brahmacārayo. | S: the restrained spiritual practitioners, | T: the restrained, ⏎ leaders of the holy life—
+
+## dn16:1.31.6–dn16:1.31.9 (dn)
+dn16:1.31.6 | P: Yā tattha devatā āsuṁ, | S: he should dedicate an offering | T: he should dedicate that offering
+dn16:1.31.7 | P: tāsaṁ dakkhiṇamādise; | S: to the deities there. | T: to the devas there.
+dn16:1.31.8 | P: Tā pūjitā pūjayanti, | S: Venerated, they venerate him; | T: They, receiving honor, will honor him;
+dn16:1.31.9 | P: mānitā mānayanti naṁ. | S: honored, they honor him. | T: being respected, will show him respect.
+
+## dn16:1.31.10–dn16:1.31.13 (dn)
+dn16:1.31.10 | P: Tato naṁ anukampanti, | S: After that they have sympathy for him, | T: As a result, they will feel sympathy for him,
+dn16:1.31.11 | P: mātā puttaṁva orasaṁ; | S: like a mother the child at her breast. | T: like that of a mother for her child, her son.
+dn16:1.31.12 | P: Devatānukampito poso, | S: A man beloved of the deities | T: A person with whom the devas sympathize
+dn16:1.31.13 | P: sadā bhadrāni passatī”ti. | S: always sees nice things.” | T: always meets with auspicious things.
+CONTEXT dn16:1.31.14 | P: Atha kho bhagavā sunidhavassakāre magadhamahāmatte imāhi gāthāhi anumoditvā uṭṭhāyāsanā pakkāmi. | S: When the Buddha had expressed his appreciation to Sunidha and Vassakāra with these verses, he rose from his seat and left. | T: Then the Blessed One, having given his approval to Sunidha & Vassakāra with these verses, got up from his seat and left.
+CONTEXT dn16:1.32.1 | P: Tena kho pana samayena sunidhavassakārā magadhamahāmattā bhagavantaṁ piṭṭhito piṭṭhito anubandhā honti: | S: Sunidha and Vassakāra followed behind the Buddha, thinking, | T: And on that occasion, Sunidha & Vassakāra followed right after the Blessed One, (thinking,)
+
+## dn16:1.34.3–dn16:1.34.6 (dn)
+CONTEXT dn16:1.34.1 | P: Addasā kho bhagavā te manusse appekacce nāvaṁ pariyesante appekacce uḷumpaṁ pariyesante appekacce kullaṁ bandhante apārā pāraṁ gantukāme. | S: He saw all those humans wanting to cross over. | T: He saw that some people were searching for boats; some were searching for floats; some were binding rafts in hopes of going from this shore to the other.
+CONTEXT dn16:1.34.2 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Knowing the meaning of this, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+dn16:1.34.3 | P: “Ye taranti aṇṇavaṁ saraṁ, | S: “Those who cross a deluge or stream | T: Those ⏎ who cross the foaming flood,
+dn16:1.34.4 | P: Setuṁ katvāna visajja pallalāni; | S: have built a bridge and left the marshes behind. | T: having made a bridge, avoiding the swamps
+dn16:1.34.5 | P: Kullañhi jano bandhati, | S: While some people are still tying a raft, | T: —while people are binding rafts—
+dn16:1.34.6 | P: Tiṇṇā medhāvino janā”ti. | S: intelligent people have crossed over.” | T: intelligent people ⏎ have already crossed.
+CONTEXT dn16:1.34.7 | P: Paṭhamabhāṇavāro. | S: The first recitation section. | T: (none)
+CONTEXT dn16:2.1.0 | P: 8. Ariyasaccakathā | S: 8. Talk on the Noble Truths | T: [ II ]
+
+## dn16:2.3.3–dn16:2.3.6 (dn)
+CONTEXT dn16:2.3.1 | P: Idamavoca bhagavā. | S: That is what the Buddha said. | T: That is what the Blessed One said.
+CONTEXT dn16:2.3.2 | P: Idaṁ vatvāna sugato athāparaṁ etadavoca satthā: | S: Then the Holy One, the Teacher, went on to say: | T: Having said it, the Teacher, the One Well-Gone, said further:
+dn16:2.3.3 | P: “Catunnaṁ ariyasaccānaṁ, | S: “Because of not truly seeing | T: From lack of vision
+dn16:2.3.4 | P: yathābhūtaṁ adassanā; | S: the four noble truths, | T: of the four noble truths,
+dn16:2.3.5 | P: Saṁsitaṁ dīghamaddhānaṁ, | S: we have transmigrated for a long time | T: we have wandered a long time
+dn16:2.3.6 | P: tāsu tāsveva jātisu. | S: from one rebirth to the next. | T: simply in these births & those.
+
+## dn16:2.3.7–dn16:2.3.10 (dn)
+dn16:2.3.7 | P: Tāni etāni diṭṭhāni, | S: But now that these truths have been seen, | T: These are now seen,
+dn16:2.3.8 | P: bhavanetti samūhatā; | S: the leash to existence is eradicated. | T: the guide to becoming is removed,
+dn16:2.3.9 | P: Ucchinnaṁ mūlaṁ dukkhassa, | S: The root of suffering is cut off, | T: crushed is the root of suffering & stress.
+dn16:2.3.10 | P: natthi dāni punabbhavo”ti. | S: now there’ll be no more future lives.” | T: There is now no further-becoming.
+CONTEXT dn16:2.4.1 | P: Tatrapi sudaṁ bhagavā koṭigāme viharanto etadeva bahulaṁ bhikkhūnaṁ dhammiṁ kathaṁ karoti: | S: And while staying at the village of Koṭi, too, the Buddha often gave this Dhamma talk to the mendicants: | T: While staying there near Koṭi Village, the Blessed One often gave this Dhamma talk to the monks:
+CONTEXT dn16:2.4.2 | P: “iti sīlaṁ, iti samādhi, iti paññā. | S: “Such is ethics, such is immersion, such is wisdom. | T: “Such is virtue, such is concentration, such is discernment.
+
+## dn16:3.10.4–dn16:3.10.7 (dn)
+CONTEXT dn16:3.10.2 | P: Ossaṭṭhe ca bhagavatā āyusaṅkhāre mahābhūmicālo ahosi bhiṁsanako salomahaṁso, devadundubhiyo ca phaliṁsu. | S: When he did so there was a great earthquake, awe-inspiring and hair-raising, and thunder cracked the sky. | T: And as the Blessed One relinquished the fabrications of life, there was a great earthquake, awesome & hair-raising, and rolls of the deva-drums split (the air).
+CONTEXT dn16:3.10.3 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+dn16:3.10.4 | P: “Tulamatulañca sambhavaṁ, | S: “Comparing the incomparable with the creation of prolonged life, | T: Comparing the incomparable ⏎ with coming-into-being,
+dn16:3.10.5 | P: Bhavasaṅkhāramavassaji muni; | S: the sage surrendered the life force. | T: the sage relinquished ⏎ the fabrication of becoming.
+dn16:3.10.6 | P: Ajjhattarato samāhito, | S: Happy inside, serene, | T: Inwardly joyful, ⏎ centered,
+dn16:3.10.7 | P: Abhindi kavacamivattasambhavan”ti. | S: he shattered self-creation like a suit of armor.” | T: he split his own ⏎ coming-into-being ⏎ like a coat of mail.
+CONTEXT dn16:3.11.0 | P: 16. Mahābhūmicālahetu | S: 16. The Causes of Earthquakes | T: (none)
+CONTEXT dn16:3.11.1 | P: Atha kho āyasmato ānandassa etadahosi: | S: Then Venerable Ānanda thought, | T: Then the thought occurred to Ven. Ānanda:
+
+## dn16:3.51.9–dn16:3.51.12 (dn)
+CONTEXT dn16:3.51.7 | P: Idamavoca bhagavā. | S: That is what the Buddha said. | T: That is what the Blessed One said.
+CONTEXT dn16:3.51.8 | P: Idaṁ vatvāna sugato athāparaṁ etadavoca satthā: | S: Then the Holy One, the Teacher, went on to say: | T: Having said that, the One Well-Gone said further: ⏎ Young & old ⏎ wise & foolish ⏎ rich & poor: ⏎ all end up dying. ⏎ As a potter’s clay vessels ⏎ large & small ⏎ fired & unfired ⏎ all end up broken, ⏎ so too life ⏎ heads to death. Then the Teacher said further:
+dn16:3.51.9 | P: “Paripakko vayo mayhaṁ, | S: “I’ve reached a ripe old age, | T: Ripe my age,
+dn16:3.51.10 | P: parittaṁ mama jīvitaṁ; | S: and little of my life is left. | T: little the life ⏎ remaining to me.
+dn16:3.51.11 | P: Pahāya vo gamissāmi, | S: Having given it up, I’ll depart; | T: Leaving you, I will go,
+dn16:3.51.12 | P: kataṁ me saraṇamattano. | S: I’ve made a refuge for myself. | T: having made my refuge ⏎ for myself.
+
+## dn16:3.51.13–dn16:3.51.16 (dn)
+dn16:3.51.13 | P: Appamattā satīmanto, | S: Diligent and mindful, | T: Be heedful, monks, ⏎ mindful,
+dn16:3.51.14 | P: susīlā hotha bhikkhavo; | S: be of good virtues, mendicants! | T: virtuous.
+dn16:3.51.15 | P: Susamāhitasaṅkappā, | S: With well-settled thoughts, | T: With your resolves well-concentrated,
+dn16:3.51.16 | P: sacittamanurakkhatha. | S: take good care of your minds. | T: look after your minds.
+
+## dn16:3.51.17–dn16:3.51.20 (dn) GATHERED; unequal counts require a reader
+dn16:3.51.17 | P: Yo imasmiṁ dhammavinaye, | S: Whoever meditates diligently | T: He who, in this ⏎ Dhamma & Vinaya, ⏎ remains heedful,
+dn16:3.51.18 | P: appamatto vihassati; | S: in this teaching and training, | T: (none)
+dn16:3.51.19 | P: Pahāya jātisaṁsāraṁ, | S: giving up transmigration through rebirths, | T: leaving the wandering-on ⏎ through birth,
+dn16:3.51.20 | P: dukkhassantaṁ karissatī”ti. | S: will make an end to suffering.” | T: will make an end ⏎ of stress.
+CONTEXT dn16:3.51.21 | P: Tatiyo bhāṇavāro. | S: The third recitation section. | T: (none)
+CONTEXT dn16:4.1.0 | P: 21. Nāgāpalokita | S: 21. The Elephant Look | T: [ IV ]
+
+## dn16:4.3.3–dn16:4.3.6 (dn)
+CONTEXT dn16:4.3.1 | P: Idamavoca bhagavā. | S: That is what the Buddha said. | T: That is what the Blessed One said.
+CONTEXT dn16:4.3.2 | P: Idaṁ vatvāna sugato athāparaṁ etadavoca satthā: | S: Then the Holy One, the Teacher, went on to say: | T: Having said it, the Teacher, the One Well-Gone, said further:
+dn16:4.3.3 | P: “Sīlaṁ samādhi paññā ca, | S: “Ethics, immersion, and wisdom, | T: Virtue, concentration, discernment,
+dn16:4.3.4 | P: vimutti ca anuttarā; | S: and the supreme freedom: | T: and unexcelled release:
+dn16:4.3.5 | P: Anubuddhā ime dhammā, | S: these things have been understood | T: These qualities have been awakened to
+dn16:4.3.6 | P: gotamena yasassinā. | S: by Gotama the renowned. | T: by Gotama, the prestigious.
+
+## dn16:4.3.7–dn16:4.3.10 (dn)
+dn16:4.3.7 | P: Iti buddho abhiññāya, | S: And so the Buddha, having insight, | T: Directly knowing this,
+dn16:4.3.8 | P: dhammamakkhāsi bhikkhunaṁ; | S: explained this teaching to the mendicants. | T: he shows it to the monks— ⏎ the awakened one,
+dn16:4.3.9 | P: Dukkhassantakaro satthā, | S: The teacher made an end of suffering, | T: the teacher who has made an ending of stress,
+dn16:4.3.10 | P: cakkhumā parinibbuto”ti. | S: seeing clearly, he is fully quenched.” | T: the one with eyes, ⏎ totally unbound.
+CONTEXT dn16:4.4.1 | P: Tatrāpi sudaṁ bhagavā bhaṇḍagāme viharanto etadeva bahulaṁ bhikkhūnaṁ dhammiṁ kathaṁ karoti: | S: And while staying there, too, he often gave this Dhamma talk to the mendicants: | T: While staying there at Bhaṇḍa Village, the Blessed One often gave this Dhamma talk to the monks:
+CONTEXT dn16:4.4.2 | P: “iti sīlaṁ, iti samādhi, iti paññā. | S: “Such is ethics, such is immersion, such is wisdom. | T: “Such is virtue, such is concentration, such is discernment.
+
+## dn16:4.20.6–dn16:4.20.9 (dn)
+CONTEXT dn16:4.20.4 | P: “āyāmānanda, yena kusinārā tenupasaṅkamissāmā”ti. | S: “Come, Ānanda, let’s go to Kusinārā.” | T: “Ānanda, we will go to Kusinārā.”
+CONTEXT dn16:4.20.5 | P: “Evaṁ, bhante”ti kho āyasmā ānando bhagavato paccassosi. | S: “Yes, sir,” Ānanda replied. | T: “As you say, lord,” Ven. Ānanda responded to the Blessed One.
+dn16:4.20.6 | P: Cundassa bhattaṁ bhuñjitvā, | S: I’ve heard that after eating | T: I have heard that, ⏎ on eating
+dn16:4.20.7 | P: kammārassāti me sutaṁ; | S: the meal of Cunda the smith, | T: Cunda the silversmith’s meal,
+dn16:4.20.8 | P: Ābādhaṁ samphusī dhīro, | S: the attentive one fell severely ill, | T: the enlightened one was touched by illness—
+dn16:4.20.9 | P: pabāḷhaṁ māraṇantikaṁ. | S: with pains, close to death. | T: fierce, deadly.
+
+## dn16:4.20.10–dn16:4.20.13 (dn) GATHERED; unequal counts require a reader
+dn16:4.20.10 | P: Bhuttassa ca sūkaramaddavena, | S: A severe sickness struck the Teacher | T: After he had eaten the pig-delicacy, ⏎ a fierce sickness arose in the Teacher.
+dn16:4.20.11 | P: Byādhippabāḷho udapādi satthuno; | S: who had eaten the pork on the turn. | T: (none)
+dn16:4.20.12 | P: Virecamāno bhagavā avoca, | S: While still purging the Buddha said: | T: After being purged of it, ⏎ the Blessed One said,
+dn16:4.20.13 | P: “Gacchāmahaṁ kusināraṁ nagaran”ti. | S: “I’ll go to the citadel of Kusinārā.” | T: “To the city of Kusinārā ⏎ I will go.”
+CONTEXT dn16:4.21.0 | P: 24. Pānīyāharaṇa | S: 24. Bringing a Drink | T: (none)
+CONTEXT dn16:4.21.1 | P: Atha kho bhagavā maggā okkamma yena aññataraṁ rukkhamūlaṁ tenupasaṅkami; upasaṅkamitvā āyasmantaṁ ānandaṁ āmantesi: | S: Then the Buddha left the road and went to the root of a certain tree, where he addressed Ānanda, | T: Then the Blessed One, going down from the road, went to a certain tree and, on arrival, said to Ven. Ānanda,
+
+## dn16:4.38.7–dn16:4.38.10 (dn) GATHERED; equal counts: one line per row
+CONTEXT dn16:4.38.5 | P: Āyāmānanda, yena kakudhā nadī tenupasaṅkamissāmā”ti. | S: Come, Ānanda, let’s go to the Kakudhā River.” | T: “Come, Ānanda, we will head for Kakudha River.”
+CONTEXT dn16:4.38.6 | P: “Evaṁ, bhante”ti kho āyasmā ānando bhagavato paccassosi. | S: “Yes, sir,” Ānanda replied. | T: “As you say, lord,” Ven. Ānanda responded to the Blessed One.
+dn16:4.38.7 | P: Siṅgīvaṇṇaṁ yugamaṭṭhaṁ, | S: A pair of garments the color of mountain gold | T: Pukkusa offered a pair of gold-colored robes
+dn16:4.38.8 | P: pukkuso abhihārayi; | S: was presented by Pukkusa; | T: (none)
+dn16:4.38.9 | P: Tena acchādito satthā, | S: when the Teacher was clothed with them, | T: clothed in which,
+dn16:4.38.10 | P: hemavaṇṇo asobhathāti. | S: his snow gold skin glowed bright. | T: the Teacher of golden complexion ⏎ shone brightly.
+CONTEXT dn16:4.38.11 | P: (…) | S: (none) | T: (none)
+CONTEXT dn16:4.39.1 | P: Atha kho bhagavā mahatā bhikkhusaṅghena saddhiṁ yena kakudhā nadī tenupasaṅkami; upasaṅkamitvā kakudhaṁ nadiṁ ajjhogāhetvā nhatvā ca pivitvā ca paccuttaritvā yena ambavanaṁ tenupasaṅkami. | S: Then the Buddha together with a large Saṅgha of mendicants went to the Kakudhā River. He plunged into the river and bathed and drank. And when he had emerged, he went to the mango grove, | T: Then the Blessed One, together with the large Saṅgha of monks, went to the Kakudha River and, after arriving at the Kakudha River, going down, bathing, drinking, & coming back out, went to a mango grove.
+AUTO dn16:4.38.7 starts: Pukkusa offered a pair of gold-colored robes
+AUTO dn16:4.38.8 starts: clothed in which,
+AUTO dn16:4.38.9 starts: the Teacher of golden complexion
+AUTO dn16:4.38.10 starts: shone brightly.
+
+## dn16:4.41.1–dn16:4.41.4 (dn)
+CONTEXT dn16:4.40.2 | P: Atha kho bhagavā dakkhiṇena passena sīhaseyyaṁ kappesi pāde pādaṁ accādhāya sato sampajāno uṭṭhānasaññaṁ manasikaritvā. | S: And then the Buddha laid down in the lion’s posture—on the right side, placing one foot on top of the other—mindful and aware, and focused on the time of getting up. | T: The Blessed One, lying on his right side, took up the lion’s posture, placing one foot on top of the other—mindful, alert, and attending to the perception of getting up.
+CONTEXT dn16:4.40.3 | P: Āyasmā pana cundako tattheva bhagavato purato nisīdi. | S: But Cundaka sat down right there in front of the Buddha. | T: Ven. Cundaka sat in front of him.
+dn16:4.41.1 | P: Gantvāna buddho nadikaṁ kakudhaṁ, | S: Having gone to Kakudhā Creek, | T: The awakened one, ⏎ —having gone to the little Kakudha river
+dn16:4.41.2 | P: Acchodakaṁ sātudakaṁ vippasannaṁ; | S: whose water was transparent, sweet, and clear, | T: with its pristine, pleasing water, clear—
+dn16:4.41.3 | P: Ogāhi satthā akilantarūpo, | S: the Teacher, being tired, plunged in, | T: the Teacher, seeming very tired,
+dn16:4.41.4 | P: Tathāgato appaṭimo ca loke. | S: the Realized One, without compare in the world. | T: the Tathāgata, unequalled in the world
+
+## dn16:4.41.5–dn16:4.41.8 (dn)
+dn16:4.41.5 | P: Nhatvā ca pivitvā cudatāri satthā, | S: And after bathing and drinking the Teacher emerged. | T: went down, bathed, drank, & came out.
+dn16:4.41.6 | P: Purakkhato bhikkhugaṇassa majjhe; | S: Before the group of mendicants, in the middle, the Buddha, | T: Honored, surrounded, ⏎ in the midst of the group of monks,
+dn16:4.41.7 | P: Vattā pavattā bhagavā idha dhamme, | S: the Teacher who rolled forth the present dispensation, | T: the Blessed One, Teacher, ⏎ proceeding here in the Dhamma,
+dn16:4.41.8 | P: Upāgami ambavanaṁ mahesi. | S: the great seer went to the mango grove. | T: the great seer, ⏎ went to the mango grove.
+
+## dn16:4.41.9–dn16:4.41.14 (dn)
+dn16:4.41.9 | P: Āmantayi cundakaṁ nāma bhikkhuṁ, | S: He addressed the mendicant named Cundaka: | T: He addressed the monk named Cundaka,
+dn16:4.41.10 | P: Catugguṇaṁ santhara me nipajjaṁ; | S: “Spread out my folded robe so I can lie down.” | T: “Spread it out, folded in four ⏎ for me to lie down.”
+dn16:4.41.11 | P: So codito bhāvitattena cundo, | S: The evolved one urged Cunda, | T: Ordered by the One of developed mind,
+dn16:4.41.12 | P: Catugguṇaṁ santhari khippameva; | S: who quickly spread the folded robe. | T: Cundaka quickly set it out, folded in four.
+dn16:4.41.13 | P: Nipajji satthā akilantarūpo, | S: The Teacher lay down so tired, | T: The Teacher lay down, seeming very tired,
+dn16:4.41.14 | P: Cundopi tattha pamukhe nisīdīti. | S: while Cunda sat there before him. | T: and Cundaka sat down there before him.
+CONTEXT dn16:4.42.1 | P: Atha kho bhagavā āyasmantaṁ ānandaṁ āmantesi: | S: Then the Buddha said to Venerable Ānanda: | T: Then the Blessed One addressed Ven. Ānanda,
+CONTEXT dn16:4.42.2 | P: “siyā kho panānanda, cundassa kammāraputtassa koci vippaṭisāraṁ uppādeyya: | S: “Now it may happen, Ānanda, that someone may give rise to regret in Cunda the smith: | T: “Ānanda, if anyone tries to incite remorse in Cunda the silversmith, saying,
+
+## dn16:4.43.2–dn16:4.43.5 (dn)
+CONTEXT dn16:4.42.13 | P: Cundassa, ānanda, kammāraputtassa evaṁ vippaṭisāro paṭivinetabbo”ti. | S: That’s how you should dispel remorse in Cunda the smith.” | T: In this way, Ānanda, Cunda the silversmith’s remorse should be allayed.”
+CONTEXT dn16:4.43.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: Then, understanding this matter, on that occasion the Buddha expressed this heartfelt sentiment: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+dn16:4.43.2 | P: “Dadato puññaṁ pavaḍḍhati, | S: “A giver’s merit grows; | T: For a person giving, ⏎ merit increases.
+dn16:4.43.3 | P: Saṁyamato veraṁ na cīyati; | S: enmity doesn’t build up when you have self-control. | T: For one self-restraining, ⏎ no animosity is amassed.
+dn16:4.43.4 | P: Kusalo ca jahāti pāpakaṁ, | S: A skillful person gives up bad things— | T: One who is skillful ⏎ leaves evil behind ⏎ and
+dn16:4.43.5 | P: Rāgadosamohakkhayā sanibbuto”ti. | S: with the end of greed, hate, and delusion, they’re quenched.” | T: —from the ending of ⏎ passion, ⏎ aversion, ⏎ delusion— ⏎ totally unbinds.
+CONTEXT dn16:4.43.6 | P: Catuttho bhāṇavāro. | S: The fourth recitation section. | T: (none)
+CONTEXT dn16:5.1.0 | P: 26. Yamakasālā | S: 26. The Pair of Sal Trees | T: [ V ]
+
+## dn16:5.27.5–dn16:5.27.10 (dn) GATHERED; unequal counts require a reader
+CONTEXT dn16:5.27.3 | P: Imasmiṁ kho, subhadda, dhammavinaye ariyo aṭṭhaṅgiko maggo upalabbhati, idheva, subhadda, samaṇo, idha dutiyo samaṇo, idha tatiyo samaṇo, idha catuttho samaṇo, suññā parappavādā samaṇebhi aññehi. | S: In this teaching and training the noble eightfold path is found. Only here is there an ascetic, here a second ascetic, here a third ascetic, and here a fourth ascetic. Other sects are empty of ascetics. | T: The noble eightfold path is ascertained in this doctrine & discipline, and right here there are contemplatives of the first… second… third… fourth order. Other teachings are empty of knowledgeable contemplatives.
+CONTEXT dn16:5.27.4 | P: Ime ca, subhadda, bhikkhū sammā vihareyyuṁ, asuñño loko arahantehi assāti. | S: Were these mendicants to practice well, the world would not be empty of perfected ones. | T: And if the monks dwell rightly, this world will not be empty of arahants.
+dn16:5.27.5 | P: Ekūnatiṁso vayasā subhadda, | S: I was twenty-nine years of age, Subhadda, | T: At age twenty-nine
+dn16:5.27.6 | P: Yaṁ pabbajiṁ kiṅkusalānuesī; | S: when I went forth to discover what is skillful. | T: I went forth, Subhadda, ⏎ seeking what might be skillful,
+dn16:5.27.7 | P: Vassāni paññāsa samādhikāni, | S: It’s been over fifty years | T: and since my going forth, Subhadda, ⏎ more than fifty years have passed.
+dn16:5.27.8 | P: Yato ahaṁ pabbajito subhadda; | S: since I went forth. | T: (none)
+dn16:5.27.9 | P: Ñāyassa dhammassa padesavattī, | S: Teacher of the references for the systematic teaching: | T: Outside of the realm ⏎ of methodical Dhamma,
+dn16:5.27.10 | P: Ito bahiddhā samaṇopi natthi. | S: outside of here there is no ascetic, | T: there is no contemplative.
+CONTEXT dn16:5.27.11 | P: Dutiyopi samaṇo natthi. | S: no second ascetic, | T: There is no contemplative of the second order;
+CONTEXT dn16:5.27.12 | P: Tatiyopi samaṇo natthi. | S: no third ascetic, | T: there is no contemplative of the third order;
+
+## dn16:6.10.3–dn16:6.10.8 (dn)
+CONTEXT dn16:6.10.1 | P: Parinibbute bhagavati saha parinibbānā mahābhūmicālo ahosi bhiṁsanako salomahaṁso. Devadundubhiyo ca phaliṁsu. | S: When the Buddha was fully quenched, along with the full extinguishment there was a great earthquake, awe-inspiring and hair-raising, and thunder cracked the sky. | T: When the Blessed One totally unbound, simultaneously with the total unbinding, there was a great earthquake, awesome & hair-raising, and rolls of the deva-drums split (the air).
+CONTEXT dn16:6.10.2 | P: Parinibbute bhagavati saha parinibbānā brahmāsahampati imaṁ gāthaṁ abhāsi: | S: When the Buddha was fully quenched, the divinity Sahampati spoke this verse: | T: When the Blessed One totally unbound, simultaneously with the total unbinding, Sahampati Brahmā uttered this verse:
+dn16:6.10.3 | P: “Sabbeva nikkhipissanti, | S: “All creatures in this world | T: All beings—all—in the world,
+dn16:6.10.4 | P: bhūtā loke samussayaṁ; | S: must lay down this bag of bones. | T: will cast off the bodily heap
+dn16:6.10.5 | P: Yattha etādiso satthā, | S: For even a Teacher such as this, | T: in the world ⏎ where a Teacher like this
+dn16:6.10.6 | P: loke appaṭipuggalo; | S: unrivaled in the world, | T: without peer in the world
+dn16:6.10.7 | P: Tathāgato balappatto, | S: the Realized One, attained to power, | T: the Tathāgata, with strength attained,
+dn16:6.10.8 | P: sambuddho parinibbuto”ti. | S: the Buddha was fully quenched.” | T: the Rightly Self-Awakened One, ⏎ has totally unbound.
+CONTEXT dn16:6.10.9 | P: Parinibbute bhagavati saha parinibbānā sakko devānamindo imaṁ gāthaṁ abhāsi: | S: When the Buddha was fully quenched, Sakka, lord of gods, spoke this verse: | T: When the Blessed One totally unbound, simultaneously with the total unbinding, Sakka, the deva-king, uttered this verse:
+
+## dn16:6.10.10–dn16:6.10.13 (dn)
+CONTEXT dn16:6.10.9 | P: Parinibbute bhagavati saha parinibbānā sakko devānamindo imaṁ gāthaṁ abhāsi: | S: When the Buddha was fully quenched, Sakka, lord of gods, spoke this verse: | T: When the Blessed One totally unbound, simultaneously with the total unbinding, Sakka, the deva-king, uttered this verse:
+dn16:6.10.10 | P: “Aniccā vata saṅkhārā, | S: “Oh! Conditions are impermanent, | T: How inconstant are fabrications!
+dn16:6.10.11 | P: uppādavayadhammino; | S: their nature is to rise and fall; | T: Their nature: to arise & pass away.
+dn16:6.10.12 | P: Uppajjitvā nirujjhanti, | S: having arisen, they cease; | T: They disband as they are arising.
+dn16:6.10.13 | P: tesaṁ vūpasamo sukho”ti. | S: their settling is blissful.” | T: Their total stilling is bliss.
+CONTEXT dn16:6.10.14 | P: Parinibbute bhagavati saha parinibbānā āyasmā anuruddho imā gāthāyo abhāsi: | S: When the Buddha was fully quenched, Venerable Anuruddha spoke this verse: | T: When the Blessed One totally unbound, simultaneously with the total unbinding, Ven. Anuruddha uttered this verse:
+
+## dn16:6.10.15–dn16:6.10.18 (dn)
+CONTEXT dn16:6.10.14 | P: Parinibbute bhagavati saha parinibbānā āyasmā anuruddho imā gāthāyo abhāsi: | S: When the Buddha was fully quenched, Venerable Anuruddha spoke this verse: | T: When the Blessed One totally unbound, simultaneously with the total unbinding, Ven. Anuruddha uttered this verse:
+dn16:6.10.15 | P: “Nāhu assāsapassāso, | S: “There was no more breathing | T: He had no in-&-out breathing,
+dn16:6.10.16 | P: ṭhitacittassa tādino; | S: for the unaffected one of steady heart. | T: the firm-minded one, the one who was Such,
+dn16:6.10.17 | P: Anejo santimārabbha, | S: Imperturbable, committed to peace, | T: imperturbable ⏎ & intent on peace:
+dn16:6.10.18 | P: yaṁ kālamakarī muni. | S: the sage has done his time. | T: the sage completing his span.
+
+## dn16:6.10.19–dn16:6.10.22 (dn) GATHERED; unequal counts require a reader
+dn16:6.10.19 | P: Asallīnena cittena, | S: He put up with painful feelings | T: With heart unbowed ⏎ he endured the pain.
+dn16:6.10.20 | P: vedanaṁ ajjhavāsayi; | S: without flinching. | T: (none)
+dn16:6.10.21 | P: Pajjotasseva nibbānaṁ, | S: The liberation of his heart | T: Like a flame’s unbinding ⏎ was the liberation ⏎ of awareness.
+dn16:6.10.22 | P: vimokkho cetaso ahū”ti. | S: was like the extinguishing of a lamp.” | T: (none)
+CONTEXT dn16:6.10.23 | P: Parinibbute bhagavati saha parinibbānā āyasmā ānando imaṁ gāthaṁ abhāsi: | S: When the Buddha was fully quenched, Venerable Ānanda spoke this verse: | T: When the Blessed One totally unbound, simultaneously with the total unbinding, Ven. Ānanda uttered this verse:
+
+## dn16:6.10.24–dn16:6.10.27 (dn)
+CONTEXT dn16:6.10.23 | P: Parinibbute bhagavati saha parinibbānā āyasmā ānando imaṁ gāthaṁ abhāsi: | S: When the Buddha was fully quenched, Venerable Ānanda spoke this verse: | T: When the Blessed One totally unbound, simultaneously with the total unbinding, Ven. Ānanda uttered this verse:
+dn16:6.10.24 | P: “Tadāsi yaṁ bhiṁsanakaṁ, | S: “Then there was terror! | T: It was awe-inspiring.
+dn16:6.10.25 | P: tadāsi lomahaṁsanaṁ; | S: Then they had goosebumps! | T: It was hair-raising
+dn16:6.10.26 | P: Sabbākāravarūpete, | S: When the Buddha, endowed with all fine qualities, | T: when, displaying the foremost ⏎ accomplishment in all things, ⏎ the Rightly Self-Awakened One
+dn16:6.10.27 | P: sambuddhe parinibbute”ti. | S: became fully quenched.” | T: totally unbound.
+CONTEXT dn16:6.10.28 | P: Parinibbute bhagavati ye te tattha bhikkhū avītarāgā appekacce bāhā paggayha kandanti, chinnapātaṁ papatanti, āvaṭṭanti vivaṭṭanti, “atikhippaṁ bhagavā parinibbuto, atikhippaṁ sugato parinibbuto, atikhippaṁ cakkhuṁ loke antarahito”ti. | S: When the Buddha was fully quenched, some of the mendicants there who were not free of desire, with arms raised, falling down like their feet were chopped off, rolling back and forth, lamented: “Too soon the Blessed One has become fully quenched! Too soon the Holy One has become fully quenched! Too soon the Eye of the World has vanished!” | T: When the Blessed One totally unbound, simultaneously with the total unbinding, some of the monks present who were not without passion wept, uplifting their arms. As if their feet were cut out from under them, they fell down and rolled back & forth, crying, “All too soon has the Blessed One totally unbound! All too soon has the One Well-Gone totally unbound! All too soon has the One with Eyes disappeared from the world!”
+CONTEXT dn16:6.10.29 | P: Ye pana te bhikkhū vītarāgā, te satā sampajānā adhivāsenti: | S: But the mendicants who were free of desire endured, mindful and aware, thinking, | T: But those monks who were free from passion acquiesced, mindful & alert:
+
+## dn16:6.25.4–dn16:6.25.7 (dn)
+CONTEXT dn16:6.25.2 | P: “bhagavā amhākaṁ gāmakkhette parinibbuto, na mayaṁ dassāma bhagavato sarīrānaṁ bhāgan”ti. | S: “The Buddha was fully quenched in our village district. We will not give away a share of his relics.” | T: “The Blessed One totally unbound within the borders of our own town. We will not give up a share of the Blessed One’s bone-relics.”
+CONTEXT dn16:6.25.3 | P: Evaṁ vutte, doṇo brāhmaṇo te saṅghe gaṇe etadavoca: | S: Then Doṇa the brahmin said to those various groups: | T: When this was said, Doṇa the brahman addressed the groups & factions,
+dn16:6.25.4 | P: “Suṇantu bhonto mama ekavācaṁ, | S: “Hear, worthy sirs, a single word from me. | T: “Listen, good sirs, ⏎ to a word from me.
+dn16:6.25.5 | P: Amhāka buddho ahu khantivādo; | S: Our Buddha’s teaching was acceptance. | T: Our Awakened One was a teacher ⏎ of forbearance.
+dn16:6.25.6 | P: Na hi sādhu yaṁ uttamapuggalassa, | S: It would not be good to fight over | T: It’s not good that there should be combat
+dn16:6.25.7 | P: Sarīrabhāge siyā sampahāro. | S: a share of the supreme individual’s relics. | T: over the sharing of the relics ⏎ of the highest person.
+
+## dn16:6.25.8–dn16:6.25.11 (dn)
+dn16:6.25.8 | P: Sabbeva bhonto sahitā samaggā, | S: Let us make eight portions, worthy sirs, | T: Let us, masters,
+dn16:6.25.9 | P: Sammodamānā karomaṭṭhabhāge; | S: rejoicing in unity and harmony. | T: unite in concord, ⏎ on friendly terms, ⏎ and make eight shares.
+dn16:6.25.10 | P: Vitthārikā hontu disāsu thūpā, | S: Let there be monuments far and wide, | T: Let there be ⏎ burial mounds ⏎ in the various directions,
+dn16:6.25.11 | P: Bahū janā cakkhumato pasannā”ti. | S: so many folk may gain faith in the Clear-eyed One!” | T: many people made confident ⏎ in the One with Eyes.”
+CONTEXT dn16:6.25.12 | P: “Tena hi, brāhmaṇa, tvaññeva bhagavato sarīrāni aṭṭhadhā samaṁ savibhattaṁ vibhajāhī”ti. | S: “Well then, brahmin, you yourself should fairly divide the Buddha’s relics in eight portions.” | T: “In that case, brahman, you yourself divide the Blessed One’s bone-relics into eight equal shares.”
+CONTEXT dn16:6.25.13 | P: “Evaṁ, bho”ti kho doṇo brāhmaṇo tesaṁ saṅghānaṁ gaṇānaṁ paṭissutvā bhagavato sarīrāni aṭṭhadhā samaṁ suvibhattaṁ vibhajitvā te saṅghe gaṇe etadavoca: | S: “Yes, worthy sirs,” replied Doṇa to those various groups. He divided the relics as asked and said to them, | T: Responding, “As you say, good sirs,” to the groups & factions, Doṇa the brahman divided the Blessed One’s bone-relics into eight equal shares and then said to the groups & factions,
+
+## dn16:6.28.1–dn16:6.28.4 (dn) GATHERED; possible speaker requires a reader
+CONTEXT dn16:6.27.11 | P: Iti aṭṭha sarīrathūpā navamo tumbathūpo dasamo aṅgārathūpo. | S: Thus there were eight monuments for the relics, a ninth for the urn, and a tenth for the embers. | T: Thus there were eight burial mounds for the bone-relics, a ninth for the urn, and a tenth for the embers.
+CONTEXT dn16:6.27.12 | P: Evametaṁ bhūtapubbanti. | S: That is how it was in the old days. | T: That is how it was in the past.
+dn16:6.28.1 | P: Aṭṭhadoṇaṁ cakkhumato sarīraṁ, | S: There were eight shares of the Clear-eyed One’s relics. | T: Eight portions were the relics ⏎ of the One with Eyes, ⏎ the highest, the foremost of men:
+dn16:6.28.2 | P: Sattadoṇaṁ jambudīpe mahenti; | S: Seven were worshiped in the Black Plum Tree Land. | T: seven honored in Jambudīpa,
+dn16:6.28.3 | P: Ekañca doṇaṁ purisavaruttamassa, | S: But one share of the most excellent of men | T: (none)
+dn16:6.28.4 | P: Rāmagāme nāgarājā maheti. | S: was worshiped in Rāmagāma by a dragon king. | T: and one in Rāmagāma ⏎ honored by kings of the nāgas.
+
+## dn16:6.28.5–dn16:6.28.8 (dn)
+dn16:6.28.5 | P: Ekāhi dāṭhā tidivehi pūjitā, | S: One tooth is venerated by the gods of the Third Heaven, | T: One tooth ⏎ the Devas of the Thirty-three worship;
+dn16:6.28.6 | P: Ekā pana gandhārapure mahīyati; | S: and one is worshiped in the city of Gandhāra; | T: one is honored in Gandhārapura;
+dn16:6.28.7 | P: Kāliṅgarañño vijite punekaṁ, | S: another one in the realm of the Kaliṅga King, | T: one in the realm of the king of Kāliṅga;
+dn16:6.28.8 | P: Ekaṁ pana nāgarājā maheti. | S: and one is worshiped by a dragon king. | T: another is honored by kings of the nāgas.
+
+## dn16:6.28.9–dn16:6.28.12 (dn) GATHERED; unequal counts require a reader
+dn16:6.28.9 | P: Tasseva tejena ayaṁ vasundharā, | S: Through their glory this rich earth | T: These, with their splendor, ⏎ their excellent gifts, ⏎ embellish this wealth-bearing earth.
+dn16:6.28.10 | P: Āyāgaseṭṭhehi mahī alaṅkatā; | S: is adorned with the best of offerings. | T: (none)
+dn16:6.28.11 | P: Evaṁ imaṁ cakkhumato sarīraṁ, | S: Thus the Clear-eyed One’s corpse | T: Thus the relics of the One with Eyes
+dn16:6.28.12 | P: Susakkataṁ sakkatasakkatehi. | S: is well honored by the honorable. | T: are honored by those honored ⏎ by those who are honored.
+
+## dn16:6.28.13–dn16:6.28.16 (dn)
+dn16:6.28.13 | P: Devindanāgindanarindapūjito, | S: It’s venerated by lords of gods, dragons, and fairies; | T: He is worshiped by deva kings, ⏎ nāga kings, human kings,
+dn16:6.28.14 | P: Manussindaseṭṭhehi tatheva pūjito; | S: and likewise venerated by the finest lords of men. | T: and likewise is worshiped ⏎ by the most excellent people.
+dn16:6.28.15 | P: Taṁ vandatha pañjalikā labhitvā, | S: Honor it with cupped palms when you get the chance, | T: So pay homage to him, ⏎ with hands palm-to-palm ⏎ over the heart,
+dn16:6.28.16 | P: Buddho have kappasatehi dullabhoti. | S: for a Buddha is rare even in a hundred eons. | T: for the Awakened are rarely encountered ⏎ in the course of one hundred eons.
+
+## dn16:6.28.17–dn16:6.28.20 (dn)
+dn16:6.28.17 | P: Cattālīsa samā dantā, | S: Altogether forty even teeth, | T: (none)
+dn16:6.28.18 | P: kesā lomā ca sabbaso; | S: and the body hair and head hair, | T: (none)
+dn16:6.28.19 | P: Devā hariṁsu ekekaṁ, | S: were carried off individually by gods | T: (none)
+dn16:6.28.20 | P: cakkavāḷaparamparāti. | S: across the universe. | T: (none)
+CONTEXT dn16:6.28.21 | P: Mahāparinibbānasuttaṁ niṭṭhitaṁ tatiyaṁ. | S: (none) | T: (none)
+
+## dn20:3.4–dn20:3.7 (dn)
+CONTEXT dn20:3.2 | P: Atha kho tā devatā bhagavantaṁ abhivādetvā ekamantaṁ aṭṭhaṁsu. | S: They bowed to the Buddha and stood to one side. | T: Having paid homage to him, they stood to one side.
+CONTEXT dn20:3.3 | P: Ekamantaṁ ṭhitā kho ekā devatā bhagavato santike imaṁ gāthaṁ abhāsi: | S: Standing to one side, one deity spoke this verse in the Buddha’s presence: | T: As they were standing there, one devatā recited this verse in the Blessed One’s presence:
+dn20:3.4 | P: “Mahāsamayo pavanasmiṁ, | S: “There’s a great congregation in the woods, | T: “A great meeting in the woods:
+dn20:3.5 | P: Devakāyā samāgatā; | S: where heavenly hosts have assembled. | T: The deva hosts have assembled.
+dn20:3.6 | P: Āgatamha imaṁ dhammasamayaṁ, | S: We’ve come to this righteous congregation | T: We have come to this Dhamma meeting
+dn20:3.7 | P: Dakkhitāye aparājitasaṅghan”ti. | S: to see the invincible Saṅgha!” | T: to see the unvanquished Saṅgha.”
+CONTEXT dn20:3.8 | P: Atha kho aparā devatā bhagavato santike imaṁ gāthaṁ abhāsi: | S: Then another deity spoke this verse in the Buddha’s presence: | T: Then another devatā recited this verse in the Blessed One’s presence:
+
+## dn20:3.9–dn20:3.12 (dn)
+CONTEXT dn20:3.8 | P: Atha kho aparā devatā bhagavato santike imaṁ gāthaṁ abhāsi: | S: Then another deity spoke this verse in the Buddha’s presence: | T: Then another devatā recited this verse in the Blessed One’s presence:
+dn20:3.9 | P: “Tatra bhikkhavo samādahaṁsu, | S: “The mendicants there are immersed in samādhi, | T: “There the monks are concentrated,
+dn20:3.10 | P: Cittamattano ujukaṁ akaṁsu; | S: they’ve straightened their own minds. | T: have straightened their own minds.
+dn20:3.11 | P: Sārathīva nettāni gahetvā, | S: Like a charioteer holding the reins, | T: Like a charioteer holding the reins,
+dn20:3.12 | P: Indriyāni rakkhanti paṇḍitā”ti. | S: the astute ones protect their senses.” | T: the wise ones guard their faculties.”
+CONTEXT dn20:3.13 | P: Atha kho aparā devatā bhagavato santike imaṁ gāthaṁ abhāsi: | S: Then another deity spoke this verse in the Buddha’s presence: | T: Then another devatā recited this verse in the Blessed One’s presence:
+
+## dn20:3.14–dn20:3.17 (dn)
+CONTEXT dn20:3.13 | P: Atha kho aparā devatā bhagavato santike imaṁ gāthaṁ abhāsi: | S: Then another deity spoke this verse in the Buddha’s presence: | T: Then another devatā recited this verse in the Blessed One’s presence:
+dn20:3.14 | P: “Chetvā khīlaṁ chetvā palighaṁ, | S: “They snapped the post and snapped the cross-bar, | T: “Having cut through barrenness, cut the cross-bar,
+dn20:3.15 | P: Indakhīlaṁ ūhacca manejā; | S: unstirred, they tore out Indra’s pillar. | T: having uprooted Indra’s pillar, unstirred,
+dn20:3.16 | P: Te caranti suddhā vimalā, | S: They live pure and immaculate, | T: they wander about pure, unstained,
+dn20:3.17 | P: Cakkhumatā sudantā susunāgā”ti. | S: the young giants tamed by the Clear-eyed One.” | T: young nāgas well tamed by the One with Eyes.”
+CONTEXT dn20:3.18 | P: Atha kho aparā devatā bhagavato santike imaṁ gāthaṁ abhāsi: | S: Then another deity spoke this verse in the Buddha’s presence: | T: Then another devatā recited this verse in the Blessed One’s presence:
+
+## dn20:3.19–dn20:3.22 (dn)
+CONTEXT dn20:3.18 | P: Atha kho aparā devatā bhagavato santike imaṁ gāthaṁ abhāsi: | S: Then another deity spoke this verse in the Buddha’s presence: | T: Then another devatā recited this verse in the Blessed One’s presence:
+dn20:3.19 | P: “Ye keci buddhaṁ saraṇaṁ gatāse, | S: “Anyone who has gone to the Buddha for refuge | T: “Those who have gone to the Buddha for refuge
+dn20:3.20 | P: Na te gamissanti apāyabhūmiṁ; | S: won’t go to a plane of loss. | T: will not go to the plane of woe.
+dn20:3.21 | P: Pahāya mānusaṁ dehaṁ, | S: After giving up this human body, | T: On discarding the human body,
+dn20:3.22 | P: Devakāyaṁ paripūressantī”ti. | S: they swell the heavenly host.” | T: they will fill the hosts of the devas.”
+CONTEXT dn20:4.0 | P: 1. Devatāsannipāta | S: 1. The Gathering of Deities | T: (none)
+CONTEXT dn20:4.1 | P: Atha kho bhagavā bhikkhū āmantesi: | S: Then the Buddha said to the mendicants: | T: Then the Blessed One addressed the monks:
+
+## dn20:5.1–dn20:5.4 (dn)
+CONTEXT dn20:4.9 | P: “Evaṁ, bhante”ti kho te bhikkhū bhagavato paccassosuṁ. | S: “Yes, sir,” they replied. | T: “As you say, lord,” the monks responded to the Blessed One.
+CONTEXT dn20:4.10 | P: Bhagavā etadavoca: | S: The Buddha said this: | T: The Blessed One said:
+dn20:5.1 | P: “Silokamanukassāmi, | S: “I invoke a paean of praise! | T: I will recite a verse of tribute.
+dn20:5.2 | P: yattha bhummā tadassitā; | S: Where the earth-gods dwell, | T: Those who live where spirits dwell,
+dn20:5.3 | P: Ye sitā girigabbharaṁ, | S: there, in mountain caves, | T: who live in mountain caves,
+dn20:5.4 | P: pahitattā samāhitā. | S: resolute and composed, | T: resolute, concentrated,
+
+## dn20:5.5–dn20:5.8 (dn)
+dn20:5.5 | P: Puthūsīhāva sallīnā, | S: dwell many like lonely lions, | T: many, like hidden lions,
+dn20:5.6 | P: lomahaṁsābhisambhuno; | S: who have mastered their fears. | T: who have overcome horripilation,
+dn20:5.7 | P: Odātamanasā suddhā, | S: Their minds are bright and pure, | T: white-hearted, pure,
+dn20:5.8 | P: vippasannamanāvilā. | S: clear and unclouded.” | T: serene, & undisturbed:
+
+## dn20:5.9–dn20:5.12 (dn)
+dn20:5.9 | P: Bhiyyo pañcasate ñatvā, | S: Over five hundred were known | T: Knowing that more than 500 of them
+dn20:5.10 | P: vane kāpilavatthave; | S: in the wood at Kapilavatthu. | T: had come to the forest of Kapilavatthu,
+dn20:5.11 | P: Tato āmantayī satthā, | S: Consequently, the Teacher addressed | T: the Teacher then said to them,
+dn20:5.12 | P: sāvake sāsane rate. | S: the disciples who love the teaching: | T: disciples delighting in his instruction,
+
+## dn20:5.13–dn20:5.16 (dn) GATHERED; equal counts: one line per row
+dn20:5.13 | P: ‘Devakāyā abhikkantā, | S: “The heavenly hosts have come forth; | T: “The deva hosts have approached.
+dn20:5.14 | P: te vijānātha bhikkhavo’; | S: mendicants, you should be aware of them.” | T: Detect them, monks!”
+dn20:5.15 | P: Te ca ātappamakaruṁ, | S: Those monks grew keen, | T: Listening to the Awakened One’s instruction, ⏎ they made an ardent effort.
+dn20:5.16 | P: sutvā buddhassa sāsanaṁ. | S: hearing the Buddha’s instruction. | T: (none)
+AUTO dn20:5.13 starts: “The deva hosts have approached.
+AUTO dn20:5.14 starts: Detect them, monks!”
+AUTO dn20:5.15 starts: Listening to the Awakened One’s instruction,
+AUTO dn20:5.16 starts: they made an ardent effort.
+
+## dn20:6.1–dn20:6.4 (dn)
+dn20:6.1 | P: Tesaṁ pāturahu ñāṇaṁ, | S: Knowledge manifested in them, | T: Knowledge appeared to them,
+dn20:6.2 | P: amanussānadassanaṁ; | S: seeing those non-human beings. | T: vision of non-human beings.
+dn20:6.3 | P: Appeke satamaddakkhuṁ, | S: Some saw a hundred, | T: Some saw 100,
+dn20:6.4 | P: sahassaṁ atha sattariṁ. | S: a thousand, even seventy thousand, | T: some 1,000, some 70,000,
+
+## dn20:6.5–dn20:6.8 (dn)
+dn20:6.5 | P: Sataṁ eke sahassānaṁ, | S: while some saw a hundred thousand | T: some had vision of 100,000 non-human beings.
+dn20:6.6 | P: amanussānamaddasuṁ; | S: non-human beings. | T: (none)
+dn20:6.7 | P: Appekenantamaddakkhuṁ, | S: But some saw an endless number | T: Some gained vision of innumerable devas
+dn20:6.8 | P: disā sabbā phuṭā ahuṁ. | S: spread out in every direction. | T: filling every direction.
+
+## dn20:6.9–dn20:6.12 (dn)
+dn20:6.9 | P: Tañca sabbaṁ abhiññāya, | S: And all that was known | T: Realizing all this,
+dn20:6.10 | P: vavatthitvāna cakkhumā; | S: and distinguished by the Clear-eyed One. | T: the One-with-Vision felt moved to speak.
+dn20:6.11 | P: Tato āmantayī satthā, | S: Consequently, the Teacher addressed | T: The Teacher then said to them,
+dn20:6.12 | P: sāvake sāsane rate. | S: the disciples who love the teaching: | T: disciples delighting in his instruction,
+
+## dn20:6.13–dn20:6.16 (dn)
+dn20:6.13 | P: ‘Devakāyā abhikkantā, | S: “The heavenly hosts have come forth; | T: “The deva hosts have approached.
+dn20:6.14 | P: te vijānātha bhikkhavo; | S: mendicants, you should be aware of them. | T: Detect them, monks,
+dn20:6.15 | P: Ye vohaṁ kittayissāmi, | S: I shall extol them for you, | T: as I describe their glories,
+dn20:6.16 | P: girāhi anupubbaso’. | S: with lyrics in proper order. | T: one by one.
+
+## dn20:7.1–dn20:7.6 (dn)
+dn20:7.1 | P: Sattasahassā te yakkhā, | S: There are seven thousand spirits, | T: 7,000 yakkhas inhabiting the land of Kāpilavatthu,
+dn20:7.2 | P: bhummā kāpilavatthavā; | S: earth-gods of Kapilavatthu. | T: (none)
+dn20:7.3 | P: Iddhimanto jutimanto, | S: They’re powerful and brilliant, | T: powerful, effulgent,
+dn20:7.4 | P: vaṇṇavanto yasassino; | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:7.5 | P: Modamānā abhikkāmuṁ, | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:7.6 | P: bhikkhūnaṁ samitiṁ vanaṁ. | S: to the meeting of mendicants in the wood. | T: have approached the monks’ forest meeting.
+
+## dn20:7.7–dn20:7.12 (dn)
+dn20:7.7 | P: Chasahassā hemavatā, | S: From the Himalayas there are six thousand | T: 6,000 yakkhas from the Himālayas,
+dn20:7.8 | P: yakkhā nānattavaṇṇino; | S: spirits of different colors. | T: of varied hue,
+dn20:7.9 | P: Iddhimanto jutimanto, | S: They’re powerful and brilliant, | T: powerful, effulgent,
+dn20:7.10 | P: vaṇṇavanto yasassino; | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:7.11 | P: Modamānā abhikkāmuṁ, | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:7.12 | P: bhikkhūnaṁ samitiṁ vanaṁ. | S: to the meeting of mendicants in the wood. | T: have approached the monks’ forest meeting.
+
+## dn20:7.13–dn20:7.18 (dn)
+dn20:7.13 | P: Sātāgirā tisahassā, | S: From Mount Sātā there are three thousand | T: From Mount Sāta 3,000 yakkhas of varied hue,
+dn20:7.14 | P: yakkhā nānattavaṇṇino; | S: spirits of different colors. | T: (none)
+dn20:7.15 | P: Iddhimanto jutimanto, | S: They’re powerful and brilliant, | T: powerful, effulgent,
+dn20:7.16 | P: vaṇṇavanto yasassino; | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:7.17 | P: Modamānā abhikkāmuṁ, | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:7.18 | P: bhikkhūnaṁ samitiṁ vanaṁ. | S: to the meeting of mendicants in the wood. | T: have approached the monks’ forest meeting.

@@ -1,0 +1,405 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## dhp372:1–dhp372:4 (dhp)
+dhp372:1 | P: Natthi jhānaṁ apaññassa, | S: No absorption for one without wisdom, | T: There’s ⏎ no jhana ⏎ for one with ⏎ no discernment,
+dhp372:2 | P: paññā natthi ajhāyato; | S: no wisdom for one without absorption. | T: no discernment ⏎ for one with ⏎ no jhana.
+dhp372:3 | P: Yamhi jhānañca paññā ca, | S: But one with absorption and wisdom— | T: But one with ⏎ both jhana ⏎ & discernment:
+dhp372:4 | P: sa ve nibbānasantike. | S: they have truly drawn near to extinguishment. | T: he’s on the verge ⏎ of Unbinding.
+
+## dhp373:1–dhp373:4 (dhp) GATHERED; possible speaker requires a reader
+dhp373:1 | P: Suññāgāraṁ paviṭṭhassa, | S: A mendicant who enters an empty hut | T: A monk with his mind at peace, ⏎ going into an empty dwelling,
+dhp373:2 | P: santacittassa bhikkhuno; | S: with mind at peace | T: (none)
+dhp373:3 | P: Amānusī rati hoti, | S: finds a superhuman delight | T: clearly seeing the Dhamma aright: ⏎ his delight is more ⏎ than human.
+dhp373:4 | P: sammā dhammaṁ vipassato. | S: as they rightly discern the Dhamma. | T: (none)
+
+## dhp374:1–dhp374:4 (dhp)
+dhp374:1 | P: Yato yato sammasati, | S: Whenever they are mindful | T: However it is, ⏎ however it is he touches
+dhp374:2 | P: khandhānaṁ udayabbayaṁ; | S: of the rise and fall of the aggregates, | T: the arising-&-passing of aggregates:
+dhp374:3 | P: Labhatī pītipāmojjaṁ, | S: they feel rapture and joy: | T: he gains rapture & joy:
+dhp374:4 | P: amataṁ taṁ vijānataṁ. | S: that is freedom from death for one who knows. | T: that, for those who know it, ⏎ is deathless, ⏎ the Deathless.
+
+## dhp375:1–dhp375:4 (dhp)
+dhp375:1 | P: Tatrāyamādi bhavati, | S: This is the very start of the path | T: Here the first things
+dhp375:2 | P: idha paññassa bhikkhuno; | S: for a wise mendicant here: | T: for a discerning monk ⏎ are
+dhp375:3 | P: Indriyagutti santuṭṭhi, | S: guarding the senses, contentment, | T: guarding the senses, ⏎ contentment,
+dhp375:4 | P: pātimokkhe ca saṁvaro. | S: and restraint in the monastic code. | T: restraint in line with the Patimokkha.
+
+## dhp376:1–dhp376:6 (dhp)
+dhp376:1 | P: Mitte bhajassu kalyāṇe, | S: Mix with spiritual friends, | T: He should associate with admirable friends.
+dhp376:2 | P: suddhājīve atandite; | S: who are tireless and pure of livelihood. | T: Living purely, untiring,
+dhp376:3 | P: Paṭisanthāravutyassa, | S: Share what you have with others, | T: hospitable by habit,
+dhp376:4 | P: ācārakusalo siyā; | S: being skillful in your conduct. | T: skilled in his conduct,
+dhp376:5 | P: Tato pāmojjabahulo, | S: And when you’re full of joy, | T: gaining a manifold joy,
+dhp376:6 | P: dukkhassantaṁ karissati. | S: you’ll make an end to suffering. | T: he will put an end ⏎ to suffering & stress.
+CONTEXT dhp377:0 | P: Pañcasatabhikkhuvatthu | S: (none) | T: (none)
+
+## dhp377:1–dhp377:4 (dhp) GATHERED; equal counts: one line per row
+CONTEXT dhp377:0 | P: Pañcasatabhikkhuvatthu | S: (none) | T: (none)
+dhp377:1 | P: Vassikā viya pupphāni, | S: As a jasmine sheds | T: Shed passion ⏎ & aversion, monks– ⏎ as a jasmine would,
+dhp377:2 | P: maddavāni pamuñcati; | S: its withered flowers, | T: its withered flowers.
+dhp377:3 | P: Evaṁ rāgañca dosañca, | S: O mendicants, | T: (none)
+dhp377:4 | P: vippamuñcetha bhikkhavo. | S: shed greed and hate. | T: (none)
+CONTEXT dhp378:0 | P: Santakāyattheravatthu | S: (none) | T: (none)
+AUTO dhp377:1 starts: Shed passion
+AUTO dhp377:2 starts: & aversion, monks–
+AUTO dhp377:3 starts: as a jasmine would,
+AUTO dhp377:4 starts: its withered flowers.
+
+## dhp378:1–dhp378:4 (dhp)
+CONTEXT dhp378:0 | P: Santakāyattheravatthu | S: (none) | T: (none)
+dhp378:1 | P: Santakāyo santavāco, | S: Calm in body, calm in speech, | T: Calmed in body, ⏎ calmed in speech,
+dhp378:2 | P: santavā susamāhito; | S: peaceful and serene; | T: well-centered & calm,
+dhp378:3 | P: Vantalokāmiso bhikkhu, | S: a mendicant who’s spat out the world’s bait | T: having disgorged the baits of the world,
+dhp378:4 | P: “upasanto”ti vuccati. | S: is said to be one at peace. | T: a monk is called ⏎ thoroughly ⏎ calmed.
+CONTEXT dhp379:0 | P: Naṅgalakulattheravatthu | S: (none) | T: (none)
+
+## dhp379:1–dhp379:4 (dhp)
+CONTEXT dhp379:0 | P: Naṅgalakulattheravatthu | S: (none) | T: (none)
+dhp379:1 | P: Attanā codayattānaṁ, | S: Urge yourself on, | T: You yourself ⏎ should reprove yourself,
+dhp379:2 | P: paṭimaṁsetha attanā; | S: reflect on yourself. | T: should examine yourself.
+dhp379:3 | P: So attagutto satimā, | S: A mendicant self-controlled and mindful | T: As a self-guarded monk ⏎ with guarded self, ⏎ mindful,
+dhp379:4 | P: sukhaṁ bhikkhu vihāhisi. | S: will always dwell in happiness. | T: you dwell at ease.
+
+## dhp380:1–dhp380:5 (dhp) GATHERED; unequal counts require a reader
+dhp380:1 | P: Attā hi attano nātho, | S: Self is indeed the lord of self, | T: Your own self is ⏎ your own mainstay.
+dhp380:2 | P: ko hi nātho paro siyā; | S: for who else would be one’s lord? | T: (none)
+dhp380:3 | P: Attā hi attano gati, | S: Self is indeed the home of self, | T: Your own self is ⏎ your own guide.
+dhp380:4 | P: tasmā saṁyamamattānaṁ; | S: so restrain yourself, | T: Therefore you should ⏎ watch over yourself–
+dhp380:5 | P: Assaṁ bhadraṁva vāṇijo. | S: as a merchant his thoroughbred steed. | T: as a trader, a fine steed.
+CONTEXT dhp381:0 | P: Vakkalittheravatthu | S: (none) | T: (none)
+
+## dhp381:1–dhp381:4 (dhp)
+CONTEXT dhp381:0 | P: Vakkalittheravatthu | S: (none) | T: (none)
+dhp381:1 | P: Pāmojjabahulo bhikkhu, | S: A monk full of joy | T: A monk with a manifold joy,
+dhp381:2 | P: pasanno buddhasāsane; | S: trusting in the Buddha’s teaching, | T: with faith in the Awakened One’s teaching,
+dhp381:3 | P: Adhigacche padaṁ santaṁ, | S: would realize the peaceful state, | T: would attain the good state, ⏎ the peaceful state:
+dhp381:4 | P: saṅkhārūpasamaṁ sukhaṁ. | S: the blissful stilling of conditions. | T: stilling-of-fabrications ease.
+CONTEXT dhp382:0 | P: Sumanasāmaṇeravatthu | S: (none) | T: (none)
+
+## dhp382:1–dhp382:4 (dhp)
+CONTEXT dhp382:0 | P: Sumanasāmaṇeravatthu | S: (none) | T: (none)
+dhp382:1 | P: Yo have daharo bhikkhu, | S: A young mendicant | T: A young monk
+dhp382:2 | P: yuñjati buddhasāsane; | S: devoted to the Buddha’s teaching, | T: who strives ⏎ in the Awakened One’s teaching,
+dhp382:3 | P: Somaṁ lokaṁ pabhāseti, | S: shines upon this world, | T: brightens the world
+dhp382:4 | P: abbhā muttova candimā. | S: like the moon freed from clouds. | T: like the moon set free from a cloud.
+CONTEXT dhp382:5 | P: Bhikkhuvaggo pañcavīsatimo. | S: (none) | T: (none)
+
+## dhp383:1–dhp383:4 (dhp)
+CONTEXT dhp383:0.3 | P: Brāhmaṇavagga | S: 26. Brahmins | T: Dhp XXVI : Brahmans
+CONTEXT dhp383:0.4 | P: Pasādabahulabrāhmaṇavatthu | S: (none) | T: (none)
+dhp383:1 | P: Chinda sotaṁ parakkamma, | S: Cut the stream, striving! | T: Having striven, brahman, ⏎ cut the stream.
+dhp383:2 | P: kāme panuda brāhmaṇa; | S: Cast aside sensual pleasures, brahmin. | T: Expel sensual passions.
+dhp383:3 | P: Saṅkhārānaṁ khayaṁ ñatvā, | S: Knowing the ending of conditions, | T: Knowing the ending of fabrications,
+dhp383:4 | P: akataññūsi brāhmaṇa. | S: know the uncreated, brahmin. | T: brahman, ⏎ you know the Unmade.
+CONTEXT dhp384:0 | P: Sambahulabhikkhuvatthu | S: (none) | T: (none)
+
+## dhp384:1–dhp384:4 (dhp) GATHERED; unequal counts require a reader
+CONTEXT dhp384:0 | P: Sambahulabhikkhuvatthu | S: (none) | T: (none)
+dhp384:1 | P: Yadā dvayesu dhammesu, | S: When a brahmin has gone beyond | T: When the brahman has gone ⏎ to the beyond of two things,
+dhp384:2 | P: pāragū hoti brāhmaṇo; | S: dualistic phenomena, | T: (none)
+dhp384:3 | P: Athassa sabbe saṁyogā, | S: then they consciously | T: (none)
+dhp384:4 | P: atthaṁ gacchanti jānato. | S: make an end of all fetters. | T: then all his fetters ⏎ go to their end– ⏎ he who knows.
+CONTEXT dhp385:0 | P: Māravatthu | S: (none) | T: (none)
+
+## dhp385:1–dhp385:4 (dhp)
+CONTEXT dhp385:0 | P: Māravatthu | S: (none) | T: (none)
+dhp385:1 | P: Yassa pāraṁ apāraṁ vā, | S: One for whom there is no crossing over | T: One whose beyond or ⏎ not-beyond or ⏎ beyond-&-not-beyond
+dhp385:2 | P: pārāpāraṁ na vijjati; | S: or crossing back, or crossing over and back; | T: can’t be found;
+dhp385:3 | P: Vītaddaraṁ visaṁyuttaṁ, | S: stress-free, detached, | T: unshackled, carefree:
+dhp385:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp386:0 | P: Aññatarabrāhmaṇavatthu | S: (none) | T: (none)
+
+## dhp386:1–dhp386:4 (dhp)
+CONTEXT dhp386:0 | P: Aññatarabrāhmaṇavatthu | S: (none) | T: (none)
+dhp386:1 | P: Jhāyiṁ virajamāsīnaṁ, | S: Absorbed, rid of hopes, | T: Sitting silent, dustless, ⏎ absorbed in jhana,
+dhp386:2 | P: katakiccamanāsavaṁ; | S: their task completed, without defilements, | T: his task done, effluents gone,
+dhp386:3 | P: Uttamatthamanuppattaṁ, | S: arrived at the highest goal: | T: ultimate goal attained:
+dhp386:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp387:0 | P: Ānandattheravatthu | S: (none) | T: (none)
+
+## dhp387:1–dhp387:6 (dhp)
+CONTEXT dhp387:0 | P: Ānandattheravatthu | S: (none) | T: (none)
+dhp387:1 | P: Divā tapati ādicco, | S: The sun blazes by day, | T: By day shines the sun;
+dhp387:2 | P: rattimābhāti candimā; | S: the moon radiates at night, | T: by night, the moon;
+dhp387:3 | P: Sannaddho khattiyo tapati, | S: the aristocrat shines in armor, | T: in armor, the warrior;
+dhp387:4 | P: jhāyī tapati brāhmaṇo; | S: and the brahmin shines in absorption. | T: in jhana, the brahman.
+dhp387:5 | P: Atha sabbamahorattiṁ, | S: But all day and all night, | T: But all day & all night, ⏎ every day & every night,
+dhp387:6 | P: buddho tapati tejasā. | S: the Buddha blazes with glory. | T: the Awakened One shines ⏎ in splendor.
+CONTEXT dhp388:0 | P: Aññatarabrāhmaṇapabbajitavatthu | S: (none) | T: (none)
+
+## dhp388:1–dhp388:4 (dhp) GATHERED; unequal counts require a reader
+CONTEXT dhp388:0 | P: Aññatarabrāhmaṇapabbajitavatthu | S: (none) | T: (none)
+dhp388:1 | P: Bāhitapāpoti brāhmaṇo, | S: A brahmin’s so-called since they’ve banished evil, | T: He’s called a brahman ⏎ for having banished his evil,
+dhp388:2 | P: Samacariyā samaṇoti vuccati; | S: an ascetic’s so-called since they live a serene life. | T: a contemplative ⏎ for living in consonance,
+dhp388:3 | P: Pabbājayamattano malaṁ, | S: One who has renounced all stains | T: one gone forth ⏎ for having forsaken ⏎ his own impurities.
+dhp388:4 | P: Tasmā “pabbajito”ti vuccati. | S: is said to be a “renunciant”. | T: (none)
+CONTEXT dhp389:0 | P: Sāriputtattheravatthu | S: (none) | T: (none)
+
+## dhp389:1–dhp389:4 (dhp)
+CONTEXT dhp389:0 | P: Sāriputtattheravatthu | S: (none) | T: (none)
+dhp389:1 | P: Na brāhmaṇassa pahareyya, | S: One should never strike a brahmin, | T: One should not strike a brahman,
+dhp389:2 | P: nāssa muñcetha brāhmaṇo; | S: nor should a brahmin retaliate. | T: nor should the brahman ⏎ let loose with his anger.
+dhp389:3 | P: Dhī brāhmaṇassa hantāraṁ, | S: Woe to the one who hurts a brahmin, | T: Shame on a brahman’s killer.
+dhp389:4 | P: tato dhī yassa muñcati. | S: and woe for the one who retaliates. | T: More shame on the brahman ⏎ whose anger’s let loose.
+
+## dhp390:1–dhp390:4 (dhp)
+dhp390:1 | P: Na brāhmaṇassetadakiñci seyyo, | S: Nothing is better for a brahmin | T: Nothing’s better for the brahman
+dhp390:2 | P: Yadā nisedho manaso piyehi; | S: than to hold their mind back from attachment. | T: than when the mind is held back ⏎ from what is endearing & not.
+dhp390:3 | P: Yato yato hiṁsamano nivattati, | S: From wherever a cruel wish recoils, | T: However his harmful-heartedness ⏎ wears away,
+dhp390:4 | P: Tato tato sammatimeva dukkhaṁ. | S: right there suffering subsides. | T: that’s how stress ⏎ simply comes to rest.
+CONTEXT dhp391:0 | P: Mahāpajāpatigotamīvatthu | S: (none) | T: (none)
+
+## dhp391:1–dhp391:4 (dhp)
+CONTEXT dhp391:0 | P: Mahāpajāpatigotamīvatthu | S: (none) | T: (none)
+dhp391:1 | P: Yassa kāyena vācāya, | S: Who does nothing wrong | T: Whoever does no wrong
+dhp391:2 | P: manasā natthi dukkaṭaṁ; | S: by body, speech or mind, | T: in body, ⏎ speech, ⏎ heart,
+dhp391:3 | P: Saṁvutaṁ tīhi ṭhānehi, | S: restrained in these three respects, | T: is restrained in these three ways:
+dhp391:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp392:0 | P: Sāriputtattheravatthu | S: (none) | T: (none)
+
+## dhp392:1–dhp392:4 (dhp)
+CONTEXT dhp392:0 | P: Sāriputtattheravatthu | S: (none) | T: (none)
+dhp392:1 | P: Yamhā dhammaṁ vijāneyya, | S: You should graciously honor | T: The person from whom
+dhp392:2 | P: sammāsambuddhadesitaṁ; | S: the one from whom you learn the Dhamma | T: you would learn the Dhamma
+dhp392:3 | P: Sakkaccaṁ taṁ namasseyya, | S: taught by the awakened Buddha, | T: taught by the Rightly ⏎ Self-Awakened One:
+dhp392:4 | P: aggihuttaṁva brāhmaṇo. | S: as a brahmin honors the sacred flame. | T: you should honor him with respect– ⏎ as a brahman, the flame for a sacrifice.
+CONTEXT dhp393:0 | P: Jaṭilabrāhmaṇavatthu | S: (none) | T: (none)
+
+## dhp393:1–dhp393:4 (dhp)
+CONTEXT dhp393:0 | P: Jaṭilabrāhmaṇavatthu | S: (none) | T: (none)
+dhp393:1 | P: Na jaṭāhi na gottena, | S: Not by matted hair or family, | T: Not by matted hair, ⏎ by clan,
+dhp393:2 | P: na jaccā hoti brāhmaṇo; | S: or birth is one a brahmin. | T: or by birth, ⏎ is one a brahman.
+dhp393:3 | P: Yamhi saccañca dhammo ca, | S: Those who are truthful and principled: | T: Whoever has truth ⏎ & rectitude:
+dhp393:4 | P: so sucī so ca brāhmaṇo. | S: they are pure, they are brahmins. | T: he is a pure one, ⏎ he, a brahman.
+CONTEXT dhp394:0 | P: Kuhakabrāhmaṇavatthu | S: (none) | T: (none)
+
+## dhp394:1–dhp394:4 (dhp)
+CONTEXT dhp394:0 | P: Kuhakabrāhmaṇavatthu | S: (none) | T: (none)
+dhp394:1 | P: Kiṁ te jaṭāhi dummedha, | S: Why the matted hair, you simpleton, | T: What’s the use of your matted hair, ⏎ you dullard?
+dhp394:2 | P: kiṁ te ajinasāṭiyā; | S: and why the skin of deer? | T: What’s the use of your deerskin cloak?
+dhp394:3 | P: Abbhantaraṁ te gahanaṁ, | S: The tangle is inside you, | T: The tangle’s inside you.
+dhp394:4 | P: bāhiraṁ parimajjasi. | S: yet you polish up your outsides. | T: You comb the outside.
+CONTEXT dhp395:0 | P: Kisāgotamīvatthu | S: (none) | T: (none)
+
+## dhp395:1–dhp395:4 (dhp)
+CONTEXT dhp395:0 | P: Kisāgotamīvatthu | S: (none) | T: (none)
+dhp395:1 | P: Paṁsukūladharaṁ jantuṁ, | S: A personage who wears robes of rags, | T: Wearing cast-off rags
+dhp395:2 | P: kisaṁ dhamanisanthataṁ; | S: lean, their limbs showing veins, | T: –his body lean & lined with veins–
+dhp395:3 | P: Ekaṁ vanasmiṁ jhāyantaṁ, | S: meditating alone in the forest, | T: absorbed in jhana, ⏎ alone in the forest:
+dhp395:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp396:0 | P: Ekabrāhmaṇavatthu | S: (none) | T: (none)
+
+## dhp396:1–dhp396:6 (dhp) GATHERED; possible speaker requires a reader
+CONTEXT dhp396:0 | P: Ekabrāhmaṇavatthu | S: (none) | T: (none)
+dhp396:1 | P: Na cāhaṁ brāhmaṇaṁ brūmi, | S: I don’t call someone a brahmin | T: I don’t call one a brahman
+dhp396:2 | P: yonijaṁ mattisambhavaṁ; | S: after the mother’s womb they’re born from. | T: for being born of a mother ⏎ or sprung from a womb.
+dhp396:3 | P: Bhovādi nāma so hoti, | S: If they still have attachments, | T: He’s called a ‘bho-sayer’ ⏎ if he has anything at all.
+dhp396:4 | P: sace hoti sakiñcano; | S: they’re just someone who says “worthy”. | T: (none)
+dhp396:5 | P: Akiñcanaṁ anādānaṁ, | S: Having nothing, taking nothing: | T: But someone with nothing,
+dhp396:6 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: who clings to no thing: ⏎ he’s what I call ⏎ a brahman.
+CONTEXT dhp397:0 | P: Uggasenaseṭṭhiputtavatthu | S: (none) | T: (none)
+
+## dhp397:1–dhp397:4 (dhp)
+CONTEXT dhp397:0 | P: Uggasenaseṭṭhiputtavatthu | S: (none) | T: (none)
+dhp397:1 | P: Sabbasaṁyojanaṁ chetvā, | S: Having cut off all fetters | T: Having cut every fetter,
+dhp397:2 | P: yo ve na paritassati; | S: they have no anxiety. | T: he doesn’t get ruffled.
+dhp397:3 | P: Saṅgātigaṁ visaṁyuttaṁ, | S: They’ve slipped their chains and are detached: | T: Beyond attachment, ⏎ unshackled:
+dhp397:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp398:0 | P: Dvebrāhmaṇavatthu | S: (none) | T: (none)
+
+## dhp398:1–dhp398:4 (dhp)
+CONTEXT dhp398:0 | P: Dvebrāhmaṇavatthu | S: (none) | T: (none)
+dhp398:1 | P: Chetvā naddhiṁ varattañca, | S: They’ve cut the strap and harness, | T: Having cut the strap & thong,
+dhp398:2 | P: sandānaṁ sahanukkamaṁ; | S: the halter and bridle too, | T: cord & bridle,
+dhp398:3 | P: Ukkhittapalighaṁ buddhaṁ, | S: with cross-bar lifted, they’re awakened: | T: having thrown off the bar, ⏎ awakened:
+dhp398:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp399:0 | P: Akkosakabhāradvājavatthu | S: (none) | T: (none)
+
+## dhp399:1–dhp399:4 (dhp) GATHERED; possible speaker requires a reader
+CONTEXT dhp399:0 | P: Akkosakabhāradvājavatthu | S: (none) | T: (none)
+dhp399:1 | P: Akkosaṁ vadhabandhañca, | S: Abuse, killing, caging: | T: He endures–unangered– ⏎ insult, assault, & imprisonment.
+dhp399:2 | P: aduṭṭho yo titikkhati; | S: they endure these without anger. | T: (none)
+dhp399:3 | P: Khantībalaṁ balānīkaṁ, | S: Patience is their powerful army: | T: His army is strength; ⏎ his strength, forbearance:
+dhp399:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp400:0 | P: Sāriputtattheravatthu | S: (none) | T: (none)
+
+## dhp400:1–dhp400:4 (dhp)
+CONTEXT dhp400:0 | P: Sāriputtattheravatthu | S: (none) | T: (none)
+dhp400:1 | P: Akkodhanaṁ vatavantaṁ, | S: Not irritable or pretentious, | T: Free from anger, ⏎ duties observed,
+dhp400:2 | P: sīlavantaṁ anussadaṁ; | S: dutiful in precepts and observances, | T: principled, with no overbearing pride,
+dhp400:3 | P: Dantaṁ antimasārīraṁ, | S: tamed, bearing their final body: | T: trained, a ‘last-body’:
+dhp400:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp401:0 | P: Uppalavaṇṇāttherīvatthu | S: (none) | T: (none)
+
+## dhp401:1–dhp401:4 (dhp)
+CONTEXT dhp401:0 | P: Uppalavaṇṇāttherīvatthu | S: (none) | T: (none)
+dhp401:1 | P: Vāri pokkharapatteva, | S: Like water from a lotus leaf, | T: Like water on a lotus leaf,
+dhp401:2 | P: āraggeriva sāsapo; | S: like a mustard seed off the point of a pin, | T: a mustard seed on the tip of an awl,
+dhp401:3 | P: Yo na limpati kāmesu, | S: sensual pleasures slip off them: | T: he doesn’t adhere to sensual pleasures:
+dhp401:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp402:0 | P: Aññatarabrāhmaṇavatthu | S: (none) | T: (none)
+
+## dhp402:1–dhp402:4 (dhp)
+CONTEXT dhp402:0 | P: Aññatarabrāhmaṇavatthu | S: (none) | T: (none)
+dhp402:1 | P: Yo dukkhassa pajānāti, | S: They understand for themselves | T: He discerns right here, ⏎ for himself, ⏎ on his own,
+dhp402:2 | P: idheva khayamattano; | S: the end of suffering in this life; | T: his own ⏎ ending of stress.
+dhp402:3 | P: Pannabhāraṁ visaṁyuttaṁ, | S: with burden put down, detached: | T: Unshackled, his burden laid down:
+dhp402:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp403:0 | P: Khemābhikkhunīvatthu | S: (none) | T: (none)
+
+## dhp403:1–dhp403:4 (dhp)
+CONTEXT dhp403:0 | P: Khemābhikkhunīvatthu | S: (none) | T: (none)
+dhp403:1 | P: Gambhīrapaññaṁ medhāviṁ, | S: Deep in wisdom, intelligent, | T: Wise, profound ⏎ in discernment,
+dhp403:2 | P: maggāmaggassa kovidaṁ; | S: expert in the path and what is not the path; | T: astute ⏎ as to what is the path ⏎ & what’s not;
+dhp403:3 | P: Uttamatthamanuppattaṁ, | S: arrived at the highest goal: | T: his ultimate goal attained:
+dhp403:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp404:0 | P: Pabbhāravāsitissattheravatthu | S: (none) | T: (none)
+
+## dhp404:1–dhp404:4 (dhp)
+CONTEXT dhp404:0 | P: Pabbhāravāsitissattheravatthu | S: (none) | T: (none)
+dhp404:1 | P: Asaṁsaṭṭhaṁ gahaṭṭhehi, | S: Mixing with neither | T: Uncontaminated
+dhp404:2 | P: anāgārehi cūbhayaṁ; | S: householders nor the homeless; | T: by householders ⏎ & houseless ones alike;
+dhp404:3 | P: Anokasārimappicchaṁ, | S: a migrant with no bastion, few in wishes: | T: living with no home, ⏎ with next to no wants:
+dhp404:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp405:0 | P: Aññatarabhikkhuvatthu | S: (none) | T: (none)
+
+## dhp405:1–dhp405:4 (dhp)
+CONTEXT dhp405:0 | P: Aññatarabhikkhuvatthu | S: (none) | T: (none)
+dhp405:1 | P: Nidhāya daṇḍaṁ bhūtesu, | S: They’ve laid aside violence | T: Having put aside violence
+dhp405:2 | P: tasesu thāvaresu ca; | S: against creatures firm and frail; | T: against beings fearful or firm,
+dhp405:3 | P: Yo na hanti na ghāteti, | S: not killing or making others kill: | T: he neither kills nor ⏎ gets others to kill:
+dhp405:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp406:0 | P: Sāmaṇerānaṁvatthu | S: (none) | T: (none)
+
+## dhp406:1–dhp406:4 (dhp)
+CONTEXT dhp406:0 | P: Sāmaṇerānaṁvatthu | S: (none) | T: (none)
+dhp406:1 | P: Aviruddhaṁ viruddhesu, | S: Not fighting among those who fight, | T: Unopposing among opposition,
+dhp406:2 | P: attadaṇḍesu nibbutaṁ; | S: quenched among those who have taken up arms, | T: unbound ⏎ among the armed,
+dhp406:3 | P: Sādānesu anādānaṁ, | S: not grasping among those who grasp: | T: unclinging ⏎ among those who cling:
+dhp406:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp407:0 | P: Mahāpanthakattheravatthu | S: (none) | T: (none)
+
+## dhp407:1–dhp407:4 (dhp)
+CONTEXT dhp407:0 | P: Mahāpanthakattheravatthu | S: (none) | T: (none)
+dhp407:1 | P: Yassa rāgo ca doso ca, | S: They’ve discarded greed and hate, | T: His passion, aversion,
+dhp407:2 | P: māno makkho ca pātito; | S: along with conceit and contempt, | T: conceit, & contempt, ⏎ have fallen away–
+dhp407:3 | P: Sāsaporiva āraggā, | S: like a mustard seed off the point of a pin: | T: like a mustard seed ⏎ from the tip of an awl:
+dhp407:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp408:0 | P: Pilindavacchattheravatthu | S: (none) | T: (none)
+
+## dhp408:1–dhp408:4 (dhp)
+CONTEXT dhp408:0 | P: Pilindavacchattheravatthu | S: (none) | T: (none)
+dhp408:1 | P: Akakkasaṁ viññāpaniṁ, | S: The words they utter | T: He would say
+dhp408:2 | P: giraṁ saccamudīraye; | S: are polished, informative, and true, | T: what’s non-grating, ⏎ instructive, ⏎ true–
+dhp408:3 | P: Yāya nābhisaje kañci, | S: and don’t offend anyone: | T: abusing no one:
+dhp408:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp409:0 | P: Aññatarattheravatthu | S: (none) | T: (none)
+
+## dhp409:1–dhp409:4 (dhp) GATHERED; possible speaker requires a reader
+CONTEXT dhp409:0 | P: Aññatarattheravatthu | S: (none) | T: (none)
+dhp409:1 | P: Yodha dīghaṁ va rassaṁ vā, | S: They don’t steal anything in the world, | T: Here in the world ⏎ he takes nothing not-given
+dhp409:2 | P: aṇuṁ thūlaṁ subhāsubhaṁ; | S: long or short, | T: –long, short, ⏎ large, small, ⏎ attractive, not:
+dhp409:3 | P: Loke adinnaṁ nādiyati, | S: tiny or huge, beautiful or ugly: | T: (none)
+dhp409:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp410:0 | P: Sāriputtattheravatthu | S: (none) | T: (none)
+
+## dhp410:1–dhp410:4 (dhp)
+CONTEXT dhp410:0 | P: Sāriputtattheravatthu | S: (none) | T: (none)
+dhp410:1 | P: Āsā yassa na vijjanti, | S: They have no hope | T: His longing
+dhp410:2 | P: asmiṁ loke paramhi ca; | S: in this world or the next; | T: for this ⏎ & for the next world ⏎ can’t be found;
+dhp410:3 | P: Nirāsāsaṁ visaṁyuttaṁ, | S: with no need for hope, detached: | T: free from longing, unshackled:
+dhp410:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp411:0 | P: Mahāmoggallānattheravatthu | S: (none) | T: (none)
+
+## dhp411:1–dhp411:4 (dhp)
+CONTEXT dhp411:0 | P: Mahāmoggallānattheravatthu | S: (none) | T: (none)
+dhp411:1 | P: Yassālayā na vijjanti, | S: They have no clinging, | T: His attachments, ⏎ his homes, ⏎ can’t be found.
+dhp411:2 | P: aññāya akathaṅkathī; | S: knowledge has freed them of indecision, | T: He, through knowing, ⏎ is unperplexed,
+dhp411:3 | P: Amatogadhamanuppattaṁ, | S: they’ve arrived at the objective, freedom from death: | T: has gained a footing ⏎ in the Deathless:
+dhp411:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp412:0 | P: Revatattheravatthu | S: (none) | T: (none)
+
+## dhp412:1–dhp412:4 (dhp)
+CONTEXT dhp412:0 | P: Revatattheravatthu | S: (none) | T: (none)
+dhp412:1 | P: Yodha puññañca pāpañca, | S: They’ve escaped the chain | T: He has gone ⏎ beyond attachment here
+dhp412:2 | P: ubho saṅgamupaccagā; | S: of both good and bad deeds; | T: for both merit & evil–
+dhp412:3 | P: Asokaṁ virajaṁ suddhaṁ, | S: sorrowless, stainless, pure: | T: sorrowless, dustless, & pure:
+dhp412:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp413:0 | P: Candābhattheravatthu | S: (none) | T: (none)
+
+## dhp413:1–dhp413:4 (dhp)
+CONTEXT dhp413:0 | P: Candābhattheravatthu | S: (none) | T: (none)
+dhp413:1 | P: Candaṁva vimalaṁ suddhaṁ, | S: Pure as the spotless moon, | T: Spotless, pure, like the moon
+dhp413:2 | P: vippasannamanāvilaṁ; | S: clear and unclouded, | T: –limpid & calm–
+dhp413:3 | P: Nandībhavaparikkhīṇaṁ, | S: they’ve ended relish for rebirth: | T: his delights, his becomings, ⏎ totally gone:
+dhp413:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp414:0 | P: Sīvalittheravatthu | S: (none) | T: (none)
+
+## dhp414:1–dhp414:6 (dhp)
+CONTEXT dhp414:0 | P: Sīvalittheravatthu | S: (none) | T: (none)
+dhp414:1 | P: Yomaṁ palipathaṁ duggaṁ, | S: They’ve got past this grueling swamp | T: He has made his way past ⏎ this hard-going path
+dhp414:2 | P: saṁsāraṁ mohamaccagā; | S: of delusion, transmigration. | T: –samsara, delusion–
+dhp414:3 | P: Tiṇṇo pāraṅgato jhāyī, | S: Meditating in stillness, free of indecision, | T: has crossed over, ⏎ has gone beyond, ⏎ is free from want, ⏎ from perplexity,
+dhp414:4 | P: anejo akathaṅkathī; | S: they have crossed over to the far shore. | T: absorbed in jhana,
+dhp414:5 | P: Anupādāya nibbuto, | S: They’re quenched by not grasping: | T: through no-clinging ⏎ Unbound:
+dhp414:6 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp415:0 | P: Sundarasamuddattheravatthu | S: (none) | T: (none)
+
+## dhp415:1–dhp415:4 (dhp)
+CONTEXT dhp415:0 | P: Sundarasamuddattheravatthu | S: (none) | T: (none)
+dhp415:1 | P: Yodha kāme pahantvāna, | S: They’ve given up sensual pleasures, | T: Whoever, abandoning sensual passions here,
+dhp415:2 | P: anāgāro paribbaje; | S: and have gone forth from lay life; | T: would go forth from home–
+dhp415:3 | P: Kāmabhavaparikkhīṇaṁ, | S: they’ve ended rebirth in the sensual realm: | T: his sensual passions, becomings, ⏎ totally gone:
+dhp415:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp416:0 | P: Jaṭilattheravatthu | S: (none) | T: (none)
+
+## dhp416:1–dhp416:4 (dhp)
+CONTEXT dhp416:0 | P: Jaṭilattheravatthu | S: (none) | T: (none)
+dhp416:1 | P: Yodha taṇhaṁ pahantvāna, | S: They’ve given up craving, | T: (none)
+dhp416:2 | P: anāgāro paribbaje; | S: and have gone forth from lay life; | T: (none)
+dhp416:3 | P: Taṇhābhavaparikkhīṇaṁ, | S: they’ve ended craving to be reborn: | T: (none)
+dhp416:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: (none)
+CONTEXT dhp416:5.0 | P: Jotikattheravatthu | S: (none) | T: (none)
+
+## dhp416:5.1–dhp416:8 (dhp)
+CONTEXT dhp416:5.0 | P: Jotikattheravatthu | S: (none) | T: (none)
+dhp416:5.1 | P: Yodha taṇhaṁ pahantvāna, | S: They’ve given up craving, | T: Whoever, abandoning craving here,
+dhp416:6 | P: anāgāro paribbaje; | S: and have gone forth from lay life; | T: would go forth from home–
+dhp416:7 | P: Taṇhābhavaparikkhīṇaṁ, | S: they’ve ended craving to be reborn: | T: his cravings, becomings, ⏎ totally gone:
+dhp416:8 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp417:0 | P: Naṭaputtakattheravatthu | S: (none) | T: (none)
+
+## dhp417:1–dhp417:4 (dhp) GATHERED; possible speaker requires a reader
+CONTEXT dhp417:0 | P: Naṭaputtakattheravatthu | S: (none) | T: (none)
+dhp417:1 | P: Hitvā mānusakaṁ yogaṁ, | S: They’ve thrown off the human yoke, | T: Having left behind ⏎ the human bond,
+dhp417:2 | P: dibbaṁ yogaṁ upaccagā; | S: and slipped out of the heavenly yoke; | T: having made his way past ⏎ the divine, ⏎ from all bonds unshackled:
+dhp417:3 | P: Sabbayogavisaṁyuttaṁ, | S: unyoked from all yokes: | T: (none)
+dhp417:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp418:0 | P: Naṭaputtakattheravatthu | S: (none) | T: (none)
+
+## dhp418:1–dhp418:4 (dhp)
+CONTEXT dhp418:0 | P: Naṭaputtakattheravatthu | S: (none) | T: (none)
+dhp418:1 | P: Hitvā ratiñca aratiñca, | S: Giving up desire and discontent, | T: Having left behind ⏎ delight & displeasure,
+dhp418:2 | P: sītibhūtaṁ nirūpadhiṁ; | S: they’re cooled and free of attachments; | T: cooled, with no acquisitions–
+dhp418:3 | P: Sabbalokābhibhuṁ vīraṁ, | S: a hero, master of the whole world: | T: a hero who has conquered ⏎ all the world, ⏎ every world:
+dhp418:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp419:0 | P: Vaṅgīsattheravatthu | S: (none) | T: (none)
+
+## dhp419:1–dhp419:4 (dhp)
+CONTEXT dhp419:0 | P: Vaṅgīsattheravatthu | S: (none) | T: (none)
+dhp419:1 | P: Cutiṁ yo vedi sattānaṁ, | S: They know the passing away | T: He knows in every way ⏎ beings’ passing away,
+dhp419:2 | P: upapattiñca sabbaso; | S: and rebirth of all beings; | T: and their re- ⏎ arising;
+dhp419:3 | P: Asattaṁ sugataṁ buddhaṁ, | S: unattached, holy, awakened: | T: unattached, awakened, ⏎ well-gone:
+dhp419:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+
+## dhp420:1–dhp420:4 (dhp) GATHERED; possible speaker requires a reader
+dhp420:1 | P: Yassa gatiṁ na jānanti, | S: Gods, centaurs, and humans | T: He whose course they don’t know ⏎ –devas, gandhabbas, & human beings–
+dhp420:2 | P: devā gandhabbamānusā; | S: don’t know their destiny; | T: (none)
+dhp420:3 | P: Khīṇāsavaṁ arahantaṁ, | S: the perfected ones with defilements ended: | T: his effluents ended, an arahant:
+dhp420:4 | P: tamahaṁ brūmi brāhmaṇaṁ. | S: that’s who I declare a brahmin. | T: he’s what I call ⏎ a brahman.
+CONTEXT dhp421:0 | P: Dhammadinnāttherīvatthu | S: (none) | T: (none)

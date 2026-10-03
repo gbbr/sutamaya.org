@@ -1,0 +1,13 @@
+{
+  "batch": 17,
+  "versesRead": 57,
+  "rowsRead": 237,
+  "automaticFindings": 8,
+  "readerFindings": 31,
+  "unresolved": [
+    {
+      "key": "an4.19:4.1",
+      "reason": "This verse row begins with the full four-ways-of-not-going-off-course prose, corresponding to CONTEXT an4.19:2.3–2.4. Moving the verse start to “If you don’t—” would require changing read-only CONTEXT boundaries to avoid attaching the prose to the preceding verse."
+    }
+  ]
+}

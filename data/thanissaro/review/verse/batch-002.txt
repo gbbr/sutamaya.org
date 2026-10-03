@@ -1,0 +1,449 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## dn20:7.19–dn20:7.24 (dn)
+dn20:7.19 | P: Iccete soḷasasahassā, | S: And thus there are sixteen thousand | T: These 16,000 yakkhas of varied hue
+dn20:7.20 | P: yakkhā nānattavaṇṇino; | S: spirits of different colors. | T: (none)
+dn20:7.21 | P: Iddhimanto jutimanto, | S: They’re powerful and brilliant, | T: powerful, effulgent,
+dn20:7.22 | P: vaṇṇavanto yasassino; | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:7.23 | P: Modamānā abhikkāmuṁ, | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:7.24 | P: bhikkhūnaṁ samitiṁ vanaṁ. | S: to the meeting of mendicants in the wood. | T: have approached the monks’ forest meeting.
+
+## dn20:8.1–dn20:8.6 (dn)
+dn20:8.1 | P: Vessāmittā pañcasatā, | S: From Vessāmitta’s mountain there are five hundred | T: 500 yakkhas from Vessāmitta,
+dn20:8.2 | P: yakkhā nānattavaṇṇino; | S: spirits of different colors. | T: of varied hue,
+dn20:8.3 | P: Iddhimanto jutimanto, | S: They’re powerful and brilliant, | T: powerful, effulgent,
+dn20:8.4 | P: vaṇṇavanto yasassino; | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:8.5 | P: Modamānā abhikkāmuṁ, | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:8.6 | P: bhikkhūnaṁ samitiṁ vanaṁ. | S: to the meeting of mendicants in the wood. | T: have approached the monks’ forest meeting.
+
+## dn20:8.7–dn20:8.12 (dn)
+dn20:8.7 | P: Kumbhīro rājagahiko, | S: And there’s Kumbhīra of Rājagaha, | T: Kumbhīra from Rājagaha,
+dn20:8.8 | P: vepullassa nivesanaṁ; | S: whose home is on Mount Vepulla. | T: who dwells on Mount Vepulla,
+dn20:8.9 | P: Bhiyyo naṁ satasahassaṁ, | S: Attended by more than | T: attended to by more than 100,000 yakkhas—
+dn20:8.10 | P: yakkhānaṁ payirupāsati; | S: a hundred thousand spirits, | T: (none)
+dn20:8.11 | P: Kumbhīro rājagahiko, | S: Kumbhīra of Rājagaha | T: Kumbhīra from Rājagaha:
+dn20:8.12 | P: sopāgā samitiṁ vanaṁ. | S: also came to the meeting in the wood. | T: He, too, has come to the forest meeting.
+
+## dn20:9.1–dn20:9.4 (dn)
+dn20:9.1 | P: Purimañca disaṁ rājā, | S: King Dhataraṭṭha rules | T: And Dhataraṭṭha, who rules as king of the Eastern Direction,
+dn20:9.2 | P: dhataraṭṭho pasāsati; | S: the eastern quarter. | T: (none)
+dn20:9.3 | P: Gandhabbānaṁ adhipati, | S: Lord of the centaurs, | T: as lord of the gandhabbas:
+dn20:9.4 | P: mahārājā yasassiso. | S: he’s a great king, glorious. | T: A glorious, great king is he,
+
+## dn20:9.5–dn20:9.10 (dn)
+dn20:9.5 | P: Puttāpi tassa bahavo, | S: And he has many mighty sons | T: and many are his sons
+dn20:9.6 | P: indanāmā mahabbalā; | S: all of them named Indra. | T: named Indra, of great strength.
+dn20:9.7 | P: Iddhimanto jutimanto, | S: They’re powerful and brilliant, | T: Powerful, effulgent,
+dn20:9.8 | P: vaṇṇavanto yasassino; | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:9.9 | P: Modamānā abhikkāmuṁ, | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:9.10 | P: bhikkhūnaṁ samitiṁ vanaṁ. | S: to the meeting of mendicants in the wood. | T: they have approached the monks’ forest meeting.
+
+## dn20:9.11–dn20:9.14 (dn)
+dn20:9.11 | P: Dakkhiṇañca disaṁ rājā, | S: King Virūḷhaka rules | T: And Virūḷha, who rules as king
+dn20:9.12 | P: virūḷho taṁ pasāsati; | S: the southern quarter. | T: of the Southern Direction,
+dn20:9.13 | P: Kumbhaṇḍānaṁ adhipati, | S: Lord of the gnomes, | T: as lord of the kumbaṇḍas:
+dn20:9.14 | P: mahārājā yasassiso. | S: he’s a great king, glorious. | T: A glorious, great king is he,
+
+## dn20:9.15–dn20:9.20 (dn)
+dn20:9.15 | P: Puttāpi tassa bahavo, | S: And he has many mighty sons | T: and many are his sons
+dn20:9.16 | P: indanāmā mahabbalā; | S: all of them named Indra. | T: named Indra, of great strength.
+dn20:9.17 | P: Iddhimanto jutimanto, | S: They’re powerful and brilliant, | T: Powerful, effulgent,
+dn20:9.18 | P: vaṇṇavanto yasassino; | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:9.19 | P: Modamānā abhikkāmuṁ, | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:9.20 | P: bhikkhūnaṁ samitiṁ vanaṁ. | S: to the meeting of mendicants in the wood. | T: they have approached the monks’ forest meeting.
+
+## dn20:9.21–dn20:9.24 (dn)
+dn20:9.21 | P: Pacchimañca disaṁ rājā, | S: King Virūpakkha rules | T: And Virūpakkha, who rules as king of the Western Direction,
+dn20:9.22 | P: virūpakkho pasāsati; | S: the western quarter. | T: (none)
+dn20:9.23 | P: Nāgānañca adhipati, | S: Lord of the dragons, | T: as lord of the nāgas:
+dn20:9.24 | P: mahārājā yasassiso. | S: he’s a great king, glorious. | T: A glorious, great king is he,
+
+## dn20:9.25–dn20:9.30 (dn)
+dn20:9.25 | P: Puttāpi tassa bahavo, | S: And he has many mighty sons | T: and many are his sons
+dn20:9.26 | P: indanāmā mahabbalā; | S: all of them named Indra. | T: named Indra, of great strength.
+dn20:9.27 | P: Iddhimanto jutimanto, | S: They’re powerful and brilliant, | T: Powerful, effulgent,
+dn20:9.28 | P: vaṇṇavanto yasassino; | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:9.29 | P: Modamānā abhikkāmuṁ, | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:9.30 | P: bhikkhūnaṁ samitiṁ vanaṁ. | S: to the meeting of mendicants in the wood. | T: they have approached the monks’ forest meeting.
+
+## dn20:9.31–dn20:9.34 (dn)
+dn20:9.31 | P: Uttarañca disaṁ rājā, | S: King Kuvera rules | T: And Kuvera, who rules as king of the Northern Direction,
+dn20:9.32 | P: kuvero taṁ pasāsati; | S: the northern quarter. | T: (none)
+dn20:9.33 | P: Yakkhānañca adhipati, | S: Lord of spirits, | T: as lord of the yakkhas:
+dn20:9.34 | P: mahārājā yasassiso. | S: he’s a great king, glorious. | T: A glorious, great king is he,
+
+## dn20:9.35–dn20:9.40 (dn)
+dn20:9.35 | P: Puttāpi tassa bahavo, | S: And he has many mighty sons | T: and many are his sons
+dn20:9.36 | P: indanāmā mahabbalā; | S: all of them named Indra. | T: named Indra, of great strength.
+dn20:9.37 | P: Iddhimanto jutimanto, | S: They’re powerful and brilliant, | T: Powerful, effulgent,
+dn20:9.38 | P: vaṇṇavanto yasassino; | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:9.39 | P: Modamānā abhikkāmuṁ, | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:9.40 | P: bhikkhūnaṁ samitiṁ vanaṁ. | S: to the meeting of mendicants in the wood. | T: they have approached the monks’ forest meeting.
+
+## dn20:9.41–dn20:9.44 (dn)
+dn20:9.41 | P: Purimaṁ disaṁ dhataraṭṭho, | S: Dhataraṭṭha in the east, | T: Dhataraṭṭha from the Eastern Direction,
+dn20:9.42 | P: dakkhiṇena virūḷhako; | S: Virūḷhaka to the south, | T: Virūḷhaka from the South,
+dn20:9.43 | P: Pacchimena virūpakkho, | S: Virūpakkha to the west, | T: Virūpakkha from the West,
+dn20:9.44 | P: kuvero uttaraṁ disaṁ. | S: and Kuvera in the north. | T: Kuvera from the Northern Direction:
+
+## dn20:9.45–dn20:9.48 (dn)
+dn20:9.45 | P: Cattāro te mahārājā, | S: These four great kings, | T: These four Great Kings encompassing the four directions,
+dn20:9.46 | P: samantā caturo disā; | S: all around in the four quarters, | T: (none)
+dn20:9.47 | P: Daddallamānā aṭṭhaṁsu, | S: stood there dazzling | T: resplendent,
+dn20:9.48 | P: vane kāpilavatthave. | S: in the wood at Kapilavatthu. | T: stand in the Kāpilavatthu forest.
+
+## dn20:10.1–dn20:10.4 (dn)
+dn20:10.1 | P: Tesaṁ māyāvino dāsā, | S: Their deceitful heathens came, | T: Their deceitful vassals have also come
+dn20:10.2 | P: āguṁ vañcanikā saṭhā; | S: so treacherous and crafty— | T: —deceptive, treacherous—
+dn20:10.3 | P: Māyā kuṭeṇḍu viṭeṇḍu, | S: the deceivers Kuṭeṇḍu, Viṭeṇḍu, | T: Māyā, Kuṭeṇḍu, Veṭeṇḍu,
+dn20:10.4 | P: viṭucca viṭuṭo saha. | S: with Viṭucca and Viṭuṭa. | T: Viṭu with Viṭuṭa,
+
+## dn20:10.5–dn20:10.8 (dn)
+dn20:10.5 | P: Candano kāmaseṭṭho ca, | S: And Candana and Kāmaseṭṭha, | T: Candana, the Chief of Sensuality,
+dn20:10.6 | P: kinnighaṇḍu nighaṇḍu ca; | S: Kinnughaṇḍu and Nighaṇḍu, | T: Kinnughaṇḍu, Nighaṇḍu,
+dn20:10.7 | P: Panādo opamañño ca, | S: Panāda and Opamañña, | T: Panāda, the Mimic,
+dn20:10.8 | P: devasūto ca mātali. | S: and Mātali, the god’s equerry. | T: Mātali, the deva’s charioteer,
+
+## dn20:10.9–dn20:10.12 (dn)
+dn20:10.9 | P: Cittaseno ca gandhabbo, | S: Cittasena the centaur came too, | T: Cittasena the gandhabba,
+dn20:10.10 | P: naḷorājā janesabho; | S: and the kings Nala and Janesabha. | T: King Naḷa, the Bull of the People,
+dn20:10.11 | P: Āgā pañcasikho ceva, | S: Pañcasikha came too, with | T: Pañcasikha has come
+dn20:10.12 | P: timbarū sūriyavacchasā. | S: Timbaru and Suriyavaccasā. | T: with Timbaru [and his daughter,] Suriyavacchasā [SunDazzle].
+
+## dn20:10.13–dn20:10.16 (dn)
+dn20:10.13 | P: Ete caññe ca rājāno, | S: These and other kings there were, | T: These & other kings,
+dn20:10.14 | P: gandhabbā saha rājubhi; | S: the centaurs with their kings. | T: gandhabbas with their kings,
+dn20:10.15 | P: Modamānā abhikkāmuṁ, | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:10.16 | P: bhikkhūnaṁ samitiṁ vanaṁ. | S: to the meeting of mendicants in the wood. | T: have approached the monks’ forest meeting.
+
+## dn20:11.1–dn20:11.4 (dn)
+dn20:11.1 | P: Athāguṁ nāgasā nāgā, | S: Then came the dragons of Nābhasa lake, | T: Then there have also come nāgas ⏎ from Lake Nābhasa,
+dn20:11.2 | P: vesālā sahatacchakā; | S: and those from Vesālī with those from Takkasilā. | T: Vesālī & Tacchaka.
+dn20:11.3 | P: Kambalassatarā āguṁ, | S: The Kambalas and Assataras came | T: Kambalas, Assataras,
+dn20:11.4 | P: pāyāgā saha ñātibhi. | S: and those from Payāga with their kin. | T: Pāyāgas, & their kin.
+
+## dn20:11.5–dn20:11.8 (dn)
+dn20:11.5 | P: Yāmunā dhataraṭṭhā ca, | S: Those from Yamunā, and the Dhataraṭṭha | T: And from the River Yāmuna
+dn20:11.6 | P: āgū nāgā yasassino; | S: dragons came, so glorious. | T: comes the prestigious nāga, Dhataraṭṭha.
+dn20:11.7 | P: Erāvaṇo mahānāgo, | S: And Erāvaṇa the great dragon | T: The great nāga Erāvaṇṇa:
+dn20:11.8 | P: sopāgā samitiṁ vanaṁ. | S: also came to the meeting in the wood. | T: He, too, has come to the forest meeting.
+
+## dn20:11.9–dn20:11.12 (dn)
+dn20:11.9 | P: Ye nāgarāje sahasā haranti, | S: Those who seize the dragon kings by force— | T: They who swoop down swiftly on nāga kings,
+dn20:11.10 | P: Dibbā dijā pakkhi visuddhacakkhū; | S: Heavenly, twice-born birds with piercing vision— | T: divine, twice-born, winged, their eyesight pure:
+dn20:11.11 | P: Vehāyasā te vanamajjhapattā, | S: swoop down to the wood from the sky; | T: (Garuḍas) came from the sky to the midst of the forest.
+dn20:11.12 | P: Citrā supaṇṇā iti tesa nāmaṁ. | S: their name is ‘Rainbow Phoenix’. | T: Citra & Supaṇṇa are their names.
+
+## dn20:11.13–dn20:11.16 (dn)
+dn20:11.13 | P: Abhayaṁ tadā nāgarājānamāsi, | S: But the dragon kings remained fearless, | T: But the Buddha made the nāga kings safe,
+dn20:11.14 | P: Supaṇṇato khemamakāsi buddho; | S: for the Buddha kept them safe from the phoenixes. | T: made them secure from Supaṇṇa.
+dn20:11.15 | P: Saṇhāhi vācāhi upavhayantā, | S: Wooing each other with gentle words, | T: Addressing one another with affectionate words,
+dn20:11.16 | P: Nāgā supaṇṇā saraṇamakaṁsu buddhaṁ. | S: the dragons and phoenixes took the Buddha as refuge. | T: the nāgas & Supaṇṇas made the Buddha their refuge.
+
+## dn20:12.1–dn20:12.4 (dn)
+dn20:12.1 | P: Jitā vajirahatthena, | S: Defeated by Vajirahattha, | T: Defeated by Indra of the thunderbolt hand,
+dn20:12.2 | P: samuddaṁ asurāsitā; | S: the titans live in the ocean. | T: Asuras dwelling in the ocean,
+dn20:12.3 | P: Bhātaro vāsavassete, | S: They’re brothers of Vāsava, | T: Vāsava’s brothers—
+dn20:12.4 | P: iddhimanto yasassino. | S: powerful and glorious. | T: powerful, prestigious—
+
+## dn20:12.5–dn20:12.8 (dn)
+dn20:12.5 | P: Kālakañcā mahābhismā, | S: There’s the terrifying Kālakañjas, | T: Greatly terrifying Kālakañjas,
+dn20:12.6 | P: asurā dānaveghasā; | S: the Dānava and Ghasa titans, | T: the Dānaveghasa asuras,
+dn20:12.7 | P: Vepacitti sucitti ca, | S: Vepacitti and Sucitti, | T: Vepacitti & Sucitti,
+dn20:12.8 | P: pahārādo namucī saha. | S: Pahārāda with Namuci, | T: Pahārāda, with Namucī,
+
+## dn20:12.9–dn20:12.14 (dn)
+dn20:12.9 | P: Satañca baliputtānaṁ, | S: and Bali’s hundred sons, | T: and Bali’s hundred sons,
+dn20:12.10 | P: sabbe verocanāmakā; | S: all named after Virocana. | T: all named Veroca,
+dn20:12.11 | P: Sannayhitvā balisenaṁ, | S: Bali’s army armed themselves | T: arrayed with powerful armies
+dn20:12.12 | P: rāhubhaddamupāgamuṁ; | S: and went to the auspicious Rāhu, saying: | T: have approached their honored Rāhu ⏎ [and said]:
+dn20:12.13 | P: ‘Samayo dāni bhaddante, | S: ‘Now is the time, sir, | T: “Now is the occasion, sir,
+dn20:12.14 | P: bhikkhūnaṁ samitiṁ vanaṁ’. | S: for the meeting of mendicants in the wood.’ | T: of the monk’s forest meeting.”
+
+## dn20:13.1–dn20:13.4 (dn)
+dn20:13.1 | P: Āpo ca devā pathavī, | S: The gods of water and earth, | T: Devas of water, earth,
+dn20:13.2 | P: tejo vāyo tadāgamuṁ; | S: and fire and wind came there. | T: fire, & wind have come here.
+dn20:13.3 | P: Varuṇā vāraṇā devā, | S: The gods of Varuṇa and Varuṇa’s offsping, | T: Varuṇas, Vāruṇas,
+dn20:13.4 | P: somo ca yasasā saha. | S: and Soma together with Yasa. | T: Soma together with Yasa,
+
+## dn20:13.5–dn20:13.8 (dn)
+dn20:13.5 | P: Mettā karuṇā kāyikā, | S: A host of the gods of love | T: the prestigious devas of the hosts
+dn20:13.6 | P: āguṁ devā yasassino; | S: and compassion came, so glorious. | T: of goodwill & compassion have come.
+dn20:13.7 | P: Dasete dasadhā kāyā, | S: These ten hosts of gods | T: These ten ten-fold hosts,
+dn20:13.8 | P: sabbe nānattavaṇṇino. | S: shone in all different colors. | T: all of varied hue,
+
+## dn20:13.9–dn20:13.12 (dn)
+dn20:13.9 | P: Iddhimanto jutimanto, | S: They’re powerful and brilliant, | T: powerful, effulgent,
+dn20:13.10 | P: vaṇṇavanto yasassino; | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:13.11 | P: Modamānā abhikkāmuṁ, | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:13.12 | P: bhikkhūnaṁ samitiṁ vanaṁ. | S: to the meeting of mendicants in the wood. | T: have approached the monks’ forest meeting.
+
+## dn20:14.1–dn20:14.4 (dn)
+dn20:14.1 | P: Veṇḍudevā sahali ca, | S: The Vishnu and Sahalī gods, | T: Veṇḍu [Viṣṇu] & Sahalī,
+dn20:14.2 | P: asamā ca duve yamā; | S: and the unequaled pair of twins. | T: Asama & the Yama twins,
+dn20:14.3 | P: Candassūpanisā devā, | S: The gods living on the moon came, | T: the devas dependent on the moon
+dn20:14.4 | P: candamāguṁ purakkhatvā. | S: with the Moon before them. | T: surrounding the moon have come.
+
+## dn20:14.5–dn20:14.8 (dn)
+dn20:14.5 | P: Sūriyassūpanisā devā, | S: The gods living on the sun came, | T: The devas dependent on the sun
+dn20:14.6 | P: sūriyamāguṁ purakkhatvā; | S: with the Sun before them. | T: surrounding the sun have come.
+dn20:14.7 | P: Nakkhattāni purakkhatvā, | S: And with the stars before them | T: Devas surrounding the zodiac stars
+dn20:14.8 | P: āguṁ mandavalāhakā. | S: came the languid gods of clouds. | T: and the sprites of the clouds have come.
+
+## dn20:14.9–dn20:14.12 (dn)
+dn20:14.9 | P: Vasūnaṁ vāsavo seṭṭho, | S: And Vāsava came, the greatest of the Vasus, | T: Sakka, chief of the Vasus,
+dn20:14.10 | P: sakkopāgā purindado; | S: who is Sakka the Able, Purindada the Firstgiver: | T: the ancient donor, has come.
+dn20:14.11 | P: Dasete dasadhā kāyā, | S: These ten hosts of gods | T: These ten ten-fold hosts,
+dn20:14.12 | P: sabbe nānattavaṇṇino. | S: shone in all different colors. | T: all of varied hue,
+
+## dn20:14.13–dn20:14.16 (dn)
+dn20:14.13 | P: Iddhimanto jutimanto, | S: They’re powerful and brilliant, | T: powerful, effulgent,
+dn20:14.14 | P: vaṇṇavanto yasassino; | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:14.15 | P: Modamānā abhikkāmuṁ, | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:14.16 | P: bhikkhūnaṁ samitiṁ vanaṁ. | S: to the meeting of mendicants in the wood. | T: have approached the monks’ forest meeting.
+
+## dn20:15.1–dn20:15.4 (dn)
+dn20:15.1 | P: Athāguṁ sahabhū devā, | S: Then came the Sahabhū gods, | T: Then come the Sahabhu devas,
+dn20:15.2 | P: jalamaggi sikhāriva; | S: blazing like a crested flame; | T: blazing like crests of fire-flame.
+dn20:15.3 | P: Ariṭṭhakā ca rojā ca, | S: and the Ariṭṭhakas and Rojas too, | T: The Ariṭṭakas, Rojas,
+dn20:15.4 | P: umāpupphanibhāsino. | S: and the gods hued blue as flax. | T: cornflower blue.
+
+## dn20:15.5–dn20:15.10 (dn)
+dn20:15.5 | P: Varuṇā sahadhammā ca, | S: The Varuṇas and Sahadhammas, | T: Varuṇas & Sahadhammas,
+dn20:15.6 | P: accutā ca anejakā; | S: the Accutas and Anejakas, | T: Accutas & Anejakas,
+dn20:15.7 | P: Sūleyyarucirā āguṁ, | S: the Sūleyyas and Ruciras all came, | T: Sūleyyas & Ruciras,
+dn20:15.8 | P: āguṁ vāsavanesino; | S: as did the Vāsavanesi gods. | T: and Vāsavanesis have come.
+dn20:15.9 | P: Dasete dasadhā kāyā, | S: These ten hosts of gods | T: These ten ten-fold hosts,
+dn20:15.10 | P: sabbe nānattavaṇṇino. | S: shone in all different colors. | T: all of varied hue,
+
+## dn20:15.11–dn20:15.14 (dn)
+dn20:15.11 | P: Iddhimanto jutimanto, | S: They’re powerful and brilliant, | T: powerful, effulgent,
+dn20:15.12 | P: vaṇṇavanto yasassino; | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:15.13 | P: Modamānā abhikkāmuṁ, | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:15.14 | P: bhikkhūnaṁ samitiṁ vanaṁ. | S: to the meeting of mendicants in the wood. | T: have approached the monks’ forest meeting.
+
+## dn20:16.1–dn20:16.4 (dn)
+dn20:16.1 | P: Samānā mahāsamanā, | S: The Samānas, Mahāsamānas, | T: Samānas, Great Samānas,
+dn20:16.2 | P: mānusā mānusuttamā; | S: Mānusas, and Mānusuttamas all came, | T: Mānusas, Super Mānusas,
+dn20:16.3 | P: Khiḍḍāpadosikā āguṁ, | S: and the gods depraved by play, | T: the devas corrupted by play have come,
+dn20:16.4 | P: āguṁ manopadosikā. | S: and those who are malevolent. | T: as well as devas corrupted by mind.
+
+## dn20:16.5–dn20:16.10 (dn)
+dn20:16.5 | P: Athāguṁ harayo devā, | S: Then came the gods of Mercury, | T: Then come green-gold devas and those wearing red.
+dn20:16.6 | P: ye ca lohitavāsino; | S: and those who live on Mars. | T: (none)
+dn20:16.7 | P: Pāragā mahāpāragā, | S: The Pāragas and Mahāpāragas came, | T: Pāragas, Great Pāragas,
+dn20:16.8 | P: āguṁ devā yasassino; | S: such glorious gods. | T: prestigious devas have come.
+dn20:16.9 | P: Dasete dasadhā kāyā, | S: These ten hosts of gods | T: These ten ten-fold hosts,
+dn20:16.10 | P: sabbe nānattavaṇṇino. | S: shone in all different colors. | T: all of varied hue,
+
+## dn20:16.11–dn20:16.14 (dn)
+dn20:16.11 | P: Iddhimanto jutimanto, | S: They’re powerful and brilliant, | T: powerful, effulgent,
+dn20:16.12 | P: vaṇṇavanto yasassino; | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:16.13 | P: Modamānā abhikkāmuṁ, | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:16.14 | P: bhikkhūnaṁ samitiṁ vanaṁ. | S: to the meeting of mendicants in the wood. | T: have approached the monks’ forest meeting.
+
+## dn20:17.1–dn20:17.4 (dn)
+dn20:17.1 | P: Sukkā karambhā aruṇā, | S: The gods of Venus, the newborn Sun, and the Dawn | T: White devas, ruddy-green devas, dawn-devas
+dn20:17.2 | P: āguṁ veghanasā saha; | S: came along with those from Saturn. | T: have come with the Veghanas
+dn20:17.3 | P: Odātagayhā pāmokkhā, | S: And the gods of the white globe came | T: headed by devas totally in white.
+dn20:17.4 | P: āguṁ devā vicakkhaṇā. | S: leading the brilliant gods. | T: The Vicakkhaṇas have come.
+
+## dn20:17.5–dn20:17.8 (dn)
+dn20:17.5 | P: Sadāmattā hāragajā, | S: The Sadāmattas and Hāragajas, | T: Sadāmatta, Hāragajas,
+dn20:17.6 | P: missakā ca yasassino; | S: and assorted glorious ones; | T: & the prestigious multi-coloreds,
+dn20:17.7 | P: Thanayaṁ āga pajjunno, | S: Pajjuna came thundering, | T: Pajunna, the thunderer,
+dn20:17.8 | P: yo disā abhivassati. | S: he who rains on all quarters. | T: who brings rain to the lands:
+
+## dn20:17.9–dn20:17.14 (dn)
+dn20:17.9 | P: Dasete dasadhā kāyā, | S: These ten hosts of gods | T: These ten ten-fold hosts,
+dn20:17.10 | P: sabbe nānattavaṇṇino; | S: shone in all different colors. | T: all of varied hue,
+dn20:17.11 | P: Iddhimanto jutimanto, | S: They’re powerful and brilliant, | T: powerful, effulgent,
+dn20:17.12 | P: vaṇṇavanto yasassino; | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:17.13 | P: Modamānā abhikkāmuṁ, | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:17.14 | P: bhikkhūnaṁ samitiṁ vanaṁ. | S: to the meeting of mendicants in the wood. | T: have approached the monks’ forest meeting.
+
+## dn20:18.1–dn20:18.6 (dn)
+dn20:18.1 | P: Khemiyā tusitā yāmā, | S: The Khemiyas from the realms of Tusita and Yama, | T: The Khemiyas, Tusitas, & Yāmas,
+dn20:18.2 | P: kaṭṭhakā ca yasassino; | S: and the glorious Kaṭṭhakas came; | T: the prestigious Kaṭṭhakas,
+dn20:18.3 | P: Lambītakā lāmaseṭṭhā, | S: the Lambītakas, Lāmaseṭṭhas, | T: Lambitakas & Lāma chiefs,
+dn20:18.4 | P: jotināmā ca āsavā; | S: those called the Shining, and those Yonder. | T: the Jotināmas & Āsavas,
+dn20:18.5 | P: Nimmānaratino āguṁ, | S: The gods who love to create came too, | T: the Nimmānaratis have come,
+dn20:18.6 | P: athāguṁ paranimmitā. | S: and those who control what is created by others. | T: as have the Paranimmitas.
+
+## dn20:18.7–dn20:18.12 (dn)
+dn20:18.7 | P: Dasete dasadhā kāyā, | S: These ten hosts of gods | T: These ten ten-fold hosts,
+dn20:18.8 | P: sabbe nānattavaṇṇino; | S: shone in all different colors. | T: all of varied hue,
+dn20:18.9 | P: Iddhimanto jutimanto, | S: They’re powerful and brilliant, | T: powerful, effulgent,
+dn20:18.10 | P: vaṇṇavanto yasassino; | S: so beautiful and glorious. | T: glamorous, prestigious,
+dn20:18.11 | P: Modamānā abhikkāmuṁ, | S: Rejoicing, they’ve come forth | T: rejoicing,
+dn20:18.12 | P: bhikkhūnaṁ samitiṁ vanaṁ. | S: to the meeting of mendicants in the wood. | T: have approached the monks’ forest meeting.
+
+## dn20:19.1–dn20:19.4 (dn)
+dn20:19.1 | P: Saṭṭhete devanikāyā, | S: These sixty hosts of gods | T: These 60 deva groups,
+dn20:19.2 | P: sabbe nānattavaṇṇino; | S: shone in all different colors. | T: all of varied hue,
+dn20:19.3 | P: Nāmanvayena āgacchuṁ, | S: They came organized by name, | T: have come arranged in order,
+dn20:19.4 | P: ye caññe sadisā saha. | S: these and others likewise, thinking: | T: together with others in like manner (thinking:)
+
+## dn20:19.5–dn20:19.8 (dn)
+dn20:19.5 | P: ‘Pavuṭṭhajātimakhilaṁ, | S: ‘They who have shed rebirth, the kindly ones, | T: “We’ll see the one who has transcended birth,
+dn20:19.6 | P: oghatiṇṇamanāsavaṁ; | S: the undefiled ones who have crossed the flood— | T: who has no bounds, who has crossed over the flood, ⏎ effluent-free,
+dn20:19.7 | P: Dakkhemoghataraṁ nāgaṁ, | S: let us see them, with the dragon who brought them across, | T: the Mighty One, crossing over the flood,
+dn20:19.8 | P: candaṁva asitātigaṁ’. | S: who like the Moon has overcome darkness.’ | T: like the moon emerging from the dark fortnight.”
+
+## dn20:20.1–dn20:20.4 (dn)
+dn20:20.1 | P: Subrahmā paramatto ca, | S: Subrahmā and Paramatta came, | T: Subrahmā and Paramatta Brahmā,
+dn20:20.2 | P: puttā iddhimato saha; | S: with sons of those powerful ones. | T: together with sons of the Powerful One,
+dn20:20.3 | P: Sanaṅkumāro tisso ca, | S: Sanaṅkumāra and Tissa | T: Sanaṅkumāra and Tissa:
+dn20:20.4 | P: sopāga samitiṁ vanaṁ. | S: also came to the meeting in the wood. | T: They too have come to the forest meeting.
+
+## dn20:20.5–dn20:20.8 (dn)
+dn20:20.5 | P: Sahassaṁ brahmalokānaṁ, | S: Of a thousand realms of divinity, | T: Great Brahmā, who stands over 1,000 Brahmā worlds,
+dn20:20.6 | P: mahābrahmābhitiṭṭhati; | S: the Great Divinity stands forth. | T: (none)
+dn20:20.7 | P: Upapanno jutimanto, | S: He has arisen, brilliant, | T: who arose there spontaneously, effulgent:
+dn20:20.8 | P: bhismākāyo yasassiso. | S: his formidable body so glorious. | T: Prestigious is he, with a terrifying body.
+
+## dn20:20.9–dn20:20.12 (dn) GATHERED; equal counts: one line per row
+dn20:20.9 | P: Dasettha issarā āguṁ, | S: Ten Gods Almighty came there, | T: And ten Brahmā sovereigns, each the lord of his own realm—
+dn20:20.10 | P: paccekavasavattino; | S: each one of them wielding power, | T: (none)
+dn20:20.11 | P: Tesañca majjhato āga, | S: and in the middle of them came | T: and in their midst has come
+dn20:20.12 | P: hārito parivārito. | S: Hārita with his following.” | T: Hārita Brahmā ⏎ surrounded by his retinue.”
+AUTO dn20:20.9 starts: And ten Brahmā sovereigns, each the lord of
+AUTO dn20:20.10 starts: and in their midst has come
+AUTO dn20:20.11 starts: Hārita Brahmā
+AUTO dn20:20.12 starts: surrounded by his retinue.”
+
+## dn20:21.1–dn20:21.4 (dn)
+dn20:21.1 | P: Te ca sabbe abhikkante, | S: When they had all come forth— | T: When all these devas with Indras & Brahmās had come,
+dn20:21.2 | P: sainde deve sabrahmake; | S: the gods with their Lord, and the divinities— | T: (none)
+dn20:21.3 | P: Mārasenā abhikkāmi, | S: Māra’s army came forth too: | T: Māra’s army came as well.
+dn20:21.4 | P: passa kaṇhassa mandiyaṁ. | S: see the stupidity of the Dark Lord! | T: Now look at the Dark One’s foolishness!
+
+## dn20:21.5–dn20:21.8 (dn)
+dn20:21.5 | P: ‘Etha gaṇhatha bandhatha, | S: “Come, seize them and bind them,” he said, | T: [He said:] “Come seize them! Bind them!
+dn20:21.6 | P: rāgena baddhamatthu vo; | S: “let them be bound by desire! | T: Tie them down with passion!
+dn20:21.7 | P: Samantā parivāretha, | S: Surround them on all sides, | T: Surround them on every side!
+dn20:21.8 | P: mā vo muñcittha koci naṁ’. | S: don’t let any escape!” | T: Don’t let anyone at all escape!”
+
+## dn20:21.9–dn20:21.12 (dn)
+dn20:21.9 | P: Iti tattha mahāseno, | S: And so there the great general, | T: Thus the great warlord urged on his dark army,
+dn20:21.10 | P: kaṇho senaṁ apesayi; | S: the Dark Lord sent forth his army. | T: (none)
+dn20:21.11 | P: Pāṇinā talamāhacca, | S: He struck the ground with his fist | T: slapping the ground with his hand,
+dn20:21.12 | P: saraṁ katvāna bheravaṁ. | S: to make a horrifying sound | T: making a horrendous din,
+
+## dn20:21.13–dn20:21.16 (dn)
+dn20:21.13 | P: Yathā pāvussako megho, | S: like a monsoon cloud, | T: as when ⏎ a storm cloud
+dn20:21.14 | P: thanayanto savijjuko; | S: thundering and flashing. | T: bursts with thunder, ⏎ lightning, & torrents of rain.
+dn20:21.15 | P: Tadā so paccudāvatti, | S: But then turned back, | T: But then he withdrew—
+dn20:21.16 | P: saṅkuddho asayaṁvase. | S: furious, out of control. | T: enraged, ⏎ with none under his sway.
+
+## dn20:22.1–dn20:22.4 (dn)
+dn20:22.1 | P: Tañca sabbaṁ abhiññāya, | S: And all that was known | T: Realizing all this,
+dn20:22.2 | P: vavatthitvāna cakkhumā; | S: and distinguished by the Clear-eyed One. | T: the One-with-Vision felt moved to speak.
+dn20:22.3 | P: Tato āmantayī satthā, | S: Consequently, the Teacher addressed | T: The Teacher then said to them,
+dn20:22.4 | P: sāvake sāsane rate. | S: the disciples who love the teaching: | T: disciples delighting in his instruction,
+
+## dn20:22.5–dn20:22.10 (dn) GATHERED; equal counts: one line per row
+dn20:22.5 | P: ‘Mārasenā abhikkantā, | S: “Māra’s army has arrived; | T: “Māra’s army has approached.
+dn20:22.6 | P: te vijānātha bhikkhavo’; | S: mendicants, you should be aware of them.” | T: Detect them, monks!”
+dn20:22.7 | P: Te ca ātappamakaruṁ, | S: Those monks grew keen, | T: Listening to the Awakened One’s instruction, ⏎ they made an ardent effort.
+dn20:22.8 | P: sutvā buddhassa sāsanaṁ; | S: hearing the Buddha’s instruction. | T: (none)
+dn20:22.9 | P: Vītarāgehi pakkāmuṁ, | S: The army fled from those free of passion, | T: The army retreated from those without passion,
+dn20:22.10 | P: nesaṁ lomāpi iñjayuṁ. | S: and not a single hair was stirred! | T: without raising even a hair on their bodies.
+AUTO dn20:22.5 starts: “Māra’s army has approached.
+AUTO dn20:22.6 starts: Detect them, monks!”
+AUTO dn20:22.7 starts: Listening to the Awakened One’s instruction,
+AUTO dn20:22.8 starts: they made an ardent effort.
+AUTO dn20:22.9 starts: The army retreated from those without passion,
+AUTO dn20:22.10 starts: without raising even a hair on their bodies.
+
+## dn20:22.11–dn20:22.14 (dn)
+dn20:22.11 | P: ‘Sabbe vijitasaṅgāmā, | S: “All triumphant in battle, | T: Having all won the battle—
+dn20:22.12 | P: bhayātītā yasassino; | S: so fearless and glorious. | T: prestigious, past fear—
+dn20:22.13 | P: Modanti saha bhūtehi, | S: They rejoice with all the spirits, | T: they rejoice with all beings:
+dn20:22.14 | P: sāvakā te janesutā’”ti. | S: the disciples renowned among men.” | T: disciples outstanding among the human race.
+CONTEXT dn20:22.15 | P: Mahāsamayasuttaṁ niṭṭhitaṁ sattamaṁ. | S: (none) | T: (none)
+
+## dn21:1.5.1–dn21:1.5.4 (dn)
+CONTEXT dn21:1.4.7.0 | P: 1. Pañcasikhagītagāthā | S: 1. Pañcasikha’s Song | T: (none)
+CONTEXT dn21:1.4.8 | P: Ekamantaṁ ṭhito kho pañcasikho gandhabbadevaputto beluvapaṇḍuvīṇaṁ assāvesi, imā ca gāthā abhāsi buddhūpasañhitā dhammūpasañhitā saṅghūpasañhitā arahantūpasañhitā kāmūpasañhitā: | S: Standing to one side, Pañcasikha played his arched harp, and sang these verses on the Buddha, the teaching, the Saṅgha, the perfected ones, and sensual love. | T: (none)
+dn21:1.5.1 | P: “Vande te pitaraṁ bhadde, | S: “O Bhaddā Suriyavaccasā, my Darling Sunshine, | T: (none)
+dn21:1.5.2 | P: timbaruṁ sūriyavacchase; | S: I pay homage to your father Timbaru, | T: (none)
+dn21:1.5.3 | P: Yena jātāsi kalyāṇī, | S: through whom was born a lady so fine, | T: (none)
+dn21:1.5.4 | P: ānandajananī mama. | S: to fill me with a joy I never knew. | T: (none)
+
+## dn21:1.5.5–dn21:1.5.8 (dn)
+dn21:1.5.5 | P: Vātova sedataṁ kanto, | S: As sweet as a breeze to one who’s sweating, | T: (none)
+dn21:1.5.6 | P: pānīyaṁva pipāsato; | S: or when thirsty, a sweet and cooling drink, | T: (none)
+dn21:1.5.7 | P: Aṅgīrasi piyāmesi, | S: so dear are you, Aṅgīrasi, to me— | T: (none)
+dn21:1.5.8 | P: dhammo arahatāmiva. | S: just like the teaching is to all the saints! | T: (none)
+
+## dn21:1.5.9–dn21:1.5.12 (dn)
+dn21:1.5.9 | P: Āturasseva bhesajjaṁ, | S: Like a cure when you’re struck by fever dire, | T: (none)
+dn21:1.5.10 | P: bhojanaṁva jighacchato; | S: or food to ease the hunger pain, | T: (none)
+dn21:1.5.11 | P: Parinibbāpaya maṁ bhadde, | S: come on, Bhaddā, please put out my fire, | T: (none)
+dn21:1.5.12 | P: jalantamiva vārinā. | S: quench me like water on a flame. | T: (none)
+
+## dn21:1.5.13–dn21:1.5.16 (dn)
+dn21:1.5.13 | P: Sītodakaṁ pokkharaṇiṁ, | S: As elephants burning in the heat of summer, | T: (none)
+dn21:1.5.14 | P: yuttaṁ kiñjakkhareṇunā; | S: sink down in a lotus pond to rest, | T: (none)
+dn21:1.5.15 | P: Nāgo ghammābhitattova, | S: so cool, full of petals and of pollen— | T: (none)
+dn21:1.5.16 | P: ogāhe te thanūdaraṁ. | S: that’s how I would plunge into your breast. | T: (none)
+
+## dn21:1.5.17–dn21:1.5.20 (dn)
+dn21:1.5.17 | P: Accaṅkusova nāgova, | S: Like elephants bursting bonds in rutting season, | T: (none)
+dn21:1.5.18 | P: jitaṁ me tuttatomaraṁ; | S: beating off the pricks of lance and pikes— | T: (none)
+dn21:1.5.19 | P: Kāraṇaṁ nappajānāmi, | S: I just don’t understand what is the reason | T: (none)
+dn21:1.5.20 | P: sammatto lakkhaṇūruyā. | S: I’m so crazy for your shapely thighs! | T: (none)
+
+## dn21:1.5.21–dn21:1.5.24 (dn)
+dn21:1.5.21 | P: Tayi gedhitacittosmi, | S: For you, my heart is full of passion, | T: (none)
+dn21:1.5.22 | P: cittaṁ vipariṇāmitaṁ; | S: I’m in a besotted state of mind. | T: (none)
+dn21:1.5.23 | P: Paṭigantuṁ na sakkomi, | S: There is no going back, I’m just not able, | T: (none)
+dn21:1.5.24 | P: vaṅkaghastova ambujo. | S: I’m like a fish that’s hooked up on the line. | T: (none)
+
+## dn21:1.5.25–dn21:1.5.28 (dn)
+dn21:1.5.25 | P: Vāmūru saja maṁ bhadde, | S: Come on, my Bhaddā, hold me, fair of thighs! | T: (none)
+dn21:1.5.26 | P: saja maṁ mandalocane; | S: Embrace me, maid of captivating eyes! | T: (none)
+dn21:1.5.27 | P: Palissaja maṁ kalyāṇi, | S: Take me in your arms, my lovely lady, | T: (none)
+dn21:1.5.28 | P: etaṁ me abhipatthitaṁ. | S: that’s all I’d ever want or could desire. | T: (none)
+
+## dn21:1.5.29–dn21:1.5.32 (dn)
+dn21:1.5.29 | P: Appako vata me santo, | S: Ah, then my desire was such a small thing, | T: (none)
+dn21:1.5.30 | P: kāmo vellitakesiyā; | S: my sweet, with your curling wavy hair; | T: (none)
+dn21:1.5.31 | P: Anekabhāvo samuppādi, | S: now, like to arahants an offering, | T: (none)
+dn21:1.5.32 | P: arahanteva dakkhiṇā. | S: it’s grown so very much from there. | T: (none)
+
+## dn21:1.5.33–dn21:1.5.36 (dn)
+dn21:1.5.33 | P: Yaṁ me atthi kataṁ puññaṁ, | S: Whatever the merit I have forged | T: (none)
+dn21:1.5.34 | P: arahantesu tādisu; | S: by giving to such perfected beings— | T: (none)
+dn21:1.5.35 | P: Taṁ me sabbaṅgakalyāṇi, | S: may that, my altogether gorgeous, | T: (none)
+dn21:1.5.36 | P: tayā saddhiṁ vipaccataṁ. | S: ripen in togetherness with you. | T: (none)
+
+## dn21:1.5.37–dn21:1.5.40 (dn)
+dn21:1.5.37 | P: Yaṁ me atthi kataṁ puññaṁ, | S: Whatever the merit I have forged | T: (none)
+dn21:1.5.38 | P: asmiṁ pathavimaṇḍale; | S: in this vast territory, | T: (none)
+dn21:1.5.39 | P: Taṁ me sabbaṅgakalyāṇi, | S: may that, my altogether gorgeous, | T: (none)
+dn21:1.5.40 | P: tayā saddhiṁ vipaccataṁ. | S: ripen in togetherness with you. | T: (none)
+
+## dn21:1.5.41–dn21:1.5.44 (dn)
+dn21:1.5.41 | P: Sakyaputtova jhānena, | S: As the Sakyan, absorbed, did meditate | T: (none)
+dn21:1.5.42 | P: ekodi nipako sato; | S: at one, alert, and mindful too, | T: (none)
+dn21:1.5.43 | P: Amataṁ muni jigīsāno, | S: the sage seeking the state free of death— | T: (none)
+dn21:1.5.44 | P: tamahaṁ sūriyavacchase. | S: so I, oh my Sunshine, seek for you! | T: (none)
+
+## dn21:1.5.45–dn21:1.5.48 (dn)
+dn21:1.5.45 | P: Yathāpi muni nandeyya, | S: And just like the sage would delight, | T: (none)
+dn21:1.5.46 | P: patvā sambodhimuttamaṁ; | S: once he had awakened to the truth, | T: (none)
+dn21:1.5.47 | P: Evaṁ nandeyyaṁ kalyāṇi, | S: so I would delight, my fine lady, | T: (none)
+dn21:1.5.48 | P: missībhāvaṁ gato tayā. | S: were I to become one with you. | T: (none)
+
+## dn21:1.5.49–dn21:1.5.52 (dn)
+dn21:1.5.49 | P: Sakko ce me varaṁ dajjā, | S: If Sakka were to grant me one wish, | T: (none)
+dn21:1.5.50 | P: tāvatiṁsānamissaro; | S: as Lord of the Thirty and Three, | T: (none)
+dn21:1.5.51 | P: Tāhaṁ bhadde vareyyāhe, | S: my Bhaddā, you’re all I would wish for, | T: (none)
+dn21:1.5.52 | P: evaṁ kāmo daḷho mama. | S: so strong is the love in me. | T: (none)

@@ -9,11 +9,11 @@ sn12.65:2.12 starts: ‘Name-&-form exists when consciousness exists. From consc
 sn12.65:4.8 none
 sn12.65:4.15 starts: ‘Name-&-form doesn’t exist when what doesn’t exist?
 iti104:3.3 starts: living the Dhamma of the noble ones,
-iti104:3.4 none
+# superseded: iti104:3.4 none
 sn3.9:5.1 starts: Where goats, rams, & cattle of various
-sn3.9:5.3 none
-sn3.9:5.4 none
-sn3.9:6.2 none
-sn3.9:6.3 starts: But sacrifices free from violence, offered always
+# superseded: sn3.9:5.3 none
+# superseded: sn3.9:5.4 none
+# superseded: sn3.9:6.2 none
+# superseded: sn3.9:6.3 starts: But sacrifices free from violence, offered always
 iti39:3.4 starts: sympathetic to all beings.
 snp5.16:3.2 none

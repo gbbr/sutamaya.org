@@ -1,0 +1,9 @@
+{
+  "batch": 34,
+  "versesRead": 58,
+  "rowsRead": 238,
+  "automaticFindings": 15,
+  "readerFindings": 55,
+  "unresolved": [],
+  "ruleCandidate": "ITI93:4.4 contained next-stanza5.4 amuttā mārabandhanā as its last translator line. Replaced AUTO5.1 with that earlier existing line start; this repairs stanza identity and leaves two whole lines grouped on5.1, all other rows filled in order. ITI89:4 has three English lines for four rows."
+}

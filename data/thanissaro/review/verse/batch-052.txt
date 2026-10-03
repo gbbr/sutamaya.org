@@ -1,0 +1,408 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## snp5.4:2.1–snp5.4:2.6 (snp)
+snp5.4:2.1 | P: “Ye kecime isayo manujā, | S: “Whatever seers and men,” | T: The Buddha: ⏎ Those many human seers
+CONTEXT snp5.4:2.2 | P: (puṇṇakāti bhagavā) | S: replied the Buddha, | T: (none)
+snp5.4:2.3 | P: Khattiyā brāhmaṇā devatānaṁ; | S: “aristocrats and brahmins here in the world | T: —noble warriors, brahmans—
+snp5.4:2.4 | P: Yaññamakappayiṁsu puthūdha loke, | S: have performed so many different sacrifices to the gods: | T: who have offered sacrifices to devas ⏎ here in the world,
+snp5.4:2.5 | P: Āsīsamānā puṇṇaka itthattaṁ; | S: all performed sacrifices bound to old age, | T: Puṇṇaka, ⏎ hoping for more of this state of being, ⏎ offered their sacrifices
+snp5.4:2.6 | P: Jaraṁ sitā yaññamakappayiṁsu”. | S: longing for this place.” | T: because of aging.
+CONTEXT snp5.4:3.2 | P: (iccāyasmā puṇṇako) | S: said Venerable Puṇṇaka, | T: (none)
+
+## snp5.4:3.1–snp5.4:3.7 (snp)
+snp5.4:3.1 | P: “Ye kecime isayo manujā, | S: “As to those seers and men,” | T: Puṇṇaka: ⏎ These many human seers
+CONTEXT snp5.4:3.2 | P: (iccāyasmā puṇṇako) | S: said Venerable Puṇṇaka, | T: (none)
+snp5.4:3.3 | P: Khattiyā brāhmaṇā devatānaṁ; | S: “and aristocrats and brahmins here in the world | T: —noble warriors, brahmans—
+snp5.4:3.4 | P: Yaññamakappayiṁsu puthūdha loke, | S: who have performed so many different sacrifices to the gods: | T: who have offered sacrifices to devas ⏎ here in the world:
+snp5.4:3.5 | P: Kaccissu te bhagavā yaññapathe appamattā; | S: being diligent in the technique of sacrifice, | T: Have they, Blessed One, ⏎ heeding the path of sacrifice,
+snp5.4:3.6 | P: Atāruṁ jātiñca jarañca mārisa, | S: have they crossed over rebirth and old age, good fellow? | T: dear sir, ⏎ crossed over birth & aging?
+snp5.4:3.7 | P: Pucchāmi taṁ bhagavā brūhi me taṁ”. | S: I ask you, Blessed One; please tell me this.” | T: I ask you, Blessed One. ⏎ Please tell me.
+CONTEXT snp5.4:4.2 | P: (puṇṇakāti bhagavā) | S: replied the Buddha, | T: (none)
+
+## snp5.4:4.1–snp5.4:4.5 (snp)
+snp5.4:4.1 | P: “Āsīsanti thomayanti abhijappanti juhanti, | S: “Hoping, invoking, praying, and worshiping,” | T: The Buddha: ⏎ They hoped for, liked, ⏎ longed for, ⏎ so they sacrificed—
+CONTEXT snp5.4:4.2 | P: (puṇṇakāti bhagavā) | S: replied the Buddha, | T: (none)
+snp5.4:4.3 | P: Kāmābhijappanti paṭicca lābhaṁ; | S: “they pray for pleasure derived from profit. | T: they longed for sensuality, ⏎ dependent on gain.
+snp5.4:4.4 | P: Te yājayogā bhavarāgarattā, | S: Devoted to sacrifice, besotted by rebirth, | T: I tell you: ⏎ Those who take on the yoke ⏎ of sacrifice, ⏎ impassioned with ⏎ the passion for becoming,
+snp5.4:4.5 | P: Nātariṁsu jātijaranti brūmi”. | S: they’ve not crossed over rebirth and old age, I declare.” | T: have not crossed over birth & aging.
+CONTEXT snp5.4:5.2 | P: (iccāyasmā puṇṇako) | S: said Venerable Puṇṇaka, | T: (none)
+
+## snp5.4:5.1–snp5.4:5.6 (snp)
+snp5.4:5.1 | P: “Te ce nātariṁsu yājayogā, | S: “If those devoted to sacrifice,” | T: Puṇṇaka: ⏎ If those who take on the yoke of sacrifice
+CONTEXT snp5.4:5.2 | P: (iccāyasmā puṇṇako) | S: said Venerable Puṇṇaka, | T: (none)
+snp5.4:5.3 | P: Yaññehi jātiñca jarañca mārisa; | S: “have not, by sacrificing, crossed over rebirth and old age, | T: haven’t crossed over birth & aging,
+snp5.4:5.4 | P: Atha ko carahi devamanussaloke, | S: who then in the world of gods and humans | T: then who in the world, dear sir, ⏎ of beings divine & human
+snp5.4:5.5 | P: Atāri jātiñca jarañca mārisa; | S: has crossed over rebirth and old age, good fellow? | T: has crossed over birth & aging?
+snp5.4:5.6 | P: Pucchāmi taṁ bhagavā brūhi me taṁ”. | S: I ask you, Blessed One; please tell me this.” | T: I ask you, Blessed One. ⏎ Please tell me.
+CONTEXT snp5.4:6.2 | P: (puṇṇakāti bhagavā) | S: replied the Buddha, | T: (none)
+
+## snp5.4:6.1–snp5.4:6.5 (snp)
+snp5.4:6.1 | P: “Saṅkhāya lokasmi paroparāni, | S: “Having appraised the world high and low,” | T: The Buddha: ⏎ He who has fathomed ⏎ the high & low in the world,
+CONTEXT snp5.4:6.2 | P: (puṇṇakāti bhagavā) | S: replied the Buddha, | T: (none)
+snp5.4:6.3 | P: Yassiñjitaṁ natthi kuhiñci loke; | S: “there is nothing in the world that disturbs them. | T: for whom there is nothing ⏎ perturbing in the world—
+snp5.4:6.4 | P: Santo vidhūmo anīgho nirāso, | S: Peaceful, unclouded, untroubled, with no need for hope— | T: evaporated, undesiring, ⏎ untroubled, at peace—
+snp5.4:6.5 | P: Atāri so jātijaranti brūmī”ti. | S: they’ve crossed over rebirth and old age, I declare.” | T: he, I tell you, has crossed over birth ⏎ & aging.
+CONTEXT snp5.4:6.6 | P: Puṇṇakamāṇavapucchā tatiyā. | S: (none) | T: (none)
+
+## snp5.5:1.1–snp5.5:1.5 (snp)
+CONTEXT snp5.5:0.1 | P: Sutta Nipāta 5.5 | S: Anthology of Discourses 5.5 | T: (none)
+CONTEXT snp5.5:0.2 | P: Mettagūmāṇavapucchā | S: The Questions of Mettagū | T: 5:4 Mettagū’s Questions
+snp5.5:1.1 | P: “Pucchāmi taṁ bhagavā brūhi me taṁ, | S: “I ask you, Blessed One; please tell me this,” | T: I ask you, Blessed One. ⏎ Please tell me.
+CONTEXT snp5.5:1.2 | P: (iccāyasmā mettagū) | S: said Venerable Mettagū, | T: (none)
+snp5.5:1.3 | P: Maññāmi taṁ vedaguṁ bhāvitattaṁ; | S: “for I think you are a knowledge master, evolved. | T: I regard you as an attainer-of-knowledge, ⏎ developed in mind.
+snp5.5:1.4 | P: Kuto nu dukkhā samudāgatā ime, | S: Where do all these sufferings come from, | T: From what have the many ⏎ forms of stress
+snp5.5:1.5 | P: Ye keci lokasmimanekarūpā”. | S: in all their countless forms in the world?” | T: arisen in the world?
+CONTEXT snp5.5:2.2 | P: (mettagūti bhagavā) | S: replied the Buddha, | T: (none)
+
+## snp5.5:2.1–snp5.5:2.5 (snp)
+snp5.5:2.1 | P: “Dukkhassa ve maṁ pabhavaṁ apucchasi, | S: “You have rightly asked me of the origin of suffering,” | T: The Buddha: ⏎ You ask me ⏎ the source of stress.
+CONTEXT snp5.5:2.2 | P: (mettagūti bhagavā) | S: replied the Buddha, | T: (none)
+snp5.5:2.3 | P: Taṁ te pavakkhāmi yathā pajānaṁ; | S: “I shall tell you as I understand it. | T: I’ll tell it to you ⏎ as one who discerns.
+snp5.5:2.4 | P: Upadhinidānā pabhavanti dukkhā, | S: Attachment is the source of suffering | T: From acquisition as cause
+snp5.5:2.5 | P: Ye keci lokasmimanekarūpā. | S: in all its countless forms in the world. | T: the many forms of stress ⏎ come into being in the world.
+
+## snp5.5:3.1–snp5.5:3.4 (snp)
+snp5.5:3.1 | P: Yo ve avidvā upadhiṁ karoti, | S: When an ignorant person builds up attachments, | T: Whoever, unknowing, ⏎ makes acquisitions
+snp5.5:3.2 | P: Punappunaṁ dukkhamupeti mando; | S: that dullard returns to suffering again and again. | T: —the dullard— ⏎ comes to stress ⏎ again & again.
+snp5.5:3.3 | P: Tasmā pajānaṁ upadhiṁ na kayirā, | S: So let one who understands not build up attachments, | T: Therefore, discerning, ⏎ you shouldn’t create acquisitions
+snp5.5:3.4 | P: Dukkhassa jātippabhavānupassī”. | S: contemplating the inception of suffering and rebirth.” | T: as you stay focused on ⏎ the birth & origin of stress.
+
+## snp5.5:4.1–snp5.5:4.6 (snp)
+snp5.5:4.1 | P: “Yaṁ taṁ apucchimha akittayī no, | S: “Whatever I asked you have explained to me. | T: Mettagū: ⏎ What we asked, you’ve expounded.
+snp5.5:4.2 | P: Aññaṁ taṁ pucchāma tadiṅgha brūhi; | S: I ask you once more, please tell me this: | T: Now we ask something else. ⏎ Please tell us.
+snp5.5:4.3 | P: Kathaṁ nu dhīrā vitaranti oghaṁ, | S: How do the attentive cross the flood | T: How do the enlightened ⏎ cross over the flood of
+snp5.5:4.4 | P: Jātiṁ jaraṁ sokapariddavañca; | S: of rebirth, old age, sorrow, and lamenting? | T: birth & aging, ⏎ lamentation & sorrow?
+snp5.5:4.5 | P: Taṁ me muni sādhu viyākarohi, | S: Please, sage, answer me clearly, | T: Please, sage, declare this to me
+snp5.5:4.6 | P: Tathā hi te vidito esa dhammo”. | S: for truly you understand this matter.” | T: as this Dhamma has ⏎ been known by you.
+CONTEXT snp5.5:5.2 | P: (mettagūti bhagavā) | S: replied the Buddha, | T: (none)
+
+## snp5.5:5.1–snp5.5:5.5 (snp)
+snp5.5:5.1 | P: “Kittayissāmi te dhammaṁ, | S: “I shall extol a teaching to you,” | T: The Buddha: ⏎ I will expound to you Dhamma
+CONTEXT snp5.5:5.2 | P: (mettagūti bhagavā) | S: replied the Buddha, | T: (none)
+snp5.5:5.3 | P: Diṭṭhe dhamme anītihaṁ; | S: “that is apparent in the present, not relying on legends. | T: —here-&-now, ⏎ not quoted words—
+snp5.5:5.4 | P: Yaṁ viditvā sato caraṁ, | S: Having understood it, one who lives mindfully | T: knowing which, living mindfully,
+snp5.5:5.5 | P: Tare loke visattikaṁ”. | S: may cross over clinging in the world.” | T: you’ll cross over beyond ⏎ entanglement in the world.
+
+## snp5.5:6.1–snp5.5:6.4 (snp)
+snp5.5:6.1 | P: “Tañcāhaṁ abhinandāmi, | S: “And I rejoice, great seer, | T: Mettagū: ⏎ And I relish, Great Seer,
+snp5.5:6.2 | P: mahesi dhammamuttamaṁ; | S: in that supreme teaching, | T: that Dhamma supreme,
+snp5.5:6.3 | P: Yaṁ viditvā sato caraṁ, | S: having understood which, one who lives mindfully | T: knowing which, living mindfully,
+snp5.5:6.4 | P: tare loke visattikaṁ”. | S: may cross over clinging in the world.” | T: I’ll cross over beyond ⏎ entanglement in the world.
+CONTEXT snp5.5:7.2 | P: (mettagūti bhagavā) | S: replied the Buddha, | T: (none)
+
+## snp5.5:7.1–snp5.5:7.5 (snp) GATHERED; paragraph has speaker/context rows
+snp5.5:7.1 | P: “Yaṁ kiñci sampajānāsi, | S: “Once you’ve expelled relishing and dogmatism,” | T: The Buddha: ⏎ Whatever you’re alert to,
+CONTEXT snp5.5:7.2 | P: (mettagūti bhagavā) | S: replied the Buddha, | T: (none)
+snp5.5:7.3 | P: Uddhaṁ adho tiriyañcāpi majjhe; | S: “regarding everything you are aware of— | T: (none)
+snp5.5:7.4 | P: Etesu nandiñca nivesanañca, | S: above, below, all round, between— | T: above, below, ⏎ across, in between:
+snp5.5:7.5 | P: Panujja viññāṇaṁ bhave na tiṭṭhe. | S: having cast aside consciousness, don’t continue in existence. | T: Dispelling any delight, ⏎ any entrenchment ⏎ in those things, ⏎ consciousness should not take a stance ⏎ in becoming.
+
+## snp5.5:8.1–snp5.5:8.4 (snp)
+snp5.5:8.1 | P: Evaṁvihārī sato appamatto, | S: A mendicant who wanders meditating like this, | T: The monk who dwells thus
+snp5.5:8.2 | P: Bhikkhu caraṁ hitvā mamāyitāni; | S: diligent and mindful, calling nothing their own, | T: —mindful, heedful— ⏎ letting go of his sense of mine,
+snp5.5:8.3 | P: Jātiṁ jaraṁ sokapariddavañca, | S: would, being wise, give up the suffering | T: knowing right here would abandon
+snp5.5:8.4 | P: Idheva vidvā pajaheyya dukkhaṁ”. | S: of rebirth, old age, sorrow and lamenting right here.” | T: birth & aging, ⏎ lamentation & sorrow, ⏎ stress.
+
+## snp5.5:9.1–snp5.5:9.4 (snp)
+snp5.5:9.1 | P: “Etābhinandāmi vaco mahesino, | S: “I rejoice in the words of the great seer! | T: Mettagū: ⏎ I relish, Gotama, the Great Seer’s words
+snp5.5:9.2 | P: Sukittitaṁ gotamanūpadhīkaṁ; | S: You have expounded non-attachment well, Gotama. | T: well-expounded, without acquisition,
+snp5.5:9.3 | P: Addhā hi bhagavā pahāsi dukkhaṁ, | S: Clearly the Buddha has given up suffering, | T: for yes, Blessed One, ⏎ you’ve abandoned stress
+snp5.5:9.4 | P: Tathā hi te vidito esa dhammo. | S: for truly you understand this matter. | T: as this Dhamma has ⏎ been known by you.
+
+## snp5.5:10.1–snp5.5:10.4 (snp) GATHERED; unequal counts require a reader
+snp5.5:10.1 | P: Te cāpi nūnappajaheyyu dukkhaṁ, | S: Surely, sage, those you’d regularly instruct | T: And they, too, would abandon stress ⏎ those whom you, sage, ⏎ would admonish unceasingly.
+snp5.5:10.2 | P: Ye tvaṁ muni aṭṭhitaṁ ovadeyya; | S: would also give up suffering. | T: (none)
+snp5.5:10.3 | P: Taṁ taṁ namassāmi samecca nāga, | S: Having met, I bow especially to you, O spiritual giant; | T: Having met you, I bow down to you, ⏎ Nāga.
+snp5.5:10.4 | P: Appeva maṁ bhagavā aṭṭhitaṁ ovadeyya”. | S: hopefully the Buddha may regularly instruct me.” | T: Perhaps you will admonish me ⏎ unceasingly.
+
+## snp5.5:11.1–snp5.5:11.4 (snp)
+snp5.5:11.1 | P: “Yaṁ brāhmaṇaṁ vedagumābhijaññā, | S: “Any brahmin recognized as a knowledge master, | T: The Buddha: ⏎ Whoever you recognize ⏎ as a brahman, an attainer-of-knowledge
+snp5.5:11.2 | P: Akiñcanaṁ kāmabhave asattaṁ; | S: who has nothing, unattached to sensual life, | T: possessing nothing, ⏎ unentangled ⏎ in sensuality & becoming—
+snp5.5:11.3 | P: Addhā hi so oghamimaṁ atāri, | S: clearly has crossed this flood, | T: yes, he has crossed over this flood.
+snp5.5:11.4 | P: Tiṇṇo ca pāraṁ akhilo akaṅkho. | S: crossed to the far shore, kind, wishless. | T: Having crossed to the far shore, ⏎ he’s free from rigidity, free ⏎ from doubt.
+
+## snp5.5:12.1–snp5.5:12.4 (snp)
+snp5.5:12.1 | P: Vidvā ca yo vedagū naro idha, | S: And a wise person here, a knowledge master, | T: And anyone who has realized, ⏎ who is an attainer-of-knowledge here,
+snp5.5:12.2 | P: Bhavābhave saṅgamimaṁ visajja; | S: having untied the bond to life after life, | T: having unentangled the bond ⏎ to becoming and non-,
+snp5.5:12.3 | P: So vītataṇho anīgho nirāso, | S: free of craving, untroubled, with no need for hope, | T: free of craving, ⏎ untroubled, ⏎ undesiring—
+snp5.5:12.4 | P: Atāri so jātijaranti brūmī”ti. | S: has crossed over rebirth and old age, I declare.” | T: he, ⏎ I tell you, has crossed over birth ⏎ & aging.
+CONTEXT snp5.5:12.5 | P: Mettagūmāṇavapucchā catutthī. | S: (none) | T: (none)
+
+## snp5.6:1.1–snp5.6:1.5 (snp)
+CONTEXT snp5.6:0.1 | P: Sutta Nipāta 5.6 | S: Anthology of Discourses 5.6 | T: (none)
+CONTEXT snp5.6:0.2 | P: Dhotakamāṇavapucchā | S: The Questions of Dhotaka | T: 5:5 Dhotaka’s Questions
+snp5.6:1.1 | P: “Pucchāmi taṁ bhagavā brūhi metaṁ, | S: “I ask you, Blessed One; please tell me this,” | T: I ask you, Blessed One. ⏎ Please tell me.
+CONTEXT snp5.6:1.2 | P: (iccāyasmā dhotako) | S: said Venerable Dhotaka, | T: (none)
+snp5.6:1.3 | P: Vācābhikaṅkhāmi mahesi tuyhaṁ; | S: “I long for your voice, great seer. | T: I hope for your words, Great Seer.
+snp5.6:1.4 | P: Tava sutvāna nigghosaṁ, | S: After hearing your message, | T: Having heard your pronouncement,
+snp5.6:1.5 | P: Sikkhe nibbānamattano”. | S: I shall train myself for extinguishment.” | T: I’ll train for my own ⏎ unbinding.
+CONTEXT snp5.6:2.2 | P: (dhotakāti bhagavā) | S: replied the Buddha, | T: (none)
+
+## snp5.6:2.1–snp5.6:2.5 (snp)
+snp5.6:2.1 | P: “Tenahātappaṁ karohi, | S: “Well then, be keen, alert,” | T: The Buddha: ⏎ In that case, ⏎ be ardent—
+CONTEXT snp5.6:2.2 | P: (dhotakāti bhagavā) | S: replied the Buddha, | T: (none)
+snp5.6:2.3 | P: Idheva nipako sato; | S: “and mindful right here. | T: astute & mindful right here.
+snp5.6:2.4 | P: Ito sutvāna nigghosaṁ, | S: After hearing this message, go on | T: Then, having heard my pronouncement,
+snp5.6:2.5 | P: Sikkhe nibbānamattano”. | S: and train yourself for extinguishment.” | T: train for your own ⏎ unbinding.
+
+## snp5.6:3.1–snp5.6:3.4 (snp)
+snp5.6:3.1 | P: “Passāmahaṁ devamanussaloke, | S: “I see in the world of gods and humans | T: Dhotaka: ⏎ I see in the world of beings ⏎ divine & human,
+snp5.6:3.2 | P: Akiñcanaṁ brāhmaṇamiriyamānaṁ; | S: a brahmin traveling with nothing. | T: a brahman who lives ⏎ possessing nothing.
+snp5.6:3.3 | P: Taṁ taṁ namassāmi samantacakkhu, | S: I bow especially to you, All-seer: | T: I pay homage to him, ⏎ the All-around Eye.
+snp5.6:3.4 | P: Pamuñca maṁ sakka kathaṅkathāhi”. | S: release me, Sakyan, from my indecisions.” | T: From my perplexities, Sakyan, release me!
+
+## snp5.6:4.1–snp5.6:4.4 (snp) GATHERED; possible speaker requires a reader
+snp5.6:4.1 | P: “Nāhaṁ sahissāmi pamocanāya, | S: “I am not able to release anyone | T: The Buddha: ⏎ No one in the world, Dhotaka, ⏎ can I release from perplexity.
+snp5.6:4.2 | P: Kathaṅkathiṁ dhotaka kañci loke; | S: in the world who is indecisive, Dhotaka. | T: (none)
+snp5.6:4.3 | P: Dhammañca seṭṭhaṁ abhijānamāno, | S: But when you understand the best of teachings, | T: But knowing the most excellent Dhamma,
+snp5.6:4.4 | P: Evaṁ tuvaṁ oghamimaṁ taresi”. | S: you shall cross this flood.” | T: you will cross over this flood.
+
+## snp5.6:5.1–snp5.6:5.4 (snp)
+snp5.6:5.1 | P: “Anusāsa brahme karuṇāyamāno, | S: “Teach me, brahmin, out of compassion, | T: Dhotaka: ⏎ Teach with compassion, brahman,
+snp5.6:5.2 | P: Vivekadhammaṁ yamahaṁ vijaññaṁ; | S: the principle of seclusion so that I may understand. | T: the Dhamma of seclusion ⏎ so that I may know—
+snp5.6:5.3 | P: Yathāhaṁ ākāsova abyāpajjamāno, | S: I wish to practice right here, peaceful, independent, | T: so that I, unafflicted as space, ⏎ may go about right here, ⏎ independent,
+snp5.6:5.4 | P: Idheva santo asito careyyaṁ”. | S: unobstructed as space itself.” | T: at peace.
+CONTEXT snp5.6:6.2 | P: (dhotakāti bhagavā) | S: replied the Buddha, | T: (none)
+
+## snp5.6:6.1–snp5.6:6.5 (snp)
+snp5.6:6.1 | P: “Kittayissāmi te santiṁ, | S: “I shall extol that peace for you,” | T: The Buddha: ⏎ I will expound to you peace
+CONTEXT snp5.6:6.2 | P: (dhotakāti bhagavā) | S: replied the Buddha, | T: (none)
+snp5.6:6.3 | P: Diṭṭhe dhamme anītihaṁ; | S: “that is apparent in the present, not relying on legends. | T: —here-&-now, ⏎ not quoted words—
+snp5.6:6.4 | P: Yaṁ viditvā sato caraṁ, | S: Having understood it, one who lives mindfully | T: knowing which, living mindfully,
+snp5.6:6.5 | P: Tare loke visattikaṁ”. | S: may cross over clinging in the world.” | T: you’ll go beyond ⏎ entanglement in the world.
+
+## snp5.6:7.1–snp5.6:7.4 (snp)
+snp5.6:7.1 | P: “Tañcāhaṁ abhinandāmi, | S: “And I rejoice, great seer, | T: Dhotaka: ⏎ And I relish, Great Seer,
+snp5.6:7.2 | P: mahesi santimuttamaṁ; | S: in that supreme peace, | T: that peace supreme,
+snp5.6:7.3 | P: Yaṁ viditvā sato caraṁ, | S: having understood which, one who lives mindfully | T: knowing which, living mindfully,
+snp5.6:7.4 | P: tare loke visattikaṁ”. | S: may cross over clinging in the world.” | T: I’ll go beyond ⏎ entanglement in the world.
+CONTEXT snp5.6:8.2 | P: (dhotakāti bhagavā) | S: replied the Buddha, | T: (none)
+
+## snp5.6:8.1–snp5.6:8.5 (snp) GATHERED; paragraph has speaker/context rows
+snp5.6:8.1 | P: “Yaṁ kiñci sampajānāsi, | S: “Once you have understood that everything,” | T: The Buddha: ⏎ Whatever you’re alert to,
+CONTEXT snp5.6:8.2 | P: (dhotakāti bhagavā) | S: replied the Buddha, | T: (none)
+snp5.6:8.3 | P: Uddhaṁ adho tiriyañcāpi majjhe; | S: “you are aware of in the world— | T: (none)
+snp5.6:8.4 | P: Etaṁ viditvā saṅgoti loke, | S: above, below, all round, between— | T: above, below, ⏎ across, in between:
+snp5.6:8.5 | P: Bhavābhavāya mākāsi taṇhan”ti. | S: is a chain, don’t crave for life after life.” | T: Knowing it as a bond in the world, ⏎ don’t create craving ⏎ for becoming or non-.
+CONTEXT snp5.6:8.6 | P: Dhotakamāṇavapucchā pañcamī. | S: (none) | T: (none)
+
+## snp5.7:1.1–snp5.7:1.5 (snp)
+CONTEXT snp5.7:0.1 | P: Sutta Nipāta 5.7 | S: Anthology of Discourses 5.7 | T: (none)
+CONTEXT snp5.7:0.2 | P: Upasīvamāṇavapucchā | S: The Questions of Upasīva | T: 5:6 Upasīva’s Questions
+snp5.7:1.1 | P: “Eko ahaṁ sakka mahantamoghaṁ, | S: “Alone and independent, O Sakyan,” | T: Alone, Sakyan, with nothing to rely on,
+CONTEXT snp5.7:1.2 | P: (iccāyasmā upasīvo) | S: said Venerable Upasīva, | T: (none)
+snp5.7:1.3 | P: Anissito no visahāmi tārituṁ; | S: “I am not able to cross the great flood. | T: I can’t venture across ⏎ the great flood.
+snp5.7:1.4 | P: Ārammaṇaṁ brūhi samantacakkhu, | S: Tell me a support, All-seer, | T: Tell me, All-around Eye, ⏎ the support to rely on
+snp5.7:1.5 | P: Yaṁ nissito oghamimaṁ tareyyaṁ”. | S: depending on which I may cross this flood.” | T: for crossing over this flood.
+CONTEXT snp5.7:2.2 | P: (upasīvāti bhagavā) | S: replied the Buddha, | T: (none)
+
+## snp5.7:2.1–snp5.7:2.5 (snp)
+snp5.7:2.1 | P: “Ākiñcaññaṁ pekkhamāno satimā, | S: “Mindfully contemplating nothingness,” | T: The Buddha: ⏎ Mindfully focused on nothingness,
+CONTEXT snp5.7:2.2 | P: (upasīvāti bhagavā) | S: replied the Buddha, | T: (none)
+snp5.7:2.3 | P: Natthīti nissāya tarassu oghaṁ; | S: “depending on the perception ‘there is nothing’, cross the flood. | T: relying on ‘There isn’t,’ ⏎ you should cross over the flood.
+snp5.7:2.4 | P: Kāme pahāya virato kathāhi, | S: Giving up sensual pleasures, refraining from chatter, | T: Abandoning sensuality, ⏎ abstaining from conversations,
+snp5.7:2.5 | P: Taṇhakkhayaṁ nattamahābhipassa”. | S: watch day and night for the ending of craving.” | T: keep watch for the ending of ⏎ craving, night & day.
+CONTEXT snp5.7:3.2 | P: (iccāyasmā upasīvo) | S: said Venerable Upasīva, | T: (none)
+
+## snp5.7:3.1–snp5.7:3.5 (snp)
+snp5.7:3.1 | P: “Sabbesu kāmesu yo vītarāgo, | S: “One who is free of desire for sensual pleasures,” | T: Upasīva: ⏎ One free from passion ⏎ for all sensuality
+CONTEXT snp5.7:3.2 | P: (iccāyasmā upasīvo) | S: said Venerable Upasīva, | T: (none)
+snp5.7:3.3 | P: Ākiñcaññaṁ nissito hitvā maññaṁ; | S: “depending on nothingness, all else left behind, | T: relying on nothingness, letting go of all else,
+snp5.7:3.4 | P: Saññāvimokkhe parame vimutto, | S: freed in the ultimate liberation of perception: | T: released in the highest emancipation of perception:
+snp5.7:3.5 | P: Tiṭṭhe nu so tattha anānuyāyī”. | S: might they remain there without traveling on?” | T: Does he stay there unaffected?
+CONTEXT snp5.7:4.2 | P: (upasīvāti bhagavā) | S: replied the Buddha, | T: (none)
+
+## snp5.7:4.1–snp5.7:4.5 (snp)
+snp5.7:4.1 | P: “Sabbesu kāmesu yo vītarāgo, | S: “One free of desire for sensual pleasures,” | T: The Buddha: ⏎ One free from passion ⏎ for all sensuality
+CONTEXT snp5.7:4.2 | P: (upasīvāti bhagavā) | S: replied the Buddha, | T: (none)
+snp5.7:4.3 | P: Ākiñcaññaṁ nissito hitvā maññaṁ; | S: “depending on nothingness, all else left behind, | T: relying on nothingness, letting go of all else,
+snp5.7:4.4 | P: Saññāvimokkhe parame vimutto, | S: freed in the ultimate liberation of perception: | T: released in the highest emancipation of perception:
+snp5.7:4.5 | P: Tiṭṭheyya so tattha anānuyāyī”. | S: they might remain there without traveling on.” | T: He stays there unaffected.
+
+## snp5.7:5.1–snp5.7:5.4 (snp)
+snp5.7:5.1 | P: “Tiṭṭhe ce so tattha anānuyāyī, | S: “If they were to remain there without traveling on, | T: Upasīva: ⏎ If, All-around Eye, he stays there, ⏎ unaffected
+snp5.7:5.2 | P: Pūgampi vassānaṁ samantacakkhu; | S: even for myriad years, All-seer, | T: for many years,
+snp5.7:5.3 | P: Tattheva so sītisiyā vimutto, | S: and, being freed, were to grow cool right there, | T: right there ⏎ would he be cooled & released?
+snp5.7:5.4 | P: Cavetha viññāṇaṁ tathāvidhassa”. | S: would the consciousness of that sort pass away?” | T: Would his consciousness be like that?
+CONTEXT snp5.7:6.2 | P: (upasīvāti bhagavā) | S: replied the Buddha, | T: (none)
+
+## snp5.7:6.1–snp5.7:6.5 (snp)
+snp5.7:6.1 | P: “Accī yathā vātavegena khittā, | S: “As a flame tossed by a gust of wind,” | T: The Buddha: ⏎ As a flame overthrown by the force of the wind
+CONTEXT snp5.7:6.2 | P: (upasīvāti bhagavā) | S: replied the Buddha, | T: (none)
+snp5.7:6.3 | P: Atthaṁ paleti na upeti saṅkhaṁ; | S: “comes to an end and cannot be reckoned; | T: goes to an end ⏎ that cannot be classified,
+snp5.7:6.4 | P: Evaṁ munī nāmakāyā vimutto, | S: so too, a sage freed from the set of mental phenomena | T: so the sage freed from the name-body
+snp5.7:6.5 | P: Atthaṁ paleti na upeti saṅkhaṁ”. | S: comes to an end and cannot be reckoned.” | T: goes to an end ⏎ that cannot be classified.
+
+## snp5.7:7.1–snp5.7:7.4 (snp)
+snp5.7:7.1 | P: “Atthaṅgato so uda vā so natthi, | S: “One who has disappeared—do they not exist? | T: Upasīva: ⏎ One who has reached the end: ⏎ Does he not exist,
+snp5.7:7.2 | P: Udāhu ve sassatiyā arogo; | S: Or are they free from disease for eternity? | T: or is he for eternity ⏎ free from dis-ease?
+snp5.7:7.3 | P: Taṁ me munī sādhu viyākarohi, | S: Please, sage, answer me clearly, | T: Please, sage, declare this to me
+snp5.7:7.4 | P: Tathā hi te vidito esa dhammo”. | S: for truly you understand this matter.” | T: as this phenomenon has been known by you.
+CONTEXT snp5.7:8.2 | P: (upasīvāti bhagavā) | S: replied the Buddha. | T: (none)
+
+## snp5.7:8.1–snp5.7:8.5 (snp)
+snp5.7:8.1 | P: “Atthaṅgatassa na pamāṇamatthi, | S: “One who has disappeared cannot be defined,” | T: The Buddha: ⏎ One who has reached the end ⏎ has no criterion
+CONTEXT snp5.7:8.2 | P: (upasīvāti bhagavā) | S: replied the Buddha. | T: (none)
+snp5.7:8.3 | P: Yena naṁ vajjuṁ taṁ tassa natthi; | S: “They have nothing by which others might describe them. | T: by which anyone would say that— ⏎ for him it doesn’t exist.
+snp5.7:8.4 | P: Sabbesu dhammesu samohatesu, | S: When all things have been eradicated, | T: When all phenomena are done away with,
+snp5.7:8.5 | P: Samūhatā vādapathāpi sabbe”ti. | S: eradicated, too, are all ways of speech.” | T: all means of speaking ⏎ are done away with as well.
+CONTEXT snp5.7:8.6 | P: Upasīvamāṇavapucchā chaṭṭhī. | S: (none) | T: (none)
+
+## snp5.8:1.1–snp5.8:1.5 (snp)
+CONTEXT snp5.8:0.1 | P: Sutta Nipāta 5.8 | S: Anthology of Discourses 5.8 | T: (none)
+CONTEXT snp5.8:0.2 | P: Nandamāṇavapucchā | S: The Questions of Nanda | T: 5:7 Nanda’s Questions
+snp5.8:1.1 | P: “Santi loke munayo, | S: “People say there are sages in the world,” | T: There are in the world ⏎ sages, they say
+CONTEXT snp5.8:1.2 | P: (iccāyasmā nando) | S: said Venerable Nanda, | T: —
+snp5.8:1.3 | P: Janā vadanti tayidaṁ kathaṁsu; | S: “but how is this the case? | T: in what way?
+snp5.8:1.4 | P: Ñāṇūpapannaṁ no muniṁ vadanti, | S: Is someone called a sage because of their knowledge, | T: Do they call one a sage ⏎ for possessing knowledge
+snp5.8:1.5 | P: Udāhu ve jīvitenūpapannaṁ”. | S: or because of their way of life?” | T: or possessing a way of life?
+
+## snp5.8:2.1–snp5.8:2.4 (snp) GATHERED; possible speaker requires a reader
+snp5.8:2.1 | P: “Na diṭṭhiyā na sutiyā na ñāṇena, (…) | S: “Experts do not speak of a sage in terms of | T: The Buddha: ⏎ Not on account of his views, ⏎ learning, ⏎ or knowledge ⏎ do the skilled here, Nanda, ⏎ call one a sage.
+snp5.8:2.2 | P: Munīdha nanda kusalā vadanti; | S: view, learning, or knowledge. | T: (none)
+snp5.8:2.3 | P: Visenikatvā anīghā nirāsā, | S: Those who are sages live far from the crowd, I say, | T: Those who live ⏎ disarmed,
+snp5.8:2.4 | P: Caranti ye te munayoti brūmi”. | S: untroubled, with no need for hope.” | T: undesiring, ⏎ untroubled: ⏎ Those, I say, are called sages.
+CONTEXT snp5.8:3.2 | P: (iccāyasmā nando) | S: said Venerable Nanda, | T: (none)
+
+## snp5.8:3.1–snp5.8:3.8 (snp)
+snp5.8:3.1 | P: “Ye kecime samaṇabrāhmaṇāse, | S: “As to those ascetics and brahmins,” | T: Nanda: ⏎ Whatever brahmans & contemplatives
+CONTEXT snp5.8:3.2 | P: (iccāyasmā nando) | S: said Venerable Nanda, | T: (none)
+snp5.8:3.3 | P: Diṭṭhassutenāpi vadanti suddhiṁ; | S: “who speak of purity in terms of what is seen or heard, | T: describe purity ⏎ in terms of views & learning,
+snp5.8:3.4 | P: Sīlabbatenāpi vadanti suddhiṁ, | S: or in terms of precepts and vows, | T: describe purity ⏎ in terms of habits & practices,
+snp5.8:3.5 | P: Anekarūpena vadanti suddhiṁ. | S: or in terms of countless different things. | T: describe purity ⏎ in terms of manifold ways:
+snp5.8:3.6 | P: Kaccissu te bhagavā tattha yatā carantā, | S: Living self-controlled in that matter, | T: Have they, dear sir, living there in that way,
+snp5.8:3.7 | P: Atāru jātiñca jarañca mārisa; | S: have they crossed over rebirth and old age, good fellow? | T: crossed over birth & aging?
+snp5.8:3.8 | P: Pucchāmi taṁ bhagavā brūhi me taṁ”. | S: I ask you, Blessed One; please tell me this.” | T: I ask you, Blessed One. ⏎ Please tell me.
+CONTEXT snp5.8:4.2 | P: (nandāti bhagavā) | S: replied the Buddha, | T: (none)
+
+## snp5.8:4.1–snp5.8:4.7 (snp)
+snp5.8:4.1 | P: “Ye kecime samaṇabrāhmaṇāse, | S: “As to those ascetics and brahmins,” | T: The Buddha: ⏎ Whatever brahmans & contemplatives
+CONTEXT snp5.8:4.2 | P: (nandāti bhagavā) | S: replied the Buddha, | T: (none)
+snp5.8:4.3 | P: Diṭṭhassutenāpi vadanti suddhiṁ; | S: “who speak of purity in terms of what is seen or heard, | T: describe purity ⏎ in terms of views & learning,
+snp5.8:4.4 | P: Sīlabbatenāpi vadanti suddhiṁ, | S: or in terms of precepts and vows, | T: describe purity ⏎ in terms of habits & practices,
+snp5.8:4.5 | P: Anekarūpena vadanti suddhiṁ; | S: or in terms of countless different things. | T: describe purity ⏎ in terms of manifold ways:
+snp5.8:4.6 | P: Kiñcāpi te tattha yatā caranti, | S: Even though they live self-controlled in that matter, | T: None of them, living there in that way,
+snp5.8:4.7 | P: Nātariṁsu jātijaranti brūmi”. | S: they’ve not crossed over rebirth and old age, I declare.” | T: I tell you, have crossed over birth & aging.
+CONTEXT snp5.8:5.2 | P: (iccāyasmā nando) | S: said Venerable Nanda, | T: (none)
+
+## snp5.8:5.1–snp5.8:5.9 (snp)
+snp5.8:5.1 | P: “Ye kecime samaṇabrāhmaṇāse, | S: “As to those ascetics and brahmins,” | T: Nanda: ⏎ Whatever brahmans & contemplatives
+CONTEXT snp5.8:5.2 | P: (iccāyasmā nando) | S: said Venerable Nanda, | T: (none)
+snp5.8:5.3 | P: Diṭṭhassutenāpi vadanti suddhiṁ; | S: “who speak of purity in terms of what is seen or heard, | T: describe purity ⏎ in terms of views & learning,
+snp5.8:5.4 | P: Sīlabbatenāpi vadanti suddhiṁ, | S: or in terms of precepts and vows, | T: describe purity ⏎ in terms of habits & practices,
+snp5.8:5.5 | P: Anekarūpena vadanti suddhiṁ. | S: or in terms of countless different things. | T: describe purity ⏎ in terms of manifold ways:
+snp5.8:5.6 | P: Te ce muni brūsi anoghatiṇṇe, | S: You say they have not crossed the flood, sage. | T: If, sage, as you say, ⏎ they’ve not crossed over the flood,
+snp5.8:5.7 | P: Atha ko carahi devamanussaloke; | S: So who then in the world of gods and humans | T: then who in the world ⏎ of beings divine & human,
+snp5.8:5.8 | P: Atāri jātiñca jarañca mārisa, | S: has crossed over rebirth and old age, good fellow? | T: dear sir, ⏎ has crossed over birth & aging?
+snp5.8:5.9 | P: Pucchāmi taṁ bhagavā brūhi me taṁ”. | S: I ask you, Blessed One; please tell me this.” | T: I ask you, Blessed One. ⏎ Please tell me.
+CONTEXT snp5.8:6.2 | P: (nandāti bhagavā) | S: replied the Buddha, | T: (none)
+
+## snp5.8:6.1–snp5.8:6.8 (snp)
+snp5.8:6.1 | P: “Nāhaṁ sabbe samaṇabrāhmaṇāse, | S: “I don’t say that all ascetics and brahmins,” | T: The Buddha: ⏎ I don’t say that all brahmans & contemplatives
+CONTEXT snp5.8:6.2 | P: (nandāti bhagavā) | S: replied the Buddha, | T: (none)
+snp5.8:6.3 | P: Jātijarāya nivutāti brūmi; | S: “are shrouded by rebirth and old age. | T: are shrouded in birth & aging.
+snp5.8:6.4 | P: Ye sīdha diṭṭhaṁ va sutaṁ mutaṁ vā, | S: There are those here who have given up all | T: Those here who’ve abandoned
+snp5.8:6.5 | P: Sīlabbataṁ vāpi pahāya sabbaṁ. | S: that is seen, heard, and thought, and precepts and vows, | T: what’s seen, heard, & sensed, ⏎ habits & practices ⏎ —all—
+snp5.8:6.6 | P: Anekarūpampi pahāya sabbaṁ, | S: who have given up all the countless different things. | T: who’ve abandoned their manifold ways ⏎ —again, all—
+snp5.8:6.7 | P: Taṇhaṁ pariññāya anāsavāse; | S: Fully understanding craving, they are free of defilements, | T: who, comprehending craving, ⏎ are effluent-free:
+snp5.8:6.8 | P: Te ve narā oghatiṇṇāti brūmi”. | S: those people, I say, have crossed the flood.” | T: They are the ones, I tell you, ⏎ who’ve crossed over the flood.
+
+## snp5.8:7.1–snp5.8:7.7 (snp)
+snp5.8:7.1 | P: “Etābhinandāmi vaco mahesino, | S: “I rejoice in the words of the great seer! | T: Nanda: ⏎ I relish, Gotama, the Great Seer’s words
+snp5.8:7.2 | P: Sukittitaṁ gotamanūpadhīkaṁ; | S: You have expounded non-attachment well, Gotama. | T: well-expounded, without acquisition.
+snp5.8:7.3 | P: Ye sīdha diṭṭhaṁ va sutaṁ mutaṁ vā, | S: There are those here who have given up all | T: Those here who’ve abandoned
+snp5.8:7.4 | P: Sīlabbataṁ vāpi pahāya sabbaṁ. | S: that is seen, heard, and thought, and precepts and vows, | T: what’s seen, heard, & sensed, ⏎ habits & practices ⏎ —all—
+snp5.8:7.5 | P: Anekarūpampi pahāya sabbaṁ, | S: who have given up all the countless different things. | T: who’ve abandoned their manifold ways ⏎ —again, all—
+snp5.8:7.6 | P: Taṇhaṁ pariññāya anāsavāse; | S: Fully understanding craving, they are free of defilements, | T: who, comprehending craving, ⏎ are effluent-free:
+snp5.8:7.7 | P: Ahampi te oghatiṇṇāti brūmī”ti. | S: those people, I agree, have crossed the flood.” | T: I, too, say they’ve crossed over the flood.
+CONTEXT snp5.8:7.8 | P: Nandamāṇavapucchā sattamā. | S: (none) | T: (none)
+
+## snp5.9:1.1–snp5.9:1.7 (snp)
+CONTEXT snp5.9:0.1 | P: Sutta Nipāta 5.9 | S: Anthology of Discourses 5.9 | T: (none)
+CONTEXT snp5.9:0.2 | P: Hemakamāṇavapucchā | S: The Questions of Hemaka | T: 5:8 Hemaka’s Question
+snp5.9:1.1 | P: “Ye me pubbe viyākaṁsu, | S: “Those who have previously answered me,” | T: In the past,
+CONTEXT snp5.9:1.2 | P: (iccāyasmā hemako) | S: said Venerable Hemaka, | T: (none)
+snp5.9:1.3 | P: Huraṁ gotamasāsanā; | S: “before Gotama’s teaching, | T: before hearing Gotama’s message,
+snp5.9:1.4 | P: Iccāsi iti bhavissati, | S: said ‘thus it was’ or ‘so it shall be’. | T: when anyone explained ‘It is,’ ‘It will be,’
+snp5.9:1.5 | P: Sabbaṁ taṁ itihītihaṁ; | S: All that was just the testament of hearsay; | T: all that was hearsay, ⏎ quotation marks.
+snp5.9:1.6 | P: Sabbaṁ taṁ takkavaḍḍhanaṁ, | S: all that just fostered speculation: | T: All that promoted conjecture
+snp5.9:1.7 | P: Nāhaṁ tattha abhiramiṁ. | S: I found no delight in that. | T: and gave me no pleasure.
+
+## snp5.9:2.1–snp5.9:2.4 (snp)
+snp5.9:2.1 | P: Tvañca me dhammamakkhāhi, | S: But you, sage, explain to me | T: Now, sage, teach me
+snp5.9:2.2 | P: taṇhānigghātanaṁ muni; | S: the teaching that destroys craving. | T: the Dhamma ⏎ demolishing craving,
+snp5.9:2.3 | P: Yaṁ viditvā sato caraṁ, | S: Having understood it, one who lives mindfully | T: knowing which, living mindfully,
+snp5.9:2.4 | P: tare loke visattikaṁ”. | S: may cross over clinging in the world.” | T: one would cross over beyond ⏎ entanglement in the world.
+
+## snp5.9:3.1–snp5.9:3.4 (snp)
+snp5.9:3.1 | P: “Idha diṭṭhasutamutaviññātesu, | S: “The removal of desire and lust, Hemaka, | T: The Buddha: ⏎ Here, Hemaka,
+snp5.9:3.2 | P: Piyarūpesu hemaka; | S: for pleasant things | T: with regard to things dear
+snp5.9:3.3 | P: Chandarāgavinodanaṁ, | S: seen, heard, thought, or cognized here | T: —seen, heard, sensed, & cognized— ⏎ there is: ⏎ the dispelling of passion & desire,
+snp5.9:3.4 | P: Nibbānapadamaccutaṁ. | S: is extinguishment, the state that does not pass. | T: the unfallen, undying state of unbinding.
+
+## snp5.9:4.1–snp5.9:4.4 (snp)
+snp5.9:4.1 | P: Etadaññāya ye satā, | S: Those who have fully understood this, mindful, | T: Those knowing this, mindful,
+snp5.9:4.2 | P: Diṭṭhadhammābhinibbutā; | S: are quenched in this very life. | T: fully unbound ⏎ in the here-&-now,
+snp5.9:4.3 | P: Upasantā ca te sadā, | S: Always at peace, | T: are always calmed,
+snp5.9:4.4 | P: Tiṇṇā loke visattikan”ti. | S: they’ve crossed over clinging to the world.” | T: have crossed over beyond ⏎ entanglement in the world.
+CONTEXT snp5.9:4.5 | P: Hemakamāṇavapucchā aṭṭhamā. | S: (none) | T: (none)
+
+## snp5.10:1.1–snp5.10:1.5 (snp)
+CONTEXT snp5.10:0.1 | P: Sutta Nipāta 5.10 | S: Anthology of Discourses 5.10 | T: (none)
+CONTEXT snp5.10:0.2 | P: Todeyyamāṇavapucchā | S: The Questions of Todeyya | T: 5:9 Todeyya’s Questions
+snp5.10:1.1 | P: “Yasmiṁ kāmā na vasanti, | S: “In whom sensual pleasures do not dwell,” | T: One in whom ⏎ no sensualities dwell;
+CONTEXT snp5.10:1.2 | P: (iccāyasmā todeyyo) | S: said Venerable Todeyya, | T: (none)
+snp5.10:1.3 | P: Taṇhā yassa na vijjati; | S: “and for whom there is no craving, | T: in whom ⏎ no craving is found;
+snp5.10:1.4 | P: Kathaṅkathā ca yo tiṇṇo, | S: and who has crossed over indecision— | T: who has crossed over perplexity—
+snp5.10:1.5 | P: Vimokkho tassa kīdiso”. | S: of what kind is their liberation?” | T: his emancipation: ⏎ What is it like?
+CONTEXT snp5.10:2.2 | P: (todeyyāti bhagavā) | S: replied the Buddha, | T: (none)
+
+## snp5.10:2.1–snp5.10:2.5 (snp)
+snp5.10:2.1 | P: “Yasmiṁ kāmā na vasanti, | S: “In whom sensual pleasures do not dwell,” | T: The Buddha: ⏎ One in whom ⏎ no sensualities dwell;
+CONTEXT snp5.10:2.2 | P: (todeyyāti bhagavā) | S: replied the Buddha, | T: (none)
+snp5.10:2.3 | P: Taṇhā yassa na vijjati; | S: “and for whom there is no craving, | T: in whom ⏎ no craving is found;
+snp5.10:2.4 | P: Kathaṅkathā ca yo tiṇṇo, | S: and who has crossed over indecision— | T: who has crossed over perplexity—
+snp5.10:2.5 | P: Vimokkho tassa nāparo”. | S: there is no liberation that is further.” | T: his emancipation ⏎ is not other than that.
+
+## snp5.10:3.1–snp5.10:3.4 (snp)
+snp5.10:3.1 | P: “Nirāsaso so uda āsasāno, | S: “Are they free of hope, or are they still in need of hope? | T: Todeyya: ⏎ Is he without desire, ⏎ or desiring?
+snp5.10:3.2 | P: Paññāṇavā so uda paññakappī; | S: Do they possess wisdom, or are they still forming wisdom? | T: Discerning or ⏎ still acquiring discernment?
+snp5.10:3.3 | P: Muniṁ ahaṁ sakka yathā vijaññaṁ, | S: O Sakyan, elucidate the sage to me, | T: Describe the sage to me, Sakyan,
+snp5.10:3.4 | P: Taṁ me viyācikkha samantacakkhu”. | S: so that I may understand, All-seer.” | T: All-around Eye, ⏎ so that I may recognize ⏎ what he is like.
+
+## snp5.10:4.1–snp5.10:4.4 (snp)
+snp5.10:4.1 | P: “Nirāsaso so na ca āsasāno, | S: “They are free of hope, they are not in need of hope. | T: The Buddha: ⏎ He’s without desire, ⏎ not desiring;
+snp5.10:4.2 | P: Paññāṇavā so na ca paññakappī; | S: They possess wisdom, they are not still forming wisdom. | T: discerning, ⏎ not still acquiring discernment.
+snp5.10:4.3 | P: Evampi todeyya muniṁ vijāna, | S: That, Todeyya, is how to understand a sage, | T: Recognize the sage, Todeyya,
+snp5.10:4.4 | P: Akiñcanaṁ kāmabhave asattan”ti. | S: one who has nothing, unattached to sensual life.” | T: as having nothing, ⏎ unentangled ⏎ in sensuality ⏎ & becoming.
+CONTEXT snp5.10:4.5 | P: Todeyyamāṇavapucchā navamā. | S: (none) | T: (none)
+
+## snp5.11:1.1–snp5.11:1.7 (snp) GATHERED; paragraph has speaker/context rows
+CONTEXT snp5.11:0.1 | P: Sutta Nipāta 5.11 | S: Anthology of Discourses 5.11 | T: (none)
+CONTEXT snp5.11:0.2 | P: Kappamāṇavapucchā | S: The Questions of Kappa | T: 5:10 Kappa’s Question
+snp5.11:1.1 | P: “Majjhe sarasmiṁ tiṭṭhataṁ, | S: “For those overwhelmed by old age and death,” | T: For one stranded in the middle of the lake, ⏎ in the flood of great danger—birth— ⏎ overwhelmed with aging & death:
+CONTEXT snp5.11:1.2 | P: (iccāyasmā kappo) | S: said Venerable Kappa, | T: (none)
+snp5.11:1.3 | P: Oghe jāte mahabbhaye; | S: “stuck mid-stream | T: (none)
+snp5.11:1.4 | P: Jarāmaccuparetānaṁ, | S: as the terrifying flood arises, | T: (none)
+snp5.11:1.5 | P: Dīpaṁ pabrūhi mārisa; | S: tell me an island, good fellow. | T: Tell me the island, dear sir,
+snp5.11:1.6 | P: Tvañca me dīpamakkhāhi, | S: Explain to me an island | T: and show me the island
+snp5.11:1.7 | P: Yathāyidaṁ nāparaṁ siyā”. | S: so this may occur no further.” | T: so that this may not happen again.
+CONTEXT snp5.11:2.2 | P: (kappāti bhagavā) | S: replied the Buddha, | T: (none)
+
+## snp5.11:2.1–snp5.11:2.5 (snp)
+snp5.11:2.1 | P: “Majjhe sarasmiṁ tiṭṭhataṁ, | S: “For those overwhelmed by old age and death,” | T: The Buddha: ⏎ For one stranded in the middle of the lake,
+CONTEXT snp5.11:2.2 | P: (kappāti bhagavā) | S: replied the Buddha, | T: (none)
+snp5.11:2.3 | P: Oghe jāte mahabbhaye; | S: “stuck mid-stream | T: in the flood of great danger—birth—
+snp5.11:2.4 | P: Jarāmaccuparetānaṁ, | S: as the terrifying flood arises, | T: overwhelmed with aging & death,
+snp5.11:2.5 | P: Dīpaṁ pabrūmi kappa te. | S: I shall tell you an island, Kappa. | T: Kappa, I will tell you the island.
+
+## snp5.11:3.1–snp5.11:3.4 (snp)
+snp5.11:3.1 | P: Akiñcanaṁ anādānaṁ, | S: Having nothing, taking nothing: | T: Having nothing, free ⏎ of clinging:
+snp5.11:3.2 | P: etaṁ dīpaṁ anāparaṁ; | S: this is the island with nothing further. | T: That is the island, ⏎ there is no other.
+snp5.11:3.3 | P: Nibbānaṁ iti naṁ brūmi, | S: I call it extinguishment, | T: That’s unbinding, I tell you,
+snp5.11:3.4 | P: jarāmaccuparikkhayaṁ. | S: the ending of old age and death. | T: the total ending of aging & death.

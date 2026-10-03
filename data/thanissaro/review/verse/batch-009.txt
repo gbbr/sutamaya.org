@@ -1,0 +1,420 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## sn3.10:6.1–sn3.10:6.4 (sn)
+CONTEXT sn3.10:5.5 | P: Paṭhamo vaggo. | S: (none) | T: (none)
+CONTEXT sn3.10:6.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn3.10:6.1 | P: Daharo puriso jarā, | S: (none) | T: (none)
+sn3.10:6.2 | P: piyaṁ attānarakkhito; | S: (none) | T: (none)
+sn3.10:6.3 | P: Appakā aḍḍakaraṇaṁ, | S: (none) | T: (none)
+sn3.10:6.4 | P: mallikā yaññabandhananti. | S: (none) | T: (none)
+
+## sn3.11:9.1–sn3.11:9.4 (sn) GATHERED; unequal counts require a reader
+CONTEXT sn3.11:7.3 | P: Idāni te, bhante, taṁ rajojallaṁ pavāhetvā sunhātā suvilittā kappitakesamassū odātavatthā pañcahi kāmaguṇehi samappitā samaṅgībhūtā paricāressantī”ti. | S: Now—when they have rinsed off the dust and dirt, and are nicely bathed and anointed, with hair and beard dressed, and dressed in white—they will amuse themselves, supplied and provided with the five kinds of sensual stimulation.” | T: Now, when they have scrubbed off the dirt & mud, are well-bathed & well-perfumed, have trimmed their hair and beards, and have put on white clothes, they will go about endowed and provided with the five strings of sensuality.”
+CONTEXT sn3.11:8.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imā gāthāyo abhāsi: | S: Then, understanding this matter, on that occasion the Buddha recited these verses: | T: Then, on realizing the significance of that, the Blessed One on that occasion recited these verses:
+sn3.11:9.1 | P: “Na vaṇṇarūpena naro sujāno, | S: “It’s not easy to know a man by his appearance. | T: Not by appearance ⏎ is a man rightly known,
+sn3.11:9.2 | P: Na vissase ittaradassanena; | S: You shouldn’t trust them at first sight. | T: nor should trust be based ⏎ on a quick glance,
+sn3.11:9.3 | P: Susaññatānañhi viyañjanena, | S: For undisciplined men live in this world | T: —for, disguised as well-restrained, ⏎ the unrestrained go through this world.
+sn3.11:9.4 | P: Asaññatā lokamimaṁ caranti. | S: disguised as the disciplined. | T: (none)
+
+## sn3.11:10.1–sn3.11:10.4 (sn)
+sn3.11:10.1 | P: Patirūpako mattikākuṇḍalova, | S: Like a fake earring made of clay, | T: A counterfeit earring made of clay,
+sn3.11:10.2 | P: Lohaḍḍhamāsova suvaṇṇachanno; | S: like a copper halfpenny covered with gold, | T: a bronze half-dollar coated in gold:
+sn3.11:10.3 | P: Caranti loke parivārachannā, | S: they live hidden in the world, | T: They go about in this world ⏎ hidden all around—
+sn3.11:10.4 | P: Anto asuddhā bahi sobhamānā”ti. | S: corrupt inside but beautiful outside.” | T: impure inside, ⏎ beautiful out.
+
+## sn3.13:3.1–sn3.13:3.4 (sn)
+CONTEXT sn3.13:1.3 | P: Atha kho rājā pasenadi kosalo bhuttāvī mahassāsī yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ abhivādetvā ekamantaṁ nisīdi. | S: Then after eating King Pasenadi of Kosala went up to the Buddha, huffing and puffing. He bowed and sat down to one side. | T: Then, having just finished his meal and breathing heavily, he went to the Blessed One and, on arrival, having bowed down to him, sat to one side.
+CONTEXT sn3.13:2.1 | P: Atha kho bhagavā rājānaṁ pasenadiṁ kosalaṁ bhuttāviṁ mahassāsiṁ viditvā tāyaṁ velāyaṁ imaṁ gāthaṁ abhāsi: | S: Then, knowing that King Pasenadi was huffing and puffing after eating, on that occasion the Buddha spoke this verse: | T: Then the Blessed One, sensing that King Pasenadi of Kosala had just finished his meal and was breathing heavily, recited this verse:
+sn3.13:3.1 | P: “Manujassa sadā satīmato, | S: “When a man is always mindful, | T: For a person always mindful,
+sn3.13:3.2 | P: Mattaṁ jānato laddhabhojane; | S: knowing moderation in eating, | T: knowing moderation in the food he’s obtained,
+sn3.13:3.3 | P: Tanukassa bhavanti vedanā, | S: his discomfort fades, | T: his pains grow slender;
+sn3.13:3.4 | P: Saṇikaṁ jīrati āyupālayan”ti. | S: and he ages slowly, taking care of his life.” | T: gradually he ages, guarding his life.
+CONTEXT sn3.13:4.1 | P: Tena kho pana samayena sudassano māṇavo rañño pasenadissa kosalassa piṭṭhito ṭhito hoti. | S: Now at that time the student Sudassana was standing behind the king. | T: Now, on that occasion the young brahman Sudassana was standing behind King Pasenadi of Kosala.
+CONTEXT sn3.13:4.2 | P: Atha kho rājā pasenadi kosalo sudassanaṁ māṇavaṁ āmantesi: | S: Then King Pasenadi addressed him, | T: So the king addressed him,
+
+## sn3.13:5.1–sn3.13:5.4 (sn)
+CONTEXT sn3.13:4.4 | P: Ahañca te devasikaṁ kahāpaṇasataṁ kahāpaṇasataṁ niccaṁ bhikkhaṁ pavattayissāmī”ti. | S: I’ll set up a regular daily allowance of a hundred dollars for you.” | T: and I will bestow on you a daily stipend of one hundred kahapaṇa.”
+CONTEXT sn3.13:4.5 | P: “Evaṁ, devā”ti kho sudassano māṇavo rañño pasenadissa kosalassa paṭissutvā bhagavato santike imaṁ gāthaṁ pariyāpuṇitvā rañño pasenadissa kosalassa bhattābhihāre sudaṁ bhāsati: | S: “Yes, Your Majesty,” replied Sudassana. He memorized that verse in the Buddha’s presence, and then whenever the king was served a meal he would repeat it: | T: Saying, “As you say, your majesty,” the young brahman Sudassana and learning the verse in the Blessed One’s presence, he recited it during the time when King Pasenadi was taking his meal:
+sn3.13:5.1 | P: “Manujassa sadā satīmato, | S: “When a man is always mindful, | T: For a person always mindful,
+sn3.13:5.2 | P: Mattaṁ jānato laddhabhojane; | S: knowing moderation in eating, | T: knowing moderation in the food he’s obtained,
+sn3.13:5.3 | P: Tanukassa bhavanti vedanā, | S: his discomfort fades, | T: his pains grow slender;
+sn3.13:5.4 | P: Saṇikaṁ jīrati āyupālayan”ti. | S: and he ages slowly, taking care of his life.” | T: gradually he ages, guarding his life.
+CONTEXT sn3.13:6.1 | P: Atha kho rājā pasenadi kosalo anupubbena nāḷikodanaparamatāya saṇṭhāsi. | S: Then the king gradually got used to having at most a cup of rice. | T: Then King Pasenadi of Kosala step-by-step restrained himself to at most a quart-measure of rice.
+CONTEXT sn3.13:6.2 | P: Atha kho rājā pasenadi kosalo aparena samayena susallikhitagatto pāṇinā gattāni anumajjanto tāyaṁ velāyaṁ imaṁ udānaṁ udānesi: | S: After some time King Pasenadi’s body slimmed right down. Stroking his limbs with his hands, at that time he expressed this heartfelt sentiment: | T: At a later time, when he had become quite slim, he stroked his limbs with his hand and exclaimed,
+
+## sn3.14:5.1–sn3.14:5.4 (sn)
+CONTEXT sn3.14:4.3 | P: Ajjeva, bhikkhave, rājā pasenadi kosalo imaṁ rattiṁ dukkhaṁ seti parājito”ti. | S: Yet on this day King Pasenadi will have a bad night’s sleep as one defeated.” | T: Yet for now, King Pasenadi will lie down tonight in pain, defeated.”
+CONTEXT sn3.14:4.4 | P: Idamavoca …pe… | S: That is what the Buddha said. … | T: That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further:
+sn3.14:5.1 | P: “Jayaṁ veraṁ pasavati, | S: “Victory breeds enmity; | T: “Winning gives birth to hostility.
+sn3.14:5.2 | P: dukkhaṁ seti parājito; | S: the defeated sleep badly. | T: Losing, one lies down in pain.
+sn3.14:5.3 | P: Upasanto sukhaṁ seti, | S: The peaceful sleep at ease, | T: The calmed lie down with ease,
+sn3.14:5.4 | P: hitvā jayaparājayan”ti. | S: having left victory and defeat behind.” | T: having set ⏎ winning & losing ⏎ aside.”
+
+## sn3.15:7.1–sn3.15:7.4 (sn)
+CONTEXT sn3.15:5.1 | P: “Atha kho, bhante, rājā pasenadi kosalo rañño māgadhassa ajātasattuno vedehiputtassa sabbaṁ hatthikāyaṁ pariyādiyitvā sabbaṁ assakāyaṁ pariyādiyitvā sabbaṁ rathakāyaṁ pariyādiyitvā sabbaṁ pattikāyaṁ pariyādiyitvā jīvantameva naṁ osajjī”ti. | S: (none) | T: (none)
+CONTEXT sn3.15:6.1 | P: Atha kho bhagavā etamatthaṁ viditvā tāyaṁ velāyaṁ imā gāthāyo abhāsi: | S: Then, understanding this matter, on that occasion the Buddha recited these verses: | T: Then, on realizing the significance of that, the Blessed One on that occasion exclaimed:
+sn3.15:7.1 | P: “Vilumpateva puriso, | S: “A man goes on plundering | T: “A man may plunder
+sn3.15:7.2 | P: yāvassa upakappati; | S: as long as it serves his ends. | T: as long as it serves his ends,
+sn3.15:7.3 | P: Yadā caññe vilumpanti, | S: But as soon as others plunder him, | T: but when others are plundered,
+sn3.15:7.4 | P: so vilutto viluppati. | S: the plunderer is plundered. | T: he who has plundered ⏎ gets plundered in turn.
+
+## sn3.15:8.1–sn3.15:8.4 (sn)
+sn3.15:8.1 | P: Ṭhānañhi maññati bālo, | S: For the fool thinks they’re on solid ground, | T: A fool thinks, ⏎ ‘Now’s my chance,’
+sn3.15:8.2 | P: yāva pāpaṁ na paccati; | S: so long as their wickedness has not ripened. | T: as long as his evil ⏎ has yet to ripen.
+sn3.15:8.3 | P: Yadā ca paccati pāpaṁ, | S: But as soon as that wickedness ripens, | T: But when it ripens,
+sn3.15:8.4 | P: atha dukkhaṁ nigacchati. | S: they fall into suffering. | T: the fool ⏎ falls ⏎ into pain.
+
+## sn3.15:9.1–sn3.15:9.6 (sn)
+sn3.15:9.1 | P: Hantā labhati hantāraṁ, | S: A killer creates a killer; | T: Killing, you gain ⏎ your killer.
+sn3.15:9.2 | P: jetāraṁ labhate jayaṁ; | S: a conqueror creates a conqueror; | T: Conquering, you gain one ⏎ who will conquer you;
+sn3.15:9.3 | P: Akkosako ca akkosaṁ, | S: an abuser creates abuse, | T: insulting, insult;
+sn3.15:9.4 | P: rosetārañca rosako; | S: and a bully creates a bully. | T: harassing, harassment.
+sn3.15:9.5 | P: Atha kammavivaṭṭena, | S: And so as deeds unfold | T: And so, through the cycle of action,
+sn3.15:9.6 | P: so vilutto viluppatī”ti. | S: the plunderer is plundered.” | T: he who has plundered ⏎ gets plundered in turn.”
+
+## sn3.17:5.1–sn3.17:5.4 (sn) GATHERED; unequal counts require a reader
+CONTEXT sn3.17:4.5 | P: diṭṭhadhammikañceva atthaṁ samparāyikañcā”ti. | S: this life and lives to come.” | T: benefits in this life & benefits in lives to come.”
+CONTEXT sn3.17:4.6 | P: Idamavoca …pe… | S: That is what the Buddha said. … | T: That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further:
+sn3.17:5.1 | P: “Āyuṁ arogiyaṁ vaṇṇaṁ, | S: “For one who desires high delights | T: “For one who desires
+sn3.17:5.2 | P: saggaṁ uccākulīnataṁ; | S: again and again— | T: (none)
+sn3.17:5.3 | P: Ratiyo patthayantena, | S: long life, beauty, and health, | T: long life, health, ⏎ beauty,
+sn3.17:5.4 | P: uḷārā aparāparā. | S: heaven, and an eminent family— | T: heaven, & noble birth, ⏎ —lavish delights, one after another—
+
+## sn3.17:6.1–sn3.17:6.4 (sn)
+sn3.17:6.1 | P: Appamādaṁ pasaṁsanti, | S: the astute praise diligence | T: the wise praise heedfulness
+sn3.17:6.2 | P: puññakiriyāsu paṇḍitā; | S: in making merit. | T: in doing acts of merit.
+sn3.17:6.3 | P: Appamatto ubho atthe, | S: Being diligent, an astute person | T: When heedful, wise,
+sn3.17:6.4 | P: adhiggaṇhāti paṇḍito. | S: secures both benefits: | T: you achieve both kinds of benefit:
+
+## sn3.17:7.1–sn3.17:7.4 (sn)
+sn3.17:7.1 | P: Diṭṭhe dhamme ca yo attho, | S: the benefit in this life, | T: benefits in this life,
+sn3.17:7.2 | P: yo cattho samparāyiko; | S: and in lives to come. | T: & benefits in lives to come.
+sn3.17:7.3 | P: Atthābhisamayā dhīro, | S: An attentive one, comprehending the meaning, | T: By breaking through to your benefit, ⏎ you’re called enlightened,
+sn3.17:7.4 | P: paṇḍitoti pavuccatī”ti. | S: is said to be astute.” | T: wise.
+
+## sn3.19:7.1–sn3.19:7.4 (sn)
+CONTEXT sn3.19:6.5 | P: Tassa te bhoge evaṁ sammā paribhuñjiyamāne neva rājāno haranti, na corā haranti, na aggi ḍahati, na udakaṁ vahati, na appiyā dāyādā haranti. | S: (none) | T: (none)
+CONTEXT sn3.19:6.6 | P: Evaṁsa te, mahārāja, bhogā sammā paribhuñjiyamānā paribhogaṁ gacchanti, no parikkhayan”ti. | S: it’s used, not wasted. | T: his wealth, properly put to use, goes to a good use and not to waste.”
+sn3.19:7.1 | P: “Amanussaṭṭhāne udakaṁva sītaṁ, | S: As cool water in an uninhabited region | T: That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further: ⏎ “Like water ⏎ in a haunted place
+sn3.19:7.2 | P: Tadapeyyamānaṁ parisosameti; | S: evaporates when not drunk; | T: that, without being imbibed, ⏎ dries up:
+sn3.19:7.3 | P: Evaṁ dhanaṁ kāpuriso labhitvā, | S: so too when a reprobate acquires wealth, | T: Such is the wealth ⏎ acquired by a worthless man
+sn3.19:7.4 | P: Nevattanā bhuñjati no dadāti. | S: they neither use it themselves nor give it away. | T: who neither enjoys it himself ⏎ nor gives.
+
+## sn3.19:8.1–sn3.19:8.4 (sn)
+sn3.19:8.1 | P: Dhīro ca viññū adhigamma bhoge, | S: When the attentive and sensible acquire wealth, | T: But one enlightened & knowing, ⏎ on acquiring wealth,
+sn3.19:8.2 | P: So bhuñjati kiccakaro ca hoti; | S: they use it, being dutiful. | T: enjoys it & performs his duties.
+sn3.19:8.3 | P: So ñātisaṅghaṁ nisabho bharitvā, | S: That boss, having supported the family unit, | T: He, a bull among men, ⏎ having supported his kin
+sn3.19:8.4 | P: Anindito saggamupeti ṭhānan”ti. | S: blameless, goes to a heavenly place.” | T: without blame, ⏎ without blame ⏎ goes to the land of heaven.”
+
+## sn3.20:5.1–sn3.20:5.4 (sn)
+CONTEXT sn3.20:4.10 | P: “Evaṁ, mahārāja, seṭṭhi gahapati mahāroruvaṁ nirayaṁ upapanno”ti. | S: “Yes he has, Great King.” | T: “Yes, great king. He has reappeared in the Great Roruva hell.”
+CONTEXT sn3.20:4.11 | P: Idamavoca …pe…. | S: That is what the Buddha said. … | T: That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further:
+sn3.20:5.1 | P: “Dhaññaṁ dhanaṁ rajataṁ jātarūpaṁ, | S: “Grain, money, silver, and gold, | T: “Grain, wealth, silver, gold,
+sn3.20:5.2 | P: Pariggahaṁ vāpi yadatthi kiñci; | S: or whatever other possessions there are; | T: or whatever other belongings you have;
+sn3.20:5.3 | P: Dāsā kammakarā pessā, | S: bondservants, workers, servants, | T: slaves, servants, errand-runners,
+sn3.20:5.4 | P: Ye cassa anujīvino. | S: and those dependent for their livelihood: | T: & any dependents:
+
+## sn3.20:6.1–sn3.20:6.4 (sn)
+sn3.20:6.1 | P: Sabbaṁ nādāya gantabbaṁ, | S: you must go on without taking these; | T: You must go without taking ⏎ any of them;
+sn3.20:6.2 | P: sabbaṁ nikkhippagāminaṁ; | S: all of them are left behind. | T: you must leave ⏎ all of them ⏎ behind.
+sn3.20:6.3 | P: Yañca karoti kāyena, | S: But the deeds you do | T: What you do
+sn3.20:6.4 | P: vācāya uda cetasā. | S: by body, speech, and mind— | T: with body, speech, or mind:
+
+## sn3.20:7.1–sn3.20:7.4 (sn)
+sn3.20:7.1 | P: Tañhi tassa sakaṁ hoti, | S: that’s what you can call your own. | T: that is yours;
+sn3.20:7.2 | P: taṁva ādāya gacchati; | S: That’s what you take when you go. | T: taking ⏎ that you go;
+sn3.20:7.3 | P: Taṁvassa anugaṁ hoti, | S: That’s what goes with you, | T: that’s ⏎ your follower,
+sn3.20:7.4 | P: chāyāva anapāyinī. | S: like a shadow that never leaves. | T: like a shadow ⏎ that never leaves.
+
+## sn3.20:8.1–sn3.20:8.4 (sn)
+sn3.20:8.1 | P: Tasmā kareyya kalyāṇaṁ, | S: That’s why you should do good, | T: Thus you should do what is fine
+sn3.20:8.2 | P: nicayaṁ samparāyikaṁ; | S: investing in the future life. | T: as a stash for the next life.
+sn3.20:8.3 | P: Puññāni paralokasmiṁ, | S: The good deeds of sentient beings | T: Acts of merit
+sn3.20:8.4 | P: patiṭṭhā honti pāṇinan”ti. | S: support them in the next world.” | T: are the support for beings ⏎ in their after-death world.”
+CONTEXT sn3.20:8.5 | P: Dutiyo vaggo. | S: (none) | T: (none)
+CONTEXT sn3.20:9.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+
+## sn3.20:9.1–sn3.20:9.6 (sn)
+CONTEXT sn3.20:8.5 | P: Dutiyo vaggo. | S: (none) | T: (none)
+CONTEXT sn3.20:9.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn3.20:9.1 | P: Jaṭilā pañca rājāno, | S: (none) | T: (none)
+sn3.20:9.2 | P: Doṇapākakurena ca; | S: (none) | T: (none)
+sn3.20:9.3 | P: Saṅgāmena dve vuttāni, | S: (none) | T: (none)
+sn3.20:9.4 | P: Mallikā dve appamādena ca; | S: (none) | T: (none)
+sn3.20:9.5 | P: Aputtakena dve vuttā, | S: (none) | T: (none)
+sn3.20:9.6 | P: Vaggo tena pavuccatīti. | S: (none) | T: (none)
+
+## sn3.21:10.1–sn3.21:10.4 (sn)
+CONTEXT sn3.21:9.4 | P: Ime kho, mahārāja, cattāro puggalā santo saṁvijjamānā lokasmin”ti. | S: These are the four individuals found in the world.” | T: “These, great king, are the four types of people to be found existing in the world.”
+CONTEXT sn3.21:9.5 | P: Idamavoca …pe… | S: That is what the Buddha said. … | T: That is what the Blessed One said. Having said that, the One Well-gone, the Teacher, said further:
+sn3.21:10.1 | P: “Daliddo puriso rāja, | S: “O King, some people are poor, | T: “A poor person, O king,
+sn3.21:10.2 | P: assaddho hoti maccharī; | S: faithless and stingy. | T: without conviction, stingy,
+sn3.21:10.3 | P: Kadariyo pāpasaṅkappo, | S: Miserly, with bad intentions, | T: mean, ⏎ with ⏎ evil resolves,
+sn3.21:10.4 | P: micchādiṭṭhi anādaro. | S: they lack regard, they have wrong view. | T: wrong views, ⏎ disrespectful,
+
+## sn3.21:11.1–sn3.21:11.4 (sn) GATHERED; unequal counts require a reader
+sn3.21:11.1 | P: Samaṇe brāhmaṇe vāpi, | S: They abuse and insult | T: who abuses & reviles
+sn3.21:11.2 | P: aññe vāpi vanibbake; | S: ascetics and brahmins | T: contemplatives, ⏎ brahmans, ⏎ & other mendicants,
+sn3.21:11.3 | P: Akkosati paribhāsati, | S: and other supplicants. | T: (none)
+sn3.21:11.4 | P: natthiko hoti rosako. | S: They’re nihilists and bullies, | T: a nihilist, a cynic,
+
+## sn3.21:12.1–sn3.21:12.6 (sn) GATHERED; possible speaker requires a reader
+sn3.21:12.1 | P: Dadamānaṁ nivāreti, | S: who prevent others from giving | T: who hinders those giving food ⏎ to those begging:
+sn3.21:12.2 | P: yācamānāna bhojanaṁ; | S: food to beggars. | T: (none)
+sn3.21:12.3 | P: Tādiso puriso rāja, | S: O King, ruler of the people: | T: Such a person, when dying, O king, ⏎ goes, O lord of people,
+sn3.21:12.4 | P: mīyamāno janādhipa; | S: when such people die | T: (none)
+sn3.21:12.5 | P: Upeti nirayaṁ ghoraṁ, | S: they fall into the terrible hell— | T: to a terrible hell:
+sn3.21:12.6 | P: tamotamaparāyano. | S: from darkness they’re bound for darkness. | T: From darkness headed to darkness.
+
+## sn3.21:13.1–sn3.21:13.4 (sn)
+sn3.21:13.1 | P: Daliddo puriso rāja, | S: O King, some people are poor, | T: A poor person, O king,
+sn3.21:13.2 | P: saddho hoti amaccharī; | S: but faithful and not stingy. | T: of conviction, not stingy,
+sn3.21:13.3 | P: Dadāti seṭṭhasaṅkappo, | S: They give with best of intentions, | T: gives—with the best resolves,
+sn3.21:13.4 | P: abyaggamanaso naro. | S: that peaceful-hearted person. | T: a man of unscattered heart—to
+
+## sn3.21:14.1–sn3.21:14.4 (sn)
+sn3.21:14.1 | P: Samaṇe brāhmaṇe vāpi, | S: They rise for and bow to | T: contemplatives, ⏎ brahmans,
+sn3.21:14.2 | P: aññe vāpi vanibbake; | S: ascetics and brahmins | T: & other mendicants,
+sn3.21:14.3 | P: Uṭṭhāya abhivādeti, | S: and other supplicants. | T: Standing up, he bows down
+sn3.21:14.4 | P: samacariyāya sikkhati. | S: Training in moral conduct, | T: and trains in polite conduct.
+
+## sn3.21:15.1–sn3.21:15.6 (sn) GATHERED; possible speaker requires a reader
+sn3.21:15.1 | P: Dadamānaṁ na vāreti, | S: they don’t prevent others from giving | T: He doesn’t thwart those giving food ⏎ to those begging:
+sn3.21:15.2 | P: yācamānāna bhojanaṁ; | S: food to beggars. | T: (none)
+sn3.21:15.3 | P: Tādiso puriso rāja, | S: O King, ruler of the people: | T: Such a person, when dying, O king, ⏎ goes, O lord of people,
+sn3.21:15.4 | P: mīyamāno janādhipa; | S: when such people die | T: (none)
+sn3.21:15.5 | P: Upeti tidivaṁ ṭhānaṁ, | S: they go to the Third Heaven— | T: to the triple heaven:
+sn3.21:15.6 | P: tamojotiparāyano. | S: from darkness they’re bound for light. | T: From darkness headed to light.
+
+## sn3.21:16.1–sn3.21:16.4 (sn)
+sn3.21:16.1 | P: Aḍḍho ce puriso rāja, | S: O King, some people are rich, | T: A rich person, O king,
+sn3.21:16.2 | P: assaddho hoti maccharī; | S: but faithless and stingy. | T: without conviction, stingy,
+sn3.21:16.3 | P: Kadariyo pāpasaṅkappo, | S: Miserly, with bad intentions, | T: mean, ⏎ with ⏎ evil resolves,
+sn3.21:16.4 | P: micchādiṭṭhi anādaro. | S: they lack regard, they have wrong view. | T: wrong views, ⏎ disrespectful,
+
+## sn3.21:17.1–sn3.21:17.4 (sn) GATHERED; unequal counts require a reader
+sn3.21:17.1 | P: Samaṇe brāhmaṇe vāpi, | S: They abuse and insult | T: who abuses & reviles
+sn3.21:17.2 | P: aññe vāpi vanibbake; | S: ascetics and brahmins | T: contemplatives, ⏎ brahmans, ⏎ & other mendicants,
+sn3.21:17.3 | P: Akkosati paribhāsati, | S: and other supplicants | T: (none)
+sn3.21:17.4 | P: natthiko hoti rosako. | S: They’re nihilists and bullies, | T: a nihilist, a cynic,
+
+## sn3.21:18.1–sn3.21:18.6 (sn) GATHERED; possible speaker requires a reader
+sn3.21:18.1 | P: Dadamānaṁ nivāreti, | S: who prevent others from giving | T: who hinders those giving food ⏎ to those begging:
+sn3.21:18.2 | P: yācamānāna bhojanaṁ; | S: food to beggars. | T: (none)
+sn3.21:18.3 | P: Tādiso puriso rāja, | S: O King, ruler of the people: | T: Such a person, when dying, O king, ⏎ goes, O lord of people,
+sn3.21:18.4 | P: mīyamāno janādhipa; | S: when such people die | T: (none)
+sn3.21:18.5 | P: Upeti nirayaṁ ghoraṁ, | S: they fall into the terrible hell— | T: to a terrible hell:
+sn3.21:18.6 | P: jotitamaparāyano. | S: from light they’re bound for darkness. | T: From light headed to darkness.
+
+## sn3.21:19.1–sn3.21:19.4 (sn)
+sn3.21:19.1 | P: Aḍḍho ce puriso rāja, | S: O King, some people are rich, | T: A rich person, O king,
+sn3.21:19.2 | P: saddho hoti amaccharī; | S: faithful and not stingy. | T: of conviction, not stingy,
+sn3.21:19.3 | P: Dadāti seṭṭhasaṅkappo, | S: They give with best of intentions, | T: gives—with the best resolves,
+sn3.21:19.4 | P: abyaggamanaso naro. | S: that peaceful-hearted person. | T: a man of unscattered heart—to
+
+## sn3.21:20.1–sn3.21:20.4 (sn)
+sn3.21:20.1 | P: Samaṇe brāhmaṇe vāpi, | S: They rise for and bow to | T: contemplatives, ⏎ brahmans,
+sn3.21:20.2 | P: aññe vāpi vanibbake; | S: ascetics and brahmins | T: & other mendicants,
+sn3.21:20.3 | P: Uṭṭhāya abhivādeti, | S: and other supplicants. | T: Standing up, he bows down
+sn3.21:20.4 | P: samacariyāya sikkhati. | S: Training in moral conduct, | T: and trains in polite conduct.
+
+## sn3.21:21.1–sn3.21:21.6 (sn) GATHERED; possible speaker requires a reader
+sn3.21:21.1 | P: Dadamānaṁ na vāreti, | S: they don’t prevent others from giving | T: He doesn’t thwart those giving food ⏎ to those begging:
+sn3.21:21.2 | P: yācamānāna bhojanaṁ; | S: food to beggars. | T: (none)
+sn3.21:21.3 | P: Tādiso puriso rāja, | S: O King, ruler of the people: | T: Such a person, when dying, O king, ⏎ goes, O lord of people,
+sn3.21:21.4 | P: mīyamāno janādhipa; | S: when such people die | T: (none)
+sn3.21:21.5 | P: Upeti tidivaṁ ṭhānaṁ, | S: they go to the Third Heaven— | T: to the triple heaven:
+sn3.21:21.6 | P: jotijotiparāyano”ti. | S: from light they’re bound for light.” | T: From light headed to light.”
+
+## sn3.22:4.1–sn3.22:4.6 (sn)
+CONTEXT sn3.22:3.4 | P: evameva kho, mahārāja, sabbe sattā maraṇadhammā maraṇapariyosānā maraṇaṁ anatītā”ti. | S: In the same way, all sentient beings are liable to die. Death is their end; they’re not exempt from death.” | T: in the same way all beings are subject to death, have death as their end, have not gone beyond death.”
+CONTEXT sn3.22:3.5 | P: Idamavoca …pe… | S: That is what the Buddha said. … | T: That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further:
+sn3.22:4.1 | P: “Sabbe sattā marissanti, | S: “All beings will die, | T: “All beings will die,
+sn3.22:4.2 | P: maraṇantañhi jīvitaṁ; | S: for life ends in death. | T: for life ends in death.
+sn3.22:4.3 | P: Yathākammaṁ gamissanti, | S: They pass on according to their deeds, | T: They will go in line with their actions,
+sn3.22:4.4 | P: puññapāpaphalūpagā; | S: reaping the fruits of good and bad. | T: reaping the fruits ⏎ of their merit & evil:
+sn3.22:4.5 | P: Nirayaṁ pāpakammantā, | S: Those who do bad go to hell, | T: hell for those who did evil,
+sn3.22:4.6 | P: puññakammā ca suggatiṁ. | S: and if you do good you go to heaven. | T: a good destination ⏎ for those who made merit.
+
+## sn3.22:5.1–sn3.22:5.4 (sn)
+sn3.22:5.1 | P: Tasmā kareyya kalyāṇaṁ, | S: That’s why you should do good, | T: So do what is admirable,
+sn3.22:5.2 | P: nicayaṁ samparāyikaṁ; | S: investing in the future life. | T: as an accumulation ⏎ for the future life.
+sn3.22:5.3 | P: Puññāni paralokasmiṁ, | S: The good deeds of sentient beings | T: Deeds of merit are the support for beings
+sn3.22:5.4 | P: patiṭṭhā honti pāṇinan”ti. | S: support them in the next world.” | T: when they arise ⏎ in the other world.”
+
+## sn3.23:2.1–sn3.23:2.4 (sn)
+CONTEXT sn3.23:1.9 | P: Ime kho, mahārāja, tayo lokassa dhammā uppajjamānā uppajjanti ahitāya dukkhāya aphāsuvihārāyā”ti. | S: These three things arise in the world for its harm, suffering, and discomfort.” | T: These are the three qualities of the world, great king, that when arising, arise for harm, stress, & discomfort.”
+CONTEXT sn3.23:1.10 | P: Idamavoca …pe… | S: That is what the Buddha said. … | T: That is what the Blessed One said. Having said that, the One Well-Gone, the Teacher, said further:
+sn3.23:2.1 | P: “Lobho doso ca moho ca, | S: “When greed, hate, and delusion, | T: “Greed, aversion, & delusion
+sn3.23:2.2 | P: purisaṁ pāpacetasaṁ; | S: originate inside oneself, | T: —born from oneself—
+sn3.23:2.3 | P: Hiṁsanti attasambhūtā, | S: they harm a person of wicked heart, | T: destroy ⏎ the person of evil awareness,
+sn3.23:2.4 | P: tacasāraṁva samphalan”ti. | S: as a bamboo is destroyed by its own fruit.” | T: as its own fruit, the reed.”
+
+## sn3.24:4.1–sn3.24:4.4 (sn) GATHERED; unequal counts require a reader
+CONTEXT sn3.24:3.9 | P: Idamavoca bhagavā …pe… | S: That is what the Buddha said. | T: That is what the Blessed One said.
+CONTEXT sn3.24:3.10 | P: satthā: | S: Then the Holy One, the Teacher, went on to say: | T: Having said that, the One Well-Gone, the Teacher, said further:
+sn3.24:4.1 | P: “Issattaṁ balavīriyañca, | S: “Any youth skilled at archery, | T: “As a king intent on battle ⏎ would hire a youth ⏎ in whom there are ⏎ archery skills, ⏎ persistence, ⏎ & strength,
+sn3.24:4.2 | P: yasmiṁ vijjetha māṇave; | S: powerful and vigorous, | T: (none)
+sn3.24:4.3 | P: Taṁ yuddhattho bhare rājā, | S: would be employed by a king going to war— | T: (none)
+sn3.24:4.4 | P: nāsūraṁ jātipaccayā. | S: one is not a coward by reason of birth. | T: and not, on the basis of birth, ⏎ a coward;
+
+## sn3.24:5.1–sn3.24:5.4 (sn) GATHERED; unequal counts require a reader
+sn3.24:5.1 | P: Tatheva khantisoraccaṁ, | S: Just so, whoever is settled | T: so, too, you should honor
+sn3.24:5.2 | P: dhammā yasmiṁ patiṭṭhitā; | S: in the qualities of patience and gentleness, | T: (none)
+sn3.24:5.3 | P: Ariyavuttiṁ medhāviṁ, | S: an intelligent person with noble conduct, | T: a person of noble conduct, wise, ⏎ in whom are established ⏎ composure ⏎ & patience,
+sn3.24:5.4 | P: hīnajaccampi pūjaye. | S: should be venerated even if they’re low born. | T: even though ⏎ his birth may be lowly.
+
+## sn3.24:6.1–sn3.24:6.4 (sn)
+sn3.24:6.1 | P: Kāraye assame ramme, | S: You should build lovely hermitages | T: Let donors build ⏎ pleasant hermitages
+sn3.24:6.2 | P: vāsayettha bahussute; | S: and settle learned people in them. | T: and there invite the learned to stay.
+sn3.24:6.3 | P: Papañca vivane kayirā, | S: You should set up water supplies in barren regions | T: Let them make reservoirs ⏎ in dry forests
+sn3.24:6.4 | P: dugge saṅkamanāni ca. | S: and passages in places hard to travel. | T: and walking paths ⏎ where it’s rough.
+
+## sn3.24:7.1–sn3.24:7.4 (sn) GATHERED; unequal counts require a reader
+sn3.24:7.1 | P: Annaṁ pānaṁ khādanīyaṁ, | S: Food, drink, edibles, | T: Let them, with a clear, calm awareness, ⏎ give food, drink, snacks,
+sn3.24:7.2 | P: vatthasenāsanāni ca; | S: clothes, and lodgings | T: clothing, & lodgings
+sn3.24:7.3 | P: Dadeyya ujubhūtesu, | S: should be given to the upright ones, | T: to those who’ve become ⏎ straightforward.
+sn3.24:7.4 | P: vippasannena cetasā. | S: with a clear and confident heart. | T: (none)
+
+## sn3.24:8.1–sn3.24:8.4 (sn) GATHERED; unequal counts require a reader
+sn3.24:8.1 | P: Yathā hi megho thanayaṁ, | S: The thundering rain cloud, | T: Just as a hundred-billowed, ⏎ lightning-garlanded, ⏎ thundering cloud,
+sn3.24:8.2 | P: vijjumālī satakkaku; | S: its hundred peaks wreathed in lightning, | T: (none)
+sn3.24:8.3 | P: Thalaṁ ninnañca pūreti, | S: pours down over the rich earth, | T: raining down on the wealth-bearing [earth],
+sn3.24:8.4 | P: abhivassaṁ vasundharaṁ. | S: soaking the uplands and valleys. | T: fills the highlands & low,
+
+## sn3.24:9.1–sn3.24:9.4 (sn) GATHERED; unequal counts require a reader
+sn3.24:9.1 | P: Tatheva saddho sutavā, | S: So too an astute person, | T: even so ⏎ a person of conviction & learning, ⏎ wise,
+sn3.24:9.2 | P: abhisaṅkhacca bhojanaṁ; | S: faithful and learned, | T: (none)
+sn3.24:9.3 | P: Vanibbake tappayati, | S: should prepare a meal to satisfy | T: having stored up provisions, ⏎ satisfies wayfarers
+sn3.24:9.4 | P: annapānena paṇḍito. | S: supplicants with food and drink. | T: with food & drink.
+
+## sn3.24:10.1–sn3.24:10.6 (sn)
+sn3.24:10.1 | P: Āmodamāno pakireti, | S: Rejoicing, they strew gifts about, | T: Delighting in distributing alms,
+sn3.24:10.2 | P: detha dethāti bhāsati; | S: saying, ‘Give! Give!’ | T: ‘Give to them! ⏎ Give!’ ⏎ he says.
+sn3.24:10.3 | P: Taṁ hissa gajjitaṁ hoti, | S: For that is their thunder, | T: That ⏎ is his thunder,
+sn3.24:10.4 | P: devasseva pavassato; | S: like rain sent from the heavens. | T: like a raining cloud’s.
+sn3.24:10.5 | P: Sā puññadhārā vipulā, | S: That stream of merit so abundant | T: That shower of merit, ⏎ abundant,
+sn3.24:10.6 | P: dātāraṁ abhivassatī”ti. | S: showers down on the giver.” | T: rains back on the one ⏎ who gives.”
+
+## sn3.25:6.1–sn3.25:6.4 (sn)
+CONTEXT sn3.25:5.3 | P: Idamavoca bhagavā …pe… | S: That is what the Buddha said. | T: That is what the Blessed One said.
+CONTEXT sn3.25:5.4 | P: satthā: | S: Then the Holy One, the Teacher, went on to say: | T: Having said that, the One Well-Gone, the Teacher, further said this:
+sn3.25:6.1 | P: “Yathāpi selā vipulā, | S: “Suppose there were vast mountains | T: “Like massive boulders,
+sn3.25:6.2 | P: nabhaṁ āhacca pabbatā; | S: of solid rock pressing against the sky | T: mountains pressing against the sky,
+sn3.25:6.3 | P: Samantānupariyāyeyyuṁ, | S: drawing in from all sides | T: moving in from all sides,
+sn3.25:6.4 | P: nippothento catuddisā. | S: and crushing the four quarters. | T: crushing the four directions,
+
+## sn3.25:7.1–sn3.25:7.6 (sn)
+sn3.25:7.1 | P: Evaṁ jarā ca maccu ca, | S: So too old age and death | T: so aging & death
+sn3.25:7.2 | P: adhivattanti pāṇine; | S: advance upon all living creatures— | T: come rolling over living beings:
+sn3.25:7.3 | P: Khattiye brāhmaṇe vesse, | S: aristocrats, brahmins, peasants, | T: noble warriors, brahmans, merchants,
+sn3.25:7.4 | P: sudde caṇḍālapukkuse; | S: menials, corpse-workers, and scavengers. | T: workers, outcastes, & scavengers.
+sn3.25:7.5 | P: Na kiñci parivajjeti, | S: They spare nothing. | T: They spare nothing.
+sn3.25:7.6 | P: sabbamevābhimaddati. | S: They crush all beneath them. | T: They trample everything.
+
+## sn3.25:8.1–sn3.25:8.4 (sn)
+sn3.25:8.1 | P: Na tattha hatthīnaṁ bhūmi, | S: There’s nowhere for elephants to take a stand, | T: Here elephant troops can hold no ground,
+sn3.25:8.2 | P: na rathānaṁ na pattiyā; | S: nor chariots nor infantry. | T: nor can chariots or infantry,
+sn3.25:8.3 | P: Na cāpi mantayuddhena, | S: They can’t be defeated | T: nor can a battle of wits
+sn3.25:8.4 | P: sakkā jetuṁ dhanena vā. | S: by diplomatic battles or by wealth. | T: or wealth win out.
+
+## sn3.25:9.1–sn3.25:9.4 (sn)
+sn3.25:9.1 | P: Tasmā hi paṇḍito poso, | S: That’s why an astute person, | T: So a wise person,
+sn3.25:9.2 | P: sampassaṁ atthamattano; | S: seeing what’s good for themselves, | T: seeing his own good,
+sn3.25:9.3 | P: Buddhe dhamme ca saṅghe ca, | S: being wise, would place faith | T: steadfast, secures confidence
+sn3.25:9.4 | P: dhīro saddhaṁ nivesaye. | S: in the Buddha, the teaching, and the Saṅgha. | T: in the Buddha, Dhamma, & Saṅgha.
+
+## sn3.25:10.1–sn3.25:10.4 (sn)
+sn3.25:10.1 | P: Yo dhammaṁ cari kāyena, | S: Whoever lives by the teaching | T: One who practices the Dhamma
+sn3.25:10.2 | P: vācāya uda cetasā; | S: in body, speech, and mind, | T: in thought, word, & deed,
+sn3.25:10.3 | P: Idheva naṁ pasaṁsanti, | S: is praised in this life | T: receives praise here on earth
+sn3.25:10.4 | P: pecca sagge pamodatī”ti. | S: and departs to rejoice in heaven.” | T: and after death rejoices in heaven.”
+CONTEXT sn3.25:10.5 | P: Tatiyo vaggo. | S: (none) | T: (none)
+CONTEXT sn3.25:11.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+
+## sn3.25:11.1–sn3.25:11.4 (sn)
+CONTEXT sn3.25:10.5 | P: Tatiyo vaggo. | S: (none) | T: (none)
+CONTEXT sn3.25:11.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn3.25:11.1 | P: Puggalo ayyikā loko, | S: (none) | T: (none)
+sn3.25:11.2 | P: issattaṁ pabbatūpamā; | S: (none) | T: (none)
+sn3.25:11.3 | P: Desitaṁ buddhaseṭṭhena, | S: (none) | T: (none)
+sn3.25:11.4 | P: imaṁ kosalapañcakanti. | S: (none) | T: (none)
+CONTEXT sn3.25:11.5 | P: Kosalasaṁyuttaṁ samattaṁ. | S: The Linked Discourses with the Kosalan are complete. | T: (none)
+
+## sn4.1:3.1–sn4.1:3.4 (sn)
+CONTEXT sn4.1:1.6 | P: Sādhu vatamhi mutto bodhiṁ samajjhagan”ti. | S: Thank goodness I’m freed and have attained awakening.” | T: How good that I’m released, that I have attained awakening!”
+CONTEXT sn4.1:2.1 | P: Atha kho māro pāpimā bhagavato cetasā cetoparivitakkamaññāya yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ gāthāya ajjhabhāsi: | S: And then Māra the Wicked, knowing the Buddha’s train of thought, went up to him and addressed him in verse: | T: Then Māra the Evil One, having known with his awareness the train of thought in the Blessed One's awareness, went to the Blessed One and addressed him in verse:
+sn4.1:3.1 | P: “Tapokammā apakkamma, | S: “You’ve left the practice of mortification | T: “Straying from the ascetic actions
+sn4.1:3.2 | P: yena sujjhanti māṇavā; | S: by which sons of men purify themselves. | T: by which young brahmans are purified,
+sn4.1:3.3 | P: Asuddho maññasi suddho, | S: You’re impure, but think yourself pure; | T: impure, you suppose you’re pure.
+sn4.1:3.4 | P: suddhimaggā aparaddho”ti. | S: you’ve strayed from the path of purity.” | T: You’ve missed the path to purity.”
+CONTEXT sn4.1:4.1 | P: Atha kho bhagavā “māro ayaṁ pāpimā” iti viditvā māraṁ pāpimantaṁ gāthāhi ajjhabhāsi: | S: Then the Buddha, knowing that this was Māra the Wicked, replied to him in verse: | T: Then, having understood that “This is Mara the Evil One,” the Blessed One replied to him in verses:
+
+## sn4.1:5.1–sn4.1:5.4 (sn)
+CONTEXT sn4.1:4.1 | P: Atha kho bhagavā “māro ayaṁ pāpimā” iti viditvā māraṁ pāpimantaṁ gāthāhi ajjhabhāsi: | S: Then the Buddha, knowing that this was Māra the Wicked, replied to him in verse: | T: Then, having understood that “This is Mara the Evil One,” the Blessed One replied to him in verses:
+sn4.1:5.1 | P: “Anatthasaṁhitaṁ ñatvā, | S: “I realized that it’s pointless; | T: “Having known it to be useless,
+sn4.1:5.2 | P: yaṁ kiñci amaraṁ tapaṁ; | S: all that endless mortification | T: any further austerity,
+sn4.1:5.3 | P: Sabbaṁ natthāvahaṁ hoti, | S: is as futile | T: each bringing nothing,
+sn4.1:5.4 | P: phiyārittaṁva dhammani. | S: as oars and rudder on dry land. | T: like oars & rudder on dry land:
+
+## sn4.1:6.1–sn4.1:6.4 (sn)
+sn4.1:6.1 | P: Sīlaṁ samādhi paññañca, | S: Ethics, immersion, and wisdom: | T: Developing virtue, concentration, & discernment,
+sn4.1:6.2 | P: Maggaṁ bodhāya bhāvayaṁ; | S: by developing this path to awakening | T: the path to awakening,
+sn4.1:6.3 | P: Pattosmi paramaṁ suddhiṁ, | S: I attained ultimate purity. | T: I’ve attained the foremost purity.
+sn4.1:6.4 | P: Nihato tvamasi antakā”ti. | S: You’re beaten, terminator!” | T: But you, End-maker, are struck down.”
+CONTEXT sn4.1:7.1 | P: Atha kho māro pāpimā “jānāti maṁ bhagavā, jānāti maṁ sugato”ti, dukkhī dummano tatthevantaradhāyīti. | S: Then Māra the Wicked, thinking, “The Buddha knows me! The Holy One knows me!” miserable and sad, vanished right there. | T: Then Mara the Evil One—sad & dejected at realizing, “The Blessed One knows me, the One Well-Gone knows me”—vanished right there.
+
+## sn4.8:2.1–sn4.8:2.4 (sn)
+CONTEXT sn4.8:1.2 | P: ekaṁ samayaṁ bhagavā sāvatthiyaṁ viharati jetavane anāthapiṇḍikassa ārāme. | S: At one time the Buddha was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery. | T: on one occasion the Blessed One was staying near Sāvatthī in Jeta’s Grove, Anāthapiṇḍika’s monastery.
+CONTEXT sn4.8:1.3 | P: Atha kho māro pāpimā yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavato santike imaṁ gāthaṁ abhāsi: | S: Then Māra the Wicked went up to the Buddha and spoke this verse in the Buddha’s presence: | T: Then Māra the Evil One went to the Blessed One and recited this verse in his presence:
+sn4.8:2.1 | P: “Nandati puttehi puttimā, | S: “Children bring you delight! | T: “Those with children ⏎ delight ⏎ because of their children.
+sn4.8:2.2 | P: Gomā gobhi tatheva nandati; | S: Cattle also bring you delight! | T: Those with cattle ⏎ delight ⏎ because of their cows.
+sn4.8:2.3 | P: Upadhīhi narassa nandanā, | S: For attachments are a man’s delight; | T: A person’s delight ⏎ comes from acquisitions,
+sn4.8:2.4 | P: Na hi so nandati yo nirūpadhī”ti. | S: without attachments there’s no delight.” | T: since a person with no acquisitions ⏎ doesn’t delight.”
+
+## sn4.8:3.1–sn4.8:3.4 (sn)
+sn4.8:3.1 | P: “Socati puttehi puttimā, | S: “Your children bring you sorrow. | T: The Buddha: ⏎ “Those with children ⏎ grieve ⏎ because of their children.
+sn4.8:3.2 | P: Gomā gobhi tatheva socati; | S: Your cattle also bring you sorrow. | T: Those with cattle ⏎ grieve ⏎ because of their cows.
+sn4.8:3.3 | P: Upadhīhi narassa socanā, | S: For attachments are a man’s sorrow; | T: A person’s grief ⏎ comes from acquisitions,
+sn4.8:3.4 | P: Na hi so socati yo nirūpadhī”ti. | S: without attachments there are no sorrows.” | T: since a person with no acquisitions ⏎ doesn’t grieve.”
+CONTEXT sn4.8:4.1 | P: Atha kho māro pāpimā “jānāti maṁ bhagavā, jānāti maṁ sugato”ti dukkhī dummano tatthevantaradhāyīti. | S: Then Māra the Wicked, thinking, “The Buddha knows me! The Holy One knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “The Blessed One knows me; the One Well-Gone knows me”—vanished right there.
+
+## sn4.13:2.1–sn4.13:2.4 (sn)
+CONTEXT sn4.13:1.6 | P: Atha kho bhagavā catugguṇaṁ saṅghāṭiṁ paññapetvā dakkhiṇena passena sīhaseyyaṁ kappesi pāde pādaṁ accādhāya sato sampajāno. | S: And then he spread out his outer robe folded in four and laid down in the lion’s posture—on the right side, placing one foot on top of the other—mindful and aware. | T: Having had his outer robe folded in four and laid out, he lay down on his right side in the lion’s posture—with one foot placed on top of the other—mindful & alert.
+CONTEXT sn4.13:1.7 | P: Atha kho māro pāpimā yena bhagavā tenupasaṅkami; upasaṅkamitvā bhagavantaṁ gāthāya ajjhabhāsi: | S: Then Māra the Wicked went up to the Buddha and addressed him in verse: | T: Then Māra the Evil One went to the Blessed One and recited this verse in his presence:
+sn4.13:2.1 | P: “Mandiyā nu kho sesi udāhu kāveyyamatto, | S: “Are you feeble that you lie down? Or are you drunk on poetry? | T: “Are you lying there in a stupor, ⏎ or drunk on poetry?
+sn4.13:2.2 | P: Atthā nu te sampacurā na santi; | S: Are your goals not amply satisfied? | T: Are your goals so very few?
+sn4.13:2.3 | P: Eko vivitte sayanāsanamhi, | S: Alone in a secluded lodging, | T: All alone in a secluded lodging,
+sn4.13:2.4 | P: Niddāmukho kimidaṁ soppase vā”ti. | S: why this sleeping, sleepyhead?” | T: what is this dreamer, this sleepy-face?”
+
+## sn4.13:3.1–sn4.13:3.4 (sn)
+sn4.13:3.1 | P: “Na mandiyā sayāmi nāpi kāveyyamatto, | S: “I’m not feeble that I lie down, nor am I drunk on poetry. | T: The Buddha: ⏎ “I lie here, ⏎ not in a stupor, ⏎ nor drunk on poetry.
+sn4.13:3.2 | P: Atthaṁ sameccāhamapetasoko; | S: Having reached the goal, I’m rid of sorrow. | T: My goal attained, ⏎ I am sorrow-free.
+sn4.13:3.3 | P: Eko vivitte sayanāsanamhi, | S: Alone in a secluded lodging, | T: All alone in a secluded lodging,
+sn4.13:3.4 | P: Sayāmahaṁ sabbabhūtānukampī. | S: I lie down full of sympathy for all living creatures. | T: I lie down with sympathy ⏎ for all beings.
+
+## sn4.13:4.1–sn4.13:4.4 (sn)
+sn4.13:4.1 | P: Yesampi sallaṁ urasi paviṭṭhaṁ, | S: Even those with a dart stuck in the breast, | T: Even those pierced in the chest ⏎ with an arrow,
+sn4.13:4.2 | P: Muhuṁ muhuṁ hadayaṁ vedhamānaṁ; | S: piercing the heart moment by moment, | T: their hearts rapidly, ⏎ rapidly ⏎ beating:
+sn4.13:4.3 | P: Tepīdha soppaṁ labhare sasallā, | S: are able to get some sleep. | T: even they with their arrows ⏎ are able to sleep.
+sn4.13:4.4 | P: Tasmā ahaṁ na supe vītasallo. | S: So why not I, whose dart is drawn out? | T: So why shouldn’t I, ⏎ with my arrow removed?
+
+## sn4.13:5.1–sn4.13:5.4 (sn)
+sn4.13:5.1 | P: Jaggaṁ na saṅke napi bhemi sottuṁ, | S: I don’t lie awake tense, nor do I fear to sleep. | T: I’m not awake with worry, ⏎ nor afraid to sleep.
+sn4.13:5.2 | P: Rattindivā nānutapanti māmaṁ; | S: The days and nights don’t disturb me, | T: Days & nights ⏎ don’t oppress me.
+sn4.13:5.3 | P: Hāniṁ na passāmi kuhiñci loke, | S: as I see no decline for myself in the world. | T: I see no threat of decline ⏎ in any world at all.
+sn4.13:5.4 | P: Tasmā supe sabbabhūtānukampī”ti. | S: That’s why I lie down full of sympathy for all living creatures.” | T: That’s why I sleep ⏎ with sympathy ⏎ for all beings.”
+CONTEXT sn4.13:6.1 | P: Atha kho māro pāpimā “jānāti maṁ bhagavā, jānāti maṁ sugato”ti dukkhī dummano tatthevantaradhāyīti. | S: Then Māra the Wicked, thinking, “The Buddha knows me! The Holy One knows me!” miserable and sad, vanished right there. | T: Then Māra the Evil One—sad & dejected at realizing, “The Blessed One knows me; the One Well-Gone knows me”—vanished right there.
+
+## sn4.18:3.1–sn4.18:3.4 (sn) GATHERED; possible speaker requires a reader
+CONTEXT sn4.18:2.5 | P: “Tena hi, bhante, bhagavā dutiyampi pañcasālaṁ brāhmaṇagāmaṁ piṇḍāya pavisatu. | S: “Well then, sir, let the Buddha enter Pañcasālā a second time for alms. | T: “In that case, lord, let the Blessed One go into Pañcasālā a second time.
+CONTEXT sn4.18:2.6 | P: Tathāhaṁ karissāmi yathā bhagavā piṇḍaṁ lacchatī”ti. | S: I’ll make sure you get alms.” | T: I’ll arrange that you get alms.”
+sn4.18:3.1 | P: “Apuññaṁ pasavi māro, | S: “Māra has produced wickedness | T: The Buddha: ⏎ “You’ve produced demerit, Evil One,
+sn4.18:3.2 | P: āsajja naṁ tathāgataṁ; | S: in attacking the Realized One. | T: insulting the Tathāgata.
+sn4.18:3.3 | P: Kiṁ nu maññasi pāpima, | S: Wicked One, do you imagine that | T: (none)
+sn4.18:3.4 | P: na me pāpaṁ vipaccati. | S: your wickedness won’t bear fruit? | T: (none)

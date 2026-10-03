@@ -1,0 +1,416 @@
+Pali decides the VERSE, not a word-for-word row mapping.
+T uses ⏎ for the translator’s line breaks. Split only there.
+Keep his order; never gather lines while a verse row is empty.
+AUTO fixes the unique equal-count spread; copy its findings.
+Check AUTO verse identity, but judge other cuts yourself.
+CONTEXT rows are read-only; report only verse keys.
+
+## sn21.6:3.1–sn21.6:3.4 (sn)
+sn21.6:3.1 | P: Evameva manussesu, | S: So it is for humans— | T: In the same way, among human beings,
+sn21.6:3.2 | P: daharo cepi paññavā; | S: if a little person is wise, | T: even if one is small ⏎ but endowed in discernment,
+sn21.6:3.3 | P: So hi tattha mahā hoti, | S: they’re the truly great one, | T: one is great for that—
+sn21.6:3.4 | P: neva bālo sarīravā”ti. | S: not the fool with a good body.” | T: not the fool endowed in physique.
+CONTEXT sn21.6:3.5 | P: Chaṭṭhaṁ. | S: (none) | T: (none)
+
+## sn21.8:2.1–sn21.8:2.4 (sn)
+CONTEXT sn21.8:1.5 | P: Idamavoca bhagavā …pe… | S: That is what the Buddha said. | T: That is what the Blessed One said.
+CONTEXT sn21.8:1.6 | P: satthā: | S: Then the Holy One, the Teacher, went on to say: | T: Having said that, the One Well-gone, the Teacher, said further:
+sn21.8:2.1 | P: “Kadāhaṁ nandaṁ passeyyaṁ, | S: “When will I see Nanda | T: “When will I see Nanda
+sn21.8:2.2 | P: āraññaṁ paṁsukūlikaṁ; | S: in the wilderness, wearing rag robes, | T: a wilderness dweller, wearing cast-off cloth,
+sn21.8:2.3 | P: Aññātuñchena yāpentaṁ, | S: feeding on scraps offered by strangers, | T: getting by on the alms of strangers,
+sn21.8:2.4 | P: kāmesu anapekkhinan”ti. | S: unconcerned for sensual pleasures?” | T: indifferent to sensuality?”
+CONTEXT sn21.8:3.1 | P: Atha kho āyasmā nando aparena samayena āraññiko ca piṇḍapātiko ca paṁsukūliko ca kāmesu ca anapekkho vihāsīti. | S: Then some time later Venerable Nanda stayed in the wilderness, ate only almsfood, wore rag robes, and lived without concern for sensual pleasures. | T: Then, at a later time, Ven. Nanda became a wilderness dweller, one who went for alms, who wore cast-off cloth, and he dwelt indifferent to sensuality.
+CONTEXT sn21.8:3.2 | P: Aṭṭhamaṁ. | S: (none) | T: (none)
+
+## sn21.9:3.1–sn21.9:3.4 (sn)
+CONTEXT sn21.9:2.1 | P: Idamavoca bhagavā. | S: That is what the Buddha said. | T: That is what the Blessed One said.
+CONTEXT sn21.9:2.2 | P: Idaṁ vatvāna sugato athāparaṁ etadavoca satthā: | S: Then the Holy One, the Teacher, went on to say: | T: Having said that, the One Well-Gone, the Teacher, said further:
+sn21.9:3.1 | P: “Kiṁ nu kujjhasi mā kujjhi, | S: “Why are you angry? Don’t be angry! | T: Why are you angry? Don’t be angry.
+sn21.9:3.2 | P: Akkodho tissa te varaṁ; | S: It’s better to not be angry, Tissa. | T: Non-anger, Tissa, is best for you.
+sn21.9:3.3 | P: Kodhamānamakkhavinayatthañhi, | S: For this spiritual life is lived | T: It’s for the sake of subduing
+sn21.9:3.4 | P: Tissa brahmacariyaṁ vussatī”ti. | S: in order to remove anger, conceit, and denigration.” | T: anger, conceit, & contempt, Tissa, ⏎ that the holy life is lived.
+CONTEXT sn21.9:3.5 | P: Navamaṁ. | S: (none) | T: (none)
+
+## sn21.10:5.1–sn21.10:5.4 (sn)
+CONTEXT sn21.10:4.1 | P: Idamavoca bhagavā. | S: That is what the Buddha said. | T: That is what the Blessed One said.
+CONTEXT sn21.10:4.2 | P: Idaṁ vatvāna sugato athāparaṁ etadavoca satthā: | S: Then the Holy One, the Teacher, went on to say: | T: Having said it, the One Well-Gone further said this:
+sn21.10:5.1 | P: “Sabbābhibhuṁ sabbaviduṁ sumedhaṁ, | S: “The vanquisher of all, knower of all, so very intelligent, | T: “All-conquering, ⏎ all-knowing, intelligent;
+sn21.10:5.2 | P: Sabbesu dhammesu anūpalittaṁ; | S: is unsullied in the midst of all things. | T: with regard to all things, ⏎ unadhering;
+sn21.10:5.3 | P: Sabbañjahaṁ taṇhākkhaye vimuttaṁ, | S: He’s given up all, freed in the ending of craving: | T: all-abandoning, ⏎ released in the ending of craving:
+sn21.10:5.4 | P: Tamahaṁ naraṁ ekavihārīti brūmī”ti. | S: I declare that man to be one who lives alone.” | T: Him I call ⏎ a man who lives ⏎ alone.”
+CONTEXT sn21.10:5.5 | P: Dasamaṁ. | S: (none) | T: (none)
+
+## sn22.3:2.1–sn22.3:2.4 (sn)
+CONTEXT sn22.3:1.3 | P: Atha kho hāliddikāni gahapati yenāyasmā mahākaccāno tenupasaṅkami; upasaṅkamitvā āyasmantaṁ mahākaccānaṁ abhivādetvā ekamantaṁ nisīdi. Ekamantaṁ nisinno kho hāliddikāni gahapati āyasmantaṁ mahākaccānaṁ etadavoca: | S: Then the householder Hāliddikāni went up to Venerable Mahākaccāna, bowed, sat down to one side, and said to him, | T: Then Haliddikāni the householder went to him and, on arrival, having bowed down to him, sat to one side. As he was sitting there he said to Ven. Mahā Kaccāna:
+CONTEXT sn22.3:1.4 | P: “vuttamidaṁ, bhante, bhagavatā aṭṭhakavaggiye māgaṇḍiyapañhe: | S: “Sir, this was said by the Buddha in the Chapter of the Eights, in ‘The Questions of Māgandiya’: | T: “Venerable sir, this was said by the Blessed One in Māgaṇḍiya’s Questions in the Aṭṭhaka Vagga:
+sn22.3:2.1 | P: ‘Okaṁ pahāya aniketasārī, | S: ‘After leaving their bastion to migrate without abode, | T: ‘Having abandoned home, ⏎ living free from society,
+sn22.3:2.2 | P: Gāme akubbaṁ muni santhavāni; | S: a sage doesn’t get close to anyone in town. | T: the sage ⏎ in villages ⏎ creates no intimacies.
+sn22.3:2.3 | P: Kāmehi ritto apurakkharāno, | S: Rid of sensual pleasures, not expecting, | T: Rid of sensuality, not ⏎ preferring,
+sn22.3:2.4 | P: Kathaṁ na viggayha janena kayirā’ti. | S: they wouldn’t get in arguments with people.’ | T: he wouldn’t engage with people ⏎ in quarrelsome debate.’
+CONTEXT sn22.3:3.1 | P: Imassa nu kho, bhante, bhagavatā saṅkhittena bhāsitassa kathaṁ vitthārena attho daṭṭhabbo”ti? | S: How should we see the detailed meaning of the Buddha’s brief statement?” | T: “How is the detailed meaning of this, the Blessed One’s brief statement, to be understood?”
+CONTEXT sn22.3:4.1 | P: “Rūpadhātu kho, gahapati, viññāṇassa oko. | S: “Householder, the form element is a bastion for consciousness. | T: [Ven. Mahā Kaccāna:] “The property of form, householder, is the home of consciousness.
+
+## sn22.3:17.1–sn22.3:17.4 (sn)
+CONTEXT sn22.3:15.4 | P: Evaṁ kho, gahapati, kathaṁ na viggayha janena kattā hoti. | S: That’s how one doesn’t argue with people. | T: This is how one does not engage with people in quarrelsome debate.
+CONTEXT sn22.3:16.1 | P: Iti kho, gahapati, yaṁ taṁ vuttaṁ bhagavatā aṭṭhakavaggiye māgaṇḍiyapañhe: | S: So, householder, that’s how to understand the detailed meaning of what the Buddha said in brief in the Chapter of the Eights, in ‘The Questions of Māgandiya’: | T: “So, householder, what was said by the Blessed One in Māgaṇḍiya’s Questions in the Aṭṭhaka Vagga:
+sn22.3:17.1 | P: ‘Okaṁ pahāya aniketasārī, | S: ‘After leaving their bastion to migrate without abode, | T: ‘Having abandoned home, ⏎ living free from society,
+sn22.3:17.2 | P: Gāme akubbaṁ munisanthavāni; | S: a sage doesn’t get close to anyone in town. | T: the sage ⏎ in villages ⏎ creates no intimacies.
+sn22.3:17.3 | P: Kāmehi ritto apurakkharāno, | S: Rid of sensual pleasures, not expecting, | T: Rid of sensuality, not ⏎ preferring,
+sn22.3:17.4 | P: Kathaṁ na viggayha janena kayirā’ti. | S: they wouldn’t get in arguments with people.’” | T: he wouldn’t engage with people ⏎ in quarrelsome debate.’
+CONTEXT sn22.3:18.1 | P: Imassa kho, gahapati, bhagavatā saṅkhittena bhāsitassa evaṁ vitthārena attho daṭṭhabbo”ti. | S: (none) | T: “This is how the detailed meaning of this, the Blessed One’s brief statement, is to be understood.”
+CONTEXT sn22.3:18.2 | P: Tatiyaṁ. | S: (none) | T: (none)
+
+## sn22.22:6.1–sn22.22:6.4 (sn)
+CONTEXT sn22.22:5.1 | P: Idamavoca bhagavā. | S: That is what the Buddha said. | T: That is what the Blessed One said.
+CONTEXT sn22.22:5.2 | P: Idaṁ vatvāna sugato athāparaṁ etadavoca satthā: | S: Then the Holy One, the Teacher, went on to say: | T: Having said that, the One Well-Gone, the Teacher, said further:
+sn22.22:6.1 | P: “Bhārā have pañcakkhandhā, | S: “The five aggregates are indeed burdens, | T: A burden indeed ⏎ are the five aggregates,
+sn22.22:6.2 | P: bhārahāro ca puggalo; | S: and the individual is the bearer of the burden. | T: and the carrier of the burden ⏎ is the person.
+sn22.22:6.3 | P: Bhārādānaṁ dukhaṁ loke, | S: Taking up the burden is suffering in the world, | T: Taking up the burden in the world ⏎ is stressful.
+sn22.22:6.4 | P: bhāranikkhepanaṁ sukhaṁ. | S: and putting the burden down is happiness. | T: Casting off the burden ⏎ is bliss.
+
+## sn22.22:7.1–sn22.22:7.4 (sn)
+sn22.22:7.1 | P: Nikkhipitvā garuṁ bhāraṁ, | S: When the heavy burden is put down | T: Having cast off the heavy burden
+sn22.22:7.2 | P: aññaṁ bhāraṁ anādiya; | S: without taking up another, | T: and not taking on another,
+sn22.22:7.3 | P: Samūlaṁ taṇhamabbuyha, | S: one who has plucked out craving, root and all, | T: pulling up craving, ⏎ along with its root,
+sn22.22:7.4 | P: nicchāto parinibbuto”ti. | S: is hungerless, quenched.” | T: one is free from hunger, ⏎ totally unbound.
+CONTEXT sn22.22:7.5 | P: Paṭhamaṁ. | S: (none) | T: (none)
+
+## sn22.42:2.1–sn22.42:2.4 (sn)
+CONTEXT sn22.42:1.5 | P: Natumhākavaggo catuttho. | S: (none) | T: (none)
+CONTEXT sn22.42:2.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn22.42:2.1 | P: Natumhākena dve vuttā, | S: (none) | T: (none)
+sn22.42:2.2 | P: bhikkhūhi apare duve; | S: (none) | T: (none)
+sn22.42:2.3 | P: Ānandena ca dve vuttā, | S: (none) | T: (none)
+sn22.42:2.4 | P: anudhammehi dve dukāti. | S: (none) | T: (none)
+
+## sn22.76:4.1–sn22.76:4.4 (sn)
+CONTEXT sn22.76:3.1 | P: Idamavoca bhagavā. | S: That is what the Buddha said. | T: That is what the Blessed One said.
+CONTEXT sn22.76:3.2 | P: Idaṁ vatvāna sugato athāparaṁ etadavoca satthā: | S: Then the Holy One, the Teacher, went on to say: | T: Having said that, the One Well-Gone, the Teacher, said further:
+sn22.76:4.1 | P: “Sukhino vata arahanto, | S: “Oh! How happy are the perfected ones! | T: “How happy are the arahants!
+sn22.76:4.2 | P: taṇhā tesaṁ na vijjati; | S: Craving is not found in them, | T: Craving isn’t found in them.
+sn22.76:4.3 | P: Asmimāno samucchinno, | S: the conceit ‘I am’ is cut off, | T: Cut off is the conceit, ‘I am’;
+sn22.76:4.4 | P: mohajālaṁ padālitaṁ. | S: and the net of delusion is shattered. | T: burst, the net of delusion.
+
+## sn22.76:5.1–sn22.76:5.4 (sn)
+sn22.76:5.1 | P: Anejaṁ te anuppattā, | S: They’ve attained imperturbability, | T: Having reached imperturbability,
+sn22.76:5.2 | P: cittaṁ tesaṁ anāvilaṁ; | S: their minds are unclouded, | T: their minds are clear & disturbance-free.
+sn22.76:5.3 | P: Loke anupalittā te, | S: nothing in the world clings to them, | T: Unsullied in the world,
+sn22.76:5.4 | P: brahmabhūtā anāsavā. | S: manifesting divinity, undefiled. | T: Brahmā–become, effluent-free,
+
+## sn22.76:6.1–sn22.76:6.4 (sn)
+sn22.76:6.1 | P: Pañcakkhandhe pariññāya, | S: Completely understanding the five aggregates, | T: comprehending the five aggregates,
+sn22.76:6.2 | P: satta saddhammagocarā; | S: their domain is the seven good qualities. | T: ranging in seven true dhammas,
+sn22.76:6.3 | P: Pasaṁsiyā sappurisā, | S: Those true persons are praiseworthy, | T: praiseworthy men of integrity:
+sn22.76:6.4 | P: puttā buddhassa orasā. | S: the Buddha’s bosom sons. | T: They are the Buddha’s children, his sons.
+
+## sn22.76:7.1–sn22.76:7.4 (sn)
+sn22.76:7.1 | P: Sattaratanasampannā, | S: Endowed with the seven gems, | T: Consummate in the seven treasures,
+sn22.76:7.2 | P: Tīsu sikkhāsu sikkhitā; | S: and trained in the three trainings, | T: trained in the threefold training,
+sn22.76:7.3 | P: Anuvicaranti mahāvīrā, | S: the great heroes live on, | T: these great heroes go wandering
+sn22.76:7.4 | P: Pahīnabhayabheravā. | S: with fear and dread given up. | T: having left fear & terror behind.
+
+## sn22.76:8.1–sn22.76:8.4 (sn)
+sn22.76:8.1 | P: Dasahaṅgehi sampannā, | S: Endowed with ten factors, | T: Consummate in ten factors,
+sn22.76:8.2 | P: mahānāgā samāhitā; | S: those giants are immersed in samādhi. | T: great nāgas, concentrated,
+sn22.76:8.3 | P: Ete kho seṭṭhā lokasmiṁ, | S: They are the best in the world, | T: they are the best in the world:
+sn22.76:8.4 | P: taṇhā tesaṁ na vijjati. | S: craving is not found in them. | T: Craving isn’t found in them.
+
+## sn22.76:9.1–sn22.76:9.4 (sn) GATHERED; possible speaker requires a reader
+sn22.76:9.1 | P: Asekhañāṇamuppannaṁ, | S: The adept’s knowledge has arisen: | T: The adept’s knowledge ⏎ has arisen in them:
+sn22.76:9.2 | P: antimoyaṁ samussayo; | S: ‘This bag of bones is my last.’ | T: ‘This is the last body.’
+sn22.76:9.3 | P: Yo sāro brahmacariyassa, | S: They are independent of others | T: As for the essence of the holy life, ⏎ they don’t depend on others in that.
+sn22.76:9.4 | P: tasmiṁ aparapaccayā. | S: in the core of the spiritual path. | T: (none)
+
+## sn22.76:10.1–sn22.76:10.4 (sn)
+sn22.76:10.1 | P: Vidhāsu na vikampanti, | S: They do not waver due to the discriminations, | T: They don’t waver from conceits.
+sn22.76:10.2 | P: vippamuttā punabbhavā; | S: they’re freed from future lives. | T: They’re released from further-becoming.
+sn22.76:10.3 | P: Dantabhūmimanuppattā, | S: They’ve reached the level of the tamed, | T: Having reached the level of the tamed,
+sn22.76:10.4 | P: te loke vijitāvino. | S: in the world, they’re the winners. | T: they have victory in the world.
+
+## sn22.76:11.1–sn22.76:11.4 (sn)
+sn22.76:11.1 | P: Uddhaṁ tiriyaṁ apācīnaṁ, | S: Above, below, all round, | T: Above, around, & below,
+sn22.76:11.2 | P: nandī tesaṁ na vijjati; | S: relishing is not found in them. | T: delight isn’t found in them.
+sn22.76:11.3 | P: Nadanti te sīhanādaṁ, | S: They roar their lion’s roar: | T: They roar their lion’s roar:
+sn22.76:11.4 | P: buddhā loke anuttarā”ti. | S: ‘The awakened are supreme in the world!’” | T: ‘In the world, the awakened ⏎ are unexcelled!’”
+CONTEXT sn22.76:11.5 | P: Catutthaṁ. | S: (none) | T: (none)
+
+## sn22.78:3.1–sn22.78:3.4 (sn) GATHERED; possible speaker requires a reader
+CONTEXT sn22.78:2.13 | P: Idamavoca bhagavā …pe… | S: That is what the Buddha said. | T: (none)
+CONTEXT sn22.78:2.14 | P: etadavoca satthā: | S: Then the Holy One, the Teacher, went on to say: | T: (none)
+sn22.78:3.1 | P: “Yadā buddho abhiññāya, | S: “The Buddha, the unrivaled Teacher | T: When the Awakened One, through direct knowledge, ⏎ —the Teacher, the person with no peer
+sn22.78:3.2 | P: dhammacakkaṁ pavattayi; | S: in all the world with its gods, | T: in the world with its devas—
+sn22.78:3.3 | P: Sadevakassa lokassa, | S: rolls forth the Wheel of Dhamma | T: sets the Dhamma wheel rolling:
+sn22.78:3.4 | P: satthā appaṭipuggalo. | S: from his own insight: | T: (none)
+
+## sn22.78:4.1–sn22.78:4.4 (sn)
+sn22.78:4.1 | P: Sakkāyañca nirodhañca, | S: substantial reality, its cessation, | T: the cessation of self-identification,
+sn22.78:4.2 | P: sakkāyassa ca sambhavaṁ; | S: the origin of substantial reality, | T: & the cause of self-identification,
+sn22.78:4.3 | P: Ariyañcaṭṭhaṅgikaṁ maggaṁ, | S: and the noble eightfold path | T: & the noble eightfold path,
+sn22.78:4.4 | P: dukkhūpasamagāminaṁ. | S: that leads to the stilling of suffering. | T: leading to the stilling of suffering,
+
+## sn22.78:5.1–sn22.78:5.4 (sn)
+sn22.78:5.1 | P: Yepi dīghāyukā devā, | S: And then the long-lived gods, | T: long-lived devas—
+sn22.78:5.2 | P: vaṇṇavanto yasassino; | S: so beautiful and glorious, | T: beautiful, prestigious—
+sn22.78:5.3 | P: Bhītā santāsamāpāduṁ, | S: are afraid and full of terror, | T: become fearful & frightened,
+sn22.78:5.4 | P: sīhassevitare migā. | S: like the other beasts when they hear a lion. | T: like deer at a lion’s roar.
+
+## sn22.78:6.1–sn22.78:6.4 (sn)
+sn22.78:6.1 | P: Avītivattā sakkāyaṁ, | S: ‘We haven’t passed beyond substantial reality! | T: ‘We’re not beyond self-identification.
+sn22.78:6.2 | P: aniccā kira bho mayaṁ; | S: It turns out we’re impermanent!’ | T: It seems we’re inconstant,’
+sn22.78:6.3 | P: Sutvā arahato vākyaṁ, | S: So they say when they hear the word | T: [they say,] ⏎ on hearing the word
+sn22.78:6.4 | P: vippamuttassa tādino”ti. | S: of the perfected one, free and unaffected.” | T: of the Worthy One, ⏎ the one fully released, ⏎ the one who is Such.
+CONTEXT sn22.78:6.5 | P: Chaṭṭhaṁ. | S: (none) | T: (none)
+
+## sn22.79:15.1–sn22.79:15.4 (sn)
+CONTEXT sn22.79:14.25 | P: viññāṇaṁ neva vidhūpeti na sandhūpeti, vidhūpetvā ṭhito. | S: consciousness, but remain after dissipating it. | T: consciousness, but stands having scattered it.
+CONTEXT sn22.79:14.26 | P: Evaṁvimuttacittaṁ kho, bhikkhave, bhikkhuṁ saindā devā sabrahmakā sapajāpatikā ārakāva namassanti: | S: When a mendicant’s mind is freed like this, the gods together with Indra, the Divinity, and the Progenitor worship them from afar: | T: “And to the monk whose mind is thus released, the devas, together with Indra, the Brahmās, & Pajāpatis, pay homage even from afar:
+sn22.79:15.1 | P: ‘Namo te purisājañña, | S: ‘Homage to you, O thoroughbred! | T: ‘Homage to you, O thoroughbred man.
+sn22.79:15.2 | P: namo te purisuttama; | S: Homage to you, supreme among men! | T: Homage to you, O superlative man—
+sn22.79:15.3 | P: Yassa te nābhijānāma, | S: We don’t understand | T: you of whom we don’t know even what
+sn22.79:15.4 | P: yampi nissāya jhāyasī’”ti. | S: the basis of your absorption.’” | T: dependent on which ⏎ you’re absorbed.’”
+CONTEXT sn22.79:15.5 | P: Sattamaṁ. | S: (none) | T: (none)
+
+## sn22.82:15.1–sn22.82:15.6 (sn)
+CONTEXT sn22.82:14.15 | P: evaṁ passaṁ …pe… | S: Seeing this … | T: “Seeing thus, the instructed disciple of the noble ones grows disenchanted with form, disenchanted with feeling, disenchanted with perception, disenchanted with fabrications, disenchanted with consciousness. Disenchanted, he becomes dispassionate. Through dispassion, he is released. With release, there is the knowledge, ‘Released.’
+CONTEXT sn22.82:14.16 | P: nāparaṁ itthattāyāti pajānātī”ti. | S: They understand: ‘… there is nothing further for this place.’” | T: He discerns that ‘Birth is ended, the holy life fulfilled, the task done. There is nothing further for this world.’”
+sn22.82:15.1 | P: “Dve khandhā taññeva siyaṁ, | S: “Two on the aggregates; exactly the same; and can there be; | T: (none)
+sn22.82:15.2 | P: adhivacanañca hetunā; | S: on the term; and on the cause; | T: (none)
+sn22.82:15.3 | P: Sakkāyena duve vuttā, | S: two questions on substantial reality; | T: (none)
+sn22.82:15.4 | P: assādaviññāṇakena ca; | S: gratification; and that with consciousness: | T: (none)
+sn22.82:15.5 | P: Ete dasavidhā vuttā, | S: these are the ten questions | T: (none)
+sn22.82:15.6 | P: hoti bhikkhu pucchāyā”ti. | S: the monk came to ask.” | T: (none)
+CONTEXT sn22.82:15.7 | P: Dasamaṁ. | S: (none) | T: (none)
+CONTEXT sn22.82:15.8 | P: Khajjanīyavaggo tatiyo. | S: (none) | T: (none)
+
+## sn22.82:16.1–sn22.82:16.4 (sn)
+CONTEXT sn22.82:15.8 | P: Khajjanīyavaggo tatiyo. | S: (none) | T: (none)
+CONTEXT sn22.82:16.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn22.82:16.1 | P: Assādo dve samudayā, | S: (none) | T: (none)
+sn22.82:16.2 | P: arahantehi apare dve; | S: (none) | T: (none)
+sn22.82:16.3 | P: Sīho khajjanī piṇḍolyaṁ, | S: (none) | T: (none)
+sn22.82:16.4 | P: pālileyyena puṇṇamāti. | S: (none) | T: (none)
+
+## sn22.95:9.1–sn22.95:9.6 (sn)
+CONTEXT sn22.95:8.1 | P: Idamavoca bhagavā. | S: That is what the Buddha said. | T: That is what the Blessed One said.
+CONTEXT sn22.95:8.2 | P: Idaṁ vatvāna sugato athāparaṁ etadavoca satthā: | S: Then the Holy One, the Teacher, went on to say: | T: Having said that, the One Well-Gone, the Teacher, said further:
+sn22.95:9.1 | P: “Pheṇapiṇḍūpamaṁ rūpaṁ, | S: “Form is like a lump of foam; | T: “Form is like a glob of foam;
+sn22.95:9.2 | P: vedanā bubbuḷūpamā; | S: feeling is like a bubble; | T: feeling, a bubble;
+sn22.95:9.3 | P: Marīcikūpamā saññā, | S: perception seems like a mirage; | T: perception, a mirage;
+sn22.95:9.4 | P: saṅkhārā kadalūpamā; | S: choices like a banana plant; | T: fabrications, a banana tree;
+sn22.95:9.5 | P: Māyūpamañca viññāṇaṁ, | S: and consciousness like an illusion: | T: consciousness, a magic trick—
+sn22.95:9.6 | P: desitādiccabandhunā. | S: so taught the Kinsman of the Sun. | T: this has been taught ⏎ by the Kinsman of the Sun.
+
+## sn22.95:10.1–sn22.95:10.4 (sn)
+sn22.95:10.1 | P: Yathā yathā nijjhāyati, | S: However you contemplate them, | T: However you observe them,
+sn22.95:10.2 | P: yoniso upaparikkhati; | S: examining them rationally, | T: appropriately examine them,
+sn22.95:10.3 | P: Rittakaṁ tucchakaṁ hoti, | S: they’re vacuous and hollow | T: they’re empty, void
+sn22.95:10.4 | P: yo naṁ passati yoniso. | S: when you look at them closely. | T: to whoever sees them ⏎ appropriately.
+
+## sn22.95:11.1–sn22.95:11.4 (sn) GATHERED; possible speaker requires a reader
+sn22.95:11.1 | P: Imañca kāyaṁ ārabbha, | S: Concerning this body, | T: Beginning with the body
+sn22.95:11.2 | P: bhūripaññena desitaṁ; | S: he of vast wisdom has taught | T: as taught by the One ⏎ with profound discernment:
+sn22.95:11.3 | P: Pahānaṁ tiṇṇaṁ dhammānaṁ, | S: that when three things are given up, | T: When abandoned by three things ⏎ —life, warmth, & consciousness— ⏎ form is rejected, cast aside.
+sn22.95:11.4 | P: rūpaṁ passatha chaḍḍitaṁ. | S: you’ll see this form discarded. | T: (none)
+
+## sn22.95:12.1–sn22.95:12.4 (sn) GATHERED; equal counts: one line per row
+sn22.95:12.1 | P: Āyu usmā ca viññāṇaṁ, | S: When vitality, warmth, and consciousness | T: (none)
+sn22.95:12.2 | P: yadā kāyaṁ jahantimaṁ; | S: leave this body, | T: When bereft of these
+sn22.95:12.3 | P: Apaviddho tadā seti, | S: it lies dumped there, | T: it lies thrown away,
+sn22.95:12.4 | P: parabhattaṁ acetanaṁ. | S: food for others, insentient. | T: senseless, ⏎ a meal for others.
+AUTO sn22.95:12.1 starts: When bereft of these
+AUTO sn22.95:12.2 starts: it lies thrown away,
+AUTO sn22.95:12.3 starts: senseless,
+AUTO sn22.95:12.4 starts: a meal for others.
+
+## sn22.95:13.1–sn22.95:13.4 (sn)
+sn22.95:13.1 | P: Etādisāyaṁ santāno, | S: Such is this continuity, | T: That’s the way it goes:
+sn22.95:13.2 | P: māyāyaṁ bālalāpinī; | S: this illusion, this lament of fools. | T: It’s a magic trick, ⏎ an idiot’s babbling.
+sn22.95:13.3 | P: Vadhako esa akkhāto, | S: It’s said to be a killer, | T: It’s said to be ⏎ a murderer.
+sn22.95:13.4 | P: sāro ettha na vijjati. | S: for no core is found here. | T: No substance here ⏎ is found.
+
+## sn22.95:14.1–sn22.95:14.4 (sn) GATHERED; unequal counts require a reader
+sn22.95:14.1 | P: Evaṁ khandhe avekkheyya, | S: An energetic mendicant | T: Thus a monk, persistence aroused,
+sn22.95:14.2 | P: bhikkhu āraddhavīriyo; | S: should examine the aggregates like this, | T: should view the aggregates ⏎ by day & by night,
+sn22.95:14.3 | P: Divā vā yadi vā rattiṁ, | S: with situational awareness and mindfulness | T: mindful, ⏎ alert;
+sn22.95:14.4 | P: sampajāno paṭissato. | S: whether by day or by night. | T: (none)
+
+## sn22.95:15.1–sn22.95:15.4 (sn)
+sn22.95:15.1 | P: Jaheyya sabbasaṁyogaṁ, | S: They should give up all fetters, | T: should discard all fetters;
+sn22.95:15.2 | P: kareyya saraṇattano; | S: and make a refuge for themselves. | T: should make himself ⏎ his own refuge;
+sn22.95:15.3 | P: Careyyādittasīsova, | S: They should live as though their head was on fire, | T: should live as if ⏎ his head were on fire—
+sn22.95:15.4 | P: patthayaṁ accutaṁ padan”ti. | S: aspiring to the state that does not pass.” | T: in hopes of the state ⏎ with no falling away.”
+CONTEXT sn22.95:15.5 | P: Tatiyaṁ. | S: (none) | T: (none)
+
+## sn25.10:3.1–sn25.10:3.4 (sn)
+CONTEXT sn25.10:2.7 | P: Cakkhuvaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT sn25.10:3.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn25.10:3.1 | P: Cakkhu rūpañca viññāṇaṁ, | S: (none) | T: (none)
+sn25.10:3.2 | P: phasso ca vedanāya ca; | S: (none) | T: (none)
+sn25.10:3.3 | P: Saññā ca cetanā taṇhā, | S: (none) | T: (none)
+sn25.10:3.4 | P: dhātu khandhena te dasāti. | S: (none) | T: (none)
+CONTEXT sn25.10:3.5 | P: Okkantasaṁyuttaṁ samattaṁ. | S: The Linked Discourses on stepping into are complete. | T: (none)
+
+## sn27.10:2.1–sn27.10:2.4 (sn)
+CONTEXT sn27.10:1.6 | P: Kilesavaggo paṭhamo. | S: (none) | T: (none)
+CONTEXT sn27.10:2.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn27.10:2.1 | P: Cakkhu rūpañca viññāṇaṁ, | S: (none) | T: (none)
+sn27.10:2.2 | P: phasso ca vedanāya ca; | S: (none) | T: (none)
+sn27.10:2.3 | P: Saññā ca cetanā taṇhā, | S: (none) | T: (none)
+sn27.10:2.4 | P: dhātu khandhena te dasāti. | S: (none) | T: (none)
+CONTEXT sn27.10:2.5 | P: Kilesasaṁyuttaṁ samattaṁ. | S: The Linked Discourses on corruptions are complete. | T: (none)
+
+## sn35.93:4.1–sn35.93:4.4 (sn)
+CONTEXT sn35.93:3.16 | P: Channavaggo catuttho. | S: (none) | T: (none)
+CONTEXT sn35.93:4.0 | P: Tassuddānaṁ | S: (none) | T: (none)
+sn35.93:4.1 | P: Palokasuññā saṅkhittaṁ, | S: (none) | T: (none)
+sn35.93:4.2 | P: channo puṇṇo ca bāhiyo; | S: (none) | T: (none)
+sn35.93:4.3 | P: Ejena ca duve vuttā, | S: (none) | T: (none)
+sn35.93:4.4 | P: dvayehi apare duveti. | S: (none) | T: (none)
+
+## sn35.95:12.1–sn35.95:12.4 (sn)
+CONTEXT sn35.95:10.8 | P: Esevanto dukkhassā”ti. | S: Just this is the end of suffering.” | T: This, just this, is the end of stress.”
+CONTEXT sn35.95:11.1 | P: “Imassa khvāhaṁ, bhante, bhagavatā saṅkhittena bhāsitassa vitthārena atthaṁ ājānāmi: | S: “This is how I understand the detailed meaning of the Buddha’s brief statement: | T: “I understand in detail, lord, the meaning of what the Blessed One has said in brief:
+sn35.95:12.1 | P: ‘Rūpaṁ disvā sati muṭṭhā, | S: ‘When you see a sight, mindfulness is lost | T: Seeing a form ⏎ —mindfulness lapsed—
+sn35.95:12.2 | P: Piyaṁ nimittaṁ manasi karoto; | S: as you focus on a pleasant feature. | T: attending ⏎ to the theme of ‘endearing,’
+sn35.95:12.3 | P: Sārattacitto vedeti, | S: Experiencing it with a mind full of desire, | T: impassioned in mind, ⏎ one feels
+sn35.95:12.4 | P: Tañca ajjhosa tiṭṭhati. | S: you keep clinging to it. | T: and remains fastened on it.
+
+## sn35.95:13.1–sn35.95:13.6 (sn) GATHERED; unequal counts require a reader
+sn35.95:13.1 | P: Tassa vaḍḍhanti vedanā, | S: Many feelings grow | T: One’s feelings, born of the form, ⏎ grow numerous,
+sn35.95:13.2 | P: anekā rūpasambhavā; | S: arising from sights. | T: (none)
+sn35.95:13.3 | P: Abhijjhā ca vihesā ca, | S: The mind is damaged | T: Greed & annoyance
+sn35.95:13.4 | P: cittamassūpahaññati; | S: by covetousness and cruelty. | T: injure one’s mind.
+sn35.95:13.5 | P: Evaṁ ācinato dukkhaṁ, | S: Heaping up suffering like this, | T: Thus amassing stress,
+sn35.95:13.6 | P: ārā nibbāna vuccati. | S: you’re said to be far from extinguishment. | T: one is said to be far ⏎ from unbinding.
+
+## sn35.95:14.1–sn35.95:14.4 (sn)
+sn35.95:14.1 | P: Saddaṁ sutvā sati muṭṭhā, | S: When you hear a sound, mindfulness is lost | T: Hearing a sound…
+sn35.95:14.2 | P: Piyaṁ nimittaṁ manasi karoto; | S: as you focus on a pleasant feature. | T: (none)
+sn35.95:14.3 | P: Sārattacitto vedeti, | S: Experiencing it with a mind full of desire, | T: (none)
+sn35.95:14.4 | P: Tañca ajjhosa tiṭṭhati. | S: you keep clinging to it. | T: (none)
+
+## sn35.95:15.1–sn35.95:15.6 (sn)
+sn35.95:15.1 | P: Tassa vaḍḍhanti vedanā, | S: Many feelings grow | T: (none)
+sn35.95:15.2 | P: anekā saddasambhavā; | S: arising from sounds. | T: (none)
+sn35.95:15.3 | P: Abhijjhā ca vihesā ca, | S: The mind is damaged | T: (none)
+sn35.95:15.4 | P: cittamassūpahaññati; | S: by covetousness and cruelty. | T: (none)
+sn35.95:15.5 | P: Evaṁ ācinato dukkhaṁ, | S: Heaping up suffering like this, | T: (none)
+sn35.95:15.6 | P: ārā nibbāna vuccati. | S: you’re said to be far from extinguishment. | T: (none)
+
+## sn35.95:16.1–sn35.95:16.4 (sn)
+sn35.95:16.1 | P: Gandhaṁ ghatvā sati muṭṭhā, | S: When you smell an odor, mindfulness is lost | T: Smelling an aroma…
+sn35.95:16.2 | P: Piyaṁ nimittaṁ manasi karoto; | S: as you focus on a pleasant feature. | T: (none)
+sn35.95:16.3 | P: Sārattacitto vedeti, | S: Experiencing it with a mind full of desire, | T: (none)
+sn35.95:16.4 | P: Tañca ajjhosa tiṭṭhati. | S: you keep clinging to it. | T: (none)
+
+## sn35.95:17.1–sn35.95:17.6 (sn)
+sn35.95:17.1 | P: Tassa vaḍḍhanti vedanā, | S: Many feelings grow | T: (none)
+sn35.95:17.2 | P: anekā gandhasambhavā; | S: arising from smells. | T: (none)
+sn35.95:17.3 | P: Abhijjhā ca vihesā ca, | S: The mind is damaged | T: (none)
+sn35.95:17.4 | P: cittamassūpahaññati; | S: by covetousness and cruelty. | T: (none)
+sn35.95:17.5 | P: Evaṁ ācinato dukkhaṁ, | S: Heaping up suffering like this, | T: (none)
+sn35.95:17.6 | P: ārā nibbāna vuccati. | S: you’re said to be far from extinguishment. | T: (none)
+
+## sn35.95:18.1–sn35.95:18.4 (sn)
+sn35.95:18.1 | P: Rasaṁ bhotvā sati muṭṭhā, | S: When you enjoy a taste, mindfulness is lost | T: Tasting a flavor…
+sn35.95:18.2 | P: Piyaṁ nimittaṁ manasi karoto; | S: as you focus on a pleasant feature. | T: (none)
+sn35.95:18.3 | P: Sārattacitto vedeti, | S: Experiencing it with a mind full of desire, | T: (none)
+sn35.95:18.4 | P: Tañca ajjhosa tiṭṭhati. | S: you keep clinging to it. | T: (none)
+
+## sn35.95:19.1–sn35.95:19.6 (sn)
+sn35.95:19.1 | P: Tassa vaḍḍhanti vedanā, | S: Many feelings grow | T: (none)
+sn35.95:19.2 | P: anekā rasasambhavā; | S: arising from tastes. | T: (none)
+sn35.95:19.3 | P: Abhijjhā ca vihesā ca, | S: The mind is damaged | T: (none)
+sn35.95:19.4 | P: cittamassūpahaññati; | S: by covetousness and cruelty. | T: (none)
+sn35.95:19.5 | P: Evaṁ ācinato dukkhaṁ, | S: Heaping up suffering like this, | T: (none)
+sn35.95:19.6 | P: ārā nibbāna vuccati. | S: you’re said to be far from extinguishment. | T: (none)
+
+## sn35.95:20.1–sn35.95:20.4 (sn)
+sn35.95:20.1 | P: Phassaṁ phussa sati muṭṭhā, | S: When you sense a touch, mindfulness is lost | T: Touching a tactile sensation…
+sn35.95:20.2 | P: Piyaṁ nimittaṁ manasi karoto; | S: as you focus on a pleasant feature. | T: (none)
+sn35.95:20.3 | P: Sārattacitto vedeti, | S: Experiencing it with a mind full of desire, | T: (none)
+sn35.95:20.4 | P: Tañca ajjhosa tiṭṭhati. | S: you keep clinging to it. | T: (none)
+
+## sn35.95:21.1–sn35.95:21.6 (sn)
+sn35.95:21.1 | P: Tassa vaḍḍhanti vedanā, | S: Many feelings grow | T: (none)
+sn35.95:21.2 | P: anekā phassasambhavā; | S: arising from touches. | T: (none)
+sn35.95:21.3 | P: Abhijjhā ca vihesā ca, | S: The mind is damaged | T: (none)
+sn35.95:21.4 | P: cittamassūpahaññati; | S: by covetousness and cruelty. | T: (none)
+sn35.95:21.5 | P: Evaṁ ācinato dukkhaṁ, | S: Heaping up suffering like this, | T: (none)
+sn35.95:21.6 | P: ārā nibbāna vuccati. | S: you’re said to be far from extinguishment. | T: (none)
+
+## sn35.95:22.1–sn35.95:22.4 (sn)
+sn35.95:22.1 | P: Dhammaṁ ñatvā sati muṭṭhā, | S: When you know an idea, mindfulness is lost | T: Knowing an idea ⏎ —mindfulness lapsed—
+sn35.95:22.2 | P: Piyaṁ nimittaṁ manasi karoto; | S: as you focus on a pleasant feature. | T: attending ⏎ to the theme of ‘endearing,’
+sn35.95:22.3 | P: Sārattacitto vedeti, | S: Experiencing it with a mind full of desire, | T: impassioned in mind, ⏎ one feels
+sn35.95:22.4 | P: Tañca ajjhosa tiṭṭhati. | S: you keep clinging to it. | T: and remains fastened on it.
+
+## sn35.95:23.1–sn35.95:23.6 (sn) GATHERED; unequal counts require a reader
+sn35.95:23.1 | P: Tassa vaḍḍhanti vedanā, | S: Many feelings grow | T: One’s feelings, born of the idea, ⏎ grow numerous,
+sn35.95:23.2 | P: anekā dhammasambhavā; | S: arising from ideas. | T: (none)
+sn35.95:23.3 | P: Abhijjhā ca vihesā ca, | S: The mind is damaged | T: Greed & annoyance
+sn35.95:23.4 | P: cittamassūpahaññati; | S: by covetousness and cruelty. | T: injure one’s mind.
+sn35.95:23.5 | P: Evaṁ ācinato dukkhaṁ, | S: Heaping up suffering like this, | T: Thus amassing stress,
+sn35.95:23.6 | P: ārā nibbāna vuccati. | S: you’re said to be far from extinguishment. | T: one is said to be far ⏎ from unbinding.
+
+## sn35.95:24.1–sn35.95:24.4 (sn)
+sn35.95:24.1 | P: Na so rajjati rūpesu, | S: There’s no desire for sights | T: Not impassioned with forms
+sn35.95:24.2 | P: rūpaṁ disvā paṭissato; | S: when you see a sight with mindfulness. | T: —seeing a form with mindfulness firm—
+sn35.95:24.3 | P: Virattacitto vedeti, | S: Experiencing it with a mind free of desire, | T: dispassioned in mind, ⏎ one knows
+sn35.95:24.4 | P: tañca nājjhosa tiṭṭhati. | S: you don’t keep clinging to it. | T: and doesn’t remain fastened on it.
+
+## sn35.95:25.1–sn35.95:25.6 (sn)
+sn35.95:25.1 | P: Yathāssa passato rūpaṁ, | S: Even as you see a sight | T: While one is seeing a form
+sn35.95:25.2 | P: sevato cāpi vedanaṁ; | S: and get familiar with how it feels, | T: —and even experiencing feeling—
+sn35.95:25.3 | P: Khīyati nopacīyati, | S: you wear away, you don’t heap up: | T: it falls away and doesn’t accumulate.
+sn35.95:25.4 | P: evaṁ so caratī sato; | S: that’s how to live mindfully. | T: Thus one fares mindfully.
+sn35.95:25.5 | P: Evaṁ apacinato dukkhaṁ, | S: Eroding suffering like this, | T: Thus not amassing stress,
+sn35.95:25.6 | P: santike nibbāna vuccati. | S: you’re said to be in the presence of extinguishment. | T: one is said to be ⏎ in the presence of unbinding.
+
+## sn35.95:26.1–sn35.95:26.4 (sn)
+sn35.95:26.1 | P: Na so rajjati saddesu, | S: There’s no desire for sounds | T: Not impassioned with sounds…
+sn35.95:26.2 | P: saddaṁ sutvā paṭissato; | S: when you hear a sound with mindfulness. | T: (none)
+sn35.95:26.3 | P: Virattacitto vedeti, | S: Experiencing it with a mind free of desire, | T: (none)
+sn35.95:26.4 | P: tañca nājjhosa tiṭṭhati. | S: you don’t keep clinging to it. | T: (none)
+
+## sn35.95:27.1–sn35.95:27.6 (sn)
+sn35.95:27.1 | P: Yathāssa suṇato saddaṁ, | S: Even as you hear a sound | T: (none)
+sn35.95:27.2 | P: sevato cāpi vedanaṁ; | S: and get familiar with how it feels, | T: (none)
+sn35.95:27.3 | P: Khīyati nopacīyati, | S: you wear away, you don’t heap up: | T: (none)
+sn35.95:27.4 | P: evaṁ so caratī sato; | S: that’s how to live mindfully. | T: (none)
+sn35.95:27.5 | P: Evaṁ apacinato dukkhaṁ, | S: Eroding suffering like this, | T: (none)
+sn35.95:27.6 | P: santike nibbāna vuccati. | S: you’re said to be in the presence of extinguishment. | T: (none)
+
+## sn35.95:28.1–sn35.95:28.4 (sn)
+sn35.95:28.1 | P: Na so rajjati gandhesu, | S: There’s no desire for odors | T: Not impassioned with aromas…
+sn35.95:28.2 | P: gandhaṁ ghatvā paṭissato; | S: when you smell an odor with mindfulness. | T: (none)
+sn35.95:28.3 | P: Virattacitto vedeti, | S: Experiencing it with a mind free of desire, | T: (none)
+sn35.95:28.4 | P: tañca nājjhosa tiṭṭhati. | S: you don’t keep clinging to it. | T: (none)
+
+## sn35.95:29.1–sn35.95:29.6 (sn)
+sn35.95:29.1 | P: Yathāssa ghāyato gandhaṁ, | S: Even as you smell an odor | T: (none)
+sn35.95:29.2 | P: sevato cāpi vedanaṁ; | S: and get familiar with how it feels, | T: (none)
+sn35.95:29.3 | P: Khīyati nopacīyati, | S: you wear away, you don’t heap up: | T: (none)
+sn35.95:29.4 | P: evaṁ so caratī sato; | S: that’s how to live mindfully. | T: (none)
+sn35.95:29.5 | P: Evaṁ apacinato dukkhaṁ, | S: Eroding suffering like this, | T: (none)
+sn35.95:29.6 | P: santike nibbāna vuccati. | S: you’re said to be in the presence of extinguishment. | T: (none)
+
+## sn35.95:30.1–sn35.95:30.4 (sn)
+sn35.95:30.1 | P: Na so rajjati rasesu, | S: There’s no desire for tastes | T: Not impassioned with flavors…
+sn35.95:30.2 | P: rasaṁ bhotvā paṭissato; | S: when you enjoy a taste with mindfulness. | T: (none)
+sn35.95:30.3 | P: Virattacitto vedeti, | S: Experiencing it with a mind free of desire, | T: (none)
+sn35.95:30.4 | P: tañca nājjhosa tiṭṭhati. | S: you don’t keep clinging to it. | T: (none)
+
+## sn35.95:31.1–sn35.95:31.6 (sn)
+sn35.95:31.1 | P: Yathāssa sāyato rasaṁ, | S: Even as you savor a taste | T: (none)
+sn35.95:31.2 | P: sevato cāpi vedanaṁ; | S: and get familiar with how it feels, | T: (none)
+sn35.95:31.3 | P: Khīyati nopacīyati, | S: you wear away, you don’t heap up: | T: (none)
+sn35.95:31.4 | P: evaṁ so caratī sato; | S: that’s how to live mindfully. | T: (none)
+sn35.95:31.5 | P: Evaṁ apacinato dukkhaṁ, | S: Eroding suffering like this, | T: (none)
+sn35.95:31.6 | P: santike nibbāna vuccati. | S: you’re said to be in the presence of extinguishment. | T: (none)
+
+## sn35.95:32.1–sn35.95:32.4 (sn)
+sn35.95:32.1 | P: Na so rajjati phassesu, | S: There’s no desire for touches | T: Not impassioned with tactile sensations…
+sn35.95:32.2 | P: phassaṁ phussa paṭissato; | S: when you sense a touch with mindfulness. | T: (none)
+sn35.95:32.3 | P: Virattacitto vedeti, | S: Experiencing it with a mind free of desire, | T: (none)
+sn35.95:32.4 | P: tañca nājjhosa tiṭṭhati. | S: you don’t keep clinging to it. | T: (none)

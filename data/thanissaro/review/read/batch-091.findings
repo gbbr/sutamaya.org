@@ -21,14 +21,14 @@ snp3.1:1.3 starts: how he reasoned and chose the Going
 snp3.1:1.4 none
 snp3.1:3.2 starts: evil deeds in body.
 snp3.1:5.3 starts: and on seeing him, consummate in marks,
-snp3.1:7.1 starts: Mindful, his eyes downcast,
-snp3.1:7.2 starts: This one’s not like one from a
-snp3.1:15.2 none
+# superseded: snp3.1:7.1 starts: Mindful, his eyes downcast,
+# superseded: snp3.1:7.2 starts: This one’s not like one from a
+# superseded: snp3.1:15.2 none
 snp3.1:15.3 starts: and after giving friendly greetings,
 thag10.2:2.2 starts: to the wilderness praised by the Awakened One
 thag10.2:3.3 starts: —refreshing, giving rapture to meditators—
 thag10.2:6.1 starts: As I desire to do this, may
-thag10.2:6.2 none
+# superseded: thag10.2:6.2 none
 thag10.2:6.4 starts: No one can do it for anyone
 thag10.2:7.1 starts: I myself bind on my armor.
 # dropped, judged worse: thag10.2:9.3 starts: on Giribbaja I’ll delight.
