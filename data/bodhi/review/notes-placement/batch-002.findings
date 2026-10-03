@@ -1,0 +1,263 @@
+# Batch 002 passage-note placement findings
+
+Read all 41 supplied candidates, complete Pali stretches, and source paragraphs. Supplemental full Pali, Bodhi translation and upstream HTML were read for AN10.35 and SN35.150 to recover their first omitted rows and preceding ellipsis boundaries. Judgment uses Pali as authority and source paragraph boundaries as evidence. Proposed changes preserve every source word, punctuation, link/reference and markup in source order. Editorial notes are prose, including notes that replace verses. No corpus changes or commits were made.
+
+Totals: 41 judged; 26 move; 15 leave; 0 uncertain.
+
+## an10.213:2.10 — list-item-note; leave
+noteKeys: an10.213:2.10
+The inline “as above” abbreviates intermediate ten-quality list items between the printed first and tenth items. No boundary changes.
+
+## an10.35:1.14 — whole-passage-note; move
+noteKeys: an10.35:1.14
+targetKey: an10.35:1.4
+The omitted ten-quality exposition begins Idhupāli, bhikkhu sīlavā at 1.4. The final quoted sentence currently sharing 1.14 is actual translation and stays there. The standalone ellipsis at 1.12 belongs to the preceding source paragraph, after “What ten?”, and must remain before the moved note: absorb it into 1.3 and empty 1.12. Move the complete note sentence, retaining its source span and references, to 1.4.
+an10.35:1.3 starts: What ten?”
+an10.35:1.4 starts: The same ten qualities as in the
+an10.35:1.12 none
+an10.35:1.14 starts: “A bhikkhu who possesses these ten qualities
+
+## an10.62:2.21 — whole-passage-note; move
+noteKeys: an10.62:2.21
+targetKey: an10.62:2.7
+The complete subsequent nutriment exposition begins Pañca nīvaraṇepāhaṁ at 2.7. Keep the preceding answer and its ellipsis at 2.6. The whole linked note and trailing ellipsis end before the printed question at 2.26.
+an10.62:2.7 starts: as in <a href="https://suttacentral.net/an10.61">AN10.61</a> …
+an10.62:2.21 none
+an10.62:2.26 starts: And what is the nutriment for not
+
+## an4.54:6.1 — whole-passage-note; move
+noteKeys: an4.54:6.1, an4.54:10.2
+targetKey: an4.54:2.1
+“The rest, including the verses” starts with the omitted prose question Kathañca at 2.1. The source paragraph's [60–61] at 10.2 continues the same note and moves with it. Neither fragment is translated verse.
+an4.54:2.1 starts: The rest, including the verses, is identical
+an4.54:6.1 none
+an4.54:10.2 none
+
+## an8.22:5.6 — partial-sentence-note; leave
+noteKeys: an8.22:5.6
+“I then went to them … as in 8:21 …” elides the continuation of the partly printed approach-and-speech sentence (etadavacaṁ at 5.2) and exchange. The explicit partial-sentence exception applies. No boundary changes.
+
+## an8.47:5.2 — whole-passage-note; move
+noteKeys: an8.47:5.2
+targetKey: an8.47:2.3
+The standalone note replaces the whole eight-quality explanation and all verses after “What eight?” The first Pali explanation begins Idha, visākhe at 2.3. Retain the complete link and note as prose.
+an8.47:2.3 starts: As in <a href="https://suttacentral.net/an8.46">AN8.46</a>, including the verses.
+an8.47:5.2 none
+
+## dn2:92.20 — ordinary-translation; leave
+noteKeys: none
+“This too, great king” translates Idampi kho, mahārāja at 92.20. It is the actual conclusion after an omitted formula. No boundary changes.
+
+## mn63:6.9 — ordinary-translation; leave
+noteKeys: none
+The soul/body phrase translates Taṁ jīvaṁ taṁ sarīraṁ in the retained sequence of speculative views. No whole-passage note occurs. No boundary changes.
+
+## mn65:27.5 — ordinary-translation; leave
+noteKeys: none
+The “Let him not lose” sentence translates Pali 27.4–5 with the condition placed after the prohibition in translator order. No boundary changes.
+
+## sn11.13:13.1 — whole-passage-note; move
+noteKeys: sn11.13:13.1
+targetKey: sn11.13:7.1
+The first Magha/Maghava explanation is already printed at 6.1. The whole note replaces the remaining names beginning at 7.1, then the vows and verses. Preserve both links and the complete verse-number equation in the one note.
+sn11.13:7.1 starts: (Here follows the names of Sakka as
+sn11.13:13.1 none
+
+## sn12.22:1.10 — partial-sentence-note; leave
+noteKeys: sn12.22:1.10
+“Such is form … as in §21 …” starts by abbreviating the remaining components of the partly translated form formula and ends before the final cessation clause. The partial-sentence exception applies. No boundary changes.
+
+## sn12.2:2.7 — list-item-note; leave
+noteKeys: sn12.2:2.7
+“As in preceding sutta” is inline within the semicolon list of dependent-origination links, between retained opening links and the conclusion. No boundary changes.
+
+## sn12.42:1.3 — whole-passage-note; move
+noteKeys: sn12.42:1.3
+targetKey: sn12.42:1.1
+The only source paragraph replaces the whole sutta, beginning with its untranslated setting.
+sn12.42:1.1 starts: This sutta is identical with the preceding
+sn12.42:1.3 none
+
+## sn12.56:2.2 — whole-passage-note; move
+noteKeys: sn12.56:2.2
+targetKey: sn12.56:1.1
+The only source paragraph replaces the whole sutta and describes reordered similes; the setting at 1.1 is its first Pali row.
+sn12.56:1.1 starts: This sutta is identical with the preceding
+sn12.56:2.2 none
+
+## sn16.7:12.8 — whole-passage-note; move
+noteKeys: sn16.7:12.8
+targetKey: sn16.7:8.2
+The whole repeated statement follows the printed “Good, good, Kassapa!” and begins Yassa kassaci ... saddhā natthi at 8.2.
+sn16.7:8.2 starts: The Buddha then repeats the entire statement
+sn16.7:12.8 none
+
+## sn22.36:3.13 — partial-sentence-note; leave
+noteKeys: sn22.36:3.13
+“If ... tendency towards form … as above in full … then one is not reckoned” retains fragments of the opening and ending sentences around the elision. No boundary changes.
+
+## sn22.55:7.6 — ordinary-translation; leave
+noteKeys: none
+“Or self as in consciousness” is the translated final alternative in the aggregate/self formula at 7.6. No boundary changes.
+
+## sn22.65:3.6 — list-item-note; leave
+noteKeys: sn22.65:3.6
+The inline “as above in full” abbreviates intermediate aggregate items and finishes before the printed final freedom clause. No boundary changes.
+
+## sn22.7:9.1 — ordinary-translation; leave
+noteKeys: none
+The consciousness/self alternatives translate Na viññāṇaṁ at 9.1 and resume the abbreviated series. No boundary changes.
+
+## sn22.81:9.1 — ordinary-translation; leave
+noteKeys: none
+The printed negative form/self alternatives translate the opening of 9.1 after the preceding omitted formation discussion. No boundary changes.
+
+## sn35.102:1.16 — whole-passage-note; move
+noteKeys: sn35.102:1.16
+targetKey: sn35.102:1.1
+The only source paragraph replaces the whole sutta, beginning Yaṁ ... na tumhākaṁ at 1.1.
+sn35.102:1.1 starts: This sutta is identical with the preceding
+sn35.102:1.16 none
+
+## sn35.113:1.2 — whole-passage-note; move
+noteKeys: sn35.113:1.2
+targetKey: sn35.113:1.1
+The sole identity note replaces the whole sutta including the setting at 1.1. Preserve the complete linked reference.
+sn35.113:1.1 starts: (Identical with <a href="https://suttacentral.net/sn12.45">SN12.45</a>.)
+sn35.113:1.2 none
+
+## sn35.121:19.2 — whole-passage-note; move
+noteKeys: sn35.121:19.2
+targetKey: sn35.121:17.1
+After the translated answer at 16.1, the note replaces the rest of the full exchange beginning the next question at 17.1. End the note before the next printed “Is the ear” at 21.1.
+sn35.121:17.1 starts: The rest as in the preceding paragraph.
+sn35.121:19.2 none
+sn35.121:21.1 starts: “Is the ear …
+
+## sn35.128:1.5 — whole-passage-note; move
+noteKeys: sn35.128:1.5
+targetKey: sn35.128:1.3
+The standalone “As in §118” replaces Soṇa's complete question and subsequent discourse; the first omitted question starts ko nu kho at 1.3, before the explicit Pali expansion instruction at 1.5.
+sn35.128:1.3 starts: As in §118.
+sn35.128:1.5 none
+
+## sn35.139:1.12 — whole-passage-note; move
+noteKeys: sn35.139:1.12, sn35.139:1.13
+targetKey: sn35.139:1.1
+Join “Identical with the preceding sutta,” and “but stated by way of the six external bases” unchanged as one whole-sutta note at 1.1. Empty both fragments' former rows.
+sn35.139:1.1 starts: Identical with the preceding sutta, but stated
+sn35.139:1.12 none
+sn35.139:1.13 none
+
+## sn35.150:10.1 — whole-passage-note; move
+noteKeys: sn35.150:6.1, sn35.150:10.1
+targetKey: sn35.150:2.1
+Full source HTML has “... impermanent?” … <span class='pe'>all as in §32</span> …”. The untranslated first answer at 2.1 begins the entire omitted dialogue. Move the source-order sequence “… all as in §32 …” together, including the former standalone ellipsis at 6.1; empty both holders. The following “Seeing thus” at 15.1 is actual translation, with its later reference and conclusion preserved.
+sn35.150:2.1 starts: … all as in §32 …
+sn35.150:6.1 none
+sn35.150:10.1 none
+sn35.150:15.1 starts: “Seeing thus …
+
+## sn35.22:1.6 — whole-passage-note; move
+noteKeys: sn35.22:1.6
+targetKey: sn35.22:1.1
+The only source paragraph replaces both arising and cessation passages of the whole sutta. The first Pali opening is at 1.1.
+sn35.22:1.1 starts: The same for the six external sense
+sn35.22:1.6 none
+
+## sn35.72:1.2 — whole-passage-note; move
+noteKeys: sn35.72:1.2
+targetKey: sn35.72:1.1
+The note explicitly replaces the first two full paragraphs, beginning Yo hi koci at 1.1. Actual question translation resumes at 3.1.
+sn35.72:1.1 starts: The first two paragraphs as in the
+sn35.72:1.2 none
+sn35.72:3.1 starts: “What do you think, bhikkhu,
+
+## sn35.86:24.4 — whole-passage-note; move
+noteKeys: sn35.86:24.4
+targetKey: sn35.86:4.1
+The printed first question and answer end at 3.1. The full completion note replaces the following discourse beginning Yaṁ panāniccaṁ at 4.1. The final quoted endpoint belongs to the editorial instruction “down to”; keep it in the note and do not anchor it as a separate actual translation.
+sn35.86:4.1 starts: Complete as in §32, down to “there
+sn35.86:24.4 none
+
+## sn36.24:1.9 — list-item-note; leave
+noteKeys: sn36.24:1.9
+The inline “all as in preceding sutta” starts by eliding the three feeling list items and ends before the retained escape clause. The list/partial-sentence exception applies. No boundary changes.
+
+## sn4.10:1.3 — whole-passage-note; move
+noteKeys: sn4.10:1.3
+targetKey: sn4.10:1.1
+The whole omitted opening includes Evaṁ me sutaṁ and the Buddha's prose speech. Actual narrative resumes with Māra's approach at 3.1; all subsequent printed verse lines remain whole and in order.
+sn4.10:1.1 starts: Opening as in preceding sutta:
+sn4.10:1.3 none
+sn4.10:3.1 starts: Then Mara the Evil One approached the
+
+## sn44.4:1.2 — whole-passage-note; move
+noteKeys: sn44.4:1.2
+targetKey: sn44.4:1.1
+The standalone initial “As above down to” replaces the setting and preceding conversation starting at 1.1. The question at 1.3 is following actual translation.
+sn44.4:1.1 starts: As above down to:
+sn44.4:1.2 none
+sn44.4:1.3 starts: “What now, friend, is the cause and
+
+## sn44.8:1.7 — whole-passage-note; move
+noteKeys: sn44.8:1.7
+targetKey: sn44.8:1.4
+The complete first question is already printed at 1.3. The note replaces the whole following exchange beginning the Buddha's Abyākataṁ answer at 1.4. Actual new question translation resumes at 2.1.
+sn44.8:1.4 starts: as above …
+sn44.8:1.7 none
+sn44.8:2.1 starts: “What, Master Gotama, is the cause and
+
+## sn44.8:6.13 — ordinary-translation; leave
+noteKeys: none
+The final self-in-consciousness alternative is actual translation at 6.13. No boundary changes.
+
+## sn45.146-148:3.9 — already-correct; leave
+noteKeys: sn45.146-148:3.9
+The elaboration instruction corresponds to the explicit Pali expansion instruction after the completed cloth sutta. The intervening empty endsutta row is not an omitted passage. No boundary changes.
+
+## sn45.69:1.4 — whole-passage-note; move
+noteKeys: sn45.69:1.4
+targetKey: sn45.69:1.2
+The accomplishment label is printed at 1.1. The completion note substitutes for the whole ensuing expectation/development exposition beginning Yonisomanasikārasampannassetaṁ at 1.2. Move only “complete as in §63 …”; retain the following actual “He develops right concentration ...” sentence at 1.4, separate from the note. Preserve the label's preceding ellipsis and all source markup in order.
+sn45.69:1.2 starts: complete as in §63 …
+sn45.69:1.4 starts: He develops right concentration, which is based
+
+## sn45.96:1.5 — whole-passage-note; move
+noteKeys: sn45.96:1.5
+targetKey: sn45.96:1.4
+The standalone completion note replaces the complete question and explanation beginning Kathañca at 1.4.
+sn45.96:1.4 starts: Complete as in §91.
+sn45.96:1.5 none
+
+## sn46.17:5.2 — whole-passage-note; move
+noteKeys: sn46.17:5.2
+targetKey: sn46.17:2.1
+All attached verses are replaced by one parenthesized prose note. The first omitted verse is Appakā te manussesu at 2.1. Keep the whole note and link together, not distributed over verse lines.
+sn46.17:2.1 starts: (The verses attached to this sutta are
+sn46.17:5.2 none
+
+## sn47.23:1.3 — whole-passage-note; move
+noteKeys: sn47.23:1.3
+targetKey: sn47.23:1.1
+The omitted opening begins with Ekaṁ samayaṁ at 1.1. The following printed question at 1.4 is actual translation.
+sn47.23:1.1 starts: As above down to:
+sn47.23:1.3 none
+sn47.23:1.4 starts: “Friend Ānanda, what is the cause and
+
+## sn47.63-72:1.2 — whole-passage-note; move
+noteKeys: sn47.63-72:1.2
+targetKey: sn47.63-72:1.1
+The source note replaces the complete diligence group beginning Yāvatā ... sattā at 1.1. Keep the following translated uddāna whole/in order at its existing rows; the anchor at 2.1 ends the note before those actual verses.
+sn47.63-72:1.1 starts: (To be elaborated by way of the
+sn47.63-72:1.2 none
+sn47.63-72:2.1 starts: Tathagata, footprint, roof peak,
+
+## sn56.14:6.1 — whole-passage-note; move
+noteKeys: sn56.14:6.1
+targetKey: sn56.14:3.1
+The source's translated suffering definition ends at 2.5. “The rest” starts with the next full origin-of-suffering question at 3.1 and includes all remaining definitions and exhortation.
+sn56.14:3.1 starts: The rest of the sutta is identical
+sn56.14:6.1 none
+
+# done

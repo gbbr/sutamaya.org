@@ -1,0 +1,35 @@
+{
+  "rowsRead": 289,
+  "textIdsReviewed": [
+    "an10.28",
+    "sn35.146",
+    "sn1.34",
+    "an3.36",
+    "an10.217"
+  ],
+  "proposalRationales": [
+    {
+      "keys": [
+        "sn1.34:7.1",
+        "sn1.34:7.3",
+        "sn1.34:7.4"
+      ],
+      "reason": "The first verse row currently contains two complete Bodhi verse lines, while the next Pali verse row (7.3) is empty. Keep the first whole line on 7.1 and place the second whole line on 7.3; 7.4 anchors the following whole line. This preserves the order and integrity of all four Bodhi verse lines and makes every Pali verse row visible. The prose attribution at 7.2 introduces a source-order complication described separately."
+    }
+  ],
+  "openConcerns": [
+    {
+      "keys": [
+        "sn1.34:7.1",
+        "sn1.34:7.2",
+        "sn1.34:7.3"
+      ],
+      "concern": "Bodhi places the prose attribution after both first verse lines, whereas Pali places it between them. Moving only the second complete verse line to 7.3 preserves verse-line order but leaves the attribution on 7.2 before that line in rendered row order. An independent judge should decide how to handle this attribution complication; no directive to relocate, omit, or split the attribution is proposed."
+    }
+  ],
+  "reviewNotes": [
+    "All rows read in four untruncated chunks. Pali was the alignment authority; secondary translation used only for context.",
+    "No certain prose misplacements found. Accepted coherent sentences spanning Pali rows on the first row, omissions and abbreviations, and headings or numbers.",
+    "Other verse differences in semantic order were accepted because Bodhi whole lines remain in their own order and each Pali verse row has content."
+  ]
+}

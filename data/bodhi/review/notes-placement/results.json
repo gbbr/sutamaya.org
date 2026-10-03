@@ -1,0 +1,24 @@
+{
+  "status": "finished",
+  "candidateRows": 123,
+  "distinctNotesMoved": 81,
+  "notesLeft": 23,
+  "leftReasons": {
+    "list-item-note": 5,
+    "already-correct": 4,
+    "partial-sentence-note": 14
+  },
+  "ordinaryTranslationRowsExcluded": 18,
+  "duplicateSplitNoteCandidates": 1,
+  "changingBoundaryDirectives": 183,
+  "unchangedAnchors": 25,
+  "textFilesChanged": 81,
+  "referenceRecordsMoved": 81,
+  "supersededHistoricalDirectives": 14,
+  "effort": "high for all candidate judgments",
+  "openUncertainNotes": 0,
+  "checkerFalsePositives": [
+    "an3.27:4.1",
+    "sn46.17:2.1"
+  ]
+}

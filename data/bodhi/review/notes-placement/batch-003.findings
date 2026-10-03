@@ -1,0 +1,90 @@
+# All 41 candidates and their full supplied Pali stretches/source paragraphs read.
+# Proposed moves: 30. Leave: 11. Uncertain: 0.
+# Exact decisions and boundary rationales: batch-003.judgments.json.
+# Only whole-passage substitutes move. Inline partial-sentence notes and ordinary translation stay.
+# AN10.22 / AN10.36: empty the displaced standalone ellipses so they return to the preceding What ten? before the note, preserving source order.
+an10.22:3.3 starts: As in <a href="https://suttacentral.net/an10.21">AN10.21</a> …
+an10.22:7.2 none
+an10.22:8.2 none
+an10.22:13.1 starts: “These, Ānanda, are the ten Tathāgata’s powers
+an10.36:1.4 starts: The same ten qualities as in <a href="https://suttacentral.net/an10.34">AN10.34</a>.
+an10.36:1.12 none
+an10.36:1.14 starts: “A bhikkhu who possesses these ten qualities
+an3.27:4.1 starts: A verse is attached identical with that
+an3.27:4.2 none
+an5.50:9.1 starts: The sequel is identical to <a href="https://suttacentral.net/an5.48">AN5.48</a>,
+an5.50:14.3 none
+an5.50:18.1 starts: When this was said, King Muṇḍa asked
+an8.43:1.5 starts: All as in <a href="https://suttacentral.net/an8.42">AN8.42</a>, including the verses.
+an8.43:3.1 none
+an8.43:12.1 none
+an8.48:2.3 starts: As in <a href="https://suttacentral.net/an8.46">AN8.46</a>, including the verses.
+an8.48:12.2 none
+sn11.20:1.1 starts: As above down to:
+sn11.20:1.2 none
+sn11.20:1.8 starts: “Then, bhikkhus, Sakka, lord of the devas,
+sn12.36:1.1 starts: This sutta is identical with the preceding
+sn12.36:2.1 none
+sn12.36:2.4 none
+sn12.50:1.1 starts: This sutta is identical with the preceding
+sn12.50:5.1 none
+sn22.34:1.1 starts: This sutta is identical with the preceding
+sn22.34:1.13 none
+# SN22.38: the note ends at concluding:; the following quotation remains actual translation on 7.9.
+sn22.38:5.2 starts: The Buddha here repeats the entire answer
+sn22.38:7.9 starts: “Being asked thus, Ānanda, you should answer
+sn22.77:1.1 starts: This sutta is identical with the preceding
+sn22.77:2.3 none
+sn22.81:6.4 starts: all as above …
+sn22.81:6.6 none
+sn22.81:6.12 starts: When one knows and sees thus, bhikkhus,
+sn22.88:1.3 starts: As in preceding sutta, down to:
+sn22.88:1.10 none
+sn22.88:3.6 starts: “Then if you have nothing for which
+sn35.107:1.1 starts: (Identical with <a href="https://suttacentral.net/sn12.44">SN12.44</a>.)
+sn35.107:2.5 none
+sn35.117:2.2 starts: all as in preceding sutta down to:
+sn35.117:3.1 none
+sn35.117:5.11 none
+sn35.117:7.3 starts: The Venerable Ānanda said this:
+sn35.122:1.1 starts: Identical with §109, but by way of
+sn35.122:1.3 none
+sn35.143:1.1 starts: These three suttas are identical with §§140-42,
+sn35.143:1.3 none
+sn35.16:1.1 starts: The same for the six external sense
+sn35.16:2.1 none
+sn35.54:1.2 starts: The Buddha’s reply is as above.
+sn35.54:1.15 none
+sn35.73:1.1 starts: The first two paragraphs as in §71.
+sn35.73:1.2 none
+sn35.73:3.1 starts: “What do you think, bhikkhu,
+# SN35.89: the two ellipsis holders bracket the same omitted-passage note and move together with it.
+sn35.89:4.1 starts: … as in §32 down to: …
+sn35.89:7.1 none
+sn35.89:9.2 none
+sn35.89:14.1 none
+sn35.89:15.4 starts: “He understands: ‘Destroyed is birth, the holy
+sn36.8:1.1 starts: As in preceding sutta down to the
+sn36.8:3.3 none
+sn36.8:4.4 starts: “A bhikkhu should await his time mindful
+sn44.11:1.5 starts: All as in §1 down to:
+sn44.11:1.9 none
+sn44.11:3.13 starts: “What then, Master Kaccana, is the cause
+sn44.5:1.1 starts: As above down to:
+sn44.5:1.2 none
+sn44.5:1.3 starts: “What now, friend, is the cause and
+# SN45.83: completion note ends before He develops right concentration, which remains on 1.4.
+sn45.83:1.2 starts: complete as in §77 …
+sn45.83:1.4 starts: He develops right concentration, which is based
+sn45.97:1.3 starts: Complete as in §§91–96.
+sn45.97:1.4 none
+sn47.14:3.1 starts: … as in §9 …
+sn47.14:3.6 none
+sn47.14:3.7 starts: Those bhikkhus, either now or after I
+sn47.27:2.2 starts: as above …
+sn47.27:2.4 none
+sn47.27:2.6 starts: It is because one has completely developed
+sn47.73-84:1.1 starts: (To be elaborated parallel to <a href="https://suttacentral.net/sn45.149">SN45.149</a>.)
+sn47.73-84:1.2 none
+sn47.73-84:2.1 starts: Strenuous, seeds, and nagas,
+# done

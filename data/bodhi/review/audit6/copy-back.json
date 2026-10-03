@@ -1,0 +1,12 @@
+{
+  "files": [
+    "data/bodhi/sutta/an/an8/an8.23_translation-en-bodhi.json",
+    "data/bodhi/sutta/an/an10/an10.267-746_translation-en-bodhi.json",
+    "data/bodhi/sutta/sn/sn12/sn12.57_translation-en-bodhi.json",
+    "data/bodhi/cuts.json",
+    "data/bodhi/report.json",
+    "data/bodhi/review/hand/codex-audit6.findings"
+  ],
+  "textsChanged": 3,
+  "notesChanged": 0
+}

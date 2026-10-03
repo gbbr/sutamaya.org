@@ -1,0 +1,85 @@
+{
+  "rowsRead": 331,
+  "textIdsReviewed": [
+    "an10.219",
+    "an10.240-266",
+    "an3.48",
+    "an3.50",
+    "an3.55",
+    "an4.17",
+    "an4.21",
+    "an4.22",
+    "an4.56",
+    "an4.62",
+    "an5.22",
+    "an5.304",
+    "an5.42",
+    "an5.60",
+    "an5.64"
+  ],
+  "proposals": [],
+  "openConcerns": [],
+  "acceptedCases": [
+    {
+      "textId": "an10.219",
+      "reason": "All opening statements, questions, replies, loving-kindness/equanimity passages, distinct quoted sentences, and conclusions align with their Pali rows. Abbreviated compassion and joy repetitions are accepted."
+    },
+    {
+      "textId": "an10.240-266",
+      "reason": "Each distinct repeated-purpose list item has its corresponding row; lust repeated at the last English item is acceptable wording within the formula."
+    },
+    {
+      "textId": "an3.48",
+      "reason": "Prose lists align. Verse translation changes semantic order within stanzas, but Bodhi’s whole lines remain in source order, the verse begins on its first Pali row, and all Pali rows are visible."
+    },
+    {
+      "textId": "an3.50",
+      "reason": "Thief and evil-bhikkhu lists, questions, examples, quoted thoughts, and conclusions are aligned. Untranslated uddāna and terminal labels are accepted omissions."
+    },
+    {
+      "textId": "an3.55",
+      "reason": "Lust, hate, and delusion passages and the final response align. Abbreviated hate repetition is accepted."
+    },
+    {
+      "textId": "an4.17",
+      "reason": "Four-course prose and all four intact verse lines align and retain order."
+    },
+    {
+      "textId": "an4.21",
+      "reason": "All narrative and repeated aggregate statements align. Verse 10 changes English semantic order but retains whole Bodhi lines and all Pali rows; no semantic realignment is warranted."
+    },
+    {
+      "textId": "an4.22",
+      "reason": "Prose elder criteria align. Verse 5 and 8 have reordered semantic content within Bodhi’s source sequence; these whole lines are accepted in order."
+    },
+    {
+      "textId": "an4.56",
+      "reason": "The prose aligns and the exact edition abbreviation begins at the first omitted verse row; no missing verse text is inferred."
+    },
+    {
+      "textId": "an4.62",
+      "reason": "All four kinds of happiness, reflections, summary, and verse lines align. English verse semantic order is accepted."
+    },
+    {
+      "textId": "an5.22",
+      "reason": "All five negative and five positive dependency list items align individually."
+    },
+    {
+      "textId": "an5.304",
+      "reason": "Opening, question, perception list, and conclusion align."
+    },
+    {
+      "textId": "an5.42",
+      "reason": "All five prose beneficiaries have separate corresponding rows. Verse 3 and 4 retain Bodhi source order despite different Pali semantic order. At 4.1 three whole source lines are retained with ⏎; together with the subsequent rows, all eight source lines stay in order and all six Pali verse rows remain visible. No regrouping or semantic realignment proposed."
+    },
+    {
+      "textId": "an5.60",
+      "reason": "Opening, question, five qualities, and conclusion align; terminal labels and uddāna omissions are accepted."
+    },
+    {
+      "textId": "an5.64",
+      "reason": "Opening, question, growth list, conclusion, and all whole verse lines align and retain order."
+    }
+  ],
+  "coverageNote": "Read the entire supplied batch in sequential manageable chunks, from an10.219:1.1 through an5.64:2.5. Reviewed every Pali/T row, including all untranslated rows."
+}

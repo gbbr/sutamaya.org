@@ -1,0 +1,29 @@
+{
+  "command": "node scripts/segmenter/segment-translations.mjs bodhi",
+  "isolatedCopy": "/private/tmp/bodhi-notes-reproduce-oltcxxv1",
+  "comparison": {
+    "sutta": {
+      "files": 1166,
+      "different": []
+    },
+    "notes": {
+      "files": 1,
+      "different": []
+    },
+    "cuts.json": {
+      "identical": true
+    },
+    "covered.json": {
+      "identical": true
+    },
+    "learned.json": {
+      "identical": true
+    },
+    "report.json": {
+      "identical": true
+    },
+    "review/references.json": {
+      "identical": true
+    }
+  }
+}

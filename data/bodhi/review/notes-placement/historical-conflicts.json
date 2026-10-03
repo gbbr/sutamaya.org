@@ -1,0 +1,86 @@
+[
+  {
+    "file": "data/bodhi/review/hand/codex-import-exceptions.findings",
+    "line": "an4.54:2.1 none",
+    "key": "an4.54:2.1",
+    "replacement": "The rest, including the verses, is identical"
+  },
+  {
+    "file": "data/bodhi/review/hand/fixes.findings",
+    "line": "sn45.83:1.4 starts: complete as in §77 … He develops right concentration,",
+    "key": "sn45.83:1.4",
+    "replacement": "He develops right concentration, which is based"
+  },
+  {
+    "file": "data/bodhi/review/hand/source-mapping.findings",
+    "line": "sn45.83:1.2 none",
+    "key": "sn45.83:1.2",
+    "replacement": "complete as in §77 …"
+  },
+  {
+    "file": "data/bodhi/review/hand/source-mapping.findings",
+    "line": "sn45.83:1.4 starts: complete as in §77 … He develops right",
+    "key": "sn45.83:1.4",
+    "replacement": "He develops right concentration, which is based"
+  },
+  {
+    "file": "data/bodhi/review/hand/source-mapping.findings",
+    "line": "sn45.90:1.2 none",
+    "key": "sn45.90:1.2",
+    "replacement": "complete as in §84 …"
+  },
+  {
+    "file": "data/bodhi/review/hand/source-mapping.findings",
+    "line": "sn45.90:1.4 starts: complete as in §84 … He develops right",
+    "key": "sn45.90:1.4",
+    "replacement": "He develops right concentration, which has as"
+  },
+  {
+    "file": "data/bodhi/review/codex-read/batch-003.findings",
+    "line": "an4.54:2.1 none",
+    "key": "an4.54:2.1",
+    "replacement": "The rest, including the verses, is identical"
+  },
+  {
+    "file": "data/bodhi/review/reread/batch-018.findings",
+    "line": "sn47.14:3.6 starts: … as in §9 …",
+    "key": "sn47.14:3.6",
+    "replacement": null
+  },
+  {
+    "file": "data/bodhi/review/reread/batch-005.findings",
+    "line": "sn11.12:9.1 starts: The remainder of this sutta is identical",
+    "key": "sn11.12:9.1",
+    "replacement": null
+  },
+  {
+    "file": "data/bodhi/review/read/batch-017.findings",
+    "line": "an10.53:6.1 none",
+    "key": "an10.53:6.1",
+    "replacement": "… [97–98] … as in 10:51 down"
+  },
+  {
+    "file": "data/bodhi/review/read/batch-109.findings",
+    "line": "sn35.54:1.2 none",
+    "key": "sn35.54:1.2",
+    "replacement": "The Buddha’s reply is as above."
+  },
+  {
+    "file": "data/bodhi/review/read/batch-007.findings",
+    "line": "sn45.83:1.2 none",
+    "key": "sn45.83:1.2",
+    "replacement": "complete as in §77 …"
+  },
+  {
+    "file": "data/bodhi/review/read/batch-007.findings",
+    "line": "sn45.90:1.2 none",
+    "key": "sn45.90:1.2",
+    "replacement": "complete as in §84 …"
+  },
+  {
+    "file": "data/bodhi/review/read/batch-007.findings",
+    "line": "sn45.90:1.4 starts: complete as in §84 … He develops right concentration,",
+    "key": "sn45.90:1.4",
+    "replacement": "He develops right concentration, which has as"
+  }
+]

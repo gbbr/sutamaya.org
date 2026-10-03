@@ -1,0 +1,33 @@
+{
+  "checkUpstream": {
+    "matchPages": 1158,
+    "differ": 0,
+    "log": "check-upstream.log"
+  },
+  "checkIntegrity": {
+    "problems": 0,
+    "log": "check-integrity.log"
+  },
+  "checkRound": {
+    "changedSinceHead": 193,
+    "newlyShownPali": 82,
+    "newlyHiddenPali": 104,
+    "hiddenTranslatedVersePali": 0,
+    "actualSplitVerseLines": 0,
+    "rawReportedNonWholeRows": [
+      "an3.27:4.1",
+      "sn46.17:2.1"
+    ],
+    "falsePositiveEvidence": "check-round-note-exceptions.json",
+    "checkerChangeNeeded": "check-round.py must normalize linked/app-formatted citations and distinguish whole omission notes from translated verse lines; no scripts changed."
+  },
+  "newlyHiddenDisposition": {
+    "noteAbbreviationRows": 103,
+    "coveredEntriesWithinOmittedRanges": 0,
+    "sourceGoalFromAudit6": "an10.267-746:1.24: paṭinissaggāya …pe… repeated goal Bodhi abbreviates; remains hidden",
+    "details": "omission-ranges.json; all note-only passages are omitted/repetition, not translated content; no covered.json additions"
+  },
+  "freshReproduction": "reproduction.json:1166 texts,notes,cuts/covered/learned/report/references byte-identical",
+  "cross": 0,
+  "lists": 0
+}

@@ -1,0 +1,69 @@
+{
+  "sameReadRows": 2499,
+  "threeNamedMisses": {
+    "an8.48": [
+      "an8.48:2.3",
+      "an8.48:12.2"
+    ],
+    "sn35.102": [
+      "sn35.102:1.1",
+      "sn35.102:1.16"
+    ],
+    "sn35.137": [
+      "sn35.137:1.1",
+      "sn35.137:1.9",
+      "sn35.137:1.10"
+    ]
+  },
+  "additionalFiveSampledNotes": [
+    "sn35.62",
+    "sn44.6",
+    "sn45.96",
+    "sn47.73-84",
+    "sn47.85-94"
+  ],
+  "allAdditionalBoundaryKeys": [
+    "an8.48:12.2",
+    "an8.48:2.3",
+    "sn35.102:1.1",
+    "sn35.102:1.16",
+    "sn35.137:1.1",
+    "sn35.137:1.10",
+    "sn35.137:1.9",
+    "sn35.62:14.1",
+    "sn35.62:20.7",
+    "sn35.62:3.1",
+    "sn44.6:1.6",
+    "sn45.96:1.4",
+    "sn45.96:1.5",
+    "sn47.73-84:1.1",
+    "sn47.73-84:1.2",
+    "sn47.85-94:1.1",
+    "sn47.85-94:1.4"
+  ],
+  "correctedBoundaryKeys": [
+    "an10.267-746:1.16",
+    "an10.267-746:1.24",
+    "an8.23:7.1",
+    "an8.48:12.2",
+    "an8.48:2.3",
+    "sn12.57:4.3",
+    "sn35.102:1.1",
+    "sn35.102:1.16",
+    "sn35.137:1.1",
+    "sn35.137:1.10",
+    "sn35.137:1.9",
+    "sn35.62:14.1",
+    "sn35.62:20.7",
+    "sn35.62:3.1",
+    "sn44.6:1.6",
+    "sn45.96:1.4",
+    "sn45.96:1.5",
+    "sn47.73-84:1.1",
+    "sn47.73-84:1.2",
+    "sn47.85-94:1.1",
+    "sn47.85-94:1.4"
+  ],
+  "correctedPercent": 0.8403361344537815,
+  "rateMeaning": "All confirmed changing boundary directives in original sample, measured before initial and follow-up repairs; no resampling. Three named misses add7; five other sampled notes add10."
+}

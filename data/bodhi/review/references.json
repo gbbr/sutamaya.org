@@ -7,7 +7,7 @@
     "target": "an3.2"
   },
   {
-    "key": "an3.27:4.2",
+    "key": "an3.27:4.1",
     "source": "text",
     "words": "A verse is attached identical with that in 3:26",
     "kind": "stands_in",
@@ -63,14 +63,14 @@
     "target": "an4.18"
   },
   {
-    "key": "an4.40:2.4",
+    "key": "an4.40:1.2",
     "source": "text",
     "words": "The prose portion is identical with that of 4:39",
     "kind": "stands_in",
     "target": "an4.39"
   },
   {
-    "key": "an4.54:6.1",
+    "key": "an4.54:2.1",
     "source": "text",
     "words": "is identical with 4:53",
     "kind": "stands_in",
@@ -119,7 +119,7 @@
     "target": "an5.48"
   },
   {
-    "key": "an5.50:14.3",
+    "key": "an5.50:9.1",
     "source": "text",
     "words": "The sequel is identical to 5:48",
     "kind": "stands_in",
@@ -147,7 +147,7 @@
     "target": "an8.5"
   },
   {
-    "key": "an8.8:10.1",
+    "key": "an8.8:8.2",
     "source": "text",
     "words": "Sakka here cites the Buddha’s entire discourse of 8:7",
     "kind": "stands_in",
@@ -203,7 +203,7 @@
     "target": "an8.41"
   },
   {
-    "key": "an8.43:3.1",
+    "key": "an8.43:1.5",
     "source": "text",
     "words": "All as in 8:42",
     "kind": "stands_in",
@@ -217,7 +217,7 @@
     "target": "an8.42"
   },
   {
-    "key": "an8.45:4.4",
+    "key": "an8.45:2.2",
     "source": "text",
     "words": "All as in 8:42",
     "kind": "stands_in",
@@ -231,14 +231,14 @@
     "target": "an8.46"
   },
   {
-    "key": "an8.47:5.2",
+    "key": "an8.47:2.3",
     "source": "text",
     "words": "As in 8:46",
     "kind": "stands_in",
     "target": "an8.46"
   },
   {
-    "key": "an8.48:12.2",
+    "key": "an8.48:2.3",
     "source": "text",
     "words": "As in 8:46",
     "kind": "stands_in",
@@ -280,28 +280,28 @@
     "target": "an6.2"
   },
   {
-    "key": "an10.22:8.2",
+    "key": "an10.22:3.3",
     "source": "text",
     "words": "As in 10:21",
     "kind": "stands_in",
     "target": "an10.21"
   },
   {
-    "key": "an10.27:6.6",
+    "key": "an10.27:6.2",
     "source": "text",
     "words": "They here report the entire course of events",
     "kind": "stands_in",
     "target": "an10.27"
   },
   {
-    "key": "an10.35:1.14",
+    "key": "an10.35:1.4",
     "source": "text",
     "words": "The same ten qualities as in the preceding sutta",
     "kind": "stands_in",
     "target": "an10.34"
   },
   {
-    "key": "an10.36:1.14",
+    "key": "an10.36:1.4",
     "source": "text",
     "words": "The same ten qualities as in 10:34",
     "kind": "stands_in",
@@ -329,14 +329,14 @@
     "target": "an10.51"
   },
   {
-    "key": "an10.53:7.1",
+    "key": "an10.53:6.1",
     "source": "text",
     "words": "as in 10:51 down to:",
     "kind": "stands_in",
     "target": "an10.51"
   },
   {
-    "key": "an10.62:2.21",
+    "key": "an10.62:2.7",
     "source": "text",
     "words": "as in 10:61",
     "kind": "stands_in",
@@ -882,21 +882,21 @@
     "target": "sn1.20"
   },
   {
-    "key": "sn4.10:1.3",
+    "key": "sn4.10:1.1",
     "source": "text",
     "words": "Opening as in preceding sutta",
     "kind": "stands_in",
     "target": "sn4.9"
   },
   {
-    "key": "sn11.2:2.10",
+    "key": "sn11.2:1.1",
     "source": "text",
     "words": "This sutta is identical with the preceding one",
     "kind": "stands_in",
     "target": "sn11.1"
   },
   {
-    "key": "sn11.2:2.10",
+    "key": "sn11.2:1.1",
     "source": "text",
     "words": "Verses 863–67 = 858–",
     "kind": "stands_in",
@@ -931,28 +931,28 @@
     "target": "sn11.11"
   },
   {
-    "key": "sn11.12:10.4",
+    "key": "sn11.12:8.2",
     "source": "text",
     "words": "Verses 906–7 = 904–5",
     "kind": "stands_in",
     "target": "sn11.11"
   },
   {
-    "key": "sn11.13:13.1",
+    "key": "sn11.13:7.1",
     "source": "text",
     "words": "as in 11:12",
     "kind": "stands_in",
     "target": "sn11.12"
   },
   {
-    "key": "sn11.13:13.1",
+    "key": "sn11.13:7.1",
     "source": "text",
     "words": "as in 11:11",
     "kind": "stands_in",
     "target": "sn11.11"
   },
   {
-    "key": "sn11.13:13.1",
+    "key": "sn11.13:7.1",
     "source": "text",
     "words": "verses 908–",
     "kind": "stands_in",
@@ -980,7 +980,7 @@
     "target": "sn11.18"
   },
   {
-    "key": "sn11.20:1.2",
+    "key": "sn11.20:1.1",
     "source": "text",
     "words": "As above down to:",
     "kind": "stands_in",
@@ -1015,7 +1015,7 @@
     "target": "sn12.2"
   },
   {
-    "key": "sn12.28:2.10",
+    "key": "sn12.28:2.2",
     "source": "text",
     "words": "as in preceding sutta",
     "kind": "stands_in",
@@ -1043,35 +1043,35 @@
     "target": "sn12.2"
   },
   {
-    "key": "sn12.36:2.1",
+    "key": "sn12.36:1.1",
     "source": "text",
     "words": "This sutta is identical with the preceding one",
     "kind": "stands_in",
     "target": "sn12.35"
   },
   {
-    "key": "sn12.42:1.3",
+    "key": "sn12.42:1.1",
     "source": "text",
     "words": "This sutta is identical with the preceding one",
     "kind": "stands_in",
     "target": "sn12.41"
   },
   {
-    "key": "sn12.50:5.1",
+    "key": "sn12.50:1.1",
     "source": "text",
     "words": "This sutta is identical with the preceding one",
     "kind": "stands_in",
     "target": "sn12.49"
   },
   {
-    "key": "sn12.54:2.3",
+    "key": "sn12.54:1.1",
     "source": "text",
     "words": "This sutta is identical with the preceding one",
     "kind": "stands_in",
     "target": "sn12.53"
   },
   {
-    "key": "sn12.56:2.2",
+    "key": "sn12.56:1.1",
     "source": "text",
     "words": "This sutta is identical with the preceding one",
     "kind": "stands_in",
@@ -1099,7 +1099,7 @@
     "target": "sn12.68"
   },
   {
-    "key": "sn16.7:12.8",
+    "key": "sn16.7:8.2",
     "source": "text",
     "words": "The Buddha then repeats the entire statement of the Venerable Mahakassapa",
     "kind": "stands_in",
@@ -1134,7 +1134,7 @@
     "target": "sn22.5"
   },
   {
-    "key": "sn22.34:1.13",
+    "key": "sn22.34:1.1",
     "source": "text",
     "words": "This sutta is identical with the preceding one",
     "kind": "stands_in",
@@ -1155,7 +1155,7 @@
     "target": "sn22.36"
   },
   {
-    "key": "sn22.38:7.9",
+    "key": "sn22.38:5.2",
     "source": "text",
     "words": "The Buddha here repeats the entire answer of the Venerable Ānanda",
     "kind": "stands_in",
@@ -1218,7 +1218,7 @@
     "target": "sn22.66"
   },
   {
-    "key": "sn22.77:2.3",
+    "key": "sn22.77:1.1",
     "source": "text",
     "words": "This sutta is identical with the preceding one",
     "kind": "stands_in",
@@ -1232,7 +1232,7 @@
     "target": "sn22.80"
   },
   {
-    "key": "sn22.81:6.6",
+    "key": "sn22.81:6.4",
     "source": "text",
     "words": "all as above",
     "kind": "stands_in",
@@ -1246,7 +1246,7 @@
     "target": "sn22.82"
   },
   {
-    "key": "sn22.88:1.10",
+    "key": "sn22.88:1.3",
     "source": "text",
     "words": "As in preceding sutta,",
     "kind": "stands_in",
@@ -1267,7 +1267,7 @@
     "target": "sn35.7"
   },
   {
-    "key": "sn35.14:2.2",
+    "key": "sn35.14:1.1",
     "source": "text",
     "words": "The same is repeated for the six external sense bases",
     "kind": "stands_in",
@@ -1302,7 +1302,7 @@
     "target": "sn35.33-42"
   },
   {
-    "key": "sn35.54:1.15",
+    "key": "sn35.54:1.2",
     "source": "text",
     "words": "The Buddha’s reply is as above",
     "kind": "stands_in",
@@ -1330,7 +1330,7 @@
     "target": "sn35.60"
   },
   {
-    "key": "sn35.62:20.7",
+    "key": "sn35.62:3.1",
     "source": "text",
     "words": "To be completed as in §32",
     "kind": "stands_in",
@@ -1344,21 +1344,21 @@
     "target": "sn35.65"
   },
   {
-    "key": "sn35.72:1.2",
+    "key": "sn35.72:1.1",
     "source": "text",
     "words": "The first two paragraphs as in the preceding sutta",
     "kind": "stands_in",
     "target": "sn35.71"
   },
   {
-    "key": "sn35.73:1.2",
+    "key": "sn35.73:1.1",
     "source": "text",
     "words": "The first two paragraphs as in §71",
     "kind": "stands_in",
     "target": "sn35.71"
   },
   {
-    "key": "sn35.75:1.3",
+    "key": "sn35.75:1.1",
     "source": "text",
     "words": "As above down to:",
     "kind": "stands_in",
@@ -1372,14 +1372,14 @@
     "target": "sn35.79"
   },
   {
-    "key": "sn35.86:24.4",
+    "key": "sn35.86:4.1",
     "source": "text",
     "words": "Complete as in §32, down to",
     "kind": "stands_in",
     "target": "sn35.32"
   },
   {
-    "key": "sn35.89:9.2",
+    "key": "sn35.89:4.1",
     "source": "text",
     "words": "as in §32 down to:",
     "kind": "stands_in",
@@ -1393,14 +1393,14 @@
     "target": "sn35.95"
   },
   {
-    "key": "sn35.100:1.10",
+    "key": "sn35.100:1.3",
     "source": "text",
     "words": "The rest is identical with the preceding sutta",
     "kind": "stands_in",
     "target": "sn35.99"
   },
   {
-    "key": "sn35.102:1.16",
+    "key": "sn35.102:1.1",
     "source": "text",
     "words": "This sutta is identical with the preceding one",
     "kind": "stands_in",
@@ -1414,49 +1414,49 @@
     "target": "sn12.43"
   },
   {
-    "key": "sn35.107:2.5",
+    "key": "sn35.107:1.1",
     "source": "text",
     "words": "Identical with SN 12.44",
     "kind": "stands_in",
     "target": "sn12.44"
   },
   {
-    "key": "sn35.112:1.7",
+    "key": "sn35.112:1.1",
     "source": "text",
     "words": "Identical with §111",
     "kind": "stands_in",
     "target": "sn35.111"
   },
   {
-    "key": "sn35.113:1.2",
+    "key": "sn35.113:1.1",
     "source": "text",
     "words": "Identical with SN 12.45",
     "kind": "stands_in",
     "target": "sn12.45"
   },
   {
-    "key": "sn35.117:3.1",
+    "key": "sn35.117:2.2",
     "source": "text",
     "words": "all as in preceding sutta down to:",
     "kind": "stands_in",
     "target": "sn35.116"
   },
   {
-    "key": "sn35.119:1.2",
+    "key": "sn35.119:1.1",
     "source": "text",
     "words": "The same",
     "kind": "stands_in",
     "target": "sn35.118"
   },
   {
-    "key": "sn35.121:19.2",
+    "key": "sn35.121:17.1",
     "source": "text",
     "words": "The rest as in the preceding paragraph",
     "kind": "stands_in",
     "target": "sn35.121"
   },
   {
-    "key": "sn35.122:1.3",
+    "key": "sn35.122:1.1",
     "source": "text",
     "words": "Identical with §109",
     "kind": "stands_in",
@@ -1470,7 +1470,7 @@
     "target": "sn35.110"
   },
   {
-    "key": "sn35.124:2.3",
+    "key": "sn35.124:1.3",
     "source": "text",
     "words": "The question and the reply are exactly the same as in §118",
     "kind": "stands_in",
@@ -1491,7 +1491,7 @@
     "target": "sn35.118"
   },
   {
-    "key": "sn35.128:1.5",
+    "key": "sn35.128:1.3",
     "source": "text",
     "words": "As in §118",
     "kind": "stands_in",
@@ -1533,21 +1533,21 @@
     "target": "sn35.127"
   },
   {
-    "key": "sn35.137:1.9",
+    "key": "sn35.137:1.1",
     "source": "text",
     "words": "Identical with the preceding sutta",
     "kind": "stands_in",
     "target": "sn35.136"
   },
   {
-    "key": "sn35.139:1.12",
+    "key": "sn35.139:1.1",
     "source": "text",
     "words": "Identical with the preceding sutta",
     "kind": "stands_in",
     "target": "sn35.138"
   },
   {
-    "key": "sn35.143:1.3",
+    "key": "sn35.143:1.1",
     "source": "text",
     "words": "These three suttas are identical with §§140-42",
     "kind": "stands_in",
@@ -1561,7 +1561,7 @@
     "target": "sn35.147"
   },
   {
-    "key": "sn35.150:10.1",
+    "key": "sn35.150:2.1",
     "source": "text",
     "words": "all as in §32",
     "kind": "stands_in",
@@ -1589,7 +1589,7 @@
     "target": "sn35.247"
   },
   {
-    "key": "sn36.8:3.3",
+    "key": "sn36.8:1.1",
     "source": "text",
     "words": "As in preceding sutta down to the second injunction:",
     "kind": "stands_in",
@@ -1624,7 +1624,7 @@
     "target": "sn36.15"
   },
   {
-    "key": "sn36.17:1.2",
+    "key": "sn36.17:1.1",
     "source": "text",
     "words": "These two suttas are identical with §§15–",
     "kind": "stands_in",
@@ -1701,7 +1701,7 @@
     "target": "sn44.1"
   },
   {
-    "key": "sn44.2:2.12",
+    "key": "sn44.2:1.1",
     "source": "text",
     "words": "Identical with 22:86",
     "kind": "stands_in",
@@ -1715,21 +1715,21 @@
     "target": "sn44.2"
   },
   {
-    "key": "sn44.4:1.2",
+    "key": "sn44.4:1.1",
     "source": "text",
     "words": "As above down to:",
     "kind": "stands_in",
     "target": "sn44.3"
   },
   {
-    "key": "sn44.5:1.2",
+    "key": "sn44.5:1.1",
     "source": "text",
     "words": "As above down to:",
     "kind": "stands_in",
     "target": "sn44.3"
   },
   {
-    "key": "sn44.6:1.6",
+    "key": "sn44.6:1.4",
     "source": "text",
     "words": "All as above down to:",
     "kind": "stands_in",
@@ -1743,7 +1743,7 @@
     "target": "sn44.7"
   },
   {
-    "key": "sn44.8:1.7",
+    "key": "sn44.8:1.4",
     "source": "text",
     "words": "as above",
     "kind": "stands_in",
@@ -1757,14 +1757,14 @@
     "target": "sn44.8"
   },
   {
-    "key": "sn44.11:1.9",
+    "key": "sn44.11:1.5",
     "source": "text",
     "words": "All as in §1 down to:",
     "kind": "stands_in",
     "target": "sn44.1"
   },
   {
-    "key": "sn45.3:4.3",
+    "key": "sn45.3:3.1",
     "source": "text",
     "words": "The rest as in the preceding sutta",
     "kind": "stands_in",
@@ -1778,7 +1778,7 @@
     "target": "sn45.63"
   },
   {
-    "key": "sn45.69:1.4",
+    "key": "sn45.69:1.2",
     "source": "text",
     "words": "complete as in §63",
     "kind": "stands_in",
@@ -1806,7 +1806,7 @@
     "target": "sn45.77"
   },
   {
-    "key": "sn45.83:1.4",
+    "key": "sn45.83:1.2",
     "source": "text",
     "words": "complete as in §77",
     "kind": "stands_in",
@@ -1820,7 +1820,7 @@
     "target": "sn45.84"
   },
   {
-    "key": "sn45.90:1.4",
+    "key": "sn45.90:1.2",
     "source": "text",
     "words": "complete as in §84",
     "kind": "stands_in",
@@ -1834,14 +1834,14 @@
     "target": "sn45.91"
   },
   {
-    "key": "sn45.96:1.5",
+    "key": "sn45.96:1.4",
     "source": "text",
     "words": "Complete as in §91",
     "kind": "stands_in",
     "target": "sn45.91"
   },
   {
-    "key": "sn45.97:1.4",
+    "key": "sn45.97:1.3",
     "source": "text",
     "words": "Complete as in §§91–",
     "kind": "stands_in",
@@ -1904,7 +1904,7 @@
     "target": "sn46.14"
   },
   {
-    "key": "sn46.17:5.2",
+    "key": "sn46.17:2.1",
     "source": "text",
     "words": "The verses attached to this sutta are identical with those at 45:34 above",
     "kind": "stands_in",
@@ -1981,7 +1981,7 @@
     "target": "sn47.9"
   },
   {
-    "key": "sn47.14:3.6",
+    "key": "sn47.14:3.1",
     "source": "text",
     "words": "as in §9",
     "kind": "stands_in",
@@ -2009,7 +2009,7 @@
     "target": "sn47.18"
   },
   {
-    "key": "sn47.23:1.3",
+    "key": "sn47.23:1.1",
     "source": "text",
     "words": "As above down to:",
     "kind": "stands_in",
@@ -2023,7 +2023,7 @@
     "target": "sn47.22"
   },
   {
-    "key": "sn47.27:2.4",
+    "key": "sn47.27:2.2",
     "source": "text",
     "words": "as above",
     "kind": "stands_in",
@@ -2037,7 +2037,7 @@
     "target": "sn47.29"
   },
   {
-    "key": "sn47.33:2.4",
+    "key": "sn47.33:2.2",
     "source": "text",
     "words": "as above",
     "kind": "stands_in",
@@ -2065,21 +2065,21 @@
     "target": "sn45.92-95"
   },
   {
-    "key": "sn47.63-72:1.2",
+    "key": "sn47.63-72:1.1",
     "source": "text",
     "words": "To be elaborated by way of the establishments of mindfulness parallel to 45:139-48",
     "kind": "stands_in",
     "target": "sn45.139"
   },
   {
-    "key": "sn47.73-84:1.2",
+    "key": "sn47.73-84:1.1",
     "source": "text",
     "words": "To be elaborated parallel to 45:149-60",
     "kind": "stands_in",
     "target": "sn45.149"
   },
   {
-    "key": "sn47.85-94:1.4",
+    "key": "sn47.85-94:1.1",
     "source": "text",
     "words": "To be elaborated parallel to 45:161-70",
     "kind": "stands_in",
@@ -2100,7 +2100,7 @@
     "target": null
   },
   {
-    "key": "sn56.14:6.1",
+    "key": "sn56.14:3.1",
     "source": "text",
     "words": "The rest of the sutta is identical with §13",
     "kind": "stands_in",

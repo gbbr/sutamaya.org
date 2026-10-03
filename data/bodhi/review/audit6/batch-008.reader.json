@@ -1,0 +1,35 @@
+{
+  "rowsRead": 72,
+  "textIdsReviewed": [
+    "sn56.27",
+    "sn56.28",
+    "sn56.2",
+    "sn56.41",
+    "sn56.45"
+  ],
+  "proposals": [],
+  "openConcerns": [],
+  "acceptedCases": [
+    {
+      "textId": "sn56.27",
+      "reason": "Opening, question, four-truth list, explanation, naming conclusion, and exertion instruction match their Pali rows. The abbreviated final instruction and untranslated ordinal are accepted."
+    },
+    {
+      "textId": "sn56.28",
+      "reason": "The opening, four-truth list, Tathāgata/noble-one explanation, naming conclusion, and final instruction match their Pali rows. The opening wording “these are these” is a textual peculiarity, not an alignment error."
+    },
+    {
+      "textId": "sn56.2",
+      "reason": "Both repeated seclusion statements, question, truth-comprehension list, and final exertion instruction match Pali. Abbreviated truth repetitions are accepted."
+    },
+    {
+      "textId": "sn56.41",
+      "reason": "All setting/narrative sentences, thought and reported-speech introductions, quoted statements, questions, battle explanation, speculative-view list, reasons, beneficial reflection instruction, and conclusion align with their Pali rows. Bodhi’s “as above” at 2.6 properly abbreviates the repeated narrative. Coherent English clauses spanning adjacent Pali rows retain Pali order."
+    },
+    {
+      "textId": "sn56.45",
+      "reason": "Narrative, thought, repeated archery observation, question, comparison, reply, truth-penetration instruction, and conclusion align. The repeated first-person report at 2.2–2.6 is omitted after the narrative summary at 2.1; this is accepted abbreviation rather than missing or misplaced speech."
+    }
+  ],
+  "coverageNote": "Reviewed every supplied row from sn56.27:1.1 through sn56.45:4.2. This batch contains no verse rows."
+}

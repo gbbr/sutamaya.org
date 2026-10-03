@@ -1,0 +1,14 @@
+{
+  "candidateCount": 123,
+  "batches": {
+    "batch-001": 41,
+    "batch-002": 41,
+    "batch-003": 41
+  },
+  "bytes": {
+    "batch-001": 223515,
+    "batch-002": 222398,
+    "batch-003": 227100
+  },
+  "broadDiscovery": "all1658 post-gap English rows; broad phrase inventory plus independent source pe/add span match; excludes nothing based on external candidate list"
+}

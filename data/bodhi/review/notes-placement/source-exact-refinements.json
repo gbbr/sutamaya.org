@@ -1,0 +1,72 @@
+[
+  {
+    "readerDirective": "an10.53:6.1 starts: … [97–98] … as in AN10.51 down",
+    "sourceExactDirective": "an10.53:6.1 starts: … [97–98] … as in 10:51 down",
+    "reason": "Remove layout HTML and reverse app citation formatting so cut quote matches upstream source stream; no change of proposed location."
+  },
+  {
+    "readerDirective": "an8.45:2.2 starts: All as in AN8.42, including the verses.",
+    "sourceExactDirective": "an8.45:2.2 starts: All as in 8:42, including the verses.",
+    "reason": "Remove layout HTML and reverse app citation formatting so cut quote matches upstream source stream; no change of proposed location."
+  },
+  {
+    "readerDirective": "sn44.2:1.1 starts: (Identical with SN22.86.) [381–84]",
+    "sourceExactDirective": "sn44.2:1.1 starts: (Identical with 22:86.) [381–84]",
+    "reason": "Remove layout HTML and reverse app citation formatting so cut quote matches upstream source stream; no change of proposed location."
+  },
+  {
+    "readerDirective": "sn47.85-94:1.1 starts: (To be elaborated parallel to SN45.161.)",
+    "sourceExactDirective": "sn47.85-94:1.1 starts: (To be elaborated parallel to 45:161-70.)",
+    "reason": "Remove layout HTML and reverse app citation formatting so cut quote matches upstream source stream; no change of proposed location."
+  },
+  {
+    "readerDirective": "an10.62:2.7 starts: as in <a href=\"https://suttacentral.net/an10.61\">AN10.61</a> …",
+    "sourceExactDirective": "an10.62:2.7 starts: as in 10:61 …",
+    "reason": "Remove layout HTML and reverse app citation formatting so cut quote matches upstream source stream; no change of proposed location."
+  },
+  {
+    "readerDirective": "an8.47:2.3 starts: As in <a href=\"https://suttacentral.net/an8.46\">AN8.46</a>, including the verses.",
+    "sourceExactDirective": "an8.47:2.3 starts: As in 8:46, including the verses.",
+    "reason": "Remove layout HTML and reverse app citation formatting so cut quote matches upstream source stream; no change of proposed location."
+  },
+  {
+    "readerDirective": "sn35.113:1.1 starts: (Identical with <a href=\"https://suttacentral.net/sn12.45\">SN12.45</a>.)",
+    "sourceExactDirective": "sn35.113:1.1 starts: (Identical with SN 12.45.)",
+    "reason": "Remove layout HTML and reverse app citation formatting so cut quote matches upstream source stream; no change of proposed location."
+  },
+  {
+    "readerDirective": "an10.22:3.3 starts: As in <a href=\"https://suttacentral.net/an10.21\">AN10.21</a> …",
+    "sourceExactDirective": "an10.22:3.3 starts: As in 10:21 …",
+    "reason": "Remove layout HTML and reverse app citation formatting so cut quote matches upstream source stream; no change of proposed location."
+  },
+  {
+    "readerDirective": "an10.36:1.4 starts: The same ten qualities as in <a href=\"https://suttacentral.net/an10.34\">AN10.34</a>.",
+    "sourceExactDirective": "an10.36:1.4 starts: The same ten qualities as in 10:34.",
+    "reason": "Remove layout HTML and reverse app citation formatting so cut quote matches upstream source stream; no change of proposed location."
+  },
+  {
+    "readerDirective": "an5.50:9.1 starts: The sequel is identical to <a href=\"https://suttacentral.net/an5.48\">AN5.48</a>,",
+    "sourceExactDirective": "an5.50:9.1 starts: The sequel is identical to 5:48,",
+    "reason": "Remove layout HTML and reverse app citation formatting so cut quote matches upstream source stream; no change of proposed location."
+  },
+  {
+    "readerDirective": "an8.43:1.5 starts: All as in <a href=\"https://suttacentral.net/an8.42\">AN8.42</a>, including the verses.",
+    "sourceExactDirective": "an8.43:1.5 starts: All as in 8:42, including the verses.",
+    "reason": "Remove layout HTML and reverse app citation formatting so cut quote matches upstream source stream; no change of proposed location."
+  },
+  {
+    "readerDirective": "an8.48:2.3 starts: As in <a href=\"https://suttacentral.net/an8.46\">AN8.46</a>, including the verses.",
+    "sourceExactDirective": "an8.48:2.3 starts: As in 8:46, including the verses.",
+    "reason": "Remove layout HTML and reverse app citation formatting so cut quote matches upstream source stream; no change of proposed location."
+  },
+  {
+    "readerDirective": "sn35.107:1.1 starts: (Identical with <a href=\"https://suttacentral.net/sn12.44\">SN12.44</a>.)",
+    "sourceExactDirective": "sn35.107:1.1 starts: (Identical with SN 12.44.)",
+    "reason": "Remove layout HTML and reverse app citation formatting so cut quote matches upstream source stream; no change of proposed location."
+  },
+  {
+    "readerDirective": "sn47.73-84:1.1 starts: (To be elaborated parallel to <a href=\"https://suttacentral.net/sn45.149\">SN45.149</a>.)",
+    "sourceExactDirective": "sn47.73-84:1.1 starts: (To be elaborated parallel to 45:149-60.)",
+    "reason": "Remove layout HTML and reverse app citation formatting so cut quote matches upstream source stream; no change of proposed location."
+  }
+]

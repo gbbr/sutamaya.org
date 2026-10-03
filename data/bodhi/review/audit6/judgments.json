@@ -1,0 +1,123 @@
+{
+  "review": "bodhi-audit6",
+  "reviewed_proposals": 11,
+  "comparison_basis": "All Pali rows and exact source-page line orders in judge-packet.md were read. The Trial findings supply the changed placements; the full-row section's After columns repeat the baseline. No reader batches were read.",
+  "counts": {
+    "accept": 4,
+    "reject": 1,
+    "already-correct": 6,
+    "refine": 0,
+    "changing_directives": 4,
+    "changing_texts": 3,
+    "open_issues": 1
+  },
+  "decisions": [
+    {
+      "key": "an10.267-746:1.16",
+      "proposed_directive": "an10.267-746:1.16 starts: of heedlessness …",
+      "decision": "accept",
+      "rationale": "This is a distinct ellipsis-separated list item. Pamadassa is on 1.16, the first Pali row of the heedlessness item; 1.24 only repeats the goal patinissaggaya. Moving the item to 1.16 preserves the source list order and accepts Bodhi's abbreviation of the intervening goals.",
+      "accepted_directives": [
+        "an10.267-746:1.16 starts: of heedlessness …"
+      ]
+    },
+    {
+      "key": "an10.267-746:1.17",
+      "proposed_directive": "an10.267-746:1.17 none",
+      "decision": "already-correct",
+      "rationale": "The row already has no English. Bodhi abbreviates the repeated destruction and other goal phrases after the full formula on 1.1; the proposal makes no change and is not an error.",
+      "accepted_directives": []
+    },
+    {
+      "key": "an10.267-746:1.24",
+      "proposed_directive": "an10.267-746:1.24 none",
+      "decision": "accept",
+      "rationale": "This removes the old placement of the heedlessness list item after moving it to 1.16. The Pali here is the repeated relinquishment goal, not the first occurrence of heedlessness. The paired directives retain every source word in order.",
+      "accepted_directives": [
+        "an10.267-746:1.24 none"
+      ]
+    },
+    {
+      "key": "an8.23:4.2",
+      "proposed_directive": "an8.23:4.2 starts: After his meal, on returning from his alms",
+      "decision": "already-correct",
+      "rationale": "The row already starts with these words and renders the bhikkhu's return and report. Bodhi's summary legitimately replaces the repeated report on 5.1–6.4. This start is unchanged by the accepted speaker move and is not an error.",
+      "accepted_directives": []
+    },
+    {
+      "key": "an8.23:7.1",
+      "proposed_directive": "an8.23:7.1 starts: The Blessed One said: “Good, good, bhikkhu!",
+      "decision": "accept",
+      "rationale": "The Pali on 4.2 has the bhikkhu addressing the Buddha, whereas Bodhi's added attribution introduces the Buddha's reply at 7.1. Moving the attribution with that reply leaves the report sentence complete, retains the abbreviated repeated dialogue, and exactly preserves source word order.",
+      "accepted_directives": [
+        "an8.23:7.1 starts: The Blessed One said: “Good, good, bhikkhu!"
+      ]
+    },
+    {
+      "key": "sn1.34:7.1",
+      "proposed_directive": "sn1.34:7.1 starts: “If devas and humans have not seen",
+      "decision": "already-correct",
+      "rationale": "The row already begins with Bodhi's first whole line of this verse, on its first Pali verse row. This unchanged start is a valid anchor; the separate difficulty concerning the second line and intervening attribution remains open under 7.3.",
+      "accepted_directives": []
+    },
+    {
+      "key": "sn1.34:7.3",
+      "proposed_directive": "sn1.34:7.3 starts: The one thus liberated here or beyond,”",
+      "decision": "reject",
+      "rationale": "The proposed text is an entire source verse line, but in the source it precedes 'said the Venerable Mogharaja', which is already on Pali speaker row 7.2. Moving the verse line to 7.3 while retaining that attribution on 7.2 reverses source word order. Moving or emptying the speaker row to force the split would require a verse/prose repair outside the permitted cutting rules. The trial's not-found status therefore does not justify an alternate forced directive; leave the placement issue open.",
+      "accepted_directives": [],
+      "open_issue": "sn1.34:7.3-source-attribution-order"
+    },
+    {
+      "key": "sn1.34:7.4",
+      "proposed_directive": "sn1.34:7.4 starts: “Are they to be praised who venerate",
+      "decision": "already-correct",
+      "rationale": "The row already starts with this whole source verse line and follows the source attribution. Bodhi orders these last two verse lines differently from their Pali meanings; keeping both whole and in his order is correct. No change is required.",
+      "accepted_directives": []
+    },
+    {
+      "key": "sn12.57:4.2",
+      "proposed_directive": "sn12.57:4.2 starts: Then a man would come along bringing a",
+      "decision": "already-correct",
+      "rationale": "This is already the row's start and renders Atha puriso agaccheyya kuddalapitakam adaya. The accepted continuation move changes its extent, not its start. The anchor is not an error.",
+      "accepted_directives": []
+    },
+    {
+      "key": "sn12.57:4.3",
+      "proposed_directive": "sn12.57:4.3 none",
+      "decision": "accept",
+      "rationale": "The complete second English sentence starts with the cutting operations abbreviated by …pe… on 4.2, and continues through the swift-river clause on 4.3. That one sentence belongs whole on its first Pali row, 4.2. The preceding sentence also starts on 4.2; 4.3 contains only the final alternative clause of the second sentence, not the beginning of a separate sentence. Emptying 4.3 retains the source wording and order and does not restore omitted repetition.",
+      "accepted_directives": [
+        "sn12.57:4.3 none"
+      ]
+    },
+    {
+      "key": "sn12.57:4.4",
+      "proposed_directive": "sn12.57:4.4 starts: Thus that sapling would be cut off at",
+      "decision": "already-correct",
+      "rationale": "This separate conclusion sentence already begins on its own Pali row, Evanhi so ... ucchinnamulo assa. It remains there after the continuation move. No changing finding is warranted.",
+      "accepted_directives": []
+    }
+  ],
+  "accepted_directives": [
+    "an10.267-746:1.16 starts: of heedlessness …",
+    "an10.267-746:1.24 none",
+    "an8.23:7.1 starts: The Blessed One said: “Good, good, bhikkhu!",
+    "sn12.57:4.3 none"
+  ],
+  "open_issues": [
+    {
+      "id": "sn1.34:7.3-source-attribution-order",
+      "status": "open",
+      "keys": [
+        "sn1.34:7.1",
+        "sn1.34:7.2",
+        "sn1.34:7.3"
+      ],
+      "kind": "verse/prose source-order conflict",
+      "requires_segmenter_change": true,
+      "description": "Bodhi places the second whole verse line before the Mogharaja attribution, whereas the Pali places the attribution between its first and second verse rows. The baseline preserves the source order by retaining two English verse lines on 7.1, but does not spread the second line to 7.3. Ordinary monotonic start directives cannot move that line to 7.3 while retaining the attribution on its own row and preserving source order.",
+      "next_step": "Review later support for verse lines whose source attribution occurs at a different position from the Pali attribution. Preserve every source word and whole verse line in source order, keep the first verse line on the first Pali verse row, and ensure all translated verse Pali remains visible. Do not force a hand cut or alter source text."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "rowsRead": 473,
+  "textIdsReviewed": [
+    "an10.4",
+    "sn35.102",
+    "sn36.26",
+    "sn22.68",
+    "an8.48",
+    "sn35.62",
+    "sn47.16",
+    "sn35.137",
+    "sn35.53",
+    "sn47.85-94",
+    "sn45.96",
+    "sn46.46",
+    "sn46.47",
+    "an10.267-746",
+    "an3.21",
+    "an4.16",
+    "sn22.27",
+    "sn22.14",
+    "sn35.233",
+    "sn35.60",
+    "an5.28"
+  ],
+  "proposals": [
+    {
+      "key": "an10.267-746:1.16",
+      "directives": [
+        "an10.267-746:1.16 starts: of heedlessness …",
+        "an10.267-746:1.17 none",
+        "an10.267-746:1.24 none"
+      ],
+      "reason": "The final list item, Bodhi’s exact “of heedlessness …”, begins with P pamādassa at 1.16. Its current row 1.24 is only the last continuation paṭinissaggāya of that Pali item. The neighboring items (hatred through intoxication) already start on their corresponding Pali item openings. Move the short last item to its first Pali row and leave subsequent continuations empty; 1.25 retains the concluding sentence."
+    }
+  ],
+  "openConcerns": [
+    {
+      "keys": [
+        "sn35.102:1.16"
+      ],
+      "reason": "Whole-sutta editorial summary “This sutta is identical with the preceding one except that it omits the simile.” sits mid-sutta. It could be placed at 1.1 as an opening abbreviation, but exact edition-note placement is not determined by Pali and this is not proposed as a sure error."
+    },
+    {
+      "keys": [
+        "sn35.137:1.9",
+        "sn35.137:1.10"
+      ],
+      "reason": "Whole-sutta summary “Identical with the preceding sutta, but without the verses.” is split across two middle Pali rows. An opening abbreviation at 1.1 would be coherent, but exact edition-note placement requires source context; no error proposed."
+    },
+    {
+      "keys": [
+        "an8.48:12.2"
+      ],
+      "reason": "“As in AN8.46, including the verses.” occupies a verse row although it summarizes the omitted section after the question at 2.2. It might belong at 2.3, but it is an edition abbreviation rather than an intact verse line, and source-note placement needs confirmation; no verse lines were moved or cleared."
+    },
+    {
+      "keys": [
+        "sn35.62:20.7",
+        "sn47.16:3.3",
+        "sn45.96:1.5"
+      ],
+      "reason": "Completion/reference notes occur near the ends or interiors of omitted passages. Their placement may be source-editorial rather than translation alignment; accepted pending exact source context."
+    }
+  ],
+  "acceptedCases": [
+    "Abbreviations, omitted repetitions, terminal ordinals, alternative personal names, and the added English closing formula at an10.267-746:1.25 were accepted.",
+    "Single coherent prose sentences covering consecutive Pali lines, including an4.16:1.4–1.5 and 1.13–1.14, were accepted on their first row.",
+    "Coherent prose split in Pali order, including an3.21 vocatives and later continuations separated by omitted repeated material, was accepted.",
+    "All visible intact verse lines in sn47.85-94 and an4.16 retain source order and their whole lines; no semantic realignment proposed.",
+    "The batch ends at an5.28:9.2, and every supplied row through that endpoint was reviewed."
+  ]
+}

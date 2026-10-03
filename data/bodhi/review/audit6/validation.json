@@ -1,0 +1,28 @@
+{
+  "checkUpstream": {
+    "pagesMatch": 1158,
+    "differ": 0,
+    "log": "check-upstream.log"
+  },
+  "checkIntegrity": {
+    "problems": 0,
+    "log": "check-integrity.log"
+  },
+  "checkRound": {
+    "changedTextRows": 6,
+    "splitVerseLines": 0,
+    "newlyShownPali": 1,
+    "newlyHiddenOutsideCovered": [
+      "an10.267-746:1.24"
+    ],
+    "hiddenTranslatedVersePali": 0,
+    "log": "check-round.log",
+    "newlyHiddenDisposition": {
+      "an10.267-746:1.24": "paṭinissaggāya …pe… is the repeated relinquishment goal Bodhi abbreviates after giving the full formula. His heedlessness item belongs at pamādassa on 1.16. Per Building them into the app, abbreviated repetition stays hidden and must not be added to covered.json."
+    }
+  },
+  "plainFreshCopy": "reproduction.json: 1166 sutta files, 1 notes file, cuts/covered/learned/report all byte-identical",
+  "cross": "cross.log: 0 new suspects; other translator sutta snapshot present",
+  "lists": "lists.log: 0 new suspects",
+  "externalJudge": "Claude follow-up pending in another session"
+}

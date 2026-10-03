@@ -1,0 +1,248 @@
+[
+  {
+    "candidateKey": "an10.213:1.6",
+    "classification": "list-item-note",
+    "decision": "leave",
+    "noteKeys": [
+      "an10.213:1.6"
+    ],
+    "targetKey": null,
+    "rationale": "Source “as above” abbreviates intermediate items of the ten-quality list, not a whole passage. Keep its existing place.",
+    "directives": []
+  },
+  {
+    "candidateKey": "an8.20:9.6",
+    "classification": "already-correct",
+    "decision": "leave",
+    "noteKeys": [
+      "an8.20:9.6"
+    ],
+    "targetKey": null,
+    "rationale": "Source paragraph 15 replaces intermediate full qualities, but Pali compresses those qualities into the pe at 9.6. The note is already on that first/only Pali row; the actual first-quality conclusion belongs there too.",
+    "directives": []
+  },
+  {
+    "candidateKey": "mn65:26.6",
+    "classification": "partial-sentence-note",
+    "decision": "leave",
+    "noteKeys": [
+      "mn65:26.6"
+    ],
+    "targetKey": null,
+    "rationale": "Source paragraph 39 begins the correction sentence with “does not prevaricate” and uses “repeat rest of §24” to replace the rest of that sentence as well as subsequent repetition. Explicit partial-sentence rule requires leaving it.",
+    "directives": []
+  },
+  {
+    "candidateKey": "sn12.68:8.1",
+    "classification": "already-correct",
+    "decision": "leave",
+    "noteKeys": [
+      "sn12.68:8.1"
+    ],
+    "targetKey": null,
+    "rationale": "The standalone source paragraph replaces the full repeated Nārada question-and-answer series; 8.1 is already its first Pali row. Prior 7.7 is included in the actual translation at 7.6.",
+    "directives": []
+  },
+  {
+    "candidateKey": "sn22.35:3.5",
+    "classification": "partial-sentence-note",
+    "decision": "leave",
+    "noteKeys": [
+      "sn22.35:3.5"
+    ],
+    "targetKey": null,
+    "rationale": "Source paragraph 8 inserts “as above in full” between the opening conditional “If … towards form” and the concluding “then … not reckoned”; it replaces parts of sentences and intervening repetitions. Leave under the explicit partial-sentence rule.",
+    "directives": []
+  },
+  {
+    "candidateKey": "sn22.64:3.6",
+    "classification": "partial-sentence-note",
+    "decision": "leave",
+    "noteKeys": [
+      "sn22.64:3.6"
+    ],
+    "targetKey": null,
+    "rationale": "Source paragraph 8 embeds “as above in full” between the initial conceiving-form clause and the concluding not-conceiving clause. It replaces parts of the paired sentence and intermediate aggregate repetitions, so keeps its place.",
+    "directives": []
+  },
+  {
+    "candidateKey": "sn36.8:7.3",
+    "classification": "partial-sentence-note",
+    "decision": "leave",
+    "noteKeys": [
+      "sn36.8:7.3"
+    ],
+    "targetKey": null,
+    "rationale": "Source paragraph 6 starts the incomplete conditional “If he feels a pleasant feeling” before “all as in preceding sutta”. The repeat instruction replaces the remainder of that sentence plus later material; keep it under the partial-sentence rule. The final quoted understanding at 7.4 is actual translation, not note.",
+    "directives": []
+  },
+  {
+    "candidateKey": "sn46.15:3.2",
+    "classification": "partial-sentence-note",
+    "decision": "leave",
+    "noteKeys": [
+      "sn46.15:3.2",
+      "sn46.15:3.3"
+    ],
+    "targetKey": null,
+    "rationale": "Source paragraph 1 inserts the repeat note immediately after “approached … Mahamoggallana”, replacing the rest of that same narrative sentence before the subsequent dialogue. Keep the complete note’s continuation at 3.3 under the explicit partial-sentence rule.",
+    "directives": []
+  },
+  {
+    "candidateKey": "sn47.16:3.3",
+    "classification": "partial-sentence-note",
+    "decision": "leave",
+    "noteKeys": [
+      "sn47.16:3.3"
+    ],
+    "targetKey": null,
+    "rationale": "Source paragraph 3 begins the departure sentence through “rose from his seat”, then replaces the rest of that sentence and subsequent practice/knowledge with the note. It therefore keeps its place. The arahant conclusion at 3.4 is actual translation.",
+    "directives": []
+  },
+  {
+    "candidateKey": "an10.213:2.10",
+    "classification": "list-item-note",
+    "decision": "leave",
+    "noteKeys": [
+      "an10.213:2.10"
+    ],
+    "rationale": "The source's inline 'as above' abbreviates items between the translated first abstention and tenth right-view item; Pali 2.10 is itself an intermediate list item. It does not replace a whole passage.",
+    "directives": []
+  },
+  {
+    "candidateKey": "an8.22:5.6",
+    "classification": "partial-sentence-note",
+    "decision": "leave",
+    "noteKeys": [
+      "an8.22:5.6"
+    ],
+    "rationale": "Source paragraph 9 prints 'I then went to them … as in 8:21 …'; Pali 5.2 continues with etadavacaṁ and the quoted speech. The note completes an already partly translated narrative sentence and exchange, before the printed 5.9 sentence.",
+    "directives": []
+  },
+  {
+    "candidateKey": "sn12.22:1.10",
+    "classification": "partial-sentence-note",
+    "decision": "leave",
+    "noteKeys": [
+      "sn12.22:1.10"
+    ],
+    "rationale": "The source starts the quoted formula 'Such is form … as in §21 …' and retains its final cessation clause. The first form formula is only partly translated, so this inline elision substitutes for the remainder of that formula and subsequent formulas, rather than standing alone for an entire passage.",
+    "directives": []
+  },
+  {
+    "candidateKey": "sn12.2:2.7",
+    "classification": "list-item-note",
+    "decision": "leave",
+    "noteKeys": [
+      "sn12.2:2.7"
+    ],
+    "rationale": "'As in preceding sutta' is embedded between the first two dependent-origination links and the conclusion. It abbreviates intermediate links in the continuing semicolon list, including phassapaccayā vedanā at 2.7.",
+    "directives": []
+  },
+  {
+    "candidateKey": "sn22.36:3.13",
+    "classification": "partial-sentence-note",
+    "decision": "leave",
+    "noteKeys": [
+      "sn22.36:3.13"
+    ],
+    "rationale": "The source prints only the opening 'If ... tendency towards form' and the ending 'then one is not reckoned'; its inline 'as above in full' fills the intervening continuation of that partly translated sentence and repeated aggregate formulas.",
+    "directives": []
+  },
+  {
+    "candidateKey": "sn22.65:3.6",
+    "classification": "list-item-note",
+    "decision": "leave",
+    "noteKeys": [
+      "sn22.65:3.6"
+    ],
+    "rationale": "The inline 'as above in full' follows the printed first form proposition and precedes the final freedom clause. It elides repeated aggregate items, including saññaṁ at 3.6, inside a partly retained series.",
+    "directives": []
+  },
+  {
+    "candidateKey": "sn36.24:1.9",
+    "classification": "list-item-note",
+    "decision": "leave",
+    "noteKeys": [
+      "sn36.24:1.9"
+    ],
+    "rationale": "The source's inline 'all as in preceding sutta' follows 'There are these three feelings …' and ends before 'this is the escape'. It starts by eliding the three feeling list items in 1.6 and ends within the last escape proposition; it is not a standalone whole-passage replacement.",
+    "directives": []
+  },
+  {
+    "candidateKey": "sn45.146-148:3.9",
+    "classification": "already-correct",
+    "decision": "leave",
+    "noteKeys": [
+      "sn45.146-148:3.9"
+    ],
+    "rationale": "The instruction 'Each sutta is to be elaborated ...' corresponds to Pali (Yadapi tathāgataṁ, tadapi vitthāretabbaṁ.) at 3.9, after the completed cloth discourse. It is already on its canonical expansion-instruction row; no preceding omitted whole passage begins in the blank endsutta row 3.8.",
+    "directives": []
+  },
+  {
+    "candidateKey": "mn65:25.6",
+    "classification": "partial-sentence-note",
+    "decision": "leave",
+    "noteKeys": [
+      "mn65:25.6"
+    ],
+    "rationale": "repeat rest of §23 starts within the sentence already translated When he is corrected ... he prevaricates at 25.2, supplying the remaining misconduct clauses before further repeated material. The explicit partial-sentence rule keeps this inline note in place.",
+    "boundaryDirectives": [],
+    "directives": []
+  },
+  {
+    "candidateKey": "sn12.27:2.5",
+    "classification": "partial-sentence-note",
+    "decision": "leave",
+    "noteKeys": [
+      "sn12.27:2.5"
+    ],
+    "rationale": "The source reads The aging of the various beings ... as in §2 ... thus this aging and this death. The note begins inside the aging definition whose opening is translated on 2.2; it is an inline partial-definition abbreviation, not a whole independent passage.",
+    "boundaryDirectives": [],
+    "directives": []
+  },
+  {
+    "candidateKey": "sn22.63:3.6",
+    "classification": "partial-sentence-note",
+    "decision": "leave",
+    "noteKeys": [
+      "sn22.63:3.6"
+    ],
+    "rationale": "as above in full begins after In clinging to form ... one is bound by Mara, before the untranslated non-clinging half at 3.4, and ends before the actual final non-clinging clause. It spans part of a sentence and subsequent aggregate items, so the explicit inline-note rule keeps it in place.",
+    "boundaryDirectives": [],
+    "directives": []
+  },
+  {
+    "candidateKey": "sn35.133:4.9",
+    "classification": "partial-sentence-note",
+    "decision": "leave",
+    "noteKeys": [
+      "sn35.133:4.9"
+    ],
+    "rationale": "Then he went to the Venerable Udayī translates only part of 4.7, whose remaining upasaṅkamitvā ... etadavoca (having approached, he said) is omitted before the invitation. all as above starts within that existing sentence, although it also covers later narrative; the explicit partial-sentence exception keeps it in place.",
+    "boundaryDirectives": [],
+    "directives": []
+  },
+  {
+    "candidateKey": "sn45.161:7.8",
+    "classification": "already-correct",
+    "decision": "leave",
+    "noteKeys": [
+      "sn45.161:7.8"
+    ],
+    "rationale": "The final source paragraph instructs elaboration of the following suttas and follows the last translated abandoning subsection. It is forward-looking series guidance, not a substitute for the omitted final sentences of the current sutta; no whole-passage move within this candidate is justified.",
+    "boundaryDirectives": [],
+    "directives": []
+  },
+  {
+    "candidateKey": "sn56.16:3.7",
+    "classification": "partial-sentence-note",
+    "decision": "leave",
+    "noteKeys": [
+      "sn56.16:3.7"
+    ],
+    "rationale": "For if any ascetic or brahmin should speak thus opens the conditional sentence on 3.4. as above replaces its quoted content, impossible conclusion and subsequent repeated truths before the final fourth-truth quote. Because it begins inside that conditional sentence, the explicit partial-sentence rule keeps the note in place.",
+    "boundaryDirectives": [],
+    "directives": []
+  }
+]

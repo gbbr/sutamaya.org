@@ -1,0 +1,16 @@
+[
+  {
+    "key": "an3.27:4.1",
+    "renderedNote": "A verse is attached identical with that in AN3.26.",
+    "sourceExactNote": "A verse is attached identical with that in 3:26.",
+    "wholeSourceLine": true,
+    "reason": "Entire abbreviation note, not a translated verse line; checker compares HTML-linked app citation against raw numeric source citation without normalization."
+  },
+  {
+    "key": "sn46.17:2.1",
+    "renderedNote": "(The verses attached to this sutta are identical with those at SN45.34 above.)",
+    "sourceExactNote": "(The verses attached to this sutta are identical with those at 45:34 above.)",
+    "wholeSourceLine": true,
+    "reason": "Entire abbreviation note, not a translated verse line; checker compares HTML-linked app citation against raw numeric source citation without normalization."
+  }
+]

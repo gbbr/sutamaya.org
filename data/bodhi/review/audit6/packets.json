@@ -1,0 +1,15 @@
+{
+  "rows": 2499,
+  "batches": {
+    "batch-008": 72,
+    "batch-004": 331,
+    "batch-005": 253,
+    "batch-007": 354,
+    "batch-006": 370,
+    "batch-002": 357,
+    "batch-003": 289,
+    "batch-001": 473
+  },
+  "verseLineBreak": "\u23ce preserves a source verse-line break inside an English row",
+  "authority": "Pali on every row; verse tag from Pali markup"
+}

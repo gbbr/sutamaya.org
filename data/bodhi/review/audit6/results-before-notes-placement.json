@@ -1,0 +1,62 @@
+{
+  "status": "Codex audit complete; external Claude judgment pending as arranged",
+  "seed": 20261006,
+  "reader": "3 independent Codex subagents, inherited model, effort high",
+  "judge": "separate Codex subagent, effort xhigh, read no batches",
+  "readRows": 2499,
+  "correctionKeys": 4,
+  "changingTexts": 3,
+  "changedTextRows": 6,
+  "percent": 0.1600640256102441,
+  "collections": {
+    "sn": {
+      "texts": 66,
+      "readRows": 1253,
+      "correctionKeys": 1,
+      "percent": 0.07980845969672785,
+      "errorKeys": [
+        "sn12.57:4.3"
+      ]
+    },
+    "an": {
+      "texts": 33,
+      "readRows": 1246,
+      "correctionKeys": 3,
+      "percent": 0.24077046548956663,
+      "errorKeys": [
+        "an10.267-746:1.16",
+        "an10.267-746:1.24",
+        "an8.23:7.1"
+      ]
+    },
+    "kn": {
+      "texts": 0,
+      "readRows": 0,
+      "correctionKeys": 0,
+      "percent": null,
+      "errorKeys": []
+    }
+  },
+  "proposals": {
+    "total": 11,
+    "approvedChanges": 4,
+    "alreadyCorrect": 6,
+    "rejected": 1
+  },
+  "openIssues": [
+    {
+      "id": "sn1.34:7.3-source-attribution-order",
+      "status": "open",
+      "keys": [
+        "sn1.34:7.1",
+        "sn1.34:7.2",
+        "sn1.34:7.3"
+      ],
+      "kind": "verse/prose source-order conflict",
+      "requires_segmenter_change": true,
+      "description": "Bodhi places the second whole verse line before the Mogharaja attribution, whereas the Pali places the attribution between its first and second verse rows. The baseline preserves the source order by retaining two English verse lines on 7.1, but does not spread the second line to 7.3. Ordinary monotonic start directives cannot move that line to 7.3 while retaining the attribution on its own row and preserving source order.",
+      "next_step": "Review later support for verse lines whose source attribution occurs at a different position from the Pali attribution. Preserve every source word and whole verse line in source order, keep the first verse line on the first Pali verse row, and ensure all translated verse Pali remains visible. Do not force a hand cut or alter source text."
+    }
+  ],
+  "rateMeaning": "Distinct approved changing boundary directives / displayed read --every rows, before audit repairs. No-op anchors and rejected proposals excluded, as audit5 counts approved corrections. This is a stratified whole-text sample, not a corpus-wide rate."
+}

@@ -1,0 +1,4 @@
+{
+  "differingTextsOrNotes": [],
+  "plainCommand": "node scripts/segmenter/segment-translations.mjs bodhi"
+}

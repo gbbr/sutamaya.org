@@ -1,0 +1,407 @@
+[
+  {
+    "before": "an3.27:4.2",
+    "after": "an3.27:4.1",
+    "words": "A verse is attached identical with that in 3:26"
+  },
+  {
+    "before": "an4.40:2.4",
+    "after": "an4.40:1.2",
+    "words": "The prose portion is identical with that of 4:39"
+  },
+  {
+    "before": "an4.54:6.1",
+    "after": "an4.54:2.1",
+    "words": "is identical with 4:53"
+  },
+  {
+    "before": "an5.50:14.3",
+    "after": "an5.50:9.1",
+    "words": "The sequel is identical to 5:48"
+  },
+  {
+    "before": "an8.8:10.1",
+    "after": "an8.8:8.2",
+    "words": "Sakka here cites the Buddha’s entire discourse of 8:7"
+  },
+  {
+    "before": "an8.43:3.1",
+    "after": "an8.43:1.5",
+    "words": "All as in 8:42"
+  },
+  {
+    "before": "an8.45:4.4",
+    "after": "an8.45:2.2",
+    "words": "All as in 8:42"
+  },
+  {
+    "before": "an8.47:5.2",
+    "after": "an8.47:2.3",
+    "words": "As in 8:46"
+  },
+  {
+    "before": "an8.48:12.2",
+    "after": "an8.48:2.3",
+    "words": "As in 8:46"
+  },
+  {
+    "before": "an10.22:8.2",
+    "after": "an10.22:3.3",
+    "words": "As in 10:21"
+  },
+  {
+    "before": "an10.27:6.6",
+    "after": "an10.27:6.2",
+    "words": "They here report the entire course of events"
+  },
+  {
+    "before": "an10.35:1.14",
+    "after": "an10.35:1.4",
+    "words": "The same ten qualities as in the preceding sutta"
+  },
+  {
+    "before": "an10.36:1.14",
+    "after": "an10.36:1.4",
+    "words": "The same ten qualities as in 10:34"
+  },
+  {
+    "before": "an10.53:7.1",
+    "after": "an10.53:6.1",
+    "words": "as in 10:51 down to:"
+  },
+  {
+    "before": "an10.62:2.21",
+    "after": "an10.62:2.7",
+    "words": "as in 10:61"
+  },
+  {
+    "before": "sn4.10:1.3",
+    "after": "sn4.10:1.1",
+    "words": "Opening as in preceding sutta"
+  },
+  {
+    "before": "sn11.2:2.10",
+    "after": "sn11.2:1.1",
+    "words": "This sutta is identical with the preceding one"
+  },
+  {
+    "before": "sn11.2:2.10",
+    "after": "sn11.2:1.1",
+    "words": "Verses 863–67 = 858–"
+  },
+  {
+    "before": "sn11.12:10.4",
+    "after": "sn11.12:8.2",
+    "words": "Verses 906–7 = 904–5"
+  },
+  {
+    "before": "sn11.13:13.1",
+    "after": "sn11.13:7.1",
+    "words": "as in 11:12"
+  },
+  {
+    "before": "sn11.13:13.1",
+    "after": "sn11.13:7.1",
+    "words": "as in 11:11"
+  },
+  {
+    "before": "sn11.13:13.1",
+    "after": "sn11.13:7.1",
+    "words": "verses 908–"
+  },
+  {
+    "before": "sn11.20:1.2",
+    "after": "sn11.20:1.1",
+    "words": "As above down to:"
+  },
+  {
+    "before": "sn12.28:2.10",
+    "after": "sn12.28:2.2",
+    "words": "as in preceding sutta"
+  },
+  {
+    "before": "sn12.36:2.1",
+    "after": "sn12.36:1.1",
+    "words": "This sutta is identical with the preceding one"
+  },
+  {
+    "before": "sn12.42:1.3",
+    "after": "sn12.42:1.1",
+    "words": "This sutta is identical with the preceding one"
+  },
+  {
+    "before": "sn12.50:5.1",
+    "after": "sn12.50:1.1",
+    "words": "This sutta is identical with the preceding one"
+  },
+  {
+    "before": "sn12.54:2.3",
+    "after": "sn12.54:1.1",
+    "words": "This sutta is identical with the preceding one"
+  },
+  {
+    "before": "sn12.56:2.2",
+    "after": "sn12.56:1.1",
+    "words": "This sutta is identical with the preceding one"
+  },
+  {
+    "before": "sn16.7:12.8",
+    "after": "sn16.7:8.2",
+    "words": "The Buddha then repeats the entire statement of the Venerable Mahakassapa"
+  },
+  {
+    "before": "sn22.34:1.13",
+    "after": "sn22.34:1.1",
+    "words": "This sutta is identical with the preceding one"
+  },
+  {
+    "before": "sn22.38:7.9",
+    "after": "sn22.38:5.2",
+    "words": "The Buddha here repeats the entire answer of the Venerable Ānanda"
+  },
+  {
+    "before": "sn22.77:2.3",
+    "after": "sn22.77:1.1",
+    "words": "This sutta is identical with the preceding one"
+  },
+  {
+    "before": "sn22.81:6.6",
+    "after": "sn22.81:6.4",
+    "words": "all as above"
+  },
+  {
+    "before": "sn22.88:1.10",
+    "after": "sn22.88:1.3",
+    "words": "As in preceding sutta,"
+  },
+  {
+    "before": "sn35.14:2.2",
+    "after": "sn35.14:1.1",
+    "words": "The same is repeated for the six external sense bases"
+  },
+  {
+    "before": "sn35.54:1.15",
+    "after": "sn35.54:1.2",
+    "words": "The Buddha’s reply is as above"
+  },
+  {
+    "before": "sn35.62:20.7",
+    "after": "sn35.62:3.1",
+    "words": "To be completed as in §32"
+  },
+  {
+    "before": "sn35.72:1.2",
+    "after": "sn35.72:1.1",
+    "words": "The first two paragraphs as in the preceding sutta"
+  },
+  {
+    "before": "sn35.73:1.2",
+    "after": "sn35.73:1.1",
+    "words": "The first two paragraphs as in §71"
+  },
+  {
+    "before": "sn35.75:1.3",
+    "after": "sn35.75:1.1",
+    "words": "As above down to:"
+  },
+  {
+    "before": "sn35.86:24.4",
+    "after": "sn35.86:4.1",
+    "words": "Complete as in §32, down to"
+  },
+  {
+    "before": "sn35.89:9.2",
+    "after": "sn35.89:4.1",
+    "words": "as in §32 down to:"
+  },
+  {
+    "before": "sn35.100:1.10",
+    "after": "sn35.100:1.3",
+    "words": "The rest is identical with the preceding sutta"
+  },
+  {
+    "before": "sn35.102:1.16",
+    "after": "sn35.102:1.1",
+    "words": "This sutta is identical with the preceding one"
+  },
+  {
+    "before": "sn35.107:2.5",
+    "after": "sn35.107:1.1",
+    "words": "Identical with SN 12.44"
+  },
+  {
+    "before": "sn35.112:1.7",
+    "after": "sn35.112:1.1",
+    "words": "Identical with §111"
+  },
+  {
+    "before": "sn35.113:1.2",
+    "after": "sn35.113:1.1",
+    "words": "Identical with SN 12.45"
+  },
+  {
+    "before": "sn35.117:3.1",
+    "after": "sn35.117:2.2",
+    "words": "all as in preceding sutta down to:"
+  },
+  {
+    "before": "sn35.119:1.2",
+    "after": "sn35.119:1.1",
+    "words": "The same"
+  },
+  {
+    "before": "sn35.121:19.2",
+    "after": "sn35.121:17.1",
+    "words": "The rest as in the preceding paragraph"
+  },
+  {
+    "before": "sn35.122:1.3",
+    "after": "sn35.122:1.1",
+    "words": "Identical with §109"
+  },
+  {
+    "before": "sn35.124:2.3",
+    "after": "sn35.124:1.3",
+    "words": "The question and the reply are exactly the same as in §118"
+  },
+  {
+    "before": "sn35.128:1.5",
+    "after": "sn35.128:1.3",
+    "words": "As in §118"
+  },
+  {
+    "before": "sn35.137:1.9",
+    "after": "sn35.137:1.1",
+    "words": "Identical with the preceding sutta"
+  },
+  {
+    "before": "sn35.139:1.12",
+    "after": "sn35.139:1.1",
+    "words": "Identical with the preceding sutta"
+  },
+  {
+    "before": "sn35.143:1.3",
+    "after": "sn35.143:1.1",
+    "words": "These three suttas are identical with §§140-42"
+  },
+  {
+    "before": "sn35.150:10.1",
+    "after": "sn35.150:2.1",
+    "words": "all as in §32"
+  },
+  {
+    "before": "sn36.8:3.3",
+    "after": "sn36.8:1.1",
+    "words": "As in preceding sutta down to the second injunction:"
+  },
+  {
+    "before": "sn36.17:1.2",
+    "after": "sn36.17:1.1",
+    "words": "These two suttas are identical with §§15–"
+  },
+  {
+    "before": "sn44.2:2.12",
+    "after": "sn44.2:1.1",
+    "words": "Identical with 22:86"
+  },
+  {
+    "before": "sn44.4:1.2",
+    "after": "sn44.4:1.1",
+    "words": "As above down to:"
+  },
+  {
+    "before": "sn44.5:1.2",
+    "after": "sn44.5:1.1",
+    "words": "As above down to:"
+  },
+  {
+    "before": "sn44.6:1.6",
+    "after": "sn44.6:1.4",
+    "words": "All as above down to:"
+  },
+  {
+    "before": "sn44.8:1.7",
+    "after": "sn44.8:1.4",
+    "words": "as above"
+  },
+  {
+    "before": "sn44.11:1.9",
+    "after": "sn44.11:1.5",
+    "words": "All as in §1 down to:"
+  },
+  {
+    "before": "sn45.3:4.3",
+    "after": "sn45.3:3.1",
+    "words": "The rest as in the preceding sutta"
+  },
+  {
+    "before": "sn45.69:1.4",
+    "after": "sn45.69:1.2",
+    "words": "complete as in §63"
+  },
+  {
+    "before": "sn45.83:1.4",
+    "after": "sn45.83:1.2",
+    "words": "complete as in §77"
+  },
+  {
+    "before": "sn45.90:1.4",
+    "after": "sn45.90:1.2",
+    "words": "complete as in §84"
+  },
+  {
+    "before": "sn45.96:1.5",
+    "after": "sn45.96:1.4",
+    "words": "Complete as in §91"
+  },
+  {
+    "before": "sn45.97:1.4",
+    "after": "sn45.97:1.3",
+    "words": "Complete as in §§91–"
+  },
+  {
+    "before": "sn46.17:5.2",
+    "after": "sn46.17:2.1",
+    "words": "The verses attached to this sutta are identical with those at 45:34 above"
+  },
+  {
+    "before": "sn47.14:3.6",
+    "after": "sn47.14:3.1",
+    "words": "as in §9"
+  },
+  {
+    "before": "sn47.23:1.3",
+    "after": "sn47.23:1.1",
+    "words": "As above down to:"
+  },
+  {
+    "before": "sn47.27:2.4",
+    "after": "sn47.27:2.2",
+    "words": "as above"
+  },
+  {
+    "before": "sn47.33:2.4",
+    "after": "sn47.33:2.2",
+    "words": "as above"
+  },
+  {
+    "before": "sn47.63-72:1.2",
+    "after": "sn47.63-72:1.1",
+    "words": "To be elaborated by way of the establishments of mindfulness parallel to 45:139-48"
+  },
+  {
+    "before": "sn47.73-84:1.2",
+    "after": "sn47.73-84:1.1",
+    "words": "To be elaborated parallel to 45:149-60"
+  },
+  {
+    "before": "sn47.85-94:1.4",
+    "after": "sn47.85-94:1.1",
+    "words": "To be elaborated parallel to 45:161-70"
+  },
+  {
+    "before": "sn56.14:6.1",
+    "after": "sn56.14:3.1",
+    "words": "The rest of the sutta is identical with §13"
+  }
+]

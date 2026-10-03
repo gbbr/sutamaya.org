@@ -1,0 +1,1665 @@
+[
+  {
+    "key": "an10.213:1.6",
+    "above": "an10.213:1.3",
+    "gap": [
+      "an10.213:1.4",
+      "an10.213:1.5"
+    ],
+    "text": "as above …"
+  },
+  {
+    "key": "an10.213:2.10",
+    "above": "an10.213:2.3",
+    "gap": [
+      "an10.213:2.4",
+      "an10.213:2.5",
+      "an10.213:2.6",
+      "an10.213:2.7",
+      "an10.213:2.8",
+      "an10.213:2.9"
+    ],
+    "text": "as above …"
+  },
+  {
+    "key": "an10.22:8.2",
+    "above": "an10.22:7.2",
+    "gap": [
+      "an10.22:8.1"
+    ],
+    "text": "As in AN10.21 …"
+  },
+  {
+    "key": "an10.27:6.6",
+    "above": "an10.27:6.1",
+    "gap": [
+      "an10.27:6.2",
+      "an10.27:6.3",
+      "an10.27:6.4",
+      "an10.27:6.5"
+    ],
+    "text": "They here report the entire course of events, down to:"
+  },
+  {
+    "key": "an10.35:1.14",
+    "above": "an10.35:1.12",
+    "gap": [
+      "an10.35:1.13"
+    ],
+    "text": "The same ten qualities as in the preceding sutta. “A bhikkhu who possesses these ten qualities may give dependence.”"
+  },
+  {
+    "key": "an10.36:1.14",
+    "above": "an10.36:1.12",
+    "gap": [
+      "an10.36:1.13"
+    ],
+    "text": "The same ten qualities as in AN10.34. “A bhikkhu who possesses these ten qualities may be attended upon by a novice.”"
+  },
+  {
+    "key": "an10.53:7.1",
+    "above": "an10.53:6.4",
+    "gap": [
+      "an10.53:6.5",
+      "an10.53:6.6"
+    ],
+    "text": "as in AN10.51 down to:"
+  },
+  {
+    "key": "an10.62:2.21",
+    "above": "an10.62:2.6",
+    "gap": [
+      "an10.62:2.7",
+      "an10.62:2.8",
+      "an10.62:2.9",
+      "an10.62:2.10",
+      "an10.62:2.11",
+      "an10.62:2.12",
+      "an10.62:2.13",
+      "an10.62:2.14",
+      "an10.62:2.15",
+      "an10.62:2.16",
+      "an10.62:2.17",
+      "an10.62:2.18",
+      "an10.62:2.19",
+      "an10.62:2.20"
+    ],
+    "text": "as in AN10.61 …"
+  },
+  {
+    "key": "an3.27:4.2",
+    "above": "an3.27:3.8",
+    "gap": [
+      "an3.27:4.1"
+    ],
+    "text": "A verse is attached identical with that in AN3.26."
+  },
+  {
+    "key": "an4.40:2.4",
+    "above": "an4.40:1.1",
+    "gap": [
+      "an4.40:1.2",
+      "an4.40:1.3",
+      "an4.40:1.4",
+      "an4.40:1.5",
+      "an4.40:1.6",
+      "an4.40:1.7",
+      "an4.40:1.8",
+      "an4.40:2.1",
+      "an4.40:2.2",
+      "an4.40:2.3"
+    ],
+    "text": "The prose portion is identical with that of AN4.39."
+  },
+  {
+    "key": "an4.54:6.1",
+    "above": "an4.54:1.6",
+    "gap": [
+      "an4.54:2.1",
+      "an4.54:2.2",
+      "an4.54:2.3",
+      "an4.54:2.4",
+      "an4.54:3.1",
+      "an4.54:3.2",
+      "an4.54:3.3",
+      "an4.54:3.4",
+      "an4.54:4.1",
+      "an4.54:4.2",
+      "an4.54:4.3",
+      "an4.54:4.4",
+      "an4.54:5.1",
+      "an4.54:5.2",
+      "an4.54:5.3",
+      "an4.54:5.4",
+      "an4.54:5.5"
+    ],
+    "text": "The rest, including the verses, is identical with AN4.53 but addressed to the bhikkhus."
+  },
+  {
+    "key": "an5.50:14.3",
+    "above": "an5.50:8.4",
+    "gap": [
+      "an5.50:9.1",
+      "an5.50:9.2",
+      "an5.50:9.3",
+      "an5.50:9.4",
+      "an5.50:9.5",
+      "an5.50:9.6",
+      "an5.50:9.7",
+      "an5.50:10.1",
+      "an5.50:10.2",
+      "an5.50:10.3",
+      "an5.50:10.4",
+      "an5.50:10.5",
+      "an5.50:10.6",
+      "an5.50:10.7",
+      "an5.50:11.1",
+      "an5.50:11.2",
+      "an5.50:11.3",
+      "an5.50:11.4",
+      "an5.50:11.5",
+      "an5.50:11.6",
+      "an5.50:11.7",
+      "an5.50:11.8",
+      "an5.50:12.1",
+      "an5.50:12.2",
+      "an5.50:12.3",
+      "an5.50:12.4",
+      "an5.50:12.5",
+      "an5.50:12.6",
+      "an5.50:12.7",
+      "an5.50:12.8",
+      "an5.50:13.1",
+      "an5.50:14.1",
+      "an5.50:14.2"
+    ],
+    "text": "The sequel is identical to AN5.48, including the verses. [61–62]"
+  },
+  {
+    "key": "an8.20:9.6",
+    "above": "an8.20:9.4",
+    "gap": [
+      "an8.20:9.5"
+    ],
+    "text": "This is the first astounding and amazing quality that the bhikkhus see in this Dhamma and discipline because of which they take delight in it…. All as in AN8.19, but addressed to the bhikkhus."
+  },
+  {
+    "key": "an8.22:5.6",
+    "above": "an8.22:5.2",
+    "gap": [
+      "an8.22:5.3",
+      "an8.22:5.4",
+      "an8.22:5.5"
+    ],
+    "text": "as in AN8.21 …"
+  },
+  {
+    "key": "an8.43:3.1",
+    "above": "an8.43:1.4",
+    "gap": [
+      "an8.43:1.5",
+      "an8.43:1.6",
+      "an8.43:1.7",
+      "an8.43:1.8",
+      "an8.43:1.9",
+      "an8.43:2.1",
+      "an8.43:2.2",
+      "an8.43:2.3",
+      "an8.43:2.4",
+      "an8.43:2.5"
+    ],
+    "text": "All as in AN8.42, including the verses."
+  },
+  {
+    "key": "an8.45:4.4",
+    "above": "an8.45:2.1",
+    "gap": [
+      "an8.45:2.2",
+      "an8.45:2.3",
+      "an8.45:2.4",
+      "an8.45:2.5",
+      "an8.45:2.6",
+      "an8.45:2.7",
+      "an8.45:3.1",
+      "an8.45:3.2",
+      "an8.45:3.3",
+      "an8.45:3.4",
+      "an8.45:3.5",
+      "an8.45:4.1",
+      "an8.45:4.2",
+      "an8.45:4.3"
+    ],
+    "text": "All as in AN8.42, including the verses."
+  },
+  {
+    "key": "an8.47:5.2",
+    "above": "an8.47:2.2",
+    "gap": [
+      "an8.47:2.3",
+      "an8.47:3.1",
+      "an8.47:3.2",
+      "an8.47:3.3",
+      "an8.47:4.1",
+      "an8.47:4.2",
+      "an8.47:4.3",
+      "an8.47:4.4",
+      "an8.47:5.1"
+    ],
+    "text": "As in AN8.46, including the verses."
+  },
+  {
+    "key": "an8.48:12.2",
+    "above": "an8.48:2.2",
+    "gap": [
+      "an8.48:2.3",
+      "an8.48:3.1",
+      "an8.48:3.2",
+      "an8.48:3.3",
+      "an8.48:4.1",
+      "an8.48:5.1",
+      "an8.48:5.2",
+      "an8.48:6.1",
+      "an8.48:7.1",
+      "an8.48:8.1",
+      "an8.48:8.2",
+      "an8.48:9.1",
+      "an8.48:10.1",
+      "an8.48:11.1",
+      "an8.48:11.2",
+      "an8.48:11.3",
+      "an8.48:11.4",
+      "an8.48:12.1"
+    ],
+    "text": "As in AN8.46, including the verses."
+  },
+  {
+    "key": "an8.8:10.1",
+    "above": "an8.8:8.1",
+    "gap": [
+      "an8.8:8.2",
+      "an8.8:8.3",
+      "an8.8:8.4",
+      "an8.8:8.5",
+      "an8.8:8.6",
+      "an8.8:8.7",
+      "an8.8:8.8",
+      "an8.8:8.9",
+      "an8.8:8.10",
+      "an8.8:8.11",
+      "an8.8:8.12",
+      "an8.8:8.13",
+      "an8.8:8.14",
+      "an8.8:8.15",
+      "an8.8:9.1",
+      "an8.8:9.2",
+      "an8.8:9.3",
+      "an8.8:9.4",
+      "an8.8:9.5",
+      "an8.8:9.6",
+      "an8.8:9.7",
+      "an8.8:9.8"
+    ],
+    "text": "Sakka here cites the Buddha’s entire discourse of AN8.7,"
+  },
+  {
+    "key": "dn2:92.20",
+    "above": "dn2:92.3",
+    "gap": [
+      "dn2:92.4",
+      "dn2:92.5",
+      "dn2:92.6",
+      "dn2:92.7",
+      "dn2:92.8",
+      "dn2:92.9",
+      "dn2:92.10",
+      "dn2:92.11",
+      "dn2:92.12",
+      "dn2:92.13",
+      "dn2:92.14",
+      "dn2:92.15",
+      "dn2:92.16",
+      "dn2:92.17",
+      "dn2:92.18",
+      "dn2:92.19"
+    ],
+    "text": "This too, great king, is a visible fruit of recluseship more excellent and sublime than the previous ones."
+  },
+  {
+    "key": "mn140:19.22",
+    "above": "mn140:19.20",
+    "gap": [
+      "mn140:19.21"
+    ],
+    "text": "One understands: ‘With the cessation of that same contact to be felt as neither-painful-nor-pleasant, its corresponding feeling…ceases and subsides.’"
+  },
+  {
+    "key": "mn63:3.32",
+    "above": "mn63:3.27",
+    "gap": [
+      "mn63:3.28",
+      "mn63:3.29",
+      "mn63:3.30",
+      "mn63:3.31"
+    ],
+    "text": "‘the soul is the same as the body,’…"
+  },
+  {
+    "key": "mn63:6.9",
+    "above": "mn63:6.6",
+    "gap": [
+      "mn63:6.7",
+      "mn63:6.8"
+    ],
+    "text": "‘the soul is the same as the body,’…"
+  },
+  {
+    "key": "mn65:25.6",
+    "above": "mn65:25.2",
+    "gap": [
+      "mn65:25.3",
+      "mn65:25.4",
+      "mn65:25.5"
+    ],
+    "text": "repeat rest of §23…"
+  },
+  {
+    "key": "mn65:26.6",
+    "above": "mn65:26.2",
+    "gap": [
+      "mn65:26.3",
+      "mn65:26.4",
+      "mn65:26.5"
+    ],
+    "text": "repeat rest of §24…"
+  },
+  {
+    "key": "mn65:27.5",
+    "above": "mn65:27.3",
+    "gap": [
+      "mn65:27.4"
+    ],
+    "text": "Let him not lose that measure of faith and love, as he may if we take action against him by repeatedly admonishing him.’"
+  },
+  {
+    "key": "mn65:28.7",
+    "above": "mn65:28.3",
+    "gap": [
+      "mn65:28.4",
+      "mn65:28.5",
+      "mn65:28.6"
+    ],
+    "text": "‘Let him not lose that measure of faith and love, as he may if we take action against him by repeatedly admonishing him.’"
+  },
+  {
+    "key": "sn11.12:9.1",
+    "above": "sn11.12:8.1",
+    "gap": [
+      "sn11.12:8.2",
+      "sn11.12:8.3",
+      "sn11.12:8.4",
+      "sn11.12:8.5",
+      "sn11.12:8.6",
+      "sn11.12:8.7",
+      "sn11.12:8.8",
+      "sn11.12:8.9",
+      "sn11.12:8.10"
+    ],
+    "text": "The remainder of this sutta is identical with the preceding one."
+  },
+  {
+    "key": "sn11.13:13.1",
+    "above": "sn11.13:6.1",
+    "gap": [
+      "sn11.13:7.1",
+      "sn11.13:8.1",
+      "sn11.13:9.1",
+      "sn11.13:10.1",
+      "sn11.13:11.1",
+      "sn11.13:12.1"
+    ],
+    "text": "(Here follows the names of Sakka as in SN11.12 and the seven vows as in SN11.11, followed by verses 908–9 = 904–5.)"
+  },
+  {
+    "key": "sn11.20:1.2",
+    "above": null,
+    "gap": [
+      "sn11.20:1.1"
+    ],
+    "text": "As above down to:"
+  },
+  {
+    "key": "sn11.2:2.10",
+    "above": null,
+    "gap": [
+      "sn11.2:1.1",
+      "sn11.2:1.2",
+      "sn11.2:1.3",
+      "sn11.2:1.4",
+      "sn11.2:1.5",
+      "sn11.2:2.1",
+      "sn11.2:2.2",
+      "sn11.2:2.3",
+      "sn11.2:2.4",
+      "sn11.2:2.5",
+      "sn11.2:2.6",
+      "sn11.2:2.7",
+      "sn11.2:2.8",
+      "sn11.2:2.9"
+    ],
+    "text": "This sutta is identical with the preceding one, except that the young deva is named Susima. Verses 863–67 = 858–62."
+  },
+  {
+    "key": "sn12.22:1.10",
+    "above": "sn12.22:1.3",
+    "gap": [
+      "sn12.22:1.4",
+      "sn12.22:1.5",
+      "sn12.22:1.6",
+      "sn12.22:1.7",
+      "sn12.22:1.8",
+      "sn12.22:1.9"
+    ],
+    "text": "as in §21 …"
+  },
+  {
+    "key": "sn12.27:2.5",
+    "above": "sn12.27:2.2",
+    "gap": [
+      "sn12.27:2.3",
+      "sn12.27:2.4"
+    ],
+    "text": "as in §2 …"
+  },
+  {
+    "key": "sn12.28:2.10",
+    "above": "sn12.28:2.1",
+    "gap": [
+      "sn12.28:2.2",
+      "sn12.28:2.3",
+      "sn12.28:2.4",
+      "sn12.28:2.5",
+      "sn12.28:2.6",
+      "sn12.28:2.7",
+      "sn12.28:2.8",
+      "sn12.28:2.9"
+    ],
+    "text": "as in preceding sutta …"
+  },
+  {
+    "key": "sn12.2:2.7",
+    "above": "sn12.2:2.3",
+    "gap": [
+      "sn12.2:2.4",
+      "sn12.2:2.5",
+      "sn12.2:2.6"
+    ],
+    "text": "as in preceding sutta …"
+  },
+  {
+    "key": "sn12.36:2.1",
+    "above": null,
+    "gap": [
+      "sn12.36:1.1",
+      "sn12.36:1.2",
+      "sn12.36:1.3",
+      "sn12.36:1.4"
+    ],
+    "text": "This sutta is identical with the preceding one, differing only in that the bhikkhus are addressed collectively throughout, and there is no interlocutor who asks inappropriate questions."
+  },
+  {
+    "key": "sn12.36:2.4",
+    "above": "sn12.36:2.1",
+    "gap": [
+      "sn12.36:2.2",
+      "sn12.36:2.3"
+    ],
+    "text": "The Buddha simply cites the invalid types of assertions on his own."
+  },
+  {
+    "key": "sn12.42:1.3",
+    "above": null,
+    "gap": [
+      "sn12.42:1.1",
+      "sn12.42:1.2"
+    ],
+    "text": "This sutta is identical with the preceding one except that it is addressed to “a number of bhikkhus.”"
+  },
+  {
+    "key": "sn12.50:5.1",
+    "above": null,
+    "gap": [
+      "sn12.50:1.1",
+      "sn12.50:1.2",
+      "sn12.50:1.3",
+      "sn12.50:1.4",
+      "sn12.50:2.1",
+      "sn12.50:2.2",
+      "sn12.50:2.3",
+      "sn12.50:2.4",
+      "sn12.50:2.5",
+      "sn12.50:2.6",
+      "sn12.50:2.7",
+      "sn12.50:2.8",
+      "sn12.50:2.9",
+      "sn12.50:2.10",
+      "sn12.50:2.11",
+      "sn12.50:2.12",
+      "sn12.50:2.13",
+      "sn12.50:2.14",
+      "sn12.50:2.15",
+      "sn12.50:3.1",
+      "sn12.50:3.2",
+      "sn12.50:3.3",
+      "sn12.50:3.4",
+      "sn12.50:3.5",
+      "sn12.50:3.6",
+      "sn12.50:3.7",
+      "sn12.50:4.1",
+      "sn12.50:4.2",
+      "sn12.50:4.3",
+      "sn12.50:4.4",
+      "sn12.50:4.5",
+      "sn12.50:4.6",
+      "sn12.50:4.7",
+      "sn12.50:4.8",
+      "sn12.50:4.9"
+    ],
+    "text": "This sutta is identical with the preceding one except that the passages enclosed in brackets there as absent in some editions are here clearly included in all editions."
+  },
+  {
+    "key": "sn12.54:2.3",
+    "above": null,
+    "gap": [
+      "sn12.54:1.1",
+      "sn12.54:1.2",
+      "sn12.54:1.3",
+      "sn12.54:1.4",
+      "sn12.54:1.5",
+      "sn12.54:1.6",
+      "sn12.54:1.7",
+      "sn12.54:2.1",
+      "sn12.54:2.2"
+    ],
+    "text": "This sutta is identical with the preceding one except that in both the sections on origination and cessation the similes come first and their applications only afterwards."
+  },
+  {
+    "key": "sn12.56:2.2",
+    "above": null,
+    "gap": [
+      "sn12.56:1.1",
+      "sn12.56:1.2",
+      "sn12.56:1.3",
+      "sn12.56:1.4",
+      "sn12.56:1.5",
+      "sn12.56:1.6",
+      "sn12.56:1.7",
+      "sn12.56:2.1"
+    ],
+    "text": "This sutta is identical with the preceding one except that in both the sections on origination and cessation the similes come first and their applications only afterwards."
+  },
+  {
+    "key": "sn12.66:14.1",
+    "above": "sn12.66:13.13",
+    "gap": [
+      "sn12.66:13.14",
+      "sn12.66:13.15",
+      "sn12.66:13.16",
+      "sn12.66:13.17"
+    ],
+    "text": "in the future …"
+  },
+  {
+    "key": "sn12.68:8.1",
+    "above": "sn12.68:7.6",
+    "gap": [
+      "sn12.68:7.7"
+    ],
+    "text": "Here the Venerable Saviṭṭha asks the Venerable Narada the same series of questions as were addressed to the Venerable Musīla, and he answers in exactly the same way."
+  },
+  {
+    "key": "sn16.7:12.8",
+    "above": "sn16.7:8.1",
+    "gap": [
+      "sn16.7:8.2",
+      "sn16.7:8.3",
+      "sn16.7:8.4",
+      "sn16.7:8.5",
+      "sn16.7:8.6",
+      "sn16.7:9.1",
+      "sn16.7:9.2",
+      "sn16.7:9.3",
+      "sn16.7:9.4",
+      "sn16.7:9.5",
+      "sn16.7:9.6",
+      "sn16.7:9.7",
+      "sn16.7:9.8",
+      "sn16.7:9.9",
+      "sn16.7:9.10",
+      "sn16.7:9.11",
+      "sn16.7:9.12",
+      "sn16.7:9.13",
+      "sn16.7:9.14",
+      "sn16.7:9.15",
+      "sn16.7:10.1",
+      "sn16.7:10.2",
+      "sn16.7:10.3",
+      "sn16.7:10.4",
+      "sn16.7:10.5",
+      "sn16.7:11.1",
+      "sn16.7:11.2",
+      "sn16.7:11.3",
+      "sn16.7:11.4",
+      "sn16.7:11.5",
+      "sn16.7:12.1",
+      "sn16.7:12.2",
+      "sn16.7:12.3",
+      "sn16.7:12.4",
+      "sn16.7:12.5",
+      "sn16.7:12.6",
+      "sn16.7:12.7"
+    ],
+    "text": "The Buddha then repeats the entire statement of the Venerable Mahakassapa."
+  },
+  {
+    "key": "sn22.34:1.13",
+    "above": null,
+    "gap": [
+      "sn22.34:1.1",
+      "sn22.34:1.2",
+      "sn22.34:1.3",
+      "sn22.34:1.4",
+      "sn22.34:1.5",
+      "sn22.34:1.6",
+      "sn22.34:1.7",
+      "sn22.34:1.8",
+      "sn22.34:1.9",
+      "sn22.34:1.10",
+      "sn22.34:1.11",
+      "sn22.34:1.12"
+    ],
+    "text": "This sutta is identical with the preceding one except that it omits the simile."
+  },
+  {
+    "key": "sn22.35:3.5",
+    "above": "sn22.35:3.3",
+    "gap": [
+      "sn22.35:3.4"
+    ],
+    "text": "as above in full …"
+  },
+  {
+    "key": "sn22.36:3.13",
+    "above": "sn22.36:3.3",
+    "gap": [
+      "sn22.36:3.4",
+      "sn22.36:3.5",
+      "sn22.36:3.6",
+      "sn22.36:3.7",
+      "sn22.36:3.8",
+      "sn22.36:3.9",
+      "sn22.36:3.10",
+      "sn22.36:3.11",
+      "sn22.36:3.12"
+    ],
+    "text": "as above in full …"
+  },
+  {
+    "key": "sn22.38:7.9",
+    "above": "sn22.38:5.1",
+    "gap": [
+      "sn22.38:5.2",
+      "sn22.38:5.3",
+      "sn22.38:5.4",
+      "sn22.38:5.5",
+      "sn22.38:5.6",
+      "sn22.38:5.7",
+      "sn22.38:5.8",
+      "sn22.38:5.9",
+      "sn22.38:6.1",
+      "sn22.38:6.2",
+      "sn22.38:6.3",
+      "sn22.38:6.4",
+      "sn22.38:6.5",
+      "sn22.38:6.6",
+      "sn22.38:6.7",
+      "sn22.38:6.8",
+      "sn22.38:7.1",
+      "sn22.38:7.2",
+      "sn22.38:7.3",
+      "sn22.38:7.4",
+      "sn22.38:7.5",
+      "sn22.38:7.6",
+      "sn22.38:7.7",
+      "sn22.38:7.8"
+    ],
+    "text": "The Buddha here repeats the entire answer of the Venerable Ānanda, concluding: “Being asked thus, Ānanda, you should answer in such a way.”"
+  },
+  {
+    "key": "sn22.55:2.6",
+    "above": "sn22.55:2.2",
+    "gap": [
+      "sn22.55:2.3",
+      "sn22.55:2.4",
+      "sn22.55:2.5"
+    ],
+    "text": "or self as in consciousness."
+  },
+  {
+    "key": "sn22.55:7.6",
+    "above": "sn22.55:7.2",
+    "gap": [
+      "sn22.55:7.3",
+      "sn22.55:7.4",
+      "sn22.55:7.5"
+    ],
+    "text": "or self as in consciousness."
+  },
+  {
+    "key": "sn22.63:3.6",
+    "above": "sn22.63:3.3",
+    "gap": [
+      "sn22.63:3.4",
+      "sn22.63:3.5"
+    ],
+    "text": "as above in full …"
+  },
+  {
+    "key": "sn22.64:3.6",
+    "above": "sn22.64:3.3",
+    "gap": [
+      "sn22.64:3.4",
+      "sn22.64:3.5"
+    ],
+    "text": "as above in full …"
+  },
+  {
+    "key": "sn22.65:3.6",
+    "above": "sn22.65:3.3",
+    "gap": [
+      "sn22.65:3.4",
+      "sn22.65:3.5"
+    ],
+    "text": "as above in full …"
+  },
+  {
+    "key": "sn22.77:2.3",
+    "above": null,
+    "gap": [
+      "sn22.77:1.1",
+      "sn22.77:1.2",
+      "sn22.77:1.3",
+      "sn22.77:1.4",
+      "sn22.77:1.5",
+      "sn22.77:2.1",
+      "sn22.77:2.2"
+    ],
+    "text": "This sutta is identical with the preceding one except that the verses are omitted."
+  },
+  {
+    "key": "sn22.7:5.1",
+    "above": "sn22.7:4.2",
+    "gap": [
+      "sn22.7:4.3",
+      "sn22.7:4.4",
+      "sn22.7:4.5",
+      "sn22.7:4.6"
+    ],
+    "text": "consciousness as self, or self as possessing consciousness, or consciousness as in self, or self as in consciousness."
+  },
+  {
+    "key": "sn22.7:9.1",
+    "above": "sn22.7:8.3",
+    "gap": [
+      "sn22.7:8.4",
+      "sn22.7:8.5",
+      "sn22.7:8.6",
+      "sn22.7:8.7"
+    ],
+    "text": "consciousness as self, or self as possessing consciousness, or consciousness as in self, or self as in consciousness."
+  },
+  {
+    "key": "sn22.81:6.6",
+    "above": "sn22.81:6.3",
+    "gap": [
+      "sn22.81:6.4",
+      "sn22.81:6.5"
+    ],
+    "text": "all as above …"
+  },
+  {
+    "key": "sn22.81:8.1",
+    "above": "sn22.81:7.3",
+    "gap": [
+      "sn22.81:7.4",
+      "sn22.81:7.5",
+      "sn22.81:7.6",
+      "sn22.81:7.7",
+      "sn22.81:7.8",
+      "sn22.81:7.9",
+      "sn22.81:7.10",
+      "sn22.81:7.11",
+      "sn22.81:7.12"
+    ],
+    "text": "“He may not regard form as self or self as possessing form or form as in self,"
+  },
+  {
+    "key": "sn22.81:9.1",
+    "above": "sn22.81:8.3",
+    "gap": [
+      "sn22.81:8.4",
+      "sn22.81:8.5",
+      "sn22.81:8.6",
+      "sn22.81:8.7",
+      "sn22.81:8.8",
+      "sn22.81:8.9",
+      "sn22.81:8.10",
+      "sn22.81:8.11",
+      "sn22.81:8.12"
+    ],
+    "text": "“He may not regard form as self … or self as in form,"
+  },
+  {
+    "key": "sn22.88:1.10",
+    "above": "sn22.88:1.2",
+    "gap": [
+      "sn22.88:1.3",
+      "sn22.88:1.4",
+      "sn22.88:1.5",
+      "sn22.88:1.6",
+      "sn22.88:1.7",
+      "sn22.88:1.8",
+      "sn22.88:1.9"
+    ],
+    "text": "As in preceding sutta, down to:"
+  },
+  {
+    "key": "sn35.100:1.10",
+    "above": "sn35.100:1.2",
+    "gap": [
+      "sn35.100:1.3",
+      "sn35.100:1.4",
+      "sn35.100:1.5",
+      "sn35.100:1.6",
+      "sn35.100:1.7",
+      "sn35.100:1.8",
+      "sn35.100:1.9"
+    ],
+    "text": "The rest is identical with the preceding sutta."
+  },
+  {
+    "key": "sn35.102:1.16",
+    "above": null,
+    "gap": [
+      "sn35.102:1.1",
+      "sn35.102:1.2",
+      "sn35.102:1.3",
+      "sn35.102:1.4",
+      "sn35.102:1.5",
+      "sn35.102:1.6",
+      "sn35.102:1.7",
+      "sn35.102:1.8",
+      "sn35.102:1.9",
+      "sn35.102:1.10",
+      "sn35.102:1.11",
+      "sn35.102:1.12",
+      "sn35.102:1.13",
+      "sn35.102:1.14",
+      "sn35.102:1.15"
+    ],
+    "text": "This sutta is identical with the preceding one except that it omits the simile."
+  },
+  {
+    "key": "sn35.107:2.5",
+    "above": null,
+    "gap": [
+      "sn35.107:1.1",
+      "sn35.107:1.2",
+      "sn35.107:1.3",
+      "sn35.107:1.4",
+      "sn35.107:1.5",
+      "sn35.107:1.6",
+      "sn35.107:1.7",
+      "sn35.107:1.8",
+      "sn35.107:1.9",
+      "sn35.107:1.10",
+      "sn35.107:1.11",
+      "sn35.107:1.12",
+      "sn35.107:1.13",
+      "sn35.107:1.14",
+      "sn35.107:1.15",
+      "sn35.107:1.16",
+      "sn35.107:1.17",
+      "sn35.107:1.18",
+      "sn35.107:1.19",
+      "sn35.107:1.20",
+      "sn35.107:2.1",
+      "sn35.107:2.2",
+      "sn35.107:2.3",
+      "sn35.107:2.4"
+    ],
+    "text": "(Identical with SN12.44.)"
+  },
+  {
+    "key": "sn35.112:1.7",
+    "above": null,
+    "gap": [
+      "sn35.112:1.1",
+      "sn35.112:1.2",
+      "sn35.112:1.3",
+      "sn35.112:1.4",
+      "sn35.112:1.5",
+      "sn35.112:1.6"
+    ],
+    "text": "Identical with §111, but stated by way of the six external sense bases."
+  },
+  {
+    "key": "sn35.113:1.2",
+    "above": null,
+    "gap": [
+      "sn35.113:1.1"
+    ],
+    "text": "(Identical with SN12.45.)"
+  },
+  {
+    "key": "sn35.117:3.1",
+    "above": "sn35.117:2.1",
+    "gap": [
+      "sn35.117:2.2",
+      "sn35.117:2.3",
+      "sn35.117:2.4",
+      "sn35.117:2.5",
+      "sn35.117:2.6"
+    ],
+    "text": "all as in preceding sutta down to:"
+  },
+  {
+    "key": "sn35.119:1.2",
+    "above": null,
+    "gap": [
+      "sn35.119:1.1"
+    ],
+    "text": "The same except that the interlocutor is Pañcasikha, son of the gandhabbas."
+  },
+  {
+    "key": "sn35.121:19.2",
+    "above": "sn35.121:16.1",
+    "gap": [
+      "sn35.121:17.1",
+      "sn35.121:18.1",
+      "sn35.121:19.1"
+    ],
+    "text": "The rest as in the preceding paragraph."
+  },
+  {
+    "key": "sn35.122:1.3",
+    "above": null,
+    "gap": [
+      "sn35.122:1.1",
+      "sn35.122:1.2"
+    ],
+    "text": "Identical with §109, but by way of the six external sense bases."
+  },
+  {
+    "key": "sn35.124:2.3",
+    "above": "sn35.124:1.2",
+    "gap": [
+      "sn35.124:1.3",
+      "sn35.124:1.4",
+      "sn35.124:2.1",
+      "sn35.124:2.2"
+    ],
+    "text": "The question and the reply are exactly the same as in §118."
+  },
+  {
+    "key": "sn35.128:1.5",
+    "above": "sn35.128:1.2",
+    "gap": [
+      "sn35.128:1.3",
+      "sn35.128:1.4"
+    ],
+    "text": "As in §118."
+  },
+  {
+    "key": "sn35.133:4.9",
+    "above": "sn35.133:4.7",
+    "gap": [
+      "sn35.133:4.8"
+    ],
+    "text": "all as above …"
+  },
+  {
+    "key": "sn35.137:1.9",
+    "above": null,
+    "gap": [
+      "sn35.137:1.1",
+      "sn35.137:1.2",
+      "sn35.137:1.3",
+      "sn35.137:1.4",
+      "sn35.137:1.5",
+      "sn35.137:1.6",
+      "sn35.137:1.7",
+      "sn35.137:1.8"
+    ],
+    "text": "Identical with the preceding sutta,"
+  },
+  {
+    "key": "sn35.139:1.12",
+    "above": null,
+    "gap": [
+      "sn35.139:1.1",
+      "sn35.139:1.2",
+      "sn35.139:1.3",
+      "sn35.139:1.4",
+      "sn35.139:1.5",
+      "sn35.139:1.6",
+      "sn35.139:1.7",
+      "sn35.139:1.8",
+      "sn35.139:1.9",
+      "sn35.139:1.10",
+      "sn35.139:1.11"
+    ],
+    "text": "Identical with the preceding sutta,"
+  },
+  {
+    "key": "sn35.143:1.3",
+    "above": null,
+    "gap": [
+      "sn35.143:1.1",
+      "sn35.143:1.2"
+    ],
+    "text": "These three suttas are identical with §§140-42, but are stated by way of the six external sense bases.)"
+  },
+  {
+    "key": "sn35.14:2.2",
+    "above": null,
+    "gap": [
+      "sn35.14:1.1",
+      "sn35.14:1.2",
+      "sn35.14:1.3",
+      "sn35.14:1.4",
+      "sn35.14:1.5",
+      "sn35.14:1.6",
+      "sn35.14:1.7",
+      "sn35.14:1.8",
+      "sn35.14:1.9",
+      "sn35.14:1.10",
+      "sn35.14:1.11",
+      "sn35.14:1.12",
+      "sn35.14:1.13",
+      "sn35.14:1.14",
+      "sn35.14:1.15",
+      "sn35.14:1.16",
+      "sn35.14:1.17",
+      "sn35.14:1.18",
+      "sn35.14:2.1"
+    ],
+    "text": "The same is repeated for the six external sense bases."
+  },
+  {
+    "key": "sn35.150:10.1",
+    "above": "sn35.150:6.1",
+    "gap": [
+      "sn35.150:7.1",
+      "sn35.150:8.1",
+      "sn35.150:9.1",
+      "sn35.150:9.2",
+      "sn35.150:9.3"
+    ],
+    "text": "all as in §32 …"
+  },
+  {
+    "key": "sn35.16:2.1",
+    "above": null,
+    "gap": [
+      "sn35.16:1.1",
+      "sn35.16:1.2",
+      "sn35.16:1.3",
+      "sn35.16:1.4",
+      "sn35.16:1.5",
+      "sn35.16:1.6",
+      "sn35.16:1.7",
+      "sn35.16:1.8",
+      "sn35.16:1.9",
+      "sn35.16:1.10",
+      "sn35.16:1.11",
+      "sn35.16:1.12",
+      "sn35.16:1.13",
+      "sn35.16:1.14",
+      "sn35.16:1.15",
+      "sn35.16:1.16",
+      "sn35.16:1.17",
+      "sn35.16:1.18",
+      "sn35.16:1.19",
+      "sn35.16:1.20",
+      "sn35.16:1.21",
+      "sn35.16:1.22"
+    ],
+    "text": "The same for the six external sense bases."
+  },
+  {
+    "key": "sn35.18:2.2",
+    "above": null,
+    "gap": [
+      "sn35.18:1.1",
+      "sn35.18:1.2",
+      "sn35.18:1.3",
+      "sn35.18:1.4",
+      "sn35.18:1.5",
+      "sn35.18:1.6",
+      "sn35.18:1.7",
+      "sn35.18:1.8",
+      "sn35.18:1.9",
+      "sn35.18:1.10",
+      "sn35.18:1.11",
+      "sn35.18:1.12",
+      "sn35.18:1.13",
+      "sn35.18:1.14",
+      "sn35.18:1.15",
+      "sn35.18:1.16",
+      "sn35.18:2.1"
+    ],
+    "text": "The same for the six external sense bases."
+  },
+  {
+    "key": "sn35.22:1.6",
+    "above": null,
+    "gap": [
+      "sn35.22:1.1",
+      "sn35.22:1.2",
+      "sn35.22:1.3",
+      "sn35.22:1.4",
+      "sn35.22:1.5"
+    ],
+    "text": "The same for the six external sense bases."
+  },
+  {
+    "key": "sn35.54:1.15",
+    "above": "sn35.54:1.1",
+    "gap": [
+      "sn35.54:1.2",
+      "sn35.54:1.3",
+      "sn35.54:1.4",
+      "sn35.54:1.5",
+      "sn35.54:1.6",
+      "sn35.54:1.7",
+      "sn35.54:1.8",
+      "sn35.54:1.9",
+      "sn35.54:1.10",
+      "sn35.54:1.11",
+      "sn35.54:1.12",
+      "sn35.54:1.13",
+      "sn35.54:1.14"
+    ],
+    "text": "The Buddha’s reply is as above."
+  },
+  {
+    "key": "sn35.62:20.7",
+    "above": "sn35.62:14.1",
+    "gap": [
+      "sn35.62:14.2",
+      "sn35.62:14.3",
+      "sn35.62:14.4",
+      "sn35.62:14.5",
+      "sn35.62:14.6",
+      "sn35.62:14.7",
+      "sn35.62:14.8",
+      "sn35.62:14.9",
+      "sn35.62:15.1",
+      "sn35.62:16.1",
+      "sn35.62:17.1",
+      "sn35.62:18.1",
+      "sn35.62:18.2",
+      "sn35.62:19.1",
+      "sn35.62:20.1",
+      "sn35.62:20.2",
+      "sn35.62:20.3",
+      "sn35.62:20.4",
+      "sn35.62:20.5",
+      "sn35.62:20.6"
+    ],
+    "text": "To be completed as in §32 …"
+  },
+  {
+    "key": "sn35.72:1.2",
+    "above": null,
+    "gap": [
+      "sn35.72:1.1"
+    ],
+    "text": "The first two paragraphs as in the preceding sutta."
+  },
+  {
+    "key": "sn35.73:1.2",
+    "above": null,
+    "gap": [
+      "sn35.73:1.1"
+    ],
+    "text": "The first two paragraphs as in §71."
+  },
+  {
+    "key": "sn35.75:1.3",
+    "above": null,
+    "gap": [
+      "sn35.75:1.1",
+      "sn35.75:1.2"
+    ],
+    "text": "As above down to:"
+  },
+  {
+    "key": "sn35.86:24.4",
+    "above": "sn35.86:3.1",
+    "gap": [
+      "sn35.86:4.1",
+      "sn35.86:5.1",
+      "sn35.86:6.1",
+      "sn35.86:6.2",
+      "sn35.86:7.1",
+      "sn35.86:8.1",
+      "sn35.86:9.1",
+      "sn35.86:10.1",
+      "sn35.86:10.2",
+      "sn35.86:11.1",
+      "sn35.86:12.1",
+      "sn35.86:13.1",
+      "sn35.86:14.1",
+      "sn35.86:14.2",
+      "sn35.86:15.1",
+      "sn35.86:16.1",
+      "sn35.86:17.1",
+      "sn35.86:18.1",
+      "sn35.86:18.2",
+      "sn35.86:18.3",
+      "sn35.86:19.1",
+      "sn35.86:20.1",
+      "sn35.86:21.1",
+      "sn35.86:22.1",
+      "sn35.86:22.2",
+      "sn35.86:23.1",
+      "sn35.86:24.1",
+      "sn35.86:24.2",
+      "sn35.86:24.3"
+    ],
+    "text": "Complete as in §32, down to “there is no more for this state of being.”"
+  },
+  {
+    "key": "sn35.89:9.2",
+    "above": "sn35.89:7.1",
+    "gap": [
+      "sn35.89:8.1",
+      "sn35.89:9.1"
+    ],
+    "text": "as in §32 down to:"
+  },
+  {
+    "key": "sn36.17:1.2",
+    "above": null,
+    "gap": [
+      "sn36.17:1.1"
+    ],
+    "text": "These two suttas are identical with §§15–16 except that in each “a number of bhikkhus” is the interlocutor in place of Ānanda."
+  },
+  {
+    "key": "sn36.24:1.9",
+    "above": "sn36.24:1.5",
+    "gap": [
+      "sn36.24:1.6",
+      "sn36.24:1.7",
+      "sn36.24:1.8"
+    ],
+    "text": "all as in preceding sutta …"
+  },
+  {
+    "key": "sn36.8:3.3",
+    "above": null,
+    "gap": [
+      "sn36.8:1.1",
+      "sn36.8:1.2",
+      "sn36.8:1.3",
+      "sn36.8:2.1",
+      "sn36.8:2.2",
+      "sn36.8:3.1",
+      "sn36.8:3.2"
+    ],
+    "text": "As in preceding sutta down to the second injunction:"
+  },
+  {
+    "key": "sn36.8:7.3",
+    "above": "sn36.8:6.9",
+    "gap": [
+      "sn36.8:6.10",
+      "sn36.8:7.1",
+      "sn36.8:7.2"
+    ],
+    "text": "“If he feels a pleasant feeling … all as in preceding sutta …"
+  },
+  {
+    "key": "sn4.10:1.3",
+    "above": null,
+    "gap": [
+      "sn4.10:1.1",
+      "sn4.10:1.2"
+    ],
+    "text": "Opening as in preceding sutta:"
+  },
+  {
+    "key": "sn44.11:1.9",
+    "above": "sn44.11:1.4",
+    "gap": [
+      "sn44.11:1.5",
+      "sn44.11:1.6",
+      "sn44.11:1.7",
+      "sn44.11:1.8"
+    ],
+    "text": "All as in §1 down to:"
+  },
+  {
+    "key": "sn44.2:2.12",
+    "above": null,
+    "gap": [
+      "sn44.2:1.1",
+      "sn44.2:1.2",
+      "sn44.2:1.3",
+      "sn44.2:1.4",
+      "sn44.2:1.5",
+      "sn44.2:1.6",
+      "sn44.2:1.7",
+      "sn44.2:1.8",
+      "sn44.2:1.9",
+      "sn44.2:1.10",
+      "sn44.2:1.11",
+      "sn44.2:2.1",
+      "sn44.2:2.2",
+      "sn44.2:2.3",
+      "sn44.2:2.4",
+      "sn44.2:2.5",
+      "sn44.2:2.6",
+      "sn44.2:2.7",
+      "sn44.2:2.8",
+      "sn44.2:2.9",
+      "sn44.2:2.10",
+      "sn44.2:2.11"
+    ],
+    "text": "(Identical with SN22.86.)"
+  },
+  {
+    "key": "sn44.4:1.2",
+    "above": null,
+    "gap": [
+      "sn44.4:1.1"
+    ],
+    "text": "As above down to:"
+  },
+  {
+    "key": "sn44.5:1.2",
+    "above": null,
+    "gap": [
+      "sn44.5:1.1"
+    ],
+    "text": "As above down to:"
+  },
+  {
+    "key": "sn44.6:1.6",
+    "above": "sn44.6:1.4",
+    "gap": [
+      "sn44.6:1.5"
+    ],
+    "text": "All as above down to:"
+  },
+  {
+    "key": "sn44.8:1.7",
+    "above": "sn44.8:1.3",
+    "gap": [
+      "sn44.8:1.4",
+      "sn44.8:1.5",
+      "sn44.8:1.6"
+    ],
+    "text": "as above …"
+  },
+  {
+    "key": "sn44.8:3.1",
+    "above": "sn44.8:2.4",
+    "gap": [
+      "sn44.8:2.5",
+      "sn44.8:2.6"
+    ],
+    "text": "“Vaccha, wanderers of other sects regard form as self, or self as possessing form, or form as in self, or self as in form."
+  },
+  {
+    "key": "sn44.8:3.13",
+    "above": "sn44.8:3.9",
+    "gap": [
+      "sn44.8:3.10",
+      "sn44.8:3.11",
+      "sn44.8:3.12"
+    ],
+    "text": "or self as in consciousness."
+  },
+  {
+    "key": "sn44.8:6.13",
+    "above": "sn44.8:6.9",
+    "gap": [
+      "sn44.8:6.10",
+      "sn44.8:6.11",
+      "sn44.8:6.12"
+    ],
+    "text": "or self as in consciousness."
+  },
+  {
+    "key": "sn44.8:6.5",
+    "above": "sn44.8:6.1",
+    "gap": [
+      "sn44.8:6.2",
+      "sn44.8:6.3",
+      "sn44.8:6.4"
+    ],
+    "text": "or self as in consciousness."
+  },
+  {
+    "key": "sn45.146-148:2.1",
+    "above": "sn45.146-148:1.2",
+    "gap": [
+      "sn45.146-148:1.3"
+    ],
+    "text": "The Sun “Bhikkhus, just as in the autumn, when the sky is clear and cloudless, the sun, ascending in the sky, dispels all darkness from space as it shines and beams and radiates,"
+  },
+  {
+    "key": "sn45.146-148:3.9",
+    "above": "sn45.146-148:3.7",
+    "gap": [
+      "sn45.146-148:3.8"
+    ],
+    "text": "Each sutta is to be elaborated in accordance with the same fourfold method."
+  },
+  {
+    "key": "sn45.161:7.8",
+    "above": "sn45.161:7.5",
+    "gap": [
+      "sn45.161:7.6",
+      "sn45.161:7.7"
+    ],
+    "text": "Each of the following suttas is to be elaborated in accordance with the fourfold method employed in §161."
+  },
+  {
+    "key": "sn45.3:4.3",
+    "above": "sn45.3:2.4",
+    "gap": [
+      "sn45.3:3.1",
+      "sn45.3:3.2",
+      "sn45.3:4.1",
+      "sn45.3:4.2"
+    ],
+    "text": "The rest as in the preceding sutta."
+  },
+  {
+    "key": "sn45.69:1.4",
+    "above": "sn45.69:1.1",
+    "gap": [
+      "sn45.69:1.2",
+      "sn45.69:1.3"
+    ],
+    "text": "complete as in §63 … He develops right concentration, which is based upon seclusion, dispassion, and cessation, maturing in release."
+  },
+  {
+    "key": "sn45.83:1.4",
+    "above": "sn45.83:1.1",
+    "gap": [
+      "sn45.83:1.2",
+      "sn45.83:1.3"
+    ],
+    "text": "complete as in §77 … He develops right concentration, which is based upon seclusion, dispassion, and cessation, maturing in release."
+  },
+  {
+    "key": "sn45.90:1.4",
+    "above": "sn45.90:1.1",
+    "gap": [
+      "sn45.90:1.2",
+      "sn45.90:1.3"
+    ],
+    "text": "complete as in §84 … He develops right concentration, which has as its final goal the removal of lust, the removal of hatred, the removal of delusion."
+  },
+  {
+    "key": "sn45.96:1.5",
+    "above": "sn45.96:1.3",
+    "gap": [
+      "sn45.96:1.4"
+    ],
+    "text": "Complete as in §91."
+  },
+  {
+    "key": "sn45.97:1.4",
+    "above": "sn45.97:1.2",
+    "gap": [
+      "sn45.97:1.3"
+    ],
+    "text": "Complete as in §§91–96."
+  },
+  {
+    "key": "sn46.15:3.2",
+    "above": "sn46.15:1.3",
+    "gap": [
+      "sn46.15:2.1",
+      "sn46.15:2.2",
+      "sn46.15:3.1"
+    ],
+    "text": "all as above,"
+  },
+  {
+    "key": "sn46.17:5.2",
+    "above": "sn46.17:1.4",
+    "gap": [
+      "sn46.17:2.1",
+      "sn46.17:2.2",
+      "sn46.17:2.3",
+      "sn46.17:2.4",
+      "sn46.17:3.1",
+      "sn46.17:3.2",
+      "sn46.17:3.3",
+      "sn46.17:3.4",
+      "sn46.17:4.1",
+      "sn46.17:4.2",
+      "sn46.17:4.3",
+      "sn46.17:4.4",
+      "sn46.17:5.1"
+    ],
+    "text": "(The verses attached to this sutta are identical with those at SN45.34 above.)"
+  },
+  {
+    "key": "sn47.14:3.6",
+    "above": "sn47.14:2.17",
+    "gap": [
+      "sn47.14:3.1",
+      "sn47.14:3.2",
+      "sn47.14:3.3",
+      "sn47.14:3.4",
+      "sn47.14:3.5"
+    ],
+    "text": "… as in §9 …"
+  },
+  {
+    "key": "sn47.16:3.3",
+    "above": "sn47.16:3.1",
+    "gap": [
+      "sn47.16:3.2"
+    ],
+    "text": "as in preceding sutta …"
+  },
+  {
+    "key": "sn47.23:1.3",
+    "above": null,
+    "gap": [
+      "sn47.23:1.1",
+      "sn47.23:1.2"
+    ],
+    "text": "As above down to:"
+  },
+  {
+    "key": "sn47.27:2.4",
+    "above": "sn47.27:2.1",
+    "gap": [
+      "sn47.27:2.2",
+      "sn47.27:2.3"
+    ],
+    "text": "as above …"
+  },
+  {
+    "key": "sn47.33:2.4",
+    "above": "sn47.33:2.1",
+    "gap": [
+      "sn47.33:2.2",
+      "sn47.33:2.3"
+    ],
+    "text": "as above …"
+  },
+  {
+    "key": "sn47.63-72:1.2",
+    "above": null,
+    "gap": [
+      "sn47.63-72:1.1"
+    ],
+    "text": "(To be elaborated by way of the establishments of mindfulness parallel to SN45.139.)"
+  },
+  {
+    "key": "sn47.73-84:1.2",
+    "above": null,
+    "gap": [
+      "sn47.73-84:1.1"
+    ],
+    "text": "(To be elaborated parallel to SN45.149.)"
+  },
+  {
+    "key": "sn47.85-94:1.4",
+    "above": null,
+    "gap": [
+      "sn47.85-94:1.1",
+      "sn47.85-94:1.2",
+      "sn47.85-94:1.3"
+    ],
+    "text": "(To be elaborated parallel to SN45.161.)"
+  },
+  {
+    "key": "sn56.14:6.1",
+    "above": "sn56.14:2.5",
+    "gap": [
+      "sn56.14:3.1",
+      "sn56.14:3.2",
+      "sn56.14:3.3",
+      "sn56.14:4.1",
+      "sn56.14:4.2",
+      "sn56.14:4.3",
+      "sn56.14:5.1",
+      "sn56.14:5.2",
+      "sn56.14:5.3",
+      "sn56.14:5.4",
+      "sn56.14:5.5"
+    ],
+    "text": "The rest of the sutta is identical with §13."
+  },
+  {
+    "key": "sn56.16:3.7",
+    "above": "sn56.16:3.4",
+    "gap": [
+      "sn56.16:3.5",
+      "sn56.16:3.6"
+    ],
+    "text": "as above …"
+  }
+]

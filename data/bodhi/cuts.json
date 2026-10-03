@@ -186,8 +186,12 @@
  "an10.27:10.2": "eard it from them.\n(1) “When it was said: ‘A question about one, a concise statement about one, an explanation of one,’",
  "an10.29:10.3": "on both sides, might be blue, blue in color, with a blue hue, with a blue tint,",
  "an10.29:13.3": "oth sides, might be white, white in color, with a white hue, with a white tint,",
- "an10.53:7.1": "n the ways of my own mind.’ … [97–98] …",
- "an10.53:7.5": "mind.’ … [97–98] … as in 10:51 down to:",
+ "an10.53:7.1": {
+  "empty": "up"
+ },
+ "an10.53:7.5": {
+  "empty": "up"
+ },
  "an10.54:10.8": "crease,’ one should use such a lodging.",
  "an10.54:11.8": "hould resort to such a village or town.",
  "an10.54:12.8": "uld resort to such a country or region.",
@@ -1716,7 +1720,9 @@
  "sn22.98:1.8": "in the same just like eternity itself?”",
  "sn35.104:1.7": " eye that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing. These have been abandoned by the Tathagata, cut off at the root, made like a palm stump, obliterated so that they are no more subject to future arising.",
  "sn35.104:1.10": "mind that are desirable, lovely, agreeable, pleasing, sensually enticing, tantalizing. These have been abandoned by the Tathagata, cut off at the root, made like a palm stump, obliterated so that they are no more subject to future arising.",
- "sn35.117:5.11": "ed … all as in preceding sutta down to:",
+ "sn35.117:5.11": {
+  "empty": "up"
+ },
  "sn35.117:7.3": " in preceding sutta down to: [99–100] …",
  "sn35.121:8.1": "t?” –“Impermanent, venerable sir.”–“Is what is impermanent suffering or happiness?”–“Suffering, venerable sir.”–“Is what is impermanent, suffering, and subject to change fit to be regarded thus: ‘This is mine, this I am, this is my self’?”–",
  "sn35.121:46.1": " consciousness arisen with mind-contact as condition permanent or impermanent?”–",
@@ -1759,7 +1765,8 @@
   "placed": true
  },
  "sn35.54:1.2": {
-  "empty": "up"
+  "after": " see, for the fetters to be abandoned?”",
+  "placed": true
  },
  "an10.12:2.2": "ow does a bhikkhu possess five factors?",
  "an10.14:5.3": "or form, not devoid of desire, affection, thirst, passion, and craving for it….",
@@ -1783,7 +1790,9 @@
  "an10.3:2.12": "rson, one whose behavior is virtuous, non-regret possesses its proximate cause.",
  "an10.40:1.2": " in the Saṅgha, concord in the Saṅgha.’",
  "an10.53:2.2": "still or growth—in wholesome qualities?",
- "an10.53:6.4": "be skilled in the ways of my own mind.’",
+ "an10.53:6.4": {
+  "empty": "up"
+ },
  "an10.54:7.8": "to be used and those not to be used. Villages or towns too, I say, are twofold:",
  "an10.54:7.10": " and those not to be resorted to. Countries or regions too, I say, are twofold:",
  "an10.54:7.12": "ed to. Persons too, I say, are twofold:",
@@ -3574,7 +3583,9 @@
  "sn1.40:1.3": "Wood, in the Hall with the Peaked Roof.",
  "sn1.41:1.3": " in Jeta’s Grove, Anathapiṇḍika’s Park.",
  "sn11.1:2.14": "t a third time Suvīra became negligent.",
- "sn11.12:10.4": "ta is identical with the preceding one.",
+ "sn11.12:10.4": {
+  "empty": "up"
+ },
  "sn11.14:2.3": " He undertook faith, virtue, learning, generosity, and wisdom in the Dhamma and Discipline proclaimed by the Tathagata.",
  "sn11.14:2.6": "mbled, and complained about it, saying:",
  "sn11.14:2.8": "en this young deva was a human being, he was a poor man, a pauper, an indigent.",
@@ -5233,7 +5244,7 @@
  "sn45.77:1.6": "on, and cessation, maturing in release.",
  "sn45.8:9.5": "nd in mind, ardent, clearly comprehending, mindful, having removed covetousness and displeasure in regard to the world.",
  "sn45.83:1.4": {
-  "after": "… accomplishment in careful attention …",
+  "after": "areful attention … complete as in §77 …",
   "placed": true
  },
  "sn45.91:1.6": "on, and cessation, maturing in release.",
@@ -5566,7 +5577,8 @@
   "placed": true
  },
  "an8.45:2.2": {
-  "empty": "down"
+  "after": "raordinarily brilliant and pervasive….”",
+  "placed": true
  },
  "an8.45:3.5": {
   "empty": "up"
@@ -6636,8 +6648,7 @@
   "empty": "up"
  },
  "sn47.14:3.6": {
-  "after": "ma as your refuge, with no other refuge",
-  "placed": true
+  "empty": "up"
  },
  "sn47.30:1.6": "ot their subsiding, is to be discerned.",
  "sn47.37:1.4": "g, mindful, having removed covetousness and displeasure in regard to the world.",
@@ -7043,7 +7054,8 @@
   "placed": true
  },
  "an10.53:6.1": {
-  "empty": "up"
+  "after": "be skilled in the ways of my own mind.’",
+  "placed": true
  },
  "an10.54:9.1": {
   "after": "fold: to be used and not to be used,’ it is because of this that this was said.",
@@ -12511,7 +12523,9 @@
   "empty": "up"
  },
  "sn45.83:1.2": {
-  "empty": "up"
+  "after": "… accomplishment in careful attention …",
+  "placed": true,
+  "own": true
  },
  "sn45.92-95:1.8": {
   "empty": "up"
@@ -12972,10 +12986,12 @@
   "own": true
  },
  "sn45.90:1.2": {
-  "empty": "up"
+  "after": "… accomplishment in careful attention …",
+  "placed": true,
+  "own": true
  },
  "sn45.90:1.4": {
-  "after": "… accomplishment in careful attention …",
+  "after": "areful attention … complete as in §84 …",
   "placed": true
  },
  "mn95:23.2": {
@@ -14196,9 +14212,7 @@
   "placed": true
  },
  "sn11.12:9.1": {
-  "after": "hich he achieved the status of Sakka….”",
-  "placed": true,
-  "own": true
+  "empty": "up"
  },
  "sn11.12:10.1": {
   "empty": "up"
@@ -21659,7 +21673,8 @@
   "own": true
  },
  "an4.54:2.1": {
-  "empty": "up"
+  "after": "deva lives together with a female deva.",
+  "placed": true
  },
  "an4.59:1.2": {
   "after": "d, he gives the recipients four things.",
@@ -24244,6 +24259,642 @@
   "own": true
  },
  "sn22.76:10.2": {
+  "empty": "up"
+ },
+ "an10.267-746:1.16": {
+  "after": "ceit … of arrogance … of intoxication …",
+  "placed": true,
+  "own": true
+ },
+ "an10.267-746:1.24": {
+  "empty": "up"
+ },
+ "an8.23:7.1": {
+  "after": " reported to him all that had happened.",
+  "placed": true
+ },
+ "sn12.57:4.3": {
+  "empty": "up"
+ },
+ "an10.22:3.3": {
+  "after": "in motion the brahma wheel. What ten? …",
+  "placed": true,
+  "own": true
+ },
+ "an10.22:7.2": {
+  "empty": "up"
+ },
+ "an10.22:8.2": {
+  "empty": "up"
+ },
+ "an10.27:6.2": {
+  "after": " robes, and entered Sāvatthī for alms….",
+  "placed": true,
+  "own": true
+ },
+ "an10.27:6.6": {
+  "empty": "up"
+ },
+ "an10.35:1.4": {
+  "after": "pāli, may give dependence. What ten?” …",
+  "placed": true,
+  "own": true
+ },
+ "an10.35:1.12": {
+  "empty": "up"
+ },
+ "an10.35:1.14": {
+  "after": "en qualities as in the preceding sutta.",
+  "placed": true
+ },
+ "an10.36:1.4": {
+  "after": "attended upon by a novice. What ten?” …",
+  "placed": true,
+  "own": true
+ },
+ "an10.36:1.12": {
+  "empty": "up"
+ },
+ "an10.36:1.14": {
+  "after": "” …\nThe same ten qualities as in 10:34.",
+  "placed": true
+ },
+ "an10.62:2.7": {
+  "after": "t should be said: the five hindrances …",
+  "placed": true,
+  "own": true
+ },
+ "an10.62:2.21": {
+  "empty": "up"
+ },
+ "an3.27:4.1": {
+  "after": "f persons found existing in the world.”",
+  "placed": true,
+  "own": true
+ },
+ "an3.27:4.2": {
+  "empty": "up"
+ },
+ "an4.40:1.2": {
+  "after": "ched the Blessed One … and said to him:",
+  "placed": true,
+  "own": true
+ },
+ "an4.40:2.4": {
+  "empty": "up"
+ },
+ "an4.54:6.1": {
+  "empty": "up"
+ },
+ "an4.54:10.2": {
+  "empty": "up"
+ },
+ "an5.50:9.1": {
+  "after": " or Brahmā, or by anyone in the world….",
+  "placed": true,
+  "own": true
+ },
+ "an5.50:14.3": {
+  "empty": "up"
+ },
+ "an8.43:1.5": {
+  "after": "traordinarily brilliant and pervasive?”",
+  "placed": true,
+  "own": true
+ },
+ "an8.43:3.1": {
+  "empty": "up"
+ },
+ "an8.43:12.1": {
+  "empty": "up"
+ },
+ "an8.45:4.4": {
+  "empty": "up"
+ },
+ "an8.45:12.1": {
+  "empty": "up"
+ },
+ "an8.47:2.3": {
+  "after": " agreeable-bodied deities. What eight?”",
+  "placed": true,
+  "own": true
+ },
+ "an8.47:5.2": {
+  "empty": "up"
+ },
+ "an8.48:2.3": {
+  "after": " agreeable-bodied deities. What eight?”",
+  "placed": true,
+  "own": true
+ },
+ "an8.48:12.2": {
+  "empty": "up"
+ },
+ "an8.8:8.2": {
+  "after": "me to time to review his own failings….",
+  "placed": true,
+  "own": true
+ },
+ "an8.8:10.1": {
+  "empty": "up"
+ },
+ "an8.8:10.3": {
+  "empty": "up"
+ },
+ "an8.8:12.3": {
+  "empty": "up"
+ },
+ "an8.8:12.4": {
+  "empty": "up"
+ },
+ "sn11.12:8.2": {
+  "after": "hich he achieved the status of Sakka….”",
+  "placed": true,
+  "own": true
+ },
+ "sn11.13:7.1": {
+  "after": "agha. Therefore he is called Maghava….”",
+  "placed": true,
+  "own": true
+ },
+ "sn11.13:13.1": {
+  "empty": "up"
+ },
+ "sn11.2:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn11.2:2.10": {
+  "empty": "up"
+ },
+ "sn11.20:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn11.20:1.2": {
+  "empty": "up"
+ },
+ "sn12.28:2.2": {
+  "after": "nd what, bhikkhus, is aging-and-death?…",
+  "placed": true,
+  "own": true
+ },
+ "sn12.28:2.10": {
+  "empty": "up"
+ },
+ "sn12.36:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn12.36:2.1": {
+  "empty": "up"
+ },
+ "sn12.36:2.4": {
+  "empty": "up"
+ },
+ "sn12.42:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn12.42:1.3": {
+  "empty": "up"
+ },
+ "sn12.50:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn12.50:5.1": {
+  "empty": "up"
+ },
+ "sn12.54:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn12.54:2.3": {
+  "empty": "up"
+ },
+ "sn12.56:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn12.56:2.2": {
+  "empty": "up"
+ },
+ "sn16.7:8.2": {
+  "after": " of nondecline.”\n“Good, good, Kassapa!”",
+  "placed": true,
+  "own": true
+ },
+ "sn16.7:12.8": {
+  "empty": "up"
+ },
+ "sn22.34:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn22.34:1.13": {
+  "empty": "up"
+ },
+ "sn22.38:5.2": {
+  "after": "r in such a way.”\n“Good, good, Ānanda!”",
+  "placed": true,
+  "own": true
+ },
+ "sn22.38:7.9": {
+  "after": "er of the Venerable Ānanda, concluding:",
+  "placed": true
+ },
+ "sn22.77:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn22.77:2.3": {
+  "empty": "up"
+ },
+ "sn22.81:6.4": {
+  "after": "g form. That regarding is a formation …",
+  "placed": true,
+  "own": true
+ },
+ "sn22.81:6.6": {
+  "empty": "up"
+ },
+ "sn22.88:1.3": {
+  "after": "a’s Park, sick, afflicted, gravely ill.",
+  "placed": true,
+  "own": true
+ },
+ "sn22.88:1.10": {
+  "empty": "up"
+ },
+ "sn35.100:1.3": {
+  "after": "understands things as they really are.”",
+  "placed": true,
+  "own": true
+ },
+ "sn35.100:1.10": {
+  "empty": "up"
+ },
+ "sn35.102:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn35.102:1.16": {
+  "empty": "up"
+ },
+ "sn35.107:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn35.107:2.5": {
+  "empty": "up"
+ },
+ "sn35.112:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn35.112:1.7": {
+  "empty": "up"
+ },
+ "sn35.113:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn35.113:1.2": {
+  "empty": "up"
+ },
+ "sn35.117:2.2": {
+  "after": "One had left, the bhikkhus considered …",
+  "placed": true,
+  "own": true
+ },
+ "sn35.117:3.1": {
+  "empty": "up"
+ },
+ "sn35.119:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn35.119:1.2": {
+  "empty": "up"
+ },
+ "sn35.121:17.1": {
+  "after": "e-contact as condition permanent or impermanent?”–“Impermanent, venerable sir.”",
+  "placed": true,
+  "own": true
+ },
+ "sn35.121:19.2": {
+  "empty": "up"
+ },
+ "sn35.122:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn35.122:1.3": {
+  "empty": "up"
+ },
+ "sn35.124:1.3": {
+  "after": "hed the Blessed One … and said to him….",
+  "placed": true,
+  "own": true
+ },
+ "sn35.124:2.3": {
+  "empty": "up"
+ },
+ "sn35.128:1.3": {
+  "after": "ed the Blessed One … and said to him.….",
+  "placed": true,
+  "own": true
+ },
+ "sn35.128:1.5": {
+  "empty": "up"
+ },
+ "sn35.137:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn35.137:1.9": {
+  "empty": "up"
+ },
+ "sn35.137:1.10": {
+  "empty": "up"
+ },
+ "sn35.139:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn35.139:1.12": {
+  "empty": "up"
+ },
+ "sn35.139:1.13": {
+  "empty": "up"
+ },
+ "sn35.14:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn35.14:2.2": {
+  "empty": "up"
+ },
+ "sn35.143:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn35.143:1.3": {
+  "empty": "up"
+ },
+ "sn35.150:2.1": {
+  "after": ", is the eye permanent or impermanent?”",
+  "placed": true,
+  "own": true
+ },
+ "sn35.150:6.1": {
+  "empty": "up"
+ },
+ "sn35.150:10.1": {
+  "empty": "up"
+ },
+ "sn35.16:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn35.16:2.1": {
+  "empty": "up"
+ },
+ "sn35.18:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn35.18:2.2": {
+  "empty": "up"
+ },
+ "sn35.22:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn35.22:1.6": {
+  "empty": "up"
+ },
+ "sn35.54:1.15": {
+  "empty": "up"
+ },
+ "sn35.62:3.1": {
+  "after": ", is the eye permanent or impermanent?”",
+  "placed": true,
+  "own": true
+ },
+ "sn35.62:14.1": {
+  "empty": "up"
+ },
+ "sn35.62:20.7": {
+  "empty": "up"
+ },
+ "sn35.72:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn35.72:1.2": {
+  "empty": "up"
+ },
+ "sn35.73:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn35.73:1.2": {
+  "empty": "up"
+ },
+ "sn35.75:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn35.75:1.3": {
+  "empty": "up"
+ },
+ "sn35.86:4.1": {
+  "after": "rmanent?”—“Impermanent, venerable sir.”",
+  "placed": true,
+  "own": true
+ },
+ "sn35.86:24.4": {
+  "empty": "up"
+ },
+ "sn35.89:4.1": {
+  "after": "rmanent?”—“Impermanent, venerable sir.”",
+  "placed": true,
+  "own": true
+ },
+ "sn35.89:7.1": {
+  "empty": "up"
+ },
+ "sn35.89:9.2": {
+  "empty": "up"
+ },
+ "sn35.89:14.1": {
+  "empty": "up"
+ },
+ "sn36.17:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn36.17:1.2": {
+  "empty": "up"
+ },
+ "sn36.17:2.10": {
+  "empty": "up"
+ },
+ "sn36.8:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn36.8:3.3": {
+  "empty": "up"
+ },
+ "sn4.10:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn4.10:1.3": {
+  "empty": "up"
+ },
+ "sn44.11:1.5": {
+  "after": " does the Tathagata exist after death?”",
+  "placed": true,
+  "own": true
+ },
+ "sn44.11:1.9": {
+  "empty": "up"
+ },
+ "sn44.2:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn44.2:2.12": {
+  "empty": "up"
+ },
+ "sn44.2:16.6": {
+  "empty": "up"
+ },
+ "sn44.4:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn44.4:1.2": {
+  "empty": "up"
+ },
+ "sn44.5:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn44.5:1.2": {
+  "empty": "up"
+ },
+ "sn44.6:1.6": {
+  "empty": "up"
+ },
+ "sn44.8:1.4": {
+  "after": " Master Gotama, is the world eternal?”…",
+  "placed": true,
+  "own": true
+ },
+ "sn44.8:1.7": {
+  "empty": "up"
+ },
+ "sn45.3:3.1": {
+  "after": "nd cultivate the Noble Eightfold Path?”",
+  "placed": true,
+  "own": true
+ },
+ "sn45.3:4.3": {
+  "empty": "up"
+ },
+ "sn45.69:1.2": {
+  "after": "… Accomplishment in careful attention …",
+  "placed": true,
+  "own": true
+ },
+ "sn45.69:1.4": {
+  "after": "areful attention … complete as in §63 …",
+  "placed": true
+ },
+ "sn45.96:1.4": {
+  "after": " slopes, and inclines towards Nibbāna.”",
+  "placed": true,
+  "own": true
+ },
+ "sn45.96:1.5": {
+  "empty": "up"
+ },
+ "sn45.97:1.3": {
+  "after": " slopes, and inclines towards Nibbāna.”",
+  "placed": true,
+  "own": true
+ },
+ "sn45.97:1.4": {
+  "empty": "up"
+ },
+ "sn46.17:2.1": {
+  "after": " from the near shore to the far shore.”",
+  "placed": true,
+  "own": true
+ },
+ "sn46.17:5.2": {
+  "empty": "up"
+ },
+ "sn47.14:3.1": {
+  "after": "ma as your refuge, with no other refuge",
+  "placed": true,
+  "own": true
+ },
+ "sn47.23:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn47.23:1.3": {
+  "empty": "up"
+ },
+ "sn47.27:2.2": {
+  "after": "hat one is beyond training. What four?…",
+  "placed": true,
+  "own": true
+ },
+ "sn47.27:2.4": {
+  "empty": "up"
+ },
+ "sn47.33:2.2": {
+  "after": " destruction of suffering.\n“What four?…",
+  "placed": true,
+  "own": true
+ },
+ "sn47.33:2.4": {
+  "empty": "up"
+ },
+ "sn47.63-72:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn47.63-72:1.2": {
+  "empty": "up"
+ },
+ "sn47.73-84:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn47.73-84:1.2": {
+  "empty": "up"
+ },
+ "sn47.85-94:1.1": {
+  "placed": true,
+  "own": true
+ },
+ "sn47.85-94:1.4": {
+  "empty": "up"
+ },
+ "sn56.14:3.1": {
+  "after": "s called the noble truth of suffering.”",
+  "placed": true,
+  "own": true
+ },
+ "sn56.14:6.1": {
   "empty": "up"
  }
 }

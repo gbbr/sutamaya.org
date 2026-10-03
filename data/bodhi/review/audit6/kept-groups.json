@@ -1,0 +1,265 @@
+{
+ "groups": [
+  {
+   "text": "an10.267-746",
+   "verdict": "passes",
+   "findings": [
+    {
+     "key": "an10.267-746:1.16",
+     "starts": "of heedlessness …",
+     "settles": {
+      "after": "ceit … of arrogance … of intoxication …",
+      "placed": true,
+      "own": true
+     }
+    },
+    {
+     "key": "an10.267-746:1.24",
+     "starts": null,
+     "settles": {
+      "empty": "up"
+     }
+    }
+   ],
+   "lines": [
+    {
+     "key": "an10.267-746:1.15",
+     "sujato": "vanity …",
+     "before": "of intoxication …",
+     "after": "of intoxication …"
+    },
+    {
+     "key": "an10.267-746:1.16",
+     "sujato": "for the complete understanding of negligence …",
+     "before": "",
+     "after": "of heedlessness …"
+    },
+    {
+     "key": "an10.267-746:1.17",
+     "sujato": "complete ending …",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an10.267-746:1.18",
+     "sujato": "giving up …",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an10.267-746:1.19",
+     "sujato": "ending …",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an10.267-746:1.20",
+     "sujato": "vanishing …",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an10.267-746:1.21",
+     "sujato": "fading away …",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an10.267-746:1.22",
+     "sujato": "cessation …",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an10.267-746:1.23",
+     "sujato": "giving away …",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an10.267-746:1.24",
+     "sujato": "letting go of negligence …",
+     "before": "of heedlessness …",
+     "after": ""
+    },
+    {
+     "key": "an10.267-746:1.25",
+     "sujato": "these ten things should be developed.”",
+     "before": "these ten things are to be developed.” This is what the Blessed One said. Elated, those bhikkhus delighted in the Blessed One’s statement.",
+     "after": "these ten things are to be developed.” This is what the Blessed One said. Elated, those bhikkhus delighted in the Blessed One’s statement."
+    }
+   ]
+  },
+  {
+   "text": "an8.23",
+   "verdict": "passes",
+   "findings": [
+    {
+     "key": "an8.23:7.1",
+     "starts": "The Blessed One said: “Good, good, bhikkhu!",
+     "settles": {
+      "after": " reported to him all that had happened.",
+      "placed": true
+     }
+    }
+   ],
+   "lines": [
+    {
+     "key": "an8.23:4.2",
+     "sujato": "Then after the meal, on his return from almsround, he went to the Buddha, bowed, sat down to one side, and told him of what he had discussed with the householder Hatthaka. The Buddha said:",
+     "before": "After his meal, on returning from his alms round, he approached the Blessed One, paid homage to him, sat down to one side, and reported to him all that had happened. The Blessed One said:",
+     "after": "After his meal, on returning from his alms round, he approached the Blessed One, paid homage to him, sat down to one side, and reported to him all that had happened."
+    },
+    {
+     "key": "an8.23:5.1",
+     "pali": "“Idhāhaṁ, bhante, pubbaṇhasamayaṁ nivāsetvā pattacīvaramādāya yena hatthakassa āḷavakassa nivesanaṁ tenupasaṅkamiṁ; upasaṅkamitvā paññatte āsane nisīdiṁ.",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an8.23:5.2",
+     "pali": "Atha kho, bhante, hatthako āḷavako yenāhaṁ tenupasaṅkami; upasaṅkamitvā maṁ abhivādetvā ekamantaṁ nisīdi.",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an8.23:5.3",
+     "pali": "Ekamantaṁ nisinnaṁ kho ahaṁ, bhante, hatthakaṁ āḷavakaṁ etadavacaṁ:",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an8.23:5.4",
+     "pali": "‘sattahi kho tvaṁ, āvuso, acchariyehi abbhutehi dhammehi samannāgato bhagavatā byākato.",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an8.23:5.5",
+     "pali": "Katamehi sattahi?",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an8.23:5.6",
+     "pali": "Saddho, bhikkhave, hatthako āḷavako;",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an8.23:5.7",
+     "pali": "sīlavā …pe…",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an8.23:5.8",
+     "pali": "hirīmā …",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an8.23:5.9",
+     "pali": "ottappī …",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an8.23:5.10",
+     "pali": "bahussuto …",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an8.23:5.11",
+     "pali": "cāgavā …",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an8.23:5.12",
+     "pali": "paññavā, bhikkhave, hatthako āḷavakoti.",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an8.23:5.13",
+     "pali": "Imehi kho tvaṁ, āvuso, sattahi acchariyehi abbhutehi dhammehi samannāgato bhagavatā byākato’ti.",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an8.23:6.1",
+     "pali": "Evaṁ vutte, bhante, hatthako maṁ etadavoca:",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an8.23:6.2",
+     "pali": "‘kaccittha, bhante, na koci gihī ahosi odātavasano’ti?",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an8.23:6.3",
+     "pali": "‘Na hettha, āvuso, koci gihī ahosi odātavasano’ti.",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an8.23:6.4",
+     "pali": "‘Sādhu, bhante, yadettha na koci gihī ahosi odātavasano’”ti.",
+     "before": "",
+     "after": ""
+    },
+    {
+     "key": "an8.23:7.1",
+     "sujato": "“Good, good, mendicant!",
+     "before": "“Good, good, bhikkhu!",
+     "after": "The Blessed One said: “Good, good, bhikkhu!"
+    },
+    {
+     "key": "an8.23:7.2",
+     "sujato": "That gentleman has few wishes.",
+     "before": "That clansman has few desires,",
+     "after": "That clansman has few desires,"
+    }
+   ]
+  },
+  {
+   "text": "sn12.57",
+   "verdict": "passes",
+   "findings": [
+    {
+     "key": "sn12.57:4.3",
+     "starts": null,
+     "settles": {
+      "empty": "up"
+     }
+    }
+   ],
+   "lines": [
+    {
+     "key": "sn12.57:4.2",
+     "sujato": "Then a person comes along with a spade and basket. …",
+     "before": "Then a man would come along bringing a shovel and a basket.",
+     "after": "Then a man would come along bringing a shovel and a basket. He would cut down the sapling at its foot … as in §55 … he would winnow the ashes in a strong wind or let them be carried away by the swift current of a river."
+    },
+    {
+     "key": "sn12.57:4.3",
+     "sujato": "They’d cut the sapling apart, cut up the parts, and chop it into splinters. They’d dry the splinters in the wind and sun, burn them with fire, and reduce them to ashes. Then they’d winnow the ashes in a strong wind, or glide them down a swift stream.",
+     "before": "He would cut down the sapling at its foot … as in §55 … he would winnow the ashes in a strong wind or let them be carried away by the swift current of a river.",
+     "after": ""
+    },
+    {
+     "key": "sn12.57:4.4",
+     "sujato": "In this way the sapling is cut off at the root, made like a palm stump, obliterated, and unable to arise in the future.",
+     "before": "Thus that sapling would be cut off at the root, made like a palm stump, obliterated so that it is no more subject to future arising.",
+     "after": "Thus that sapling would be cut off at the root, made like a palm stump, obliterated so that it is no more subject to future arising."
+    }
+   ]
+  }
+ ],
+ "others": [],
+ "disputed": []
+}

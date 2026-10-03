@@ -1,0 +1,1773 @@
+{
+  "candidateCount": 123,
+  "judgments": [
+    {
+      "candidateKey": "an10.213:1.6",
+      "classification": "list-item-note",
+      "decision": "leave",
+      "noteKeys": [
+        "an10.213:1.6"
+      ],
+      "targetKey": null,
+      "rationale": "Source “as above” abbreviates intermediate items of the ten-quality list, not a whole passage. Keep its existing place.",
+      "directives": []
+    },
+    {
+      "candidateKey": "an10.27:6.6",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "an10.27:6.6"
+      ],
+      "targetKey": "an10.27:6.2",
+      "rationale": "The translated arrival at 6.1 is complete. The note stands for the reported sequence beginning with their thought at 6.2, through 8.1. Actual departure and quoted conclusion at 8.2–8.3 remain.",
+      "directives": [
+        "an10.27:6.2 starts: They here report the entire course of",
+        "an10.27:6.6 none"
+      ]
+    },
+    {
+      "candidateKey": "an10.53:7.1",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "an10.53:6.4",
+        "an10.53:7.1",
+        "an10.53:7.5"
+      ],
+      "targetKey": "an10.53:6.1",
+      "rationale": "Supplementary Pali/T confirms 5.1 already renders the instruction at 5.2. The source’s entire repeat note, including its leading page-reference ellipses and trailing ellipsis, stands for the self-examination passage beginning at 6.1. Keep the actual positive examination at 8.1–8.2.",
+      "directives": [
+        "an10.53:6.1 starts: … [97–98] … as in AN10.51 down",
+        "an10.53:6.4 none",
+        "an10.53:7.1 none",
+        "an10.53:7.5 none"
+      ]
+    },
+    {
+      "candidateKey": "an4.40:2.4",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "an4.40:2.4"
+      ],
+      "targetKey": "an4.40:1.2",
+      "rationale": "Source paragraph 1 translates the approach at 1.1. Paragraph 2 replaces the ensuing prose dialogue beginning with Udāyī’s question at 1.2. The translated verse starts at 3.1 and remains whole/in order.",
+      "directives": [
+        "an4.40:1.2 starts: The prose portion is identical with that",
+        "an4.40:2.4 none"
+      ]
+    },
+    {
+      "candidateKey": "an8.20:9.6",
+      "classification": "already-correct",
+      "decision": "leave",
+      "noteKeys": [
+        "an8.20:9.6"
+      ],
+      "targetKey": null,
+      "rationale": "Source paragraph 15 replaces intermediate full qualities, but Pali compresses those qualities into the pe at 9.6. The note is already on that first/only Pali row; the actual first-quality conclusion belongs there too.",
+      "directives": []
+    },
+    {
+      "candidateKey": "an8.45:4.4",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "an8.45:4.4",
+        "an8.45:12.1"
+      ],
+      "targetKey": "an8.45:2.2",
+      "rationale": "After the complete introductory assertion at 2.1, the source note replaces all remaining instruction and verses beginning with the question at 2.2. The page reference at 12.1 is part of that same source paragraph, not a verse line.",
+      "directives": [
+        "an8.45:2.2 starts: All as in AN8.42, including the verses.",
+        "an8.45:4.4 none",
+        "an8.45:12.1 none"
+      ]
+    },
+    {
+      "candidateKey": "an8.8:10.1",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "an8.8:10.1",
+        "an8.8:10.3",
+        "an8.8:12.3",
+        "an8.8:12.4"
+      ],
+      "targetKey": "an8.8:8.2",
+      "rationale": "The source translates the first review sentence at 8.1, then substitutes one note for the remainder of the cited discourse, beginning with review of others at 8.2. Combine “down to” and the split page reference/ellipsis. Supplement confirms actual concluding instruction at 12.10 stays there.",
+      "directives": [
+        "an8.8:8.2 starts: Sakka here cites the Buddha’s entire discourse",
+        "an8.8:10.1 none",
+        "an8.8:10.3 none",
+        "an8.8:12.3 none",
+        "an8.8:12.4 none"
+      ]
+    },
+    {
+      "candidateKey": "mn63:3.32",
+      "classification": "ordinary-translation",
+      "decision": "leave",
+      "noteKeys": [],
+      "targetKey": null,
+      "rationale": "The quoted soul/body view directly renders the Pali list member taṁ jīvaṁ taṁ sarīraṁ; the ellipsis abbreviates its repeated framing, not a whole-passage note.",
+      "directives": []
+    },
+    {
+      "candidateKey": "mn65:26.6",
+      "classification": "partial-sentence-note",
+      "decision": "leave",
+      "noteKeys": [
+        "mn65:26.6"
+      ],
+      "targetKey": null,
+      "rationale": "Source paragraph 39 begins the correction sentence with “does not prevaricate” and uses “repeat rest of §24” to replace the rest of that sentence as well as subsequent repetition. Explicit partial-sentence rule requires leaving it.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn11.12:9.1",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn11.12:9.1",
+        "sn11.12:10.4"
+      ],
+      "targetKey": "sn11.12:8.2",
+      "rationale": "Source paragraph 9 gives only the initial seven-vows assertion at 8.1. Paragraph 10 substitutes a whole remainder-note beginning with “What seven?” at 8.2; verse-number equivalence at 10.4 is part of the same note.",
+      "directives": [
+        "sn11.12:8.2 starts: The remainder of this sutta is identical",
+        "sn11.12:9.1 none",
+        "sn11.12:10.4 none"
+      ]
+    },
+    {
+      "candidateKey": "sn11.2:2.10",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn11.2:2.10"
+      ],
+      "targetKey": "sn11.2:1.1",
+      "rationale": "The sole source paragraph replaces the entire sutta, including the setting at 1.1 and verses. Keep its verse equivalence with the prose note, not as translated verse.",
+      "directives": [
+        "sn11.2:1.1 starts: This sutta is identical with the preceding",
+        "sn11.2:2.10 none"
+      ]
+    },
+    {
+      "candidateKey": "sn12.28:2.10",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn12.28:2.10"
+      ],
+      "targetKey": "sn12.28:2.2",
+      "rationale": "The source gives the complete aging-and-death question at 2.1, then replaces the definitions and repeated analyses beginning at 2.2. Actual final path/concentration translation at 4.7–4.8 remains.",
+      "directives": [
+        "sn12.28:2.2 starts: as in preceding sutta …",
+        "sn12.28:2.10 none"
+      ]
+    },
+    {
+      "candidateKey": "sn12.36:2.4",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn12.36:2.1",
+        "sn12.36:2.4"
+      ],
+      "targetKey": "sn12.36:1.1",
+      "rationale": "The sole source paragraph is one whole-sutta note; its concluding explanatory sentence at 2.4 is part of that note. Supplementary Pali/T confirms empty setting at 1.1 is the first row.",
+      "directives": [
+        "sn12.36:1.1 starts: This sutta is identical with the preceding",
+        "sn12.36:2.1 none",
+        "sn12.36:2.4 none"
+      ]
+    },
+    {
+      "candidateKey": "sn12.54:2.3",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn12.54:2.3"
+      ],
+      "targetKey": "sn12.54:1.1",
+      "rationale": "The sole source paragraph replaces the full sutta, not merely the second lamp simile. Its first Pali row is the setting at 1.1.",
+      "directives": [
+        "sn12.54:1.1 starts: This sutta is identical with the preceding",
+        "sn12.54:2.3 none"
+      ]
+    },
+    {
+      "candidateKey": "sn12.68:8.1",
+      "classification": "already-correct",
+      "decision": "leave",
+      "noteKeys": [
+        "sn12.68:8.1"
+      ],
+      "targetKey": null,
+      "rationale": "The standalone source paragraph replaces the full repeated Nārada question-and-answer series; 8.1 is already its first Pali row. Prior 7.7 is included in the actual translation at 7.6.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn22.35:3.5",
+      "classification": "partial-sentence-note",
+      "decision": "leave",
+      "noteKeys": [
+        "sn22.35:3.5"
+      ],
+      "targetKey": null,
+      "rationale": "Source paragraph 8 inserts “as above in full” between the opening conditional “If … towards form” and the concluding “then … not reckoned”; it replaces parts of sentences and intervening repetitions. Leave under the explicit partial-sentence rule.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn22.55:2.6",
+      "classification": "ordinary-translation",
+      "decision": "leave",
+      "noteKeys": [],
+      "targetKey": null,
+      "rationale": "The final alternative “or self as in consciousness” directly renders viññāṇasmiṁ vā attānaṁ at 2.6; preceding ellipses are the translator’s abbreviation.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn22.64:3.6",
+      "classification": "partial-sentence-note",
+      "decision": "leave",
+      "noteKeys": [
+        "sn22.64:3.6"
+      ],
+      "targetKey": null,
+      "rationale": "Source paragraph 8 embeds “as above in full” between the initial conceiving-form clause and the concluding not-conceiving clause. It replaces parts of the paired sentence and intermediate aggregate repetitions, so keeps its place.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn22.7:5.1",
+      "classification": "ordinary-translation",
+      "decision": "leave",
+      "noteKeys": [],
+      "targetKey": null,
+      "rationale": "The consciousness/self alternatives directly translate viññāṇaṁ attato … viññāṇasmiṁ vā attānaṁ at 5.1. Earlier aggregate paragraphs are deliberately abbreviated.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn22.81:8.1",
+      "classification": "ordinary-translation",
+      "decision": "leave",
+      "noteKeys": [],
+      "targetKey": null,
+      "rationale": "The source paragraph 14 is an actual new assertion about not regarding form as self, etc. It directly renders the new negative alternatives at 8.1; the preceding formation analysis is abbreviated.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn35.100:1.10",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.100:1.10"
+      ],
+      "targetKey": "sn35.100:1.3",
+      "rationale": "Source paragraph 1 ends after the complete secluded-understanding assertion at 1.2. The standalone remainder-note replaces the question and subsequent analysis beginning at 1.3.",
+      "directives": [
+        "sn35.100:1.3 starts: The rest is identical with the preceding",
+        "sn35.100:1.10 none"
+      ]
+    },
+    {
+      "candidateKey": "sn35.112:1.7",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.112:1.7"
+      ],
+      "targetKey": "sn35.112:1.1",
+      "rationale": "The sole source paragraph substitutes for the entire external-base sutta beginning with rūpe at 1.1, not only its positive second half.",
+      "directives": [
+        "sn35.112:1.1 starts: Identical with §111, but stated by way",
+        "sn35.112:1.7 none"
+      ]
+    },
+    {
+      "candidateKey": "sn35.119:1.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.119:1.2"
+      ],
+      "targetKey": "sn35.119:1.1",
+      "rationale": "The sole source paragraph replaces the whole Pañcasikha sutta, including the Rājagaha setting at 1.1.",
+      "directives": [
+        "sn35.119:1.1 starts: The same except that the interlocutor is",
+        "sn35.119:1.2 none"
+      ]
+    },
+    {
+      "candidateKey": "sn35.124:2.3",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.124:2.3"
+      ],
+      "targetKey": "sn35.124:1.3",
+      "rationale": "Source paragraph 1 translates the setting/approach through 1.2. Paragraph 2 replaces the entire question and reply, whose first Pali question begins at 1.3.",
+      "directives": [
+        "sn35.124:1.3 starts: The question and the reply are exactly",
+        "sn35.124:2.3 none"
+      ]
+    },
+    {
+      "candidateKey": "sn35.137:1.9",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.137:1.9",
+        "sn35.137:1.10"
+      ],
+      "targetKey": "sn35.137:1.1",
+      "rationale": "The source’s one sentence replaces the whole sutta beginning at 1.1. “but without the verses” at 1.10 is the continuation of that same note, not actual translation.",
+      "directives": [
+        "sn35.137:1.1 starts: Identical with the preceding sutta, but without",
+        "sn35.137:1.9 none",
+        "sn35.137:1.10 none"
+      ]
+    },
+    {
+      "candidateKey": "sn35.14:2.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.14:2.2"
+      ],
+      "targetKey": "sn35.14:1.1",
+      "rationale": "The sole source paragraph replaces the entire external-base awakening discourse beginning at 1.1.",
+      "directives": [
+        "sn35.14:1.1 starts: The same is repeated for the six",
+        "sn35.14:2.2 none"
+      ]
+    },
+    {
+      "candidateKey": "sn35.18:2.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.18:2.2"
+      ],
+      "targetKey": "sn35.18:1.1",
+      "rationale": "The sole source paragraph replaces the whole external-base discourse beginning at 1.1.",
+      "directives": [
+        "sn35.18:1.1 starts: The same for the six external sense",
+        "sn35.18:2.2 none"
+      ]
+    },
+    {
+      "candidateKey": "sn35.62:20.7",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.62:14.1",
+        "sn35.62:20.7"
+      ],
+      "targetKey": "sn35.62:3.1",
+      "rationale": "Source paragraph 2 ends with the translated eye-impermanence question at 2.2. Paragraph 3 is one note, including its leading ellipsis currently at 14.1, replacing the dialogue and liberation sequence from the first answer at 3.1. Keep the actual concluding Dhamma assertion at 20.8.",
+      "directives": [
+        "sn35.62:3.1 starts: … To be completed as in §32",
+        "sn35.62:14.1 none",
+        "sn35.62:20.7 none"
+      ]
+    },
+    {
+      "candidateKey": "sn35.75:1.3",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.75:1.3"
+      ],
+      "targetKey": "sn35.75:1.1",
+      "rationale": "Source paragraph 1 replaces the complete opening narrative/dialogue from the first approach at 1.1. Actual resumed question at 6.1 and all later translation remain.",
+      "directives": [
+        "sn35.75:1.1 starts: As above down to:",
+        "sn35.75:1.3 none"
+      ]
+    },
+    {
+      "candidateKey": "sn36.17:1.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn36.17:1.2",
+        "sn36.17:2.10"
+      ],
+      "targetKey": "sn36.17:1.1",
+      "rationale": "The source paragraph is one note replacing both parallel suttas; this sutta begins with the bhikkhus’ approach at 1.1. Its page reference at 2.10 belongs with the note.",
+      "directives": [
+        "sn36.17:1.1 starts: These two suttas are identical with §§15–16",
+        "sn36.17:1.2 none",
+        "sn36.17:2.10 none"
+      ]
+    },
+    {
+      "candidateKey": "sn36.8:7.3",
+      "classification": "partial-sentence-note",
+      "decision": "leave",
+      "noteKeys": [
+        "sn36.8:7.3"
+      ],
+      "targetKey": null,
+      "rationale": "Source paragraph 6 starts the incomplete conditional “If he feels a pleasant feeling” before “all as in preceding sutta”. The repeat instruction replaces the remainder of that sentence plus later material; keep it under the partial-sentence rule. The final quoted understanding at 7.4 is actual translation, not note.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn44.2:2.12",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn44.2:2.12",
+        "sn44.2:16.6"
+      ],
+      "targetKey": "sn44.2:1.1",
+      "rationale": "The sole source paragraph replaces the whole Anurādha sutta from its Vesālī setting at 1.1. Its page reference at 16.6 is part of the note, not a translated question.",
+      "directives": [
+        "sn44.2:1.1 starts: (Identical with SN22.86.) [381–84]",
+        "sn44.2:2.12 none",
+        "sn44.2:16.6 none"
+      ]
+    },
+    {
+      "candidateKey": "sn44.6:1.6",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn44.6:1.6"
+      ],
+      "targetKey": "sn44.6:1.4",
+      "rationale": "Full upstream confirms a standalone source paragraph replacing the repeated dialogue after the complete first question. Pali’s pe at 1.4 contains its first omitted reply/question, so append the entire note after that question on 1.4. The unchanged question-start directive is a necessary target anchor; empty 1.6. Keep the actual cause/reason question on 1.8.",
+      "directives": [
+        "sn44.6:1.4 starts: “How is it, friend Koṭṭhita, does the",
+        "sn44.6:1.6 none"
+      ]
+    },
+    {
+      "candidateKey": "sn44.8:3.13",
+      "classification": "ordinary-translation",
+      "decision": "leave",
+      "noteKeys": [],
+      "targetKey": null,
+      "rationale": "“or self as in consciousness” is the final directly translated alternative at 3.13. The separate “All as above down to” note belongs to a later dialogue and is outside this candidate’s text.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn45.146-148:2.1",
+      "classification": "ordinary-translation",
+      "decision": "leave",
+      "noteKeys": [],
+      "targetKey": null,
+      "rationale": "The Sun heading and full autumn-sun simile directly render the new sutta beginning at 2.1; the preceding sutta’s elaboration is abbreviated, not moved.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn45.3:4.3",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn45.3:4.3"
+      ],
+      "targetKey": "sn45.3:3.1",
+      "rationale": "Source paragraph 4 ends with the development question at 2.4. Paragraph 5 substitutes one whole remainder-note for its answer and further friendship discourse beginning at 3.1.",
+      "directives": [
+        "sn45.3:3.1 starts: The rest as in the preceding sutta.",
+        "sn45.3:4.3 none"
+      ]
+    },
+    {
+      "candidateKey": "sn45.90:1.4",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn45.90:1.4"
+      ],
+      "targetKey": "sn45.90:1.2",
+      "rationale": "After the careful-attention item at 1.1, the source completion note replaces the ensuing expectation/development passage beginning at 1.2. The actual resumed right-concentration sentence stays on 1.4 and the final conclusion stays on 1.5.",
+      "directives": [
+        "sn45.90:1.2 starts: complete as in §84 …",
+        "sn45.90:1.4 starts: He develops right concentration, which has as"
+      ]
+    },
+    {
+      "candidateKey": "sn46.15:3.2",
+      "classification": "partial-sentence-note",
+      "decision": "leave",
+      "noteKeys": [
+        "sn46.15:3.2",
+        "sn46.15:3.3"
+      ],
+      "targetKey": null,
+      "rationale": "Source paragraph 1 inserts the repeat note immediately after “approached … Mahamoggallana”, replacing the rest of that same narrative sentence before the subsequent dialogue. Keep the complete note’s continuation at 3.3 under the explicit partial-sentence rule.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn47.16:3.3",
+      "classification": "partial-sentence-note",
+      "decision": "leave",
+      "noteKeys": [
+        "sn47.16:3.3"
+      ],
+      "targetKey": null,
+      "rationale": "Source paragraph 3 begins the departure sentence through “rose from his seat”, then replaces the rest of that sentence and subsequent practice/knowledge with the note. It therefore keeps its place. The arahant conclusion at 3.4 is actual translation.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn47.33:2.4",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn47.33:2.4"
+      ],
+      "targetKey": "sn47.33:2.2",
+      "rationale": "The source gives the complete question at 2.1; “as above” replaces the full four-establishments answer from the body contemplation at 2.2 through 2.5, not one list item. Actual neglected/undertaken conclusions at 2.6–2.7 remain.",
+      "directives": [
+        "sn47.33:2.2 starts: as above …",
+        "sn47.33:2.4 none"
+      ]
+    },
+    {
+      "candidateKey": "sn47.85-94:1.4",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn47.85-94:1.4"
+      ],
+      "targetKey": "sn47.85-94:1.1",
+      "rationale": "Source paragraph 1 replaces the entire grouped searches sequence beginning at 1.1, not just Pali’s concluding elaboration instruction. Keep the separate actual uddāna verse lines at 2.1–2.4 whole and in order.",
+      "directives": [
+        "sn47.85-94:1.1 starts: (To be elaborated parallel to SN45.161.)",
+        "sn47.85-94:1.4 none"
+      ]
+    },
+    {
+      "candidateKey": "an10.213:2.10",
+      "classification": "list-item-note",
+      "decision": "leave",
+      "noteKeys": [
+        "an10.213:2.10"
+      ],
+      "rationale": "The source's inline 'as above' abbreviates items between the translated first abstention and tenth right-view item; Pali 2.10 is itself an intermediate list item. It does not replace a whole passage.",
+      "directives": []
+    },
+    {
+      "candidateKey": "an10.35:1.14",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "an10.35:1.14"
+      ],
+      "targetKey": "an10.35:1.4",
+      "rationale": "Source paragraph 3 replaces the whole ten-quality explanation, which begins Idhupāli, bhikkhu sīlavā at 1.4. The concluding Imehi sentence at 1.14 is actual translation. Supplemental full Pali/Bodhi and source HTML establish the target and the preceding ellipsis's paragraph.",
+      "boundaryInstructions": "Keep the standalone ellipsis originally at 1.12 with the preceding source paragraph ending What ten? at 1.3, before the note. Move only 'The same ten qualities as in the preceding sutta.' to 1.4, retaining its source span/reference markup. Leave the following quoted concluding sentence at 1.14.",
+      "directives": [
+        "an10.35:1.3 starts: What ten?”",
+        "an10.35:1.4 starts: The same ten qualities as in the",
+        "an10.35:1.12 none",
+        "an10.35:1.14 starts: “A bhikkhu who possesses these ten qualities"
+      ]
+    },
+    {
+      "candidateKey": "an10.62:2.21",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "an10.62:2.21"
+      ],
+      "targetKey": "an10.62:2.7",
+      "rationale": "The printed answer about the five hindrances ends at 2.6. The note substitutes for the subsequent complete repeated nutriment exposition starting Pañca nīvaraṇepāhaṁ at 2.7, through the statement at 2.25; actual translation resumes with the next question at 2.26.",
+      "boundaryInstructions": "Move the complete linked note with its trailing ellipsis to 2.7; retain the preceding ellipsis with the printed answer at 2.6 and anchor the next actual question at 2.26.",
+      "directives": [
+        "an10.62:2.7 starts: as in <a href=\"https://suttacentral.net/an10.61\">AN10.61</a> …",
+        "an10.62:2.21 none",
+        "an10.62:2.26 starts: And what is the nutriment for not"
+      ]
+    },
+    {
+      "candidateKey": "an4.54:6.1",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "an4.54:6.1",
+        "an4.54:10.2"
+      ],
+      "targetKey": "an4.54:2.1",
+      "rationale": "'The rest, including the verses' covers the prose explanations beginning Kathañca at 2.1 and all subsequent verses. The source page reference [60–61] at 10.2 continues the same note paragraph; it is not verse translation.",
+      "boundaryInstructions": "Move the entire note, linked AN4.53 reference and final [60–61] together to 2.1. Empty both former holders. The remaining omitted prose/verse rows remain empty, and the editorial note is prose, not a verse line.",
+      "directives": [
+        "an4.54:2.1 starts: The rest, including the verses, is identical",
+        "an4.54:6.1 none",
+        "an4.54:10.2 none"
+      ]
+    },
+    {
+      "candidateKey": "an8.22:5.6",
+      "classification": "partial-sentence-note",
+      "decision": "leave",
+      "noteKeys": [
+        "an8.22:5.6"
+      ],
+      "rationale": "Source paragraph 9 prints 'I then went to them … as in 8:21 …'; Pali 5.2 continues with etadavacaṁ and the quoted speech. The note completes an already partly translated narrative sentence and exchange, before the printed 5.9 sentence.",
+      "directives": []
+    },
+    {
+      "candidateKey": "an8.47:5.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "an8.47:5.2"
+      ],
+      "targetKey": "an8.47:2.3",
+      "rationale": "The standalone source paragraph 'As in 8:46, including the verses' replaces the entire eight-quality explanation and verses after What eight?; Pali begins that explanation with Idha, visākhe at 2.3.",
+      "boundaryInstructions": "Move the complete note and link to 2.3 and empty 5.2. Treat it as prose, not a translated verse line.",
+      "directives": [
+        "an8.47:2.3 starts: As in <a href=\"https://suttacentral.net/an8.46\">AN8.46</a>, including the verses.",
+        "an8.47:5.2 none"
+      ]
+    },
+    {
+      "candidateKey": "dn2:92.20",
+      "classification": "ordinary-translation",
+      "decision": "leave",
+      "noteKeys": [],
+      "rationale": "'This too, great king, is a visible fruit' translates Idampi kho, mahārāja at 92.20. The preceding omitted mind classifications do not turn that concluding sentence into an editorial note.",
+      "directives": []
+    },
+    {
+      "candidateKey": "mn63:6.9",
+      "classification": "ordinary-translation",
+      "decision": "leave",
+      "noteKeys": [],
+      "rationale": "'The soul is the same as the body' directly translates Taṁ jīvaṁ taṁ sarīraṁ at 6.9 within the printed sequence of speculative views. Its ellipsis abbreviates the recurring sentence; there is no whole-passage note.",
+      "directives": []
+    },
+    {
+      "candidateKey": "mn65:27.5",
+      "classification": "ordinary-translation",
+      "decision": "leave",
+      "noteKeys": [],
+      "rationale": "The source places the prohibition 'Let him not lose' before its conditional 'as he may if we take action'. That sentence translates Pali 27.4–5 in Bodhi's order, rather than being an editorial repetition note.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn11.13:13.1",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn11.13:13.1"
+      ],
+      "targetKey": "sn11.13:7.1",
+      "rationale": "The source has already translated the first name Magha/Maghava at 6.1. The standalone note then replaces the remaining names, seven vows and verses; the first omitted name explanation begins Sakko ... sakkaccaṁ dānaṁ adāsi at 7.1.",
+      "boundaryInstructions": "Keep 6.1's printed Magha explanation and ellipsis. Move the entire parenthesized note, both links and verse-number equations to 7.1; empty 13.1.",
+      "directives": [
+        "sn11.13:7.1 starts: (Here follows the names of Sakka as",
+        "sn11.13:13.1 none"
+      ]
+    },
+    {
+      "candidateKey": "sn12.22:1.10",
+      "classification": "partial-sentence-note",
+      "decision": "leave",
+      "noteKeys": [
+        "sn12.22:1.10"
+      ],
+      "rationale": "The source starts the quoted formula 'Such is form … as in §21 …' and retains its final cessation clause. The first form formula is only partly translated, so this inline elision substitutes for the remainder of that formula and subsequent formulas, rather than standing alone for an entire passage.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn12.2:2.7",
+      "classification": "list-item-note",
+      "decision": "leave",
+      "noteKeys": [
+        "sn12.2:2.7"
+      ],
+      "rationale": "'As in preceding sutta' is embedded between the first two dependent-origination links and the conclusion. It abbreviates intermediate links in the continuing semicolon list, including phassapaccayā vedanā at 2.7.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn12.42:1.3",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn12.42:1.3"
+      ],
+      "targetKey": "sn12.42:1.1",
+      "rationale": "The only source paragraph states that this sutta is identical to the preceding one. It substitutes for the entire sutta, including the untranslated setting Sāvatthiyaṁ viharati at 1.1.",
+      "directives": [
+        "sn12.42:1.1 starts: This sutta is identical with the preceding",
+        "sn12.42:1.3 none"
+      ]
+    },
+    {
+      "candidateKey": "sn12.56:2.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn12.56:2.2"
+      ],
+      "targetKey": "sn12.56:1.1",
+      "rationale": "The sole source paragraph replaces the whole sutta and describes its changed simile ordering. The first omitted Pali is the setting at 1.1, not the second simile's arriving man at 2.2.",
+      "directives": [
+        "sn12.56:1.1 starts: This sutta is identical with the preceding",
+        "sn12.56:2.2 none"
+      ]
+    },
+    {
+      "candidateKey": "sn16.7:12.8",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn16.7:12.8"
+      ],
+      "targetKey": "sn16.7:8.2",
+      "rationale": "After the printed Good, good, Kassapa! at 8.1, the source note replaces the Buddha's whole repeated statement. Its first Pali sentence begins Yassa kassaci ... saddhā natthi at 8.2.",
+      "directives": [
+        "sn16.7:8.2 starts: The Buddha then repeats the entire statement",
+        "sn16.7:12.8 none"
+      ]
+    },
+    {
+      "candidateKey": "sn22.36:3.13",
+      "classification": "partial-sentence-note",
+      "decision": "leave",
+      "noteKeys": [
+        "sn22.36:3.13"
+      ],
+      "rationale": "The source prints only the opening 'If ... tendency towards form' and the ending 'then one is not reckoned'; its inline 'as above in full' fills the intervening continuation of that partly translated sentence and repeated aggregate formulas.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn22.55:7.6",
+      "classification": "ordinary-translation",
+      "decision": "leave",
+      "noteKeys": [],
+      "rationale": "'Or self as in consciousness' is the translated final alternative of the abbreviated aggregate/self formula at na viññāṇaṁ ... 7.6. It contains no editorial note.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn22.65:3.6",
+      "classification": "list-item-note",
+      "decision": "leave",
+      "noteKeys": [
+        "sn22.65:3.6"
+      ],
+      "rationale": "The inline 'as above in full' follows the printed first form proposition and precedes the final freedom clause. It elides repeated aggregate items, including saññaṁ at 3.6, inside a partly retained series.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn22.7:9.1",
+      "classification": "ordinary-translation",
+      "decision": "leave",
+      "noteKeys": [],
+      "rationale": "The consciousness/self alternatives translate Na viññāṇaṁ ... at 9.1 and resume the abbreviated series in source paragraph 7. They are actual translated content, not a repetition instruction.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn22.81:9.1",
+      "classification": "ordinary-translation",
+      "decision": "leave",
+      "noteKeys": [],
+      "rationale": "'He may not regard form as self ... or self as in form' directly translates the opening negative alternatives at 9.1. Empty rows in the preceding repeated formation exposition do not alter that correspondence.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn35.102:1.16",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.102:1.16"
+      ],
+      "targetKey": "sn35.102:1.1",
+      "rationale": "The source's only paragraph replaces the whole sutta and notes the omitted simile. The first Pali is Yaṁ ... na tumhākaṁ at 1.1.",
+      "directives": [
+        "sn35.102:1.1 starts: This sutta is identical with the preceding",
+        "sn35.102:1.16 none"
+      ]
+    },
+    {
+      "candidateKey": "sn35.113:1.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.113:1.2"
+      ],
+      "targetKey": "sn35.113:1.1",
+      "rationale": "The sole source paragraph '(Identical with SN 12.45.)' substitutes for the entire sutta; its first Pali row is the Ñātika setting at 1.1.",
+      "directives": [
+        "sn35.113:1.1 starts: (Identical with <a href=\"https://suttacentral.net/sn12.45\">SN12.45</a>.)",
+        "sn35.113:1.2 none"
+      ]
+    },
+    {
+      "candidateKey": "sn35.121:19.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.121:19.2"
+      ],
+      "targetKey": "sn35.121:17.1",
+      "rationale": "After the translated Impermanent answer at 16.1, 'The rest as in the preceding paragraph' substitutes for the remaining complete question-and-answer exchange. Its first omitted question is Yaṁ panāniccaṁ dukkhaṁ vā at 17.1.",
+      "boundaryInstructions": "Keep this complete note at 17.1, ending before the next printed question beginning Is the ear at 21.1.",
+      "directives": [
+        "sn35.121:17.1 starts: The rest as in the preceding paragraph.",
+        "sn35.121:19.2 none",
+        "sn35.121:21.1 starts: “Is the ear …"
+      ]
+    },
+    {
+      "candidateKey": "sn35.128:1.5",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.128:1.5"
+      ],
+      "targetKey": "sn35.128:1.3",
+      "rationale": "The source introduces Soṇa's speaking at 1.2 but prints none of his question; the standalone As in §118 substitutes for that whole question and subsequent discourse, beginning ko nu kho at 1.3. The Pali expansion instruction at 1.5 is later than the first omitted passage row.",
+      "directives": [
+        "sn35.128:1.3 starts: As in §118.",
+        "sn35.128:1.5 none"
+      ]
+    },
+    {
+      "candidateKey": "sn35.139:1.12",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.139:1.12",
+        "sn35.139:1.13"
+      ],
+      "targetKey": "sn35.139:1.1",
+      "rationale": "The source contains one whole-sutta note split between 'Identical with the preceding sutta,' and 'but stated by way ...'. It replaces all Pali beginning Yaṁ ... na tumhākaṁ at 1.1.",
+      "boundaryInstructions": "Join the two fragments as one unchanged note at 1.1 and empty both 1.12 and 1.13.",
+      "directives": [
+        "sn35.139:1.1 starts: Identical with the preceding sutta, but stated",
+        "sn35.139:1.12 none",
+        "sn35.139:1.13 none"
+      ]
+    },
+    {
+      "candidateKey": "sn35.150:10.1",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.150:6.1",
+        "sn35.150:10.1"
+      ],
+      "targetKey": "sn35.150:2.1",
+      "rationale": "The printed first question ends at 1.5. Source HTML then gives '… all as in §32 …' for the whole remaining exchange, beginning the untranslated Impermanent answer at 2.1. The preceding standalone ellipsis at 6.1 belongs before the note, not to a translated No answer.",
+      "boundaryInstructions": "Move the complete source-order sequence '… all as in §32 …' together to 2.1, preserving the pe span; empty both former holders. End it before the actual Seeing thus sentence at 15.1, preserving that sentence's following reference and final translation.",
+      "directives": [
+        "sn35.150:2.1 starts: … all as in §32 …",
+        "sn35.150:6.1 none",
+        "sn35.150:10.1 none",
+        "sn35.150:15.1 starts: “Seeing thus …"
+      ]
+    },
+    {
+      "candidateKey": "sn35.22:1.6",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.22:1.6"
+      ],
+      "targetKey": "sn35.22:1.1",
+      "rationale": "The only source paragraph 'The same for the six external sense bases' replaces the whole sutta, both arising and cessation paragraphs, beginning Yo ... rūpānaṁ uppādo at 1.1.",
+      "directives": [
+        "sn35.22:1.1 starts: The same for the six external sense",
+        "sn35.22:1.6 none"
+      ]
+    },
+    {
+      "candidateKey": "sn35.72:1.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.72:1.2"
+      ],
+      "targetKey": "sn35.72:1.1",
+      "rationale": "The standalone source note explicitly replaces the first two paragraphs, beginning Yo hi koci at 1.1 and including the monk's reply in section 2. Actual translation resumes at Taṁ kiṁ maññasi in 3.1.",
+      "directives": [
+        "sn35.72:1.1 starts: The first two paragraphs as in the",
+        "sn35.72:1.2 none",
+        "sn35.72:3.1 starts: “What do you think, bhikkhu,"
+      ]
+    },
+    {
+      "candidateKey": "sn35.86:24.4",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.86:24.4"
+      ],
+      "targetKey": "sn35.86:4.1",
+      "rationale": "The source prints the eye question and Impermanent answer through 3.1, then replaces the entire remaining discourse with Complete as in §32. Its first omitted question is at 4.1. The quoted 'there is no more ...' is the note's endpoint specification, not a separate actual concluding translation.",
+      "boundaryInstructions": "Keep every word of the note, including down to and its quoted endpoint, together at 4.1; empty 24.4.",
+      "directives": [
+        "sn35.86:4.1 starts: Complete as in §32, down to “there",
+        "sn35.86:24.4 none"
+      ]
+    },
+    {
+      "candidateKey": "sn36.24:1.9",
+      "classification": "list-item-note",
+      "decision": "leave",
+      "noteKeys": [
+        "sn36.24:1.9"
+      ],
+      "rationale": "The source's inline 'all as in preceding sutta' follows 'There are these three feelings …' and ends before 'this is the escape'. It starts by eliding the three feeling list items in 1.6 and ends within the last escape proposition; it is not a standalone whole-passage replacement.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn4.10:1.3",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn4.10:1.3"
+      ],
+      "targetKey": "sn4.10:1.1",
+      "rationale": "'Opening as in preceding sutta:' replaces the whole opening, including Evaṁ me sutaṁ at 1.1 and the Buddha's speech in section 2; actual narrative resumes with Māra's approach at 3.1.",
+      "directives": [
+        "sn4.10:1.1 starts: Opening as in preceding sutta:",
+        "sn4.10:1.3 none",
+        "sn4.10:3.1 starts: Then Mara the Evil One approached the"
+      ]
+    },
+    {
+      "candidateKey": "sn44.4:1.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn44.4:1.2"
+      ],
+      "targetKey": "sn44.4:1.1",
+      "rationale": "The source begins solely 'As above down to:', replacing the setting and earlier conversation starting Ekaṁ samayaṁ at 1.1. The next actual question at 1.3 is explicitly printed and must remain separate.",
+      "directives": [
+        "sn44.4:1.1 starts: As above down to:",
+        "sn44.4:1.2 none",
+        "sn44.4:1.3 starts: “What now, friend, is the cause and"
+      ]
+    },
+    {
+      "candidateKey": "sn44.8:1.7",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn44.8:1.7"
+      ],
+      "targetKey": "sn44.8:1.4",
+      "rationale": "The complete first question is printed at 1.3; 'as above' then substitutes for the subsequent whole question-and-answer exchange. Its first omitted sentence is the Buddha's Abyākataṁ answer at 1.4, not the last fragment of the final answer at 1.7.",
+      "directives": [
+        "sn44.8:1.4 starts: as above …",
+        "sn44.8:1.7 none",
+        "sn44.8:2.1 starts: “What, Master Gotama, is the cause and"
+      ]
+    },
+    {
+      "candidateKey": "sn44.8:6.13",
+      "classification": "ordinary-translation",
+      "decision": "leave",
+      "noteKeys": [],
+      "rationale": "'Or self as in consciousness' translates the last consciousness/self alternative at 6.13, resuming Bodhi's abbreviated aggregate series. It is actual translation, not a whole-passage note.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn45.146-148:3.9",
+      "classification": "already-correct",
+      "decision": "leave",
+      "noteKeys": [
+        "sn45.146-148:3.9"
+      ],
+      "rationale": "The instruction 'Each sutta is to be elaborated ...' corresponds to Pali (Yadapi tathāgataṁ, tadapi vitthāretabbaṁ.) at 3.9, after the completed cloth discourse. It is already on its canonical expansion-instruction row; no preceding omitted whole passage begins in the blank endsutta row 3.8.",
+      "directives": []
+    },
+    {
+      "candidateKey": "sn45.69:1.4",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn45.69:1.4"
+      ],
+      "targetKey": "sn45.69:1.2",
+      "rationale": "The printed accomplishment label at 1.1 is followed by 'complete as in §63', replacing the complete expectation statement and development explanation beginning Yonisomanasikārasampannassetaṁ at 1.2. 'He develops right concentration ...' at 1.4 is following actual translation, not part of the note.",
+      "boundaryInstructions": "Move only 'complete as in §63 …' to 1.2. Keep the linked/other markup and the preceding label ellipsis in source order. Retain the subsequent actual right-concentration sentence at 1.4 as its boundary.",
+      "directives": [
+        "sn45.69:1.2 starts: complete as in §63 …",
+        "sn45.69:1.4 starts: He develops right concentration, which is based"
+      ]
+    },
+    {
+      "candidateKey": "sn45.96:1.5",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn45.96:1.5"
+      ],
+      "targetKey": "sn45.96:1.4",
+      "rationale": "The separate source paragraph 'Complete as in §91.' replaces the whole question and ensuing explanation. The omitted question begins Kathañca at 1.4, before the development formula at 1.5.",
+      "directives": [
+        "sn45.96:1.4 starts: Complete as in §91.",
+        "sn45.96:1.5 none"
+      ]
+    },
+    {
+      "candidateKey": "sn46.17:5.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn46.17:5.2"
+      ],
+      "targetKey": "sn46.17:2.1",
+      "rationale": "The standalone source paragraph replaces all attached verses; the first verse begins Appakā te manussesu at 2.1. Placement on hitvā kāme at 5.2 erroneously makes the editorial note look like verse translation.",
+      "boundaryInstructions": "Move the complete parenthesized note and its SN45.34 link to 2.1 as a prose note; empty 5.2. Do not distribute the note among verse lines.",
+      "directives": [
+        "sn46.17:2.1 starts: (The verses attached to this sutta are",
+        "sn46.17:5.2 none"
+      ]
+    },
+    {
+      "candidateKey": "sn47.23:1.3",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn47.23:1.3"
+      ],
+      "targetKey": "sn47.23:1.1",
+      "rationale": "The initial standalone 'As above down to:' substitutes for the complete opening setting and approach, starting Ekaṁ samayaṁ at 1.1. The printed question begins at 1.4.",
+      "directives": [
+        "sn47.23:1.1 starts: As above down to:",
+        "sn47.23:1.3 none",
+        "sn47.23:1.4 starts: “Friend Ānanda, what is the cause and"
+      ]
+    },
+    {
+      "candidateKey": "sn47.63-72:1.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn47.63-72:1.2"
+      ],
+      "targetKey": "sn47.63-72:1.1",
+      "rationale": "The parenthesized source paragraph substitutes for the whole diligence group, whose first Pali opening Yāvatā ... sattā is at 1.1. The following uddāna is actual translated verse and must remain on its existing whole lines.",
+      "directives": [
+        "sn47.63-72:1.1 starts: (To be elaborated by way of the",
+        "sn47.63-72:1.2 none",
+        "sn47.63-72:2.1 starts: Tathagata, footprint, roof peak,"
+      ]
+    },
+    {
+      "candidateKey": "sn56.14:6.1",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn56.14:6.1"
+      ],
+      "targetKey": "sn56.14:3.1",
+      "rationale": "The source prints the suffering definition through 2.5 and then 'The rest of the sutta is identical with §13.' The rest begins with the origin-of-suffering question Katamañca ... dukkhasamudayaṁ at 3.1, not the final exhortation at 6.1.",
+      "directives": [
+        "sn56.14:3.1 starts: The rest of the sutta is identical",
+        "sn56.14:6.1 none"
+      ]
+    },
+    {
+      "candidateKey": "an10.22:8.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "an10.22:8.2"
+      ],
+      "targetKey": "an10.22:3.3",
+      "rationale": "Source paragraph 5 replaces all ten powers after What ten?; full corresponding Pali starts the first power at Idhānanda, 3.3. The earlier standalone ellipsis on 7.2 belongs to source paragraph 4, after What ten?, and must return to 3.2 before the note to preserve source order. The concluding translation at 13.1 is outside the note.",
+      "boundaryDirectives": [
+        "an10.22:3.3 starts: As in <a href=\"https://suttacentral.net/an10.21\">AN10.21</a> …",
+        "an10.22:7.2 none",
+        "an10.22:8.2 none",
+        "an10.22:13.1 starts: “These, Ānanda, are the ten Tathāgata’s powers"
+      ],
+      "directives": [
+        "an10.22:3.3 starts: As in <a href=\"https://suttacentral.net/an10.21\">AN10.21</a> …",
+        "an10.22:7.2 none",
+        "an10.22:8.2 none",
+        "an10.22:13.1 starts: “These, Ānanda, are the ten Tathāgata’s powers"
+      ]
+    },
+    {
+      "candidateKey": "an10.36:1.14",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "an10.36:1.14"
+      ],
+      "targetKey": "an10.36:1.4",
+      "rationale": "The independent same-ten-qualities note replaces the complete list beginning Idhupāli, bhikkhu sīlavā hoti at 1.4. The standalone ellipsis on 1.12 belongs after source paragraph 2's What ten? and returns to 1.3. Only the note moves; the actual concluding sentence remains at 1.14.",
+      "boundaryDirectives": [
+        "an10.36:1.4 starts: The same ten qualities as in <a href=\"https://suttacentral.net/an10.34\">AN10.34</a>.",
+        "an10.36:1.12 none",
+        "an10.36:1.14 starts: “A bhikkhu who possesses these ten qualities"
+      ],
+      "directives": [
+        "an10.36:1.4 starts: The same ten qualities as in <a href=\"https://suttacentral.net/an10.34\">AN10.34</a>.",
+        "an10.36:1.12 none",
+        "an10.36:1.14 starts: “A bhikkhu who possesses these ten qualities"
+      ]
+    },
+    {
+      "candidateKey": "an3.27:4.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "an3.27:4.2"
+      ],
+      "targetKey": "an3.27:4.1",
+      "rationale": "Source paragraph 6 replaces the entire four-line verse; its first Pali line is Nihīyati puriso at 4.1. The prose note is one whole note, not a translated verse line.",
+      "boundaryDirectives": [
+        "an3.27:4.1 starts: A verse is attached identical with that",
+        "an3.27:4.2 none"
+      ],
+      "directives": [
+        "an3.27:4.1 starts: A verse is attached identical with that",
+        "an3.27:4.2 none"
+      ]
+    },
+    {
+      "candidateKey": "an5.50:14.3",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "an5.50:14.3"
+      ],
+      "targetKey": "an5.50:9.1",
+      "rationale": "The sequel note in source paragraph 13 replaces the entire teaching after the five situations, beginning Assutavato ... puthujjanassa at 9.1, including all verses through 17.4. Keep [61–62] with the note; the narrative resumes at 18.1.",
+      "boundaryDirectives": [
+        "an5.50:9.1 starts: The sequel is identical to <a href=\"https://suttacentral.net/an5.48\">AN5.48</a>,",
+        "an5.50:14.3 none",
+        "an5.50:18.1 starts: When this was said, King Muṇḍa asked"
+      ],
+      "directives": [
+        "an5.50:9.1 starts: The sequel is identical to <a href=\"https://suttacentral.net/an5.48\">AN5.48</a>,",
+        "an5.50:14.3 none",
+        "an5.50:18.1 starts: When this was said, King Muṇḍa asked"
+      ]
+    },
+    {
+      "candidateKey": "an8.43:3.1",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "an8.43:3.1",
+        "an8.43:12.1"
+      ],
+      "targetKey": "an8.43:1.5",
+      "rationale": "All as in AN8.42 replaces the whole answer after the uposatha question, starting Idha ... ariyasāvako iti paṭisañcikkhati at 1.5, and includes the remaining prose and verses. The split [256–258] at 12.1 is the same source paragraph's continuation and stays attached to the one note.",
+      "boundaryDirectives": [
+        "an8.43:1.5 starts: All as in <a href=\"https://suttacentral.net/an8.42\">AN8.42</a>, including the verses.",
+        "an8.43:3.1 none",
+        "an8.43:12.1 none"
+      ],
+      "directives": [
+        "an8.43:1.5 starts: All as in <a href=\"https://suttacentral.net/an8.42\">AN8.42</a>, including the verses.",
+        "an8.43:3.1 none",
+        "an8.43:12.1 none"
+      ]
+    },
+    {
+      "candidateKey": "an8.48:12.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "an8.48:12.2"
+      ],
+      "targetKey": "an8.48:2.3",
+      "rationale": "Source paragraph 3 replaces the complete answer to What eight?, including the verses. The first quality begins Idha ... mātugāmo at 2.3, well before the current verse-row holder.",
+      "boundaryDirectives": [
+        "an8.48:2.3 starts: As in <a href=\"https://suttacentral.net/an8.46\">AN8.46</a>, including the verses.",
+        "an8.48:12.2 none"
+      ],
+      "directives": [
+        "an8.48:2.3 starts: As in <a href=\"https://suttacentral.net/an8.46\">AN8.46</a>, including the verses.",
+        "an8.48:12.2 none"
+      ]
+    },
+    {
+      "candidateKey": "mn140:19.22",
+      "classification": "ordinary-translation",
+      "decision": "leave",
+      "noteKeys": [],
+      "rationale": "One understands ... ceases and subsides directly translates the cognition and cessation sentence at 19.22. Its internal ellipsis abbreviates repeated wording; it is not an editorial passage note.",
+      "boundaryDirectives": [],
+      "directives": []
+    },
+    {
+      "candidateKey": "mn65:25.6",
+      "classification": "partial-sentence-note",
+      "decision": "leave",
+      "noteKeys": [
+        "mn65:25.6"
+      ],
+      "rationale": "repeat rest of §23 starts within the sentence already translated When he is corrected ... he prevaricates at 25.2, supplying the remaining misconduct clauses before further repeated material. The explicit partial-sentence rule keeps this inline note in place.",
+      "boundaryDirectives": [],
+      "directives": []
+    },
+    {
+      "candidateKey": "mn65:28.7",
+      "classification": "ordinary-translation",
+      "decision": "leave",
+      "noteKeys": [],
+      "rationale": "Let him not lose that measure of faith and love directly renders mā ... saddhāmattakaṁ pemamattakaṁ ... parihāyī and the preceding conditional clause. This is actual speech, not a note.",
+      "boundaryDirectives": [],
+      "directives": []
+    },
+    {
+      "candidateKey": "sn11.20:1.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn11.20:1.2"
+      ],
+      "targetKey": "sn11.20:1.1",
+      "rationale": "Source paragraph 1 replaces the opening narrative and story through 1.7, beginning the Sāvatthī setting at 1.1. The actual translated descent from the palace begins at 1.8 and must remain outside the note.",
+      "boundaryDirectives": [
+        "sn11.20:1.1 starts: As above down to:",
+        "sn11.20:1.2 none",
+        "sn11.20:1.8 starts: “Then, bhikkhus, Sakka, lord of the devas,"
+      ],
+      "directives": [
+        "sn11.20:1.1 starts: As above down to:",
+        "sn11.20:1.2 none",
+        "sn11.20:1.8 starts: “Then, bhikkhus, Sakka, lord of the devas,"
+      ]
+    },
+    {
+      "candidateKey": "sn12.27:2.5",
+      "classification": "partial-sentence-note",
+      "decision": "leave",
+      "noteKeys": [
+        "sn12.27:2.5"
+      ],
+      "rationale": "The source reads The aging of the various beings ... as in §2 ... thus this aging and this death. The note begins inside the aging definition whose opening is translated on 2.2; it is an inline partial-definition abbreviation, not a whole independent passage.",
+      "boundaryDirectives": [],
+      "directives": []
+    },
+    {
+      "candidateKey": "sn12.36:2.1",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn12.36:2.1",
+        "sn12.36:2.4"
+      ],
+      "targetKey": "sn12.36:1.1",
+      "rationale": "The only source paragraph is a two-sentence editorial substitute for the entire sutta, including the setting and dependent-origination opening. The Buddha simply cites ... on his own at 2.4 continues that same note and must move whole with 2.1.",
+      "boundaryDirectives": [
+        "sn12.36:1.1 starts: This sutta is identical with the preceding",
+        "sn12.36:2.1 none",
+        "sn12.36:2.4 none"
+      ],
+      "directives": [
+        "sn12.36:1.1 starts: This sutta is identical with the preceding",
+        "sn12.36:2.1 none",
+        "sn12.36:2.4 none"
+      ]
+    },
+    {
+      "candidateKey": "sn12.50:5.1",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn12.50:5.1"
+      ],
+      "targetKey": "sn12.50:1.1",
+      "rationale": "The sole source paragraph substitutes for the entire sutta, comparing its edition coverage with the preceding sutta. The first omitted Pali row is Sāvatthiyaṁ viharati, 1.1, not the concluding noble-disciple sentence.",
+      "boundaryDirectives": [
+        "sn12.50:1.1 starts: This sutta is identical with the preceding",
+        "sn12.50:5.1 none"
+      ],
+      "directives": [
+        "sn12.50:1.1 starts: This sutta is identical with the preceding",
+        "sn12.50:5.1 none"
+      ]
+    },
+    {
+      "candidateKey": "sn12.66:14.1",
+      "classification": "ordinary-translation",
+      "decision": "leave",
+      "noteKeys": [],
+      "rationale": "in the future renders anāgatamaddhānaṁ in the Pali temporal sequence past, future, present. The source ellipsis shortens repetitions but introduces no editorial note.",
+      "boundaryDirectives": [],
+      "directives": []
+    },
+    {
+      "candidateKey": "sn22.34:1.13",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn22.34:1.13"
+      ],
+      "targetKey": "sn22.34:1.1",
+      "rationale": "The sole source paragraph describes the entire sutta as the preceding one without its simile. This replaces every Pali paragraph beginning Sāvatthinidānaṁ at 1.1.",
+      "boundaryDirectives": [
+        "sn22.34:1.1 starts: This sutta is identical with the preceding",
+        "sn22.34:1.13 none"
+      ],
+      "directives": [
+        "sn22.34:1.1 starts: This sutta is identical with the preceding",
+        "sn22.34:1.13 none"
+      ]
+    },
+    {
+      "candidateKey": "sn22.38:7.9",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn22.38:7.9"
+      ],
+      "targetKey": "sn22.38:5.2",
+      "rationale": "Source paragraph 8 replaces the Buddha's whole repetition of Ānanda's answer, beginning Yaṁ kho ... rūpaṁ atītaṁ at 5.2 after the translated Good, good. Its wording ends concluding:. Source paragraph 9's Being asked thus quotation directly translates 7.9 and must remain there, separated from the moved note.",
+      "boundaryDirectives": [
+        "sn22.38:5.2 starts: The Buddha here repeats the entire answer",
+        "sn22.38:7.9 starts: “Being asked thus, Ānanda, you should answer"
+      ],
+      "directives": [
+        "sn22.38:5.2 starts: The Buddha here repeats the entire answer",
+        "sn22.38:7.9 starts: “Being asked thus, Ānanda, you should answer"
+      ]
+    },
+    {
+      "candidateKey": "sn22.63:3.6",
+      "classification": "partial-sentence-note",
+      "decision": "leave",
+      "noteKeys": [
+        "sn22.63:3.6"
+      ],
+      "rationale": "as above in full begins after In clinging to form ... one is bound by Mara, before the untranslated non-clinging half at 3.4, and ends before the actual final non-clinging clause. It spans part of a sentence and subsequent aggregate items, so the explicit inline-note rule keeps it in place.",
+      "boundaryDirectives": [],
+      "directives": []
+    },
+    {
+      "candidateKey": "sn22.77:2.3",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn22.77:2.3"
+      ],
+      "targetKey": "sn22.77:1.1",
+      "rationale": "The only source paragraph replaces this whole sutta with a comparison to its predecessor, excluding the predecessor's verses. The omitted sutta begins with Sāvatthinidānaṁ, 1.1.",
+      "boundaryDirectives": [
+        "sn22.77:1.1 starts: This sutta is identical with the preceding",
+        "sn22.77:2.3 none"
+      ],
+      "directives": [
+        "sn22.77:1.1 starts: This sutta is identical with the preceding",
+        "sn22.77:2.3 none"
+      ]
+    },
+    {
+      "candidateKey": "sn22.81:6.6",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn22.81:6.6"
+      ],
+      "targetKey": "sn22.81:6.4",
+      "rationale": "That regarding is a formation fully translates 6.3. all as above then replaces the complete following question at 6.4 and its repeated explanation through 6.11. The independent concluding knowledge sentence resumes at 6.12; this is a whole omitted explanatory passage rather than a fragment of 6.3.",
+      "boundaryDirectives": [
+        "sn22.81:6.4 starts: all as above …",
+        "sn22.81:6.6 none",
+        "sn22.81:6.12 starts: When one knows and sees thus, bhikkhus,"
+      ],
+      "directives": [
+        "sn22.81:6.4 starts: all as above …",
+        "sn22.81:6.6 none",
+        "sn22.81:6.12 starts: When one knows and sees thus, bhikkhus,"
+      ]
+    },
+    {
+      "candidateKey": "sn22.88:1.10",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn22.88:1.10"
+      ],
+      "targetKey": "sn22.88:1.3",
+      "rationale": "Source paragraph 1 translates the setting and Assaji's illness, through 1.2. Its separate paragraph 2 note replaces the following narrative and dialogue from Atha kho ... upaṭṭhāke āmantesi, 1.3, until the actual remorse question at 3.6.",
+      "boundaryDirectives": [
+        "sn22.88:1.3 starts: As in preceding sutta, down to:",
+        "sn22.88:1.10 none",
+        "sn22.88:3.6 starts: “Then if you have nothing for which"
+      ],
+      "directives": [
+        "sn22.88:1.3 starts: As in preceding sutta, down to:",
+        "sn22.88:1.10 none",
+        "sn22.88:3.6 starts: “Then if you have nothing for which"
+      ]
+    },
+    {
+      "candidateKey": "sn35.107:2.5",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.107:2.5"
+      ],
+      "targetKey": "sn35.107:1.1",
+      "rationale": "The sole source paragraph identifies the entire sutta with SN12.44. The Pali's first omitted sentence is the promise to teach the world's origin and disappearance, 1.1.",
+      "boundaryDirectives": [
+        "sn35.107:1.1 starts: (Identical with <a href=\"https://suttacentral.net/sn12.44\">SN12.44</a>.)",
+        "sn35.107:2.5 none"
+      ],
+      "directives": [
+        "sn35.107:1.1 starts: (Identical with <a href=\"https://suttacentral.net/sn12.44\">SN12.44</a>.)",
+        "sn35.107:2.5 none"
+      ]
+    },
+    {
+      "candidateKey": "sn35.117:3.1",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.117:3.1",
+        "sn35.117:5.11"
+      ],
+      "targetKey": "sn35.117:2.2",
+      "rationale": "Then ... the bhikkhus considered fully renders 2.1. The completion note replaces their complete quoted consideration beginning idaṁ kho no at 2.2 and the subsequent visit/dialogue through 7.2. [99–100] … on 5.11 continues the same source note. The Venerable Ānanda said this is actual narrative at 7.3.",
+      "boundaryDirectives": [
+        "sn35.117:2.2 starts: all as in preceding sutta down to:",
+        "sn35.117:3.1 none",
+        "sn35.117:5.11 none",
+        "sn35.117:7.3 starts: The Venerable Ānanda said this:"
+      ],
+      "directives": [
+        "sn35.117:2.2 starts: all as in preceding sutta down to:",
+        "sn35.117:3.1 none",
+        "sn35.117:5.11 none",
+        "sn35.117:7.3 starts: The Venerable Ānanda said this:"
+      ]
+    },
+    {
+      "candidateKey": "sn35.122:1.3",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.122:1.3"
+      ],
+      "targetKey": "sn35.122:1.1",
+      "rationale": "The only source paragraph substitutes for the full sutta by way of the external sense bases. Its first omitted Pali is the teaching announcement at 1.1, preceding the question on 1.3.",
+      "boundaryDirectives": [
+        "sn35.122:1.1 starts: Identical with §109, but by way of",
+        "sn35.122:1.3 none"
+      ],
+      "directives": [
+        "sn35.122:1.1 starts: Identical with §109, but by way of",
+        "sn35.122:1.3 none"
+      ]
+    },
+    {
+      "candidateKey": "sn35.133:4.9",
+      "classification": "partial-sentence-note",
+      "decision": "leave",
+      "noteKeys": [
+        "sn35.133:4.9"
+      ],
+      "rationale": "Then he went to the Venerable Udayī translates only part of 4.7, whose remaining upasaṅkamitvā ... etadavoca (having approached, he said) is omitted before the invitation. all as above starts within that existing sentence, although it also covers later narrative; the explicit partial-sentence exception keeps it in place.",
+      "boundaryDirectives": [],
+      "directives": []
+    },
+    {
+      "candidateKey": "sn35.143:1.3",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.143:1.3"
+      ],
+      "targetKey": "sn35.143:1.1",
+      "rationale": "The sole source note stands for all three external-base suttas; this page's first Pali sentence is Rūpā ... aniccā at 1.1. Preserve the source's trailing parenthesis with the one note.",
+      "boundaryDirectives": [
+        "sn35.143:1.1 starts: These three suttas are identical with §§140-42,",
+        "sn35.143:1.3 none"
+      ],
+      "directives": [
+        "sn35.143:1.1 starts: These three suttas are identical with §§140-42,",
+        "sn35.143:1.3 none"
+      ]
+    },
+    {
+      "candidateKey": "sn35.16:2.1",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.16:2.1"
+      ],
+      "targetKey": "sn35.16:1.1",
+      "rationale": "The same for the six external sense bases is the entire source page, replacing the whole external-base counterpart. The omitted sutta starts Rūpānāhaṁ ... assādapariyesanaṁ acariṁ at 1.1.",
+      "boundaryDirectives": [
+        "sn35.16:1.1 starts: The same for the six external sense",
+        "sn35.16:2.1 none"
+      ],
+      "directives": [
+        "sn35.16:1.1 starts: The same for the six external sense",
+        "sn35.16:2.1 none"
+      ]
+    },
+    {
+      "candidateKey": "sn35.54:1.15",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.54:1.15"
+      ],
+      "targetKey": "sn35.54:1.2",
+      "rationale": "Source paragraph 1 contains the translated question at 1.1. Paragraph 2 substitutes for the Buddha's entire reply, beginning Cakkhuṁ kho ... aniccato at 1.2 and ending 1.16.",
+      "boundaryDirectives": [
+        "sn35.54:1.2 starts: The Buddha’s reply is as above.",
+        "sn35.54:1.15 none"
+      ],
+      "directives": [
+        "sn35.54:1.2 starts: The Buddha’s reply is as above.",
+        "sn35.54:1.15 none"
+      ]
+    },
+    {
+      "candidateKey": "sn35.73:1.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.73:1.2"
+      ],
+      "targetKey": "sn35.73:1.1",
+      "rationale": "The note substitutes for the first two whole paragraphs: the opening declaration and the bhikkhu's discouraged response, 1.1–2.3. The actual eye question begins at 3.1.",
+      "boundaryDirectives": [
+        "sn35.73:1.1 starts: The first two paragraphs as in §71.",
+        "sn35.73:1.2 none",
+        "sn35.73:3.1 starts: “What do you think, bhikkhu,"
+      ],
+      "directives": [
+        "sn35.73:1.1 starts: The first two paragraphs as in §71.",
+        "sn35.73:1.2 none",
+        "sn35.73:3.1 starts: “What do you think, bhikkhu,"
+      ]
+    },
+    {
+      "candidateKey": "sn35.89:9.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn35.89:7.1",
+        "sn35.89:9.2",
+        "sn35.89:14.1"
+      ],
+      "targetKey": "sn35.89:4.1",
+      "rationale": "The source translates the eye question and Impermanent reply (through 3.1), then gives … as in §32 down to: … as one replacement for the intervening dialogue and liberation teaching. Full corresponding Pali shows the first omitted whole question at 4.1. Both standalone ellipses bracket this same note and move with it; the final He understands quotation is actual translation at 15.4.",
+      "boundaryDirectives": [
+        "sn35.89:4.1 starts: … as in §32 down to: …",
+        "sn35.89:7.1 none",
+        "sn35.89:9.2 none",
+        "sn35.89:14.1 none",
+        "sn35.89:15.4 starts: “He understands: ‘Destroyed is birth, the holy"
+      ],
+      "directives": [
+        "sn35.89:4.1 starts: … as in §32 down to: …",
+        "sn35.89:7.1 none",
+        "sn35.89:9.2 none",
+        "sn35.89:14.1 none",
+        "sn35.89:15.4 starts: “He understands: ‘Destroyed is birth, the holy"
+      ]
+    },
+    {
+      "candidateKey": "sn36.8:3.3",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn36.8:3.3"
+      ],
+      "targetKey": "sn36.8:1.1",
+      "rationale": "The first source paragraph substitutes for the entire opening narrative, initial injunction and definitions, from the Vesālī setting at 1.1 through 4.3. The second injunction is explicitly translated at 4.4 and follows the note.",
+      "boundaryDirectives": [
+        "sn36.8:1.1 starts: As in preceding sutta down to the",
+        "sn36.8:3.3 none",
+        "sn36.8:4.4 starts: “A bhikkhu should await his time mindful"
+      ],
+      "directives": [
+        "sn36.8:1.1 starts: As in preceding sutta down to the",
+        "sn36.8:3.3 none",
+        "sn36.8:4.4 starts: “A bhikkhu should await his time mindful"
+      ]
+    },
+    {
+      "candidateKey": "sn44.11:1.9",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn44.11:1.9"
+      ],
+      "targetKey": "sn44.11:1.5",
+      "rationale": "The first post-death question is translated at 1.4. Source paragraph 3 substitutes for the complete following answer, questions and prefatory dialogue from Abyākataṁ kho ... at 1.5 through 3.12. The actual cause-and-reason question resumes at 3.13.",
+      "boundaryDirectives": [
+        "sn44.11:1.5 starts: All as in §1 down to:",
+        "sn44.11:1.9 none",
+        "sn44.11:3.13 starts: “What then, Master Kaccana, is the cause"
+      ],
+      "directives": [
+        "sn44.11:1.5 starts: All as in §1 down to:",
+        "sn44.11:1.9 none",
+        "sn44.11:3.13 starts: “What then, Master Kaccana, is the cause"
+      ]
+    },
+    {
+      "candidateKey": "sn44.5:1.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn44.5:1.2"
+      ],
+      "targetKey": "sn44.5:1.1",
+      "rationale": "As above down to replaces the whole opening setting and repeated questions before the translated cause-and-reason question. The omitted passage starts with the Sāriputta–Mahākoṭṭhika setting at 1.1; 1.2 is Pali expansion instructions, not the first omitted row.",
+      "boundaryDirectives": [
+        "sn44.5:1.1 starts: As above down to:",
+        "sn44.5:1.2 none",
+        "sn44.5:1.3 starts: “What now, friend, is the cause and"
+      ],
+      "directives": [
+        "sn44.5:1.1 starts: As above down to:",
+        "sn44.5:1.2 none",
+        "sn44.5:1.3 starts: “What now, friend, is the cause and"
+      ]
+    },
+    {
+      "candidateKey": "sn44.8:3.1",
+      "classification": "ordinary-translation",
+      "decision": "leave",
+      "noteKeys": [],
+      "rationale": "Vaccha, wanderers of other sects regard form as self directly translates the opening of Aññatitthiyā ... rūpaṁ attato samanupassanti at 3.1; the remaining alternatives are also actual translation.",
+      "boundaryDirectives": [],
+      "directives": []
+    },
+    {
+      "candidateKey": "sn44.8:6.5",
+      "classification": "ordinary-translation",
+      "decision": "leave",
+      "noteKeys": [],
+      "rationale": "or self as in consciousness directly renders viññāṇasmiṁ vā attānaṁ at 6.5, completing the actual quotation whose repeated alternatives Bodhi elides. No editorial note occurs here.",
+      "boundaryDirectives": [],
+      "directives": []
+    },
+    {
+      "candidateKey": "sn45.161:7.8",
+      "classification": "already-correct",
+      "decision": "leave",
+      "noteKeys": [
+        "sn45.161:7.8"
+      ],
+      "rationale": "The final source paragraph instructs elaboration of the following suttas and follows the last translated abandoning subsection. It is forward-looking series guidance, not a substitute for the omitted final sentences of the current sutta; no whole-passage move within this candidate is justified.",
+      "boundaryDirectives": [],
+      "directives": []
+    },
+    {
+      "candidateKey": "sn45.83:1.4",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn45.83:1.4"
+      ],
+      "targetKey": "sn45.83:1.2",
+      "rationale": "The source completes the introductory accomplishment clause at 1.1, then the completion note replaces the entire next expectation sentence (1.2), question (1.3), and path explanation until the final right-concentration sentence. Move that whole intervening passage note to 1.2 while retaining He develops right concentration on 1.4 as a necessary actual-translation anchor.",
+      "boundaryDirectives": [
+        "sn45.83:1.2 starts: complete as in §77 …",
+        "sn45.83:1.4 starts: He develops right concentration, which is based"
+      ],
+      "directives": [
+        "sn45.83:1.2 starts: complete as in §77 …",
+        "sn45.83:1.4 starts: He develops right concentration, which is based"
+      ]
+    },
+    {
+      "candidateKey": "sn45.97:1.4",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn45.97:1.4"
+      ],
+      "targetKey": "sn45.97:1.3",
+      "rationale": "Source paragraph 1 fully translates the simile through 1.2. Its independent Complete note replaces the whole next question, answer and conclusion, beginning Kathañca at 1.3.",
+      "boundaryDirectives": [
+        "sn45.97:1.3 starts: Complete as in §§91–96.",
+        "sn45.97:1.4 none"
+      ],
+      "directives": [
+        "sn45.97:1.3 starts: Complete as in §§91–96.",
+        "sn45.97:1.4 none"
+      ]
+    },
+    {
+      "candidateKey": "sn47.14:3.6",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn47.14:3.6"
+      ],
+      "targetKey": "sn47.14:3.1",
+      "rationale": "The preceding translated exhortation fully renders 2.17. The note substitutes for the complete ensuing how-question and mindfulness explanation at 3.1–3.6. Those bhikkhus then resumes actual translation at 3.7.",
+      "boundaryDirectives": [
+        "sn47.14:3.1 starts: … as in §9 …",
+        "sn47.14:3.6 none",
+        "sn47.14:3.7 starts: Those bhikkhus, either now or after I"
+      ],
+      "directives": [
+        "sn47.14:3.1 starts: … as in §9 …",
+        "sn47.14:3.6 none",
+        "sn47.14:3.7 starts: Those bhikkhus, either now or after I"
+      ]
+    },
+    {
+      "candidateKey": "sn47.27:2.4",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn47.27:2.4"
+      ],
+      "targetKey": "sn47.27:2.2",
+      "rationale": "The note answers What four? by replacing the whole four-establishments explanation, starting Idhāvuso ... kāye kāyānupassī at 2.2. No list item is partly translated before it; the actual conclusion begins at 2.6.",
+      "boundaryDirectives": [
+        "sn47.27:2.2 starts: as above …",
+        "sn47.27:2.4 none",
+        "sn47.27:2.6 starts: It is because one has completely developed"
+      ],
+      "directives": [
+        "sn47.27:2.2 starts: as above …",
+        "sn47.27:2.4 none",
+        "sn47.27:2.6 starts: It is because one has completely developed"
+      ]
+    },
+    {
+      "candidateKey": "sn47.73-84:1.2",
+      "classification": "whole-passage-note",
+      "decision": "move",
+      "noteKeys": [
+        "sn47.73-84:1.2"
+      ],
+      "targetKey": "sn47.73-84:1.1",
+      "rationale": "The first source paragraph stands for the whole twelve-sutta expansion beginning the strenuous-work simile at 1.1. Preserve its existing SN45.149 hyperlink. The following mnemonic is actual verse translation and retains each whole line in Bodhi's order, anchored at 2.1.",
+      "boundaryDirectives": [
+        "sn47.73-84:1.1 starts: (To be elaborated parallel to <a href=\"https://suttacentral.net/sn45.149\">SN45.149</a>.)",
+        "sn47.73-84:1.2 none",
+        "sn47.73-84:2.1 starts: Strenuous, seeds, and nagas,"
+      ],
+      "directives": [
+        "sn47.73-84:1.1 starts: (To be elaborated parallel to <a href=\"https://suttacentral.net/sn45.149\">SN45.149</a>.)",
+        "sn47.73-84:1.2 none",
+        "sn47.73-84:2.1 starts: Strenuous, seeds, and nagas,"
+      ]
+    },
+    {
+      "candidateKey": "sn56.16:3.7",
+      "classification": "partial-sentence-note",
+      "decision": "leave",
+      "noteKeys": [
+        "sn56.16:3.7"
+      ],
+      "rationale": "For if any ascetic or brahmin should speak thus opens the conditional sentence on 3.4. as above replaces its quoted content, impossible conclusion and subsequent repeated truths before the final fourth-truth quote. Because it begins inside that conditional sentence, the explicit partial-sentence rule keeps the note in place.",
+      "boundaryDirectives": [],
+      "directives": []
+    }
+  ]
+}
