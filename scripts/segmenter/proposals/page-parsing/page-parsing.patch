@@ -1,0 +1,297 @@
+--- a/scripts/segmenter/segment-translations.mjs
++++ b/scripts/segmenter/segment-translations.mjs
+@@ -365,6 +365,17 @@
+   return all.length > 0 && within.length >= all.length * share;
+ }
+ 
++// Introductory prose is italic on the page; Pali terms inside it may be roman.
++// Require the paragraph's beginning and end to carry that italic markup before
++// allowing those short roman interruptions. This is used only before the body.
++function italicIntroduction(el) {
++  if (wholly(el, 'em, i', 0.9)) return true;
++  const content = [...el.childNodes].filter((node) => node.textContent.trim());
++  const italic = (node) => node.nodeType === 1 && /^(em|i)$/i.test(node.tagName);
++  return content.length > 0 && italic(content[0]) && italic(content.at(-1))
++    && wholly(el, 'em, i', 0.85);
++}
++
+ const newUnit = (uids, title, root) => ({ uids, title, titles: [], roots: [root], blocks: [], intro: [], seeAlso: [], notes: new Map() });
+ 
+ // Returns the texts of a dhammatalks.org page: one, the page's. A file joining several pages, as
+@@ -387,12 +398,42 @@
+   unit.oneOfSeveral = !!own;
+   const starred = [...root.querySelectorAll('p.stars')].some((p) => !p.hasAttribute('data-skip'));
+   let body = false;
++  let continuingNote = null;
++
++  function extractInlineCommentary(el) {
++    // Only explicitly attributed commentary is a note; bracketed translated
++    // words, speaker names and descriptions of abbreviated Pali stay in text.
++    const walker = document.createTreeWalker(el, 4);
++    const nodes = [];
++    while (walker.nextNode()) nodes.push(walker.currentNode);
++    for (const node of nodes) {
++      const matches = [...node.data.matchAll(/\[(?:The Commentary\b|Commentary:)[^\]]+\]/g)];
++      if (!matches.length) continue;
++      const fragment = document.createDocumentFragment();
++      let at = 0;
++      for (const match of matches) {
++        fragment.append(document.createTextNode(node.data.slice(at, match.index)));
++        const id = `inlineCommentary${unit.notes.size}`;
++        unit.notes.set(id, { id, html: escapeHtml(match[0]), used: 0 });
++        const marker = document.createElement('span');
++        marker.className = 'fn';
++        const link = document.createElement('a');
++        link.href = `#${id}`;
++        marker.append(link);
++        fragment.append(marker);
++        at = match.index + match[0].length;
++      }
++      fragment.append(document.createTextNode(node.data.slice(at)));
++      node.replaceWith(fragment);
++    }
++  }
+ 
+   function handle(el, verse) {
+     const tag = el.tagName.toLowerCase();
+     const cls = el.getAttribute('class') ?? '';
+     if (el.hasAttribute('data-skip')) return;
+     if (tag === 'h1') {
++      continuingNote = null;
+       // A later page's title opens its text.
+       if (!root.contains(el) && /\p{L}/u.test(titleOf(el))) unit.titles.push({ title: titleOf(el), block: unit.blocks.length });
+       return skip(el);
+@@ -410,6 +451,9 @@
+         // What the box holds before its first note is a note no marker points to.
+         else if (html) unit.notes.set(`box${unit.notes.size}`, (note = { id: `box${unit.notes.size}`, html, used: 0 }));
+       }
++      // A closing note with a nested verse can close its box before its prose
++      // commentary, as Ud 7.8 does. Continue that note until another section.
++      continuingNote = body && el.querySelector('.verse') ? note : null;
+       return;
+     }
+     // A note outside the notes' box, as SN 1.20's are, where the box closes before them.
+@@ -417,7 +461,8 @@
+       unit.notes.set(el.id, { id: el.id, html: unnumbered(noteHtml(el)), used: 0 });
+       return skip(el);
+     }
+-    if (/seealso/.test(cls) || (tag === 'p' && /^\s*See also:/.test(el.textContent))) {
++    if (/seealso|\bsee\s+also\b/.test(cls) || (tag === 'p' && /^\s*See also\b/.test(el.textContent))) {
++      continuingNote = null;
+       // A heading styled as a "See also", wholly bold, as DN 1's are.
+       if (wholly(el, 'strong, b', 1)) {
+         body = true;
+@@ -425,6 +470,30 @@
+       }
+       unit.seeAlso.push(noteHtml(el));
+       return skip(el);
++    }
++    // The explicitly labelled second rendering is commentary on the first.
++    // Keep its heading and every paragraph, in order, together in the notes.
++    const alternative = tag === 'p' && italicIntroduction(el)
++      && (/^\s*Alternative translation:\s*$/i.test(el.textContent)
++        || /^\s*\[.*\b(?:discourse|sutta)\b.*\btranslated as follows:\]\s*$/i.test(el.textContent));
++    if (body && alternative) {
++      const id = `alternative${unit.notes.size}`;
++      unit.notes.set(id, (continuingNote = { id, html: noteHtml(el), used: 0, beforeSeeAlso: true }));
++      return skip(el);
++    }
++    // A separately labelled editorial note can follow "See also" outside
++    // the numbered notes' box, as AN 9.42's closing remarks do.
++    if (body && (tag === 'p' || tag === 'div') && /^\s*Note:\s/.test(el.textContent)) {
++      const id = `editorial${unit.notes.size}`;
++      unit.notes.set(id, (continuingNote = { id, html: noteHtml(el), used: 0 }));
++      return skip(el);
++    }
++    if (continuingNote) {
++      if (/^h[2-6]$/.test(tag) || /\bstars\b/.test(cls)) continuingNote = null;
++      else {
++        continuingNote.html += ` ${noteHtml(el)}`;
++        return skip(el);
++      }
+     }
+     if (/\bstars\b/.test(cls)) {
+       body = true;
+@@ -440,7 +509,7 @@
+     }
+     if (/suttaCite|verse_stars|notetitle/.test(cls)) return skip(el);
+     if (!body) {
+-      if (starred || /\bintro\b/.test(cls) || /iblock/.test(cls) || (tag === 'p' && wholly(el, 'em, i', 0.9))) {
++      if (starred || /\bintro\b/.test(cls) || /iblock/.test(cls) || (tag === 'p' && italicIntroduction(el))) {
+         unit.intro.push(noteHtml(el));
+         return skip(el);
+       }
+@@ -458,6 +527,7 @@
+     if (tag === 'pre') return void unit.blocks.push(...lineBlocks(el));
+     if (/^h[2-6]$/.test(tag)) return void unit.blocks.push(...blocksOf(el, 'h'));
+     if (tag === 'p' || tag === 'blockquote') {
++      extractInlineCommentary(el);
+       const kind = /vspk/.test(cls) ? 'spk' : verse === 'first' ? 'vs' : verse ? 'v' : 'p';
+       unit.blocks.push(...blocksOf(el, kind));
+     }
+@@ -1816,7 +1886,9 @@
+     }
+     // Notes whose marker is in the title or the introduction go with them, on the title line; on a
+     // page of several suttas, the unused ones are the others'.
+-    const titleNotes = unit.oneOfSeveral ? [] : [...unit.notes.values()].filter((nt) => !nt.used).map((nt) => nt.html);
++    const unusedNotes = unit.oneOfSeveral ? [] : [...unit.notes.values()].filter((nt) => !nt.used);
++    const titleNotes = unusedNotes.filter((nt) => !nt.beforeSeeAlso).map((nt) => nt.html);
++    const beforeSeeAlso = unusedNotes.filter((nt) => nt.beforeSeeAlso).map((nt) => nt.html);
+ 
+     // What the Pali shows: each line Sujato translates either has English here or its Pali joins a
+     // neighbour's; a piece carrying two or more such lines besides its own is longer than his.
+@@ -1872,7 +1944,7 @@
+     // The title line: one of those the text opens with, as a later sutta's are another's.
+     const head = lines.slice(0, Math.max(0, lines.findIndex((l) => !l.title)));
+     const titleLine = head.find((l) => l.suttaTitle) ?? head.at(-1);
+-    const titleParts = [...unit.intro, ...unit.seeAlso, ...titleNotes];
++    const titleParts = [...unit.intro, ...beforeSeeAlso, ...unit.seeAlso, ...titleNotes];
+     if (titleLine) put(titleLine, unit.title, [titleParts.map((p) => `<p>${p}</p>`).join('')].filter(Boolean));
+     // With none, its notes go with the first line that has text.
+     else if (titleParts.length) segNotes[Math.max(0, segText.findIndex(Boolean))].unshift(...titleParts);
+--- a/scripts/segmenter/check-upstream.py
++++ b/scripts/segmenter/check-upstream.py
+@@ -160,6 +160,21 @@
+     return size > 0 and styled(node, tags) >= size * share
+ 
+ 
++def italic_introduction(node):
++    """Recognises introductory italic prose with roman terms inside it.
++
++    The paragraph must begin and end in italic markup to use the lower share;
++    the caller still requires it to occur before the translation's body.
++    """
++    if wholly(node, ('em', 'i'), 0.9):
++        return True
++    content = [child for child in node.children if text(child).strip()]
++    return (bool(content)
++            and all(isinstance(child, Node) and child.tag in ('em', 'i')
++                    for child in (content[0], content[-1]))
++            and wholly(node, ('em', 'i'), 0.85))
++
++
+ def title(h1):
+     """Returns a heading's title: its text before any <br>, the Pali name and number after it."""
+     return text(h1, '\x00').split('\x00')[0]
+@@ -208,6 +223,28 @@
+     body, intro, see_also, boxes, marks = [], [], [], [], []
+     stars = any('stars' in n.cls for n in walk(doc) if n.tag == 'p')
+     started = False
++    continuing_box = None
++    continuations = {}
++    inline_notes = {}
++
++    def extract_inline_commentary(node):
++        """Separate explicitly attributed bracketed commentary from translated prose."""
++        children = []
++        for child in node.children:
++            if not isinstance(child, str):
++                extract_inline_commentary(child)
++                children.append(child)
++                continue
++            at = 0
++            for match in re.finditer(r'\[(?:The Commentary\b|Commentary:)[^\]]+\]', child):
++                children.append(child[at:match.start()])
++                key = f'inlineCommentary{len(inline_notes)}'
++                inline_notes[key] = match[0]
++                mark = Node('a', {'class': 'footnote-ref', 'href': '#' + key}, node)
++                children.append(mark)
++                at = match.end()
++            children.append(child[at:])
++        node.children = children
+ 
+     def marked(block):
+         """Returns the notes a block's markers point to, in order."""
+@@ -215,33 +252,53 @@
+ 
+     def handle(block):
+         """Puts a block's words with the text, the introduction, "See also" or the notes."""
+-        nonlocal started
++        nonlocal started, continuing_box
+         cls = block.cls
+         # The notes' box, and a note the box closed before.
+         if ('note' in cls and block.tag in ('div', 'section')) or (block.tag == 'p' and re.search(r'note\d+$|^fn\d+$', block.id)):
+             boxes.append(block)
++            continuing_box = (block if started and block.tag != 'p'
++                              and any('verse' in n.cls for n in walk(block)) else None)
+         elif not mine(block):
+             pass
+         elif block.tag == 'h1':
++            continuing_box = None
+             body.append(title(block))
+-        elif 'seealso' in cls or ('see' in cls and 'also' in cls) or (block.tag == 'p' and text(block).strip().startswith('See also:')):
++        elif 'seealso' in cls or ('see' in cls and 'also' in cls) or (block.tag == 'p' and re.match(r'\s*See also\b', text(block))):
++            continuing_box = None
+             # dhammatalks.org styles some headings as a "See also": those wholly in bold.
+             (body if wholly(block, ('strong', 'b'), 1.0) else see_also).append(text(block))
++        elif (started and block.tag == 'p' and italic_introduction(block)
++              and (re.fullmatch(r'\s*Alternative translation:\s*', text(block), re.I)
++                   or re.fullmatch(r'\s*\[.*\b(?:discourse|sutta)\b.*\btranslated as follows:\]\s*', text(block), re.I))):
++            continuing_box = Node('div', {'class': 'note alternative'}, block.parent)
++            continuing_box.children = [block]
++            boxes.append(continuing_box)
++        elif started and block.tag in ('p', 'div') and re.match(r'\s*Note:\s', text(block)):
++            continuing_box = Node('div', {'class': 'note'}, block.parent)
++            continuing_box.children = [block]
++            boxes.append(continuing_box)
++        elif (continuing_box is not None and block.tag not in ('h2', 'h3', 'h4', 'h5', 'h6')
++              and 'stars' not in cls):
++            continuations.setdefault(id(continuing_box), []).append(block)
+         elif 'stars' in cls:
++            continuing_box = None
+             started = True
+         elif 'suttaCite' in cls:
+             # The Dhammapada's verse numbers, linking to its endnotes.
+             marks.extend(n.attrs['href'].split('#')[1] for n in walk(block) if n.tag == 'a' and 'endnotes.html#' in n.attrs.get('href', ''))
+         elif 'verse_stars' in cls or 'notetitle' in cls:
+             pass
+-        elif not started and (stars or 'intro' in cls or 'iblock' in cls or (block.tag == 'p' and wholly(block, ('em', 'i'), 0.9))):
++        elif not started and (stars or 'intro' in cls or 'iblock' in cls or (block.tag == 'p' and italic_introduction(block))):
+             intro.append(text(block))
+         else:
++            continuing_box = None
+             started = True
+             if block.tag in ('div', 'section'):
+                 for part in blocks(block):
+                     handle(part)
+             else:
++                extract_inline_commentary(block)
+                 body.append(text(block))
+                 marks.extend(marked(block))
+ 
+@@ -252,9 +309,14 @@
+     # The notes by id, each without its number, with the paragraphs that follow it; anything in a
+     # box before its first note is a note of its own.
+     notes = {}
++    alternatives = []
+     for box in boxes:
+         last = None
+-        for part in [box] if box.tag == 'p' else box.children:
++        if 'alternative' in box.cls:
++            last = f'@alternative{len(notes)}'
++            notes[last] = ''
++            alternatives.append(last)
++        for part in [box] if box.tag == 'p' else box.children + continuations.get(id(box), []):
+             if isinstance(part, Node) and 'notetitle' in part.cls:
+                 continue
+             if isinstance(part, Node) and part.id:
+@@ -266,6 +328,7 @@
+                     notes[last] = ''
+                 notes[last] += ' ' + text(part)
+     notes.update((k, v) for k, v in ENDNOTES.items() if k in marks)
++    notes.update(inline_notes)
+     # Each marker's note goes where its marker is, so a note marked twice is written twice; a marker
+     # naming no note takes the unused one numbered the same. The notes no marker in the text points
+     # to go first, beside the introduction, but on a page of several suttas, where they are the others'.
+@@ -276,8 +339,9 @@
+             mark = next((k for k in notes if number and k.endswith(number[0]) and k not in marks and k not in used), mark)
+         used.add(mark)
+         written.append(notes.get(mark, ''))
+-    unused = [v for k, v in notes.items() if k not in used] if own is None else []
+-    return body, intro + see_also + unused + written
++    unused = [v for k, v in notes.items() if k not in used and k not in alternatives] if own is None else []
++    alternative_text = [notes[k] for k in alternatives] if own is None else []
++    return body, intro + alternative_text + see_also + unused + written
+ 
+ 
+ def endnotes():

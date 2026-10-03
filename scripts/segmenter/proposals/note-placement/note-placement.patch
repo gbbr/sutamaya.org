@@ -1,0 +1,370 @@
+--- a/scripts/segmenter/segment-translations.mjs
++++ b/scripts/segmenter/segment-translations.mjs
+@@ -326,6 +326,38 @@
+ //   kind – the first line's kind; later lines are verse lines ("v")
+ function blocksOf(el, kind) {
+   const { text, marks } = collapse(inlineText(el));
++  // Editorial passage substitutes are text, not footnotes. Keep their source extent so the
++  // layout can distinguish a whole omitted passage from an abbreviation inside a sentence.
++  const notes = [];
++  const annotations = [...el.querySelectorAll('span.pe, span.add')];
++  // Some sources print these editorial directions without an annotation span.
++  if (/^\(?\s*(?:Identical\b|These .*suttas\b|Here follows\b|To be (?:elaborated|completed)\b|The (?:verses|rest|remainder|sequel|first .*paragraphs)\b)/i.test(text)) annotations.push(el);
++  let noteFrom = 0;
++  for (const span of annotations) {
++    const words = collapse(inlineText(span)).text;
++    if (!/\b(?:identical|as (?:in|above)|parallel to|same (?:for|except|ten|series|is)|rest|remainder|sequel|entire|complete|elaborated|verse is attached)\b/i.test(words)) continue;
++    if (/^Each (?:sutta|of the following)/i.test(words)) continue;
++    const at = text.indexOf(words, noteFrom);
++    if (at < 0) continue;
++    noteFrom = at + words.length;
++    const furniture = /^[\s.…\d\[\](),:–—-]*$/;
++    const prefix = text.slice(0, at), suffix = text.slice(at + words.length);
++    let start = at, end = at + words.length;
++    if (furniture.test(prefix)) start = 0;
++    // A page reference enclosed in ellipses belongs to the note, not the earlier sentence.
++    else {
++      const pagePrefix = /\s*…\s*\[[\d–—-]+\]\s*…\s*$/.exec(prefix);
++      if (pagePrefix) start = pagePrefix.index;
++      else if (!/^(?:all )?as above$/i.test(words)) {
++        const opening = /\s+…\s*$/.exec(prefix);
++        if (opening && /\?[”’"')\]]*$/.test(prefix.slice(0, opening.index))) start = opening.index;
++      }
++    }
++    const trailing = /^[\s.…\d\[\](),:–—-]*/.exec(suffix)[0];
++    end += trailing.length;
++    notes.push({ start, end, standalone: furniture.test(prefix) && furniture.test(suffix),
++      before: text.slice(0, start).replace(/[\s…]+$/, ''), words });
++  }
+   // A line that is only a speaker's name, as SuttaCentral's "The Blessed One:" before a verse.
+   const speakers = new Set([...el.querySelectorAll('span.speaker')].map((s) => s.textContent.replace(/\s+/g, ' ').trim()));
+   const blocks = [];
+@@ -334,7 +366,9 @@
+     if (line) {
+       const own = marks.filter((m) => m.at >= offset && m.at <= offset + line.length);
+       const lineKind = speakers.has(line) ? 'spk' : i === 0 ? kind : 'v';
+-      blocks.push({ kind: lineKind, text: line, marks: own.map((m) => ({ id: m.id, at: m.at - offset })) });
++      blocks.push({ kind: lineKind, text: line, marks: own.map((m) => ({ id: m.id, at: m.at - offset })),
++        notes: notes.filter(n => n.start >= offset && n.start < offset + line.length)
++          .map(n => ({ ...n, start: n.start - offset, end: n.end - offset })) });
+     }
+     offset += line.length + 1;
+   });
+@@ -814,10 +848,12 @@
+   let text = '';
+   const starts = [];
+   const marks = [];
++  const notes = [];
+   for (const block of blocks) {
+     if (text) text += '\n';
+     starts.push({ at: text.length, kind: block.kind });
+     for (const m of block.marks) marks.push({ id: m.id, at: text.length + m.at });
++    for (const n of block.notes ?? []) notes.push({ ...n, start: text.length + n.start, end: text.length + n.end });
+     text += block.text;
+   }
+ 
+@@ -852,7 +888,11 @@
+   for (const m of text.matchAll(/\s+(?=[“‘])/g)) add(m.index + m[0].length, 1.2, {});
+   for (const m of text.matchAll(/[—–](?=[^\s—–])/g)) add(m.index + 1, 1.2, {});
+   add(text.length, 3, {});
+-  return { text, marks, blocks: starts, cuts: [...cuts.values()].sort((a, b) => a.at - b.at) };
++  for (const note of notes) {
++    while (note.start < note.end && /\s/.test(text[note.start])) note.start++;
++    while (note.end < text.length && /\s/.test(text[note.end])) note.end++;
++  }
++  return { text, marks, notes, blocks: starts, cuts: [...cuts.values()].sort((a, b) => a.at - b.at) };
+ }
+ 
+ // Returns each line's piece of the stream — its span, and whether it's empty or merged into the
+@@ -1162,6 +1202,92 @@
+     }
+     (entry.verseLayouts ??= []).push(record);
+     i = end - 1;
++  }
++}
++
++// A prose substitute belongs where its omitted passage starts. Its lexical resemblance to a
++// later Pali row says nothing about ownership. Existing reviewed cuts always have the last word.
++function placePassageNotes(stream, body, results, entry, decided = decisions) {
++  const { text } = stream;
++  const meaningful = s => /\p{L}/u.test(s);
++  for (const note of stream.notes ?? []) {
++    const touched = results.map((r, i) => ({ r, i })).filter(({ r }) => !r.empty && !r.merged && r.start < note.end && r.end > note.start);
++    if (!touched.length) continue;
++    const first = touched[0].i, last = touched.at(-1).i;
++    let before = results.findLastIndex((r, i) => i <= first && !r.empty && !r.merged && r.start < note.start
++      && meaningful(text.slice(r.start, Math.min(r.end, note.start))));
++    // A note already attached to printed text can continue that text's sentence or abbreviated
++    // Pali row. Its separate passage ownership cannot be inferred from the annotation alone.
++    if (before === first) continue;
++    if (before >= 0 && first === before + 1 && touched.length > 1 && /pe[.…]/.test(body[before].pali)) continue;
++    // Only complete printed sentences introduce an inline passage substitute. Partial clauses
++    // and list-item abbreviations keep their original location.
++    const closed = /[.?!][”’"')\]]*$/.test(note.before);
++    const questionNext = before >= 0 && /[.?][”’"')\]]*$/.test(body[before].pali)
++      && body.slice(before + 1, before + 3).some(line => /\?/.test(line.pali));
++    const passage = /\b(?:down to|including the verses|complete as)\b/i.test(note.words);
++    if (!note.standalone && !closed && !questionNext && !passage) continue;
++    // An independently placed ellipsis has already started an inline abbreviation. Do not
++    // infer a new passage start for the explanatory note that follows it.
++    if (!note.standalone && /^(?:all )?as above$/i.test(note.words) && results.slice(before + 1, first).some(r =>
++      !r.empty && !r.merged && r.end <= note.start && !meaningful(text.slice(r.start, r.end)))) continue;
++    let target = before + 1;
++    if (before >= 0) {
++      // A sentence may render the tail of its Pali paragraph on its opening row.
++      const source = new Set(wordsOf(text.slice(results[before].start, note.start)));
++      const own = new Set(wordsOf(body[before].en));
++      while (target <= first && !body[target].paraStart && body[target].doc === body[before].doc) {
++        if (/\?/.test(body[target].pali)) break;
++        const extra = wordsOf(body[target].en).filter(w => !own.has(w));
++        const closing = !body[target].en && !body[target].verse
++          && /[—–]$/.test(body[target - 1].pali) && closed;
++        if (target === first && !closing) break;
++        if (!closing && (!extra.length || !extra.every(w => source.has(w)))) break;
++        wordsOf(body[target].en).forEach(w => own.add(w));
++        target++;
++      }
++      // An abbreviated Pali dialogue can begin on the row already holding its printed question.
++      const precedingClosed = /[.?!][”’"')\]]*[.…\s]*$/.test(text.slice(results[before].start, note.start));
++      if (first > before + 1 && /pe[.…]/.test(body[before].pali) && (closed
++        || (precedingClosed && /^(?:All )?as (?:above|in)\b/i.test(note.words)))) target = before;
++    }
++    if (target > last + 1 || target >= body.length || body[target].doc !== body[first].doc) continue;
++    const record = { source: note.words, key: body[first].key, proposed: body[target].key };
++    if (target === first && touched.length === 1) {
++      record.status = 'same';
++      (entry.notePlacements ??= []).push(record);
++      continue;
++    }
++    // Protect reviewed note ownership and gaps; surrounding sentence starts stay in place.
++    const settled = results.slice(Math.min(target, first), Math.max(target, last) + 1).some(r => decided[r.key] !== undefined);
++    if (settled) { record.status = 'reviewed placement kept'; }
++    else {
++      const start = note.start, end = note.end;
++      const original = results.map(r => ({ ...r }));
++      const joined = segmentsOf(original, text).joined;
++      // Preserve actual text on either side, and gather only the substitute's contiguous span.
++      for (let i = Math.min(target, first); i <= Math.max(target, last); i++) {
++        const r = results[i];
++        if (i === target) {
++          r.start = target === before ? r.start : start;
++          r.end = end;
++          r.empty = r.merged = false;
++          r.margin = null;
++        } else if (i !== before && r.end <= end) {
++          r.start = r.end = end;
++          r.empty = true;
++          r.merged = false;
++          r.margin = null;
++        } else if (r.end > end && r.start < end) r.start = end;
++      }
++      if (before >= 0 && before !== target) results[before].end = start;
++      record.status = target === first && touched.length === 1 ? 'same' : 'placed';
++      if (segmentsOf(results, text).joined !== joined) {
++        original.forEach((r, i) => { results[i] = r; });
++        record.status = 'passage boundary unclear';
++      }
++    }
++    (entry.notePlacements ??= []).push(record);
+   }
+ }
+ 
+@@ -1558,6 +1684,7 @@
+   const run = (decided) => {
+     const results = aligned.map((r) => ({ ...r }));
+     applyDecisions(results, text, {}, decided);
++    placePassageNotes(stream, body, results, {}, decided);
+     spreadVerses(stream, body, results, {}, decided);
+     return { results, ...segmentsOf(results, text) };
+   };
+@@ -1862,6 +1989,7 @@
+       if (keepFindings) for (const g of groups) if (g.verdict === 'passes') for (const f of g.findings) decisions[f.key] = f.settles;
+     }
+     applyDecisions(results, stream.text, entry);
++    placePassageNotes(stream, body, results, entry);
+     spreadVerses(stream, body, results, entry);
+     const { segText, endsJoined, joined: got } = segmentsOf(results, stream.text);
+ 
+--- /dev/null
++++ b/scripts/segmenter/__tests__/note-placement.test.js
+@@ -0,0 +1,147 @@
++import { afterAll, expect, test } from 'vitest';
++import { spawnSync } from 'node:child_process';
++import fs from 'node:fs';
++import os from 'node:os';
++import path from 'node:path';
++import { fileURLToPath } from 'node:url';
++
++const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
++const scratch = fs.mkdtempSync(path.join(os.tmpdir(), 'segment-note-placement-'));
++afterAll(() => fs.rmSync(scratch, { recursive: true, force: true }));
++
++function segment(source, rows, cuts = {}, translator = 'bodhi') {
++  const root = fs.mkdtempSync(path.join(scratch, 'case-'));
++  const write = (relative, value) => {
++    const file = path.join(root, relative);
++    fs.mkdirSync(path.dirname(file), { recursive: true });
++    fs.writeFileSync(file, typeof value === 'string' ? value : JSON.stringify(value));
++  };
++  write('scripts/segmenter/segment-translations.mjs', fs.readFileSync(path.join(ROOT, 'scripts/segmenter/segment-translations.mjs'), 'utf8'));
++  fs.symlinkSync(path.join(ROOT, 'node_modules'), path.join(root, 'node_modules'), 'dir');
++  fs.symlinkSync(path.join(ROOT, 'scripts/lib'), path.join(root, 'scripts/lib'), 'dir');
++  const keys = rows.map((row, i) => row.key ?? `fixture:1.${i + 1}`);
++  const entries = fn => Object.fromEntries(rows.map((row, i) => [keys[i], fn(row, i)]));
++  write('data/pali/sutta/fixture_root-pli-ms.json', entries(row => row.pali ?? 'passage.'));
++  write('data/sujato/sutta/fixture_translation-en-sujato.json', entries(row => row.en ?? ''));
++  write('data/html/pli/ms/sutta/fixture_html.json', entries((row, i) => `${i === 0 || row.paraStart ? '<p>' : ''}${row.verse ? '<span class="verse-line">{}</span>' : '{}'}${i === rows.length - 1 ? '</p>' : ''}`));
++  write(`data/upstream/${translator}/sutta/fixture.html`, `<article id="fixture"><header><h1></h1></header>${source}</article>`);
++  write(`data/${translator}/cuts.json`, cuts);
++  write(`data/${translator}/learned.json`, {});
++  const result = spawnSync(process.execPath, ['scripts/segmenter/segment-translations.mjs', translator, '--only', 'fixture'], {
++    cwd: root, encoding: 'utf8', timeout: 10000,
++  });
++  expect(result.error).toBeUndefined();
++  expect(result.status, result.stdout + result.stderr).toBe(0);
++  expect(result.stdout).toContain('0 not written');
++  const text = JSON.parse(fs.readFileSync(path.join(root, `data/${translator}/sutta/fixture_translation-en-${translator}.json`), 'utf8'));
++  return keys.map(key => text[key].trim());
++}
++
++const rows = n => Array.from({ length: n }, () => ({}));
++
++test.each(['bodhi', 'thanissaro'])('a whole-sutta note stays whole on the first Pali row (%s)', translator => {
++  const note = 'This sutta is identical with the preceding one except that it omits the simile.';
++  const body = rows(6);
++  body[4].en = 'identical with the preceding one';
++  body[5].en = 'except that it omits the simile';
++  expect(segment(`<p><span class="pe">${note}</span></p>`, body, {}, translator))
++    .toEqual([note, '', '', '', '', '']);
++});
++
++test('a passage note follows the complete printed question, before omitted verse rows', () => {
++  const note = 'As in AN8.46, including the verses.';
++  const body = [{ en: 'What eight?', pali: 'Katamāni aṭṭha?' }, ...rows(5).map(row => ({ ...row, verse: true }))];
++  body[5].en = 'As in AN8.46 including the verses';
++  expect(segment(`<p>What eight?</p><p><span class="pe">${note}</span></p>`, body))
++    .toEqual(['What eight?', note, '', '', '', '']);
++});
++
++test('a plain parenthetical editorial note needs no pe markup', () => {
++  expect(segment('<p>(Identical with the preceding sutta, but without the verses.)</p>', rows(4)))
++    .toEqual(['(Identical with the preceding sutta, but without the verses.)', '', '', '']);
++});
++
++test('page references and ellipses remain part of the whole note', () => {
++  const note = '… The rest is identical with the preceding sutta. [61–62] …';
++  expect(segment(`<p>Earlier teaching.</p><p>… <span class="pe">The rest is identical with the preceding sutta.</span> [61–62] …</p>`,
++    [{ en: 'Earlier teaching.' }, ...rows(4)]))
++    .toEqual(['Earlier teaching.', note, '', '', '']);
++});
++
++test('a later printed passage survives gathering the note above it', () => {
++  const note = 'As above down to:';
++  const body = [...rows(4), { en: 'The final answer is peace.' }];
++  body[3].en = note;
++  expect(segment(`<p><span class="pe">${note}</span></p><p>The final answer is peace.</p>`, body))
++    .toEqual([note, '', '', '', 'The final answer is peace.']);
++});
++
++test('inline notes after a complete question introduce the next passage', () => {
++  const body = [{ en: 'What four?', pali: 'Katamāni cattāri?' }, ...rows(4), { en: 'These are the four.' }];
++  body[3].en = 'as above';
++  expect(segment('<p>What four?… <span class="pe">as above</span> … These are the four.</p>', body))
++    .toEqual(['What four?…', 'as above …', '', '', '', 'These are the four.']);
++});
++
++test('inline list abbreviations retain their settled position', () => {
++  const cuts = { 'fixture:1.2': { after: 'The first item …', own: true }, 'fixture:1.4': { after: 'as above …', own: true } };
++  expect(segment('<p>The first item … <span class="pe">as above</span> … and the last item.</p>',
++    [{ en: 'first item' }, { en: 'as above' }, {}, { en: 'last item' }], cuts))
++    .toEqual(['The first item …', 'as above …', '', 'and the last item.']);
++});
++
++test('annotation markup alone does not move a partial sentence or list abbreviation', () => {
++  for (const prefix of ['The first item …', 'I then went to them …', 'When he is corrected, he prevaricates …']) {
++    const body = [{ en: prefix, pali: 'Pāṇātipātī hoti …pe…' }, {}, { en: 'as above' }, { en: 'the last item' }];
++    const source = `${prefix} as above … the last item.`;
++    expect(segment(`<p>${prefix} <span class="pe">as above</span> … the last item.</p>`, body))
++      .toEqual(segment(`<p>${source}</p>`, body));
++  }
++});
++
++test('a note keeps ownership on an already-started abbreviated Pali passage', () => {
++  const body = [{ en: 'First quality. All as in the preceding sutta.', pali: 'paṭhamo dhammo …pe…' }, {}, { en: 'Last quality.' }];
++  const cuts = { 'fixture:1.3': { after: 'All as in the preceding sutta.', own: true } };
++  expect(segment('<p>First quality.</p><p><span class="pe">All as in the preceding sutta.</span></p><p>Last quality.</p>', body, cuts))
++    .toEqual(['First quality. All as in the preceding sutta.', '', 'Last quality.']);
++});
++
++test('ordinary prose mentioning identity is translation, not a passage note', () => {
++  const cuts = { 'fixture:1.3': { after: 'The question was asked.', own: true } };
++  expect(segment('<p>The question was asked.</p><p>The soul is the same as the body.</p>',
++    [{ en: 'question asked' }, {}, { en: 'soul same body' }], cuts))
++    .toEqual(['The question was asked.', '', 'The soul is the same as the body.']);
++});
++
++test('a reviewed placement overrides the automatic first-row proposal', () => {
++  const note = 'The rest is identical with the preceding sutta.';
++  const cuts = { 'fixture:1.2': { empty: 'up' }, 'fixture:1.3': { after: 'Earlier teaching.', own: true } };
++  expect(segment(`<p>Earlier teaching.</p><p><span class="pe">${note}</span></p>`,
++    [{ en: 'Earlier teaching.' }, {}, { en: note }, {}], cuts))
++    .toEqual(['Earlier teaching.', '', note, '']);
++});
++
++test('a Pali sentence tail that Sujato leaves blank stays with the printed sentence', () => {
++  const body = [
++    { en: 'I should train: I will know my own mind.', pali: 'sacittapariyāyakusalo bhavissāmī—' },
++    { pali: 'evañhi sikkhitabbaṁ.' },
++    { paraStart: true, pali: 'Kathañca kusalo hoti?', en: 'How is one skilled?' },
++    {},
++    { en: 'as in AN1.1 down to' },
++    { en: 'The final answer is peace.' },
++  ];
++  expect(segment('<p>I should train: I will know my own mind. … [97–98] … <span class="pe">as in AN1.1 down to:</span> … The final answer is peace.</p>', body))
++    .toEqual(['I should train: I will know my own mind.', '', '… [97–98] … as in AN1.1 down to: …', '', '', 'The final answer is peace.']);
++});
++
++test('a leading ellipsis joins a whole passage reference after a complete question', () => {
++  const body = [{ pali: 'Kiṁ maññasi?', en: 'What do you think?' }, {}, { en: 'all as in §32' }, { en: 'The final answer is peace.' }];
++  expect(segment('<p>What do you think? … <span class="pe">all as in §32</span> … The final answer is peace.</p>', body))
++    .toEqual(['What do you think?', '… all as in §32 …', '', 'The final answer is peace.']);
++});
++
++test('an ambiguous inline abbreviation does not displace an independently aligned ellipsis', () => {
++  const body = [{ en: 'What four?', pali: 'Katame cattāro?' }, {}, { en: '…' }, { en: 'as above' }, { en: 'These are the four.' }];
++  expect(segment('<p>What four? … <span class="pe">as above</span> … These are the four.</p>', body))
++    .toEqual(segment('<p>What four? … as above … These are the four.</p>', body));
++});
+--- a/data/upstream/README.md
++++ b/data/upstream/README.md
+@@ -20,14 +20,7 @@
+ settled is in "The files", "Segmenting" and "Building them into the app", and each round's packets
+ and answers are in `data/<translator>/review/`. What remains, in order:
+ 
+-1. **Teach the segmenter** the rules those rounds settled, so the steps in "Reviewing new and
+-   revised texts" shrink to what the rules leave. Two are proposed in
+-   `scripts/segmenter/proposals/`, each a patch with its tests and report: `verse-layout/` lays out
+-   verse as the verse rounds did, and `note-placement/` places a note standing for a whole passage
+-   as Bodhi's notes round did.
+-   Each keeps every reviewed layout, so applying it is checked by regenerating both translations,
+-   which must reproduce the committed texts exactly.
+-2. **The translator's own commentary read as text**: his introductions, closing remarks and
++1. **The translator's own commentary read as text**: his introductions, closing remarks and
+    alternative renderings belong in `notes/`, as most of his introductions already are, but the
+    segmenter doesn't recognise some of them as notes and reads them into a line: SN 1.8:1.2 (an
+    introduction), Ud 7.8:4.6 (closing remarks printed after his notes) and AN 3.47:2.4 (an
+@@ -207,6 +200,14 @@
+ read-throughs. A finding that contradicts an earlier one marks it superseded; one overriding a
+ hand fix goes in `review/hand/verse-review.findings`. A place where lines interleave neighbouring
+ verses, or the fix needs a prose line, is recorded for a later round rather than forced.
++
++A translator's note replacing a whole passage or sutta ("As in AN8.46, including the verses",
++"This sutta is identical with the preceding one", "The rest…") sits whole on the first Pali line
++of the passage it replaces, just as a sentence sits where it starts. The segmenter places source
++passage notes there and keeps their page references and ellipses together; settled cuts win.
++Inline abbreviations inside a sentence or list keep their place. Readers settle ownership where
++printed text and a note overlap or an earlier ellipsis makes the passage boundary unclear;
++`report.json` records attempted placements in `notePlacements`.
+ 
+ Every round keeps to these:
+ 

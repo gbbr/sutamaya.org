@@ -1,0 +1,262 @@
+[
+  {
+    "translator": "thanissaro",
+    "uid": "sn1.8",
+    "source": "sutta/sn/sn1/sn1.8.html",
+    "cause": "marked introduction",
+    "passages": [
+      {
+        "paragraph": 1,
+        "text": "Like the similar sutta SN 1:7, this sutta offers evidence in support of the translation, “awakened” for the Pali term, Buddha. The verses draw a direct connection between two words derived from the same root: the adjective sambuddha, a variant of buddha, and the verb pābujjhati, which in context clearly means to awaken from sleep.",
+        "html": "<p><em>Like the similar sutta <a href=\"/suttas/SN/SN1_7.html\" class=\"sutta-ref\">SN 1:7</a>, this sutta offers evidence in support of the translation, “awakened” for the Pali term,</em> Buddha. <em>The verses draw a direct connection between two words derived from the same root: the adjective</em> sambuddha, <em>a variant of</em> buddha, <em>and the verb</em> pābujjhati, <em>which in context clearly means to awaken from sleep.</em></p>"
+      }
+    ],
+    "translationFile": "data/thanissaro/sutta/sn/sn1/sn1.8_translation-en-thanissaro.json",
+    "sourceKeys": [
+      "sn1.8:1.2"
+    ],
+    "notesFile": "data/thanissaro/notes/sn/sn1/sn1.8_comment-en-thanissaro.json",
+    "destinationKeys": [
+      "sn1.8:0.3"
+    ]
+  },
+  {
+    "translator": "thanissaro",
+    "uid": "ud7.8",
+    "source": "sutta/kn/ud/vagga7/ud7.8.html",
+    "cause": "closing note continuation",
+    "passages": [
+      {
+        "paragraph": 1,
+        "text": "In AN 10:29, the Buddha recommends this view as conducive to developing dispassion for becoming. However, in MN 106 he warns that it can lead to the refined equanimity of the dimension of neither perception nor non-perception, which can become an object of clinging. Only if that subtle clinging is detected can all clinging be abandoned.",
+        "html": "<p>In <a href=\"/suttas/AN/AN10_29.html\">AN&nbsp;10:29</a>, the Buddha recommends this view as conducive to developing dispassion for becoming. However, in <a href=\"/suttas/MN/MN106.html\">MN&nbsp;106</a> he warns that it can lead to the refined equanimity of the dimension of neither perception nor non-perception, which can become an object of clinging. Only if that subtle clinging is detected can all clinging be abandoned.</p>"
+      },
+      {
+        "paragraph": 2,
+        "text": "The Canon’s most extended discussion of this theme of meditation is in SN 22:55. See Appendix Two.",
+        "html": "<p>The Canon’s most extended discussion of this theme of meditation is in <a href=\"/suttas/SN/SN22_55.html\">SN&nbsp;22:55</a>. See <a href=\"/suttas/KN/Ud/apptwo.html\">Appendix Two</a>.</p>"
+      },
+      {
+        "paragraph": 3,
+        "text": "For more on this topic, see The Paradox of Becoming, chapter 5.",
+        "html": "<p>For more on this topic, see <em>The Paradox of Becoming,</em> chapter 5.</p>"
+      }
+    ],
+    "translationFile": "data/thanissaro/sutta/kn/ud/vagga7/ud7.8_translation-en-thanissaro.json",
+    "sourceKeys": [
+      "ud7.8:4.6"
+    ],
+    "notesFile": "data/thanissaro/notes/kn/ud/vagga7/ud7.8_comment-en-thanissaro.json",
+    "destinationKeys": [
+      "ud7.8:4.4"
+    ]
+  },
+  {
+    "translator": "thanissaro",
+    "uid": "an3.47",
+    "source": "sutta/an/an3/an3.47.html",
+    "cause": "alternative rendering",
+    "passages": [
+      {
+        "paragraph": 1,
+        "text": "Alternative translation:",
+        "html": "<p class=\"first\"><em>Alternative translation:</em></p>"
+      },
+      {
+        "paragraph": 2,
+        "text": "“Monks, these three are fabricated characteristics of what is fabricated. Which three? Arising is discernable, passing away is discernable, alteration [literally: otherness] of what stays is discernable.",
+        "html": "<p>“Monks, these three are fabricated characteristics of what is fabricated. Which three? Arising is discernable, passing away is discernable, alteration [literally: otherness] of what stays is discernable.</p>"
+      },
+      {
+        "paragraph": 3,
+        "text": "“These are three fabricated characteristics of what is fabricated.",
+        "html": "<p>“These are three fabricated characteristics of what is fabricated.</p>"
+      },
+      {
+        "paragraph": 4,
+        "text": "“Now these three are unfabricated characteristics of what is unfabricated. Which three? No arising is discernable, no passing away is discernable, no alteration of what stays is discernable.",
+        "html": "<p>“Now these three are unfabricated characteristics of what is unfabricated. Which three? No arising is discernable, no passing away is discernable, no alteration of what stays is discernable.</p>"
+      },
+      {
+        "paragraph": 5,
+        "text": "“These are three unfabricated characteristics of what is unfabricated.”",
+        "html": "<p>“These are three unfabricated characteristics of what is unfabricated.”</p>"
+      }
+    ],
+    "translationFile": "data/thanissaro/sutta/an/an3/an3.47_translation-en-thanissaro.json",
+    "sourceKeys": [
+      "an3.47:2.4"
+    ],
+    "notesFile": "data/thanissaro/notes/an/an3/an3.47_comment-en-thanissaro.json",
+    "destinationKeys": [
+      "an3.47:0.3"
+    ]
+  },
+  {
+    "translator": "thanissaro",
+    "uid": "an9.42",
+    "source": "sutta/an/an9/an9.42.html",
+    "cause": "closing editorial note",
+    "passages": [
+      {
+        "paragraph": 1,
+        "text": "Note: The following three discourses show that, contrary to a popular misconception, the phrase, “Released through discernment” does not refer to a person who has attained release without experience of the jhānas. Instead, it refers to a person who has attained at least the first jhāna but does not experience any of the psychic powers that sometimes can be accessed through jhāna.",
+        "html": "<p>Note: The following three discourses show that, contrary to a popular misconception, the phrase, “Released through discernment” does not refer to a person who has attained release without experience of the jhānas. Instead, it refers to a person who has attained at least the first jhāna but does not experience any of the psychic powers that sometimes can be accessed through jhāna.</p>"
+      }
+    ],
+    "translationFile": "data/thanissaro/sutta/an/an9/an9.42_translation-en-thanissaro.json",
+    "sourceKeys": [
+      "an9.42:12.2"
+    ],
+    "notesFile": "data/thanissaro/notes/an/an9/an9.42_comment-en-thanissaro.json",
+    "destinationKeys": [
+      "an9.42:0.3"
+    ]
+  },
+  {
+    "translator": "thanissaro",
+    "uid": "sn35.82",
+    "source": "sutta/sn/sn35/sn35.82.html",
+    "cause": "alternative rendering",
+    "passages": [
+      {
+        "paragraph": 1,
+        "text": "[Because the word loka can also mean ‘cosmos,’ this discourse can also be translated as follows:]",
+        "html": "<p class=\"first\"><em>[Because the word</em> loka<em> can also mean ‘cosmos,’ this discourse can also be translated as follows:]</em></p>"
+      },
+      {
+        "paragraph": 2,
+        "text": "Then a certain monk went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he said to the Blessed One: “‘The cosmos, the cosmos [loka],’ it is said. In what respect does the word ‘cosmos’ apply?”",
+        "html": "<p class=\"first\">Then a certain monk went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he said to the Blessed One: “‘The cosmos, the cosmos <em>[loka],’</em> it is said. In what respect does the word ‘cosmos’ apply?”</p>"
+      },
+      {
+        "paragraph": 3,
+        "text": "“Insofar as it disintegrates [lujjati], monk, it is called the ‘cosmos.’ Now what disintegrates? The eye disintegrates. Forms disintegrate. Eye-consciousness disintegrates. Eye-contact disintegrates. And whatever there is that arises in dependence on eye-contact—experienced as pleasure, pain or neither-pleasure-nor-pain—that too disintegrates.",
+        "html": "<p>“Insofar as it disintegrates <em>[lujjati],</em> monk, it is called the ‘cosmos.’ Now what disintegrates? The eye disintegrates. Forms disintegrate. Eye-consciousness disintegrates. Eye-contact disintegrates. And whatever there is that arises in dependence on eye-contact—experienced as pleasure, pain or neither-pleasure-nor-pain—that too disintegrates.</p>"
+      },
+      {
+        "paragraph": 4,
+        "text": "“The ear disintegrates. Sounds disintegrate…",
+        "html": "<p>“The ear disintegrates. Sounds disintegrate…</p>"
+      },
+      {
+        "paragraph": 5,
+        "text": "“The nose disintegrates. Aromas disintegrate…",
+        "html": "<p>“The nose disintegrates. Aromas disintegrate…</p>"
+      },
+      {
+        "paragraph": 6,
+        "text": "“The tongue disintegrates. Tastes disintegrate…",
+        "html": "<p>“The tongue disintegrates. Tastes disintegrate…</p>"
+      },
+      {
+        "paragraph": 7,
+        "text": "“The body disintegrates. Tactile sensations disintegrate…",
+        "html": "<p>“The body disintegrates. Tactile sensations disintegrate…</p>"
+      },
+      {
+        "paragraph": 8,
+        "text": "“The intellect disintegrates. Ideas disintegrate. Intellect-consciousness disintegrates. Intellect-contact disintegrates. And whatever there is that arises in dependence on intellect-contact—experienced as pleasure, pain or neither-pleasure-nor-pain—that too disintegrates.",
+        "html": "<p>“The intellect disintegrates. Ideas disintegrate. Intellect-consciousness disintegrates. Intellect-contact disintegrates. And whatever there is that arises in dependence on intellect-contact—experienced as pleasure, pain or neither-pleasure-nor-pain—that too disintegrates.</p>"
+      },
+      {
+        "paragraph": 9,
+        "text": "“Insofar as it disintegrates, it is called the ‘cosmos.’”",
+        "html": "<p>“Insofar as it disintegrates, it is called the ‘cosmos.’”<span class=\"fn\"><a href=\"#sn35.82note01\">1</a></span><!--end fn cite--></p>"
+      }
+    ],
+    "translationFile": "data/thanissaro/sutta/sn/sn35/sn35.82_translation-en-thanissaro.json",
+    "sourceKeys": [
+      "sn35.82:2.8",
+      "sn35.82:2.9"
+    ],
+    "notesFile": "data/thanissaro/notes/sn/sn35/sn35.82_comment-en-thanissaro.json",
+    "destinationKeys": [
+      "sn35.82:0.3"
+    ]
+  },
+  {
+    "translator": "thanissaro",
+    "uid": "sn48.8",
+    "source": "sutta/sn/sn48/sn48.8.html",
+    "cause": "closing references",
+    "passages": [
+      {
+        "paragraph": 1,
+        "text": "See also SN 45:8 and SN 56:11.",
+        "html": "<p>See also <a href=\"/suttas/SN/SN45_8.html\" class=\"sutta-ref\">SN 45:8</a> and <a href=\"/suttas/SN/SN56_11.html\" class=\"sutta-ref\">SN 56:11</a>.</p>"
+      }
+    ],
+    "translationFile": "data/thanissaro/sutta/sn/sn48/sn48.8_translation-en-thanissaro.json",
+    "sourceKeys": [
+      "sn48.8:1.18"
+    ],
+    "notesFile": "data/thanissaro/notes/sn/sn48/sn48.8_comment-en-thanissaro.json",
+    "destinationKeys": [
+      "sn48.8:0.3"
+    ]
+  },
+  {
+    "translator": "thanissaro",
+    "uid": "an8.54",
+    "source": "sutta/an/an8/an8.54.html",
+    "cause": "explicit inline commentary",
+    "passages": [
+      {
+        "paragraph": 1,
+        "text": "[Commentary: one who shakes more fruit off a tree than he can possibly eat]",
+        "html": "[Commentary: one who shakes more fruit off a tree than he can possibly eat]"
+      }
+    ],
+    "translationFile": "data/thanissaro/sutta/an/an8/an8.54_translation-en-thanissaro.json",
+    "sourceKeys": [
+      "an8.54:5.5"
+    ],
+    "notesFile": "data/thanissaro/notes/an/an8/an8.54_comment-en-thanissaro.json",
+    "destinationKeys": [
+      "an8.54:5.5"
+    ]
+  },
+  {
+    "translator": "thanissaro",
+    "uid": "sn47.8",
+    "source": "sutta/sn/sn47/sn47.8.html",
+    "cause": "explicit inline commentary",
+    "passages": [
+      {
+        "paragraph": 1,
+        "text": "[Commentary: the five hindrances]",
+        "html": "[Commentary: the five hindrances]"
+      }
+    ],
+    "translationFile": "data/thanissaro/sutta/sn/sn47/sn47.8_translation-en-thanissaro.json",
+    "sourceKeys": [
+      "sn47.8:3.5"
+    ],
+    "notesFile": "data/thanissaro/notes/sn/sn47/sn47.8_comment-en-thanissaro.json",
+    "destinationKeys": [
+      "sn47.8:3.5"
+    ]
+  },
+  {
+    "translator": "thanissaro",
+    "uid": "sn20.7",
+    "source": "sutta/sn/sn20/sn20.7.html",
+    "cause": "explicit inline commentary",
+    "passages": [
+      {
+        "paragraph": 1,
+        "text": "[The Commentary notes that the drum originally could be heard for twelve leagues, but in its final condition couldn’t be heard even from behind a curtain.]",
+        "html": "[The Commentary notes that the drum originally could be heard for twelve leagues, but in its final condition couldn’t be heard even from behind a curtain.]"
+      }
+    ],
+    "translationFile": "data/thanissaro/sutta/sn/sn20/sn20.7_translation-en-thanissaro.json",
+    "sourceKeys": [
+      "sn20.7:1.6"
+    ],
+    "notesFile": "data/thanissaro/notes/sn/sn20/sn20.7_comment-en-thanissaro.json",
+    "destinationKeys": [
+      "sn20.7:1.4"
+    ]
+  }
+]

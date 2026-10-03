@@ -21,18 +21,33 @@ settled is in "The files", "Segmenting" and "Building them into the app", and ea
 and answers are in `data/<translator>/review/`. What remains, in order:
 
 1. **Teach the segmenter** the rules those rounds settled, so the steps in "Reviewing new and
-   revised texts" shrink to what the rules leave. Two are proposed in
-   `scripts/segmenter/proposals/`, each a patch with its tests and report: `verse-layout/` lays out
-   verse as the verse rounds did, and `note-placement/` places a note standing for a whole passage
-   as Bodhi's notes round did.
-   Each keeps every reviewed layout, so applying it is checked by regenerating both translations,
-   which must reproduce the committed texts exactly.
+   revised texts" shrink to what the rules leave. Both are ready in
+   `scripts/segmenter/proposals/note-placement/`: apply `verse-layout-current.patch` (verse laid
+   out as the verse rounds did), then `note-placement.patch` (a note standing for a whole passage
+   placed as Bodhi's notes round did); `report.txt` has the measurements. Each keeps every
+   reviewed layout, so after applying them a plain run must reproduce both translations exactly,
+   and `npm test` must pass. `proposals/verse-layout/` is an earlier version of the first patch
+   and goes once it is applied.
 2. **The translator's own commentary read as text**: his introductions, closing remarks and
-   alternative renderings belong in `notes/`, as most of his introductions already are, but some
-   are read into a line: SN 1.8:1.2 (an introduction the segmenter doesn't recognise as one),
-   Ud 7.8:4.6 (closing remarks printed after his notes) and AN 3.47:2.4 (an alternative
-   translation of the whole sutta). Moving them takes a fix to how the segmenter, and
-   `check-upstream.py` alike, read his pages; the translation itself stays as it is.
+   alternative renderings belong in `notes/`, as most of his introductions already are, but the
+   segmenter doesn't recognise some of them as notes and reads them into a line: SN 1.8:1.2 (an
+   introduction), Ud 7.8:4.6 (closing remarks printed after his notes) and AN 3.47:2.4 (an
+   alternative translation of the whole sutta). The fix is in how the segmenter, and
+   `check-upstream.py` alike, read his pages, so it catches every such passage, not only these;
+   the translation itself stays as it is. It is ready in `scripts/segmenter/proposals/page-parsing/`
+   (`page-parsing.patch`; `README.md` is its report, and `moved-passages.md` lists every passage
+   it moves), but first:
+   - take out of it the three bracketed asides inside his paragraphs, AN 8.54:5.5, SN 47.8:3.5
+     and SN 20.7:1.6, which stay in the text (see "Building them into the app"); that also clears
+     the stale AN 8.54:5.6 anchor its report mentions. It then moves six paragraph-level passages;
+   - it was made against the segmenter before item 1's patches, so apply it after them. A plain
+     run then changes only the texts in `moved-passages.md`, and the checks still pass.
+3. **Four lines a Pali line off**, fixed through `review/hand/` like any other boundary, without
+   touching the words or their order: Ṭhānissaro's AN 10.18:8.2 (the assessment starts on 8.1)
+   and AN 6.45:9.1 (the "He desires…" sentences start on 9.2); Bodhi's MN 8:14.4 (items 21–43
+   start on 14.5, their Pali) and SN 35.52 (its page gives ten suttas as one shortened list, and
+   the first nine formulations are SN 35.43–51's, placed on those texts as the SN 45 range pages
+   are).
 
 ## What's here
 
@@ -301,9 +316,12 @@ Once segmenting is done, the app's build takes these translations in. What it mu
   - **a passage printed at a different point from the Pali**: it stays where his page puts it,
     on the nearest line, and its own Pali stays hidden, as with Ṭhānissaro's second prose
     paragraph in AN 4.19 (its Pali is 2.1–2.4, before both verses) and the closing sentence of
-    his SN 4.24 (its Pali is SN 4.25:1.1). The translator's text never changes in any way: not a
-    word, and not its order, which `check-upstream.py` enforces. Pairing it with its own Pali is
-    left to the Reader (see "Open questions for the Reader").
+    his SN 4.24 (its Pali is SN 4.25:1.1). The translation never changes in any way: not a word,
+    and not its order, which `check-upstream.py` enforces. His commentary on the same page
+    (introductions, closing remarks, alternative renderings) isn't translation: it goes to
+    `notes/`. A bracketed aside inside his paragraph, such as "[Commentary: the five
+    hindrances]" or "[literally: otherness]", is part of his text and stays. Pairing a passage
+    with its own Pali is left to the Reader (see "Open questions for the Reader").
 - The Pali under an English line follows the rule for Sujato's lines ([docs/corpus.md](../../docs/corpus.md)'s
   "A segment"): a lone empty line in its paragraph joins the line above, and a run of two or more
   stays hidden, since most runs are repetitions the translator abbreviates. The exception is the
@@ -346,7 +364,9 @@ What the data can't settle, left for when the Reader takes these translations in
   Tapping it shows only *Chandā dosā bhayā mohā*, the first line of the verse, while its own
   Pali, 2.1–2.4, stays hidden. The Reader could show 2.1–2.4 when that line is tapped. SN 4.24
   is the same across two texts: his closing "Then Māra the Evil One … drawing in the dirt with a
-  stick" sits on 10.4, the last line of the verse, and its Pali is SN 4.25:1.1.
+  stick" sits on 10.4, the last line of the verse, and its Pali is SN 4.25:1.1. DN 33 is the
+  same within a list: at 1.11.141 his list gives two items in the opposite order from the Pali,
+  which has another item between them.
 
 ## Where to look
 

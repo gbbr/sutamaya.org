@@ -1,0 +1,126 @@
+1 thanissaro an10.18:8.2: 1 paragraph matches; P < DIV#sutta < BODY
+2 thanissaro an3.102:4.2: 1 paragraph matches; P < DIV#sutta < BODY
+3 thanissaro an3.47:2.4: 2 paragraph matches; P < DIV#sutta < BODY; P < DIV#sutta < BODY
+4 thanissaro an4.194:2.3: 1 paragraph matches; P < DIV#sutta < BODY
+5 thanissaro an4.19:4.1: 1 paragraph matches; P < DIV#sutta < BODY
+6 thanissaro an5.75:15.9: 1 paragraph matches; P < DIV#sutta < BODY
+7 thanissaro an6.45:9.1: 1 paragraph matches; P < DIV#sutta < BODY
+8 thanissaro an8.39:5.1: 1 paragraph matches; P < DIV#sutta < BODY
+9 thanissaro an8.39:6.1: 1 paragraph matches; P < DIV#sutta < BODY
+10 thanissaro an8.64:7.3: 5 paragraph matches; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY
+11 thanissaro an9.20:8.8: 2 paragraph matches; P < DIV#sutta < BODY; P < DIV#sutta < BODY
+12 thanissaro an9.35:1.6: 2 paragraph matches; P < DIV#sutta < BODY; P < DIV#sutta < BODY
+13 thanissaro an9.35:3.6: 2 paragraph matches; P < DIV#sutta < BODY; P < DIV#sutta < BODY
+14 thanissaro an9.42:12.2: 9 paragraph matches; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY
+15 thanissaro dn11:9-66.3: 1 paragraph matches; H2#toc_6 < DIV#DN11 < DIV#sutta
+16 thanissaro dn11:9-66.7: 1 paragraph matches; P < DIV#DN11 < DIV#sutta
+17 thanissaro dn12:56-62.4: 1 paragraph matches; P < DIV#DN12 < DIV#sutta
+18 thanissaro dn12:63-77.5: 2 paragraph matches; P < DIV#DN12 < DIV#sutta; P < DIV#DN12 < DIV#sutta
+19 thanissaro dn16:1.16.5: 3 paragraph matches; P < DIV#DN16 < DIV#sutta; P < DIV#DN16 < DIV#sutta; P < DIV#DN16 < DIV#sutta
+20 thanissaro dn1:1.31.7: 3 paragraph matches; P < DIV#DN01 < DIV#sutta; P < DIV#DN01 < DIV#sutta; P < DIV#DN01 < DIV#sutta
+21 thanissaro dn29:22.7: 1 paragraph matches; P < DIV#DN29 < DIV#sutta
+22 thanissaro dn33:1.11.141: 1 paragraph matches; P < DIV#DN33 < DIV#sutta
+23 thanissaro dn33:2.1.135: 4 paragraph matches; P < DIV#DN33 < DIV#sutta; P < DIV#DN33 < DIV#sutta; P < DIV#DN33 < DIV#sutta; P < DIV#DN33 < DIV#sutta
+24 thanissaro iti81:5.1: 1 paragraph matches; P < DIV#sutta < BODY
+25 thanissaro snp3.7:7.5: 2 paragraph matches; P < DIV#sutta < BODY; P < DIV#sutta < BODY
+26 thanissaro ud7.8:4.6: 1 paragraph matches; P.v1 < DIV.verse < DIV#sutta
+27 thanissaro mn108:22.1: 1 paragraph matches; P < DIV#MN108 < DIV#sutta
+28 thanissaro mn10:44.3: 1 paragraph matches; P < DIV#MN10 < DIV#sutta
+29 thanissaro mn119:41.1: 1 paragraph matches; P < DIV#MN119 < DIV#sutta
+30 thanissaro mn125:17-21.1: 5 paragraph matches; P < DIV#MN125 < DIV#sutta; P < DIV#MN125 < DIV#sutta; P < DIV#MN125 < DIV#sutta; P < DIV#MN125 < DIV#sutta; P < DIV#MN125 < DIV#sutta
+31 thanissaro mn28:17.6: 4 paragraph matches; P < DIV#MN28 < DIV#sutta; P < DIV#MN28 < DIV#sutta; P < DIV#MN28 < DIV#sutta; P < DIV#MN28 < DIV#sutta
+32 thanissaro mn54:19.5: 7 paragraph matches; P < DIV#MN54 < DIV#sutta; P < DIV#MN54 < DIV#sutta; P < DIV#MN54 < DIV#sutta; P < DIV#MN54 < DIV#sutta; P < DIV#MN54 < DIV#sutta; P < DIV#MN54 < DIV#sutta; P < DIV#MN54 < DIV#sutta
+33 thanissaro mn54:20.12: 7 paragraph matches; P < DIV#MN54 < DIV#sutta; P < DIV#MN54 < DIV#sutta; P < DIV#MN54 < DIV#sutta; P < DIV#MN54 < DIV#sutta; P < DIV#MN54 < DIV#sutta; P < DIV#MN54 < DIV#sutta; P < DIV#MN54 < DIV#sutta
+34 thanissaro mn62:8.1: 2 paragraph matches; P < DIV#MN62 < DIV#sutta; P < DIV#MN62 < DIV#sutta
+35 thanissaro mn64:13.4: 2 paragraph matches; P < DIV#MN64 < DIV#sutta; P < DIV#MN64 < DIV#sutta
+36 thanissaro mn66:11.8: 1 paragraph matches; P < DIV#MN66 < DIV#sutta
+37 thanissaro mn66:12.7: 1 paragraph matches; P < DIV#MN66 < DIV#sutta
+38 thanissaro mn75:20.1: 3 paragraph matches; P < DIV#MN75 < DIV#sutta; P < DIV#MN75 < DIV#sutta; P < DIV#MN75 < DIV#sutta
+39 thanissaro mn75:22.3: 3 paragraph matches; P < DIV#MN75 < DIV#sutta; P < DIV#MN75 < DIV#sutta; P < DIV#MN75 < DIV#sutta
+40 thanissaro mn75:23.3: 3 paragraph matches; P < DIV#MN75 < DIV#sutta; P < DIV#MN75 < DIV#sutta; P < DIV#MN75 < DIV#sutta
+41 thanissaro mn82:7.18: 4 paragraph matches; P < DIV#MN82 < DIV#sutta; P < DIV#MN82 < DIV#sutta; P < DIV#MN82 < DIV#sutta; P < DIV#MN82 < DIV#sutta
+42 thanissaro mn82:9.1: 6 paragraph matches; P < DIV#MN82 < DIV#sutta; P < DIV#MN82 < DIV#sutta; P < DIV#MN82 < DIV#sutta; P < DIV#MN82 < DIV#sutta; P < DIV#MN82 < DIV#sutta; P < DIV#MN82 < DIV#sutta
+43 thanissaro sn1.8:1.2: 1 paragraph matches; P < DIV#sutta < BODY
+44 thanissaro sn11.5:1.1: 1 paragraph matches; P < DIV#sutta < BODY
+45 thanissaro sn12.68:2.11: 5 paragraph matches; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY
+46 thanissaro sn12.68:4.11: 5 paragraph matches; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY
+47 thanissaro sn16.11:16.1: 1 paragraph matches; P < DIV#sutta < BODY
+48 thanissaro sn22.100:4.5: 2 paragraph matches; P < DIV#sutta < BODY; P < DIV#sutta < BODY
+49 thanissaro sn22.57:1.1: 1 paragraph matches; P < DIV#sutta < BODY
+50 thanissaro sn22.80:10.13: 1 paragraph matches; P < DIV#sutta < BODY
+51 thanissaro sn22.82:14.3: 2 paragraph matches; P < DIV#sutta < BODY; P < DIV#sutta < BODY
+52 thanissaro sn22.83:4.3: 0 paragraph matches; 
+53 thanissaro sn22.84:8.6: 0 paragraph matches; 
+54 thanissaro sn22.84:8.11: 0 paragraph matches; 
+55 thanissaro sn22.85:7.3: 5 paragraph matches; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY
+56 thanissaro sn22.85:7.8: 5 paragraph matches; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY
+57 thanissaro sn22.97:6.3: 2 paragraph matches; P < DIV#sutta < BODY; P < DIV#sutta < BODY
+58 thanissaro sn35.117:6.2: 1 paragraph matches; P < DIV#sutta < BODY
+59 thanissaro sn35.243:6.8: 1 paragraph matches; P < DIV#sutta < BODY
+60 thanissaro sn35.82:2.8: 2 paragraph matches; P < DIV#sutta < BODY; P < DIV#sutta < BODY
+61 thanissaro sn35.88:3.6: 2 paragraph matches; P < DIV#sutta < BODY; P < DIV#sutta < BODY
+62 thanissaro sn35.93:2.1: 1 paragraph matches; P < DIV#sutta < BODY
+63 thanissaro sn38.10:1.1: 1 paragraph matches; P < DIV#sutta < BODY
+64 thanissaro sn38.11:1.1: 1 paragraph matches; P < DIV#sutta < BODY
+65 thanissaro sn38.12:1.1: 1 paragraph matches; P < DIV#sutta < BODY
+66 thanissaro sn38.13:1.1: 1 paragraph matches; P < DIV#sutta < BODY
+67 thanissaro sn38.14:1.1: 1 paragraph matches; P < DIV#sutta < BODY
+68 thanissaro sn38.15:1.1: 1 paragraph matches; P < DIV#sutta < BODY
+69 thanissaro sn38.2:1.1: 1 paragraph matches; P < DIV#sutta < BODY
+70 thanissaro sn38.4:1.1: 1 paragraph matches; P < DIV#sutta < BODY
+71 thanissaro sn38.5:1.1: 1 paragraph matches; P < DIV#sutta < BODY
+72 thanissaro sn38.6:1.1: 1 paragraph matches; P < DIV#sutta < BODY
+73 thanissaro sn38.7:1.1: 1 paragraph matches; P < DIV#sutta < BODY
+74 thanissaro sn38.8:1.1: 1 paragraph matches; P < DIV#sutta < BODY
+75 thanissaro sn38.9:1.1: 1 paragraph matches; P < DIV#sutta < BODY
+76 thanissaro sn4.24:10.4: 0 paragraph matches; 
+77 thanissaro sn42.10:3.5: 1 paragraph matches; P < DIV#sutta < BODY
+78 thanissaro sn44.4:1.2: 1 paragraph matches; P < DIV#sutta < BODY
+79 thanissaro sn44.5:1.2: 1 paragraph matches; P < DIV#sutta < BODY
+80 thanissaro sn45.8:1.1: 1 paragraph matches; P < DIV#sutta < BODY
+81 thanissaro sn46.53:1.2: 1 paragraph matches; P < DIV#sutta < BODY
+82 thanissaro sn47.42:1.1: 1 paragraph matches; P < DIV#sutta < BODY
+83 thanissaro sn48.44:1.4: 1 paragraph matches; P < DIV#sutta < BODY
+84 thanissaro sn51.14:5.4: 1 paragraph matches; P < DIV#sutta < BODY
+85 thanissaro sn51.14:5.17: 6 paragraph matches; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY
+86 thanissaro sn55.22:2.5: 1 paragraph matches; P < DIV#sutta < BODY
+87 thanissaro sn55.23:2.3: 2 paragraph matches; P < DIV#sutta < BODY; P < DIV#sutta < BODY
+88 thanissaro sn55.30:2.3: 1 paragraph matches; P < DIV#sutta < BODY
+89 thanissaro sn55.7:11.1: 3 paragraph matches; P < DIV#sutta < BODY; P < DIV#sutta < BODY; P < DIV#sutta < BODY
+90 bodhi an5.57:1.7: 1 paragraph matches; P < ARTICLE#an5.57 < BODY
+91 bodhi dn15:34.4: 1 paragraph matches; P < ARTICLE#dn15 < BODY
+92 bodhi dn1:1.14.2: 0 paragraph matches; 
+93 bodhi dn2:49.2: 0 paragraph matches; 
+94 bodhi mn64:15.4: 2 paragraph matches; P < ARTICLE#mn64 < BODY; P < ARTICLE#mn64 < BODY
+95 bodhi mn75:20.1: 3 paragraph matches; P < ARTICLE#mn75 < BODY; P < ARTICLE#mn75 < BODY; P < ARTICLE#mn75 < BODY
+96 bodhi mn82:9.1: 2 paragraph matches; P < ARTICLE#mn82 < BODY; P < ARTICLE#mn82 < BODY
+97 bodhi mn8:14.4: 1 paragraph matches; P < ARTICLE#mn8 < BODY
+98 bodhi mn8:15.3: 1 paragraph matches; P < ARTICLE#mn8 < BODY
+99 bodhi mn8:16.47: 3 paragraph matches; P < ARTICLE#mn8 < BODY; P < ARTICLE#mn8 < BODY; P < ARTICLE#mn8 < BODY
+100 bodhi sn35.243:6.8: 1 paragraph matches; P < ARTICLE#sn35.243 < BODY
+101 bodhi sn35.52:1.1: 1 paragraph matches; P < ARTICLE#sn35.52 < BODY
+102 bodhi sn36.8:6.9: 3 paragraph matches; P < ARTICLE#sn36.8 < BODY; P < ARTICLE#sn36.8 < BODY; P < ARTICLE#sn36.8 < BODY
+103 bodhi sn46.2:9.3: 7 paragraph matches; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY
+104 bodhi sn46.2:10.3: 7 paragraph matches; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY
+105 bodhi sn46.2:11.3: 7 paragraph matches; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY
+106 bodhi sn46.2:12.3: 7 paragraph matches; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY
+107 bodhi sn46.2:13.3: 7 paragraph matches; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY
+108 bodhi sn46.2:14.3: 7 paragraph matches; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY
+109 bodhi sn46.2:15.3: 7 paragraph matches; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY; P < ARTICLE#sn46.2 < BODY
+110 bodhi sn46.51:6.3: 9 paragraph matches; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY
+111 bodhi sn46.51:7.3: 9 paragraph matches; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY
+112 bodhi sn46.51:8.3: 9 paragraph matches; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY
+113 bodhi sn46.51:9.3: 9 paragraph matches; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY
+114 bodhi sn46.51:10.3: 9 paragraph matches; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY
+115 bodhi sn46.51:11.3: 9 paragraph matches; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY
+116 bodhi sn46.51:12.3: 9 paragraph matches; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY
+117 bodhi sn46.51:18.3: 7 paragraph matches; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY
+118 bodhi sn46.51:19.3: 7 paragraph matches; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY
+119 bodhi sn46.51:20.3: 7 paragraph matches; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY
+120 bodhi sn46.51:21.3: 7 paragraph matches; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY
+121 bodhi sn46.51:22.3: 7 paragraph matches; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY
+122 bodhi sn46.51:23.3: 7 paragraph matches; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY
+123 bodhi sn46.51:24.3: 7 paragraph matches; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY; P < ARTICLE#sn46.51 < BODY
+124 bodhi sn47.12:1.3: 3 paragraph matches; P < ARTICLE#sn47.12 < BODY; P < ARTICLE#sn47.12 < BODY; P < ARTICLE#sn47.12 < BODY
+125 bodhi sn47.12:1.6: 3 paragraph matches; P < ARTICLE#sn47.12 < BODY; P < ARTICLE#sn47.12 < BODY; P < ARTICLE#sn47.12 < BODY
+126 bodhi sn47.12:5.3: 3 paragraph matches; P < ARTICLE#sn47.12 < BODY; P < ARTICLE#sn47.12 < BODY; P < ARTICLE#sn47.12 < BODY

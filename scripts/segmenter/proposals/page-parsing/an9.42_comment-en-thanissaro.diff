@@ -1,0 +1,11 @@
+--- a/data/thanissaro/notes/an/an9/an9.42_comment-en-thanissaro.json
++++ b/data/thanissaro/notes/an/an9/an9.42_comment-en-thanissaro.json
+@@ -1,7 +1,7 @@
+ {
+   "an9.42:0.1": "",
+   "an9.42:0.2": "",
+-  "an9.42:0.3": "<p>See also: <a href='https://suttacentral.net/mn121'>MN 121</a>; <a href='https://suttacentral.net/an9.34'>AN 9:34</a></p>",
++  "an9.42:0.3": "<p>See also: <a href='https://suttacentral.net/mn121'>MN 121</a>; <a href='https://suttacentral.net/an9.34'>AN 9:34</a></p><p>Note: The following three discourses show that, contrary to a popular misconception, the phrase, “Released through discernment” does not refer to a person who has attained release without experience of the jhānas. Instead, it refers to a person who has attained at least the first jhāna but does not experience any of the psychic powers that sometimes can be accessed through jhāna.</p>",
+   "an9.42:1.1": "",
+   "an9.42:1.2": "",
+   "an9.42:1.3": "",

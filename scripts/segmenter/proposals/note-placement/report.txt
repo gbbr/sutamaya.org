@@ -1,0 +1,47 @@
+Note placement — finished, 2026-10-03
+
+Bodhi, hand answers withheld: 81/81 distinct moved notes land whole on the
+hand-selected first Pali row (82/82 candidates include one duplicate).
+All 23 notes left alone and all 18 ordinary-translation controls are unchanged.
+123 judgments; zero broken source streams. No Thanissaro hand-review cohort
+exists, so no inference match rate is claimed for him.
+
+The production parser/aligner/placement are measured with all 208 hand-answer
+cut keys restored to pre-review values; the placement guard gets no decisions.
+Earlier prose/verse cuts and learned vocabulary provide context. Gold targets
+score only completed predictions, requiring the whole source span on one row;
+controls compare row text. The rule was refined against this cohort, so these
+figures show agreement with settled reviews, not unseen-text accuracy.
+
+Source editorial spans/directions identify passage substitutes, including their
+page references and ellipses. Placement starts after the preceding printed text,
+skipping Pali tails already translated there. Inline clause/list abbreviations,
+notes attached to printed text and ambiguous earlier ellipses keep their place.
+Settled cuts win. No sutta IDs or gold targets enter the production rule.
+
+Plain runs exactly reproduce all 1167 Bodhi and 2677 Thanissaro sutta/notes files,
+also matching the current shared data: zero differences or unwritten texts.
+Both upstream checks: zero word differences (1158/1430 pages). Both integrity
+checks: zero problems. npm test: 122 files, 1730 tests passed, including 15 new
+actual-CLI note tests and 10 verse tests. No test processes remain; nothing else
+was stopped. Environment-only Vite/cache/build-data changes are excluded.
+
+Patch: scripts/segmenter/proposals/note-placement/note-placement.patch
+Changes: segmenter, real CLI tests, short README rule, completed task removed.
+The shared README changed since the verse proposal: apply the accompanying
+verse-layout-current.patch first, then note-placement.patch. The compatible
+verse base has identical source/tests and preserves the other sessions' README
+updates. Both apply to current files and produce the tested files exactly.
+No shared implementation/data changes, no commits.
+
+New-sutta readers settle ambiguous text/note overlaps or earlier ellipses;
+verse still leaves unequal-count grouping/gaps, cross-verse ownership and
+cases without usable source breaks. Ordinary cut/read-through checks continue.
+
+Resume/reproduce: isolated copy /private/tmp/sutamaya-note-placement-6u13htcx,
+node_modules linked; baseline/ has pre-review context, reviewed/ final outputs,
+prototype/ logs. If lost, make a fresh isolated copy of the reviewed repository,
+link dependencies, copy this folder and apply both patches in order. Run:
+node scripts/segmenter/proposals/note-placement/measure-notes.mjs bodhi
+withheld-cuts.json excludes this review's answers; measurement.json holds
+per-candidate scores and summary.json the figures and source/patch hashes.

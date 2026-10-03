@@ -1,0 +1,11 @@
+--- a/data/thanissaro/sutta/sn/sn1/sn1.8_translation-en-thanissaro.json
++++ b/data/thanissaro/sutta/sn/sn1/sn1.8_translation-en-thanissaro.json
+@@ -3,7 +3,7 @@
+   "sn1.8:0.2": "",
+   "sn1.8:0.3": "Thoroughly Confused ",
+   "sn1.8:1.1": "",
+-  "sn1.8:1.2": "Like the similar sutta SN 1:7, this sutta offers evidence in support of the translation, “awakened” for the Pali term, Buddha. The verses draw a direct connection between two words derived from the same root: the adjective sambuddha, a variant of buddha, and the verb pābujjhati, which in context clearly means to awaken from sleep. Standing to one side, a devatā addressed the Blessed One with a verse: ",
++  "sn1.8:1.2": "Standing to one side, a devatā addressed the Blessed One with a verse: ",
+   "sn1.8:2.1": "“Those for whom\nphenomena are thoroughly confused, ",
+   "sn1.8:2.2": "who may be led\nby the teachings of others: ",
+   "sn1.8:2.3": "Asleep are they;\nthey haven’t awakened. ",

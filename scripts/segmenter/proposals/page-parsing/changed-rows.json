@@ -1,0 +1,58 @@
+{
+  "data/thanissaro/sutta/an/an3/an3.47_translation-en-thanissaro.json": [
+    "an3.47:2.4"
+  ],
+  "data/thanissaro/sutta/an/an8/an8.54_translation-en-thanissaro.json": [
+    "an8.54:5.5"
+  ],
+  "data/thanissaro/sutta/an/an9/an9.42_translation-en-thanissaro.json": [
+    "an9.42:12.2"
+  ],
+  "data/thanissaro/sutta/kn/ud/vagga7/ud7.8_translation-en-thanissaro.json": [
+    "ud7.8:4.6"
+  ],
+  "data/thanissaro/sutta/sn/sn1/sn1.8_translation-en-thanissaro.json": [
+    "sn1.8:1.2"
+  ],
+  "data/thanissaro/sutta/sn/sn20/sn20.7_translation-en-thanissaro.json": [
+    "sn20.7:1.6"
+  ],
+  "data/thanissaro/sutta/sn/sn35/sn35.82_translation-en-thanissaro.json": [
+    "sn35.82:2.8",
+    "sn35.82:2.9"
+  ],
+  "data/thanissaro/sutta/sn/sn47/sn47.8_translation-en-thanissaro.json": [
+    "sn47.8:3.5"
+  ],
+  "data/thanissaro/sutta/sn/sn48/sn48.8_translation-en-thanissaro.json": [
+    "sn48.8:1.18"
+  ],
+  "data/thanissaro/notes/an/an3/an3.47_comment-en-thanissaro.json": [
+    "an3.47:0.3"
+  ],
+  "data/thanissaro/notes/an/an8/an8.54_comment-en-thanissaro.json": [
+    "an8.54:5.5"
+  ],
+  "data/thanissaro/notes/an/an9/an9.42_comment-en-thanissaro.json": [
+    "an9.42:0.3"
+  ],
+  "data/thanissaro/notes/kn/ud/vagga7/ud7.8_comment-en-thanissaro.json": [
+    "ud7.8:4.4"
+  ],
+  "data/thanissaro/notes/sn/sn1/sn1.8_comment-en-thanissaro.json": [
+    "sn1.8:0.3"
+  ],
+  "data/thanissaro/notes/sn/sn20/sn20.7_comment-en-thanissaro.json": [
+    "sn20.7:1.4"
+  ],
+  "data/thanissaro/notes/sn/sn35/sn35.82_comment-en-thanissaro.json": [
+    "sn35.82:0.3",
+    "sn35.82:2.9"
+  ],
+  "data/thanissaro/notes/sn/sn47/sn47.8_comment-en-thanissaro.json": [
+    "sn47.8:3.5"
+  ],
+  "data/thanissaro/notes/sn/sn48/sn48.8_comment-en-thanissaro.json": [
+    "sn48.8:0.3"
+  ]
+}

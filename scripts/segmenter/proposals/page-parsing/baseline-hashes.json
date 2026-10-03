@@ -1,0 +1,5 @@
+{
+  "scripts/segmenter/segment-translations.mjs": "c09988d1118e121a93586debac3a3ded4ae7e591e4070108370826eb076a356e",
+  "scripts/segmenter/check-upstream.py": "f3f6bb3e3e87275c44f1222debc756bfc22ffb01fb1ad18254d2aaefb3d0d401",
+  "scripts/segmenter/check-integrity.py": "2375ec59009239b41cbd36cdd4645dac1c9cfb09a626854013b4265783300f08"
+}

@@ -1,0 +1,11 @@
+--- a/data/thanissaro/sutta/sn/sn48/sn48.8_translation-en-thanissaro.json
++++ b/data/thanissaro/sutta/sn/sn48/sn48.8_translation-en-thanissaro.json
+@@ -19,7 +19,7 @@
+   "sn48.8:1.15": "Here the faculty of concentration is to be seen. ",
+   "sn48.8:1.16": "“And where is the faculty of discernment to be seen? ",
+   "sn48.8:1.17": "In the four noble truths: ",
+-  "sn48.8:1.18": "Here the faculty of discernment is to be seen.” See also SN 45:8 and SN 56:11. ",
++  "sn48.8:1.18": "Here the faculty of discernment is to be seen.” ",
+   "sn48.8:1.19": "",
+   "sn48.8:1.20": ""
+ }

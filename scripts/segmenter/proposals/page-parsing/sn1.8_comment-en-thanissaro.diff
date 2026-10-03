@@ -1,0 +1,11 @@
+--- a/data/thanissaro/notes/sn/sn1/sn1.8_comment-en-thanissaro.json
++++ b/data/thanissaro/notes/sn/sn1/sn1.8_comment-en-thanissaro.json
+@@ -1,7 +1,7 @@
+ {
+   "sn1.8:0.1": "",
+   "sn1.8:0.2": "",
+-  "sn1.8:0.3": "<p>See also: <a href='https://suttacentral.net/mn41'>MN 41</a>; <a href='https://suttacentral.net/mn61'>MN 61</a>; <a href='https://suttacentral.net/mn97'>MN 97</a>; <a href='https://suttacentral.net/an6.55'>AN 6:55</a>; <a href='https://suttacentral.net/an6.63'>AN 6:63</a></p>",
++  "sn1.8:0.3": "<p><i>Like the similar sutta <a href='https://suttacentral.net/sn1.7'>SN 1:7</a>, this sutta offers evidence in support of the translation, “awakened” for the Pali term,</i> Buddha. <i>The verses draw a direct connection between two words derived from the same root: the adjective</i> sambuddha, <i>a variant of</i> buddha, <i>and the verb</i> pābujjhati, <i>which in context clearly means to awaken from sleep.</i></p><p>See also: <a href='https://suttacentral.net/mn41'>MN 41</a>; <a href='https://suttacentral.net/mn61'>MN 61</a>; <a href='https://suttacentral.net/mn97'>MN 97</a>; <a href='https://suttacentral.net/an6.55'>AN 6:55</a>; <a href='https://suttacentral.net/an6.63'>AN 6:63</a></p>",
+   "sn1.8:1.1": "",
+   "sn1.8:1.2": "",
+   "sn1.8:2.1": "",

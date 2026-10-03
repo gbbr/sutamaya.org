@@ -1,0 +1,19 @@
+--- a/data/thanissaro/notes/sn/sn35/sn35.82_comment-en-thanissaro.json
++++ b/data/thanissaro/notes/sn/sn35/sn35.82_comment-en-thanissaro.json
+@@ -1,7 +1,7 @@
+ {
+   "sn35.82:0.1": "",
+   "sn35.82:0.2": "",
+-  "sn35.82:0.3": "<p>See also: <a href='https://suttacentral.net/dn11'>DN 11</a>; <a href='https://suttacentral.net/mn82'>MN 82</a>; <a href='https://suttacentral.net/sn12.48'>SN 12:48</a>; <a href='https://suttacentral.net/an4.45'>AN 4:45</a>; <a href='https://suttacentral.net/an10.95'>AN 10:95</a></p>",
++  "sn35.82:0.3": "<p><i>[Because the word</i> loka<i> can also mean ‘cosmos,’ this discourse can also be translated as follows:]</i> Then a certain monk went to the Blessed One and, on arrival, having bowed down to him, sat to one side. As he was sitting there, he said to the Blessed One: “‘The cosmos, the cosmos <i>[loka],’</i> it is said. In what respect does the word ‘cosmos’ apply?” “Insofar as it disintegrates <i>[lujjati],</i> monk, it is called the ‘cosmos.’ Now what disintegrates? The eye disintegrates. Forms disintegrate. Eye-consciousness disintegrates. Eye-contact disintegrates. And whatever there is that arises in dependence on eye-contact—experienced as pleasure, pain or neither-pleasure-nor-pain—that too disintegrates. “The ear disintegrates. Sounds disintegrate… “The nose disintegrates. Aromas disintegrate… “The tongue disintegrates. Tastes disintegrate… “The body disintegrates. Tactile sensations disintegrate… “The intellect disintegrates. Ideas disintegrate. Intellect-consciousness disintegrates. Intellect-contact disintegrates. And whatever there is that arises in dependence on intellect-contact—experienced as pleasure, pain or neither-pleasure-nor-pain—that too disintegrates. “Insofar as it disintegrates, it is called the ‘cosmos.’”</p><p>See also: <a href='https://suttacentral.net/dn11'>DN 11</a>; <a href='https://suttacentral.net/mn82'>MN 82</a>; <a href='https://suttacentral.net/sn12.48'>SN 12:48</a>; <a href='https://suttacentral.net/an4.45'>AN 4:45</a>; <a href='https://suttacentral.net/an10.95'>AN 10:95</a></p><p>For alternative definition of “world/cosmos,” see <a href='https://suttacentral.net/an9.38'>AN 9:38</a>.</p>",
+   "sn35.82:1.1": "",
+   "sn35.82:2.1": "",
+   "sn35.82:2.2": "",
+@@ -11,6 +11,6 @@
+   "sn35.82:2.6": "",
+   "sn35.82:2.7": "",
+   "sn35.82:2.8": "",
+-  "sn35.82:2.9": "For alternative definition of “world/cosmos,” see <a href='https://suttacentral.net/an9.38'>AN 9:38</a>.",
++  "sn35.82:2.9": "",
+   "sn35.82:2.10": ""
+ }

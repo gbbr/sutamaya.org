@@ -1,0 +1,16 @@
+{
+  "root": "/private/tmp/sutamaya-page-parsing-reproduction-3012d6lh",
+  "corpusFilesCompared": 3844,
+  "corpusDifferences": [],
+  "artifactsCompared": [
+    "data/thanissaro/cuts.json",
+    "data/thanissaro/covered.json",
+    "data/thanissaro/learned.json",
+    "data/thanissaro/report.json",
+    "data/bodhi/cuts.json",
+    "data/bodhi/covered.json",
+    "data/bodhi/learned.json",
+    "data/bodhi/report.json"
+  ],
+  "artifactDifferences": []
+}

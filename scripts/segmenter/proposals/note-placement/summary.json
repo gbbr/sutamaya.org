@@ -1,0 +1,77 @@
+{
+  "translator": "bodhi",
+  "candidates": 123,
+  "withheldAnswerKeys": 208,
+  "movedCandidates": {
+    "total": 82,
+    "exact": 82
+  },
+  "distinctMovedNotes": {
+    "total": 81,
+    "exact": 81
+  },
+  "notesLeftAlone": {
+    "total": 23,
+    "unchanged": 23
+  },
+  "ordinaryTranslationControls": {
+    "total": 18,
+    "unchanged": 18
+  },
+  "brokenStreams": 0,
+  "reproduction": {
+    "bodhi": {
+      "files": 1167,
+      "changed": [],
+      "missingOrExtra": []
+    },
+    "thanissaro": {
+      "files": 2677,
+      "changed": [],
+      "missingOrExtra": []
+    }
+  },
+  "tests": {
+    "files": 122,
+    "tests": 1730,
+    "newNoteTests": 15,
+    "verseTests": 10,
+    "passed": true
+  },
+  "checks": {
+    "bodhi": {
+      "upstreamPagesMatched": 1158,
+      "wordDifferences": 0,
+      "integrityProblems": 0
+    },
+    "thanissaro": {
+      "upstreamPagesMatched": 1430,
+      "wordDifferences": 0,
+      "integrityProblems": 0
+    }
+  },
+  "snapshot": {
+    "branch": "translations",
+    "head": "48365764149e11701ae769d61b87ec834fa2aba1",
+    "isolatedCopy": "/private/tmp/sutamaya-note-placement-6u13htcx"
+  },
+  "patchSha256": {
+    "verse-layout-current.patch": "064f1cb304da908138005283da88713ca32514b656b970dbd408453f68a020bc",
+    "note-placement.patch": "babda38866a8ac6b3406bf03dceffed295e57abfdcc13425e8b7ab86b99fea80"
+  },
+  "sourceSha256": {
+    "scripts/segmenter/segment-translations.mjs": {
+      "after": "682ad97222f96a37452ddb748eaf596aabd7085f775b802b0b653aa9fde8e9be",
+      "before": "f884666e812cfb4de522cd40a8e22406a6357c02ddaf7f6287b0394ff2b9d396"
+    },
+    "scripts/segmenter/__tests__/note-placement.test.js": {
+      "after": "97fceccd8bed25d73c3bfe9f45a8e374e83044202fa9311978bcea4545c71a87",
+      "before": null
+    },
+    "data/upstream/README.md": {
+      "after": "befe0f24a59e3eec4a527f0800f348f75fd8368fd32632d75fb2467887640e09",
+      "before": "bd350ca0ba4bfb2535ccfa89b630386593bda31d4761fe7e7d481b380095dc9a"
+    }
+  },
+  "measurementMethod": "Production parser/aligner/placement, with all 208 hand-answer cut keys restored to pre-review values; placement guard receives no decisions. Existing prose/verse context retained. Gold targets used only after prediction. 183 changing cut directives and 25 no-op keys withheld."
+}
