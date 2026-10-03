@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-03",
+  "baselineCommit": "2bfb89b251ece81c1edf5997ac0f7907586bd788",
+  "status": "complete; mechanically validated inventory, no semantic review",
+  "authorizedScope": "Inventory only: targeted SN/AN/KN verse, recovered candidates and recorded problems; complete-scope evidence gaps; no new semantic reads, alignment changes, pilot or commits.",
+  "stages": {
+    "discoverEvidence": "complete",
+    "scanCorpus": "complete",
+    "reconcileCandidates": "complete",
+    "deduplicateQueue": "complete",
+    "validateInventory": "complete"
+  },
+  "resume": "Run node scripts/segmenter/inventory-pali-review.mjs. Matching document checkpoints are reused; final outputs are rebuilt from them.",
+  "limitations": [
+    "A current cut matching an old proposal is not proof of semantic correctness.",
+    "Local Pali judgments are not full-text reads.",
+    "Fresh audits are future work; their rows are not selected yet."
+  ],
+  "lastCompletedDocument": "thanissaro/sn9.9",
+  "completedDocuments": 2617,
+  "checkpointDirectory": "data/upstream/pali-review-inventory/documents/"
+}

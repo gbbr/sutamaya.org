@@ -1,0 +1,17 @@
+{
+  "baselineCommit": "2bfb89b251ece81c1edf5997ac0f7907586bd788",
+  "status": "passed",
+  "missingCheckpoint": "bodhi/an10.10",
+  "reusedCheckpoints": 2616,
+  "rebuiltCheckpoints": 1,
+  "restoredCheckpointBytesMatch": true,
+  "identicalReportHashes": {
+    "inputs.json": "4e649b2d10c072b4ac7aa2180acbe33feb7358c2b2f60aade01b8c2e84fce901",
+    "coverage-ledger.json": "e9383a228ee60d421c616fdcf9cea9018a8625287d26b9fbf00dc09a88d9df17",
+    "queue.json": "343e7afc1e3a9ee2dec41853d5f6094cead94c2657fc8e282450d778c5c6c0ab",
+    "candidates.json": "8e77ee26ddcb186475d5947bc1da337c83b488b5552def1c57ddf76cb192c9c4",
+    "passages.tsv": "e307667071c7e4a27812117ef9ed76c495d0ec47e6f25b1085ec935519be3d5b",
+    "validation.json": "4452104d8f2b05c34ac5ed20e2fec5b028cbb80896e973ae53fc7f169ffc5e20"
+  },
+  "scope": "Inventory resume and deterministic reports only; no alignment or semantic-review claim."
+}

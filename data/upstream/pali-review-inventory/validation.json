@@ -1,0 +1,12 @@
+{
+  "baselineCommit": "2bfb89b251ece81c1edf5997ac0f7907586bd788",
+  "status": "passed; mechanical inventory checks only",
+  "checkedDocuments": 2617,
+  "checkedInputHashes": 9660,
+  "checkedTargetRows": 17725,
+  "checkedKnownCoverageRows": 1408,
+  "verseRowsVerifiedAgainstExistingClassifier": 18687,
+  "recoveredCandidates": 403,
+  "candidatesWithLaterPaliEvidence": 78,
+  "pendingCandidates": 325
+}
