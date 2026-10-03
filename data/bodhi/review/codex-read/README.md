@@ -17,7 +17,6 @@ fresh audit repairs. The row count includes both vacated and filled keys; it is 
 independent mistakes. `../audit5/` holds that audit's frozen inputs, findings and result.
 
 `followup-rounds.json` records cross/list judgments; `source-ranges.json` preserves source-mapping
-work and limitations. The consolidated state and validation are in
-[`data/upstream/codex-sn-an-kn-review.json`](../../../upstream/codex-sn-an-kn-review.json).
-Earlier hand proposals superseded by reviewed corrections stay visible as comments. The app
-implementation and MN/DN translations are outside this integration. The finished integration has the user’s specific commit approval.
+work and limitations. Earlier hand proposals superseded by reviewed corrections stay visible as
+comments. Verse lines this import merged into the line above are spread again by
+`../hand/verse-positional.findings`, the upstream README's rule for verse.

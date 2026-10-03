@@ -158,8 +158,10 @@ A line's T should say what its S says. Report only what is clearly misplaced:
 These are not errors, so leave them out: different wording, or a different order of words within
 a line; a line the translator leaves out or shortens; several of Sujato's lines given as one
 sentence that sits on the first of them, with (none) on the others; a heading or a number the
-translator adds at the start of a line. But a list whose items are parted by ellipses is not one
-sentence: each item that renders its own Pali line belongs on it.
+translator adds at the start of a line; a verse whose lines the translator orders his own way,
+spread over its Pali lines in order, so that a line holds words of another line of the same verse
+(leave his lines spread; never merge them onto one line). But a list whose items are parted by
+ellipses is not one sentence: each item that renders its own Pali line belongs on it.
 
 A line's text runs from its first words to the first words of the next line that has text, so
 every fix says where a line should start. Write one line for each line to change:
@@ -285,9 +287,11 @@ translation belongs on the one whose words it renders, not the later one by defa
 meaning, not wording. These are not
 errors: different wording, or a different order of words within a line; a line the translator
 leaves out or shortens; several of Sujato's lines given as one sentence that sits on the first of
-them, with (none) on the others; a heading or a number the translator adds at the start of a line.
-But a list whose items are parted by ellipses is not one sentence: each item that renders its own
-Pali line belongs on it.
+them, with (none) on the others; a heading or a number the translator adds at the start of a line;
+a verse whose lines the translator orders his own way, spread over its Pali lines in order, so that
+a line holds words of another line of the same verse (leave his lines spread; never merge them onto
+one line). But a list whose items are parted by ellipses is not one sentence: each item that
+renders its own Pali line belongs on it.
 
 Read all of the file, in two or three parts, then save your fixes with the Write tool as
 <answers path>, one per line and nothing else. Be token-efficient: use only the Read and Write
@@ -325,8 +329,9 @@ a line; a line the translator leaves out or shortens, or abbreviates with an ell
 of the translator's that renders several Pali lines together and cannot be divided at a point that
 matches them, sitting on the first of them, with (none) on the others; a heading or a number the
 translator adds at the start of a line; a passage the translator himself moves to another place in
-the text. But separate sentences, or separate items of a list, that each render their own Pali
-line belong on those lines.
+the text; a verse whose lines the translator orders his own way, spread over its Pali lines in
+order (leave his lines spread; never merge them onto one line). But separate sentences, or
+separate items of a list, that each render their own Pali line belong on those lines.
 
 A line's text runs from its first words to the first words of the next line that has text, so
 every fix says where a line should start. Write one line for each line to change:

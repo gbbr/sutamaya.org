@@ -6,16 +6,26 @@ Bhikkhu's. This folder keeps them as their sources publish them. The segmenter,
 `data/sujato/`'s layout, and writes them to `data/bodhi/` and `data/thanissaro/`, where reviews
 settle the cuts it is unsure of.
 
-## Work paused
+## What's left
 
-Start with [the alignment handoff](HANDOFF.md) when resuming. It records completed work,
-remaining tasks and repository archives, and defines the direct-Pali review standard, explicit
-correspondence, idempotent processing, reviewer effort and the planned incoming-sutta workflow.
-Higher-effort work needs a scoped proposal with expected usage and Gabriel's go-ahead before it
-starts. Use the saved inventory to establish remaining scope before the usage and correspondence
-pilot. The process below is the legacy workflow awaiting a tested replacement; follow the handoff's
-quality requirements when resuming. Finalize the operational instructions from the completed corpus
-learning. The app notes below are unchanged.
+1. **Skipped lines**: each translation's `skipped.json`, the lines below its English that it
+   abbreviates or leaves out (see "Building them into the app"). A passage rendered earlier than
+   its Pali, as in Bodhi's SN 4.25, 12.68 and 22.80 and Ṭhānissaro's SN 22.58, is skipped where it
+   stands.
+2. **Verse**: in SN, AN and KN, each verse's English sits in its own verse, in order, spread over
+   its Pali lines as far as the translator's line breaks allow (see "Building them into the app").
+   `scripts/segmenter/review-pali.py packet` writes texts with the Pali on every row for the
+   readers.
+3. **Source mapping**: Bodhi's SN 45 pages repeat one body under two numbers in eight pairs (45.42–47
+   and 48, through 45.92–95 and 96), so which app text holds it is open
+   (`data/bodhi/review/codex-read/source-ranges.json`). Ṭhānissaro's older AN 5.254–271 copies
+   number the suttas the Thai way, as AN 5.254, 255, 256, 257–263, 264 and 265–271
+   (`data/thanissaro/review/codex-read/source-ranges.json`).
+4. **A fresh audit**, drawn as `review/audit5/draw.py` draws, with a new seed.
+5. **New and revised texts**: each rule settled here goes into "Pulling updates" and "Reviewing new
+   and revised texts" as it's settled, so a new or revised sutta from either translator is
+   imported and aligned in the fewest steps that keep it right. The segmenter applies whatever a
+   rule can decide, and readers judge only what it can't.
 
 ## What's here
 
@@ -128,6 +138,7 @@ in `data/sujato/`'s layout:
 | `cuts.json` | what the reviews settled, by line, kept across runs |
 | `learned.json` | the translator's words learned for Sujato's |
 | `report.json` | each text's alignment and how sure it is |
+| `skipped.json` | the lines below an English line that the translation abbreviates or leaves out |
 | `review/` | the review rounds, the read-throughs, the audits and the list of references |
 
 - **The words are only cut**: a text whose lines, joined, aren't word for word its page is reported
@@ -217,34 +228,18 @@ Once segmenting is done, the app's build takes these translations in. What it mu
   by sutta rather than file by file (see "Segmenting").
 - Credit each text's source and keep its terms (see "Licences"): Bodhi's Wisdom texts are shown
   unchanged, and none of these is sold. The editorial rules over Sujato's English never apply.
-- Lines pair with the Pali, not one to one with Sujato's: a sentence spanning several Pali lines
-  sits on the first and leaves the rest empty, so a stanza's text starts on its first line even
-  where the translator orders its lines his own way, and a line Sujato leaves empty can hold text.
-- Discuss with Gabriel, an open question for the app rather than the segmenting: which Pali shows
-  under a line whose English covers the empty lines below it. The rule for Sujato's lines
-  ([docs/corpus.md](../../docs/corpus.md)'s "A segment") joins only a lone empty line to the line
-  above and hides a longer run's Pali, for all three translations alike. Most such runs are
-  passages the translator abbreviates with "…", whose Pali would stand under a line that doesn't
-  translate it; some are a sentence or list given whole on its first line, Sujato's condensed
-  lists among them, whose Pali the rule hides though the line translates it. Empty English and
-  ellipses alone cannot distinguish these cases. The app needs the reviewed correspondence:
-  which Pali lines a translated group covers, and which passages are abbreviated or omitted.
-  Whatever the rule, the paragraphs and stanzas it joins within come from the Pali's markup
-  (`data/html`): the line keys make each of the Dhammapada's verse lines a paragraph of its own.
-
-  The current omission rule also hides what the translator leaves out: the rest of a sutta he gives in
-  excerpt (Ṭhānissaro's DN 21, DN 26, MN 54 and MN 91), framing lines such as the Itivuttaka's,
-  and Sujato's section headings.
-- Planned reveal work also accounts for passages a translator renders earlier in a compressed
-  exchange, and lists whose source text differs from this Pali edition. These need explicit
-  correspondence or a recorded source difference; joining every intervening empty line would
-  imply that the English translates unrelated Pali. Omitted Pali needs a distinct way to be
-  revealed if the reader wants it. Translation switching, links and highlights need to preserve
-  the underlying Pali location when a translated group covers several line keys. These are app
-  requirements recorded during alignment review; the app's behavior is unchanged.
-  The data preparation needs coverage records for the smallest coherent translated groups,
-  shared source passages and edition differences, with omissions distinguished from English
-  rendered elsewhere. The unresolved cases are in [the SN/AN/KN review record](codex-sn-an-kn-review.json).
+- Lines pair with the Pali, not one to one with Sujato's, and a line Sujato leaves empty can hold
+  text:
+  - **prose**: a sentence spanning several Pali lines sits on the first and leaves the rest empty;
+  - **verse**: the translator's lines are spread over the verse's Pali lines in order, at his own
+    line breaks, the way Sujato's are. A line needn't translate the Pali it sits on; the verse
+    must. The English never matches the Pali line for line, and the Pali's line keys never change.
+- An English line shows the Pali of its own line and of the empty lines below it, up to the next
+  English line in the same paragraph, leaving out those in `skipped.json`. Pali with no English
+  line above it in its paragraph shows under none, as with Sujato's lines; so does the rest of a
+  sutta given in excerpt (Ṭhānissaro's DN 21, DN 26, MN 54 and MN 91). The paragraphs come from the
+  Pali's markup (`data/html`), not the line keys, which make each of the Dhammapada's verse lines
+  a paragraph of its own.
 - The markup to render:
   - **text** (`sutta/`): a newline inside a line where one of the translator's verse lines starts,
     as throughout the Dhammapada (Sujato's lines never have one, so the Reader doesn't yet break
@@ -255,8 +250,8 @@ Once segmenting is done, the app's build takes these translations in. What it mu
   The links should open the sutta in the app instead.
 - The note on a sutta's title line, or on its first line where it has none, holds the translator's
   introduction and "See also". Bodhi has notes only for DN 1.
-- Only `sutta/` and `notes/` ship. `review/`, `cuts.json`, `learned.json` and `report.json` are
-  working files.
+- Only `sutta/`, `notes/` and `skipped.json` ship. `review/`, `cuts.json`, `learned.json` and
+  `report.json` are working files.
 
 ## Where to look
 
@@ -267,6 +262,6 @@ Once segmenting is done, the app's build takes these translations in. What it mu
 | The word-for-word check against the pages | `scripts/segmenter/check-upstream.py` |
 | The check of titles, headings, closing lines, notes and links | `scripts/segmenter/check-integrity.py` |
 | The audits | `data/<translator>/review/audit*/` |
-| The SN/AN/KN import, judgments and remaining correspondence work | [codex-sn-an-kn-review.json](codex-sn-an-kn-review.json) |
+| Review packets with the Pali on every row | `scripts/segmenter/review-pali.py` |
 | How a session answers a round, and the prompts | [review-rounds.md](review-rounds.md) |
 | The reader a read-through runs | `.claude/agents/line-reader.md` |

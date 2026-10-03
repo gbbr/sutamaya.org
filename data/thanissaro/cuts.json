@@ -109,7 +109,8 @@
  "dhp314:4": "erward.\nBetter that a good deed be done",
  "dhp321:2": "d is the one\nthey take into assemblies.",
  "dhp321:4": {
-  "empty": "up"
+  "after": "he tamed who endures\na false accusation",
+  "placed": true
  },
  "dhp331:4": "it at the ending of life is a blessing.",
  "dhp33:3": "d to guard,\nto hold in check:\nthe mind.",
@@ -629,7 +630,8 @@
  "iti109:12.5": "sed,\ntouch release now here,\nnow there.",
  "iti110:11.2": "hold life,\nis following no path at all,",
  "iti112:9.2": {
-  "empty": "up"
+  "after": "free\nfrom fear.\nHe is free\nof effluent,",
+  "placed": true
  },
  "iti112:13.4": " mature:\n‘In this world with its devas,",
  "iti17:3.2": "onk who’s a friend\nto admirable people\n–",
@@ -676,7 +678,8 @@
  "iti89:5.1": "ise, composed,\nincandescent with honor–",
  "iti89:5.3": "of heedlessness\nassaulted the Tathāgata",
  "iti89:7.2": {
-  "empty": "up"
+  "after": "ind,\ndisrespectful.\nWhoever might think",
+  "placed": true
  },
  "iti89:8.1": "ucceed,\nfor the mass of water is great.",
  "snp1.1:5.2": "eeing\nin states of becoming\nno essence,",
@@ -889,7 +892,8 @@
  "thag12.2:1.3": "I was born,\npoor, with next to no food.",
  "thag12.2:5.1": "tood still\nout of sympathy\njust\nfor me.",
  "thag13.1:11.4": {
-  "empty": "up"
+  "after": "t at peace.\nThere’s nothing to be done,",
+  "placed": true
  },
  "thag14.1:12.3": "y me;\nthe Awakened One’s bidding,\ndone;",
  "thag14.2:10.1": "etter,\nnot the status of those\nunaware.",
@@ -2457,7 +2461,8 @@
  "iti37:3.3": " what should inspire urgency,\nthe wise,",
  "iti37:3.4": "gency,\nthe wise,\nmasterful,\nardent monk",
  "iti39:3.2": {
-  "empty": "up"
+  "after": "n in sequence.”\nSee the two statements,",
+  "placed": true
  },
  "iti41:3.2": "e world\n–including its heavenly beings:",
  "iti42:3.4": "ound\nhave strayed\nfrom the bright root,",
@@ -4722,7 +4727,8 @@
  "thag11.1:5.2": ".\nWith clear waters &\nmassive boulders,",
  "thag12.1:4.2": " estranged.\nThe unvirtuous person gains",
  "thag13.1:7.3": {
-  "empty": "up"
+  "after": "celled in the world,\nthe One with Eyes,",
+  "placed": true
  },
  "thag14.2:5.1": "oth,\nnot seeing them\nfor what they are.",
  "thag14.2:9.3": "are\nor the lowliness of those who know,",
@@ -9113,7 +9119,8 @@
  "snp4.5:6.2": "e who isn’t inclined\ntoward either side",
  "snp4.7:3.3": "\nbut then resorts\nto sexual intercourse",
  "snp4.7:10.3": {
-  "empty": "up"
+  "after": " life\nunconcerned for sensual pleasures",
+  "placed": true
  },
  "snp4.8:3.2": " disputes in the midst of the assembly,",
  "snp4.8:4.4": "ents, he grieves—the inferior exponent.",
@@ -12575,7 +12582,8 @@
  },
  "iti72:3.3": "m sensuality,\n& the overcoming of forms",
  "iti72:3.4": {
-  "empty": "up"
+  "after": "s\n–ardent\nalways–\ntouching the stilling",
+  "placed": true
  },
  "iti74:5.6": {
   "after": "ness. They are principled & admirable by nature. However, their son or daughter",
@@ -14205,7 +14213,9 @@
   "placed": true
  },
  "iti111:10.6": {
-  "empty": "up"
+  "after": "-tranquility–\nis said to be continually",
+  "placed": true,
+  "own": true
  },
  "iti111:11.2": {
   "empty": "up"
@@ -14240,7 +14250,9 @@
   "own": true
  },
  "iti22:6.4": {
-  "empty": "up"
+  "after": ",\nthe wise reappear\nin a world of bliss",
+  "placed": true,
+  "own": true
  },
  "iti22:7.2": {
   "empty": "up"
@@ -14288,7 +14300,9 @@
   "placed": true
  },
  "iti39:3.3": {
-  "empty": "up"
+  "after": "e two statements,\ndeclared in sequence,",
+  "placed": true,
+  "own": true
  },
  "iti41:6.2": {
   "empty": "up"
@@ -14315,7 +14329,9 @@
   "empty": "up"
  },
  "iti60:4.4": {
-  "empty": "up"
+  "after": ",\nthe wise reappear\nin a world of bliss",
+  "placed": true,
+  "own": true
  },
  "iti60:5.2": {
   "empty": "up"
@@ -27125,10 +27141,13 @@
   "placed": true
  },
  "iti76:7.2": {
-  "empty": "up"
+  "after": "il people.\nA man who wraps rotting fish",
+  "placed": true
  },
  "iti76:8.2": {
-  "empty": "up"
+  "after": "s.\nBut a man who wraps powdered incense",
+  "placed": true,
+  "own": true
  },
  "iti76:8.3": {
   "after": " powdered incense\nin the leaf of a tree",
@@ -28610,7 +28629,8 @@
   "placed": true
  },
  "snp4.7:10.2": {
-  "empty": "up"
+  "after": "nmeshed\nin sensual pleasures,\nenvy him:",
+  "placed": true
  },
  "snp4.8:1.2": {
   "after": "is there purity’\n—that’s what they say—",
@@ -36370,7 +36390,8 @@
   "placed": true
  },
  "sn12.31:9.4": {
-  "empty": "up"
+  "after": "ement in Ajita’s Question in the Way to the Further Shore:\n‘Those here who have fathomed the Dhamma,\nthose who are learners,\nthose who are run-of-the-mill:\nWhen you, dear sir, astute,\nare asked this,",
+  "placed": true
  },
  "sn12.31:11.1": {
   "after": "d this,\ntell me their manner of life.’”",
@@ -49147,7 +49168,8 @@
   "placed": true
  },
  "iti24:3.2": {
-  "empty": "up"
+  "after": "”\nThe accumulation\nof a single person’s",
+  "placed": true
  },
  "iti29:3.3": {
   "after": "Eye & ear & nose,\ntongue, body, & mind:",
@@ -49192,7 +49214,8 @@
   "placed": true
  },
  "iti39:3.4": {
-  "empty": "up"
+  "after": "by the Tathāgata,\nawakened, sympathetic",
+  "placed": true
  },
  "iti41:5.3": {
   "after": ":\nthose who are\nself-awakened,\nmindful,",
@@ -49375,7 +49398,8 @@
   "placed": true
  },
  "iti89:8.2": {
-  "empty": "up"
+  "after": "So it is\nwhen anyone attacks with abuse",
+  "placed": true
  },
  "snp2.4:8.2": {
   "after": "ection.\nAvoiding, abstaining from evil;",
@@ -50565,10 +50589,12 @@
   "placed": true
  },
  "dhp284:2": {
-  "empty": "up"
+  "after": " as long as the least\nbit of underbrush",
+  "placed": true
  },
  "dhp414:4": {
-  "empty": "up"
+  "after": "nd,\nis free from want,\nfrom perplexity,",
+  "placed": true
  },
  "dhp51:4": {
   "after": "lored\nbut scentless:\na well-spoken word",
@@ -50583,13 +50609,16 @@
   "empty": "up"
  },
  "iti33:3.4": {
-  "empty": "up"
+  "after": "auspicious views:\na person, discerning,",
+  "placed": true
  },
  "iti33:3.5": {
-  "empty": "up"
+  "after": "cerning,\nendowed with these two things,",
+  "placed": true
  },
  "iti74:6.2": {
-  "empty": "up"
+  "after": "wered birth.”\nThe wise hope for a child",
+  "placed": true
  },
  "iti76:3.4": {
   "after": "bliss:\npraise;\nthe obtaining of wealth;",
@@ -50597,7 +50626,8 @@
   "own": true
  },
  "iti76:9.2": {
-  "empty": "up"
+  "after": "lightened.\nSo,\nknowing your own outcome",
+  "placed": true
  },
  "snp4.7:1.1": {
   "placed": true,
@@ -50610,32 +50640,40 @@
   "empty": "up"
  },
  "thag13.1:7.4": {
-  "empty": "up"
+  "after": " One with Eyes,\nmaking the lute simile,",
+  "placed": true
  },
  "thag2.27:2.2": {
-  "empty": "up"
+  "after": "way, remember me:\nconsummate in vision,",
+  "placed": true
  },
  "thag2.27:2.3": {
-  "empty": "up"
+  "after": "ciple of the Rightly\nSelf-awakened One,",
+  "placed": true
  },
  "thag2.27:2.4": {
-  "empty": "up"
+  "after": "\nthe Awakened One’s thoroughbred child,",
+  "placed": true
  },
  "thig6.8:6.2": {
-  "empty": "up"
+  "after": "kness.\nThen I stayed, suffusing my body",
+  "placed": true
  },
  "sn12.31:2.4": {
-  "empty": "up"
+  "after": "er Shore [Sn 5:1]:\n‘Those here who have fathomed the Dhamma,\nthose who are learners,\nthose who are run-of-the-mill:\nWhen you, dear sir, astute,\nare asked this,",
+  "placed": true
  },
  "sn12.31:5.4": {
-  "empty": "up"
+  "after": "Sāriputta, it is said in Ajita’s Question in the Way to the Further Shore:\n‘Those here who have fathomed the Dhamma,\nthose who are learners,\nthose who are run-of-the-mill:\nWhen you, dear sir, astute,",
+  "placed": true
  },
  "sn35.229:3.4": {
   "after": "ean,\nwith its danger of sharks, demons,",
   "placed": true
  },
  "sn35.229:4.2": {
-  "empty": "up"
+  "after": " who has\novercome ties,\nforsaken death,",
+  "placed": true
  },
  "sn42.8:6.4": {
   "after": "’ A disciple has faith in that teacher,",

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Builds complete Pali review packets and checks saved review evidence.
+"""Builds whole-document review packets with the Pali on every row, and checks them.
 
-Run from the repository root; see data/upstream/HANDOFF.md for the review process.
-Packets are review inputs only. This tool never applies findings or changes corpus data.
+Run from the repository root. Packets are review inputs only: this tool never applies findings or
+changes corpus data.
 """
 import argparse
 import hashlib
@@ -11,10 +11,8 @@ import json
 from pathlib import Path
 import re
 import subprocess
-import zipfile
 
 ROOT = Path(__file__).resolve().parents[2]
-ARCHIVE = ROOT / 'data/upstream/review-archive/2026-10-02'
 
 
 def digest(data):
@@ -49,27 +47,6 @@ def expanded_uids(uids):
             prefix, first, last = span.groups()
             found.update(f'{prefix}{n}' for n in range(int(first), int(last) + 1))
     return found
-
-
-def verify_archive():
-    """Verifies archived payloads and compressed scratch members against their hashes."""
-    files = load(ARCHIVE / 'manifest.json')['files']
-    members = 0
-    for item in files:
-        path = inside(ARCHIVE, item['path'])
-        data = path.read_bytes()
-        if len(data) != item['bytes'] or digest(data) != item['sha256']:
-            raise ValueError(f'Archive mismatch: {item["path"]}')
-        if 'members' in item:
-            with zipfile.ZipFile(path) as bundle:
-                if set(bundle.namelist()) != {m['path'] for m in item['members']}:
-                    raise ValueError(f'Archive member list mismatch: {item["path"]}')
-                for member in item['members']:
-                    data = bundle.read(member['path'])
-                    if len(data) != member['bytes'] or digest(data) != member['sha256']:
-                        raise ValueError(f'Archive member mismatch: {member["path"]}')
-                    members += 1
-    print(f'Archive verified: {len(files)} payload files, {members} compressed members.')
 
 
 def packet(translator, docs, output):
@@ -163,10 +140,9 @@ def verify_packet(folder):
 
 
 def main():
-    """Runs the selected evidence check or packet build."""
+    """Runs the selected packet build or check."""
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest='command', required=True)
-    commands.add_parser('archive-check', help='verify the repository recovery archive')
     build = commands.add_parser('packet', help='write Pali-inclusive whole-document packets')
     build.add_argument('translator', choices=['bodhi', 'thanissaro'])
     build.add_argument('documents', nargs='+', help='file document IDs, such as dhp1-20')
@@ -175,13 +151,11 @@ def main():
     check.add_argument('folder', type=Path)
     args = parser.parse_args()
     try:
-        if args.command == 'archive-check':
-            verify_archive()
-        elif args.command == 'packet':
+        if args.command == 'packet':
             packet(args.translator, args.documents, args.out)
         else:
             verify_packet(args.folder)
-    except (OSError, ValueError, KeyError, zipfile.BadZipFile) as error:
+    except (OSError, ValueError, KeyError) as error:
         parser.exit(1, f'{error}\n')
 
 

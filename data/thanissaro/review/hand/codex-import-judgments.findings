@@ -52,10 +52,10 @@ iti29:4.3 starts: he experiences ease:
 iti29:4.4 none
 iti31:3.1 starts: Having abandoned bodily misconduct, verbal misconduct,
 iti31:3.2 starts: verbal misconduct,
-iti39:3.3 none
-iti39:3.4 none
+# superseded: iti39:3.3 none
+# superseded: iti39:3.4 none
 iti72:3.3 starts: –ardent always– touching
-iti72:3.4 none
+# superseded: iti72:3.4 none
 iti75:6.1 starts: Not to contemplatives, to brahmans, to the miserable, nor to the homeless does he share what he’s gained: food, drinks, nourishment.
 iti75:6.4 starts: food, drinks, nourishment.
 iti75:6.5 starts: He, that lowest of people, is called a cloud with no rain.
@@ -69,9 +69,9 @@ iti83:16.4 starts: without limit, with no acquisitions,
 iti89:3.1 starts: May no one in the world ever be reborn with evil desire.
 iti89:3.2 starts: be reborn with evil desire.
 iti89:7.1 starts: Whoever might think of polluting
-iti89:7.2 none
+# superseded: iti89:7.2 none
 iti89:8.1 starts: So it is when anyone attacks
-iti89:8.2 none
+# superseded: iti89:8.2 none
 snp3.5:7.3 starts: To them, at the right time,
 snp3.5:7.4 starts: to them a brahman aiming at merit should sacrifice.
 snp3.5:8.3 starts: To them, at the right time,
@@ -183,7 +183,7 @@ iti91:5.4 none
 iti102:5.3 starts: is there attained Unbinding,
 iti75:6.2 starts: to the miserable, nor to the homeless
 iti75:6.3 starts: does he share what he’s gained:
-iti39:3.2 none
+# superseded: iti39:3.2 none
 thag1.114:1.2 starts: greedy for carcass pleasures while life is wasting away:
 ud2.3:3.1 starts: Whoever hits with a stick
 ud2.3:4.1 starts: Whoever doesn’t hit with a stick
