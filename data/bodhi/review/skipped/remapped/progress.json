@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "scope": "Remapped SN45 range texts and following singles only",
+  "documents_checked": 16,
+  "runs": 0,
+  "empty_lines_reviewed": 0,
+  "covered_added": 0,
+  "skipped": 0,
+  "total_covered": 32,
+  "remaining": 0,
+  "structural_checks_passed": true
+}

@@ -1,0 +1,98 @@
+{
+  "translator": "thanissaro",
+  "ordering": "Natural file-path order, then Pali JSON insertion order",
+  "sources": {
+    "data/thanissaro/sutta/an/an5/an5.254_translation-en-thanissaro.json": "973e6fa5fa95db0ef37959e7f886ea6591a172b1727086ba7dc92acfec906511",
+    "data/pali/sutta/an/an5/an5.254_root-pli-ms.json": "9ce472500393d49114929e3c23c0df2d12d827e8ddc1b67c5e91730ca0900772",
+    "data/html/pli/ms/sutta/an/an5/an5.254_html.json": "22d37b24bc8bd59755538972861f7144e149c992f6ce52d4c899062290aac1d2",
+    "data/sujato/sutta/an/an5/an5.254_translation-en-sujato.json": "02a0fccd428fbdd198e465f51903c02b75fac5bbef059fda6fb8befe93d91294",
+    "data/thanissaro/sutta/an/an5/an5.255_translation-en-thanissaro.json": "32003ce006a3538156c4f117a8e4b9456880d4c2e2dae2d3067ef1fbd629f10f",
+    "data/pali/sutta/an/an5/an5.255_root-pli-ms.json": "39500a107f12eca3925c6a49e16738cdc395fca4a7925a163333e0db9ba7ba5e",
+    "data/html/pli/ms/sutta/an/an5/an5.255_html.json": "8f78e2a56c5a1aac517ae63520637daade422586834ca9b4661fb1e0875f9dd3",
+    "data/sujato/sutta/an/an5/an5.255_translation-en-sujato.json": "1fa8c929bcae1385add7017c1ea8211a3111e62f8fe8ee973527eefc0c384c0a",
+    "data/thanissaro/sutta/an/an5/an5.256_translation-en-thanissaro.json": "c5ed556792d3a03f3dc16a95f2c5fc0ddb6d3b868c0e4e349bdec7b674a95bcf",
+    "data/pali/sutta/an/an5/an5.256_root-pli-ms.json": "d60bcb3ea650c5b2a95dcb6151d61598ebb288514364c0ed1a5d4df44b372fd6",
+    "data/html/pli/ms/sutta/an/an5/an5.256_html.json": "7ecdf3ce2bdd9ce3f4feec63956fd955aa291b1697150bf7ab5b079070e848d4",
+    "data/sujato/sutta/an/an5/an5.256_translation-en-sujato.json": "48f4176c958d684e7dc2e6a5f9cc7741dd85d22549f382e84f76aba2b6bb4afd",
+    "data/thanissaro/sutta/an/an5/an5.257-263_translation-en-thanissaro.json": "4da6992520b6fd2f12870840774c1995012134adcefb61428f8450988116b20a",
+    "data/pali/sutta/an/an5/an5.257-263_root-pli-ms.json": "7f3c2a5af99564a8d8caa95e25e348c2c33ad7443bb036eb89db431dd2743292",
+    "data/html/pli/ms/sutta/an/an5/an5.257-263_html.json": "69a47283973a2e21e7f38643f5ffa69e590c2b8436226828646f87d10908633a",
+    "data/sujato/sutta/an/an5/an5.257-263_translation-en-sujato.json": "5834ff5911569b841b0cf6f864bc012519cb17e0e6903229b8452c3d8d775301",
+    "data/thanissaro/sutta/an/an5/an5.264_translation-en-thanissaro.json": "90a5ec95c6b29d3438e8a3dfb23f2dadb58129f6a60d932577d685a3ea7e4795",
+    "data/pali/sutta/an/an5/an5.264_root-pli-ms.json": "e25bb2c983229e7385d6d08d8ebdcf05a838ee7be0af1398c5052ac2873dd49a",
+    "data/html/pli/ms/sutta/an/an5/an5.264_html.json": "cc03b31616a319db0602030fb6dc1ea82c56579597d0fa30b378d2a49903b908",
+    "data/sujato/sutta/an/an5/an5.264_translation-en-sujato.json": "6fd1ce92379c0eadeb172fab27d160323998655189588c28d7204e648b386442",
+    "data/thanissaro/sutta/an/an5/an5.265-271_translation-en-thanissaro.json": "b71c70ba8e16b8abcce0d0da0266d866f770f57385b3128818404760e3d5b0c3",
+    "data/pali/sutta/an/an5/an5.265-271_root-pli-ms.json": "c19bcfcd6c258d6ef0cb15f6f208798bb2f71d0a5813febf8b7e63c89b07070d",
+    "data/html/pli/ms/sutta/an/an5/an5.265-271_html.json": "50e1cb6e341985239368900e286b9be31b6fbf35c956d68d81748aa9c28d92ec",
+    "data/sujato/sutta/an/an5/an5.265-271_translation-en-sujato.json": "604e1cd7c09c12089f5748cc4bb9f2439ae2df29edff2a62699106b31586a98b"
+  },
+  "runs": [
+    {
+      "id": 1,
+      "file": "data/thanissaro/sutta/an/an5/an5.264_translation-en-thanissaro.json",
+      "paragraph": 2,
+      "above": {
+        "key": "an5.264:2.1",
+        "pali": "Pañcime, bhikkhave, dhamme pahāya bhabbo paṭhamaṁ jhānaṁ upasampajja viharituṁ. ",
+        "sujato": "But after giving up these five qualities you can enter and remain in the first absorption. ",
+        "english": "“With the abandoning of these five qualities, one is capable of entering & remaining in the first jhāna.…” "
+      },
+      "lines": [
+        {
+          "key": "an5.264:2.2",
+          "pali": "Katame pañca? ",
+          "sujato": "What five? ",
+          "english": ""
+        },
+        {
+          "key": "an5.264:2.3",
+          "pali": "Āvāsamacchariyaṁ, kulamacchariyaṁ, lābhamacchariyaṁ, vaṇṇamacchariyaṁ, akataññutaṁ akataveditaṁ. ",
+          "sujato": "Stinginess with dwellings, families, material things, praise, and lack of gratitude and thankfulness. ",
+          "english": ""
+        },
+        {
+          "key": "an5.264:2.4",
+          "pali": "Ime kho, bhikkhave, pañca dhamme pahāya bhabbo paṭhamaṁ jhānaṁ upasampajja viharitun”ti. ",
+          "sujato": "After giving up these five qualities you can enter and remain in the first absorption.” ",
+          "english": ""
+        }
+      ],
+      "below": null,
+      "belowInSameParagraph": false
+    },
+    {
+      "id": 2,
+      "file": "data/thanissaro/sutta/an/an5/an5.265-271_translation-en-thanissaro.json",
+      "paragraph": 2,
+      "above": {
+        "key": "an5.265-271:2.1",
+        "pali": "Pañcime, bhikkhave, dhamme pahāya bhabbo dutiyaṁ jhānaṁ … tatiyaṁ jhānaṁ … catutthaṁ jhānaṁ … sotāpattiphalaṁ … sakadāgāmiphalaṁ … anāgāmiphalaṁ … arahattaṁ sacchikātuṁ. ",
+        "sujato": "But after giving up these five qualities you can enter and remain in the second absorption … third absorption … fourth absorption … and realize the fruit of stream-entry … the fruit of once-return … the fruit of non-return … perfection. ",
+        "english": "“With the abandoning of these five qualities, one is capable of entering & remaining in the second jhāna… the third jhāna… the fourth jhāna; capable of realizing the fruit of stream-entry… the fruit of once-returning… the fruit of non-returning… arahantship.…” "
+      },
+      "lines": [
+        {
+          "key": "an5.265-271:2.2",
+          "pali": "Katame pañca? ",
+          "sujato": "What five? ",
+          "english": ""
+        },
+        {
+          "key": "an5.265-271:2.3",
+          "pali": "Āvāsamacchariyaṁ, kulamacchariyaṁ, lābhamacchariyaṁ, vaṇṇamacchariyaṁ, akataññutaṁ akataveditaṁ. ",
+          "sujato": "Stinginess with dwellings, families, material things, praise, and lack of gratitude and thankfulness. ",
+          "english": ""
+        },
+        {
+          "key": "an5.265-271:2.4",
+          "pali": "Ime kho, bhikkhave, pañca dhamme pahāya bhabbo arahattaṁ sacchikātun”ti. ",
+          "sujato": "After giving up these five qualities you can realize perfection.” ",
+          "english": ""
+        }
+      ],
+      "below": null,
+      "belowInSameParagraph": false
+    }
+  ]
+}

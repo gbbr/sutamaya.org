@@ -1,0 +1,17 @@
+{
+  "translator": "thanissaro",
+  "rule": "Own content explicitly rendered; abbreviated or compressed repetitions and doubtful lines stay skipped.",
+  "input_marks_sha256": "f6a0557a1ddd45ada7cb101fc51e4b0387d9ba507d146994055d97e2f933c12d",
+  "covered_checked": 0,
+  "changed": 0,
+  "complete": true,
+  "records": [],
+  "skipped_decisions": {
+    "an5.264:2.2": "The repeated what-five question is omitted after the English ellipsis.",
+    "an5.264:2.3": "The repeated list of stinginess and ingratitude is omitted after the ellipsis.",
+    "an5.264:2.4": "Closing restatement after the question and list is omitted after the ellipsis; the English above renders the opening assertion only.",
+    "an5.265-271:2.2": "The repeated what-five question is omitted after the English ellipsis.",
+    "an5.265-271:2.3": "The repeated list of stinginess and ingratitude is omitted after the ellipsis.",
+    "an5.265-271:2.4": "Closing restatement after the question and list is omitted after the ellipsis; the English above renders the opening assertion only."
+  }
+}

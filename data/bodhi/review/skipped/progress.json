@@ -18,8 +18,20 @@
   "covered_output_written": true,
   "structural_checks_passed": true,
   "exclusions": [
-    "SN 45"
+    "SN45 outside the remapped range texts reviewed in remapped/"
   ],
   "active_check": "rule-check.json",
-  "previous_audit": "audit.json is historical; its stop and MN72:13.5 recommendation were superseded by the user."
+  "previous_audit": "audit.json is historical; its stop and MN72:13.5 recommendation were superseded by the user.",
+  "remapped_review": {
+    "status": "complete",
+    "scope": "Remapped SN45 range texts and following singles only",
+    "documents_checked": 16,
+    "runs": 0,
+    "empty_lines_reviewed": 0,
+    "covered_added": 0,
+    "skipped": 0,
+    "total_covered": 32,
+    "remaining": 0,
+    "structural_checks_passed": true
+  }
 }

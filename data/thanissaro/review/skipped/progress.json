@@ -17,9 +17,19 @@
   "skipped_sampling": "retired by user; no further skipped marks checked",
   "covered_output_written": true,
   "structural_checks_passed": true,
-  "exclusions": [
-    "AN 5.254–271"
-  ],
+  "exclusions": [],
   "active_check": "rule-check.json",
-  "previous_audit": "audit.json is historical; its stop and MN72:13.5 recommendation were superseded by the user."
+  "previous_audit": "audit.json is historical; its stop and MN72:13.5 recommendation were superseded by the user.",
+  "remapped_review": {
+    "status": "complete",
+    "scope": "AN5.254–271 only",
+    "documents_checked": 6,
+    "runs": 2,
+    "empty_lines_reviewed": 6,
+    "covered_added": 0,
+    "skipped": 6,
+    "total_covered": 54,
+    "remaining": 0,
+    "structural_checks_passed": true
+  }
 }

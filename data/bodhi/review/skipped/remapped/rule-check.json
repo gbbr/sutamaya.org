@@ -1,0 +1,10 @@
+{
+  "translator": "bodhi",
+  "rule": "Own content explicitly rendered; abbreviated or compressed repetitions and doubtful lines stay skipped.",
+  "input_marks_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "covered_checked": 0,
+  "changed": 0,
+  "complete": true,
+  "records": [],
+  "skipped_decisions": {}
+}

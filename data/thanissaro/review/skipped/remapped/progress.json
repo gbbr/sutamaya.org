@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "scope": "AN5.254–271 only",
+  "documents_checked": 6,
+  "runs": 2,
+  "empty_lines_reviewed": 6,
+  "covered_added": 0,
+  "skipped": 6,
+  "total_covered": 54,
+  "remaining": 0,
+  "structural_checks_passed": true
+}

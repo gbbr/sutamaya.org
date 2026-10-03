@@ -1,0 +1,47 @@
+thanissaro: skipped-Pali review batch 001
+Read the full English above, each original Pali line, and the next English. Sujato is context only.
+covered = this line's own content is explicitly rendered by the English above, including complete lists.
+skipped = abbreviated or compressed repetition, even if mentioned, or omitted. When in doubt, skipped.
+Judge each key independently; a run may be mixed. An ellipsis alone does not decide.
+Only runs of two or more empty prose lines in the same paragraph are reviewed; lone lines join automatically.
+Write <key> covered|skipped|unsure for every RUN key, then # done. Do not mark context keys.
+
+=== RUN 1: an5.264:2.2 an5.264:2.3 an5.264:2.4 ===
+File: data/thanissaro/sutta/an/an5/an5.264_translation-en-thanissaro.json
+ABOVE an5.264:2.1
+Pali: Pañcime, bhikkhave, dhamme pahāya bhabbo paṭhamaṁ jhānaṁ upasampajja viharituṁ. 
+Sujato: But after giving up these five qualities you can enter and remain in the first absorption. 
+Translator: “With the abandoning of these five qualities, one is capable of entering & remaining in the first jhāna.…” 
+JUDGE an5.264:2.2
+Pali: Katame pañca? 
+Sujato: What five? 
+Translator: (empty)
+JUDGE an5.264:2.3
+Pali: Āvāsamacchariyaṁ, kulamacchariyaṁ, lābhamacchariyaṁ, vaṇṇamacchariyaṁ, akataññutaṁ akataveditaṁ. 
+Sujato: Stinginess with dwellings, families, material things, praise, and lack of gratitude and thankfulness. 
+Translator: (empty)
+JUDGE an5.264:2.4
+Pali: Ime kho, bhikkhave, pañca dhamme pahāya bhabbo paṭhamaṁ jhānaṁ upasampajja viharitun”ti. 
+Sujato: After giving up these five qualities you can enter and remain in the first absorption.” 
+Translator: (empty)
+BELOW (outside this paragraph): (none)
+
+=== RUN 2: an5.265-271:2.2 an5.265-271:2.3 an5.265-271:2.4 ===
+File: data/thanissaro/sutta/an/an5/an5.265-271_translation-en-thanissaro.json
+ABOVE an5.265-271:2.1
+Pali: Pañcime, bhikkhave, dhamme pahāya bhabbo dutiyaṁ jhānaṁ … tatiyaṁ jhānaṁ … catutthaṁ jhānaṁ … sotāpattiphalaṁ … sakadāgāmiphalaṁ … anāgāmiphalaṁ … arahattaṁ sacchikātuṁ. 
+Sujato: But after giving up these five qualities you can enter and remain in the second absorption … third absorption … fourth absorption … and realize the fruit of stream-entry … the fruit of once-return … the fruit of non-return … perfection. 
+Translator: “With the abandoning of these five qualities, one is capable of entering & remaining in the second jhāna… the third jhāna… the fourth jhāna; capable of realizing the fruit of stream-entry… the fruit of once-returning… the fruit of non-returning… arahantship.…” 
+JUDGE an5.265-271:2.2
+Pali: Katame pañca? 
+Sujato: What five? 
+Translator: (empty)
+JUDGE an5.265-271:2.3
+Pali: Āvāsamacchariyaṁ, kulamacchariyaṁ, lābhamacchariyaṁ, vaṇṇamacchariyaṁ, akataññutaṁ akataveditaṁ. 
+Sujato: Stinginess with dwellings, families, material things, praise, and lack of gratitude and thankfulness. 
+Translator: (empty)
+JUDGE an5.265-271:2.4
+Pali: Ime kho, bhikkhave, pañca dhamme pahāya bhabbo arahattaṁ sacchikātun”ti. 
+Sujato: After giving up these five qualities you can realize perfection.” 
+Translator: (empty)
+BELOW (outside this paragraph): (none)

@@ -10,6 +10,8 @@ import assert from 'node:assert/strict';
 const root = path.resolve(import.meta.dirname, '..');
 const mode = process.argv[2] ?? 'prepare';
 assert(['prepare', 'refresh-context', 'check', 'finish'].includes(mode), 'Use prepare, refresh-context, check or finish');
+const remappedOnly = process.argv[3] === '--remapped';
+assert(process.argv.length <= 3 || (process.argv.length === 4 && remappedOnly), 'Optional scope: --remapped');
 const read = (file) => JSON.parse(fs.readFileSync(file, 'utf8'));
 const plain = (s = '') => s.replace(/<[^>]*>/g, '').replace(/&(?:nbsp|#160);/g, ' ').trim();
 const sha = (s) => crypto.createHash('sha256').update(s).digest('hex');
@@ -20,6 +22,9 @@ const save = (file, value) => fs.writeFileSync(file, `${JSON.stringify(value, nu
 const coverageRule = 'Own content explicitly rendered; abbreviated or compressed repetitions and doubtful lines stay skipped.';
 const excluded = (translator, key) => translator === 'bodhi' ? /^sn45\./.test(key)
   : /^an5\.(?:25[4-9]|26\d|27[01])(?=[:\-])/.test(key);
+const remappedFile = (translator, file) => (translator === 'bodhi'
+  ? /^sn45\.(?:42-47|48|50-54|55|57-61|62|64-68|69|71-75|76|78-82|83|85-89|90|92-95|96)_translation-en-bodhi\.json$/
+  : /^an5\.(?:254|255|256|257-263|264|265-271)_translation-en-thanissaro\.json$/).test(path.basename(file));
 
 // Read the actual template around its placeholder, including inherited colophon/uddana roles.
 function paragraphs(pali, html) {
@@ -56,9 +61,13 @@ function inventory(translator) {
   const sources = {};
   for (const file of walk(base).filter((f) => f.endsWith('.json'))) {
     const rel = path.relative(base, file);
-    // These pages are being remapped in other sessions. Do not read or freeze them.
-    const keys = Object.keys(read(file));
-    if (keys.some((key) => excluded(translator, key))) continue;
+    if (remappedOnly) {
+      if (!remappedFile(translator, file)) continue;
+    } else {
+      // The original review snapshot omits these pages; --remapped reviews the finished mappings separately.
+      const keys = Object.keys(read(file));
+      if (keys.some((key) => excluded(translator, key))) continue;
+    }
     const siblings = {
       own: file,
       pali: path.join(root, 'data/pali/sutta', rel.replace(`_translation-en-${translator}`, '_root-pli-ms')),
@@ -93,6 +102,22 @@ function inventory(translator) {
   return { translator, ordering: 'Natural file-path order, then Pali JSON insertion order', sources, runs };
 }
 
+function mergedCovered(translator, keys) {
+  const file = path.join(root, 'data', translator, 'covered.json');
+  const wanted = new Set(fs.existsSync(file) ? read(file) : []);
+  const ordered = [];
+  for (const document of walk(path.join(root, 'data', translator, 'sutta')).filter((f) => f.endsWith('.json'))) {
+    const rows = Object.keys(read(document));
+    if (remappedFile(translator, document)) for (const key of rows) wanted.delete(key);
+  }
+  for (const key of keys) wanted.add(key);
+  for (const document of walk(path.join(root, 'data', translator, 'sutta')).filter((f) => f.endsWith('.json'))) {
+    for (const key of Object.keys(read(document))) if (wanted.delete(key)) ordered.push(key);
+  }
+  assert.equal(wanted.size, 0, `${translator}: covered keys missing from translation files`);
+  return ordered;
+}
+
 function packet(runs, translator, batch) {
   const output = [
     `${translator}: skipped-Pali review batch ${batch}`,
@@ -118,7 +143,7 @@ function packet(runs, translator, batch) {
 
 const outputs = [];
 for (const translator of ['bodhi', 'thanissaro']) {
-  const directory = path.join(root, 'data', translator, 'review/skipped');
+  const directory = path.join(root, 'data', translator, 'review/skipped', ...(remappedOnly ? ['remapped'] : []));
   const current = inventory(translator);
   const judged = current.runs;
   const counts = { runs: judged.length, lines: judged.reduce((n, r) => n + r.lines.length, 0) };
@@ -219,7 +244,8 @@ for (const translator of ['bodhi', 'thanissaro']) {
 if (mode === 'finish') {
   // Validate both translators before writing either output. Skipped samples are retired.
   for (const { translator, changed, keys } of outputs) {
-    save(path.join(root, 'data', translator, 'covered.json'), keys);
-    console.log(JSON.stringify({ translator, covered: keys.length, changed }));
+    const covered = remappedOnly ? mergedCovered(translator, keys) : keys;
+    save(path.join(root, 'data', translator, 'covered.json'), covered);
+    console.log(JSON.stringify({ translator, scoped_covered: keys.length, covered: covered.length, changed }));
   }
 }

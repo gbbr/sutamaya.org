@@ -1,0 +1,18 @@
+{
+  "method": "Independent HTMLParser and direct current Pali/translation reads; complete scoped inventory rebuilt; every covered output checked",
+  "passed": true,
+  "scoped_documents_checked": 16,
+  "scoped_runs_checked": 0,
+  "scoped_empty_lines_checked": 0,
+  "new_covered_lines": 0,
+  "covered_output_keys_checked": 32,
+  "covered_order_checked": true,
+  "checks": [
+    "Every key exists in Pali",
+    "Translation key exists and is empty",
+    "Not verse/title/heading/colophon/uddana",
+    "In a paragraph-local run of at least two below nonempty English",
+    "All scoped source hashes unchanged",
+    "Other covered entries preserved"
+  ]
+}
