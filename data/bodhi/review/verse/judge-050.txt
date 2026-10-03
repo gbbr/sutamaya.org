@@ -1,0 +1,935 @@
+## 1 (bodhi, sn1.70)
+Source line breaks: “In what has the world arisen? ↵ In what does it form intimacy? ↵ By clinging to what is the world ↵ Harassed in regard to what?” ↵ “In six has the world arisen;
+sn1.70:1.1 | P: “Kismiṁ loko samuppanno, | S: “In what has the world arisen?
+  Before: “In what has the world arisen?
+  After: “In what has the world arisen?
+sn1.70:1.2 | P: kismiṁ kubbati santhavaṁ; | S: With what does it get intimate?
+  Before: In what does it form intimacy?
+  After: In what does it form intimacy?
+sn1.70:1.3 | P: Kissa loko upādāya, | S: By grasping what
+  Before: By clinging to what
+  After: By clinging to what is the world
+sn1.70:1.4 | P: kismiṁ loko vihaññatī”ti. | S: is the world troubled in what?”
+  Before: is the world ↵ Harassed in regard to what?”
+  After: Harassed in regard to what?”
+sn1.70:2.1 | P: “Chasu loko samuppanno, | S: “The world has arisen in six.
+  Before: “In six has the world arisen;
+  After: “In six has the world arisen;
+
+## 2 (bodhi, an5.34)
+Source line breaks: By giving, he becomes dear and many resort to him. ↵ He attains a good reputation and his fame increases. ↵ The generous man is composed ↵ and confidently enters the assembly. ↵ Therefore, seeking happiness, ↵ wise persons give gifts,
+an5.34:8.1 | P: Dadaṁ piyo hoti bhajanti naṁ bahū, | S: Giving, you’re loved and befriended by many people.
+  Before: By giving, he becomes dear and many resort to him.
+  After: By giving, he becomes dear and many resort to him.
+an5.34:8.2 | P: Kittiñca pappoti yaso ca vaḍḍhati; | S: You get a good reputation, and your fame grows.
+  Before: He attains a good reputation and his fame increases.
+  After: He attains a good reputation and his fame increases.
+an5.34:8.3 | P: Amaṅkubhūto parisaṁ vigāhati, | S: A generous man enters an assembly
+  Before: The generous man is composed ↵ and confidently enters the assembly.
+  After: The generous man is composed
+an5.34:8.4 | P: Visārado hoti naro amaccharī. | S: bold and self-assured.
+  Before: (none)
+  After: and confidently enters the assembly.
+an5.34:9.1 | P: Tasmā hi dānāni dadanti paṇḍitā, | S: So an astute person, seeking happiness, would give gifts,
+  Before: Therefore, seeking happiness, ↵ wise persons give gifts,
+  After: Therefore, seeking happiness, ↵ wise persons give gifts,
+
+## 3 (bodhi, an3.40)
+Source line breaks: Indeed, sir, you the witness ↵ despise your good self; ↵ you conceal the evil self ↵ existing within yourself. ↵ The devas and Tathāgatas see the fool
+an3.40:5.1 | P: Kalyāṇaṁ vata bho sakkhi, | S: When you witness your good self,
+  Before: Indeed, sir, you the witness
+  After: Indeed, sir, you the witness
+an3.40:5.2 | P: attānaṁ atimaññasi; | S: you despise it;
+  Before: despise your good self;
+  After: despise your good self;
+an3.40:5.3 | P: Yo santaṁ attani pāpaṁ, | S: while you disguise
+  Before: you conceal the evil self ↵ existing within yourself.
+  After: you conceal the evil self
+an3.40:5.4 | P: attānaṁ parigūhasi. | S: your bad self inside yourself.
+  Before: (none)
+  After: existing within yourself.
+an3.40:6.1 | P: Passanti devā ca tathāgatā ca, | S: The gods and the Realized One see
+  Before: The devas and Tathāgatas see the fool
+  After: The devas and Tathāgatas see the fool
+
+## 4 (bodhi, sn1.40)
+Source line breaks: “Here came Kokanada, Pajjunna’s daughter, ↵ Beautiful as the gleam of lightning. ↵ Venerating the Buddha and the Dhamma, ↵ She spoke these verses full of meaning.
+sn1.40:2.1 | P: “Idhāgamā vijjupabhāsavaṇṇā, | S: “She came here, beautiful as a flash of lightning,
+  Before: “Here came Kokanada, Pajjunna’s daughter, ↵ Beautiful as the gleam of lightning.
+  After: “Here came Kokanada, Pajjunna’s daughter,
+sn1.40:2.2 | P: Kokanadā pajjunnassa dhītā; | S: Kokanadā, Pajjunna’s daughter.
+  Before: (none)
+  After: Beautiful as the gleam of lightning.
+sn1.40:2.3 | P: Buddhañca dhammañca namassamānā, | S: Revering the Buddha and the teaching,
+  Before: Venerating the Buddha and the Dhamma,
+  After: Venerating the Buddha and the Dhamma,
+sn1.40:2.4 | P: Gāthācimā atthavatī abhāsi. | S: she spoke these verses full of meaning.
+  Before: She spoke these verses full of meaning.
+  After: She spoke these verses full of meaning.
+
+## 5 (bodhi, mn26)
+Source line breaks: ‘In Magadha there have appeared till now ↵ Impure teachings devised by those still stained. ↵ Open the doors to the Deathless! Let them hear ↵ The Dhamma that the Stainless One has found. ↵ Just as one who stands on a mountain peak
+mn26:20.10 | P: ‘Pāturahosi magadhesu pubbe, | S: ‘Among the Magadhans there appeared in the past
+  Before: ‘In Magadha there have appeared till now
+  After: ‘In Magadha there have appeared till now
+mn26:20.11 | P: Dhammo asuddho samalehi cintito; | S: an impure teaching thought up by the stained.
+  Before: Impure teachings devised by those still stained.
+  After: Impure teachings devised by those still stained.
+mn26:20.12 | P: Apāpuretaṁ amatassa dvāraṁ, | S: Fling open the door to freedom from death!
+  Before: Open the doors to the Deathless!
+  After: Open the doors to the Deathless! Let them hear
+mn26:20.13 | P: Suṇantu dhammaṁ vimalenānubuddhaṁ. | S: Let them hear the teaching the immaculate one discovered.
+  Before: Let them hear ↵ The Dhamma that the Stainless One has found.
+  After: The Dhamma that the Stainless One has found.
+mn26:20.14 | P: Sele yathā pabbatamuddhaniṭṭhito, | S: Standing high on a rocky mountain,
+  Before: Just as one who stands on a mountain peak
+  After: Just as one who stands on a mountain peak
+
+## 6 (bodhi, mn82)
+Source line breaks: Better is wisdom here than any wealth, ↵ Since by wisdom one gains the final goal. ↵ For people through ignorance do evil deeds ↵ While failing to reach the goal from life to life. ↵ As one goes to the womb and the next world,
+mn82:42.35 | P: Tasmā hi paññāva dhanena seyyo, | S: Therefore wisdom’s much better than wealth,
+  Before: Better is wisdom here than any wealth,
+  After: Better is wisdom here than any wealth,
+mn82:42.36 | P: Yāya vosānamidhādhigacchati; | S: since by wisdom you reach consummation in this life.
+  Before: Since by wisdom one gains the final goal.
+  After: Since by wisdom one gains the final goal.
+mn82:42.37 | P: Abyositattā hi bhavābhavesu, | S: But if because of delusion you don’t reach consummation,
+  Before: (none)
+  After: For people through ignorance do evil deeds
+mn82:42.38 | P: Pāpāni kammāni karonti mohā. | S: you’ll do evil deeds in life after life.
+  Before: For people through ignorance do evil deeds ↵ While failing to reach the goal from life to life.
+  After: While failing to reach the goal from life to life.
+mn82:42.39 | P: Upeti gabbhañca parañca lokaṁ, | S: One who enters a womb and the world beyond,
+  Before: As one goes to the womb and the next world,
+  After: As one goes to the womb and the next world,
+
+## 7 (bodhi, sn36.4)
+Source line breaks: A weakling of little strength ↵ Who weeps out loud and wails: ↵ He has not risen up in the bottomless abyss, ↵ Nor has he even gained a foothold.
+sn36.4:3.1 | P: Akkandati parodati, | S: weeping and wailing,
+  Before: A weakling of little strength ↵ Who weeps out loud and wails:
+  After: A weakling of little strength
+sn36.4:3.2 | P: dubbalo appathāmako; | S: a weakling lacking strength—
+  Before: (none)
+  After: Who weeps out loud and wails:
+sn36.4:3.3 | P: Na so pātāle paccuṭṭhāsi, | S: you won’t stand up in the abyss
+  Before: He has not risen up in the bottomless abyss,
+  After: He has not risen up in the bottomless abyss,
+sn36.4:3.4 | P: atho gādhampi nājjhagā. | S: and find a footing.
+  Before: Nor has he even gained a foothold.
+  After: Nor has he even gained a foothold.
+
+## 8 (bodhi, an4.40)
+Source line breaks: When what has been properly obtained ↵ is properly offered, properly sacrificed, ↵ to those worthy of offerings, ↵ the sacrifice is vast and the deities are pleased. ↵ The wise person endowed with faith,
+an4.40:6.1 | P: Suhutaṁ suyiṭṭhaṁ suppattaṁ, | S: When it’s well-gotten, well-offered, and well-sacrificed,
+  Before: When what has been properly obtained ↵ is properly offered, properly sacrificed,
+  After: When what has been properly obtained
+an4.40:6.2 | P: Dakkhiṇeyyesu yaṁ kataṁ; | S: to those worthy of a religious donation,
+  Before: to those worthy of offerings,
+  After: is properly offered, properly sacrificed,
+an4.40:6.3 | P: Yañño ca vipulo hoti, | S: a sacrifice is truly abundant,
+  Before: the sacrifice is vast
+  After: to those worthy of offerings,
+an4.40:6.4 | P: Pasīdanti ca devatā. | S: and even the deities are pleased.
+  Before: and the deities are pleased.
+  After: the sacrifice is vast and the deities are pleased.
+an4.40:7.1 | P: Evaṁ yajitvā medhāvī, | S: When an intelligent, faithful person,
+  Before: The wise person endowed with faith,
+  After: The wise person endowed with faith,
+
+## 9 (bodhi, mn82)
+Source line breaks: Clad in a shroud, he leaves his wealth behind, ↵ Prodded with stakes he burns upon the pyre. ↵ And as he dies, no relatives or friends ↵ Can offer him shelter and refuge here.
+mn82:42.19 | P: So ḍayhati sūlehi tujjamāno, | S: It’s poked with stakes while being burnt,
+  Before: Clad in a shroud, he leaves his wealth behind, ↵ Prodded with stakes he burns upon the pyre.
+  After: Clad in a shroud, he leaves his wealth behind,
+mn82:42.20 | P: Ekena vatthena pahāya bhoge; | S: in just a single cloth, all wealth gone.
+  Before: (none)
+  After: Prodded with stakes he burns upon the pyre.
+mn82:42.21 | P: Na mīyamānassa bhavanti tāṇā, | S: Relatives, friends, and companions
+  Before: And as he dies, no relatives or friends
+  After: And as he dies, no relatives or friends
+mn82:42.22 | P: Ñātīdha mittā atha vā sahāyā. | S: can’t help you when you’re dying.
+  Before: Can offer him shelter and refuge here.
+  After: Can offer him shelter and refuge here.
+
+## 10 (bodhi, sn21.3)
+Source line breaks: “‘As Sāriputta is supreme ↵ In wisdom, virtue, and peace, ↵ So a bhikkhu who has gone beyond ↵ At best can only equal him.’”
+sn21.3:6.1 | P: ‘Sāriputtova paññāya, | S: ‘Sāriputta is full of wisdom,
+  Before: “‘As Sāriputta is supreme ↵ In wisdom,
+  After: “‘As Sāriputta is supreme
+sn21.3:6.2 | P: sīlena upasamena ca; | S: ethics, and peace.
+  Before: virtue, and peace,
+  After: In wisdom, virtue, and peace,
+sn21.3:6.3 | P: Yopi pāraṅgato bhikkhu, | S: Even a mendicant who has crossed over
+  Before: So a bhikkhu who has gone beyond
+  After: So a bhikkhu who has gone beyond
+sn21.3:6.4 | P: etāvaparamo siyā’”ti. | S: might at best equal him.’”
+  Before: At best can only equal him.’”
+  After: At best can only equal him.’”
+
+## 11 (bodhi, an4.24)
+Source line breaks: Amid those who are self-constrained, the Stable One ↵ would not posit as categorically true or false ↵ anything seen, heard, or sensed, ↵ clung to and considered truth by others. ↵ Since they have already seen this dart
+an4.24:8.1 | P: Yaṁ kiñci diṭṭhaṁva sutaṁ mutaṁ vā, | S: Such a one does not take anything
+  Before: Amid those who are self-constrained, the Stable One
+  After: Amid those who are self-constrained, the Stable One
+an4.24:8.2 | P: Ajjhositaṁ saccamutaṁ paresaṁ; | S: seen, heard, or thought to be ultimately true or false.
+  Before: would not posit as categorically true or false ↵ anything seen, heard, or sensed,
+  After: would not posit as categorically true or false
+an4.24:8.3 | P: Na tesu tādī sayasaṁvutesu, | S: But others get attached, thinking it’s the truth,
+  Before: clung to and considered truth by others.
+  After: anything seen, heard, or sensed,
+an4.24:8.4 | P: Saccaṁ musā vāpi paraṁ daheyya. | S: limited by their preconceptions.
+  Before: (none)
+  After: clung to and considered truth by others.
+an4.24:9.1 | P: Etañca sallaṁ paṭikacca disvā, | S: Since they’ve seen this dart
+  Before: Since they have already seen this dart
+  After: Since they have already seen this dart
+
+## 12 (bodhi, an3.30)
+Source line breaks: The person with inverted wisdom, ↵ stupid and undiscerning, ↵ often goes to visit bhikkhus ↵ to hear them teach the Dhamma. ↵ Yet this person cannot grasp ↵ anything from the talk, ↵ at its beginning, middle, and end, ↵ for he utterly lacks wisdom. ↵ He too often goes to visit bhikkhus ↵ to hear them teach the Dhamma. ↵ He too often goes to visit bhikkhus ↵ to hear them teach the Dhamma.
+an3.30:4.1 | P: Avakujjapañño puriso, | S: A person with upside-down wisdom,
+  Before: The person with inverted wisdom,
+  After: The person with inverted wisdom,
+an3.30:4.2 | P: dummedho avicakkhaṇo; | S: is a simpleton and cannot see,
+  Before: stupid and undiscerning,
+  After: stupid and undiscerning,
+an3.30:4.3 | P: Abhikkhaṇampi ce hoti, | S: and even if they frequently
+  Before: often
+  After: often goes to visit bhikkhus
+an3.30:4.4 | P: gantā bhikkhūna santike. | S: go into the mendicants’ presence,
+  Before: goes to visit bhikkhus ↵ to hear them teach the Dhamma.
+  After: to hear them teach the Dhamma.
+an3.30:5.1 | P: Ādiṁ kathāya majjhañca, | S: such a person can’t learn
+  Before: Yet this person cannot grasp ↵ anything from the talk,
+  After: Yet this person cannot grasp
+an3.30:5.2 | P: pariyosānañca tādiso; | S: the beginning, middle, or end
+  Before: at its beginning, middle, and end,
+  After: anything from the talk,
+an3.30:5.3 | P: Uggahetuṁ na sakkoti, | S: of the discussion,
+  Before: (none)
+  After: at its beginning, middle, and end,
+an3.30:5.4 | P: paññā hissa na vijjati. | S: for their wisdom is lacking.
+  Before: for he utterly lacks wisdom.
+  After: for he utterly lacks wisdom.
+
+## 13 (bodhi, sn11.19)
+Source line breaks: “Having given this explanation, ↵ Having worshipped the Blessed One, ↵ The deva-king Maghava, Suja’s husband, ↵ The chief, climbed into his chariot.”
+sn11.19:7.1 | P: Idaṁ vatvāna maghavā, | S: After saying this, Maghavā the chief,
+  Before: The Blessed One: ↵ “Having given this explanation, ↵ Having worshipped the Blessed One,
+  After: The Blessed One: ↵ “Having given this explanation,
+sn11.19:7.2 | P: devarājā sujampati; | S: king of gods, Sujā’s husband,
+  Before: The deva-king Maghava, Suja’s husband,
+  After: Having worshipped the Blessed One,
+sn11.19:7.3 | P: Bhagavantaṁ namassitvā, | S: having worshiped the Buddha,
+  Before: The chief,
+  After: The deva-king Maghava, Suja’s husband,
+sn11.19:7.4 | P: pamukho rathamāruhī”ti. | S: climbed into his chariot.”
+  Before: climbed into his chariot.”
+  After: The chief, climbed into his chariot.”
+
+## 14 (bodhi, sn11.18)
+Source line breaks: Those versed in the Triple Veda, ↵ All the khattiyas reigning on earth, ↵ The Four Great Kings and the glorious Thirty— ↵ “‘These all humbly worship me— ↵ Those versed in the Triple Veda, ↵ All the khattiyas reigning on earth, ↵ The Four Great Kings and the glorious Thirty— ↵ But I worship those endowed with virtue,
+sn11.18:3.1 | P: ‘Maṁ namassanti tevijjā, | S: ‘Those proficient in the three Vedas worship me,
+  Before: Sakka: ↵ “‘These all humbly worship me— ↵ Those versed in the Triple Veda,
+  After: Sakka: ↵ “‘These all humbly worship me—
+sn11.18:3.2 | P: sabbe bhummā ca khattiyā; | S: as do all the aristocrats on earth,
+  Before: All the khattiyas reigning on earth,
+  After: Those versed in the Triple Veda,
+sn11.18:3.3 | P: Cattāro ca mahārājā, | S: the four great kings,
+  Before: The Four Great Kings and the glorious Thirty—
+  After: All the khattiyas reigning on earth,
+sn11.18:3.4 | P: tidasā ca yasassino. | S: and the glorious host of Thirty.
+  Before: (none)
+  After: The Four Great Kings and the glorious Thirty—
+sn11.18:4.1 | P: Ahañca sīlasampanne, | S: But I revere those accomplished in ethics,
+  Before: But I worship those endowed with virtue,
+  After: But I worship those endowed with virtue,
+
+## 15 (bodhi, sn1.46)
+Source line breaks: “One who has such a vehicle— ↵ Whether a woman or a man— ↵ Has, by means of this vehicle, ↵ Drawn close to Nibbāna.”
+sn1.46:4.1 | P: Yassa etādisaṁ yānaṁ, | S: Any woman or man
+  Before: “One who has such a vehicle— ↵ Whether a woman or a man—
+  After: “One who has such a vehicle—
+sn1.46:4.2 | P: itthiyā purisassa vā; | S: who has such a vehicle,
+  Before: Has,
+  After: Whether a woman or a man—
+sn1.46:4.3 | P: Sa ve etena yānena, | S: by means of this vehicle
+  Before: by means of this vehicle,
+  After: Has, by means of this vehicle,
+sn1.46:4.4 | P: nibbānasseva santike”ti. | S: has drawn near to extinguishment.”
+  Before: Drawn close to Nibbāna.”
+  After: Drawn close to Nibbāna.”
+
+## 16 (bodhi, sn45.4)
+Source line breaks: “This divine vehicle unsurpassed ↵ Originates from within oneself. ↵ The wise depart from the world in it, ↵ Inevitably winning the victory.”
+sn45.4:11.1 | P: Etadattani sambhūtaṁ, | S: this, originating in oneself,
+  Before: “This divine vehicle unsurpassed ↵ Originates from within oneself.
+  After: “This divine vehicle unsurpassed
+sn45.4:11.2 | P: brahmayānaṁ anuttaraṁ; | S: is the supreme divine vehicle.
+  Before: (none)
+  After: Originates from within oneself.
+sn45.4:11.3 | P: Niyyanti dhīrā lokamhā, | S: The attentive leave the world in it,
+  Before: The wise depart from the world in it,
+  After: The wise depart from the world in it,
+sn45.4:11.4 | P: aññadatthu jayaṁ jayan”ti. | S: sure of winning the victory.”
+  Before: Inevitably winning the victory.”
+  After: Inevitably winning the victory.”
+
+## 17 (bodhi, an5.33)
+Source line breaks: She does not despise her husband, ↵ the man who constantly supports her, ↵ who ardently and eagerly ↵ always brings her whatever she wants. ↵ Nor does a good woman scold her husband ↵ with speech caused by jealousy; ↵ the wise woman shows veneration ↵ to all those whom her husband reveres. ↵ She rises early, works diligently,
+an5.33:9.1 | P: Yo naṁ bharati sabbadā, | S: She’d never look down on her husband,
+  Before: She does not despise her husband, ↵ the man who constantly supports her,
+  After: She does not despise her husband,
+an5.33:9.2 | P: niccaṁ ātāpi ussuko; | S: who’s always eager to work hard,
+  Before: who ardently and eagerly
+  After: the man who constantly supports her,
+an5.33:9.3 | P: Sabbakāmaharaṁ posaṁ, | S: always looking after her,
+  Before: always brings her whatever she wants.
+  After: who ardently and eagerly
+an5.33:9.4 | P: bhattāraṁ nātimaññati. | S: and bringing whatever she wants.
+  Before: (none)
+  After: always brings her whatever she wants.
+an5.33:10.1 | P: Na cāpi sotthi bhattāraṁ, | S: And a good woman never scolds her husband
+  Before: Nor does a good woman scold her husband ↵ with speech caused by jealousy;
+  After: Nor does a good woman scold her husband
+an5.33:10.2 | P: issācārena rosaye; | S: with jealous words.
+  Before: (none)
+  After: with speech caused by jealousy;
+an5.33:10.3 | P: Bhattu ca garuno sabbe, | S: Being astute, she reveres
+  Before: the wise woman shows veneration ↵ to all those whom her husband reveres.
+  After: the wise woman shows veneration
+an5.33:10.4 | P: paṭipūjeti paṇḍitā. | S: those respected by her husband.
+  Before: (none)
+  After: to all those whom her husband reveres.
+an5.33:11.1 | P: Uṭṭhāhikā analasā, | S: She gets up early, works tirelessly,
+  Before: She rises early, works diligently,
+  After: She rises early, works diligently,
+
+## 18 (bodhi, sn1.25)
+Source line breaks: “If a bhikkhu is an arahant, ↵ Consummate, with taints destroyed, ↵ One who bears his final body, ↵ Would he still say, ‘I speak’? ↵ And would he say, ‘They speak to me’?” ↵ “If a bhikkhu is an arahant, ↵ Consummate, with taints destroyed, ↵ One who bears his final body, ↵ Consummate, with taints destroyed, ↵ One who bears his final body,
+sn1.25:1.1 | P: “Yo hoti bhikkhu arahaṁ katāvī, | S: “When a mendicant is perfected, well-versed,
+  Before: “If a bhikkhu is an arahant, ↵ Consummate,
+  After: “If a bhikkhu is an arahant,
+sn1.25:1.2 | P: Khīṇāsavo antimadehadhārī; | S: with defilements ended, bearing the final body:
+  Before: with taints destroyed, ↵ One who bears his final body,
+  After: Consummate, with taints destroyed, ↵ One who bears his final body,
+sn1.25:1.3 | P: Ahaṁ vadāmītipi so vadeyya, | S: would they say, ‘I speak’,
+  Before: Would he still say, ‘I speak’?
+  After: Would he still say, ‘I speak’?
+sn1.25:1.4 | P: Mamaṁ vadantītipi so vadeyyā”ti. | S: or even ‘they speak to me’?”
+  Before: And would he say, ‘They speak to me’?”
+  After: And would he say, ‘They speak to me’?”
+
+## 19 (bodhi, sn1.47)
+Source line breaks: “For whom does merit always increase, ↵ Both by day and by night? ↵ Who are the people going to heaven, ↵ Established in Dhamma, endowed with virtue?” ↵ “Those who set up a park or a grove,
+sn1.47:1.1 | P: “Kesaṁ divā ca ratto ca, | S: “Whose merit always grows
+  Before: “For whom does merit always increase,
+  After: “For whom does merit always increase,
+sn1.47:1.2 | P: sadā puññaṁ pavaḍḍhati; | S: by day and by night?
+  Before: Both by day and by night?
+  After: Both by day and by night?
+sn1.47:1.3 | P: Dhammaṭṭhā sīlasampannā, | S: What people—firm in principle, accomplished in conduct—
+  Before: Who are the people going to heaven, ↵ Established in Dhamma, endowed with virtue?”
+  After: Who are the people going to heaven,
+sn1.47:1.4 | P: ke janā saggagāmino”ti. | S: are going to heaven?”
+  Before: (none)
+  After: Established in Dhamma, endowed with virtue?”
+sn1.47:2.1 | P: “Ārāmaropā vanaropā, | S: “Planters of parks or groves,
+  Before: “Those who set up a park or a grove,
+  After: “Those who set up a park or a grove,
+
+## 20 (bodhi, sn11.17)
+Source line breaks: “Rise up, O hero, victor in battle! ↵ Your burden lowered, debt-free one, wander in the world. ↵ “Rise up, O hero, victor in battle! ↵ O caravan leader, debt-free one, wander in the world. ↵ Teach the Dhamma, O Blessed One: ↵ There will be those who will understand.”
+sn11.17:4.1 | P: ‘Uṭṭhehi vīra vijitasaṅgāma, | S: ‘Rise, hero! Victor in battle, caravan leader,
+  Before: “Rise up, O hero, victor in battle! ↵ O caravan leader,
+  After: “Rise up, O hero, victor in battle!
+sn11.17:4.2 | P: Satthavāha anaṇa vicara loke; | S: wander the world free of debt.
+  Before: debt-free one, wander in the world.
+  After: O caravan leader, debt-free one, wander in the world.
+sn11.17:4.3 | P: Desassu bhagavā dhammaṁ, | S: Let the Blessed One teach the Dhamma!
+  Before: Teach the Dhamma, O Blessed One:
+  After: Teach the Dhamma, O Blessed One:
+sn11.17:4.4 | P: Aññātāro bhavissantī’”ti. | S: There will be those who understand!’”
+  Before: There will be those who will understand.”
+  After: There will be those who will understand.”
+
+## 21 (bodhi, an5.47)
+Source line breaks: Therefore an intelligent person, ↵ remembering the Buddhas’ teaching, ↵ should be intent on faith and virtuous behavior, ↵ confidence and vision of the Dhamma.
+an5.47:9.1 | P: Tasmā saddhañca sīlañca, | S: So let the wise devote themselves
+  Before: Therefore an intelligent person, ↵ remembering the Buddhas’ teaching,
+  After: Therefore an intelligent person,
+an5.47:9.2 | P: pasādaṁ dhammadassanaṁ; | S: to faith, ethical behavior,
+  Before: should be intent on faith and virtuous behavior,
+  After: remembering the Buddhas’ teaching,
+an5.47:9.3 | P: Anuyuñjetha medhāvī, | S: confidence, and insight into the teaching,
+  Before: confidence and vision of the Dhamma.
+  After: should be intent on faith and virtuous behavior,
+an5.47:9.4 | P: saraṁ buddhāna sāsanan”ti. | S: remembering the instructions of the Buddhas.”
+  Before: (none)
+  After: confidence and vision of the Dhamma.
+an5.47:9.5 | P: Sattamaṁ. | S: (none)
+  Before: (none)
+  After: (none)
+
+## 22 (bodhi, sn36.1)
+Source line breaks: Where they finally cease, ↵ And the path leading to their destruction. ↵ With the destruction of feelings ↵ A bhikkhu is hungerless and fully quenched.
+sn36.1:3.1 | P: Yattha cetā nirujjhanti, | S: where they cease,
+  Before: Where they finally cease,
+  After: Where they finally cease,
+sn36.1:3.2 | P: maggañca khayagāminaṁ; | S: and the path that leads to their ending.
+  Before: And the path leading to their destruction.
+  After: And the path leading to their destruction.
+sn36.1:3.3 | P: Vedanānaṁ khayā bhikkhu, | S: With the ending of feelings, a mendicant
+  Before: With the destruction of feelings ↵ A bhikkhu
+  After: With the destruction of feelings
+sn36.1:3.4 | P: nicchāto parinibbuto”ti. | S: is hungerless, quenched.”
+  Before: is hungerless and fully quenched.
+  After: A bhikkhu is hungerless and fully quenched.
+sn36.1:3.5 | P: Paṭhamaṁ. | S: (none)
+  Before: (none)
+  After: (none)
+
+## 23 (bodhi, mn26)
+Source line breaks: ‘Enough with teaching the Dhamma ↵ That even I found hard to reach; ↵ For it will never be perceived ↵ By those who live in lust and hate. ↵ Those dyed in lust, wrapped in darkness ↵ Will never discern this abstruse Dhamma ↵ Which goes against the worldly stream, ↵ Subtle, deep, and difficult to see.’
+mn26:19.8 | P: ‘Kicchena me adhigataṁ, | S: ‘I’ve struggled hard to realize this,
+  Before: ‘Enough with teaching the Dhamma ↵ That even I found hard to reach;
+  After: ‘Enough with teaching the Dhamma
+mn26:19.9 | P: halaṁ dāni pakāsituṁ; | S: there’s no need to reveal it now!
+  Before: For it will never be perceived
+  After: That even I found hard to reach;
+mn26:19.10 | P: Rāgadosaparetehi, | S: Those mired in greed and hate
+  Before: By those who live in lust and hate. ↵ Those dyed in lust, wrapped in darkness
+  After: For it will never be perceived
+mn26:19.11 | P: nāyaṁ dhammo susambudho. | S: can’t really understand this teaching.
+  Before: Will never discern this abstruse Dhamma
+  After: By those who live in lust and hate.
+mn26:19.12 | P: Paṭisotagāmiṁ nipuṇaṁ, | S: It goes against the stream, subtle,
+  Before: Which goes against the worldly stream, ↵ Subtle,
+  After: Those dyed in lust, wrapped in darkness
+mn26:19.13 | P: gambhīraṁ duddasaṁ aṇuṁ; | S: deep, obscure, and very fine.
+  Before: deep, and difficult to see.’
+  After: Will never discern this abstruse Dhamma
+mn26:19.14 | P: Rāgarattā na dakkhanti, | S: Those besotted by greed cannot see,
+  Before: (none)
+  After: Which goes against the worldly stream,
+mn26:19.15 | P: tamokhandhena āvuṭā’ti. | S: for they’re cloaked in a mass of darkness.’
+  Before: (none)
+  After: Subtle, deep, and difficult to see.’
+mn26:19.16 | P: Itiha me, bhikkhave, paṭisañcikkhato appossukkatāya cittaṁ namati, no dhammadesanāya. | S: So, as I reflected like this, my mind inclined to remaining passive, not to teaching the Dhamma.
+  Before: Considering thus, my mind inclined to inaction rather than to teaching the Dhamma.
+  After: Considering thus, my mind inclined to inaction rather than to teaching the Dhamma.
+
+## 24 (bodhi, sn4.17)
+Source line breaks: “But when he has transcended this, ↵ The mindful disciple of the Buddha ↵ Shines radiantly like the sun, ↵ Having surmounted Mara’s realm.”
+sn4.17:4.1 | P: Etañca samatikkamma, | S: But a mindful disciple of the Buddha
+  Before: “But when he has transcended this, ↵ The mindful disciple of the Buddha
+  After: “But when he has transcended this,
+sn4.17:4.2 | P: sato buddhassa sāvako; | S: has transcended all that.
+  Before: (none)
+  After: The mindful disciple of the Buddha
+sn4.17:4.3 | P: Māradheyyaṁ atikkamma, | S: Having slipped free of Māra’s dominion,
+  Before: Shines radiantly like the sun, ↵ Having surmounted Mara’s realm.”
+  After: Shines radiantly like the sun,
+sn4.17:4.4 | P: ādiccova virocatī”ti. | S: they dazzle like the sun.”
+  Before: (none)
+  After: Having surmounted Mara’s realm.”
+sn4.17:5.1 | P: Atha kho māro pāpimā …pe… tatthevantaradhāyīti. | S: Then Māra … vanished right there.
+  Before: Then Mara the Evil One … disappeared right there.
+  After: Then Mara the Evil One … disappeared right there.
+
+## 25 (bodhi, an3.29)
+Source line breaks: Both by thievish cheatful acts ↵ and by means of false speech ↵ the man indulging in sensual pleasures ↵ is skilled in amassing wealth. ↵ Having gone from here to hell, ↵ the one-eyed person is tormented.
+an3.29:6.1 | P: Theyyena kūṭakammena, | S: Both by fraudulent, thieving deeds,
+  Before: Both by thievish cheatful acts
+  After: Both by thievish cheatful acts
+an3.29:6.2 | P: musāvādena cūbhayaṁ; | S: and also by lies,
+  Before: and by means of false speech
+  After: and by means of false speech
+an3.29:6.3 | P: Kusalo hoti saṅghātuṁ, | S: the young man’s skilled at piling up money,
+  Before: the man indulging in sensual pleasures ↵ is skilled in amassing wealth.
+  After: the man indulging in sensual pleasures
+an3.29:6.4 | P: kāmabhogī ca mānavo; | S: and enjoying sensual pleasures.
+  Before: (none)
+  After: is skilled in amassing wealth.
+an3.29:6.5 | P: Ito so nirayaṁ gantvā, | S: From here they go to hell—
+  Before: Having gone from here to hell,
+  After: Having gone from here to hell,
+an3.29:6.6 | P: ekacakkhu vihaññati. | S: the one-eyed person is ruined.
+  Before: the one-eyed person is tormented.
+  After: the one-eyed person is tormented.
+
+## 26 (bodhi, sn35.228)
+Source line breaks: “One who has crossed this ocean so hard to cross, ↵ With its dangers of sharks, demons, waves, ↵ The knowledge-master who has lived the holy life, ↵ Reached the world’s end, is called one gone beyond.”
+sn35.228:3.1 | P: “Yo imaṁ samuddaṁ sagāhaṁ sarakkhasaṁ, | S: “A knowledge master who’s crossed the ocean so hard to cross,
+  Before: “One who has crossed this ocean so hard to cross,
+  After: “One who has crossed this ocean so hard to cross,
+sn35.228:3.2 | P: Saūmiṁ sāvaṭṭaṁ sabhayaṁ duttaraṁ accatari; | S: with its saltwater crocodiles and monsters, its waves, whirlpools, and dangers;
+  Before: With its dangers of sharks, demons, waves,
+  After: With its dangers of sharks, demons, waves,
+sn35.228:3.3 | P: Sa vedagū vusitabrahmacariyo, | S: they’ve completed the spiritual journey and gone to the end of the world,
+  Before: The knowledge-master who has lived the holy life, ↵ Reached the world’s end,
+  After: The knowledge-master who has lived the holy life,
+sn35.228:3.4 | P: Lokantagū pāragatoti vuccatī”ti. | S: they’re called ‘one who has gone beyond’.”
+  Before: is called one gone beyond.”
+  After: Reached the world’s end, is called one gone beyond.”
+sn35.228:3.5 | P: Paṭhamaṁ. | S: (none)
+  Before: (none)
+  After: (none)
+
+## 27 (bodhi, an8.10)
+Source line breaks: Get rid of the trash! ↵ Remove the depraved fellows! ↵ Sweep the chaff away, non-ascetics ↵ who think themselves ascetics! ↵ Having banished those of evil desires,
+an8.10:10.1 | P: Kāraṇḍavaṁ niddhamatha, | S: Throw out the trash!
+  Before: Get rid of the trash!
+  After: Get rid of the trash!
+an8.10:10.2 | P: Kasambuṁ apakassatha; | S: Get rid of the rubbish!
+  Before: Remove the depraved fellows!
+  After: Remove the depraved fellows!
+an8.10:10.3 | P: Tato palāpe vāhetha, | S: And sweep away the scraps—
+  Before: Sweep the chaff away,
+  After: Sweep the chaff away, non-ascetics
+an8.10:10.4 | P: Assamaṇe samaṇamānine. | S: they’re not ascetics, they just think they are.
+  Before: non-ascetics ↵ who think themselves ascetics!
+  After: who think themselves ascetics!
+an8.10:11.1 | P: Niddhamitvāna pāpicche, | S: When you’ve thrown out those of corrupt wishes,
+  Before: Having banished those of evil desires,
+  After: Having banished those of evil desires,
+
+## 28 (bodhi, mn82)
+Source line breaks: While his heirs take over his wealth, this being ↵ Must pass on according to his actions; ↵ And as he dies nothing can follow him; ↵ Not child nor wife nor wealth nor royal estate.
+mn82:42.23 | P: Dāyādakā tassa dhanaṁ haranti, | S: Heirs take your riches,
+  Before: While his heirs take over his wealth,
+  After: While his heirs take over his wealth, this being
+mn82:42.24 | P: Satto pana gacchati yena kammaṁ; | S: while beings fare on according to their deeds.
+  Before: this being ↵ Must pass on according to his actions;
+  After: Must pass on according to his actions;
+mn82:42.25 | P: Na mīyamānaṁ dhanamanveti kiñci, | S: Riches don’t follow you when you die;
+  Before: And as he dies nothing can follow him;
+  After: And as he dies nothing can follow him;
+mn82:42.26 | P: Puttā ca dārā ca dhanañca raṭṭhaṁ. | S: nor do children, wife, wealth, nor kingdom.
+  Before: Not child nor wife nor wealth nor royal estate.
+  After: Not child nor wife nor wealth nor royal estate.
+
+## 29 (bodhi, an5.38)
+Source line breaks: those in the world who are fields of merit— ↵ devoid of lust and hatred, ↵ devoid of delusion, taintless— ↵ resort to such a person.
+an5.38:6.1 | P: Vītarāgā vītadosā, | S: Those free of greed, freed of hate,
+  Before: those in the world who are fields of merit— ↵ devoid of lust and hatred,
+  After: those in the world who are fields of merit—
+an5.38:6.2 | P: vītamohā anāsavā; | S: free of delusion, undefiled,
+  Before: devoid of delusion, taintless—
+  After: devoid of lust and hatred,
+an5.38:6.3 | P: Puññakkhettāni lokasmiṁ, | S: fields of merit for the world,
+  Before: (none)
+  After: devoid of delusion, taintless—
+an5.38:6.4 | P: sevanti tādisaṁ naraṁ. | S: associate with such a person.
+  Before: resort to such a person.
+  After: resort to such a person.
+
+## 30 (bodhi, sn11.19)
+Source line breaks: “‘The Perfectly Enlightened One here ↵ In this world with its devas, ↵ The Teacher of perfect name: ↵ He is the one whom I worship, Matali.
+sn11.19:3.1 | P: ‘Yo idha sammāsambuddho, | S: ‘It’s the fully awakened Buddha,
+  Before: Sakka: ↵ “‘The Perfectly Enlightened One here ↵ In this world with its devas,
+  After: Sakka: ↵ “‘The Perfectly Enlightened One here
+sn11.19:3.2 | P: asmiṁ loke sadevake; | S: the Teacher of peerless name
+  Before: The Teacher of perfect name:
+  After: In this world with its devas,
+sn11.19:3.3 | P: Anomanāmaṁ satthāraṁ, | S: in this world with its gods—
+  Before: (none)
+  After: The Teacher of perfect name:
+sn11.19:3.4 | P: taṁ namassāmi mātali. | S: that’s who I worship, Mātali.
+  Before: He is the one whom I worship, Matali.
+  After: He is the one whom I worship, Matali.
+
+## 31 (bodhi, an4.39)
+Source line breaks: and various creatures are slain. ↵ But when they regularly offer by family custom ↵ sacrifices free from violence, ↵ no goats, sheep, and cattle ↵ or various creatures are slain. ↵ That is the sacrifice the great seers ↵ of right conduct attend. ↵ The wise person should offer this;
+an4.39:4.4 | P: upayanti mahesino. | S: and various creatures are killed.
+  Before: and various creatures are slain.
+  After: and various creatures are slain.
+an4.39:5.1 | P: Ye ca yaññā nirārambhā, | S: But the great sages of right comportment
+  Before: (none)
+  After: But when they regularly offer by family custom
+an4.39:5.2 | P: yajanti anukulaṁ sadā; | S: do attend those sacrifices
+  Before: But when they regularly offer by family custom
+  After: sacrifices free from violence,
+an4.39:5.3 | P: Ajeḷakā ca gāvo ca, | S: that are non-violent and propitious,
+  Before: sacrifices free from violence,
+  After: no goats, sheep, and cattle
+an4.39:5.4 | P: vividhā nettha haññare; | S: where goats, sheep, and cattle,
+  Before: no goats, sheep, and cattle
+  After: or various creatures are slain.
+an4.39:5.5 | P: Tañca sammaggatā yaññaṁ, | S: and various creatures are not killed.
+  Before: or various creatures are slain.
+  After: That is the sacrifice the great seers
+an4.39:5.6 | P: upayanti mahesino. | S: (none)
+  Before: That is the sacrifice the great seers ↵ of right conduct attend.
+  After: of right conduct attend.
+an4.39:6.1 | P: Etaṁ yajetha medhāvī, | S: An intelligent person should sacrifice like this,
+  Before: The wise person should offer this;
+  After: The wise person should offer this;
+
+## 32 (bodhi, an10.12)
+Source line breaks: When sensual desire and ill will, ↵ dullness and drowsiness, ↵ restlessness, and doubt are ↵ totally absent in a bhikkhu; ↵ when one like this possesses ↵ the virtue and concentration ↵ of one beyond training, ↵ and similar liberation and knowledge; ↵ possessing five factors
+an10.12:4.1 | P: Kāmacchando ca byāpādo, | S: Sensual desire, ill will,
+  Before: When sensual desire and ill will,
+  After: When sensual desire and ill will,
+an10.12:4.2 | P: thinamiddhañca bhikkhuno; | S: dullness and drowsiness,
+  Before: dullness and drowsiness,
+  After: dullness and drowsiness,
+an10.12:4.3 | P: Uddhaccaṁ vicikicchā ca, | S: restlessness, and doubt
+  Before: restlessness, and doubt
+  After: restlessness, and doubt are
+an10.12:4.4 | P: sabbasova na vijjati. | S: are not found in a mendicant at all.
+  Before: are ↵ totally absent in a bhikkhu;
+  After: totally absent in a bhikkhu;
+an10.12:5.1 | P: Asekhena ca sīlena, | S: That sort are accomplished
+  Before: when one like this possesses ↵ the virtue
+  After: when one like this possesses
+an10.12:5.2 | P: asekhena samādhinā; | S: in an adept’s ethics,
+  Before: and concentration ↵ of one beyond training,
+  After: the virtue and concentration
+an10.12:5.3 | P: Vimuttiyā ca sampanno, | S: an adept’s immersion,
+  Before: and similar liberation
+  After: of one beyond training,
+an10.12:5.4 | P: ñāṇena ca tathāvidho. | S: and freedom and knowledge.
+  Before: and knowledge;
+  After: and similar liberation and knowledge;
+an10.12:6.1 | P: Sa ve pañcaṅgasampanno, | S: Possessing these five factors,
+  Before: possessing five factors
+  After: possessing five factors
+
+## 33 (bodhi, an4.17)
+Source line breaks: If through desire, hate, fear, or delusion ↵ one transgresses against the Dhamma, ↵ one’s fame diminishes like the moon ↵ in the dark fortnight.
+an4.17:2.1 | P: Chandā dosā bhayā mohā, | S: If you act against the teaching
+  Before: If through desire, hate, fear, or delusion ↵ one transgresses against the Dhamma,
+  After: If through desire, hate, fear, or delusion
+an4.17:2.2 | P: yo dhammaṁ ativattati; | S: out of favoritism, hostility, cowardice, or stupidity,
+  Before: (none)
+  After: one transgresses against the Dhamma,
+an4.17:2.3 | P: Nihīyati tassa yaso, | S: your fame fades away,
+  Before: one’s fame diminishes
+  After: one’s fame diminishes like the moon
+an4.17:2.4 | P: kāḷapakkheva candimā”ti. | S: like the moon in the waning fortnight.”
+  Before: like the moon ↵ in the dark fortnight.
+  After: in the dark fortnight.
+an4.17:2.5 | P: Sattamaṁ. | S: (none)
+  Before: (none)
+  After: (none)
+
+## 34 (bodhi, an4.3)
+Source line breaks: For a hundred thousand and thirty-six ↵ nirabbudas, plus five abbudas, ↵ the slanderer of noble ones goes to hell, ↵ having defamed them with evil speech and mind.
+an4.3:5.1 | P: Sataṁ sahassānaṁ nirabbudānaṁ, | S: For a hundred thousand times a hundred million,
+  Before: For a hundred thousand and thirty-six ↵ nirabbudas, plus five abbudas,
+  After: For a hundred thousand and thirty-six
+an4.3:5.2 | P: Chattiṁsatī pañca ca abbudāni; | S: times five hundred and thirty-six times a thousand times ten million years
+  Before: (none)
+  After: nirabbudas, plus five abbudas,
+an4.3:5.3 | P: Yamariyagarahī nirayaṁ upeti, | S: a slanderer of noble ones goes to hell,
+  Before: the slanderer of noble ones goes to hell,
+  After: the slanderer of noble ones goes to hell,
+an4.3:5.4 | P: Vācaṁ manañca paṇidhāya pāpakan”ti. | S: having aimed bad words and thoughts at them.”
+  Before: having defamed them with evil speech and mind.
+  After: having defamed them with evil speech and mind.
+
+## 35 (bodhi, an3.29)
+Source line breaks: He does not possess such wealth, ↵ nor does he do deeds of merit; ↵ the blind man destitute of eyes ↵ casts an unlucky throw in both respects. ↵ The person described as one-eyed ↵ is a hypocrite who seeks wealth, ↵ sometimes righteously ↵ and sometimes unrighteously. ↵ Both by thievish cheatful acts
+an3.29:4.1 | P: Na ceva bhogā tathārūpā, | S: Neither suitable wealth,
+  Before: He does not possess such wealth,
+  After: He does not possess such wealth,
+an3.29:4.2 | P: na ca puññāni kubbati; | S: nor merit do they make.
+  Before: nor does he do deeds of merit;
+  After: nor does he do deeds of merit;
+an3.29:4.3 | P: Ubhayattha kaliggāho, | S: They hold a losing hand on both counts,
+  Before: the blind man destitute of eyes ↵ casts an unlucky throw in both respects.
+  After: the blind man destitute of eyes
+an3.29:4.4 | P: andhassa hatacakkhuno. | S: those who are blind, with ruined eyes.
+  Before: (none)
+  After: casts an unlucky throw in both respects.
+an3.29:5.1 | P: Athāparāyaṁ akkhāto, | S: And now the one-eyed
+  Before: The person described as one-eyed
+  After: The person described as one-eyed
+an3.29:5.2 | P: Ekacakkhu ca puggalo; | S: individual is explained.
+  Before: (none)
+  After: is a hypocrite who seeks wealth,
+an3.29:5.3 | P: Dhammādhammena saṭhoso, | S: By methods good and bad,
+  Before: (none)
+  After: sometimes righteously
+an3.29:5.4 | P: Bhogāni pariyesati. | S: that devious person seeks wealth.
+  Before: is a hypocrite who seeks wealth, ↵ sometimes righteously ↵ and sometimes unrighteously.
+  After: and sometimes unrighteously.
+an3.29:6.1 | P: Theyyena kūṭakammena, | S: Both by fraudulent, thieving deeds,
+  Before: Both by thievish cheatful acts
+  After: Both by thievish cheatful acts
+
+## 36 (bodhi, sn36.5)
+Source line breaks: One who has seen the pleasant as painful ↵ And the painful as a dart, ↵ Seen as impermanent the peaceful feeling ↵ Neither painful nor pleasant: ↵ He is a bhikkhu who sees rightly,
+sn36.5:2.1 | P: Yo sukhaṁ dukkhato adda, | S: A mendicant who sees pleasure as pain,
+  Before: One who has seen the pleasant as painful
+  After: One who has seen the pleasant as painful
+sn36.5:2.2 | P: dukkhamaddakkhi sallato; | S: and suffering as a dart,
+  Before: And the painful as a dart,
+  After: And the painful as a dart,
+sn36.5:2.3 | P: Adukkhamasukhaṁ santaṁ, | S: and that peaceful, neutral feeling
+  Before: Seen as impermanent the peaceful feeling ↵ Neither painful nor pleasant:
+  After: Seen as impermanent the peaceful feeling
+sn36.5:2.4 | P: addakkhi naṁ aniccato. | S: as impermanent
+  Before: (none)
+  After: Neither painful nor pleasant:
+sn36.5:3.1 | P: Sa ve sammaddaso bhikkhu, | S: sees rightly;
+  Before: He is a bhikkhu who sees rightly,
+  After: He is a bhikkhu who sees rightly,
+
+## 37 (bodhi, an4.51)
+Source line breaks: Just as the many rivers used by the hosts of people, ↵ flowing downstream, reach the ocean, ↵ the great mass of water, the boundless sea, ↵ the fearsome receptacle of heaps of gems;
+an4.51:7.1 | P: Mahodadhiṁ aparimitaṁ mahāsaraṁ, | S: Hosts of people use the rivers,
+  Before: Just as the many rivers used by the hosts of people,
+  After: Just as the many rivers used by the hosts of people,
+an4.51:7.2 | P: Bahubheravaṁ ratanavarānamālayaṁ; | S: and though the rivers are many,
+  Before: (none)
+  After: flowing downstream, reach the ocean,
+an4.51:7.3 | P: Najjo yathā naragaṇasaṅghasevitā, | S: all reach the great deep, the boundless ocean,
+  Before: flowing downstream, reach the ocean, ↵ the great mass of water, the boundless sea,
+  After: the great mass of water, the boundless sea,
+an4.51:7.4 | P: Puthū savantī upayanti sāgaraṁ. | S: the cruel sea that’s home to precious gems.
+  Before: the fearsome receptacle of heaps of gems;
+  After: the fearsome receptacle of heaps of gems;
+
+## 38 (bodhi, sn11.4)
+Source line breaks: “‘They call that strength no strength at all— ↵ The strength that is the strength of folly— ↵ But no one can reproach a person ↵ Who is strong because guarded by Dhamma.
+sn11.4:9.1 | P: Abalaṁ taṁ balaṁ āhu, | S: The strength of folly
+  Before: “‘They call that strength no strength at all— ↵ The strength that is the strength of folly—
+  After: “‘They call that strength no strength at all—
+sn11.4:9.2 | P: yassa bālabalaṁ balaṁ; | S: is really just weakness, they say.
+  Before: (none)
+  After: The strength that is the strength of folly—
+sn11.4:9.3 | P: Balassa dhammaguttassa, | S: But no one can challenge a person
+  Before: But no one can reproach a person
+  After: But no one can reproach a person
+sn11.4:9.4 | P: paṭivattā na vijjati. | S: who’s strong, guarded by the teaching.
+  Before: Who is strong because guarded by Dhamma.
+  After: Who is strong because guarded by Dhamma.
+
+## 39 (bodhi, sn1.32)
+Source line breaks: “That which the miser fears when he does not give ↵ Is the very danger that comes to the nongiver. ↵ The hunger and thirst that the miser fears ↵ Afflict that fool in this world and the next. ↵ “Therefore, having removed stinginess,
+sn1.32:4.1 | P: “Yasseva bhīto na dadāti maccharī, | S: “When a miser fails to give because of fear,
+  Before: “That which the miser fears when he does not give
+  After: “That which the miser fears when he does not give
+sn1.32:4.2 | P: Tadevādadato bhayaṁ; | S: the very thing they’re afraid of comes to pass.
+  Before: Is the very danger that comes to the nongiver.
+  After: Is the very danger that comes to the nongiver.
+sn1.32:4.3 | P: Jighacchā ca pipāsā ca, | S: The hunger and thirst
+  Before: The hunger and thirst
+  After: The hunger and thirst that the miser fears
+sn1.32:4.4 | P: Yassa bhāyati maccharī; | S: that a miser fears
+  Before: that the miser fears
+  After: (none)
+sn1.32:4.5 | P: Tameva bālaṁ phusati, | S: hurt the fool
+  Before: Afflict that fool
+  After: Afflict that fool in this world and the next.
+sn1.32:4.6 | P: Asmiṁ loke paramhi ca. | S: in this world and the next.
+  Before: in this world and the next.
+  After: (none)
+sn1.32:5.1 | P: Tasmā vineyya maccheraṁ, | S: So you should dispel stinginess,
+  Before: “Therefore, having removed stinginess,
+  After: “Therefore, having removed stinginess,
+
+## 40 (bodhi, an3.36)
+Source line breaks: But those good people here who, ↵ when warned by the divine messengers, ↵ never become heedless ↵ in regard to the noble Dhamma;
+an3.36:20.1 | P: Ye ca kho devadūtehi, | S: When warned by the gods’ messengers,
+  Before: But those good people here who, ↵ when warned by the divine messengers,
+  After: But those good people here who,
+an3.36:20.2 | P: santo sappurisā idha; | S: the good and true persons here
+  Before: (none)
+  After: when warned by the divine messengers,
+an3.36:20.3 | P: Coditā nappamajjanti, | S: never neglect
+  Before: never become heedless
+  After: never become heedless
+an3.36:20.4 | P: ariyadhamme kudācanaṁ. | S: the teaching of the Noble One.
+  Before: in regard to the noble Dhamma;
+  After: in regard to the noble Dhamma;
+
+## 41 (bodhi, mn26)
+Source line breaks: ‘I am one who has transcended all, a knower of all, ↵ Unsullied among all things, renouncing all, ↵ By craving’s ceasing freed. Having known this all ↵ For myself, to whom should I point as teacher? ↵ I have no teacher, and one like me ↵ Exists nowhere in all the world ↵ With all its gods, because I have ↵ No person for my counterpart. ↵ I am the Accomplished One in the world,
+mn26:25.6 | P: ‘Sabbābhibhū sabbavidūhamasmi, | S: ‘I am the vanquisher of all, the knower of all,
+  Before: ‘I am one who has transcended all, a knower of all,
+  After: ‘I am one who has transcended all, a knower of all,
+mn26:25.7 | P: Sabbesu dhammesu anūpalitto; | S: unsullied in the midst of all things.
+  Before: Unsullied among all things,
+  After: Unsullied among all things, renouncing all,
+mn26:25.8 | P: Sabbañjaho taṇhākkhaye vimutto, | S: I’ve given up all, freed through the ending of craving.
+  Before: renouncing all, ↵ By craving’s ceasing freed.
+  After: By craving’s ceasing freed. Having known this all
+mn26:25.9 | P: Sayaṁ abhiññāya kamuddiseyyaṁ. | S: Since I know for myself, whose follower should I be?
+  Before: Having known this all ↵ For myself, to whom should I point as teacher?
+  After: For myself, to whom should I point as teacher?
+mn26:25.10 | P: Na me ācariyo atthi, | S: I have no tutor.
+  Before: I have no teacher,
+  After: I have no teacher, and one like me
+mn26:25.11 | P: sadiso me na vijjati; | S: There is no one like me.
+  Before: and one like me ↵ Exists nowhere
+  After: Exists nowhere in all the world
+mn26:25.12 | P: Sadevakasmiṁ lokasmiṁ, | S: In the world with its gods,
+  Before: in all the world ↵ With all its gods,
+  After: With all its gods, because I have
+mn26:25.13 | P: natthi me paṭipuggalo. | S: I have no rival.
+  Before: because I have ↵ No person for my counterpart.
+  After: No person for my counterpart.
+mn26:25.14 | P: Ahañhi arahā loke, | S: For in this world, I am the perfected one;
+  Before: I am the Accomplished One in the world,
+  After: I am the Accomplished One in the world,
+
+## 42 (bodhi, an5.36)
+Source line breaks: Therefore, with a non-regressing mind, ↵ one should give a gift where it yields great fruit. ↵ Merits are the support of living beings ↵ when they arise in the other world.
+an5.36:4.1 | P: Tasmā dade appaṭivānacitto, | S: So you should give without holding back,
+  Before: Therefore, with a non-regressing mind, ↵ one should give a gift
+  After: Therefore, with a non-regressing mind,
+an5.36:4.2 | P: Yattha dinnaṁ mahapphalaṁ; | S: where a gift is very fruitful.
+  Before: where it yields great fruit.
+  After: one should give a gift where it yields great fruit.
+an5.36:4.3 | P: Puññāni paralokasmiṁ, | S: The good deeds of sentient beings
+  Before: Merits are the support of living beings
+  After: Merits are the support of living beings
+an5.36:4.4 | P: Patiṭṭhā honti pāṇinan”ti. | S: support them in the next world.”
+  Before: when they arise in the other world.
+  After: when they arise in the other world.
+
+## 43 (bodhi, sn11.18)
+Source line breaks: “Having given this explanation, ↵ Having worshipped the different quarters, ↵ The deva-king Maghava, Suja’s husband, ↵ The chief, climbed into his chariot.”
+sn11.18:7.1 | P: Idaṁ vatvāna maghavā, | S: After saying this, Maghavā the chief,
+  Before: The Blessed One: ↵ “Having given this explanation, ↵ Having worshipped the different quarters, ↵ The deva-king Maghava, Suja’s husband,
+  After: The Blessed One: ↵ “Having given this explanation,
+sn11.18:7.2 | P: devarājā sujampati; | S: king of gods, Sujā’s husband,
+  Before: (none)
+  After: Having worshipped the different quarters,
+sn11.18:7.3 | P: Puthuddisā namassitvā, | S: having worshiped the various quarters
+  Before: (none)
+  After: The deva-king Maghava, Suja’s husband,
+sn11.18:7.4 | P: pamukho rathamāruhī”ti. | S: climbed into his chariot.”
+  Before: The chief, climbed into his chariot.”
+  After: The chief, climbed into his chariot.”
+
+## 44 (bodhi, an4.51)
+Source line breaks: so the streams of merit reach the wise man ↵ who is a giver of food, drink, and cloth; ↵ they reach the donor of beds, seats, and covers ↵ like rivers carrying their waters to the sea.
+an4.51:8.1 | P: Evaṁ naraṁ annadapānavatthadaṁ, | S: In the same way, when a person gives food, drink, and clothes;
+  Before: so the streams of merit reach the wise man ↵ who is a giver of food, drink, and cloth;
+  After: so the streams of merit reach the wise man
+an4.51:8.2 | P: Seyyānisajjattharaṇassa dāyakaṁ; | S: and they’re a giver of beds, seats, and mats—
+  Before: they reach the donor of beds, seats, and covers
+  After: who is a giver of food, drink, and cloth;
+an4.51:8.3 | P: Puññassa dhārā upayanti paṇḍitaṁ, | S: the streams of merit reach that astute person,
+  Before: (none)
+  After: they reach the donor of beds, seats, and covers
+an4.51:8.4 | P: Najjo yathā vārivahāva sāgaran”ti. | S: as the rivers bring their waters to the sea.”
+  Before: like rivers carrying their waters to the sea.
+  After: like rivers carrying their waters to the sea.
+
+## 45 (bodhi, an4.19)
+Source line breaks: If through desire, hate, fear, or delusion ↵ one transgresses against the Dhamma, ↵ one’s fame diminishes like the moon ↵ in the dark fortnight. ↵ If one does not transgress the Dhamma ↵ through desire, hate, fear, or delusion, ↵ one’s fame becomes full like the moon ↵ in the bright fortnight.
+an4.19:3.1 | P: Chandā dosā bhayā mohā, | S: If you act against the teaching
+  Before: If through desire, hate, fear, or delusion ↵ one transgresses against the Dhamma,
+  After: If through desire, hate, fear, or delusion
+an4.19:3.2 | P: yo dhammaṁ ativattati; | S: out of favoritism, hostility, cowardice, or stupidity,
+  Before: (none)
+  After: one transgresses against the Dhamma,
+an4.19:3.3 | P: Nihīyati tassa yaso, | S: your fame fades away,
+  Before: one’s fame diminishes
+  After: one’s fame diminishes like the moon
+an4.19:3.4 | P: kāḷapakkheva candimā. | S: like the moon in the waning fortnight.
+  Before: like the moon ↵ in the dark fortnight.
+  After: in the dark fortnight.
+an4.19:4.1 | P: Chandā dosā bhayā mohā, | S: If you don’t act against the teaching
+  Before: If one does not transgress the Dhamma ↵ through desire, hate, fear, or delusion,
+  After: If one does not transgress the Dhamma
+an4.19:4.2 | P: yo dhammaṁ nātivattati; | S: out of favoritism, hostility, cowardice, and stupidity,
+  Before: (none)
+  After: through desire, hate, fear, or delusion,
+an4.19:4.3 | P: Āpūrati tassa yaso, | S: your fame swells,
+  Before: one’s fame becomes full
+  After: one’s fame becomes full like the moon
+an4.19:4.4 | P: sukkapakkheva candimā”ti. | S: like the moon in the waxing fortnight.”
+  Before: like the moon ↵ in the bright fortnight.
+  After: in the bright fortnight.
+an4.19:4.5 | P: Navamaṁ. | S: (none)
+  Before: (none)
+  After: (none)
+
+## 46 (bodhi, sn1.62)
+Source line breaks: “The world is led around by mind; ↵ By mind it’s dragged here and there. ↵ Mind is the one thing that has ↵ All under its control.”
+sn1.62:2.1 | P: “Cittena nīyati loko, | S: “The mind leads the world on.
+  Before: “The world is led around by mind;
+  After: “The world is led around by mind;
+sn1.62:2.2 | P: cittena parikassati; | S: The mind drags it around.
+  Before: By mind it’s dragged here and there.
+  After: By mind it’s dragged here and there.
+sn1.62:2.3 | P: Cittassa ekadhammassa, | S: Mind is the one thing
+  Before: Mind is the one thing
+  After: Mind is the one thing that has
+sn1.62:2.4 | P: sabbeva vasamanvagū”ti. | S: that has everything under its sway.”
+  Before: that has ↵ All under its control.”
+  After: All under its control.”
+
+## 47 (bodhi, an3.39)
+Source line breaks: intoxication with health, ↵ with youth, and with life— ↵ having seen security in renunciation. ↵ “Zeal then arose in me ↵ as I clearly saw nibbāna.
+an3.39:10.4 | P: jīvitasmiñca ye madā. | S: of health, of youth,
+  Before: intoxication with health, ↵ with youth,
+  After: intoxication with health, ↵ with youth, and with life—
+an3.39:11.1 | P: Sabbe made abhibhosmi, | S: and even of life—
+  Before: and with life—
+  After: (none)
+an3.39:11.2 | P: Nekkhamme daṭṭhu khemataṁ; | S: seeing renunciation as sanctuary.
+  Before: having seen security in renunciation.
+  After: having seen security in renunciation.
+an3.39:11.3 | P: Tassa me ahu ussāho, | S: Zeal sprang up in me
+  Before: “Zeal then arose in me
+  After: “Zeal then arose in me
+an3.39:11.4 | P: Nibbānaṁ abhipassato. | S: as I looked to extinguishment.
+  Before: as I clearly saw nibbāna.
+  After: as I clearly saw nibbāna.
+
+## 48 (bodhi, an4.28)
+Source line breaks: Who can obstruct the dispeller ↵ who has discarded all kamma? ↵ Who is fit to blame one who is like ↵ a coin of refined gold? ↵ Even the devas praise such a one; ↵ by Brahmā too he is praised.
+an4.28:7.1 | P: Sabbakammavihāyīnaṁ, | S: Who can hold back the dispeller,
+  Before: Who can obstruct the dispeller
+  After: Who can obstruct the dispeller
+an4.28:7.2 | P: panuṇṇaṁ ko nivāraye; | S: who’s cast aside all deeds?
+  Before: who has discarded all kamma?
+  After: who has discarded all kamma?
+an4.28:7.3 | P: Nekkhaṁ jambonadasseva, | S: Like a pendant of Black Plum River gold,
+  Before: Who is fit to blame one who is like ↵ a coin of refined gold?
+  After: Who is fit to blame one who is like
+an4.28:7.4 | P: ko taṁ ninditumarahati; | S: who is worthy to criticize them?
+  Before: (none)
+  After: a coin of refined gold?
+an4.28:7.5 | P: Devāpi naṁ pasaṁsanti, | S: Even the gods praise them,
+  Before: Even the devas praise such a one;
+  After: Even the devas praise such a one;
+an4.28:7.6 | P: brahmunāpi pasaṁsito”ti. | S: and by the Divinity, too, they’re praised.”
+  Before: by Brahmā too he is praised.
+  After: by Brahmā too he is praised.
+
+## 49 (bodhi, sn11.18)
+Source line breaks: “‘I worship as well, O Matali, ↵ Those householders making merit, ↵ The lay followers possessed of virtue ↵ Who righteously maintain a wife.’
+sn11.18:5.1 | P: Ye gahaṭṭhā puññakarā, | S: I also worship those householders,
+  Before: “‘I worship as well, O Matali, ↵ Those householders making merit,
+  After: “‘I worship as well, O Matali,
+sn11.18:5.2 | P: sīlavanto upāsakā; | S: the ethical lay followers
+  Before: The lay followers possessed of virtue
+  After: Those householders making merit,
+sn11.18:5.3 | P: Dhammena dāraṁ posenti, | S: who make merit, Mātali,
+  Before: (none)
+  After: The lay followers possessed of virtue
+sn11.18:5.4 | P: te namassāmi mātalī’ti. | S: providing for a partner in a principled manner.’
+  Before: Who righteously maintain a wife.’
+  After: Who righteously maintain a wife.’
+
+## 50 (bodhi, sn4.25)
+Source line breaks: “How does a bhikkhu here often dwell ↵ That, five floods crossed, he here has crossed the sixth? ↵ How does he meditate so sensual perceptions ↵ Are kept at bay and fail to grip him?”
+sn4.25:16.1 | P: “Kathaṁvihārībahulodha bhikkhu, | S: “How does a mendicant who has crossed five floods
+  Before: “How does a bhikkhu here often dwell ↵ That, five floods crossed,
+  After: “How does a bhikkhu here often dwell
+sn4.25:16.2 | P: Pañcoghatiṇṇo atarīdha chaṭṭhaṁ; | S: usually meditate here while crossing the sixth?
+  Before: he here has crossed the sixth?
+  After: That, five floods crossed, he here has crossed the sixth?
+sn4.25:16.3 | P: Kathaṁ jhāyiṁ bahulaṁ kāmasaññā, | S: How do they usually practice absorption so that sensual perceptions
+  Before: How does he meditate so sensual perceptions
+  After: How does he meditate so sensual perceptions
+sn4.25:16.4 | P: Paribāhirā honti aladdha yo tan”ti. | S: are blocked out and don’t get hold of them?”
+  Before: Are kept at bay and fail to grip him?”
+  After: Are kept at bay and fail to grip him?”

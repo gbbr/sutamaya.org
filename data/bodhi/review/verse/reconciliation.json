@@ -1,0 +1,4918 @@
+{
+  "proposalCount": 881,
+  "manualRows": 391,
+  "ruleRows": 490,
+  "superseded": [
+    {
+      "file": "data/bodhi/review/audit5/batch-002.findings",
+      "line": 3,
+      "key": "sn11.4:2.2",
+      "old": null,
+      "new": "Is it, Maghava, from fear or weakness"
+    },
+    {
+      "file": "data/bodhi/review/audit5/batch-002.findings",
+      "line": 4,
+      "key": "sn11.4:2.3",
+      "old": null,
+      "new": "That you endure him so patiently,"
+    },
+    {
+      "file": "data/bodhi/review/audit5/batch-002.findings",
+      "line": 5,
+      "key": "sn11.4:9.4",
+      "old": null,
+      "new": "Who is strong because guarded by Dhamma."
+    },
+    {
+      "file": "data/bodhi/review/audit5/batch-002.findings",
+      "line": 7,
+      "key": "sn11.4:12.2",
+      "old": null,
+      "new": "His own and the other’s—"
+    },
+    {
+      "file": "data/bodhi/review/audit5/batch-003.findings",
+      "line": 1,
+      "key": "sn11.18:5.2",
+      "old": null,
+      "new": "Those householders making merit,"
+    },
+    {
+      "file": "data/bodhi/review/audit5/batch-003.findings",
+      "line": 2,
+      "key": "sn11.18:5.4",
+      "old": null,
+      "new": "Who righteously maintain a wife.’"
+    },
+    {
+      "file": "data/bodhi/review/audit5/batch-003.findings",
+      "line": 4,
+      "key": "sn11.18:7.2",
+      "old": null,
+      "new": "Having worshipped the different quarters,"
+    },
+    {
+      "file": "data/bodhi/review/audit5/batch-003.findings",
+      "line": 5,
+      "key": "sn11.18:7.4",
+      "old": null,
+      "new": "The chief, climbed into his chariot.”"
+    },
+    {
+      "file": "data/bodhi/review/audit5/batch-003.findings",
+      "line": 6,
+      "key": "sn35.229:3.4",
+      "old": null,
+      "new": "With its dangers of sharks, demons, waves."
+    },
+    {
+      "file": "data/bodhi/review/audit5/batch-003.findings",
+      "line": 7,
+      "key": "sn4.11:3.2",
+      "old": null,
+      "new": "Quake all over in its entirety,"
+    },
+    {
+      "file": "data/bodhi/review/audit5/batch-003.findings",
+      "line": 8,
+      "key": "an4.25:2.2",
+      "old": null,
+      "new": "not based on tradition, culminating in nibbāna,"
+    },
+    {
+      "file": "data/bodhi/review/audit5/batch-003.findings",
+      "line": 9,
+      "key": "an4.25:2.3",
+      "old": null,
+      "new": "lived for the sake of"
+    },
+    {
+      "file": "data/bodhi/review/audit5/batch-003.findings",
+      "line": 13,
+      "key": "sn1.35:2.2",
+      "old": null,
+      "new": "While actually being otherwise,"
+    },
+    {
+      "file": "data/bodhi/review/audit5/batch-003.findings",
+      "line": 14,
+      "key": "sn1.35:2.3",
+      "old": null,
+      "new": "What one enjoys is obtained by theft"
+    },
+    {
+      "file": "data/bodhi/review/audit5/batch-004.findings",
+      "line": 2,
+      "key": "sn1.39:2.3",
+      "old": null,
+      "new": "Kokanada am I,"
+    },
+    {
+      "file": "data/bodhi/review/audit5/batch-004.findings",
+      "line": 5,
+      "key": "an3.34:13.2",
+      "old": null,
+      "new": "born of greed, hatred, and delusion,"
+    },
+    {
+      "file": "data/bodhi/review/audit5/batch-004.findings",
+      "line": 6,
+      "key": "an3.34:13.3",
+      "old": null,
+      "new": "whether what was fashioned by him be"
+    },
+    {
+      "file": "data/bodhi/review/audit5/batch-004.findings",
+      "line": 7,
+      "key": "an3.34:14.2",
+      "old": null,
+      "new": "any deed born of greed, hatred, and delusion."
+    },
+    {
+      "file": "data/bodhi/review/audit5/batch-004.findings",
+      "line": 9,
+      "key": "sn4.6:5.2",
+      "old": null,
+      "new": "Many terrors, flies, serpents,"
+    },
+    {
+      "file": "data/bodhi/review/audit5/batch-006.findings",
+      "line": 2,
+      "key": "sn1.41:5.2",
+      "old": "the body Along with one’s possessions.",
+      "new": "Along with one’s possessions."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-004.findings",
+      "line": 9,
+      "key": "sn35.95:26.2",
+      "old": null,
+      "new": "One is not inflamed by lust for"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-004.findings",
+      "line": 11,
+      "key": "sn35.95:28.2",
+      "old": null,
+      "new": "One is not inflamed by lust for"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-004.findings",
+      "line": 13,
+      "key": "sn35.95:30.2",
+      "old": null,
+      "new": "One is not inflamed by lust for"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-004.findings",
+      "line": 15,
+      "key": "sn35.95:32.2",
+      "old": null,
+      "new": "One is not inflamed by lust for"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-004.findings",
+      "line": 17,
+      "key": "sn35.95:34.2",
+      "old": null,
+      "new": "One is not inflamed by lust for"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-009.findings",
+      "line": 2,
+      "key": "an4.40:3.2",
+      "old": null,
+      "new": "well prepared and nonviolent,"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-009.findings",
+      "line": 4,
+      "key": "an4.40:3.4",
+      "old": null,
+      "new": "attend such a sacrifice as this."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-009.findings",
+      "line": 6,
+      "key": "an4.40:4.4",
+      "old": null,
+      "new": "praise this kind of sacrifice."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-012.findings",
+      "line": 2,
+      "key": "an5.43:9.3",
+      "old": "long life, beauty, fame, acclaim, heaven,",
+      "new": "and lofty delights"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-016.findings",
+      "line": 2,
+      "key": "sn1.47:1.4",
+      "old": null,
+      "new": "Established in Dhamma, endowed with virtue?”"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-016.findings",
+      "line": 4,
+      "key": "sn1.47:3.4",
+      "old": null,
+      "new": "Established in Dhamma, endowed with virtue.”"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-016.findings",
+      "line": 5,
+      "key": "sn11.25:2.4",
+      "old": "always dwell Within the hearts of the",
+      "new": "Within the hearts of the noble ones."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-017.findings",
+      "line": 1,
+      "key": "an3.30:4.4",
+      "old": "goes to visit bhikkhus to hear them",
+      "new": "to hear them teach the Dhamma."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-017.findings",
+      "line": 2,
+      "key": "an3.30:6.4",
+      "old": "goes to visit bhikkhus to hear them",
+      "new": "to hear them teach the Dhamma."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-017.findings",
+      "line": 3,
+      "key": "an3.30:8.4",
+      "old": "goes to visit bhikkhus to hear them",
+      "new": "to hear them teach the Dhamma."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-019.findings",
+      "line": 2,
+      "key": "an3.29:4.4",
+      "old": null,
+      "new": "casts an unlucky throw in both respects."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-019.findings",
+      "line": 4,
+      "key": "an3.29:9.2",
+      "old": null,
+      "new": "the blind one and the one-eyed person,"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-020.findings",
+      "line": 1,
+      "key": "an4.60:3.3",
+      "old": "they serve the virtuous monks of upright conduct",
+      "new": "the virtuous monks of upright conduct"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-020.findings",
+      "line": 2,
+      "key": "an4.60:3.4",
+      "old": "of upright conduct with robes, almsfood,",
+      "new": "with robes, almsfood, lodgings, and medicines:"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-021.findings",
+      "line": 5,
+      "key": "an8.37:2.4",
+      "old": null,
+      "new": "to those who lead the spiritual life."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-022.findings",
+      "line": 2,
+      "key": "an5.40:3.4",
+      "old": null,
+      "new": "all grow in dependence on him;"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-022.findings",
+      "line": 4,
+      "key": "an5.40:5.4",
+      "old": null,
+      "new": "delighting in the deva world."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-022.findings",
+      "line": 8,
+      "key": "an3.48:4.4",
+      "old": null,
+      "new": "all grow in dependence upon him;"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-023.findings",
+      "line": 11,
+      "key": "sn4.11:3.4",
+      "old": null,
+      "new": "For they are are fully liberated.”"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-025.findings",
+      "line": 1,
+      "key": "an3.35:8.2",
+      "old": null,
+      "new": "the brahmin who has attained nibbāna,"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-025.findings",
+      "line": 6,
+      "key": "an5.38:6.2",
+      "old": null,
+      "new": "devoid of lust and hatred,"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-026.findings",
+      "line": 1,
+      "key": "an5.48:9.2",
+      "old": "gifts, or tradition—there one should exert oneself",
+      "new": "in whatever way—by chanting, mantras,"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-026.findings",
+      "line": 2,
+      "key": "an5.48:9.3",
+      "old": null,
+      "new": "maxims, gifts, or tradition—there"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-026.findings",
+      "line": 3,
+      "key": "an5.48:9.4",
+      "old": "there one should exert oneself in just",
+      "new": "one should exert oneself in just that"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-028.findings",
+      "line": 2,
+      "key": "sn4.17:4.4",
+      "old": null,
+      "new": "Having surmounted Mara’s realm.”"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-028.findings",
+      "line": 3,
+      "key": "an5.33:9.3",
+      "old": null,
+      "new": "who ardently and eagerly"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-028.findings",
+      "line": 5,
+      "key": "sn4.6:4.2",
+      "old": "for lodging— He is the sage, self-controlled.",
+      "new": "He is the sage, self-controlled."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-028.findings",
+      "line": 9,
+      "key": "sn4.6:5.4",
+      "old": null,
+      "new": "Stirs not a hair because of them."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-029.findings",
+      "line": 3,
+      "key": "sn11.8:4.4",
+      "old": null,
+      "new": "Is supreme among enjoyments."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-029.findings",
+      "line": 5,
+      "key": "sn11.8:5.4",
+      "old": null,
+      "new": "Is supreme among enjoyments."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-029.findings",
+      "line": 8,
+      "key": "sn36.1:3.4",
+      "old": "is hungerless and fully quenched.",
+      "new": "A bhikkhu is hungerless and fully quenched."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-031.findings",
+      "line": 2,
+      "key": "an8.29:13.6",
+      "old": null,
+      "new": "this is incentive enough to strive."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-032.findings",
+      "line": 4,
+      "key": "an3.34:13.4",
+      "old": "little or much,",
+      "new": null
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-034.findings",
+      "line": 2,
+      "key": "an3.40:5.4",
+      "old": "the evil self existing within yourself.",
+      "new": "existing within yourself."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-035.findings",
+      "line": 4,
+      "key": "sn4.20:4.2",
+      "old": null,
+      "new": "Who has seen the source whence suffering springs?"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-037.findings",
+      "line": 2,
+      "key": "an8.46:19.3",
+      "old": null,
+      "new": "who ardently and eagerly"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-037.findings",
+      "line": 4,
+      "key": "an10.12:4.4",
+      "old": "are totally absent in a bhikkhu;",
+      "new": "totally absent in a bhikkhu;"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-037.findings",
+      "line": 5,
+      "key": "an10.12:5.3",
+      "old": "and concentration of one beyond training,",
+      "new": "of one beyond training,"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-037.findings",
+      "line": 6,
+      "key": "sn1.39:3.2",
+      "old": "that the Dhamma Has been realized by",
+      "new": "Has been realized by the One with Vision;"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-038.findings",
+      "line": 2,
+      "key": "sn4.21:4.2",
+      "old": null,
+      "new": "Who has seen the source whence suffering springs?"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-038.findings",
+      "line": 10,
+      "key": "an4.22:8.4",
+      "old": "is called an elder.",
+      "new": "a bhikkhu is called an elder."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-039.findings",
+      "line": 3,
+      "key": "sn36.4:3.2",
+      "old": null,
+      "new": "Who weeps out loud and wails:"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-039.findings",
+      "line": 8,
+      "key": "an5.55:10.4",
+      "old": null,
+      "new": "while in the world, they have gone beyond."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-041.findings",
+      "line": 2,
+      "key": "an4.52:7.2",
+      "old": "on faith and virtuous behavior,",
+      "new": "remembering the Buddhas’ teaching,"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-042.findings",
+      "line": 2,
+      "key": "an4.3:5.2",
+      "old": null,
+      "new": "nirabbudas, plus five abbudas,"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-042.findings",
+      "line": 3,
+      "key": "sn5.9:5.2",
+      "old": "in a field It grows depending on",
+      "new": "It grows depending on a pair of"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-043.findings",
+      "line": 1,
+      "key": "sn21.10:5.3",
+      "old": "with all cast off, Liberated in the",
+      "new": "Liberated in the destruction of craving:"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-045.findings",
+      "line": 3,
+      "key": "an5.57:12.3",
+      "old": null,
+      "new": "by other people who exist"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-045.findings",
+      "line": 5,
+      "key": "an5.34:9.4",
+      "old": "they delight in companionship with the devas.",
+      "new": "for a long time they delight"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-045.findings",
+      "line": 6,
+      "key": "an5.32:10.4",
+      "old": "and glory, good reputation, happiness, and strength.",
+      "new": "good reputation, happiness, and strength."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-048.findings",
+      "line": 1,
+      "key": "an4.53:10.2",
+      "old": "self-controlled, living their lives righteously,",
+      "new": "charitable and self-controlled,"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-048.findings",
+      "line": 4,
+      "key": "sn4.23:3.4",
+      "old": null,
+      "new": "Who has overcome all enmity and fear."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-058.findings",
+      "line": 1,
+      "key": "an4.1:5.2",
+      "old": "taught the Dhamma to the bhikkhus.",
+      "new": "the Buddha taught the Dhamma to the"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-058.findings",
+      "line": 2,
+      "key": "an4.23:7.2",
+      "old": "who has untied all knots.",
+      "new": "the wise one who has untied all"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-058.findings",
+      "line": 3,
+      "key": "an4.32:2.3",
+      "old": "and impartiality under diverse worldly conditions,",
+      "new": "under diverse worldly conditions,"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-058.findings",
+      "line": 4,
+      "key": "an4.32:3.4",
+      "old": "from their children.",
+      "new": "and veneration from their children."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-059.findings",
+      "line": 4,
+      "key": "an4.62:7.4",
+      "old": "then sees things clearly with wisdom.",
+      "new": "a mortal then sees things clearly with"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-059.findings",
+      "line": 5,
+      "key": "an4.62:8.2",
+      "old": "both kinds of happiness.",
+      "new": "knows both kinds of happiness."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-061.findings",
+      "line": 2,
+      "key": "an5.36:4.2",
+      "old": "where it yields great fruit.",
+      "new": "one should give a gift where it"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-063.findings",
+      "line": 1,
+      "key": "an8.16:3.4",
+      "old": "is worthy of going on a mission.",
+      "new": "of going on a mission."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-063.findings",
+      "line": 2,
+      "key": "an8.1:3.4",
+      "old": "as he sees the destruction of the acquisitions.",
+      "new": "the destruction of the acquisitions."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-063.findings",
+      "line": 3,
+      "key": "an8.1:6.4",
+      "old": "cannot match a sixteenth part of the",
+      "new": "a sixteenth part of the moon’s radiance."
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-066.findings",
+      "line": 2,
+      "key": "sn1.62:1.4",
+      "old": "that has All under its control?”",
+      "new": "All under its control?”"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-066.findings",
+      "line": 3,
+      "key": "sn1.62:2.4",
+      "old": "that has All under its control.”",
+      "new": "All under its control.”"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-066.findings",
+      "line": 4,
+      "key": "sn1.63:1.4",
+      "old": "that has All under its control?”",
+      "new": "All under its control?”"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-066.findings",
+      "line": 5,
+      "key": "sn1.63:2.4",
+      "old": "that has All under its control.”",
+      "new": "All under its control.”"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-066.findings",
+      "line": 6,
+      "key": "sn1.70:1.4",
+      "old": "is the world Harassed in regard to",
+      "new": "Harassed in regard to what?”"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-066.findings",
+      "line": 7,
+      "key": "sn1.70:2.4",
+      "old": "the world Is harassed in regard to",
+      "new": "Is harassed in regard to six.”"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-070.findings",
+      "line": 2,
+      "key": "sn21.8:2.2",
+      "old": "as a forest dweller, Wearing robes stitched from",
+      "new": "Wearing robes stitched from rags,"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-079.findings",
+      "line": 4,
+      "key": "sn36.6:6.2",
+      "old": "no more exist; Both have been extinguished,",
+      "new": "Both have been extinguished, brought to an"
+    },
+    {
+      "file": "data/bodhi/review/codex-read/batch-082.findings",
+      "line": 1,
+      "key": "sn45.34:6.3",
+      "old": "the wise man Should cleanse himself",
+      "new": "Owning nothing, the wise man"
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-audit5.findings",
+      "line": 9,
+      "key": "sn11.4:12.2",
+      "old": null,
+      "new": "His own and the other’s—"
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-audit5.findings",
+      "line": 14,
+      "key": "sn11.18:7.2",
+      "old": null,
+      "new": "Having worshipped the different quarters,"
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-audit5.findings",
+      "line": 35,
+      "key": "an3.34:13.2",
+      "old": null,
+      "new": "born of greed, hatred, and delusion,"
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-audit5.findings",
+      "line": 36,
+      "key": "an3.34:13.3",
+      "old": null,
+      "new": "whether what was fashioned by him be"
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-audit5.findings",
+      "line": 37,
+      "key": "an3.34:14.2",
+      "old": null,
+      "new": "any deed born of greed, hatred, and delusion."
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-audit5.findings",
+      "line": 41,
+      "key": "sn1.41:5.2",
+      "old": "the body Along with one’s possessions.",
+      "new": "Along with one’s possessions."
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-exceptions.findings",
+      "line": 1,
+      "key": "an3.30:4.4",
+      "old": "goes to visit bhikkhus to hear them",
+      "new": "to hear them teach the Dhamma."
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-exceptions.findings",
+      "line": 2,
+      "key": "an3.30:6.4",
+      "old": "goes to visit bhikkhus to hear them",
+      "new": "to hear them teach the Dhamma."
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-exceptions.findings",
+      "line": 3,
+      "key": "an3.30:8.4",
+      "old": "goes to visit bhikkhus to hear them",
+      "new": "to hear them teach the Dhamma."
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-exceptions.findings",
+      "line": 16,
+      "key": "an5.43:9.2",
+      "old": null,
+      "new": "acclaim, heaven, high families,"
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-exceptions.findings",
+      "line": 17,
+      "key": "an5.43:9.3",
+      "old": null,
+      "new": "and lofty delights"
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-exceptions.findings",
+      "line": 18,
+      "key": "an5.43:9.4",
+      "old": null,
+      "new": "following in succession,"
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-exceptions.findings",
+      "line": 20,
+      "key": "an5.57:12.2",
+      "old": "and death",
+      "new": "old age, and death are disgusted"
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-exceptions.findings",
+      "line": 21,
+      "key": "an5.57:12.3",
+      "old": "are disgusted by other people who exist",
+      "new": "by other people who exist"
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-exceptions.findings",
+      "line": 22,
+      "key": "an5.57:12.4",
+      "old": null,
+      "new": "in accordance with their nature."
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-exceptions.findings",
+      "line": 50,
+      "key": "sn4.11:3.4",
+      "old": null,
+      "new": "For they are are fully liberated.”"
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-judgments.findings",
+      "line": 2,
+      "key": "an10.12:5.2",
+      "old": "and concentration of one beyond training,",
+      "new": "the virtue and concentration"
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-judgments.findings",
+      "line": 3,
+      "key": "an10.12:5.3",
+      "old": "and similar liberation",
+      "new": "of one beyond training,"
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-judgments.findings",
+      "line": 4,
+      "key": "an10.12:5.4",
+      "old": "and knowledge;",
+      "new": "and similar liberation and knowledge;"
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-judgments.findings",
+      "line": 10,
+      "key": "an3.40:5.4",
+      "old": null,
+      "new": "existing within yourself."
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-judgments.findings",
+      "line": 14,
+      "key": "an4.52:7.4",
+      "old": null,
+      "new": "confidence and vision of the Dhamma."
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-judgments.findings",
+      "line": 15,
+      "key": "an4.53:10.2",
+      "old": "and self-controlled, living their lives righteously,",
+      "new": "charitable and self-controlled,"
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-judgments.findings",
+      "line": 32,
+      "key": "an8.37:2.4",
+      "old": "to fertile fields of merit, to those",
+      "new": "to those who lead the spiritual life."
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-judgments.findings",
+      "line": 33,
+      "key": "an5.33:9.3",
+      "old": "always brings her whatever she wants.",
+      "new": "who ardently and eagerly"
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-judgments.findings",
+      "line": 34,
+      "key": "an5.33:9.4",
+      "old": null,
+      "new": "always brings her whatever she wants."
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-judgments.findings",
+      "line": 36,
+      "key": "an5.38:6.2",
+      "old": "devoid of delusion, taintless—",
+      "new": "devoid of lust and hatred,"
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-judgments.findings",
+      "line": 37,
+      "key": "an8.46:19.3",
+      "old": "always brings her whatever she wants.",
+      "new": "who ardently and eagerly"
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-judgments.findings",
+      "line": 38,
+      "key": "an8.46:19.4",
+      "old": null,
+      "new": "always brings her whatever she wants."
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-sn-judgments.findings",
+      "line": 28,
+      "key": "sn4.11:3.4",
+      "old": null,
+      "new": "For they are are fully liberated.”"
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-sn-judgments.findings",
+      "line": 37,
+      "key": "sn45.34:6.4",
+      "old": null,
+      "new": "Should cleanse himself of mental defilements."
+    },
+    {
+      "file": "data/bodhi/review/hand/codex-import-sn-judgments.findings",
+      "line": 57,
+      "key": "sn5.9:5.2",
+      "old": "is sown in a field It grows depending",
+      "new": "It grows depending on a pair of"
+    },
+    {
+      "file": "data/bodhi/review/hand/verse-positional.findings",
+      "line": 9,
+      "key": "an4.52:7.3",
+      "old": "confidence and vision of the Dhamma.",
+      "new": "should be intent on faith and virtuous behavior,"
+    },
+    {
+      "file": "data/bodhi/review/hand/verse-positional.findings",
+      "line": 16,
+      "key": "sn1.35:2.3",
+      "old": "Like the gains of a cheating gambler.”",
+      "new": "What one enjoys is obtained by theft"
+    },
+    {
+      "file": "data/bodhi/review/hand/verse-positional.findings",
+      "line": 28,
+      "key": "sn11.18:5.2",
+      "old": "The lay followers possessed of virtue",
+      "new": "Those householders making merit,"
+    },
+    {
+      "file": "data/bodhi/review/hand/verse-positional.findings",
+      "line": 31,
+      "key": "sn11.4:2.2",
+      "old": "from fear or weakness",
+      "new": "Is it, Maghava, from fear or weakness"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-004.findings",
+      "line": 18,
+      "key": "sn35.95:25.3",
+      "old": "Suffering is exhausted, not built up.",
+      "new": "And while one undergoes a feeling,"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-009.findings",
+      "line": 37,
+      "key": "an4.19:3.4",
+      "old": "like the moon in the dark fortnight.",
+      "new": "in the dark fortnight."
+    },
+    {
+      "file": "data/bodhi/review/read/batch-009.findings",
+      "line": 39,
+      "key": "an4.19:4.4",
+      "old": "like the moon in the bright fortnight.",
+      "new": "in the bright fortnight."
+    },
+    {
+      "file": "data/bodhi/review/read/batch-020.findings",
+      "line": 12,
+      "key": "sn36.5:2.4",
+      "old": null,
+      "new": "Neither painful nor pleasant:"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-021.findings",
+      "line": 11,
+      "key": "an3.30:7.2",
+      "old": null,
+      "new": "While sitting in his seat,"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-021.findings",
+      "line": 13,
+      "key": "an3.30:9.2",
+      "old": null,
+      "new": "he comprehends the phrasing,"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-024.findings",
+      "line": 18,
+      "key": "sn21.6:2.4",
+      "old": null,
+      "new": "Regardless of their bodies’ size."
+    },
+    {
+      "file": "data/bodhi/review/read/batch-037.findings",
+      "line": 25,
+      "key": "sn11.4:2.4",
+      "old": null,
+      "new": "Listening to his harsh words?’"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-037.findings",
+      "line": 29,
+      "key": "sn11.4:4.4",
+      "old": null,
+      "new": "The wise man should restrain the fool.’"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-039.findings",
+      "line": 22,
+      "key": "sn1.34:7.5",
+      "old": null,
+      "new": "The best of men, faring for the good"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-039.findings",
+      "line": 24,
+      "key": "sn11.18:5.3",
+      "old": null,
+      "new": "The lay followers possessed of virtue"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-040.findings",
+      "line": 1,
+      "key": "sn35.229:3.2",
+      "old": null,
+      "new": "Along with the taint of ignorance,"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-042.findings",
+      "line": 9,
+      "key": "sn4.11:3.3",
+      "old": null,
+      "new": "The enlightened are not perturbed,"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-044.findings",
+      "line": 4,
+      "key": "an3.35:8.4",
+      "old": null,
+      "new": "not tainted by sensual pleasures."
+    },
+    {
+      "file": "data/bodhi/review/read/batch-048.findings",
+      "line": 8,
+      "key": "sn11.1:5.2",
+      "old": null,
+      "new": "Might achieve unending bliss:"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-048.findings",
+      "line": 15,
+      "key": "an3.57:11.4",
+      "old": null,
+      "new": "when planted in that spotless field."
+    },
+    {
+      "file": "data/bodhi/review/read/batch-048.findings",
+      "line": 16,
+      "key": "an3.57:12.4",
+      "old": null,
+      "new": "but give their gifts to those outside."
+    },
+    {
+      "file": "data/bodhi/review/read/batch-049.findings",
+      "line": 1,
+      "key": "an3.34:14.2",
+      "old": "A bhikkhu, giving rise to knowledge,",
+      "new": "any deed born of greed, hatred, and delusion."
+    },
+    {
+      "file": "data/bodhi/review/read/batch-049.findings",
+      "line": 2,
+      "key": "an3.34:14.3",
+      "old": null,
+      "new": "A bhikkhu, giving rise to knowledge,"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-049.findings",
+      "line": 10,
+      "key": "sn35.132:3.2",
+      "old": null,
+      "new": "Those brahmins who recalled the ancient rules."
+    },
+    {
+      "file": "data/bodhi/review/read/batch-052.findings",
+      "line": 2,
+      "key": "an4.25:2.4",
+      "old": null,
+      "new": "restraint and abandoning."
+    },
+    {
+      "file": "data/bodhi/review/read/batch-052.findings",
+      "line": 15,
+      "key": "sn4.16:5.1",
+      "old": null,
+      "new": "“Though they seek him everywhere,"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-063.findings",
+      "line": 25,
+      "key": "sn1.42:3.2",
+      "old": null,
+      "new": "Is the giver of all."
+    },
+    {
+      "file": "data/bodhi/review/read/batch-068.findings",
+      "line": 4,
+      "key": "sn1.20:25.3",
+      "old": null,
+      "new": "Though devas and humans search for him"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-068.findings",
+      "line": 5,
+      "key": "sn1.20:25.4",
+      "old": "Though devas and humans search for him",
+      "new": "Here and beyond, in the heavens and all"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-068.findings",
+      "line": 7,
+      "key": "an4.33:3.3",
+      "old": "sets in motion the wheel of Dhamma, he teaches",
+      "new": "in this world with its devas,"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-073.findings",
+      "line": 7,
+      "key": "an3.40:4.2",
+      "old": null,
+      "new": "there is no place in the world called"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-076.findings",
+      "line": 8,
+      "key": "sn35.136:7.4",
+      "old": null,
+      "new": "Don’t understand it in its presence."
+    },
+    {
+      "file": "data/bodhi/review/read/batch-080.findings",
+      "line": 5,
+      "key": "an3.58:9.4",
+      "old": null,
+      "new": "benefactor of devas and humans;"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-084.findings",
+      "line": 17,
+      "key": "an5.57:12.3",
+      "old": "and death",
+      "new": "by other people who exist"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-084.findings",
+      "line": 18,
+      "key": "an5.57:12.4",
+      "old": "are disgusted by other people who exist",
+      "new": "in accordance with their nature."
+    },
+    {
+      "file": "data/bodhi/review/read/batch-101.findings",
+      "line": 3,
+      "key": "sn1.61:1.4",
+      "old": "that has All under its control?”",
+      "new": "All under its control?”"
+    },
+    {
+      "file": "data/bodhi/review/read/batch-101.findings",
+      "line": 4,
+      "key": "sn1.61:2.4",
+      "old": "that has All under its control.”",
+      "new": "All under its control.”"
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-008.findings",
+      "line": 19,
+      "key": "an4.40:6.4",
+      "old": "and the deities are pleased.",
+      "new": "the sacrifice is vast and the deities"
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-008.findings",
+      "line": 20,
+      "key": "an4.40:7.4",
+      "old": "in a happy world, in a realm",
+      "new": "in a realm without affliction."
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-013.findings",
+      "line": 5,
+      "key": "an4.17:2.4",
+      "old": "like the moon in the dark fortnight.",
+      "new": "in the dark fortnight."
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-013.findings",
+      "line": 7,
+      "key": "an4.18:2.4",
+      "old": "like the moon in the bright fortnight.",
+      "new": "in the bright fortnight."
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-024.findings",
+      "line": 4,
+      "key": "an3.30:9.1",
+      "old": null,
+      "new": "While sitting in his seat,"
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-034.findings",
+      "line": 14,
+      "key": "sn1.34:6.3",
+      "old": null,
+      "new": "Though devas and humans search for him"
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-034.findings",
+      "line": 15,
+      "key": "sn1.34:6.4",
+      "old": "Though devas and humans search for him",
+      "new": "Here and beyond, in the heavens and all"
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-034.findings",
+      "line": 16,
+      "key": "sn1.34:6.5",
+      "old": "Here and beyond,",
+      "new": "They do not find the one whose knots"
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-034.findings",
+      "line": 17,
+      "key": "sn1.34:6.6",
+      "old": "in the heavens and all abodes, They",
+      "new": "The one untroubled, free of longing.”"
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-038.findings",
+      "line": 5,
+      "key": "sn11.4:6.2",
+      "old": null,
+      "new": "In practising patient endurance:"
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-048.findings",
+      "line": 18,
+      "key": "sn1.32:4.4",
+      "old": "that the miser fears",
+      "new": null
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-048.findings",
+      "line": 19,
+      "key": "sn1.32:4.6",
+      "old": "in this world and the next.",
+      "new": null
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-053.findings",
+      "line": 1,
+      "key": "sn45.34:6.4",
+      "old": "of mental defilements.",
+      "new": "Should cleanse himself of mental defilements."
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-054.findings",
+      "line": 5,
+      "key": "an4.60:4.4",
+      "old": null,
+      "new": "merit always increases;"
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-054.findings",
+      "line": 11,
+      "key": "an5.55:9.4",
+      "old": "into time, destination, and existence upon existence.",
+      "new": "destination, and existence upon existence."
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-056.findings",
+      "line": 8,
+      "key": "sn1.20:25.5",
+      "old": "Here and beyond,",
+      "new": "They do not find the one whose knots"
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-056.findings",
+      "line": 9,
+      "key": "sn1.20:25.6",
+      "old": "in the heavens and all abodes, They",
+      "new": "The one untroubled, free of longing."
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-060.findings",
+      "line": 19,
+      "key": "an3.36:17.4",
+      "old": null,
+      "new": "which it ever covers pervasively."
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-061.findings",
+      "line": 5,
+      "key": "an5.42:3.4",
+      "old": null,
+      "new": "who is learned and of virtuous behavior and"
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-063.findings",
+      "line": 22,
+      "key": "an4.14:5.4",
+      "old": "were taught by the Kinsman of the Sun.",
+      "new": "by the Kinsman of the Sun."
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-068.findings",
+      "line": 6,
+      "key": "mn82:42.20",
+      "old": null,
+      "new": "Prodded with stakes he burns upon the pyre."
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-074.findings",
+      "line": 15,
+      "key": "an4.10:10.4",
+      "old": "and the bond of existence,",
+      "new": "sense pleasures and the bond of existence,"
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-076.findings",
+      "line": 1,
+      "key": "an4.33:3.4",
+      "old": null,
+      "new": "sets in motion the wheel of Dhamma,"
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-079.findings",
+      "line": 2,
+      "key": "mn26:25.8",
+      "old": "renouncing all, By craving’s ceasing freed.",
+      "new": "By craving’s ceasing freed. Having known this all"
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-079.findings",
+      "line": 3,
+      "key": "mn26:25.12",
+      "old": "in all the world With all its gods,",
+      "new": "With all its gods, because I have"
+    },
+    {
+      "file": "data/bodhi/review/reread/batch-079.findings",
+      "line": 4,
+      "key": "mn26:25.13",
+      "old": "because I have No person for my counterpart.",
+      "new": "No person for my counterpart."
+    }
+  ],
+  "handOverrides": {
+    "sn11.4:12.2": "His own and the other’s—",
+    "sn11.18:7.2": "Having worshipped the different quarters,",
+    "an3.34:13.2": "born of greed, hatred, and delusion,",
+    "an3.34:13.3": "whether what was fashioned by him be",
+    "an3.34:14.2": "any deed born of greed, hatred, and delusion.",
+    "sn1.41:5.2": "Along with one’s possessions.",
+    "an3.30:4.4": "to hear them teach the Dhamma.",
+    "an3.30:6.4": "to hear them teach the Dhamma.",
+    "an3.30:8.4": "to hear them teach the Dhamma.",
+    "an5.43:9.2": "acclaim, heaven, high families,",
+    "an5.43:9.3": "and lofty delights",
+    "an5.43:9.4": "following in succession,",
+    "an5.57:12.2": "old age, and death are disgusted",
+    "an5.57:12.3": "by other people who exist",
+    "an5.57:12.4": "in accordance with their nature.",
+    "sn4.11:3.4": "For they are are fully liberated.”",
+    "an10.12:5.2": "the virtue and concentration",
+    "an10.12:5.3": "of one beyond training,",
+    "an10.12:5.4": "and similar liberation and knowledge;",
+    "an3.40:5.4": "existing within yourself.",
+    "an4.52:7.4": "confidence and vision of the Dhamma.",
+    "an4.53:10.2": "charitable and self-controlled,",
+    "an8.37:2.4": "to those who lead the spiritual life.",
+    "an5.33:9.3": "who ardently and eagerly",
+    "an5.33:9.4": "always brings her whatever she wants.",
+    "an5.38:6.2": "devoid of lust and hatred,",
+    "an8.46:19.3": "who ardently and eagerly",
+    "an8.46:19.4": "always brings her whatever she wants.",
+    "sn45.34:6.4": "Should cleanse himself of mental defilements.",
+    "sn5.9:5.2": "It grows depending on a pair of",
+    "an4.52:7.3": "should be intent on faith and virtuous behavior,",
+    "sn1.35:2.3": "What one enjoys is obtained by theft",
+    "sn11.18:5.2": "Those householders making merit,",
+    "sn11.4:2.2": "Is it, Maghava, from fear or weakness"
+  },
+  "formatNormalizations": [
+    "data/bodhi/review/verse/batch-015.findings"
+  ],
+  "provenance": {
+    "an10.12:6.1": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an10.12:6.2": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an10.12:6.3": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an10.12:6.4": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:4.1": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:4.2": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:4.3": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:4.4": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:5.1": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:5.2": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:5.3": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:5.4": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:6.1": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:6.2": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:6.3": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:6.4": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:6.5": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:6.6": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:7.1": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:7.2": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:7.3": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:7.4": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:9.1": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:9.2": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:9.3": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.29:9.4": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.30:5.1": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.30:5.2": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.30:5.3": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.30:5.4": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.30:9.1": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.30:9.2": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.30:9.3": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.30:9.4": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.34:14.1": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.34:14.2": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.34:14.3": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.34:14.4": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.35:8.1": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.35:8.2": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.35:8.3": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.35:8.4": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.36:17.1": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.36:17.2": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.36:17.3": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.36:17.4": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.36:20.1": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.36:20.2": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.36:20.3": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.36:20.4": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.39:12.1": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.39:12.2": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.39:12.3": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.39:12.4": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.40:4.1": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.40:4.2": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.40:4.3": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.40:4.4": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.40:5.1": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.40:5.2": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.40:5.3": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.40:5.4": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.48:3.1": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.48:3.2": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.48:3.3": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.48:3.4": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.48:4.1": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.48:4.2": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.48:4.3": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.48:4.4": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.48:4.5": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.48:4.6": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.48:5.1": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.48:5.2": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.48:5.3": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an3.48:5.4": [
+      "data/bodhi/review/verse/batch-001.rules.findings"
+    ],
+    "an10.12:4.3": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an10.12:4.4": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an10.12:5.1": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an10.12:5.2": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an10.12:5.3": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an10.12:5.4": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an3.30:4.3": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an3.30:4.4": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an3.30:6.3": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an3.30:6.4": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an3.30:7.2": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an3.30:7.3": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an3.30:7.4": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an3.30:8.3": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an3.30:8.4": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an3.34:13.1": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an3.34:13.2": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an3.34:13.3": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an3.34:13.4": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an3.39:8.2": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an3.39:8.3": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an3.39:8.4": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an3.39:10.4": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an3.39:11.1": [
+      "data/bodhi/review/verse/batch-001.findings"
+    ],
+    "an3.52:5.1": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.52:5.2": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.52:5.3": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.52:5.4": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.57:11.1": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.57:11.2": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.57:11.3": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.57:11.4": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.57:12.1": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.57:12.2": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.57:12.3": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.57:12.4": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.57:13.1": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.57:13.2": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.57:13.3": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.57:13.4": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.58:9.1": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.58:9.2": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.58:9.3": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.58:9.4": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.58:10.1": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.58:10.2": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.58:10.3": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.58:10.4": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.15:3.1": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.15:3.2": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.15:3.3": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.15:3.4": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.21:10.1": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.21:10.2": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.21:10.3": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.21:10.4": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.22:5.1": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.22:5.2": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.22:5.3": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.22:5.4": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.22:5.5": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.22:5.6": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.24:8.1": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.24:8.2": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.24:8.3": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.24:8.4": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.25:2.1": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.25:2.2": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.25:2.3": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.25:2.4": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.25:2.5": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an4.25:2.6": [
+      "data/bodhi/review/verse/batch-002.rules.findings"
+    ],
+    "an3.57:6.1": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an3.57:6.2": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an3.57:6.3": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an3.57:6.4": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an3.57:7.3": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an3.57:7.4": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.10:10.3": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.10:10.4": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.11:11.1": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.11:11.2": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.12:8.1": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.12:8.2": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.12:8.3": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.12:8.4": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.14:5.3": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.14:5.4": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.16:2.5": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.16:2.6": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.17:2.1": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.17:2.2": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.17:2.3": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.17:2.4": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.18:2.1": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.18:2.2": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.18:2.3": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.18:2.4": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.19:3.1": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.19:3.2": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.19:3.3": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.19:3.4": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.19:4.1": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.19:4.2": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.19:4.3": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.19:4.4": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.1:5.1": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.1:5.2": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.22:8.1": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.22:8.2": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.22:8.3": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.22:8.4": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.23:7.1": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.23:7.2": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.26:2.1": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.26:2.2": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.26:3.1": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.26:3.2": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.27:2.4": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.27:2.5": [
+      "data/bodhi/review/verse/batch-002.findings"
+    ],
+    "an4.28:7.1": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.28:7.2": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.28:7.3": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.28:7.4": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.28:7.5": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.28:7.6": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.33:3.1": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.33:3.2": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.33:3.3": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.33:3.4": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.34:5.1": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.34:5.2": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.34:5.3": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.34:5.4": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.35:6.1": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.35:6.2": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.35:6.3": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.35:6.4": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.35:6.5": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.35:6.6": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.36:5.1": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.36:5.2": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.36:5.3": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.36:5.4": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.36:5.5": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.36:5.6": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.39:3.1": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.39:3.2": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.39:3.3": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.39:3.4": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.39:5.1": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.39:5.2": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.39:5.3": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.39:5.4": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.39:5.5": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.39:5.6": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.3:5.1": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.3:5.2": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.3:5.3": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.3:5.4": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.40:3.1": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.40:3.2": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.40:3.3": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.40:3.4": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.40:4.1": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.40:4.2": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.40:4.3": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.40:4.4": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.51:7.1": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.51:7.2": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.51:7.3": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.51:7.4": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.51:8.1": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.51:8.2": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.51:8.3": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.51:8.4": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.52:7.1": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.52:7.2": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.52:7.3": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.52:7.4": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.55:4.1": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.55:4.2": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.55:4.3": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.55:4.4": [
+      "data/bodhi/review/verse/batch-003.rules.findings"
+    ],
+    "an4.32:2.2": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an4.32:2.3": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an4.32:2.4": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an4.32:2.5": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an4.32:3.3": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an4.32:3.4": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an4.33:6.1": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an4.33:6.2": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an4.33:6.3": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an4.38:7.2": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an4.38:7.3": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an4.40:6.1": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an4.40:6.2": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an4.40:6.3": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an4.40:6.4": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an4.40:7.3": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an4.40:7.4": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an4.53:10.1": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an4.53:10.2": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an4.53:10.3": [
+      "data/bodhi/review/verse/batch-003.findings"
+    ],
+    "an5.31:12.1": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.31:12.2": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.31:12.3": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.31:12.4": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.32:8.1": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.32:8.2": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.32:8.3": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.32:8.4": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.33:9.1": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.33:9.2": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.33:9.3": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.33:9.4": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.33:10.1": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.33:10.2": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.33:10.3": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.33:10.4": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.34:8.1": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.34:8.2": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.34:8.3": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.34:8.4": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.38:3.1": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.38:3.2": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.38:3.3": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.38:3.4": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.38:4.1": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.38:4.2": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.38:4.3": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.38:4.4": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.38:6.1": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.38:6.2": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.38:6.3": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.38:6.4": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.40:2.1": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.40:2.2": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.40:2.3": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an5.40:2.4": [
+      "data/bodhi/review/verse/batch-004.rules.findings"
+    ],
+    "an4.5:8.3": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an4.5:8.4": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an4.60:3.2": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an4.60:3.3": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an4.60:3.4": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an4.60:4.1": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an4.60:4.2": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an4.60:4.3": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an4.60:4.4": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an4.60:4.5": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an4.60:4.6": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an4.62:7.3": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an4.62:7.4": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an4.62:8.1": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an4.62:8.2": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an5.31:11.1": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an5.31:11.2": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an5.31:13.3": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an5.31:13.4": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an5.32:10.3": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an5.32:10.4": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an5.34:9.3": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an5.34:9.4": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an5.34:10.1": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an5.34:10.2": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an5.36:4.1": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an5.36:4.2": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an5.37:2.1": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an5.37:2.2": [
+      "data/bodhi/review/verse/batch-004.findings"
+    ],
+    "an5.40:3.1": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.40:3.2": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.40:3.3": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.40:3.4": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.40:3.5": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.40:3.6": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.40:4.1": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.40:4.2": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.40:4.3": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.40:4.4": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.40:5.1": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.40:5.2": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.40:5.3": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.40:5.4": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.42:3.1": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.42:3.2": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.42:3.3": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.42:3.4": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.43:9.1": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.43:9.2": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.43:9.3": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.43:9.4": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.45:7.1": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.45:7.2": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.45:7.3": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.45:7.4": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.45:8.1": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.45:8.2": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.45:8.3": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.45:8.4": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.47:9.1": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.47:9.2": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.47:9.3": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.47:9.4": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.55:10.1": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.55:10.2": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.55:10.3": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.55:10.4": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.57:16.1": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.57:16.2": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.57:16.3": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.57:16.4": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an8.29:13.1": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an8.29:13.2": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an8.29:13.3": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an8.29:13.4": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an8.29:13.5": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an8.29:13.6": [
+      "data/bodhi/review/verse/batch-005.rules.findings"
+    ],
+    "an5.42:4.2": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.42:4.3": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.42:4.4": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.44:8.2": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.44:8.3": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.44:8.4": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.48:8.3": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.48:8.4": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.48:9.1": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.48:9.2": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.48:9.3": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.48:9.4": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.48:10.3": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.48:10.4": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.55:9.3": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.55:9.4": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.57:12.1": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.57:12.2": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.57:12.3": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.57:12.4": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.57:14.4": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an5.57:15.1": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an8.10:8.3": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an8.10:8.4": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an8.10:10.3": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an8.10:10.4": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an8.16:3.3": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an8.16:3.4": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an8.1:3.3": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an8.1:3.4": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an8.1:6.3": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an8.1:6.4": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an8.29:18.1": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an8.29:18.2": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an8.29:18.3": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an8.29:18.4": [
+      "data/bodhi/review/verse/batch-005.findings"
+    ],
+    "an8.30:23.1": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.30:23.2": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.30:23.3": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.30:23.4": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.37:4.1": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.37:4.2": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.37:4.3": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.37:4.4": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.38:4.3": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.38:4.4": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.38:5.1": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.38:5.2": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.46:19.1": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.46:19.2": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.46:19.3": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.46:19.4": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.46:20.1": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.46:20.2": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.46:20.3": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.46:20.4": [
+      "data/bodhi/review/verse/batch-006.rules.findings"
+    ],
+    "an8.29:19.1": [
+      "data/bodhi/review/verse/batch-006.findings"
+    ],
+    "an8.29:19.2": [
+      "data/bodhi/review/verse/batch-006.findings"
+    ],
+    "an8.29:19.3": [
+      "data/bodhi/review/verse/batch-006.findings"
+    ],
+    "an8.29:19.4": [
+      "data/bodhi/review/verse/batch-006.findings"
+    ],
+    "an8.37:2.3": [
+      "data/bodhi/review/verse/batch-006.findings"
+    ],
+    "an8.37:2.4": [
+      "data/bodhi/review/verse/batch-006.findings"
+    ],
+    "an8.49:15.3": [
+      "data/bodhi/review/verse/batch-006.findings"
+    ],
+    "an8.49:15.4": [
+      "data/bodhi/review/verse/batch-006.findings"
+    ],
+    "an8.5:2.3": [
+      "data/bodhi/review/verse/batch-006.findings"
+    ],
+    "an8.5:2.4": [
+      "data/bodhi/review/verse/batch-006.findings"
+    ],
+    "mn82:42.19": [
+      "data/bodhi/review/verse/batch-007.rules.findings"
+    ],
+    "mn82:42.20": [
+      "data/bodhi/review/verse/batch-007.rules.findings"
+    ],
+    "mn82:42.21": [
+      "data/bodhi/review/verse/batch-007.rules.findings"
+    ],
+    "mn82:42.22": [
+      "data/bodhi/review/verse/batch-007.rules.findings"
+    ],
+    "mn82:42.35": [
+      "data/bodhi/review/verse/batch-007.rules.findings"
+    ],
+    "mn82:42.36": [
+      "data/bodhi/review/verse/batch-007.rules.findings"
+    ],
+    "mn82:42.37": [
+      "data/bodhi/review/verse/batch-007.rules.findings"
+    ],
+    "mn82:42.38": [
+      "data/bodhi/review/verse/batch-007.rules.findings"
+    ],
+    "sn1.18:1.1": [
+      "data/bodhi/review/verse/batch-007.rules.findings"
+    ],
+    "sn1.18:1.2": [
+      "data/bodhi/review/verse/batch-007.rules.findings"
+    ],
+    "sn1.18:1.3": [
+      "data/bodhi/review/verse/batch-007.rules.findings"
+    ],
+    "sn1.18:1.4": [
+      "data/bodhi/review/verse/batch-007.rules.findings"
+    ],
+    "mn26:19.8": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn26:19.9": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn26:19.10": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn26:19.11": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn26:19.12": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn26:19.13": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn26:19.14": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn26:19.15": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn26:20.10": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn26:20.11": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn26:20.12": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn26:20.13": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn26:25.6": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn26:25.7": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn26:25.8": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn26:25.9": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn26:25.10": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn26:25.11": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn26:25.12": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn26:25.13": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn82:42.23": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn82:42.24": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn82:42.25": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "mn82:42.26": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "sn1.17:3.1": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "sn1.17:3.2": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "sn1.17:3.3": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "sn1.17:3.4": [
+      "data/bodhi/review/verse/batch-007.findings"
+    ],
+    "sn1.23:3.1": [
+      "data/bodhi/review/verse/batch-008.rules.findings"
+    ],
+    "sn1.23:3.2": [
+      "data/bodhi/review/verse/batch-008.rules.findings"
+    ],
+    "sn1.23:3.3": [
+      "data/bodhi/review/verse/batch-008.rules.findings"
+    ],
+    "sn1.23:3.4": [
+      "data/bodhi/review/verse/batch-008.rules.findings"
+    ],
+    "sn1.30:1.1": [
+      "data/bodhi/review/verse/batch-008.rules.findings"
+    ],
+    "sn1.30:1.2": [
+      "data/bodhi/review/verse/batch-008.rules.findings"
+    ],
+    "sn1.30:1.3": [
+      "data/bodhi/review/verse/batch-008.rules.findings"
+    ],
+    "sn1.30:1.4": [
+      "data/bodhi/review/verse/batch-008.rules.findings"
+    ],
+    "sn1.30:1.5": [
+      "data/bodhi/review/verse/batch-008.rules.findings"
+    ],
+    "sn1.30:1.6": [
+      "data/bodhi/review/verse/batch-008.rules.findings"
+    ],
+    "sn1.32:10.1": [
+      "data/bodhi/review/verse/batch-008.rules.findings"
+    ],
+    "sn1.32:10.2": [
+      "data/bodhi/review/verse/batch-008.rules.findings"
+    ],
+    "sn1.32:10.3": [
+      "data/bodhi/review/verse/batch-008.rules.findings"
+    ],
+    "sn1.32:10.4": [
+      "data/bodhi/review/verse/batch-008.rules.findings"
+    ],
+    "sn1.20:25.1": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.20:25.2": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.20:25.3": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.20:25.4": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.20:25.5": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.20:25.6": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.25:1.1": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.25:1.2": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.25:2.1": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.25:2.2": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.25:3.1": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.25:3.2": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.27:2.1": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.27:2.2": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.29:1.3": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.29:1.4": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.32:4.3": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.32:4.4": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.32:4.5": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.32:4.6": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.32:14.1": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.32:14.2": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.32:14.3": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.32:14.4": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.34:6.1": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.34:6.2": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.34:6.3": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.34:6.4": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.34:6.5": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.34:6.6": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.34:7.4": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.34:7.5": [
+      "data/bodhi/review/verse/batch-008.findings"
+    ],
+    "sn1.35:2.1": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.35:2.2": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.35:2.3": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.35:2.4": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.39:2.1": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.39:2.2": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.39:2.3": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.39:2.4": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.40:2.1": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.40:2.2": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.40:2.3": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.40:2.4": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.42:3.1": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.42:3.2": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.42:3.3": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.42:3.4": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.43:1.1": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.43:1.2": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.43:1.3": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.43:1.4": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.47:1.1": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.47:1.2": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.47:1.3": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.47:1.4": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.47:3.1": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.47:3.2": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.47:3.3": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.47:3.4": [
+      "data/bodhi/review/verse/batch-009.rules.findings"
+    ],
+    "sn1.39:3.1": [
+      "data/bodhi/review/verse/batch-009.findings"
+    ],
+    "sn1.39:3.2": [
+      "data/bodhi/review/verse/batch-009.findings"
+    ],
+    "sn1.41:5.1": [
+      "data/bodhi/review/verse/batch-009.findings"
+    ],
+    "sn1.41:5.2": [
+      "data/bodhi/review/verse/batch-009.findings"
+    ],
+    "sn1.44:1.1": [
+      "data/bodhi/review/verse/batch-009.findings"
+    ],
+    "sn1.44:1.2": [
+      "data/bodhi/review/verse/batch-009.findings"
+    ],
+    "sn1.44:1.3": [
+      "data/bodhi/review/verse/batch-009.findings"
+    ],
+    "sn1.44:1.4": [
+      "data/bodhi/review/verse/batch-009.findings"
+    ],
+    "sn1.46:4.1": [
+      "data/bodhi/review/verse/batch-009.findings"
+    ],
+    "sn1.46:4.2": [
+      "data/bodhi/review/verse/batch-009.findings"
+    ],
+    "sn1.46:4.3": [
+      "data/bodhi/review/verse/batch-009.findings"
+    ],
+    "sn1.46:4.4": [
+      "data/bodhi/review/verse/batch-009.findings"
+    ],
+    "sn1.61:1.3": [
+      "data/bodhi/review/verse/batch-010.findings"
+    ],
+    "sn1.61:1.4": [
+      "data/bodhi/review/verse/batch-010.findings"
+    ],
+    "sn1.61:2.3": [
+      "data/bodhi/review/verse/batch-010.findings"
+    ],
+    "sn1.61:2.4": [
+      "data/bodhi/review/verse/batch-010.findings"
+    ],
+    "sn1.62:1.3": [
+      "data/bodhi/review/verse/batch-010.findings"
+    ],
+    "sn1.62:1.4": [
+      "data/bodhi/review/verse/batch-010.findings"
+    ],
+    "sn1.62:2.3": [
+      "data/bodhi/review/verse/batch-010.findings"
+    ],
+    "sn1.62:2.4": [
+      "data/bodhi/review/verse/batch-010.findings"
+    ],
+    "sn1.63:1.3": [
+      "data/bodhi/review/verse/batch-010.findings"
+    ],
+    "sn1.63:1.4": [
+      "data/bodhi/review/verse/batch-010.findings"
+    ],
+    "sn1.63:2.3": [
+      "data/bodhi/review/verse/batch-010.findings"
+    ],
+    "sn1.63:2.4": [
+      "data/bodhi/review/verse/batch-010.findings"
+    ],
+    "sn1.70:1.3": [
+      "data/bodhi/review/verse/batch-010.findings"
+    ],
+    "sn1.70:1.4": [
+      "data/bodhi/review/verse/batch-010.findings"
+    ],
+    "sn1.70:2.3": [
+      "data/bodhi/review/verse/batch-010.findings"
+    ],
+    "sn1.70:2.4": [
+      "data/bodhi/review/verse/batch-010.findings"
+    ],
+    "sn11.14:6.1": [
+      "data/bodhi/review/verse/batch-011.rules.findings"
+    ],
+    "sn11.14:6.2": [
+      "data/bodhi/review/verse/batch-011.rules.findings"
+    ],
+    "sn11.14:6.3": [
+      "data/bodhi/review/verse/batch-011.rules.findings"
+    ],
+    "sn11.14:6.4": [
+      "data/bodhi/review/verse/batch-011.rules.findings"
+    ],
+    "sn11.18:2.1": [
+      "data/bodhi/review/verse/batch-011.rules.findings"
+    ],
+    "sn11.18:2.2": [
+      "data/bodhi/review/verse/batch-011.rules.findings"
+    ],
+    "sn11.18:2.3": [
+      "data/bodhi/review/verse/batch-011.rules.findings"
+    ],
+    "sn11.18:2.4": [
+      "data/bodhi/review/verse/batch-011.rules.findings"
+    ],
+    "sn11.18:2.5": [
+      "data/bodhi/review/verse/batch-011.rules.findings"
+    ],
+    "sn11.18:2.6": [
+      "data/bodhi/review/verse/batch-011.rules.findings"
+    ],
+    "sn11.18:5.1": [
+      "data/bodhi/review/verse/batch-011.rules.findings"
+    ],
+    "sn11.18:5.2": [
+      "data/bodhi/review/verse/batch-011.rules.findings"
+    ],
+    "sn11.18:5.3": [
+      "data/bodhi/review/verse/batch-011.rules.findings"
+    ],
+    "sn11.18:5.4": [
+      "data/bodhi/review/verse/batch-011.rules.findings"
+    ],
+    "sn11.19:4.1": [
+      "data/bodhi/review/verse/batch-011.rules.findings"
+    ],
+    "sn11.19:4.2": [
+      "data/bodhi/review/verse/batch-011.rules.findings"
+    ],
+    "sn11.19:4.3": [
+      "data/bodhi/review/verse/batch-011.rules.findings"
+    ],
+    "sn11.19:4.4": [
+      "data/bodhi/review/verse/batch-011.rules.findings"
+    ],
+    "sn11.17:2.1": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.17:2.2": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.17:4.1": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.17:4.2": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.18:3.1": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.18:3.2": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.18:3.3": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.18:3.4": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.18:7.1": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.18:7.2": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.18:7.3": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.18:7.4": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.19:3.1": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.19:3.2": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.19:3.3": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.19:3.4": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.19:6.1": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.19:6.2": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.19:7.1": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.19:7.2": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.19:7.3": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.19:7.4": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.1:5.2": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.1:5.3": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.1:6.1": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.1:6.2": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.20:8.1": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.20:8.2": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.20:9.1": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.20:9.2": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.20:9.3": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.20:9.4": [
+      "data/bodhi/review/verse/batch-011.findings"
+    ],
+    "sn11.24:4.1": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.24:4.2": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.24:4.3": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.24:4.4": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.24:4.5": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.24:4.6": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.4:9.1": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.4:9.2": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.4:9.3": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.4:9.4": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.4:11.1": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.4:11.2": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.4:11.3": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.4:11.4": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.4:12.1": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.4:12.2": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.4:12.3": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.4:12.4": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.6:2.1": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.6:2.2": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.6:2.3": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.6:2.4": [
+      "data/bodhi/review/verse/batch-012.rules.findings"
+    ],
+    "sn11.21:2.3": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.21:2.4": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.21:3.3": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.21:3.4": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.23:2.3": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.23:2.4": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.25:2.3": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.25:2.4": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.25:2.5": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.25:2.6": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.4:2.1": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.4:2.2": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.4:2.3": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.4:2.4": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.4:4.3": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.4:4.4": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.4:6.1": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.4:6.2": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.5:9.1": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.5:9.2": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.5:10.1": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.8:4.3": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.8:4.4": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.8:5.3": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn11.8:5.4": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn21.10:5.2": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn21.10:5.3": [
+      "data/bodhi/review/verse/batch-012.findings"
+    ],
+    "sn21.6:2.1": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn21.6:2.2": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn21.6:2.3": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn21.6:2.4": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn22.78:3.1": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn22.78:3.2": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn22.78:3.3": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn22.78:3.4": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn22.95:14.1": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn22.95:14.2": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn22.95:14.3": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn22.95:14.4": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn35.132:3.1": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn35.132:3.2": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn35.136:3.1": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn35.136:3.2": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn35.136:3.3": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn35.136:3.4": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn35.136:7.1": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn35.136:7.2": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn35.136:7.3": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn35.136:7.4": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn35.136:8.1": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn35.136:8.2": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn35.136:8.3": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn35.136:8.4": [
+      "data/bodhi/review/verse/batch-013.rules.findings"
+    ],
+    "sn21.3:6.1": [
+      "data/bodhi/review/verse/batch-013.findings"
+    ],
+    "sn21.3:6.2": [
+      "data/bodhi/review/verse/batch-013.findings"
+    ],
+    "sn21.8:2.1": [
+      "data/bodhi/review/verse/batch-013.findings"
+    ],
+    "sn21.8:2.2": [
+      "data/bodhi/review/verse/batch-013.findings"
+    ],
+    "sn22.82:15.1": [
+      "data/bodhi/review/verse/batch-013.findings"
+    ],
+    "sn22.82:15.2": [
+      "data/bodhi/review/verse/batch-013.findings"
+    ],
+    "sn22.82:15.3": [
+      "data/bodhi/review/verse/batch-013.findings"
+    ],
+    "sn22.82:15.4": [
+      "data/bodhi/review/verse/batch-013.findings"
+    ],
+    "sn22.82:15.5": [
+      "data/bodhi/review/verse/batch-013.findings"
+    ],
+    "sn22.82:15.6": [
+      "data/bodhi/review/verse/batch-013.findings"
+    ],
+    "sn35.132:6.3": [
+      "data/bodhi/review/verse/batch-013.findings"
+    ],
+    "sn35.132:6.4": [
+      "data/bodhi/review/verse/batch-013.findings"
+    ],
+    "sn35.132:6.5": [
+      "data/bodhi/review/verse/batch-013.findings"
+    ],
+    "sn35.229:3.1": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn35.229:3.2": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn35.229:3.3": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn35.229:3.4": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn35.95:24.1": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn35.95:24.2": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn35.95:24.3": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn35.95:24.4": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn35.95:25.1": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn35.95:25.2": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn35.95:25.3": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn35.95:25.4": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn35.95:25.5": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn35.95:25.6": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn36.1:2.1": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn36.1:2.2": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn36.1:2.3": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn36.1:2.4": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn36.2:2.1": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn36.2:2.2": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn36.2:2.3": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn36.2:2.4": [
+      "data/bodhi/review/verse/batch-014.rules.findings"
+    ],
+    "sn35.228:3.3": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.228:3.4": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.229:4.3": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.229:4.4": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:26.1": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:26.2": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:26.3": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:27.6": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:28.1": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:28.2": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:28.3": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:29.6": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:30.1": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:30.2": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:30.3": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:31.6": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:32.1": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:32.2": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:32.3": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:33.6": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:34.1": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:34.2": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:34.3": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:35.1": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn35.95:35.5": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn36.12:6.3": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn36.12:6.4": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn36.1:3.3": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn36.1:3.4": [
+      "data/bodhi/review/verse/batch-014.findings"
+    ],
+    "sn36.4:3.1": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn36.4:3.2": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn36.4:3.3": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn36.4:3.4": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn36.5:2.1": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn36.5:2.2": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn36.5:2.3": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn36.5:2.4": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.11:3.1": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.11:3.2": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.11:3.3": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.11:3.4": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.16:5.1": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.16:5.2": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.16:5.3": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.16:5.4": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.17:4.1": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.17:4.2": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.17:4.3": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.17:4.4": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.1:6.1": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.1:6.2": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.1:6.3": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.1:6.4": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.20:4.1": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.20:4.2": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.20:4.3": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.20:4.4": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.21:4.1": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.21:4.2": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.21:4.3": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.21:4.4": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.23:3.1": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.23:3.2": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.23:3.3": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn4.23:3.4": [
+      "data/bodhi/review/verse/batch-015.rules.findings"
+    ],
+    "sn36.3:4.1": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn36.3:4.2": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn36.3:4.3": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn36.3:6.3": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn36.3:6.4": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn36.5:3.5": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn36.5:3.6": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn36.6:6.1": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn36.6:6.2": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn4.14:4.1": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn4.14:4.2": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn4.14:4.3": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn4.23:5.1": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn4.23:5.2": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn4.25:14.1": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn4.25:14.2": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn4.25:14.3": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn4.25:14.4": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn4.25:16.1": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn4.25:16.2": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn4.25:18.1": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn4.25:18.2": [
+      "data/bodhi/review/verse/batch-015.findings"
+    ],
+    "sn4.6:5.1": [
+      "data/bodhi/review/verse/batch-016.rules.findings"
+    ],
+    "sn4.6:5.2": [
+      "data/bodhi/review/verse/batch-016.rules.findings"
+    ],
+    "sn4.6:5.3": [
+      "data/bodhi/review/verse/batch-016.rules.findings"
+    ],
+    "sn4.6:5.4": [
+      "data/bodhi/review/verse/batch-016.rules.findings"
+    ],
+    "sn45.4:11.1": [
+      "data/bodhi/review/verse/batch-016.rules.findings"
+    ],
+    "sn45.4:11.2": [
+      "data/bodhi/review/verse/batch-016.rules.findings"
+    ],
+    "sn45.4:11.3": [
+      "data/bodhi/review/verse/batch-016.rules.findings"
+    ],
+    "sn45.4:11.4": [
+      "data/bodhi/review/verse/batch-016.rules.findings"
+    ],
+    "sn4.6:4.1": [
+      "data/bodhi/review/verse/batch-016.findings"
+    ],
+    "sn4.6:4.2": [
+      "data/bodhi/review/verse/batch-016.findings"
+    ],
+    "sn45.34:6.2": [
+      "data/bodhi/review/verse/batch-016.findings"
+    ],
+    "sn45.34:6.3": [
+      "data/bodhi/review/verse/batch-016.findings"
+    ],
+    "sn45.34:6.4": [
+      "data/bodhi/review/verse/batch-016.findings"
+    ],
+    "sn45.4:10.1": [
+      "data/bodhi/review/verse/batch-016.findings"
+    ],
+    "sn45.4:10.2": [
+      "data/bodhi/review/verse/batch-016.findings"
+    ],
+    "sn47.18:6.1": [
+      "data/bodhi/review/verse/batch-016.findings"
+    ],
+    "sn47.18:6.2": [
+      "data/bodhi/review/verse/batch-016.findings"
+    ],
+    "sn47.43:6.1": [
+      "data/bodhi/review/verse/batch-016.findings"
+    ],
+    "sn47.43:6.2": [
+      "data/bodhi/review/verse/batch-016.findings"
+    ],
+    "sn5.2:2.1": [
+      "data/bodhi/review/verse/batch-017.rules.findings"
+    ],
+    "sn5.2:2.2": [
+      "data/bodhi/review/verse/batch-017.rules.findings"
+    ],
+    "sn5.2:2.3": [
+      "data/bodhi/review/verse/batch-017.rules.findings"
+    ],
+    "sn5.2:2.4": [
+      "data/bodhi/review/verse/batch-017.rules.findings"
+    ],
+    "sn5.3:2.1": [
+      "data/bodhi/review/verse/batch-017.rules.findings"
+    ],
+    "sn5.3:2.2": [
+      "data/bodhi/review/verse/batch-017.rules.findings"
+    ],
+    "sn5.3:2.3": [
+      "data/bodhi/review/verse/batch-017.rules.findings"
+    ],
+    "sn5.3:2.4": [
+      "data/bodhi/review/verse/batch-017.rules.findings"
+    ],
+    "sn5.4:5.1": [
+      "data/bodhi/review/verse/batch-017.rules.findings"
+    ],
+    "sn5.4:5.2": [
+      "data/bodhi/review/verse/batch-017.rules.findings"
+    ],
+    "sn5.4:5.3": [
+      "data/bodhi/review/verse/batch-017.rules.findings"
+    ],
+    "sn5.4:5.4": [
+      "data/bodhi/review/verse/batch-017.rules.findings"
+    ],
+    "sn5.9:5.1": [
+      "data/bodhi/review/verse/batch-017.findings"
+    ],
+    "sn5.9:5.2": [
+      "data/bodhi/review/verse/batch-017.findings"
+    ]
+  },
+  "proposals": {
+    "an10.12:6.1": "possessing five factors",
+    "an10.12:6.2": "and having removed five factors,",
+    "an10.12:6.3": "he is truly called a consummate one",
+    "an10.12:6.4": "in this Dhamma and discipline.",
+    "an3.29:4.1": "He does not possess such wealth,",
+    "an3.29:4.2": "nor does he do deeds of merit;",
+    "an3.29:4.3": "the blind man destitute of eyes",
+    "an3.29:4.4": "casts an unlucky throw in both respects.",
+    "an3.29:5.1": "The person described as one-eyed",
+    "an3.29:5.2": "is a hypocrite who seeks wealth,",
+    "an3.29:5.3": "sometimes righteously",
+    "an3.29:5.4": "and sometimes unrighteously.",
+    "an3.29:6.1": "Both by thievish cheatful acts",
+    "an3.29:6.2": "and by means of false speech",
+    "an3.29:6.3": "the man indulging in sensual pleasures",
+    "an3.29:6.4": "is skilled in amassing wealth.",
+    "an3.29:6.5": "Having gone from here to hell,",
+    "an3.29:6.6": "the one-eyed person is tormented.",
+    "an3.29:7.1": "One with two eyes is said to be",
+    "an3.29:7.2": "the best kind of person.",
+    "an3.29:7.3": "His wealth is acquired by his own exertion,",
+    "an3.29:7.4": "with goods righteously gained.",
+    "an3.29:9.1": "One should avoid from afar",
+    "an3.29:9.2": "the blind one and the one-eyed person,",
+    "an3.29:9.3": "but should befriend the one with two eyes,",
+    "an3.29:9.4": "the best kind of person.",
+    "an3.30:5.1": "Yet this person cannot grasp",
+    "an3.30:5.2": "anything from the talk,",
+    "an3.30:5.3": "at its beginning, middle, and end,",
+    "an3.30:5.4": "for he utterly lacks wisdom.",
+    "an3.30:9.1": "While sitting in his seat,",
+    "an3.30:9.2": "he comprehends the phrasing,",
+    "an3.30:9.3": "at the beginning, middle, and end",
+    "an3.30:9.4": "of the talk given by the bhikkhu.",
+    "an3.34:14.1": "Therefore a wise person should abandon",
+    "an3.34:14.2": "any deed born of greed, hatred, and delusion.",
+    "an3.34:14.3": "A bhikkhu, giving rise to knowledge,",
+    "an3.34:14.4": "should abandon all bad destinations.",
+    "an3.35:8.1": "He always sleeps well,",
+    "an3.35:8.2": "the brahmin who has attained nibbāna,",
+    "an3.35:8.3": "cooled off, without acquisitions,",
+    "an3.35:8.4": "not tainted by sensual pleasures.",
+    "an3.36:17.1": "“Its floor as well is made of iron",
+    "an3.36:17.2": "and heated till it glows with fire.",
+    "an3.36:17.3": "The range is a full hundred yojanas",
+    "an3.36:17.4": "which it ever covers pervasively.",
+    "an3.36:20.1": "But those good people here who,",
+    "an3.36:20.2": "when warned by the divine messengers,",
+    "an3.36:20.3": "never become heedless",
+    "an3.36:20.4": "in regard to the noble Dhamma;",
+    "an3.39:12.1": "Now I am incapable",
+    "an3.39:12.2": "of indulging in sensual pleasures.",
+    "an3.39:12.3": "Relying on the spiritual life,",
+    "an3.39:12.4": "never will I turn back.”",
+    "an3.40:4.1": "For one performing an evil deed",
+    "an3.40:4.2": "there is no place in the world called",
+    "an3.40:4.3": "The self within you knows, O person,",
+    "an3.40:4.4": "whether it is true or false.",
+    "an3.40:5.1": "Indeed, sir, you the witness",
+    "an3.40:5.2": "despise your good self;",
+    "an3.40:5.3": "you conceal the evil self",
+    "an3.40:5.4": "existing within yourself.",
+    "an3.48:3.1": "Just as the trees that grow",
+    "an3.48:3.2": "in dependence on a rocky mountain",
+    "an3.48:3.3": "in a vast forest wilderness",
+    "an3.48:3.4": "might become great “woodland lords,”",
+    "an3.48:4.1": "so, when the head of a family here",
+    "an3.48:4.2": "possesses faith and virtue,",
+    "an3.48:4.3": "his wife, children, and relatives",
+    "an3.48:4.4": "all grow in dependence upon him;",
+    "an3.48:4.5": "so too his friends, his family circle,",
+    "an3.48:4.6": "and those dependent on him.",
+    "an3.48:5.1": "Those possessed of discernment,",
+    "an3.48:5.2": "seeing that virtuous man’s good conduct,",
+    "an3.48:5.3": "his generosity and good deeds,",
+    "an3.48:5.4": "emulate his example.",
+    "an10.12:4.3": "restlessness, and doubt are",
+    "an10.12:4.4": "totally absent in a bhikkhu;",
+    "an10.12:5.1": "when one like this possesses",
+    "an10.12:5.2": "the virtue and concentration",
+    "an10.12:5.3": "of one beyond training,",
+    "an10.12:5.4": "and similar liberation and knowledge;",
+    "an3.30:4.3": "often goes to visit bhikkhus",
+    "an3.30:4.4": "to hear them teach the Dhamma.",
+    "an3.30:6.3": "He too often goes to visit bhikkhus",
+    "an3.30:6.4": "to hear them teach the Dhamma.",
+    "an3.30:7.2": "While sitting in his seat,",
+    "an3.30:7.3": "he grasps the phrasing of the talk,",
+    "an3.30:7.4": "at its beginning, middle, and end.",
+    "an3.30:8.3": "He too often goes to visit bhikkhus",
+    "an3.30:8.4": "to hear them teach the Dhamma.",
+    "an3.34:13.1": "Whatever kamma an ignorant person has done",
+    "an3.34:13.2": "born of greed, hatred, and delusion,",
+    "an3.34:13.3": "whether what was fashioned by him be",
+    "an3.34:13.4": null,
+    "an3.39:8.2": "old age, and death, are disgusted",
+    "an3.39:8.3": "by other people who exist",
+    "an3.39:8.4": "in accordance with their nature.",
+    "an3.39:10.4": "intoxication with health,",
+    "an3.39:11.1": null,
+    "an3.52:5.1": "When one departs this life,",
+    "an3.52:5.2": "self-control over body, speech, and mind,",
+    "an3.52:5.3": "and the deeds of merit one did while",
+    "an3.52:5.4": "lead to one’s happiness.",
+    "an3.57:11.1": "who has gone beyond all things of the",
+    "an3.57:11.2": "and by non-clinging has reached nibbāna:",
+    "an3.57:11.3": "an offering is truly vast",
+    "an3.57:11.4": "when planted in that spotless field.",
+    "an3.57:12.1": "Fools devoid of understanding,",
+    "an3.57:12.2": "dull-witted, unlearned,",
+    "an3.57:12.3": "do not attend on the holy ones",
+    "an3.57:12.4": "but give their gifts to those outside.",
+    "an3.57:13.1": "Those, however, who attend on the holy ones,",
+    "an3.57:13.2": "on the wise ones esteemed as sagely,",
+    "an3.57:13.3": "and those whose faith in the Fortunate One",
+    "an3.57:13.4": "is deeply rooted and well established,",
+    "an3.58:9.1": "“the wise one, dispeller of darkness,",
+    "an3.58:9.2": "the triple-knowledge bearer, victor over death;",
+    "an3.58:9.3": "the one they call an abandoner of all,",
+    "an3.58:9.4": "benefactor of devas and humans;",
+    "an3.58:10.1": "“the one possessing the three knowledges,",
+    "an3.58:10.2": "who dwells without delusion;",
+    "an3.58:10.3": "they worship him, the Buddha",
+    "an3.58:10.4": "Gotama, bearing his final body.",
+    "an4.15:3.1": "In this world together with its devas",
+    "an4.15:3.2": "above, across, and below,",
+    "an4.15:3.3": "as far as the world extends,",
+    "an4.15:3.4": "the Buddha is declared foremost.",
+    "an4.21:10.1": "all those dwelled, now dwell,",
+    "an4.21:10.2": "and in the future will dwell",
+    "an4.21:10.3": "revering the good Dhamma.",
+    "an4.21:10.4": "This is the nature of the Buddhas.",
+    "an4.22:5.1": "The dullard with a restless mind",
+    "an4.22:5.2": "who speaks much chatter,",
+    "an4.22:5.3": "his thoughts unsettled,",
+    "an4.22:5.4": "delighting in a bad teaching,",
+    "an4.22:5.5": "holding bad views, disrespectful,",
+    "an4.22:5.6": "is far from an elder’s stature.",
+    "an4.24:8.1": "Amid those who are self-constrained, the Stable One",
+    "an4.24:8.2": "would not posit as categorically true or false",
+    "an4.24:8.3": "anything seen, heard, or sensed,",
+    "an4.24:8.4": "clung to and considered truth by others.",
+    "an4.25:2.1": "The Blessed One taught the spiritual life,",
+    "an4.25:2.2": "not based on tradition, culminating in nibbāna,",
+    "an4.25:2.3": "lived for the sake of",
+    "an4.25:2.4": "restraint and abandoning.",
+    "an4.25:2.5": "This is the path of the great beings,",
+    "an4.25:2.6": "the path followed by the great seers.",
+    "an3.57:6.1": "Among cattle of any sort,",
+    "an3.57:6.2": "whether black, white, red, or golden,",
+    "an3.57:6.3": "mottled, uniform, or pigeon-colored,",
+    "an3.57:6.4": null,
+    "an3.57:7.3": "the one that can bear the load,",
+    "an3.57:7.4": "possessing strength, advancing with good speed.",
+    "an4.10:10.3": "But having entirely understood",
+    "an4.10:10.4": "sense pleasures and the bond of existence,",
+    "an4.11:11.1": "But one who, whether walking,",
+    "an4.11:11.2": "standing, sitting, or lying down,",
+    "an4.12:8.1": "Training in what is conducive",
+    "an4.12:8.2": "to serenity of mind, always mindful,",
+    "an4.12:8.3": "they call such a bhikkhu",
+    "an4.12:8.4": "one constantly resolute.",
+    "an4.14:5.3": "these four strivings were taught",
+    "an4.14:5.4": "by the Kinsman of the Sun.",
+    "an4.16:2.5": "having known volitional activities",
+    "an4.16:2.6": "as alien, as suffering, and not as",
+    "an4.17:2.1": "If through desire, hate, fear, or delusion",
+    "an4.17:2.2": "one transgresses against the Dhamma,",
+    "an4.17:2.3": "one’s fame diminishes like the moon",
+    "an4.17:2.4": "in the dark fortnight.",
+    "an4.18:2.1": "If one does not transgress the Dhamma",
+    "an4.18:2.2": "through desire, hate, fear, or delusion,",
+    "an4.18:2.3": "one’s fame becomes full like the moon",
+    "an4.18:2.4": "in the bright fortnight.",
+    "an4.19:3.1": "If through desire, hate, fear, or delusion",
+    "an4.19:3.2": "one transgresses against the Dhamma,",
+    "an4.19:3.3": "one’s fame diminishes like the moon",
+    "an4.19:3.4": "in the dark fortnight.",
+    "an4.19:4.1": "If one does not transgress the Dhamma",
+    "an4.19:4.2": "through desire, hate, fear, or delusion,",
+    "an4.19:4.3": "one’s fame becomes full like the moon",
+    "an4.19:4.4": "in the bright fortnight.",
+    "an4.1:5.1": "“Having directly known these things,",
+    "an4.1:5.2": "the Buddha taught the Dhamma to the",
+    "an4.22:8.1": "in whom there are no taints—",
+    "an4.22:8.2": "he is the one I call an",
+    "an4.22:8.3": "With the destruction of the taints",
+    "an4.22:8.4": "a bhikkhu is called an elder.",
+    "an4.23:7.1": "He is the vanquisher of all,",
+    "an4.23:7.2": "the wise one who has untied all",
+    "an4.26:2.1": "Those who are deceivers, stubborn, talkers,",
+    "an4.26:2.2": "imposters, haughty, unconcentrated,",
+    "an4.26:3.1": "But those who are honest and sincere,",
+    "an4.26:3.2": "steadfast, compliant, and well concentrated,",
+    "an4.27:2.4": "because of a lodging,",
+    "an4.27:2.5": "robe, drink, and food,",
+    "an4.28:7.1": "Who can obstruct the dispeller",
+    "an4.28:7.2": "who has discarded all kamma?",
+    "an4.28:7.3": "Who is fit to blame one who is",
+    "an4.28:7.4": "a coin of refined gold?",
+    "an4.28:7.5": "Even the devas praise such a one;",
+    "an4.28:7.6": "by Brahmā too he is praised.",
+    "an4.33:3.1": "When, through direct knowledge,",
+    "an4.33:3.2": "the Buddha, the teacher, the peerless person",
+    "an4.33:3.3": "in this world with its devas,",
+    "an4.33:3.4": "sets in motion the wheel of Dhamma,",
+    "an4.34:5.1": "For those confident in regard to the foremost,",
+    "an4.34:5.2": "knowing the foremost Dhamma,",
+    "an4.34:5.3": "confident in the Buddha—the foremost—",
+    "an4.34:5.4": "unsurpassed, worthy of offerings;",
+    "an4.35:6.1": "He who found for the sake of all",
+    "an4.35:6.2": "release from the snare of death;",
+    "an4.35:6.3": "who revealed the Dhamma, the method,",
+    "an4.35:6.4": "for the benefit of devas and humans;",
+    "an4.35:6.5": "he in whom many people gain confidence",
+    "an4.35:6.6": "when they see and listen to him;",
+    "an4.36:5.1": "“I have destroyed those taints by which",
+    "an4.36:5.2": "I might have been reborn as a deva",
+    "an4.36:5.3": "or as a gandhabba that travels through the",
+    "an4.36:5.4": "by which I might have reached the state",
+    "an4.36:5.5": "or arrived back at the human state:",
+    "an4.36:5.6": "I have dispelled and cut down these taints.",
+    "an4.39:3.1": "The horse sacrifice, human sacrifice,",
+    "an4.39:3.2": "sammāpāsa, vājapeyya, niraggaḷa:",
+    "an4.39:3.3": "these grand sacrifices, fraught with violence,",
+    "an4.39:3.4": "do not bring great fruit.",
+    "an4.39:5.1": "But when they regularly offer by family custom",
+    "an4.39:5.2": "sacrifices free from violence,",
+    "an4.39:5.3": "no goats, sheep, and cattle",
+    "an4.39:5.4": "or various creatures are slain.",
+    "an4.39:5.5": "That is the sacrifice the great seers",
+    "an4.39:5.6": "of right conduct attend.",
+    "an4.3:5.1": "For a hundred thousand and thirty-six",
+    "an4.3:5.2": "nirabbudas, plus five abbudas,",
+    "an4.3:5.3": "the slanderer of noble ones goes to hell,",
+    "an4.3:5.4": "having defamed them with evil speech and mind.",
+    "an4.40:3.1": "When a sacrifice is timely and allowable,",
+    "an4.40:3.2": "well prepared and nonviolent,",
+    "an4.40:3.3": "the self-controlled followers of the spiritual life",
+    "an4.40:3.4": "attend such a sacrifice as this.",
+    "an4.40:4.1": "Those in the world who have removed the",
+    "an4.40:4.2": "transcenders of time and destination,",
+    "an4.40:4.3": "the Buddhas who are proficient in sacrifice,",
+    "an4.40:4.4": "praise this kind of sacrifice.",
+    "an4.51:7.1": "Just as the many rivers used by the",
+    "an4.51:7.2": "flowing downstream, reach the ocean,",
+    "an4.51:7.3": "the great mass of water, the boundless sea,",
+    "an4.51:7.4": "the fearsome receptacle of heaps of gems;",
+    "an4.51:8.1": "so the streams of merit reach the wise",
+    "an4.51:8.2": "who is a giver of food, drink, and",
+    "an4.51:8.3": "they reach the donor of beds, seats, and",
+    "an4.51:8.4": "like rivers carrying their waters to the sea.",
+    "an4.52:7.1": "Therefore an intelligent person,",
+    "an4.52:7.2": "remembering the Buddhas’ teaching,",
+    "an4.52:7.3": "should be intent on faith and virtuous behavior,",
+    "an4.52:7.4": "confidence and vision of the Dhamma.",
+    "an4.55:4.1": "Both husband and wife are endowed with faith,",
+    "an4.55:4.2": "charitable and self-controlled,",
+    "an4.55:4.3": "living their lives righteously,",
+    "an4.55:4.4": "addressing each other with pleasant words,",
+    "an4.32:2.2": "beneficent conduct, and impartiality",
+    "an4.32:2.3": "under diverse worldly conditions,",
+    "an4.32:2.4": "as is suitable to fit each case:",
+    "an4.32:2.5": "of sustaining a favorable relationship",
+    "an4.32:3.3": "would be able to obtain esteem",
+    "an4.32:3.4": "and veneration from their children.",
+    "an4.33:6.1": "“It seems that we are impermanent,",
+    "an4.33:6.2": "not beyond personal existence,” they say,",
+    "an4.33:6.3": "when they hear the word of the",
+    "an4.38:7.2": "tranquil, undefeated, enlightened",
+    "an4.38:7.3": "by breaking through conceit,",
+    "an4.40:6.1": "When what has been properly obtained",
+    "an4.40:6.2": "is properly offered, properly sacrificed,",
+    "an4.40:6.3": "to those worthy of offerings,",
+    "an4.40:6.4": "the sacrifice is vast and the deities",
+    "an4.40:7.3": "is reborn in a happy world,",
+    "an4.40:7.4": "in a realm without affliction.",
+    "an4.53:10.1": "Both husband and wife are endowed with",
+    "an4.53:10.2": "charitable and self-controlled,",
+    "an4.53:10.3": "living their lives righteously,",
+    "an5.31:12.1": "so the Perfectly Enlightened One’s disciple,",
+    "an5.31:12.2": "the wise one accomplished in vision,",
+    "an5.31:12.3": "surpasses the miserly person",
+    "an5.31:12.4": "in five specific respects:",
+    "an5.32:8.1": "For those confident in regard to the foremost,",
+    "an5.32:8.2": "knowing the foremost Dhamma,",
+    "an5.32:8.3": "confident in the Buddha—the foremost—",
+    "an5.32:8.4": "unsurpassed, worthy of offerings;",
+    "an5.33:9.1": "She does not despise her husband,",
+    "an5.33:9.2": "the man who constantly supports her,",
+    "an5.33:9.3": "who ardently and eagerly",
+    "an5.33:9.4": "always brings her whatever she wants.",
+    "an5.33:10.1": "Nor does a good woman scold her husband",
+    "an5.33:10.2": "with speech caused by jealousy;",
+    "an5.33:10.3": "the wise woman shows veneration",
+    "an5.33:10.4": "to all those whom her husband reveres.",
+    "an5.34:8.1": "By giving, he becomes dear and many resort",
+    "an5.34:8.2": "He attains a good reputation and his fame",
+    "an5.34:8.3": "The generous man is composed",
+    "an5.34:8.4": "and confidently enters the assembly.",
+    "an5.38:3.1": "A large tree with a mighty trunk,",
+    "an5.38:3.2": "branches, leaves, and fruit,",
+    "an5.38:3.3": "firm roots, and bearing fruit,",
+    "an5.38:3.4": "is a support for many birds.",
+    "an5.38:4.1": "Having flown across the sky,",
+    "an5.38:4.2": "the birds resort to this delightful base:",
+    "an5.38:4.3": "those in need of shade partake of its",
+    "an5.38:4.4": "those needing fruit enjoy its fruit.",
+    "an5.38:6.1": "those in the world who are fields of",
+    "an5.38:6.2": "devoid of lust and hatred,",
+    "an5.38:6.3": "devoid of delusion, taintless—",
+    "an5.38:6.4": "resort to such a person.",
+    "an5.40:2.1": "Just as the trees that grow",
+    "an5.40:2.2": "in dependence on a rocky mountain",
+    "an5.40:2.3": "in a vast forest wilderness",
+    "an5.40:2.4": "might become great ‘woodland lords,’",
+    "an4.5:8.3": "that sage who has lived the spiritual",
+    "an4.5:8.4": "reached the world’s end, is called",
+    "an4.60:3.2": "proper for the layperson, they serve",
+    "an4.60:3.3": "the virtuous monks of upright conduct",
+    "an4.60:3.4": "with robes, almsfood, lodgings, and medicines:",
+    "an4.60:4.1": null,
+    "an4.60:4.2": null,
+    "an4.60:4.3": "for them both by day and night",
+    "an4.60:4.4": "merit always increases;",
+    "an4.60:4.5": "having done excellent deeds,",
+    "an4.60:4.6": "they pass on to a heavenly state.",
+    "an4.62:7.3": "Enjoying the happiness of enjoyment,",
+    "an4.62:7.4": "a mortal then sees things clearly with",
+    "an4.62:8.1": "While seeing things clearly, the wise one",
+    "an4.62:8.2": "knows both kinds of happiness.",
+    "an5.31:11.1": "“As the hundred-peaked rain cloud,",
+    "an5.31:11.2": "thundering, wreathed in lightning,",
+    "an5.31:13.3": "Possessed of wealth, after death",
+    "an5.31:13.4": "he rejoices in heaven.”",
+    "an5.32:10.3": "the foremost life span, beauty, and glory,",
+    "an5.32:10.4": "good reputation, happiness, and strength.",
+    "an5.34:9.3": "When they are settled in the triple",
+    "an5.34:9.4": "for a long time they delight",
+    "an5.34:10.1": "Having taken the opportunity to do wholesome",
+    "an5.34:10.2": "passing from here, self-luminous, they roam in",
+    "an5.36:4.1": "Therefore, with a non-regressing mind,",
+    "an5.36:4.2": "one should give a gift where it",
+    "an5.37:2.1": "The wise one is a giver of",
+    "an5.37:2.2": "strength, beauty, and discernment.",
+    "an5.40:3.1": "so, when the head of a family here",
+    "an5.40:3.2": "possesses faith and virtue,",
+    "an5.40:3.3": "his wife, children, and relatives",
+    "an5.40:3.4": "all grow in dependence on him;",
+    "an5.40:3.5": "so too his companions, his family circle,",
+    "an5.40:3.6": "and those dependent on him.",
+    "an5.40:4.1": "Those possessed of discernment,",
+    "an5.40:4.2": "seeing that virtuous man’s good conduct,",
+    "an5.40:4.3": "his generosity and good deeds,",
+    "an5.40:4.4": "emulate his example.",
+    "an5.40:5.1": "Having lived here in accord with Dhamma,",
+    "an5.40:5.2": "the path leading to a good destination,",
+    "an5.40:5.3": "those who desire sensual pleasures rejoice,",
+    "an5.40:5.4": "delighting in the deva world.",
+    "an5.42:3.1": "The deities protect one guarded by the Dhamma,",
+    "an5.42:3.2": "who has managed his wealth for the welfare",
+    "an5.42:3.3": "Fame does not forsake one steadfast in the",
+    "an5.42:3.4": "who is learned and of virtuous behavior and",
+    "an5.43:9.1": "For one desiring long life, beauty, fame,",
+    "an5.43:9.2": "acclaim, heaven, high families,",
+    "an5.43:9.3": "and lofty delights",
+    "an5.43:9.4": "following in succession,",
+    "an5.45:7.1": "Just as the many rivers used by the",
+    "an5.45:7.2": "flowing downstream, reach the ocean,",
+    "an5.45:7.3": "the great mass of water, the boundless sea,",
+    "an5.45:7.4": "the fearsome receptacle of heaps of gems;",
+    "an5.45:8.1": "so the streams of merit reach the wise",
+    "an5.45:8.2": "who is a giver of food, drink, and",
+    "an5.45:8.3": "they reach the donor of beds, seats, and",
+    "an5.45:8.4": "like rivers carrying their waters to the sea.",
+    "an5.47:9.1": "Therefore an intelligent person,",
+    "an5.47:9.2": "remembering the Buddhas’ teaching,",
+    "an5.47:9.3": "should be intent on faith and virtuous behavior,",
+    "an5.47:9.4": "confidence and vision of the Dhamma.",
+    "an5.55:10.1": "But those who have fully understood sense pleasures",
+    "an5.55:10.2": "live without fear from any quarter.",
+    "an5.55:10.3": "Having attained the destruction of the taints,",
+    "an5.55:10.4": "while in the world, they have gone beyond.",
+    "an5.57:16.1": "Now I am incapable",
+    "an5.57:16.2": "of indulging in sensual pleasures.",
+    "an5.57:16.3": "Relying on the spiritual life,",
+    "an5.57:16.4": "never will I turn back.”",
+    "an8.29:13.1": "If one has directly encountered them,",
+    "an8.29:13.2": "fortune rarely gained in the world,",
+    "an8.29:13.3": "if one has obtained the human state,",
+    "an8.29:13.4": "and the good Dhamma is being taught,",
+    "an8.29:13.5": "for a person desiring his own good,",
+    "an8.29:13.6": "this is incentive enough to strive.",
+    "an5.42:4.2": "a speaker of truth,",
+    "an5.42:4.3": "possessing a sense of shame,",
+    "an5.42:4.4": "pure like a coin of refined gold?",
+    "an5.44:8.2": "when he gives willingly to the upright",
+    "an5.44:8.3": "clothing, bedding, food, and drink,",
+    "an5.44:8.4": "and various kinds of requisites.",
+    "an5.48:8.3": "his enemies are saddened, having seen",
+    "an5.48:8.4": "that his former facial expression does not",
+    "an5.48:9.1": "“Wherever one might gain one’s good,",
+    "an5.48:9.2": "in whatever way—by chanting, mantras,",
+    "an5.48:9.3": "maxims, gifts, or tradition—there",
+    "an5.48:9.4": "one should exert oneself in just that",
+    "an5.48:10.3": "one should accept the situation without sorrowing,",
+    "an5.48:10.4": "thinking: ‘The kamma is strong; what can",
+    "an5.55:9.3": "are plunged headlong into saṁsāra, into time,",
+    "an5.55:9.4": "destination, and existence upon existence.",
+    "an5.57:12.1": "“Worldlings subject to illness,",
+    "an5.57:12.2": "old age, and death are disgusted",
+    "an5.57:12.3": "by other people who exist",
+    "an5.57:12.4": "in accordance with their nature.",
+    "an5.57:14.4": "intoxication with health,",
+    "an5.57:15.1": null,
+    "an8.10:8.3": "but secretly he does evil deeds,",
+    "an8.10:8.4": "holds pernicious views, and lacks respect.",
+    "an8.10:10.3": "Sweep the chaff away, non-ascetics",
+    "an8.10:10.4": "who think themselves ascetics!",
+    "an8.16:3.3": "a bhikkhu like this is worthy",
+    "an8.16:3.4": "of going on a mission.",
+    "an8.1:3.3": "the fetters thin out as he sees",
+    "an8.1:3.4": "the destruction of the acquisitions.",
+    "an8.1:6.3": "just as the hosts of stars cannot",
+    "an8.1:6.4": "a sixteenth part of the moon’s radiance.",
+    "an8.29:18.1": "Those who have practiced the path,",
+    "an8.29:18.2": "proclaimed by the Tathāgata,",
+    "an8.29:18.3": "have penetrated the right moment in the",
+    "an8.29:18.4": "the unsurpassed spiritual life.",
+    "an8.30:23.1": "“Having understood my thoughts,",
+    "an8.30:23.2": "the unsurpassed teacher in the world",
+    "an8.30:23.3": "came to me by psychic potency",
+    "an8.30:23.4": "in a mind-made body.",
+    "an8.37:4.1": "Having thus practiced charity",
+    "an8.37:4.2": "with a mind freely generous,",
+    "an8.37:4.3": "one intelligent and wise, rich in faith,",
+    "an8.37:4.4": "is reborn in a pleasant, unafflicted world.",
+    "an8.38:4.3": "Firm in faith, the pious man,",
+    "an8.38:4.4": "having known their good qualities,",
+    "an8.38:5.1": "venerates the homeless renouncers,",
+    "an8.38:5.2": "the mendicants who lead the spiritual life.",
+    "an8.46:19.1": "She does not despise her husband,",
+    "an8.46:19.2": "the man who constantly supports her,",
+    "an8.46:19.3": "who ardently and eagerly",
+    "an8.46:19.4": "always brings her whatever she wants.",
+    "an8.46:20.1": "Nor does a good woman scold her husband",
+    "an8.46:20.2": "with speech caused by jealousy;",
+    "an8.46:20.3": "the wise woman shows veneration",
+    "an8.46:20.4": "to all those whom her husband reveres.",
+    "an8.29:19.1": "You should dwell without leakages,",
+    "an8.29:19.2": "guarded, ever-mindful in the restraints",
+    "an8.29:19.3": "taught by the One with Vision,",
+    "an8.29:19.4": "the Kinsman of the Sun.",
+    "an8.37:2.3": "he gives gifts often to fertile fields",
+    "an8.37:2.4": "to those who lead the spiritual life.",
+    "an8.49:15.3": "virtuous, firm in Dhamma,",
+    "an8.49:15.4": "a speaker of truth.",
+    "an8.5:2.3": "these conditions that people meet",
+    "an8.5:2.4": "are impermanent, transient, and subject to change.",
+    "mn82:42.19": "Clad in a shroud, he leaves his wealth",
+    "mn82:42.20": "Prodded with stakes he burns upon the pyre.",
+    "mn82:42.21": "And as he dies, no relatives or friends",
+    "mn82:42.22": "Can offer him shelter and refuge here.",
+    "mn82:42.35": "Better is wisdom here than any wealth,",
+    "mn82:42.36": "Since by wisdom one gains the final goal.",
+    "mn82:42.37": "For people through ignorance do evil deeds",
+    "mn82:42.38": "While failing to reach the goal from life",
+    "sn1.18:1.1": "“Is there a person somewhere in the world",
+    "sn1.18:1.2": "Who is restrained by a sense of shame,",
+    "sn1.18:1.3": "One who draws back from blame",
+    "sn1.18:1.4": "As a good horse does from the whip?”",
+    "mn26:19.8": "‘Enough with teaching the Dhamma",
+    "mn26:19.9": "That even I found hard to reach;",
+    "mn26:19.10": "For it will never be perceived",
+    "mn26:19.11": "By those who live in lust and hate.",
+    "mn26:19.12": "Those dyed in lust, wrapped in darkness",
+    "mn26:19.13": "Will never discern this abstruse Dhamma",
+    "mn26:19.14": "Which goes against the worldly stream,",
+    "mn26:19.15": "Subtle, deep, and difficult to see.’",
+    "mn26:20.10": "‘In Magadha there have appeared till now",
+    "mn26:20.11": "Impure teachings devised by those still stained.",
+    "mn26:20.12": "Open the doors to the Deathless! Let them",
+    "mn26:20.13": "The Dhamma that the Stainless One has found.",
+    "mn26:25.6": "‘I am one who has transcended all,",
+    "mn26:25.7": "Unsullied among all things, renouncing all,",
+    "mn26:25.8": "By craving’s ceasing freed. Having known this all",
+    "mn26:25.9": "For myself, to whom should I point as",
+    "mn26:25.10": "I have no teacher, and one like",
+    "mn26:25.11": "Exists nowhere in all the world",
+    "mn26:25.12": "With all its gods, because I have",
+    "mn26:25.13": "No person for my counterpart.",
+    "mn82:42.23": "While his heirs take over his wealth, this",
+    "mn82:42.24": "Must pass on according to his actions;",
+    "mn82:42.25": "And as he dies nothing can follow him;",
+    "mn82:42.26": "Not child nor wife nor wealth nor royal",
+    "sn1.17:3.1": "“Drawing in the mind’s thoughts",
+    "sn1.17:3.2": "As a tortoise draws its limbs into its",
+    "sn1.17:3.3": "Independent, not harassing others, fully quenched,",
+    "sn1.17:3.4": "A bhikkhu would not blame anyone.”",
+    "sn1.23:3.1": "“Those for whom lust and hatred",
+    "sn1.23:3.2": "Along with ignorance have been expunged,",
+    "sn1.23:3.3": "The arahants with taints destroyed:",
+    "sn1.23:3.4": "For them the tangle is disentangled.",
+    "sn1.30:1.1": "“Having approached you, we ask a question",
+    "sn1.30:1.2": "Of the slender hero with antelope calves,",
+    "sn1.30:1.3": "Greedless, subsisting on little food,",
+    "sn1.30:1.4": "Wandering alone like a lion or naga,",
+    "sn1.30:1.5": "Without concern for sensual pleasures:",
+    "sn1.30:1.6": "How is one released from suffering?”",
+    "sn1.32:10.1": "“The bad do not emulate the good,",
+    "sn1.32:10.2": "Who give what is hard to give",
+    "sn1.32:10.3": "And do deeds hard to do:",
+    "sn1.32:10.4": "The Dhamma of the good is hard to",
+    "sn1.20:25.1": "The Blessed One:",
+    "sn1.20:25.2": "He cut off craving here for name-and-form.",
+    "sn1.20:25.3": "Though devas and humans search for him",
+    "sn1.20:25.4": "Here and beyond, in the heavens and all",
+    "sn1.20:25.5": "They do not find the one whose knots",
+    "sn1.20:25.6": "The one untroubled, free of longing.",
+    "sn1.25:1.1": "“If a bhikkhu is an arahant,",
+    "sn1.25:1.2": "Consummate, with taints destroyed,",
+    "sn1.25:2.1": "“If a bhikkhu is an arahant,",
+    "sn1.25:2.2": "Consummate, with taints destroyed,",
+    "sn1.25:3.1": "“When a bhikkhu is an arahant,",
+    "sn1.25:3.2": "Consummate, with taints destroyed,",
+    "sn1.27:2.1": "“Where water, earth, fire, and air,",
+    "sn1.27:2.2": "Do not gain a footing:",
+    "sn1.29:1.3": "Born from a bog, O great hero!",
+    "sn1.29:1.4": "How does one escape from it?”",
+    "sn1.32:4.3": "The hunger and thirst that the miser fears",
+    "sn1.32:4.4": null,
+    "sn1.32:4.5": "Afflict that fool in this world and the",
+    "sn1.32:4.6": null,
+    "sn1.32:14.1": "“If one practises the Dhamma",
+    "sn1.32:14.2": "If while one supports one’s wife",
+    "sn1.32:14.3": "Then a hundred thousand offerings",
+    "sn1.32:14.4": "Are not worth even a fraction",
+    "sn1.34:6.1": "“He abandoned reckoning, did not assume conceit;",
+    "sn1.34:6.2": "He cut off craving here for name-and-form.",
+    "sn1.34:6.3": "Though devas and humans search for him",
+    "sn1.34:6.4": "Here and beyond, in the heavens and all",
+    "sn1.34:6.5": "They do not find the one whose knots",
+    "sn1.34:6.6": "The one untroubled, free of longing.”",
+    "sn1.34:7.4": "“Are they to be praised who venerate him,",
+    "sn1.34:7.5": "The best of men, faring for the good",
+    "sn1.35:2.1": "“If one shows oneself in one way",
+    "sn1.35:2.2": "While actually being otherwise,",
+    "sn1.35:2.3": "What one enjoys is obtained by theft",
+    "sn1.35:2.4": "Like the gains of a cheating gambler.”",
+    "sn1.39:2.1": "“I worship the Buddha, the best of beings,",
+    "sn1.39:2.2": "Dwelling in the woods at Vesali.",
+    "sn1.39:2.3": "Kokanada am I,",
+    "sn1.39:2.4": "Kokanada, Pajjunna’s daughter.",
+    "sn1.40:2.1": "“Here came Kokanada, Pajjunna’s daughter,",
+    "sn1.40:2.2": "Beautiful as the gleam of lightning.",
+    "sn1.40:2.3": "Venerating the Buddha and the Dhamma,",
+    "sn1.40:2.4": "She spoke these verses full of meaning.",
+    "sn1.42:3.1": "“The one who gives a residence",
+    "sn1.42:3.2": "Is the giver of all.",
+    "sn1.42:3.3": "But the one who teaches the Dhamma",
+    "sn1.42:3.4": "Is the giver of the Deathless.”",
+    "sn1.43:1.1": "“They always take delight in food,",
+    "sn1.43:1.2": "Both devas and human beings.",
+    "sn1.43:1.3": "So what sort of spirit could it be",
+    "sn1.43:1.4": "That does not take delight in food?”",
+    "sn1.47:1.1": "“For whom does merit always increase,",
+    "sn1.47:1.2": "Both by day and by night?",
+    "sn1.47:1.3": "Who are the people going to heaven,",
+    "sn1.47:1.4": "Established in Dhamma, endowed with virtue?”",
+    "sn1.47:3.1": "“For them merit always increases,",
+    "sn1.47:3.2": "Both by day and by night;",
+    "sn1.47:3.3": "Those are the people going to heaven,",
+    "sn1.47:3.4": "Established in Dhamma, endowed with virtue.”",
+    "sn1.39:3.1": "“Earlier I had only heard that the Dhamma",
+    "sn1.39:3.2": "Has been realized by the One with Vision;",
+    "sn1.41:5.1": "“Then in the end one leaves the body",
+    "sn1.41:5.2": "Along with one’s possessions.",
+    "sn1.44:1.1": "A devatā:",
+    "sn1.44:1.2": "With its one root, two whirlpools,",
+    "sn1.44:1.3": "Three stains, five extensions,",
+    "sn1.44:1.4": "An ocean with twelve eddies.”",
+    "sn1.46:4.1": "“One who has such a vehicle—",
+    "sn1.46:4.2": "Whether a woman or a man—",
+    "sn1.46:4.3": "Has, by means of this vehicle,",
+    "sn1.46:4.4": "Drawn close to Nibbāna.”",
+    "sn1.61:1.3": "What is the one thing that has",
+    "sn1.61:1.4": "All under its control?”",
+    "sn1.61:2.3": "Name is the one thing that has",
+    "sn1.61:2.4": "All under its control.”",
+    "sn1.62:1.3": "What is the one thing that has",
+    "sn1.62:1.4": "All under its control?”",
+    "sn1.62:2.3": "Mind is the one thing that has",
+    "sn1.62:2.4": "All under its control.”",
+    "sn1.63:1.3": "What is the one thing that has",
+    "sn1.63:1.4": "All under its control?”",
+    "sn1.63:2.3": "Craving is the one thing that has",
+    "sn1.63:2.4": "All under its control.”",
+    "sn1.70:1.3": "By clinging to what is the world",
+    "sn1.70:1.4": "Harassed in regard to what?”",
+    "sn1.70:2.3": "By clinging to six the world",
+    "sn1.70:2.4": "Is harassed in regard to six.”",
+    "sn11.14:6.1": "“‘Therefore the person of intelligence,",
+    "sn11.14:6.2": "Remembering the Buddha’s Teaching,",
+    "sn11.14:6.3": "Should be devoted to faith and virtue,",
+    "sn11.14:6.4": "To confidence and vision of the Dhamma.’”",
+    "sn11.18:2.1": "“‘These all humbly worship you—",
+    "sn11.18:2.2": "Those versed in the Triple Veda,",
+    "sn11.18:2.3": "All the khattiyas reigning on earth,",
+    "sn11.18:2.4": "The Four Great Kings and the glorious Thirty—",
+    "sn11.18:2.5": "So who, O Sakka, is that spirit",
+    "sn11.18:2.6": "To whom you bow in worship?’",
+    "sn11.18:5.1": "“‘I worship as well, O Matali,",
+    "sn11.18:5.2": "Those householders making merit,",
+    "sn11.18:5.3": "The lay followers possessed of virtue",
+    "sn11.18:5.4": "Who righteously maintain a wife.’",
+    "sn11.19:4.1": "“‘Those for whom lust and hatred",
+    "sn11.19:4.2": "And ignorance have been expunged,",
+    "sn11.19:4.3": "The arahants with taints destroyed:",
+    "sn11.19:4.4": "These are the ones whom I worship, Matali.",
+    "sn11.17:2.1": "“Rise up, O hero, victor in battle!",
+    "sn11.17:2.2": "Your burden lowered, debt-free one, wander in the",
+    "sn11.17:4.1": "“Rise up, O hero, victor in battle!",
+    "sn11.17:4.2": "O caravan leader, debt-free one, wander in the",
+    "sn11.18:3.1": "Sakka:",
+    "sn11.18:3.2": "Those versed in the Triple Veda,",
+    "sn11.18:3.3": "All the khattiyas reigning on earth,",
+    "sn11.18:3.4": "The Four Great Kings and the glorious Thirty—",
+    "sn11.18:7.1": "The Blessed One:",
+    "sn11.18:7.2": "Having worshipped the different quarters,",
+    "sn11.18:7.3": "The deva-king Maghava, Suja’s husband,",
+    "sn11.18:7.4": "The chief, climbed into his chariot.”",
+    "sn11.19:3.1": "Sakka:",
+    "sn11.19:3.2": "In this world with its devas,",
+    "sn11.19:3.3": "The Teacher of perfect name:",
+    "sn11.19:3.4": "He is the one whom I worship, Matali.",
+    "sn11.19:6.1": "Matali:",
+    "sn11.19:6.2": "Are indeed the best in the world.",
+    "sn11.19:7.1": "The Blessed One:",
+    "sn11.19:7.2": "Having worshipped the Blessed One,",
+    "sn11.19:7.3": "The deva-king Maghava, Suja’s husband,",
+    "sn11.19:7.4": "The chief, climbed into his chariot.”",
+    "sn11.1:5.2": "Might achieve unending bliss:",
+    "sn11.1:5.3": "Go there, Suvīra,",
+    "sn11.1:6.1": "Suvīra:",
+    "sn11.1:6.2": "Without doing work, O Sakka,",
+    "sn11.20:8.1": "Matali:",
+    "sn11.20:8.2": "Are indeed the best in the world.",
+    "sn11.20:9.1": "The Blessed One:",
+    "sn11.20:9.2": "Having worshipped the Bhikkhu Saṅgha,",
+    "sn11.20:9.3": "The deva-king Maghava, Suja’s husband,",
+    "sn11.20:9.4": "The chief, climbed into his chariot.”",
+    "sn11.24:4.1": "“‘Bring anger under your control;",
+    "sn11.24:4.2": "Do not let your friendships decay.",
+    "sn11.24:4.3": "Do not blame one who is blameless;",
+    "sn11.24:4.4": "Do not utter divisive speech.",
+    "sn11.24:4.5": "Like a mountain avalanche",
+    "sn11.24:4.6": "Anger crushes evil people.’”",
+    "sn11.4:9.1": "“‘They call that strength no strength at all—",
+    "sn11.4:9.2": "The strength that is the strength of folly—",
+    "sn11.4:9.3": "But no one can reproach a person",
+    "sn11.4:9.4": "Who is strong because guarded by Dhamma.",
+    "sn11.4:11.1": "“‘He practises for the welfare of both,",
+    "sn11.4:11.2": "His own and the other’s,",
+    "sn11.4:11.3": "When, knowing that his foe is angry,",
+    "sn11.4:11.4": "He mindfully maintains his peace.",
+    "sn11.4:12.1": "“‘When he achieves the cure of both—",
+    "sn11.4:12.2": "His own and the other’s—",
+    "sn11.4:12.3": "The people who consider him a fool",
+    "sn11.4:12.4": "Are unskilled in the Dhamma.’",
+    "sn11.6:2.1": "“‘Avoid, O Matali, with your chariot pole",
+    "sn11.6:2.2": "The bird nests in the silk-cotton woods;",
+    "sn11.6:2.3": "Let’s surrender our lives to the asuras",
+    "sn11.6:2.4": "Rather than make these birds nestless.’",
+    "sn11.21:2.3": "What is the one thing, O Gotama,",
+    "sn11.21:2.4": "Whose killing you approve?”",
+    "sn11.21:3.3": "The killing of anger, O Vasava,",
+    "sn11.21:3.4": "With its poisoned root and honeyed tip:",
+    "sn11.23:2.3": "Goes to the terrible hell,",
+    "sn11.23:2.4": "Like Sambara, for a hundred years.’”",
+    "sn11.25:2.3": "Nonanger and harmlessness always dwell",
+    "sn11.25:2.4": "Within the hearts of the noble ones.",
+    "sn11.25:2.5": "Like a mountain avalanche",
+    "sn11.25:2.6": "Anger crushes evil people.’”",
+    "sn11.4:2.1": "“‘When face to face with Vepacitti",
+    "sn11.4:2.2": "Is it, Maghava, from fear or weakness",
+    "sn11.4:2.3": "That you endure him so patiently,",
+    "sn11.4:2.4": "Listening to his harsh words?’",
+    "sn11.4:4.3": "Hence with drastic punishment",
+    "sn11.4:4.4": "The wise man should restrain the fool.’",
+    "sn11.4:6.1": "Matali:",
+    "sn11.4:6.2": "In practising patient endurance:",
+    "sn11.5:9.1": "… verses = 877–82 …",
+    "sn11.5:9.2": null,
+    "sn11.5:10.1": null,
+    "sn11.8:4.3": "But for all creatures association",
+    "sn11.8:4.4": "Is supreme among enjoyments.",
+    "sn11.8:5.3": "But for all creatures association",
+    "sn11.8:5.4": "Is supreme among enjoyments.",
+    "sn21.10:5.2": "Among all things unsullied, with all cast off,",
+    "sn21.10:5.3": "Liberated in the destruction of craving:",
+    "sn21.6:2.1": "“Geese, herons, and peacocks,",
+    "sn21.6:2.2": "Elephants, and spotted deer,",
+    "sn21.6:2.3": "All are frightened of the lion",
+    "sn21.6:2.4": "Regardless of their bodies’ size.",
+    "sn22.78:3.1": "“When the Buddha, through direct knowledge,",
+    "sn22.78:3.2": "Sets in motion the Wheel of Dhamma,",
+    "sn22.78:3.3": "The peerless Teacher in this world",
+    "sn22.78:3.4": "With its devas makes this known:",
+    "sn22.95:14.1": "“A bhikkhu with energy aroused",
+    "sn22.95:14.2": "Should look upon the aggregates thus,",
+    "sn22.95:14.3": "Whether by day or at night,",
+    "sn22.95:14.4": "Comprehending, ever mindful.",
+    "sn35.132:3.1": "They took delight in Dhamma and meditation,",
+    "sn35.132:3.2": "Those brahmins who recalled the ancient rules.",
+    "sn35.136:3.1": "“These are considered happiness",
+    "sn35.136:3.2": "By the world with its devas;",
+    "sn35.136:3.3": "But where these cease,",
+    "sn35.136:3.4": "That they consider suffering.",
+    "sn35.136:7.1": "“But for the good it is disclosed,",
+    "sn35.136:7.2": "It is light here for those who see.",
+    "sn35.136:7.3": "The dullards unskilled in the Dhamma",
+    "sn35.136:7.4": "Don’t understand it in its presence.",
+    "sn35.136:8.1": "“This Dhamma isn’t easily understood",
+    "sn35.136:8.2": "By those afflicted with lust for existence,",
+    "sn35.136:8.3": "Who flow along in the stream of existence,",
+    "sn35.136:8.4": "Deeply mired in Mara’s realm.",
+    "sn21.3:6.1": "“‘As Sāriputta is supreme",
+    "sn21.3:6.2": "In wisdom, virtue, and peace,",
+    "sn21.8:2.1": "“When shall I see Nanda as a",
+    "sn21.8:2.2": "Wearing robes stitched from rags,",
+    "sn22.82:15.1": "These are the ten questions",
+    "sn22.82:15.2": "Two about the aggregates,",
+    "sn22.82:15.3": "Designation and the cause,",
+    "sn22.82:15.4": "Two about identity,",
+    "sn22.82:15.5": "One each on gratification",
+    "sn22.82:15.6": "And this body with consciousness.",
+    "sn35.132:6.3": "Hypocrisy, bent staffs, ablutions:",
+    "sn35.132:6.4": null,
+    "sn35.132:6.5": "These emblems of the brahmins",
+    "sn35.229:3.1": "“One who has expunged lust and hate",
+    "sn35.229:3.2": "Along with the taint of ignorance,",
+    "sn35.229:3.3": "Has crossed this ocean so hard to cross",
+    "sn35.229:3.4": "With its dangers of sharks, demons, waves.",
+    "sn35.95:24.1": "“When, firmly mindful, one sees a form,",
+    "sn35.95:24.2": "One is not inflamed by lust for forms;",
+    "sn35.95:24.3": "One experiences it with dispassionate mind",
+    "sn35.95:24.4": "And does not remain holding it tightly.",
+    "sn35.95:25.1": "“One fares mindfully in such a way",
+    "sn35.95:25.2": "That even as one sees the form,",
+    "sn35.95:25.3": "And while one undergoes a feeling,",
+    "sn35.95:25.4": "Suffering is exhausted, not built up.",
+    "sn35.95:25.5": "For one dismantling suffering thus,",
+    "sn35.95:25.6": "Nibbāna is said to be close by.",
+    "sn36.1:2.1": "A disciple of the Buddha, mindful,",
+    "sn36.1:2.2": "Concentrated, comprehending clearly,",
+    "sn36.1:2.3": "Understands feelings",
+    "sn36.1:2.4": "And the origin of feelings,",
+    "sn36.2:2.1": "Whether it be pleasant or painful",
+    "sn36.2:2.2": "Along with the neither-painful-nor-pleasant,",
+    "sn36.2:2.3": "Both the internal and the external,",
+    "sn36.2:2.4": "Whatever kind of feeling there is:",
+    "sn35.228:3.3": "The knowledge-master who has lived the holy life,",
+    "sn35.228:3.4": "Reached the world’s end, is called one",
+    "sn35.229:4.3": "Passed away, he cannot be measured, I",
+    "sn35.229:4.4": "He has bewildered the King of Death.”",
+    "sn35.95:26.1": "“When, firmly mindful, one hears a sound,",
+    "sn35.95:26.2": "One is not inflamed by lust for",
+    "sn35.95:26.3": null,
+    "sn35.95:27.6": null,
+    "sn35.95:28.1": "“When, firmly mindful, one smells an odour,",
+    "sn35.95:28.2": "One is not inflamed by lust for",
+    "sn35.95:28.3": null,
+    "sn35.95:29.6": null,
+    "sn35.95:30.1": "“When, firmly mindful, one enjoys a taste,",
+    "sn35.95:30.2": "One is not inflamed by lust for",
+    "sn35.95:30.3": null,
+    "sn35.95:31.6": null,
+    "sn35.95:32.1": "“When, firmly mindful, one feels a contact,",
+    "sn35.95:32.2": "One is not inflamed by lust for",
+    "sn35.95:32.3": null,
+    "sn35.95:33.6": null,
+    "sn35.95:34.1": "“When, firmly mindful, one knows an object,",
+    "sn35.95:34.2": "One is not inflamed by lust for",
+    "sn35.95:34.3": null,
+    "sn35.95:35.1": null,
+    "sn35.95:35.5": "For one diminishing suffering thus",
+    "sn36.12:6.3": "Standing in Dhamma, with the body’s breakup,",
+    "sn36.12:6.4": "The knowledge-master cannot be reckoned.",
+    "sn36.1:3.3": "With the destruction of feelings",
+    "sn36.1:3.4": "A bhikkhu is hungerless and fully quenched.",
+    "sn36.4:3.1": "A weakling of little strength",
+    "sn36.4:3.2": "Who weeps out loud and wails:",
+    "sn36.4:3.3": "He has not risen up in the bottomless",
+    "sn36.4:3.4": "Nor has he even gained a foothold.",
+    "sn36.5:2.1": "One who has seen the pleasant as painful",
+    "sn36.5:2.2": "And the painful as a dart,",
+    "sn36.5:2.3": "Seen as impermanent the peaceful feeling",
+    "sn36.5:2.4": "Neither painful nor pleasant:",
+    "sn4.11:3.1": "“Even if you make this Vulture Peak",
+    "sn4.11:3.2": "Quake all over in its entirety,",
+    "sn4.11:3.3": "The enlightened are not perturbed,",
+    "sn4.11:3.4": "For they are are fully liberated.”",
+    "sn4.16:5.1": "“Though they seek him everywhere,",
+    "sn4.16:5.2": "Mara and his army do not find him:",
+    "sn4.16:5.3": "The one thus detached, secure,",
+    "sn4.16:5.4": "Who has gone beyond all ’fetters.”",
+    "sn4.17:4.1": "“But when he has transcended this,",
+    "sn4.17:4.2": "The mindful disciple of the Buddha",
+    "sn4.17:4.3": "Shines radiantly like the sun,",
+    "sn4.17:4.4": "Having surmounted Mara’s realm.”",
+    "sn4.1:6.1": "By developing the path to enlightenment—",
+    "sn4.1:6.2": "Virtue, concentration, and wisdom—",
+    "sn4.1:6.3": "I have attained supreme purity:",
+    "sn4.1:6.4": "You’re defeated, End-maker!”",
+    "sn4.20:4.1": "“How could a person incline to sensual pleasures",
+    "sn4.20:4.2": "Who has seen the source whence suffering springs?",
+    "sn4.20:4.3": "Having known acquisition as a tie in the",
+    "sn4.20:4.4": "A person should train for its removal.”",
+    "sn4.21:4.1": "“How could a person incline to sensual pleasures",
+    "sn4.21:4.2": "Who has seen the source whence suffering springs?",
+    "sn4.21:4.3": "Having known acquisition as a tie in the",
+    "sn4.21:4.4": "A person should train for its removal.”",
+    "sn4.23:3.1": "“O great hero, great in wisdom,",
+    "sn4.23:3.2": "Blazing forth with power and glory!",
+    "sn4.23:3.3": "I worship your feet, One with Vision,",
+    "sn4.23:3.4": "Who has overcome all enmity and fear.",
+    "sn36.3:4.1": "The One of Broad Wisdom has taught",
+    "sn36.3:4.2": "With reference to that peaceful feeling,",
+    "sn36.3:4.3": "If one seeks delight even in this,",
+    "sn36.3:6.3": "Standing in Dhamma, with the body’s breakup",
+    "sn36.3:6.4": "The knowledge-master cannot be reckoned.",
+    "sn36.5:3.5": "Standing in Dhamma, with the body’s breakup",
+    "sn36.5:3.6": "The knowledge-master cannot be reckoned.",
+    "sn36.6:6.1": "For him attraction and repulsion no more",
+    "sn36.6:6.2": "Both have been extinguished, brought to an",
+    "sn4.14:4.1": "The Blessed One: “Compassionate for their welfare,",
+    "sn4.14:4.2": "The Buddha instructs others.",
+    "sn4.14:4.3": "The Tathagata is fully released",
+    "sn4.23:5.1": "“How, O Blessed One, can your disciple—",
+    "sn4.23:5.2": "One delighting in the Teaching,",
+    "sn4.25:14.1": "The Blessed One: “Having conquered the army",
+    "sn4.25:14.2": "Meditating alone, I discovered bliss,",
+    "sn4.25:14.3": "The attainment of the goal, the peace",
+    "sn4.25:14.4": "Therefore I don’t make friends with people,",
+    "sn4.25:16.1": "“How does a bhikkhu here often dwell",
+    "sn4.25:16.2": "That, five floods crossed, he here has",
+    "sn4.25:18.1": "“When a bhikkhu here often dwells thus,",
+    "sn4.25:18.2": "With five floods crossed, he here has",
+    "sn4.6:5.1": "“Though many creatures crawl about,",
+    "sn4.6:5.2": "Many terrors, flies, serpents,",
+    "sn4.6:5.3": "The great sage gone to his empty hut",
+    "sn4.6:5.4": "Stirs not a hair because of them.",
+    "sn45.4:11.1": "“This divine vehicle unsurpassed",
+    "sn45.4:11.2": "Originates from within oneself.",
+    "sn45.4:11.3": "The wise depart from the world in it,",
+    "sn45.4:11.4": "Inevitably winning the victory.”",
+    "sn4.6:4.1": "“He who resorts to empty huts for",
+    "sn4.6:4.2": "He is the sage, self-controlled.",
+    "sn45.34:6.2": "Having left behind sensual pleasures.",
+    "sn45.34:6.3": "Owning nothing, the wise man",
+    "sn45.34:6.4": "Should cleanse himself of mental defilements.",
+    "sn45.4:10.1": "“Good will, harmlessness, and seclusion:",
+    "sn45.4:10.2": "These are the chariot’s weaponry,",
+    "sn47.18:6.1": "“The seer of the destruction of birth,",
+    "sn47.18:6.2": "Compassionate, knows the one-way path",
+    "sn47.43:6.1": "“‘The seer of the destruction of birth,",
+    "sn47.43:6.2": "Compassionate, knows the one-way path",
+    "sn5.2:2.1": "“That state so hard to achieve",
+    "sn5.2:2.2": "Which is to be attained by the seers,",
+    "sn5.2:2.3": "Can’t be attained by a woman",
+    "sn5.2:2.4": "With her two-fingered wisdom.”",
+    "sn5.3:2.1": "“Why now, when your son is dead,",
+    "sn5.3:2.2": "Do you sit alone with tearful face?",
+    "sn5.3:2.3": "Having entered the woods all alone,",
+    "sn5.3:2.4": "Are you on the lookout for a man?”",
+    "sn5.4:5.1": "“I am repelled and humiliated",
+    "sn5.4:5.2": "By this foul, putrid body,",
+    "sn5.4:5.3": "Subject to break up, fragile:",
+    "sn5.4:5.4": "I’ve uprooted sensual craving.",
+    "sn5.9:5.1": "“As when a seed is sown in",
+    "sn5.9:5.2": "It grows depending on a pair of"
+  },
+  "legacyFindingRetirement": {
+    "file": "data/bodhi/review/empty/batch-002.findings",
+    "line": "an5.6:3.3 starts: then there is the entering upon the unwholesome. (4)",
+    "reason": "Outside the verse audit; the historical quote is not found in the already-settled empty row. Retired without changing the app text so only this audit can propose passing groups."
+  },
+  "open": [
+    {
+      "keys": [
+        "sn1.34:7.1",
+        "sn1.34:7.3"
+      ],
+      "reason": "Complete source lines combine meanings on both sides of the Pali prose interruption; kept whole without inventing an English line break."
+    }
+  ]
+}

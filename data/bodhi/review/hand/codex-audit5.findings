@@ -6,12 +6,12 @@ sn35.63:2.8 none
 # superseded: sn11.4:2.3 none
 # superseded: sn11.4:9.4 none
 # superseded: sn11.4:10.2 none
-sn11.4:12.2 none
+# superseded: sn11.4:12.2 none
 sn11.4:12.3 starts: The people who consider him a fool
 # superseded: sn11.18:5.2 none
 # superseded: sn11.18:5.4 none
 # superseded: sn11.18:6.2 none
-sn11.18:7.2 none
+# superseded: sn11.18:7.2 none
 sn11.18:7.4 starts: The chief, climbed into his chariot.
 # superseded: sn35.229:3.4 none
 # superseded: sn4.11:3.2 none
@@ -32,13 +32,13 @@ sn35.138:1.17 none
 # superseded: sn1.39:2.3 none
 # superseded: sn1.39:4.2 none
 # superseded: sn1.39:5.2 none
-an3.34:13.2 none
-an3.34:13.3 none
-an3.34:14.2 none
+# superseded: an3.34:13.2 none
+# superseded: an3.34:13.3 none
+# superseded: an3.34:14.2 none
 an3.34:14.3 starts: A bhikkhu, giving rise to knowledge,
 # superseded: sn4.6:5.2 none
 # superseded: an5.35:2.4 none
-sn1.41:5.2 starts: the body Along with one’s possessions.
+# superseded: sn1.41:5.2 starts: the body Along with one’s possessions.
 # superseded: sn1.71:3.4 none
 # superseded: sn11.15:2.4 none
 sn45.143:3.2 starts: so too …”

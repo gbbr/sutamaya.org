@@ -14,14 +14,16 @@ each rule the work settles goes into "Pulling updates" and "Reviewing new and re
 the same change, as something the segmenter does itself wherever it can, leaving readers only what
 a rule can't decide.
 
-1. **Covered lines**: each translation's `covered.json`, the lines in a run of two or more empty
-   lines that the English above translates (see "Building them into the app"). Most such runs are
+1. **Covered lines**: each translation's `covered.json`, the empty lines the reader would never see
+   (a run of two or more, or a lone one opening its paragraph) whose content the English above
+   translates (see "Building them into the app"). Most such runs are
    repetitions the translator abbreviates, which stay out. A passage rendered earlier than its
    Pali, as in Bodhi's SN 4.25, 12.68 and 22.80 and Ṭhānissaro's SN 22.58, isn't covered by the
    line above it. The rounds are in `review/skipped/`.
 2. **Verse**: in every collection, each verse's English sits in its own verse, in order, spread
    over its Pali lines as far as the translator's line breaks allow (see "Building them into the
-   app"). The rounds are in `review/verse/`.
+   app"). The rounds are in `review/verse/`. Bodhi's is done, every verse in MN, SN, AN and Thag
+   (his DN texts have none).
 3. **Source mapping**: Bodhi's eight shared SN 45 pages (45.42–48 through 45.92–96)
    are each saved once under their full span, with their English spread once over both app texts
    by their Pali (`data/bodhi/review/source-mapping-final/`).
@@ -32,7 +34,10 @@ a rule can't decide.
    the numbering evidence in `data/thanissaro/review/codex-read/source-ranges.json`.
 4. **Teach the segmenter**: the patterns items 1–3 settle become rules it applies to new texts,
    checked against the reviews' own answers, and the steps in "Reviewing new and revised texts"
-   shrink to what the rules leave.
+   shrink to what the rules leave. Verse starts from what Bodhi's round settled: the translator's
+   lines are never cut, a verse with as many of his lines as Pali lines takes one on each
+   (`scripts/segmenter/review-bodhi-verse.py` already does this), and only a line whose wording
+   crosses into the next verse needs a reader to say which verse it sits in.
 5. **A fresh audit** once the rest is done, drawn as `review/audit5/draw.py` draws, with a new
    seed.
 
@@ -146,7 +151,9 @@ dhammatalks.org revises its translations and adds new ones; Bodhi's change rarel
 4. **Segment**: `node scripts/segmenter/segment-translations.mjs thanissaro` (or `bodhi`). A new
    text comes out with the segmenter's own cuts. A revised one keeps every settled cut that still
    fits, and the run names those that don't.
-5. **Review** the new and revised texts, as "Reviewing new and revised texts" says.
+5. **Review** the new and revised texts, as "Reviewing new and revised texts" says. For Bodhi,
+   include their Pali verse paragraphs in the verse check; a revised source line break can change
+   a settled cut even when the words stay the same.
 
 ## Segmenting
 
@@ -160,7 +167,7 @@ in `data/sujato/`'s layout:
 | `cuts.json` | what the reviews settled, by line, kept across runs |
 | `learned.json` | the translator's words learned for Sujato's |
 | `report.json` | each text's alignment and how sure it is |
-| `covered.json` | the lines in a run of two or more empty lines that the English above translates |
+| `covered.json` | the empty lines the reader would never see whose content the English above translates |
 | `review/` | the review rounds, the read-throughs, the audits and the list of references |
 
 - **The words are only cut**: a text whose lines, joined, aren't word for word its page is reported
@@ -188,6 +195,12 @@ names them, as their files here are named. Bodhi's shared SN 45 pages are review
 app texts: a common formula stays where it is first translated, each listed variant sits on its
 own Pali line, and the final full passage sits on the terminal sutta's Pali.
 
+Bodhi's verse goes through rounds of its own: `python3 scripts/segmenter/review-bodhi-verse.py
+--out data/bodhi/review/<folder>` writes packets with every Pali verse row, Sujato's context and
+Bodhi's text at his own line breaks. It spreads a verse with as many of his lines as Pali lines
+itself; readers place the rest, keeping each of his lines whole and in order, and a finding that
+contradicts an earlier one, a hand fix included, marks it superseded.
+
 Every round keeps to these:
 
 - **The Pali decides.** Sujato's English is context only: his verse lines often follow a different
@@ -199,8 +212,16 @@ Every round keeps to these:
 - **One session at a time writes a translator's files** (`sutta/`, `notes/`, `cuts.json`,
   `report.json`). The segmenter works on one translator at a time, so sessions on different
   translators run side by side.
-- **Readers work at effort high**, and nothing above it. The steps below name Sonnet and Opus; any
-  strong model does the same work.
+- **Readers work at effort high**, and nothing above it, up to six at once on Codex and three on
+  Claude, whose allowance is smaller. The steps below name Sonnet and Opus; any strong model does
+  the same work.
+- **A judge from another model** compares a random sample of the changed groups, before and
+  after, with the Pali: a judge from the readers' own model shares their blind spots. Fifty
+  groups catch a mistake a round makes again and again; two or fewer worse passes.
+- **`python3 scripts/segmenter/check-round.py <translator>`** checks what the round changed since
+  the last commit: every verse line it moved must still be a whole line of the translator's page,
+  and each Pali line it newly hides is either repetition the English abbreviates, which stays
+  hidden, or content the English above renders, which goes into `covered.json`.
 
 1. **Unsure cuts**: `put cuts --items 1.0`. Sonnet answers each cut, and Opus answers the same cuts
    on its own. `keep-agreed cuts` keeps what the two agree on. The rest goes to Opus once more, with
@@ -304,6 +325,7 @@ Once segmenting is done, the app's build takes these translations in. What it mu
 | Putting rounds up and keeping their answers | `scripts/segmenter/review-rounds.py` |
 | The word-for-word check against the pages | `scripts/segmenter/check-upstream.py` |
 | The check of titles, headings, closing lines, notes and links | `scripts/segmenter/check-integrity.py` |
+| The check of a round's changes against the pages and the reveal rule | `scripts/segmenter/check-round.py` |
 | The audits | `data/<translator>/review/audit*/` |
 | Review packets with the Pali on every row | `scripts/segmenter/review-pali.py` |
 | How a session answers a round, and the prompts | [review-rounds.md](review-rounds.md) |

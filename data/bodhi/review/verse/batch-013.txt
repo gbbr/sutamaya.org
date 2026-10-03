@@ -1,0 +1,493 @@
+## Verse sn21.3:6.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘As Sāriputta is supreme ↵ In wisdom, virtue, and peace, ↵ So a bhikkhu who has gone beyond ↵ At best can only equal him.’”
+sn21.3:6.1 | P: ‘Sāriputtova paññāya, | S: ‘Sāriputta is full of wisdom, | T: “‘As Sāriputta is supreme ↵ In wisdom,
+sn21.3:6.2 | P: sīlena upasamena ca; | S: ethics, and peace. | T: virtue, and peace,
+sn21.3:6.3 | P: Yopi pāraṅgato bhikkhu, | S: Even a mendicant who has crossed over | T: So a bhikkhu who has gone beyond
+sn21.3:6.4 | P: etāvaparamo siyā’”ti. | S: might at best equal him.’” | T: At best can only equal him.’”
+
+## Verse sn21.4:5.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Not by means of slack endeavour, ↵ Not by means of feeble effort, ↵ Is this Nibbāna to be achieved, ↵ Release from all suffering.
+sn21.4:5.1 | P: “Nayidaṁ sithilamārabbha, | S: “Not by being slack, | T: “Not by means of slack endeavour,
+sn21.4:5.2 | P: nayidaṁ appena thāmasā; | S: or with little strength | T: Not by means of feeble effort,
+sn21.4:5.3 | P: Nibbānaṁ adhigantabbaṁ, | S: may this be realized—extinguishment, | T: Is this Nibbāna to be achieved,
+sn21.4:5.4 | P: sabbadukkhappamocanaṁ. | S: the release from all suffering. | T: Release from all suffering.
+
+## Verse sn21.4:6.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “This young bhikkhu by my side ↵ Is a supreme man indeed: ↵ He carries about his final body, ↵ Having conquered Mara and his mount.”
+sn21.4:6.1 | P: Ayañca daharo bhikkhu, | S: This young monk, | T: “This young bhikkhu by my side
+sn21.4:6.2 | P: ayamuttamapuriso; | S: this best of men, | T: Is a supreme man indeed:
+sn21.4:6.3 | P: Dhāreti antimaṁ dehaṁ, | S: bears his final body, | T: He carries about his final body,
+sn21.4:6.4 | P: jetvā māraṁ savāhinin”ti. | S: having vanquished Māra with his legions.” | T: Having conquered Mara and his mount.”
+
+## Verse sn21.5:2.1 | 6 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “This bhikkhu shines with sublime beauty, ↵ Having a mind utterly straight. ↵ Detached is he, free from fetters, ↵ Attained to Nibbāna by nonclinging. ↵ He carries about his final body, ↵ Having conquered Mara and his mount.”
+sn21.5:2.1 | P: “Sobhati vatāyaṁ bhikkhu, | S: “This mendicant truly shines. | T: “This bhikkhu shines with sublime beauty,
+sn21.5:2.2 | P: ujubhūtena cetasā; | S: His heart is upright, | T: Having a mind utterly straight.
+sn21.5:2.3 | P: Vippayutto visaṁyutto, | S: he’s unfettered, detached, | T: Detached is he, free from fetters,
+sn21.5:2.4 | P: anupādāya nibbuto; | S: quenched by not grasping. | T: Attained to Nibbāna by nonclinging.
+sn21.5:2.5 | P: Dhāreti antimaṁ dehaṁ, | S: He bears his final body, | T: He carries about his final body,
+sn21.5:2.6 | P: jetvā māraṁ savāhinin”ti. | S: having vanquished Māra with his legions.” | T: Having conquered Mara and his mount.”
+
+## Verse sn21.6:2.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): “Geese, herons, and peacocks, ↵ Elephants, and spotted deer, ↵ All are frightened of the lion ↵ Regardless of their bodies’ size.
+sn21.6:2.1 | P: “Haṁsā koñcā mayūrā ca, | S: “Geese, herons, and peacocks, | T: “Geese, herons, and peacocks,
+sn21.6:2.2 | P: hatthayo pasadā migā; | S: elephants and spotted deer— | T: Elephants, and spotted deer,
+sn21.6:2.3 | P: Sabbe sīhassa bhāyanti, | S: though their bodies are not equal, | T: All are frightened of the lion ↵ Regardless of their bodies’ size.
+sn21.6:2.4 | P: natthi kāyasmiṁ tulyatā. | S: they all fear the lion. | T: (none)
+
+## Verse sn21.6:3.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “In the same way among human beings ↵ The small one endowed with wisdom— ↵ He is the one that is truly great, ↵ Not the fool with a well-built body.”
+sn21.6:3.1 | P: Evameva manussesu, | S: So it is for humans— | T: “In the same way among human beings
+sn21.6:3.2 | P: daharo cepi paññavā; | S: if a little person is wise, | T: The small one endowed with wisdom—
+sn21.6:3.3 | P: So hi tattha mahā hoti, | S: they’re the truly great one, | T: He is the one that is truly great,
+sn21.6:3.4 | P: neva bālo sarīravā”ti. | S: not the fool with a good body.” | T: Not the fool with a well-built body.”
+
+## Verse sn21.7:5.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “When the wise man is in the midst of fools ↵ They do not know him if he does not speak, ↵ But they know him when he speaks, ↵ Pointing out the deathless state.
+sn21.7:5.1 | P: “Nābhāsamānaṁ jānanti, | S: “Though an astute person is mixed up with fools, | T: “When the wise man is in the midst of fools
+sn21.7:5.2 | P: missaṁ bālehi paṇḍitaṁ; | S: they don’t know unless he speaks. | T: They do not know him if he does not speak,
+sn21.7:5.3 | P: Bhāsamānañca jānanti, | S: But when he speaks they know, | T: But they know him when he speaks,
+sn21.7:5.4 | P: desentaṁ amataṁ padaṁ. | S: he’s teaching the state free of death. | T: Pointing out the deathless state.
+
+## Verse sn21.7:6.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “He should speak and explain the Dhamma, ↵ He should raise high the seers’ banner. ↵ Well-spoken words are the seers’ banner: ↵ For the Dhamma is the banner of seers.”
+sn21.7:6.1 | P: Bhāsaye jotaye dhammaṁ, | S: He should speak and illustrate the teaching, | T: “He should speak and explain the Dhamma,
+sn21.7:6.2 | P: paggaṇhe isinaṁ dhajaṁ; | S: holding up the banner of the seers. | T: He should raise high the seers’ banner.
+sn21.7:6.3 | P: Subhāsitadhajā isayo, | S: Words well spoken are the seers’ banner, | T: Well-spoken words are the seers’ banner:
+sn21.7:6.4 | P: dhammo hi isinaṁ dhajo”ti. | S: for the teaching is the banner of the seers.” | T: For the Dhamma is the banner of seers.”
+
+## Verse sn21.8:2.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “When shall I see Nanda as a forest dweller, ↵ Wearing robes stitched from rags, ↵ Subsisting on the scraps of strangers, ↵ Indifferent towards sensual pleasures?”
+sn21.8:2.1 | P: “Kadāhaṁ nandaṁ passeyyaṁ, | S: “When will I see Nanda | T: “When shall I see Nanda
+sn21.8:2.2 | P: āraññaṁ paṁsukūlikaṁ; | S: in the wilderness, wearing rag robes, | T: as a forest dweller, ↵ Wearing robes stitched from rags,
+sn21.8:2.3 | P: Aññātuñchena yāpentaṁ, | S: feeding on scraps offered by strangers, | T: Subsisting on the scraps of strangers,
+sn21.8:2.4 | P: kāmesu anapekkhinan”ti. | S: unconcerned for sensual pleasures?” | T: Indifferent towards sensual pleasures?”
+
+## Verse sn21.9:3.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Why are you angry? Don’t be angry! ↵ Nonanger is better for you, Tissa. ↵ It is to remove anger, conceit, and scorn, ↵ That the holy life is lived, O Tissa.”
+sn21.9:3.1 | P: “Kiṁ nu kujjhasi mā kujjhi, | S: “Why are you angry? Don’t be angry! | T: “Why are you angry? Don’t be angry!
+sn21.9:3.2 | P: Akkodho tissa te varaṁ; | S: It’s better to not be angry, Tissa. | T: Nonanger is better for you, Tissa.
+sn21.9:3.3 | P: Kodhamānamakkhavinayatthañhi, | S: For this spiritual life is lived | T: It is to remove anger, conceit, and scorn,
+sn21.9:3.4 | P: Tissa brahmacariyaṁ vussatī”ti. | S: in order to remove anger, conceit, and denigration.” | T: That the holy life is lived, O Tissa.”
+
+## Verse sn22.102:13.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn22.102:13.1 | P: Nadī pupphañca pheṇañca, | S: (none) | T: (none)
+sn22.102:13.2 | P: gomayañca nakhāsikhaṁ; | S: (none) | T: (none)
+sn22.102:13.3 | P: Suddhikaṁ dve ca gaddulā, | S: (none) | T: (none)
+sn22.102:13.4 | P: vāsījaṭaṁ aniccatāti. | S: (none) | T: (none)
+
+## Verse sn22.102:14.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn22.102:14.1 | P: Upayo arahanto ca, | S: (none) | T: (none)
+sn22.102:14.2 | P: khajjanī therasavhayaṁ; | S: (none) | T: (none)
+sn22.102:14.3 | P: Pupphavaggena paṇṇāsa, | S: (none) | T: (none)
+sn22.102:14.4 | P: dutiyo tena vuccatīti. | S: (none) | T: (none)
+
+## Verse sn22.11:2.1 | 6 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn22.11:2.1 | P: Nakulapitā devadahā, | S: (none) | T: (none)
+sn22.11:2.2 | P: Dvepi hāliddikāni ca; | S: (none) | T: (none)
+sn22.11:2.3 | P: Samādhipaṭisallāṇā, | S: (none) | T: (none)
+sn22.11:2.4 | P: Upādāparitassanā duve; | S: (none) | T: (none)
+sn22.11:2.5 | P: Atītānāgatapaccuppannā, | S: (none) | T: (none)
+sn22.11:2.6 | P: Vaggo tena pavuccati. | S: (none) | T: (none)
+
+## Verse sn22.21:2.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn22.21:2.1 | P: Aniccaṁ dukkhaṁ anattā, | S: (none) | T: (none)
+sn22.21:2.2 | P: yadaniccāpare tayo; | S: (none) | T: (none)
+sn22.21:2.3 | P: Hetunāpi tayo vuttā, | S: (none) | T: (none)
+sn22.21:2.4 | P: ānandena ca te dasāti. | S: (none) | T: (none)
+
+## Verse sn22.22:6.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “The five aggregates are truly burdens, ↵ The burden-carrier is the person. ↵ Taking up the burden is suffering in the world, ↵ Laying the burden down is blissful.
+sn22.22:6.1 | P: “Bhārā have pañcakkhandhā, | S: “The five aggregates are indeed burdens, | T: “The five aggregates are truly burdens,
+sn22.22:6.2 | P: bhārahāro ca puggalo; | S: and the individual is the bearer of the burden. | T: The burden-carrier is the person.
+sn22.22:6.3 | P: Bhārādānaṁ dukhaṁ loke, | S: Taking up the burden is suffering in the world, | T: Taking up the burden is suffering in the world,
+sn22.22:6.4 | P: bhāranikkhepanaṁ sukhaṁ. | S: and putting the burden down is happiness. | T: Laying the burden down is blissful.
+
+## Verse sn22.22:7.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Having laid the heavy burden down ↵ Without taking up another burden, ↵ Having drawn out craving with its root, ↵ One is free from hunger, fully quenched.”
+sn22.22:7.1 | P: Nikkhipitvā garuṁ bhāraṁ, | S: When the heavy burden is put down | T: Having laid the heavy burden down
+sn22.22:7.2 | P: aññaṁ bhāraṁ anādiya; | S: without taking up another, | T: Without taking up another burden,
+sn22.22:7.3 | P: Samūlaṁ taṇhamabbuyha, | S: one who has plucked out craving, root and all, | T: Having drawn out craving with its root,
+sn22.22:7.4 | P: nicchāto parinibbuto”ti. | S: is hungerless, quenched.” | T: One is free from hunger, fully quenched.”
+
+## Verse sn22.32:2.1 | 6 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn22.32:2.1 | P: Bhāraṁ pariññaṁ abhijānaṁ, | S: (none) | T: (none)
+sn22.32:2.2 | P: chandarāgaṁ catutthakaṁ; | S: (none) | T: (none)
+sn22.32:2.3 | P: Assādā ca tayo vuttā, | S: (none) | T: (none)
+sn22.32:2.4 | P: abhinandanamaṭṭhamaṁ; | S: (none) | T: (none)
+sn22.32:2.5 | P: Uppādaṁ aghamūlañca, | S: (none) | T: (none)
+sn22.32:2.6 | P: ekādasamo pabhaṅgūti. | S: (none) | T: (none)
+
+## Verse sn22.3:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): ‘Having left home to roam without abode, ↵ In the village the sage is intimate with none; ↵ Rid of sensual pleasures, without expectations, ↵ He would not engage people in dispute.’ ↵ ‘Having left home to roam without abode, ↵ In the village the sage is intimate with none; ↵ Rid of sensual pleasures, without expectations,
+sn22.3:2.1 | P: ‘Okaṁ pahāya aniketasārī, | S: ‘After leaving their bastion to migrate without abode, | T: ‘Having left home to roam without abode,
+sn22.3:2.2 | P: Gāme akubbaṁ muni santhavāni; | S: a sage doesn’t get close to anyone in town. | T: In the village the sage is intimate with none;
+sn22.3:2.3 | P: Kāmehi ritto apurakkharāno, | S: Rid of sensual pleasures, not expecting, | T: Rid of sensual pleasures, without expectations,
+sn22.3:2.4 | P: Kathaṁ na viggayha janena kayirā’ti. | S: they wouldn’t get in arguments with people.’ | T: He would not engage people in dispute.’
+
+## Verse sn22.3:17.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): ‘Having left home to roam without abode, ↵ In the village the sage is intimate with none; ↵ Rid of sensual pleasures, without expectations, ↵ ‘Having left home to roam without abode, ↵ In the village the sage is intimate with none; ↵ Rid of sensual pleasures, without expectations, ↵ He would not engage people in dispute’—
+sn22.3:17.1 | P: ‘Okaṁ pahāya aniketasārī, | S: ‘After leaving their bastion to migrate without abode, | T: ‘Having left home to roam without abode,
+sn22.3:17.2 | P: Gāme akubbaṁ munisanthavāni; | S: a sage doesn’t get close to anyone in town. | T: In the village the sage is intimate with none;
+sn22.3:17.3 | P: Kāmehi ritto apurakkharāno, | S: Rid of sensual pleasures, not expecting, | T: Rid of sensual pleasures, without expectations,
+sn22.3:17.4 | P: Kathaṁ na viggayha janena kayirā’ti. | S: they wouldn’t get in arguments with people.’” | T: He would not engage people in dispute’—
+
+## Verse sn22.42:2.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn22.42:2.1 | P: Natumhākena dve vuttā, | S: (none) | T: (none)
+sn22.42:2.2 | P: bhikkhūhi apare duve; | S: (none) | T: (none)
+sn22.42:2.3 | P: Ānandena ca dve vuttā, | S: (none) | T: (none)
+sn22.42:2.4 | P: anudhammehi dve dukāti. | S: (none) | T: (none)
+
+## Verse sn22.52:2.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn22.52:2.1 | P: Attadīpā paṭipadā, | S: (none) | T: (none)
+sn22.52:2.2 | P: Dve ca honti aniccatā; | S: (none) | T: (none)
+sn22.52:2.3 | P: Samanupassanā khandhā, | S: (none) | T: (none)
+sn22.52:2.4 | P: Dve soṇā dve nandikkhayena cāti. | S: (none) | T: (none)
+
+## Verse sn22.52:3.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn22.52:3.1 | P: Nakulapitā anicco ca, | S: (none) | T: (none)
+sn22.52:3.2 | P: Bhāro natumhākena ca; | S: (none) | T: (none)
+sn22.52:3.3 | P: Attadīpena paññāso, | S: (none) | T: (none)
+sn22.52:3.4 | P: Paṭhamo tena pavuccatīti. | S: (none) | T: (none)
+
+## Verse sn22.62:14.1 | 5 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn22.62:14.1 | P: Upayo bījaṁ udānaṁ, | S: (none) | T: (none)
+sn22.62:14.2 | P: Upādānaparivattaṁ; | S: (none) | T: (none)
+sn22.62:14.3 | P: Sattaṭṭhānañca sambuddho, | S: (none) | T: (none)
+sn22.62:14.4 | P: Pañcamahāli ādittā; | S: (none) | T: (none)
+sn22.62:14.5 | P: Vaggo niruttipathena cāti. | S: (none) | T: (none)
+
+## Verse sn22.72:2.1 | 5 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn22.72:2.1 | P: Upādiyamaññamānā, | S: (none) | T: (none)
+sn22.72:2.2 | P: Athābhinandamāno ca; | S: (none) | T: (none)
+sn22.72:2.3 | P: Aniccaṁ dukkhaṁ anattā ca, | S: (none) | T: (none)
+sn22.72:2.4 | P: Anattaniyaṁ rajanīyasaṇṭhitaṁ; | S: (none) | T: (none)
+sn22.72:2.5 | P: Rādhasurādhena te dasāti. | S: (none) | T: (none)
+
+## Verse sn22.76:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Happy indeed are the arahants! ↵ No craving can be found in them. ↵ Cut off is the conceit ‘I am,’ ↵ Burst asunder is delusion’s net. ↵ No craving can be found in them.
+sn22.76:4.1 | P: “Sukhino vata arahanto, | S: “Oh! How happy are the perfected ones! | T: “Happy indeed are the arahants!
+sn22.76:4.2 | P: taṇhā tesaṁ na vijjati; | S: Craving is not found in them, | T: No craving can be found in them.
+sn22.76:4.3 | P: Asmimāno samucchinno, | S: the conceit ‘I am’ is cut off, | T: Cut off is the conceit ‘I am,’
+sn22.76:4.4 | P: mohajālaṁ padālitaṁ. | S: and the net of delusion is shattered. | T: Burst asunder is delusion’s net.
+
+## Verse sn22.76:5.1 | 4 Pali rows | 3 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Limpid are their minds; ↵ They are unsullied in the world— ↵ The holy ones, without taints.
+sn22.76:5.1 | P: Anejaṁ te anuppattā, | S: They’ve attained imperturbability, | T: (none)
+sn22.76:5.2 | P: cittaṁ tesaṁ anāvilaṁ; | S: their minds are unclouded, | T: Limpid are their minds;
+sn22.76:5.3 | P: Loke anupalittā te, | S: nothing in the world clings to them, | T: They are unsullied in the world—
+sn22.76:5.4 | P: brahmabhūtā anāsavā. | S: manifesting divinity, undefiled. | T: The holy ones, without taints.
+
+## Verse sn22.76:6.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Having fully understood the five aggregates, ↵ Ranging in the seven good qualities, ↵ Those praiseworthy superior men ↵ Are the Buddha’s bosom sons.
+sn22.76:6.1 | P: Pañcakkhandhe pariññāya, | S: Completely understanding the five aggregates, | T: “Having fully understood the five aggregates,
+sn22.76:6.2 | P: satta saddhammagocarā; | S: their domain is the seven good qualities. | T: Ranging in the seven good qualities,
+sn22.76:6.3 | P: Pasaṁsiyā sappurisā, | S: Those true persons are praiseworthy, | T: Those praiseworthy superior men
+sn22.76:6.4 | P: puttā buddhassa orasā. | S: the Buddha’s bosom sons. | T: Are the Buddha’s bosom sons.
+
+## Verse sn22.76:7.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Endowed with the seven gems, ↵ Trained in the threefold training, ↵ Those great heroes wander about ↵ With fear and trembling abandoned.
+sn22.76:7.1 | P: Sattaratanasampannā, | S: Endowed with the seven gems, | T: “Endowed with the seven gems,
+sn22.76:7.2 | P: Tīsu sikkhāsu sikkhitā; | S: and trained in the three trainings, | T: Trained in the threefold training,
+sn22.76:7.3 | P: Anuvicaranti mahāvīrā, | S: the great heroes live on, | T: Those great heroes wander about
+sn22.76:7.4 | P: Pahīnabhayabheravā. | S: with fear and dread given up. | T: With fear and trembling abandoned.
+
+## Verse sn22.76:8.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): No craving can be found in them. ↵ “Endowed with the ten factors, ↵ Those great nagas, concentrated, ↵ Are the best beings in the world: ↵ No craving can be found in them.
+sn22.76:8.1 | P: Dasahaṅgehi sampannā, | S: Endowed with ten factors, | T: “Endowed with the ten factors,
+sn22.76:8.2 | P: mahānāgā samāhitā; | S: those giants are immersed in samādhi. | T: Those great nagas, concentrated,
+sn22.76:8.3 | P: Ete kho seṭṭhā lokasmiṁ, | S: They are the best in the world, | T: Are the best beings in the world:
+sn22.76:8.4 | P: taṇhā tesaṁ na vijjati. | S: craving is not found in them. | T: No craving can be found in them.
+
+## Verse sn22.76:9.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “The adepts’ knowledge has arisen in them: ↵ ‘This body is the last I bear.’ ↵ In regard to the core of the holy life ↵ They no longer depend on others.
+sn22.76:9.1 | P: Asekhañāṇamuppannaṁ, | S: The adept’s knowledge has arisen: | T: “The adepts’ knowledge has arisen in them:
+sn22.76:9.2 | P: antimoyaṁ samussayo; | S: ‘This bag of bones is my last.’ | T: ‘This body is the last I bear.’
+sn22.76:9.3 | P: Yo sāro brahmacariyassa, | S: They are independent of others | T: In regard to the core of the holy life
+sn22.76:9.4 | P: tasmiṁ aparapaccayā. | S: in the core of the spiritual path. | T: They no longer depend on others.
+
+## Verse sn22.76:10.1 | 4 Pali rows | 3 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): They are released from renewed existence. ↵ Having reached the stage of the tamed, ↵ They are the victors in the world.
+sn22.76:10.1 | P: Vidhāsu na vikampanti, | S: They do not waver due to the discriminations, | T: (none)
+sn22.76:10.2 | P: vippamuttā punabbhavā; | S: they’re freed from future lives. | T: They are released from renewed existence.
+sn22.76:10.3 | P: Dantabhūmimanuppattā, | S: They’ve reached the level of the tamed, | T: Having reached the stage of the tamed,
+sn22.76:10.4 | P: te loke vijitāvino. | S: in the world, they’re the winners. | T: They are the victors in the world.
+
+## Verse sn22.76:11.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Above, across, and below, ↵ Delight is no more found in them. ↵ They boldly sound their lion’s roar: ↵ ‘The enlightened are supreme in the world.’”
+sn22.76:11.1 | P: Uddhaṁ tiriyaṁ apācīnaṁ, | S: Above, below, all round, | T: “Above, across, and below,
+sn22.76:11.2 | P: nandī tesaṁ na vijjati; | S: relishing is not found in them. | T: Delight is no more found in them.
+sn22.76:11.3 | P: Nadanti te sīhanādaṁ, | S: They roar their lion’s roar: | T: They boldly sound their lion’s roar:
+sn22.76:11.4 | P: buddhā loke anuttarā”ti. | S: ‘The awakened are supreme in the world!’” | T: ‘The enlightened are supreme in the world.’”
+
+## Verse sn22.78:3.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): “When the Buddha, through direct knowledge, ↵ Sets in motion the Wheel of Dhamma, ↵ The peerless Teacher in this world ↵ With its devas makes this known:
+sn22.78:3.1 | P: “Yadā buddho abhiññāya, | S: “The Buddha, the unrivaled Teacher | T: “When the Buddha, through direct knowledge,
+sn22.78:3.2 | P: dhammacakkaṁ pavattayi; | S: in all the world with its gods, | T: (none)
+sn22.78:3.3 | P: Sadevakassa lokassa, | S: rolls forth the Wheel of Dhamma | T: Sets in motion the Wheel of Dhamma,
+sn22.78:3.4 | P: satthā appaṭipuggalo. | S: from his own insight: | T: The peerless Teacher in this world ↵ With its devas makes this known:
+
+## Verse sn22.78:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “The cessation of identity ↵ And the origin of identity, ↵ Also the Noble Eightfold Path ↵ That leads to suffering’s appeasement.
+sn22.78:4.1 | P: Sakkāyañca nirodhañca, | S: substantial reality, its cessation, | T: “The cessation of identity
+sn22.78:4.2 | P: sakkāyassa ca sambhavaṁ; | S: the origin of substantial reality, | T: And the origin of identity,
+sn22.78:4.3 | P: Ariyañcaṭṭhaṅgikaṁ maggaṁ, | S: and the noble eightfold path | T: Also the Noble Eightfold Path
+sn22.78:4.4 | P: dukkhūpasamagāminaṁ. | S: that leads to the stilling of suffering. | T: That leads to suffering’s appeasement.
+
+## Verse sn22.78:5.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Then those devas with long life spans, ↵ Beautiful, ablaze with glory, ↵ Are struck with fear, filled with terror, ↵ Like beasts who hear the lion’s roar.
+sn22.78:5.1 | P: Yepi dīghāyukā devā, | S: And then the long-lived gods, | T: “Then those devas with long life spans,
+sn22.78:5.2 | P: vaṇṇavanto yasassino; | S: so beautiful and glorious, | T: Beautiful, ablaze with glory,
+sn22.78:5.3 | P: Bhītā santāsamāpāduṁ, | S: are afraid and full of terror, | T: Are struck with fear, filled with terror,
+sn22.78:5.4 | P: sīhassevitare migā. | S: like the other beasts when they hear a lion. | T: Like beasts who hear the lion’s roar.
+
+## Verse sn22.78:6.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘We’ve not transcended identity; ↵ It seems, sir, we’re impermanent,’ ↵ So they say having heard the utterance ↵ Of the Arahant, the released Stable One.”
+sn22.78:6.1 | P: Avītivattā sakkāyaṁ, | S: ‘We haven’t passed beyond substantial reality! | T: “‘We’ve not transcended identity;
+sn22.78:6.2 | P: aniccā kira bho mayaṁ; | S: It turns out we’re impermanent!’ | T: It seems, sir, we’re impermanent,’
+sn22.78:6.3 | P: Sutvā arahato vākyaṁ, | S: So they say when they hear the word | T: So they say having heard the utterance
+sn22.78:6.4 | P: vippamuttassa tādino”ti. | S: of the perfected one, free and unaffected.” | T: Of the Arahant, the released Stable One.”
+
+## Verse sn22.79:15.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘Homage to you, O thoroughbred man! ↵ Homage to you, O highest among men! ↵ We ourselves do not directly know ↵ Dependent upon what you meditate.’”
+sn22.79:15.1 | P: ‘Namo te purisājañña, | S: ‘Homage to you, O thoroughbred! | T: “‘Homage to you, O thoroughbred man!
+sn22.79:15.2 | P: namo te purisuttama; | S: Homage to you, supreme among men! | T: Homage to you, O highest among men!
+sn22.79:15.3 | P: Yassa te nābhijānāma, | S: We don’t understand | T: We ourselves do not directly know
+sn22.79:15.4 | P: yampi nissāya jhāyasī’”ti. | S: the basis of your absorption.’” | T: Dependent upon what you meditate.’”
+
+## Verse sn22.82:15.1 | 6 Pali rows | 8 English pieces | gathered=True | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): These are the ten questions ↵ The bhikkhu came to ask: ↵ Two about the aggregates, ↵ Whether the same, can there be, ↵ Designation and the cause, ↵ Two about identity, ↵ One each on gratification ↵ And this body with consciousness.
+sn22.82:15.1 | P: “Dve khandhā taññeva siyaṁ, | S: “Two on the aggregates; exactly the same; and can there be; | T: These are the ten questions ↵ The bhikkhu came to ask: ↵ Two about the aggregates, ↵ Whether the same, can there be,
+sn22.82:15.2 | P: adhivacanañca hetunā; | S: on the term; and on the cause; | T: Designation and the cause,
+sn22.82:15.3 | P: Sakkāyena duve vuttā, | S: two questions on substantial reality; | T: Two about identity,
+sn22.82:15.4 | P: assādaviññāṇakena ca; | S: gratification; and that with consciousness: | T: One each on gratification ↵ And this body with consciousness.
+sn22.82:15.5 | P: Ete dasavidhā vuttā, | S: these are the ten questions | T: (none)
+sn22.82:15.6 | P: hoti bhikkhu pucchāyā”ti. | S: the monk came to ask.” | T: (none)
+
+## Verse sn22.82:16.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn22.82:16.1 | P: Assādo dve samudayā, | S: (none) | T: (none)
+sn22.82:16.2 | P: arahantehi apare dve; | S: (none) | T: (none)
+sn22.82:16.3 | P: Sīho khajjanī piṇḍolyaṁ, | S: (none) | T: (none)
+sn22.82:16.4 | P: pālileyyena puṇṇamāti. | S: (none) | T: (none)
+
+## Verse sn22.92:3.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn22.92:3.1 | P: Ānando tisso yamako, | S: (none) | T: (none)
+sn22.92:3.2 | P: anurādho ca vakkali; | S: (none) | T: (none)
+sn22.92:3.3 | P: Assaji khemako channo, | S: (none) | T: (none)
+sn22.92:3.4 | P: rāhulā apare duve. | S: (none) | T: (none)
+
+## Verse sn22.95:9.1 | 6 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Form is like a lump of foam, ↵ Feeling like a water bubble; ↵ Perception is like a mirage, ↵ Volitions like a plantain trunk, ↵ And consciousness like an illusion, ↵ So explained the Kinsman of the Sun.
+sn22.95:9.1 | P: “Pheṇapiṇḍūpamaṁ rūpaṁ, | S: “Form is like a lump of foam; | T: “Form is like a lump of foam,
+sn22.95:9.2 | P: vedanā bubbuḷūpamā; | S: feeling is like a bubble; | T: Feeling like a water bubble;
+sn22.95:9.3 | P: Marīcikūpamā saññā, | S: perception seems like a mirage; | T: Perception is like a mirage,
+sn22.95:9.4 | P: saṅkhārā kadalūpamā; | S: choices like a banana plant; | T: Volitions like a plantain trunk,
+sn22.95:9.5 | P: Māyūpamañca viññāṇaṁ, | S: and consciousness like an illusion: | T: And consciousness like an illusion,
+sn22.95:9.6 | P: desitādiccabandhunā. | S: so taught the Kinsman of the Sun. | T: So explained the Kinsman of the Sun.
+
+## Verse sn22.95:10.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “However one may ponder it ↵ And carefully investigate it, ↵ It appears but hollow and void ↵ When one views it carefully.
+sn22.95:10.1 | P: Yathā yathā nijjhāyati, | S: However you contemplate them, | T: “However one may ponder it
+sn22.95:10.2 | P: yoniso upaparikkhati; | S: examining them rationally, | T: And carefully investigate it,
+sn22.95:10.3 | P: Rittakaṁ tucchakaṁ hoti, | S: they’re vacuous and hollow | T: It appears but hollow and void
+sn22.95:10.4 | P: yo naṁ passati yoniso. | S: when you look at them closely. | T: When one views it carefully.
+
+## Verse sn22.95:11.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “With reference to this body ↵ The One of Broad Wisdom has taught ↵ That with the abandoning of three things ↵ One sees this form discarded.
+sn22.95:11.1 | P: Imañca kāyaṁ ārabbha, | S: Concerning this body, | T: “With reference to this body
+sn22.95:11.2 | P: bhūripaññena desitaṁ; | S: he of vast wisdom has taught | T: The One of Broad Wisdom has taught
+sn22.95:11.3 | P: Pahānaṁ tiṇṇaṁ dhammānaṁ, | S: that when three things are given up, | T: That with the abandoning of three things
+sn22.95:11.4 | P: rūpaṁ passatha chaḍḍitaṁ. | S: you’ll see this form discarded. | T: One sees this form discarded.
+
+## Verse sn22.95:12.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “When vitality, heat, and consciousness ↵ Depart from this physical body, ↵ Then it lies there cast away: ↵ Food for others, without volition.
+sn22.95:12.1 | P: Āyu usmā ca viññāṇaṁ, | S: When vitality, warmth, and consciousness | T: “When vitality, heat, and consciousness
+sn22.95:12.2 | P: yadā kāyaṁ jahantimaṁ; | S: leave this body, | T: Depart from this physical body,
+sn22.95:12.3 | P: Apaviddho tadā seti, | S: it lies dumped there, | T: Then it lies there cast away:
+sn22.95:12.4 | P: parabhattaṁ acetanaṁ. | S: food for others, insentient. | T: Food for others, without volition.
+
+## Verse sn22.95:13.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Such is this continuum, ↵ This illusion, beguiler of fools. ↵ It is taught to be a murderer; ↵ Here no substance can be found.
+sn22.95:13.1 | P: Etādisāyaṁ santāno, | S: Such is this continuity, | T: “Such is this continuum,
+sn22.95:13.2 | P: māyāyaṁ bālalāpinī; | S: this illusion, this lament of fools. | T: This illusion, beguiler of fools.
+sn22.95:13.3 | P: Vadhako esa akkhāto, | S: It’s said to be a killer, | T: It is taught to be a murderer;
+sn22.95:13.4 | P: sāro ettha na vijjati. | S: for no core is found here. | T: Here no substance can be found.
+
+## Verse sn22.95:14.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): “A bhikkhu with energy aroused ↵ Should look upon the aggregates thus, ↵ Whether by day or at night, ↵ Comprehending, ever mindful.
+sn22.95:14.1 | P: Evaṁ khandhe avekkheyya, | S: An energetic mendicant | T: “A bhikkhu with energy aroused
+sn22.95:14.2 | P: bhikkhu āraddhavīriyo; | S: should examine the aggregates like this, | T: Should look upon the aggregates thus,
+sn22.95:14.3 | P: Divā vā yadi vā rattiṁ, | S: with situational awareness and mindfulness | T: (none)
+sn22.95:14.4 | P: sampajāno paṭissato. | S: whether by day or by night. | T: Whether by day or at night, ↵ Comprehending, ever mindful.
+
+## Verse sn22.95:15.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “He should discard all the fetters ↵ And make a refuge for himself; ↵ Let him fare as with head ablaze, ↵ Yearning for the imperishable state.”
+sn22.95:15.1 | P: Jaheyya sabbasaṁyogaṁ, | S: They should give up all fetters, | T: “He should discard all the fetters
+sn22.95:15.2 | P: kareyya saraṇattano; | S: and make a refuge for themselves. | T: And make a refuge for himself;
+sn22.95:15.3 | P: Careyyādittasīsova, | S: They should live as though their head was on fire, | T: Let him fare as with head ablaze,
+sn22.95:15.4 | P: patthayaṁ accutaṁ padan”ti. | S: aspiring to the state that does not pass.” | T: Yearning for the imperishable state.”
+
+## Verse sn35.103:1.2 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘This, surely a knowledge-master— ↵ This, surely a universal conqueror— ↵ This, surely he has excised ↵ The tumour’s root not excised before!’ ↵ “‘This, surely a knowledge-master— ↵ This, surely a universal conqueror— ↵ This, surely he has excised ↵ The tumour’s root not excised before!’ ↵ “‘This, surely a knowledge-master— ↵ This, surely a universal conqueror— ↵ This, surely he has excised ↵ The tumour’s root not excised before!’”
+sn35.103:1.2 | P: ‘idaṁ jātu vedagū, | S: ‘Hereupon, ever the knowledge master! | T: “‘This, surely a knowledge-master—
+sn35.103:1.3 | P: idaṁ jātu sabbajī, | S: Hereupon, ever the conqueror of all! | T: This, surely a universal conqueror—
+sn35.103:1.4 | P: idaṁ jātu apalikhataṁ | S: Hereupon, ever the undug | T: This, surely he has excised
+sn35.103:1.5 | P: gaṇḍamūlaṁ palikhaṇin’ti. | S: boil’s root was dug out by me!’ | T: The tumour’s root not excised before!’
+
+## Verse sn35.103:1.8 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘This, surely a knowledge-master— ↵ This, surely a universal conqueror— ↵ This, surely he has excised ↵ The tumour’s root not excised before!’ ↵ “‘This, surely a knowledge-master— ↵ This, surely a universal conqueror— ↵ This, surely he has excised ↵ The tumour’s root not excised before!’ ↵ “‘This, surely a knowledge-master— ↵ This, surely a universal conqueror— ↵ This, surely he has excised ↵ The tumour’s root not excised before!’”
+sn35.103:1.8 | P: ‘idaṁ jātu vedagū, | S: ‘Hereupon, ever the knowledge master! | T: “‘This, surely a knowledge-master—
+sn35.103:1.9 | P: idaṁ jātu sabbajī, | S: Hereupon, ever the conqueror of all! | T: This, surely a universal conqueror—
+sn35.103:1.10 | P: idaṁ jātu apalikhataṁ | S: Hereupon, ever the undug | T: This, surely he has excised
+sn35.103:1.11 | P: gaṇḍamūlaṁ palikhaṇin’ti. | S: boil’s root is dug out!’ | T: The tumour’s root not excised before!’
+
+## Verse sn35.103:5.2 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.103:5.2 | P: ‘idaṁ jātu vedagū, | S: ‘Hereupon, ever the knowledge master! | T: (none)
+sn35.103:5.3 | P: idaṁ jātu sabbajī, | S: Hereupon, ever the conqueror of all! | T: (none)
+sn35.103:5.4 | P: idaṁ jātu apalikhataṁ | S: Hereupon, ever the undug | T: (none)
+sn35.103:5.5 | P: gaṇḍamūlaṁ palikhaṇin’ti. | S: boil’s root is dug out!’ | T: (none)
+
+## Verse sn35.103:5.8 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘This, surely a knowledge-master— ↵ This, surely a universal conqueror— ↵ This, surely he has excised ↵ The tumour’s root not excised before!’ ↵ “‘This, surely a knowledge-master— ↵ This, surely a universal conqueror— ↵ This, surely he has excised ↵ The tumour’s root not excised before!’ ↵ “‘This, surely a knowledge-master— ↵ This, surely a universal conqueror— ↵ This, surely he has excised ↵ The tumour’s root not excised before!’”
+sn35.103:5.8 | P: ‘idaṁ jātu vedagū, | S: ‘Hereupon, ever the knowledge master! | T: “‘This, surely a knowledge-master—
+sn35.103:5.9 | P: idaṁ jātu sabbajī, | S: Hereupon, ever the conqueror of all! | T: This, surely a universal conqueror—
+sn35.103:5.10 | P: idaṁ jātu apalikhataṁ | S: Hereupon, ever the undug | T: This, surely he has excised
+sn35.103:5.11 | P: gaṇḍamūlaṁ palikhaṇin’ti. | S: boil’s root is dug out!’” | T: The tumour’s root not excised before!’”
+
+## Verse sn35.103:6.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.103:6.1 | P: Dve saṅgayhā parihānaṁ, | S: (none) | T: (none)
+sn35.103:6.2 | P: Pamādavihārī ca saṁvaro; | S: (none) | T: (none)
+sn35.103:6.3 | P: Samādhi paṭisallānaṁ, | S: (none) | T: (none)
+sn35.103:6.4 | P: Dve natumhākena uddakoti. | S: (none) | T: (none)
+
+## Verse sn35.103:7.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.103:7.1 | P: Avijjā migajālañca, | S: (none) | T: (none)
+sn35.103:7.2 | P: Gilānaṁ channaṁ catutthakaṁ; | S: (none) | T: (none)
+sn35.103:7.3 | P: Saḷavaggena paññāsaṁ, | S: (none) | T: (none)
+sn35.103:7.4 | P: Dutiyo paṇṇāsako ayanti. | S: (none) | T: (none)
+
+## Verse sn35.113:4.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.113:4.1 | P: Yogakkhemi upādāya, | S: (none) | T: (none)
+sn35.113:4.2 | P: Dukkhaṁ loko ca seyyo ca; | S: (none) | T: (none)
+sn35.113:4.3 | P: Saṁyojanaṁ upādānaṁ, | S: (none) | T: (none)
+sn35.113:4.4 | P: Dve parijānaṁ upassutīti. | S: (none) | T: (none)
+
+## Verse sn35.123:2.1 | 6 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.123:2.1 | P: Mārapāsena dve vuttā, | S: (none) | T: (none)
+sn35.123:2.2 | P: lokakāmaguṇena ca; | S: (none) | T: (none)
+sn35.123:2.3 | P: Sakko pañcasikho ceva, | S: (none) | T: (none)
+sn35.123:2.4 | P: sāriputto ca rāhulo; | S: (none) | T: (none)
+sn35.123:2.5 | P: Saṁyojanaṁ upādānaṁ, | S: (none) | T: (none)
+sn35.123:2.6 | P: vaggo tena pavuccatīti. | S: (none) | T: (none)
+
+## Verse sn35.132:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Those men of old who excelled in virtue, ↵ Those brahmins who recalled the ancient rules, ↵ Their sense doors guarded, well protected, ↵ Dwelt having vanquished wrath within. ↵ Those brahmins who recalled the ancient rules, …
+sn35.132:2.1 | P: “Sīluttamā pubbatarā ahesuṁ, | S: “For the brahmins of old, ethics were the highest; | T: “Those men of old who excelled in virtue,
+sn35.132:2.2 | P: Te brāhmaṇā ye purāṇaṁ saranti; | S: they remembered the ancient legends. | T: Those brahmins who recalled the ancient rules,
+sn35.132:2.3 | P: Guttāni dvārāni surakkhitāni, | S: Their sense doors were guarded, well protected, | T: Their sense doors guarded, well protected,
+sn35.132:2.4 | P: Ahesuṁ tesaṁ abhibhuyya kodhaṁ. | S: and they had mastered anger. | T: Dwelt having vanquished wrath within.
+
+## Verse sn35.132:3.1 | 2 Pali rows | 2 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): They took delight in Dhamma and meditation, ↵ Those brahmins who recalled the ancient rules.
+sn35.132:3.1 | P: Dhamme ca jhāne ca ratā ahesuṁ, | S: Those brahmins who remembered the ancient legends | T: They took delight in Dhamma and meditation, ↵ Those brahmins who recalled the ancient rules.
+sn35.132:3.2 | P: Te brāhmaṇā ye purāṇaṁ saranti. | S: enjoyed virtue and absorption. | T: (none)
+
+## Verse sn35.132:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “But these have fallen, claiming ‘We recite.’ ↵ Puffed up by clan, faring unrighteously, ↵ Overcome by anger, armed with diverse weapons, ↵ They molest both frail and firm.
+sn35.132:4.1 | P: Ime ca vokkamma japāmaseti, | S: But these have lost their way. Saying, ‘We must pray’, | T: “But these have fallen, claiming ‘We recite.’
+sn35.132:4.2 | P: Gottena mattā visamaṁ caranti; | S: they live out of balance, judging by clan. | T: Puffed up by clan, faring unrighteously,
+sn35.132:4.3 | P: Kodhābhibhūtā puthuattadaṇḍā, | S: Mastered by anger, they take up many arms, | T: Overcome by anger, armed with diverse weapons,
+sn35.132:4.4 | P: Virajjamānā sataṇhātaṇhesu. | S: indifferent to those with craving and without. | T: They molest both frail and firm.
+
+## Verse sn35.132:5.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “For one with sense doors unguarded ↵ All the vows he undertakes are vain ↵ Just like the wealth a man gains in a dream: ↵ Fasting and sleeping on the ground, ↵ Bathing at dawn, study of the three Vedas,
+sn35.132:5.1 | P: Aguttadvārassa bhavanti moghā, | S: All is vain for someone who doesn’t guard the sense doors, | T: “For one with sense doors unguarded ↵ All the vows he undertakes are vain
+sn35.132:5.2 | P: Supineva laddhaṁ purisassa vittaṁ; | S: like the wealth a person finds in a dream. | T: Just like the wealth a man gains in a dream:
+sn35.132:5.3 | P: Anāsakā thaṇḍilasāyikā ca, | S: Fasting, sleeping on bare ground, | T: Fasting and sleeping on the ground,
+sn35.132:5.4 | P: Pāto sinānañca tayo ca vedā. | S: bathing at daybreak, the three Vedas, | T: Bathing at dawn, study of the three Vedas,
+
+## Verse sn35.132:6.1 | 6 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Rough hides, matted locks, and dirt; ↵ Hymns, rules and vows, austerities, ↵ Hypocrisy, bent staffs, ablutions: ↵ These emblems of the brahmins ↵ Are used to increase their worldly gains.
+sn35.132:6.1 | P: Kharājinaṁ jaṭāpaṅko, | S: rough hides, dreadlocks, and mud, | T: Rough hides, matted locks, and dirt;
+sn35.132:6.2 | P: mantā sīlabbataṁ tapo; | S: hymns, precepts and observances, and fervent austerities, | T: Hymns, rules and vows, austerities,
+sn35.132:6.3 | P: Kuhanā vaṅkadaṇḍā ca, | S: fawning, bent staffs, | T: Hypocrisy, bent staffs,
+sn35.132:6.4 | P: udakācamanāni ca; | S: and sipping water. | T: ablutions:
+sn35.132:6.5 | P: Vaṇṇā ete brāhmaṇānaṁ, | S: These emblems of the brahmins | T: These emblems of the brahmins
+sn35.132:6.6 | P: katā kiñcikkhabhāvanā. | S: are only used to generate profits. | T: Are used to increase their worldly gains.
+
+## Verse sn35.132:7.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “A mind that is well concentrated, ↵ Clear and free from blemish, ↵ Tender towards all sentient beings— ↵ That is the path for attaining Brahma.” ↵ Tender towards all sentient beings—
+sn35.132:7.1 | P: Cittañca susamāhitaṁ, | S: A mind that’s serene, | T: “A mind that is well concentrated,
+sn35.132:7.2 | P: vippasannamanāvilaṁ; | S: clear and unclouded, | T: Clear and free from blemish,
+sn35.132:7.3 | P: Akhilaṁ sabbabhūtesu, | S: kind to all creatures: | T: Tender towards all sentient beings—
+sn35.132:7.4 | P: so maggo brahmapattiyā”ti. | S: that’s the path to attainment of divinity!” | T: That is the path for attaining Brahma.”
+
+## Verse sn35.132:10.1 | 5 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Those brahmins who recalled the ancient rules, ↵ Tender towards all sentient beings— ↵ “‘Those men of old who excelled in virtue, ↵ Those brahmins who recalled the ancient rules, … ↵ Tender towards all sentient beings— ↵ That is the path for attaining Brahma.’
+sn35.132:10.1 | P: ‘Sīluttamā pubbatarā ahesuṁ, | S: (none) | T: “‘Those men of old who excelled in virtue,
+sn35.132:10.2 | P: Te brāhmaṇā ye purāṇaṁ saranti; | S: (none) | T: Those brahmins who recalled the ancient rules,
+sn35.132:10.3 | P: …pe… | S: (none) | T: …
+sn35.132:10.4 | P: Akhilaṁ sabbabhūtesu, | S: (none) | T: Tender towards all sentient beings—
+sn35.132:10.5 | P: So maggo brahmapattiyā’ti. | S: (none) | T: That is the path for attaining Brahma.’
+
+## Verse sn35.133:8.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.133:8.1 | P: Vesālī vajji nāḷandā, | S: (none) | T: (none)
+sn35.133:8.2 | P: Bhāradvāja soṇo ca ghosito; | S: (none) | T: (none)
+sn35.133:8.3 | P: Hāliddiko nakulapitā, | S: (none) | T: (none)
+sn35.133:8.4 | P: Lohicco verahaccānīti. | S: (none) | T: (none)
+
+## Verse sn35.136:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Forms, sounds, odours, tastes, ↵ Tactiles and all objects of mind— ↵ Desirable, lovely, agreeable, ↵ So long as it’s said: ‘They are.’
+sn35.136:2.1 | P: “Rūpā saddā rasā gandhā, | S: “Sights, sounds, tastes, smells, | T: “Forms, sounds, odours, tastes,
+sn35.136:2.2 | P: phassā dhammā ca kevalā; | S: touches and ideas, the lot of them— | T: Tactiles and all objects of mind—
+sn35.136:2.3 | P: Iṭṭhā kantā manāpā ca, | S: they’re likable, desirable, and pleasurable | T: Desirable, lovely, agreeable,
+sn35.136:2.4 | P: yāvatatthīti vuccati. | S: as long as you can say that they exist. | T: So long as it’s said: ‘They are.’
+
+## Verse sn35.136:3.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): “These are considered happiness ↵ By the world with its devas; ↵ But where these cease, ↵ That they consider suffering.
+sn35.136:3.1 | P: Sadevakassa lokassa, | S: For all the world with its gods, | T: “These are considered happiness ↵ By the world with its devas;
+sn35.136:3.2 | P: ete vo sukhasammatā; | S: this is what they deem happiness. | T: (none)
+sn35.136:3.3 | P: Yattha cete nirujjhanti, | S: And where they cease | T: But where these cease,
+sn35.136:3.4 | P: taṁ tesaṁ dukkhasammataṁ. | S: is deemed as suffering for them. | T: That they consider suffering.
+
+## Verse sn35.136:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “The noble ones have seen as happiness ↵ The ceasing of identity. ↵ This view of those who clearly see ↵ Runs counter to the entire world.
+sn35.136:4.1 | P: Sukhaṁ diṭṭhamariyebhi, | S: The noble ones have seen that happiness | T: “The noble ones have seen as happiness
+sn35.136:4.2 | P: sakkāyassa nirodhanaṁ; | S: is the cessation of substantial reality. | T: The ceasing of identity.
+sn35.136:4.3 | P: Paccanīkamidaṁ hoti, | S: This insight by those who see | T: This view of those who clearly see
+sn35.136:4.4 | P: sabbalokena passataṁ. | S: contradicts the whole world. | T: Runs counter to the entire world.
+
+## Verse sn35.136:5.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “What others speak of as happiness, ↵ That the noble ones say is suffering; ↵ What others speak of as suffering, ↵ That the noble ones know as bliss.
+sn35.136:5.1 | P: Yaṁ pare sukhato āhu, | S: What others say is happiness | T: “What others speak of as happiness,
+sn35.136:5.2 | P: tadariyā āhu dukkhato; | S: the noble ones say is suffering. | T: That the noble ones say is suffering;
+sn35.136:5.3 | P: Yaṁ pare dukkhato āhu, | S: What others say is suffering | T: What others speak of as suffering,
+sn35.136:5.4 | P: tadariyā sukhato vidū. | S: the noble ones know as happiness. | T: That the noble ones know as bliss.
+
+## Verse sn35.136:6.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Behold this Dhamma hard to comprehend: ↵ Here the foolish are bewildered. ↵ For those with blocked minds it is obscure, ↵ Sheer darkness for those who do not see.
+sn35.136:6.1 | P: Passa dhammaṁ durājānaṁ, | S: See, this teaching is hard to understand, | T: “Behold this Dhamma hard to comprehend:
+sn35.136:6.2 | P: sammūḷhettha aviddasu; | S: it confuses the ignorant. | T: Here the foolish are bewildered.
+sn35.136:6.3 | P: Nivutānaṁ tamo hoti, | S: There is darkness for the shrouded; | T: For those with blocked minds it is obscure,
+sn35.136:6.4 | P: andhakāro apassataṁ. | S: blackness for those who don’t see. | T: Sheer darkness for those who do not see.
+
+## Verse sn35.136:7.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): “But for the good it is disclosed, ↵ It is light here for those who see. ↵ The dullards unskilled in the Dhamma ↵ Don’t understand it in its presence.
+sn35.136:7.1 | P: Satañca vivaṭaṁ hoti, | S: But the good are open; | T: “But for the good it is disclosed,
+sn35.136:7.2 | P: āloko passatāmiva; | S: like light for those who see. | T: It is light here for those who see.
+sn35.136:7.3 | P: Santike na vijānanti, | S: Though close, they do not understand, | T: The dullards unskilled in the Dhamma ↵ Don’t understand it in its presence.
+sn35.136:7.4 | P: maggā dhammassa akovidā. | S: the seekers inexpert in the teaching. | T: (none)
+
+## Verse sn35.136:8.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): “This Dhamma isn’t easily understood ↵ By those afflicted with lust for existence, ↵ Who flow along in the stream of existence, ↵ Deeply mired in Mara’s realm.
+sn35.136:8.1 | P: Bhavarāgaparetebhi, | S: They’re mired in desire for continued existence, | T: “This Dhamma isn’t easily understood ↵ By those afflicted with lust for existence,
+sn35.136:8.2 | P: bhavarāgānusārībhi; | S: flowing along the stream of lives, | T: Who flow along in the stream of existence,
+sn35.136:8.3 | P: Māradheyyānupannehi, | S: mired in Māra’s dominion: | T: Deeply mired in Mara’s realm.
+sn35.136:8.4 | P: nāyaṁ dhammo susambudho. | S: this teaching isn’t easy for them to understand. | T: (none)
+
+## Verse sn35.136:9.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Who else apart from the noble ones ↵ Are able to understand this state? ↵ When they have rightly known that state, ↵ The taintless ones are fully quenched.”
+sn35.136:9.1 | P: Ko nu aññatra mariyebhi, | S: Who, apart from the noble ones, | T: “Who else apart from the noble ones
+sn35.136:9.2 | P: Padaṁ sambuddhumarahati; | S: is qualified to understand this state? | T: Are able to understand this state?
+sn35.136:9.3 | P: Yaṁ padaṁ sammadaññāya, | S: Having rightly understood this state, | T: When they have rightly known that state,
+sn35.136:9.4 | P: Parinibbanti anāsavā”ti. | S: the undefiled are fully extinguished.” | T: The taintless ones are fully quenched.”

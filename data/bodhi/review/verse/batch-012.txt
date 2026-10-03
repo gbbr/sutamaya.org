@@ -1,0 +1,471 @@
+## Verse sn11.21:2.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Having slain what does one sleep soundly? ↵ Having slain what does one not sorrow? ↵ What is the one thing, O Gotama, ↵ Whose killing you approve?”
+sn11.21:2.1 | P: “Kiṁsu chetvā sukhaṁ seti, | S: “When what is slain do you sleep at ease? | T: “Having slain what does one sleep soundly?
+sn11.21:2.2 | P: kiṁsu chetvā na socati; | S: When what is slain is there no sorrow? | T: Having slain what does one not sorrow?
+sn11.21:2.3 | P: Kissassu ekadhammassa, | S: What is the one thing | T: What is the one thing,
+sn11.21:2.4 | P: vadhaṁ rocesi gotamā”ti. | S: whose killing you approve?” | T: O Gotama, ↵ Whose killing you approve?”
+
+## Verse sn11.21:3.1 | 6 Pali rows | 8 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Having slain anger, one sleeps soundly; ↵ Having slain anger, one does not sorrow; ↵ The killing of anger, O Vasava, ↵ With its poisoned root and honeyed tip: ↵ This is the killing the noble ones praise, ↵ For having slain that, one does not sorrow.”
+sn11.21:3.1 | P: “Kodhaṁ chetvā sukhaṁ seti, | S: “When anger’s slain you sleep at ease. | T: The Blessed One: ↵ “Having slain anger, one sleeps soundly;
+sn11.21:3.2 | P: kodhaṁ chetvā na socati; | S: When anger’s slain there is no sorrow. | T: Having slain anger, one does not sorrow;
+sn11.21:3.3 | P: Kodhassa visamūlassa, | S: Anger has a poisonous root | T: The killing of anger,
+sn11.21:3.4 | P: madhuraggassa vāsava; | S: and a sweet tip, O Vāsava. | T: O Vasava, ↵ With its poisoned root and honeyed tip:
+sn11.21:3.5 | P: Vadhaṁ ariyā pasaṁsanti, | S: The noble ones praise its killing, | T: This is the killing the noble ones praise,
+sn11.21:3.6 | P: tañhi chetvā na socatī”ti. | S: for when it’s slain there is no sorrow.” | T: For having slain that, one does not sorrow.”
+
+## Verse sn11.22:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘I am not one afflicted in mind, ↵ Nor easily drawn by anger’s whirl. ↵ I never become angry for long, ↵ Nor does anger persist in me.
+sn11.22:4.1 | P: ‘Na sūpahatacittomhi, | S: ‘My mind isn’t easily upset; | T: “‘I am not one afflicted in mind,
+sn11.22:4.2 | P: nāvattena suvānayo; | S: I’m not easily drawn into the maelstrom. | T: Nor easily drawn by anger’s whirl.
+sn11.22:4.3 | P: Na vo cirāhaṁ kujjhāmi, | S: I don’t get angry for long, | T: I never become angry for long,
+sn11.22:4.4 | P: kodho mayi nāvatiṭṭhati. | S: anger doesn’t last in me. | T: Nor does anger persist in me.
+
+## Verse sn11.22:5.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘When I’m angry I don’t speak harshly ↵ And I don’t praise my virtues. ↵ I keep myself well restrained ↵ Out of regard for my own good.’”
+sn11.22:5.1 | P: Kuddhāhaṁ na pharusaṁ brūmi, | S: When I do get angry I don’t speak harshly, | T: “‘When I’m angry I don’t speak harshly
+sn11.22:5.2 | P: Na ca dhammāni kittaye; | S: nor do I advertise my own virtues. | T: And I don’t praise my virtues.
+sn11.22:5.3 | P: Sanniggaṇhāmi attānaṁ, | S: I carefully restrain myself | T: I keep myself well restrained
+sn11.22:5.4 | P: Sampassaṁ atthamattano’”ti. | S: out of regard for my own welfare.’” | T: Out of regard for my own good.’”
+
+## Verse sn11.23:2.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘A magician—O Maghava, Sakka, ↵ King of devas, Suja’s husband— ↵ Goes to the terrible hell, ↵ Like Sambara, for a hundred years.’”
+sn11.23:2.1 | P: ‘Māyāvī maghavā sakka, | S: ‘O Maghavā, O Sakka, | T: “‘A magician—O Maghava, Sakka,
+sn11.23:2.2 | P: devarāja sujampati; | S: king of gods, Sujā’s husband: | T: King of devas, Suja’s husband—
+sn11.23:2.3 | P: Upeti nirayaṁ ghoraṁ, | S: a sorceror like Sambara falls | T: Goes to the terrible hell, ↵ Like Sambara,
+sn11.23:2.4 | P: sambarova sataṁ saman’”ti. | S: into the terrible hell for a full century.’” | T: for a hundred years.’”
+
+## Verse sn11.24:4.1 | 6 Pali rows | 6 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): “‘Bring anger under your control; ↵ Do not let your friendships decay. ↵ Do not blame one who is blameless; ↵ Do not utter divisive speech. ↵ Like a mountain avalanche ↵ Anger crushes evil people.’”
+sn11.24:4.1 | P: ‘Kodho vo vasamāyātu, | S: ‘Control your anger; | T: “‘Bring anger under your control;
+sn11.24:4.2 | P: Mā ca mittehi vo jarā; | S: don’t let friendships decay. | T: Do not let your friendships decay.
+sn11.24:4.3 | P: Agarahiyaṁ mā garahittha, | S: Don’t blame the blameless, | T: Do not blame one who is blameless;
+sn11.24:4.4 | P: Mā ca bhāsittha pesuṇaṁ; | S: and don’t backbite. | T: Do not utter divisive speech.
+sn11.24:4.5 | P: Atha pāpajanaṁ kodho, | S: For anger crushes bad people | T: Like a mountain avalanche ↵ Anger crushes evil people.’”
+sn11.24:4.6 | P: Pabbatovābhimaddatī’”ti. | S: like a mountain.’” | T: (none)
+
+## Verse sn11.25:2.1 | 6 Pali rows | 7 English pieces | gathered=True | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘Do not let anger overpower you; ↵ Do not become angry at those who are angry. ↵ Nonanger and harmlessness always dwell ↵ Within the hearts of the noble ones. ↵ Like a mountain avalanche ↵ Anger crushes evil people.’”
+sn11.25:2.1 | P: ‘Mā vo kodho ajjhabhavi, | S: ‘Don’t let anger be your master, | T: “‘Do not let anger overpower you;
+sn11.25:2.2 | P: mā ca kujjhittha kujjhataṁ; | S: don’t get angry at angry people. | T: Do not become angry at those who are angry.
+sn11.25:2.3 | P: Akkodho avihiṁsā ca, | S: Kindness and harmlessness | T: Nonanger and harmlessness
+sn11.25:2.4 | P: ariyesu ca paṭipadā; | S: are always present in the noble ones. | T: always dwell ↵ Within the hearts of the noble ones.
+sn11.25:2.5 | P: Atha pāpajanaṁ kodho, | S: For anger crushes bad people | T: Like a mountain avalanche ↵ Anger crushes evil people.’”
+sn11.25:2.6 | P: pabbatovābhimaddatī’”ti. | S: like a mountain.’” | T: (none)
+
+## Verse sn11.25:3.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn11.25:3.1 | P: Chetvā dubbaṇṇiya māyā, | S: (none) | T: (none)
+sn11.25:3.2 | P: accayena akodhano; | S: (none) | T: (none)
+sn11.25:3.3 | P: Desitaṁ buddhaseṭṭhena, | S: (none) | T: (none)
+sn11.25:3.4 | P: idañhi sakkapañcakanti. | S: (none) | T: (none)
+
+## Verse sn11.25:4.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn11.25:4.1 | P: Devatā devaputto ca, | S: (none) | T: (none)
+sn11.25:4.2 | P: rājā māro ca bhikkhunī; | S: (none) | T: (none)
+sn11.25:4.3 | P: Brahmā brāhmaṇa vaṅgīso, | S: (none) | T: (none)
+sn11.25:4.4 | P: vanayakkhena vāsavoti. | S: (none) | T: (none)
+
+## Verse sn11.2:3.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn11.2:3.1 | P: ‘Anuṭṭhahaṁ avāyāmaṁ, | S: ‘Susīma, go to that place | T: (none)
+sn11.2:3.2 | P: sukhaṁ yatrādhigacchati; | S: where you can achieve happiness | T: (none)
+sn11.2:3.3 | P: Susīma tattha gacchāhi, | S: without working for it or trying hard— | T: (none)
+sn11.2:3.4 | P: mañca tattheva pāpayā’ti. | S: and take me with you!’ | T: (none)
+
+## Verse sn11.2:4.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn11.2:4.1 | P: ‘Alasvassa anuṭṭhātā, | S: ‘That a lazy man who does no work, | T: (none)
+sn11.2:4.2 | P: na ca kiccāni kāraye; | S: and doesn’t do his duty, | T: (none)
+sn11.2:4.3 | P: Sabbakāmasamiddhassa, | S: should fulfill all his desires: | T: (none)
+sn11.2:4.4 | P: taṁ me sakka varaṁ disā’ti. | S: Sakka, render me this boon!’ | T: (none)
+
+## Verse sn11.2:5.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn11.2:5.1 | P: ‘Yatthālaso anuṭṭhātā, | S: ‘Susīma, go to that place | T: (none)
+sn11.2:5.2 | P: accantaṁ sukhamedhati; | S: where a lazy man who does no work | T: (none)
+sn11.2:5.3 | P: Susīma tattha gacchāhi, | S: prospers in unending happiness— | T: (none)
+sn11.2:5.4 | P: mañca tattheva pāpayā’ti. | S: and take me with you!’ | T: (none)
+
+## Verse sn11.2:6.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn11.2:6.1 | P: ‘Akammunā devaseṭṭha, | S: ‘O Sakka, first among gods, | T: (none)
+sn11.2:6.2 | P: sakka vindemu yaṁ sukhaṁ; | S: that we might find the happiness | T: (none)
+sn11.2:6.3 | P: Asokaṁ anupāyāsaṁ, | S: that’s sorrowless, unstressed: | T: (none)
+sn11.2:6.4 | P: taṁ me sakka varaṁ disā’ti. | S: Sakka, render me this boon!’ | T: (none)
+
+## Verse sn11.2:7.1 | 5 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn11.2:7.1 | P: ‘Sace atthi akammena, | S: ‘If there exists anywhere a place | T: (none)
+sn11.2:7.2 | P: koci kvaci na jīvati; | S: where one can live happily without working, | T: (none)
+sn11.2:7.3 | P: Nibbānassa hi so maggo, | S: that surely would be extinguishment’s path! | T: (none)
+sn11.2:7.4 | P: susīma tattha gacchāhi; | S: Susīma, go to that place | T: (none)
+sn11.2:7.5 | P: Mañca tattheva pāpayā’ti. | S: and take me with you!’ | T: (none)
+
+## Verse sn11.3:13.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “In a forest, at the foot of a tree, ↵ Or in an empty hut, O bhikkhus, ↵ You should recollect the Buddha: ↵ No fear will then arise in you.
+sn11.3:13.1 | P: “Araññe rukkhamūle vā, | S: “In the wilderness, at a tree’s root, | T: “In a forest, at the foot of a tree,
+sn11.3:13.2 | P: suññāgāreva bhikkhavo; | S: or an empty hut, O mendicants, | T: Or in an empty hut, O bhikkhus,
+sn11.3:13.3 | P: Anussaretha sambuddhaṁ, | S: recollect the Buddha, | T: You should recollect the Buddha:
+sn11.3:13.4 | P: bhayaṁ tumhāka no siyā. | S: and no fear will come to you. | T: No fear will then arise in you.
+
+## Verse sn11.3:14.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “But if you cannot recall the Buddha, ↵ Best in the world, the bull of men, ↵ Then you should recall the Dhamma, ↵ Emancipating, well expounded.
+sn11.3:14.1 | P: No ce buddhaṁ sareyyātha, | S: If you can’t recollect the Buddha— | T: “But if you cannot recall the Buddha,
+sn11.3:14.2 | P: lokajeṭṭhaṁ narāsabhaṁ; | S: the eldest in the world, the captain of men— | T: Best in the world, the bull of men,
+sn11.3:14.3 | P: Atha dhammaṁ sareyyātha, | S: then recollect the teaching, | T: Then you should recall the Dhamma,
+sn11.3:14.4 | P: niyyānikaṁ sudesitaṁ. | S: emancipating, well taught. | T: Emancipating, well expounded.
+
+## Verse sn11.3:15.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “But if you cannot recall the Dhamma, ↵ Emancipating, well expounded, ↵ Then you should recall the Saṅgha, ↵ The unsurpassed field of merit.
+sn11.3:15.1 | P: No ce dhammaṁ sareyyātha, | S: If you can’t recollect the teaching— | T: “But if you cannot recall the Dhamma,
+sn11.3:15.2 | P: niyyānikaṁ sudesitaṁ; | S: emancipating, well taught— | T: Emancipating, well expounded,
+sn11.3:15.3 | P: Atha saṅghaṁ sareyyātha, | S: then recollect the Saṅgha, | T: Then you should recall the Saṅgha,
+sn11.3:15.4 | P: puññakkhettaṁ anuttaraṁ. | S: the supreme field of merit. | T: The unsurpassed field of merit.
+
+## Verse sn11.3:16.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “For those who thus recall the Buddha, ↵ The Dhamma, and the Saṅgha, bhikkhus, ↵ No fear or trepidation will arise, ↵ Nor any grisly terror.”
+sn11.3:16.1 | P: Evaṁ buddhaṁ sarantānaṁ, | S: Thus recollecting the Buddha, | T: “For those who thus recall the Buddha,
+sn11.3:16.2 | P: Dhammaṁ saṅghañca bhikkhavo; | S: the teaching, and the Saṅgha, mendicants, | T: The Dhamma, and the Saṅgha, bhikkhus,
+sn11.3:16.3 | P: Bhayaṁ vā chambhitattaṁ vā, | S: fear and terror | T: No fear or trepidation will arise,
+sn11.3:16.4 | P: Lomahaṁso na hessatī”ti. | S: and goosebumps will be no more.” | T: Nor any grisly terror.”
+
+## Verse sn11.4:2.1 | 4 Pali rows | 5 English pieces | gathered=True | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘When face to face with Vepacitti ↵ Is it, Maghava, from fear or weakness ↵ That you endure him so patiently, ↵ Listening to his harsh words?’
+sn11.4:2.1 | P: ‘Bhayā nu maghavā sakka, | S: ‘O Maghavā, O Sakka, | T: “‘When face to face with Vepacitti ↵ Is it, Maghava,
+sn11.4:2.2 | P: dubbalyā no titikkhasi; | S: is it from fear or from weakness | T: from fear or weakness
+sn11.4:2.3 | P: Suṇanto pharusaṁ vācaṁ, | S: that you endure such harsh words | T: That you endure him so patiently, ↵ Listening to his harsh words?’
+sn11.4:2.4 | P: sammukhā vepacittino’ti. | S: in the presence of Vepacitti?’ | T: (none)
+
+## Verse sn11.4:3.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘It is neither through fear nor weakness ↵ That I am patient with Vepacitti. ↵ How can a wise person like me ↵ Engage in combat with a fool?’
+sn11.4:3.1 | P: ‘Nāhaṁ bhayā na dubbalyā, | S: ‘It’s not out of fear or weakness | T: Sakka: ↵ “‘It is neither through fear nor weakness
+sn11.4:3.2 | P: khamāmi vepacittino; | S: that I’m patient with Vepacitti. | T: That I am patient with Vepacitti.
+sn11.4:3.3 | P: Kathañhi mādiso viññū, | S: For how can a sensible person like me | T: How can a wise person like me
+sn11.4:3.4 | P: bālena paṭisaṁyuje’ti. | S: get in a fight with a fool?’ | T: Engage in combat with a fool?’
+
+## Verse sn11.4:4.1 | 4 Pali rows | 5 English pieces | gathered=True | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘Fools would vent their anger even more ↵ If no one would keep them in check. ↵ Hence with drastic punishment ↵ The wise man should restrain the fool.’
+sn11.4:4.1 | P: ‘Bhiyyo bālā pabhijjeyyuṁ, | S: ‘Fools would vent even more | T: Matali: ↵ “‘Fools would vent their anger even more
+sn11.4:4.2 | P: no cassa paṭisedhako; | S: if there’s no one to put a stop to them. | T: If no one would keep them in check.
+sn11.4:4.3 | P: Tasmā bhusena daṇḍena, | S: So an attentive one should stop | T: Hence with drastic punishment ↵ The wise man should restrain the fool.’
+sn11.4:4.4 | P: dhīro bālaṁ nisedhaye’ti. | S: a fool with forceful punishment.’ | T: (none)
+
+## Verse sn11.4:5.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘I myself think this alone ↵ Is the way to check the fool: ↵ When one knows one’s foe is angry ↵ One mindfully maintains one’s peace.’
+sn11.4:5.1 | P: ‘Etadeva ahaṁ maññe, | S: ‘I think that this is the only way | T: Sakka: ↵ “‘I myself think this alone
+sn11.4:5.2 | P: bālassa paṭisedhanaṁ; | S: to put a stop to a fool, | T: Is the way to check the fool:
+sn11.4:5.3 | P: Paraṁ saṅkupitaṁ ñatvā, | S: when you know that the other is upset, | T: When one knows one’s foe is angry
+sn11.4:5.4 | P: yo sato upasammatī’ti. | S: be mindful and stay calm.’ | T: One mindfully maintains one’s peace.’
+
+## Verse sn11.4:6.1 | 6 Pali rows | 7 English pieces | gathered=True | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘I see this fault, O Vasava, ↵ In practising patient endurance: ↵ When the fool thinks of you thus, ↵ “He endures me out of fear,” ↵ The dolt will chase you even more ↵ As a bull does one who flees.’ ↵ “He endures me out of fear,”
+sn11.4:6.1 | P: ‘Etadeva titikkhāya, | S: ‘In this mere endurance, Vāsava, | T: Matali: ↵ “‘I see this fault, O Vasava, ↵ In practising patient endurance:
+sn11.4:6.2 | P: vajjaṁ passāmi vāsava; | S: I see a flaw. | T: (none)
+sn11.4:6.3 | P: Yadā naṁ maññati bālo, | S: When a fool thinks, | T: When the fool thinks of you thus,
+sn11.4:6.4 | P: bhayā myāyaṁ titikkhati; | S: “He endures me out of fear,” | T: “He endures me out of fear,”
+sn11.4:6.5 | P: Ajjhāruhati dummedho, | S: the simpleton will go after you even harder, | T: The dolt will chase you even more
+sn11.4:6.6 | P: gova bhiyyo palāyinan’ti. | S: like a cow chasing someone who runs away.’ | T: As a bull does one who flees.’
+
+## Verse sn11.4:7.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “He endures me out of fear,” ↵ “‘Let it be whether or not he thinks, ↵ “He endures me out of fear,” ↵ Of goals that culminate in one’s own good ↵ None is found better than patience.
+sn11.4:7.1 | P: ‘Kāmaṁ maññatu vā mā vā, | S: ‘Let him think this if he wishes, or not— | T: Sakka: ↵ “‘Let it be whether or not he thinks,
+sn11.4:7.2 | P: bhayā myāyaṁ titikkhati; | S: “He endures me out of fear.” | T: “He endures me out of fear,”
+sn11.4:7.3 | P: Sadatthaparamā atthā, | S: For the highest goal, one’s own, | T: Of goals that culminate in one’s own good
+sn11.4:7.4 | P: khantyā bhiyyo na vijjati. | S: naught better than patience is found. | T: None is found better than patience.
+
+## Verse sn11.4:8.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘When a person endowed with strength ↵ Patiently endures a weakling, ↵ They call that the supreme patience; ↵ The weakling must be patient always.
+sn11.4:8.1 | P: Yo have balavā santo, | S: When a strong person | T: “‘When a person endowed with strength
+sn11.4:8.2 | P: dubbalassa titikkhati; | S: endures a weakling, | T: Patiently endures a weakling,
+sn11.4:8.3 | P: Tamāhu paramaṁ khantiṁ, | S: they call that the ultimate patience, | T: They call that the supreme patience;
+sn11.4:8.4 | P: niccaṁ khamati dubbalo. | S: for a weakling must always be patient. | T: The weakling must be patient always.
+
+## Verse sn11.4:9.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): “‘They call that strength no strength at all— ↵ The strength that is the strength of folly— ↵ But no one can reproach a person ↵ Who is strong because guarded by Dhamma.
+sn11.4:9.1 | P: Abalaṁ taṁ balaṁ āhu, | S: The strength of folly | T: “‘They call that strength no strength at all— ↵ The strength that is the strength of folly—
+sn11.4:9.2 | P: yassa bālabalaṁ balaṁ; | S: is really just weakness, they say. | T: (none)
+sn11.4:9.3 | P: Balassa dhammaguttassa, | S: But no one can challenge a person | T: But no one can reproach a person
+sn11.4:9.4 | P: paṭivattā na vijjati. | S: who’s strong, guarded by the teaching. | T: Who is strong because guarded by Dhamma.
+
+## Verse sn11.4:10.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘One who repays an angry man with anger ↵ Thereby makes things worse for himself. ↵ Not repaying an angry man with anger, ↵ One wins a battle hard to win.
+sn11.4:10.1 | P: Tasseva tena pāpiyo, | S: When you get angry at an angry person | T: “‘One who repays an angry man with anger
+sn11.4:10.2 | P: yo kuddhaṁ paṭikujjhati; | S: you just make things worse for yourself. | T: Thereby makes things worse for himself.
+sn11.4:10.3 | P: Kuddhaṁ appaṭikujjhanto, | S: When you don’t get angry at an angry person | T: Not repaying an angry man with anger,
+sn11.4:10.4 | P: saṅgāmaṁ jeti dujjayaṁ. | S: you win a battle hard to win. | T: One wins a battle hard to win.
+
+## Verse sn11.4:11.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): “‘He practises for the welfare of both, ↵ His own and the other’s, ↵ When, knowing that his foe is angry, ↵ He mindfully maintains his peace.
+sn11.4:11.1 | P: Ubhinnamatthaṁ carati, | S: When you know that the other is angry, | T: “‘He practises for the welfare of both, ↵ His own and the other’s, ↵ When, knowing that his foe is angry,
+sn11.4:11.2 | P: attano ca parassa ca; | S: you act for the good of both | T: (none)
+sn11.4:11.3 | P: Paraṁ saṅkupitaṁ ñatvā, | S: yourself and the other | T: (none)
+sn11.4:11.4 | P: yo sato upasammati. | S: if you’re mindful and stay calm. | T: He mindfully maintains his peace.
+
+## Verse sn11.4:12.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): “‘When he achieves the cure of both— ↵ His own and the other’s— ↵ The people who consider him a fool ↵ Are unskilled in the Dhamma.’
+sn11.4:12.1 | P: Ubhinnaṁ tikicchantānaṁ, | S: People inexpert in the teaching | T: “‘When he achieves the cure of both— ↵ His own and the other’s—
+sn11.4:12.2 | P: attano ca parassa ca; | S: consider one who heals both | T: (none)
+sn11.4:12.3 | P: Janā maññanti bāloti, | S: oneself and the other | T: The people who consider him a fool
+sn11.4:12.4 | P: ye dhammassa akovidā’ti. | S: to be a fool.’ | T: Are unskilled in the Dhamma.’
+
+## Verse sn11.5:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘Fools would vent their anger even more ↵ If no one would keep them in check. ↵ Hence with drastic punishment ↵ The wise man should restrain the fool.’
+sn11.5:2.1 | P: ‘Bhiyyo bālā pabhijjeyyuṁ, | S: ‘Fools would vent even more | T: “‘Fools would vent their anger even more
+sn11.5:2.2 | P: no cassa paṭisedhako; | S: if there’s no one to put a stop to them. | T: If no one would keep them in check.
+sn11.5:2.3 | P: Tasmā bhusena daṇḍena, | S: So an intelligent person should stop | T: Hence with drastic punishment
+sn11.5:2.4 | P: dhīro bālaṁ nisedhaye’ti. | S: a fool with forceful punishment.’ | T: The wise man should restrain the fool.’
+
+## Verse sn11.5:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘I myself think this alone ↵ Is the way to check the fool: ↵ When one knows one’s foe is angry ↵ One mindfully maintains one’s peace.’
+sn11.5:4.1 | P: ‘Etadeva ahaṁ maññe, | S: ‘I think that this is the only way | T: “‘I myself think this alone
+sn11.5:4.2 | P: bālassa paṭisedhanaṁ; | S: to put a stop to a fool, | T: Is the way to check the fool:
+sn11.5:4.3 | P: Paraṁ saṅkupitaṁ ñatvā, | S: when you know that the other is upset, | T: When one knows one’s foe is angry
+sn11.5:4.4 | P: yo sato upasammatī’ti. | S: be mindful and stay calm.’ | T: One mindfully maintains one’s peace.’
+
+## Verse sn11.5:6.1 | 6 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘I see this fault, O Vasava, ↵ In practising patient endurance: ↵ When the fool thinks of you thus, ↵ “He endures me out of fear,” ↵ The dolt will chase you even more ↵ As a bull does one who flees.’
+sn11.5:6.1 | P: ‘Etadeva titikkhāya, | S: ‘In this mere endurance, Vāsava, | T: “‘I see this fault, O Vasava,
+sn11.5:6.2 | P: vajjaṁ passāmi vāsava; | S: I see a flaw. | T: In practising patient endurance:
+sn11.5:6.3 | P: Yadā naṁ maññati bālo, | S: When a fool thinks, | T: When the fool thinks of you thus,
+sn11.5:6.4 | P: bhayā myāyaṁ titikkhati; | S: “He endures me out of fear,” | T: “He endures me out of fear,”
+sn11.5:6.5 | P: Ajjhāruhati dummedho, | S: the simpleton will go after you even harder, | T: The dolt will chase you even more
+sn11.5:6.6 | P: gova bhiyyo palāyinan’ti. | S: like a cow chasing someone who runs away.’ | T: As a bull does one who flees.’
+
+## Verse sn11.5:8.1 | 4 Pali rows | 1 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): -891 “‘Let it be whether or not he thinks,
+sn11.5:8.1 | P: ‘Kāmaṁ maññatu vā mā vā, | S: ‘Let him think this if he wishes, or not— | T: -891 “‘Let it be whether or not he thinks,
+sn11.5:8.2 | P: bhayā myāyaṁ titikkhati; | S: “He endures me out of fear.” | T: (none)
+sn11.5:8.3 | P: Sadatthaparamā atthā, | S: For the highest goal, one’s own, | T: (none)
+sn11.5:8.4 | P: khantyā bhiyyo na vijjati. | S: naught better than patience is found. | T: (none)
+
+## Verse sn11.5:9.1 | 4 Pali rows | 2 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): … verses = 877–82 …
+sn11.5:9.1 | P: Yo have balavā santo, | S: When a strong person | T: …
+sn11.5:9.2 | P: dubbalassa titikkhati; | S: endures a weakling, | T: verses = 877–
+sn11.5:9.3 | P: Tamāhu paramaṁ khantiṁ, | S: they call that the ultimate patience, | T: (none)
+sn11.5:9.4 | P: niccaṁ khamati dubbalo. | S: for a weakling must always be patient. | T: (none)
+
+## Verse sn11.5:10.1 | 4 Pali rows | 1 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn11.5:10.1 | P: Abalaṁ taṁ balaṁ āhu, | S: The strength of folly | T: 82 …
+sn11.5:10.2 | P: yassa bālabalaṁ balaṁ; | S: is really just weakness, they say. | T: (none)
+sn11.5:10.3 | P: Balassa dhammaguttassa, | S: But no one can challenge a person | T: (none)
+sn11.5:10.4 | P: paṭivattā na vijjati. | S: who’s strong, guarded by the teaching. | T: (none)
+
+## Verse sn11.5:11.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn11.5:11.1 | P: Tasseva tena pāpiyo, | S: When you get angry at an angry person | T: (none)
+sn11.5:11.2 | P: yo kuddhaṁ paṭikujjhati; | S: you just make things worse for yourself. | T: (none)
+sn11.5:11.3 | P: Kuddhaṁ appaṭikujjhanto, | S: When you don’t get angry at an angry person | T: (none)
+sn11.5:11.4 | P: saṅgāmaṁ jeti dujjayaṁ. | S: you win a battle hard to win. | T: (none)
+
+## Verse sn11.5:12.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn11.5:12.1 | P: Ubhinnamatthaṁ carati, | S: When you know that the other is angry, | T: (none)
+sn11.5:12.2 | P: attano ca parassa ca; | S: you act for the good of both | T: (none)
+sn11.5:12.3 | P: Paraṁ saṅkupitaṁ ñatvā, | S: yourself and the other | T: (none)
+sn11.5:12.4 | P: yo sato upasammati. | S: if you’re mindful and stay calm. | T: (none)
+
+## Verse sn11.5:13.1 | 4 Pali rows | 1 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Are unskilled in the Dhamma.’
+sn11.5:13.1 | P: Ubhinnaṁ tikicchantānaṁ, | S: People inexpert in the teaching | T: (none)
+sn11.5:13.2 | P: attano ca parassa ca; | S: consider one who heals both | T: (none)
+sn11.5:13.3 | P: Janā maññanti bāloti, | S: oneself and the other | T: (none)
+sn11.5:13.4 | P: ye dhammassa akovidā’ti. | S: to be a fool.’ | T: Are unskilled in the Dhamma.’
+
+## Verse sn11.6:2.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): “‘Avoid, O Matali, with your chariot pole ↵ The bird nests in the silk-cotton woods; ↵ Let’s surrender our lives to the asuras ↵ Rather than make these birds nestless.’
+sn11.6:2.1 | P: ‘Kulāvakā mātali simbalismiṁ, | S: ‘Mātali, don’t ram the bird nests | T: “‘Avoid, O Matali, with your chariot pole ↵ The bird nests in the silk-cotton woods;
+sn11.6:2.2 | P: Īsāmukhena parivajjayassu; | S: in the Red Silk-Cotton Woods with your draft-pole. | T: (none)
+sn11.6:2.3 | P: Kāmaṁ cajāma asuresu pāṇaṁ, | S: I’d rather give up our lives to the titans | T: Let’s surrender our lives to the asuras
+sn11.6:2.4 | P: Māyime dijā vikulāvakā ahesun’ti. | S: than deprive these birds of their nests.’ | T: Rather than make these birds nestless.’
+
+## Verse sn11.7:4.1 | 6 Pali rows | 7 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): ‘“Whatever evil comes to a liar, ↵ Whatever evil to a reviler of noble ones, ↵ Whatever evil to a betrayer of friends, ↵ Whatever evil to one without gratitude: ↵ That same evil touches the one ↵ Who transgresses against you, Suja’s husband.’”
+sn11.7:4.1 | P: ‘Yaṁ musā bhaṇato pāpaṁ, | S: ‘Whatever bad things happen to a liar, | T: Vepacitti: ↵ ‘“Whatever evil comes to a liar,
+sn11.7:4.2 | P: Yaṁ pāpaṁ ariyūpavādino; | S: or to someone who slanders the noble ones, | T: Whatever evil to a reviler of noble ones,
+sn11.7:4.3 | P: Mittadduno ca yaṁ pāpaṁ, | S: or to someone who betrays a friend, | T: Whatever evil to a betrayer of friends,
+sn11.7:4.4 | P: Yaṁ pāpaṁ akataññuno; | S: or to someone who’s ungrateful, | T: Whatever evil to one without gratitude:
+sn11.7:4.5 | P: Tameva pāpaṁ phusatu, | S: the same bad things impact | T: That same evil touches the one
+sn11.7:4.6 | P: Yo te dubbhe sujampatī’”ti. | S: anyone who betrays you, Sujā’s husband.’” | T: Who transgresses against you, Suja’s husband.’”
+
+## Verse sn11.8:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “A man should make an effort ↵ Until his goal has been achieved. ↵ Goals shine when achieved: ↵ This is the word of Verocana.” ↵ “A man should make an effort ↵ Until his goal has been achieved. ↵ Goals shine when achieved: ↵ This is the word of Verocana.”
+sn11.8:2.1 | P: “Vāyametheva puriso, | S: “A man should make an effort | T: “A man should make an effort
+sn11.8:2.2 | P: yāva atthassa nipphadā; | S: until his goal is accomplished. | T: Until his goal has been achieved.
+sn11.8:2.3 | P: Nipphannasobhano attho, | S: A goal is splendid when accomplished— | T: Goals shine when achieved:
+sn11.8:2.4 | P: verocanavaco idan”ti. | S: this is the word of Verocana!” | T: This is the word of Verocana.”
+
+## Verse sn11.8:3.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “A man should make an effort ↵ Until his goal has been achieved. ↵ “A man should make an effort ↵ Until his goal has been achieved. ↵ Of goals that shine when achieved, ↵ None is found better than patience.” ↵ Of goals that shine when achieved, ↵ None is found better than patience.”
+sn11.8:3.1 | P: “Vāyametheva puriso, | S: “A man should make an effort | T: Sakka: ↵ “A man should make an effort
+sn11.8:3.2 | P: yāva atthassa nipphadā; | S: until his goal is accomplished. | T: Until his goal has been achieved.
+sn11.8:3.3 | P: Nipphannasobhano attho, | S: For the goal that’s splendid when accomplished, | T: Of goals that shine when achieved,
+sn11.8:3.4 | P: khantyā bhiyyo na vijjatī”ti. | S: naught better than patience is found.” | T: None is found better than patience.”
+
+## Verse sn11.8:4.1 | 6 Pali rows | 7 English pieces | gathered=True | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Goals shine when achieved: ↵ This is the word of Verocana.” ↵ “All beings are bent on a goal ↵ Here or there as fits the case, ↵ But for all creatures association ↵ Is supreme among enjoyments. ↵ Goals shine when achieved: ↵ This is the word of Verocana.” ↵ Here or there as fits the case, ↵ But for all creatures association ↵ Is supreme among enjoyments.
+sn11.8:4.1 | P: “Sabbe sattā atthajātā, | S: “All beings are in need, | T: Verocana: ↵ “All beings are bent on a goal
+sn11.8:4.2 | P: tattha tattha yathārahaṁ; | S: as they deserve in each case. | T: Here or there as fits the case,
+sn11.8:4.3 | P: Saṁyogaparamā tveva, | S: But even so, harnessed work is the highest | T: But for all creatures association ↵ Is supreme among enjoyments.
+sn11.8:4.4 | P: sambhogā sabbapāṇinaṁ; | S: thing of value for all living creatures. | T: (none)
+sn11.8:4.5 | P: Nipphannasobhano attho, | S: A goal is splendid when accomplished— | T: Goals shine when achieved:
+sn11.8:4.6 | P: verocanavaco idan”ti. | S: this is the word of Verocana!” | T: This is the word of Verocana.”
+
+## Verse sn11.8:5.1 | 6 Pali rows | 7 English pieces | gathered=True | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Of goals that shine when achieved, ↵ None is found better than patience.” ↵ Here or there as fits the case, ↵ But for all creatures association ↵ Is supreme among enjoyments. ↵ “All beings are bent upon a goal ↵ Here or there as fits the case, ↵ But for all creatures association ↵ Is supreme among enjoyments. ↵ Of goals that shine when achieved, ↵ None is found better than patience.”
+sn11.8:5.1 | P: “Sabbe sattā atthajātā, | S: “All beings are in need, | T: Sakka: ↵ “All beings are bent upon a goal
+sn11.8:5.2 | P: tattha tattha yathārahaṁ; | S: as they deserve in each case. | T: Here or there as fits the case,
+sn11.8:5.3 | P: Saṁyogaparamā tveva, | S: But rather than harnessed work being the highest | T: But for all creatures association ↵ Is supreme among enjoyments.
+sn11.8:5.4 | P: sambhogā sabbapāṇinaṁ; | S: thing of value for all living creatures, | T: (none)
+sn11.8:5.5 | P: Nipphannasobhano attho, | S: for the goal that’s splendid when accomplished, | T: Of goals that shine when achieved,
+sn11.8:5.6 | P: khantyā bhiyyo na vijjatī”ti. | S: naught better than patience is found.” | T: None is found better than patience.”
+
+## Verse sn11.9:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘The odour of the seers long bound by their vows, ↵ Emitted from their bodies, goes with the wind. ↵ Turn away from here, O thousand-eyed god, ↵ For the seers’ odour is foul, O deva-king.’
+sn11.9:2.1 | P: ‘Gandho isīnaṁ ciradikkhitānaṁ, | S: ‘When seers have been long initiated, | T: “‘The odour of the seers long bound by their vows,
+sn11.9:2.2 | P: Kāyā cuto gacchati mālutena; | S: the odor of their bodies goes with the gale. | T: Emitted from their bodies, goes with the wind.
+sn11.9:2.3 | P: Ito paṭikkamma sahassanetta, | S: You’d better leave, O thousand-eyed! | T: Turn away from here, O thousand-eyed god,
+sn11.9:2.4 | P: Gandho isīnaṁ asuci devarājā’ti. | S: The odor of the seers is unclean, king of gods.’ | T: For the seers’ odour is foul, O deva-king.’
+
+## Verse sn11.9:3.1 | 5 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “‘Let the odour of the seers long bound by their vows, ↵ Emitted from their bodies, go with the wind; ↵ We yearn for this odour, O venerable sirs, ↵ As for a garland of flowers on the head. ↵ The devas do not perceive it as repulsive.’”
+sn11.9:3.1 | P: ‘Gandho isīnaṁ ciradikkhitānaṁ, | S: ‘When seers have been long initiated, | T: Sakka: ↵ “‘Let the odour of the seers long bound by their vows,
+sn11.9:3.2 | P: Kāyā cuto gacchatu mālutena; | S: let the odor of their bodies go with the gale. | T: Emitted from their bodies, go with the wind;
+sn11.9:3.3 | P: Sucitrapupphaṁ sirasmiṁva mālaṁ, | S: We yearn for this odor, sirs, | T: We yearn for this odour, O venerable sirs,
+sn11.9:3.4 | P: Gandhaṁ etaṁ paṭikaṅkhāma bhante; | S: like a colorful crown of flowers. | T: As for a garland of flowers on the head.
+sn11.9:3.5 | P: Na hettha devā paṭikūlasaññino’”ti. | S: The gods don’t see it as repulsive.’” | T: The devas do not perceive it as repulsive.’”
+
+## Verse sn12.20:6.1 | 6 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn12.20:6.1 | P: Āhāraṁ phagguno ceva, | S: (none) | T: (none)
+sn12.20:6.2 | P: Dve ca samaṇabrāhmaṇā; | S: (none) | T: (none)
+sn12.20:6.3 | P: Kaccānagotta dhammakathikaṁ, | S: (none) | T: (none)
+sn12.20:6.4 | P: Acelaṁ timbarukena ca; | S: (none) | T: (none)
+sn12.20:6.5 | P: Bālapaṇḍitato ceva, | S: (none) | T: (none)
+sn12.20:6.6 | P: Dasamo paccayena cāti. | S: (none) | T: (none)
+
+## Verse sn12.30:3.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn12.30:3.1 | P: Dve dasabalā upanisā ca, | S: (none) | T: (none)
+sn12.30:3.2 | P: Aññatitthiyabhūmijo; | S: (none) | T: (none)
+sn12.30:3.3 | P: Upavāṇo paccayo bhikkhu, | S: (none) | T: (none)
+sn12.30:3.4 | P: Dve ca samaṇabrāhmaṇāti. | S: (none) | T: (none)
+
+## Verse sn12.31:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): ‘Those who have comprehended the Dhamma, ↵ And the manifold trainees here: ↵ Asked about their way of conduct, ↵ Being discreet, tell me, dear sir.’ ↵ ‘Those who have comprehended the Dhamma, ↵ And the manifold trainees here: ↵ Asked about their way of conduct, ↵ Being discreet, tell me, dear sir.’—
+sn12.31:2.1 | P: ‘Ye ca saṅkhātadhammāse, | S: ‘There are those who have appraised the teaching, | T: ‘Those who have comprehended the Dhamma,
+sn12.31:2.2 | P: ye ca sekkhā puthū idha; | S: and many kinds of trainees here. | T: And the manifold trainees here:
+sn12.31:2.3 | P: Tesaṁ me nipako iriyaṁ, | S: Now you, being alert, are asked | T: Asked about their way of conduct,
+sn12.31:2.4 | P: puṭṭho pabrūhi mārisā’ti. | S: to tell me their behavior, good fellow.’ | T: Being discreet, tell me, dear sir.’
+
+## Verse sn12.31:5.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn12.31:5.1 | P: ‘Ye ca saṅkhātadhammāse, | S: (none) | T: (none)
+sn12.31:5.2 | P: ye ca sekkhā puthū idha; | S: (none) | T: (none)
+sn12.31:5.3 | P: Tesaṁ me nipako iriyaṁ, | S: (none) | T: (none)
+sn12.31:5.4 | P: puṭṭho pabrūhi mārisā’ti. | S: (none) | T: (none)
+
+## Verse sn12.31:9.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): ‘Those who have comprehended the Dhamma, ↵ And the manifold trainees here: ↵ Asked about their way of conduct, ↵ Being discreet, tell me, dear sir.’ ↵ ‘Those who have comprehended the Dhamma, ↵ And the manifold trainees here: ↵ Asked about their way of conduct, ↵ Being discreet, tell me, dear sir.’—
+sn12.31:9.1 | P: ‘Ye ca saṅkhātadhammāse, | S: ‘There are those who have appraised the teaching, | T: ‘Those who have comprehended the Dhamma,
+sn12.31:9.2 | P: ye ca sekkhā puthū idha; | S: and many kinds of trainees here. | T: And the manifold trainees here:
+sn12.31:9.3 | P: Tesaṁ me nipako iriyaṁ, | S: Now you, being alert, are asked | T: Asked about their way of conduct,
+sn12.31:9.4 | P: puṭṭho pabrūhi mārisā’ti. | S: to tell me their behavior, good fellow.’ | T: Being discreet, tell me, dear sir.’—
+
+## Verse sn12.31:13.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn12.31:13.1 | P: ‘Ye ca saṅkhātadhammāse, | S: (none) | T: (none)
+sn12.31:13.2 | P: ye ca sekkhā puthū idha; | S: (none) | T: (none)
+sn12.31:13.3 | P: Tesaṁ me nipako iriyaṁ, | S: (none) | T: (none)
+sn12.31:13.4 | P: puṭṭho pabrūhi mārisā’ti. | S: (none) | T: (none)
+
+## Verse sn12.40:4.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn12.40:4.1 | P: Bhūtamidaṁ kaḷārañca, | S: (none) | T: (none)
+sn12.40:4.2 | P: duve ca ñāṇavatthūni; | S: (none) | T: (none)
+sn12.40:4.3 | P: Avijjāpaccayā ca dve, | S: (none) | T: (none)
+sn12.40:4.4 | P: natumhā cetanā tayoti. | S: (none) | T: (none)
+
+## Verse sn12.50:6.1 | 6 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn12.50:6.1 | P: Dve pañcaverabhayā vuttā, | S: (none) | T: (none)
+sn12.50:6.2 | P: dukkhaṁ loko ca ñātikaṁ; | S: (none) | T: (none)
+sn12.50:6.3 | P: Aññataraṁ jāṇussoṇi ca, | S: (none) | T: (none)
+sn12.50:6.4 | P: lokāyatikena aṭṭhamaṁ; | S: (none) | T: (none)
+sn12.50:6.5 | P: Dve ariyasāvakā vuttā, | S: (none) | T: (none)
+sn12.50:6.6 | P: vaggo tena pavuccatīti. | S: (none) | T: (none)
+
+## Verse sn12.60:7.1 | 6 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn12.60:7.1 | P: Parivīmaṁsanupādānaṁ, | S: (none) | T: (none)
+sn12.60:7.2 | P: dve ca saṁyojanāni ca; | S: (none) | T: (none)
+sn12.60:7.3 | P: Mahārukkhena dve vuttā, | S: (none) | T: (none)
+sn12.60:7.4 | P: taruṇena ca sattamaṁ; | S: (none) | T: (none)
+sn12.60:7.5 | P: Nāmarūpañca viññāṇaṁ, | S: (none) | T: (none)
+sn12.60:7.6 | P: nidānena ca te dasāti. | S: (none) | T: (none)
+
+## Verse sn12.70:30.1 | 6 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn12.70:30.1 | P: Dve assutavatā vuttā, | S: (none) | T: (none)
+sn12.70:30.2 | P: puttamaṁsena cāparaṁ; | S: (none) | T: (none)
+sn12.70:30.3 | P: Atthirāgo ca nagaraṁ, | S: (none) | T: (none)
+sn12.70:30.4 | P: sammasaṁ naḷakalāpiyaṁ; | S: (none) | T: (none)
+sn12.70:30.5 | P: Kosambī upayanti ca, | S: (none) | T: (none)
+sn12.70:30.6 | P: dasamo susimena cāti. | S: (none) | T: (none)
+
+## Verse sn12.72-81:11.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn12.72-81:11.1 | P: Paccayekādasa vuttā, | S: (none) | T: (none)
+sn12.72-81:11.2 | P: catusaccavibhajjanā; | S: (none) | T: (none)
+sn12.72-81:11.3 | P: Samaṇabrāhmaṇavaggo, | S: (none) | T: (none)
+sn12.72-81:11.4 | P: nidāne bhavati aṭṭhamo. | S: (none) | T: (none)
+
+## Verse sn12.72-81:12.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn12.72-81:12.1 | P: Buddho āhāro dasabalo, | S: (none) | T: (none)
+sn12.72-81:12.2 | P: Kaḷāro gahapatipañcamo; | S: (none) | T: (none)
+sn12.72-81:12.3 | P: Dukkhavaggo mahāvaggo, | S: (none) | T: (none)
+sn12.72-81:12.4 | P: Aṭṭhamo samaṇabrāhmaṇoti. | S: (none) | T: (none)
+
+## Verse sn16.13:6.1 | 6 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn16.13:6.1 | P: Santuṭṭhañca anottappī, | S: (none) | T: (none)
+sn16.13:6.2 | P: candūpamaṁ kulūpakaṁ; | S: (none) | T: (none)
+sn16.13:6.3 | P: Jiṇṇaṁ tayo ca ovādā, | S: (none) | T: (none)
+sn16.13:6.4 | P: jhānābhiññā upassayaṁ; | S: (none) | T: (none)
+sn16.13:6.5 | P: Cīvaraṁ paraṁmaraṇaṁ, | S: (none) | T: (none)
+sn16.13:6.6 | P: saddhammappatirūpakanti. | S: (none) | T: (none)
+
+## Verse sn21.10:5.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “The wise one, all-conqueror, all-knower, ↵ Among all things unsullied, with all cast off, ↵ Liberated in the destruction of craving: ↵ I call that person ‘one who dwells alone.’”
+sn21.10:5.1 | P: “Sabbābhibhuṁ sabbaviduṁ sumedhaṁ, | S: “The vanquisher of all, knower of all, so very intelligent, | T: “The wise one, all-conqueror, all-knower,
+sn21.10:5.2 | P: Sabbesu dhammesu anūpalittaṁ; | S: is unsullied in the midst of all things. | T: Among all things unsullied,
+sn21.10:5.3 | P: Sabbañjahaṁ taṇhākkhaye vimuttaṁ, | S: He’s given up all, freed in the ending of craving: | T: with all cast off, ↵ Liberated in the destruction of craving:
+sn21.10:5.4 | P: Tamahaṁ naraṁ ekavihārīti brūmī”ti. | S: I declare that man to be one who lives alone.” | T: I call that person ‘one who dwells alone.’”
+
+## Verse sn21.11:3.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “The khattiya is the best among people ↵ For those whose standard is the clan, ↵ But one accomplished in knowledge and conduct ↵ Is best among devas and humans.
+sn21.11:3.1 | P: “Khattiyo seṭṭho janetasmiṁ, | S: “The aristocrat is best among people | T: “The khattiya is the best among people
+sn21.11:3.2 | P: ye gottapaṭisārino; | S: who take clan as the standard. | T: For those whose standard is the clan,
+sn21.11:3.3 | P: Vijjācaraṇasampanno, | S: But one accomplished in knowledge and conduct | T: But one accomplished in knowledge and conduct
+sn21.11:3.4 | P: so seṭṭho devamānuse. | S: is best among gods and humans. | T: Is best among devas and humans.
+
+## Verse sn21.11:4.1 | 6 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “The sun shines by day, ↵ The moon glows at night, ↵ The khattiya shines clad in armour, ↵ The meditative brahmin shines. ↵ But all the time, day and night, ↵ The Buddha shines with glory.”
+sn21.11:4.1 | P: Divā tapati ādicco, | S: The sun blazes by day, | T: “The sun shines by day,
+sn21.11:4.2 | P: rattimābhāti candimā; | S: the moon radiates at night, | T: The moon glows at night,
+sn21.11:4.3 | P: Sannaddho khattiyo tapati, | S: the aristocrat shines in armor, | T: The khattiya shines clad in armour,
+sn21.11:4.4 | P: jhāyī tapati brāhmaṇo; | S: and the brahmin shines in absorption. | T: The meditative brahmin shines.
+sn21.11:4.5 | P: Atha sabbamahorattiṁ, | S: But all day and all night, | T: But all the time, day and night,
+sn21.11:4.6 | P: buddho tapati tejasā”ti. | S: the Buddha blazes with glory.” | T: The Buddha shines with glory.”
+
+## Verse sn21.12:3.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “These two companion bhikkhus ↵ Have been united for a very long time. ↵ The true Dhamma has united them ↵ In the Dhamma proclaimed by the Buddha.
+sn21.12:3.1 | P: “Sahāyāvatime bhikkhū, | S: “These companion mendicants | T: “These two companion bhikkhus
+sn21.12:3.2 | P: cirarattaṁ sametikā; | S: have been together for a long time. | T: Have been united for a very long time.
+sn21.12:3.3 | P: Sameti nesaṁ saddhammo, | S: The true teaching has brought them together, | T: The true Dhamma has united them
+sn21.12:3.4 | P: dhamme buddhappavedite. | S: the teaching proclaimed by the Buddha. | T: In the Dhamma proclaimed by the Buddha.
+
+## Verse sn21.12:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “They have been disciplined well by Kappina ↵ In the Dhamma proclaimed by the Noble One. ↵ They carry about their final bodies, ↵ Having conquered Mara and his mount.”
+sn21.12:4.1 | P: Suvinītā kappinena, | S: They’ve been well trained by Kappina | T: “They have been disciplined well by Kappina
+sn21.12:4.2 | P: dhamme ariyappavedite; | S: in the teaching proclaimed by the Noble One. | T: In the Dhamma proclaimed by the Noble One.
+sn21.12:4.3 | P: Dhārenti antimaṁ dehaṁ, | S: They bear their final body, | T: They carry about their final bodies,
+sn21.12:4.4 | P: jetvā māraṁ savāhinin”ti. | S: having vanquished Māra with his legions.” | T: Having conquered Mara and his mount.”
+
+## Verse sn21.12:5.1 | 6 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn21.12:5.1 | P: Kolito upatisso ca, | S: (none) | T: (none)
+sn21.12:5.2 | P: ghaṭo cāpi pavuccati; | S: (none) | T: (none)
+sn21.12:5.3 | P: Navo sujāto bhaddi ca, | S: (none) | T: (none)
+sn21.12:5.4 | P: visākho nando tisso ca; | S: (none) | T: (none)
+sn21.12:5.5 | P: Theranāmo ca kappino, | S: (none) | T: (none)
+sn21.12:5.6 | P: sahāyena ca dvādasāti. | S: (none) | T: (none)
+
+## Verse sn21.12:6.1 | 5 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn21.12:6.1 | P: Nidānābhisamayadhātu, | S: (none) | T: (none)
+sn21.12:6.2 | P: anamataggena kassapaṁ; | S: (none) | T: (none)
+sn21.12:6.3 | P: Sakkārarāhulalakkhaṇo, | S: (none) | T: (none)
+sn21.12:6.4 | P: opammabhikkhunā vaggo. | S: (none) | T: (none)
+sn21.12:6.5 | P: Dutiyo tena pavuccatīti. | S: (none) | T: (none)

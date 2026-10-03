@@ -1,0 +1,14 @@
+AN4.60 source-line clarification; the Pali decides paragraph ownership.
+Source line breaks: When the wise practice the way ↵ proper for the layperson, they serve ↵ the virtuous monks of upright conduct ↵ with robes, almsfood, lodgings, and medicines: ↵ for them both by day and night ↵ merit always increases; ↵ having done excellent deeds, ↵ they pass on to a heavenly state.
+an4.60:3.1 | P: Gihisāmīcipaṭipadaṁ, | S: Those who are astute practice the way | T: When the wise practice the way
+an4.60:3.2 | P: paṭipajjanti paṇḍitā; | S: that’s appropriate for laypeople. | T: proper for the layperson,
+an4.60:3.3 | P: Sammaggate sīlavante, | S: They provide those who are ethical | T: they serve ↵ the virtuous monks of upright conduct
+an4.60:3.4 | P: cīvarena upaṭṭhitā. | S: and rightly comported with robes, | T: with robes,
+an4.60:4.1 | P: Piṇḍapātasayanena, | S: almsfood, lodgings, | T: almsfood, lodgings,
+an4.60:4.2 | P: Gilānappaccayena ca; | S: and supplies for the sick. | T: and medicines:
+an4.60:4.3 | P: Tesaṁ divā ca ratto ca, | S: Their merit always grows | T: for them both by day and night ↵ merit always increases;
+an4.60:4.4 | P: Sadā puññaṁ pavaḍḍhati; | S: by day and by night. | T: (none)
+an4.60:4.5 | P: Saggañca kamatiṭṭhānaṁ, | S: They pass on to a place in heaven, | T: having done excellent deeds, ↵ they pass on to a heavenly state.
+an4.60:4.6 | P: Kammaṁ katvāna bhaddakan”ti. | S: having done excellent deeds.” | T: (none)
+an4.60:4.7 | P: Dasamaṁ. | S:  | T: (none)
+an4.60:4.8 | P: Puññābhisandavaggo paṭhamo. | S:  | T: (none)

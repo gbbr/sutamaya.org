@@ -1,0 +1,1421 @@
+{
+  "changedTexts": [
+    {
+      "file": "data/bodhi/sutta/mn/mn82_translation-en-bodhi.json",
+      "keys": [
+        "mn82:42.19",
+        "mn82:42.20",
+        "mn82:42.23",
+        "mn82:42.24",
+        "mn82:42.37",
+        "mn82:42.38"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/mn/mn26_translation-en-bodhi.json",
+      "keys": [
+        "mn26:19.8",
+        "mn26:19.9",
+        "mn26:19.10",
+        "mn26:19.11",
+        "mn26:19.12",
+        "mn26:19.13",
+        "mn26:19.14",
+        "mn26:19.15",
+        "mn26:20.12",
+        "mn26:20.13",
+        "mn26:25.7",
+        "mn26:25.8",
+        "mn26:25.9",
+        "mn26:25.10",
+        "mn26:25.11",
+        "mn26:25.12",
+        "mn26:25.13"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an8/an8.5_translation-en-bodhi.json",
+      "keys": [
+        "an8.5:2.3",
+        "an8.5:2.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an8/an8.37_translation-en-bodhi.json",
+      "keys": [
+        "an8.37:2.3",
+        "an8.37:2.4",
+        "an8.37:4.2",
+        "an8.37:4.3",
+        "an8.37:4.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an8/an8.38_translation-en-bodhi.json",
+      "keys": [
+        "an8.38:4.3",
+        "an8.38:4.4",
+        "an8.38:5.1",
+        "an8.38:5.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an8/an8.16_translation-en-bodhi.json",
+      "keys": [
+        "an8.16:3.3",
+        "an8.16:3.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an8/an8.30_translation-en-bodhi.json",
+      "keys": [
+        "an8.30:23.3",
+        "an8.30:23.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an8/an8.46_translation-en-bodhi.json",
+      "keys": [
+        "an8.46:19.1",
+        "an8.46:19.2",
+        "an8.46:19.3",
+        "an8.46:19.4",
+        "an8.46:20.3",
+        "an8.46:20.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an8/an8.1_translation-en-bodhi.json",
+      "keys": [
+        "an8.1:3.3",
+        "an8.1:3.4",
+        "an8.1:6.3",
+        "an8.1:6.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an8/an8.10_translation-en-bodhi.json",
+      "keys": [
+        "an8.10:8.3",
+        "an8.10:8.4",
+        "an8.10:10.3",
+        "an8.10:10.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an8/an8.49_translation-en-bodhi.json",
+      "keys": [
+        "an8.49:15.3",
+        "an8.49:15.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an8/an8.29_translation-en-bodhi.json",
+      "keys": [
+        "an8.29:13.5",
+        "an8.29:13.6",
+        "an8.29:18.1",
+        "an8.29:18.2",
+        "an8.29:18.3",
+        "an8.29:18.4",
+        "an8.29:19.1",
+        "an8.29:19.2",
+        "an8.29:19.3",
+        "an8.29:19.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an5/an5.45_translation-en-bodhi.json",
+      "keys": [
+        "an5.45:7.2",
+        "an5.45:7.3",
+        "an5.45:8.1",
+        "an5.45:8.2",
+        "an5.45:8.3"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an5/an5.32_translation-en-bodhi.json",
+      "keys": [
+        "an5.32:8.1",
+        "an5.32:8.2",
+        "an5.32:10.3",
+        "an5.32:10.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an5/an5.42_translation-en-bodhi.json",
+      "keys": [
+        "an5.42:3.3",
+        "an5.42:3.4",
+        "an5.42:4.2",
+        "an5.42:4.3",
+        "an5.42:4.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an5/an5.57_translation-en-bodhi.json",
+      "keys": [
+        "an5.57:12.1",
+        "an5.57:12.2",
+        "an5.57:12.3",
+        "an5.57:12.4",
+        "an5.57:14.4",
+        "an5.57:15.1",
+        "an5.57:16.3",
+        "an5.57:16.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an5/an5.38_translation-en-bodhi.json",
+      "keys": [
+        "an5.38:3.1",
+        "an5.38:3.2",
+        "an5.38:4.1",
+        "an5.38:4.2",
+        "an5.38:6.1",
+        "an5.38:6.2",
+        "an5.38:6.3"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an5/an5.47_translation-en-bodhi.json",
+      "keys": [
+        "an5.47:9.1",
+        "an5.47:9.2",
+        "an5.47:9.3",
+        "an5.47:9.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an5/an5.40_translation-en-bodhi.json",
+      "keys": [
+        "an5.40:2.1",
+        "an5.40:2.2",
+        "an5.40:2.3",
+        "an5.40:3.3",
+        "an5.40:3.4",
+        "an5.40:4.1",
+        "an5.40:4.2",
+        "an5.40:4.3",
+        "an5.40:5.3",
+        "an5.40:5.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an5/an5.37_translation-en-bodhi.json",
+      "keys": [
+        "an5.37:2.1",
+        "an5.37:2.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an5/an5.48_translation-en-bodhi.json",
+      "keys": [
+        "an5.48:8.3",
+        "an5.48:8.4",
+        "an5.48:9.1",
+        "an5.48:9.2",
+        "an5.48:9.3",
+        "an5.48:9.4",
+        "an5.48:10.3",
+        "an5.48:10.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an5/an5.55_translation-en-bodhi.json",
+      "keys": [
+        "an5.55:9.3",
+        "an5.55:9.4",
+        "an5.55:10.3",
+        "an5.55:10.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an5/an5.36_translation-en-bodhi.json",
+      "keys": [
+        "an5.36:4.1",
+        "an5.36:4.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an5/an5.31_translation-en-bodhi.json",
+      "keys": [
+        "an5.31:11.1",
+        "an5.31:11.2",
+        "an5.31:12.1",
+        "an5.31:12.2",
+        "an5.31:13.3",
+        "an5.31:13.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an5/an5.34_translation-en-bodhi.json",
+      "keys": [
+        "an5.34:8.3",
+        "an5.34:8.4",
+        "an5.34:9.3",
+        "an5.34:9.4",
+        "an5.34:10.1",
+        "an5.34:10.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an5/an5.43_translation-en-bodhi.json",
+      "keys": [
+        "an5.43:9.1",
+        "an5.43:9.2",
+        "an5.43:9.3",
+        "an5.43:9.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an5/an5.44_translation-en-bodhi.json",
+      "keys": [
+        "an5.44:8.2",
+        "an5.44:8.3",
+        "an5.44:8.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an5/an5.33_translation-en-bodhi.json",
+      "keys": [
+        "an5.33:9.1",
+        "an5.33:9.2",
+        "an5.33:9.3",
+        "an5.33:9.4",
+        "an5.33:10.1",
+        "an5.33:10.2",
+        "an5.33:10.3",
+        "an5.33:10.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.15_translation-en-bodhi.json",
+      "keys": [
+        "an4.15:3.1",
+        "an4.15:3.2",
+        "an4.15:3.3"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.62_translation-en-bodhi.json",
+      "keys": [
+        "an4.62:7.3",
+        "an4.62:7.4",
+        "an4.62:8.1",
+        "an4.62:8.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.33_translation-en-bodhi.json",
+      "keys": [
+        "an4.33:3.1",
+        "an4.33:3.2",
+        "an4.33:3.3",
+        "an4.33:3.4",
+        "an4.33:6.1",
+        "an4.33:6.2",
+        "an4.33:6.3"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.51_translation-en-bodhi.json",
+      "keys": [
+        "an4.51:7.2",
+        "an4.51:7.3",
+        "an4.51:8.1",
+        "an4.51:8.2",
+        "an4.51:8.3"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.26_translation-en-bodhi.json",
+      "keys": [
+        "an4.26:2.1",
+        "an4.26:2.2",
+        "an4.26:3.1",
+        "an4.26:3.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.3_translation-en-bodhi.json",
+      "keys": [
+        "an4.3:5.1",
+        "an4.3:5.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.21_translation-en-bodhi.json",
+      "keys": [
+        "an4.21:10.1",
+        "an4.21:10.2",
+        "an4.21:10.3"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.34_translation-en-bodhi.json",
+      "keys": [
+        "an4.34:5.1",
+        "an4.34:5.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.12_translation-en-bodhi.json",
+      "keys": [
+        "an4.12:8.1",
+        "an4.12:8.2",
+        "an4.12:8.3",
+        "an4.12:8.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.39_translation-en-bodhi.json",
+      "keys": [
+        "an4.39:3.3",
+        "an4.39:3.4",
+        "an4.39:5.1",
+        "an4.39:5.2",
+        "an4.39:5.3",
+        "an4.39:5.4",
+        "an4.39:5.5",
+        "an4.39:5.6"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.60_translation-en-bodhi.json",
+      "keys": [
+        "an4.60:3.2",
+        "an4.60:3.3",
+        "an4.60:3.4",
+        "an4.60:4.1",
+        "an4.60:4.2",
+        "an4.60:4.3",
+        "an4.60:4.4",
+        "an4.60:4.5",
+        "an4.60:4.6"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.17_translation-en-bodhi.json",
+      "keys": [
+        "an4.17:2.1",
+        "an4.17:2.2",
+        "an4.17:2.3",
+        "an4.17:2.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.24_translation-en-bodhi.json",
+      "keys": [
+        "an4.24:8.2",
+        "an4.24:8.3",
+        "an4.24:8.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.53_translation-en-bodhi.json",
+      "keys": [
+        "an4.53:10.1",
+        "an4.53:10.2",
+        "an4.53:10.3"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.1_translation-en-bodhi.json",
+      "keys": [
+        "an4.1:5.1",
+        "an4.1:5.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.23_translation-en-bodhi.json",
+      "keys": [
+        "an4.23:7.1",
+        "an4.23:7.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.18_translation-en-bodhi.json",
+      "keys": [
+        "an4.18:2.1",
+        "an4.18:2.2",
+        "an4.18:2.3",
+        "an4.18:2.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.36_translation-en-bodhi.json",
+      "keys": [
+        "an4.36:5.1",
+        "an4.36:5.2",
+        "an4.36:5.3",
+        "an4.36:5.4",
+        "an4.36:5.5",
+        "an4.36:5.6"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.10_translation-en-bodhi.json",
+      "keys": [
+        "an4.10:10.3",
+        "an4.10:10.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.11_translation-en-bodhi.json",
+      "keys": [
+        "an4.11:11.1",
+        "an4.11:11.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.19_translation-en-bodhi.json",
+      "keys": [
+        "an4.19:3.1",
+        "an4.19:3.2",
+        "an4.19:3.3",
+        "an4.19:3.4",
+        "an4.19:4.1",
+        "an4.19:4.2",
+        "an4.19:4.3",
+        "an4.19:4.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.40_translation-en-bodhi.json",
+      "keys": [
+        "an4.40:3.1",
+        "an4.40:3.2",
+        "an4.40:3.3",
+        "an4.40:3.4",
+        "an4.40:4.3",
+        "an4.40:4.4",
+        "an4.40:6.1",
+        "an4.40:6.2",
+        "an4.40:6.3",
+        "an4.40:6.4",
+        "an4.40:7.3",
+        "an4.40:7.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.55_translation-en-bodhi.json",
+      "keys": [
+        "an4.55:4.2",
+        "an4.55:4.3"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.22_translation-en-bodhi.json",
+      "keys": [
+        "an4.22:5.5",
+        "an4.22:5.6",
+        "an4.22:8.1",
+        "an4.22:8.2",
+        "an4.22:8.3",
+        "an4.22:8.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.25_translation-en-bodhi.json",
+      "keys": [
+        "an4.25:2.3",
+        "an4.25:2.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.52_translation-en-bodhi.json",
+      "keys": [
+        "an4.52:7.2",
+        "an4.52:7.3",
+        "an4.52:7.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.38_translation-en-bodhi.json",
+      "keys": [
+        "an4.38:7.2",
+        "an4.38:7.3"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.16_translation-en-bodhi.json",
+      "keys": [
+        "an4.16:2.5",
+        "an4.16:2.6"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.35_translation-en-bodhi.json",
+      "keys": [
+        "an4.35:6.1",
+        "an4.35:6.2",
+        "an4.35:6.5",
+        "an4.35:6.6"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.5_translation-en-bodhi.json",
+      "keys": [
+        "an4.5:8.3",
+        "an4.5:8.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.28_translation-en-bodhi.json",
+      "keys": [
+        "an4.28:7.3",
+        "an4.28:7.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.27_translation-en-bodhi.json",
+      "keys": [
+        "an4.27:2.4",
+        "an4.27:2.5"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.32_translation-en-bodhi.json",
+      "keys": [
+        "an4.32:2.2",
+        "an4.32:2.3",
+        "an4.32:2.4",
+        "an4.32:2.5",
+        "an4.32:3.3",
+        "an4.32:3.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an4/an4.14_translation-en-bodhi.json",
+      "keys": [
+        "an4.14:5.3",
+        "an4.14:5.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an3/an3.48_translation-en-bodhi.json",
+      "keys": [
+        "an3.48:3.1",
+        "an3.48:3.2",
+        "an3.48:3.3",
+        "an3.48:4.3",
+        "an3.48:4.4",
+        "an3.48:5.1",
+        "an3.48:5.2",
+        "an3.48:5.3"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an3/an3.40_translation-en-bodhi.json",
+      "keys": [
+        "an3.40:4.1",
+        "an3.40:4.2",
+        "an3.40:5.3",
+        "an3.40:5.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an3/an3.52_translation-en-bodhi.json",
+      "keys": [
+        "an3.52:5.3",
+        "an3.52:5.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an3/an3.30_translation-en-bodhi.json",
+      "keys": [
+        "an3.30:4.3",
+        "an3.30:4.4",
+        "an3.30:5.1",
+        "an3.30:5.2",
+        "an3.30:5.3",
+        "an3.30:6.3",
+        "an3.30:6.4",
+        "an3.30:7.2",
+        "an3.30:7.3",
+        "an3.30:7.4",
+        "an3.30:8.3",
+        "an3.30:8.4",
+        "an3.30:9.1",
+        "an3.30:9.2",
+        "an3.30:9.3",
+        "an3.30:9.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an3/an3.35_translation-en-bodhi.json",
+      "keys": [
+        "an3.35:8.1",
+        "an3.35:8.2",
+        "an3.35:8.3",
+        "an3.35:8.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an3/an3.57_translation-en-bodhi.json",
+      "keys": [
+        "an3.57:6.1",
+        "an3.57:6.2",
+        "an3.57:6.3",
+        "an3.57:6.4",
+        "an3.57:7.3",
+        "an3.57:7.4",
+        "an3.57:11.3",
+        "an3.57:11.4",
+        "an3.57:12.3",
+        "an3.57:12.4",
+        "an3.57:13.1",
+        "an3.57:13.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an3/an3.58_translation-en-bodhi.json",
+      "keys": [
+        "an3.58:9.3",
+        "an3.58:9.4",
+        "an3.58:10.3",
+        "an3.58:10.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an3/an3.29_translation-en-bodhi.json",
+      "keys": [
+        "an3.29:4.3",
+        "an3.29:4.4",
+        "an3.29:5.2",
+        "an3.29:5.3",
+        "an3.29:5.4",
+        "an3.29:6.3",
+        "an3.29:6.4",
+        "an3.29:7.3",
+        "an3.29:7.4",
+        "an3.29:9.1",
+        "an3.29:9.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an3/an3.34_translation-en-bodhi.json",
+      "keys": [
+        "an3.34:13.1",
+        "an3.34:13.2",
+        "an3.34:13.3",
+        "an3.34:13.4",
+        "an3.34:14.1",
+        "an3.34:14.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an3/an3.39_translation-en-bodhi.json",
+      "keys": [
+        "an3.39:8.2",
+        "an3.39:8.3",
+        "an3.39:8.4",
+        "an3.39:10.4",
+        "an3.39:11.1",
+        "an3.39:12.3",
+        "an3.39:12.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an3/an3.36_translation-en-bodhi.json",
+      "keys": [
+        "an3.36:17.3",
+        "an3.36:17.4",
+        "an3.36:20.1",
+        "an3.36:20.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/an/an10/an10.12_translation-en-bodhi.json",
+      "keys": [
+        "an10.12:4.3",
+        "an10.12:4.4",
+        "an10.12:5.1",
+        "an10.12:5.2",
+        "an10.12:5.3",
+        "an10.12:5.4",
+        "an10.12:6.3",
+        "an10.12:6.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn36/sn36.6_translation-en-bodhi.json",
+      "keys": [
+        "sn36.6:6.1",
+        "sn36.6:6.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn36/sn36.1_translation-en-bodhi.json",
+      "keys": [
+        "sn36.1:2.1",
+        "sn36.1:2.2",
+        "sn36.1:3.3",
+        "sn36.1:3.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn36/sn36.4_translation-en-bodhi.json",
+      "keys": [
+        "sn36.4:3.1",
+        "sn36.4:3.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn36/sn36.3_translation-en-bodhi.json",
+      "keys": [
+        "sn36.3:4.1",
+        "sn36.3:4.2",
+        "sn36.3:6.3",
+        "sn36.3:6.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn36/sn36.2_translation-en-bodhi.json",
+      "keys": [
+        "sn36.2:2.3",
+        "sn36.2:2.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn36/sn36.12_translation-en-bodhi.json",
+      "keys": [
+        "sn36.12:6.3",
+        "sn36.12:6.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn36/sn36.5_translation-en-bodhi.json",
+      "keys": [
+        "sn36.5:2.3",
+        "sn36.5:2.4",
+        "sn36.5:3.5",
+        "sn36.5:3.6"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.20_translation-en-bodhi.json",
+      "keys": [
+        "sn1.20:25.3",
+        "sn1.20:25.4",
+        "sn1.20:25.5",
+        "sn1.20:25.6"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.42_translation-en-bodhi.json",
+      "keys": [
+        "sn1.42:3.1",
+        "sn1.42:3.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.35_translation-en-bodhi.json",
+      "keys": [
+        "sn1.35:2.2",
+        "sn1.35:2.3",
+        "sn1.35:2.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.63_translation-en-bodhi.json",
+      "keys": [
+        "sn1.63:1.3",
+        "sn1.63:1.4",
+        "sn1.63:2.3",
+        "sn1.63:2.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.32_translation-en-bodhi.json",
+      "keys": [
+        "sn1.32:4.3",
+        "sn1.32:4.4",
+        "sn1.32:4.5",
+        "sn1.32:4.6",
+        "sn1.32:10.1",
+        "sn1.32:10.2",
+        "sn1.32:10.3",
+        "sn1.32:14.1",
+        "sn1.32:14.2",
+        "sn1.32:14.3",
+        "sn1.32:14.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.27_translation-en-bodhi.json",
+      "keys": [
+        "sn1.27:2.1",
+        "sn1.27:2.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.40_translation-en-bodhi.json",
+      "keys": [
+        "sn1.40:2.1",
+        "sn1.40:2.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.61_translation-en-bodhi.json",
+      "keys": [
+        "sn1.61:1.3",
+        "sn1.61:1.4",
+        "sn1.61:2.3",
+        "sn1.61:2.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.47_translation-en-bodhi.json",
+      "keys": [
+        "sn1.47:1.3",
+        "sn1.47:1.4",
+        "sn1.47:3.3",
+        "sn1.47:3.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.30_translation-en-bodhi.json",
+      "keys": [
+        "sn1.30:1.1",
+        "sn1.30:1.2",
+        "sn1.30:1.3",
+        "sn1.30:1.4",
+        "sn1.30:1.5"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.25_translation-en-bodhi.json",
+      "keys": [
+        "sn1.25:1.1",
+        "sn1.25:1.2",
+        "sn1.25:2.1",
+        "sn1.25:2.2",
+        "sn1.25:3.1",
+        "sn1.25:3.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.46_translation-en-bodhi.json",
+      "keys": [
+        "sn1.46:4.1",
+        "sn1.46:4.2",
+        "sn1.46:4.3"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.39_translation-en-bodhi.json",
+      "keys": [
+        "sn1.39:2.1",
+        "sn1.39:2.2",
+        "sn1.39:3.1",
+        "sn1.39:3.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.17_translation-en-bodhi.json",
+      "keys": [
+        "sn1.17:3.3",
+        "sn1.17:3.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.18_translation-en-bodhi.json",
+      "keys": [
+        "sn1.18:1.1",
+        "sn1.18:1.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.41_translation-en-bodhi.json",
+      "keys": [
+        "sn1.41:5.1",
+        "sn1.41:5.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.23_translation-en-bodhi.json",
+      "keys": [
+        "sn1.23:3.1",
+        "sn1.23:3.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.44_translation-en-bodhi.json",
+      "keys": [
+        "sn1.44:1.1",
+        "sn1.44:1.2",
+        "sn1.44:1.3",
+        "sn1.44:1.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.62_translation-en-bodhi.json",
+      "keys": [
+        "sn1.62:1.3",
+        "sn1.62:1.4",
+        "sn1.62:2.3",
+        "sn1.62:2.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.43_translation-en-bodhi.json",
+      "keys": [
+        "sn1.43:1.1",
+        "sn1.43:1.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.34_translation-en-bodhi.json",
+      "keys": [
+        "sn1.34:6.3",
+        "sn1.34:6.4",
+        "sn1.34:6.5",
+        "sn1.34:6.6",
+        "sn1.34:7.4",
+        "sn1.34:7.5"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.70_translation-en-bodhi.json",
+      "keys": [
+        "sn1.70:1.3",
+        "sn1.70:1.4",
+        "sn1.70:2.3",
+        "sn1.70:2.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn1/sn1.29_translation-en-bodhi.json",
+      "keys": [
+        "sn1.29:1.3",
+        "sn1.29:1.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn47/sn47.18_translation-en-bodhi.json",
+      "keys": [
+        "sn47.18:6.1",
+        "sn47.18:6.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn47/sn47.43_translation-en-bodhi.json",
+      "keys": [
+        "sn47.43:6.1",
+        "sn47.43:6.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn22/sn22.78_translation-en-bodhi.json",
+      "keys": [
+        "sn22.78:3.2",
+        "sn22.78:3.3",
+        "sn22.78:3.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn22/sn22.82_translation-en-bodhi.json",
+      "keys": [
+        "sn22.82:15.1",
+        "sn22.82:15.2",
+        "sn22.82:15.3",
+        "sn22.82:15.4",
+        "sn22.82:15.5",
+        "sn22.82:15.6"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn22/sn22.95_translation-en-bodhi.json",
+      "keys": [
+        "sn22.95:14.3",
+        "sn22.95:14.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn35/sn35.95_translation-en-bodhi.json",
+      "keys": [
+        "sn35.95:24.1",
+        "sn35.95:24.2",
+        "sn35.95:25.1",
+        "sn35.95:25.2",
+        "sn35.95:25.3",
+        "sn35.95:25.4",
+        "sn35.95:26.1",
+        "sn35.95:26.2",
+        "sn35.95:27.6",
+        "sn35.95:28.1",
+        "sn35.95:28.2",
+        "sn35.95:29.6",
+        "sn35.95:30.1",
+        "sn35.95:30.2",
+        "sn35.95:31.6",
+        "sn35.95:32.1",
+        "sn35.95:32.2",
+        "sn35.95:33.6",
+        "sn35.95:34.1",
+        "sn35.95:34.2",
+        "sn35.95:35.1"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn35/sn35.136_translation-en-bodhi.json",
+      "keys": [
+        "sn35.136:3.1",
+        "sn35.136:3.2",
+        "sn35.136:7.3",
+        "sn35.136:7.4",
+        "sn35.136:8.1",
+        "sn35.136:8.2",
+        "sn35.136:8.3",
+        "sn35.136:8.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn35/sn35.228_translation-en-bodhi.json",
+      "keys": [
+        "sn35.228:3.3",
+        "sn35.228:3.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn35/sn35.229_translation-en-bodhi.json",
+      "keys": [
+        "sn35.229:3.1",
+        "sn35.229:3.2",
+        "sn35.229:4.3",
+        "sn35.229:4.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn35/sn35.132_translation-en-bodhi.json",
+      "keys": [
+        "sn35.132:3.1",
+        "sn35.132:3.2",
+        "sn35.132:6.3",
+        "sn35.132:6.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn5/sn5.4_translation-en-bodhi.json",
+      "keys": [
+        "sn5.4:5.1",
+        "sn5.4:5.2",
+        "sn5.4:5.3"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn5/sn5.3_translation-en-bodhi.json",
+      "keys": [
+        "sn5.3:2.1",
+        "sn5.3:2.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn5/sn5.9_translation-en-bodhi.json",
+      "keys": [
+        "sn5.9:5.1",
+        "sn5.9:5.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn5/sn5.2_translation-en-bodhi.json",
+      "keys": [
+        "sn5.2:2.3",
+        "sn5.2:2.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn4/sn4.11_translation-en-bodhi.json",
+      "keys": [
+        "sn4.11:3.3",
+        "sn4.11:3.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn4/sn4.6_translation-en-bodhi.json",
+      "keys": [
+        "sn4.6:4.1",
+        "sn4.6:4.2",
+        "sn4.6:5.3",
+        "sn4.6:5.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn4/sn4.25_translation-en-bodhi.json",
+      "keys": [
+        "sn4.25:14.1",
+        "sn4.25:14.2",
+        "sn4.25:14.3",
+        "sn4.25:16.1",
+        "sn4.25:16.2",
+        "sn4.25:18.1",
+        "sn4.25:18.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn4/sn4.1_translation-en-bodhi.json",
+      "keys": [
+        "sn4.1:6.1",
+        "sn4.1:6.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn4/sn4.16_translation-en-bodhi.json",
+      "keys": [
+        "sn4.16:5.1",
+        "sn4.16:5.2",
+        "sn4.16:5.3",
+        "sn4.16:5.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn4/sn4.20_translation-en-bodhi.json",
+      "keys": [
+        "sn4.20:4.1",
+        "sn4.20:4.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn4/sn4.14_translation-en-bodhi.json",
+      "keys": [
+        "sn4.14:4.1",
+        "sn4.14:4.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn4/sn4.21_translation-en-bodhi.json",
+      "keys": [
+        "sn4.21:4.1",
+        "sn4.21:4.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn4/sn4.17_translation-en-bodhi.json",
+      "keys": [
+        "sn4.17:4.1",
+        "sn4.17:4.2",
+        "sn4.17:4.3",
+        "sn4.17:4.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn4/sn4.23_translation-en-bodhi.json",
+      "keys": [
+        "sn4.23:3.3",
+        "sn4.23:3.4",
+        "sn4.23:5.1",
+        "sn4.23:5.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn11/sn11.19_translation-en-bodhi.json",
+      "keys": [
+        "sn11.19:3.1",
+        "sn11.19:3.2",
+        "sn11.19:3.3",
+        "sn11.19:4.1",
+        "sn11.19:4.2",
+        "sn11.19:6.1",
+        "sn11.19:6.2",
+        "sn11.19:7.1",
+        "sn11.19:7.2",
+        "sn11.19:7.3",
+        "sn11.19:7.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn11/sn11.25_translation-en-bodhi.json",
+      "keys": [
+        "sn11.25:2.3",
+        "sn11.25:2.4",
+        "sn11.25:2.5",
+        "sn11.25:2.6"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn11/sn11.4_translation-en-bodhi.json",
+      "keys": [
+        "sn11.4:2.1",
+        "sn11.4:2.2",
+        "sn11.4:2.3",
+        "sn11.4:2.4",
+        "sn11.4:4.3",
+        "sn11.4:4.4",
+        "sn11.4:6.1",
+        "sn11.4:6.2",
+        "sn11.4:9.1",
+        "sn11.4:9.2",
+        "sn11.4:11.1",
+        "sn11.4:11.2",
+        "sn11.4:11.3",
+        "sn11.4:12.1",
+        "sn11.4:12.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn11/sn11.1_translation-en-bodhi.json",
+      "keys": [
+        "sn11.1:5.2",
+        "sn11.1:5.3",
+        "sn11.1:6.1",
+        "sn11.1:6.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn11/sn11.20_translation-en-bodhi.json",
+      "keys": [
+        "sn11.20:8.1",
+        "sn11.20:8.2",
+        "sn11.20:9.1",
+        "sn11.20:9.2",
+        "sn11.20:9.3",
+        "sn11.20:9.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn11/sn11.14_translation-en-bodhi.json",
+      "keys": [
+        "sn11.14:6.2",
+        "sn11.14:6.3",
+        "sn11.14:6.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn11/sn11.6_translation-en-bodhi.json",
+      "keys": [
+        "sn11.6:2.1",
+        "sn11.6:2.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn11/sn11.21_translation-en-bodhi.json",
+      "keys": [
+        "sn11.21:2.3",
+        "sn11.21:2.4",
+        "sn11.21:3.3",
+        "sn11.21:3.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn11/sn11.8_translation-en-bodhi.json",
+      "keys": [
+        "sn11.8:4.3",
+        "sn11.8:4.4",
+        "sn11.8:5.3",
+        "sn11.8:5.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn11/sn11.5_translation-en-bodhi.json",
+      "keys": [
+        "sn11.5:9.1",
+        "sn11.5:9.2",
+        "sn11.5:10.1"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn11/sn11.24_translation-en-bodhi.json",
+      "keys": [
+        "sn11.24:4.5",
+        "sn11.24:4.6"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn11/sn11.17_translation-en-bodhi.json",
+      "keys": [
+        "sn11.17:2.1",
+        "sn11.17:2.2",
+        "sn11.17:4.1",
+        "sn11.17:4.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn11/sn11.18_translation-en-bodhi.json",
+      "keys": [
+        "sn11.18:2.1",
+        "sn11.18:2.2",
+        "sn11.18:2.3",
+        "sn11.18:2.4",
+        "sn11.18:3.1",
+        "sn11.18:3.2",
+        "sn11.18:3.3",
+        "sn11.18:3.4",
+        "sn11.18:5.1",
+        "sn11.18:5.2",
+        "sn11.18:5.3",
+        "sn11.18:7.1",
+        "sn11.18:7.2",
+        "sn11.18:7.3"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn11/sn11.23_translation-en-bodhi.json",
+      "keys": [
+        "sn11.23:2.3",
+        "sn11.23:2.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn45/sn45.4_translation-en-bodhi.json",
+      "keys": [
+        "sn45.4:10.1",
+        "sn45.4:10.2",
+        "sn45.4:11.1",
+        "sn45.4:11.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn45/sn45.34_translation-en-bodhi.json",
+      "keys": [
+        "sn45.34:6.2",
+        "sn45.34:6.3",
+        "sn45.34:6.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn21/sn21.10_translation-en-bodhi.json",
+      "keys": [
+        "sn21.10:5.2",
+        "sn21.10:5.3"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn21/sn21.3_translation-en-bodhi.json",
+      "keys": [
+        "sn21.3:6.1",
+        "sn21.3:6.2"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn21/sn21.6_translation-en-bodhi.json",
+      "keys": [
+        "sn21.6:2.3",
+        "sn21.6:2.4"
+      ]
+    },
+    {
+      "file": "data/bodhi/sutta/sn/sn21/sn21.8_translation-en-bodhi.json",
+      "keys": [
+        "sn21.8:2.1",
+        "sn21.8:2.2"
+      ]
+    }
+  ],
+  "changedRows": 663,
+  "rowsByCollection": {
+    "mn": 23,
+    "an": 347,
+    "sn": 293
+  },
+  "allChangedKeysAreReviewedVerseKeys": true,
+  "paliKeysChanged": false,
+  "sourcesChanged": false,
+  "notesChanged": false,
+  "automatic116VersesMatchProposals": true,
+  "remainingGatheredHeuristic": {
+    "sn1.35:4.1": "Speaker label precedes one verse line; its four English verse lines already occupy four of the six Pali rows."
+  }
+}

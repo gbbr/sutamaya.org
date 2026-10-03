@@ -1,0 +1,68 @@
+{
+  "translator": "bodhi",
+  "effort": "high",
+  "versesRead": 1172,
+  "rowsRead": 4978,
+  "batchesRead": 17,
+  "batchesLeft": 0,
+  "collections": {
+    "AN": 414,
+    "SN": 709,
+    "MN": 41,
+    "Thag": 8,
+    "DN": 0
+  },
+  "automaticVerses": 116,
+  "manualFindingRows": 391,
+  "changedLines": 663,
+  "changedTexts": 148,
+  "passingGroups": 239,
+  "passingFindings": 409,
+  "otherFindingsAlreadySo": 4403,
+  "judge": {
+    "groups": 106,
+    "collections": {
+      "AN": 50,
+      "SN": 50,
+      "MN": 6
+    },
+    "better": 106,
+    "same": 0,
+    "worse": 0,
+    "blinded": true,
+    "note": "50 from each collection with at least 50 passing groups; all six from MN. Thag and DN had no passing changes."
+  },
+  "checks": {
+    "isolatedUpstreamDiffer": 0,
+    "isolatedIntegrityProblems": 0,
+    "repositoryUpstreamDiffer": 0,
+    "repositoryIntegrityProblems": 0,
+    "gitDiffCheck": "passed"
+  },
+  "usage": {
+    "readers": 3,
+    "independentJudge": 1,
+    "effort": "high",
+    "tokenUsage": "not available from collaboration tools"
+  },
+  "open": [
+    {
+      "keys": [
+        "sn1.34:7.1",
+        "sn1.34:7.3"
+      ],
+      "reason": "Complete source lines combine meanings on both sides of the Pali prose interruption; kept whole without inventing an English line break."
+    }
+  ],
+  "futureRules": [
+    "Equal English/Pali line counts with verified complete source lines decide gathered spreads (116 verses).",
+    "Source-line boundaries can detect cuts within one English line and guide unequal-count spreads; paragraph ownership still needs reading where a complete line spans Pali verses."
+  ],
+  "supersededEarlierFindings": 190,
+  "legacyRetirement": {
+    "file": "data/bodhi/review/empty/batch-002.findings",
+    "line": "an5.6:3.3 starts: then there is the entering upon the unwholesome. (4)",
+    "reason": "Outside the verse audit; the historical quote is not found in the already-settled empty row. Retired without changing the app text so only this audit can propose passing groups."
+  },
+  "notes": "All saved pages and Pali keys unchanged. Reviewed all verses; Thag and DN required no changes. No commits."
+}

@@ -1,0 +1,2485 @@
+{
+  "seed": 20261004,
+  "collections": {
+    "an": 28,
+    "sn": 28
+  },
+  "groups": [
+    {
+      "text": "sn5.3",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn5.3:2.2",
+          "starts": "Do you sit alone with tearful face?",
+          "settles": {
+            "after": "verse:\n“Why now, when your son is dead,",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn5.3:2.1",
+          "sujato": "“Why do you sit alone and cry",
+          "before": "“Why now, when your son is dead, Do you sit alone with tearful face?",
+          "after": "“Why now, when your son is dead,"
+        },
+        {
+          "key": "sn5.3:2.2",
+          "sujato": "as if your children have died?",
+          "before": "",
+          "after": "Do you sit alone with tearful face?"
+        },
+        {
+          "key": "sn5.3:2.3",
+          "sujato": "You’ve come to the woods all alone—",
+          "before": "Having entered the woods all alone,",
+          "after": "Having entered the woods all alone,"
+        }
+      ]
+    },
+    {
+      "text": "an5.55",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an5.55:10.4",
+          "starts": "while in the world, they have gone beyond.",
+          "settles": {
+            "after": "attained the destruction of the taints,",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an5.55:10.3",
+          "sujato": "They are those in the world who’ve crossed over,",
+          "before": "Having attained the destruction of the taints, while in the world, they have gone beyond.",
+          "after": "Having attained the destruction of the taints,"
+        },
+        {
+          "key": "an5.55:10.4",
+          "sujato": "having reached the ending of defilements.”",
+          "before": "",
+          "after": "while in the world, they have gone beyond."
+        },
+        {
+          "key": "an5.55:10.5",
+          "pali": "Pañcamaṁ.",
+          "before": "",
+          "after": ""
+        }
+      ]
+    },
+    {
+      "text": "an8.10",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an8.10:8.4",
+          "starts": "holds pernicious views, and lacks respect.",
+          "settles": {
+            "after": "voice,\nbut secretly he does evil deeds,",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an8.10:8.3",
+          "sujato": "But they act in secret, with their bad views",
+          "before": "but secretly he does evil deeds, holds pernicious views,",
+          "after": "but secretly he does evil deeds,"
+        },
+        {
+          "key": "an8.10:8.4",
+          "sujato": "and their lack of regard for others.",
+          "before": "and lacks respect.",
+          "after": "holds pernicious views, and lacks respect."
+        },
+        {
+          "key": "an8.10:9.1",
+          "sujato": "You should recognize them for what they are:",
+          "before": "Though he is devious, a speaker of lies,",
+          "after": "Though he is devious, a speaker of lies,"
+        }
+      ]
+    },
+    {
+      "text": "an3.57",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an3.57:11.4",
+          "starts": "when planted in that spotless field.",
+          "settles": {
+            "after": "ched nibbāna:\nan offering is truly vast",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an3.57:11.3",
+          "sujato": "In that flawless field,",
+          "before": "an offering is truly vast when planted in that spotless field.",
+          "after": "an offering is truly vast"
+        },
+        {
+          "key": "an3.57:11.4",
+          "sujato": "a religious donation is abundant.",
+          "before": "",
+          "after": "when planted in that spotless field."
+        },
+        {
+          "key": "an3.57:12.1",
+          "sujato": "Fools who don’t understand—",
+          "before": "Fools devoid of understanding,",
+          "after": "Fools devoid of understanding,"
+        }
+      ]
+    },
+    {
+      "text": "sn11.1",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn11.1:5.2",
+          "starts": "Might achieve unending bliss:",
+          "settles": {
+            "after": "a:\n“‘Where a lazy man who does not toil",
+            "placed": true
+          }
+        },
+        {
+          "key": "sn11.1:5.3",
+          "starts": "Go there, Suvīra,",
+          "settles": {
+            "after": " not toil\nMight achieve unending bliss:",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn11.1:5.1",
+          "sujato": "‘Suvīra, go to that place",
+          "before": "Sakka: “‘Where a lazy man who does not toil",
+          "after": "Sakka: “‘Where a lazy man who does not toil"
+        },
+        {
+          "key": "sn11.1:5.2",
+          "sujato": "where a lazy man who does no work",
+          "before": "",
+          "after": "Might achieve unending bliss:"
+        },
+        {
+          "key": "sn11.1:5.3",
+          "sujato": "prospers in unending happiness—",
+          "before": "Might achieve unending bliss: Go there, Suvīra,",
+          "after": "Go there, Suvīra,"
+        },
+        {
+          "key": "sn11.1:5.4",
+          "sujato": "and take me with you!’",
+          "before": "And take me along with you.’",
+          "after": "And take me along with you.’"
+        }
+      ]
+    },
+    {
+      "text": "an4.11",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an4.11:11.2",
+          "starts": "standing, sitting, or lying down,",
+          "settles": {
+            "after": "htenment.\nBut one who, whether walking,",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an4.11:11.1",
+          "sujato": "But one who, whether standing or walking,",
+          "before": "But one who, whether walking, standing,",
+          "after": "But one who, whether walking,"
+        },
+        {
+          "key": "an4.11:11.2",
+          "sujato": "sitting or lying down,",
+          "before": "sitting, or lying down,",
+          "after": "standing, sitting, or lying down,"
+        },
+        {
+          "key": "an4.11:11.3",
+          "sujato": "has calmed their thoughts,",
+          "before": "has calmed his thoughts",
+          "after": "has calmed his thoughts"
+        }
+      ]
+    },
+    {
+      "text": "sn4.16",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn4.16:5.1",
+          "starts": "“Though they seek him everywhere,",
+          "settles": {
+            "after": "’t mine,’\nThus one is detached from it.",
+            "placed": true
+          }
+        },
+        {
+          "key": "sn4.16:5.2",
+          "starts": "Mara and his army do not find him:",
+          "settles": {
+            "after": "m it.\n“Though they seek him everywhere,",
+            "placed": true,
+            "own": true
+          }
+        },
+        {
+          "key": "sn4.16:5.3",
+          "starts": "The one thus detached, secure,",
+          "settles": {
+            "after": "ere,\nMara and his army do not find him:",
+            "placed": true
+          }
+        },
+        {
+          "key": "sn4.16:5.4",
+          "starts": "Who has gone beyond all ’fetters.”",
+          "settles": {
+            "after": "ind him:\nThe one thus detached, secure,",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn4.16:4.4",
+          "sujato": "that’s how they become free of desire for them.",
+          "before": "Thus one is detached from it.",
+          "after": "Thus one is detached from it."
+        },
+        {
+          "key": "sn4.16:5.1",
+          "sujato": "When you’re detached, secure,",
+          "before": "",
+          "after": "“Though they seek him everywhere,"
+        },
+        {
+          "key": "sn4.16:5.2",
+          "sujato": "all fetters transcended,",
+          "before": "",
+          "after": "Mara and his army do not find him:"
+        },
+        {
+          "key": "sn4.16:5.3",
+          "sujato": "though Māra and his army chase everywhere",
+          "before": "“Though they seek him everywhere,",
+          "after": "The one thus detached, secure,"
+        },
+        {
+          "key": "sn4.16:5.4",
+          "sujato": "they never find you.”",
+          "before": "Mara and his army do not find him: The one thus detached, secure, Who has gone beyond all ’fetters.”",
+          "after": "Who has gone beyond all ’fetters.”"
+        },
+        {
+          "key": "sn4.16:6.1",
+          "sujato": "Then Māra … vanished right there.",
+          "before": "Then Mara the Evil One … disappeared right there.",
+          "after": "Then Mara the Evil One … disappeared right there."
+        }
+      ]
+    },
+    {
+      "text": "an4.26",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an4.26:2.2",
+          "starts": "imposters, haughty, unconcentrated,",
+          "settles": {
+            "after": "e who are deceivers, stubborn, talkers,",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an4.26:2.1",
+          "sujato": "Those who are deceivers and flatterers, <j>pompous and fake,",
+          "before": "Those who are deceivers, stubborn, talkers, imposters,",
+          "after": "Those who are deceivers, stubborn, talkers,"
+        },
+        {
+          "key": "an4.26:2.2",
+          "sujato": "insolent and scattered:",
+          "before": "haughty, unconcentrated,",
+          "after": "imposters, haughty, unconcentrated,"
+        },
+        {
+          "key": "an4.26:2.3",
+          "sujato": "these don’t grow in the teaching",
+          "before": "do not make progress in the Dhamma",
+          "after": "do not make progress in the Dhamma"
+        }
+      ]
+    },
+    {
+      "text": "an3.57",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an3.57:6.2",
+          "starts": "whether black, white, red, or golden,",
+          "settles": {
+            "after": "ry fruitful.”\nAmong cattle of any sort,",
+            "placed": true
+          }
+        },
+        {
+          "key": "an3.57:6.4",
+          "starts": null,
+          "settles": {
+            "empty": "up"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an3.57:6.1",
+          "sujato": "Cows may be black or white,",
+          "before": "Among cattle of any sort, whether black, white,",
+          "after": "Among cattle of any sort,"
+        },
+        {
+          "key": "an3.57:6.2",
+          "sujato": "red or tawny,",
+          "before": "red, or golden,",
+          "after": "whether black, white, red, or golden,"
+        },
+        {
+          "key": "an3.57:6.3",
+          "sujato": "mottled or uniform,",
+          "before": "mottled, uniform,",
+          "after": "mottled, uniform, or pigeon-colored,"
+        },
+        {
+          "key": "an3.57:6.4",
+          "sujato": "or pigeon-colored.",
+          "before": "or pigeon-colored,",
+          "after": ""
+        },
+        {
+          "key": "an3.57:7.1",
+          "sujato": "But when one is born among them,",
+          "before": "the tamed bull is born,",
+          "after": "the tamed bull is born,"
+        }
+      ]
+    },
+    {
+      "text": "an5.48",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an5.48:8.4",
+          "starts": "that his former facial expression does not",
+          "settles": {
+            "after": ",\nhis enemies are saddened, having seen",
+            "placed": true
+          }
+        },
+        {
+          "key": "an5.48:9.2",
+          "starts": "in whatever way—by chanting, mantras,",
+          "settles": {
+            "after": "e.\n“Wherever one might gain one’s good,",
+            "placed": true
+          }
+        },
+        {
+          "key": "an5.48:9.3",
+          "starts": "maxims, gifts, or tradition—there",
+          "settles": {
+            "after": ",\nin whatever way—by chanting, mantras,",
+            "placed": true
+          }
+        },
+        {
+          "key": "an5.48:9.4",
+          "starts": "one should exert oneself in just that",
+          "settles": {
+            "after": "tras,\nmaxims, gifts, or tradition—there",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an5.48:8.3",
+          "sujato": "their enemies suffer,",
+          "before": "his enemies are saddened,",
+          "after": "his enemies are saddened, having seen"
+        },
+        {
+          "key": "an5.48:8.4",
+          "sujato": "seeing that their normal expression doesn’t change.",
+          "before": "having seen that his former facial expression does not change.",
+          "after": "that his former facial expression does not change."
+        },
+        {
+          "key": "an5.48:9.1",
+          "sujato": "Prayers, recitations, fine sayings,",
+          "before": "“Wherever one might gain one’s good, in whatever way—by chanting, mantras, maxims,",
+          "after": "“Wherever one might gain one’s good,"
+        },
+        {
+          "key": "an5.48:9.2",
+          "sujato": "or charity of woven rugs:",
+          "before": "gifts, or tradition—",
+          "after": "in whatever way—by chanting, mantras,"
+        },
+        {
+          "key": "an5.48:9.3",
+          "sujato": "if by means of any such things you benefit,",
+          "before": "",
+          "after": "maxims, gifts, or tradition—there"
+        },
+        {
+          "key": "an5.48:9.4",
+          "sujato": "then by all means keep doing them.",
+          "before": "there one should exert oneself in just that way.",
+          "after": "one should exert oneself in just that way."
+        },
+        {
+          "key": "an5.48:10.1",
+          "sujato": "But if you understand that ‘this good thing",
+          "before": "“But if one should understand: ‘This good",
+          "after": "“But if one should understand: ‘This good"
+        }
+      ]
+    },
+    {
+      "text": "an4.15",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an4.15:3.2",
+          "starts": "above, across, and below,",
+          "settles": {
+            "after": ".\nIn this world together with its devas",
+            "placed": true
+          }
+        },
+        {
+          "key": "an4.15:3.3",
+          "starts": "as far as the world extends,",
+          "settles": {
+            "after": "ith its devas\nabove, across, and below,",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an4.15:3.1",
+          "sujato": "Above, below, all round,",
+          "before": "In this world together with its devas above, across, and below,",
+          "after": "In this world together with its devas"
+        },
+        {
+          "key": "an4.15:3.2",
+          "sujato": "as far as the planet extends;",
+          "before": "as far as the world extends,",
+          "after": "above, across, and below,"
+        },
+        {
+          "key": "an4.15:3.3",
+          "sujato": "in all the world with its gods,",
+          "before": "",
+          "after": "as far as the world extends,"
+        },
+        {
+          "key": "an4.15:3.4",
+          "sujato": "the Buddha is declared foremost.”",
+          "before": "the Buddha is declared foremost.",
+          "after": "the Buddha is declared foremost."
+        }
+      ]
+    },
+    {
+      "text": "an8.46",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an8.46:19.2",
+          "starts": "the man who constantly supports her,",
+          "settles": {
+            "after": "ies.”\nShe does not despise her husband,",
+            "placed": true
+          }
+        },
+        {
+          "key": "an8.46:19.3",
+          "starts": "who ardently and eagerly",
+          "settles": {
+            "after": "d,\nthe man who constantly supports her,",
+            "placed": true
+          }
+        },
+        {
+          "key": "an8.46:19.4",
+          "starts": "always brings her whatever she wants.",
+          "settles": {
+            "after": " supports her,\nwho ardently and eagerly",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an8.46:19.1",
+          "sujato": "She’d never look down on her husband,",
+          "before": "She does not despise her husband, the man who constantly supports her,",
+          "after": "She does not despise her husband,"
+        },
+        {
+          "key": "an8.46:19.2",
+          "sujato": "who’s always eager to work hard,",
+          "before": "who ardently and eagerly",
+          "after": "the man who constantly supports her,"
+        },
+        {
+          "key": "an8.46:19.3",
+          "sujato": "always looking after her,",
+          "before": "always brings her whatever she wants.",
+          "after": "who ardently and eagerly"
+        },
+        {
+          "key": "an8.46:19.4",
+          "sujato": "and bringing whatever she wants.",
+          "before": "",
+          "after": "always brings her whatever she wants."
+        },
+        {
+          "key": "an8.46:20.1",
+          "sujato": "And a good woman never scolds her husband",
+          "before": "Nor does a good woman scold her husband",
+          "after": "Nor does a good woman scold her husband"
+        }
+      ]
+    },
+    {
+      "text": "an8.37",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an8.37:2.4",
+          "starts": "to those who lead the spiritual life.",
+          "settles": {
+            "after": "gifts often to fertile fields of merit,",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an8.37:2.3",
+          "sujato": "regularly to spiritual practitioners",
+          "before": "he gives gifts often",
+          "after": "he gives gifts often to fertile fields of merit,"
+        },
+        {
+          "key": "an8.37:2.4",
+          "sujato": "who are fertile fields of merit.",
+          "before": "to fertile fields of merit, to those who lead the spiritual life.",
+          "after": "to those who lead the spiritual life."
+        },
+        {
+          "key": "an8.37:3.1",
+          "sujato": "They never regret",
+          "before": "He does not feel regret,",
+          "after": "He does not feel regret,"
+        }
+      ]
+    },
+    {
+      "text": "sn1.20",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn1.20:25.3",
+          "starts": "Though devas and humans search for him",
+          "settles": {
+            "after": "cut off craving here for name-and-form.",
+            "placed": true
+          }
+        },
+        {
+          "key": "sn1.20:25.4",
+          "starts": "Here and beyond, in the heavens and all",
+          "settles": {
+            "after": "\nThough devas and humans search for him",
+            "placed": true,
+            "own": true
+          }
+        },
+        {
+          "key": "sn1.20:25.5",
+          "starts": "They do not find the one whose knots",
+          "settles": {
+            "after": " beyond, in the heavens and all abodes,",
+            "placed": true,
+            "own": true
+          }
+        },
+        {
+          "key": "sn1.20:25.6",
+          "starts": "The one untroubled, free of longing.",
+          "settles": {
+            "after": "o not find the one whose knots are cut,",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn1.20:25.2",
+          "sujato": "craving for name and form was cut off right here.",
+          "before": "He cut off craving here for name-and-form.",
+          "after": "He cut off craving here for name-and-form."
+        },
+        {
+          "key": "sn1.20:25.3",
+          "sujato": "They cut the ties, untroubled, <j>with no need for hope.",
+          "before": "",
+          "after": "Though devas and humans search for him"
+        },
+        {
+          "key": "sn1.20:25.4",
+          "sujato": "Though gods and humans search for them",
+          "before": "Though devas and humans search for him",
+          "after": "Here and beyond, in the heavens and all abodes,"
+        },
+        {
+          "key": "sn1.20:25.5",
+          "sujato": "in this life or the next, they never find them,",
+          "before": "Here and beyond,",
+          "after": "They do not find the one whose knots are cut,"
+        },
+        {
+          "key": "sn1.20:25.6",
+          "sujato": "not in heaven nor in any abode.",
+          "before": "in the heavens and all abodes, They do not find the one whose knots are cut, The one untroubled, free of longing.",
+          "after": "The one untroubled, free of longing."
+        },
+        {
+          "key": "sn1.20:26.1",
+          "sujato": "Tell me if you understand, spirit.”",
+          "before": "“If you understand, spirit, speak up.”",
+          "after": "“If you understand, spirit, speak up.”"
+        }
+      ]
+    },
+    {
+      "text": "an4.32",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an4.32:2.3",
+          "starts": "under diverse worldly conditions,",
+          "settles": {
+            "after": "h,\nbeneficent conduct, and impartiality",
+            "placed": true
+          }
+        },
+        {
+          "key": "an4.32:2.5",
+          "starts": "of sustaining a favorable relationship",
+          "settles": {
+            "after": " suitable to fit each case: these means",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an4.32:2.2",
+          "sujato": "taking care here,",
+          "before": "beneficent conduct,",
+          "after": "beneficent conduct, and impartiality"
+        },
+        {
+          "key": "an4.32:2.3",
+          "sujato": "and treating equally in worldly conditions,",
+          "before": "and impartiality under diverse worldly conditions,",
+          "after": "under diverse worldly conditions,"
+        },
+        {
+          "key": "an4.32:2.4",
+          "sujato": "as they deserve in each case.",
+          "before": "as is suitable to fit each case:",
+          "after": "as is suitable to fit each case: these means"
+        },
+        {
+          "key": "an4.32:2.5",
+          "sujato": "These ways of being inclusive in the world",
+          "before": "these means of sustaining a favorable relationship",
+          "after": "of sustaining a favorable relationship"
+        },
+        {
+          "key": "an4.32:2.6",
+          "sujato": "are like a moving chariot’s linchpin.",
+          "before": "are like the linchpin of a rolling chariot.",
+          "after": "are like the linchpin of a rolling chariot."
+        }
+      ]
+    },
+    {
+      "text": "an5.40",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an5.40:2.2",
+          "starts": "in dependence on a rocky mountain",
+          "settles": {
+            "after": "five ways.”\nJust as the trees that grow",
+            "placed": true
+          }
+        },
+        {
+          "key": "an5.40:2.3",
+          "starts": "in a vast forest wilderness",
+          "settles": {
+            "after": " grow\nin dependence on a rocky mountain",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an5.40:2.1",
+          "sujato": "Supported by the rocky mountain",
+          "before": "Just as the trees that grow in dependence on a rocky mountain",
+          "after": "Just as the trees that grow"
+        },
+        {
+          "key": "an5.40:2.2",
+          "sujato": "in the wilds, the formidable forest,",
+          "before": "in a vast forest wilderness",
+          "after": "in dependence on a rocky mountain"
+        },
+        {
+          "key": "an5.40:2.3",
+          "sujato": "the tree grows",
+          "before": "",
+          "after": "in a vast forest wilderness"
+        },
+        {
+          "key": "an5.40:2.4",
+          "sujato": "to become lord of the forest.",
+          "before": "might become great ‘woodland lords,’",
+          "after": "might become great ‘woodland lords,’"
+        }
+      ]
+    },
+    {
+      "text": "an4.1",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an4.1:5.2",
+          "starts": "the Buddha taught the Dhamma to the",
+          "settles": {
+            "after": "f.\n“Having directly known these things,",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an4.1:5.1",
+          "sujato": "And so the Buddha, having insight,",
+          "before": "“Having directly known these things, the Buddha",
+          "after": "“Having directly known these things,"
+        },
+        {
+          "key": "an4.1:5.2",
+          "sujato": "explained this teaching to the mendicants.",
+          "before": "taught the Dhamma to the bhikkhus.",
+          "after": "the Buddha taught the Dhamma to the bhikkhus."
+        },
+        {
+          "key": "an4.1:5.3",
+          "sujato": "The teacher made an end of suffering,",
+          "before": "The Teacher, the end-maker of suffering,",
+          "after": "The Teacher, the end-maker of suffering,"
+        }
+      ]
+    },
+    {
+      "text": "an4.22",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an4.22:5.6",
+          "starts": "is far from an elder’s stature.",
+          "settles": {
+            "after": "hing,\nholding bad views, disrespectful,",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an4.22:5.5",
+          "sujato": "They’re far from seniority, with their bad views",
+          "before": "holding bad views, disrespectful, is far from an elder’s stature.",
+          "after": "holding bad views, disrespectful,"
+        },
+        {
+          "key": "an4.22:5.6",
+          "sujato": "and their lack of regard for others.",
+          "before": "",
+          "after": "is far from an elder’s stature."
+        },
+        {
+          "key": "an4.22:6.1",
+          "sujato": "But one accomplished in ethics,",
+          "before": "But one accomplished in virtue,",
+          "after": "But one accomplished in virtue,"
+        }
+      ]
+    },
+    {
+      "text": "an3.57",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an3.57:12.4",
+          "starts": "but give their gifts to those outside.",
+          "settles": {
+            "after": "learned,\ndo not attend on the holy ones",
+            "placed": true
+          }
+        },
+        {
+          "key": "an3.57:13.2",
+          "starts": "on the wise ones esteemed as sagely,",
+          "settles": {
+            "after": ", however, who attend on the holy ones,",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an3.57:12.3",
+          "sujato": "give their gifts to those outside,",
+          "before": "do not attend on the holy ones but give their gifts to those outside.",
+          "after": "do not attend on the holy ones"
+        },
+        {
+          "key": "an3.57:12.4",
+          "sujato": "and don’t attend the peaceful ones.",
+          "before": "",
+          "after": "but give their gifts to those outside."
+        },
+        {
+          "key": "an3.57:13.1",
+          "sujato": "But those who do attend the peaceful ones—",
+          "before": "Those, however, who attend on the holy ones, on the wise ones esteemed as sagely,",
+          "after": "Those, however, who attend on the holy ones,"
+        },
+        {
+          "key": "an3.57:13.2",
+          "sujato": "wise, esteemed as attentive—",
+          "before": "",
+          "after": "on the wise ones esteemed as sagely,"
+        },
+        {
+          "key": "an3.57:13.3",
+          "sujato": "and whose faith in the Holy One",
+          "before": "and those whose faith in the Fortunate One",
+          "after": "and those whose faith in the Fortunate One"
+        }
+      ]
+    },
+    {
+      "text": "an4.14",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an4.14:5.4",
+          "starts": "by the Kinsman of the Sun.",
+          "settles": {
+            "after": "ction:\nthese four strivings were taught",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an4.14:5.3",
+          "sujato": "these are the four efforts",
+          "before": "these four strivings",
+          "after": "these four strivings were taught"
+        },
+        {
+          "key": "an4.14:5.4",
+          "sujato": "taught by the Kinsman of the Sun.",
+          "before": "were taught by the Kinsman of the Sun.",
+          "after": "by the Kinsman of the Sun."
+        },
+        {
+          "key": "an4.14:5.5",
+          "sujato": "Any mendicant who keenly applies these",
+          "before": "By these means an ardent bhikkhu here",
+          "after": "By these means an ardent bhikkhu here"
+        }
+      ]
+    },
+    {
+      "text": "an5.32",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an5.32:8.2",
+          "starts": "knowing the foremost Dhamma,",
+          "settles": {
+            "after": "se confident in regard to the foremost,",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an5.32:8.1",
+          "sujato": "For those who, knowing the best teaching,",
+          "before": "For those confident in regard to the foremost, knowing the foremost Dhamma,",
+          "after": "For those confident in regard to the foremost,"
+        },
+        {
+          "key": "an5.32:8.2",
+          "sujato": "base their confidence on the best—",
+          "before": "",
+          "after": "knowing the foremost Dhamma,"
+        },
+        {
+          "key": "an5.32:8.3",
+          "sujato": "confident in the best Awakened One,",
+          "before": "confident in the Buddha—the foremost—",
+          "after": "confident in the Buddha—the foremost—"
+        }
+      ]
+    },
+    {
+      "text": "an8.16",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an8.16:3.4",
+          "starts": "of going on a mission.",
+          "settles": {
+            "after": "question;\na bhikkhu like this is worthy",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an8.16:3.3",
+          "sujato": "Such a mendicant",
+          "before": "a bhikkhu like this",
+          "after": "a bhikkhu like this is worthy"
+        },
+        {
+          "key": "an8.16:3.4",
+          "sujato": "is worthy of going on a mission.”",
+          "before": "is worthy of going on a mission.",
+          "after": "of going on a mission."
+        },
+        {
+          "key": "an8.16:3.5",
+          "pali": "Chaṭṭhaṁ.",
+          "before": "",
+          "after": ""
+        }
+      ]
+    },
+    {
+      "text": "sn11.21",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn11.21:3.4",
+          "starts": "With its poisoned root and honeyed tip:",
+          "settles": {
+            "after": "sorrow;\nThe killing of anger, O Vasava,",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn11.21:3.3",
+          "sujato": "Anger has a poisonous root",
+          "before": "The killing of anger,",
+          "after": "The killing of anger, O Vasava,"
+        },
+        {
+          "key": "sn11.21:3.4",
+          "sujato": "and a sweet tip, O Vāsava.",
+          "before": "O Vasava, With its poisoned root and honeyed tip:",
+          "after": "With its poisoned root and honeyed tip:"
+        },
+        {
+          "key": "sn11.21:3.5",
+          "sujato": "The noble ones praise its killing,",
+          "before": "This is the killing the noble ones praise,",
+          "after": "This is the killing the noble ones praise,"
+        }
+      ]
+    },
+    {
+      "text": "sn1.29",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn1.29:1.4",
+          "starts": "How does one escape from it?”",
+          "settles": {
+            "after": "h greed,\nBorn from a bog, O great hero!",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn1.29:1.3",
+          "sujato": "and born from a bog.",
+          "before": "Born from a bog,",
+          "after": "Born from a bog, O great hero!"
+        },
+        {
+          "key": "sn1.29:1.4",
+          "sujato": "Great hero, how will I keep going?”",
+          "before": "O great hero! How does one escape from it?”",
+          "after": "How does one escape from it?”"
+        },
+        {
+          "key": "sn1.29:2.1",
+          "sujato": "“Having cut the strap and harness—",
+          "before": "“Having cut the thong and the strap,",
+          "after": "“Having cut the thong and the strap,"
+        }
+      ]
+    },
+    {
+      "text": "sn4.23",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn4.23:5.2",
+          "starts": "One delighting in the Teaching,",
+          "settles": {
+            "after": "“How, O Blessed One, can your disciple—",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn4.23:5.1",
+          "sujato": "For Blessed One, renowned among men,",
+          "before": "“How, O Blessed One,",
+          "after": "“How, O Blessed One, can your disciple—"
+        },
+        {
+          "key": "sn4.23:5.2",
+          "sujato": "your disciple who loves your teaching,",
+          "before": "can your disciple— One delighting in the Teaching,",
+          "after": "One delighting in the Teaching,"
+        },
+        {
+          "key": "sn4.23:5.3",
+          "sujato": "a trainee who hasn’t achieved their heart’s desire—",
+          "before": "A trainee seeking his mind’s ideal—",
+          "after": "A trainee seeking his mind’s ideal—"
+        }
+      ]
+    },
+    {
+      "text": "an4.53",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an4.53:10.2",
+          "starts": "charitable and self-controlled,",
+          "settles": {
+            "after": "usband and wife are endowed with faith,",
+            "placed": true
+          }
+        },
+        {
+          "key": "an4.53:10.3",
+          "starts": "living their lives righteously,",
+          "settles": {
+            "after": " faith,\ncharitable and self-controlled,",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an4.53:10.1",
+          "sujato": "When both are faithful and bountiful,",
+          "before": "Both husband and wife are endowed with faith, charitable",
+          "after": "Both husband and wife are endowed with faith,"
+        },
+        {
+          "key": "an4.53:10.2",
+          "sujato": "disciplined, living righteously,",
+          "before": "and self-controlled, living their lives righteously,",
+          "after": "charitable and self-controlled,"
+        },
+        {
+          "key": "an4.53:10.3",
+          "sujato": "then wife and husband",
+          "before": "",
+          "after": "living their lives righteously,"
+        },
+        {
+          "key": "an4.53:10.4",
+          "sujato": "say nice things to each other.",
+          "before": "addressing each other with pleasant words.",
+          "after": "addressing each other with pleasant words."
+        }
+      ]
+    },
+    {
+      "text": "an3.48",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an3.48:3.2",
+          "starts": "in dependence on a rocky mountain",
+          "settles": {
+            "after": "hree ways.”\nJust as the trees that grow",
+            "placed": true
+          }
+        },
+        {
+          "key": "an3.48:3.3",
+          "starts": "in a vast forest wilderness",
+          "settles": {
+            "after": " grow\nin dependence on a rocky mountain",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an3.48:3.1",
+          "sujato": "Supported by the rocky mountain",
+          "before": "Just as the trees that grow in dependence on a rocky mountain",
+          "after": "Just as the trees that grow"
+        },
+        {
+          "key": "an3.48:3.2",
+          "sujato": "in the wilds, the formidable forest,",
+          "before": "in a vast forest wilderness",
+          "after": "in dependence on a rocky mountain"
+        },
+        {
+          "key": "an3.48:3.3",
+          "sujato": "the tree grows",
+          "before": "",
+          "after": "in a vast forest wilderness"
+        },
+        {
+          "key": "an3.48:3.4",
+          "sujato": "to become lord of the forest.",
+          "before": "might become great “woodland lords,”",
+          "after": "might become great “woodland lords,”"
+        }
+      ]
+    },
+    {
+      "text": "sn11.4",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn11.4:12.2",
+          "starts": "His own and the other’s—",
+          "settles": {
+            "after": "e.\n“‘When he achieves the cure of both—",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn11.4:12.1",
+          "sujato": "People inexpert in the teaching",
+          "before": "“‘When he achieves the cure of both— His own and the other’s—",
+          "after": "“‘When he achieves the cure of both—"
+        },
+        {
+          "key": "sn11.4:12.2",
+          "sujato": "consider one who heals both",
+          "before": "",
+          "after": "His own and the other’s—"
+        },
+        {
+          "key": "sn11.4:12.3",
+          "sujato": "oneself and the other",
+          "before": "The people who consider him a fool",
+          "after": "The people who consider him a fool"
+        }
+      ]
+    },
+    {
+      "text": "sn11.4",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn11.4:4.4",
+          "starts": "The wise man should restrain the fool.’",
+          "settles": {
+            "after": "in check.\nHence with drastic punishment",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn11.4:4.3",
+          "sujato": "So an attentive one should stop",
+          "before": "Hence with drastic punishment The wise man should restrain the fool.’",
+          "after": "Hence with drastic punishment"
+        },
+        {
+          "key": "sn11.4:4.4",
+          "sujato": "a fool with forceful punishment.’",
+          "before": "",
+          "after": "The wise man should restrain the fool.’"
+        },
+        {
+          "key": "sn11.4:5.1",
+          "sujato": "‘I think that this is the only way",
+          "before": "Sakka: “‘I myself think this alone",
+          "after": "Sakka: “‘I myself think this alone"
+        }
+      ]
+    },
+    {
+      "text": "sn11.1",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn11.1:6.2",
+          "starts": "Without doing work, O Sakka,",
+          "settles": {
+            "after": "‘The bliss, supreme deva, we might find",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn11.1:6.1",
+          "sujato": "‘O Sakka, first among gods,",
+          "before": "Suvīra: “‘The bliss, supreme deva,",
+          "after": "Suvīra: “‘The bliss, supreme deva, we might find"
+        },
+        {
+          "key": "sn11.1:6.2",
+          "sujato": "that we might find the happiness",
+          "before": "we might find Without doing work, O Sakka,",
+          "after": "Without doing work, O Sakka,"
+        },
+        {
+          "key": "sn11.1:6.3",
+          "sujato": "that’s sorrowless, unstressed:",
+          "before": "The sorrowless state without despair:",
+          "after": "The sorrowless state without despair:"
+        }
+      ]
+    },
+    {
+      "text": "sn4.20",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn4.20:4.2",
+          "starts": "Who has seen the source whence suffering springs?",
+          "settles": {
+            "after": "d a person incline to sensual pleasures",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn4.20:4.1",
+          "sujato": "When a personage has seen where suffering comes from",
+          "before": "“How could a person incline to sensual pleasures Who has seen the source whence suffering springs?",
+          "after": "“How could a person incline to sensual pleasures"
+        },
+        {
+          "key": "sn4.20:4.2",
+          "sujato": "how could they incline toward sensual pleasures?",
+          "before": "",
+          "after": "Who has seen the source whence suffering springs?"
+        },
+        {
+          "key": "sn4.20:4.3",
+          "sujato": "Realizing that attachment is a chain in the world,",
+          "before": "Having known acquisition as a tie in the world,",
+          "after": "Having known acquisition as a tie in the world,"
+        }
+      ]
+    },
+    {
+      "text": "sn4.11",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn4.11:3.4",
+          "starts": "For they are are fully liberated.”",
+          "settles": {
+            "after": "ety,\nThe enlightened are not perturbed,",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn4.11:3.3",
+          "sujato": "the rightly released,",
+          "before": "The enlightened are not perturbed, For they are are fully liberated.”",
+          "after": "The enlightened are not perturbed,"
+        },
+        {
+          "key": "sn4.11:3.4",
+          "sujato": "the awakened, are unshaken.”",
+          "before": "",
+          "after": "For they are are fully liberated.”"
+        },
+        {
+          "key": "sn4.11:4.1",
+          "sujato": "Then Māra the Wicked, thinking, “The Buddha knows me! The Holy One knows me!” miserable and sad, vanished right there.",
+          "before": "Then Mara the Evil One, realizing, “The Blessed One knows me, the Fortunate One knows me,” sad and disappointed, disappeared right there.",
+          "after": "Then Mara the Evil One, realizing, “The Blessed One knows me, the Fortunate One knows me,” sad and disappointed, disappeared right there."
+        }
+      ]
+    },
+    {
+      "text": "sn45.34",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn45.34:6.3",
+          "starts": "Owning nothing, the wise man",
+          "settles": {
+            "after": ",\nHaving left behind sensual pleasures.",
+            "placed": true
+          }
+        },
+        {
+          "key": "sn45.34:6.4",
+          "starts": "Should cleanse himself of mental defilements.",
+          "settles": {
+            "after": "pleasures.\nOwning nothing, the wise man",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn45.34:6.2",
+          "sujato": "Forsaking sensual pleasures, owning nothing,",
+          "before": "Having left behind sensual pleasures. Owning nothing,",
+          "after": "Having left behind sensual pleasures."
+        },
+        {
+          "key": "sn45.34:6.3",
+          "sujato": "an astute person would cleanse themselves",
+          "before": "the wise man Should cleanse himself of mental defilements.",
+          "after": "Owning nothing, the wise man"
+        },
+        {
+          "key": "sn45.34:6.4",
+          "sujato": "of mental corruptions.",
+          "before": "",
+          "after": "Should cleanse himself of mental defilements."
+        },
+        {
+          "key": "sn45.34:7.1",
+          "sujato": "And those whose minds are rightly developed",
+          "before": "“Those whose minds are well developed",
+          "after": "“Those whose minds are well developed"
+        }
+      ]
+    },
+    {
+      "text": "sn35.132",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn35.132:3.2",
+          "starts": "Those brahmins who recalled the ancient rules.",
+          "settles": {
+            "after": " took delight in Dhamma and meditation,",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn35.132:3.1",
+          "sujato": "Those brahmins who remembered <j>the ancient legends",
+          "before": "They took delight in Dhamma and meditation, Those brahmins who recalled the ancient rules.",
+          "after": "They took delight in Dhamma and meditation,"
+        },
+        {
+          "key": "sn35.132:3.2",
+          "sujato": "enjoyed virtue and absorption.",
+          "before": "",
+          "after": "Those brahmins who recalled the ancient rules."
+        },
+        {
+          "key": "sn35.132:4.1",
+          "sujato": "But these have lost their way. <j>Saying, ‘We must pray’,",
+          "before": "“But these have fallen, claiming ‘We recite.’",
+          "after": "“But these have fallen, claiming ‘We recite.’"
+        }
+      ]
+    },
+    {
+      "text": "an8.5",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an8.5:2.4",
+          "starts": "are impermanent, transient, and subject to change.",
+          "settles": {
+            "after": "pain:\nthese conditions that people meet",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an8.5:2.3",
+          "sujato": "These qualities among mankind are impermanent,",
+          "before": "these conditions that people meet are impermanent,",
+          "after": "these conditions that people meet"
+        },
+        {
+          "key": "an8.5:2.4",
+          "sujato": "transient, and perishable.",
+          "before": "transient, and subject to change.",
+          "after": "are impermanent, transient, and subject to change."
+        },
+        {
+          "key": "an8.5:3.1",
+          "sujato": "An intelligent and mindful person knows these things,",
+          "before": "A wise and mindful person knows them",
+          "after": "A wise and mindful person knows them"
+        }
+      ]
+    },
+    {
+      "text": "sn22.95",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn22.95:14.3",
+          "starts": "Whether by day or at night,",
+          "settles": {
+            "after": "d\nShould look upon the aggregates thus,",
+            "placed": true,
+            "own": true
+          }
+        },
+        {
+          "key": "sn22.95:14.4",
+          "starts": "Comprehending, ever mindful.",
+          "settles": {
+            "after": "gates thus,\nWhether by day or at night,",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn22.95:14.2",
+          "sujato": "should examine the aggregates like this,",
+          "before": "Should look upon the aggregates thus,",
+          "after": "Should look upon the aggregates thus,"
+        },
+        {
+          "key": "sn22.95:14.3",
+          "sujato": "with situational awareness and mindfulness",
+          "before": "",
+          "after": "Whether by day or at night,"
+        },
+        {
+          "key": "sn22.95:14.4",
+          "sujato": "whether by day or by night.",
+          "before": "Whether by day or at night, Comprehending, ever mindful.",
+          "after": "Comprehending, ever mindful."
+        },
+        {
+          "key": "sn22.95:15.1",
+          "sujato": "They should give up all fetters,",
+          "before": "“He should discard all the fetters",
+          "after": "“He should discard all the fetters"
+        }
+      ]
+    },
+    {
+      "text": "sn11.8",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn11.8:5.4",
+          "starts": "Is supreme among enjoyments.",
+          "settles": {
+            "after": "t upon a goal\nHere or there as fits the case,\nBut for all creatures association",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn11.8:5.3",
+          "sujato": "But rather than harnessed work being the highest",
+          "before": "But for all creatures association Is supreme among enjoyments.",
+          "after": "But for all creatures association"
+        },
+        {
+          "key": "sn11.8:5.4",
+          "sujato": "thing of value for all living creatures,",
+          "before": "",
+          "after": "Is supreme among enjoyments."
+        },
+        {
+          "key": "sn11.8:5.5",
+          "sujato": "for the goal that’s splendid when accomplished,",
+          "before": "Of goals that shine when achieved,",
+          "after": "Of goals that shine when achieved,"
+        }
+      ]
+    },
+    {
+      "text": "sn11.6",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn11.6:2.2",
+          "starts": "The bird nests in the silk-cotton woods;",
+          "settles": {
+            "after": "Avoid, O Matali, with your chariot pole",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn11.6:2.1",
+          "sujato": "‘Mātali, don’t ram the bird nests",
+          "before": "“‘Avoid, O Matali, with your chariot pole The bird nests in the silk-cotton woods;",
+          "after": "“‘Avoid, O Matali, with your chariot pole"
+        },
+        {
+          "key": "sn11.6:2.2",
+          "sujato": "in the Red Silk-Cotton Woods with your draft-pole.",
+          "before": "",
+          "after": "The bird nests in the silk-cotton woods;"
+        },
+        {
+          "key": "sn11.6:2.3",
+          "sujato": "I’d rather give up our lives to the titans",
+          "before": "Let’s surrender our lives to the asuras",
+          "after": "Let’s surrender our lives to the asuras"
+        }
+      ]
+    },
+    {
+      "text": "sn22.82",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn22.82:15.2",
+          "starts": "Two about the aggregates,",
+          "settles": {
+            "after": " ten questions\nThe bhikkhu came to ask:",
+            "placed": true
+          }
+        },
+        {
+          "key": "sn22.82:15.3",
+          "starts": "Designation and the cause,",
+          "settles": {
+            "after": "egates,\nWhether the same, can there be,",
+            "placed": true
+          }
+        },
+        {
+          "key": "sn22.82:15.4",
+          "starts": "Two about identity,",
+          "settles": {
+            "after": "an there be,\nDesignation and the cause,",
+            "placed": true
+          }
+        },
+        {
+          "key": "sn22.82:15.5",
+          "starts": "One each on gratification",
+          "settles": {
+            "after": "tion and the cause,\nTwo about identity,",
+            "placed": true,
+            "own": true
+          }
+        },
+        {
+          "key": "sn22.82:15.6",
+          "starts": "And this body with consciousness.",
+          "settles": {
+            "after": "out identity,\nOne each on gratification",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn22.82:15.1",
+          "sujato": "“Two on the aggregates; exactly the same; <j>and can there be;",
+          "before": "These are the ten questions The bhikkhu came to ask: Two about the aggregates, Whether the same, can there be,",
+          "after": "These are the ten questions The bhikkhu came to ask:"
+        },
+        {
+          "key": "sn22.82:15.2",
+          "sujato": "on the term; and on the cause;",
+          "before": "Designation and the cause,",
+          "after": "Two about the aggregates, Whether the same, can there be,"
+        },
+        {
+          "key": "sn22.82:15.3",
+          "sujato": "two questions on substantial reality;",
+          "before": "Two about identity,",
+          "after": "Designation and the cause,"
+        },
+        {
+          "key": "sn22.82:15.4",
+          "sujato": "gratification; and that with consciousness:",
+          "before": "One each on gratification And this body with consciousness.",
+          "after": "Two about identity,"
+        },
+        {
+          "key": "sn22.82:15.5",
+          "sujato": "these are the ten questions",
+          "before": "",
+          "after": "One each on gratification"
+        },
+        {
+          "key": "sn22.82:15.6",
+          "sujato": "the monk came to ask.”",
+          "before": "",
+          "after": "And this body with consciousness."
+        },
+        {
+          "key": "sn22.82:15.7",
+          "pali": "Dasamaṁ.",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "sn22.82:15.8",
+          "pali": "Khajjanīyavaggo tatiyo.",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "sn22.82:16.0",
+          "pali": "Tassuddānaṁ",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "sn22.82:16.1",
+          "pali": "Assādo dve samudayā,",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "sn22.82:16.2",
+          "pali": "arahantehi apare dve;",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "sn22.82:16.3",
+          "pali": "Sīho khajjanī piṇḍolyaṁ,",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "sn22.82:16.4",
+          "pali": "pālileyyena puṇṇamāti.",
+          "before": "",
+          "after": ""
+        }
+      ]
+    },
+    {
+      "text": "an3.39",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an3.39:8.3",
+          "starts": "by other people who exist",
+          "settles": {
+            "after": "ness,\nold age, and death, are disgusted",
+            "placed": true,
+            "own": true
+          }
+        },
+        {
+          "key": "an3.39:8.4",
+          "starts": "in accordance with their nature.",
+          "settles": {
+            "after": "are disgusted\nby other people who exist",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an3.39:8.2",
+          "sujato": "and so are old age and death.",
+          "before": "old age, and death,",
+          "after": "old age, and death, are disgusted"
+        },
+        {
+          "key": "an3.39:8.3",
+          "sujato": "Though this is how their nature is,",
+          "before": "",
+          "after": "by other people who exist"
+        },
+        {
+          "key": "an3.39:8.4",
+          "sujato": "ordinary people feel disgusted.",
+          "before": "are disgusted by other people who exist in accordance with their nature.",
+          "after": "in accordance with their nature."
+        },
+        {
+          "key": "an3.39:9.1",
+          "sujato": "If I were to be disgusted",
+          "before": "“If I were to become disgusted",
+          "after": "“If I were to become disgusted"
+        }
+      ]
+    },
+    {
+      "text": "sn11.19",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn11.19:4.2",
+          "starts": "And ignorance have been expunged,",
+          "settles": {
+            "after": "atali.\n“‘Those for whom lust and hatred",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn11.19:4.1",
+          "sujato": "Those in whom greed, hate, and ignorance",
+          "before": "“‘Those for whom lust and hatred And ignorance have been expunged,",
+          "after": "“‘Those for whom lust and hatred"
+        },
+        {
+          "key": "sn11.19:4.2",
+          "sujato": "have faded away;",
+          "before": "",
+          "after": "And ignorance have been expunged,"
+        },
+        {
+          "key": "sn11.19:4.3",
+          "sujato": "the perfected ones with defilements ended—",
+          "before": "The arahants with taints destroyed:",
+          "after": "The arahants with taints destroyed:"
+        }
+      ]
+    },
+    {
+      "text": "an4.23",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an4.23:7.2",
+          "starts": "the wise one who has untied all",
+          "settles": {
+            "after": "the world.\nHe is the vanquisher of all,",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an4.23:7.1",
+          "sujato": "That attentive one is the vanquisher of all",
+          "before": "He is the vanquisher of all, the wise one",
+          "after": "He is the vanquisher of all,"
+        },
+        {
+          "key": "an4.23:7.2",
+          "sujato": "who is released from all ties.",
+          "before": "who has untied all knots.",
+          "after": "the wise one who has untied all knots."
+        },
+        {
+          "key": "an4.23:7.3",
+          "sujato": "He has reached ultimate peace:",
+          "before": "He has reached the supreme peace,",
+          "after": "He has reached the supreme peace,"
+        }
+      ]
+    },
+    {
+      "text": "sn11.14",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn11.14:6.3",
+          "starts": "Should be devoted to faith and virtue,",
+          "settles": {
+            "after": "nce,\nRemembering the Buddha’s Teaching,",
+            "placed": true
+          }
+        },
+        {
+          "key": "sn11.14:6.4",
+          "starts": "To confidence and vision of the Dhamma.’”",
+          "settles": {
+            "after": "\nShould be devoted to faith and virtue,",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn11.14:6.2",
+          "sujato": "to faith, ethical behaviour,",
+          "before": "Remembering the Buddha’s Teaching, Should be devoted to faith and virtue,",
+          "after": "Remembering the Buddha’s Teaching,"
+        },
+        {
+          "key": "sn11.14:6.3",
+          "sujato": "confidence, and insight into the teaching,",
+          "before": "To confidence and vision of the Dhamma.’”",
+          "after": "Should be devoted to faith and virtue,"
+        },
+        {
+          "key": "sn11.14:6.4",
+          "sujato": "remembering the instructions of the Buddhas.’”",
+          "before": "",
+          "after": "To confidence and vision of the Dhamma.’”"
+        }
+      ]
+    },
+    {
+      "text": "an4.25",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an4.25:2.4",
+          "starts": "restraint and abandoning.",
+          "settles": {
+            "after": "ating in nibbāna,\nlived for the sake of",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an4.25:2.3",
+          "sujato": "but for the sake of restraint and giving up,",
+          "before": "lived for the sake of restraint and abandoning.",
+          "after": "lived for the sake of"
+        },
+        {
+          "key": "an4.25:2.4",
+          "sujato": "and because its objective is extinguishment.",
+          "before": "",
+          "after": "restraint and abandoning."
+        },
+        {
+          "key": "an4.25:2.5",
+          "sujato": "This is the path followed by the big-hearted,",
+          "before": "This is the path of the great beings,",
+          "after": "This is the path of the great beings,"
+        }
+      ]
+    },
+    {
+      "text": "sn11.20",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn11.20:9.2",
+          "starts": "Having worshipped the Bhikkhu Saṅgha,",
+          "settles": {
+            "after": "ed One:\n“Having given this explanation,",
+            "placed": true
+          }
+        },
+        {
+          "key": "sn11.20:9.3",
+          "starts": "The deva-king Maghava, Suja’s husband,",
+          "settles": {
+            "after": ",\nHaving worshipped the Bhikkhu Saṅgha,",
+            "placed": true,
+            "own": true
+          }
+        },
+        {
+          "key": "sn11.20:9.4",
+          "starts": "The chief, climbed into his chariot.”",
+          "settles": {
+            "after": "\nThe deva-king Maghava, Suja’s husband,",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn11.20:9.1",
+          "sujato": "After saying this, Maghavā the chief,",
+          "before": "The Blessed One: “Having given this explanation, Having worshipped the Bhikkhu Saṅgha,",
+          "after": "The Blessed One: “Having given this explanation,"
+        },
+        {
+          "key": "sn11.20:9.2",
+          "sujato": "king of gods, Sujā’s husband,",
+          "before": "The deva-king Maghava, Suja’s husband, The chief,",
+          "after": "Having worshipped the Bhikkhu Saṅgha,"
+        },
+        {
+          "key": "sn11.20:9.3",
+          "sujato": "having worshiped the mendicant Saṅgha,",
+          "before": "",
+          "after": "The deva-king Maghava, Suja’s husband,"
+        },
+        {
+          "key": "sn11.20:9.4",
+          "sujato": "climbed into his chariot.”",
+          "before": "climbed into his chariot.”",
+          "after": "The chief, climbed into his chariot.”"
+        },
+        {
+          "key": "sn11.20:9.5",
+          "pali": "Dutiyo vaggo.",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "sn11.20:10.0",
+          "pali": "Tassuddānaṁ",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "sn11.20:10.1",
+          "pali": "Devā pana tayo vuttā,",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "sn11.20:10.2",
+          "pali": "daliddañca rāmaṇeyyakaṁ;",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "sn11.20:10.3",
+          "pali": "Yajamānañca vandanā,",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "sn11.20:10.4",
+          "pali": "tayo sakkanamassanāti.",
+          "before": "",
+          "after": ""
+        }
+      ]
+    },
+    {
+      "text": "an8.30",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an8.30:23.4",
+          "starts": "in a mind-made body.",
+          "settles": {
+            "after": "the world\ncame to me by psychic potency",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an8.30:23.3",
+          "sujato": "came to me in a mind-made body,",
+          "before": "came to me by psychic potency in a mind-made body.",
+          "after": "came to me by psychic potency"
+        },
+        {
+          "key": "an8.30:23.4",
+          "sujato": "using his psychic power.",
+          "before": "",
+          "after": "in a mind-made body."
+        },
+        {
+          "key": "an8.30:24.1",
+          "sujato": "He taught me more",
+          "before": "“He taught me more",
+          "after": "“He taught me more"
+        }
+      ]
+    },
+    {
+      "text": "sn36.3",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn36.3:6.4",
+          "starts": "The knowledge-master cannot be reckoned.",
+          "settles": {
+            "after": "ding in Dhamma, with the body’s breakup",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn36.3:6.3",
+          "sujato": "That knowledge master is firm in principle;",
+          "before": "Standing in Dhamma,",
+          "after": "Standing in Dhamma, with the body’s breakup"
+        },
+        {
+          "key": "sn36.3:6.4",
+          "sujato": "when their body breaks up, they can’t be reckoned.”",
+          "before": "with the body’s breakup The knowledge-master cannot be reckoned.",
+          "after": "The knowledge-master cannot be reckoned."
+        },
+        {
+          "key": "sn36.3:6.5",
+          "pali": "Tatiyaṁ.",
+          "before": "",
+          "after": ""
+        }
+      ]
+    },
+    {
+      "text": "sn47.18",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn47.18:6.2",
+          "starts": "Compassionate, knows the one-way path",
+          "settles": {
+            "after": "\n“The seer of the destruction of birth,",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn47.18:6.1",
+          "sujato": "“The compassionate one, <j>who sees the ending of rebirth,",
+          "before": "“The seer of the destruction of birth, Compassionate,",
+          "after": "“The seer of the destruction of birth,"
+        },
+        {
+          "key": "sn47.18:6.2",
+          "sujato": "understands the path to convergence.",
+          "before": "knows the one-way path",
+          "after": "Compassionate, knows the one-way path"
+        },
+        {
+          "key": "sn47.18:6.3",
+          "sujato": "By this path people crossed over before,",
+          "before": "By which in the past they crossed the flood,",
+          "after": "By which in the past they crossed the flood,"
+        }
+      ]
+    },
+    {
+      "text": "sn1.62",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn1.62:1.4",
+          "starts": "All under its control?”",
+          "settles": {
+            "after": "d there?\nWhat is the one thing that has",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn1.62:1.3",
+          "sujato": "What is the one thing",
+          "before": "What is the one thing",
+          "after": "What is the one thing that has"
+        },
+        {
+          "key": "sn1.62:1.4",
+          "sujato": "that has everything under its sway?”",
+          "before": "that has All under its control?”",
+          "after": "All under its control?”"
+        },
+        {
+          "key": "sn1.62:2.1",
+          "sujato": "“The mind leads the world on.",
+          "before": "“The world is led around by mind;",
+          "after": "“The world is led around by mind;"
+        }
+      ]
+    },
+    {
+      "text": "sn11.4",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn11.4:2.2",
+          "starts": "Is it, Maghava, from fear or weakness",
+          "settles": {
+            "after": "rse:\n“‘When face to face with Vepacitti",
+            "placed": true
+          }
+        },
+        {
+          "key": "sn11.4:2.4",
+          "starts": "Listening to his harsh words?’",
+          "settles": {
+            "after": "kness\nThat you endure him so patiently,",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn11.4:2.1",
+          "sujato": "‘O Maghavā, O Sakka,",
+          "before": "“‘When face to face with Vepacitti Is it, Maghava,",
+          "after": "“‘When face to face with Vepacitti"
+        },
+        {
+          "key": "sn11.4:2.2",
+          "sujato": "is it from fear or from weakness",
+          "before": "from fear or weakness",
+          "after": "Is it, Maghava, from fear or weakness"
+        },
+        {
+          "key": "sn11.4:2.3",
+          "sujato": "that you endure such harsh words",
+          "before": "That you endure him so patiently, Listening to his harsh words?’",
+          "after": "That you endure him so patiently,"
+        },
+        {
+          "key": "sn11.4:2.4",
+          "sujato": "in the presence of Vepacitti?’",
+          "before": "",
+          "after": "Listening to his harsh words?’"
+        },
+        {
+          "key": "sn11.4:3.1",
+          "sujato": "‘It’s not out of fear or weakness",
+          "before": "Sakka: “‘It is neither through fear nor weakness",
+          "after": "Sakka: “‘It is neither through fear nor weakness"
+        }
+      ]
+    },
+    {
+      "text": "an4.40",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an4.40:7.4",
+          "starts": "in a realm without affliction.",
+          "settles": {
+            "after": "erous mind,\nis reborn in a happy world,",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an4.40:7.3",
+          "sujato": "that astute one is reborn",
+          "before": "is reborn",
+          "after": "is reborn in a happy world,"
+        },
+        {
+          "key": "an4.40:7.4",
+          "sujato": "in a happy, pleasing world.”",
+          "before": "in a happy world, in a realm without affliction.",
+          "after": "in a realm without affliction."
+        },
+        {
+          "key": "an4.40:7.5",
+          "pali": "Dasamaṁ.",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an4.40:7.6",
+          "pali": "Cakkavaggo catuttho.",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an4.40:8.0",
+          "pali": "Tassuddānaṁ",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an4.40:8.1",
+          "pali": "Cakko saṅgaho sīho,",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an4.40:8.2",
+          "pali": "Pasādo vassakārena pañcamaṁ;",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an4.40:8.3",
+          "pali": "Doṇo aparihāniyo patilīno,",
+          "before": "",
+          "after": ""
+        },
+        {
+          "key": "an4.40:8.4",
+          "pali": "Ujjayo udāyinā te dasāti.",
+          "before": "",
+          "after": ""
+        }
+      ]
+    },
+    {
+      "text": "an4.38",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an4.38:7.3",
+          "starts": "by breaking through conceit,",
+          "settles": {
+            "after": "kkhu,\ntranquil, undefeated, enlightened",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an4.38:7.2",
+          "sujato": "tranquil and undefeated.",
+          "before": "tranquil, undefeated,",
+          "after": "tranquil, undefeated, enlightened"
+        },
+        {
+          "key": "an4.38:7.3",
+          "sujato": "And when they’re awakened <j>by comprehending conceit,",
+          "before": "enlightened by breaking through conceit,",
+          "after": "by breaking through conceit,"
+        },
+        {
+          "key": "an4.38:7.4",
+          "sujato": "they’re called ‘withdrawn’.”",
+          "before": "is called “one who has drawn back.”",
+          "after": "is called “one who has drawn back.”"
+        }
+      ]
+    },
+    {
+      "text": "an3.34",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "an3.34:14.2",
+          "starts": "any deed born of greed, hatred, and delusion.",
+          "settles": {
+            "after": "\nTherefore a wise person should abandon",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "an3.34:14.1",
+          "sujato": "So a wise person,",
+          "before": "Therefore a wise person should abandon any deed born of greed, hatred, and delusion.",
+          "after": "Therefore a wise person should abandon"
+        },
+        {
+          "key": "an3.34:14.2",
+          "sujato": "a mendicant arousing knowledge",
+          "before": "",
+          "after": "any deed born of greed, hatred, and delusion."
+        },
+        {
+          "key": "an3.34:14.3",
+          "sujato": "of the outcome of greed, hate, and delusion,",
+          "before": "A bhikkhu, giving rise to knowledge,",
+          "after": "A bhikkhu, giving rise to knowledge,"
+        }
+      ]
+    },
+    {
+      "text": "sn1.41",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn1.41:5.2",
+          "starts": "Along with one’s possessions.",
+          "settles": {
+            "after": "t.\n“Then in the end one leaves the body",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn1.41:5.1",
+          "sujato": "Then in the end this corpse is cast off,",
+          "before": "“Then in the end one leaves",
+          "after": "“Then in the end one leaves the body"
+        },
+        {
+          "key": "sn1.41:5.2",
+          "sujato": "along with all your possessions.",
+          "before": "the body Along with one’s possessions.",
+          "after": "Along with one’s possessions."
+        },
+        {
+          "key": "sn1.41:5.3",
+          "sujato": "Knowing this, an intelligent person",
+          "before": "Having understood this, the wise person",
+          "after": "Having understood this, the wise person"
+        }
+      ]
+    },
+    {
+      "text": "sn1.39",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn1.39:3.2",
+          "starts": "Has been realized by the One with Vision;",
+          "settles": {
+            "after": "arlier I had only heard that the Dhamma",
+            "placed": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn1.39:3.1",
+          "sujato": "Previously I had only heard",
+          "before": "“Earlier I had only heard",
+          "after": "“Earlier I had only heard that the Dhamma"
+        },
+        {
+          "key": "sn1.39:3.2",
+          "sujato": "the teaching realized by the Clear-eyed One.",
+          "before": "that the Dhamma Has been realized by the One with Vision;",
+          "after": "Has been realized by the One with Vision;"
+        },
+        {
+          "key": "sn1.39:3.3",
+          "sujato": "But now I know it as a witness",
+          "before": "But now I know it as a witness",
+          "after": "But now I know it as a witness"
+        }
+      ]
+    },
+    {
+      "text": "sn4.14",
+      "verdict": "passes",
+      "findings": [
+        {
+          "key": "sn4.14:4.2",
+          "starts": "The Buddha instructs others.",
+          "settles": {
+            "after": " One:\n“Compassionate for their welfare,",
+            "placed": true,
+            "own": true
+          }
+        }
+      ],
+      "lines": [
+        {
+          "key": "sn4.14:4.1",
+          "sujato": "“The Buddha instructs others",
+          "before": "The Blessed One: “Compassionate for their welfare, The Buddha instructs others.",
+          "after": "The Blessed One: “Compassionate for their welfare,"
+        },
+        {
+          "key": "sn4.14:4.2",
+          "sujato": "out of compassion for their welfare.",
+          "before": "",
+          "after": "The Buddha instructs others."
+        },
+        {
+          "key": "sn4.14:4.3",
+          "sujato": "The Realized One is liberated",
+          "before": "The Tathagata is fully released",
+          "after": "The Tathagata is fully released"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,468 @@
+## Verse sn35.155:3.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.155:3.1 | P: Kammaṁ cattāri sappāyā, | S: (none) | T: (none)
+sn35.155:3.2 | P: anantevāsi kimatthiyā; | S: (none) | T: (none)
+sn35.155:3.3 | P: Atthi nu kho pariyāyo, | S: (none) | T: (none)
+sn35.155:3.4 | P: indriyakathikena cāti. | S: (none) | T: (none)
+
+## Verse sn35.155:4.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.155:4.1 | P: Yogakkhemi ca loko ca, | S: (none) | T: (none)
+sn35.155:4.2 | P: Gahapati devadahena ca; | S: (none) | T: (none)
+sn35.155:4.3 | P: Navapurāṇena paṇṇāso, | S: (none) | T: (none)
+sn35.155:4.4 | P: Tatiyo tena vuccatīti. | S: (none) | T: (none)
+
+## Verse sn35.228:3.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “One who has crossed this ocean so hard to cross, ↵ With its dangers of sharks, demons, waves, ↵ The knowledge-master who has lived the holy life, ↵ Reached the world’s end, is called one gone beyond.”
+sn35.228:3.1 | P: “Yo imaṁ samuddaṁ sagāhaṁ sarakkhasaṁ, | S: “A knowledge master who’s crossed the ocean so hard to cross, | T: “One who has crossed this ocean so hard to cross,
+sn35.228:3.2 | P: Saūmiṁ sāvaṭṭaṁ sabhayaṁ duttaraṁ accatari; | S: with its saltwater crocodiles and monsters, its waves, whirlpools, and dangers; | T: With its dangers of sharks, demons, waves,
+sn35.228:3.3 | P: Sa vedagū vusitabrahmacariyo, | S: they’ve completed the spiritual journey and gone to the end of the world, | T: The knowledge-master who has lived the holy life, ↵ Reached the world’s end,
+sn35.228:3.4 | P: Lokantagū pāragatoti vuccatī”ti. | S: they’re called ‘one who has gone beyond’.” | T: is called one gone beyond.”
+
+## Verse sn35.229:3.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): “One who has expunged lust and hate ↵ Along with the taint of ignorance, ↵ Has crossed this ocean so hard to cross ↵ With its dangers of sharks, demons, waves.
+sn35.229:3.1 | P: Yassa rāgo ca doso ca, | S: Those in whom greed, hate, and ignorance | T: “One who has expunged lust and hate ↵ Along with the taint of ignorance,
+sn35.229:3.2 | P: Avijjā ca virājitā; | S: have faded away; | T: (none)
+sn35.229:3.3 | P: So imaṁ samuddaṁ sagāhaṁ sarakkhasaṁ, | S: have crossed the ocean so hard to cross, | T: Has crossed this ocean so hard to cross
+sn35.229:3.4 | P: Saūmibhayaṁ duttaraṁ accatari. | S: with its saltwater crocodiles and monsters, its waves and dangers. | T: With its dangers of sharks, demons, waves.
+
+## Verse sn35.229:4.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “The tie-surmounter, death-forsaker, without acquisitions, ↵ Has abandoned suffering for no renewed existence. ↵ Passed away, he cannot be measured, I say: ↵ He has bewildered the King of Death.”
+sn35.229:4.1 | P: Saṅgātigo maccujaho nirupadhi, | S: They’ve slipped their chains, given up death, and have no attachments. | T: “The tie-surmounter, death-forsaker, without acquisitions,
+sn35.229:4.2 | P: Pahāsi dukkhaṁ apunabbhavāya; | S: They’ve given up suffering, so there are no more future lives. | T: Has abandoned suffering for no renewed existence.
+sn35.229:4.3 | P: Atthaṅgato so na puneti, | S: They’ve disappeared, and cannot be measured; | T: Passed away, he cannot be measured,
+sn35.229:4.4 | P: Amohayī maccurājanti brūmī”ti. | S: and they’ve confounded the King of Death, I say.” | T: I say: ↵ He has bewildered the King of Death.”
+
+## Verse sn35.22:3.1 | 6 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.22:3.1 | P: Sambodhena duve vuttā, | S: (none) | T: (none)
+sn35.22:3.2 | P: Assādena apare duve; | S: (none) | T: (none)
+sn35.22:3.3 | P: No cetena duve vuttā, | S: (none) | T: (none)
+sn35.22:3.4 | P: Abhinandena apare duve; | S: (none) | T: (none)
+sn35.22:3.5 | P: Uppādena duve vuttā, | S: (none) | T: (none)
+sn35.22:3.6 | P: Vaggo tena pavuccatīti. | S: (none) | T: (none)
+
+## Verse sn35.237:3.1 | 6 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.237:3.1 | P: Dve samuddā bāḷisiko, | S: (none) | T: (none)
+sn35.237:3.2 | P: khīrarukkhena koṭṭhiko; | S: (none) | T: (none)
+sn35.237:3.3 | P: Kāmabhū udāyī ceva, | S: (none) | T: (none)
+sn35.237:3.4 | P: ādittena ca aṭṭhamaṁ; | S: (none) | T: (none)
+sn35.237:3.5 | P: Hatthapādūpamā dveti, | S: (none) | T: (none)
+sn35.237:3.6 | P: vaggo tena pavuccatīti. | S: (none) | T: (none)
+
+## Verse sn35.248:8.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.248:8.1 | P: Āsīviso ratho kummo, | S: (none) | T: (none)
+sn35.248:8.2 | P: dve dārukkhandhā avassuto; | S: (none) | T: (none)
+sn35.248:8.3 | P: Dukkhadhammā kiṁsukā vīṇā, | S: (none) | T: (none)
+sn35.248:8.4 | P: chappāṇā yavakalāpīti. | S: (none) | T: (none)
+
+## Verse sn35.248:9.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.248:9.1 | P: Nandikkhayo saṭṭhinayo, | S: (none) | T: (none)
+sn35.248:9.2 | P: samuddo uragena ca; | S: (none) | T: (none)
+sn35.248:9.3 | P: Catupaṇṇāsakā ete, | S: (none) | T: (none)
+sn35.248:9.4 | P: nipātesu pakāsitāti. | S: (none) | T: (none)
+
+## Verse sn35.32:29.1 | 5 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.32:29.1 | P: Sabbañca dvepi pahānā, | S: (none) | T: (none)
+sn35.32:29.2 | P: parijānāpare duve; | S: (none) | T: (none)
+sn35.32:29.3 | P: Ādittaṁ addhabhūtañca, | S: (none) | T: (none)
+sn35.32:29.4 | P: sāruppā dve ca sappāyā; | S: (none) | T: (none)
+sn35.32:29.5 | P: Vaggo tena pavuccatīti. | S: (none) | T: (none)
+
+## Verse sn35.42:2.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.42:2.1 | P: Jātijarābyādhimaraṇaṁ, | S: (none) | T: (none)
+sn35.42:2.2 | P: Soko ca saṅkilesikaṁ; | S: (none) | T: (none)
+sn35.42:2.3 | P: Khayavayasamudayaṁ, | S: (none) | T: (none)
+sn35.42:2.4 | P: Nirodhadhammena te dasāti. | S: (none) | T: (none)
+
+## Verse sn35.52:2.1 | 6 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.52:2.1 | P: Aniccaṁ dukkhaṁ anattā, | S: (none) | T: (none)
+sn35.52:2.2 | P: abhiññeyyaṁ pariññeyyaṁ; | S: (none) | T: (none)
+sn35.52:2.3 | P: Pahātabbaṁ sacchikātabbaṁ, | S: (none) | T: (none)
+sn35.52:2.4 | P: abhiññeyyapariññeyyaṁ; | S: (none) | T: (none)
+sn35.52:2.5 | P: Upaddutaṁ upassaṭṭhaṁ, | S: (none) | T: (none)
+sn35.52:2.6 | P: vaggo tena pavuccatīti. | S: (none) | T: (none)
+
+## Verse sn35.52:3.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.52:3.1 | P: Aniccavaggaṁ yamakaṁ, | S: (none) | T: (none)
+sn35.52:3.2 | P: Sabbaṁ vaggaṁ jātidhammaṁ; | S: (none) | T: (none)
+sn35.52:3.3 | P: Aniccavaggena paññāsaṁ, | S: (none) | T: (none)
+sn35.52:3.4 | P: Pañcamo tena pavuccatīti. | S: (none) | T: (none)
+
+## Verse sn35.62:21.1 | 5 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.62:21.1 | P: Avijjā saṁyojanā dve, | S: (none) | T: (none)
+sn35.62:21.2 | P: āsavena duve vuttā; | S: (none) | T: (none)
+sn35.62:21.3 | P: Anusayā apare dve, | S: (none) | T: (none)
+sn35.62:21.4 | P: pariññā dve pariyādinnaṁ; | S: (none) | T: (none)
+sn35.62:21.5 | P: Vaggo tena pavuccatīti. | S: (none) | T: (none)
+
+## Verse sn35.73:16.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.73:16.1 | P: Migajālena dve vuttā, | S: (none) | T: (none)
+sn35.73:16.2 | P: Cattāro ca samiddhinā; | S: (none) | T: (none)
+sn35.73:16.3 | P: Upaseno upavāṇo, | S: (none) | T: (none)
+sn35.73:16.4 | P: Chaphassāyatanikā tayoti. | S: (none) | T: (none)
+
+## Verse sn35.83:4.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.83:4.1 | P: Gilānena duve vuttā, | S: (none) | T: (none)
+sn35.83:4.2 | P: rādhena apare tayo; | S: (none) | T: (none)
+sn35.83:4.3 | P: Avijjāya ca dve vuttā, | S: (none) | T: (none)
+sn35.83:4.4 | P: bhikkhu loko ca phaggunoti. | S: (none) | T: (none)
+
+## Verse sn35.93:4.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.93:4.1 | P: Palokasuññā saṅkhittaṁ, | S: (none) | T: (none)
+sn35.93:4.2 | P: channo puṇṇo ca bāhiyo; | S: (none) | T: (none)
+sn35.93:4.3 | P: Ejena ca duve vuttā, | S: (none) | T: (none)
+sn35.93:4.4 | P: dvayehi apare duveti. | S: (none) | T: (none)
+
+## Verse sn35.94:3.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Just six, O bhikkhus, are the bases for contact, ↵ Where one unrestrained meets with suffering. ↵ Those who know how to restrain them ↵ Dwell uncorrupted, with faith their partner.
+sn35.94:3.1 | P: “Saḷeva phassāyatanāni bhikkhavo, | S: “Mendicants, it’s just the six fields of contact | T: “Just six, O bhikkhus, are the bases for contact,
+sn35.94:3.2 | P: Asaṁvuto yattha dukkhaṁ nigacchati; | S: that lead the unrestrained to suffering. | T: Where one unrestrained meets with suffering.
+sn35.94:3.3 | P: Tesañca ye saṁvaraṇaṁ avedisuṁ, | S: Those who understand how to restrain them | T: Those who know how to restrain them
+sn35.94:3.4 | P: Saddhādutiyā viharantānavassutā. | S: live with faith as partner, not festering. | T: Dwell uncorrupted, with faith their partner.
+
+## Verse sn35.94:4.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Having seen forms that delight the mind ↵ And having seen those that give no delight, ↵ Dispel the path of lust towards the delightful ↵ And do not soil the mind by thinking, ↵ ‘The other is displeasing to me.’ ↵ And do not soil the mind by thinking,
+sn35.94:4.1 | P: Disvāna rūpāni manoramāni, | S: When you’ve seen pleasant sights | T: “Having seen forms that delight the mind
+sn35.94:4.2 | P: Athopi disvāna amanoramāni; | S: and unpleasant ones, too, | T: And having seen those that give no delight,
+sn35.94:4.3 | P: Manorame rāgapathaṁ vinodaye, | S: dispel all manner of desire for the pleasant, | T: Dispel the path of lust towards the delightful
+sn35.94:4.4 | P: Na cāppiyaṁ meti manaṁ padosaye. | S: without hating what you don’t like. | T: And do not soil the mind by thinking, ↵ ‘The other is displeasing to me.’
+
+## Verse sn35.94:5.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): And do not soil the mind by thinking, ↵ “Having heard sounds both pleasant and raucous, ↵ Do not be enthralled with pleasant sound. ↵ Dispel the course of hate towards the raucous, ↵ And do not soil the mind by thinking, ↵ ‘This one is displeasing to me.’
+sn35.94:5.1 | P: Saddañca sutvā dubhayaṁ piyāppiyaṁ, | S: When you’ve heard sounds both liked and disliked, | T: “Having heard sounds both pleasant and raucous,
+sn35.94:5.2 | P: Piyamhi sadde na samucchito siyā; | S: don’t fall under the thrall of sounds you like, | T: Do not be enthralled with pleasant sound.
+sn35.94:5.3 | P: Athoppiye dosagataṁ vinodaye, | S: dispel hate for the unliked, | T: Dispel the course of hate towards the raucous,
+sn35.94:5.4 | P: Na cāppiyaṁ meti manaṁ padosaye. | S: and don’t hurt your mind by thinking of what you don’t like. | T: And do not soil the mind by thinking, ↵ ‘This one is displeasing to me.’
+
+## Verse sn35.94:6.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Having smelt a fragrant, delightful scent, ↵ And having smelt a putrid stench, ↵ Dispel aversion towards the stench ↵ And do not yield to desire for the lovely.
+sn35.94:6.1 | P: Gandhañca ghatvā surabhiṁ manoramaṁ, | S: When you’ve smelled a pleasant, fragrant scent, | T: “Having smelt a fragrant, delightful scent,
+sn35.94:6.2 | P: Athopi ghatvā asuciṁ akantiyaṁ; | S: and one that’s foul and unpleasant, | T: And having smelt a putrid stench,
+sn35.94:6.3 | P: Akantiyasmiṁ paṭighaṁ vinodaye, | S: dispel aversion for the unpleasant, | T: Dispel aversion towards the stench
+sn35.94:6.4 | P: Chandānunīto na ca kantiye siyā. | S: while not yielding to desire for the pleasant. | T: And do not yield to desire for the lovely.
+
+## Verse sn35.94:7.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Having enjoyed a sweet delicious taste, ↵ And having sometimes tasted what is bitter, ↵ Do not greedily enjoy the sweet taste, ↵ Do not feel aversion towards the bitter.
+sn35.94:7.1 | P: Rasañca bhotvāna asāditañca sāduṁ, | S: When you’ve enjoyed a sweet, delicious taste, | T: “Having enjoyed a sweet delicious taste,
+sn35.94:7.2 | P: Athopi bhotvāna asādumekadā; | S: and sometimes those that are bitter, | T: And having sometimes tasted what is bitter,
+sn35.94:7.3 | P: Sāduṁ rasaṁ nājjhosāya bhuñje, | S: don’t be attached to enjoying sweet tastes, | T: Do not greedily enjoy the sweet taste,
+sn35.94:7.4 | P: Virodhamāsādusu nopadaṁsaye. | S: and don’t despise the bitter. | T: Do not feel aversion towards the bitter.
+
+## Verse sn35.94:8.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “When touched by pleasant contact do not be enthralled, ↵ Do not tremble when touched by pain. ↵ Look evenly on both the pleasant and painful, ↵ Not drawn or repelled by anything.
+sn35.94:8.1 | P: Phassena phuṭṭho na sukhena majje, | S: Don’t be intoxicated by a pleasant touch, | T: “When touched by pleasant contact do not be enthralled,
+sn35.94:8.2 | P: Dukkhena phuṭṭhopi na sampavedhe; | S: and don’t tremble at a painful touch. | T: Do not tremble when touched by pain.
+sn35.94:8.3 | P: Phassadvayaṁ sukhadukkhe upekkhe, | S: Look with equanimity at the duality of pleasant and painful contacts, | T: Look evenly on both the pleasant and painful,
+sn35.94:8.4 | P: Anānuruddho aviruddha kenaci. | S: without favoring or opposing anything. | T: Not drawn or repelled by anything.
+
+## Verse sn35.94:9.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “When common people of proliferated perception ↵ Perceive and proliferate they become engaged. ↵ Having dispelled every mind-state bound to the home life, ↵ One travels on the road of renunciation.
+sn35.94:9.1 | P: Papañcasaññā itarītarā narā, | S: People generally let their perceptions proliferate; | T: “When common people of proliferated perception
+sn35.94:9.2 | P: Papañcayantā upayanti saññino; | S: perceiving and proliferating, they are attracted. | T: Perceive and proliferate they become engaged.
+sn35.94:9.3 | P: Manomayaṁ gehasitañca sabbaṁ, | S: Casting aside all mental constructions of the domestic life, | T: Having dispelled every mind-state bound to the home life,
+sn35.94:9.4 | P: Panujja nekkhammasitaṁ irīyati. | S: wander intent on renunciation. | T: One travels on the road of renunciation.
+
+## Verse sn35.94:10.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “When the mind is thus well developed in six, ↵ If touched, one’s mind never flutters anywhere. ↵ Having vanquished both lust and hate, O bhikkhus, ↵ Go to the far shore beyond birth and death!”
+sn35.94:10.1 | P: Evaṁ mano chassu yadā subhāvito, | S: When the mind is well developed like this regarding the six, | T: “When the mind is thus well developed in six,
+sn35.94:10.2 | P: Phuṭṭhassa cittaṁ na vikampate kvaci; | S: it doesn’t waver at contacts at all. | T: If touched, one’s mind never flutters anywhere.
+sn35.94:10.3 | P: Te rāgadose abhibhuyya bhikkhavo, | S: Mendicants, those who have mastered greed and hate | T: Having vanquished both lust and hate, O bhikkhus,
+sn35.94:10.4 | P: Bhavattha jātimaraṇassa pāragā”ti. | S: go beyond birth and death.” | T: Go to the far shore beyond birth and death!”
+
+## Verse sn35.95:12.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Having seen a form with mindfulness muddled, ↵ Attending to the pleasing sign, ↵ One experiences it with infatuated mind ↵ And remains tightly holding to it.
+sn35.95:12.1 | P: ‘Rūpaṁ disvā sati muṭṭhā, | S: ‘When you see a sight, mindfulness is lost | T: “Having seen a form with mindfulness muddled,
+sn35.95:12.2 | P: Piyaṁ nimittaṁ manasi karoto; | S: as you focus on a pleasant feature. | T: Attending to the pleasing sign,
+sn35.95:12.3 | P: Sārattacitto vedeti, | S: Experiencing it with a mind full of desire, | T: One experiences it with infatuated mind
+sn35.95:12.4 | P: Tañca ajjhosa tiṭṭhati. | S: you keep clinging to it. | T: And remains tightly holding to it.
+
+## Verse sn35.95:13.1 | 6 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Many feelings flourish within, ↵ Originating from the visible form, ↵ Covetousness and annoyance as well ↵ By which one’s mind becomes disturbed. ↵ For one who accumulates suffering thus ↵ Nibbāna is said to be far away. ↵ For one who accumulates suffering thus ↵ Nibbāna is said to be far away.
+sn35.95:13.1 | P: Tassa vaḍḍhanti vedanā, | S: Many feelings grow | T: “Many feelings flourish within,
+sn35.95:13.2 | P: anekā rūpasambhavā; | S: arising from sights. | T: Originating from the visible form,
+sn35.95:13.3 | P: Abhijjhā ca vihesā ca, | S: The mind is damaged | T: Covetousness and annoyance as well
+sn35.95:13.4 | P: cittamassūpahaññati; | S: by covetousness and cruelty. | T: By which one’s mind becomes disturbed.
+sn35.95:13.5 | P: Evaṁ ācinato dukkhaṁ, | S: Heaping up suffering like this, | T: For one who accumulates suffering thus
+sn35.95:13.6 | P: ārā nibbāna vuccati. | S: you’re said to be far from extinguishment. | T: Nibbāna is said to be far away.
+
+## Verse sn35.95:14.1 | 4 Pali rows | 1 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Having heard a sound with mindfulness muddled …
+sn35.95:14.1 | P: Saddaṁ sutvā sati muṭṭhā, | S: When you hear a sound, mindfulness is lost | T: “Having heard a sound with mindfulness muddled …
+sn35.95:14.2 | P: Piyaṁ nimittaṁ manasi karoto; | S: as you focus on a pleasant feature. | T: (none)
+sn35.95:14.3 | P: Sārattacitto vedeti, | S: Experiencing it with a mind full of desire, | T: (none)
+sn35.95:14.4 | P: Tañca ajjhosa tiṭṭhati. | S: you keep clinging to it. | T: (none)
+
+## Verse sn35.95:15.1 | 6 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.95:15.1 | P: Tassa vaḍḍhanti vedanā, | S: Many feelings grow | T: (none)
+sn35.95:15.2 | P: anekā saddasambhavā; | S: arising from sounds. | T: (none)
+sn35.95:15.3 | P: Abhijjhā ca vihesā ca, | S: The mind is damaged | T: (none)
+sn35.95:15.4 | P: cittamassūpahaññati; | S: by covetousness and cruelty. | T: (none)
+sn35.95:15.5 | P: Evaṁ ācinato dukkhaṁ, | S: Heaping up suffering like this, | T: (none)
+sn35.95:15.6 | P: ārā nibbāna vuccati. | S: you’re said to be far from extinguishment. | T: (none)
+
+## Verse sn35.95:16.1 | 4 Pali rows | 1 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Having smelt an odour with mindfulness muddled …
+sn35.95:16.1 | P: Gandhaṁ ghatvā sati muṭṭhā, | S: When you smell an odor, mindfulness is lost | T: “Having smelt an odour with mindfulness muddled …
+sn35.95:16.2 | P: Piyaṁ nimittaṁ manasi karoto; | S: as you focus on a pleasant feature. | T: (none)
+sn35.95:16.3 | P: Sārattacitto vedeti, | S: Experiencing it with a mind full of desire, | T: (none)
+sn35.95:16.4 | P: Tañca ajjhosa tiṭṭhati. | S: you keep clinging to it. | T: (none)
+
+## Verse sn35.95:17.1 | 6 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.95:17.1 | P: Tassa vaḍḍhanti vedanā, | S: Many feelings grow | T: (none)
+sn35.95:17.2 | P: anekā gandhasambhavā; | S: arising from smells. | T: (none)
+sn35.95:17.3 | P: Abhijjhā ca vihesā ca, | S: The mind is damaged | T: (none)
+sn35.95:17.4 | P: cittamassūpahaññati; | S: by covetousness and cruelty. | T: (none)
+sn35.95:17.5 | P: Evaṁ ācinato dukkhaṁ, | S: Heaping up suffering like this, | T: (none)
+sn35.95:17.6 | P: ārā nibbāna vuccati. | S: you’re said to be far from extinguishment. | T: (none)
+
+## Verse sn35.95:18.1 | 4 Pali rows | 1 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Having enjoyed a taste with mindfulness muddled …
+sn35.95:18.1 | P: Rasaṁ bhotvā sati muṭṭhā, | S: When you enjoy a taste, mindfulness is lost | T: “Having enjoyed a taste with mindfulness muddled …
+sn35.95:18.2 | P: Piyaṁ nimittaṁ manasi karoto; | S: as you focus on a pleasant feature. | T: (none)
+sn35.95:18.3 | P: Sārattacitto vedeti, | S: Experiencing it with a mind full of desire, | T: (none)
+sn35.95:18.4 | P: Tañca ajjhosa tiṭṭhati. | S: you keep clinging to it. | T: (none)
+
+## Verse sn35.95:19.1 | 6 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.95:19.1 | P: Tassa vaḍḍhanti vedanā, | S: Many feelings grow | T: (none)
+sn35.95:19.2 | P: anekā rasasambhavā; | S: arising from tastes. | T: (none)
+sn35.95:19.3 | P: Abhijjhā ca vihesā ca, | S: The mind is damaged | T: (none)
+sn35.95:19.4 | P: cittamassūpahaññati; | S: by covetousness and cruelty. | T: (none)
+sn35.95:19.5 | P: Evaṁ ācinato dukkhaṁ, | S: Heaping up suffering like this, | T: (none)
+sn35.95:19.6 | P: ārā nibbāna vuccati. | S: you’re said to be far from extinguishment. | T: (none)
+
+## Verse sn35.95:20.1 | 4 Pali rows | 1 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Having felt a contact with mindfulness muddled …
+sn35.95:20.1 | P: Phassaṁ phussa sati muṭṭhā, | S: When you sense a touch, mindfulness is lost | T: “Having felt a contact with mindfulness muddled …
+sn35.95:20.2 | P: Piyaṁ nimittaṁ manasi karoto; | S: as you focus on a pleasant feature. | T: (none)
+sn35.95:20.3 | P: Sārattacitto vedeti, | S: Experiencing it with a mind full of desire, | T: (none)
+sn35.95:20.4 | P: Tañca ajjhosa tiṭṭhati. | S: you keep clinging to it. | T: (none)
+
+## Verse sn35.95:21.1 | 6 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.95:21.1 | P: Tassa vaḍḍhanti vedanā, | S: Many feelings grow | T: (none)
+sn35.95:21.2 | P: anekā phassasambhavā; | S: arising from touches. | T: (none)
+sn35.95:21.3 | P: Abhijjhā ca vihesā ca, | S: The mind is damaged | T: (none)
+sn35.95:21.4 | P: cittamassūpahaññati; | S: by covetousness and cruelty. | T: (none)
+sn35.95:21.5 | P: Evaṁ ācinato dukkhaṁ, | S: Heaping up suffering like this, | T: (none)
+sn35.95:21.6 | P: ārā nibbāna vuccati. | S: you’re said to be far from extinguishment. | T: (none)
+
+## Verse sn35.95:22.1 | 4 Pali rows | 1 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Having known an object with mindfulness muddled …
+sn35.95:22.1 | P: Dhammaṁ ñatvā sati muṭṭhā, | S: When you know an idea, mindfulness is lost | T: “Having known an object with mindfulness muddled …
+sn35.95:22.2 | P: Piyaṁ nimittaṁ manasi karoto; | S: as you focus on a pleasant feature. | T: (none)
+sn35.95:22.3 | P: Sārattacitto vedeti, | S: Experiencing it with a mind full of desire, | T: (none)
+sn35.95:22.4 | P: Tañca ajjhosa tiṭṭhati. | S: you keep clinging to it. | T: (none)
+
+## Verse sn35.95:23.1 | 6 Pali rows | 2 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): For one who accumulates suffering thus ↵ Nibbāna is said to be far away. ↵ For one who accumulates suffering thus ↵ Nibbāna is said to be far away.
+sn35.95:23.1 | P: Tassa vaḍḍhanti vedanā, | S: Many feelings grow | T: (none)
+sn35.95:23.2 | P: anekā dhammasambhavā; | S: arising from ideas. | T: (none)
+sn35.95:23.3 | P: Abhijjhā ca vihesā ca, | S: The mind is damaged | T: (none)
+sn35.95:23.4 | P: cittamassūpahaññati; | S: by covetousness and cruelty. | T: (none)
+sn35.95:23.5 | P: Evaṁ ācinato dukkhaṁ, | S: Heaping up suffering like this, | T: For one who accumulates suffering thus
+sn35.95:23.6 | P: ārā nibbāna vuccati. | S: you’re said to be far from extinguishment. | T: Nibbāna is said to be far away.
+
+## Verse sn35.95:24.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): “When, firmly mindful, one sees a form, ↵ One is not inflamed by lust for forms; ↵ One experiences it with dispassionate mind ↵ And does not remain holding it tightly.
+sn35.95:24.1 | P: Na so rajjati rūpesu, | S: There’s no desire for sights | T: “When, firmly mindful, one sees a form, ↵ One is not inflamed by lust for forms;
+sn35.95:24.2 | P: rūpaṁ disvā paṭissato; | S: when you see a sight with mindfulness. | T: (none)
+sn35.95:24.3 | P: Virattacitto vedeti, | S: Experiencing it with a mind free of desire, | T: One experiences it with dispassionate mind
+sn35.95:24.4 | P: tañca nājjhosa tiṭṭhati. | S: you don’t keep clinging to it. | T: And does not remain holding it tightly.
+
+## Verse sn35.95:25.1 | 6 Pali rows | 6 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): “One fares mindfully in such a way ↵ That even as one sees the form, ↵ And while one undergoes a feeling, ↵ Suffering is exhausted, not built up. ↵ For one dismantling suffering thus, ↵ Nibbāna is said to be close by. ↵ Nibbāna is said to be close by.
+sn35.95:25.1 | P: Yathāssa passato rūpaṁ, | S: Even as you see a sight | T: “One fares mindfully in such a way ↵ That even as one sees the form,
+sn35.95:25.2 | P: sevato cāpi vedanaṁ; | S: and get familiar with how it feels, | T: And while one undergoes a feeling,
+sn35.95:25.3 | P: Khīyati nopacīyati, | S: you wear away, you don’t heap up: | T: Suffering is exhausted, not built up.
+sn35.95:25.4 | P: evaṁ so caratī sato; | S: that’s how to live mindfully. | T: (none)
+sn35.95:25.5 | P: Evaṁ apacinato dukkhaṁ, | S: Eroding suffering like this, | T: For one dismantling suffering thus,
+sn35.95:25.6 | P: santike nibbāna vuccati. | S: you’re said to be in the presence of extinguishment. | T: Nibbāna is said to be close by.
+
+## Verse sn35.95:26.1 | 4 Pali rows | 2 English pieces | gathered=True | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “When, firmly mindful, one hears a sound, ↵ One is not inflamed by lust for sounds; …
+sn35.95:26.1 | P: Na so rajjati saddesu, | S: There’s no desire for sounds | T: “When, firmly mindful, one hears a sound, ↵ One is not inflamed by lust for sounds;
+sn35.95:26.2 | P: saddaṁ sutvā paṭissato; | S: when you hear a sound with mindfulness. | T: (none)
+sn35.95:26.3 | P: Virattacitto vedeti, | S: Experiencing it with a mind free of desire, | T: (none)
+sn35.95:26.4 | P: tañca nājjhosa tiṭṭhati. | S: you don’t keep clinging to it. | T: (none)
+
+## Verse sn35.95:27.1 | 6 Pali rows | 1 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.95:27.1 | P: Yathāssa suṇato saddaṁ, | S: Even as you hear a sound | T: (none)
+sn35.95:27.2 | P: sevato cāpi vedanaṁ; | S: and get familiar with how it feels, | T: (none)
+sn35.95:27.3 | P: Khīyati nopacīyati, | S: you wear away, you don’t heap up: | T: (none)
+sn35.95:27.4 | P: evaṁ so caratī sato; | S: that’s how to live mindfully. | T: (none)
+sn35.95:27.5 | P: Evaṁ apacinato dukkhaṁ, | S: Eroding suffering like this, | T: (none)
+sn35.95:27.6 | P: santike nibbāna vuccati. | S: you’re said to be in the presence of extinguishment. | T: …
+
+## Verse sn35.95:28.1 | 4 Pali rows | 2 English pieces | gathered=True | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “When, firmly mindful, one smells an odour, ↵ One is not inflamed by lust for odours; …
+sn35.95:28.1 | P: Na so rajjati gandhesu, | S: There’s no desire for odors | T: “When, firmly mindful, one smells an odour, ↵ One is not inflamed by lust for odours;
+sn35.95:28.2 | P: gandhaṁ ghatvā paṭissato; | S: when you smell an odor with mindfulness. | T: (none)
+sn35.95:28.3 | P: Virattacitto vedeti, | S: Experiencing it with a mind free of desire, | T: (none)
+sn35.95:28.4 | P: tañca nājjhosa tiṭṭhati. | S: you don’t keep clinging to it. | T: (none)
+
+## Verse sn35.95:29.1 | 6 Pali rows | 1 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.95:29.1 | P: Yathāssa ghāyato gandhaṁ, | S: Even as you smell an odor | T: (none)
+sn35.95:29.2 | P: sevato cāpi vedanaṁ; | S: and get familiar with how it feels, | T: (none)
+sn35.95:29.3 | P: Khīyati nopacīyati, | S: you wear away, you don’t heap up: | T: (none)
+sn35.95:29.4 | P: evaṁ so caratī sato; | S: that’s how to live mindfully. | T: (none)
+sn35.95:29.5 | P: Evaṁ apacinato dukkhaṁ, | S: Eroding suffering like this, | T: (none)
+sn35.95:29.6 | P: santike nibbāna vuccati. | S: you’re said to be in the presence of extinguishment. | T: …
+
+## Verse sn35.95:30.1 | 4 Pali rows | 2 English pieces | gathered=True | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “When, firmly mindful, one enjoys a taste, ↵ One is not inflamed by lust for tastes; …
+sn35.95:30.1 | P: Na so rajjati rasesu, | S: There’s no desire for tastes | T: “When, firmly mindful, one enjoys a taste, ↵ One is not inflamed by lust for tastes;
+sn35.95:30.2 | P: rasaṁ bhotvā paṭissato; | S: when you enjoy a taste with mindfulness. | T: (none)
+sn35.95:30.3 | P: Virattacitto vedeti, | S: Experiencing it with a mind free of desire, | T: (none)
+sn35.95:30.4 | P: tañca nājjhosa tiṭṭhati. | S: you don’t keep clinging to it. | T: (none)
+
+## Verse sn35.95:31.1 | 6 Pali rows | 1 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.95:31.1 | P: Yathāssa sāyato rasaṁ, | S: Even as you savor a taste | T: (none)
+sn35.95:31.2 | P: sevato cāpi vedanaṁ; | S: and get familiar with how it feels, | T: (none)
+sn35.95:31.3 | P: Khīyati nopacīyati, | S: you wear away, you don’t heap up: | T: (none)
+sn35.95:31.4 | P: evaṁ so caratī sato; | S: that’s how to live mindfully. | T: (none)
+sn35.95:31.5 | P: Evaṁ apacinato dukkhaṁ, | S: Eroding suffering like this, | T: (none)
+sn35.95:31.6 | P: santike nibbāna vuccati. | S: you’re said to be in the presence of extinguishment. | T: …
+
+## Verse sn35.95:32.1 | 4 Pali rows | 2 English pieces | gathered=True | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “When, firmly mindful, one feels a contact, ↵ One is not inflamed by lust for contacts; …
+sn35.95:32.1 | P: Na so rajjati phassesu, | S: There’s no desire for touches | T: “When, firmly mindful, one feels a contact, ↵ One is not inflamed by lust for contacts;
+sn35.95:32.2 | P: phassaṁ phussa paṭissato; | S: when you sense a touch with mindfulness. | T: (none)
+sn35.95:32.3 | P: Virattacitto vedeti, | S: Experiencing it with a mind free of desire, | T: (none)
+sn35.95:32.4 | P: tañca nājjhosa tiṭṭhati. | S: you don’t keep clinging to it. | T: (none)
+
+## Verse sn35.95:33.1 | 6 Pali rows | 1 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.95:33.1 | P: Yathāssa phusato phassaṁ, | S: Even as you sense a touch | T: (none)
+sn35.95:33.2 | P: sevato cāpi vedanaṁ; | S: and get familiar with how it feels, | T: (none)
+sn35.95:33.3 | P: Khīyati nopacīyati, | S: you wear away, you don’t heap up: | T: (none)
+sn35.95:33.4 | P: evaṁ so caratī sato; | S: that’s how to live mindfully. | T: (none)
+sn35.95:33.5 | P: Evaṁ apacinato dukkhaṁ, | S: Eroding suffering like this, | T: (none)
+sn35.95:33.6 | P: santike nibbāna vuccati. | S: you’re said to be in the presence of extinguishment. | T: …
+
+## Verse sn35.95:34.1 | 4 Pali rows | 2 English pieces | gathered=True | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “When, firmly mindful, one knows an object, ↵ One is not inflamed by lust for objects; …
+sn35.95:34.1 | P: Na so rajjati dhammesu, | S: There’s no desire for ideas | T: “When, firmly mindful, one knows an object, ↵ One is not inflamed by lust for objects;
+sn35.95:34.2 | P: dhammaṁ ñatvā paṭissato; | S: when you know an idea with mindfulness. | T: (none)
+sn35.95:34.3 | P: Virattacitto vedeti, | S: Experiencing it with a mind free of desire, | T: (none)
+sn35.95:34.4 | P: tañca nājjhosa tiṭṭhati. | S: you don’t keep clinging to it. | T: (none)
+
+## Verse sn35.95:35.1 | 6 Pali rows | 3 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Nibbāna is said to be close by. ↵ For one diminishing suffering thus ↵ Nibbāna is said to be close by.
+sn35.95:35.1 | P: Yathāssa jānato dhammaṁ, | S: Even as you know an idea | T: …
+sn35.95:35.2 | P: Sevato cāpi vedanaṁ; | S: and get familiar with how it feels, | T: (none)
+sn35.95:35.3 | P: Khīyati nopacīyati, | S: you wear away, you don’t heap up: | T: (none)
+sn35.95:35.4 | P: Evaṁ so caratī sato; | S: that’s how to live mindfully. | T: (none)
+sn35.95:35.5 | P: Evaṁ apacinato dukkhaṁ, | S: Eroding suffering like this, | T: For one diminishing suffering thus
+sn35.95:35.6 | P: Santike nibbāna vuccatī’ti. | S: you’re said to be in the presence of extinguishment.’ | T: Nibbāna is said to be close by.
+
+## Verse sn35.95:37.1 | 4 Pali rows | 1 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.95:37.1 | P: ‘Rūpaṁ disvā sati muṭṭhā, | S: (none) | T: The Buddha here repeats the above verses in full.
+sn35.95:37.2 | P: Piyaṁ nimittaṁ manasi karoto; | S: (none) | T: (none)
+sn35.95:37.3 | P: Sārattacitto vedeti, | S: (none) | T: (none)
+sn35.95:37.4 | P: Tañca ajjhosa tiṭṭhati. | S: (none) | T: (none)
+
+## Verse sn35.95:38.1 | 6 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.95:38.1 | P: Tassa vaḍḍhanti vedanā, | S: (none) | T: (none)
+sn35.95:38.2 | P: anekā rūpasambhavā; | S: (none) | T: (none)
+sn35.95:38.3 | P: Abhijjhā ca vihesā ca, | S: (none) | T: (none)
+sn35.95:38.4 | P: cittamassūpahaññati; | S: (none) | T: (none)
+sn35.95:38.5 | P: Evaṁ ācinato dukkhaṁ, | S: (none) | T: (none)
+sn35.95:38.6 | P: ārā nibbāna vuccati. | S: (none) | T: (none)
+
+## Verse sn35.95:39.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.95:39.1 | P: Na so rajjati dhammesu, | S: (none) | T: (none)
+sn35.95:39.2 | P: dhammaṁ ñatvā paṭissato; | S: (none) | T: (none)
+sn35.95:39.3 | P: Virattacitto vedeti, | S: (none) | T: (none)
+sn35.95:39.4 | P: tañca nājjhosa tiṭṭhati. | S: (none) | T: (none)
+
+## Verse sn35.95:40.1 | 6 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn35.95:40.1 | P: Yathāssa vijānato dhammaṁ, | S: (none) | T: (none)
+sn35.95:40.2 | P: Sevato cāpi vedanaṁ; | S: (none) | T: (none)
+sn35.95:40.3 | P: Khīyati nopacīyati, | S: (none) | T: (none)
+sn35.95:40.4 | P: Evaṁ so caratī sato; | S: (none) | T: (none)
+sn35.95:40.5 | P: Evaṁ apacinato dukkhaṁ, | S: (none) | T: (none)
+sn35.95:40.6 | P: Santike nibbāna vuccatī’ti. | S: (none) | T: (none)
+
+## Verse sn36.10:2.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn36.10:2.1 | P: Samādhi sukhaṁ pahānena, | S: (none) | T: (none)
+sn36.10:2.2 | P: pātālaṁ daṭṭhabbena ca; | S: (none) | T: (none)
+sn36.10:2.3 | P: Sallena ceva gelaññā, | S: (none) | T: (none)
+sn36.10:2.4 | P: anicca phassamūlakāti. | S: (none) | T: (none)
+
+## Verse sn36.12:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Just as many diverse winds ↵ Blow back and forth across the sky, ↵ Easterly winds and westerly winds, ↵ Northerly winds and southerly winds,
+sn36.12:2.1 | P: Yathāpi vātā ākāse, | S: There are many and various | T: Just as many diverse winds
+sn36.12:2.2 | P: vāyanti vividhā puthū; | S: winds that blow in the atmosphere. | T: Blow back and forth across the sky,
+sn36.12:2.3 | P: Puratthimā pacchimā cāpi, | S: From the east they come, also the west, | T: Easterly winds and westerly winds,
+sn36.12:2.4 | P: uttarā atha dakkhiṇā. | S: the north, and then the south. | T: Northerly winds and southerly winds,
+
+## Verse sn36.12:3.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Dusty winds and dustless winds, ↵ Sometimes cold, sometimes hot, ↵ Those that are strong and others mild— ↵ Winds of many kinds that blow;
+sn36.12:3.1 | P: Sarajā arajā capi, | S: They are dusty and dustless, | T: Dusty winds and dustless winds,
+sn36.12:3.2 | P: sītā uṇhā ca ekadā; | S: cool and sometimes warm, | T: Sometimes cold, sometimes hot,
+sn36.12:3.3 | P: Adhimattā parittā ca, | S: strong and weak; | T: Those that are strong and others mild—
+sn36.12:3.4 | P: puthū vāyanti mālutā. | S: these are the different gales that blow. | T: Winds of many kinds that blow;
+
+## Verse sn36.12:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): So in this very body here ↵ Various kinds of feelings arise, ↵ Pleasant ones and painful ones, ↵ And those neither painful nor pleasant.
+sn36.12:4.1 | P: Tathevimasmiṁ kāyasmiṁ, | S: So too, in this body | T: So in this very body here
+sn36.12:4.2 | P: samuppajjanti vedanā; | S: feelings arise, | T: Various kinds of feelings arise,
+sn36.12:4.3 | P: Sukhadukkhasamuppatti, | S: pleasant and painful, | T: Pleasant ones and painful ones,
+sn36.12:4.4 | P: adukkhamasukhā ca yā. | S: and those that are neutral. | T: And those neither painful nor pleasant.
+
+## Verse sn36.12:5.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): But when a bhikkhu who is ardent ↵ Does not neglect clear comprehension, ↵ Then that wise man fully understands ↵ Feelings in their entirety.
+sn36.12:5.1 | P: Yato ca bhikkhu ātāpī, | S: But when a mendicant is keen, | T: But when a bhikkhu who is ardent
+sn36.12:5.2 | P: sampajaññaṁ na riñcati; | S: not neglecting situational awareness, | T: Does not neglect clear comprehension,
+sn36.12:5.3 | P: Tato so vedanā sabbā, | S: that astute person | T: Then that wise man fully understands
+sn36.12:5.4 | P: parijānāti paṇḍito. | S: understands all feelings. | T: Feelings in their entirety.
+
+## Verse sn36.12:6.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Having fully understood feelings, ↵ He is taintless in this very life. ↵ Standing in Dhamma, with the body’s breakup, ↵ The knowledge-master cannot be reckoned.
+sn36.12:6.1 | P: So vedanā pariññāya, | S: Completely understanding feelings, | T: Having fully understood feelings,
+sn36.12:6.2 | P: diṭṭhe dhamme anāsavo; | S: they’re without defilements in this very life. | T: He is taintless in this very life.
+sn36.12:6.3 | P: Kāyassa bhedā dhammaṭṭho, | S: That knowledge master is firm in principle; | T: Standing in Dhamma,
+sn36.12:6.4 | P: saṅkhyaṁ nopeti vedagū”ti. | S: when their body breaks up, they can’t be reckoned.” | T: with the body’s breakup, ↵ The knowledge-master cannot be reckoned.
+
+## Verse sn36.1:2.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): A disciple of the Buddha, mindful, ↵ Concentrated, comprehending clearly, ↵ Understands feelings ↵ And the origin of feelings,
+sn36.1:2.1 | P: Samāhito sampajāno, | S: Stilled, aware, | T: (none)
+sn36.1:2.2 | P: sato buddhassa sāvako; | S: a mindful disciple of the Buddha | T: A disciple of the Buddha, mindful, ↵ Concentrated, comprehending clearly,
+sn36.1:2.3 | P: Vedanā ca pajānāti, | S: understands feelings, | T: Understands feelings
+sn36.1:2.4 | P: vedanānañca sambhavaṁ. | S: the cause of feelings, | T: And the origin of feelings,
+
+## Verse sn36.1:3.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Where they finally cease, ↵ And the path leading to their destruction. ↵ With the destruction of feelings ↵ A bhikkhu is hungerless and fully quenched.
+sn36.1:3.1 | P: Yattha cetā nirujjhanti, | S: where they cease, | T: Where they finally cease,
+sn36.1:3.2 | P: maggañca khayagāminaṁ; | S: and the path that leads to their ending. | T: And the path leading to their destruction.
+sn36.1:3.3 | P: Vedanānaṁ khayā bhikkhu, | S: With the ending of feelings, a mendicant | T: With the destruction of feelings ↵ A bhikkhu
+sn36.1:3.4 | P: nicchāto parinibbuto”ti. | S: is hungerless, quenched.” | T: is hungerless and fully quenched.
+
+## Verse sn36.20:3.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn36.20:3.1 | P: Rahogataṁ dve ākāsaṁ, | S: (none) | T: (none)
+sn36.20:3.2 | P: agāraṁ dve ca ānandā; | S: (none) | T: (none)
+sn36.20:3.3 | P: Sambahulā duve vuttā, | S: (none) | T: (none)
+sn36.20:3.4 | P: pañcakaṅgo ca bhikkhunāti. | S: (none) | T: (none)
+
+## Verse sn36.21:5.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Bile, phlegm, and also wind, ↵ Imbalance and climate too, ↵ Carelessness and assault, ↵ With kamma result as the eighth.
+sn36.21:5.1 | P: “Pittaṁ semhañca vāto ca, | S: “Bile, phlegm, and wind, | T: Bile, phlegm, and also wind,
+sn36.21:5.2 | P: Sannipātā utūni ca; | S: their conjunction, and the weather, | T: Imbalance and climate too,
+sn36.21:5.3 | P: Visamaṁ opakkamikaṁ, | S: not taking care of yourself, exertion, | T: Carelessness and assault,
+sn36.21:5.4 | P: Kammavipākena aṭṭhamī”ti. | S: and the result of deeds is the eighth.” | T: With kamma result as the eighth.
+
+## Verse sn36.2:2.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): Whether it be pleasant or painful ↵ Along with the neither-painful-nor-pleasant, ↵ Both the internal and the external, ↵ Whatever kind of feeling there is:
+sn36.2:2.1 | P: Sukhaṁ vā yadi vā dukkhaṁ, | S: Whether it’s pleasant or painful, | T: Whether it be pleasant or painful
+sn36.2:2.2 | P: adukkhamasukhaṁ saha; | S: as well as what’s neutral, | T: Along with the neither-painful-nor-pleasant,
+sn36.2:2.3 | P: Ajjhattañca bahiddhā ca, | S: whatever there is that is felt | T: (none)
+sn36.2:2.4 | P: yaṁ kiñci atthi veditaṁ. | S: internally and externally: | T: Both the internal and the external, ↵ Whatever kind of feeling there is:
+
+## Verse sn36.2:3.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Having known, “This is suffering, ↵ Perishable, disintegrating,” ↵ Having touched and touched them, seeing their fall, ↵ Thus one loses one’s passion for them.
+sn36.2:3.1 | P: Etaṁ dukkhanti ñatvāna, | S: having known, ‘this is suffering, | T: Having known, “This is suffering,
+sn36.2:3.2 | P: mosadhammaṁ palokinaṁ; | S: deceptive, breaking apart’, | T: Perishable, disintegrating,”
+sn36.2:3.3 | P: Phussa phussa vayaṁ passaṁ, | S: seeing feelings vanish with every contact, | T: Having touched and touched them, seeing their fall,
+sn36.2:3.4 | P: evaṁ tattha virajjatī”ti. | S: that’s how they become free of desire for them.” | T: Thus one loses one’s passion for them.
+
+## Verse sn36.31:13.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn36.31:13.1 | P: Sīvakaaṭṭhasataṁ bhikkhu, | S: (none) | T: (none)
+sn36.31:13.2 | P: pubbe ñāṇañca bhikkhunā; | S: (none) | T: (none)
+sn36.31:13.3 | P: Samaṇabrāhmaṇā tīṇi, | S: (none) | T: (none)
+sn36.31:13.4 | P: suddhikañca nirāmisanti. | S: (none) | T: (none)

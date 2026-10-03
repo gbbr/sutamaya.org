@@ -1,0 +1,506 @@
+## Verse sn1.50:5.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “It was not apart from the Blessed One! ↵ It was not apart from your Teaching! ↵ By having understood your Dhamma ↵ They cut through the bondage of existence. ↵ They cut through the bondage of existence.”
+sn1.50:5.1 | P: “Na aññatra bhagavatā, | S: “None other than the Blessed One! | T: Ghaṭikara: ↵ “It was not apart from the Blessed One!
+sn1.50:5.2 | P: nāññatra tava sāsanā; | S: None other than your instruction! | T: It was not apart from your Teaching!
+sn1.50:5.3 | P: Yassa te dhammamaññāya, | S: It was your teaching that they understood | T: By having understood your Dhamma
+sn1.50:5.4 | P: acchiduṁ bhavabandhanaṁ. | S: to cut the bonds of rebirth. | T: They cut through the bondage of existence.
+
+## Verse sn1.50:6.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): They cut through the bondage of existence. ↵ “Where name-and-form ceases, ↵ Stops without remainder: ↵ By understanding that Dhamma here ↵ They cut through the bondage of existence.”
+sn1.50:6.1 | P: Yattha nāmañca rūpañca, | S: Where name and form | T: “Where name-and-form ceases,
+sn1.50:6.2 | P: asesaṁ uparujjhati; | S: cease with no residue left behind; | T: Stops without remainder:
+sn1.50:6.3 | P: Taṁ te dhammaṁ idhaññāya, | S: understanding this teaching, | T: By understanding that Dhamma here
+sn1.50:6.4 | P: acchiduṁ bhavabandhanan”ti. | S: they cut the bonds of rebirth.” | T: They cut through the bondage of existence.”
+
+## Verse sn1.50:7.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Deep is the speech you utter, ↵ Hard to understand, very hard to grasp. ↵ Having understood whose Dhamma ↵ Do you utter such speech?”
+sn1.50:7.1 | P: “Gambhīraṁ bhāsasī vācaṁ, | S: “The words you say are deep, | T: The Blessed One: ↵ “Deep is the speech you utter,
+sn1.50:7.2 | P: dubbijānaṁ sudubbudhaṁ; | S: hard to understand, so very hard to wake up to. | T: Hard to understand, very hard to grasp.
+sn1.50:7.3 | P: Kassa tvaṁ dhammamaññāya, | S: Whose teaching did you understand | T: Having understood whose Dhamma
+sn1.50:7.4 | P: vācaṁ bhāsasi īdisan”ti. | S: that you can say such things?” | T: Do you utter such speech?”
+
+## Verse sn1.50:8.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “In the past I was the potter, ↵ Ghaṭikara in Vehaḷiṅga. ↵ I supported my mother and father then ↵ As a lay follower of the Buddha Kassapa. ↵ Ghaṭikara in Vehaḷiṅga. ↵ As a lay follower of the Buddha Kassapa.
+sn1.50:8.1 | P: “Kumbhakāro pure āsiṁ, | S: “In the past I was a potter | T: Ghaṭikara: ↵ “In the past I was the potter,
+sn1.50:8.2 | P: vekaḷiṅge ghaṭīkaro; | S: in Vebhaliṅga named Ghaṭīkāra. | T: Ghaṭikara in Vehaḷiṅga.
+sn1.50:8.3 | P: Mātāpettibharo āsiṁ, | S: I took care of my parents | T: I supported my mother and father then
+sn1.50:8.4 | P: kassapassa upāsako. | S: as a lay follower of Buddha Kassapa. | T: As a lay follower of the Buddha Kassapa.
+
+## Verse sn1.50:9.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “I abstained from sexual intercourse, ↵ I was celibate, free from carnal ties. ↵ I was your fellow villager, ↵ In the past I was your friend.
+sn1.50:9.1 | P: Virato methunā dhammā, | S: I refrained from sexual intercourse, | T: “I abstained from sexual intercourse,
+sn1.50:9.2 | P: brahmacārī nirāmiso; | S: I was chaste, spiritual. | T: I was celibate, free from carnal ties.
+sn1.50:9.3 | P: Ahuvā te sagāmeyyo, | S: We lived in the same village; | T: I was your fellow villager,
+sn1.50:9.4 | P: ahuvā te pure sakhā. | S: in the past I was your comrade. | T: In the past I was your friend.
+
+## Verse sn1.50:10.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “I am the one who knows ↵ These seven liberated bhikkhus, ↵ Who with lust and hatred utterly destroyed ↵ Have crossed over attachment to the world.”
+sn1.50:10.1 | P: Sohamete pajānāmi, | S: I am the one who understands | T: “I am the one who knows
+sn1.50:10.2 | P: vimutte satta bhikkhavo; | S: that these seven mendicants have been freed. | T: These seven liberated bhikkhus,
+sn1.50:10.3 | P: Rāgadosaparikkhīṇe, | S: With the complete ending of greed and hate, | T: Who with lust and hatred utterly destroyed
+sn1.50:10.4 | P: tiṇṇe loke visattikan”ti. | S: they’ve crossed over clinging to the world.” | T: Have crossed over attachment to the world.”
+
+## Verse sn1.50:11.1 | 6 Pali rows | 7 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Ghaṭikara in Vehaḷiṅga. ↵ As a lay follower of the Buddha Kassapa. ↵ “Just so it was at that time, ↵ As you say, O Bhaggava: ↵ In the past you were the potter, ↵ Ghaṭikara in Vehaḷiṅga. ↵ You supported your mother and father then ↵ As a lay follower of the Buddha Kassapa.
+sn1.50:11.1 | P: “Evametaṁ tadā āsi, | S: “That’s exactly how it was, | T: The Blessed One: ↵ “Just so it was at that time,
+sn1.50:11.2 | P: yathā bhāsasi bhaggava; | S: just as you say, Bhaggava. | T: As you say, O Bhaggava:
+sn1.50:11.3 | P: Kumbhakāro pure āsi, | S: In the past you were a potter | T: In the past you were the potter,
+sn1.50:11.4 | P: vekaḷiṅge ghaṭīkaro; | S: in Vebhaliṅga named Ghaṭīkāra. | T: Ghaṭikara in Vehaḷiṅga.
+sn1.50:11.5 | P: Mātāpettibharo āsi, | S: You took care of your parents | T: You supported your mother and father then
+sn1.50:11.6 | P: kassapassa upāsako. | S: as a lay follower of Buddha Kassapa. | T: As a lay follower of the Buddha Kassapa.
+
+## Verse sn1.50:12.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “You abstained from sexual intercourse, ↵ You were celibate, free from carnal ties. ↵ You were my fellow villager, ↵ In the past you were my friend.”
+sn1.50:12.1 | P: Virato methunā dhammā, | S: You refrained from sexual intercourse, | T: “You abstained from sexual intercourse,
+sn1.50:12.2 | P: brahmacārī nirāmiso; | S: you were chaste, spiritual. | T: You were celibate, free from carnal ties.
+sn1.50:12.3 | P: Ahuvā me sagāmeyyo, | S: We lived in the same village; | T: You were my fellow villager,
+sn1.50:12.4 | P: ahuvā me pure sakhā”ti. | S: in the past you were my comrade.” | T: In the past you were my friend.”
+
+## Verse sn1.50:13.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Such was the meeting that took place ↵ Between those friends from the past, ↵ Both now inwardly developed, ↵ Bearers of their final bodies.
+sn1.50:13.1 | P: “Evametaṁ purāṇānaṁ, | S: That’s how it was | T: Such was the meeting that took place
+sn1.50:13.2 | P: sahāyānaṁ ahu saṅgamo; | S: when those friends of old met again. | T: Between those friends from the past,
+sn1.50:13.3 | P: Ubhinnaṁ bhāvitattānaṁ, | S: Both of them were evolved, | T: Both now inwardly developed,
+sn1.50:13.4 | P: sarīrantimadhārinan”ti. | S: bearing their final body. | T: Bearers of their final bodies.
+
+## Verse sn1.50:14.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn1.50:14.1 | P: Ādittaṁ kiṁdadaṁ annaṁ, | S: (none) | T: (none)
+sn1.50:14.2 | P: ekamūlaanomiyaṁ; | S: (none) | T: (none)
+sn1.50:14.3 | P: Accharāvanaropajetaṁ, | S: (none) | T: (none)
+sn1.50:14.4 | P: maccharena ghaṭīkaroti. | S: (none) | T: (none)
+
+## Verse sn1.51:1.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “What is good until old age? ↵ What is good when established? ↵ What is the precious gem of humans? ↵ What is hard for thieves to steal?”
+sn1.51:1.1 | P: “Kiṁsu yāva jarā sādhu, | S: “What’s still good in old age? | T: A devatā: ↵ “What is good until old age?
+sn1.51:1.2 | P: kiṁsu sādhu patiṭṭhitaṁ; | S: What’s good when grounded? | T: What is good when established?
+sn1.51:1.3 | P: Kiṁsu narānaṁ ratanaṁ, | S: What is people’s treasure? | T: What is the precious gem of humans?
+sn1.51:1.4 | P: kiṁsu corehi dūharan”ti. | S: What’s hard for thieves to take?” | T: What is hard for thieves to steal?”
+
+## Verse sn1.51:2.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Virtue is good until old age; ↵ Faith is good when established; ↵ Wisdom is the precious gem of humans; ↵ Merit is hard for thieves to steal.”
+sn1.51:2.1 | P: “Sīlaṁ yāva jarā sādhu, | S: “Ethics are still good in old age. | T: The Blessed One: ↵ “Virtue is good until old age;
+sn1.51:2.2 | P: saddhā sādhu patiṭṭhitā; | S: Faith is good when grounded. | T: Faith is good when established;
+sn1.51:2.3 | P: Paññā narānaṁ ratanaṁ, | S: Wisdom is people’s treasure. | T: Wisdom is the precious gem of humans;
+sn1.51:2.4 | P: puññaṁ corehi dūharan”ti. | S: Merit’s hard for thieves to take.” | T: Merit is hard for thieves to steal.”
+
+## Verse sn1.52:1.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “What is good by not decaying? ↵ What is good when made secure? ↵ What is the precious gem of humans? ↵ What cannot be stolen by thieves?”
+sn1.52:1.1 | P: “Kiṁsu ajarasā sādhu, | S: “What’s good because it never gets old? | T: “What is good by not decaying?
+sn1.52:1.2 | P: kiṁsu sādhu adhiṭṭhitaṁ; | S: What’s good when committed? | T: What is good when made secure?
+sn1.52:1.3 | P: Kiṁsu narānaṁ ratanaṁ, | S: What is people’s treasure? | T: What is the precious gem of humans?
+sn1.52:1.4 | P: kiṁsu corehyahāriyan”ti. | S: What can thieves never take?” | T: What cannot be stolen by thieves?”
+
+## Verse sn1.52:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Virtue is good by not decaying; ↵ Faith is good when made secure; ↵ Wisdom is the precious gem of humans; ↵ Merit cannot be stolen by thieves.”
+sn1.52:2.1 | P: “Sīlaṁ ajarasā sādhu, | S: “Ethics are good because they never grow old. | T: “Virtue is good by not decaying;
+sn1.52:2.2 | P: saddhā sādhu adhiṭṭhitā; | S: Faith is good when committed. | T: Faith is good when made secure;
+sn1.52:2.3 | P: Paññā narānaṁ ratanaṁ, | S: Wisdom is people’s treasure. | T: Wisdom is the precious gem of humans;
+sn1.52:2.4 | P: puññaṁ corehyahāriyan”ti. | S: Merit’s what thieves can never take.” | T: Merit cannot be stolen by thieves.”
+
+## Verse sn1.53:1.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “What is the friend of one on a journey? ↵ What is the friend in one’s own home? ↵ What is the friend of one in need? ↵ What is the friend in the future life?”
+sn1.53:1.1 | P: “Kiṁsu pavasato mittaṁ, | S: “Who’s your friend while journeying? | T: “What is the friend of one on a journey?
+sn1.53:1.2 | P: kiṁsu mittaṁ sake ghare; | S: Who’s your friend at home? | T: What is the friend in one’s own home?
+sn1.53:1.3 | P: Kiṁ mittaṁ atthajātassa, | S: Who’s your friend in time of need? | T: What is the friend of one in need?
+sn1.53:1.4 | P: kiṁ mittaṁ samparāyikan”ti. | S: Who’s your friend in lives to come?” | T: What is the friend in the future life?”
+
+## Verse sn1.53:2.1 | 6 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “A caravan is the friend of one on a journey; ↵ A mother is the friend in one’s own home; ↵ A comrade when the need arises ↵ Is one’s friend again and again. ↵ The deeds of merit one has done— ↵ That is the friend in the future life.”
+sn1.53:2.1 | P: “Sattho pavasato mittaṁ, | S: “A caravan is your friend while journeying. | T: “A caravan is the friend of one on a journey;
+sn1.53:2.2 | P: mātā mittaṁ sake ghare; | S: Mother is your friend at home. | T: A mother is the friend in one’s own home;
+sn1.53:2.3 | P: Sahāyo atthajātassa, | S: An ally in time of need | T: A comrade when the need arises
+sn1.53:2.4 | P: hoti mittaṁ punappunaṁ; | S: is a friend time and again. | T: Is one’s friend again and again.
+sn1.53:2.5 | P: Sayaṅkatāni puññāni, | S: But the good deeds you’ve done yourself— | T: The deeds of merit one has done—
+sn1.53:2.6 | P: taṁ mittaṁ samparāyikan”ti. | S: that’s your friend in lives to come.” | T: That is the friend in the future life.”
+
+## Verse sn1.54:1.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “What is the support of human beings? ↵ What is the best companion here? ↵ The creatures who dwell on the earth— ↵ By what do they sustain their life?” ↵ The creatures who dwell on the earth
+sn1.54:1.1 | P: “Kiṁsu vatthu manussānaṁ, | S: “What is the site for human beings? | T: “What is the support of human beings?
+sn1.54:1.2 | P: kiṁsūdha paramo sakhā; | S: What is the best comrade here? | T: What is the best companion here?
+sn1.54:1.3 | P: Kiṁsu bhūtā upajīvanti, | S: By what do the creatures who live off the earth | T: The creatures who dwell on the earth—
+sn1.54:1.4 | P: ye pāṇā pathavissitā”ti. | S: sustain their life?” | T: By what do they sustain their life?”
+
+## Verse sn1.54:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): The creatures who dwell on the earth— ↵ “Sons are the support of human beings, ↵ A wife the best companion; ↵ The creatures who dwell on the earth ↵ Sustain their life by rain.”
+sn1.54:2.1 | P: “Puttā vatthu manussānaṁ, | S: “Children are the site for human beings. | T: “Sons are the support of human beings,
+sn1.54:2.2 | P: bhariyā ca paramo sakhā; | S: A wife is the best comrade. | T: A wife the best companion;
+sn1.54:2.3 | P: Vuṭṭhiṁ bhūtā upajīvanti, | S: The creatures who live off the earth | T: The creatures who dwell on the earth
+sn1.54:2.4 | P: ye pāṇā pathavissitā”ti. | S: sustain their life by rain.” | T: Sustain their life by rain.”
+
+## Verse sn1.55:1.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “What is it that produces a person? ↵ What does he have that runs around? ↵ What enters upon saṁsara? ↵ What is his greatest fear?”
+sn1.55:1.1 | P: “Kiṁsu janeti purisaṁ, | S: “What gives birth to a person? | T: “What is it that produces a person?
+sn1.55:1.2 | P: kiṁsu tassa vidhāvati; | S: What do they have that runs about? | T: What does he have that runs around?
+sn1.55:1.3 | P: Kiṁsu saṁsāramāpādi, | S: What enters transmigration? | T: What enters upon saṁsara?
+sn1.55:1.4 | P: kiṁsu tassa mahabbhayan”ti. | S: What’s their greatest fear?” | T: What is his greatest fear?”
+
+## Verse sn1.55:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “It is craving that produces a person; ↵ His mind is what runs around; ↵ A being enters upon saṁsara; ↵ Suffering is his greatest fear.”
+sn1.55:2.1 | P: “Taṇhā janeti purisaṁ, | S: “Craving gives birth to a person. | T: “It is craving that produces a person;
+sn1.55:2.2 | P: cittamassa vidhāvati; | S: Their mind is what runs about. | T: His mind is what runs around;
+sn1.55:2.3 | P: Satto saṁsāramāpādi, | S: A sentient being enters transmigration. | T: A being enters upon saṁsara;
+sn1.55:2.4 | P: dukkhamassa mahabbhayan”ti. | S: Suffering is their greatest fear.” | T: Suffering is his greatest fear.”
+
+## Verse sn1.56:1.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “What is it that produces a person? ↵ What does he have that runs around? ↵ What enters upon saṁsara? ↵ From what is he not yet freed?”
+sn1.56:1.1 | P: “Kiṁsu janeti purisaṁ, | S: “What gives birth to a person? | T: “What is it that produces a person?
+sn1.56:1.2 | P: kiṁsu tassa vidhāvati; | S: What do they have that runs about? | T: What does he have that runs around?
+sn1.56:1.3 | P: Kiṁsu saṁsāramāpādi, | S: What enters transmigration? | T: What enters upon saṁsara?
+sn1.56:1.4 | P: kismā na parimuccatī”ti. | S: From what are they not free?” | T: From what is he not yet freed?”
+
+## Verse sn1.56:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Craving is what produces a person; ↵ His mind is what runs around; ↵ A being enters upon saṁsara; ↵ He is not freed from suffering.”
+sn1.56:2.1 | P: “Taṇhā janeti purisaṁ, | S: “Craving gives birth to a person. | T: “Craving is what produces a person;
+sn1.56:2.2 | P: cittamassa vidhāvati; | S: Their mind is what runs about. | T: His mind is what runs around;
+sn1.56:2.3 | P: Satto saṁsāramāpādi, | S: A sentient being enters transmigration. | T: A being enters upon saṁsara;
+sn1.56:2.4 | P: dukkhā na parimuccatī”ti. | S: From suffering they are not free.” | T: He is not freed from suffering.”
+
+## Verse sn1.57:1.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “What is it that produces a person? ↵ What does he have that runs around? ↵ What enters upon saṁsara? ↵ What determines his destiny?”
+sn1.57:1.1 | P: “Kiṁsu janeti purisaṁ, | S: “What gives birth to a person? | T: “What is it that produces a person?
+sn1.57:1.2 | P: kiṁsu tassa vidhāvati; | S: What do they have that runs about? | T: What does he have that runs around?
+sn1.57:1.3 | P: Kiṁsu saṁsāramāpādi, | S: What enters transmigration? | T: What enters upon saṁsara?
+sn1.57:1.4 | P: kiṁsu tassa parāyanan”ti. | S: What is their destiny?” | T: What determines his destiny?”
+
+## Verse sn1.57:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Craving is what produces a person; ↵ His mind is what runs around; ↵ A being enters upon saṁsara; ↵ Kamma determines his destiny.”
+sn1.57:2.1 | P: “Taṇhā janeti purisaṁ, | S: “Craving gives birth to a person. | T: “Craving is what produces a person;
+sn1.57:2.2 | P: cittamassa vidhāvati; | S: Their mind is what runs about. | T: His mind is what runs around;
+sn1.57:2.3 | P: Satto saṁsāramāpādi, | S: A sentient being enters transmigration. | T: A being enters upon saṁsara;
+sn1.57:2.4 | P: kammaṁ tassa parāyanan”ti. | S: Deeds are their final haven.” | T: Kamma determines his destiny.”
+
+## Verse sn1.58:1.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “What is declared the deviant path? ↵ What undergoes destruction night and day? ↵ What is the stain of the holy life? ↵ What is the bath without water?”
+sn1.58:1.1 | P: “Kiṁsu uppatho akkhāto, | S: “What’s declared to be a deviation? | T: “What is declared the deviant path?
+sn1.58:1.2 | P: kiṁsu rattindivakkhayo; | S: What is ending day and night? | T: What undergoes destruction night and day?
+sn1.58:1.3 | P: Kiṁ malaṁ brahmacariyassa, | S: What’s the stain of chastity? | T: What is the stain of the holy life?
+sn1.58:1.4 | P: kiṁ sinānamanodakan”ti. | S: What’s the waterless bath?” | T: What is the bath without water?”
+
+## Verse sn1.58:2.1 | 6 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Lust is declared the deviant path; ↵ Life undergoes destruction night and day; ↵ Women are the stain of the holy life: ↵ Here menfolk are enmeshed. ↵ Austerity and the holy life— ↵ That is the bath without water.”
+sn1.58:2.1 | P: “Rāgo uppatho akkhāto, | S: “Lust is declared to be a deviation. | T: “Lust is declared the deviant path;
+sn1.58:2.2 | P: Vayo rattindivakkhayo; | S: Youth is ending day and night. | T: Life undergoes destruction night and day;
+sn1.58:2.3 | P: Itthī malaṁ brahmacariyassa, | S: Women are the stain of chastity, | T: Women are the stain of the holy life:
+sn1.58:2.4 | P: Etthāyaṁ sajjate pajā; | S: to which this generation clings. | T: Here menfolk are enmeshed.
+sn1.58:2.5 | P: Tapo ca brahmacariyañca, | S: Fervor and chastity | T: Austerity and the holy life—
+sn1.58:2.6 | P: Taṁ sinānamanodakan”ti. | S: are the waterless bath.” | T: That is the bath without water.”
+
+## Verse sn1.59:1.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “What is a person’s partner? ↵ What is it that instructs him? ↵ Taking delight in what is a mortal ↵ Released from all suffering?”
+sn1.59:1.1 | P: “Kiṁsu dutiyā purisassa hoti, | S: “What is a person’s partner? | T: “What is a person’s partner?
+sn1.59:1.2 | P: Kiṁsu cenaṁ pasāsati; | S: What instructs them? | T: What is it that instructs him?
+sn1.59:1.3 | P: Kissa cābhirato macco, | S: Enjoying what is a mortal | T: Taking delight in what is a mortal
+sn1.59:1.4 | P: Sabbadukkhā pamuccatī”ti. | S: released from all suffering?” | T: Released from all suffering?”
+
+## Verse sn1.59:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Faith is a person’s partner, ↵ And wisdom is what instructs him. ↵ Taking delight in Nibbāna, a mortal ↵ Is released from all suffering.”
+sn1.59:2.1 | P: “Saddhā dutiyā purisassa hoti, | S: “Faith is a person’s partner. | T: “Faith is a person’s partner,
+sn1.59:2.2 | P: Paññā cenaṁ pasāsati; | S: Wisdom instructs them. | T: And wisdom is what instructs him.
+sn1.59:2.3 | P: Nibbānābhirato macco, | S: Delighting in extinguishment a mortal | T: Taking delight in Nibbāna, a mortal
+sn1.59:2.4 | P: Sabbadukkhā pamuccatī”ti. | S: is released from all suffering.” | T: Is released from all suffering.”
+
+## Verse sn1.5:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “How many must one cut, how many abandon, ↵ And how many further must one develop? ↵ When a bhikkhu has surmounted how many ties ↵ Is he called a crosser of the flood?”
+sn1.5:2.1 | P: “Kati chinde kati jahe, | S: “Cut how many? Drop how many? | T: “How many must one cut, how many abandon,
+sn1.5:2.2 | P: kati cuttari bhāvaye; | S: Develop how many more? | T: And how many further must one develop?
+sn1.5:2.3 | P: Kati saṅgātigo bhikkhu, | S: When a mendicant slips how many chains | T: When a bhikkhu has surmounted how many ties
+sn1.5:2.4 | P: oghatiṇṇoti vuccatī”ti. | S: are they said to have crossed the flood?” | T: Is he called a crosser of the flood?”
+
+## Verse sn1.5:3.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “One must cut off five, abandon five, ↵ And must develop a further five. ↵ A bhikkhu who has surmounted five ties ↵ Is called a crosser of the flood.”
+sn1.5:3.1 | P: “Pañca chinde pañca jahe, | S: “Five to cut, five to drop, | T: The Blessed One: ↵ “One must cut off five, abandon five,
+sn1.5:3.2 | P: pañca cuttari bhāvaye; | S: and five more to develop. | T: And must develop a further five.
+sn1.5:3.3 | P: Pañca saṅgātigo bhikkhu, | S: When a mendicant slips five chains | T: A bhikkhu who has surmounted five ties
+sn1.5:3.4 | P: oghatiṇṇoti vuccatī”ti. | S: they’re said to have crossed the flood.” | T: Is called a crosser of the flood.”
+
+## Verse sn1.60:1.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “What is the scaffolding of verses? ↵ What constitutes their phrasing? ↵ On what base do verses rest? ↵ What is the abode of verses?”
+sn1.60:1.1 | P: “Kiṁsu nidānaṁ gāthānaṁ, | S: “What’s the source of verses? | T: “What is the scaffolding of verses?
+sn1.60:1.2 | P: kiṁsu tāsaṁ viyañjanaṁ; | S: What constitutes their phrasing? | T: What constitutes their phrasing?
+sn1.60:1.3 | P: Kiṁsu sannissitā gāthā, | S: What do verses depend upon? | T: On what base do verses rest?
+sn1.60:1.4 | P: kiṁsu gāthānamāsayo”ti. | S: What underlies verses?” | T: What is the abode of verses?”
+
+## Verse sn1.60:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Metre is the scaffolding of verses; ↵ Syllables constitute their phrasing; ↵ Verses rest on a base of names; ↵ The poet is the abode of verses.”
+sn1.60:2.1 | P: “Chando nidānaṁ gāthānaṁ, | S: “Metre is the source of verses. | T: “Metre is the scaffolding of verses;
+sn1.60:2.2 | P: akkharā tāsaṁ viyañjanaṁ; | S: Syllables constitute their phrasing. | T: Syllables constitute their phrasing;
+sn1.60:2.3 | P: Nāmasannissitā gāthā, | S: Verses depend on names. | T: Verses rest on a base of names;
+sn1.60:2.4 | P: kavi gāthānamāsayo”ti. | S: A poet underlies verses.” | T: The poet is the abode of verses.”
+
+## Verse sn1.60:3.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn1.60:3.1 | P: Jarā ajarasā mittaṁ, | S: (none) | T: (none)
+sn1.60:3.2 | P: vatthu tīṇi janāni ca; | S: (none) | T: (none)
+sn1.60:3.3 | P: Uppatho ca dutiyo ca, | S: (none) | T: (none)
+sn1.60:3.4 | P: kavinā pūrito vaggoti. | S: (none) | T: (none)
+
+## Verse sn1.61:1.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “What has weighed down everything? ↵ What is most extensive? ↵ What is the one thing that has ↵ All under its control?”
+sn1.61:1.1 | P: “Kiṁsu sabbaṁ addhabhavi, | S: “What overcomes everything? | T: “What has weighed down everything?
+sn1.61:1.2 | P: kismā bhiyyo na vijjati; | S: What is it that nothing excels? | T: What is most extensive?
+sn1.61:1.3 | P: Kissassu ekadhammassa, | S: What is the one thing | T: What is the one thing
+sn1.61:1.4 | P: sabbeva vasamanvagū”ti. | S: that has everything under its sway?” | T: that has ↵ All under its control?”
+
+## Verse sn1.61:2.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Name has weighed down everything; ↵ Nothing is more extensive than name. ↵ Name is the one thing that has ↵ All under its control.”
+sn1.61:2.1 | P: “Nāmaṁ sabbaṁ addhabhavi, | S: “Name overcomes everything. | T: “Name has weighed down everything;
+sn1.61:2.2 | P: nāmā bhiyyo na vijjati; | S: Nothing excels name. | T: Nothing is more extensive than name.
+sn1.61:2.3 | P: Nāmassa ekadhammassa, | S: Name is the one thing | T: Name is the one thing
+sn1.61:2.4 | P: sabbeva vasamanvagū”ti. | S: that has everything under its sway.” | T: that has ↵ All under its control.”
+
+## Verse sn1.62:1.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “By what is the world led around? ↵ By what is it dragged here and there? ↵ What is the one thing that has ↵ All under its control?”
+sn1.62:1.1 | P: “Kenassu nīyati loko, | S: “What leads the world on? | T: “By what is the world led around?
+sn1.62:1.2 | P: kenassu parikassati; | S: What drags it around? | T: By what is it dragged here and there?
+sn1.62:1.3 | P: Kissassu ekadhammassa, | S: What is the one thing | T: What is the one thing
+sn1.62:1.4 | P: sabbeva vasamanvagū”ti. | S: that has everything under its sway?” | T: that has ↵ All under its control?”
+
+## Verse sn1.62:2.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “The world is led around by mind; ↵ By mind it’s dragged here and there. ↵ Mind is the one thing that has ↵ All under its control.”
+sn1.62:2.1 | P: “Cittena nīyati loko, | S: “The mind leads the world on. | T: “The world is led around by mind;
+sn1.62:2.2 | P: cittena parikassati; | S: The mind drags it around. | T: By mind it’s dragged here and there.
+sn1.62:2.3 | P: Cittassa ekadhammassa, | S: Mind is the one thing | T: Mind is the one thing
+sn1.62:2.4 | P: sabbeva vasamanvagū”ti. | S: that has everything under its sway.” | T: that has ↵ All under its control.”
+
+## Verse sn1.63:1.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “By what is the world led around? ↵ By what is it dragged here and there? ↵ What is the one thing that has ↵ All under its control?”
+sn1.63:1.1 | P: “Kenassu nīyati loko, | S: “What leads the world on? | T: “By what is the world led around?
+sn1.63:1.2 | P: kenassu parikassati; | S: What drags it around? | T: By what is it dragged here and there?
+sn1.63:1.3 | P: Kissassu ekadhammassa, | S: What is the one thing | T: What is the one thing
+sn1.63:1.4 | P: sabbeva vasamanvagū”ti. | S: that has everything under its sway?” | T: that has ↵ All under its control?”
+
+## Verse sn1.63:2.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “The world is led around by craving; ↵ By craving it‘s dragged here and there. ↵ Craving is the one thing that has ↵ All under its control.”
+sn1.63:2.1 | P: “Taṇhāya nīyati loko, | S: “Craving leads the world on. | T: “The world is led around by craving;
+sn1.63:2.2 | P: taṇhāya parikassati; | S: Craving drags it around. | T: By craving it‘s dragged here and there.
+sn1.63:2.3 | P: Taṇhāya ekadhammassa, | S: Craving is the one thing | T: Craving is the one thing
+sn1.63:2.4 | P: sabbeva vasamanvagū”ti. | S: that has everything under its sway.” | T: that has ↵ All under its control.”
+
+## Verse sn1.64:1.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “By what is the world tightly fettered? ↵ What is its means of travelling about? ↵ What is it that one must forsake ↵ In order to say, ‘Nibbāna’?”
+sn1.64:1.1 | P: “Kiṁsu saṁyojano loko, | S: “What fetters the world? | T: “By what is the world tightly fettered?
+sn1.64:1.2 | P: kiṁsu tassa vicāraṇaṁ; | S: How does it travel about? | T: What is its means of travelling about?
+sn1.64:1.3 | P: Kissassu vippahānena, | S: With the giving up of what | T: What is it that one must forsake
+sn1.64:1.4 | P: nibbānaṁ iti vuccatī”ti. | S: is extinguishment spoken of?” | T: In order to say, ‘Nibbāna’?”
+
+## Verse sn1.64:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “The world is tightly fettered by delight; ↵ Thought is its means of travelling about. ↵ Craving is what one must forsake ↵ In order to say, ‘Nibbāna.’”
+sn1.64:2.1 | P: “Nandīsaṁyojano loko, | S: “Delight fetters the world. | T: “The world is tightly fettered by delight;
+sn1.64:2.2 | P: vitakkassa vicāraṇaṁ; | S: It travels about by means of thought. | T: Thought is its means of travelling about.
+sn1.64:2.3 | P: Taṇhāya vippahānena, | S: With the giving up of craving | T: Craving is what one must forsake
+sn1.64:2.4 | P: nibbānaṁ iti vuccatī”ti. | S: extinguishment is spoken of.” | T: In order to say, ‘Nibbāna.’”
+
+## Verse sn1.65:1.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “By what is the world held in bondage? ↵ What is its means of travelling about? ↵ What is it that one must forsake ↵ To cut off all bondage?”
+sn1.65:1.1 | P: “Kiṁsu sambandhano loko, | S: “What binds the world? | T: “By what is the world held in bondage?
+sn1.65:1.2 | P: kiṁsu tassa vicāraṇaṁ; | S: How does it travel about? | T: What is its means of travelling about?
+sn1.65:1.3 | P: Kissassu vippahānena, | S: With the giving up of what | T: What is it that one must forsake
+sn1.65:1.4 | P: sabbaṁ chindati bandhanan”ti. | S: are all bonds severed?” | T: To cut off all bondage?”
+
+## Verse sn1.65:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “The world is held in bondage by delight; ↵ Thought is its means of travelling about. ↵ Craving is what one must forsake ↵ To cut off all bondage.”
+sn1.65:2.1 | P: “Nandīsambandhano loko, | S: “Delight binds the world. | T: “The world is held in bondage by delight;
+sn1.65:2.2 | P: vitakkassa vicāraṇaṁ; | S: It travels about by means of thought. | T: Thought is its means of travelling about.
+sn1.65:2.3 | P: Taṇhāya vippahānena, | S: With the giving up of craving | T: Craving is what one must forsake
+sn1.65:2.4 | P: sabbaṁ chindati bandhanan”ti. | S: all bonds are severed.” | T: To cut off all bondage.”
+
+## Verse sn1.66:1.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “By what is the world afflicted? ↵ By what is it enveloped? ↵ By what dart has it been wounded? ↵ With what is it always burning?”
+sn1.66:1.1 | P: “Kenassubbhāhato loko, | S: “By what is the world beaten down? | T: “By what is the world afflicted?
+sn1.66:1.2 | P: kenassu parivārito; | S: By what is it surrounded? | T: By what is it enveloped?
+sn1.66:1.3 | P: Kena sallena otiṇṇo, | S: What dart has laid it low? | T: By what dart has it been wounded?
+sn1.66:1.4 | P: kissa dhūpāyito sadā”ti. | S: With what is it always fuming?” | T: With what is it always burning?”
+
+## Verse sn1.66:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “The world is afflicted with death, ↵ Enveloped by old age; ↵ Wounded by the dart of craving, ↵ It is always burning with desire.”
+sn1.66:2.1 | P: “Maccunābbhāhato loko, | S: “The world is beaten down by death. | T: “The world is afflicted with death,
+sn1.66:2.2 | P: jarāya parivārito; | S: It’s surrounded by old age. | T: Enveloped by old age;
+sn1.66:2.3 | P: Taṇhāsallena otiṇṇo, | S: The dart of craving has laid it low. | T: Wounded by the dart of craving,
+sn1.66:2.4 | P: icchādhūpāyito sadā”ti. | S: It’s always fuming with desire.” | T: It is always burning with desire.”
+
+## Verse sn1.67:1.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “By what is the world ensnared? ↵ By what is it enveloped? ↵ By what is the world shut in? ↵ On what is the world established?”
+sn1.67:1.1 | P: “Kenassu uḍḍito loko, | S: “By what is the world ensnared? | T: “By what is the world ensnared?
+sn1.67:1.2 | P: kenassu parivārito; | S: By what is it surrounded? | T: By what is it enveloped?
+sn1.67:1.3 | P: Kenassu pihito loko, | S: By what is the world fastened shut? | T: By what is the world shut in?
+sn1.67:1.4 | P: kismiṁ loko patiṭṭhito”ti. | S: On what is the world grounded?” | T: On what is the world established?”
+
+## Verse sn1.67:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “The world is ensnared by craving; ↵ It is enveloped by old age; ↵ The world is shut in by death; ↵ The world is established on suffering.”
+sn1.67:2.1 | P: “Taṇhāya uḍḍito loko, | S: “Craving has ensnared the world. | T: “The world is ensnared by craving;
+sn1.67:2.2 | P: jarāya parivārito; | S: It’s surrounded by old age. | T: It is enveloped by old age;
+sn1.67:2.3 | P: Maccunā pihito loko, | S: The world is fastened shut by mortality. | T: The world is shut in by death;
+sn1.67:2.4 | P: dukkhe loko patiṭṭhito”ti. | S: The world is grounded on suffering.” | T: The world is established on suffering.”
+
+## Verse sn1.68:1.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “By what is the world shut in? ↵ On what is the world established? ↵ By what is the world ensnared? ↵ By what is it enveloped?”
+sn1.68:1.1 | P: “Kenassu pihito loko, | S: “By what is the world fastened shut? | T: “By what is the world shut in?
+sn1.68:1.2 | P: kismiṁ loko patiṭṭhito; | S: On what is the world grounded? | T: On what is the world established?
+sn1.68:1.3 | P: Kenassu uḍḍito loko, | S: By what is the world ensnared? | T: By what is the world ensnared?
+sn1.68:1.4 | P: kenassu parivārito”ti. | S: By what is it surrounded?” | T: By what is it enveloped?”
+
+## Verse sn1.68:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “The world is shut in by death; ↵ The world is established on suffering; ↵ The world is ensnared by craving; ↵ It is enveloped by old age.”
+sn1.68:2.1 | P: “Maccunā pihito loko, | S: “The world is fastened shut by mortality. | T: “The world is shut in by death;
+sn1.68:2.2 | P: dukkhe loko patiṭṭhito; | S: The world is grounded on suffering. | T: The world is established on suffering;
+sn1.68:2.3 | P: Taṇhāya uḍḍito loko, | S: Craving has ensnared the world. | T: The world is ensnared by craving;
+sn1.68:2.4 | P: jarāya parivārito”ti. | S: It’s surrounded by old age.” | T: It is enveloped by old age.”
+
+## Verse sn1.69:1.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “By what is the world bound? ↵ By the removal of what is it freed? ↵ What is it that one must forsake ↵ To cut off all bondage?”
+sn1.69:1.1 | P: “Kenassu bajjhatī loko, | S: “What is it that binds the world? | T: “By what is the world bound?
+sn1.69:1.2 | P: kissa vinayāya muccati; | S: By removing what is it freed? | T: By the removal of what is it freed?
+sn1.69:1.3 | P: Kissassu vippahānena, | S: With the giving up of what | T: What is it that one must forsake
+sn1.69:1.4 | P: sabbaṁ chindati bandhanan”ti. | S: are all bonds severed?” | T: To cut off all bondage?”
+
+## Verse sn1.69:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “By desire is the world bound; ↵ By the removal of desire it is freed. ↵ Desire is what one must forsake ↵ To cut off all bondage.”
+sn1.69:2.1 | P: “Icchāya bajjhatī loko, | S: “Desire is what binds the world. | T: “By desire is the world bound;
+sn1.69:2.2 | P: icchāvinayāya muccati; | S: By the removing of desire it’s freed. | T: By the removal of desire it is freed.
+sn1.69:2.3 | P: Icchāya vippahānena, | S: With the giving up of desire, | T: Desire is what one must forsake
+sn1.69:2.4 | P: sabbaṁ chindati bandhanan”ti. | S: all bonds are severed.” | T: To cut off all bondage.”
+
+## Verse sn1.6:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “How many are asleep when others are awake? ↵ How many are awake when others sleep? ↵ By how many does one gather dust? ↵ By how many is one purified?”
+sn1.6:2.1 | P: “Kati jāgarataṁ suttā, | S: “How many sleep among the waking? | T: “How many are asleep when others are awake?
+sn1.6:2.2 | P: kati suttesu jāgarā; | S: How many wake among the sleeping? | T: How many are awake when others sleep?
+sn1.6:2.3 | P: Katibhi rajamādeti, | S: By how many do you gather dust? | T: By how many does one gather dust?
+sn1.6:2.4 | P: katibhi parisujjhatī”ti. | S: By how many are you cleansed?” | T: By how many is one purified?”
+
+## Verse sn1.6:3.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Five are asleep when others are awake; ↵ Five are awake when others sleep. ↵ By five things one gathers dust, ↵ By five things one is purified.”
+sn1.6:3.1 | P: “Pañca jāgarataṁ suttā, | S: “Five sleep among the waking. | T: The Blessed One: ↵ “Five are asleep when others are awake;
+sn1.6:3.2 | P: pañca suttesu jāgarā; | S: Five wake among the sleeping. | T: Five are awake when others sleep.
+sn1.6:3.3 | P: Pañcabhi rajamādeti, | S: By five you gather dust. | T: By five things one gathers dust,
+sn1.6:3.4 | P: pañcabhi parisujjhatī”ti. | S: By five you’re cleansed.” | T: By five things one is purified.”
+
+## Verse sn1.70:1.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “In what has the world arisen? ↵ In what does it form intimacy? ↵ By clinging to what is the world ↵ Harassed in regard to what?”
+sn1.70:1.1 | P: “Kismiṁ loko samuppanno, | S: “In what has the world arisen? | T: “In what has the world arisen?
+sn1.70:1.2 | P: kismiṁ kubbati santhavaṁ; | S: With what does it get intimate? | T: In what does it form intimacy?
+sn1.70:1.3 | P: Kissa loko upādāya, | S: By grasping what | T: By clinging to what
+sn1.70:1.4 | P: kismiṁ loko vihaññatī”ti. | S: is the world troubled in what?” | T: is the world ↵ Harassed in regard to what?”
+
+## Verse sn1.70:2.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “In six has the world arisen; ↵ In six it forms intimacy; ↵ By clinging to six the world ↵ Is harassed in regard to six.”
+sn1.70:2.1 | P: “Chasu loko samuppanno, | S: “The world has arisen in six. | T: “In six has the world arisen;
+sn1.70:2.2 | P: chasu kubbati santhavaṁ; | S: It gets intimate with six. | T: In six it forms intimacy;
+sn1.70:2.3 | P: Channameva upādāya, | S: Derived from the six, | T: By clinging to six
+sn1.70:2.4 | P: chasu loko vihaññatī”ti. | S: the world’s troubled in six.” | T: the world ↵ Is harassed in regard to six.”
+
+## Verse sn1.70:3.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn1.70:3.1 | P: Nāmaṁ cittañca taṇhā ca, | S: (none) | T: (none)
+sn1.70:3.2 | P: saṁyojanañca bandhanā; | S: (none) | T: (none)
+sn1.70:3.3 | P: Abbhāhatuḍḍito pihito, | S: (none) | T: (none)
+sn1.70:3.4 | P: icchā lokena te dasāti. | S: (none) | T: (none)
+
+## Verse sn1.71:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Having slain what does one sleep soundly? ↵ Having slain what does one not sorrow? ↵ What is the one thing, O Gotama, ↵ Whose killing you approve?”
+sn1.71:2.1 | P: “Kiṁsu chetvā sukhaṁ seti, | S: “When what is slain do you sleep at ease? | T: “Having slain what does one sleep soundly?
+sn1.71:2.2 | P: kiṁsu chetvā na socati; | S: When what is slain is there no sorrow? | T: Having slain what does one not sorrow?
+sn1.71:2.3 | P: Kissassu ekadhammassa, | S: What is the one thing, Gotama, | T: What is the one thing, O Gotama,
+sn1.71:2.4 | P: vadhaṁ rocesi gotamā”ti. | S: whose killing you approve?” | T: Whose killing you approve?”
+
+## Verse sn1.71:3.1 | 6 Pali rows | 7 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Having slain anger, one sleeps soundly; ↵ Having slain anger, one does not sorrow; ↵ The killing of anger, O devatā, ↵ With its poisoned root and honeyed tip: ↵ This is the killing the noble ones praise, ↵ For having slain that, one does not sorrow.”
+sn1.71:3.1 | P: “Kodhaṁ chetvā sukhaṁ seti, | S: “When anger’s slain you sleep at ease. | T: The Blessed One: ↵ “Having slain anger, one sleeps soundly;
+sn1.71:3.2 | P: kodhaṁ chetvā na socati; | S: When anger’s slain there is no sorrow. | T: Having slain anger, one does not sorrow;
+sn1.71:3.3 | P: Kodhassa visamūlassa, | S: Anger has a poisonous root | T: The killing of anger, O devatā,
+sn1.71:3.4 | P: madhuraggassa devate; | S: and a sweet tip, O deity. | T: With its poisoned root and honeyed tip:
+sn1.71:3.5 | P: Vadhaṁ ariyā pasaṁsanti, | S: The noble ones praise its killing, | T: This is the killing the noble ones praise,
+sn1.71:3.6 | P: tañhi chetvā na socatī”ti. | S: for when it’s slain there is no sorrow.” | T: For having slain that, one does not sorrow.”
+
+## Verse sn1.72:1.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “What is the token of a chariot? ↵ What, the token of a fire? ↵ What is the token of a country? ↵ What, the token of a woman?”
+sn1.72:1.1 | P: “Kiṁsu rathassa paññāṇaṁ, | S: “What is a chariot known by? | T: “What is the token of a chariot?
+sn1.72:1.2 | P: kiṁsu paññāṇamaggino; | S: What is fire known by? | T: What, the token of a fire?
+sn1.72:1.3 | P: Kiṁsu raṭṭhassa paññāṇaṁ, | S: What is a nation known by? | T: What is the token of a country?
+sn1.72:1.4 | P: kiṁsu paññāṇamitthiyā”ti. | S: What is a woman known by?” | T: What, the token of a woman?”
+
+## Verse sn1.72:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “A standard is the token of a chariot; ↵ Smoke, the token of a fire; ↵ The king is a country’s token; ↵ A husband, the token of a woman.”
+sn1.72:2.1 | P: “Dhajo rathassa paññāṇaṁ, | S: “A chariot is known by a banner. | T: “A standard is the token of a chariot;
+sn1.72:2.2 | P: dhūmo paññāṇamaggino; | S: Fire is known by smoke. | T: Smoke, the token of a fire;
+sn1.72:2.3 | P: Rājā raṭṭhassa paññāṇaṁ, | S: A nation is known by its ruler. | T: The king is a country’s token;
+sn1.72:2.4 | P: bhattā paññāṇamitthiyā”ti. | S: A woman is known by her husband.” | T: A husband, the token of a woman.”
+
+## Verse sn1.73:1.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “What here is a man’s best treasure? ↵ What practised well brings happiness? ↵ What is really the sweetest of tastes? ↵ How lives the one whom they say lives best?”
+sn1.73:1.1 | P: “Kiṁsūdha vittaṁ purisassa seṭṭhaṁ, | S: “What’s a person’s best wealth? | T: “What here is a man’s best treasure?
+sn1.73:1.2 | P: Kiṁsu suciṇṇo sukhamāvahati; | S: What brings happiness when practiced well? | T: What practised well brings happiness?
+sn1.73:1.3 | P: Kiṁsu have sādutaraṁ rasānaṁ, | S: What’s the sweetest taste of all? | T: What is really the sweetest of tastes?
+sn1.73:1.4 | P: Kathaṁjīviṁ jīvitamāhu seṭṭhan”ti. | S: The one they say has the best life: how do they live?” | T: How lives the one whom they say lives best?”
+
+## Verse sn1.73:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Faith is here a man’s best treasure; ↵ Dhamma practised well brings happiness; ↵ Truth is really the sweetest of tastes; ↵ One living by wisdom they say lives best.”
+sn1.73:2.1 | P: “Saddhīdha vittaṁ purisassa seṭṭhaṁ, | S: “Faith here is a person’s best wealth. | T: “Faith is here a man’s best treasure;
+sn1.73:2.2 | P: Dhammo suciṇṇo sukhamāvahati; | S: The teaching brings happiness when practiced well. | T: Dhamma practised well brings happiness;
+sn1.73:2.3 | P: Saccaṁ have sādutaraṁ rasānaṁ, | S: Truth is the sweetest taste of all. | T: Truth is really the sweetest of tastes;
+sn1.73:2.4 | P: Paññājīviṁ jīvitamāhu seṭṭhan”ti. | S: The one they say has the best life lives by wisdom.” | T: One living by wisdom they say lives best.”
+
+## Verse sn1.74:1.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “What is the best of things that rise up? ↵ What excels among things that fall down? ↵ What is the best of things that go forth? ↵ Who is the most excellent of speakers?”
+sn1.74:1.1 | P: “Kiṁsu uppatataṁ seṭṭhaṁ, | S: “What’s the best of things that rise? | T: A devatā: ↵ “What is the best of things that rise up?
+sn1.74:1.2 | P: kiṁsu nipatataṁ varaṁ; | S: And what’s the finest thing to fall? | T: What excels among things that fall down?
+sn1.74:1.3 | P: Kiṁsu pavajamānānaṁ, | S: And what of the things that go forth? | T: What is the best of things that go forth?
+sn1.74:1.4 | P: kiṁsu pavadataṁ varan”ti. | S: And who’s the finest speaker?” | T: Who is the most excellent of speakers?”
+
+## Verse sn1.74:2.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “A seed is the best of things that rise up; ↵ Rain excels among things that fall down; ↵ Cattle are the best of things that go forth; ↵ A son is the most excellent of speakers.”
+sn1.74:2.1 | P: “Bījaṁ uppatataṁ seṭṭhaṁ, | S: “A seed’s the best of things that rise. | T: Another devatā: ↵ “A seed is the best of things that rise up;
+sn1.74:2.2 | P: vuṭṭhi nipatataṁ varā; | S: Rain’s the finest thing to fall. | T: Rain excels among things that fall down;
+sn1.74:2.3 | P: Gāvo pavajamānānaṁ, | S: Cattle, of things that go forth. | T: Cattle are the best of things that go forth;
+sn1.74:2.4 | P: putto pavadataṁ varo”ti. | S: And a child is the finest speaker.” | T: A son is the most excellent of speakers.”
+
+## Verse sn1.74:3.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Knowledge is the best of things that rise up; ↵ Ignorance excels among things that fall down; ↵ The Saṅgha is the best of things that go forth; ↵ The most excellent of speakers is the Buddha.”
+sn1.74:3.1 | P: “Vijjā uppatataṁ seṭṭhā, | S: “Knowledge is best of things that rise. | T: The Blessed One: ↵ “Knowledge is the best of things that rise up;
+sn1.74:3.2 | P: avijjā nipatataṁ varā; | S: Ignorance the finest thing to fall. | T: Ignorance excels among things that fall down;
+sn1.74:3.3 | P: Saṅgho pavajamānānaṁ, | S: The Saṅgha, of things that go forth. | T: The Saṅgha is the best of things that go forth;
+sn1.74:3.4 | P: buddho pavadataṁ varo”ti. | S: And the Buddha is the finest speaker.” | T: The most excellent of speakers is the Buddha.”
+
+## Verse sn1.75:1.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Why are so many people here afraid ↵ When the path has been taught with many bases? ↵ I ask you, O Gotama, broad of wisdom: ↵ On what should one take a stand ↵ To have no fear of the other world?”
+sn1.75:1.1 | P: “Kiṁsūdha bhītā janatā anekā, | S: “Why are so many people here afraid, | T: “Why are so many people here afraid
+sn1.75:1.2 | P: Maggo canekāyatanappavutto; | S: when the path has been taught with so many dimensions? | T: When the path has been taught with many bases?
+sn1.75:1.3 | P: Pucchāmi taṁ gotama bhūripañña, | S: I ask you, Gotama, whose wisdom is vast: | T: I ask you, O Gotama, broad of wisdom:
+sn1.75:1.4 | P: Kismiṁ ṭhito paralokaṁ na bhāye”ti. | S: Standing on what need one not fear the next world?” | T: On what should one take a stand ↵ To have no fear of the other world?”
+
+## Verse sn1.75:2.1 | 6 Pali rows | 7 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Having directed speech and mind rightly, ↵ Doing no evil deeds with the body, ↵ Dwelling at home with ample food and drink, ↵ Faithful, gentle, generous, amiable: ↵ When one stands on these four things, ↵ Standing firmly on the Dhamma, ↵ One need not fear the other world.”
+sn1.75:2.1 | P: “Vācaṁ manañca paṇidhāya sammā, | S: “When speech and mind are directed right, | T: “Having directed speech and mind rightly,
+sn1.75:2.2 | P: Kāyena pāpāni akubbamāno; | S: and you don’t do anything bad with the body | T: Doing no evil deeds with the body,
+sn1.75:2.3 | P: Bahvannapānaṁ gharamāvasanto, | S: while dwelling at home with plenty of food and drink. | T: Dwelling at home with ample food and drink,
+sn1.75:2.4 | P: Saddho mudū saṁvibhāgī vadaññū; | S: Faithful, gentle, charitable, and bountiful: | T: Faithful, gentle, generous, amiable:
+sn1.75:2.5 | P: Etesu dhammesu ṭhito catūsu, | S: one who stands on these four principles, | T: When one stands on these four things,
+sn1.75:2.6 | P: Dhamme ṭhito paralokaṁ na bhāye”ti. | S: who stands on the teaching need not fear the next world.” | T: Standing firmly on the Dhamma, ↵ One need not fear the other world.”
+
+## Verse sn1.76:1.1 | 6 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “What decays, what does not decay? ↵ What is declared the deviant path? ↵ What is the impediment to wholesome states? ↵ What undergoes destruction night and day? ↵ What is the stain of the holy life? ↵ What is the bath without water?
+sn1.76:1.1 | P: “Kiṁ jīrati kiṁ na jīrati, | S: “What ages, what does not age? | T: “What decays, what does not decay?
+sn1.76:1.2 | P: kiṁsu uppathoti vuccati; | S: What’s called a deviation? | T: What is declared the deviant path?
+sn1.76:1.3 | P: Kiṁsu dhammānaṁ paripantho, | S: What’s a roadblock for skillful qualities? | T: What is the impediment to wholesome states?
+sn1.76:1.4 | P: kiṁsu rattindivakkhayo; | S: What is ending day and night? | T: What undergoes destruction night and day?
+sn1.76:1.5 | P: Kiṁ malaṁ brahmacariyassa, | S: What’s the stain of celibacy? | T: What is the stain of the holy life?
+sn1.76:1.6 | P: kiṁ sinānamanodakaṁ. | S: What’s the waterless bath? | T: What is the bath without water?
+
+## Verse sn1.76:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “How many fissures are there in the world ↵ Wherein the mind does not stand firm? ↵ We’ve come to ask the Blessed One this: ↵ How are we to understand it?”
+sn1.76:2.1 | P: Kati lokasmiṁ chiddāni, | S: How many holes are there in the world, | T: “How many fissures are there in the world
+sn1.76:2.2 | P: yattha vittaṁ na tiṭṭhati; | S: where one’s wealth leaks out? | T: Wherein the mind does not stand firm?
+sn1.76:2.3 | P: Bhagavantaṁ puṭṭhumāgamma, | S: We’ve come to ask the worthy sir: | T: We’ve come to ask the Blessed One this:
+sn1.76:2.4 | P: kathaṁ jānemu taṁ mayan”ti. | S: how are we to understand this?” | T: How are we to understand it?”
+
+## Verse sn1.76:3.1 | 3 Pali rows | 3 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “The physical form of mortals decays, ↵ Their name and clan does not decay. ↵ Lust is declared the deviant path,
+sn1.76:3.1 | P: “Rūpaṁ jīrati maccānaṁ, | S: “The physical form of mortals gets old, | T: “The physical form of mortals decays,
+sn1.76:3.2 | P: nāmagottaṁ na jīrati; | S: but their name and clan don’t. | T: Their name and clan does not decay.
+sn1.76:3.3 | P: Rāgo uppathoti vuccati. | S: Lust is called a deviation, | T: Lust is declared the deviant path,
+
+## Verse sn1.76:4.1 | 6 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Greed the impediment to wholesome states. ↵ “Life undergoes destruction night and day; ↵ Women are the stain of the holy life: ↵ Here’s where menfolk are enmeshed. ↵ Austerity and the holy life— ↵ That is the bath without water.
+sn1.76:4.1 | P: Lobho dhammānaṁ paripantho, | S: and greed is a roadblock for skillful qualities. | T: Greed the impediment to wholesome states.
+sn1.76:4.2 | P: Vayo rattindivakkhayo; | S: Youth is ending day and night. | T: “Life undergoes destruction night and day;
+sn1.76:4.3 | P: Itthī malaṁ brahmacariyassa, | S: Women are the stain of chastity, | T: Women are the stain of the holy life:
+sn1.76:4.4 | P: Etthāyaṁ sajjate pajā; | S: to which this generation clings. | T: Here’s where menfolk are enmeshed.
+sn1.76:4.5 | P: Tapo ca brahmacariyañca, | S: Fervor and chastity | T: Austerity and the holy life—
+sn1.76:4.6 | P: Taṁ sinānamanodakaṁ. | S: are the waterless bath. | T: That is the bath without water.

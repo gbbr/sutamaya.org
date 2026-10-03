@@ -1,0 +1,333 @@
+## Verse sn5.10:5.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Just as, with an assemblage of parts, ↵ The word ‘chariot’ is used, ↵ So, when the aggregates exist, ↵ There is the convention ‘a being.’
+sn5.10:5.1 | P: Yathā hi aṅgasambhārā, | S: When the parts are assembled | T: “Just as, with an assemblage of parts,
+sn5.10:5.2 | P: hoti saddo ratho iti; | S: we use the word ‘chariot’. | T: The word ‘chariot’ is used,
+sn5.10:5.3 | P: Evaṁ khandhesu santesu, | S: So too, when the aggregates are present | T: So, when the aggregates exist,
+sn5.10:5.4 | P: hoti sattoti sammuti. | S: ‘sentient being’ is the convention we use. | T: There is the convention ‘a being.’
+
+## Verse sn5.10:6.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “It’s only suffering that comes to be, ↵ Suffering that stands and falls away. ↵ Nothing but suffering comes to be, ↵ Nothing but suffering ceases.”
+sn5.10:6.1 | P: Dukkhameva hi sambhoti, | S: But it’s only suffering that comes to be, | T: “It’s only suffering that comes to be,
+sn5.10:6.2 | P: dukkhaṁ tiṭṭhati veti ca; | S: lasts a while, then expires. | T: Suffering that stands and falls away.
+sn5.10:6.3 | P: Nāññatra dukkhā sambhoti, | S: Naught but suffering comes to be, | T: Nothing but suffering comes to be,
+sn5.10:6.4 | P: nāññaṁ dukkhā nirujjhatī”ti. | S: naught but suffering ceases.” | T: Nothing but suffering ceases.”
+
+## Verse sn5.10:8.1 | 5 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn5.10:8.1 | P: Āḷavikā ca somā ca, | S: (none) | T: (none)
+sn5.10:8.2 | P: Gotamī vijayā saha; | S: (none) | T: (none)
+sn5.10:8.3 | P: Uppalavaṇṇā ca cālā, | S: (none) | T: (none)
+sn5.10:8.4 | P: Upacālā sīsupacālā ca; | S: (none) | T: (none)
+sn5.10:8.5 | P: Selā vajirāya te dasāti. | S: (none) | T: (none)
+
+## Verse sn5.1:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “There is no escape in the world, ↵ So what will you do with seclusion? ↵ Enjoy the delights of sensual pleasure: ↵ Don’t be remorseful later!”
+sn5.1:2.1 | P: “Natthi nissaraṇaṁ loke, | S: “There’s no escape in the world, | T: “There is no escape in the world,
+sn5.1:2.2 | P: kiṁ vivekena kāhasi; | S: so what will seclusion do for you? | T: So what will you do with seclusion?
+sn5.1:2.3 | P: Bhuñjassu kāmaratiyo, | S: Enjoy erotic delights; | T: Enjoy the delights of sensual pleasure:
+sn5.1:2.4 | P: māhu pacchānutāpinī”ti. | S: don’t regret it later.” | T: Don’t be remorseful later!”
+
+## Verse sn5.1:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “There is an escape in the world ↵ Which I have closely touched with wisdom. ↵ O Evil One, kinsman of the negligent, ↵ You do not know that state.
+sn5.1:4.1 | P: “Atthi nissaraṇaṁ loke, | S: “There is an escape in the world, | T: “There is an escape in the world
+sn5.1:4.2 | P: paññāya me suphussitaṁ; | S: and I’ve personally experienced it with wisdom. | T: Which I have closely touched with wisdom.
+sn5.1:4.3 | P: Pamattabandhu pāpima, | S: O Wicked One, kinsman of the negligent, | T: O Evil One, kinsman of the negligent,
+sn5.1:4.4 | P: na tvaṁ jānāsi taṁ padaṁ. | S: you don’t know that state. | T: You do not know that state.
+
+## Verse sn5.1:5.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Sensual pleasures are like swords and stakes; ↵ The aggregates like their chopping block. ↵ What you call sensual delight ↵ Has become for me nondelight.”
+sn5.1:5.1 | P: Sattisūlūpamā kāmā, | S: Sensual pleasures are like swords and spears; | T: “Sensual pleasures are like swords and stakes;
+sn5.1:5.2 | P: khandhāsaṁ adhikuṭṭanā; | S: the aggregates are their chopping block. | T: The aggregates like their chopping block.
+sn5.1:5.3 | P: Yaṁ tvaṁ kāmaratiṁ brūsi, | S: What you call erotic delight | T: What you call sensual delight
+sn5.1:5.4 | P: arati mayha sā ahū”ti. | S: is now no delight for me.” | T: Has become for me nondelight.”
+
+## Verse sn5.2:2.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): “That state so hard to achieve ↵ Which is to be attained by the seers, ↵ Can’t be attained by a woman ↵ With her two-fingered wisdom.”
+sn5.2:2.1 | P: “Yaṁ taṁ isīhi pattabbaṁ, | S: “That state’s very challenging; | T: “That state so hard to achieve
+sn5.2:2.2 | P: ṭhānaṁ durabhisambhavaṁ; | S: it’s for the sages to attain. | T: Which is to be attained by the seers,
+sn5.2:2.3 | P: Na taṁ dvaṅgulapaññāya, | S: With her two-inch wisdom, | T: Can’t be attained by a woman ↵ With her two-fingered wisdom.”
+sn5.2:2.4 | P: sakkā pappotumitthiyā”ti. | S: it’s not possible for a woman.” | T: (none)
+
+## Verse sn5.2:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “What does womanhood matter at all ↵ When the mind is concentrated well, ↵ When knowledge flows on steadily ↵ As one sees correctly into Dhamma.
+sn5.2:4.1 | P: “Itthibhāvo kiṁ kayirā, | S: “What difference does womanhood make | T: “What does womanhood matter at all
+sn5.2:4.2 | P: cittamhi susamāhite; | S: when the mind is serene, | T: When the mind is concentrated well,
+sn5.2:4.3 | P: Ñāṇamhi vattamānamhi, | S: and knowledge is present | T: When knowledge flows on steadily
+sn5.2:4.4 | P: sammā dhammaṁ vipassato. | S: as you rightly discern the Dhamma. | T: As one sees correctly into Dhamma.
+
+## Verse sn5.2:5.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “One to whom it might occur, ↵ ‘I’m a woman’ or ‘I’m a man’ ↵ Or ‘I’m anything at all’— ↵ Is fit for Mara to address.”
+sn5.2:5.1 | P: Yassa nūna siyā evaṁ, | S: Surely someone who might think: | T: “One to whom it might occur,
+sn5.2:5.2 | P: Itthāhaṁ purisoti vā; | S: ‘I am woman’, or ‘I am man’, | T: ‘I’m a woman’ or ‘I’m a man’
+sn5.2:5.3 | P: Kiñci vā pana aññasmi, | S: or ‘I am’ anything at all, | T: Or ‘I’m anything at all’—
+sn5.2:5.4 | P: Taṁ māro vattumarahatī”ti. | S: is fit for Māra to address.” | T: Is fit for Mara to address.”
+
+## Verse sn5.3:2.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): “Why now, when your son is dead, ↵ Do you sit alone with tearful face? ↵ Having entered the woods all alone, ↵ Are you on the lookout for a man?”
+sn5.3:2.1 | P: “Kiṁ nu tvaṁ mataputtāva, | S: “Why do you sit alone and cry | T: “Why now, when your son is dead, ↵ Do you sit alone with tearful face?
+sn5.3:2.2 | P: ekamāsi rudammukhī; | S: as if your children have died? | T: (none)
+sn5.3:2.3 | P: Vanamajjhagatā ekā, | S: You’ve come to the woods all alone— | T: Having entered the woods all alone,
+sn5.3:2.4 | P: purisaṁ nu gavesasī”ti. | S: are you looking for a man?” | T: Are you on the lookout for a man?”
+
+## Verse sn5.3:5.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “I’ve gotten past the death of sons; ↵ With this, the search for men has ended. ↵ I do not sorrow, I do not weep, ↵ Nor do I fear you, friend .
+sn5.3:5.1 | P: “Accantaṁ mataputtāmhi, | S: “I’ve got over the death of children, | T: “I’ve gotten past the death of sons;
+sn5.3:5.2 | P: purisā etadantikā; | S: and I’m finished with men. | T: With this, the search for men has ended.
+sn5.3:5.3 | P: Na socāmi na rodāmi, | S: I don’t grieve or lament, | T: I do not sorrow, I do not weep,
+sn5.3:5.4 | P: na taṁ bhāyāmi āvuso. | S: and I’m not afraid of you, sir! | T: Nor do I fear you, friend .
+
+## Verse sn5.3:6.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Delight everywhere has been destroyed, ↵ The mass of darkness has been sundered. ↵ Having conquered the army of Death, ↵ I dwell without defiling taints.”
+sn5.3:6.1 | P: Sabbattha vihatā nandī, | S: Relishing is banished in every respect, | T: “Delight everywhere has been destroyed,
+sn5.3:6.2 | P: tamokkhandho padālito; | S: and the mass of darkness is shattered. | T: The mass of darkness has been sundered.
+sn5.3:6.3 | P: Jetvāna maccuno senaṁ, | S: I’ve defeated the army of death, | T: Having conquered the army of Death,
+sn5.3:6.4 | P: viharāmi anāsavā”ti. | S: and live without defilements.” | T: I dwell without defiling taints.”
+
+## Verse sn5.4:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “You are so young and beautiful, ↵ And I too am a youth in my prime. ↵ Come, noble lady, let us rejoice ↵ With the music of a fivefold ensemble.”
+sn5.4:2.1 | P: “Daharā tvaṁ rūpavatī, | S: “You’re so young and beautiful, | T: “You are so young and beautiful,
+sn5.4:2.2 | P: ahañca daharo susu; | S: and I’m a youth in my prime. | T: And I too am a youth in my prime.
+sn5.4:2.3 | P: Pañcaṅgikena turiyena, | S: Come, my lady, let us enjoy | T: Come, noble lady, let us rejoice
+sn5.4:2.4 | P: ehayyebhiramāmase”ti. | S: the music of a five-piece band.” | T: With the music of a fivefold ensemble.”
+
+## Verse sn5.4:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Forms, sounds, tastes, odours, ↵ And delightful tactile objects— ↵ I offer them right back to you, ↵ For I, O Mara, do not need them.
+sn5.4:4.1 | P: “Rūpā saddā rasā gandhā, | S: “Sights, sounds, tastes, smells, | T: “Forms, sounds, tastes, odours,
+sn5.4:4.2 | P: phoṭṭhabbā ca manoramā; | S: and touches so delightful. | T: And delightful tactile objects—
+sn5.4:4.3 | P: Niyyātayāmi tuyheva, | S: I hand them right back to you, Māra, | T: I offer them right back to you,
+sn5.4:4.4 | P: māra nāhaṁ tenatthikā. | S: for I have no use for them. | T: For I, O Mara, do not need them.
+
+## Verse sn5.4:5.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): “I am repelled and humiliated ↵ By this foul, putrid body, ↵ Subject to break up, fragile: ↵ I’ve uprooted sensual craving.
+sn5.4:5.1 | P: Iminā pūtikāyena, | S: This body is rotting, | T: “I am repelled and humiliated ↵ By this foul, putrid body,
+sn5.4:5.2 | P: bhindanena pabhaṅgunā; | S: decaying and frail. | T: Subject to break up, fragile:
+sn5.4:5.3 | P: Aṭṭīyāmi harāyāmi, | S: I’m horrified and repelled by it, | T: (none)
+sn5.4:5.4 | P: kāmataṇhā samūhatā. | S: and I’ve eradicated sensual craving. | T: I’ve uprooted sensual craving.
+
+## Verse sn5.4:6.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “As to those beings who fare amidst form, ↵ And those who abide in the formless, ↵ And those peaceful attainments too: ↵ Everywhere darkness has been destroyed.”
+sn5.4:6.1 | P: Ye ca rūpūpagā sattā, | S: There are beings in the realm of luminous form, | T: “As to those beings who fare amidst form,
+sn5.4:6.2 | P: ye ca arūpaṭṭhāyino; | S: and others stuck in the formless. | T: And those who abide in the formless,
+sn5.4:6.3 | P: Yā ca santā samāpatti, | S: I’ve destroyed the darkness | T: And those peaceful attainments too:
+sn5.4:6.4 | P: sabbattha vihato tamo”ti. | S: regarding all such peaceful attainments.” | T: Everywhere darkness has been destroyed.”
+
+## Verse sn5.5:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Having gone to a sal tree with flowering top, ↵ You stand at its foot all alone, bhikkhuni. ↵ There is none whose beauty rivals yours: ↵ Foolish girl, aren’t you afraid of rogues?”
+sn5.5:2.1 | P: “Supupphitaggaṁ upagamma bhikkhuni, | S: “You’ve come to this sal tree all crowned with flowers, | T: “Having gone to a sal tree with flowering top,
+sn5.5:2.2 | P: Ekā tuvaṁ tiṭṭhasi sālamūle; | S: and stand at its root all alone, O nun. | T: You stand at its foot all alone, bhikkhuni.
+sn5.5:2.3 | P: Na catthi te dutiyā vaṇṇadhātu, | S: Your beauty is second to none— | T: There is none whose beauty rivals yours:
+sn5.5:2.4 | P: Bāle na tvaṁ bhāyasi dhuttakānan”ti. | S: silly girl, aren’t you afraid of rascals?” | T: Foolish girl, aren’t you afraid of rogues?”
+
+## Verse sn5.5:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Though a hundred thousand rogues ↵ Just like you might come here, ↵ I stir not a hair, I feel no terror; ↵ Even alone, Mara, I don’t fear you.
+sn5.5:4.1 | P: “Sataṁ sahassānipi dhuttakānaṁ, | S: “Even if 100,000 rascals like you | T: “Though a hundred thousand rogues
+sn5.5:4.2 | P: Idhāgatā tādisakā bhaveyyuṁ; | S: were to come here, | T: Just like you might come here,
+sn5.5:4.3 | P: Lomaṁ na iñjāmi na santasāmi, | S: I’d stir not a hair nor panic. | T: I stir not a hair, I feel no terror;
+sn5.5:4.4 | P: Na māra bhāyāmi tamekikāpi. | S: I’m not scared of you, Māra, even alone. | T: Even alone, Mara, I don’t fear you.
+
+## Verse sn5.5:5.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “I can make myself disappear ↵ Or I can enter inside your belly. ↵ I can stand between your eyebrows ↵ Yet you won’t catch a glimpse of me.
+sn5.5:5.1 | P: Esā antaradhāyāmi, | S: I’ll vanish, | T: “I can make myself disappear
+sn5.5:5.2 | P: kucchiṁ vā pavisāmi te; | S: or I’ll enter your belly; | T: Or I can enter inside your belly.
+sn5.5:5.3 | P: Pakhumantarikāyampi, | S: I could stand between your eyebrows | T: I can stand between your eyebrows
+sn5.5:5.4 | P: tiṭṭhantiṁ maṁ na dakkhasi. | S: and you still wouldn’t see me. | T: Yet you won’t catch a glimpse of me.
+
+## Verse sn5.5:6.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “I am the master of my mind, ↵ The bases of power are well developed; ↵ I am freed from all bondage, ↵ Therefore I don’t fear you, friend.”
+sn5.5:6.1 | P: Cittasmiṁ vasībhūtāmhi, | S: I’m the master of my own mind, | T: “I am the master of my mind,
+sn5.5:6.2 | P: iddhipādā subhāvitā; | S: I’ve developed the bases of psychic power well. | T: The bases of power are well developed;
+sn5.5:6.3 | P: Sabbabandhanamuttāmhi, | S: I’m free from all bonds, | T: I am freed from all bondage,
+sn5.5:6.4 | P: na taṁ bhāyāmi āvuso”ti. | S: and I’m not afraid of you, sir!” | T: Therefore I don’t fear you, friend.”
+
+## Verse sn5.6:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Why don’t you approve of birth? ↵ Once born, one enjoys sensual pleasures. ↵ Who now has persuaded you of this: ↵ ‘Bhikkhuni, don’t approve of birth’?”
+sn5.6:2.1 | P: “Kiṁ nu jātiṁ na rocesi, | S: “Why don’t you approve of rebirth? | T: “Why don’t you approve of birth?
+sn5.6:2.2 | P: jāto kāmāni bhuñjati; | S: When you’re born, you get to enjoy sensual pleasures. | T: Once born, one enjoys sensual pleasures.
+sn5.6:2.3 | P: Ko nu taṁ idamādapayi, | S: Who put this idea in your head: | T: Who now has persuaded you of this:
+sn5.6:2.4 | P: jātiṁ mā roca bhikkhunī”ti. | S: ‘Nun, don’t approve of rebirth’?” | T: ‘Bhikkhuni, don’t approve of birth’?”
+
+## Verse sn5.6:3.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “For one who is born there is death; ↵ Once born, one encounters sufferings— ↵ Bondage, murder, affliction— ↵ Hence one shouldn’t approve of birth.
+sn5.6:3.1 | P: “Jātassa maraṇaṁ hoti, | S: “Death comes to those who are born, | T: The bhikkhuni Cala: ↵ “For one who is born there is death;
+sn5.6:3.2 | P: jāto dukkhāni phussati; | S: when you’re born you undergo sufferings— | T: Once born, one encounters sufferings—
+sn5.6:3.3 | P: Bandhaṁ vadhaṁ pariklesaṁ, | S: killing, caging, misery— | T: Bondage, murder, affliction—
+sn5.6:3.4 | P: tasmā jātiṁ na rocaye. | S: that’s why you shouldn’t approve of rebirth. | T: Hence one shouldn’t approve of birth.
+
+## Verse sn5.6:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “The Buddha has taught the Dhamma, ↵ The transcendence of birth; ↵ For the abandoning of all suffering ↵ He has settled me in the truth.
+sn5.6:4.1 | P: Buddho dhammamadesesi, | S: The Buddha taught me the Dhamma | T: “The Buddha has taught the Dhamma,
+sn5.6:4.2 | P: jātiyā samatikkamaṁ; | S: for transcending rebirth, | T: The transcendence of birth;
+sn5.6:4.3 | P: Sabbadukkhappahānāya, | S: for giving up all suffering; | T: For the abandoning of all suffering
+sn5.6:4.4 | P: so maṁ sacce nivesayi. | S: he settled me in the truth. | T: He has settled me in the truth.
+
+## Verse sn5.6:5.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “As to those beings who fare amidst form, ↵ And those who abide in the formless— ↵ Not having understood cessation, ↵ They come again to renewed existence.”
+sn5.6:5.1 | P: Ye ca rūpūpagā sattā, | S: There are beings in the realm of luminous form, | T: “As to those beings who fare amidst form,
+sn5.6:5.2 | P: ye ca arūpaṭṭhāyino; | S: and others stuck in the formless. | T: And those who abide in the formless—
+sn5.6:5.3 | P: Nirodhaṁ appajānantā, | S: Not understanding cessation, | T: Not having understood cessation,
+sn5.6:5.4 | P: āgantāro punabbhavan”ti. | S: they return in future lives.” | T: They come again to renewed existence.”
+
+## Verse sn5.7:2.1 | 6 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “There are Tavatiṁsa and Yama devas, ↵ And devatās of the Tusita realm, ↵ Devas who take delight in creating, ↵ And devas who exercise control. ↵ Direct your mind there to those realms ↵ And you’ll experience delight.” ↵ “There are Tavatiṁsa and Yama devas, ↵ And devatās of the Tusita realm, ↵ Devas who take delight in creating, ↵ And devas who exercise control.
+sn5.7:2.1 | P: “Tāvatiṁsā ca yāmā ca, | S: “There are the gods of the thirty-three, and those of Yama; | T: “There are Tavatiṁsa and Yama devas,
+sn5.7:2.2 | P: tusitā cāpi devatā; | S: also the Joyful Deities, | T: And devatās of the Tusita realm,
+sn5.7:2.3 | P: Nimmānaratino devā, | S: the gods who love to create, | T: Devas who take delight in creating,
+sn5.7:2.4 | P: ye devā vasavattino; | S: and the gods who control what is created by others. | T: And devas who exercise control.
+sn5.7:2.5 | P: Tattha cittaṁ paṇidhehi, | S: Set your heart on such places, | T: Direct your mind there to those realms
+sn5.7:2.6 | P: ratiṁ paccanubhossasī”ti. | S: and you’ll undergo delight.” | T: And you’ll experience delight.”
+
+## Verse sn5.7:3.1 | 6 Pali rows | 7 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “There are Tavatiṁsa and Yama devas, ↵ And devatās of the Tusita realm, ↵ Devas who take delight in creating, ↵ And devas who exercise control. ↵ “There are Tavatiṁsa and Yama devas, ↵ And devatās of the Tusita realm, ↵ Devas who take delight in creating, ↵ And devas who exercise control. ↵ They are still bound by sensual bondage, ↵ They come again under Mara’s control.
+sn5.7:3.1 | P: “Tāvatiṁsā ca yāmā ca, | S: “The gods of the thirty-three, and those of Yama; | T: The bhikkhuni Upacala: ↵ “There are Tavatiṁsa and Yama devas,
+sn5.7:3.2 | P: tusitā cāpi devatā; | S: also the Joyful Deities, | T: And devatās of the Tusita realm,
+sn5.7:3.3 | P: Nimmānaratino devā, | S: the gods who love to create, | T: Devas who take delight in creating,
+sn5.7:3.4 | P: ye devā vasavattino; | S: and the gods who control what is created by others— | T: And devas who exercise control.
+sn5.7:3.5 | P: Kāmabandhanabaddhā te, | S: they’re bound with the bonds of sensuality; | T: They are still bound by sensual bondage,
+sn5.7:3.6 | P: enti māravasaṁ puna. | S: they fall under your sway again. | T: They come again under Mara’s control.
+
+## Verse sn5.7:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “All the world is on fire, ↵ All the world is burning, ↵ All the world is ablaze, ↵ All the world is quaking.
+sn5.7:4.1 | P: Sabbo ādīpito loko, | S: All the world is on fire, | T: “All the world is on fire,
+sn5.7:4.2 | P: sabbo loko padhūpito; | S: all the world is smoldering, | T: All the world is burning,
+sn5.7:4.3 | P: Sabbo pajjālito loko, | S: all the world is ablaze, | T: All the world is ablaze,
+sn5.7:4.4 | P: sabbo loko pakampito. | S: all the world is rocking. | T: All the world is quaking.
+
+## Verse sn5.7:5.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “That which does not quake or blaze, ↵ That to which worldlings do not resort, ↵ Where there is no place for Mara: ↵ That is where my mind delights.”
+sn5.7:5.1 | P: Akampitaṁ apajjalitaṁ, | S: My mind adores that place | T: “That which does not quake or blaze,
+sn5.7:5.2 | P: aputhujjanasevitaṁ; | S: where Māra cannot go; | T: That to which worldlings do not resort,
+sn5.7:5.3 | P: Agati yattha mārassa, | S: it’s not shaking or burning, | T: Where there is no place for Mara:
+sn5.7:5.4 | P: tattha me nirato mano”ti. | S: and not frequented by ordinary people.” | T: That is where my mind delights.”
+
+## Verse sn5.8:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Under whom have you shaved your head? ↵ You do appear to be an ascetic, ↵ Yet you don’t approve of any creed, ↵ So why wander as if bewildered?”
+sn5.8:2.1 | P: “Kaṁ nu uddissa muṇḍāsi, | S: “In whose name did you shave your head? | T: “Under whom have you shaved your head?
+sn5.8:2.2 | P: Samaṇī viya dissasi; | S: You look like an ascetic, | T: You do appear to be an ascetic,
+sn5.8:2.3 | P: Na ca rocesi pāsaṇḍaṁ, | S: but you don’t approve any creed. | T: Yet you don’t approve of any creed,
+sn5.8:2.4 | P: Kimiva carasi momūhā”ti. | S: Why do you wander as if lost?” | T: So why wander as if bewildered?”
+
+## Verse sn5.8:3.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Outside here the followers of creeds ↵ Place their confidence in views. ↵ I don’t approve of their teachings; ↵ They are not skilled in the Dhamma.
+sn5.8:3.1 | P: “Ito bahiddhā pāsaṇḍā, | S: “Followers of other creeds | T: The bhikkhuni Sisupacala: ↵ “Outside here the followers of creeds
+sn5.8:3.2 | P: diṭṭhīsu pasīdanti te; | S: are confident in their views. | T: Place their confidence in views.
+sn5.8:3.3 | P: Na tesaṁ dhammaṁ rocemi, | S: But I don’t approve their teaching, | T: I don’t approve of their teachings;
+sn5.8:3.4 | P: te dhammassa akovidā. | S: for they’re no experts in the Dhamma. | T: They are not skilled in the Dhamma.
+
+## Verse sn5.8:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “But there’s one born in the Sakyan clan, ↵ The Enlightened One, without an equal, ↵ Conqueror of all, Mara’s subduer, ↵ Who everywhere is undefeated,
+sn5.8:4.1 | P: Atthi sakyakule jāto, | S: But there is one born in the Sakyan clan, | T: “But there’s one born in the Sakyan clan,
+sn5.8:4.2 | P: buddho appaṭipuggalo; | S: the unrivaled Buddha, | T: The Enlightened One, without an equal,
+sn5.8:4.3 | P: Sabbābhibhū māranudo, | S: vanquisher of all, dispeller of Māra, | T: Conqueror of all, Mara’s subduer,
+sn5.8:4.4 | P: sabbatthamaparājito. | S: everywhere undefeated, | T: Who everywhere is undefeated,
+
+## Verse sn5.8:5.1 | 6 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Everywhere freed and unattached, ↵ The One with Vision who sees all. ↵ “Attained to the end of all kamma, ↵ Liberated in the extinction of acquisitions, ↵ That Blessed One is my Teacher: ↵ His is the teaching I approve.”
+sn5.8:5.1 | P: Sabbattha mutto asito, | S: everywhere freed, and unattached, | T: Everywhere freed and unattached,
+sn5.8:5.2 | P: sabbaṁ passati cakkhumā; | S: the Clear-eyed One sees all. | T: The One with Vision who sees all.
+sn5.8:5.3 | P: Sabbakammakkhayaṁ patto, | S: He has attained the end of all deeds, | T: “Attained to the end of all kamma,
+sn5.8:5.4 | P: vimutto upadhisaṅkhaye; | S: freed with the ending of attachments. | T: Liberated in the extinction of acquisitions,
+sn5.8:5.5 | P: So mayhaṁ bhagavā satthā, | S: That Blessed One is my Teacher, | T: That Blessed One is my Teacher:
+sn5.8:5.6 | P: tassa rocemi sāsanan”ti. | S: and I approve his instruction.” | T: His is the teaching I approve.”
+
+## Verse sn5.9:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): By whom has this puppet been created? ↵ Where is the maker of the puppet? ↵ Where has the puppet arisen? ↵ Where does the puppet cease?”
+sn5.9:2.1 | P: “Kenidaṁ pakataṁ bimbaṁ, | S: “Who created this puppet? | T: By whom has this puppet been created?
+sn5.9:2.2 | P: kvanu bimbassa kārako; | S: Where is its maker? | T: Where is the maker of the puppet?
+sn5.9:2.3 | P: Kvanu bimbaṁ samuppannaṁ, | S: Where has the puppet arisen? | T: Where has the puppet arisen?
+sn5.9:2.4 | P: kvanu bimbaṁ nirujjhatī”ti. | S: And where does it cease?” | T: Where does the puppet cease?”
+
+## Verse sn5.9:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “This puppet is not made by itself, ↵ Nor is this misery made by another. ↵ It has come to be dependent on a cause; ↵ With the cause’s breakup it will cease.
+sn5.9:4.1 | P: “Nayidaṁ attakataṁ bimbaṁ, | S: “This puppet isn’t self-made, | T: “This puppet is not made by itself,
+sn5.9:4.2 | P: nayidaṁ parakataṁ aghaṁ; | S: nor is this gloom made by another. | T: Nor is this misery made by another.
+sn5.9:4.3 | P: Hetuṁ paṭicca sambhūtaṁ, | S: It comes to be because of a cause, | T: It has come to be dependent on a cause;
+sn5.9:4.4 | P: hetubhaṅgā nirujjhati. | S: and ceases when the cause breaks up. | T: With the cause’s breakup it will cease.
+
+## Verse sn5.9:5.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “As when a seed is sown in a field ↵ It grows depending on a pair of factors: ↵ It requires both the soil’s nutrients ↵ And a steady supply of moisture:
+sn5.9:5.1 | P: Yathā aññataraṁ bījaṁ, | S: It’s like a seed that’s sown | T: “As when a seed
+sn5.9:5.2 | P: khette vuttaṁ virūhati; | S: in a field; it grows | T: is sown in a field ↵ It grows depending on a pair of factors:
+sn5.9:5.3 | P: Pathavīrasañcāgamma, | S: relying on both the soil’s nutrients | T: It requires both the soil’s nutrients
+sn5.9:5.4 | P: sinehañca tadūbhayaṁ. | S: as well as moisture. | T: And a steady supply of moisture:
+
+## Verse sn5.9:6.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Just so the aggregates and elements, ↵ And these six bases of sensory contact, ↵ Have come to be dependent on a cause; ↵ With the cause’s breakup they will cease.”
+sn5.9:6.1 | P: Evaṁ khandhā ca dhātuyo, | S: In the same way the aggregates and elements | T: “Just so the aggregates and elements,
+sn5.9:6.2 | P: cha ca āyatanā ime; | S: and these six sense fields | T: And these six bases of sensory contact,
+sn5.9:6.3 | P: Hetuṁ paṭicca sambhūtā, | S: come to be because of a cause, | T: Have come to be dependent on a cause;
+sn5.9:6.4 | P: hetubhaṅgā nirujjhare”ti. | S: and cease when the cause breaks up.” | T: With the cause’s breakup they will cease.”
+
+## Verse sn56.10:4.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn56.10:4.1 | P: Samādhi paṭisallānā, | S: (none) | T: (none)
+sn56.10:4.2 | P: kulaputtā apare duve; | S: (none) | T: (none)
+sn56.10:4.3 | P: Samaṇabrāhmaṇā vitakkaṁ, | S: (none) | T: (none)
+sn56.10:4.4 | P: cintā viggāhikā kathāti. | S: (none) | T: (none)
+
+## Verse sn56.20:3.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn56.20:3.1 | P: Dhammacakkaṁ tathāgataṁ, | S: (none) | T: (none)
+sn56.20:3.2 | P: khandhā āyatanena ca; | S: (none) | T: (none)
+sn56.20:3.3 | P: Dhāraṇā ca dve avijjā, | S: (none) | T: (none)
+sn56.20:3.4 | P: vijjā saṅkāsanā tathāti. | S: (none) | T: (none)
+
+## Verse sn56.21:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Because of not seeing as they are ↵ The Four Noble Truths, ↵ We have wandered through the long course ↵ In the various kinds of births.
+sn56.21:4.1 | P: “Catunnaṁ ariyasaccānaṁ, | S: “Because of not truly seeing | T: “Because of not seeing as they are
+sn56.21:4.2 | P: Yathābhūtaṁ adassanā; | S: the four noble truths, | T: The Four Noble Truths,
+sn56.21:4.3 | P: Saṁsitaṁ dīghamaddhānaṁ, | S: we have transmigrated for a long time | T: We have wandered through the long course
+sn56.21:4.4 | P: Tāsu tāsveva jātisu. | S: from one rebirth to the next. | T: In the various kinds of births.
+
+## Verse sn56.21:5.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Now these truths have been seen; ↵ The conduit to existence is severed; ↵ Cut off is the root of suffering: ↵ Now there is no more renewed existence.”
+sn56.21:5.1 | P: Tāni etāni diṭṭhāni, | S: But now that these truths have been seen, | T: “Now these truths have been seen;
+sn56.21:5.2 | P: bhavanetti samūhatā; | S: the leash to existence is eradicated. | T: The conduit to existence is severed;
+sn56.21:5.3 | P: Ucchinnaṁ mūlaṁ dukkhassa, | S: The root of suffering is cut off, | T: Cut off is the root of suffering:
+sn56.21:5.4 | P: natthi dāni punabbhavo”ti. | S: now there’ll be no more future lives.” | T: Now there is no more renewed existence.”
+
+## Verse sn56.22:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “Those who do not understand suffering, ↵ Who do not know suffering’s origin, ↵ Nor where suffering completely stops, ↵ Where it ceases without remainder; ↵ Where it ceases without remainder;
+sn56.22:4.1 | P: “Ye dukkhaṁ nappajānanti, | S: “There are those who don’t understand suffering | T: “Those who do not understand suffering,
+sn56.22:4.2 | P: atho dukkhassa sambhavaṁ; | S: and suffering’s cause, | T: Who do not know suffering’s origin,
+sn56.22:4.3 | P: Yattha ca sabbaso dukkhaṁ, | S: and where all suffering | T: Nor where suffering completely stops,
+sn56.22:4.4 | P: asesaṁ uparujjhati. | S: ceases no residue left behind. | T: Where it ceases without remainder;
+
+## Verse sn56.22:5.1 | 6 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Who do not know that path ↵ Which leads to suffering’s appeasement: ↵ They are devoid of mind’s liberation ↵ And also of liberation by wisdom; ↵ Incapable of making an end, ↵ They fare on to birth and aging. ↵ Which leads to suffering’s appeasement:
+sn56.22:5.1 | P: Tañca maggaṁ na jānanti, | S: And they do not know the path | T: Who do not know that path
+sn56.22:5.2 | P: Dukkhūpasamagāminaṁ; | S: that leads to the stilling of suffering. | T: Which leads to suffering’s appeasement:
+sn56.22:5.3 | P: Cetovimuttihīnā te, | S: They lack the heart’s release, | T: They are devoid of mind’s liberation
+sn56.22:5.4 | P: Atho paññāvimuttiyā; | S: as well as the release by wisdom. | T: And also of liberation by wisdom;
+sn56.22:5.5 | P: Abhabbā te antakiriyāya, | S: Unable to make an end, | T: Incapable of making an end,
+sn56.22:5.6 | P: Te ve jātijarūpagā. | S: they continue to be reborn and grow old. | T: They fare on to birth and aging.
+
+## Verse sn56.22:6.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Where it ceases without remainder; ↵ “But those who understand suffering, ↵ Who know too suffering’s origin, ↵ And where suffering completely stops, ↵ Where it ceases without remainder;
+sn56.22:6.1 | P: Ye ca dukkhaṁ pajānanti, | S: But there are those who understand suffering | T: “But those who understand suffering,
+sn56.22:6.2 | P: atho dukkhassa sambhavaṁ; | S: and suffering’s cause, | T: Who know too suffering’s origin,
+sn56.22:6.3 | P: Yattha ca sabbaso dukkhaṁ, | S: and where all suffering | T: And where suffering completely stops,
+sn56.22:6.4 | P: asesaṁ uparujjhati. | S: ceases no residue left behind. | T: Where it ceases without remainder;
+
+## Verse sn56.22:7.1 | 6 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Which leads to suffering’s appeasement: ↵ Who understand that path ↵ Which leads to suffering’s appeasement: ↵ They are endowed with mind’s liberation ↵ And also with liberation by wisdom; ↵ Being capable of making an end, ↵ They fare no more in birth and aging.”
+sn56.22:7.1 | P: Tañca maggaṁ pajānanti, | S: And they understand the path | T: Who understand that path
+sn56.22:7.2 | P: dukkhūpasamagāminaṁ; | S: that leads to the stilling of suffering. | T: Which leads to suffering’s appeasement:
+sn56.22:7.3 | P: Cetovimuttisampannā, | S: They’re endowed with the heart’s release, | T: They are endowed with mind’s liberation
+sn56.22:7.4 | P: atho paññāvimuttiyā; | S: as well as the release by wisdom. | T: And also with liberation by wisdom;
+sn56.22:7.5 | P: Bhabbā te antakiriyāya, | S: Able to make an end, | T: Being capable of making an end,
+sn56.22:7.6 | P: na te jātijarūpagā”ti. | S: they don’t continue to be reborn and grow old.” | T: They fare no more in birth and aging.”
+
+## Verse sn56.30:3.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn56.30:3.1 | P: Dve vajjī sammāsambuddho, | S: (none) | T: (none)
+sn56.30:3.2 | P: arahaṁ āsavakkhayo; | S: (none) | T: (none)
+sn56.30:3.3 | P: Mittaṁ tathā ca loko ca, | S: (none) | T: (none)
+sn56.30:3.4 | P: pariññeyyaṁ gavampatīti. | S: (none) | T: (none)
+
+## Verse sn56.40:4.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn56.40:4.1 | P: Sīsapā khadiro daṇḍo, | S: (none) | T: (none)
+sn56.40:4.2 | P: celā sattisatena ca; | S: (none) | T: (none)
+sn56.40:4.3 | P: Pāṇā sūriyūpamā dvedhā, | S: (none) | T: (none)
+sn56.40:4.4 | P: indakhīlo ca vādinoti. | S: (none) | T: (none)
+
+## Verse sn56.50:3.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+sn56.50:3.1 | P: Cintā papāto pariḷāho, | S: (none) | T: (none)
+sn56.50:3.2 | P: kūṭaṁ vālandhakāro ca; | S: (none) | T: (none)
+sn56.50:3.3 | P: Chiggaḷena ca dve vuttā, | S: (none) | T: (none)
+sn56.50:3.4 | P: sineru apare duveti. | S: (none) | T: (none)

@@ -1,0 +1,495 @@
+## Verse an4.56:4.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+an4.56:4.1 | P: Idha dhammaṁ caritvāna, | S: (none) | T: (none)
+an4.56:4.2 | P: samasīlabbatā ubho; | S: (none) | T: (none)
+an4.56:4.3 | P: Nandino devalokasmiṁ, | S: (none) | T: (none)
+an4.56:4.4 | P: modanti kāmakāmino”ti. | S: (none) | T: (none)
+
+## Verse an4.57:3.1 | 6 Pali rows | 7 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): When one gives well-prepared food, ↵ pure, delicious, and flavorful, ↵ to the upright ones who are ↵ exalted and of excellent conduct, ↵ that offering, which links merit with merit, ↵ is praised as very fruitful ↵ by the world-knowers.
+an4.57:3.1 | P: Susaṅkhataṁ bhojanaṁ yā dadāti, | S: When she gives well-prepared food, | T: When one gives well-prepared food,
+an4.57:3.2 | P: Suciṁ paṇītaṁ rasasā upetaṁ; | S: pure, fine, and full of flavor, | T: pure, delicious, and flavorful,
+an4.57:3.3 | P: Sā dakkhiṇā ujjugatesu dinnā, | S: that offering—given to the sincere, | T: to the upright ones who are
+an4.57:3.4 | P: Caraṇūpapannesu mahaggatesu; | S: who have good conduct, and are big-hearted— | T: exalted and of excellent conduct,
+an4.57:3.5 | P: Puññena puññaṁ saṁsandamānā, | S: joins merit to merit. It’s very fruitful, | T: that offering, which links merit with merit, ↵ is praised as very fruitful
+an4.57:3.6 | P: Mahapphalā lokavidūna vaṇṇitā. | S: and is praised by those who know the world. | T: by the world-knowers.
+
+## Verse an4.57:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Those recollecting such generosity ↵ dwell in the world inspired by joy. ↵ Having removed the stain of miserliness and its root, ↵ blameless, they go to the heavenly abode.
+an4.57:4.1 | P: Etādisaṁ yaññamanussarantā, | S: Those who recall such sacrifices, | T: Those recollecting such generosity
+an4.57:4.2 | P: Ye vedajātā vicaranti loke; | S: live in the world full of inspiration. | T: dwell in the world inspired by joy.
+an4.57:4.3 | P: Vineyya maccheramalaṁ samūlaṁ, | S: They’ve driven out the stain of stinginess, root and all, | T: Having removed the stain of miserliness and its root,
+an4.57:4.4 | P: Aninditā saggamupenti ṭhānan”ti. | S: blameless, they go to a heavenly place.” | T: blameless, they go to the heavenly abode.
+
+## Verse an4.58:3.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): One who respectfully gives timely food ↵ to those self-controlled ones who eat what others give, ↵ provides them with four things: ↵ life, beauty, happiness, and strength.
+an4.58:3.1 | P: Yo saññatānaṁ paradattabhojinaṁ, | S: Carefully giving food at the right time, | T: One who respectfully gives timely food
+an4.58:3.2 | P: Kālena sakkacca dadāti bhojanaṁ; | S: to those who are disciplined, eating only what others give, | T: to those self-controlled ones who eat what others give,
+an4.58:3.3 | P: Cattāri ṭhānāni anuppavecchati, | S: you provide them with four things: | T: provides them with four things:
+an4.58:3.4 | P: Āyuñca vaṇṇañca sukhaṁ balañca. | S: long life, beauty, happiness, and strength. | T: life, beauty, happiness, and strength.
+
+## Verse an4.58:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): The man who gives life and beauty, ↵ who gives happiness and strength, ↵ will obtain long life and fame ↵ wherever he is reborn.
+an4.58:4.1 | P: So āyudāyī vaṇṇadāyī, | S: A person who gives long life, beauty, | T: The man who gives life and beauty,
+an4.58:4.2 | P: sukhaṁ balaṁ dado naro; | S: happiness, and strength, | T: who gives happiness and strength,
+an4.58:4.3 | P: Dīghāyu yasavā hoti, | S: has long life and fame | T: will obtain long life and fame
+an4.58:4.4 | P: yattha yatthūpapajjatī”ti. | S: wherever they’re reborn.” | T: wherever he is reborn.
+
+## Verse an4.59:2.1 | 4 Pali rows | 1 English pieces | gathered=False | READER: judge placement and any gathered lines
+an4.59:2.1 | P: Yo saññatānaṁ paradattabhojinaṁ, | S: (none) | T: The verses are identical with those of AN4.58.
+an4.59:2.2 | P: Kālena sakkacca dadāti bhojanaṁ; | S: (none) | T: (none)
+an4.59:2.3 | P: Cattāri ṭhānāni anuppavecchati, | S: (none) | T: (none)
+an4.59:2.4 | P: Āyuñca vaṇṇañca sukhaṁ balañca. | S: (none) | T: (none)
+
+## Verse an4.59:3.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+an4.59:3.1 | P: So āyudāyī vaṇṇadāyī, | S: (none) | T: (none)
+an4.59:3.2 | P: sukhaṁ balaṁ dado naro; | S: (none) | T: (none)
+an4.59:3.3 | P: Dīghāyu yasavā hoti, | S: (none) | T: (none)
+an4.59:3.4 | P: yattha yatthūpapajjatī”ti. | S: (none) | T: (none)
+
+## Verse an4.5:5.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Those people who are uncontrolled in sense pleasures, ↵ not rid of lust, enjoying sense pleasures here, ↵ repeatedly coming back to birth and old age, ↵ immersed in craving, are “the ones who go along with the stream.”
+an4.5:5.1 | P: Ye keci kāmesu asaññatā janā, | S: All those people with unbridled sensuality, | T: Those people who are uncontrolled in sense pleasures,
+an4.5:5.2 | P: Avītarāgā idha kāmabhogino; | S: not free of lust, enjoying sensual pleasures in this life: | T: not rid of lust, enjoying sense pleasures here,
+an4.5:5.3 | P: Punappunaṁ jātijarūpagāmi te, | S: again and again, they return to birth and old age; | T: repeatedly coming back to birth and old age,
+an4.5:5.4 | P: Taṇhādhipannā anusotagāmino. | S: those who go with the stream are sunk in craving. | T: immersed in craving, are “the ones who go along with the stream.”
+
+## Verse an4.5:6.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Therefore a wise person with mindfulness established, ↵ not resorting to sense pleasures and bad deeds, ↵ should give up sense pleasures even if it’s painful: ↵ they call this person “one who goes against the stream.”
+an4.5:6.1 | P: Tasmā hi dhīro idhupaṭṭhitassatī, | S: So the attentive in this life, with mindfulness established, | T: Therefore a wise person with mindfulness established,
+an4.5:6.2 | P: Kāme ca pāpe ca asevamāno; | S: don’t take part in sensual pleasures and bad deeds. | T: not resorting to sense pleasures and bad deeds,
+an4.5:6.3 | P: Sahāpi dukkhena jaheyya kāme, | S: In pain they’d give up sensual pleasures: | T: should give up sense pleasures even if it’s painful:
+an4.5:6.4 | P: Paṭisotagāmīti tamāhu puggalaṁ. | S: they call that individual ‘one who goes against the stream’. | T: they call this person “one who goes against the stream.”
+
+## Verse an4.5:7.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): One who has abandoned five defilements, ↵ a fulfilled trainee, unable to retrogress, ↵ attained to mind’s mastery, his faculties composed: ↵ this person is called “one inwardly firm.”
+an4.5:7.1 | P: Yo ve kilesāni pahāya pañca, | S: Someone who’s given up five corruptions, | T: One who has abandoned five defilements,
+an4.5:7.2 | P: Paripuṇṇasekho aparihānadhammo; | S: a perfect trainee, not liable to decline, | T: a fulfilled trainee, unable to retrogress,
+an4.5:7.3 | P: Cetovasippatto samāhitindriyo, | S: who’s mastered their mind, with faculties immersed in samādhi, | T: attained to mind’s mastery, his faculties composed:
+an4.5:7.4 | P: Sa ve ṭhitattoti naro pavuccati. | S: that man is called ‘steadfast’. | T: this person is called “one inwardly firm.”
+
+## Verse an4.5:8.1 | 4 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): One who has comprehended things high and low, ↵ burnt them up, so they’re gone and exist no more: ↵ that sage who has lived the spiritual life, ↵ reached the world’s end, is called ↵ “one who has gone beyond.”
+an4.5:8.1 | P: Paroparā yassa samecca dhammā, | S: The sage who has comprehended all things, high and low, | T: One who has comprehended things high and low,
+an4.5:8.2 | P: Vidhūpitā atthagatā na santi; | S: cleared them and ended them, so they are no more; | T: burnt them up, so they’re gone and exist no more:
+an4.5:8.3 | P: Sa ve muni vusitabrahmacariyo, | S: they’ve completed the spiritual journey and gone to the end of the world, | T: that sage who has lived the spiritual life, ↵ reached the world’s end,
+an4.5:8.4 | P: Lokantagū pāragatoti vuccatī”ti. | S: they’re called ‘one who has gone beyond’.” | T: is called ↵ “one who has gone beyond.”
+
+## Verse an4.60:3.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): When the wise practice the way ↵ proper for the layperson, they serve ↵ the virtuous monks of upright conduct
+an4.60:3.1 | P: Gihisāmīcipaṭipadaṁ, | S: Those who are astute practice the way | T: When the wise practice the way
+an4.60:3.2 | P: paṭipajjanti paṇḍitā; | S: that’s appropriate for laypeople. | T: proper for the layperson,
+an4.60:3.3 | P: Sammaggate sīlavante, | S: They provide those who are ethical | T: they serve ↵ the virtuous monks of upright conduct
+an4.60:3.4 | P: cīvarena upaṭṭhitā. | S: and rightly comported with robes, | T: with robes,
+
+## Verse an4.60:4.1 | 6 Pali rows | 6 English pieces | gathered=True | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): for them both by day and night ↵ merit always increases; ↵ having done excellent deeds, ↵ they pass on to a heavenly state.
+an4.60:4.1 | P: Piṇḍapātasayanena, | S: almsfood, lodgings, | T: almsfood, lodgings,
+an4.60:4.2 | P: Gilānappaccayena ca; | S: and supplies for the sick. | T: and medicines:
+an4.60:4.3 | P: Tesaṁ divā ca ratto ca, | S: Their merit always grows | T: for them both by day and night ↵ merit always increases;
+an4.60:4.4 | P: Sadā puññaṁ pavaḍḍhati; | S: by day and by night. | T: (none)
+an4.60:4.5 | P: Saggañca kamatiṭṭhānaṁ, | S: They pass on to a place in heaven, | T: having done excellent deeds, ↵ they pass on to a heavenly state.
+an4.60:4.6 | P: Kammaṁ katvāna bhaddakan”ti. | S: having done excellent deeds.” | T: (none)
+
+## Verse an4.60:5.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+an4.60:5.1 | P: Dve puññābhisandā dve ca, | S: (none) | T: (none)
+an4.60:5.2 | P: saṁvāsā samajīvino; | S: (none) | T: (none)
+an4.60:5.3 | P: Suppavāsā sudatto ca, | S: (none) | T: (none)
+an4.60:5.4 | P: bhojanaṁ gihisāmicīti. | S: (none) | T: (none)
+
+## Verse an4.61:18.1 | 6 Pali rows | 7 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “I’ve enjoyed wealth, ↵ supported my dependents, ↵ and overcome adversities. ↵ I have given an uplifting offering ↵ and performed the five oblations. ↵ I have served the virtuous monks, ↵ the self-controlled celibate ones.
+an4.61:18.1 | P: Bhuttā bhogā bhatā bhaccā, | S: ‘I’ve enjoyed my wealth, supporting those who depend on me; | T: “I’ve enjoyed wealth, ↵ supported my dependents,
+an4.61:18.2 | P: Vitiṇṇā āpadāsu me; | S: I’ve overcome losses; | T: and overcome adversities.
+an4.61:18.3 | P: Uddhaggā dakkhiṇā dinnā, | S: I’ve given uplifting religious donations; | T: I have given an uplifting offering
+an4.61:18.4 | P: Atho pañcabalī katā; | S: and made the five spirit-offerings. | T: and performed the five oblations.
+an4.61:18.5 | P: Upaṭṭhitā sīlavanto, | S: I have served the ethical and | T: I have served the virtuous monks,
+an4.61:18.6 | P: Saññatā brahmacārayo. | S: disciplined spiritual practitioners. | T: the self-controlled celibate ones.
+
+## Verse an4.61:19.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “I have achieved whatever purpose ↵ a wise person, dwelling at home, ↵ might have in desiring wealth; ↵ what I have done brings me no regret.”
+an4.61:19.1 | P: Yadatthaṁ bhogaṁ iccheyya, | S: I’ve achieved the goal | T: “I have achieved whatever purpose
+an4.61:19.2 | P: paṇḍito gharamāvasaṁ; | S: for which an astute layperson | T: a wise person, dwelling at home,
+an4.61:19.3 | P: So me attho anuppatto, | S: wishes to gain wealth. | T: might have in desiring wealth;
+an4.61:19.4 | P: kataṁ ananutāpiyaṁ. | S: I don’t regret what I’ve done.’ | T: what I have done brings me no regret.”
+
+## Verse an4.61:20.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Recollecting this, a mortal ↵ remains firm in the noble Dhamma. ↵ They praise him here in this life, ↵ and after death he rejoices in heaven.
+an4.61:20.1 | P: Etaṁ anussaraṁ macco, | S: A mortal man who recollects this | T: Recollecting this, a mortal
+an4.61:20.2 | P: ariyadhamme ṭhito naro; | S: stands firm in the teaching of the noble ones. | T: remains firm in the noble Dhamma.
+an4.61:20.3 | P: Idheva naṁ pasaṁsanti, | S: They’re praised in this life, | T: They praise him here in this life,
+an4.61:20.4 | P: pecca sagge pamodatī”ti. | S: and they depart to rejoice in heaven.” | T: and after death he rejoices in heaven.
+
+## Verse an4.62:7.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Having known the happiness of freedom from debt, ↵ one should recall the happiness of ownership. ↵ Enjoying the happiness of enjoyment, ↵ a mortal then sees things clearly with wisdom.
+an4.62:7.1 | P: Ānaṇyasukhaṁ ñatvāna, | S: Knowing the happiness of debtlessness, | T: Having known the happiness of freedom from debt,
+an4.62:7.2 | P: Atho atthisukhaṁ paraṁ; | S: and the extra happiness of possession, | T: one should recall the happiness of ownership.
+an4.62:7.3 | P: Bhuñjaṁ bhogasukhaṁ macco, | S: a mortal enjoying the happiness of using wealth, | T: Enjoying the happiness of enjoyment, ↵ a mortal
+an4.62:7.4 | P: Tato paññā vipassati. | S: then discerns clearly with wisdom. | T: then sees things clearly with wisdom.
+
+## Verse an4.62:8.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): While seeing things clearly, the wise one ↵ knows both kinds of happiness. ↵ The other is not worth a sixteenth part ↵ of the bliss of blamelessness.
+an4.62:8.1 | P: Vipassamāno jānāti, | S: Discerning clearly, a clever person knows | T: While seeing things clearly, the wise one ↵ knows
+an4.62:8.2 | P: ubho bhoge sumedhaso; | S: both kinds of happiness: | T: both kinds of happiness.
+an4.62:8.3 | P: Anavajjasukhassetaṁ, | S: the other kind is not worth a sixteenth part | T: The other is not worth a sixteenth part
+an4.62:8.4 | P: kalaṁ nāgghati soḷasin”ti. | S: of the happiness of blamelessness.” | T: of the bliss of blamelessness.
+
+## Verse an4.6:5.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): If one has little learning ↵ and is not settled in the virtues, ↵ they criticize him on both counts, ↵ virtuous behavior and learning. ↵ If one has little learning ↵ virtuous behavior and learning.
+an4.6:5.1 | P: Appassutopi ce hoti, | S: If you don’t learn much, | T: If one has little learning
+an4.6:5.2 | P: sīlesu asamāhito; | S: and aren’t steady in ethics, | T: and is not settled in the virtues,
+an4.6:5.3 | P: Ubhayena naṁ garahanti, | S: they’ll criticize you on both counts, | T: they criticize him on both counts,
+an4.6:5.4 | P: sīlato ca sutena ca. | S: for your ethics and your learning. | T: virtuous behavior and learning.
+
+## Verse an4.6:6.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): If one has little learning ↵ If one has little learning ↵ but is well settled in the virtues, ↵ they praise him for his virtuous behavior; ↵ his learning has succeeded.
+an4.6:6.1 | P: Appassutopi ce hoti, | S: If you don’t learn much, | T: If one has little learning
+an4.6:6.2 | P: sīlesu susamāhito; | S: and you are steady in ethics, | T: but is well settled in the virtues,
+an4.6:6.3 | P: Sīlato naṁ pasaṁsanti, | S: they’ll praise your ethical conduct, | T: they praise him for his virtuous behavior;
+an4.6:6.4 | P: tassa sampajjate sutaṁ. | S: since your learning has succeeded. | T: his learning has succeeded.
+
+## Verse an4.6:7.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): If one is highly learned ↵ but is not settled in the virtues, ↵ they criticize him for his lack of virtue; ↵ his learning has not succeeded. ↵ If one is highly learned
+an4.6:7.1 | P: Bahussutopi ce hoti, | S: If you learn much, | T: If one is highly learned
+an4.6:7.2 | P: sīlesu asamāhito; | S: but aren’t steady in ethics, | T: but is not settled in the virtues,
+an4.6:7.3 | P: Sīlato naṁ garahanti, | S: they’ll criticize your ethical conduct, | T: they criticize him for his lack of virtue;
+an4.6:7.4 | P: nāssa sampajjate sutaṁ. | S: for your learning hasn’t succeeded. | T: his learning has not succeeded.
+
+## Verse an4.6:8.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): virtuous behavior and learning. ↵ If one is highly learned ↵ If one is highly learned ↵ and is settled in the virtues, ↵ they praise him on both counts, ↵ virtuous behavior and learning.
+an4.6:8.1 | P: Bahussutopi ce hoti, | S: If you learn much, | T: If one is highly learned
+an4.6:8.2 | P: sīlesu susamāhito; | S: and you are steady in ethics, | T: and is settled in the virtues,
+an4.6:8.3 | P: Ubhayena naṁ pasaṁsanti, | S: they’ll praise you on both counts, | T: they praise him on both counts,
+an4.6:8.4 | P: sīlato ca sutena ca. | S: for your ethics and your learning. | T: virtuous behavior and learning.
+
+## Verse an4.6:9.1 | 6 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): When a disciple of the Buddha is highly learned, ↵ an expert on the Dhamma, endowed with wisdom, ↵ like a coin of refined mountain gold, ↵ who is fit to blame him? ↵ Even the devas praise such a one; ↵ by Brahmā too he is praised.
+an4.6:9.1 | P: Bahussutaṁ dhammadharaṁ, | S: A wise disciple of the Buddha | T: When a disciple of the Buddha is highly learned,
+an4.6:9.2 | P: sappaññaṁ buddhasāvakaṁ; | S: who is learned and has memorized the teachings; | T: an expert on the Dhamma, endowed with wisdom,
+an4.6:9.3 | P: Nekkhaṁ jambonadasseva, | S: like a pendant of Black Plum River gold, | T: like a coin of refined mountain gold,
+an4.6:9.4 | P: ko taṁ ninditumarahati; | S: who is worthy to criticize them? | T: who is fit to blame him?
+an4.6:9.5 | P: Devāpi naṁ pasaṁsanti, | S: Even the gods praise them, | T: Even the devas praise such a one;
+an4.6:9.6 | P: brahmunāpi pasaṁsito”ti. | S: and by the Divinity, too, they’re praised.” | T: by Brahmā too he is praised.
+
+## Verse an4.7:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): One who is competent and self-confident, ↵ learned, an expert on the Dhamma, ↵ practicing in accord with the Dhamma, ↵ is called an adornment of the Saṅgha.
+an4.7:2.1 | P: Yo hoti viyatto ca visārado ca, | S: Whoever is competent and self-assured, | T: One who is competent and self-confident,
+an4.7:2.2 | P: Bahussuto dhammadharo ca hoti; | S: learned, a memorizer of the teachings, | T: learned, an expert on the Dhamma,
+an4.7:2.3 | P: Dhammassa hoti anudhammacārī, | S: who lives in line with the teaching— | T: practicing in accord with the Dhamma,
+an4.7:2.4 | P: Sa tādiso vuccati saṅghasobhano. | S: such a one is said to grace the Saṅgha. | T: is called an adornment of the Saṅgha.
+
+## Verse an4.7:3.1 | 6 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): A bhikkhu accomplished in virtue, ↵ a learned bhikkhunī, ↵ a male lay follower endowed with faith, ↵ a female lay follower endowed with faith: ↵ these are the ones that adorn the Saṅgha; ↵ these are the Saṅgha’s adornments.
+an4.7:3.1 | P: Bhikkhu ca sīlasampanno, | S: A monk accomplished in ethics, | T: A bhikkhu accomplished in virtue,
+an4.7:3.2 | P: bhikkhunī ca bahussutā; | S: and a learned nun, | T: a learned bhikkhunī,
+an4.7:3.3 | P: Upāsako ca yo saddho, | S: a faithful layman, | T: a male lay follower endowed with faith,
+an4.7:3.4 | P: yā ca saddhā upāsikā; | S: and a faithful laywoman, too: | T: a female lay follower endowed with faith:
+an4.7:3.5 | P: Ete kho saṅghaṁ sobhenti, | S: these grace the Saṅgha, | T: these are the ones that adorn the Saṅgha;
+an4.7:3.6 | P: ete hi saṅghasobhanā”ti. | S: they are the graces of the Saṅgha.” | T: these are the Saṅgha’s adornments.
+
+## Verse an4.8:5.1 | 4 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): These pathways of doctrine, ↵ formulated in diverse ways, ↵ relied upon by ascetics and brahmins, ↵ do not reach the Tathāgata, ↵ the self-confident one who has passed ↵ beyond the pathways of doctrine.
+an4.8:5.1 | P: Ye kecime vādapathā puthussitā, | S: The various grounds for criticism | T: These pathways of doctrine, ↵ formulated in diverse ways,
+an4.8:5.2 | P: Yaṁnissitā samaṇabrāhmaṇā ca; | S: that ascetics and brahmins rely on | T: relied upon by ascetics and brahmins,
+an4.8:5.3 | P: Tathāgataṁ patvā na te bhavanti, | S: vanish on reaching a Realized One, | T: do not reach the Tathāgata,
+an4.8:5.4 | P: Visāradaṁ vādapathātivattaṁ. | S: self-assured, gone beyond grounds for criticism. | T: the self-confident one who has passed ↵ beyond the pathways of doctrine.
+
+## Verse an4.8:6.1 | 4 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Consummate, having overcome everything, ↵ he set in motion the wheel of Dhamma ↵ out of compassion for all beings. ↵ Beings pay homage to such a one, ↵ the best among devas and humans, ↵ who has gone beyond existence.
+an4.8:6.1 | P: Yo dhammacakkaṁ abhibhuyya kevalī, | S: He rolls forth the Wheel of Dhamma as a consummate one, | T: Consummate, having overcome everything, ↵ he set in motion the wheel of Dhamma
+an4.8:6.2 | P: Pavattayī sabbabhūtānukampī; | S: complete, sympathetic for all living creatures. | T: out of compassion for all beings.
+an4.8:6.3 | P: Taṁ tādisaṁ devamanussaseṭṭhaṁ, | S: Sentient beings revere him, first among gods and humans, | T: Beings pay homage to such a one, ↵ the best among devas and humans,
+an4.8:6.4 | P: Sattā namassanti bhavassa pāragun”ti. | S: who has gone beyond rebirth.” | T: who has gone beyond existence.
+
+## Verse an4.9:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): With craving as companion ↵ a person wanders during this long time. ↵ Going from one state to another, ↵ he does not overcome saṁsāra.
+an4.9:2.1 | P: Taṇhā dutiyo puriso, | S: Craving is a person’s partner | T: With craving as companion
+an4.9:2.2 | P: dīghamaddhāna saṁsaraṁ; | S: as they transmigrate on this long journey. | T: a person wanders during this long time.
+an4.9:2.3 | P: Itthabhāvaññathābhāvaṁ, | S: They go from this state to another, | T: Going from one state to another,
+an4.9:2.4 | P: saṁsāraṁ nātivattati. | S: but don’t escape transmigration. | T: he does not overcome saṁsāra.
+
+## Verse an4.9:3.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Having known this danger— ↵ that craving is the origin of suffering— ↵ free from craving, devoid of grasping, ↵ a bhikkhu should wander mindfully.
+an4.9:3.1 | P: Evamādīnavaṁ ñatvā, | S: Knowing this drawback— | T: Having known this danger—
+an4.9:3.2 | P: Taṇhaṁ dukkhassa sambhavaṁ; | S: that craving is the cause of suffering— | T: that craving is the origin of suffering—
+an4.9:3.3 | P: Vītataṇho anādāno, | S: rid of craving, free of grasping, | T: free from craving, devoid of grasping,
+an4.9:3.4 | P: Sato bhikkhu paribbaje”ti. | S: a mendicant would wander mindful.” | T: a bhikkhu should wander mindfully.
+
+## Verse an5.10:3.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+an5.10:3.1 | P: Saṅkhittaṁ vitthataṁ dukkhā, | S: (none) | T: (none)
+an5.10:3.2 | P: bhataṁ sikkhāya pañcamaṁ; | S: (none) | T: (none)
+an5.10:3.3 | P: Samāpatti ca kāmesu, | S: (none) | T: (none)
+an5.10:3.4 | P: cavanā dve agāravāti. | S: (none) | T: (none)
+
+## Verse an5.20:2.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+an5.20:2.1 | P: Ananussutakūṭañca, | S: (none) | T: (none)
+an5.20:2.2 | P: saṅkhittaṁ vitthatena ca; | S: (none) | T: (none)
+an5.20:2.3 | P: Daṭṭhabbañca puna kūṭaṁ, | S: (none) | T: (none)
+an5.20:2.4 | P: cattāropi hitena cāti. | S: (none) | T: (none)
+
+## Verse an5.308-1152:3.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+an5.308-1152:3.1 | P: Abhiññāya pariññāya parikkhayāya, | S: (none) | T: (none)
+an5.308-1152:3.2 | P: Pahānāya khayāya vayena ca; | S: (none) | T: (none)
+an5.308-1152:3.3 | P: Virāganirodhā cāgañca, | S: (none) | T: (none)
+an5.308-1152:3.4 | P: Paṭinissaggo ime dasāti. | S: (none) | T: (none)
+
+## Verse an5.308-1152:4.1 | 12 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+an5.308-1152:4.1 | P: Sekhabalaṁ balañceva, | S: (none) | T: (none)
+an5.308-1152:4.2 | P: Pañcaṅgikañca sumanaṁ; | S: (none) | T: (none)
+an5.308-1152:4.3 | P: Muṇḍanīvaraṇañca saññañca, | S: (none) | T: (none)
+an5.308-1152:4.4 | P: Yodhājīvañca aṭṭhamaṁ; | S: (none) | T: (none)
+an5.308-1152:4.5 | P: Theraṁ kakudhaphāsuñca, | S: (none) | T: (none)
+an5.308-1152:4.6 | P: Andhakavindadvādasaṁ; | S: (none) | T: (none)
+an5.308-1152:4.7 | P: Gilānarājatikaṇḍaṁ, | S: (none) | T: (none)
+an5.308-1152:4.8 | P: Saddhammāghātupāsakaṁ; | S: (none) | T: (none)
+an5.308-1152:4.9 | P: Araññabrāhmaṇañceva, | S: (none) | T: (none)
+an5.308-1152:4.10 | P: Kimilakkosakaṁ tathā; | S: (none) | T: (none)
+an5.308-1152:4.11 | P: Dīghācārāvāsikañca, | S: (none) | T: (none)
+an5.308-1152:4.12 | P: Duccaritūpasampadanti. | S: (none) | T: (none)
+
+## Verse an5.30:5.1 | 4 Pali rows | 0 English pieces | gathered=False | READER: judge placement and any gathered lines
+an5.30:5.1 | P: Dve agāravupakkilesā, | S: (none) | T: (none)
+an5.30:5.2 | P: Dussīlānuggahitena ca; | S: (none) | T: (none)
+an5.30:5.3 | P: Vimuttisamādhipañcaṅgikā, | S: (none) | T: (none)
+an5.30:5.4 | P: Caṅkamaṁ nāgitena cāti. | S: (none) | T: (none)
+
+## Verse an5.31:9.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “As the stainless moon ↵ moving through the sphere of space ↵ outshines with its radiance ↵ all the stars in the world,
+an5.31:9.1 | P: “Yathāpi cando vimalo, | S: “The moon so immaculate, | T: “As the stainless moon
+an5.31:9.2 | P: gacchaṁ ākāsadhātuyā; | S: journeying across the dimension of space; | T: moving through the sphere of space
+an5.31:9.3 | P: Sabbe tārāgaṇe loke, | S: outshines with its radiance | T: outshines with its radiance
+an5.31:9.4 | P: ābhāya atirocati. | S: all the world’s stars. | T: all the stars in the world,
+
+## Verse an5.31:10.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): so one accomplished in virtuous behavior, ↵ a person endowed with faith, ↵ outshines by generosity ↵ all the misers in the world.
+an5.31:10.1 | P: Tatheva sīlasampanno, | S: So too, a faithful individual, | T: so one accomplished in virtuous behavior,
+an5.31:10.2 | P: saddho purisapuggalo; | S: perfect in ethics, | T: a person endowed with faith,
+an5.31:10.3 | P: Sabbe maccharino loke, | S: outshines with their generosity | T: outshines by generosity
+an5.31:10.4 | P: cāgena atirocati. | S: all the world’s stingy people. | T: all the misers in the world.
+
+## Verse an5.31:11.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): “As the hundred-peaked rain cloud, ↵ thundering, wreathed in lightning, ↵ pours down rain upon the earth, ↵ inundating the plains and lowlands,
+an5.31:11.1 | P: Yathāpi megho thanayaṁ, | S: The thundering rain cloud, | T: “As the hundred-peaked rain cloud, ↵ thundering,
+an5.31:11.2 | P: vijjumālī satakkaku; | S: its hundred peaks wreathed in lightning, | T: wreathed in lightning,
+an5.31:11.3 | P: Thalaṁ ninnañca pūreti, | S: pours down over the rich earth, | T: pours down rain upon the earth,
+an5.31:11.4 | P: abhivassaṁ vasundharaṁ. | S: soaking the uplands and valleys. | T: inundating the plains and lowlands,
+
+## Verse an5.31:12.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): so the Perfectly Enlightened One’s disciple, ↵ the wise one accomplished in vision, ↵ surpasses the miserly person ↵ in five specific respects:
+an5.31:12.1 | P: Evaṁ dassanasampanno, | S: Even so, an astute person accomplished in vision, | T: so the Perfectly Enlightened One’s disciple, ↵ the wise one accomplished in vision,
+an5.31:12.2 | P: sammāsambuddhasāvako; | S: a disciple of the fully awakened Buddha, | T: (none)
+an5.31:12.3 | P: Macchariṁ adhigaṇhāti, | S: surpasses a stingy person | T: surpasses the miserly person
+an5.31:12.4 | P: pañcaṭhānehi paṇḍito. | S: in five respects: | T: in five specific respects:
+
+## Verse an5.31:13.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): life span and glory, ↵ beauty and happiness. ↵ Possessed of wealth, after death ↵ he rejoices in heaven.”
+an5.31:13.1 | P: Āyunā yasasā ceva, | S: long life and fame, | T: life span and glory,
+an5.31:13.2 | P: vaṇṇena ca sukhena ca; | S: beauty and happiness. | T: beauty and happiness.
+an5.31:13.3 | P: Sa ve bhogaparibyūḷho, | S: Lavished with riches, | T: Possessed of wealth,
+an5.31:13.4 | P: pecca sagge pamodatī”ti. | S: they depart to rejoice in heaven.” | T: after death ↵ he rejoices in heaven.”
+
+## Verse an5.32:8.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): For those confident in regard to the foremost, ↵ knowing the foremost Dhamma, ↵ confident in the Buddha—the foremost— ↵ unsurpassed, worthy of offerings;
+an5.32:8.1 | P: Aggato ve pasannānaṁ, | S: For those who, knowing the best teaching, | T: For those confident in regard to the foremost, ↵ knowing the foremost Dhamma,
+an5.32:8.2 | P: aggaṁ dhammaṁ vijānataṁ; | S: base their confidence on the best— | T: (none)
+an5.32:8.3 | P: Agge buddhe pasannānaṁ, | S: confident in the best Awakened One, | T: confident in the Buddha—the foremost—
+an5.32:8.4 | P: dakkhiṇeyye anuttare. | S: supremely worthy of a religious donation; | T: unsurpassed, worthy of offerings;
+
+## Verse an5.32:9.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): for those confident in the foremost Dhamma, ↵ in the blissful peace of dispassion; ↵ for those confident in the foremost Saṅgha, ↵ the unsurpassed field of merit;
+an5.32:9.1 | P: Agge dhamme pasannānaṁ, | S: confident in the best teaching, | T: for those confident in the foremost Dhamma,
+an5.32:9.2 | P: virāgūpasame sukhe; | S: the bliss of fading and stilling; | T: in the blissful peace of dispassion;
+an5.32:9.3 | P: Agge saṅghe pasannānaṁ, | S: confident in the best Saṅgha, | T: for those confident in the foremost Saṅgha,
+an5.32:9.4 | P: puññakkhette anuttare. | S: the supreme field of merit— | T: the unsurpassed field of merit;
+
+## Verse an5.32:10.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): for those giving gifts to the foremost, ↵ the foremost kind of merit increases: ↵ the foremost life span, beauty, and glory, ↵ good reputation, happiness, and strength.
+an5.32:10.1 | P: Aggasmiṁ dānaṁ dadataṁ, | S: giving gifts to the best, | T: for those giving gifts to the foremost,
+an5.32:10.2 | P: aggaṁ puññaṁ pavaḍḍhati; | S: the best of merit grows: | T: the foremost kind of merit increases:
+an5.32:10.3 | P: Aggaṁ āyu ca vaṇṇo ca, | S: the best lifespan, beauty, | T: the foremost life span, beauty,
+an5.32:10.4 | P: yaso kitti sukhaṁ balaṁ. | S: fame, reputation, happiness, and strength. | T: and glory, ↵ good reputation, happiness, and strength.
+
+## Verse an5.32:11.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): The wise one who gives to the foremost, ↵ concentrated upon the foremost Dhamma, ↵ having become a deva or human being, ↵ rejoices having attained the foremost.
+an5.32:11.1 | P: Aggassa dātā medhāvī, | S: An intelligent person gives to the best, | T: The wise one who gives to the foremost,
+an5.32:11.2 | P: aggadhammasamāhito; | S: settled on the best teaching. | T: concentrated upon the foremost Dhamma,
+an5.32:11.3 | P: Devabhūto manusso vā, | S: When they become a god or human, | T: having become a deva or human being,
+an5.32:11.4 | P: aggappatto pamodatī”ti. | S: they rejoice at reaching the best.” | T: rejoices having attained the foremost.
+
+## Verse an5.33:9.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): She does not despise her husband, ↵ the man who constantly supports her, ↵ who ardently and eagerly ↵ always brings her whatever she wants.
+an5.33:9.1 | P: Yo naṁ bharati sabbadā, | S: She’d never look down on her husband, | T: She does not despise her husband, ↵ the man who constantly supports her,
+an5.33:9.2 | P: niccaṁ ātāpi ussuko; | S: who’s always eager to work hard, | T: who ardently and eagerly
+an5.33:9.3 | P: Sabbakāmaharaṁ posaṁ, | S: always looking after her, | T: always brings her whatever she wants.
+an5.33:9.4 | P: bhattāraṁ nātimaññati. | S: and bringing whatever she wants. | T: (none)
+
+## Verse an5.33:10.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): Nor does a good woman scold her husband ↵ with speech caused by jealousy; ↵ the wise woman shows veneration ↵ to all those whom her husband reveres.
+an5.33:10.1 | P: Na cāpi sotthi bhattāraṁ, | S: And a good woman never scolds her husband | T: Nor does a good woman scold her husband ↵ with speech caused by jealousy;
+an5.33:10.2 | P: issācārena rosaye; | S: with jealous words. | T: (none)
+an5.33:10.3 | P: Bhattu ca garuno sabbe, | S: Being astute, she reveres | T: the wise woman shows veneration ↵ to all those whom her husband reveres.
+an5.33:10.4 | P: paṭipūjeti paṇḍitā. | S: those respected by her husband. | T: (none)
+
+## Verse an5.33:11.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): She rises early, works diligently, ↵ manages the domestic help; ↵ she treats her husband in agreeable ways ↵ and safeguards the wealth he earns.
+an5.33:11.1 | P: Uṭṭhāhikā analasā, | S: She gets up early, works tirelessly, | T: She rises early, works diligently,
+an5.33:11.2 | P: saṅgahitaparijjanā; | S: and manages the domestic help. | T: manages the domestic help;
+an5.33:11.3 | P: Bhattu manāpaṁ carati, | S: She’s agreeable to her husband, | T: she treats her husband in agreeable ways
+an5.33:11.4 | P: sambhataṁ anurakkhati. | S: and preserves his wealth. | T: and safeguards the wealth he earns.
+
+## Verse an5.33:12.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): The woman who fulfills her duties thus, ↵ following her husband’s will and wishes, ↵ is reborn among the devas ↵ called “the agreeable ones.”
+an5.33:12.1 | P: Yā evaṁ vattatī nārī, | S: A lady who fulfills these duties | T: The woman who fulfills her duties thus,
+an5.33:12.2 | P: bhattuchandavasānugā; | S: according to her husband’s desire, | T: following her husband’s will and wishes,
+an5.33:12.3 | P: Manāpā nāma te devā, | S: is reborn among the gods | T: is reborn among the devas
+an5.33:12.4 | P: yattha sā upapajjatī”ti. | S: called ‘Agreeable’.” | T: called “the agreeable ones.”
+
+## Verse an5.34:8.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): By giving, he becomes dear and many resort to him. ↵ He attains a good reputation and his fame increases. ↵ The generous man is composed ↵ and confidently enters the assembly.
+an5.34:8.1 | P: Dadaṁ piyo hoti bhajanti naṁ bahū, | S: Giving, you’re loved and befriended by many people. | T: By giving, he becomes dear and many resort to him.
+an5.34:8.2 | P: Kittiñca pappoti yaso ca vaḍḍhati; | S: You get a good reputation, and your fame grows. | T: He attains a good reputation and his fame increases.
+an5.34:8.3 | P: Amaṅkubhūto parisaṁ vigāhati, | S: A generous man enters an assembly | T: The generous man is composed ↵ and confidently enters the assembly.
+an5.34:8.4 | P: Visārado hoti naro amaccharī. | S: bold and self-assured. | T: (none)
+
+## Verse an5.34:9.1 | 4 Pali rows | 7 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Therefore, seeking happiness, ↵ wise persons give gifts, ↵ having removed the stain of miserliness. ↵ When they are settled in the triple heaven, ↵ for a long time they delight ↵ in companionship with the devas.
+an5.34:9.1 | P: Tasmā hi dānāni dadanti paṇḍitā, | S: So an astute person, seeking happiness, would give gifts, | T: Therefore, seeking happiness, ↵ wise persons give gifts,
+an5.34:9.2 | P: Vineyya maccheramalaṁ sukhesino; | S: having driven out the stain of stinginess. | T: having removed the stain of miserliness.
+an5.34:9.3 | P: Te dīgharattaṁ tidive patiṭṭhitā, | S: They live long in the Third Heaven, | T: When they are settled in the triple heaven, ↵ for a long time
+an5.34:9.4 | P: Devānaṁ sahabyagatā ramanti te. | S: enjoying the company of the gods. | T: they delight ↵ in companionship with the devas.
+
+## Verse an5.34:10.1 | 6 Pali rows | 7 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Having taken the opportunity to do wholesome deeds, ↵ passing from here, self-luminous, they roam in Nandana, ↵ where they delight, rejoice, and enjoy themselves, ↵ furnished with the five objects of sensual pleasure. ↵ Having fulfilled the word of the unattached Stable One, ↵ the Fortunate One’s disciples rejoice in heaven.
+an5.34:10.1 | P: Katāvakāsā katakusalā ito cutā, | S: Having taken the opportunity to do good, when they pass from here | T: Having taken the opportunity to do wholesome deeds, ↵ passing from here,
+an5.34:10.2 | P: Sayaṁpabhā anuvicaranti nandanaṁ; | S: they wander self-radiant in the Garden of Delight. | T: self-luminous, they roam in Nandana,
+an5.34:10.3 | P: Te tattha nandanti ramanti modare, | S: There they delight, rejoice, and enjoy themselves, | T: where they delight, rejoice, and enjoy themselves,
+an5.34:10.4 | P: Samappitā kāmaguṇehi pañcahi; | S: provided with the five kinds of sensual stimulation. | T: furnished with the five objects of sensual pleasure.
+an5.34:10.5 | P: Katvāna vākyaṁ asitassa tādino, | S: Having practiced the word of the unattached, the unaffected, | T: Having fulfilled the word of the unattached Stable One,
+an5.34:10.6 | P: Ramanti sagge sugatassa sāvakā”ti. | S: disciples of the Holy One rejoice in heaven.” | T: the Fortunate One’s disciples rejoice in heaven.
+
+## Verse an5.35:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): By giving, one becomes dear, ↵ one follows the duty of the good; ↵ the good self-controlled monks ↵ always resort to one.
+an5.35:2.1 | P: Dadamāno piyo hoti, | S: Giving, one is loved, | T: By giving, one becomes dear,
+an5.35:2.2 | P: sataṁ dhammaṁ anukkamaṁ; | S: and follows the way of the good. | T: one follows the duty of the good;
+an5.35:2.3 | P: Santo naṁ sadā bhajanti, | S: The good, disciplined spiritual practitioners | T: the good self-controlled monks
+an5.35:2.4 | P: saññatā brahmacārayo. | S: always associate with you. | T: always resort to one.
+
+## Verse an5.35:3.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): They teach one the Dhamma ↵ that dispels all suffering, ↵ having understood which ↵ the taintless one here attains nibbāna.
+an5.35:3.1 | P: Te tassa dhammaṁ desenti, | S: They teach you the Dhamma | T: They teach one the Dhamma
+an5.35:3.2 | P: Sabbadukkhāpanūdanaṁ; | S: that casts aside all suffering. | T: that dispels all suffering,
+an5.35:3.3 | P: Yaṁ so dhammaṁ idhaññāya, | S: Having understood this teaching, | T: having understood which
+an5.35:3.4 | P: Parinibbāti anāsavo”ti. | S: the undefiled one is fully extinguished.” | T: the taintless one here attains nibbāna.
+
+## Verse an5.36:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): At the proper time, those wise, ↵ charitable, and generous folk ↵ give a timely gift to the noble ones, ↵ who are stable and upright;
+an5.36:2.1 | P: Kāle dadanti sappaññā, | S: The wise give at the right time, | T: At the proper time, those wise,
+an5.36:2.2 | P: vadaññū vītamaccharā; | S: being bountiful and rid of stinginess. | T: charitable, and generous folk
+an5.36:2.3 | P: Kālena dinnaṁ ariyesu, | S: A religious donation at the right time | T: give a timely gift to the noble ones,
+an5.36:2.4 | P: ujubhūtesu tādisu. | S: to the noble ones, upright and unaffected, | T: who are stable and upright;
+
+## Verse an5.36:3.1 | 6 Pali rows | 6 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): given with a clear mind, ↵ one’s offering is vast. ↵ Those who rejoice in such deeds ↵ or who provide other service ↵ do not miss out on the offering; ↵ they too partake of the merit.
+an5.36:3.1 | P: Vippasannamanā tassa, | S: given with a clear and confident mind, | T: given with a clear mind,
+an5.36:3.2 | P: vipulā hoti dakkhiṇā; | S: is indeed abundant. | T: one’s offering is vast.
+an5.36:3.3 | P: Ye tattha anumodanti, | S: Those who rejoice at that, | T: Those who rejoice in such deeds
+an5.36:3.4 | P: veyyāvaccaṁ karonti vā; | S: or do other services, | T: or who provide other service
+an5.36:3.5 | P: Na tena dakkhiṇā ūnā, | S: don’t miss out on the offering; | T: do not miss out on the offering;
+an5.36:3.6 | P: tepi puññassa bhāgino. | S: they too have a share in the merit. | T: they too partake of the merit.
+
+## Verse an5.36:4.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Therefore, with a non-regressing mind, ↵ one should give a gift where it yields great fruit. ↵ Merits are the support of living beings ↵ when they arise in the other world.
+an5.36:4.1 | P: Tasmā dade appaṭivānacitto, | S: So you should give without holding back, | T: Therefore, with a non-regressing mind, ↵ one should give a gift
+an5.36:4.2 | P: Yattha dinnaṁ mahapphalaṁ; | S: where a gift is very fruitful. | T: where it yields great fruit.
+an5.36:4.3 | P: Puññāni paralokasmiṁ, | S: The good deeds of sentient beings | T: Merits are the support of living beings
+an5.36:4.4 | P: Patiṭṭhā honti pāṇinan”ti. | S: support them in the next world.” | T: when they arise in the other world.
+
+## Verse an5.37:2.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): The wise one is a giver of life, ↵ strength, beauty, and discernment. ↵ The intelligent one is a donor of happiness ↵ and in turn acquires happiness.
+an5.37:2.1 | P: Āyudo balado dhīro, | S: Being attentive, one is a giver of life, strength, | T: The wise one is a giver of life, ↵ strength,
+an5.37:2.2 | P: vaṇṇado paṭibhānado; | S: beauty, and eloquence. | T: beauty, and discernment.
+an5.37:2.3 | P: Sukhassa dātā medhāvī, | S: An intelligent giver of happiness | T: The intelligent one is a donor of happiness
+an5.37:2.4 | P: sukhaṁ so adhigacchati. | S: gains happiness in return. | T: and in turn acquires happiness.
+
+## Verse an5.37:3.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Having given life, strength, beauty, ↵ happiness, and discernment, ↵ one is long-lived and famous ↵ wherever one is reborn.
+an5.37:3.1 | P: Āyuṁ datvā balaṁ vaṇṇaṁ, | S: Giving life, strength, beauty, | T: Having given life, strength, beauty,
+an5.37:3.2 | P: sukhañca paṭibhānakaṁ; | S: happiness, and eloquence, | T: happiness, and discernment,
+an5.37:3.3 | P: Dīghāyu yasavā hoti, | S: they’re long-lived and famous | T: one is long-lived and famous
+an5.37:3.4 | P: yattha yatthūpapajjatī”ti. | S: wherever they’re reborn.” | T: wherever one is reborn.
+
+## Verse an5.38:3.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): A large tree with a mighty trunk, ↵ branches, leaves, and fruit, ↵ firm roots, and bearing fruit, ↵ is a support for many birds.
+an5.38:3.1 | P: Sākhāpattaphalūpeto, | S: With its branches, leaves, and fruit, | T: A large tree with a mighty trunk, ↵ branches, leaves, and fruit,
+an5.38:3.2 | P: khandhimāva mahādumo; | S: a great tree with its strong trunk, | T: (none)
+an5.38:3.3 | P: Mūlavā phalasampanno, | S: firmly-rooted and fruit-bearing, | T: firm roots, and bearing fruit,
+an5.38:3.4 | P: patiṭṭhā hoti pakkhinaṁ. | S: supports many birds. | T: is a support for many birds.
+
+## Verse an5.38:4.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): Having flown across the sky, ↵ the birds resort to this delightful base: ↵ those in need of shade partake of its shade; ↵ those needing fruit enjoy its fruit.
+an5.38:4.1 | P: Manorame āyatane, | S: It’s a lovely place, | T: Having flown across the sky, ↵ the birds resort to this delightful base:
+an5.38:4.2 | P: sevanti naṁ vihaṅgamā; | S: frequented by the sky-soarers. | T: (none)
+an5.38:4.3 | P: Chāyaṁ chāyatthikā yanti, | S: Those that need shade go in the shade, | T: those in need of shade partake of its shade;
+an5.38:4.4 | P: phalatthā phalabhojino. | S: those that need fruit enjoy the fruit. | T: those needing fruit enjoy its fruit.
+
+## Verse an5.38:5.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Just so, when a person is virtuous, ↵ endowed with faith, ↵ of humble manner, compliant, ↵ gentle, welcoming, soft,
+an5.38:5.1 | P: Tatheva sīlasampannaṁ, | S: So too, a faithful individual | T: Just so, when a person is virtuous,
+an5.38:5.2 | P: saddhaṁ purisapuggalaṁ; | S: is perfect in ethics, | T: endowed with faith,
+an5.38:5.3 | P: Nivātavuttiṁ atthaddhaṁ, | S: placid in manner and amenable, | T: of humble manner, compliant,
+an5.38:5.4 | P: sorataṁ sakhilaṁ muduṁ. | S: gentle, courteous, and tender. | T: gentle, welcoming, soft,
+
+## Verse an5.38:6.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): those in the world who are fields of merit— ↵ devoid of lust and hatred, ↵ devoid of delusion, taintless— ↵ resort to such a person.
+an5.38:6.1 | P: Vītarāgā vītadosā, | S: Those free of greed, freed of hate, | T: those in the world who are fields of merit— ↵ devoid of lust and hatred,
+an5.38:6.2 | P: vītamohā anāsavā; | S: free of delusion, undefiled, | T: devoid of delusion, taintless—
+an5.38:6.3 | P: Puññakkhettāni lokasmiṁ, | S: fields of merit for the world, | T: (none)
+an5.38:6.4 | P: sevanti tādisaṁ naraṁ. | S: associate with such a person. | T: resort to such a person.
+
+## Verse an5.38:7.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): They teach him the Dhamma ↵ that dispels all suffering, ↵ having understood which ↵ the taintless one here attains nibbāna.
+an5.38:7.1 | P: Te tassa dhammaṁ desenti, | S: They teach them the Dhamma, | T: They teach him the Dhamma
+an5.38:7.2 | P: Sabbadukkhāpanūdanaṁ; | S: that casts aside all suffering. | T: that dispels all suffering,
+an5.38:7.3 | P: Yaṁ so dhammaṁ idhaññāya, | S: Having understood this teaching, | T: having understood which
+an5.38:7.4 | P: Parinibbāti anāsavo”ti. | S: the undefiled one is fully extinguished.” | T: the taintless one here attains nibbāna.
+
+## Verse an5.39:2.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Considering the five prospects, ↵ wise people wish for a son. ↵ “Supported by us, he will support us, ↵ or he will do work for us. ↵ wise people wish for a son.
+an5.39:2.1 | P: Pañca ṭhānāni sampassaṁ, | S: Seeing five reasons, | T: Considering the five prospects,
+an5.39:2.2 | P: puttaṁ icchanti paṇḍitā; | S: astute people wish for a child. | T: wise people wish for a son.
+an5.39:2.3 | P: Bhato vā no bharissati, | S: Since we looked after them, they’ll look after us. | T: “Supported by us, he will support us,
+an5.39:2.4 | P: kiccaṁ vā no karissati. | S: They’ll do their duty for us. | T: or he will do work for us.
+
+## Verse an5.39:3.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): The family lineage will be extended, ↵ he will manage the inheritance, ↵ or else, when we have passed on, ↵ he will make an offering on our behalf.”
+an5.39:3.1 | P: Kulavaṁso ciraṁ tiṭṭhe, | S: The family customs will last. | T: The family lineage will be extended,
+an5.39:3.2 | P: dāyajjaṁ paṭipajjati; | S: They’ll take care of the inheritance. | T: he will manage the inheritance,
+an5.39:3.3 | P: Atha vā pana petānaṁ, | S: Or else when we have passed away | T: or else, when we have passed on,
+an5.39:3.4 | P: dakkhiṇaṁ anuppadassati. | S: they’ll give an offering on our behalf. | T: he will make an offering on our behalf.”
+
+## Verse an5.39:4.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): wise people wish for a son. ↵ Considering these prospects, ↵ wise people wish for a son. ↵ Therefore good persons, ↵ grateful and appreciative,
+an5.39:4.1 | P: Ṭhānānetāni sampassaṁ, | S: Seeing these five reasons | T: Considering these prospects,
+an5.39:4.2 | P: puttaṁ icchanti paṇḍitā; | S: astute people wish for a child. | T: wise people wish for a son.
+an5.39:4.3 | P: Tasmā santo sappurisā, | S: And so true persons, | T: Therefore good persons,
+an5.39:4.4 | P: kataññū katavedino. | S: grateful and thankful, | T: grateful and appreciative,
+
+## Verse an5.39:5.1 | 4 Pali rows | 4 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): support their mother and father, ↵ recalling how they helped one in the past; ↵ they do what is necessary for them ↵ as they did for oneself in the past.
+an5.39:5.1 | P: Bharanti mātāpitaro, | S: look after their parents, | T: support their mother and father,
+an5.39:5.2 | P: pubbe katamanussaraṁ; | S: remembering past deeds. | T: recalling how they helped one in the past;
+an5.39:5.3 | P: Karonti nesaṁ kiccāni, | S: They do for their parents, | T: they do what is necessary for them
+an5.39:5.4 | P: yathā taṁ pubbakārinaṁ. | S: as their parents did for them in the past. | T: as they did for oneself in the past.
+
+## Verse an5.39:6.1 | 4 Pali rows | 5 English pieces | gathered=False | READER: judge placement and any gathered lines
+Source line breaks (context; Pali decides verse boundaries): Following their advice, ↵ nurturing those who brought him up, ↵ continuing the family lineage, ↵ endowed with faith, virtuous: ↵ this son is worthy of praise.
+an5.39:6.1 | P: Ovādakārī bhataposī, | S: Following their advice, looking after those who raised them, | T: Following their advice, ↵ nurturing those who brought him up,
+an5.39:6.2 | P: kulavaṁsaṁ ahāpayaṁ; | S: the family customs are not lost. | T: continuing the family lineage,
+an5.39:6.3 | P: Saddho sīlena sampanno, | S: Faithful, accomplished in ethics, | T: endowed with faith, virtuous:
+an5.39:6.4 | P: putto hoti pasaṁsiyo”ti. | S: such a child is praiseworthy.” | T: this son is worthy of praise.
+
+## Verse an5.40:2.1 | 4 Pali rows | 4 English pieces | gathered=True | RULE: one complete source line per Pali row
+Source line breaks (context; Pali decides verse boundaries): Just as the trees that grow ↵ in dependence on a rocky mountain ↵ in a vast forest wilderness ↵ might become great ‘woodland lords,’
+an5.40:2.1 | P: Yathā hi pabbato selo, | S: Supported by the rocky mountain | T: Just as the trees that grow ↵ in dependence on a rocky mountain
+an5.40:2.2 | P: araññasmiṁ brahāvane; | S: in the wilds, the formidable forest, | T: in a vast forest wilderness
+an5.40:2.3 | P: Taṁ rukkhā upanissāya, | S: the tree grows | T: (none)
+an5.40:2.4 | P: vaḍḍhante te vanappatī. | S: to become lord of the forest. | T: might become great ‘woodland lords,’
