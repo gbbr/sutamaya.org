@@ -1,0 +1,95 @@
+{
+  "copy": "/private/tmp/sutamaya-verse-layout-o3_1wta_",
+  "snapshot": {
+    "branch": "translations",
+    "head": "ea9dcea1278f3fa2495417af36ae96a90275a4cb",
+    "files": 23877,
+    "copy": "/private/tmp/sutamaya-verse-layout-o3_1wta_"
+  },
+  "fileHashes": {
+    "scripts/segmenter/segment-translations.mjs": {
+      "before": "c09988d1118e121a93586debac3a3ded4ae7e591e4070108370826eb076a356e",
+      "after": "f884666e812cfb4de522cd40a8e22406a6357c02ddaf7f6287b0394ff2b9d396"
+    },
+    "scripts/segmenter/__tests__/verse-layout.test.js": {
+      "before": null,
+      "after": "a0ce38eae3ee34348d3f45a3a8422e130ae08ba1647bcbd29290716b97ea50b0"
+    },
+    "data/upstream/README.md": {
+      "before": "e09195418f86225bf74388fe5c0799a4a37992cf31d00a82141add4004fecf9e",
+      "after": "b03f71acdab9532b3b941cb3cb01bcf138b9bb75133a7f5d79c89cbbaba03d4a"
+    }
+  },
+  "translators": {
+    "bodhi": {
+      "all": {
+        "total": 1172,
+        "exact": 1127,
+        "different": 20,
+        "declined": 25,
+        "omitted": 197
+      },
+      "translated": {
+        "total": 975,
+        "exact": 930,
+        "different": 20,
+        "declined": 25,
+        "omitted": 0
+      },
+      "guardChecked": 966,
+      "causes": {
+        "reviewed grouping or omissions": 1,
+        "source-not-found": 9,
+        "gap placement": 7,
+        "grouping of excess source lines": 7,
+        "starts inside a source line": 4,
+        "reviewed cut inside source line": 2,
+        "no source line breaks": 11,
+        "speaker or first-row ownership": 3,
+        "ends inside a source line": 1
+      }
+    },
+    "thanissaro": {
+      "all": {
+        "total": 3966,
+        "exact": 2952,
+        "different": 965,
+        "declined": 49,
+        "omitted": 291
+      },
+      "translated": {
+        "total": 3675,
+        "exact": 2661,
+        "different": 965,
+        "declined": 49,
+        "omitted": 0
+      },
+      "guardChecked": 3670,
+      "causes": {
+        "reviewed cut inside source line": 384,
+        "grouping of excess source lines": 552,
+        "gap placement": 29,
+        "ends inside a source line": 9,
+        "starts inside a source line": 10,
+        "source-not-found": 5,
+        "no source line breaks": 25
+      }
+    }
+  },
+  "verification": {
+    "suttaNotesChangedFiles": {
+      "bodhi": 0,
+      "thanissaro": 0
+    },
+    "testFiles": 121,
+    "tests": 1715,
+    "upstreamDifferences": {
+      "bodhi": 0,
+      "thanissaro": 0
+    },
+    "integrityProblems": {
+      "bodhi": 0,
+      "thanissaro": 0
+    }
+  }
+}

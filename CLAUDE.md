@@ -10,7 +10,7 @@ read before changing something, the rules that span files, and how documentation
 |---|---|
 | the offline mirror, the sync, or the Worker's data routes | [docs/offline-sync.md](docs/offline-sync.md), the design and its invariants |
 | a retranslation rule, or anything under `data/sujato*` | [docs/retranslation.md](docs/retranslation.md), then the `retranslate` skill |
-| Bodhi's or Ṭhānissaro's translations (`data/bodhi*`, `data/thanissaro*`, `data/upstream/`) | [data/upstream/README.md](data/upstream/README.md): the plan ("What's left"), the review rules and what the app needs |
+| Bodhi's or Ṭhānissaro's translations (`data/bodhi*`, `data/thanissaro*`, `data/upstream/`), or showing them in the app | [data/upstream/README.md](data/upstream/README.md): the plan ("What's left"), the review rules, and what the app needs and has yet to decide ("Building them into the app", "Open questions for the Reader") |
 | search | [docs/search.md](docs/search.md) |
 | the corpus build, the browse tree, the dictionary | [docs/corpus.md](docs/corpus.md) |
 | the Worker: routes, schema, sign-in, hostnames | [docs/backend.md](docs/backend.md) |

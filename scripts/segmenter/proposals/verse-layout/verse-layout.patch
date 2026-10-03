@@ -140,3 +140,198 @@
      const { segText, endsJoined, joined: got } = segmentsOf(results, stream.text);
  
      // The text check: the segments, joined as they are written — a space after each but one with no
+--- /dev/null
++++ b/scripts/segmenter/__tests__/verse-layout.test.js
+@@ -0,0 +1,115 @@
++import { afterAll, expect, test } from 'vitest';
++import { spawnSync } from 'node:child_process';
++import fs from 'node:fs';
++import os from 'node:os';
++import path from 'node:path';
++import { fileURLToPath } from 'node:url';
++
++const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
++const scratch = fs.mkdtempSync(path.join(os.tmpdir(), 'segment-verse-layout-'));
++afterAll(() => fs.rmSync(scratch, { recursive: true, force: true }));
++
++// Each case runs the actual CLI against a small, independent corpus. No prototype imports,
++// review answers, or real translation files supply the automatic layouts.
++function segment(source, rows, { cuts = {}, reviewed = false, translator = 'bodhi' } = {}) {
++  const root = fs.mkdtempSync(path.join(scratch, 'case-'));
++  const write = (relative, value) => {
++    const file = path.join(root, relative);
++    fs.mkdirSync(path.dirname(file), { recursive: true });
++    fs.writeFileSync(file, typeof value === 'string' ? value : JSON.stringify(value));
++  };
++  write('scripts/segmenter/segment-translations.mjs', fs.readFileSync(path.join(ROOT, 'scripts/segmenter/segment-translations.mjs'), 'utf8'));
++  fs.symlinkSync(path.join(ROOT, 'node_modules'), path.join(root, 'node_modules'), 'dir');
++  fs.symlinkSync(path.join(ROOT, 'scripts/lib'), path.join(root, 'scripts/lib'), 'dir');
++  const keys = rows.map((row, i) => row.key ?? `fixture:1.${i + 1}`);
++  const entries = fn => Object.fromEntries(rows.map((row, i) => [keys[i], fn(row, i)]));
++  write('data/pali/sutta/fixture_root-pli-ms.json', entries(row => row.pali ?? 'verse'));
++  write('data/sujato/sutta/fixture_translation-en-sujato.json', entries(row => row.en ?? ''));
++  write('data/html/pli/ms/sutta/fixture_html.json', entries((row, i) => `${i === 0 || row.paraStart ? '<p>' : ''}${row.verse === false ? '{}' : '<span class="verse-line">{}</span>'}${i === rows.length - 1 ? '</p>' : ''}`));
++  write(`data/upstream/${translator}/sutta/fixture.html`, `<article id="fixture"><header><h1></h1></header>${source}</article>`);
++  write(`data/${translator}/cuts.json`, cuts);
++  write(`data/${translator}/learned.json`, {});
++  if (reviewed) {
++    write(`data/${translator}/review/verse/manifest.json`, { verses: [{ keys }] });
++    write(`data/${translator}/review/verse/review.json`, { batchesLeft: 0, versesRead: 1 });
++  }
++  const result = spawnSync(process.execPath, ['scripts/segmenter/segment-translations.mjs', translator, '--only', 'fixture'], {
++    cwd: root, encoding: 'utf8', timeout: 10000,
++  });
++  expect(result.error).toBeUndefined();
++  expect(result.status, result.stdout + result.stderr).toBe(0);
++  expect(result.stdout).toContain('0 not written');
++  const text = JSON.parse(fs.readFileSync(path.join(root, `data/${translator}/sutta/fixture_translation-en-${translator}.json`), 'utf8'));
++  return keys.map(key => text[key].trim());
++}
++
++const rows = n => Array.from({ length: n }, () => ({}));
++const verse = lines => `<blockquote><p>${lines.join('<br>')}</p></blockquote>`;
++const plain = pieces => pieces.map(s => s.replace(/\s+/g, ' ').trim());
++
++test.each(['bodhi', 'thanissaro'])('one whole source line per Pali row at equal counts (%s)', translator => {
++  const lines = ['banana orchard', 'mango harvest', 'apple vineyard', 'pear garden'];
++  const body = rows(4);
++  body[0].en = lines.join(' '); // Lexical scoring must not gather everything on this row.
++  expect(segment(verse(lines), body, { translator })).toEqual(lines);
++});
++
++test('excess source lines occupy every row and remain whole and in order', () => {
++  const lines = ['one word', 'two words', 'three words', 'four words', 'five words', 'six words'];
++  const pieces = segment(verse(lines), rows(4));
++  expect(pieces.filter(Boolean)).toHaveLength(4);
++  expect(pieces.flatMap(s => s.split('\n'))).toEqual(lines);
++});
++
++test('fewer source lines stay separate and occupy the first row', () => {
++  const lines = ['banana orchard', 'mango harvest'];
++  const body = rows(4);
++  body[3].en = lines.join(' ');
++  const pieces = segment(verse(lines), body);
++  expect(pieces[0]).toBeTruthy();
++  expect(pieces.filter(Boolean)).toEqual(lines);
++});
++
++test('a speaker label stays attached to the first line of speech', () => {
++  expect(segment(verse(['<span class="speaker">The Buddha:</span>', 'first line', 'second line']), rows(2)))
++    .toEqual(['The Buddha:\nfirst line', 'second line']);
++});
++
++test('paragraph boundaries separate verses, including integer Pali keys', () => {
++  const body = rows(4).map((row, i) => ({ ...row, key: `fixture:${i + 1}`, paraStart: i === 2 }));
++  expect(segment(verse(['a first', 'a second']) + verse(['b first', 'b second']), body))
++    .toEqual(['a first', 'a second', 'b first', 'b second']);
++});
++
++test('a settled grouping overrides the equal-count rule', () => {
++  const lines = ['first line', 'second line', 'third line', 'fourth line'];
++  const cuts = {
++    'fixture:1.2': { empty: 'up' },
++    'fixture:1.3': { after: 'first line\nsecond line', own: true },
++    'fixture:1.4': { after: 'third line', own: true },
++  };
++  expect(plain(segment(verse(lines), rows(4), { cuts })))
++    .toEqual(['first line second line', '', 'third line', 'fourth line']);
++});
++
++test('a completed verse round protects unchanged layouts without cut entries', () => {
++  const source = verse(['banana orchard', 'mango harvest', 'apple vineyard', 'pear garden']);
++  const body = rows(4);
++  body[0].en = 'banana orchard mango harvest apple vineyard pear garden';
++  const original = segment(source, body, { reviewed: true });
++  const inferred = segment(source, body);
++  expect(original).not.toEqual(inferred);
++  expect(original.flatMap(s => s ? s.split('\n') : [])).toEqual(['banana orchard', 'mango harvest', 'apple vineyard', 'pear garden']);
++});
++
++test('prose does not acquire invented source line breaks', () => {
++  const pieces = segment('<p>First whole sentence. Second whole sentence.</p>', rows(4));
++  expect(pieces.every(s => !s.includes('\n'))).toBe(true);
++  expect(plain(pieces).filter(Boolean).join(' ')).toBe('First whole sentence. Second whole sentence.');
++});
++
++test('settled cuts inside source lines remain authoritative', () => {
++  const cuts = { 'fixture:1.2': { after: 'first', own: true }, 'fixture:1.3': { after: 'whole line', own: true } };
++  expect(plain(segment(verse(['first whole line', 'second whole line']), rows(3), { cuts })))
++    .toEqual(['first', 'whole line', 'second whole line']);
++});
+--- a/data/upstream/README.md
++++ b/data/upstream/README.md
+@@ -18,23 +18,9 @@
+ settled is in "The files", "Segmenting" and "Building them into the app", and each round's packets
+ and answers are in `data/<translator>/review/`. What remains, in order:
+ 
+-1. **Teach the segmenter** the rules those rounds settled, checked against the reviews' own
+-   answers, so the steps in "Reviewing new and revised texts" shrink to what the rules leave. For
+-   verse: the translator's lines are never cut, his first line sits on the verse's first Pali
+-   line, a verse with as many of his lines as Pali lines takes one on each (both verse review
+-   scripts already do this), the rest are spread so that no Pali line is hidden, and only a line
+-   whose wording crosses into the next verse needs a reader to say which verse it sits in.
+-   A rule for this is ready but not applied, in `scripts/segmenter/proposals/verse-layout/`
+-   (patch, tests and report). It lays out 1,123 of Bodhi's 1,172 reviewed verses and 2,953 of
+-   Ṭhānissaro's 3,966 exactly as the reviews did, and keeps every reviewed layout as it is;
+-   most of the rest are verses with more of his lines than Pali lines, which it groups
+-   differently. Its tests import the prototype's module and need pointing at the segmenter.
+-   A plain run of the segmenter reproduces the committed texts exactly, despite the drift the
+-   report describes, so applying the patch can be checked by regenerating. The evidence for
+-   Ṭhānissaro's equal-count verses is in `data/thanissaro/review/verse/automation.json`.
+-2. **Fourteen places in Ṭhānissaro's verse** where his lines interleave neighbouring verses, or
++1. **Fourteen places in Ṭhānissaro's verse** where his lines interleave neighbouring verses, or
+    the fix needs a prose line (`data/thanissaro/review/verse/results.json`).
+-3. **A fresh audit** once the rest is done, drawn as `review/audit5/draw.py` draws, with a new
++2. **A fresh audit** once the rest is done, drawn as `review/audit5/draw.py` draws, with a new
+    seed.
+ 
+ ## What's here
+@@ -145,10 +131,13 @@
+    one range copy under its full span, with its original URL; leave out its duplicate terminal
+    copy, and confirm the two bodies still match before treating them as one.
+ 4. **Segment**: `node scripts/segmenter/segment-translations.mjs thanissaro` (or `bodhi`). A new
+-   text comes out with the segmenter's own cuts. A revised one keeps every settled cut that still
+-   fits, and the run names those that don't.
+-5. **Review** the new and revised texts, as "Reviewing new and revised texts" says, their verse
+-   included: a revised line break can change a settled cut even when the words stay the same.
++   text comes out with the segmenter's own cuts and verse layout. Verse lines stay whole; equal
++   counts take one source line on each Pali row, and unequal counts are spread or grouped in
++   order. A revised text keeps every settled cut that still fits, and the run names those that
++   don't; completed verse rounds also protect layouts they left unchanged.
++5. **Review** the new and revised texts, as "Reviewing new and revised texts" says. For verse,
++   check unequal-count groupings or gaps and places the rule declines; equal counts need no
++   layout round. A revised line break can change a settled cut even when the words stay the same.
+ 
+ ## Segmenting
+ 
+@@ -190,14 +179,22 @@
+ app texts: a common formula stays where it is first translated, each listed variant sits on its
+ own Pali line, and the final full passage sits on the terminal sutta's Pali.
+ 
+-Verse goes through rounds of its own. `python3 scripts/segmenter/review-bodhi-verse.py` and
+-`review-verse-thanissaro.py`, with `--out data/<translator>/review/<folder>`, write packets with
+-every Pali verse row, Sujato's context and the translation at the translator's own line breaks.
+-The script spreads a verse with as many of his lines as Pali lines itself, moving a start only
+-at one of his line breaks; readers place the rest, keeping each of his lines whole and in order.
+-A finding that contradicts an earlier one marks it superseded, and one that overrides a hand fix
+-goes into `review/hand/verse-review.findings`. A place where his lines interleave neighbouring
+-verses, or where the fix needs a prose line, is recorded for a later round rather than forced.
++The segmenter lays out verse itself: each source line stays whole, the first sits on the verse's
++first Pali row, equal counts take one on each, and unequal counts use as many rows as there are
++whole lines to fill them. A speaker label stays with its speech. `report.json`'s `verseLayouts`
++lists the layouts applied, declined, or kept because a review settled them; a review always wins.
++For a new or revised text, readers check unequal-count grouping or gap placement against the Pali,
++and settle verse ownership where a source line crosses a verse boundary or interleaves its
++neighbours. Printed prose, abbreviations and other places with no source breaks stay for the
++ordinary cuts/read-through rounds.
++
++Use `python3 scripts/segmenter/review-bodhi-verse.py` or `review-verse-thanissaro.py`, with
++`--out data/<translator>/review/<folder>`, for packets when those remaining places need context:
++every Pali verse row, Sujato's context and the translator's own line breaks. Equal-count layouts
++need no reader to spread them. Keep findings through the same isolated-copy checks as the
++read-throughs. A finding that contradicts an earlier one marks it superseded; one overriding a
++hand fix goes in `review/hand/verse-review.findings`. A place where lines interleave neighbouring
++verses, or the fix needs a prose line, is recorded for a later round rather than forced.
+ 
+ Every round keeps to these:
+ 

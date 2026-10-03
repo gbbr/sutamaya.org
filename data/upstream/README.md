@@ -14,28 +14,25 @@ each rule the work settles goes into "Pulling updates" and "Reviewing new and re
 the same change, as something the segmenter does itself wherever it can, leaving readers only what
 a rule can't decide.
 
-The covered lines, the source mapping and both translators' verse rounds are done: what they
+The covered lines, the source mapping, both translators' verse rounds and the places they left
+open (`data/thanissaro/review/verse-open/`), the placing of Bodhi's notes
+(`data/bodhi/review/notes-placement/`) and a fresh audit (`review/audit6/`) are done: what they
 settled is in "The files", "Segmenting" and "Building them into the app", and each round's packets
 and answers are in `data/<translator>/review/`. What remains, in order:
 
-1. **Teach the segmenter** the rules those rounds settled, checked against the reviews' own
-   answers, so the steps in "Reviewing new and revised texts" shrink to what the rules leave. For
-   verse: the translator's lines are never cut, his first line sits on the verse's first Pali
-   line, a verse with as many of his lines as Pali lines takes one on each (both verse review
-   scripts already do this), the rest are spread so that no Pali line is hidden, and only a line
-   whose wording crosses into the next verse needs a reader to say which verse it sits in.
-   A rule for this is ready but not applied, in `scripts/segmenter/proposals/verse-layout/`
-   (patch, tests and report). It lays out 1,123 of Bodhi's 1,172 reviewed verses and 2,953 of
-   Ṭhānissaro's 3,966 exactly as the reviews did, and keeps every reviewed layout as it is;
-   most of the rest are verses with more of his lines than Pali lines, which it groups
-   differently. Its tests import the prototype's module and need pointing at the segmenter.
-   A plain run of the segmenter reproduces the committed texts exactly, despite the drift the
-   report describes, so applying the patch can be checked by regenerating. The evidence for
-   Ṭhānissaro's equal-count verses is in `data/thanissaro/review/verse/automation.json`.
-2. **Fourteen places in Ṭhānissaro's verse** where his lines interleave neighbouring verses, or
-   the fix needs a prose line (`data/thanissaro/review/verse/results.json`).
-3. **A fresh audit** once the rest is done, drawn as `review/audit5/draw.py` draws, with a new
-   seed.
+1. **Teach the segmenter** the rules those rounds settled, so the steps in "Reviewing new and
+   revised texts" shrink to what the rules leave. Two are proposed in
+   `scripts/segmenter/proposals/`, each a patch with its tests and report: `verse-layout/` lays out
+   verse as the verse rounds did, and `note-placement/` places a note standing for a whole passage
+   as Bodhi's notes round did.
+   Each keeps every reviewed layout, so applying it is checked by regenerating both translations,
+   which must reproduce the committed texts exactly.
+2. **The translator's own commentary read as text**: his introductions, closing remarks and
+   alternative renderings belong in `notes/`, as most of his introductions already are, but some
+   are read into a line: SN 1.8:1.2 (an introduction the segmenter doesn't recognise as one),
+   Ud 7.8:4.6 (closing remarks printed after his notes) and AN 3.47:2.4 (an alternative
+   translation of the whole sutta). Moving them takes a fix to how the segmenter, and
+   `check-upstream.py` alike, read his pages; the translation itself stays as it is.
 
 ## What's here
 
@@ -297,7 +294,16 @@ Once segmenting is done, the app's build takes these translations in. What it mu
     whole as he prints it, the way Sujato's are: his first line on the verse's first Pali line,
     and every Pali line showing under one of his. A line needn't translate the Pali it sits on;
     the verse must. The English never matches the Pali line for line, and the Pali's line keys
-    never change.
+    never change;
+  - **a note in place of a passage**, such as Bodhi's "As in AN8.46, including the verses": whole,
+    on the first Pali line of the passage it stands for, whose other lines stay hidden. A note
+    standing for part of a sentence or a list item sits where that sentence starts;
+  - **a passage printed at a different point from the Pali**: it stays where his page puts it,
+    on the nearest line, and its own Pali stays hidden, as with Ṭhānissaro's second prose
+    paragraph in AN 4.19 (its Pali is 2.1–2.4, before both verses) and the closing sentence of
+    his SN 4.24 (its Pali is SN 4.25:1.1). The translator's text never changes in any way: not a
+    word, and not its order, which `check-upstream.py` enforces. Pairing it with its own Pali is
+    left to the Reader (see "Open questions for the Reader").
 - The Pali under an English line follows the rule for Sujato's lines ([docs/corpus.md](../../docs/corpus.md)'s
   "A segment"): a lone empty line in its paragraph joins the line above, and a run of two or more
   stays hidden, since most runs are repetitions the translator abbreviates. The exception is the
@@ -326,6 +332,21 @@ Once segmenting is done, the app's build takes these translations in. What it mu
   introduction and "See also". Bodhi has notes only for DN 1.
 - Only `sutta/`, `notes/` and `covered.json` ship. `review/`, `cuts.json`, `learned.json` and
   `report.json` are working files.
+
+### Open questions for the Reader
+
+What the data can't settle, left for when the Reader takes these translations in:
+
+- **A passage printed at a different point from the Pali.** Its words and order can't change, so
+  it sits on the nearest line and tapping it shows the wrong Pali. Ṭhānissaro's AN 4.19 gives
+  each prose paragraph before its verse, while the Pali gives both prose paragraphs first
+  (1.1–1.4, 2.1–2.4), then both verses (3.1–3.4, 4.1–4.4). So his second paragraph, "There are
+  these four ways of not going off course. Which four? … These are the four ways of not going
+  off course.", sits on 4.1 together with the second verse's first line, "If you don't—".
+  Tapping it shows only *Chandā dosā bhayā mohā*, the first line of the verse, while its own
+  Pali, 2.1–2.4, stays hidden. The Reader could show 2.1–2.4 when that line is tapped. SN 4.24
+  is the same across two texts: his closing "Then Māra the Evil One … drawing in the dirt with a
+  stick" sits on 10.4, the last line of the verse, and its Pali is SN 4.25:1.1.
 
 ## Where to look
 
