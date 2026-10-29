@@ -346,38 +346,32 @@ const DICTIONARY_LEAD =
 
 const DICTIONARY_URL = 'https://www.dpdict.net/';
 
-// The install steps, written rather than captured: they happen in browser chrome, which no
-// screenshot of this app can show.
+// The install section, pointing a reader in the browser to the store apps.
 const INSTALL_TITLE = 'Install the app';
 
 const INSTALL_LEAD =
-  'Adding sutamaya to your home screen gives it its own icon and a full screen with no address ' +
-  'bar. It is the same app, with everything you have saved.';
+  'Sutamaya is also an app for iPhone, iPad and Android. It comes with the whole canon and ' +
+  'dictionary on board, so it works offline from the first launch.';
 
-const INSTALL_PLATFORMS: Array<{ title: string; steps: string[] }> = [
+// Each store's page for this app, and the badge that links to it.
+const INSTALL_STORES = [
   {
-    title: 'iPhone and iPad',
-    steps: [
-      'Open app.sutamaya.org in Safari. It has to be Safari — Chrome and Firefox on iOS cannot install it.',
-      'Tap the Share button in the toolbar.',
-      'Scroll down the list and tap "Add to Home Screen".',
-      'Tap "Add", top right.',
-    ],
+    url: 'https://apps.apple.com/app/id6812033523',
+    badge: '/landing/app-store.png',
+    width: 119,
+    alt: 'Download on the App Store',
   },
   {
-    title: 'Android',
-    steps: [
-      'Open app.sutamaya.org in Chrome.',
-      'Tap the ⋮ menu, top right.',
-      'Tap "Add to Home screen", then "Install".',
-      'Chrome may offer to install it for you instead — either way works.',
-    ],
+    url: 'https://play.google.com/store/apps/details?id=org.sutamaya.app',
+    badge: '/landing/google-play.png',
+    width: 134,
+    alt: 'Get it on Google Play',
   },
 ];
 
 const INSTALL_TIPS = [
-  'Install first, then sign in and download the content — the installed app has its own storage, ' +
-    'separate from the browser you installed it from.',
+  'Your lists, notes and highlights stay in this browser until you sign in. Sign in here and in the ' +
+    'app with the same account to bring them across.',
 ];
 
 const CONTACT_TITLE = 'Get in touch';
@@ -610,26 +604,19 @@ export function HelpPage() {
           );
         })}
 
-        {/* The install section: the same section furniture as the rest, around one plain numbered
-            list per platform rather than a picture and its legend. */}
+        {/* The install section: the same section furniture as the rest, around the two store
+            badges. */}
         {!isNativeApp() && (
           <section id={anchorId(INSTALL_TITLE)} className="mb-10 scroll-mt-6">
             <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">
               {INSTALL_TITLE}
             </div>
             <p className="font-serif text-ui-lg leading-[1.55] text-ink-2 mb-4">{INSTALL_LEAD}</p>
-            <div className="flex flex-wrap gap-x-5 gap-y-7">
-              {INSTALL_PLATFORMS.map((platform) => (
-                <div key={platform.title} className="flex-1 min-w-[190px]">
-                  <div className="font-sans text-ui-sm font-semibold text-ink-2">{platform.title}</div>
-                  <ol className="list-decimal mt-2 pl-[18px] flex flex-col gap-2 marker:font-sans marker:text-ui-sm marker:text-ink-4 marker:tabular-nums">
-                    {platform.steps.map((step) => (
-                      <li key={step} className="font-sans text-ui-base leading-[1.45] text-ink-2 pl-1">
-                        {step}
-                      </li>
-                    ))}
-                  </ol>
-                </div>
+            <div className="flex flex-wrap gap-3">
+              {INSTALL_STORES.map((store) => (
+                <a key={store.url} href={store.url} target="_blank" rel="noreferrer">
+                  <img src={store.badge} width={store.width} height={40} alt={store.alt} className="block" />
+                </a>
               ))}
             </div>
             <TipCard tips={INSTALL_TIPS} />
