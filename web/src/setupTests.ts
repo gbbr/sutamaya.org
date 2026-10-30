@@ -45,6 +45,15 @@ class ResizeObserverStub {
 }
 globalThis.ResizeObserver = globalThis.ResizeObserver || (ResizeObserverStub as unknown as typeof ResizeObserver);
 
+// jsdom has no IntersectionObserver either: ReaderTitleBar watches the sutta's heading with one.
+class IntersectionObserverStub {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+}
+globalThis.IntersectionObserver =
+  globalThis.IntersectionObserver || (IntersectionObserverStub as unknown as typeof IntersectionObserver);
+
 // jsdom brings its own AbortController while `Request` stays Node's, and Node's only accepts a
 // signal its own implementation made — so the Request the router builds for every navigation
 // throws on a signal nothing in this environment can produce. The signal rides on the instance

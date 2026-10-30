@@ -24,6 +24,25 @@ export function computeSegmentScrollOffset(
 // Each container's running scroll animation, so a new one cancels it.
 const activeScrollAnimations = new WeakMap<HTMLElement, () => void>();
 
+// The scroll position the app last moved each container to.
+const appScrollTops = new WeakMap<HTMLElement, number>();
+
+// setAppScrollTop moves a container to a scroll position, marked as the app's for isAppScroll.
+function setAppScrollTop(container: HTMLElement, top: number) {
+  container.scrollTop = top;
+  appScrollTops.set(container, container.scrollTop);
+}
+
+// isAppScroll returns whether a container sits where these helpers last scrolled it, making the
+// scroll that brought it there the app's own. The first scroll to land anywhere else clears the mark.
+export function isAppScroll(container: HTMLElement): boolean {
+  const top = appScrollTops.get(container);
+  if (top === undefined) return false;
+  if (container.scrollTop === top) return true;
+  appScrollTops.delete(container);
+  return false;
+}
+
 // The inputs that cancel a running scroll, which native smooth scrolling gives for free.
 const CANCEL_EVENTS = ['wheel', 'touchstart', 'pointerdown'] as const;
 
@@ -37,7 +56,7 @@ export function animateScrollTop(container: HTMLElement, targetScrollTop: number
   // Honour the OS motion preference by hand, since this bypasses `behavior:'smooth'`, which does
   // it natively.
   if (prefersReducedMotion()) {
-    container.scrollTop = targetScrollTop;
+    setAppScrollTop(container, targetScrollTop);
     return;
   }
 
@@ -57,7 +76,7 @@ export function animateScrollTop(container: HTMLElement, targetScrollTop: number
     if (cancelled) return;
     if (startTime === null) startTime = now;
     const t = Math.min(1, (now - startTime) / duration);
-    container.scrollTop = start + delta * easeOutCubic(t);
+    setAppScrollTop(container, start + delta * easeOutCubic(t));
     if (t < 1) requestAnimationFrame(step);
     else cancel();
   }
@@ -74,5 +93,5 @@ export function animateScrollBy(container: HTMLElement, offset: number) {
 // Moves a container by a relative offset at once, in scroll units, ending any animation running on it.
 export function jumpScrollBy(container: HTMLElement, offset: number) {
   activeScrollAnimations.get(container)?.();
-  container.scrollTop += offset;
+  setAppScrollTop(container, container.scrollTop + offset);
 }
