@@ -42,6 +42,7 @@ import { HighlightPopup } from '../components/reader/HighlightPopup';
 import { HighlightGutter } from '../components/reader/HighlightGutter';
 import { DictionaryDock } from '../components/reader/DictionaryDock';
 import { ReaderTip } from '../components/reader/ReaderTip';
+import { ReaderTitleBar } from '../components/reader/ReaderTitleBar';
 import { ReaderMenuPanel } from '../components/reader/ReaderMenuPanel';
 import { ReaderSearchOverlay, type ReaderSearchView } from '../components/search/ReaderSearchOverlay';
 import { ShortcutsModal } from '../components/ShortcutsModal';
@@ -352,7 +353,7 @@ export function ReaderPage() {
   // Opens a sutta just arrived at the top where its arrival names a line it can't land on.
   useLayoutEffect(() => {
     if (!arrivalKeys || !segments || holdingPlace || searchSegments || requestedSubUid) return;
-    if (segments !== shownSegmentsRef.current && scrollRef.current) scrollRef.current.scrollTop = 0;
+    if (segments !== shownSegmentsRef.current && scrollRef.current) jumpScrollBy(scrollRef.current, -scrollRef.current.scrollTop);
   }, [arrivalKeys, segments, holdingPlace, searchSegments, requestedSubUid, scrollRef]);
 
   // The first and last segment of the requested inner sutta, whose segments run consecutively.
@@ -526,6 +527,8 @@ export function ReaderPage() {
 
   // The measure column the step animation runs on, inside the scrolling pane.
   const articleRef = useRef<HTMLDivElement>(null);
+  // The sutta's title at the head of the text.
+  const headingRef = useRef<HTMLHeadingElement>(null);
   // The sutta a step by the Reader's own controls is heading to — Prev/Next, a jump or back — and the
   // direction it travels, consumed once by the render that lands on it.
   const enterOnArrival = useRef<{ id: string; dir: 1 | -1 } | null>(null);
@@ -801,10 +804,10 @@ export function ReaderPage() {
       onTouchEnd={onTextUp}
     >
       {/* The header: close on the left, with back beside it after a jump from within the reader;
-          search and menu on the right; and the title absolutely centred on the page rather than
-          between them, since the two sides carry different numbers of buttons. A 44px bar starting
-          on the safe-area line, the platform's own top-bar geometry, with its controls centred in
-          it. */}
+          search and menu on the right; and on a wide screen the title, absolutely centred on the
+          page rather than between them, since the two sides carry different numbers of buttons —
+          on a phone, ReaderTitleBar names the sutta instead. A 44px bar starting on the safe-area
+          line, the platform's own top-bar geometry, with its controls centred in it. */}
       <header
         className="font-sans flex-none relative flex items-center justify-between box-content h-11 px-5 text-ui-base"
         style={{ borderBottom: `1px solid ${theme.rule}`, paddingTop: 'var(--safe-top)' }}
@@ -828,16 +831,16 @@ export function ReaderPage() {
         </div>
         {/* Tapping the title scrolls back to the top of the sutta, the iOS status-bar convention.
             Done by hand, since the reader scrolls in a nested div rather than the document. */}
-        <button
-          className={`absolute left-1/2 -translate-x-1/2 ${SHAREABLE ? 'max-w-[calc(100%-16rem)]' : 'max-w-[calc(100%-14rem)]'} truncate opacity-75 font-serif cursor-pointer`}
-          aria-label="Scroll to top"
-          title="Scroll to top"
-          onClick={() => scrollRef.current && animateScrollTop(scrollRef.current, 0)}
-        >
-          {/* The bare ref on mobile, where the flanking buttons leave too little room for the
-              English title. */}
-          {mobile ? sutta.ref : `${sutta.ref} · ${sutta.en}`}
-        </button>
+        {!mobile && (
+          <button
+            className={`absolute left-1/2 -translate-x-1/2 ${SHAREABLE ? 'max-w-[calc(100%-16rem)]' : 'max-w-[calc(100%-14rem)]'} truncate opacity-75 font-serif cursor-pointer`}
+            aria-label="Scroll to top"
+            title="Scroll to top"
+            onClick={() => scrollRef.current && animateScrollTop(scrollRef.current, 0)}
+          >
+            {sutta.ref} · {sutta.en}
+          </button>
+        )}
         {/* Share, Search and Menu, on the same 44px touch areas, edge to edge, as Close and Back. */}
         <div className="flex items-center gap-[25px]">
           {SHAREABLE && (
@@ -950,7 +953,7 @@ export function ReaderPage() {
           )}
           {/* The sutta's English title. Display leading, held above the serif faces' own glyph
               extent so a wrapped title's descenders clear the next line. */}
-          <h1 className="font-serif" style={{ margin: 0, fontSize: Math.round(fs * 1.72), fontWeight: 600, lineHeight: 1.2, letterSpacing: '-.015em' }}>
+          <h1 ref={headingRef} className="font-serif" style={{ margin: 0, fontSize: Math.round(fs * 1.72), fontWeight: 600, lineHeight: 1.2, letterSpacing: '-.015em' }}>
             {sutta.en}
           </h1>
           <div className="font-serif italic" style={{ fontSize: fs - 2, marginTop: 5, color: theme.dim }}>
@@ -1171,6 +1174,19 @@ export function ReaderPage() {
           )}
         </div>
       </div>
+
+      {/* After the pane, so it paints over the text scrolling beneath it. */}
+      {mobile && (
+        <ReaderTitleBar
+          key={suttaId}
+          scrollRef={scrollRef}
+          headingRef={headingRef}
+          title={`${sutta.ref} · ${sutta.en}`}
+          // Under the header: its safe-area inset, 44px bar and 1px rule.
+          top="calc(var(--safe-top) + 45px)"
+          theme={theme}
+        />
+      )}
 
       {/* The loading note, or the load error, of a page held back for its place, centred on the
           screen. */}

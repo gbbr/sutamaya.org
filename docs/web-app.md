@@ -19,6 +19,9 @@ for its Pali, then one of its words — and ticks off the first step once done. 
 track of it separately. The reader can highlight text in three colours, write a note, and file the
 sutta into lists. A side panel holds the sutta's highlights, its lists, and the display settings:
 theme, typeface, size and spacing. `?` lists the keyboard shortcuts.
+On a phone the header leaves the sutta's name to a slim bar beneath it, which slides out when the
+reader scrolls back up and tucks away when they scroll on, when the Reader scrolls by itself, or
+once the sutta's own title is in view. Tapping it returns to the top.
 
 **Segment numbers** — SuttaCentral's line references, `15.4` in `SN 46.53:15.4` — are a setting,
 off by default, for citing a line. They hang in the left margin where the reading pane, measured
