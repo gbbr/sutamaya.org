@@ -14,9 +14,11 @@ gloss a term in his wording while the line above it uses ours.
 | Pali | Bhikkhu Sujato | Here |
 |---|---|---|
 | bhikkhu | mendicant | **bhikkhu** |
+| sati | mindfulness, mindful | **awareness, aware** |
+| satipaṭṭhāna | mindfulness meditation | **the establishment of awareness** |
+| sampajañña | situational awareness, aware | **sampajañña** (and "with sampajañña" for sampajāna, "cultivate sampajañña" for sampajānakārī) |
 | samādhi | immersion, immersed | **composure, composed** (and "collect" as a verb) |
 | jhāna | absorption | **jhāna** (and "practice jhāna" for jhāyati) |
-| satipaṭṭhāna | mindfulness meditation | **the establishment of mindfulness** |
 | ātāpī | keen | **ardent** |
 | saṅkhāra | choices | **saṅkhāras** |
 | abhisaṅkharoti | make (choices) | **generate (saṅkhāras)** |
