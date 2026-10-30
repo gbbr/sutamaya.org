@@ -278,10 +278,11 @@ describe('the shipped rules, one example each', () => {
     ['dhamma-the-dhamma', 'dhp363:3', 'sujato/sutta', 'explains the text and its meaning,', 'explains the Dhamma and its meaning,'],
     // Not listed: peyyāla chapter headings are "text" as ordinary English, not dhamma.
     ['dhamma-the-dhamma', 'sn12.82:1.8', 'sujato/sutta', '(All the abbreviated texts should be told in full.)', '(All the abbreviated texts should be told in full.)'],
-    // One example per grammatical slot ātāpī occupies. The adjective is the satipaṭṭhāna formula's
-    // first word; the abstract noun ātappa is Bhikkhu Sujato's "keenness"; the adverb is his
-    // "keenly"; and the article travels with the adjective, or SN 1.23 reads "a ardent bhikkhu".
-    ['atapi-ardent', 'sn36.7:5.1', 'sujato/sutta', 'keen, aware, and mindful', 'ardent, aware, and mindful'],
+    // One example per grammatical slot ātāpī occupies. The adjective is the stock "diligent, keen,
+    // and resolute" (the satipaṭṭhāna formula's is sampajanna-pali's); the abstract noun ātappa is
+    // Bhikkhu Sujato's "keenness"; the adverb is his "keenly"; and the article travels with the
+    // adjective, or SN 1.23 reads "a ardent bhikkhu".
+    ['atapi-ardent', 'sn6.3:2.1', 'sujato/sutta', 'withdrawn, diligent, keen, and resolute', 'withdrawn, diligent, ardent, and resolute'],
     ['atapi-ardent', 'an10.14:2.3', 'sujato/sutta', 'incline toward keenness, commitment', 'incline toward ardor, commitment'],
     ['atapi-ardent', 'mn125:2.5', 'sujato/sutta', 'a mendicant who meditates diligently, keenly', 'a bhikkhu who meditates diligently, ardently'],
     ['atapi-ardent', 'sn1.23:2.3', 'sujato/sutta', 'a keen and alert mendicant—', 'an ardent and alert bhikkhu—'],
@@ -300,13 +301,40 @@ describe('the shipped rules, one example each', () => {
     ['abhisamaya-breakthrough', 'sn22.83:4.14', 'sujato/sutta', 'I comprehended the teaching.”', 'I made the breakthrough to the teaching.”'],
     // Denied: understanding a meaning, not the breakthrough.
     ['abhisamaya-breakthrough', 'an10.27:10.3', 'sujato/sutta', 'seeing its limits and fully comprehending its meaning', 'seeing its limits and fully comprehending its meaning'],
-    // The plural form absorbs "kinds of", which the singular has no reason to.
-    ['satipatthana-establishment-of-mindfulness', 'sn52.1:1.4', 'sujato/sutta', 'missed out on these four kinds of mindfulness meditation', 'missed out on these four establishments of mindfulness'],
+    // Runs ahead of sati-aware, which would otherwise take the "mindfulness" of this phrase on its
+    // own and leave "awareness meditation" behind. The plural form absorbs "kinds of".
+    ['satipatthana-establishment-of-awareness', 'sn52.1:1.4', 'sujato/sutta', 'missed out on these four kinds of mindfulness meditation', 'missed out on these four establishments of awareness'],
     // The preposition form, so the title's article stays lowercase.
-    ['satipatthana-establishment-of-mindfulness', 'dn22:0.2', 'sujato/sutta', 'The Longer Discourse on Mindfulness Meditation', 'The Longer Discourse on the Establishment of Mindfulness'],
+    ['satipatthana-establishment-of-awareness', 'dn22:0.2', 'sujato/sutta', 'The Longer Discourse on Mindfulness Meditation', 'The Longer Discourse on the Establishment of Awareness'],
     // No rule reaches a note, so MN 10's — which argues for the very rendering this one reverses —
     // stays word for word as Bhikkhu Sujato wrote it.
-    ['satipatthana-establishment-of-mindfulness', 'mn10:1.1', 'sujato/notes', 'i.e. “mindfulness meditation” or simply “meditation”', 'i.e. “mindfulness meditation” or simply “meditation”'],
+    ['satipatthana-establishment-of-awareness', 'mn10:1.1', 'sujato/notes', 'i.e. “mindfulness meditation” or simply “meditation”', 'i.e. “mindfulness meditation” or simply “meditation”'],
+    // The adjective sati.
+    ['sati-aware', 'sn9.1:3.1', 'sujato/sutta', 'Give up discontent; be mindful;', 'Give up discontent; be aware;'],
+    // The article travels with the adjective, or SN 4.17 reads "a aware disciple".
+    ['sati-aware', 'sn4.17:4.1', 'sujato/sutta', 'But a mindful disciple of the Buddha', 'But an aware disciple of the Buddha'],
+    // The adverb, which takes a phrase rather than a word.
+    ['sati-aware', 'an6.29:11.3', 'sujato/sutta', 'a mendicant goes out mindfully, returns mindfully', 'a bhikkhu goes out with awareness, returns with awareness'],
+    // Denied: caṅkamati, with no sati in the Pali at all.
+    ['sati-aware', 'dn25:6.2', 'sujato/sutta', 'he walked mindfully in the open air', 'he walked mindfully in the open air'],
+    // The adjective sampajāna beside sati's, which this rule takes as one phrase, in either order.
+    ['sampajanna-pali', 'sn47.2:2.1', 'sujato/sutta', 'a mendicant should live mindful and aware', 'a bhikkhu should live aware, with sampajañña'],
+    ['sampajanna-pali', 'dn21:2.8.16', 'sujato/sutta', 'aware and mindful. ', 'aware, with sampajañña. '],
+    // Its negation beside sati's (muṭṭhassatissa asampajānassa).
+    ['sampajanna-pali', 'an5.210:1.1', 'sujato/sutta', 'falling asleep unmindful and unaware', 'falling asleep unaware, without sampajañña'],
+    // The satipaṭṭhāna formula, which carries ātāpī too, and the pair closing a longer list.
+    ['sampajanna-pali', 'an3.156:5.2', 'sujato/sutta', 'the body—keen, aware, and mindful, rid of', 'the body—ardent and aware, with sampajañña, rid of'],
+    ['sampajanna-pali', 'an10.219:2.1', 'sujato/sutta', 'rid of ill will, unconfused, aware, and mindful.', 'rid of ill will, unconfused, and aware, with sampajañña.'],
+    // The bare adjective, where sati is not beside it.
+    ['sampajanna-pali', 'sn47.4:2.3', 'sujato/sutta', 'keen, aware, at one,', 'ardent, with sampajañña, at one,'],
+    // The noun sampajañña.
+    ['sampajanna-pali', 'an10.61:2.12', 'sujato/sutta', 'Lack of mindfulness and situational awareness.', 'Lack of awareness and sampajañña.'],
+    // The same noun where he drops "situational".
+    ['sampajanna-pali', 'an4.41:1.5', 'sujato/sutta', 'leads to mindfulness and awareness', 'leads to awareness and sampajañña'],
+    // sampajānakārī, the -kārī compound.
+    ['sampajanna-pali', 'sn47.2:3.2', 'sujato/sutta', 'a mendicant acts with situational awareness when going out', 'a bhikkhu cultivates sampajañña when going out'],
+    // Denied: iti before a quoted perception, the formless attainments' "aware that …".
+    ['sampajanna-pali', 'an1.450:1.1', 'sujato/sutta', 'aware that ‘space is infinite’', 'aware that ‘space is infinite’'],
     ['samudaya-arising', 'sn56.11:4.3', 'sujato/sutta', 'the noble truth of the origin of suffering', 'the noble truth of the arising of suffering'],
     // Denied: aggañña, how the world began.
     ['samudaya-arising', 'dn24:2.14.1', 'sujato/sutta', 'I understand the origin of the world.', 'I understand the origin of the world.'],
@@ -461,16 +489,10 @@ describe('the shipped rules, one example each', () => {
     }
   });
 
-  // Every word the term rules before `ruleId` can produce, lowercased. These are the tokens the
-  // real pass has locked by the time `ruleId` runs, so it can never consume one of them.
-  const producedBefore = (rules, ruleId) => {
-    const out = new Set();
-    for (const rule of rules.filter(isTermRule)) {
-      if (rule.id === ruleId) break;
-      for (const [, to] of rule.forms) out.add(to.toLowerCase());
-    }
-    return out;
-  };
+  // Every word the term rules can produce, lowercased. The real pass never lets a rule consume one:
+  // an earlier rule's is locked by the time it runs, and a later rule's isn't written yet.
+  const producedByRules = (rules) =>
+    new Set(rules.filter(isTermRule).flatMap((rule) => rule.forms.map(([, to]) => to.toLowerCase())));
 
   it('anchors each segment override on text its own from/to describes', async () => {
     const rules = await loadRules(RETRANSLATION_PATH);
@@ -489,13 +511,13 @@ describe('the shipped rules, one example each', () => {
         rules,
         sidecars: new Map(rules.filter(isTermRule).map((r) => [r.id, loadSidecar(r.id)])),
       });
-      // Reprocessing carries no lock history, so it re-consumes tokens the real pass had already
-      // locked. That is expected; only a rewrite consuming something no earlier rule produced
-      // means the anchor is wrong.
+      // Reprocessing carries no lock history, so it re-consumes tokens the real pass never let the
+      // rule see. That is expected; only a rewrite consuming something no rule produces means the
+      // anchor is wrong.
       for (const chunk of chunks) {
         if (!chunk.locked || chunk.text === chunk.original) continue;
         expect(
-          producedBefore(rules, chunk.ruleId).has(chunk.original.toLowerCase()),
+          producedByRules(rules).has(chunk.original.toLowerCase()),
           `${rule.id}'s from is not post-processed text: ${chunk.ruleId} rewrites `
             + `"${chunk.original}" to "${chunk.text}"`,
         ).toBe(true);

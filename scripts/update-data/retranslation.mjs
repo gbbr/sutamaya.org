@@ -11,8 +11,9 @@
 // Groups below, in array order; order inside and between them settles same-word collisions:
 //
 //   standalone terms   mendicant-bhikkhu, immersion-concentration, jhana-pali,
-//                      patisambhida-analytical-knowledge, dhamma-the-dhamma, atapi-ardent
-//   mindfulness        satipatthana-establishment-of-mindfulness
+//                      patisambhida-analytical-knowledge, dhamma-the-dhamma
+//   awareness          satipatthana-establishment-of-awareness, sampajanna-pali, sati-aware,
+//                      atapi-ardent
 //   breakthrough       abhisamaya-breakthrough
 //   arising / passing  samudaya-arising, vaya-passing-away, atthangama-disappearing,
 //                      udayabbaya-arising-passing-away
@@ -131,6 +132,90 @@ export const RULES = [
       ['the text', 'the Dhamma'],
     ],
   },
+  // ── Awareness ───────────────────────────────────────────────────────────────
+  // The satipaṭṭhāna formula's terms. satipatthana-establishment-of-awareness runs first because it
+  // claims the "mindfulness" of "mindfulness meditation", which sati-aware would otherwise take on
+  // its own. sampajanna-pali runs ahead of sati-aware and atapi-ardent because its pair forms carry
+  // their words ("keen, aware, and mindful" → "ardent and aware, with sampajañña").
+  {
+    id: 'satipatthana-establishment-of-awareness',
+    why: 'Bhikkhu Sujato renders satipaṭṭhāna as "mindfulness meditation"; this app prefers ' +
+      '"establishment of awareness", with sati as sati-aware renders it. ' +
+      'Open with an empty deny list: all 382 segments carrying the phrase are the ' +
+      'term. The plural form absorbs "kinds of" rather than reading "the four kinds of ' +
+      'establishments of awareness"; the bare singular carries its own article, and the two ' +
+      'preposition forms exist so a title keeps that article lowercase ("The Longer Discourse on ' +
+      'the Establishment of Awareness").',
+    mode: 'deny',
+    predicate: /satipaṭṭhān/i,
+    forms: [
+      ['kinds of mindfulness meditation', 'establishments of awareness'],
+      ['kind of mindfulness meditation', 'establishment of awareness'],
+      ['and mindfulness meditation', 'and the establishment of awareness'],
+      ['on mindfulness meditation', 'on the establishment of awareness'],
+      ['mindfulness meditations', 'establishments of awareness'],
+      ['mindfulness meditation', 'the establishment of awareness'],
+    ],
+  },
+  {
+    id: 'sampajanna-pali',
+    why: 'Bhikkhu Sujato renders sampajañña as "situational awareness" (or bare "awareness") and ' +
+      'the adjective sampajāna as "aware"; this app keeps the Pali, as it does for jhāna and ' +
+      'saṅkhāra. The adjective takes the noun, "with sampajañña", as jhāyati takes "practice ' +
+      'jhāna"; where it is a whole predicate, segment overrides rebuild some clauses. Beside sati\'s ' +
+      'adjective, in either order, the two read as one, "aware, with sampajañña": those forms carry ' +
+      'sati-aware\'s word, and in the satipaṭṭhāna formula atapi-ardent\'s too. The noun pair stays a ' +
+      'pair ("awareness and sampajañña"). sampajānakārī, his "acts with situational awareness", ' +
+      'takes the verb "cultivate". Closed, because plain-English "aware" is common and ' +
+      'unrelated — the formless attainments alone account for 164 segments of "aware that ‘space ' +
+      'is infinite’", which translates iti.',
+    mode: 'allow',
+    predicate: /sampajañ|sampajān/i,
+    forms: [
+      // The satipaṭṭhāna formula, ātāpī sampajāno satimā.
+      ['keen, aware, and mindful', 'ardent and aware, with sampajañña'],
+      ['keen, aware, mindful', 'ardent and aware, with sampajañña'],
+      // The same pair closing a longer list ("unconfused, aware, and mindful"); AN 4.28's runs on
+      // into "in this", so it closes the phrase with a comma of its own.
+      ['aware, and mindful', 'and aware, with sampajañña'],
+      ['aware, and mindful in this', 'and aware, with sampajañña, in this'],
+      ['mindful and aware', 'aware, with sampajañña'],
+      ['aware and mindful', 'aware, with sampajañña'],
+      ['mindful, aware', 'aware, with sampajañña'],
+      ['unmindful and unaware', 'unaware, without sampajañña'],
+      // SN 22.95's verse, where he gives sampajāno paṭissato as nouns.
+      ['with situational awareness and mindfulness', 'aware, with sampajañña'],
+      // sampajānakārī, the -kārī compound.
+      ['acts with situational awareness', 'cultivates sampajañña'],
+      ['act with situational awareness', 'cultivate sampajañña'],
+      ['acted with situational awareness', 'cultivated sampajañña'],
+      ['situational awareness', 'sampajañña'],
+      // The negated term, asampajañña and asampajāna.
+      ['unawareness', 'lack of sampajañña'],
+      ['awareness', 'sampajañña'],
+      ['unaware', 'without sampajañña'],
+      ['aware', 'with sampajañña'],
+    ],
+  },
+  {
+    id: 'sati-aware',
+    why: 'Bhikkhu Sujato renders sati as "mindfulness"/"mindful"; this app prefers ' +
+      '"awareness"/"aware". Open: the only denials are the "walking mindfully" passages, where the ' +
+      'Pali is caṅkamati (walking meditation) with no sati in it. Leaves anussati/sarati alone — ' +
+      'those render as "recollection"/"remember". One form carries the indefinite article, since ' +
+      '"a mindful disciple of the Buddha" would otherwise read "a aware".',
+    mode: 'deny',
+    predicate: /(?<!s)sat[iīāo]|ānāpānassati|kāyagatāsati|upaṭṭhitassati|muṭṭhassa|patissat/i,
+    forms: [
+      ['a mindful', 'an aware'],
+      ['mindfulness', 'awareness'],
+      ['mindful', 'aware'],
+      ['mindfully', 'with awareness'],
+      ['unmindfulness', 'unawareness'],
+      ['unmindful', 'unaware'],
+      ['unmindfully', 'without awareness'],
+    ],
+  },
   {
     id: 'atapi-ardent',
     why: 'Bhikkhu Sujato renders ātāpī as "keen"; this app prefers "ardent". ' +
@@ -147,29 +232,6 @@ export const RULES = [
       ['keenness', 'ardor'],
       ['keenly', 'ardently'],
       ['keen', 'ardent'],
-    ],
-  },
-  // ── Mindfulness ─────────────────────────────────────────────────────────────
-  // sati and its companion sampajañña are left as Bhikkhu Sujato has them ("mindfulness"/"mindful",
-  // "situational awareness"/"aware"); only the compound is retranslated.
-  {
-    id: 'satipatthana-establishment-of-mindfulness',
-    why: 'Bhikkhu Sujato renders satipaṭṭhāna as "mindfulness meditation"; this app prefers ' +
-      '"establishment of mindfulness". ' +
-      'Open with an empty deny list: all 382 segments carrying the phrase are the ' +
-      'term. The plural form absorbs "kinds of" rather than reading "the four kinds of ' +
-      'establishments of mindfulness"; the bare singular carries its own article, and the two ' +
-      'preposition forms exist so a title keeps that article lowercase ("The Longer Discourse on ' +
-      'the Establishment of Mindfulness").',
-    mode: 'deny',
-    predicate: /satipaṭṭhān/i,
-    forms: [
-      ['kinds of mindfulness meditation', 'establishments of mindfulness'],
-      ['kind of mindfulness meditation', 'establishment of mindfulness'],
-      ['and mindfulness meditation', 'and the establishment of mindfulness'],
-      ['on mindfulness meditation', 'on the establishment of mindfulness'],
-      ['mindfulness meditations', 'establishments of mindfulness'],
-      ['mindfulness meditation', 'the establishment of mindfulness'],
     ],
   },
   // ── Breakthrough ────────────────────────────────────────────────────────────
@@ -780,11 +842,11 @@ export const RULES = [
     id: 'sn47-8-blurb-establishments-succeed',
     kind: 'segment',
     why: 'SN 47.8’s blurb reads "When the four kinds of mindfulness meditation succeeds" upstream, ' +
-      'which satipatthana-establishment-of-mindfulness carries forward as "the four establishments ' +
-      'of mindfulness succeeds". The verb and its pronoun follow the plural.',
+      'which satipatthana-establishment-of-awareness carries forward as "the four establishments ' +
+      'of awareness succeeds". The verb and its pronoun follow the plural.',
     segment: 'sn-blurbs:sn47.8',
-    from: 'The parable of the cook. They present different kinds of dishes to the king, and observe which the king likes. In the same way, a bhikkhu observes why their meditation succeeds or fails. When the four establishments of mindfulness succeeds it leads to giving up hindrances and entering composure.',
-    to: 'The parable of the cook. They present different kinds of dishes to the king, and observe which the king likes. In the same way, a bhikkhu observes why their meditation succeeds or fails. When the four establishments of mindfulness succeed, they lead to giving up hindrances and entering composure.',
+    from: 'The parable of the cook. They present different kinds of dishes to the king, and observe which the king likes. In the same way, a bhikkhu observes why their meditation succeeds or fails. When the four establishments of awareness succeeds it leads to giving up hindrances and entering composure.',
+    to: 'The parable of the cook. They present different kinds of dishes to the king, and observe which the king likes. In the same way, a bhikkhu observes why their meditation succeeds or fails. When the four establishments of awareness succeed, they lead to giving up hindrances and entering composure.',
   },
 
   // ·· an idiom the replacement adjective cannot take ··
@@ -902,6 +964,75 @@ export const RULES = [
     to: 'whoever goes on retreat for the four months of the rainy season and practices the jhāna of compassion sees the Divinity and discusses with him. ',
   },
 
+  // ·· sampajañña as a whole predicate ··
+  // sampajanna-pali's "with sampajañña" stands beside an adjective but not always as a whole
+  // predicate, so where Bhikkhu Sujato's "aware" is predicative these lines rebuild the clause.
+  {
+    id: 'sampajano-hoti-question',
+    kind: 'segment',
+    why: 'Kathañca bhikkhu sampajāno hoti, opening the sampajañña section. Paired with ' +
+      'sampajano-hoti-answer, which closes the same section.',
+    segments: ['dn16:2.13.1', 'sn36.7:4.1', 'sn36.8:4.1', 'sn47.2:3.1', 'sn47.35:3.1'],
+    from: 'And how is a bhikkhu with sampajañña? ',
+    to: 'And how does a bhikkhu have sampajañña? ',
+  },
+  {
+    id: 'sampajano-hoti-answer',
+    kind: 'segment',
+    why: 'Evaṁ kho bhikkhu sampajāno hoti — sampajano-hoti-question’s line as the section’s ' +
+      'closing answer, and worded to match it.',
+    segments: ['sn47.35:3.5', 'sn36.8:4.3', 'dn16:2.13.3'],
+    from: 'That’s how a bhikkhu is with sampajañña. ',
+    to: 'That’s how a bhikkhu has sampajañña. ',
+  },
+  {
+    id: 'sampajano-situation-they',
+    kind: 'segment',
+    why: 'Itiha tattha sampajāno hoti, closing each step of the sequence in MN 122 and AN 7.49. ' +
+      '"With sampajañña" cannot govern Bhikkhu Sujato’s "of the situation", so it stands alone.',
+    segments: ['mn122:9.5', 'mn122:9.12', 'mn122:10.6', 'mn122:10.13', 'mn122:11.3', 'mn122:11.6',
+      'mn122:11.9', 'mn122:11.12', 'mn122:12.3', 'mn122:12.5', 'mn122:13.3', 'mn122:13.5',
+      'mn122:15.7', 'mn122:15.12', 'mn122:17.4', 'an7.49:3.3', 'an7.49:3.6', 'an7.49:15.3',
+      'an7.49:16.3'],
+    from: 'In this way they are with sampajañña of the situation. ',
+    to: 'In this way they remain with sampajañña. ',
+  },
+  {
+    id: 'sampajano-situation-he',
+    kind: 'segment',
+    why: 'sampajano-situation-they’s line, as AN 8.9 has it of Nanda: singular.',
+    segments: ['an8.9:1.9', 'an8.9:2.8'],
+    from: 'In this way he’s with sampajañña of the situation. ',
+    to: 'In this way he remains with sampajañña. ',
+  },
+  {
+    id: 'sampajano-conception-second',
+    kind: 'segment',
+    why: 'The four kinds of conception (gabbhāvakkanti), whose Pali alternates sampajāna and ' +
+      'asampajāna across all three moments. "Has sampajañña" pairs with the "without sampajañña" ' +
+      'the negative already produces. The first kind needs no override — it is negative throughout.',
+    segments: ['dn28:5.4', 'dn33:1.11.177'],
+    from: 'Furthermore, someone is with sampajañña when conceived in their mother’s womb, but without sampajañña as they remain there, and without sampajañña as they emerge. This is the second kind of conception. ',
+    to: 'Furthermore, someone has sampajañña when conceived in their mother’s womb, but without sampajañña as they remain there, and without sampajañña as they emerge. This is the second kind of conception. ',
+  },
+  {
+    id: 'sampajano-conception-third',
+    kind: 'segment',
+    why: 'sampajano-conception-second’s line, for the third kind: sampajañña through conception and ' +
+      'gestation, not through birth.',
+    segments: ['dn28:5.5', 'dn33:1.11.178'],
+    from: 'Furthermore, someone is with sampajañña when conceived in their mother’s womb, with sampajañña as they remain there, but without sampajañña as they emerge. This is the third kind of conception. ',
+    to: 'Furthermore, someone has sampajañña when conceived in their mother’s womb, with sampajañña as they remain there, but without sampajañña as they emerge. This is the third kind of conception. ',
+  },
+  {
+    id: 'sampajano-conception-fourth',
+    kind: 'segment',
+    why: 'sampajano-conception-second’s line, for the fourth kind: sampajañña throughout.',
+    segments: ['dn28:5.6', 'dn33:1.11.179'],
+    from: 'Furthermore, someone is with sampajañña when conceived in their mother’s womb, with sampajañña as they remain there, and with sampajañña as they emerge. This is the fourth kind of conception. ',
+    to: 'Furthermore, someone has sampajañña when conceived in their mother’s womb, with sampajañña as they remain there, and with sampajañña as they emerge. This is the fourth kind of conception. ',
+  },
+
   // ·· abhisamaya-breakthrough in a construction its parallel line words differently ··
   {
     id: 'sn56-34-abhisamaya-in-order-to',
@@ -910,8 +1041,84 @@ export const RULES = [
       'abhisamaya-breakthrough’s rendering, with "in order to" making it parallel to 1.2, the same ' +
       'karaṇīyaṁ construction in the Pali.',
     segment: 'sn56.34:2.1',
-    from: '“Bhikkhus, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, mindfulness, and situational awareness to truly comprehending the four noble truths. ',
-    to: '“Bhikkhus, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, mindfulness, and situational awareness in order to truly break through to the four noble truths. ',
+    from: '“Bhikkhus, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, awareness, and sampajañña to truly comprehending the four noble truths. ',
+    to: '“Bhikkhus, so long as you have not encompassed the four noble truths, regard your burning head or clothes with equanimity, ignore them, and apply extraordinary enthusiasm, effort, zeal, vigor, perseverance, awareness, and sampajañña in order to truly break through to the four noble truths. ',
+  },
+
+  // ·· awareness word order ··
+  // Lines where sati-aware's "mindfully" → "with awareness" lands in a word order English won't
+  // take; the phrase is right, it just has to move.
+  {
+    id: 'enter-with-awareness',
+    kind: 'segment',
+    why: 'satova samāpajjāmi — "I with awareness enter into" isn’t English; the phrase moves to the ' +
+      'front. AN 5.27 carries the same line with a trailing elision mark, a different anchor — see ' +
+      'enter-with-awareness-elided.',
+    segment: 'dn34:1.6.74',
+    from: '‘I with awareness enter into and emerge from this composure.’ ',
+    to: '‘With awareness, I enter into and emerge from this composure.’ ',
+  },
+  {
+    id: 'enter-with-awareness-elided',
+    kind: 'segment',
+    why: 'enter-with-awareness’s line, as AN 5.27 has it: followed by an elision mark.',
+    segment: 'an5.27:1.8',
+    from: '‘I with awareness enter into and emerge from this composure.’ … ',
+    to: '‘With awareness, I enter into and emerge from this composure.’ … ',
+  },
+  {
+    id: 'thag16-10-walk-with-awareness',
+    kind: 'segment',
+    why: 'Satiṁ upaṭṭhapetvāna, which Bhikkhu Sujato compresses to "very mindfully" — "very with ' +
+      'awareness" is not a phrase.',
+    segment: 'thag16.10:27.3',
+    from: 'very with awareness; ',
+    to: 'with awareness established; ',
+  },
+  {
+    id: 'mn12-step-with-awareness',
+    kind: 'segment',
+    why: 'satova abhikkamāmi, satova paṭikkamāmi — "ever so mindfully" carries an intensity "ever so ' +
+      'with awareness" can’t.',
+    segment: 'mn12:47.2',
+    from: 'I’d step forward or back ever so with awareness, so I was full of pity regarding even a drop of water, thinking: ',
+    to: 'I’d step forward or back with such care and awareness, so I was full of pity regarding even a drop of water, thinking: ',
+  },
+  {
+    id: 'endure-with-awareness',
+    kind: 'segment',
+    why: 'A verse line the Theragāthā repeats verbatim in three poems: the adverb has to follow the ' +
+      'verb.',
+    segments: ['thag1.31:1.3', 'thag3.9:2.3', 'thag15.1:12.3'],
+    from: 'one should with awareness endure, ',
+    to: 'one should endure with awareness, ',
+  },
+  {
+    id: 'snp5-7-nothingness-with-awareness',
+    kind: 'segment',
+    why: 'Ākiñcaññaṁ pekkhamāno satimā — "With awareness contemplating nothingness" reads as ' +
+      'awareness doing the contemplating; the phrase follows the verb, as satimā follows it in the ' +
+      'Pali.',
+    segment: 'snp5.7:2.1',
+    from: '“With awareness contemplating nothingness,” ',
+    to: '“Contemplating nothingness with awareness,” ',
+  },
+
+  // ·· a blurb that names the renderings ··
+  // SN 47's collection blurb is Bhikkhu Sujato writing about his terms rather than in them: it names
+  // the other renderings of satipaṭṭhāna and sampajañña, and glosses sampajañña in plain English.
+  // The awareness rules rewrite those words as if they were the terms.
+  {
+    id: 'sn47-blurb-alternative-names',
+    kind: 'segment',
+    why: 'The blurb’s "otherwise known as the “foundations of mindfulness” or “establishments of ' +
+      'mindfulness”" names the renderings readers know from elsewhere, which sati-aware would turn ' +
+      'into this app’s own. Its “situational awareness” (sampajañña, …) would read “sampajañña” ' +
+      '(sampajañña, …), so the Pali stands once; and its plain-English gloss "a broad awareness and ' +
+      'understanding" keeps its "awareness".',
+    segment: 'sn-blurbs:sn47',
+    from: 'The “Linked Discourses on the Establishment of Awareness” contains 104 discourses on the four establishments of awareness (<i lang=\'pi\' translate=\'no\'>satipaṭṭhāna</i>, otherwise known as the “foundations of awareness” or “establishments of awareness”). These are the body, feelings, mind, and principles. The last of these is translated in various ways, but a close reading of the texts in this chapter shows that it originally referred to the “principles” of causality underlying the process of meditation itself. These discourses on this fundamental topic are much less known than the longer “Discourse on the Establishment of Awareness” found in versions in MN 10 and DN 22; however, they are historically earlier than that late compilation. Where MN 10 emphasizes insight meditation, in this collection we frequently find awareness closely connected to jhāna, as it is the factor of the path that leads directly to “right composure”. Insight is mentioned only rarely. The root meaning of the term awareness (<i lang=\'pi\' translate=\'no\'>sati</i>) is “memory”, and when used in meditation it refers to not “forgetting” one’s meditation, but keeping focus on the breath or other theme of meditation. This collection presents a range of perspectives on the establishment of awareness; one of its most memorable features is a series of similes or parables illustrating the practice. The partner of awareness (<i lang=\'pi\' translate=\'no\'>sati</i>) is “sampajañña” (<i lang=\'pi\' translate=\'no\'>sampajañña</i>, sometimes rendered as “clear comprehension”), which refers to keeping a broad sampajañña and understanding especially in daily activities.',
+    to: 'The “Linked Discourses on the Establishment of Awareness” contains 104 discourses on the four establishments of awareness (<i lang=\'pi\' translate=\'no\'>satipaṭṭhāna</i>, otherwise known as the “foundations of mindfulness” or “establishments of mindfulness”). These are the body, feelings, mind, and principles. The last of these is translated in various ways, but a close reading of the texts in this chapter shows that it originally referred to the “principles” of causality underlying the process of meditation itself. These discourses on this fundamental topic are much less known than the longer “Discourse on the Establishment of Awareness” found in versions in MN 10 and DN 22; however, they are historically earlier than that late compilation. Where MN 10 emphasizes insight meditation, in this collection we frequently find awareness closely connected to jhāna, as it is the factor of the path that leads directly to “right composure”. Insight is mentioned only rarely. The root meaning of the term awareness (<i lang=\'pi\' translate=\'no\'>sati</i>) is “memory”, and when used in meditation it refers to not “forgetting” one’s meditation, but keeping focus on the breath or other theme of meditation. This collection presents a range of perspectives on the establishment of awareness; one of its most memorable features is a series of similes or parables illustrating the practice. The partner of awareness (<i lang=\'pi\' translate=\'no\'>sati</i>) is <i lang=\'pi\' translate=\'no\'>sampajañña</i> (sometimes rendered as “clear comprehension”), which refers to keeping a broad awareness and understanding especially in daily activities.',
   },
 
   // ── Blurb openers ───────────────────────────────────────────────────────────
@@ -1094,7 +1301,7 @@ export const RULES = [
         from: 'The “Linked Discourses on the Awakening Factors” contains 184 discourses on ',
         to: 'Discourses on ' },
       { blurb: 'sn-blurbs:sn47',
-        from: 'The “Linked Discourses on the Establishment of Mindfulness” contains 104 discourses on ',
+        from: 'The “Linked Discourses on the Establishment of Awareness” contains 104 discourses on ',
         to: 'Discourses on ' },
       { blurb: 'sn-blurbs:sn48',
         from: 'The “Linked Discourses on the Faculties” contains 178 discourses on ',
