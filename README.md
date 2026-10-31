@@ -116,7 +116,8 @@ and the [retranslate skill](.claude/skills/retranslate/SKILL.md) for Claude Code
 ### The dictionary
 
 Lookups come from the [Digital Pali Dictionary](https://www.dpdict.net/), cut down to the words
-this corpus uses and split into small shards, so a tap fetches one. `npm run update-data dictionary`
+this corpus uses and split into small shards, so a tap fetches one. A few definitions are the app's
+own, shown after DPD's and marked with their source. `npm run update-data dictionary`
 rebuilds it from a DPD release.
 
 More: [docs/corpus.md](docs/corpus.md).

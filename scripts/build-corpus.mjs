@@ -15,6 +15,7 @@ import {
 } from './lib/collections.js';
 import { splitPaliWords, stripPunct, lookupWord, shardFor } from './lib/paliWords.js';
 import { compareSegmentKeys } from './lib/segmentKeys.js';
+import { addDefinitions } from './lib/dictionaryAdditions.js';
 import { red, green, bold, dim } from './lib/dataSync.js';
 
 // The build's output vocabulary: `step` heads a phase, `detail` reports its counts, `ok` marks a
@@ -446,9 +447,9 @@ const nikayas = [];
   detail(`kn: ${chapterRows.length} books, ${chapterRows.reduce((n, c) => n + c.count, 0)} leaf documents`);
 }
 
-// --- Dictionary: flatten [{entry, definition:[...]}] into a headword-keyed object, trim it to the
-// words this build emitted, then split it into the range shards a word tap fetches one of — see
-// lib/corpus/dictionaryShards.ts ---
+// --- Dictionary: flatten [{entry, definition:[...]}] into a headword-keyed object, add the app's
+// own definitions, trim it to the words this build emitted, then split it into the range shards a
+// word tap fetches one of — see lib/corpus/dictionaryShards.ts ---
 step('Building dictionary shards…');
 const dictPath = path.join(DATA, 'pli2en_dpd.json');
 const { dpdVersion, entries: dpdList } = readJSON(dictPath);
@@ -461,6 +462,14 @@ if (!Array.isArray(dpdList)) {
 }
 const dpdMap = {};
 for (const { entry, definition } of dpdList) dpdMap[entry] = definition;
+
+// Add the app's own definitions to DPD's.
+const unusedAdditions = addDefinitions(dpdMap, readJSON(path.join(DATA, 'pli2en_additions.json')));
+if (unusedAdditions.length) {
+  throw new Error(
+    `data/pli2en_additions.json: no dictionary entry defines ${unusedAdditions.map((a) => a.headword).join(', ')}`
+  );
+}
 
 // The keep-set: for each tappable token, the pair lookupWord consults — the token and its
 // lowercase form.

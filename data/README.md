@@ -7,14 +7,15 @@ them into the files the app fetches ([docs/corpus.md](../docs/corpus.md)).
 
 ```
 data/
-  pali/            the Pali: sutta text, segmented, and titles
-  sujato/          Bhikkhu Sujato's English exactly as upstream: text, titles, descriptions, notes
-  sujato.post/     the same with this app's editorial rules applied (generated, git-ignored)
-  html/            SuttaCentral's per-line markup, used only to give each line its role
-  tree/            each collection's structure: DN, MN, SN, AN and the six KN books
-  diff/            what the editorial rules change, as diffs (rewritten on every run, checked in)
-  pli2en_dpd.json  the dictionary, generated from DPD and trimmed to this corpus
-  manifest.json    which sc-data commit the texts were last copied from
+  pali/                  the Pali: sutta text, segmented, and titles
+  sujato/                Bhikkhu Sujato's English exactly as upstream: text, titles, descriptions, notes
+  sujato.post/           the same with this app's editorial rules applied (generated, git-ignored)
+  html/                  SuttaCentral's per-line markup, used only to give each line its role
+  tree/                  each collection's structure: DN, MN, SN, AN and the six KN books
+  diff/                  what the editorial rules change, as diffs (rewritten on every run, checked in)
+  pli2en_dpd.json        the dictionary, generated from DPD and trimmed to this corpus
+  pli2en_additions.json  definitions this app adds to DPD's, each naming its source
+  manifest.json          which sc-data commit the texts were last copied from
 ```
 
 ## Keys and alignment
