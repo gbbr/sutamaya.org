@@ -11,6 +11,7 @@ import { useReaderOrigin } from '../hooks/useReaderOrigin';
 import { useReaderKeyboard } from '../hooks/useReaderKeyboard';
 import { useBackHandler } from '../hooks/useBackHandler';
 import { useDictionaryLookup } from '../hooks/useDictionaryLookup';
+import { useReaderTip } from '../hooks/useReaderTip';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { useLatest } from '../hooks/useLatest';
 import { animateScrollBy, animateScrollTop, jumpScrollBy } from '../lib/reader/segmentScroll';
@@ -40,6 +41,7 @@ import { SegmentedText, type SegmentNumberPlacement, type SegmentMarks } from '.
 import { HighlightPopup } from '../components/reader/HighlightPopup';
 import { HighlightGutter } from '../components/reader/HighlightGutter';
 import { DictionaryDock } from '../components/reader/DictionaryDock';
+import { ReaderTip } from '../components/reader/ReaderTip';
 import { ReaderMenuPanel } from '../components/reader/ReaderMenuPanel';
 import { ReaderSearchOverlay, type ReaderSearchView } from '../components/search/ReaderSearchOverlay';
 import { ShortcutsModal } from '../components/ShortcutsModal';
@@ -310,6 +312,14 @@ export function ReaderPage() {
     scrollRef,
     scrollToSegment,
     setOpenSegs,
+  });
+
+  const tip = useReaderTip({
+    suttaId,
+    scrollRef,
+    textShown: !!segments && !holdingPlace,
+    paliShowing: allPali || Object.values(openSegs).some(Boolean),
+    dictOpen: !!dict,
   });
 
   // Records the sutta as visited, feeding the Recent auto-list, once it has been open for
@@ -1185,6 +1195,8 @@ export function ReaderPage() {
           onRetryDictionary={retryLookup}
         />
       )}
+
+      {tip.visible && <ReaderTip paliDone={tip.paliDone} theme={theme} fontSize={fs} onClose={tip.close} />}
 
       {panel && (
         <ReaderMenuPanel
