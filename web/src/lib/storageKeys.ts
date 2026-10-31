@@ -19,6 +19,8 @@ export const OPEN_LINES_KEY = 'sutamaya.openLines';
 export const STEP_PLACES_KEY = 'sutamaya.stepPlaces';
 export const LAYOUT_PREFS_KEY = 'sutamaya.layout';
 export const HAS_OPENED_SUTTA_KEY = 'sutamaya.hasOpenedSutta';
+// How far this device has got through the reader's first-run tip (see hooks/useReaderTip.ts).
+export const READER_TIP_KEY = 'sutamaya.readerTip';
 // The reader's recent searches, newest first (see lib/search/recentSearches.ts).
 export const RECENT_SEARCHES_KEY = 'sutamaya.recentSearches';
 export const OFFLINE_NUDGE_DISMISSED_KEY = 'sutamaya.offlineNudgeDismissed';

@@ -13,9 +13,12 @@ suttas in whatever is selected. Search results take the list's place, and recent
 tree's. Narrower than 860px, it shows one pane at a time.
 
 **The Reader** shows one sutta: the English, with each line's Pali a tap away (or every line's, as
-a setting), and a dictionary on every Pali word. The reader can highlight text in three colours,
-write a note, and file the sutta into lists. A side panel holds the sutta's highlights, its lists,
-and the display settings: theme, typeface, size and spacing. `?` lists the keyboard shortcuts.
+a setting), and a dictionary on every Pali word. Once the reader scrolls into a sutta's text, and
+until they first look a word up or close it, a checklist sits in the dictionary's place — tap a line
+for its Pali, then one of its words — and ticks off the first step once done. Each device keeps
+track of it separately. The reader can highlight text in three colours, write a note, and file the
+sutta into lists. A side panel holds the sutta's highlights, its lists, and the display settings:
+theme, typeface, size and spacing. `?` lists the keyboard shortcuts.
 
 **Segment numbers** — SuttaCentral's line references, `15.4` in `SN 46.53:15.4` — are a setting,
 off by default, for citing a line. They hang in the left margin where the reading pane, measured
@@ -155,9 +158,9 @@ told when a newer corpus is out.
 |---|---|
 | `web/src/App.tsx` | the route table and the app shell |
 | `web/src/pages/` | Library, Reader, Settings, Help |
-| `web/src/components/` | `TreePane` and `ListPane` for the Library; `SegmentedText`, `DictionaryDock` and `HighlightPopup` for the Reader |
+| `web/src/components/` | `TreePane` and `ListPane` for the Library; `SegmentedText`, `DictionaryDock`, `ReaderTip` and `HighlightPopup` for the Reader |
 | `web/src/context/` | the six providers |
-| `web/src/hooks/` | keyboard, scroll memory, dictionary lookup, pointer drags |
+| `web/src/hooks/` | keyboard, scroll memory, dictionary lookup, the first-run tip, pointer drags |
 | `web/src/lib/` | everything without React |
 | `web/src/lib/ui/motion.ts`, `web/src/index.css` | screen transitions, and the Reader's step between suttas |
 | `web/vite.config.ts` | the build, the service worker's caching, the dev server |
