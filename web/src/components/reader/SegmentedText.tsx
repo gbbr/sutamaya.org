@@ -130,6 +130,17 @@ const UNSELECTABLE: CSSProperties = {
   WebkitTouchCallout: 'none',
 };
 
+// Type for a translator note's number, beside its line and at the head of the note; `top` raises
+// it in place of the browser's `sup` raise, which would open up the line.
+const NOTE_NUMBER: CSSProperties = {
+  fontStyle: 'normal',
+  fontWeight: 500,
+  fontSize: '0.65em',
+  verticalAlign: 'baseline',
+  position: 'relative',
+  top: '-0.55em',
+};
+
 /** Renders a Pali line as per-word spans, each opening the DictionaryDock when tapped. */
 function paliWordSpans(
   pali: string,
@@ -202,6 +213,8 @@ interface SegmentRowProps {
   onSpanClick: (highlightId: string, rect: DOMRect, color: string) => void;
   showNotes: boolean;
   noteOpen: boolean;
+  // The place of the segment's note among the sutta's notes, from 1.
+  noteNumber?: number;
   onToggleNote: (i: number) => void;
   onNoteLink: (href: string) => void;
   onNoteLinkPress: (href: string) => void;
@@ -238,6 +251,7 @@ const SegmentRow = memo(function SegmentRow({
   onSpanClick,
   showNotes,
   noteOpen,
+  noteNumber,
   onToggleNote,
   onNoteLink,
   onNoteLinkPress,
@@ -392,7 +406,7 @@ const SegmentRow = memo(function SegmentRow({
               // The id of the highlight this span was painted from, which useSuttaReading's
               // scrollToSegment jumps to. A highlight spanning several segments repeats it in each.
               data-hl-id={p.id}
-              // The span stays selectable, unlike `.pw` and the note asterisk, so a drag can cross
+              // The span stays selectable, unlike `.pw` and the note number, so a drag can cross
               // or extend an existing highlight. The text colour is theme.fg wherever the theme
               // paints its own fills, and a near-black otherwise.
               style={{
@@ -418,22 +432,14 @@ const SegmentRow = memo(function SegmentRow({
             // As the list-item marker above: rendered text that isn't part of `seg.en`, so
             // useHighlightPopup's offsets discount it.
             data-seg-ignore
-            // Padding grows the asterisk's tap target beyond its painted glyph; `verticalAlign`
-            // and `top` replace the browser's default `sup` raise with a smaller one.
+            className="font-sans"
+            // Padding grows the number's tap target beyond its painted digits.
             style={{
-              marginLeft: 2,
+              ...NOTE_NUMBER,
               padding: '8px 8px 8px 4px',
               color: theme.pali,
-              fontStyle: 'normal',
-              fontWeight: 700,
-              fontSize: '0.85em',
-              verticalAlign: 'baseline',
-              position: 'relative',
-              top: '-0.4em',
               cursor: 'pointer',
-              userSelect: 'none',
-              WebkitUserSelect: 'none',
-              WebkitTouchCallout: 'none',
+              ...UNSELECTABLE,
             }}
             title={stripTags(seg.note)}
             onClick={(e) => {
@@ -441,7 +447,7 @@ const SegmentRow = memo(function SegmentRow({
               onToggleNote(i);
             }}
           >
-            *
+            {noteNumber}
           </sup>
         )}
       </HeadingTag>
@@ -464,10 +470,16 @@ const SegmentRow = memo(function SegmentRow({
             const link = (e.target as Element).closest('a');
             if (link) onNoteLinkPress(link.getAttribute('href') ?? '');
           }}
-          // A note's inline formatting is static build-time data (build-corpus.mjs's cleanNote()),
-          // never user or runtime content.
-          dangerouslySetInnerHTML={{ __html: seg.note }}
-        />
+        >
+          <sup className="font-sans" style={{ ...NOTE_NUMBER, marginRight: 3, ...UNSELECTABLE }}>
+            {noteNumber}
+          </sup>
+          <span
+            // A note's inline formatting is static build-time data (build-corpus.mjs's cleanNote()),
+            // never user or runtime content.
+            dangerouslySetInnerHTML={{ __html: seg.note }}
+          />
+        </p>
       )}
     </div>
   );
@@ -489,7 +501,7 @@ interface SegmentedTextProps {
   // (lib/corpus/dictionary.ts's splitPaliWords).
   onWordClick: (word: string, segIndex: number, wordIndex: number) => void;
   onSpanClick: (highlightId: string, rect: DOMRect, color: string) => void;
-  // Whether the translator-note asterisks show at all.
+  // Whether the translator-note numbers show at all.
   showNotes: boolean;
   // Which notes are expanded inline, by segment index.
   openNotes: Record<number, boolean>;
@@ -561,11 +573,14 @@ function SegmentedTextInner({
   // A list item's ordinal within its run of consecutive list-item segments, reset to 0 by any
   // other segment so a later list restarts at 1.
   let runningListIndex = 0;
+  // The latest translator note's number, counted through the sutta from 1.
+  let runningNoteNumber = 0;
   const rows = segments.map((seg, i) => {
     // A paragraph break: the next segment's paragraph number differs, or there is none.
     const next = segments[i + 1];
     const lastInParagraph = !next || paragraphOf(next.key) !== paragraphOf(seg.key);
     runningListIndex = seg.role === 'list-item' ? runningListIndex + 1 : 0;
+    if (seg.note) runningNoteNumber += 1;
     return (
       <SegmentRow
         key={seg.key}
@@ -592,6 +607,7 @@ function SegmentedTextInner({
         onSpanClick={onSpanClick}
         showNotes={showNotes}
         noteOpen={!!openNotes[i]}
+        noteNumber={seg.note ? runningNoteNumber : undefined}
         onToggleNote={onToggleNote}
         onNoteLink={onNoteLink}
         onNoteLinkPress={onNoteLinkPress}

@@ -230,7 +230,6 @@ test('a sutta left by a search jump resumes where it was when the return arrow g
 test('a note’s link to another line of its own sutta comes back to where it was followed from', async ({ page }) => {
   await page.goto('/read/dn9');
   await expect(page.locator('[data-seg="1"]')).toBeVisible();
-  await page.keyboard.press('c');
 
   const line = page.locator('[id="dn9:21.1"]');
   await line.evaluate((el) => el.scrollIntoView({ block: 'center' }));

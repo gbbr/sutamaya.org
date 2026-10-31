@@ -64,6 +64,20 @@ describe('SegmentedText — links in a translator note', () => {
   });
 });
 
+describe('SegmentedText — translator note numbers', () => {
+  const segments: SegmentFile[] = [
+    { key: 'mn10:1.1', pali: 'Evaṁ me sutaṁ', en: 'So I have heard.', note: 'First.' },
+    { key: 'mn10:1.2', pali: 'ekaṁ samayaṁ', en: 'At one time' },
+    { key: 'mn10:1.3', pali: 'bhagavā', en: 'the Buddha', note: 'Second.' },
+  ];
+
+  it('numbers the notes through the sutta and opens each with its number', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { showNotes: true, openNotes: { 2: true } })} />);
+    expect([...container.querySelectorAll('[data-seg] sup')].map((el) => el.textContent)).toEqual(['1', '2']);
+    expect(container.querySelector('[data-reveal="note"]')!.textContent).toBe('2Second.');
+  });
+});
+
 // Regression coverage for a real bug: SuttaCentral joins some Pali words with a bare "—" (em
 // dash), no surrounding space (e.g. MN17's "samudānetabbā—cīvara...parikkhārā—te", three separate
 // dictionary words). Clicking that run used to look up the whole thing as one mangled word.

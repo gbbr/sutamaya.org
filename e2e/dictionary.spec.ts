@@ -6,7 +6,7 @@ import { test, expect } from './fixtures';
 
 test('@smoke tapping a Pali word opens the dictionary dock', async ({ page }) => {
   await page.goto('/read/dn1');
-  await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+  await expect(page.locator('[data-seg="1"]')).toContainText('So I have heard.');
 
   // Pali is revealed per segment by tapping the English.
   await page.locator('[data-seg="1"]').click();

@@ -14,7 +14,7 @@ test('the first-run tip waits for the text, ticks off the Pali, and retires on a
   await page.goto('/read/dn1');
   const tip = page.locator('[data-component="ReaderTip"]');
   const firstStep = tip.locator('li').first();
-  await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+  await expect(page.locator('[data-seg="1"]')).toContainText('So I have heard.');
   await expect(tip).toHaveCount(0);
 
   await scrollIntoText(page);
@@ -33,7 +33,7 @@ test('the first-run tip waits for the text, ticks off the Pali, and retires on a
 test('closing the first-run tip retires it for good', async ({ page }) => {
   await page.goto('/read/dn1');
   const tip = page.locator('[data-component="ReaderTip"]');
-  await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+  await expect(page.locator('[data-seg="1"]')).toContainText('So I have heard.');
   await scrollIntoText(page);
   await tip.getByRole('button', { name: 'Close' }).click();
   await expect(tip).toHaveCount(0);

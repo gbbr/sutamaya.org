@@ -38,14 +38,14 @@ test.describe('browse and read', () => {
 
     // The reader has actually rendered the text, not just the shell.
     await expect(page.locator('[data-component="SegmentedText"]')).toBeVisible();
-    await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+    await expect(page.locator('[data-seg="1"]')).toContainText('So I have heard.');
   });
 });
 
 test.describe('highlighting', () => {
   test('a highlight survives a reload', async ({ page }) => {
     await page.goto('/read/dn1');
-    await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+    await expect(page.locator('[data-seg="1"]')).toContainText('So I have heard.');
 
     // "I have heard." — offsets into the segment's stored English, which is what gets persisted.
     const phrase = (await segmentText(page, 1)).slice(3, 16);
@@ -74,7 +74,7 @@ test.describe('highlighting', () => {
   // supply by hand.
   test('a highlight can run from one segment into the next', async ({ page }) => {
     await page.goto('/read/dn1');
-    await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+    await expect(page.locator('[data-seg="1"]')).toContainText('So I have heard.');
 
     const first = await segmentText(page, 1);
     const second = await segmentText(page, 2);
@@ -113,7 +113,7 @@ test.describe('highlighting', () => {
   // stored offsets of its own and is painted from whatever that segment currently says.
   test('a highlight spanning three segments paints the middle one whole', async ({ page }) => {
     await page.goto('/read/dn1');
-    await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+    await expect(page.locator('[data-seg="1"]')).toContainText('So I have heard.');
 
     const middle = await segmentText(page, 2);
     await selectAcrossSegments(page, 1, 3, 3, 10);
@@ -135,7 +135,7 @@ test.describe('highlighting', () => {
   // Acting there has to reach the whole highlight, not the segment that was clicked.
   test('the middle segment of a highlight can be recoloured and removed like any other part', async ({ page }) => {
     await page.goto('/read/dn1');
-    await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+    await expect(page.locator('[data-seg="1"]')).toContainText('So I have heard.');
 
     const first = await segmentText(page, 1);
     const middle = await segmentText(page, 2);
@@ -182,7 +182,7 @@ test.describe('highlighting', () => {
 
   test('an existing highlight can be recoloured and removed', async ({ page }) => {
     await page.goto('/read/dn1');
-    await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+    await expect(page.locator('[data-seg="1"]')).toContainText('So I have heard.');
 
     await selectWithinSegment(page, 1, 3, 16);
     const popup = page.locator('[data-component="HighlightPopup"]');
@@ -210,7 +210,7 @@ test.describe('highlighting', () => {
     // Removal is a tombstone, not a row deletion — it must not come back on the next read.
     await waitForLocalWrites(page);
     await page.reload();
-    await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+    await expect(page.locator('[data-seg="1"]')).toContainText('So I have heard.');
     await expect(page.locator('[data-seg="1"] [data-hl-id]')).toHaveCount(0);
   });
 
@@ -223,7 +223,7 @@ test.describe('highlighting', () => {
   // against a real mirror in real browser storage rather than only as a state transition.
   test('a highlight persisted in the old per-segment shape is collapsed on load', async ({ page }) => {
     await page.goto('/read/dn1');
-    await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+    await expect(page.locator('[data-seg="1"]')).toContainText('So I have heard.');
 
     const first = await segmentText(page, 1);
     const middle = await segmentText(page, 2);
@@ -284,7 +284,7 @@ test.describe('highlighting', () => {
     expect(written).toContain('local-');
 
     await page.reload();
-    await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+    await expect(page.locator('[data-seg="1"]')).toContainText('So I have heard.');
 
     // Both ends are where the reader put them, and the middle segment is painted in full rather
     // than stopping at the length recorded when the highlight was made.
@@ -326,7 +326,7 @@ test.describe('highlighting', () => {
   // and it is checked here in real browser storage for the same reason as the one above.
   test('a highlight persisted as segment positions is re-anchored onto segment keys', async ({ page }) => {
     await page.goto('/read/dn1');
-    await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+    await expect(page.locator('[data-seg="1"]')).toContainText('So I have heard.');
 
     const first = await segmentText(page, 1);
     const last = await segmentText(page, 2);
@@ -372,7 +372,7 @@ test.describe('highlighting', () => {
     });
 
     await page.reload();
-    await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+    await expect(page.locator('[data-seg="1"]')).toContainText('So I have heard.');
 
     // Painted exactly where the positions had it, under the id it was stored with.
     await expect(page.locator('[data-seg="1"] [data-hl-id]')).toHaveText(first.slice(3));
