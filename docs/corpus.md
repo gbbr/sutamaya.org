@@ -113,6 +113,11 @@ SuttaCentral and DPD spell the niggahita differently — `ṁ` here, `ṃ` there
 each word's DPD spellings and converts the answers back. About 90 words in the corpus have no entry
 anywhere and show as a bare headword.
 
+Some definitions are the app's own, added to DPD's from `data/pli2en_additions.json`. Each names
+its source, which the dictionary shows with it — `sampajañña: (Goenka) …` — and follows DPD's lines
+for its headword in every entry that has them, never replacing one. The build adds them, so a DPD
+refresh keeps them; one whose headword no entry defines any more fails the build.
+
 ## Where to look
 
 | Where | What |
@@ -122,4 +127,5 @@ anywhere and show as a bare headword.
 | `scripts/__tests__/build-corpus.counts.test.js` | the checks over the real data, the note links among them |
 | `scripts/lib/paliWords.js` | the build's copy of the app's word splitting and shard lookup |
 | `scripts/update-data-dictionary.mjs` | the DPD import |
+| `data/pli2en_additions.json`, `scripts/lib/dictionaryAdditions.js` | the app's own definitions, and where the build adds them |
 | `web/src/lib/corpus/corpus.ts`, `dictionaryShards.ts` | the app's side: loading text, finding groups, looking words up |
