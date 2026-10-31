@@ -66,18 +66,18 @@ test('translator notes can be turned on and off', async ({ page }) => {
   await page.goto('/read/dn1');
   await expect(page.locator('[data-seg="1"]')).toBeVisible();
 
-  // dn1's first segment carries a translator note, marked by an asterisk after the text — off by
-  // default, since most reading doesn't want it.
+  // dn1's first segment carries the sutta's first translator note, marked by its number after the
+  // text — shown by default.
   const marker = page.locator('[data-seg="1"] [data-seg-ignore]');
+  await expect(marker).toHaveText('1');
+
+  // The marker is not part of the segment's stored text, so showing notes must not shift the
+  // offsets a highlight would be stored at.
+  await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.1');
+
+  await page.keyboard.press('c');
   await expect(marker).toHaveCount(0);
 
   await page.keyboard.press('c');
   await expect(marker).toHaveCount(1);
-
-  // The marker is not part of the segment's stored text, so turning notes on must not shift the
-  // offsets a highlight would be stored at.
-  await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.*');
-
-  await page.keyboard.press('c');
-  await expect(marker).toHaveCount(0);
 });

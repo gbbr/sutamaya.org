@@ -15,7 +15,7 @@ export interface ReaderPrefs {
   allPali: boolean;
   // Put the Pali above the English. Applies only with `allPali` on.
   paliAbove: boolean;
-  // Show the asterisk markers for the translator's notes.
+  // Show the numbered markers for the translator's notes.
   showNotes: boolean;
   // Paint the reader's highlights over the text.
   showHighlights: boolean;
@@ -56,7 +56,7 @@ const DEFAULTS: ReaderPrefs = {
   face: 'georgia',
   allPali: false,
   paliAbove: false,
-  showNotes: false,
+  showNotes: true,
   showHighlights: true,
   showSegmentNumbers: false,
 };

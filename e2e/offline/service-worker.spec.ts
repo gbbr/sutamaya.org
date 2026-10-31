@@ -12,18 +12,18 @@ async function waitForServiceWorker(page: Page) {
 
 test('@offline the app shell and a sutta already read survive the network being cut', async ({ page, errors }) => {
   await page.goto('/read/dn1');
-  await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+  await expect(page.locator('[data-seg="1"]')).toContainText('So I have heard.');
   await waitForServiceWorker(page);
 
   // The first visit is what populates the caches; read it once more online so the sutta text is
   // in there before anything is unplugged.
   await page.reload();
-  await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+  await expect(page.locator('[data-seg="1"]')).toContainText('So I have heard.');
 
   await setOffline(page, errors, true);
   await page.reload();
 
-  await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+  await expect(page.locator('[data-seg="1"]')).toContainText('So I have heard.');
 });
 
 test('@offline the corpus tree is browsable offline, since it is precached', async ({ page, errors }) => {

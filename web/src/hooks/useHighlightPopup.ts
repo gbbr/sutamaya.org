@@ -44,7 +44,7 @@ function closestSeg(node: Node | null): HTMLElement | null {
 }
 
 // Selector for text rendered inside a segment that isn't part of its stored `en`: the list-item
-// marker and the note asterisk, which `Range.toString()` counts regardless of `user-select`.
+// marker and the note number, which `Range.toString()` counts regardless of `user-select`.
 const IGNORED_TEXT = '[data-seg-ignore]';
 
 // Returns how much of `pre`'s text belongs to those elements. Both ranges start at the same point,

@@ -6,17 +6,17 @@ import type { ReaderFace, ResolvedTheme, ThemeColors } from '../types';
 const DARK_HIGHLIGHTS = ['#6B4E22', '#4A4A26', '#463A5C'];
 
 export const READER_THEMES: Record<ResolvedTheme, ThemeColors> = {
-  // Light's `dim` is a solid warm gray rather than an alpha of `fg`, which would composite to
-  // 3.3:1 on this ground. Every `paliTint` is that theme's own `pali` at 15%, and every `focusTint`
-  // its `pali` too, at 9–11%.
+  // Every `dim` holds about 5.6:1 on its theme's ground; light's is a solid warm gray rather than
+  // an alpha of `fg`, which would composite to 3.3:1 there. Every `paliTint` is that theme's own
+  // `pali` at 15%, and every `focusTint` its `pali` too, at 9–11%.
   light: { bg: '#FAF8F3', fg: '#1B1917', dim: '#6B6259', rule: 'rgba(27,25,23,.18)', panel: '#FFFEFB', pali: '#7A5B2E', tint: 'rgba(27,25,23,.1)', paliTint: 'rgba(122,91,46,.15)', focusTint: 'rgba(122,91,46,.09)', highlightPalette: null, selection: '#EADFC6' },
-  sepia: { bg: '#F3E7D3', fg: '#3A2E1E', dim: 'rgba(58,46,30,.55)', rule: 'rgba(58,46,30,.2)', panel: '#F8EEDD', pali: '#8C6222', tint: 'rgba(58,46,30,.1)', paliTint: 'rgba(140,98,34,.15)', focusTint: 'rgba(140,98,34,.11)', highlightPalette: null, selection: 'rgba(140,98,34,.32)' },
+  sepia: { bg: '#F3E7D3', fg: '#3A2E1E', dim: 'rgba(58,46,30,.77)', rule: 'rgba(58,46,30,.2)', panel: '#F8EEDD', pali: '#8C6222', tint: 'rgba(58,46,30,.1)', paliTint: 'rgba(140,98,34,.15)', focusTint: 'rgba(140,98,34,.11)', highlightPalette: null, selection: 'rgba(140,98,34,.32)' },
   // A warm dark brown rather than a near-black, with `fg` held short of a bright cream: at 10.3:1
   // it clears WCAG AAA while keeping 18px type from blooming, which light-on-dark does.
   dark: {
     bg: '#2A241E',
     fg: '#DCD3C3',
-    dim: 'rgba(237,230,217,.5)',
+    dim: 'rgba(237,230,217,.62)',
     rule: 'rgba(237,230,217,.18)',
     panel: '#332C24',
     // As far below the page as `panel` sits above it.

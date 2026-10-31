@@ -249,7 +249,7 @@ async function selectRange(page: Page, start: SelectionPoint, end: SelectionPoin
         if (!seg) throw new Error(`no segment ${segIndex} on the page`);
 
         // Walk the segment's text nodes, skipping the ones marked as not part of the stored text
-        // (the list-item marker and the note asterisk), so offsets line up with what gets stored.
+        // (the list-item marker and the note number), so offsets line up with what gets stored.
         const walker = document.createTreeWalker(seg, NodeFilter.SHOW_TEXT, {
           acceptNode: (node) =>
             (node.parentElement as HTMLElement | null)?.closest('[data-seg-ignore]')

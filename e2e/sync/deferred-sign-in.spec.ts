@@ -19,7 +19,7 @@ test('work done signed out is adopted onto the account at sign-in', async ({ pag
   await expect(page.locator('[data-component="SignedInBadgeDot"]')).toHaveCount(0);
 
   await page.goto('/read/dn1');
-  await expect(page.locator('[data-seg="1"]')).toHaveText('So I have heard.');
+  await expect(page.locator('[data-seg="1"]')).toContainText('So I have heard.');
 
   await writeNote(page, 'written before signing in');
 

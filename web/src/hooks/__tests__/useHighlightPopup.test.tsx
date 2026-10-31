@@ -101,7 +101,7 @@ describe('useHighlightPopup', () => {
     });
 
     // A list-item segment renders its "1." marker, and any segment with a translator note renders
-    // an asterisk, inside the same [data-seg] paragraph — neither is part of the stored `en` text,
+    // the note's number, inside the same [data-seg] paragraph — neither is part of the stored `en` text,
     // and SegmentedText marks both `data-seg-ignore`. Range.toString() counts them regardless of
     // `user-select: none`, so without discounting them every offset taken in such a segment lands
     // a couple of characters right of what was selected.
@@ -117,7 +117,7 @@ describe('useHighlightPopup', () => {
       const body = document.createTextNode('Hello world');
       const note = document.createElement('sup');
       note.setAttribute('data-seg-ignore', '');
-      note.textContent = '*';
+      note.textContent = '12';
       p.append(marker, body, note);
       root.appendChild(p);
       document.body.appendChild(root);
@@ -175,11 +175,11 @@ describe('useHighlightPopup', () => {
   describe('cross-segment selection', () => {
     // Only the two ends are recorded — the segments between them are covered by definition, so
     // nothing here measures a middle segment. That is what makes a mismatch between a middle
-    // segment's rendered DOM text and its stored `en` (the translator-note asterisk, say)
+    // segment's rendered DOM text and its stored `en` (the translator-note number, say)
     // impossible to get wrong, and what leaves no stored length to go stale when the text changes.
     it('records the two ends and nothing about the segments between them', async () => {
       mockUserData();
-      const { segs, segments } = buildSegRoot(['Alpha text', 'Beta text*', 'Gamma text']);
+      const { segs, segments } = buildSegRoot(['Alpha text', 'Beta text1', 'Gamma text']);
       const { result } = renderHook(() => useHighlightPopup('sn1.1', [], segments));
 
       selectAcross(segs[0], 6, segs[2], 5); // "text" of seg0 through "Gamma" of seg2
