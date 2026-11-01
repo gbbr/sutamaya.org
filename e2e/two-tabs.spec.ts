@@ -11,8 +11,8 @@ test('two tabs show and keep each other’s edits', async ({ page, context }) =>
   await expect(second.locator('[data-seg="1"]')).toBeVisible();
   await writeNote(second, 'written in the second tab');
 
-  // The first tab shows it without a reload, on the sutta's row.
-  await expect(listPane).toContainText('written in the second tab');
+  // The first tab shows it without a reload, as the note mark on the sutta's row.
+  await expect(listPane.getByRole('img', { name: 'Has a note' })).toBeVisible();
 
   // A save in the first tab keeps it.
   await listPane.getByRole('link', { name: /The Divine Net/ }).click();

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
-import { Eye, Highlighter, StickyNote, Library, List, Search, X } from 'lucide-react';
+import { Eye, Highlighter, PencilLine, Library, List, Search, X } from 'lucide-react';
 import { useCorpus } from '../../context/CorpusContext';
 import { useUserData } from '../../context/UserDataContext';
 import { useAuth } from '../../context/AuthContext';
@@ -46,6 +46,7 @@ import { SearchUpdating } from '../search/SearchUpdating';
 import { SearchListHits } from '../search/SearchListHits';
 import { RecentSearches } from '../search/RecentSearches';
 import { SuttaRowChips } from '../SuttaRowChips';
+import { NoteIcon } from '../NoteIcon';
 import { StagingCommit } from '../StagingCommit';
 import { type ListRowMenuProps, type ListRowEditProps, type ListRowDeleteProps, type ListRowDraftProps } from '../lists/ListRow';
 import { CorpusTreeView } from './CorpusTreeView';
@@ -391,7 +392,7 @@ export function TreePane({
         // window rather than the whole of what the reader has done.
         { list: lists.find((l) => l.id === RECENT_AUTO_LIST_ID), sub: 'Recently opened suttas', Icon: Eye },
         { list: lists.find((l) => l.id === HIGHLIGHTS_AUTO_LIST_ID), sub: "Suttas you've highlighted", Icon: Highlighter },
-        { list: lists.find((l) => l.id === NOTES_AUTO_LIST_ID), sub: "Suttas you've written notes in", Icon: StickyNote },
+        { list: lists.find((l) => l.id === NOTES_AUTO_LIST_ID), sub: "Suttas you've written notes in", Icon: PencilLine },
       ].filter((x): x is { list: ListDef; sub: string; Icon: typeof Highlighter } => !!x.list),
     [lists]
   );
@@ -920,7 +921,7 @@ export function TreePane({
                   // no description at rest, the column being half the width, but it draws one that
                   // answered the query: without it a row explained by its blurb shows the reader
                   // nothing that matched.
-                  const showNote = !!note && (explains?.line === 'note' || (!snippet && explains?.line !== 'blurb'));
+                  const showNote = !!note && explains?.line === 'note';
                   const showBlurb = !showNote && explains?.line === 'blurb';
                   const lineQuery = (line: 'note' | 'blurb') => (explains?.line === line ? explains.query : query);
                   // The description, opened at the words that found it where it is the line that matched.
@@ -958,11 +959,9 @@ export function TreePane({
                         <MatchedText text={sutta.pali} query={query} />
                       </span>
                       {showNote && (
-                        // An em dash rather than a quote rule marks this as the reader's own note.
+                        // The note icon rather than a quote rule marks this as the reader's own note.
                         <span className="flex gap-[7px] font-serif text-ui-md leading-[1.4] mt-[6px] text-ink-2">
-                          <span aria-hidden className="flex-none text-ink-3">
-                            —
-                          </span>
+                          <NoteIcon className="text-ink-3" />
                           <span className="line-clamp-3 whitespace-pre-wrap">
                             <MatchedText text={noteText} query={lineQuery('note')} notation />
                           </span>
@@ -989,7 +988,7 @@ export function TreePane({
                           )}
                         </span>
                       )}
-                      <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} query={query} />
+                      <SuttaRowChips chips={chips} noted={!!note && !showNote} hlCount={hlCount} hlColors={hlColors} query={query} />
                     </Link>
                   );
                 })}

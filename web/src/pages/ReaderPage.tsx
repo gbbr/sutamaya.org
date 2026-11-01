@@ -53,6 +53,7 @@ import { ReaderMenuPanel } from '../components/reader/ReaderMenuPanel';
 import { ReaderSearchOverlay, type ReaderSearchView } from '../components/search/ReaderSearchOverlay';
 import { ShortcutsModal } from '../components/ShortcutsModal';
 import { SuttaRowChips } from '../components/SuttaRowChips';
+import { NoteIcon } from '../components/NoteIcon';
 import { MatchedText } from '../components/MatchedText';
 import { NotFoundPage } from './NotFoundPage';
 
@@ -1115,10 +1116,7 @@ export function ReaderPage() {
                 if (!mobile) setNoteFocusSignal((s) => s + 1);
               }}
             >
-              {/* The em dash marking this as the reader's own note, as a Library list row does. */}
-              <span aria-hidden className="flex-none">
-                —
-              </span>
+              <NoteIcon />
               {/* The note itself, clamped to five lines. MatchedText renders its `*bold*`; the
                   empty query marks no words. */}
               <span className="line-clamp-5 whitespace-pre-wrap">

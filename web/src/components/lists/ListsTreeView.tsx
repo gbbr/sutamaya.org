@@ -204,8 +204,8 @@ export function ListsTreeView({
               }`}
               onClick={() => onSelect(String(list.id))}
             >
-              <span className="w-[16px] mr-[5px] flex-none flex items-center justify-center text-ink-4">
-                <Icon size={16} strokeWidth={2} />
+              <span className="w-[18px] mr-[5px] flex-none flex items-center justify-center text-ink-4">
+                <Icon size={18} strokeWidth={2} />
               </span>
               <span className="flex-1 min-w-0">
                 <span className="block text-ui-md font-medium leading-[1.3]">{list.label}</span>

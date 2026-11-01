@@ -11,6 +11,7 @@ import { prefetchSuttaText } from '../../lib/corpus/suttaPrefetch';
 import { SEARCH_CAP_NOTE, SEARCH_RESULTS_CAP, suttaHitsHeading, type ListBlockHit, type SearchHit } from '../../lib/search/metadata';
 import { searchScopeNote, windowOnMatch, type TextSearchStatus } from '../../lib/search/text';
 import { flattenListTree, suttaRowMeta } from '../../lib/lists/lists';
+import { NOTES_AUTO_LIST_ID } from '../../lib/lists/autoLists';
 import { resolveDragReorder, type ItemMidpoint } from '../../lib/lists/listPaneDrag';
 import { BackButton } from '../BackButton';
 import { MatchedText } from '../MatchedText';
@@ -18,6 +19,7 @@ import { SearchListHits } from '../search/SearchListHits';
 import { TextSearchProgress } from '../search/TextSearchProgress';
 import { SearchUpdating } from '../search/SearchUpdating';
 import { SuttaRowChips } from '../SuttaRowChips';
+import { NoteIcon } from '../NoteIcon';
 import { ListMembershipPopover } from './ListMembershipPopover';
 import type { Sutta } from '../../lib/types';
 import { opensHere } from '../../lib/navigation/linkClick';
@@ -507,11 +509,12 @@ export function ListPane({
           const on = searching && id === activeId;
           const note = notes[id];
           const { snippet, explains } = found.get(id) ?? {};
-          // The line that carried the query leads, and the quote from the sutta follows it: a hit
-          // ranked on a note or a description is explained by that line, not by a paragraph that
-          // holds one word of the query. Where neither matched, the row's usual line stands —
-          // unless the quote takes its place, as it did before.
-          const showNote = !!note && (explains?.line === 'note' || (!snippet && explains?.line !== 'blurb'));
+          // The reader's note shows in the Notes list and on a hit found in it; anywhere else the
+          // row keeps its description and marks the note among the chips. The line that carried
+          // the query leads, and the quote from the sutta follows it: a hit ranked on a note or a
+          // description is explained by that line, not by a paragraph that holds one word of the
+          // query. Where neither matched, the description stands unless the quote takes its place.
+          const showNote = !!note && (explains?.line === 'note' || currentList?.id === NOTES_AUTO_LIST_ID);
           const showBlurb = !showNote && (explains?.line === 'blurb' || !snippet);
           // The line that matched is marked with the query that found it, which the expansion table
           // may have written; a line standing here on nothing but its usual turn takes the typed one.
@@ -574,11 +577,9 @@ export function ListPane({
                   <MatchedText text={s.pali} query={rowQuery} />
                 </span>
                 {showNote && (
-                  // An em dash rather than a quote rule marks this as the reader's own note.
+                  // The note icon rather than a quote rule marks this as the reader's own note.
                   <span className="flex gap-[7px] font-serif text-ui-md leading-[1.45] mt-[7px] text-ink-2">
-                    <span aria-hidden className="flex-none text-ink-3">
-                      —
-                    </span>
+                    <NoteIcon className="text-ink-3" />
                     {/* Clamped, like the blurb it stands in for. */}
                     <span className="line-clamp-3 whitespace-pre-wrap">
                       <MatchedText text={noteText} query={lineQuery('note')} notation />
@@ -591,7 +592,7 @@ export function ListPane({
                   </span>
                 )}
                 {snippet && (
-                  // Quoted from the sutta: a left rule, against the em dash that marks the reader's
+                  // Quoted from the sutta: a left rule, against the icon that marks the reader's
                   // own note. A Pali paragraph carries its English underneath, inside the one rule.
                   <span className="block font-serif text-ui-md leading-[1.5] mt-[7px] pl-[10px] border-l-2 border-ink/25 text-ink-2">
                     {/* No `block` alongside a clamp: the clamp sets `display:-webkit-box` and
@@ -606,7 +607,7 @@ export function ListPane({
                     )}
                   </span>
                 )}
-                <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} query={rowQuery} />
+                <SuttaRowChips chips={chips} noted={!!note && !showNote} hlCount={hlCount} hlColors={hlColors} query={rowQuery} />
               </Link>
               {/* Opens the list-membership picker for this sutta. Hidden while reordering, so the
                   grip has the gutter to itself, and held at the top corner of the row, its `top`
