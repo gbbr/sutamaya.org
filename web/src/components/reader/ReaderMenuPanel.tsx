@@ -1,17 +1,19 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
-import { Minus, Plus, Trash2, X } from 'lucide-react';
+import { ChevronRight, Minus, Plus, Trash2, X } from 'lucide-react';
 import { useUserData } from '../../context/UserDataContext';
 import { FS_MAX, FS_MIN, FS_STEP, LH_MAX, LH_MIN, LH_STEP, useReaderPrefs } from '../../context/ReaderPrefsContext';
 import { NoteEditor } from './NoteEditor';
 import { ListMembershipPicker } from '../lists/ListMembershipPicker';
-import type { SegmentFile } from '../../lib/corpus/corpus';
-import { highlightStart, highlightText } from '../../lib/highlights';
+import { TRANSLATOR_SHORT_NAMES } from '../../lib/corpus/corpus';
+import { useSuttaText } from '../../hooks/useSuttaText';
+import { HighlightCountBadge } from '../HighlightCountBadge';
+import { highlightColors, highlightStart, highlightText } from '../../lib/highlights';
 import { segmentIndex } from '../../lib/corpus/segmentKeys';
 import { KeyCap } from '../ShortcutsModal';
 import { SHORTCUTS, SHOWS_KEY_HINTS } from '../../lib/shortcuts';
 import { isAndroid } from '../../lib/platform';
 import { highlightPaint, READER_FACES } from '../../lib/ui/theme';
-import type { Highlight, ReaderFace, ResolvedTheme, ThemeColors } from '../../lib/types';
+import type { Highlight, ReaderFace, ResolvedTheme, ThemeColors, Translator } from '../../lib/types';
 
 type Tab = 'highlights' | 'lists' | 'text';
 
@@ -20,11 +22,11 @@ interface ReaderMenuPanelProps {
   mobile: boolean;
   theme: ThemeColors;
   initialTab: Tab;
-  segments: SegmentFile[] | null;
+  by: Translator;
   // This sutta's highlights, in document order, which is the order this panel lists them in.
   highlights: Highlight[];
   onClose: () => void;
-  onJumpToHighlight: (segIndex: number, highlightId?: string) => void;
+  onJumpToHighlight: (segIndex: number, highlightId?: string, by?: Translator) => void;
   // Bumped to focus the note box, even with this panel already open. See NoteEditor.
   noteFocusSignal?: number;
   // Called when the tab changes from inside the open panel, which ReaderPage acts on.
@@ -176,12 +178,56 @@ function Stepper({
   );
 }
 
+/** HighlightList lists one translation's highlights, each previewed from that translation's text. */
+function HighlightList({ suttaId, by, highlights, theme, onJumpToHighlight }: Pick<ReaderMenuPanelProps,
+  'suttaId' | 'by' | 'highlights' | 'theme' | 'onJumpToHighlight'
+>) {
+  const { segments } = useSuttaText(suttaId, by);
+  const { setHighlightSpan } = useUserData();
+  // One map for the whole list, each row otherwise rebuilding it for its preview and again for its
+  // jump target.
+  const segIndex = useMemo(() => (segments ? segmentIndex(segments) : null), [segments]);
+
+  return highlights.map((h, gi) => {
+    const text = highlightText(h, segments, segIndex ?? undefined);
+    const preview = text.length > 120 ? `${text.slice(0, 120)}…` : text;
+    const start = segments && segIndex ? highlightStart(h, segments, segIndex) : null;
+    return (
+      // The last row draws no rule, what follows the list closing it with its own.
+      <div
+        key={h.id}
+        className="flex items-stretch gap-1"
+        style={gi === highlights.length - 1 ? undefined : { borderBottom: `1px solid ${theme.tint}` }}
+      >
+        <button
+          className="flex flex-1 min-w-0 gap-2.5 items-start py-2.5 text-left"
+          onClick={() => start !== null && onJumpToHighlight(start, h.id, by)}
+        >
+          <span className="w-[5px] self-stretch rounded-[3px] flex-none" style={{ background: highlightPaint(h.c, theme) }} />
+          <span className="flex-1 text-ui-sm leading-[1.45]">{preview || 'Highlighted text'}</span>
+        </button>
+        {/* Erases the highlight, the same path HighlightPopup's "Remove" takes, with no
+            confirmation. Always visible, this panel being used on touch, and faded so it reads as
+            secondary to the row's jump-to. */}
+        <button
+          className="flex-none flex items-start justify-center w-9 pt-[11px] opacity-45 hover:opacity-100"
+          style={{ color: theme.fg }}
+          aria-label="Remove highlight"
+          onClick={() => setHighlightSpan(suttaId, { k0: h.k0, o0: h.o0, k1: h.k1, o1: h.o1 }, null, by)}
+        >
+          <Trash2 size={17} strokeWidth={1.75} />
+        </button>
+      </div>
+    );
+  });
+}
+
 export function ReaderMenuPanel({
   suttaId,
   mobile,
   theme,
   initialTab,
-  segments,
+  by,
   highlights,
   onClose,
   onJumpToHighlight,
@@ -189,7 +235,13 @@ export function ReaderMenuPanel({
   onTabChange,
 }: ReaderMenuPanelProps) {
   const [tab, setTab] = useState(initialTab);
-  const { notes, submitNote, setHighlightSpan } = useUserData();
+  const { notes, submitNote, highlights: allHighlights } = useUserData();
+  const otherTranslations = (['sujato', 'bodhi', 'thanissaro'] as const)
+    .filter((id) => id !== by)
+    .map((id) => ({ by: id, highlights: (allHighlights[suttaId] ?? []).filter((h) => (h.by ?? 'sujato') === id) }))
+    .filter((translation) => translation.highlights.length > 0);
+  const otherHighlights = otherTranslations.flatMap((translation) => translation.highlights);
+  const [othersOpen, setOthersOpen] = useState(false);
   const {
     resolvedTheme,
     setTheme,
@@ -299,20 +351,12 @@ export function ReaderMenuPanel({
   // drift.
   const rowKey = (keyName: string) => (SHOWS_KEY_HINTS ? <KeyCap keyName={keyName} theme={theme} small /> : null);
 
-  // Erases a highlight, the same path HighlightPopup's "Remove" takes. No confirmation, matching
-  // that popup; the trash sits in its own target, clear of the row's jump-to.
-  const removeHighlight = ({ k0, o0, k1, o1 }: Highlight) => setHighlightSpan(suttaId, { k0, o0, k1, o1 }, null);
-
-  // One map for the whole list, each row otherwise rebuilding it for its preview and again for its
-  // jump target.
-  const segIndex = useMemo(() => (segments ? segmentIndex(segments) : null), [segments]);
-
   return (
     <>
       {/* The backdrop, which closes on a tap. The full-height panel covers it once risen and has
-          the close button below instead. */}
-      <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,.12)' }} onClick={onClose} />
-      <div data-component="ReaderMenuPanel" style={panelStyle()} className={panelClassName}>
+          the close button below instead. Both stack above the Reader's header. */}
+      <div className="absolute inset-0 z-30" style={{ background: 'rgba(0,0,0,.12)' }} onClick={onClose} />
+      <div data-component="ReaderMenuPanel" style={panelStyle()} className={`z-30 ${panelClassName}`}>
         <div className="flex items-center gap-1.5 mb-5">
           <div className="flex-1 min-w-0">
             <Segmented
@@ -365,47 +409,53 @@ export function ReaderMenuPanel({
               {highlights.length > 0 && <span className="tabular-nums">{highlights.length}</span>}
             </div>
 
-            {highlights.map((h, gi) => {
-              const text = highlightText(h, segments, segIndex ?? undefined);
-              const preview = text.length > 120 ? `${text.slice(0, 120)}…` : text;
-              const start = segments && segIndex ? highlightStart(h, segments, segIndex) : null;
-              return (
-                // The last row draws no rule, the setting below closing the list with its own.
-                <div
-                  key={h.id}
-                  className="flex items-stretch gap-1"
-                  style={gi === highlights.length - 1 ? undefined : { borderBottom: `1px solid ${theme.tint}` }}
-                >
-                  <button
-                    className="flex flex-1 min-w-0 gap-2.5 items-start py-2.5 text-left"
-                    onClick={() => start !== null && onJumpToHighlight(start, h.id)}
-                  >
-                    <span className="w-[5px] self-stretch rounded-[3px] flex-none" style={{ background: highlightPaint(h.c, theme) }} />
-                    <span className="flex-1 text-ui-sm leading-[1.45]">{preview || 'Highlighted text'}</span>
-                  </button>
-                  {/* Always visible, this panel being used on touch, and faded so it reads as
-                      secondary to the row's jump-to. */}
-                  <button
-                    className="flex-none flex items-start justify-center w-9 pt-[11px] opacity-45 hover:opacity-100"
-                    style={{ color: theme.fg }}
-                    aria-label="Remove highlight"
-                    onClick={() => removeHighlight(h)}
-                  >
-                    <Trash2 size={17} strokeWidth={1.75} />
-                  </button>
-                </div>
-              );
-            })}
+            <HighlightList suttaId={suttaId} by={by} highlights={highlights} theme={theme} onJumpToHighlight={onJumpToHighlight} />
             {highlights.length === 0 && (
               <div className="font-sans text-ui-sm py-1.5" style={{ color: theme.dim, opacity: 0.8 }}>
                 Select text in the reading, then pick a colour.
               </div>
             )}
 
+            {/* The other translations' highlights, folded under one row. */}
+            {otherTranslations.length > 0 && (
+              <div style={hairline}>
+                <button
+                  className={`${settingRow} pt-5 w-full text-left`}
+                  aria-expanded={othersOpen}
+                  onClick={() => setOthersOpen((open) => !open)}
+                >
+                  <span className="font-sans text-ui-base flex items-center gap-1.5" style={{ color: theme.dim }}>
+                    <ChevronRight
+                      size={18}
+                      strokeWidth={1.75}
+                      className={`flex-none transition-transform ${othersOpen ? 'rotate-90' : ''}`}
+                    />
+                    Other translations
+                    <HighlightCountBadge
+                      count={otherHighlights.length}
+                      colors={highlightColors(otherHighlights)}
+                      theme={theme}
+                      style={{ marginLeft: 4, transform: 'translateY(1px)' }}
+                    />
+                  </span>
+                </button>
+                {othersOpen &&
+                  otherTranslations.map((translation) => (
+                    <section key={translation.by} aria-label={`${TRANSLATOR_SHORT_NAMES[translation.by]} highlights`} className="mb-4">
+                      <h3 className={`${rowLabel} flex items-baseline gap-1.5 mb-1`} style={{ color: theme.dim }}>
+                        {TRANSLATOR_SHORT_NAMES[translation.by]}
+                        <span className="tabular-nums">{translation.highlights.length}</span>
+                      </h3>
+                      <HighlightList suttaId={suttaId} {...translation} theme={theme} onJumpToHighlight={onJumpToHighlight} />
+                    </section>
+                  ))}
+              </div>
+            )}
+
             {/* The Style tab's own show-highlights row, repeated below the list it governs.
                 Last rather than beside the heading, since it acts on the reading behind the panel,
                 and absent with nothing to hide. */}
-            {highlights.length > 0 && (
+            {(highlights.length > 0 || otherTranslations.length > 0) && (
               <div className={settingRow} style={hairline}>
                 <span className="flex items-center gap-1.5">
                   <span className={rowLabel} style={{ color: theme.dim }}>

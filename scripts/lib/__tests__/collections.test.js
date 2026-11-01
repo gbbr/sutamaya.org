@@ -311,7 +311,18 @@ describe('buildBodySegments', () => {
       en: [['sn1.1:1.1', 'Body text (en)']],
     });
     const segs = buildBodySegments(pali, en, html, notes);
-    expect(segs).toEqual([{ key: 'sn1.1:1.1', pali: 'Body text', en: 'Body text (en)' }]);
+    expect(segs).toEqual([{ key: 'sn1.1:1.1', pali: 'Body text', en: 'Body text (en)', paragraphEnd: true }]);
+  });
+
+  it('ends a paragraph where the Pali markup prints one, and where the next sutta of a batch starts', () => {
+    const keys = ['an1.1:1.1', 'an1.1:1.2', 'an1.1:1.3', 'an1.1:2.1', 'an1.2:1.1', 'an1.2:1.2'];
+    const [pali, en, html, notes] = maps({
+      pali: keys.map((k) => [k, 'Pali']),
+      en: keys.filter((k) => k !== 'an1.1:1.2').map((k) => [k, `English ${k}`]),
+      html: [['an1.1:1.1', '<p>{}'], ['an1.1:1.2', '{}</p>'], ['an1.1:1.3', '<p>{}'], ['an1.1:2.1', '{}'], ['an1.2:1.1', '{}'], ['an1.2:1.2', '{}</p>']],
+    });
+    const ends = buildBodySegments(pali, en, html, notes).filter((s) => s.paragraphEnd).map((s) => s.key);
+    expect(ends).toEqual(['an1.1:1.1', 'an1.1:2.1', 'an1.2:1.2']);
   });
 
   it('skips a segment with neither pali nor english text', () => {

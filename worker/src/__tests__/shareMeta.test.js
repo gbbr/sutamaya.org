@@ -51,7 +51,13 @@ const corpus = {
     },
   ],
   suttas: {
-    dn16: { ref: 'DN 16', en: 'The Great Discourse on the Buddha’s Extinguishment', blurb: 'The Buddha’s last days.', node: 'dn-silakkhandhavagga' },
+    dn16: {
+      ref: 'DN 16',
+      en: 'The Great Discourse on the Buddha’s Extinguishment',
+      blurb: 'The Buddha’s last days.',
+      node: 'dn-silakkhandhavagga',
+      by: { bodhi: 'https://example.org/dn16' },
+    },
     'dhp320-333': { ref: 'Dhp 320–333', en: 'The Elephant', blurb: '', node: 'dhp' },
     'sn12.1': { ref: 'SN 12.1', en: 'Dependent Origination', blurb: '', node: 'sn12.1-10' },
     'ud1.1': { ref: 'Ud 1.1', en: 'Upon Awakening (1st)', blurb: '', node: 'ud-bodhivagga' },
@@ -238,6 +244,7 @@ describe('withShareMeta, for a link naming lines', () => {
       { key: 'dn16:5.2', pali: '', en: '“Ānanda, the twin sal trees are in full blossom.”' },
     ],
     'dhp320-333': [{ key: 'dhp321:1', pali: '', en: 'They lead the tamed to the assembly.' }],
+    'bodhi/dn16': [{ key: 'dn16:5.1', pali: '', en: 'Then the Blessed One addressed the Venerable Ānanda.' }],
   };
   const env = {
     ASSETS: {
@@ -255,6 +262,18 @@ describe('withShareMeta, for a link naming lines', () => {
   it('previews the line, under its citation, and links the card to it', async () => {
     const html = await preview('https://app.sutamaya.org/read/dn16?at=5.1');
     expect(html).toContain('<title>DN 16:5.1 · The Great Discourse on the Buddha’s Extinguishment</title>');
+    expect(html).toContain('<meta property="og:description" content="Then the Buddha addressed Ānanda." />');
+    expect(html).toContain('<meta property="og:url" content="https://app.sutamaya.org/read/dn16?at=5.1" />');
+  });
+
+  it('previews the line in the translation the link names, and links the card to it', async () => {
+    const html = await preview('https://app.sutamaya.org/read/dn16?by=bodhi&at=5.1');
+    expect(html).toContain('<meta property="og:description" content="Then the Blessed One addressed the Venerable Ānanda." />');
+    expect(html).toContain('<meta property="og:url" content="https://app.sutamaya.org/read/dn16?by=bodhi&amp;at=5.1" />');
+  });
+
+  it('previews Sujato’s line for a translation the text lacks', async () => {
+    const html = await preview('https://app.sutamaya.org/read/dn16?by=thanissaro&at=5.1');
     expect(html).toContain('<meta property="og:description" content="Then the Buddha addressed Ānanda." />');
     expect(html).toContain('<meta property="og:url" content="https://app.sutamaya.org/read/dn16?at=5.1" />');
   });

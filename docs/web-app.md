@@ -29,6 +29,20 @@ inside a landscape phone's safe area, leaves room for the widest, and otherwise 
 they never narrow the text. They are never selectable, so copied text leaves them out. Tapping one
 names its line in the address.
 
+**Other translations** — Bhikkhu Bodhi's and Ṭhānissaro Bhikkhu's, where either translates the
+whole text — are chosen from a pill at the right of the header, beside search and the menu,
+bearing the current translator's name without his title ("Sujato", "Bodhi") and a chevron. A
+sutta only Sujato translates has none. Its menu lists only whole translations of that sutta, by
+full name, with the current one checked.
+
+Each has its own Pali under its lines, headings, verse line breaks, links and notes. The credit
+under the title names the translator shown and links the page the text comes from; Help gives
+their licences. A link in one opens the sutta it cites in the same translation where that has it,
+and in Sujato's otherwise. Next and Prev, and search, stay with Sujato's text. Each translation
+keeps its own highlights, place and open lines. The Highlights panel lists the current
+translation's highlights, with the other translators' folded under one row below, and opening one
+of those switches to its translation there. The badges count every translation's highlights.
+
 **Settings** holds the account — sign-in, sync status, export and deletion — the offline download
 and the app's own display settings. The theme is one setting, changed from either place; sepia
 tints only the Reader, and the rest of the app shows it as light. **Help** is a page of annotated screenshots.
@@ -67,6 +81,20 @@ behaviour components share, and `components/` the pieces the pages are built fro
   once. The address names the lines as well, by segment key — `/read/sn46.53?at=15.4` — so a copied
   address, or a link opened anywhere else, lands there too. Lines in a batch are named under the
   inner sutta they belong to: `/read/dhp274?at=4`, not `/read/dhp273-289`.
+- **The address names a translation other than Sujato's** as a query, `/read/mn1?by=bodhi&at=3.1`,
+  it being the same sutta. Without one, or naming one the text lacks, the Reader shows Sujato's.
+- **Choosing a translation keeps the line being read at the same height.** The anchor is the first
+  English segment wholly in view below the reading pane's 20px inset. If the other text omits it,
+  its nearest preceding segment takes that height; if none precedes it, its first segment does.
+  When no whole segment fits, the first intersecting one anchors the switch. Above the text, the
+  pane keeps its offset instead. Text and fonts settle before the position is applied, and scroll
+  offsets account for the app's UI scale. The pane's scroll limits still apply near either end.
+- **Consulting an alternative adds one history step above Sujato's text.** Choosing another
+  alternative replaces that step. No return arrow appears for it, and Escape closes the Reader;
+  Back, in the browser or the native apps, restores the Sujato entry's saved position and open
+  lines. Choosing Sujato in the picker returns to that entry at the line now being read. A directly
+  addressed alternative has no Sujato entry behind it, so the picker replaces that entry. The choice
+  never becomes a default for another sutta.
 - **A tapped segment number replaces the address** with its line's, adding no step to the history.
   The line is washed where it stands, as an arrival washes it, but not scrolled to. The installed
   apps have no address bar, so their Share button shares the line the address names.
@@ -121,13 +149,29 @@ A service worker serves the app from the device:
 | What | Cached |
 |---|---|
 | the app shell, `corpus.json`, the Latin font subsets, the shard indexes | on install |
-| each sutta's text, the dictionary shards | when first fetched, then refreshed in the background |
+| each translation of a sutta, the dictionary shards | when first fetched, then refreshed in the background |
 | the search text | on the first search; its file names carry a version, so it never goes stale |
 | help screenshots, the other fonts | on first use |
 | `/api/*` | never |
 
-Settings can download the whole canon in ~1 MB bundles, with the dictionary and the search text. A
-banner offers it to readers using the installed app.
+Opening a sutta preloads its other whole translations, including Sujato's when an address opens an
+alternative. Each loads independently of the displayed text and enters the same session cache and
+service-worker cache. Once loaded, switching needs no request and those translations remain
+available on an offline return. Only the neighbours' Sujato texts are preloaded; their alternatives
+wait until the reader opens them. A failed preload leaves the displayed text alone, and choosing
+that translation tries loading it again.
+
+Settings can download the whole canon in ~1 MB bundles, including every offered translation, with
+the dictionary and the search text. A sutta counts as available only when all its translations are
+cached, so a completed download supports switching even in texts never opened. The text cache's
+entry limit fits the whole canon across translations, checked against the real corpus by a test.
+A banner offers the download to readers using the installed app.
+
+A download resumes by skipping bundles whose requested documents are all cached. When its recorded
+version is stale or absent, it refetches each bundle and overwrites its documents in place, recording
+the new version only on a clean finish; failure or cancellation leaves cached documents available.
+A device with a completed older download gets the update banner even when it lacks translations
+the current corpus offers.
 
 A corrected sutta reaches a device one document at a time: the next visit shows the cached copy and
 fetches the new one, which appears at the following launch. A device that downloaded everything is
@@ -149,11 +193,11 @@ told when a newer corpus is out.
 
 ## Known gaps
 
-- There is no choice of translation — each collection has one English translation — so the Reader
-  names its source instead ("Source: SuttaCentral, modified").
+- On a phone at the largest UI size, with Share and the return arrow both in the Reader's header,
+  the translation's pill has less room than its first letter and chevron need, and spills over.
 - Deleting a list or group is one confirmation with no undo, and takes everything inside it.
-- A highlight on a line the loaded text doesn't have is left out of the Reader, but still counted
-  on the Library's badge.
+- A highlight on a line the loaded text doesn't have paints nothing, but still counts on the
+  Reader and Library badges.
 
 ## Where to look
 
@@ -161,9 +205,11 @@ told when a newer corpus is out.
 |---|---|
 | `web/src/App.tsx` | the route table and the app shell |
 | `web/src/pages/` | Library, Reader, Settings, Help |
-| `web/src/components/` | `TreePane` and `ListPane` for the Library; `SegmentedText`, `DictionaryDock`, `ReaderTip` and `HighlightPopup` for the Reader |
+| `web/src/components/` | `TreePane` and `ListPane` for the Library; `SegmentedText`, `TranslationPicker`, `DictionaryDock`, `ReaderTip` and `HighlightPopup` for the Reader |
 | `web/src/context/` | the six providers |
 | `web/src/hooks/` | keyboard, scroll memory, dictionary lookup, the first-run tip, pointer drags |
+| `web/src/hooks/useReaderOrigin.ts`, `web/src/lib/reader/{translationPlace,stepPlaces}.ts` | translation choices, reading anchors and history-entry positions |
 | `web/src/lib/` | everything without React |
+| `web/src/lib/corpus/offline.ts`, `cacheConfig.ts` | the bulk download, availability and text-cache capacity |
 | `web/src/lib/ui/motion.ts`, `web/src/index.css` | screen transitions, and the Reader's step between suttas |
 | `web/vite.config.ts` | the build, the service worker's caching, the dev server |

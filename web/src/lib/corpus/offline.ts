@@ -1,6 +1,8 @@
 import { loadDictShardManifest } from './dictionaryShards';
+import { SUTTA_TEXT_CACHE } from './cacheConfig';
 import { searchTextUrls } from '../search/text';
 import { OFFLINE_DATA_VERSION_KEY, OFFLINE_DICTIONARY_VERSION_KEY, OFFLINE_STATUS_KEY } from '../storageKeys';
+import type { SuttaMap } from '../types';
 
 // Settings' bulk offline download: the whole canon fetched as ~1MB shard bundles and unpacked into
 // the same caches an ordinary read writes, so both paths produce identical entries.
@@ -10,7 +12,6 @@ import { OFFLINE_DATA_VERSION_KEY, OFFLINE_DICTIONARY_VERSION_KEY, OFFLINE_STATU
 // than it started with; where it can, an interrupted run resumes, skipping the shards already
 // satisfied. Failures are tolerated per shard, and a long enough run of them trips a circuit
 // rather than spending a timeout on every shard left.
-const SUTTA_TEXT_CACHE = 'sutta-text';
 const MANIFEST_URL = '/data/text-shards/manifest.json';
 // The cache names, which must match vite.config.ts's runtimeCaching for these URLs, or the Service
 // Worker can't find what this module writes.
@@ -30,6 +31,7 @@ export const SHARD_FETCH_TIMEOUT_MS = 60_000;
 export interface ShardEntry {
   file: string;
   bytes: number;
+  // uids are paths under text/, including the translator's folder for an alternative.
   uids: string[];
 }
 
@@ -40,7 +42,12 @@ export interface ShardManifest {
 }
 
 function textUrl(uid: string): string {
-  return `/data/text/${encodeURIComponent(uid)}.json`;
+  return `/data/text/${uid.split('/').map(encodeURIComponent).join('/')}.json`;
+}
+
+// suttaUid returns the sutta a text path belongs to, in any translation.
+function suttaUid(textPath: string): string {
+  return textPath.slice(textPath.lastIndexOf('/') + 1);
 }
 
 function uidFromCacheUrl(url: string): string | null {
@@ -119,9 +126,9 @@ function shardSatisfied(shard: ShardEntry, wanted: Set<string>, cached: Set<stri
   return shard.uids.every((u) => !wanted.has(u) || cached.has(u));
 }
 
-// The wanted uids inside a set of shards, for reporting what a failed run didn't cache.
+// failedUidsOf returns failed suttas, counting each once across translations.
 function failedUidsOf(shards: ShardEntry[], wanted: Set<string>): string[] {
-  return [...new Set(shards.flatMap((s) => s.uids.filter((u) => wanted.has(u))))];
+  return [...new Set(shards.flatMap((s) => s.uids.filter((u) => wanted.has(u)).map(suttaUid)))];
 }
 
 // How many shards are fetched at once.
@@ -193,8 +200,8 @@ export async function prefetchSearchText(searchVersion: string, signal?: AbortSi
   }
 }
 
-// Downloads the sutta text for `uids`, one failed pass retried once. `searchVersion` also brings the
-// search blobs down, so a downloaded canon is searchable offline as well as readable.
+// prefetchAllSuttas downloads every translation of `uids`, retrying failed shards once.
+// `searchVersion` also brings the search blobs down for offline search.
 export async function prefetchAllSuttas(
   uids: string[],
   opts: {
@@ -212,10 +219,10 @@ export async function prefetchAllSuttas(
   const searchText = searchVersion ? prefetchSearchText(searchVersion, signal) : null;
 
   const [manifest, cache] = await Promise.all([fetchManifest(signal), caches.open(SUTTA_TEXT_CACHE)]);
-  const wanted = new Set(uids);
-  const cached = force ? new Set<string>() : await cachedUidSet(cache, uids);
+  const requested = new Set(uids);
+  const wanted = new Set(manifest.shards.flatMap((s) => s.uids.filter((u) => requested.has(suttaUid(u)))));
+  const cached = force ? new Set<string>() : await cachedUidSet(cache, [...wanted]);
 
-  // Only the shards holding at least one wanted uid.
   const relevantShards = manifest.shards.filter((s) => s.uids.some((u) => wanted.has(u)));
   const totalBytes = relevantShards.reduce((n, s) => n + s.bytes, 0);
   const doneBytes = { n: relevantShards.filter((s) => shardSatisfied(s, wanted, cached)).reduce((n, s) => n + s.bytes, 0) };
@@ -328,13 +335,13 @@ export interface OfflineStatus {
   total: number;
 }
 
-// How many of `uids` are cached, for Settings' offline-availability line. Remembers its answer for
-// `lastOfflineStatus`.
-export async function estimateOfflineStatus(uids: string[]): Promise<OfflineStatus> {
+// estimateOfflineStatus counts suttas with every offered translation cached and remembers the result.
+export async function estimateOfflineStatus(uids: string[], suttas: SuttaMap = {}): Promise<OfflineStatus> {
   if (!('caches' in window)) return { cached: 0, total: uids.length };
   const cache = await caches.open(SUTTA_TEXT_CACHE);
-  const cached = await cachedUidSet(cache, uids);
-  const status = { cached: cached.size, total: uids.length };
+  const paths = uids.map((uid) => [uid, ...Object.keys(suttas[uid]?.by ?? {}).map((by) => `${by}/${uid}`)]);
+  const cached = await cachedUidSet(cache, paths.flat());
+  const status = { cached: paths.filter((translations) => translations.every((p) => cached.has(p))).length, total: uids.length };
   try {
     localStorage.setItem(OFFLINE_STATUS_KEY, JSON.stringify(status));
   } catch {

@@ -62,6 +62,10 @@ A highlight is **immutable**. Recolouring one is a delete plus a new highlight; 
 The device works out which highlights a new selection displaces — always whole ones — and names them
 in the write, so replaying it later means the same thing.
 
+A highlight belongs to the translation it was made in, since its offsets count characters of that
+translation's English; one that names no translation is Sujato's. Displacing and erasing stay
+within the translation, and each text paints only its own highlights.
+
 ### Anchored on segment keys
 
 A highlight is one span between two points, each a segment key (SuttaCentral's own line id, such as
@@ -77,8 +81,8 @@ overlaps with no text loaded; the corpus build refuses a document whose keys are
   again if the line comes back.
 - Overlapping highlights made on two devices are both kept; the newer one paints on top.
 - A mirror from an older build, holding highlights by position, is converted to keys as each
-  sutta's text loads. That stays for good: a reader who never signed in has no server copy to fall
-  back on.
+  sutta's text loads in Sujato's translation, the only one such highlights can be in. That stays
+  for good: a reader who never signed in has no server copy to fall back on.
 
 ## Lists repair themselves on read
 

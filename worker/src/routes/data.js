@@ -68,6 +68,7 @@ async function buildUserData(db, userId) {
       // by (mtime, id) — see lib/highlights.ts.
       data: {
         suttaId: row.sutta_id,
+        by: row.translator,
         k0: row.k0,
         o0: row.o0,
         k1: row.k1,

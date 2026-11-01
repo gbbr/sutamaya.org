@@ -546,9 +546,11 @@ a {
   }
 }
 
-/* A link in a translator's note: the note's own colour, with a thin, faint underline. */
+/* A link in a translator's note or text: the words' own colour, with a thin, faint underline. */
 [data-reveal='note'] a,
-[data-reveal='note'] a:hover {
+[data-reveal='note'] a:hover,
+.text-link,
+.text-link:hover {
   color: inherit;
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -556,10 +558,18 @@ a {
   text-underline-offset: 2px;
 }
 
-/* A note's link in the native apps: a long press neither offers nor lifts it, there being no tabs
-   to open it in. */
+/* A translator's bulleted list: the bullet in the shell's face, whose "•" is the same size and
+   height whatever face the reading is set in. */
+.text-list > li::marker {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* A translator's link in the native apps: a long press neither offers nor lifts it, there being no
+   tabs to open it in. */
 [data-platform='ios'] [data-reveal='note'] a,
-[data-platform='android'] [data-reveal='note'] a {
+[data-platform='android'] [data-reveal='note'] a,
+[data-platform='ios'] .text-link,
+[data-platform='android'] .text-link {
   -webkit-touch-callout: none;
   -webkit-user-drag: none;
 }

@@ -6,6 +6,7 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 import { BRAND_ICONS } from '../scripts/lib/brandIcons.mjs';
+import { SUTTA_TEXT_CACHE, SUTTA_TEXT_MAX_ENTRIES } from './src/lib/corpus/cacheConfig';
 
 const landingPath = fileURLToPath(new URL('./public/landing.html', import.meta.url));
 
@@ -208,8 +209,8 @@ export default defineConfig({
             urlPattern: /\/data\/text\/.*\.json$/,
             handler: 'StaleWhileRevalidate',
             options: {
-              cacheName: 'sutta-text',
-              expiration: { maxEntries: 8000, maxAgeSeconds: 60 * 60 * 24 * 365 },
+              cacheName: SUTTA_TEXT_CACHE,
+              expiration: { maxEntries: SUTTA_TEXT_MAX_ENTRIES, maxAgeSeconds: 60 * 60 * 24 * 365 },
             },
           },
           {

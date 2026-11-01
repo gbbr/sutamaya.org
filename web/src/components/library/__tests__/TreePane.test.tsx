@@ -944,15 +944,13 @@ describe('offline text update nudge', () => {
     expect(screen.queryByText(updateText)).not.toBeInTheDocument();
   });
 
-  // The two banners share one slot, so "not fully cached yet" has to win — telling someone their
-  // copy is out of date is meaningless when they haven't got a complete one.
-  it('defers to the download nudge while the corpus is still incomplete', async () => {
+  it.each([false, true])('offers an update when a completed download lacks new translations (standalone: %s)', async (standalone) => {
     stale();
-    vi.mocked(isStandaloneDisplay).mockReturnValue(true); // the download nudge it defers to is PWA-only
+    vi.mocked(isStandaloneDisplay).mockReturnValue(standalone);
     vi.mocked(estimateOfflineStatus).mockResolvedValue({ cached: 3, total: 10 });
     renderHarness();
-    expect(await screen.findByText(downloadText)).toBeInTheDocument();
-    expect(screen.queryByText(updateText)).not.toBeInTheDocument();
+    expect(await screen.findByText(updateText)).toBeInTheDocument();
+    expect(screen.queryByText(downloadText)).not.toBeInTheDocument();
   });
 
   // Unlike the download nudge, this one is not PWA-gated: CacheFirst serves the same stale text in

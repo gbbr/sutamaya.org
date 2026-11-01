@@ -16,7 +16,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildTextIndex, searchCorpusAndText, segmentKeys, type TextIndex, type SearchMap } from '../text';
+import { buildTextIndex, pageIndex, searchCorpusAndText, segmentKeys, type TextIndex, type SearchMap } from '../text';
 import type { Corpus } from '../../types';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..', '..', '..');
@@ -46,8 +46,8 @@ const golden = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts', 'search-gol
 
 let corpus: Corpus;
 let index: TextIndex;
-// Each sutta's segment keys, as its text file lists them.
-const textKeys = new Map<string, string[]>();
+// Each sutta's segments, as its text file lists them.
+const texts = new Map<string, Array<{ key: string; en: string; pali: string }>>();
 
 beforeAll(() => {
   const out = fs.mkdtempSync(path.join(os.tmpdir(), 'search-golden-'));
@@ -63,8 +63,12 @@ beforeAll(() => {
   const map = JSON.parse(fs.readFileSync(path.join(search, `map.${corpus.searchVersion}.json`), 'utf8')) as SearchMap;
   index = buildTextIndex(read('en'), read('pa'), map);
   for (const uid of index.uids) {
-    const segs = JSON.parse(fs.readFileSync(path.join(out, 'text', `${uid}.json`), 'utf8')) as Array<{ key: string }>;
-    textKeys.set(uid, segs.map((s) => s.key));
+    const segs = JSON.parse(fs.readFileSync(path.join(out, 'text', `${uid}.json`), 'utf8')) as Array<{
+      key: string;
+      en: string;
+      pali: string;
+    }>;
+    texts.set(uid, segs.map(({ key, en, pali }) => ({ key, en, pali })));
   }
   fs.rmSync(out, { recursive: true, force: true });
 }, 60000);
@@ -120,7 +124,23 @@ describe('golden query set — pending', () => {
 // text.ts's expandKeys, one format on two sides of the workspace line.
 describe('the search map (real data)', () => {
   it("gives back every sutta's segment keys as its text lists them", () => {
-    const differing = index.uids.filter((uid, doc) => segmentKeys(index, doc).join(' ') !== textKeys.get(uid)!.join(' '));
+    const differing = index.uids.filter(
+      (uid, doc) => segmentKeys(index, doc).join(' ') !== texts.get(uid)!.map((s) => s.key).join(' ')
+    );
+    expect(differing).toEqual([]);
+  });
+});
+
+// The search text's lines are written by scripts/build-corpus.mjs and, for a translation it doesn't
+// hold, by text.ts's pageIndex from the document on screen.
+describe('pageIndex (real data)', () => {
+  it("writes every sutta's text as the search text holds it", () => {
+    const slice = (blob: string, starts: number[], doc: number) =>
+      blob.slice(starts[doc], doc + 1 < starts.length ? starts[doc + 1] - 1 : blob.length);
+    const differing = index.uids.filter((uid, doc) => {
+      const page = pageIndex(uid, texts.get(uid)!);
+      return page.en !== slice(index.en, index.enStarts, doc) || page.pa !== slice(index.pa, index.paStarts, doc);
+    });
     expect(differing).toEqual([]);
   });
 });

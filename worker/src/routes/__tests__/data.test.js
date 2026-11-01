@@ -93,6 +93,55 @@ describe('routes/data.js (D1)', () => {
     expect(body.highlights['sn1.1'][0].m).toBeTruthy();
   });
 
+  it.each([undefined, 'bodhi', 'thanissaro'])('stores and snapshots highlights by %s', async (by) => {
+    const { cookie, userId } = await signIn();
+    const before = await api('/api/data', { cookie });
+    const span = { k0: 'mn1:1.1', o0: 0, k1: 'mn1:1.1', o1: 5 };
+    const result = await write(cookie, { type: 'highlight', suttaId: 'mn1', by, span, color: 'yellow', g: 'h', erase: [] });
+    expect(result).toEqual({ ok: true });
+    const row = await env.DB.prepare('SELECT translator FROM highlights WHERE id = ? AND user_id = ?').bind('h', userId).first();
+    expect(row.translator).toBe(by ?? null);
+
+    const res = await api('/api/data', { cookie, headers: { 'If-None-Match': before.headers.get('ETag') } });
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    const [h] = body.highlights.mn1;
+    expect(h).toEqual({ id: 'h', ...span, c: 'yellow', m: expect.any(String), ...(by ? { by } : {}) });
+    expect(body.lists.find((l) => l.id === 'auto-highlights').items).toEqual(['mn1']);
+    const exported = await (await api('/api/data/export', { cookie })).json();
+    expect(exported.highlights).toEqual(body.highlights);
+  });
+
+  it.each(['sujato', 'other', '', null, 42, {}])('refuses highlight translator %j before applying an erase', async (by) => {
+    const { cookie } = await signIn();
+    const item = { type: 'highlight', suttaId: 'mn1', span: { k0: 'mn1:1.1', o0: 0, k1: 'mn1:1.1', o1: 5 }, color: 'yellow', g: 'keep', erase: [] };
+    await write(cookie, item);
+    expect(await write(cookie, { ...item, by, g: 'bad', erase: ['keep'] })).toEqual({ error: 'invalid_translator', status: 400 });
+    const body = await (await api('/api/data', { cookie })).json();
+    expect(body.highlights.mn1.map((h) => h.id)).toEqual(['keep']);
+  });
+
+  it.each([undefined, 'bodhi', 'thanissaro'])('erases only the named sutta, account and translation: %s', async (by) => {
+    const { cookie } = await signIn();
+    const other = await signIn();
+    const span = { k0: 'mn1:1.1', o0: 0, k1: 'mn1:1.1', o1: 5 };
+    const item = { type: 'highlight', suttaId: 'mn1', span, color: 'yellow', erase: [], mtime: '2026-01-01T00:00:00.000Z|a' };
+    for (const translator of [undefined, 'bodhi', 'thanissaro']) {
+      await write(cookie, { ...item, by: translator, g: translator ?? 'sujato' });
+    }
+    await write(cookie, { ...item, by, g: 'other-sutta', suttaId: 'mn2' });
+    await write(other.cookie, { ...item, by, g: by ?? 'sujato' });
+    expect(await write(cookie, {
+      ...item, by, color: null, erase: ['sujato', 'bodhi', 'thanissaro', 'other-sutta'], mtime: '2026-01-02T00:00:00.000Z|a',
+    })).toEqual({ ok: true });
+
+    const body = await (await api('/api/data', { cookie })).json();
+    expect(body.highlights.mn1.map((h) => h.id).sort()).toEqual(['sujato', 'bodhi', 'thanissaro'].filter((id) => id !== (by ?? 'sujato')).sort());
+    expect(body.highlights.mn2).toHaveLength(1);
+    const otherBody = await (await api('/api/data', { cookie: other.cookie })).json();
+    expect(otherBody.highlights.mn1).toHaveLength(1);
+  });
+
   it('membership reflects a real list a sutta was added to', async () => {
     const { cookie } = await signIn();
     // A create and the membership op that names it, in one push — the ordinary shape of a flush,

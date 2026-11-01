@@ -10,7 +10,7 @@
 // — to hedge against iOS discarding the tab outright, which is rarer and cheaper: the app
 // relaunches from the precache and restores its location and its scroll.
 import type { Corpus } from '../types';
-import type { RankedHit, TextSearchStatus } from './text';
+import type { RankedHit, TextIndex, TextSearchStatus } from './text';
 import type { SearchRequest, SearchResponse } from './worker';
 
 let worker: Worker | null = null;
@@ -24,6 +24,7 @@ let queued: {
   query: string;
   meta: RankedHit[];
   readingId?: string;
+  page?: TextIndex;
   resolve: (hits: RankedHit[] | null) => void;
 } | null = null;
 
@@ -74,7 +75,7 @@ function pump(): void {
   const job = queued;
   queued = null;
   awaiting = { id: ++lastId, resolve: job.resolve };
-  send({ type: 'search', id: awaiting.id, query: job.query, meta: job.meta, readingId: job.readingId });
+  send({ type: 'search', id: awaiting.id, query: job.query, meta: job.meta, readingId: job.readingId, page: job.page });
 }
 
 function send(msg: SearchRequest): void {
@@ -111,13 +112,15 @@ export function searchText(
   query: string,
   meta: RankedHit[],
   // The sutta on screen, in the Reader's own search.
-  readingId?: string
+  readingId?: string,
+  // The translation on screen where it isn't Sujato's (text.ts's pageIndex).
+  page?: TextIndex
 ): Promise<RankedHit[] | null> {
   if (!worker || status !== 'ready') return Promise.resolve(null);
   return new Promise((resolve) => {
     // Only the newest waiting search is worth running; an older one has been typed over already.
     queued?.resolve(null);
-    queued = { query, meta, readingId, resolve };
+    queued = { query, meta, readingId, page, resolve };
     pump();
   });
 }

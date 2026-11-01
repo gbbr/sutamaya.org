@@ -16,6 +16,7 @@ import {
 import { splitPaliWords, stripPunct, lookupWord, shardFor } from './lib/paliWords.js';
 import { compareSegmentKeys } from './lib/segmentKeys.js';
 import { addDefinitions } from './lib/dictionaryAdditions.js';
+import { TRANSLATORS, loadTranslation } from './lib/translations.js';
 import { red, green, bold, dim } from './lib/dataSync.js';
 
 // The build's output vocabulary: `step` heads a phase, `detail` reports its counts, `ok` marks a
@@ -123,30 +124,50 @@ detail(
 // Every uid the reader opens, with the document holding it.
 const readable = uidDocuments(sujatoFiles.keys());
 
-// Each linked document's segment keys, worked out the first time a note links to it.
+// Bodhi's and Ṭhānissaro's texts, each translator's by his id (lib/translations.js).
+const translations = Object.fromEntries(TRANSLATORS.map((by) => [by, loadTranslation(DATA, by)]));
+for (const [by, { english, offered }] of Object.entries(translations)) {
+  const strays = [...english.keys()].filter((doc) => !sujatoFiles.has(doc));
+  if (strays.length) throw new Error(`data/${by} has texts the app doesn't: ${strays.join(', ')}`);
+  detail(`${by}: ${offered.size} of his ${english.size} texts offered`);
+}
+
+// Each linked document's segment keys, by translator and document, worked out the first time a
+// note links to it.
 const linkedKeys = new Map();
 
-// Returns the segment keys document `doc` is built with.
-function keysOf(doc) {
-  let keys = linkedKeys.get(doc);
+// Returns the segment keys document `doc` is built with, in the translation `by` (null for Sujato's).
+function keysOf(doc, by) {
+  const id = `${by ?? ''}/${doc}`;
+  let keys = linkedKeys.get(id);
   if (!keys) {
-    const segs = buildBodySegments(loadSegMap(paliFiles.get(doc)), loadSegMap(sujatoFiles.get(doc)), loadSegMap(htmlFiles.get(doc)), new Map());
-    linkedKeys.set(doc, (keys = new Set(segs.map((s) => s.key))));
+    const translation = by && translations[by];
+    const english = loadSegMap(translation ? translation.english.get(doc) : sujatoFiles.get(doc));
+    const segs = buildBodySegments(loadSegMap(paliFiles.get(doc)), english, loadSegMap(htmlFiles.get(doc)), new Map(), null, translation?.covered);
+    linkedKeys.set(id, (keys = new Set(segs.map((s) => s.key))));
   }
   return keys;
 }
 
-// Returns the reader path a note's link opens, or null for a link to anything the corpus doesn't
-// hold. It names the link's line where the text has that line or a later one of its sutta to land
-// on (ReaderPage's segmentAt), and otherwise opens the sutta at the top.
-function notePath(href) {
+// Returns the reader path a link opens, in the translation `by` where he translates the text it
+// cites and in Sujato's otherwise, or null for a link to anything the corpus doesn't hold. It names
+// the link's line where the text has that line or a later one of its sutta to land on (ReaderPage's
+// segmentAt), and otherwise opens the sutta at the top.
+function linkPath(href, by) {
   const target = suttaCentralTarget(href);
   const doc = target && readable.get(target.uid);
   if (!doc) return null;
+  const shown = by && translations[by].offered.has(doc) ? by : null;
   const key = `${target.uid}:${target.line}`;
-  const keys = target.line ? keysOf(doc) : null;
+  const keys = target.line ? keysOf(doc, shown) : null;
   const lands = keys && (keys.has(key) || [...keys].some((k) => k.startsWith(`${target.uid}:`) && compareSegmentKeys(k, key) > 0));
-  return `/read/${target.uid}${lands ? `?at=${target.line}` : ''}`;
+  const query = [shown && `by=${shown}`, lands && `at=${target.line}`].filter(Boolean).join('&');
+  return `/read/${target.uid}${query ? `?${query}` : ''}`;
+}
+
+// Returns the reader path a link in Sujato's notes opens (linkPath).
+function notePath(href) {
+  return linkPath(href, null);
 }
 
 const nameIndexCache = new Map();
@@ -169,6 +190,7 @@ function blurbIndexFor(collection) {
 
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(OUT_TEXT, { recursive: true });
+for (const by of TRANSLATORS) fs.mkdirSync(path.join(OUT_TEXT, by), { recursive: true });
 fs.mkdirSync(OUT_SHARDS, { recursive: true });
 fs.mkdirSync(OUT_SEARCH, { recursive: true });
 
@@ -178,7 +200,8 @@ let leafCount = 0;
 // Every Pali token the reader can tap, gathered as the leaves are written.
 const tappableWords = new Set();
 
-// Per-uid digest of the bytes written to text/, folded into corpus.json's `dataVersion`.
+// Digest of each file written to text/, by its path there without ".json", folded into
+// corpus.json's `dataVersion`.
 const textDigests = new Map();
 
 // Target size of one text shard: the bundles Settings' bulk offline download fetches instead of
@@ -188,6 +211,15 @@ let shardBuf = [];
 let shardBufBytes = 0;
 let shardIndex = 0;
 const shardManifest = [];
+
+// addText keeps ordinary reads and offline downloads on the same document bytes.
+function addText(textPath, json) {
+  fs.writeFileSync(path.join(OUT_TEXT, `${textPath}.json`), json);
+  textDigests.set(textPath, sha256(json));
+  shardBuf.push([textPath, json]);
+  shardBufBytes += Buffer.byteLength(json);
+  if (shardBufBytes >= SHARD_TARGET_BYTES) flushShard();
+}
 
 function flushShard() {
   if (shardBuf.length === 0) return;
@@ -243,6 +275,7 @@ function searchKeys(segs) {
 }
 
 // Adds one sutta's segments to the search blobs, and records where it starts in each and its keys.
+// web/src/lib/search/text.ts's pageIndex writes the translation on screen the same way.
 function addToSearchBlobs(uid, segs) {
   searchMap.push([uid, searchEnChars, searchPaChars, searchKeys(segs)]);
   pushSearchLine(PARA_MARK, PARA_MARK);
@@ -257,6 +290,67 @@ function addToSearchBlobs(uid, segs) {
   }
 }
 
+// Throws unless a document's segment keys ascend in the order it is read in. A highlight is stored
+// as the keys of the segments it starts and ends on, and the reader decides what a new selection
+// overlaps by comparing those keys alone — it has no text loaded in the offline mirror, only the
+// highlights.
+function assertKeyOrder(name, segs) {
+  for (let i = 1; i < segs.length; i++) {
+    if (compareSegmentKeys(segs[i - 1].key, segs[i].key) >= 0) {
+      throw new Error(
+        `${name}: segment keys are out of document order — ${segs[i - 1].key} is not before ${segs[i].key}.\n` +
+          'Highlights compare keys to decide what a selection overlaps (web/src/lib/corpus/segmentKeys.ts).'
+      );
+    }
+  }
+}
+
+// Returns a document's segments as text/ stores them.
+function textJson(segs) {
+  return JSON.stringify(
+    segs.map(({ key, pali, en, speaker, role, headingLevel, paragraphEnd, note, headings, speakers, links, blocks }) => ({
+      key,
+      pali,
+      en,
+      ...(speaker ? { speaker } : null),
+      ...(role ? { role } : null),
+      ...(paragraphEnd ? { pe: 1 } : null),
+      ...(headingLevel ? { headingLevel } : null),
+      ...(note ? { note } : null),
+      ...(headings ? { headings } : null),
+      ...(speakers ? { speakers } : null),
+      ...(links ? { links } : null),
+      ...(blocks ? { blocks } : null),
+    }))
+  );
+}
+
+// Writes a document's text in each translation offered for it besides Sujato's, and returns the
+// page each was published on, by translator.
+function buildTranslations(uid, paliMap, htmlMap) {
+  const sources = {};
+  for (const [by, translation] of Object.entries(translations)) {
+    const source = translation.offered.get(uid);
+    if (!source) continue;
+    const segs = buildBodySegments(
+      paliMap,
+      loadSegMap(translation.english.get(uid)),
+      htmlMap,
+      loadSegMap(translation.notes.get(uid)),
+      (href) => linkPath(href, by),
+      translation.covered
+    );
+    assertKeyOrder(`${by}/${uid}`, segs);
+    for (const seg of segs) {
+      if (seg.pali) for (const word of splitPaliWords(seg.pali)) tappableWords.add(word);
+    }
+    const json = textJson(segs);
+    addText(`${by}/${uid}`, json);
+    sources[by] = source;
+  }
+  return sources;
+}
+
 function buildLeaf(uid, nodeId, collection) {
   const names = nameIndexFor(collection);
   const blurbs = blurbIndexFor(collection);
@@ -267,18 +361,7 @@ function buildLeaf(uid, nodeId, collection) {
   const htmlMap = loadSegMap(htmlFiles.get(uid));
   const notesMap = loadSegMap(notesFiles.get(uid));
   const segs = buildBodySegments(paliMap, sujatoMap, htmlMap, notesMap, notePath);
-  // A highlight is stored as the keys of the segments it starts and ends on, and the reader decides
-  // what a new selection overlaps by comparing those keys alone — it has no text loaded in the
-  // offline mirror, only the highlights. That only works while a document's keys ascend in the
-  // order it is read in, so the build refuses to emit one where they don't.
-  for (let i = 1; i < segs.length; i++) {
-    if (compareSegmentKeys(segs[i - 1].key, segs[i].key) >= 0) {
-      throw new Error(
-        `${uid}: segment keys are out of document order — ${segs[i - 1].key} is not before ${segs[i].key}.\n` +
-          'Highlights compare keys to decide what a selection overlaps (web/src/lib/corpus/segmentKeys.ts).'
-      );
-    }
-  }
+  assertKeyOrder(uid, segs);
   // The exact strings SegmentedText renders as tappable `.pw` spans.
   for (const seg of segs) {
     if (seg.pali) for (const word of splitPaliWords(seg.pali)) tappableWords.add(word);
@@ -286,24 +369,11 @@ function buildLeaf(uid, nodeId, collection) {
   const words = segs.reduce((n, s) => n + (s.en ? s.en.split(/\s+/).filter(Boolean).length : 0), 0);
   const min = Math.max(1, Math.round(words / 200));
 
-  const segsJson = JSON.stringify(
-    segs.map(({ key, pali, en, role, headingLevel, note }) => ({
-      key,
-      pali,
-      en,
-      ...(role ? { role } : null),
-      ...(headingLevel ? { headingLevel } : null),
-      ...(note ? { note } : null),
-    }))
-  );
-  fs.writeFileSync(path.join(OUT_TEXT, `${uid}.json`), segsJson);
-  textDigests.set(uid, sha256(segsJson));
+  const segsJson = textJson(segs);
+  addText(uid, segsJson);
   addToSearchBlobs(uid, segs);
 
-  shardBuf.push([uid, segsJson]);
-  shardBufBytes += Buffer.byteLength(segsJson);
-  if (shardBufBytes >= SHARD_TARGET_BYTES) flushShard();
-
+  const by = buildTranslations(uid, paliMap, htmlMap);
   suttas[uid] = {
     ref: formatRef(uid),
     node: nodeId,
@@ -311,6 +381,7 @@ function buildLeaf(uid, nodeId, collection) {
     pali: headerTitle(paliMap, uid) || names.pali.get(uid) || formatRef(uid),
     blurb: stripTags(blurbs.get(uid) || ''),
     min,
+    ...(Object.keys(by).length ? { by } : null),
   };
   leafCount += 1;
 }
@@ -575,13 +646,14 @@ detail(`${headwords.length} headwords in ${dictShards.length} shards`);
   );
 }
 
-// Two of the three versions corpus.json carries, kept apart so a reworded sutta doesn't invalidate
-// the dictionary. Sorting by uid keeps dataVersion independent of directory-walk order.
+// dataVersion covers every translation and the offline download format; see docs/corpus.md's
+// "What the build writes". Sorting by path keeps it independent of directory-walk order.
 const dataVersion = sha256(
-  [...textDigests]
-    .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
-    .map(([uid, digest]) => `${uid}:${digest}`)
-    .join('\n')
+  'text-shards-v2\n' +
+    [...textDigests]
+      .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
+      .map(([uid, digest]) => `${uid}:${digest}`)
+      .join('\n')
 );
 const dictionaryVersion = sha256(dpdJson);
 
@@ -622,7 +694,7 @@ flushShard();
 const totalShardBytes = shardManifest.reduce((n, s) => n + s.bytes, 0);
 fs.writeFileSync(
   path.join(OUT_SHARDS, 'manifest.json'),
-  JSON.stringify({ totalBytes: totalShardBytes, totalUids: leafCount, shards: shardManifest })
+  JSON.stringify({ totalBytes: totalShardBytes, totalUids: textDigests.size, shards: shardManifest })
 );
 detail(`${shardManifest.length} text shards (${(totalShardBytes / 1e6).toFixed(1)} MB) for offline bulk download`);
 

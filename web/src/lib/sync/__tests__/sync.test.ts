@@ -6,6 +6,7 @@ import {
   queueSiblingOrder,
   renameListRecord,
   setNoteRecord,
+  writeHighlightRecord,
   type MirrorState,
 } from '../mirror';
 import { flushMirror } from '../sync';
@@ -51,6 +52,16 @@ beforeEach(() => {
 });
 
 describe('flushMirror', () => {
+  it.each(['sujato', 'bodhi', 'thanissaro'] as const)('pushes the translation of a %s highlight', async (by) => {
+    const span = { k0: 'dn1:1.1', o0: 0, k1: 'dn1:1.1', o1: 5 };
+    const state = writeHighlightRecord(emptyMirror('u1'), 'dn1', span, 'yellow', by);
+    await flushMirror(state);
+    expect(pushedItems()).toEqual([{
+      type: 'highlight', suttaId: 'dn1', span, color: 'yellow', g: expect.any(String), erase: [], mtime: expect.any(String),
+      ...(by === 'sujato' ? {} : { by }),
+    }]);
+  });
+
   it('stops on a status-less failure and leaves the whole queue for next time', async () => {
     dataApiPush.mockImplementation(() => Promise.reject(new Error('Failed to fetch')));
     const state = setNoteRecord(withQueuedAdd(), 'dn1', 'a note');

@@ -42,7 +42,7 @@ function latestIds(entries: { id: string; at: string }[], limit: number): string
 function highlightOf(record: HighlightRecord): Highlight[] {
   if (!record.color || typeof record.span?.k0 !== 'string') return [];
   const { k0, o0, k1, o1 } = record.span;
-  return [{ id: record.g, k0, o0, k1, o1, c: record.color, m: record.mtime }];
+  return [{ id: record.g, ...(record.by ? { by: record.by } : {}), k0, o0, k1, o1, c: record.color, m: record.mtime }];
 }
 
 // Document order, which the highlights panel lists in and the gutter's marks are drawn from, and

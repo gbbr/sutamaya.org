@@ -65,9 +65,9 @@ async function accountAlreadyGone(): Promise<boolean> {
 
 // Rough size of the whole offline download over the wire — sutta text, dictionary and search text,
 // as the compressed bundles they are fetched in.
-const TOTAL_DOWNLOAD_MB_ESTIMATE = 10;
+const TOTAL_DOWNLOAD_MB_ESTIMATE = 16;
 // Rough size the same content occupies on the device, where it is held uncompressed.
-const TOTAL_STORED_MB_ESTIMATE = 60;
+const TOTAL_STORED_MB_ESTIMATE = 80;
 
 // The shell colours one theme tile is drawn in, as literals rather than the `--paper`/`--treepane`/
 // `--ink` custom properties they mirror, since every tile renders in its own theme at once.
@@ -360,7 +360,7 @@ export function SettingsPage() {
     if (!corpus) return;
     let cancelled = false;
     const uids = flatSuttaOrder(corpus);
-    estimateOfflineStatus(uids)
+    estimateOfflineStatus(uids, corpus.suttas)
       .then((s) => {
         if (!cancelled) setCachedStatus(s);
       })
@@ -446,7 +446,7 @@ export function SettingsPage() {
       // download keeps reporting the offline copy as behind.
       if (failed.length === 0 && !controller.signal.aborted) recordCachedCorpusVersion('data', corpus.dataVersion);
       if (dictionaryOk) recordCachedCorpusVersion('dictionary', corpus.dictionaryVersion);
-      setCachedStatus(await estimateOfflineStatus(uids));
+      setCachedStatus(await estimateOfflineStatus(uids, corpus.suttas));
     } catch (e) {
       console.error('Offline download failed', e);
     } finally {
@@ -677,7 +677,7 @@ export function SettingsPage() {
                         : 'Checking how much is available offline…'}
                     </p>
                     <p className="mt-2">
-                      Downloading all content enables the app to work fully offline. It downloads about{' '}
+                      Downloading all content includes every translation and enables the app to work fully offline. It downloads about{' '}
                       {TOTAL_DOWNLOAD_MB_ESTIMATE} MB and uses about {TOTAL_STORED_MB_ESTIMATE} MB on this
                       device.
                     </p>

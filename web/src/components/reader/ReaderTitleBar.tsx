@@ -12,7 +12,8 @@ interface ReaderTitleBarProps {
   // The sutta's own title, the bar's stand-in once it scrolls away.
   headingRef: RefObject<HTMLElement>;
   title: string;
-  // The bar's top edge, the bottom of the Reader's header.
+  // The bar's top edge: under the Reader's header rule, which covers it, so no seam can open
+  // between the two where the safe area and UI scale put the rule on a fraction of a pixel.
   top: string;
   theme: ThemeColors;
 }
@@ -76,10 +77,13 @@ export function ReaderTitleBar({ scrollRef, headingRef, title, top, theme }: Rea
     <div className="absolute overflow-hidden pointer-events-none pb-6" style={{ top, left: 'var(--safe-left)', right: 'var(--safe-right)' }}>
       <button
         data-component="ReaderTitleBar"
-        className="pointer-events-auto flex w-full h-9 items-center gap-4 px-5 transition-[transform,visibility] duration-200 ease-out motion-reduce:transition-none"
+        className="pointer-events-auto flex w-full h-9 items-center gap-4 px-5 backdrop-blur-xl backdrop-saturate-150 transition-[transform,visibility] duration-300 ease-out motion-reduce:transition-none"
         style={{
-          // The theme's tint over the page colour, opaque, so the bar reads as its own surface.
-          background: `linear-gradient(${theme.tint}, ${theme.tint}), ${theme.bg}`,
+          // The theme's tint over the page colour, translucent over a blur of the text beneath, as an
+          // iOS bar is.
+          background: `linear-gradient(${theme.tint}, ${theme.tint}), color-mix(in srgb, ${theme.bg} 75%, transparent)`,
+          // The header's rule along its foot, setting it off from the text in every theme.
+          borderBottom: `1px solid ${theme.rule}`,
           boxShadow: '0 6px 16px rgba(0,0,0,.1)',
           transform: shown ? undefined : 'translateY(-100%)',
           visibility: shown ? undefined : 'hidden',

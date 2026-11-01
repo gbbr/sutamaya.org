@@ -124,7 +124,7 @@ export function HeaderBanner() {
     // banner could plausibly show.
     if (!corpus || !(downloadNudgeEligible || textStale)) return;
     let cancelled = false;
-    estimateOfflineStatus(flatSuttaOrder(corpus)).then((s) => {
+    estimateOfflineStatus(flatSuttaOrder(corpus), corpus.suttas).then((s) => {
       if (!cancelled) setOfflineCachedStatus(s);
     });
     return () => {
@@ -132,10 +132,9 @@ export function HeaderBanner() {
     };
   }, [corpus, downloadNudgeEligible, textStale]);
   const fullyCached = !!offlineCachedStatus && offlineCachedStatus.cached >= offlineCachedStatus.total;
-  // Whether the corpus is fully cached is what makes the two offline nudges exclusive: download
-  // it, or, once it is downloaded, refresh a copy that has fallen behind.
-  const showOfflineNudge = downloadNudgeEligible && !nudgeDismissed && !!offlineCachedStatus && !fullyCached;
-  const showUpdateNudge = textStale && fullyCached && !!corpus && updateDismissedVersion !== corpus.dataVersion;
+  // textStale identifies a completed download even when this corpus adds translations it lacks.
+  const showOfflineNudge = downloadNudgeEligible && !textStale && !nudgeDismissed && !!offlineCachedStatus && !fullyCached;
+  const showUpdateNudge = textStale && !!corpus && updateDismissedVersion !== corpus.dataVersion;
 
   // Counted off the derived view rather than the mirror, so it means what the reader sees. Never in
   // the native app, which leaves sign-in to Settings.

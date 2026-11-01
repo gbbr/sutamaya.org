@@ -4,7 +4,7 @@ import { useLatest } from './useLatest';
 import { isNonEmpty, spansOverlap, type HlSpan } from '../lib/highlights';
 import { isAndroid, platformName } from '../lib/platform';
 import type { SegmentFile } from '../lib/corpus/corpus';
-import type { Highlight } from '../lib/types';
+import type { Highlight, Translator } from '../lib/types';
 
 // Android's WebView commits a selection through its own `ActionMode` bar and fires no usable
 // `touchend` on the text, so there the popup is opened from `selectionchange` once the pointer is
@@ -137,14 +137,14 @@ function spanKeepingEnd(range: Range, segments: SegmentFile[], kept: HlSpan): Hl
   return isNonEmpty(span) ? span : null;
 }
 
-export function useHighlightPopup(suttaId: string | undefined, highlights: Highlight[], segments: SegmentFile[] | null) {
+export function useHighlightPopup(suttaId: string | undefined, highlights: Highlight[], segments: SegmentFile[] | null, by: Translator = 'sujato') {
   const { setHighlightSpan } = useUserData();
   const [pop, setPop] = useState<PopState | null>(null);
 
-  // Closes the popup on a sutta change: its span names segments of the sutta it was opened in.
+  // The popup's span belongs to the sutta and translation it was opened in.
   useEffect(() => {
     setPop(null);
-  }, [suttaId]);
+  }, [suttaId, by]);
 
   // Opens the popup on an existing highlight, given its id, so a click anywhere in one recolours
   // or erases the whole of it — including a highlight spanning several segments.
@@ -243,12 +243,12 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
     async (color: string | null) => {
       if (!pop || !suttaId) return;
       // Writes to the offline mirror, so it can't fail on the network.
-      await setHighlightSpan(suttaId, pop.span, color);
+      await setHighlightSpan(suttaId, pop.span, color, by);
       setPop(null);
       const sel = window.getSelection();
       if (sel) sel.removeAllRanges();
     },
-    [pop, suttaId, setHighlightSpan]
+    [pop, suttaId, setHighlightSpan, by]
   );
 
   const close = useCallback(() => {

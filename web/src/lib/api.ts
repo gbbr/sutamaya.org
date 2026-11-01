@@ -132,7 +132,7 @@ export type PushItem =
   | { type: 'note'; suttaId: string; text: string; mtime: string }
   // Replayable because the client decides identity: `g` names the highlight being created, `erase`
   // the ones this selection displaces. See worker/src/lib/writes.js.
-  | { type: 'highlight'; suttaId: string; span: HlSpan; color: string | null; g: string; erase: string[]; mtime: string }
+  | { type: 'highlight'; suttaId: string; by?: Highlight['by']; span: HlSpan; color: string | null; g: string; erase: string[]; mtime: string }
   // `visited` has no separate mtime column: visitedAt is both the value stored and the guard the
   // write is conditional on.
   | { type: 'visited'; suttaId: string; visitedAt: string };

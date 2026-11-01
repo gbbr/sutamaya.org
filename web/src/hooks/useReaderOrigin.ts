@@ -1,3 +1,4 @@
+import type { Translator } from '../lib/types';
 import { useNavigate, type NavigateOptions } from 'react-router';
 import { transitionPage } from '../lib/ui/motion';
 import { tagIntent } from '../lib/navigation/routeIntent';
@@ -47,25 +48,28 @@ function persistReaderOrigin(
 // is the sutta the last jump from within the reader left: the way back, one jump at a time
 // (docs/web-app.md's "Routing"). It lasts as long as the history entry does.
 export function useReaderOrigin(
-  locationState: { from?: string; fromView?: 'tree' | 'list'; searchIds?: string[]; backTo?: string } | undefined
+  locationState: { from?: string; fromView?: 'tree' | 'list'; searchIds?: string[]; backTo?: string; backBy?: Translator; translationStep?: boolean; sujatoHasWayBack?: boolean } | undefined
 ) {
   const navigate = useNavigate();
   const from = locationState?.from;
   const fromView = locationState?.fromView;
   const searchIds = locationState?.searchIds;
   const backTo = locationState?.backTo;
+  const backBy = locationState?.backBy;
 
   // Turns the page to the sutta before or after, in the current one's place: the origin, the
-  // library search's run and the way back all carry over. Turning onto the sutta the way back leads
-  // to is that way back.
+  // library search's run and the way back all carry over. A consultation's way back to Sujato's
+  // text carries over only when that text has a way back of its own. Turning onto the sutta the way
+  // back leads to is that way back.
   function turnTo(nextSuttaId: string) {
-    if (nextSuttaId === backTo) {
+    if (nextSuttaId === backTo && (backBy ?? 'sujato') === 'sujato') {
       goBack();
       return;
     }
+    const wayBack = locationState?.translationStep && !locationState.sujatoHasWayBack ? undefined : backTo;
     persistReaderOrigin(nextSuttaId, from, fromView, searchIds);
     navigate(`/read/${encodeURIComponent(nextSuttaId)}`, {
-      state: { from, fromView, searchIds, backTo },
+      state: { from, fromView, searchIds, backTo: wayBack, backBy },
       replace: true,
     });
   }
@@ -80,15 +84,17 @@ export function useReaderOrigin(
   function jumpTo(
     nextSuttaId: string,
     passage?: Passage,
-    leaving?: string
+    leaving?: string,
+    by: Translator = 'sujato',
+    leavingBy: Translator = 'sujato'
   ) {
-    if (nextSuttaId === backTo && !passage) {
+    if (nextSuttaId === backTo && by === (backBy ?? 'sujato') && !passage) {
       goBack();
       return;
     }
     persistReaderOrigin(nextSuttaId, from, fromView, undefined);
-    const state = { from, fromView, backTo: leaving ?? backTo };
-    navigate(readLink(nextSuttaId, passage), {
+    const state = { from, fromView, backTo: leaving ?? backTo, backBy: leaving ? (leavingBy === 'sujato' ? undefined : leavingBy) : backBy };
+    navigate(readLink(nextSuttaId, passage, by), {
       // A fresh arrival every time, so a jump to where the reader already is scrolls and washes again.
       state: tagIntent(
         passage
@@ -96,6 +102,26 @@ export function useReaderOrigin(
           : state
       ),
       replace: !leaving,
+    });
+  }
+
+  /** chooseTranslation keeps one consultation step above the original Sujato reading. */
+  function chooseTranslation(suttaId: string, by: Translator, leavingBy: Translator) {
+    if (by === leavingBy) return;
+    if (by === 'sujato' && locationState?.translationStep) {
+      goBack();
+      return;
+    }
+    const replace = leavingBy !== 'sujato';
+    navigate(readLink(suttaId, undefined, by), {
+      replace,
+      state: tagIntent({
+        from, fromView, searchIds,
+        backTo: replace ? backTo : suttaId,
+        backBy: replace ? backBy : undefined,
+        translationStep: by !== 'sujato' && (!replace || locationState?.translationStep),
+        sujatoHasWayBack: replace ? locationState?.sujatoHasWayBack : !!backTo,
+      }),
     });
   }
 
@@ -127,5 +153,5 @@ export function useReaderOrigin(
     leaveReader(fallbackPath);
   }
 
-  return { from, fromView, searchIds, backTo, turnTo, jumpTo, goBack, closeToOrigin, leaveReader };
+  return { from, fromView, searchIds, backTo, turnTo, jumpTo, chooseTranslation, goBack, closeToOrigin, leaveReader };
 }

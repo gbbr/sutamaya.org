@@ -48,6 +48,7 @@ function openOverlay(query: string) {
       currentId="dn1"
       saved={leftAt(query)}
       onOpenSutta={vi.fn()}
+      onOpenPassage={vi.fn()}
       onClose={vi.fn()}
     />
   );
@@ -73,6 +74,10 @@ function Harness({
       onOpenSutta={(id, passage) => {
         setOpen(false);
         onOpenSutta(id, passage);
+      }}
+      onOpenPassage={(passage) => {
+        setOpen(false);
+        onOpenSutta('dn1', passage);
       }}
       onClose={() => setOpen(false)}
     />

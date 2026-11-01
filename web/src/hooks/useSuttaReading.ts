@@ -6,7 +6,7 @@ import { useHighlightPopup } from './useHighlightPopup';
 import { useScrollMemory, type ScrollRestore } from './useScrollMemory';
 import { highlightColors, highlightStart } from '../lib/highlights';
 import { segmentIndex } from '../lib/corpus/segmentKeys';
-import type { Highlight } from '../lib/types';
+import type { Highlight, Translator } from '../lib/types';
 import { getUiScale } from '../lib/ui/uiPrefs';
 import { animateScrollBy, computeSegmentScrollOffset, jumpScrollBy } from '../lib/reader/segmentScroll';
 
@@ -17,10 +17,10 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
   suttaId: string | undefined,
   // Namespaces the remembered scroll position, as `{prefix}:{suttaId}`.
   scrollKeyPrefix: string,
-  { restore = 'stored' }: { restore?: ScrollRestore } = {}
+  { restore = 'stored', by = 'sujato' }: { restore?: ScrollRestore; by?: Translator } = {}
 ) {
   const { highlights, ready: userDataReady, anchorHighlights } = useUserData();
-  const { segments, error, retry } = useSuttaText(suttaId);
+  const { segments, error, retry } = useSuttaText(suttaId, by);
   // Whether this opening is at a place rather than the top — one remembered on a return, or one the
   // arrival names — whose offset is right only on the text's final layout, so it also waits for the
   // text's fonts.
@@ -33,28 +33,29 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
   // which is every sutta once read. Before paint rather than after, so a converted highlight is
   // never briefly missing from a reading that has already drawn.
   useLayoutEffect(() => {
-    if (suttaId && segments) anchorHighlights(suttaId, segments);
-  }, [suttaId, segments, anchorHighlights]);
+    if (by === 'sujato' && suttaId && segments) anchorHighlights(suttaId, segments);
+  }, [suttaId, by, segments, anchorHighlights]);
   // This sutta's highlights, stable across renders, and only those naming segments this copy of
   // the sutta has: one naming a segment it lacks is kept in the account but shown nowhere, rather
   // than drawn somewhere its reader never put it, and appears whole on a copy that has it.
   // One map per loaded text rather than one per highlight, this running again on every edit the
   // reader makes anywhere in their data.
   const segIndex = useMemo(() => (segments ? segmentIndex(segments) : null), [segments]);
+  const allHighlights = (suttaId && highlights[suttaId]) || EMPTY_HIGHLIGHTS;
   const hlForSutta = useMemo(() => {
-    const all = (suttaId && highlights[suttaId]) || EMPTY_HIGHLIGHTS;
+    const all = allHighlights.filter((h) => (h.by ?? 'sujato') === by);
     if (!segments || !segIndex || !all.length) return all;
     const resolvable = all.filter((h) => highlightStart(h, segments, segIndex) !== null);
     return resolvable.length === all.length ? all : resolvable;
-  }, [suttaId, highlights, segments, segIndex]);
-  const popup = useHighlightPopup(suttaId, hlForSutta, segments);
+  }, [allHighlights, by, segments, segIndex]);
+  const popup = useHighlightPopup(suttaId, hlForSutta, segments, by);
   // The reading pane's scroll container, restored once the text and user data are both in, and on a
   // return the text's fonts too.
-  const scrollRef = useScrollMemory<T>(suttaId ? `${scrollKeyPrefix}:${suttaId}` : null, true, {
+  const scrollRef = useScrollMemory<T>(suttaId ? `${scrollKeyPrefix}:${suttaId}${by === 'sujato' ? '' : `:${by}`}` : null, true, {
     restore,
     readyToRestore: !!segments && !holdingPlace && userDataReady,
   });
-  const hlColors = useMemo(() => highlightColors(hlForSutta), [hlForSutta]);
+  const hlColors = useMemo(() => highlightColors(allHighlights), [allHighlights]);
 
   /** Scrolls one segment into view, or a named highlight within it. Stable across renders. */
   const scrollToSegment = useCallback((
@@ -70,7 +71,7 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
     // The named highlight's span inside the segment, when the caller passed one.
     const hlEl = highlightId && Array.from(segEl.querySelectorAll<HTMLElement>('[data-hl-id]')).find((s) => s.dataset.hlId === highlightId);
     // What to scroll to: that span, else the segment's wrapper — the Pali and English lines together.
-    const el = hlEl || segEl.parentElement || segEl;
+    const el = hlEl || segEl.closest<HTMLElement>('[id]') || segEl;
     // Scroll offset, in the units scrollTop takes at the current UI scale.
     const containerRect = container.getBoundingClientRect();
     const elRect = el.getBoundingClientRect();
@@ -80,5 +81,5 @@ export function useSuttaReading<T extends HTMLElement = HTMLDivElement>(
     else animateScrollBy(container, offset);
   }, [scrollRef]);
 
-  return { segments, error, retry, holdingPlace, hlForSutta, hlCount: hlForSutta.length, hlColors, scrollRef, scrollToSegment, ...popup };
+  return { segments, error, retry, holdingPlace, hlForSutta, hlCount: allHighlights.length, hlColors, scrollRef, scrollToSegment, ...popup };
 }

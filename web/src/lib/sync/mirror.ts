@@ -5,7 +5,7 @@ import type { SegmentFile } from '../corpus/corpus';
 import { nextMtime } from './mtime';
 import { randomId } from '../ids';
 import type { UserData } from '../api';
-import type { ListKind } from '../types';
+import type { Highlight, ListKind, Translator } from '../types';
 
 // The offline mirror: every list, note, highlight and visit this account has, as the client's own
 // durable copy rather than a cache of the last server response. Mutators here write to it and mark
@@ -56,6 +56,7 @@ export interface NoteRecord {
 export interface HighlightRecord {
   g: string;
   suttaId: string;
+  by?: Highlight['by'];
   span: HlSpan;
   color: string | null;
   erase: string[];
@@ -157,7 +158,7 @@ function isLegacy(data: HighlightRecord): boolean {
 export function anchorHighlights(state: MirrorState, suttaId: string, segments: SegmentFile[]): MirrorState {
   let highlights: Record<string, Stored<HighlightRecord>> | null = null;
   for (const [g, record] of Object.entries(state.highlights)) {
-    if (record.data.suttaId !== suttaId || !isLegacy(record.data)) continue;
+    if (record.data.suttaId !== suttaId || record.data.by !== undefined || !isLegacy(record.data)) continue;
     const endpoints = legacyEndpoints(record.data as LegacyHighlightRecord);
     // A start past the end of the text this device holds, or a record with no usable span at all:
     // no key names it, and inventing one would move the highlight somewhere its reader never put
@@ -344,9 +345,10 @@ export function writeHighlightRecord(
   state: MirrorState,
   suttaId: string,
   span: HlSpan,
-  color: string | null
+  color: string | null,
+  by: Translator = 'sujato'
 ): MirrorState {
-  const displaced = displacedIds(highlightsFor(state, suttaId), span);
+  const displaced = displacedIds(highlightsFor(state, suttaId).filter((h) => (h.by ?? 'sujato') === by), span);
   const highlights = { ...state.highlights };
   const erase: string[] = [];
   for (const g of displaced) {
@@ -362,7 +364,7 @@ export function writeHighlightRecord(
   const pushable = [...new Set(erase)];
   if (!color && !pushable.length) return { ...state, highlights };
   const g = randomId();
-  highlights[g] = { dirty: true, data: { g, suttaId, span, color, erase: pushable, mtime: nextMtime(), sent: false } };
+  highlights[g] = { dirty: true, data: { g, suttaId, ...(by === 'sujato' ? {} : { by }), span, color, erase: pushable, mtime: nextMtime(), sent: false } };
   return { ...state, highlights };
 }
 
@@ -520,14 +522,14 @@ export function applySnapshot(state: MirrorState, snapshot: UserData, pulled: Pu
   );
   const highlights: Record<string, Stored<HighlightRecord>> = {};
   for (const [suttaId, rows] of Object.entries(snapshot.highlights)) {
-    for (const { id, c, m, ...span } of rows) {
+    for (const { id, c, m, by, ...span } of rows) {
       if (pendingErase.has(id)) continue;
       // `span` is taken whole rather than field by field, so a row the account has not been
       // re-anchored yet arrives in the shape the server stored it in and anchorHighlights converts
       // it, exactly as one written by an older build on this device does.
       highlights[id] = {
         dirty: false,
-        data: { g: id, suttaId, span: span as HlSpan, color: c, erase: [], mtime: m, sent: true },
+        data: { g: id, suttaId, ...(by ? { by } : {}), span: span as HlSpan, color: c, erase: [], mtime: m, sent: true },
       };
     }
   }

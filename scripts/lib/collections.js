@@ -2,6 +2,8 @@
 // the tree and a document's segments with. Everything below the collection level — leaf titles
 // above all — is looked up from the data files instead.
 
+import { closingSpeaker, parseLine, takeClosingSpeaker } from './translations.js';
+
 export const NIKAYA_META = {
   dn: { label: 'Dīgha Nikāya', sub: 'Long Discourses' },
   mn: { label: 'Majjhima Nikāya', sub: 'Middle Discourses' },
@@ -299,38 +301,69 @@ export function paragraphOf(key) {
   return key.slice(0, colon + 1) + (dot === -1 ? afterColon : afterColon.slice(0, dot));
 }
 
+const PARAGRAPH_START_RE = /<(?:p|h[1-6]|li|blockquote)\b/;
+
+// Returns each line's paragraph as the Pali's markup opens them, and as each sutta of a batch opens
+// one, numbered in key order.
+export function markupParagraphs(keys, htmlMap) {
+  const paragraphs = new Map();
+  let n = 0;
+  let sutta = null;
+  for (const key of keys) {
+    const own = key.slice(0, key.indexOf(':'));
+    if (PARAGRAPH_START_RE.test(htmlMap.get(key) ?? '') || own !== sutta) n += 1;
+    sutta = own;
+    paragraphs.set(key, n);
+  }
+  return paragraphs;
+}
+
 // Returns one document's body segments, in Pali key order, each with its English, role and note.
 // Title lines, uddāna verses and lines with no English are left out, but a lone untranslated line's
 // Pali joins the line above it.
 export function buildBodySegments(
   paliMap,
-  sujatoMap,
+  englishMap,
   htmlMap,
   notesMap,
-  // The reader path a note's link opens (cleanNote).
-  readPath
+  // The reader path a note's or a line's link opens (cleanNote).
+  readPath,
+  // For another translator's text, the empty lines whose content the English above renders, which
+  // join it (covered.json). Given this, a line keeps its translator's markup (parseLine) and
+  // paragraphs come from the Pali's markup instead of the keys.
+  covered
 ) {
-  const orderedKeys = paliMap.size ? [...paliMap.keys()] : [...sujatoMap.keys()];
+  const orderedKeys = paliMap.size ? [...paliMap.keys()] : [...englishMap.keys()];
+  const printed = markupParagraphs(orderedKeys, htmlMap);
+  const paragraph = (key) => (covered ? printed.get(key) : paragraphOf(key));
   const segs = [];
+  // The segment before, across titles, which a printed paragraph ending after it marks.
+  let previous = null;
+  // The segment before, where a speaker label closes it, naming who speaks the next line.
+  let naming = null;
   // Whether this segment falls inside an unclosed gatha blockquote, for the stanzas whose
   // continuation lines carry no marker of their own.
   let insideGathaBlockquote = false;
   let insideUddana = false;
   // The segment the line before became, or null where that line was left out.
   let above = null;
+  // The sutta's last segment so far, which a covered line joins.
+  let last = null;
   // An untranslated line's Pali and the segment above it, joined if the next line is translated.
   let pendingJoin = null;
   for (const key of orderedKeys) {
     const segId = key.slice(key.indexOf(':') + 1);
     // nikaya/book/vagga/sutta title lines
     if (segId === '0' || segId.startsWith('0.')) {
-      above = pendingJoin = null;
+      above = pendingJoin = last = naming = null;
       continue;
     }
     const pali = (paliMap.get(key) || '').trim();
     // "<j>" is Bhikkhu Sujato's enjambment placeholder, not markup, and nothing renders it as a
     // line break.
-    let en = stripHtmlTags((sujatoMap.get(key) || '').replace(/<j>/g, ''));
+    const { en, speaker, headings, speakers, links, blocks } = covered
+      ? parseLine(englishMap.get(key) || '', readPath ?? (() => null))
+      : { en: stripHtmlTags((englishMap.get(key) || '').replace(/<j>/g, '')) };
     // Tracked even for a segment skipped below, so a blank one mid-stanza doesn't lose the state.
     const template = htmlMap.get(key);
     if (template && GATHA_OPEN_RE.test(template)) insideGathaBlockquote = true;
@@ -340,20 +373,26 @@ export function buildBodySegments(
     const uddana = insideUddana || (template && UDDANA_INTRO_RE.test(template));
     if (template && BLOCKQUOTE_CLOSE_RE.test(template)) insideUddana = false;
     if (uddana) {
-      above = pendingJoin = null;
+      above = pendingJoin = last = naming = null;
       continue;
     }
     let roleInfo = roleFor(template);
     if (!roleInfo && stillInsideGatha) roleInfo = { role: 'verse' };
     // Lines with no English: left out, a lone one's Pali joining the line above in its paragraph
-    // (docs/corpus.md's "A segment").
+    // (docs/corpus.md's "A segment"), and a covered one's joining the nearest translated line above.
     if (!en) {
       if (!pali) continue;
+      if (covered?.has(key)) {
+        if (!last) throw new Error(`${key} is in covered.json, but no line of its sutta above it is translated`);
+        last.pali = `${last.pali} ${pali}`.trim();
+        above = pendingJoin = null;
+        continue;
+      }
       const joinsAbove =
         above &&
         roleInfo?.role !== 'heading' &&
         roleInfo?.role !== 'end' &&
-        paragraphOf(key) === paragraphOf(above.key);
+        paragraph(key) === paragraph(above.key);
       pendingJoin = joinsAbove ? { seg: above, pali } : null;
       above = null;
       continue;
@@ -365,10 +404,19 @@ export function buildBodySegments(
       seg.role = roleInfo.role;
       if (roleInfo.headingLevel) seg.headingLevel = roleInfo.headingLevel;
     }
+    if (speaker) seg.speaker = speaker;
+    if (headings?.length) seg.headings = headings;
+    if (speakers?.length) seg.speakers = speakers;
+    if (links?.length) seg.links = links;
+    if (blocks?.length) seg.blocks = blocks;
     const rawNote = notesMap.get(key);
     if (rawNote && rawNote.trim()) seg.note = cleanNote(rawNote, readPath);
+    if (previous && printed.get(previous.key) !== printed.get(key)) previous.paragraphEnd = true;
+    if (naming && !seg.speaker) seg.speaker = takeClosingSpeaker(naming);
     segs.push(seg);
-    above = seg;
+    above = last = previous = seg;
+    naming = closingSpeaker(seg) ? seg : null;
   }
+  if (previous) previous.paragraphEnd = true;
   return segs;
 }

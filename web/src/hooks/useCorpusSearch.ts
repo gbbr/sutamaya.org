@@ -1,6 +1,6 @@
 import { useDeferredValue, useEffect, useMemo, useState, useSyncExternalStore } from 'react';
 import { opensAtPassage, searchGroups, searchLists, type ListBlockHit, type SearchHit } from '../lib/search/metadata';
-import { searchCorpusVariants, type RankedHit, type TextSearchStatus } from '../lib/search/text';
+import { searchCorpusVariants, type RankedHit, type TextIndex, type TextSearchStatus } from '../lib/search/text';
 import {
   beginTextSearchLoad,
   searchText,
@@ -32,8 +32,9 @@ function hydrate(corpus: Corpus, meta: SearchHit[], ranked: RankedHit[]): Search
 // its results — has its complete list, and its scroll position, in the first frame. One entry: the
 // only search worth returning to is the one just left. Refreshed by the search this seeds, which
 // runs anyway, so data edited while away corrects itself a moment later. The Reader's search opens
-// only on one run for the sutta it is reading, whose passages the hits carry.
-let lastCompleted: { query: string; readingId?: string; hits: SearchHit[] } | null = null;
+// only on one run for the sutta it is reading, in the translation on screen, whose passages the hits
+// carry.
+let lastCompleted: { query: string; readingId?: string; page?: TextIndex; hits: SearchHit[] } | null = null;
 
 // Returns the sutta hits and list hits for a query, scanned off a deferred copy of it so typing
 // stays responsive.
@@ -53,7 +54,9 @@ export function useCorpusSearch(
   lists: ListDef[],
   highlights: HighlightsMap,
   // The sutta on screen, in the Reader's own search, whose hit carries every passage holding the query.
-  readingId?: string
+  readingId?: string,
+  // The translation on screen where it isn't Sujato's, which those passages are found in (text.ts's pageIndex).
+  page?: TextIndex
 ): {
   hits: SearchHit[];
   listHits: ListBlockHit[];
@@ -81,7 +84,8 @@ export function useCorpusSearch(
   // Keyed on the metadata hits themselves, so an answer to an earlier keystroke — or to the same
   // one before the reader's own data changed — is never shown against a later query.
   const [merged, setMerged] = useState<{ meta: SearchHit[]; hits: SearchHit[] } | null>(() =>
-    lastCompleted?.query === deferredQuery && (!readingId || lastCompleted.readingId === readingId)
+    lastCompleted?.query === deferredQuery &&
+    (!readingId || (lastCompleted.readingId === readingId && lastCompleted.page === page))
       ? { meta, hits: lastCompleted.hits }
       : null
   );
@@ -91,7 +95,7 @@ export function useCorpusSearch(
     if (!corpus || !searching || status !== 'ready') return;
     let live = true;
     const ask = meta.map(({ id, rank, saved }) => ({ id, rank, saved }));
-    void searchText(deferredQuery, ask, readingId).then((ranked) => {
+    void searchText(deferredQuery, ask, readingId, page).then((ranked) => {
       if (!live) return;
       // The worker died mid-search: the metadata half is the whole answer from here, so nothing
       // is held over it.
@@ -100,13 +104,13 @@ export function useCorpusSearch(
         return;
       }
       const hits = hydrate(corpus, meta, ranked);
-      lastCompleted = { query: deferredQuery, readingId, hits };
+      lastCompleted = { query: deferredQuery, readingId, page, hits };
       setMerged({ meta, hits });
     });
     return () => {
       live = false;
     };
-  }, [corpus, searching, status, deferredQuery, meta, readingId]);
+  }, [corpus, searching, status, deferredQuery, meta, readingId, page]);
 
   const answered = merged?.meta === meta;
   // Whether the results are waiting: on the opening keystroke, on the text still on its way, or on
