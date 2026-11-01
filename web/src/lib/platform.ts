@@ -47,7 +47,8 @@ export function isStandaloneDisplay(): boolean {
 // The origin the API and the data export live at: empty on web, where the app shares an origin with
 // the Worker; the Worker's own origin in a native shell, whose WebView origin is local instead.
 // `__API_BASE_OVERRIDE__` (vite.config.ts, from SUTAMAYA_API_BASE) points a native test build at a
-// local Worker; it is the empty string in every normal build.
-export const API_BASE =
-  (typeof __API_BASE_OVERRIDE__ === 'string' && __API_BASE_OVERRIDE__) ||
-  (isNativeApp() ? 'https://app.sutamaya.org' : '');
+// local Worker; it is the empty string in every normal build. The web ignores it, so a browser on a
+// native dev server keeps its own origin.
+export const API_BASE = isNativeApp()
+  ? (typeof __API_BASE_OVERRIDE__ === 'string' && __API_BASE_OVERRIDE__) || 'https://app.sutamaya.org'
+  : '';
