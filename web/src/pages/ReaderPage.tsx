@@ -15,7 +15,10 @@ import { useReaderTip } from '../hooks/useReaderTip';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { useLatest } from '../hooks/useLatest';
 import { animateScrollBy, animateScrollTop, jumpScrollBy } from '../lib/reader/segmentScroll';
-import { flatSuttaOrder, breadcrumbFor, normalizeRouteId, resolveCanonicalSuttaId, loadSuttaText, uidHolds, type SegmentFile } from '../lib/corpus/corpus';
+import {
+  flatSuttaOrder, breadcrumbFor, normalizeRouteId, resolveCanonicalSuttaId, loadSuttaText, uidHolds, translatorOf, TRANSLATOR_NAMES,
+  type SegmentFile,
+} from '../lib/corpus/corpus';
 import { segmentAt } from '../lib/corpus/segmentKeys';
 import { prefetchSuttaText } from '../lib/corpus/suttaPrefetch';
 import { flattenListTree, resolveListById, suttaRowMeta } from '../lib/lists/lists';
@@ -27,22 +30,24 @@ import { passageFromSearch, readLink, type Passage } from '../lib/navigation/pas
 import { READER_INTENT_KEY } from '../lib/storageKeys';
 import { enteredByReturn, takeAddressArrival } from '../lib/navigation/entryKind';
 import { getUiScale } from '../lib/ui/uiPrefs';
-import type { Highlight } from '../lib/types';
+import type { Highlight, Translator } from '../lib/types';
 import { animateStep, cancelStepAnimations } from '../lib/ui/motion';
 import { markSuttaOpened } from '../lib/pwaNudge';
 import { getReaderPanelTab, setReaderPanelTab, type ReaderPanelTab } from '../lib/reader/readerPanelTab';
 import { keepOpenLines, keptOpenLines } from '../lib/reader/openLines';
 import { keepStepPlace, stepPlace } from '../lib/reader/stepPlaces';
+import { translationPlace, restoreTranslationPlace, type TranslationPlace } from '../lib/reader/translationPlace';
 import { platformName } from '../lib/platform';
 import { canShareLink, shareLink, shareUrl } from '../lib/native/share';
 import type { SearchHit } from '../lib/search/metadata';
-import { marksOf } from '../lib/search/text';
+import { marksOf, pageIndex } from '../lib/search/text';
 import { SegmentedText, type SegmentNumberPlacement, type SegmentMarks } from '../components/reader/SegmentedText';
 import { HighlightPopup } from '../components/reader/HighlightPopup';
 import { HighlightGutter } from '../components/reader/HighlightGutter';
 import { DictionaryDock } from '../components/reader/DictionaryDock';
 import { ReaderTip } from '../components/reader/ReaderTip';
 import { ReaderTitleBar } from '../components/reader/ReaderTitleBar';
+import { TranslationPicker } from '../components/reader/TranslationPicker';
 import { ReaderMenuPanel } from '../components/reader/ReaderMenuPanel';
 import { ReaderSearchOverlay, type ReaderSearchView } from '../components/search/ReaderSearchOverlay';
 import { ShortcutsModal } from '../components/ShortcutsModal';
@@ -92,14 +97,14 @@ function arrivalOf(location: Location | undefined, uid: string | undefined): (Se
   return passage ? { ...passage, navId: `${location.key}${location.search}` } : state;
 }
 
-// noteLinkTarget returns the sutta a link in a translator's note names and the passage its query
-// string carries, for a /read path the build wrote, else undefined.
-function noteLinkTarget(href: string): { uid: string; passage?: Passage } | undefined {
+// noteLinkTarget returns the sutta a translator's link names, the passage its query string carries
+// and the translation it opens in, for a /read path the build wrote, else undefined.
+function noteLinkTarget(href: string): { uid: string; passage?: Passage; by: Translator } | undefined {
   const url = new URL(href, window.location.origin);
   const id = /^\/read\/([^/]+)$/.exec(url.pathname)?.[1];
   if (!id) return undefined;
   const uid = normalizeRouteId(decodeURIComponent(id));
-  return { uid, passage: passageFromSearch(url.search, uid) };
+  return { uid, passage: passageFromSearch(url.search, uid), by: translatorOf(url.searchParams.get('by')) };
 }
 
 export function ReaderPage() {
@@ -124,7 +129,7 @@ export function ReaderPage() {
       navigate(`/read/${encodeURIComponent(requestedId)}${location.search}${location.hash}`, { replace: true });
     }
   }, [routeSuttaId, requestedId, navigate, location.search, location.hash]);
-  const { notes, membership, lists, markVisited } = useUserData();
+  const { notes, membership, lists, markVisited, ready: userDataReady } = useUserData();
   const {
     resolvedTheme,
     fs,
@@ -145,7 +150,7 @@ export function ReaderPage() {
   // Where the reader was opened from (LibraryPage's onOpen): `from` is the pane and node to close
   // back to, `fromView` which pane to show there. Absent for a direct link to /read/:suttaId.
   const readerLocationState = location?.state as
-    | { from?: string; fromView?: 'tree' | 'list'; searchIds?: string[]; backTo?: string }
+    | { from?: string; fromView?: 'tree' | 'list'; searchIds?: string[]; backTo?: string; backBy?: Translator; translationStep?: boolean; sujatoHasWayBack?: boolean }
     | undefined;
   // The segments a search hit's snippet was drawn from or a link names, those whose Pali it opens
   // and what its words were marked by, sampled once per navigation rather than once per mount: this
@@ -170,7 +175,7 @@ export function ReaderPage() {
   const arrivalKeys = arrivalRef.current.segments;
   const arrivalPaliKeys = arrivalRef.current.paliSegments;
   const searchMarkedBy = arrivalRef.current.markedBy;
-  const { from, fromView, searchIds, backTo, turnTo, jumpTo, goBack, closeToOrigin, leaveReader } =
+  const { from, fromView, searchIds, backTo, turnTo, jumpTo, chooseTranslation, goBack, closeToOrigin, leaveReader } =
     useReaderOrigin(readerLocationState);
   const [openSegs, setOpenSegs] = useState<Record<number, boolean>>({});
   const [openNotes, setOpenNotes] = useState<Record<number, boolean>>({});
@@ -194,6 +199,30 @@ export function ReaderPage() {
   const tapRef = useRef<{ x: number; y: number } | null>(null);
 
   const sutta = corpus && suttaId ? corpus.suttas[suttaId] : undefined;
+  // The translation on screen: the one the address names, where this text has it, else Sujato's.
+  const requestedBy = translatorOf(new URLSearchParams(location.search).get('by'));
+  const by: Translator = requestedBy !== 'sujato' && sutta?.by?.[requestedBy] ? requestedBy : 'sujato';
+  // Names this reading of the sutta, for what is kept per translation: its place and open lines.
+  const readingKey = by === 'sujato' ? suttaId : `${suttaId}:${by}`;
+  // A switch of translation keeps the search's query, its rows starting again from the top.
+  useEffect(() => {
+    if (searchView.current) searchView.current = { ...searchView.current, activeIndex: 0, scrollTop: 0 };
+  }, [by]);
+  // switchingPlace is where a switch of translation keeps the reader, held from the choice until the
+  // new text is laid out there, a delayed text or font load included.
+  const switchingPlace = useRef<{
+    readingKey: string;
+    fromKey: string;
+    entryKey?: string;
+    place?: TranslationPlace;
+    highlight?: { segIndex: number; id?: string };
+    scrollTop: number;
+    applied?: boolean;
+  }>();
+  if (switchingPlace.current?.entryKey && switchingPlace.current.entryKey !== location.key) switchingPlace.current = undefined;
+  const translationArrival = switchingPlace.current && switchingPlace.current.readingKey === readingKey && switchingPlace.current.fromKey !== location.key
+    ? switchingPlace.current : undefined;
+  if (translationArrival) translationArrival.entryKey = location.key;
   // Where this sutta opens, sampled once per sutta id:
   //   placed – at the line the arrival names, or the inner sutta the route names, which the Reader
   //            scrolls to itself
@@ -201,13 +230,13 @@ export function ReaderPage() {
   //            (lib/navigation/entryKind.ts)
   //   top    – otherwise, an address opened in the browser included
   const restoreRef = useRef<{ id?: string; restore: ScrollRestore }>({ restore: 'stored' });
-  if (restoreRef.current.id !== suttaId) {
+  if (restoreRef.current.id !== readingKey) {
     // Taken on every opening, placed ones too, so the page load's is the one that answers.
     const addressArrival = takeAddressArrival(location.key);
     restoreRef.current = {
-      id: suttaId,
+      id: readingKey,
       restore:
-        requestedSubUid || arrivalKeys !== undefined
+        translationArrival || requestedSubUid || arrivalKeys !== undefined
           ? 'placed'
           : enteredByReturn(navigationType, location.state) && !addressArrival
             ? 'stored'
@@ -218,9 +247,9 @@ export function ReaderPage() {
   const [openLinesOf, setOpenLinesOf] = useState<string>();
   // Swaps in a sutta's lines as it arrives: those left open on a return, none otherwise. In render,
   // so a return's scroll offset is restored with them already open.
-  if (openLinesOf !== suttaId) {
-    setOpenLinesOf(suttaId);
-    const kept = suttaId && restoreRef.current.restore === 'stored' ? keptOpenLines(suttaId) : undefined;
+  if (openLinesOf !== readingKey) {
+    setOpenLinesOf(readingKey);
+    const kept = readingKey && restoreRef.current.restore === 'stored' ? keptOpenLines(readingKey) : undefined;
     setOpenSegs(kept?.pali ?? {});
     setOpenNotes(kept?.notes ?? {});
   }
@@ -240,7 +269,22 @@ export function ReaderPage() {
     close: closePop,
     popStop,
     openPop,
-  } = useSuttaReading(suttaId, 'reader', restoreRef.current);
+  } = useSuttaReading(suttaId, 'reader', { ...restoreRef.current, by });
+
+  // Preloads the sutta's other translations, each on its own, so a switch is instant and offline.
+  useEffect(() => {
+    if (!suttaId || !sutta) return;
+    for (const translator of ['sujato', 'bodhi', 'thanissaro'] as const) {
+      if (translator !== by && (translator === 'sujato' || sutta.by?.[translator])) {
+        loadSuttaText(suttaId, translator).catch(() => {});
+      }
+    }
+  }, [suttaId, sutta, by]);
+  // The translation on screen where it isn't Sujato's, which the search finds this sutta's passages in.
+  const searchPage = useMemo(
+    () => (by !== 'sujato' && suttaId && segments ? pageIndex(suttaId, segments) : undefined),
+    [by, suttaId, segments]
+  );
   const flatLists = useMemo(() => flattenListTree(lists), [lists]);
   // The user lists this sutta belongs to, as chips. Auto-lists are filtered out by suttaRowMeta.
   const suttaChips = useMemo(
@@ -255,6 +299,7 @@ export function ReaderPage() {
     () =>
       (segments || []).reduce<Array<{ i: number; text: string; level: 2 | 3 | 4 | 5 }>>((acc, s, i) => {
         if (s.role === 'heading') acc.push({ i, text: s.en, level: s.headingLevel ?? 2 });
+        else for (const [from, to] of s.headings ?? []) acc.push({ i, text: s.en.slice(from, to), level: 2 });
         return acc;
       }, []),
     [segments]
@@ -281,13 +326,13 @@ export function ReaderPage() {
     // Clears a selection outliving the tap that opened this sutta, which would otherwise block the
     // first touch-scroll.
     window.getSelection()?.removeAllRanges();
-  }, [suttaId]);
+  }, [readingKey]);
 
   // Keeps the lines this sutta shows open, for a return to it: none of the Pali while all of it
   // shows, and none of the notes while they are hidden.
   useEffect(() => {
-    if (suttaId) keepOpenLines(suttaId, { pali: allPali ? {} : openSegs, notes: showNotes ? openNotes : {} });
-  }, [suttaId, openSegs, openNotes, allPali, showNotes]);
+    if (readingKey) keepOpenLines(readingKey, { pali: allPali ? {} : openSegs, notes: showNotes ? openNotes : {} });
+  }, [readingKey, openSegs, openNotes, allPali, showNotes]);
 
   // The reading pane's width, its padding in and its scroll bar out.
   const [paneWidth, setPaneWidth] = useState<number>();
@@ -308,7 +353,7 @@ export function ReaderPage() {
   }, [suttaId, scrollRef]);
 
   const { dict, activeWord, closeDict, onWordClick, goToAdjacentWord, retryLookup } = useDictionaryLookup({
-    suttaId,
+    suttaId: readingKey,
     segments,
     scrollRef,
     scrollToSegment,
@@ -349,7 +394,7 @@ export function ReaderPage() {
     return arrivalPaliKeys.map((key) => segmentAt(segments, key)).filter((i) => i !== -1);
   }, [arrivalPaliKeys, segments]);
   // The inner sutta asked for, unless the arrival names a passage of it to open at instead.
-  const innerUid = searchSegments ? undefined : requestedSubUid;
+  const innerUid = searchSegments || translationArrival ? undefined : requestedSubUid;
   // Opens a sutta just arrived at the top where its arrival names a line it can't land on.
   useLayoutEffect(() => {
     if (!arrivalKeys || !segments || holdingPlace || searchSegments || requestedSubUid) return;
@@ -568,21 +613,64 @@ export function ReaderPage() {
 
   // Returns the reader to where they left an entry of the sutta on screen (openFromReader), on a Back
   // or Forward to it: gliding for the Reader's own back, as the step out glided, and at once for the
-  // browser's (docs/web-app.md's "Screen transitions").
+  // browser's (docs/web-app.md's "Screen transitions"). It waits for the text, in whichever
+  // translation the entry shows, to be laid out.
+  //
+  // restoredStep is the history entry on screen: whether it was arrived at from within the same
+  // sutta, and whether its place has been restored yet.
+  const restoredStep = useRef<{ key: string; suttaId?: string; withinSutta?: boolean; done?: boolean }>({ key: location.key, suttaId });
+  if (restoredStep.current.key !== location.key) {
+    restoredStep.current = { key: location.key, suttaId, withinSutta: restoredStep.current.suttaId === suttaId };
+  }
   useLayoutEffect(() => {
     const el = scrollRef.current;
     const top = navigationType === NavigationType.Pop ? stepPlace(location.key) : undefined;
-    if (!el || top === undefined || !segments || segments !== shownSegmentsRef.current) return;
-    const glide = enterOnArrival.current?.id === suttaId;
+    if (!el || top === undefined || !segments || holdingPlace || !userDataReady || !restoredStep.current.withinSutta || restoredStep.current.done || translationArrival) return;
+    restoredStep.current.done = true;
+    const glide = segments === shownSegmentsRef.current && enterOnArrival.current?.id === suttaId;
     enterOnArrival.current = null;
     if (glide) animateScrollTop(el, top);
     else jumpScrollBy(el, top - el.scrollTop);
-  }, [location.key]);
+  }, [location.key, navigationType, segments, holdingPlace, userDataReady, translationArrival, suttaId, scrollRef]);
+
+  // Lays the translation just switched to out at the reader's place, once its text is in.
+  useLayoutEffect(() => {
+    const pane = scrollRef.current;
+    if (!translationArrival || translationArrival.applied || !pane || !segments || holdingPlace || !userDataReady) return;
+    translationArrival.applied = true;
+    if (translationArrival.highlight) {
+      scrollToSegment(translationArrival.highlight.segIndex, 'center', translationArrival.highlight.id, 'instant');
+    } else if (translationArrival.place) restoreTranslationPlace(pane, segments, translationArrival.place);
+    else jumpScrollBy(pane, translationArrival.scrollTop - pane.scrollTop);
+  }, [translationArrival, segments, holdingPlace, userDataReady, scrollRef, scrollToSegment]);
+
+  // Switches to translation `nextBy`, keeping the reader's place in both the entry left and the one
+  // arrived at.
+  function switchTranslation(nextBy: Translator, highlight?: { segIndex: number; id?: string }) {
+    const pane = scrollRef.current;
+    if (!suttaId || nextBy === by || !pane) return;
+    keepStepPlace(location.key, pane.scrollTop);
+    // The sutta's title still on screen: the new translation opens at the top.
+    const heading = headingRef.current;
+    const atTop = !highlight && !!heading && heading.getBoundingClientRect().bottom > pane.getBoundingClientRect().top;
+    switchingPlace.current = {
+      readingKey: nextBy === 'sujato' ? suttaId : `${suttaId}:${nextBy}`,
+      fromKey: location.key,
+      place: atTop ? undefined : translationPlace(pane),
+      highlight,
+      scrollTop: atTop ? 0 : pane.scrollTop,
+    };
+    chooseTranslation(suttaId, nextBy, by);
+  }
 
   // Scrolls to a highlight, closing the panel and turning highlights back on if they were hidden.
-  function jumpToHighlight(segIndex: number, highlightId?: string) {
+  function jumpToHighlight(segIndex: number, highlightId?: string, nextBy: Translator = by) {
     setPanel(false);
     revealHighlights();
+    if (nextBy !== by) {
+      switchTranslation(nextBy, { segIndex, id: highlightId });
+      return;
+    }
     requestAnimationFrame(() => scrollToSegment(segIndex, 'center', highlightId));
   }
 
@@ -590,9 +678,12 @@ export function ReaderPage() {
     closeToOrigin(suttaId, sutta ? `/browse/${sutta.node}/${suttaId}` : '/');
   }
 
-  // The header's back arrow, and where Escape and the native apps' Back end up: back one jump while
-  // there is a way back, arriving from the left as Prev does, or gliding back within the sutta on
-  // screen; otherwise out of the reader.
+  // Whether the header shows the return arrow, which a translation switch never does.
+  const showBack = !!backTo && !readerLocationState?.translationStep;
+
+  // The header's back arrow, and where the native apps' Back ends up, as Escape does while the
+  // arrow shows: back one step while there is a way back, arriving from the left as Prev does, or
+  // gliding back within the sutta on screen; otherwise out of the reader.
   function backOrClose() {
     if (!backTo) {
       closeReader();
@@ -605,16 +696,16 @@ export function ReaderPage() {
   // Opens sutta `id` at `passage` from within the Reader, a step with the way back to where the
   // reader is: another sutta arrives from the right as Next does; a line of the one open is glided
   // to, the place it leaves kept for the way back (lib/reader/stepPlaces.ts).
-  function openFromReader(id: string, passage?: Passage) {
+  function openFromReader(id: string, passage?: Passage, targetBy: Translator = 'sujato') {
     const target = corpus ? resolveCanonicalSuttaId(corpus, id) : id;
     if (target !== suttaId) {
       enterOnArrival.current = { id: target, dir: 1 };
     } else {
       // Nowhere to go: the sutta on screen, named without a line of it.
-      if (!passage && id === target) return;
+      if (!passage && id === target && targetBy === by) return;
       if (scrollRef.current) keepStepPlace(location.key, scrollRef.current.scrollTop);
     }
-    jumpTo(id, passage, suttaId);
+    jumpTo(id, passage, suttaId, targetBy, by);
   }
 
   function onSearchOpenSutta(id: string, snippet?: SearchHit['snippet']) {
@@ -622,17 +713,23 @@ export function ReaderPage() {
     openFromReader(id, snippet);
   }
 
+  // onSearchOpenPassage opens a line the search found in the sutta on screen, in the translation showing.
+  function onSearchOpenPassage(passage: Passage) {
+    setSearchOpen(false);
+    if (suttaId) openFromReader(suttaId, passage, by);
+  }
+
   // Follows a link in a translator's note. Stable across renders.
   const noteLinkRef = useLatest((href: string) => {
     const target = noteLinkTarget(href);
-    if (target) openFromReader(target.uid, target.passage);
+    if (target) openFromReader(target.uid, target.passage, target.by);
   });
   const onNoteLink = useCallback((href: string) => noteLinkRef.current(href), [noteLinkRef]);
   // Starts loading the text a note's link names as it is pressed, as a search result does.
   const onNoteLinkPress = useCallback(
     (href: string) => {
       const target = noteLinkTarget(href);
-      if (target) prefetchSuttaText(corpus, target.uid);
+      if (target?.by === 'sujato') prefetchSuttaText(corpus, target.uid);
     },
     [corpus]
   );
@@ -641,7 +738,7 @@ export function ReaderPage() {
   const segmentNumberRef = useLatest((i: number) => {
     const key = segments?.[i]?.key;
     if (!key || !suttaId) return;
-    navigate(readLink(suttaId, { segments: [key, key] }), {
+    navigate(readLink(suttaId, { segments: [key, key] }, by), {
       replace: true,
       // Keeps where the reader was opened from, and drops whatever an earlier arrival carried.
       state: tagIntent({
@@ -721,8 +818,12 @@ export function ReaderPage() {
     closeDict,
     panel,
     setPanel,
-    backOrClose,
+    // Escape follows the header: the return arrow while it shows, otherwise Close.
+    backOrClose: showBack ? backOrClose : closeReader,
     step,
+    switchTranslation: (next) => {
+      if (next === 'sujato' || sutta?.by?.[next]) switchTranslation(next);
+    },
     goToAdjacentWord,
     setTab,
     setNoteFocusSignal,
@@ -804,22 +905,23 @@ export function ReaderPage() {
       onTouchEnd={onTextUp}
     >
       {/* The header: close on the left, with back beside it after a jump from within the reader;
-          search and menu on the right; and on a wide screen the title, absolutely centred on the
-          page rather than between them, since the two sides carry different numbers of buttons —
-          on a phone, ReaderTitleBar names the sutta instead. A 44px bar starting on the safe-area
-          line, the platform's own top-bar geometry, with its controls centred in it. */}
+          on the right the translation, where the sutta has more than one, then search and menu;
+          and on a wide screen the title, absolutely centred on the page rather than between them,
+          since the two sides carry different numbers of buttons — on a phone, ReaderTitleBar
+          names the sutta instead. A 44px bar starting on the safe-area line, the platform's own
+          top-bar geometry, with its controls centred in it, above the text so its menus are. */}
       <header
-        className="font-sans flex-none relative flex items-center justify-between box-content h-11 px-5 text-ui-base"
+        className="font-sans flex-none relative z-20 flex items-center justify-between gap-[25px] box-content h-11 px-5 text-ui-base"
         style={{ borderBottom: `1px solid ${theme.rule}`, paddingTop: 'var(--safe-top)' }}
       >
         {/* `p-[12.5px] -m-[12.5px]`: a 44px touch area around each 19px icon, the platform
             minimum, with the negative margin collapsing the button's layout box back to the icon;
             `gap-[25px]` puts the touch areas edge to edge. */}
-        <div className="flex items-center gap-[25px]">
+        <div className="flex flex-none items-center gap-[25px]">
           <button className="flex items-center p-[12.5px] -m-[12.5px]" title="Close" onClick={closeReader}>
             <X size={19} strokeWidth={1.75} />
           </button>
-          {backTo && (
+          {showBack && (
             <button
               className="flex items-center p-[12.5px] -m-[12.5px]"
               title={`Back to ${corpus.suttas[backTo]?.ref ?? backTo}`}
@@ -831,9 +933,18 @@ export function ReaderPage() {
         </div>
         {/* Tapping the title scrolls back to the top of the sutta, the iOS status-bar convention.
             Done by hand, since the reader scrolls in a nested div rather than the document. */}
+        {/* The title's width leaves room for the wider side, the translation's pill included. */}
         {!mobile && (
           <button
-            className={`absolute left-1/2 -translate-x-1/2 ${SHAREABLE ? 'max-w-[calc(100%-16rem)]' : 'max-w-[calc(100%-14rem)]'} truncate opacity-75 font-serif cursor-pointer`}
+            className={`absolute left-1/2 -translate-x-1/2 ${
+              sutta.by && SHAREABLE
+                ? 'max-w-[calc(100%-34rem)]'
+                : sutta.by
+                  ? 'max-w-[calc(100%-32rem)]'
+                  : SHAREABLE
+                    ? 'max-w-[calc(100%-16rem)]'
+                    : 'max-w-[calc(100%-14rem)]'
+            } truncate opacity-75 font-serif cursor-pointer`}
             aria-label="Scroll to top"
             title="Scroll to top"
             onClick={() => scrollRef.current && animateScrollTop(scrollRef.current, 0)}
@@ -841,8 +952,11 @@ export function ReaderPage() {
             {sutta.ref} · {sutta.en}
           </button>
         )}
-        {/* Share, Search and Menu, on the same 44px touch areas, edge to edge, as Close and Back. */}
-        <div className="flex items-center gap-[25px]">
+        {/* The translation, then Share, Search and Menu, on the same 44px touch areas, edge to edge,
+            as Close and Back. Positioned for the translation's menu to hang from, and shrinking only
+            by the translation's name. */}
+        <div className="relative flex min-w-0 items-center gap-[25px]">
+          <TranslationPicker key={suttaId} by={by} alternatives={sutta.by} theme={theme} onChoose={switchTranslation} />
           {SHAREABLE && (
             <button
               className="flex items-center p-[12.5px] -m-[12.5px]"
@@ -852,7 +966,8 @@ export function ReaderPage() {
                 e.stopPropagation();
                 // The segment the address names, when a tapped segment number or a link put one there.
                 const at = new URLSearchParams(location.search).get('at');
-                shareLink(shareUrl(`/read/${requestedSubUid ?? suttaId}${at ? `?at=${at}` : ''}`)).catch(() => {});
+                const query = [by !== 'sujato' && `by=${by}`, at && `at=${at}`].filter(Boolean).join('&');
+                shareLink(shareUrl(`/read/${requestedSubUid ?? suttaId}${query ? `?${query}` : ''}`)).catch(() => {});
               }}
             >
               <ShareIcon size={19} strokeWidth={1.75} />
@@ -965,12 +1080,12 @@ export function ReaderPage() {
             {sutta.min} min read ·{' '}
             Translation:{' '}
             <a
-              href={`https://github.com/gbbr/sutamaya.org/blob/main/docs/translation-changes.md`}
+              href={by === 'sujato' ? 'https://github.com/gbbr/sutamaya.org/blob/main/docs/translation-changes.md' : sutta.by?.[by]}
               target="_blank"
               rel="noreferrer"
               style={{ color: 'inherit', textDecoration: 'none' }}
             >
-              Bhikkhu Sujato (edited)
+              {by === 'sujato' ? `${TRANSLATOR_NAMES.sujato} (edited)` : TRANSLATOR_NAMES[by]}
             </a>
           </div>
           {sutta.blurb && (
@@ -1043,7 +1158,7 @@ export function ReaderPage() {
                   const step = h.level - 2;
                   return (
                     <button
-                      key={h.i}
+                      key={`${h.i}:${h.text}`}
                       className="block text-left hover:underline"
                       style={{
                         paddingLeft: step * 12,
@@ -1183,7 +1298,7 @@ export function ReaderPage() {
           headingRef={headingRef}
           title={`${sutta.ref} · ${sutta.en}`}
           // Under the header: its safe-area inset, 44px bar and 1px rule.
-          top="calc(var(--safe-top) + 45px)"
+          top="calc(var(--safe-top) + 44px)"
           theme={theme}
         />
       )}
@@ -1220,8 +1335,8 @@ export function ReaderPage() {
           mobile={mobile}
           theme={theme}
           initialTab={tab}
-          segments={segments}
           highlights={hlForSutta}
+          by={by}
           onClose={() => setPanel(false)}
           onJumpToHighlight={jumpToHighlight}
           noteFocusSignal={noteFocusSignal}
@@ -1263,8 +1378,10 @@ export function ReaderPage() {
         <ReaderSearchOverlay
           theme={theme}
           currentId={suttaId}
+          page={searchPage}
           saved={searchView}
           onOpenSutta={onSearchOpenSutta}
+          onOpenPassage={onSearchOpenPassage}
           onClose={() => setSearchOpen(false)}
         />
       )}

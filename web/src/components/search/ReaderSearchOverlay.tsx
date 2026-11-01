@@ -8,7 +8,7 @@ import { useActiveHitIndex } from '../../hooks/useActiveHitIndex';
 import { useRecentSearches } from '../../hooks/useRecentSearches';
 import { READER_SEARCH_PLACEHOLDER, SEARCH_CAP_NOTE, SEARCH_RESULTS_CAP, type SearchHit } from '../../lib/search/metadata';
 import { clearRecentSearches, removeRecentSearch, saveRecentSearch } from '../../lib/search/recentSearches';
-import { searchNoMatches, windowOnMatch } from '../../lib/search/text';
+import { searchNoMatches, windowOnMatch, type TextIndex } from '../../lib/search/text';
 import { beginTextSearchLoad } from '../../lib/search/textClient';
 import { prefetchSuttaText } from '../../lib/corpus/suttaPrefetch';
 import { flattenListTree, suttaRowMeta } from '../../lib/lists/lists';
@@ -84,16 +84,28 @@ interface ReaderSearchOverlayProps {
   theme: ThemeColors;
   // The sutta on screen, whose passages holding the query lead the results.
   currentId?: string;
+  // The translation on screen where it isn't Sujato's, which those passages are found in.
+  page?: TextIndex;
   // How the overlay was last left, kept up to date while it is open; null starts it afresh.
   saved: { current: ReaderSearchView | null };
   // `passage` is where a text hit was found, which the reader opens at; absent for every other row.
   onOpenSutta: (id: string, passage?: Passage) => void;
+  // Opens one of the passages of the sutta on screen, in the translation showing.
+  onOpenPassage: (passage: Passage) => void;
   onClose: () => void;
 }
 
 // The reader's search overlay: a floating input with results directly underneath, opened with "/"
 // from anywhere in the reader. Each row shows the same blurb and note as ListPane's.
-export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onClose }: ReaderSearchOverlayProps) {
+export function ReaderSearchOverlay({
+  theme,
+  currentId,
+  page,
+  saved,
+  onOpenSutta,
+  onOpenPassage,
+  onClose,
+}: ReaderSearchOverlayProps) {
   const { corpus } = useCorpus();
   const { mobile } = useLayout();
   const { lists, notes, membership, highlights } = useUserData();
@@ -119,7 +131,8 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
     notes,
     lists,
     highlights,
-    currentId
+    currentId,
+    page
   );
   // The passages of the sutta being read that hold the query, and the other suttas' hits: the first
   // SEARCH_RESULTS_CAP of them, the panel being unvirtualized.
@@ -197,11 +210,6 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
     onOpenSutta(hit.matchedId ?? hit.id, hit.snippet);
   }
 
-  // openPassage scrolls the sutta being read to one of its passages.
-  function openPassage(passage: Passage) {
-    if (currentId) onOpenSutta(currentId, passage);
-  }
-
   // togglePassages shows the next passages, with the cursor on the first of them, or collapses them
   // back to the first once all are shown, taking the cursor up with the toggle.
   function togglePassages() {
@@ -222,7 +230,7 @@ export function ReaderSearchOverlay({ theme, currentId, saved, onOpenSutta, onCl
       return;
     }
     if (saved.current) saved.current.activeIndex = i;
-    if (i < shownPassages.length) openPassage(shownPassages[i]);
+    if (i < shownPassages.length) onOpenPassage(shownPassages[i]);
     else if (displayHits[i - firstHitIndex]) openHit(displayHits[i - firstHitIndex]);
   }
 

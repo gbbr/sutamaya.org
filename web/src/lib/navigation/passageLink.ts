@@ -1,3 +1,4 @@
+import type { Translator } from '../types';
 import type { MarkedBy } from '../search/text';
 import { isKeyLine, keyLine, keySutta } from '../corpus/segmentKeys';
 
@@ -13,13 +14,15 @@ export interface Passage {
 // tab included. With a passage, the link names the sutta its segments belong to — an inner sutta of
 // a batched document, where they are in one — and the query string names each segment by what
 // follows its colon:
+//   by   – the translation, where it isn't Sujato's
 //   at   – the first and last segment, "15.4-15.6", or one, "15.4"
 //   pali – the segments whose Pali is shown, "15.4,15.5"
 //   q    – each query the words are marked by, repeated
-export function readLink(id: string, passage?: Passage): string {
-  if (!passage) return `/read/${encodeURIComponent(id)}`;
+export function readLink(id: string, passage?: Passage, by: Translator = 'sujato'): string {
+  if (!passage) return `/read/${encodeURIComponent(id)}${by === 'sujato' ? '' : `?by=${by}`}`;
   const [first, last] = passage.segments;
-  const params = new URLSearchParams({ at: first === last ? keyLine(first) : `${keyLine(first)}-${keyLine(last)}` });
+  const params = new URLSearchParams(by === 'sujato' ? undefined : { by });
+  params.set('at', first === last ? keyLine(first) : `${keyLine(first)}-${keyLine(last)}`);
   if (passage.paliSegments?.length) params.set('pali', passage.paliSegments.map(keyLine).join(','));
   for (const query of passage.markedBy?.queries ?? []) params.append('q', query);
   return `/read/${encodeURIComponent(keySutta(first))}?${params}`;

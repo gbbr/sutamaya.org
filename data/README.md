@@ -13,6 +13,9 @@ data/
   html/                  SuttaCentral's per-line markup, used only to give each line its role
   tree/                  each collection's structure: DN, MN, SN, AN and the six KN books
   diff/                  what the editorial rules change, as diffs (rewritten on every run, checked in)
+  upstream/              Bhikkhu Bodhi's and Ṭhānissaro Bhikkhu's translations as published; see its README
+  bodhi/                 Bodhi's, cut onto the Pali's lines and built beside Sujato's
+  thanissaro/            Ṭhānissaro's, the same
   pli2en_dpd.json        the dictionary, generated from DPD and trimmed to this corpus
   pli2en_additions.json  definitions this app adds to DPD's, each naming its source
   manifest.json          which sc-data commit the texts were last copied from
@@ -81,9 +84,10 @@ skipped, and says so. How the dictionary is built is in
 
 ## License and attribution
 
-Everything here but the dictionary — the Pali, Bhikkhu Sujato's translations, titles, descriptions,
-notes and markup — comes from [SuttaCentral](https://suttacentral.net), which dedicates it to the
-public domain under [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+Everything here but the dictionary and the other translations — the Pali, Bhikkhu Sujato's
+translations, titles, descriptions, notes and markup — comes from
+[SuttaCentral](https://suttacentral.net), which dedicates it to the public domain under
+[CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 ([sc_bilara_data/LICENSE.md](https://github.com/suttacentral/sc-data/blob/main/sc_bilara_data/LICENSE.md)).
 This app's changes to the translation are released under the repository's
 [LICENSE](../LICENSE), not as a claim over the text.
@@ -92,3 +96,6 @@ This app's changes to the translation are released under the repository's
 Bodhirasa, licensed [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/):
 attribution, non-commercial use, and share-alike on anything derived from it. The file records the
 DPD release it came from, and the build passes that on to the app.
+
+Bhikkhu Bodhi's and Ṭhānissaro Bhikkhu's translations, in `upstream/`, `bodhi/` and `thanissaro/`,
+keep their publishers' terms, listed in [upstream/README.md](upstream/README.md#licences).

@@ -140,6 +140,10 @@ paragraph. The first shows, and *more* adds ten at a time, up to 80. A row takes
 to its line. Finding in the page in hand isn't a search of the canon, so it isn't saved to recent
 searches.
 
+The section searches the translation on screen. Where that is Bodhi's or Ṭhānissaro's, the app
+prepares its text for searching as the build prepares Sujato's, and a row opens its line in that
+translation. The other suttas are found in Sujato's text.
+
 It matches as find-in-page does: a word anywhere, inside a longer word too, so `sampajann` finds
 *satisampajañña* and *asampajañña*, where the search of the canon, matching the start of a word,
 finds neither. The price is the same as find-in-page's — `sati` also stops on *bhavissati* — which
@@ -149,7 +153,9 @@ showing.
 
 Reopened on the same sutta, the search comes back as it was left — the query, the lines shown, the
 scroll and the selected row — so the next result is a tap away. The query is selected, so typing
-starts a new search. Moving to another sutta starts it afresh.
+starts a new search. Moving to another sutta starts it afresh, and switching translation keeps the
+query and the lines shown but starts again from the top, since the rows are now the other
+translation's.
 
 ## Collections and lists
 

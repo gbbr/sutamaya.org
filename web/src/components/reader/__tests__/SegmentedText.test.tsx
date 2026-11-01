@@ -168,6 +168,61 @@ describe('SegmentedText — verse-group breaks in a batched document', () => {
   });
 });
 
+describe('SegmentedText — printed paragraphs', () => {
+  it('breaks where the markup ends a paragraph, not where the segment numbers change', () => {
+    const segments: SegmentFile[] = [
+      { key: 'dn11:1.1', pali: 'a', en: 'a', pe: 1 },
+      { key: 'dn11:1.2', pali: 'b', en: 'b' },
+      { key: 'dn11:2.1', pali: 'c', en: 'c', pe: 1 },
+    ];
+    const { container } = render(<SegmentedText {...baseProps(segments)} />);
+    const gapBelow = (key: string) => (container.querySelector(`[id="${key}"]`) as HTMLElement).style.marginBottom;
+    expect(gapBelow('dn11:1.1')).not.toBe('0px');
+    expect(gapBelow('dn11:1.2')).toBe('0px');
+  });
+
+  it('rules a verse line’s verse alone, leaving his paragraph after it as prose', () => {
+    const en = 'I weary myself with Gotama.” Then Māra left.';
+    const segments: SegmentFile[] = [{ key: 'sn4.24:10.4', pali: 'Pali', en, role: 'verse', blocks: [[29, en.length, 'paragraph']] }];
+    const { container } = render(<SegmentedText {...baseProps(segments)} />);
+    const row = container.querySelector<HTMLElement>('[id="sn4.24:10.4"]')!;
+    expect(row.style.borderLeft).toBe('');
+    const line = row.querySelector<HTMLElement>('[data-seg]')!;
+    expect(line.textContent).toBe(en);
+    const verse = line.firstElementChild as HTMLElement;
+    expect(verse.textContent).toBe('I weary myself with Gotama.” ');
+    expect(verse.style.borderLeft).toContain('2px solid');
+    const prose = line.querySelector('p')!;
+    expect(prose.textContent).toBe('Then Māra left.');
+    expect(prose.style.borderLeft).toBe('');
+  });
+});
+
+describe('SegmentedText — paragraphs in three-level keys', () => {
+  const segments: SegmentFile[] = [
+    { key: 'dn1:1.21.0', pali: 'h', en: 'h', role: 'heading', headingLevel: 3 },
+    { key: 'dn1:1.21.1', pali: 'a', en: 'a' },
+    { key: 'dn1:1.21.2', pali: 'b', en: 'b' },
+    { key: 'dn1:1.22.1', pali: 'c', en: 'c' },
+    { key: 'mn10:4.0.2', pali: 'd', en: 'd', role: 'heading', headingLevel: 3 },
+    { key: 'mn10:4.1', pali: 'e', en: 'e' },
+  ];
+  const gapBelow = (key: string) => {
+    const { container } = render(<SegmentedText {...baseProps(segments)} />);
+    return (container.querySelector(`#${key.replace(/[:.]/g, '\\$&')}`) as HTMLElement).style.marginBottom;
+  };
+
+  it('breaks between the paragraphs of a section', () => {
+    expect(gapBelow('dn1:1.21.1')).toBe('0px');
+    expect(gapBelow('dn1:1.21.2')).not.toBe('0px');
+  });
+
+  it("leaves a heading's gap to the heading, within its section", () => {
+    expect(gapBelow('dn1:1.21.0')).toBe('0px');
+    expect(gapBelow('mn10:4.0.2')).toBe('0px');
+  });
+});
+
 // Regression coverage for a related bug: a direct link or search hit for one specific inner sutta
 // of a batched document (e.g. "dhp321" within the loaded "dhp320-333" document) had no way to tell
 // the reader which of the batch's many identical-looking verses it actually pointed at — see
@@ -472,5 +527,191 @@ describe('SegmentedText — a Pali line opening', () => {
   it('just shows on a row that mounts with it open', () => {
     const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: { 0: true } })} />);
     expect(paliLine(container).classList).not.toContain('animate-fadeUp');
+  });
+});
+
+
+describe('SegmentedText — alternate translation markup', () => {
+  const en = 'The heading First line\nSecond line: MN 1.';
+  const segments: SegmentFile[] = [{
+    key: 'mn2:1.1', en, pali: 'His paired Pali', role: 'verse',
+    headings: [[0, 11]], links: [[36, 40, '/read/mn1?by=bodhi&at=1.1']],
+    note: 'A note with <i>emphasis</i>.',
+  }];
+
+  it('keeps the stored text intact while rendering headings, verse breaks, links and notes', () => {
+    const props = baseProps(segments, { showNotes: true, openNotes: { 0: true } });
+    const { container } = render(<SegmentedText {...props} />);
+    const line = container.querySelector<HTMLElement>('[data-seg]')!;
+    expect(line.textContent).toBe(en + '1');
+    expect(line.style.whiteSpace).toBe('pre-line');
+    expect(line.querySelector('[style*="font-weight: 700"]')?.textContent).toBe('The heading');
+    expect(container.querySelector('[data-reveal="pali"]')?.textContent).toBe('His paired Pali');
+    expect(container.querySelector('[data-reveal="note"] i')?.textContent).toBe('emphasis');
+    const link = line.querySelector('a')!;
+    expect(link.textContent).toBe('MN 1');
+    fireEvent.click(link);
+    expect(props.onNoteLink).toHaveBeenCalledWith('/read/mn1?by=bodhi&at=1.1');
+    expect(props.onToggleSeg).not.toHaveBeenCalled();
+  });
+
+  it('leaves modified reference clicks to the browser without toggling Pali', () => {
+    const props = baseProps(segments);
+    const { container } = render(<SegmentedText {...props} />);
+    const click = new MouseEvent('click', { bubbles: true, cancelable: true, ctrlKey: true });
+    container.querySelector('[data-seg] a')!.dispatchEvent(click);
+    expect(click.defaultPrevented).toBe(false);
+    expect(props.onNoteLink).not.toHaveBeenCalled();
+    expect(props.onToggleSeg).not.toHaveBeenCalled();
+  });
+});
+
+describe('SegmentedText — translator speaker labels', () => {
+  it.each([false, true])('keeps label styling, text offsets and a crossing highlight with Pali above %s', paliAbove => {
+    const en = 'The Buddha:\nFirst line. Māra: See SN4.24.';
+    const segments: SegmentFile[] = [{
+      key: 'sn4.24:3.1', pali: 'Pali', en, role: 'verse', speakers: [[0, 11], [24, 29]],
+      blocks: [[0, en.length, 'paragraph']], links: [[34, 40, '/read/sn4.24?by=thanissaro']],
+    }];
+    const highlight: Highlight = {
+      id: 'speaker', k0: 'sn4.24:3.1', o0: 4, k1: 'sn4.24:3.1', o1: 38,
+      c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev',
+    };
+    const props = baseProps(segments, { paliAbove, allPali: paliAbove, highlights: [highlight] });
+    const { container } = render(<SegmentedText {...props} />);
+    const line = container.querySelector<HTMLElement>('[data-seg]')!;
+    expect(line.textContent).toBe(en);
+    const labels = [...line.querySelectorAll<HTMLElement>('span[style*="font-size"]')];
+    expect(labels.map(s => s.textContent)).toEqual(['The Buddha:', 'Māra:']);
+    for (const label of labels) {
+      expect(label.style.fontSize).toBe(`${(paliAbove ? 16 : 18) - 3}px`);
+      expect(label.style.color).toBe('rgb(136, 136, 136)');
+    }
+    const painted = [...line.querySelectorAll('[data-hl-id]')];
+    expect(painted.map(s => s.textContent).join('')).toBe(en.slice(4, 38));
+    fireEvent.click(painted[0]);
+    expect(props.onSpanClick).toHaveBeenCalledWith('speaker', expect.anything(), highlight.c);
+    fireEvent.click(line.querySelector('a')!);
+    expect(props.onNoteLink).toHaveBeenCalledWith('/read/sn4.24?by=thanissaro');
+    expect(props.onToggleSeg).not.toHaveBeenCalled();
+  });
+
+  it.each([false, true])('sets a line’s opening label above it, outside the verse rule, with Pali above %s', paliAbove => {
+    const segments: SegmentFile[] = [{ key: 'sn1.9:3.1', pali: 'Pali', en: 'First line,\nsecond line.', role: 'verse', speaker: 'The Buddha:' }];
+    const props = baseProps(segments, { paliAbove, allPali: paliAbove });
+    const { container } = render(<SegmentedText {...props} />);
+    const row = container.querySelector<HTMLElement>('[id="sn1.9:3.1"]')!;
+    const label = row.firstElementChild as HTMLElement;
+    expect(label.textContent).toBe('The Buddha:');
+    expect(row.style.borderLeft).toBe('');
+    const ruled = label.nextElementSibling as HTMLElement;
+    expect(ruled.style.borderLeft).toContain('2px solid');
+    expect(ruled.querySelector('[data-seg]')!.textContent).toBe('First line,\nsecond line.');
+    fireEvent.click(label);
+    expect(props.onToggleSeg).toHaveBeenCalledWith(0);
+  });
+});
+
+describe('SegmentedText — translator blocks inside one Pali line', () => {
+  const en = 'An opening. First item; second, MN 1. A closing.';
+  const segments: SegmentFile[] = [{
+    key: 'dn1:1.21.2', en, pali: 'Paired Pali',
+    blocks: [[0, 11, 'paragraph'], [12, 23, 'list-item'], [24, 37, 'list-item'], [38, 48, 'paragraph']],
+    links: [[32, 36, '/read/mn1?by=bodhi']], note: 'A note.',
+  }];
+  const highlight: Highlight = {
+    id: 'blocks', k0: 'dn1:1.21.2', o0: 3, k1: 'dn1:1.21.2', o1: 42, c: '#ffe08a', m: '2026-01-01T00:00:00.000Z|dev',
+  };
+
+  it('keeps one bullet per item and one paragraph per source block across a partial highlight', () => {
+    const props = baseProps(segments, {
+      highlights: [highlight], marks: new Map([[0, { en: [[20, 35]], pa: [] }]]),
+    });
+    const { container } = render(<SegmentedText {...props} />);
+    const line = container.querySelector<HTMLElement>('[data-seg]')!;
+    expect(line.tagName).toBe('DIV');
+    expect(line.textContent).toBe(en);
+    expect([...line.querySelectorAll('p')].map(p => p.textContent)).toEqual(['An opening.', 'A closing.']);
+    expect([...line.querySelectorAll('ul > li')].map(li => li.textContent)).toEqual(['First item;', 'second, MN 1.']);
+    expect(line.querySelector('ul')?.style.listStyleType).toBe('disc');
+    expect([...line.querySelectorAll('[data-hl-id]')].map(el => el.textContent).join('')).toBe(en.slice(3, 42));
+    expect([...line.querySelectorAll('mark')].map(el => el.textContent).join('')).toBe(en.slice(20, 35));
+    fireEvent.click(line.querySelector('a')!);
+    expect(props.onNoteLink).toHaveBeenCalledWith('/read/mn1?by=bodhi');
+    fireEvent.click(line.querySelector('li [data-hl-id]')!);
+    expect(props.onSpanClick).toHaveBeenCalledWith('blocks', expect.anything(), highlight.c);
+    expect(props.onToggleSeg).not.toHaveBeenCalled();
+  });
+
+  it('keeps indented items tight and unbulleted through highlights, marks and links', () => {
+    const indented: SegmentFile[] = [{ ...segments[0], blocks: segments[0].blocks!.map(([a, b, kind]) =>
+      [a, b, kind === 'list-item' ? 'indented-item' : kind]) }];
+    const props = baseProps(indented, { highlights: [highlight], marks: new Map([[0, { en: [[20, 35]], pa: [] }]]) });
+    const { container } = render(<SegmentedText {...props} />);
+    const line = container.querySelector<HTMLElement>('[data-seg]')!;
+    const list = line.querySelector('ul')!;
+    expect(line.textContent).toBe(en);
+    expect(list.style.listStyleType).toBe('none');
+    expect(list.style.paddingInlineStart).toBe('1.4em');
+    expect(list.style.marginBottom).toBe('0px');
+    expect([...list.querySelectorAll('li')].map(el => el.style.marginBlock)).toEqual(['0px', '0px']);
+    expect([...line.querySelectorAll('[data-hl-id]')].map(el => el.textContent).join('')).toBe(en.slice(3, 42));
+    expect([...line.querySelectorAll('mark')].map(el => el.textContent).join('')).toBe(en.slice(20, 35));
+    const range = document.createRange();
+    range.selectNodeContents(line);
+    range.setEndBefore(line.querySelectorAll('li')[1]);
+    expect(range.toString()).toBe(en.slice(0, 24));
+    fireEvent.click(line.querySelector('a')!);
+    expect(props.onNoteLink).toHaveBeenCalledWith('/read/mn1?by=bodhi');
+    fireEvent.click(line.querySelector('li [data-hl-id]')!);
+    expect(props.onSpanClick).toHaveBeenCalledWith('blocks', expect.anything(), highlight.c);
+    expect(props.onToggleSeg).not.toHaveBeenCalled();
+  });
+
+  it.each([false, true])('keeps a list tight across Pali paragraph boundaries (Pali above: %s)', paliAbove => {
+    const rows: SegmentFile[] = [
+      { key: 'dn1:1.1', en: 'First item;', pali: 'First Pali', blocks: [[0, 11, 'indented-item']] },
+      { key: 'dn1:2.1', en: 'second item.', pali: 'Second Pali', blocks: [[0, 12, 'indented-item']] },
+      { key: 'dn1:3.1', en: 'Closing.', pali: 'Closing Pali' },
+    ];
+    const { container } = render(<SegmentedText {...baseProps(rows, { paliAbove, allPali: true })} />);
+    const first = container.querySelector<HTMLElement>('[id="dn1:1.1"]')!;
+    const last = container.querySelector<HTMLElement>('[id="dn1:2.1"]')!;
+    expect(first.style.marginBottom).toBe('0px');
+    expect(last.style.marginBottom).toBe('22px');
+    expect([...container.querySelectorAll('ul')].map(el => el.style.margin)).toEqual(['0px', '0px']);
+    expect([...container.querySelectorAll('[data-seg]')].map(el => el.textContent)).toEqual(rows.map(s => s.en));
+    expect(container.querySelectorAll('[data-reveal="pali"]')).toHaveLength(3);
+  });
+
+  it('counts exactly the stored text through DOM ranges across block boundaries', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments)} />);
+    const line = container.querySelector<HTMLElement>('[data-seg]')!;
+    const range = document.createRange();
+    range.selectNodeContents(line);
+    range.setEndBefore(line.querySelectorAll('li')[1]);
+    expect(range.toString()).toBe(en.slice(0, 24));
+    range.selectNodeContents(line);
+    expect(range.toString()).toBe(en);
+    fireEvent.click(line.querySelector('li')!);
+    expect(container.querySelector('[data-reveal="pali"]')?.textContent).toBe('Paired Pali');
+  });
+
+  it('keeps inline segment and note numbers on the first and last text blocks', () => {
+    const { container } = render(<SegmentedText {...baseProps(segments, { showNotes: true, segmentNumbers: 'inline' })} />);
+    const line = container.querySelector<HTMLElement>('[data-seg]')!;
+    expect(line.querySelector('p:first-child [data-seg-ignore]')?.textContent).toBe('1.21.2');
+    expect(line.querySelector('p:last-child sup')?.textContent).toBe('1');
+  });
+
+  it('keeps a heading whole when a highlight crosses its middle', () => {
+    const { container } = render(<SegmentedText {...baseProps([{
+      ...segments[0], blocks: undefined, headings: [[0, 11]],
+    }], { highlights: [highlight] })} />);
+    const line = container.querySelector('[data-seg]')!;
+    const headings = line.querySelectorAll('[style*="font-weight: 700"]');
+    expect(headings).toHaveLength(1);
+    expect(headings[0].textContent).toBe('An opening.');
+    expect(line.textContent).toBe(en);
   });
 });

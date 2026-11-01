@@ -56,6 +56,7 @@ export function assembleUserData({ listDocs, noteDocs, highlightDocs, visitedDoc
   highlightDocs.forEach(({ id, data }) => {
     (highlights[data.suttaId] = highlights[data.suttaId] || []).push({
       id,
+      ...(data.by ? { by: data.by } : {}),
       k0: data.k0,
       o0: data.o0,
       k1: data.k1,

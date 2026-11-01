@@ -1,6 +1,10 @@
 import { useEffect } from 'react';
 import { useLatest } from './useLatest';
 import { SHORTCUTS, isShortcut, isTypingTarget } from '../lib/shortcuts';
+import type { Translator } from '../lib/types';
+
+// The translation each of SHORTCUTS.readerTranslation's keys chooses, in its order.
+const TRANSLATION_KEYS: Translator[] = ['sujato', 'bodhi', 'thanissaro'];
 
 interface UseReaderKeyboardOptions {
   shortcutsOpen: boolean;
@@ -15,6 +19,8 @@ interface UseReaderKeyboardOptions {
   setPanel: (open: boolean) => void;
   backOrClose: () => void;
   step: (dir: 1 | -1) => void;
+  // Opens the sutta in another translation, where it has that one.
+  switchTranslation: (by: Translator) => void;
   goToAdjacentWord: (dir: 1 | -1) => void;
   setTab: (tab: 'highlights' | 'lists' | 'text') => void;
   setNoteFocusSignal: (updater: (s: number) => number) => void;
@@ -54,6 +60,7 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
   // Read through latest refs, since each is rebuilt on every ReaderPage render while this listener
   // subscribes once.
   const step = useLatest(opts.step);
+  const switchTranslation = useLatest(opts.switchTranslation);
   const goToAdjacentWord = useLatest(opts.goToAdjacentWord);
   const backOrClose = useLatest(opts.backOrClose);
 
@@ -88,6 +95,9 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
       } else if (isShortcut(e, SHORTCUTS.readerNav)) {
         e.preventDefault();
         step.current(e.key.toLowerCase() === 'j' ? -1 : 1);
+      } else if (isShortcut(e, SHORTCUTS.readerTranslation)) {
+        e.preventDefault();
+        switchTranslation.current(TRANSLATION_KEYS[SHORTCUTS.readerTranslation.match.indexOf(e.code)]);
       } else if (isShortcut(e, SHORTCUTS.readerDictNav)) {
         // The arrows step the dock's prev/next word, and leave the browser's own arrow scrolling
         // alone while it is closed.

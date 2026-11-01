@@ -9,7 +9,7 @@ import {
   useSyncExternalStore,
   type ReactNode,
 } from 'react';
-import type { Highlight, HighlightsMap, ListDef, ListKind, Membership, NotesMap, VisitedMap } from '../lib/types';
+import type { Highlight, HighlightsMap, ListDef, ListKind, Membership, NotesMap, Translator, VisitedMap } from '../lib/types';
 import {
   anchorHighlights as anchorHighlightRecords,
   applyFlushOutcome,
@@ -80,7 +80,7 @@ interface UserDataState {
   toggleMembership: (suttaId: string, listId: string) => Promise<void>;
   addToList: (suttaId: string, list: ListDef) => Promise<void>;
   submitNote: (suttaId: string, text: string) => Promise<void>;
-  setHighlightSpan: (suttaId: string, span: HlSpan, color: string | null) => Promise<void>;
+  setHighlightSpan: (suttaId: string, span: HlSpan, color: string | null, by?: Translator) => Promise<void>;
   anchorHighlights: (suttaId: string, segments: SegmentFile[]) => void;
   markVisited: (suttaId: string) => void;
 }
@@ -388,8 +388,8 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
   // tombstones those the span displaces (lib/sync/mirror.ts's writeHighlightRecord); an erase
   // (color === null) is the tombstones alone.
   const setHighlightSpan = useCallback(
-    async (suttaId: string, span: HlSpan, color: string | null) => {
-      mutate((s) => writeHighlightRecord(s, suttaId, span, color));
+    async (suttaId: string, span: HlSpan, color: string | null, by: Translator = 'sujato') => {
+      mutate((s) => writeHighlightRecord(s, suttaId, span, color, by));
     },
     [mutate]
   );

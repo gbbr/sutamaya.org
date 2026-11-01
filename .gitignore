@@ -1,10 +1,12 @@
 .DS_Store
 # Contents rather than the directory itself: git can't re-include anything under an excluded
-# directory, and skills/ and commands/ are checked in (see .claude/skills/retranslate/).
+# directory, and skills/, commands/ and agents/ are checked in (see .claude/skills/retranslate/).
 .claude/*
 !.claude/skills/
 !.claude/commands/
+!.claude/agents/
 node_modules/
+__pycache__/
 web/dist/
 web/dev-dist/
 web/ota/
@@ -13,6 +15,8 @@ web/public/data/
 # resources under web/ios/ and web/android/ are what's committed.
 web/assets/
 data/sujato.post/
+# A review round's packets and answers, in the copy where it runs (data/upstream/README.md).
+data/*/review/
 .env
 *.local
 CLAUDE.local.md

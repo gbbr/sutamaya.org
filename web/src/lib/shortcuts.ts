@@ -1,9 +1,10 @@
 export type ShortcutScope = 'library' | 'reader';
 
 export interface Shortcut {
-  // The exact value(s) a keydown handler compares against — `e.key`, or `e.key.toLowerCase()` for
-  // the case-insensitive letter shortcuts. Both the handlers and the "?" help modal read it, so the
-  // displayed key can't drift from what the key does. Checked with `.includes(e.key)`, never `===`.
+  // The exact value(s) a keydown handler compares against — `e.key`, `e.key.toLowerCase()` for
+  // the case-insensitive letter shortcuts, or `e.code` for a key named by its position. Both the
+  // handlers and the "?" help modal read it, so the displayed key can't drift from what the key
+  // does. Checked with `.includes(e.key)`, never `===`.
   match: string[];
   // Human-readable key caps shown in the help modal, same order as `match`.
   keys: string[];
@@ -34,6 +35,15 @@ export const SHORTCUTS = {
   // horizontal movement the reader sees animate. Shift is required: leaving the reader mid-sutta
   // shouldn't be one stray keypress away.
   readerNav: { match: ['j', 'k'], keys: ['⇧J', '⇧K'], label: 'Previous / next sutta', scope: 'reader', shift: true },
+  // The digit keys by position, since Shift types a different symbol on them in each keyboard
+  // layout; in the translation picker's order.
+  readerTranslation: {
+    match: ['Digit1', 'Digit2', 'Digit3'],
+    keys: ['⇧1', '⇧2', '⇧3'],
+    label: 'Read Sujato / Bodhi / Ṭhānissaro',
+    scope: 'reader',
+    shift: true,
+  },
   readerDictNav: {
     match: ['ArrowLeft', 'ArrowRight'],
     keys: ['←', '→'],
@@ -69,12 +79,13 @@ export function shortcutsForScope(scope: ShortcutScope): Shortcut[] {
 // so no single-key shortcut can hijack a browser chord; Shift is consulted only where a shortcut
 // asks for it, '?' being reachable only as Shift+/.
 export function isShortcut(
-  e: Pick<KeyboardEvent, 'key' | 'ctrlKey' | 'metaKey' | 'altKey' | 'shiftKey'>,
+  e: Pick<KeyboardEvent, 'key' | 'ctrlKey' | 'metaKey' | 'altKey' | 'shiftKey'> & { code?: string },
   shortcut: Shortcut
 ): boolean {
   if (e.ctrlKey || e.metaKey || e.altKey) return false;
   if (shortcut.shift && !e.shiftKey) return false;
-  return shortcut.match.includes(e.key) || shortcut.match.includes(e.key.toLowerCase());
+  return shortcut.match.includes(e.key) || shortcut.match.includes(e.key.toLowerCase())
+    || (!!e.code && shortcut.match.includes(e.code));
 }
 
 // True if `e` targets a text input or textarea, which is where a single-key shortcut stands down.

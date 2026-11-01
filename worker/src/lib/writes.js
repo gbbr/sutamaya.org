@@ -261,14 +261,15 @@ async function setNote(db, userId, item) {
 // conflict rather than using OR IGNORE, which would swallow every other constraint failure too and
 // report a write that never landed as a success.
 const INSERT_HIGHLIGHT_SQL = `
-  INSERT INTO highlights (id, user_id, sutta_id, k0, o0, k1, o1, color, created_at, mtime)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  INSERT INTO highlights (id, user_id, sutta_id, k0, o0, k1, o1, color, created_at, mtime, translator)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   ON CONFLICT (user_id, id) DO NOTHING
 `;
 
 // Retires one highlight, conditional on mtime.
 const TOMBSTONE_HIGHLIGHT_SQL = `
-  UPDATE highlights SET deleted = 1, mtime = ?3 WHERE user_id = ?1 AND id = ?2 AND mtime < ?3
+  UPDATE highlights SET deleted = 1, mtime = ?3
+  WHERE id = ?2 AND user_id = ?1 AND sutta_id = ?4 AND translator IS ?5 AND mtime < ?3
 `;
 
 // Applies one highlight gesture over `span` — from (k0, o0) up to but not including (k1, o1), in
@@ -279,7 +280,8 @@ const TOMBSTONE_HIGHLIGHT_SQL = `
 // Both ids come from the client and are never inferred from live rows, so the write means the same
 // thing whenever it is replayed.
 async function setHighlight(db, userId, item) {
-  const { suttaId, span, color, g, erase } = item || {};
+  const { suttaId, span, color, g, erase, by } = item || {};
+  if (by !== undefined && by !== 'bodhi' && by !== 'thanissaro') return { error: 'invalid_translator', status: 400 };
   if (!suttaId || !span) return { error: 'span_required', status: 400 };
   const { k0, o0, k1, o1 } = span;
   // Which of two keys comes first in the document is a question only the corpus answers, and the
@@ -296,9 +298,9 @@ async function setHighlight(db, userId, item) {
   // `created_at` takes the client instant too, so the Highlights auto-list orders by when the user
   // highlighted rather than when the write arrived.
   const mtime = resolveMtime(item?.mtime);
-  const statements = erase.map((id) => db.prepare(TOMBSTONE_HIGHLIGHT_SQL).bind(userId, id, mtime));
+  const statements = erase.map((id) => db.prepare(TOMBSTONE_HIGHLIGHT_SQL).bind(userId, id, mtime, suttaId, by ?? null));
   if (color) {
-    statements.push(db.prepare(INSERT_HIGHLIGHT_SQL).bind(g, userId, suttaId, k0, o0, k1, o1, color, mtime, mtime));
+    statements.push(db.prepare(INSERT_HIGHLIGHT_SQL).bind(g, userId, suttaId, k0, o0, k1, o1, color, mtime, mtime, by ?? null));
   }
   // D1 rejects an empty batch, which an erase displacing nothing would produce.
   if (statements.length) await db.batch(statements);

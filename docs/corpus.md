@@ -6,6 +6,7 @@ and `npm run dev` and `npm run build` run it first.
 
 ```
 data/sujato ───post───▶ data/sujato.post ──┐
+data/bodhi, data/thanissaro ───────────────┤
 data/pali, data/html, data/tree ───────────┼──build-corpus──▶ web/public/data/
 data/pli2en_dpd.json ──────────────────────┘
 ```
@@ -17,19 +18,27 @@ The first step applies the editorial rules ([retranslation.md](retranslation.md)
 
 | File | Holds |
 |---|---|
-| `corpus.json` | the browse tree, an index of every sutta (reference, titles, description, reading time) and version stamps |
+| `corpus.json` | the browse tree, an index of every sutta (reference, titles, description, reading time, other translations) and version stamps |
 | `text/<uid>.json` | one document's segments: each line's Pali and English, its translator's note, and its role |
-| `text-shards/` | the same text in ~1 MB bundles, for Settings' offline download; left out of the native bundle |
+| `text/bodhi/`, `text/thanissaro/` | the same, in Bodhi's or Ṭhānissaro's English ([Other translations](#other-translations)) |
+| `text-shards/` | every offered translation in ~1 MB bundles, for Settings' offline download; left out of the native bundle |
 | `dict-shards/` | the dictionary in ~256 KB alphabetical ranges, so a tap fetches one |
 | `search/` | the whole canon as two plain-text files, English and Pali ([search.md](search.md)) |
 
 A document is a sutta, or a batch of short ones such as `an1.1-10`; there are 4,041. Each segment
 is keyed by SuttaCentral's own id, such as `mn10:2.7`, which is also what a highlight anchors on.
 
-`corpus.json` also carries versions: `dataVersion`, a hash of all the text; `dictionaryVersion`;
-`searchVersion`, a hash of the search files that also names them; and the DPD release and sc-data
-commit it was built from. Settings compares the first two with what a device downloaded, to say
-when its offline copy is out of date.
+`corpus.json` also carries versions: `dataVersion`, a hash of all translations and the offline
+download format; `dictionaryVersion`; `searchVersion`, a hash of the search files that also names
+them; and the DPD release and sc-data commit it was built from. Settings compares the first two
+with what a device downloaded, to say
+when its offline copy is out of date. The download format is part of the version so a completed
+copy missing translations needs an update even when the documents themselves are unchanged.
+
+Each offline bundle holds complete documents, keyed by their path under `text/`, including
+`bodhi/` or `thanissaro/` for an alternative. Its manifest names those paths and their total count.
+Unpacking restores each document at the same URL an ordinary read caches, so the Reader needs no
+separate offline loading path.
 
 ## A segment
 
@@ -43,6 +52,12 @@ its chapter. A lone one between two translated lines of a paragraph usually has 
 by the line above, so its Pali joins that line and the Pali shown for it is whole. What counts as
 translated is read from the English itself, so a line translated upstream appears on the next
 refresh.
+
+Paragraphs are the ones SuttaCentral prints: the Pali's markup opens each, and each sutta of a
+batch starts one. The segment numbers group lines more loosely, often several printed paragraphs
+to one number, so paragraphs don't follow them. The build marks the line ending each paragraph with `pe`, a
+short key since nearly every paragraph carries one, and the Reader leaves a gap below it. A text
+cached without the marks breaks at its segment numbers instead.
 
 The build refuses a document whose segment keys are out of order, because highlights compare keys
 to work out what overlaps ([offline-sync.md](offline-sync.md#anchored-on-segment-keys)).
@@ -59,6 +74,47 @@ renumbered — lands on the next line of that sutta. Where there is none, the bu
 out and the link opens the sutta at the top. A test over the real data checks every link opens a
 sutta the app holds at a line it can land on, and that no link to one was lost to a change in how
 the source writes them.
+
+## Other translations
+
+Bhikkhu Bodhi's and Ṭhānissaro Bhikkhu's texts, cut onto the Pali's lines in `data/bodhi/` and
+`data/thanissaro/` ([data/upstream/README.md](../data/upstream/README.md)), are built beside
+Sujato's, each document with its own Pali under its own lines. The index names each text's other
+translations, with the page each was published on, for the Reader's credit.
+
+- **Only whole translations.** A text is offered where the translator's pages cover every sutta in
+  it and it holds more than titles. A group he only partly translates, as Ṭhānissaro's AN 1 and AN 2
+  selections, isn't, nor is a sutta he gives in excerpt. A page standing for several texts is built
+  whole on each.
+- **The Pali under a line** follows "A segment", but paragraphs come from the Pali's markup, so a
+  lone line inside a Dhammapada verse joins too. A line in his `covered.json`, whose content the
+  English above renders, joins the nearest translated line above, past any abbreviated ones.
+- **His markup** stays as offsets into the line's plain text, which is what highlights slice:
+  `headings` round a heading or title of his that no Pali heading line holds, `speakers` round
+  his source-marked speaker labels, and `links` round a reference to another sutta. Speakers
+  come from dhammatalks.org's `p.vspk` or SuttaCentral's `span.speaker`, including inline prose
+  attributions; their words and breaks stay in place. A label opening a line, after at most the
+  quotation mark opening its paragraph, leaves the text as the line's `speaker`, which the Reader
+  sets on a line of its own above, outside a verse's rule; one closing a line after its other
+  words names the speaker of the next line, and becomes that line's `speaker`. The Reader gives
+  them the muted, smaller type of Sujato's speaker lines.
+  `blocks` holds `[from, to, kind]` where two or more of his paragraphs
+  share a Pali line (`paragraph`, from `<p>`), or one shares a Pali verse line with his verse,
+  which the Reader draws as prose outside the verse's rule, and for his bulleted list items (`list-item`, from
+  `<ul><li>`). Ṭhānissaro's `<div class="iblock">` and `<div class="sq-list">` give
+  `indented-item` ranges only where the source wrapper holds at least two direct `<p>` children
+  and no other content, and every item except the last ends in `;`, `,` or `—`, ignoring note
+  markers and whitespace. These lists are indented, tight and unbulleted, including continuations
+  across Pali paragraphs; other source prose keeps ordinary paragraphs. A list fragment alone
+  on a Pali line keeps its range too; these layouts do not change the alignment.
+  The spaces between blocks and the breaks between his verse lines stay in the text, so markup
+  adds no characters to a highlight's offsets. The Reader draws the source blocks around the
+  inline highlights and links. A source heading spanning consecutive Pali heading lines sits
+  whole on the first, leaving the other English lines empty.
+- **His links**, in the text and the notes, open the cited text in his translation where it is
+  offered, and in Sujato's otherwise.
+- **Left out**: his introduction and "See also", which sit on the title line's note. Search covers
+  Sujato's text alone; the dictionary covers the words every text shows.
 
 ## How the library is arranged
 
@@ -124,6 +180,7 @@ refresh keeps them; one whose headword no entry defines any more fails the build
 |---|---|
 | `scripts/build-corpus.mjs` | the build |
 | `scripts/lib/collections.js` | how the library is grouped, how a segment is assembled, and a note's links |
+| `scripts/lib/translations.js` | which texts Bodhi and Ṭhānissaro offer, where each was published, and their lines' markup |
 | `scripts/__tests__/build-corpus.counts.test.js` | the checks over the real data, the note links among them |
 | `scripts/lib/paliWords.js` | the build's copy of the app's word splitting and shard lookup |
 | `scripts/update-data-dictionary.mjs` | the DPD import |

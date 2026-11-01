@@ -1,6 +1,12 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { estimateOfflineStatus, prefetchAllSuttas, prefetchDictionary, SHARD_FETCH_TIMEOUT_MS, type ShardManifest } from '../offline';
 import { resetDictShardCache } from '../dictionaryShards';
+import type { SuttaMap } from '../../types';
+
+const suttas: SuttaMap = {
+  dn1: { ref: 'DN1', node: 'dn', en: '', pali: '', blurb: '', min: 1, by: { bodhi: 'https://example.org/bodhi', thanissaro: 'https://example.org/thanissaro' } },
+  dn2: { ref: 'DN2', node: 'dn', en: '', pali: '', blurb: '', min: 1 },
+};
 
 // offline.ts targets browser-only behavior that this test's Node environment (see
 // vitest.config.ts — .test.ts files run under plain Node, not jsdom) doesn't provide on its own:
@@ -120,6 +126,18 @@ describe('offline', () => {
       vi.stubGlobal('window', {});
       const status = await estimateOfflineStatus(['dn1', 'dn2']);
       expect(status).toEqual({ cached: 0, total: 2 });
+    });
+
+    it('counts a sutta only when all its offered translations are cached', async () => {
+      const cache = await cacheStorage.open('sutta-text');
+      await cache.put('/data/text/dn1.json', jsonResponse([]));
+      await cache.put('/data/text/dn2.json', jsonResponse([]));
+      await cache.put('/data/text/bodhi/dn1.json', jsonResponse([]));
+      await cache.put('/data/text/thanissaro/mn1.json', jsonResponse([]));
+
+      expect(await estimateOfflineStatus(['dn1', 'dn2'], suttas)).toEqual({ cached: 1, total: 2 });
+      await cache.put('/data/text/thanissaro/dn1.json', jsonResponse([]));
+      expect(await estimateOfflineStatus(['dn1', 'dn2'], suttas)).toEqual({ cached: 2, total: 2 });
     });
   });
 
@@ -263,6 +281,76 @@ describe('offline', () => {
 
       expect(failed).toEqual([]);
       expect(cache.has('/data/text/dn2.json')).toBe(true);
+    });
+  });
+
+  describe('prefetchAllSuttas — translations', () => {
+    const paths = ['dn1', 'bodhi/dn1', 'thanissaro/dn1'];
+
+    it('caches each complete translation at its Reader URL and skips them all on resume', async () => {
+      const manifest = makeManifest([paths, ['dn2']]);
+      const bundle = Object.fromEntries(paths.map((p) => [p, [{ key: 'dn1:1.1', en: p, pali: 'pali', note: 'note', blocks: [[0, 3, 'paragraph']] }]]));
+      const fetchSpy = routedFetch(manifest, { 'text-shards/0.json': bundle });
+      vi.stubGlobal('fetch', fetchSpy);
+      const onProgress = vi.fn();
+
+      expect(await prefetchAllSuttas(['dn1'], { onProgress })).toEqual({ failed: [], circuitTripped: false });
+      const cache = await cacheStorage.open('sutta-text');
+      expect(cache.size).toBe(3);
+      for (const p of paths) {
+        expect(await (await cache.match(`/data/text/${p}.json`))?.json()).toEqual(bundle[p]);
+      }
+      expect(cache.has('/data/text/bodhi%2Fdn1.json')).toBe(false);
+      expect(onProgress).toHaveBeenLastCalledWith(100, 100);
+      expect(fetchSpy).toHaveBeenCalledTimes(2);
+
+      fetchSpy.mockClear();
+      expect((await prefetchAllSuttas(['dn1'])).failed).toEqual([]);
+      expect(fetchSpy).toHaveBeenCalledTimes(1);
+      expect(fetchSpy.mock.calls[0][0]).toBe('/data/text-shards/manifest.json');
+    });
+
+    it('downloads missing alternatives when Sujato is already cached', async () => {
+      const manifest = makeManifest([['dn1'], ['bodhi/dn1', 'thanissaro/dn1']]);
+      const cache = await cacheStorage.open('sutta-text');
+      await cache.put('/data/text/dn1.json', jsonResponse([]));
+      const fetchSpy = routedFetch(manifest, { 'text-shards/1.json': bundleFor(paths.slice(1)) });
+      vi.stubGlobal('fetch', fetchSpy);
+      const onProgress = vi.fn();
+
+      expect((await prefetchAllSuttas(['dn1'], { onProgress })).failed).toEqual([]);
+      expect(fetchSpy).toHaveBeenCalledTimes(2);
+      expect(onProgress).toHaveBeenNthCalledWith(1, 100, 200);
+      expect(onProgress).toHaveBeenLastCalledWith(200, 200);
+      expect(await estimateOfflineStatus(['dn1'], suttas)).toEqual({ cached: 1, total: 1 });
+    });
+
+    it('reports a sutta once when its alternatives fail and keeps its cached text', async () => {
+      const manifest = makeManifest([['dn1'], ['bodhi/dn1', 'thanissaro/dn1']]);
+      vi.stubGlobal('fetch', routedFetch(manifest, { 'text-shards/0.json': bundleFor(['dn1']) }));
+
+      expect((await prefetchAllSuttas(['dn1'])).failed).toEqual(['dn1']);
+      const cache = await cacheStorage.open('sutta-text');
+      expect(cache.has('/data/text/dn1.json')).toBe(true);
+      expect(await estimateOfflineStatus(['dn1'], suttas)).toEqual({ cached: 0, total: 1 });
+    });
+
+    it('refreshes every translation in place and preserves old copies when a shard fails', async () => {
+      const manifest = makeManifest(paths.map((p) => [p]));
+      const cache = await cacheStorage.open('sutta-text');
+      for (const p of paths) await cache.put(`/data/text/${p}.json`, jsonResponse('old'));
+      await cache.put('/data/text/mn1.json', jsonResponse('unrelated'));
+      const fetchSpy = routedFetch(manifest, {
+        'text-shards/0.json': { dn1: 'new Sujato' },
+        'text-shards/1.json': { 'bodhi/dn1': 'new Bodhi' },
+      }, { 'text-shards/2.json': () => jsonResponse('unavailable', 503) });
+      vi.stubGlobal('fetch', fetchSpy);
+
+      expect((await prefetchAllSuttas(['dn1'], { force: true })).failed).toEqual(['dn1']);
+      expect(await (await cache.match('/data/text/dn1.json'))?.json()).toBe('new Sujato');
+      expect(await (await cache.match('/data/text/bodhi/dn1.json'))?.json()).toBe('new Bodhi');
+      expect(await (await cache.match('/data/text/thanissaro/dn1.json'))?.json()).toBe('old');
+      expect(cache.has('/data/text/mn1.json')).toBe(true);
     });
   });
 

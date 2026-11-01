@@ -182,3 +182,8 @@ More: [docs/e2e.md](docs/e2e.md).
 
 Code: CC BY-NC-SA 4.0, see [LICENSE](LICENSE). Texts: SuttaCentral, public domain (CC0). Dictionary: derived
 from DPD, CC BY-NC-SA 4.0. Details in [data/README.md](data/README.md).
+
+Bhikkhu Bodhi's and Ṭhānissaro Bhikkhu's translations, in `data/upstream/`, `data/bodhi/` and
+`data/thanissaro/`, are not public domain: each keeps its publisher's terms, listed in
+[data/upstream/README.md](data/upstream/README.md). The app shows each with a credit linking its
+source, and Help gives their licences.

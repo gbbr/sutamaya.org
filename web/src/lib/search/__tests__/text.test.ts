@@ -7,6 +7,7 @@ import { RANK_NAMED, SEARCH_RESULTS_CAP } from '../metadata';
 import {
   buildTextIndex,
   mergeSearchHits,
+  pageIndex,
   passagesOf,
   searchCorpusVariants,
   searchSuttaText,
@@ -18,6 +19,7 @@ import {
   RANK_TEXT_ANYWHERE,
   type RankedHit,
   type SearchMap,
+  type TextIndex,
   type TextScore,
 } from '../text';
 import { runsOf, type Mark } from '../match';
@@ -458,6 +460,25 @@ describe('mergeSearchHits', () => {
     expect(text.size).toBe(0);
     const hits = mergeSearchHits<RankedHit>([], text, Y, 'sampajan', (id, rank) => ({ id, rank, saved: false }), 'r');
     expect(hits).toMatchObject([{ id: 'r', passages: [{ text: 'Asampajāno.', under: 'Unaware.' }] }]);
+  });
+
+  it("finds the sutta being read's passages in the translation on screen, where it isn't Sujato's", () => {
+    const canon = index([{ uid: 'r', paras: one([['Greed.', 'Lobho.']]) }]);
+    const page = pageIndex('r', [{ key: 'r:1.1', en: 'Craving.', pali: 'Lobho.' }]);
+    const merge = (query: string, onScreen?: TextIndex) =>
+      mergeSearchHits<RankedHit>(
+        [],
+        searchTextVariants(canon, query),
+        canon,
+        query,
+        (id, rank) => ({ id, rank, saved: false }),
+        'r',
+        onScreen
+      );
+    expect(merge('craving', page)).toMatchObject([{ id: 'r', passages: [{ text: 'Craving.', segments: ['r:1.1', 'r:1.1'] }] }]);
+    expect(merge('lobho', page)).toMatchObject([{ id: 'r', passages: [{ text: 'Lobho.', under: 'Craving.' }] }]);
+    expect(merge('greed', page)[0].passages).toBeUndefined();
+    expect(merge('greed')).toMatchObject([{ id: 'r', passages: [{ text: 'Greed.' }] }]);
   });
 });
 

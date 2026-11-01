@@ -214,6 +214,51 @@ export function buildTextIndex(en: string, pa: string, map: SearchMap): TextInde
   };
 }
 
+// pageIndex returns a TextIndex of one document the search text doesn't hold, a translation other
+// than Sujato's, with its lines written as scripts/build-corpus.mjs's addToSearchBlobs writes them.
+export function pageIndex(uid: string, segments: ReadonlyArray<{ key: string; en: string; pali: string }>): TextIndex {
+  const en = [PARA_MARK];
+  const pa = [PARA_MARK];
+  let para = segments.length ? paragraphOf(segments[0].key) : '';
+  for (const seg of segments) {
+    const p = paragraphOf(seg.key);
+    if (p !== para) {
+      en.push(PARA_MARK);
+      pa.push(PARA_MARK);
+      para = p;
+    }
+    en.push(searchLine(seg.en));
+    pa.push(searchLine(seg.pali));
+  }
+  const enText = en.join('\n');
+  const paText = pa.join('\n');
+  return {
+    uids: [uid],
+    enStarts: [0],
+    paStarts: [0],
+    en: enText,
+    pa: paText,
+    enParas: paragraphStarts(enText),
+    paParas: paragraphStarts(paText),
+    keys: [segments.map((seg) => seg.key)],
+  };
+}
+
+// paragraphOf returns the paragraph a segment key's number names, "mn10:2" for "mn10:2.7", as
+// scripts/lib/collections.js's paragraphOf does.
+function paragraphOf(key: string): string {
+  const colon = key.indexOf(':');
+  const rest = key.slice(colon + 1);
+  const dot = rest.indexOf('.');
+  return key.slice(0, colon + 1) + (dot === -1 ? rest : rest.slice(0, dot));
+}
+
+// searchLine returns `s` with the characters that would break the search text's one line per
+// segment replaced, as scripts/build-corpus.mjs's searchLine does.
+function searchLine(s: string): string {
+  return s.replace(/[\r\n\x1e]+/g, ' ');
+}
+
 // Returns the segment keys a search map entry carries, each written out whole.
 function expandKeys(keys: string): string[] {
   let uid = '';
@@ -849,7 +894,10 @@ export function mergeSearchHits<T extends RankedHit>(
   typed: string,
   make: (uid: string, bucket: number) => T | null,
   // The sutta on screen, in the Reader's search, whose hit gets its passages wherever it ranks.
-  readingId?: string
+  readingId?: string,
+  // The translation on screen where it isn't Sujato's, as pageIndex gives it, searched for the
+  // passages in place of his text.
+  page?: TextIndex
 ): T[] {
   const best = new Map<string, T>();
   for (const hit of meta) best.set(hit.id, hit);
@@ -879,8 +927,9 @@ export function mergeSearchHits<T extends RankedHit>(
     }
   }
   if (index && readingId) {
-    const doc = index.uids.indexOf(readingId);
-    const passages = doc < 0 ? [] : passagesOf(index, doc, typed, text.get(readingId));
+    const doc = page ? 0 : index.uids.indexOf(readingId);
+    const score = page ? searchTextVariants(page, typed).get(readingId) : text.get(readingId);
+    const passages = doc < 0 ? [] : passagesOf(page ?? index, doc, typed, score);
     // The sutta being read, searched on its own: a hit only that search found joins the end.
     const reading = passages.length
       ? (hits.find((hit) => hit.id === readingId) ?? make(readingId, RANK_TEXT_ANYWHERE))

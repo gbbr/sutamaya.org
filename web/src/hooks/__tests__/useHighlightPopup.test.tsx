@@ -323,10 +323,10 @@ describe('useHighlightPopup', () => {
   });
 
   describe('pick', () => {
-    it('saves the current span and clears the popup', async () => {
+    it.each(['sujato', 'bodhi', 'thanissaro'] as const)('saves the current span in %s and clears the popup', async (by) => {
       const { setHighlightSpan } = mockUserData();
       const { segs, segments } = buildSegRoot(['Hello world']);
-      const { result } = renderHook(() => useHighlightPopup('sn1.1', [], segments));
+      const { result } = renderHook(() => useHighlightPopup('sn1.1', [], segments, by));
 
       selectAcross(segs[0], 0, segs[0], 5);
       await triggerTextUp(result.current.onTextUp);
@@ -335,7 +335,20 @@ describe('useHighlightPopup', () => {
         await result.current.pick('yellow');
       });
 
-      expect(setHighlightSpan).toHaveBeenCalledWith('sn1.1', { k0: key(0), o0: 0, k1: key(0), o1: 5 }, 'yellow');
+      expect(setHighlightSpan).toHaveBeenCalledWith('sn1.1', { k0: key(0), o0: 0, k1: key(0), o1: 5 }, 'yellow', by);
+      expect(result.current.pop).toBeNull();
+    });
+
+    it('closes a selection when the translation changes', async () => {
+      mockUserData();
+      const { segs, segments } = buildSegRoot(['Hello world']);
+      const { result, rerender } = renderHook(({ by }) => useHighlightPopup('sn1.1', [], segments, by), {
+        initialProps: { by: 'bodhi' as 'bodhi' | 'thanissaro' },
+      });
+      selectAcross(segs[0], 0, segs[0], 5);
+      await triggerTextUp(result.current.onTextUp);
+      expect(result.current.pop).not.toBeNull();
+      rerender({ by: 'thanissaro' });
       expect(result.current.pop).toBeNull();
     });
   });

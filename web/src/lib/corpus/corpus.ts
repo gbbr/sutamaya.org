@@ -3,7 +3,7 @@
 //
 // The dictionary is not loaded here: it is fetched one range shard at a time by the tap that needs
 // it (lib/corpus/dictionaryShards.ts).
-import type { ChapterRow, Corpus, ListDef, Nikaya, Sutta } from '../types';
+import type { ChapterRow, Corpus, ListDef, Nikaya, Sutta, Translator } from '../types';
 
 export async function loadCorpus(): Promise<Corpus> {
   const res = await fetch('/data/corpus.json');
@@ -22,8 +22,45 @@ export interface SegmentFile {
   role?: SegmentRole;
   // The sub-heading's <h2>–<h5> nesting, for role === 'heading' only.
   headingLevel?: 2 | 3 | 4 | 5;
-  // Bhikkhu Sujato's translator note, which may contain inline HTML.
+  // Set where the paragraph the Pali's markup prints ends with this line.
+  pe?: 1;
+  // The translator's note, which may contain inline HTML.
   note?: string;
+  // The translator's headings that no Pali heading line holds, as offsets into `en`.
+  headings?: [from: number, to: number][];
+  // The translator's source-marked speaker label opening the line, set on a line of its own above it.
+  speaker?: string;
+  // The translator's source-marked speaker labels later in the line, as offsets into `en`.
+  speakers?: [from: number, to: number][];
+  // The translator's references to other suttas, as offsets into `en` and the reader path each opens.
+  links?: [from: number, to: number, href: string][];
+  // The translator's paragraphs, list items and indented lines, as offsets into `en`.
+  blocks?: [from: number, to: number, kind: 'paragraph' | 'list-item' | 'indented-item'][];
+}
+
+// The name each translator is credited by.
+export const TRANSLATOR_NAMES: Record<Translator, string> = {
+  sujato: 'Bhikkhu Sujato',
+  bodhi: 'Bhikkhu Bodhi',
+  thanissaro: 'Ṭhānissaro Bhikkhu',
+};
+
+// The name each translator's switcher shows: his name alone, without his title.
+export const TRANSLATOR_SHORT_NAMES: Record<Translator, string> = {
+  sujato: 'Sujato',
+  bodhi: 'Bodhi',
+  thanissaro: 'Ṭhānissaro',
+};
+
+// Returns the translator an address's `by` names: Sujato for none, or for one the app doesn't know.
+export function translatorOf(by: string | null): Translator {
+  return by === 'bodhi' || by === 'thanissaro' ? by : 'sujato';
+}
+
+// Returns where a text's file sits under text/, without ".json": Sujato's by its uid, another
+// translator's in his own folder.
+function textPath(uid: string, by: Translator): string {
+  return by === 'sujato' ? uid : `${by}/${uid}`;
 }
 
 const textCache = new Map<string, Promise<SegmentFile[]>>();
@@ -31,28 +68,29 @@ const textCache = new Map<string, Promise<SegmentFile[]>>();
 // promise still answers a microtask later, which costs a render with no text.
 const textResolved = new Map<string, SegmentFile[]>();
 
-export function loadSuttaText(uid: string): Promise<SegmentFile[]> {
-  let p = textCache.get(uid);
+export function loadSuttaText(uid: string, by: Translator = 'sujato'): Promise<SegmentFile[]> {
+  const key = textPath(uid, by);
+  let p = textCache.get(key);
   if (!p) {
-    p = fetch(`/data/text/${encodeURIComponent(uid)}.json`)
+    p = fetch(`/data/text/${by === 'sujato' ? '' : `${by}/`}${encodeURIComponent(uid)}.json`)
       .then((r) => {
-        if (!r.ok) throw new Error(`Failed to load ${uid}.json (${r.status})`);
+        if (!r.ok) throw new Error(`Failed to load ${key}.json (${r.status})`);
         return r.json();
       })
       .then((segs: SegmentFile[]) => {
-        textResolved.set(uid, segs);
+        textResolved.set(key, segs);
         return segs;
       });
     // Evict a failed fetch, so a retry refetches instead of replaying the same rejection.
-    p.catch(() => textCache.delete(uid));
-    textCache.set(uid, p);
+    p.catch(() => textCache.delete(key));
+    textCache.set(key, p);
   }
   return p;
 }
 
 // The text for `uid` if a previous loadSuttaText has already resolved it, else undefined.
-export function peekSuttaText(uid: string | undefined): SegmentFile[] | undefined {
-  return uid ? textResolved.get(uid) : undefined;
+export function peekSuttaText(uid: string | undefined, by: Translator = 'sujato'): SegmentFile[] | undefined {
+  return uid ? textResolved.get(textPath(uid, by)) : undefined;
 }
 
 export function suttaEntries(corpus: Corpus): Array<[string, Sutta]> {

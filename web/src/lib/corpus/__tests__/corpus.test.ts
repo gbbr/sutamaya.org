@@ -776,6 +776,27 @@ describe('peekSuttaText', () => {
     expect(peekSuttaText('mn1')).toEqual(segments);
   });
 
+  it('keeps each translation in its own cache and retries only the failed translation', async () => {
+    const fetchText = vi.fn(async (url: string) => ({
+      ok: !url.includes('/bodhi/'), status: 503,
+      json: async () => [{ key: 'mn2:1.1', pali: 'evaṁ', en: url }],
+    }) as Response);
+    vi.stubGlobal('fetch', fetchText);
+    await loadSuttaText('mn2');
+    await loadSuttaText('mn2', 'thanissaro');
+    await expect(loadSuttaText('mn2', 'bodhi')).rejects.toThrow();
+    expect(peekSuttaText('mn2')?.[0].en).toBe('/data/text/mn2.json');
+    expect(peekSuttaText('mn2', 'thanissaro')?.[0].en).toBe('/data/text/thanissaro/mn2.json');
+    expect(peekSuttaText('mn2', 'bodhi')).toBeUndefined();
+    fetchText.mockImplementation(async (url: string) => ({
+      ok: true, json: async () => [{ key: 'mn2:1.1', pali: 'evaṁ', en: url }],
+    }) as Response);
+    await loadSuttaText('mn2', 'bodhi');
+    await loadSuttaText('mn2');
+    expect(fetchText).toHaveBeenCalledTimes(4);
+    expect(peekSuttaText('mn2', 'bodhi')?.[0].en).toBe('/data/text/bodhi/mn2.json');
+  });
+
   it('has nothing for a sutta nobody asked for, or for no sutta at all', () => {
     expect(peekSuttaText('an-id-never-loaded')).toBeUndefined();
     expect(peekSuttaText(undefined)).toBeUndefined();

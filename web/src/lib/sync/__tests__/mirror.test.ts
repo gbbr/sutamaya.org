@@ -23,6 +23,8 @@ import {
 } from '../mirror';
 import type { UserData } from '../../api';
 import type { SegmentFile } from '../../corpus/corpus';
+import type { Translator } from '../../types';
+import { deriveUserData } from '../mirrorView';
 
 // A span names the segments it starts and ends on. These tests read more clearly in positions, so
 // a helper says which key each position belongs to.
@@ -121,6 +123,43 @@ describe('applySnapshot', () => {
 
     expect(Object.keys(state.highlights).sort()).toEqual(['g1', 'g2']);
     expect(state.highlights.g1.data).toMatchObject({ suttaId: 'dn1', span: span(0, 3, 1, 9), sent: true });
+  });
+});
+
+describe('translation highlights', () => {
+  const translators: Translator[] = ['sujato', 'bodhi', 'thanissaro'];
+  const highlights = translators.map((by) => ({
+    id: by, ...(by === 'sujato' ? {} : { by }), ...span(0, 0, 0, 5), c: 'yellow', m: '2026-01-01T00:00:00.000Z|d',
+  }));
+  const server = snapshot({ highlights: { dn1: highlights } });
+
+  it.each(translators)('preserves %s on a pull and in the derived view', (by) => {
+    const state = applySnapshot(emptyMirror('u1'), server);
+    const record = state.highlights[by].data;
+    expect(record.span).toEqual(span(0, 0, 0, 5));
+    expect(record.by).toBe(by === 'sujato' ? undefined : by);
+    expect(deriveUserData(state).highlights.dn1.find((h) => h.id === by)).toEqual(highlights.find((h) => h.id === by));
+  });
+
+  it.each(translators)('displaces and erases only %s, including across a stale pull', (by) => {
+    const initial = applySnapshot(emptyMirror('u1'), server);
+    const recoloured = writeHighlightRecord(initial, 'dn1', span(0, 1, 0, 3), 'green', by);
+    expect(recoloured.highlights[by]).toBeUndefined();
+    const replacement = Object.values(recoloured.highlights).find((r) => r.dirty)!.data;
+    expect(replacement.erase).toEqual([by]);
+    expect(replacement.by).toBe(by === 'sujato' ? undefined : by);
+    if (by === 'sujato') expect(replacement).not.toHaveProperty('by');
+    for (const other of translators.filter((id) => id !== by)) {
+      expect(recoloured.highlights[other]).toBe(initial.highlights[other]);
+    }
+
+    const erased = writeHighlightRecord(recoloured, 'dn1', span(0, 1, 0, 3), null, by);
+    const pending = Object.values(erased.highlights).find((r) => r.dirty)!.data;
+    expect(pending.erase).toEqual([by]);
+    expect(pending.color).toBeNull();
+    expect(pending.by).toBe(by === 'sujato' ? undefined : by);
+    expect(Object.keys(applySnapshot(erased, server).highlights)).not.toContain(by);
+    expect(deriveUserData(erased).highlights.dn1.map((h) => h.id).sort()).toEqual(translators.filter((id) => id !== by).sort());
   });
 });
 
@@ -601,6 +640,18 @@ describe('anchorHighlights', () => {
     data: { g, suttaId: 'dn1', span, color: 'yellow', erase: [], mtime: '2026-01-01T00:00:00.000Z|d', sent: true, ...over },
   });
   const stored = (highlights: Record<string, unknown>) => ({ ...emptyMirror('u1'), highlights } as unknown as MirrorState);
+
+  it('converts only Sujato records, leaving named translations untouched', () => {
+    const before = stored({
+      old: positioned('old', { i0: 1, o0: 0, i1: 1, o1: 4 }),
+      bodhi: positioned('bodhi', { i0: 1, o0: 0, i1: 1, o1: 4 }, { by: 'bodhi' }),
+      thanissaro: ranged('thanissaro', [{ i: 1, s: 0, e: 4 }], { by: 'thanissaro' }),
+    });
+    const state = anchorHighlights(before, 'dn1', segments);
+    expect(state.highlights.old.data.span).toEqual({ k0: k(1), o0: 0, k1: k(1), o1: 4 });
+    expect(state.highlights.bodhi).toBe(before.highlights.bodhi);
+    expect(state.highlights.thanissaro).toBe(before.highlights.thanissaro);
+  });
 
   it('names the keys the two endpoint positions sit on', () => {
     const state = anchorHighlights(stored({ g1: positioned('g1', { i0: 2, o0: 3, i1: 4, o1: 6 }) }), 'dn1', segments);

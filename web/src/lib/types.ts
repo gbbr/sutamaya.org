@@ -1,3 +1,5 @@
+export type Translator = 'sujato' | 'bodhi' | 'thanissaro';
+
 export interface Sutta {
   ref: string;
   node: string;
@@ -5,6 +7,8 @@ export interface Sutta {
   pali: string;
   blurb: string;
   min: number;
+  // The source page for each alternative translation offered for this document.
+  by?: Partial<Record<Exclude<Translator, 'sujato'>, string>>;
 }
 
 export type SuttaMap = Record<string, Sutta>;
@@ -37,9 +41,8 @@ export interface Corpus {
   // The suttacentral/sc-data commit the text was last synced from, which the reader's translation
   // attribution links to.
   sujatoCommit: string;
-  // Digest of the built sutta text, changing whenever any sutta's rendered text does. Per-sutta
-  // text is cached under unversioned URLs, so this is how a device tells its copy has fallen
-  // behind.
+  // dataVersion covers every translation and the offline download format, so a device can tell
+  // when its copy under unversioned text URLs has fallen behind.
   dataVersion: string;
   // Digest of the search blobs themselves, which is what their filenames carry. Separate from
   // `dataVersion` because the blobs hold the same segments as the per-sutta text but not the same
@@ -63,6 +66,8 @@ export interface Highlight {
   // Minted by the client when the colour is picked, so a highlight made offline has its final
   // identity at once.
   id: string;
+  // The translation whose English anchors this span; absent means Sujato's.
+  by?: Exclude<Translator, 'sujato'>;
   k0: string;
   o0: number;
   k1: string;

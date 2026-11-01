@@ -7,8 +7,8 @@
 //
 // The lookups port web/src/lib/corpus/corpus.ts (findNode, resolveCanonicalSuttaId), the trim in
 // web/src/lib/navigation/documentMeta.ts and the reading of `at` in
-// web/src/lib/navigation/passageLink.ts, and the titles match what ReaderPage and LibraryPage pass
-// to useDocumentMeta. No module is shared between the two workspaces — change one, change the
+// web/src/lib/navigation/passageLink.ts and of `by` in ReaderPage, and the titles match what
+// ReaderPage and LibraryPage pass to useDocumentMeta. No module is shared between the two workspaces — change one, change the
 // other.
 
 // The paths that carry a subject of their own. A user list also lives under /browse, but its
@@ -68,8 +68,9 @@ export async function withShareMeta(shell, url, env) {
 }
 
 // Returns the title and description of the lines a /read link's `at` names — "15.4", or a run,
-// "15.4-15.6" — read from its sutta's text, or null when it names none the text holds. `at` is kept
-// for the card's own link.
+// "15.4-15.6" — read from its sutta's text in the translation `by` names, where the text has it,
+// else Sujato's; or null when it names none the text holds. `by` and `at` are kept for the card's
+// own link.
 async function linesMetaFor(corpus, url, env) {
   const at = url.searchParams.get('at')?.split('-');
   const match = /^\/read\/([^/]+)/.exec(url.pathname);
@@ -82,20 +83,24 @@ async function linesMetaFor(corpus, url, env) {
   }
   const docId = resolveSuttaId(corpus, uid);
   const sutta = corpus.suttas[docId];
-  const segments = sutta ? await loadText(env, url, docId) : null;
+  if (!sutta) return null;
+  const requested = url.searchParams.get('by');
+  const by = sutta.by && Object.hasOwn(sutta.by, requested) ? requested : null;
+  const segments = await loadText(env, url, docId, by);
   if (!segments) return null;
   const first = segments.findIndex((s) => s.key === `${uid}:${at[0]}`);
   const last = segments.findIndex((s) => s.key === `${uid}:${at[at.length - 1]}`);
   if (first === -1 || last < first) return null;
   const description = summarize(segments.slice(first, last + 1).map((s) => s.en).join(' '));
   if (!description) return null;
-  return { title: `${citedRef(sutta, docId, uid)}:${at.join('–')} · ${sutta.en}`, description, at: at.join('-') };
+  return { title: `${citedRef(sutta, docId, uid)}:${at.join('–')} · ${sutta.en}`, description, by, at: at.join('-') };
 }
 
-// Returns a document's segments from the assets binding, or null if they can't be read.
-async function loadText(env, url, docId) {
+// Returns a document's segments in the translation `by` names, Sujato's when null, from the assets
+// binding, or null if they can't be read.
+async function loadText(env, url, docId, by) {
   try {
-    const res = await env.ASSETS.fetch(new URL(`/data/text/${encodeURIComponent(docId)}.json`, url));
+    const res = await env.ASSETS.fetch(new URL(`/data/text/${by ? `${by}/` : ''}${encodeURIComponent(docId)}.json`, url));
     return res.ok ? await res.json() : null;
   } catch {
     return null;
@@ -111,10 +116,12 @@ function citedRef(sutta, docId, uid) {
 
 // Writes one page's title and description into the shell as it streams past.
 export function applyShareMeta(shell, meta, url) {
+  // The translation and lines the card previews, kept in its own link.
+  const query = [meta.by && `by=${meta.by}`, meta.at && `at=${meta.at}`].filter(Boolean).join('&');
   const tags = [
     ['og:type', 'website'],
     ['og:site_name', 'sutamaya'],
-    ['og:url', `${url.origin}${url.pathname}${meta.at ? `?at=${meta.at}` : ''}`],
+    ['og:url', `${url.origin}${url.pathname}${query ? `?${query}` : ''}`],
     ['og:title', meta.title],
     ...(meta.description ? [['og:description', meta.description]] : []),
     // Square and declared, so a crawler picks the thumbnail layout without fetching the file.

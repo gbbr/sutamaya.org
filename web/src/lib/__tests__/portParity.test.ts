@@ -125,7 +125,7 @@ function workerDocsFrom(state: MirrorState) {
     })),
     highlightDocs: Object.values(state.highlights).flatMap(({ data }) =>
       data.color
-        ? [{ id: data.g, data: { suttaId: data.suttaId, ...data.span, color: data.color, mtime: data.mtime, createdAt: data.mtime } }]
+        ? [{ id: data.g, data: { suttaId: data.suttaId, by: data.by, ...data.span, color: data.color, mtime: data.mtime, createdAt: data.mtime } }]
         : []
     ),
     visitedDocs: Object.values(state.visited).map(({ data }) => ({ id: data.suttaId, data: { visitedAt: data.visitedAt } })),
@@ -165,6 +165,14 @@ describe('deriveUserData agrees with the worker’s assembleUserData', () => {
         mn1: { dirty: false, data: { suttaId: 'mn1', text: 'newer', mtime: '2025-01-02T00:00:00.000Z|d' } },
       },
       highlights: {
+        bodhi: {
+          dirty: false,
+          data: { g: 'bodhi', by: 'bodhi', suttaId: 'sn1.1', span: { k0: 'sn1.1:1.1', o0: 0, k1: 'sn1.1:1.1', o1: 4 }, color: 'green', erase: [], mtime: '2025-01-02T00:00:00.000Z|d', sent: true },
+        },
+        thanissaro: {
+          dirty: false,
+          data: { g: 'thanissaro', by: 'thanissaro', suttaId: 'mn1', span: { k0: 'mn1:1.1', o0: 0, k1: 'mn1:1.1', o1: 4 }, color: 'blue', erase: [], mtime: '2025-01-04T00:00:00.000Z|d', sent: true },
+        },
         g1: {
           dirty: false,
           data: { g: 'g1', suttaId: 'sn1.1', span: { k0: 'sn1.1:1.1', o0: 0, k1: 'sn1.1:1.1', o1: 4 }, color: 'yellow', erase: [], mtime: '2025-01-03T00:00:00.000Z|d', sent: true },

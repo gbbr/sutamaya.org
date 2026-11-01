@@ -27,13 +27,23 @@ const NO_MARKS: Mark[] = [];
 /** Where a segment's number shows: hanging in the left margin, or at the start of its line. */
 export type SegmentNumberPlacement = 'margin' | 'inline';
 
-/** Returns the paragraph a segment key belongs to — its uid plus the digits before the first dot. */
-function paragraphOf(key: string): string {
+/** Returns the section a segment key belongs to — its uid plus the digits before the first dot. */
+function sectionOf(key: string): string {
   const colon = key.indexOf(':');
   const uid = key.slice(0, colon);
   const segId = key.slice(colon + 1);
   const dot = segId.indexOf('.');
   return dot === -1 ? uid : `${uid}:${segId.slice(0, dot)}`;
+}
+
+/**
+ * Returns the paragraph a segment key belongs to, for a text that marks none — its key without the
+ * last number, which in DN's three-level keys ("dn1:1.21.2") is a paragraph within a section.
+ */
+function paragraphOf(key: string): string {
+  const colon = key.indexOf(':');
+  const dot = key.lastIndexOf('.');
+  return dot < colon ? key.slice(0, colon) : key.slice(0, dot);
 }
 
 /** Returns the type treatment for a segment's structural role, over the base English style. */
@@ -262,9 +272,169 @@ const SegmentRow = memo(function SegmentRow({
   const parts = buildParts(seg.en, rangesForSeg);
   const enMarks = marks ? mergedMarks(seg.en, marks.en) : NO_MARKS;
   const paMarks = marks ? mergedMarks(seg.pali, marks.pa) : NO_MARKS;
-  // The element a segment renders as: <h2>–<h5> for a sub-heading, <p> for everything else.
-  const HeadingTag: 'h2' | 'h3' | 'h4' | 'h5' | 'p' =
-    seg.role === 'heading' ? (`h${seg.headingLevel ?? 2}` as 'h2' | 'h3' | 'h4' | 'h5') : 'p';
+  /** linkedText renders a slice of the English with the translator's links and the search marks. */
+  function linkedText(from: number, to: number, fill: string): ReactNode {
+    const nodes: ReactNode[] = [];
+    let at = from;
+    for (const [start, end, href] of seg.links ?? []) {
+      const a = Math.max(from, start);
+      const b = Math.min(to, end);
+      if (a >= b) continue;
+      if (at < a) nodes.push(<Fragment key={at}>{marked(seg.en.slice(at, a), at, enMarks, fill)}</Fragment>);
+      nodes.push(
+        <a
+          key={a}
+          className="text-link"
+          href={href}
+          onClick={(e) => {
+            e.stopPropagation();
+            if (!opensHere(e)) return;
+            e.preventDefault();
+            onNoteLink(href);
+          }}
+          onPointerDown={() => onNoteLinkPress(href)}
+        >
+          {marked(seg.en.slice(a, b), a, enMarks, fill)}
+        </a>
+      );
+      at = b;
+    }
+    if (at < to) nodes.push(<Fragment key={at}>{marked(seg.en.slice(at, to), at, enMarks, fill)}</Fragment>);
+    return nodes;
+  }
+  /** highlightedText renders a slice with highlights, links and search marks at their text offsets. */
+  function highlightedText(from: number, to: number): ReactNode {
+    const nodes = parts.map((p) => {
+      const a = Math.max(from, p.start);
+      const b = Math.min(to, p.start + p.text.length);
+      if (a >= b) return null;
+      if (!p.c) return <Fragment key={a}>{linkedText(a, b, theme.selection)}</Fragment>;
+      const paint = highlightPaint(p.c, theme);
+      return (
+        <span
+          key={a}
+          // The id of the highlight this span was painted from, which useSuttaReading's
+          // scrollToSegment jumps to. A highlight spanning several segments or blocks repeats it.
+          data-hl-id={p.id}
+          // The span stays selectable, unlike `.pw` and the note number, so a drag can cross or
+          // extend an existing highlight. The text colour is theme.fg wherever the theme paints its
+          // own fills, and a near-black otherwise.
+          style={{
+            background: paint,
+            borderRadius: 2,
+            boxShadow: `0 0 0 2px ${paint}`,
+            color: theme.highlightPalette ? theme.fg : '#1B1917',
+          }}
+          onClick={(e) => {
+            e.stopPropagation();
+            // The span's own box, not that of a search mark inside it that took the click.
+            onSpanClick(p.id!, e.currentTarget.getBoundingClientRect(), p.c!);
+          }}
+        >
+          {linkedText(a, b, markOnHighlight(paint, theme))}
+        </span>
+      );
+    });
+    return <>
+      {from === 0 && !paliLeads && listMarker}
+      {from === 0 && !paliLeads && segmentNumberMark((enRoleStyle.fontSize as number | undefined) ?? enFontSize)}
+      {nodes}
+      {to === seg.en.length && seg.note && showNotes && (
+        <sup
+          // As the list-item marker: rendered text that isn't part of `seg.en`, so
+          // useHighlightPopup's offsets discount it.
+          data-seg-ignore
+          className="font-sans"
+          // Padding grows the number's tap target beyond its painted digits.
+          style={{ ...NOTE_NUMBER, padding: '8px 8px 8px 4px', color: theme.pali, cursor: 'pointer', ...UNSELECTABLE }}
+          title={stripTags(seg.note)}
+          onClick={(e) => {
+            e.stopPropagation();
+            onToggleNote(i);
+          }}
+        >
+          {noteNumber}
+        </sup>
+      )}
+    </>;
+  }
+  /** speakerText styles source labels around highlights without changing the text's offsets. */
+  function speakerText(from: number, to: number): ReactNode {
+    const nodes: ReactNode[] = [];
+    let at = from;
+    for (const [start, end] of seg.speakers ?? []) {
+      const a = Math.max(from, start), b = Math.min(to, end);
+      if (a >= b) continue;
+      if (at < a) nodes.push(<Fragment key={at}>{highlightedText(at, a)}</Fragment>);
+      nodes.push(<span key={a} style={roleStyle('speaker', enFontSize, theme)}>{highlightedText(a, b)}</span>);
+      at = b;
+    }
+    if (at < to) nodes.push(<Fragment key={at}>{highlightedText(at, to)}</Fragment>);
+    return nodes;
+  }
+  /** englishText renders source blocks around inline highlights so a highlight cannot split a block. */
+  function englishText(): ReactNode {
+    const blocks: [number, number, 'heading' | NonNullable<SegmentFile['blocks']>[number][2]][] = [
+      ...(seg.blocks ?? []),
+      ...(seg.headings ?? []).map(([from, to]): [number, number, 'heading'] => [from, to, 'heading']),
+    ];
+    blocks.sort(([a], [b]) => a - b);
+    // Text outside his blocks: in a line holding verse and a paragraph of his prose, the verse, ruled.
+    const loose = (from: number, to: number) =>
+      proseInVerse && seg.en.slice(from, to).trim() ? (
+        <span key={from} style={{ display: 'block', ...verseRule }}>{speakerText(from, to)}</span>
+      ) : (
+        <Fragment key={from}>{speakerText(from, to)}</Fragment>
+      );
+    const nodes: ReactNode[] = [];
+    let at = 0;
+    for (let k = 0; k < blocks.length; k++) {
+      const [from, to, kind] = blocks[k];
+      if (at < from) nodes.push(loose(at, from));
+      if (kind === 'list-item' || kind === 'indented-item') {
+        const unbulleted = kind === 'indented-item';
+        const items: ReactNode[] = [];
+        let end = from;
+        do {
+          const [a, b] = blocks[k];
+          if (end < a) items.push(<Fragment key={end}>{speakerText(end, a)}</Fragment>);
+          items.push(<li key={a} style={{ marginBlock: unbulleted ? 0 : '0.2em', paddingInlineStart: unbulleted ? 0 : '0.15em' }}>{speakerText(a, b)}</li>);
+          end = b;
+          k++;
+        } while (blocks[k]?.[2] === kind && !seg.en.slice(end, blocks[k][0]).trim());
+        k--;
+        nodes.push(
+          <ul key={from} className="text-list" style={{
+            listStyleType: unbulleted ? 'none' : 'disc', paddingInlineStart: '1.4em',
+            margin: unbulleted ? 0 : '0.4em 0', whiteSpace: 'normal',
+            ...(unbulleted && from > 0 ? { marginTop: paragraphGap } : null),
+          }}>
+            {items}
+          </ul>
+        );
+        at = end;
+      } else {
+        nodes.push(kind === 'paragraph' ? (
+          <p key={from} style={{ margin: 0, marginTop: from === 0 ? 0 : paragraphGap }}>{speakerText(from, to)}</p>
+        ) : (
+          <span
+            key={from}
+            className="font-sans"
+            style={{ display: 'block', ...roleStyle('heading', enFontSize, theme), marginTop: headingGapTop, marginBottom: headingGapBottom }}
+          >
+            {speakerText(from, to)}
+          </span>
+        ));
+        at = to;
+      }
+    }
+    if (at < seg.en.length) nodes.push(loose(at, seg.en.length));
+    return nodes;
+  }
+  // The segment's container: a heading, a block wrapper for source markup, or a plain paragraph.
+  const HeadingTag = seg.role === 'heading'
+    ? (`h${seg.headingLevel ?? 2}` as 'h2' | 'h3' | 'h4' | 'h5')
+    : seg.blocks?.length || seg.headings?.length ? 'div' : 'p';
   // English size when the Pali leads, a step under the reading size.
   const glossFontSize = Math.round(fontSize * 0.9);
   // A list item's "N.", absolutely positioned into the gutter its line's padding opens, and
@@ -284,9 +454,11 @@ const SegmentRow = memo(function SegmentRow({
   if (!open && !paliFades) setPaliFades(true);
   const [noteFades, setNoteFades] = useState(!noteShown);
   if (!noteShown && !noteFades) setNoteFades(true);
+  // A verse line also holding a paragraph of his prose, whose rule runs beside the verse alone.
+  const proseInVerse = seg.role === 'verse' && !!seg.blocks?.some(([, , kind]) => kind === 'paragraph');
   // How far the segment's lines sit in from the column's edge: a verse's rule and indent, kept by a
   // speaker following it.
-  const lineIndent = seg.role === 'verse' ? 16 : seg.role === 'speaker' && afterVerse ? 30 : 0;
+  const lineIndent = seg.role === 'verse' && !proseInVerse ? 16 : seg.role === 'speaker' && afterVerse ? 30 : 0;
   // The segment's number, for whichever of its lines comes first, set at `lineSize` px.
   const segmentNumberMark = (lineSize: number) =>
     segmentNumber && (
@@ -362,16 +534,13 @@ const SegmentRow = memo(function SegmentRow({
   const paliLeads = above && !!paliLine;
   const enFontSize = paliLeads ? glossFontSize : fontSize;
   const enRoleStyle = roleStyle(seg.role, enFontSize, theme, seg.headingLevel);
-  return (
-    <div
-      id={seg.key}
-      style={{
-        marginBottom: lastInParagraph ? paragraphGap : 0,
-        ...(seg.role === 'verse' ? { paddingLeft: 14, borderLeft: `2px solid ${theme.rule}` } : null),
-        // A speaker attribution following a verse keeps the verse's indent and rule.
-        ...(seg.role === 'speaker' && afterVerse ? { paddingLeft: 28, borderLeft: `2px solid ${theme.rule}` } : null),
-      }}
-    >
+  // A verse's indent and rule, which a speaker attribution following a verse keeps.
+  const verseRule =
+    seg.role === 'verse' ? { paddingLeft: 14, borderLeft: `2px solid ${theme.rule}` }
+    : seg.role === 'speaker' && afterVerse ? { paddingLeft: 28, borderLeft: `2px solid ${theme.rule}` }
+    : undefined;
+  const lines = (
+    <>
       {above && paliLine}
       <HeadingTag
         data-seg={i}
@@ -385,6 +554,7 @@ const SegmentRow = memo(function SegmentRow({
           cursor: 'pointer',
           fontSize: enFontSize,
           lineHeight: lineHeight / 100,
+          whiteSpace: 'pre-line',
           color: theme.fg,
           ...(seg.role === 'heading' ? null : { fontFamily: face }),
           ...enRoleStyle,
@@ -397,59 +567,7 @@ const SegmentRow = memo(function SegmentRow({
           ...(seg.role === 'list-item' ? { paddingLeft: 24, position: 'relative' } : null),
         } as CSSProperties}
       >
-        {!paliLeads && listMarker}
-        {!paliLeads && segmentNumberMark((enRoleStyle.fontSize as number | undefined) ?? enFontSize)}
-        {parts.map((p, j) =>
-          p.c ? (
-            <span
-              key={j}
-              // The id of the highlight this span was painted from, which useSuttaReading's
-              // scrollToSegment jumps to. A highlight spanning several segments repeats it in each.
-              data-hl-id={p.id}
-              // The span stays selectable, unlike `.pw` and the note number, so a drag can cross
-              // or extend an existing highlight. The text colour is theme.fg wherever the theme
-              // paints its own fills, and a near-black otherwise.
-              style={{
-                background: highlightPaint(p.c, theme),
-                borderRadius: 2,
-                boxShadow: `0 0 0 2px ${highlightPaint(p.c, theme)}`,
-                color: theme.highlightPalette ? theme.fg : '#1B1917',
-              }}
-              onClick={(e) => {
-                e.stopPropagation();
-                // The span's own box, not that of a search mark inside it that took the click.
-                onSpanClick(p.id!, e.currentTarget.getBoundingClientRect(), p.c!);
-              }}
-            >
-              {marked(p.text, p.start, enMarks, markOnHighlight(highlightPaint(p.c, theme), theme))}
-            </span>
-          ) : (
-            <span key={j}>{marked(p.text, p.start, enMarks, theme.selection)}</span>
-          )
-        )}
-        {seg.note && showNotes && (
-          <sup
-            // As the list-item marker above: rendered text that isn't part of `seg.en`, so
-            // useHighlightPopup's offsets discount it.
-            data-seg-ignore
-            className="font-sans"
-            // Padding grows the number's tap target beyond its painted digits.
-            style={{
-              ...NOTE_NUMBER,
-              padding: '8px 8px 8px 4px',
-              color: theme.pali,
-              cursor: 'pointer',
-              ...UNSELECTABLE,
-            }}
-            title={stripTags(seg.note)}
-            onClick={(e) => {
-              e.stopPropagation();
-              onToggleNote(i);
-            }}
-          >
-            {noteNumber}
-          </sup>
-        )}
+        {englishText()}
       </HeadingTag>
       {!above && paliLine}
       {showNotes && seg.note && noteOpen && (
@@ -481,6 +599,30 @@ const SegmentRow = memo(function SegmentRow({
           />
         </p>
       )}
+    </>
+  );
+  return (
+    <div id={seg.key} style={{ marginBottom: lastInParagraph ? paragraphGap : 0, ...(seg.speaker || proseInVerse ? null : verseRule) }}>
+      {seg.speaker && (
+        // The translator's label naming who speaks the line, above it and outside a verse's rule.
+        <p
+          style={{
+            margin: 0,
+            cursor: 'pointer',
+            fontFamily: face,
+            lineHeight: lineHeight / 100,
+            ...roleStyle('speaker', enFontSize, theme),
+            ...UNSELECTABLE,
+          }}
+          onClick={() => {
+            if (String(window.getSelection())) return;
+            onToggleSeg(i);
+          }}
+        >
+          {seg.speaker}
+        </p>
+      )}
+      {seg.speaker ? <div style={proseInVerse ? undefined : verseRule}>{lines}</div> : lines}
     </div>
   );
 });
@@ -570,15 +712,26 @@ function SegmentedTextInner({
   // Every highlight's stored span resolved into the ranges falling in each segment, by segment
   // index — see lib/highlights.ts's highlightRanges.
   const rangesBySeg = useMemo(() => expandHighlights(highlights, segments), [highlights, segments]);
+  // Whether the text marks where its printed paragraphs end; a copy cached without the marks breaks
+  // them at its segment numbers instead.
+  const printedParagraphs = useMemo(() => segments.some((s) => s.pe), [segments]);
   // A list item's ordinal within its run of consecutive list-item segments, reset to 0 by any
   // other segment so a later list restarts at 1.
   let runningListIndex = 0;
   // The latest translator note's number, counted through the sutta from 1.
   let runningNoteNumber = 0;
   const rows = segments.map((seg, i) => {
-    // A paragraph break: the next segment's paragraph number differs, or there is none.
+    // A paragraph break: the next segment is in another paragraph, or there is none. A heading,
+    // whose own margin is the space below it, ends one only with its section.
     const next = segments[i + 1];
-    const lastInParagraph = !next || paragraphOf(next.key) !== paragraphOf(seg.key);
+    const lastBlock = seg.blocks?.at(-1);
+    const firstBlock = next?.blocks?.[0];
+    const continuesIndentedList = lastBlock?.[2] === 'indented-item' && lastBlock[1] === seg.en.length
+      && firstBlock?.[2] === 'indented-item' && firstBlock[0] === 0;
+    const lastInParagraph =
+      !continuesIndentedList && (!next ||
+      (seg.role === 'heading' ? sectionOf(next.key) !== sectionOf(seg.key)
+        : printedParagraphs ? !!seg.pe : paragraphOf(next.key) !== paragraphOf(seg.key)));
     runningListIndex = seg.role === 'list-item' ? runningListIndex + 1 : 0;
     if (seg.note) runningNoteNumber += 1;
     return (

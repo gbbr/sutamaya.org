@@ -326,13 +326,30 @@ const SECTIONS: HelpSection[] = [
 const TRANSLATION_TITLE = 'The translation';
 
 const TRANSLATION_LEAD =
-  'The English is Bhante Sujato’s translation, published by SuttaCentral under CC0. It is not ' +
+  'The main English text is Bhante Sujato’s translation, published by SuttaCentral under CC0. It is not ' +
   'reproduced verbatim here: a number of Pali terms are rendered differently (or left in Pali) — ' +
   'bhikkhu rather than mendicant, composure rather than immersion — and about fifty individual ' +
   'lines are reworded. Everything else is his, word for word, and his own footnotes are never ' +
   'altered.';
 
 const TRANSLATION_URL = 'https://github.com/gbbr/sutamaya.org/blob/main/docs/translation-changes.md';
+
+// The credit Bodhi's and Ṭhānissaro's translations ask for: their publishers and licences. Each
+// sutta's own credit links the page its text comes from.
+const OTHER_TRANSLATIONS_TITLE = 'Other translations';
+
+const OTHER_TRANSLATIONS_LEAD =
+  'Some suttas can also be read in Bhikkhu Bodhi’s or Ṭhānissaro Bhikkhu’s translation, word for ' +
+  'word as published, each crediting the page it comes from. Bhikkhu Bodhi’s are from Wisdom ' +
+  'Publications, under CC BY-NC-ND 3.0, and from the Buddhist Publication Society, for free ' +
+  'distribution. Ṭhānissaro Bhikkhu’s are from dhammatalks.org, under CC BY-NC 4.0. A few are ' +
+  'Access to Insight’s copies, under its terms.';
+
+// Each licence the lead names, and the link to its terms.
+const OTHER_TRANSLATIONS_LICENCES = [
+  { label: 'CC BY-NC-ND 3.0 (Bhikkhu Bodhi)', url: 'https://creativecommons.org/licenses/by-nc-nd/3.0/' },
+  { label: 'CC BY-NC 4.0 (Ṭhānissaro Bhikkhu)', url: 'https://creativecommons.org/licenses/by-nc/4.0/' },
+];
 
 // The dictionary credit its licence asks for: whose work it is and where to find it whole. The
 // version this build shipped is in corpus.json.
@@ -391,7 +408,7 @@ const CONTENTS: Array<{ label: string; titles: string[] }> = [
     label: 'Using the app',
     titles: [...SECTIONS.map((section) => section.title), ...(isNativeApp() ? [] : [INSTALL_TITLE])],
   },
-  { label: 'About', titles: [TRANSLATION_TITLE, DICTIONARY_TITLE, CONTACT_TITLE] },
+  { label: 'About', titles: [TRANSLATION_TITLE, OTHER_TRANSLATIONS_TITLE, DICTIONARY_TITLE, CONTACT_TITLE] },
 ];
 
 // A numbered marker, on the picture and in the legend alike. A fixed cool blue outside the app's
@@ -640,6 +657,29 @@ export function HelpPage() {
             View the full list of changes
             <ExternalLink size={16} strokeWidth={1.75} className="flex-none text-ink-4" />
           </a>
+          <BackToTop onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })} />
+        </section>
+
+        {/* The other translations' credit, in the same shape, with a link for each licence. */}
+        <section id={anchorId(OTHER_TRANSLATIONS_TITLE)} className="mb-10 scroll-mt-6">
+          <div className="font-sans text-ui-2xs font-bold tracking-[.12em] uppercase text-ink-3 mb-2">
+            {OTHER_TRANSLATIONS_TITLE}
+          </div>
+          <p className="font-serif text-ui-lg leading-[1.55] text-ink-2 mb-4">{OTHER_TRANSLATIONS_LEAD}</p>
+          <div className="flex flex-col items-start gap-2">
+            {OTHER_TRANSLATIONS_LICENCES.map(({ label, url }) => (
+              <a
+                key={url}
+                href={url}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 font-sans text-ui-base text-ink-2 hover:text-ink underline decoration-ink/25 underline-offset-2"
+              >
+                {label}
+                <ExternalLink size={16} strokeWidth={1.75} className="flex-none text-ink-4" />
+              </a>
+            ))}
+          </div>
           <BackToTop onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })} />
         </section>
 

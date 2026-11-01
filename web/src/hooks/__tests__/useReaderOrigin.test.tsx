@@ -26,6 +26,58 @@ afterEach(() => {
 });
 
 describe('useReaderOrigin', () => {
+  it('pushes one translation consultation, replaces alternatives, and returns to Sujato', () => {
+    const initialProps: Parameters<typeof useReaderOrigin>[0] = {
+      from: '/browse/mn?q=calm', fromView: 'list', searchIds: ['mn1', 'mn2'], backTo: 'dn1',
+    };
+    const { result, rerender } = renderHook((state) => useReaderOrigin(state), { initialProps });
+    result.current.chooseTranslation('mn1', 'bodhi', 'sujato');
+    expect(navigate).toHaveBeenLastCalledWith('/read/mn1?by=bodhi', {
+      replace: false,
+      state: expect.objectContaining({
+        from: initialProps.from, fromView: 'list', searchIds: ['mn1', 'mn2'],
+        backTo: 'mn1', translationStep: true, sujatoHasWayBack: true,
+      }),
+    });
+    rerender({ ...initialProps, backTo: 'mn1', translationStep: true, sujatoHasWayBack: true });
+    result.current.chooseTranslation('mn1', 'thanissaro', 'bodhi');
+    expect(navigate).toHaveBeenLastCalledWith('/read/mn1?by=thanissaro', {
+      replace: true,
+      state: expect.objectContaining({ backTo: 'mn1', translationStep: true, sujatoHasWayBack: true, searchIds: ['mn1', 'mn2'] }),
+    });
+    result.current.chooseTranslation('mn1', 'sujato', 'thanissaro');
+    expect(navigate).toHaveBeenLastCalledWith(-1);
+  });
+
+  it('replaces a directly addressed alternative without inventing a return entry', () => {
+    const { result } = renderHook(() => useReaderOrigin(undefined));
+    result.current.chooseTranslation('mn1', 'thanissaro', 'bodhi');
+    expect(navigate).toHaveBeenLastCalledWith('/read/mn1?by=thanissaro', {
+      replace: true, state: expect.objectContaining({ backTo: undefined, translationStep: undefined }),
+    });
+    result.current.chooseTranslation('mn1', 'sujato', 'bodhi');
+    expect(navigate).toHaveBeenLastCalledWith('/read/mn1', {
+      replace: true, state: expect.objectContaining({ backTo: undefined, translationStep: false }),
+    });
+  });
+
+  it('a page turn drops the way back to Sujato, unless the Sujato entry has a way back of its own', () => {
+    const initialProps: Parameters<typeof useReaderOrigin>[0] = { from: '/browse/mn' };
+    const { result, rerender } = renderHook((state) => useReaderOrigin(state), { initialProps });
+    result.current.chooseTranslation('mn1', 'bodhi', 'sujato');
+    expect(navigate).toHaveBeenLastCalledWith('/read/mn1?by=bodhi', {
+      replace: false, state: expect.objectContaining({ backTo: 'mn1', translationStep: true, sujatoHasWayBack: false }),
+    });
+    rerender({ from: '/browse/mn', backTo: 'mn1', translationStep: true, sujatoHasWayBack: false });
+    result.current.turnTo('mn2');
+    expect(navigate).toHaveBeenLastCalledWith('/read/mn2', { state: { from: '/browse/mn', backTo: undefined }, replace: true });
+
+    // After a jump, the way back stays, leading through Sujato's text to where the jump left.
+    rerender({ from: '/browse/mn', backTo: 'mn1', translationStep: true, sujatoHasWayBack: true });
+    result.current.turnTo('mn2');
+    expect(navigate).toHaveBeenLastCalledWith('/read/mn2', { state: { from: '/browse/mn', backTo: 'mn1' }, replace: true });
+  });
+
   it('turnToturns the page in place, persisting the origin under the new sutta id and carrying from/fromView', () => {
     const { result } = renderHook(() => useReaderOrigin({ from: '/browse/sn1', fromView: 'list' }));
     result.current.turnTo('sn1.2');
@@ -95,6 +147,22 @@ describe('useReaderOrigin', () => {
     navigate.mockClear();
     result.current.turnTo('mn11');
     expect(navigate).toHaveBeenLastCalledWith(-1);
+  });
+
+  it('preserves a reference translator and never uses an alternate history entry for Next/Prev', () => {
+    const initialProps: Parameters<typeof useReaderOrigin>[0] = { from: '/browse/mn' };
+    const { result, rerender } = renderHook((state) => useReaderOrigin(state), { initialProps });
+    result.current.jumpTo('mn10', { segments: ['mn10:2.7', 'mn10:2.7'] }, 'mn9', 'bodhi', 'thanissaro');
+    expect(navigate).toHaveBeenLastCalledWith('/read/mn10?by=bodhi&at=2.7', {
+      state: expect.objectContaining({ backTo: 'mn9', backBy: 'thanissaro' }), replace: false,
+    });
+    rerender({ backTo: 'mn9', backBy: 'thanissaro' });
+    result.current.turnTo('mn9');
+    expect(navigate).toHaveBeenLastCalledWith('/read/mn9', expect.objectContaining({ replace: true }));
+    result.current.jumpTo('mn9', undefined, 'mn10', 'thanissaro', 'bodhi');
+    expect(navigate).toHaveBeenLastCalledWith(-1);
+    result.current.jumpTo('mn9', undefined, 'mn10', 'bodhi', 'bodhi');
+    expect(navigate).toHaveBeenLastCalledWith('/read/mn9?by=bodhi', expect.objectContaining({ replace: false }));
   });
 
   it('a jump to a passage in a batch names the inner sutta its lines belong to', () => {

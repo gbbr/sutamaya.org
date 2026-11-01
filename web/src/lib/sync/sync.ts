@@ -109,6 +109,7 @@ function buildQueue(state: MirrorState): Push[] {
       item: {
         type: 'highlight',
         suttaId: data.suttaId,
+        ...(data.by ? { by: data.by } : {}),
         span: data.span,
         color: data.color,
         g: data.g,

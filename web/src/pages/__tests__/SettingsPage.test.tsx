@@ -191,11 +191,12 @@ describe('opening without reflow', () => {
 
   it('states what a download costs before the availability count arrives', async () => {
     const { container } = renderSettings();
-    expect(container.textContent).toContain('It downloads about 10 MB and uses about 60 MB on this device.');
+    expect(container.textContent).toContain('It downloads about 16 MB and uses about 80 MB on this device.');
+    expect(container.textContent).toContain('includes every translation');
     // Only the line above it is still unknown, and it is one line either way.
     expect(container.textContent).toContain('Checking how much is available offline…');
     expect(await screen.findByText('Currently 0% is available offline.')).toBeInTheDocument();
-    expect(container.textContent).toContain('It downloads about 10 MB and uses about 60 MB on this device.');
+    expect(container.textContent).toContain('It downloads about 16 MB and uses about 80 MB on this device.');
   });
 
   it('opens on the count it last measured, rather than measuring before it can say anything', () => {
@@ -303,20 +304,28 @@ describe('refreshing a stale offline copy', () => {
   it('announces the update and offers a re-download instead of the first-time download', async () => {
     vi.mocked(isOfflineTextStale).mockReturnValue(true);
     renderSettings();
-    expect(await screen.findByText('Updated content is available (10 MB).')).toBeInTheDocument();
+    expect(await screen.findByText('Updated content is available (16 MB).')).toBeInTheDocument();
     expect(screen.getByText('Download updated content')).toBeInTheDocument();
     // The ordinary availability line is replaced, not shown alongside it.
-    expect(screen.queryByText('All suttas available offline.')).not.toBeInTheDocument();
+    expect(screen.queryByText('All content available offline.')).not.toBeInTheDocument();
   });
 
   // Without forcing, prefetchAllSuttas skips every already-cached uid and the "refresh" replaces
   // nothing while still reporting success.
   it('refetches every sutta shard when the cached text is behind the build', async () => {
+    const state = vi.mocked(useCorpus)();
+    const corpus: Corpus = {
+      ...state.corpus!,
+      nikayas: [{ id: 'dn', label: 'DN', sub: '', count: 1 }],
+      suttas: { dn1: { ref: 'DN1', node: 'dn', en: '', pali: '', blurb: '', min: 1, by: { bodhi: 'https://example.org/bodhi', thanissaro: 'https://example.org/thanissaro' } } },
+    };
+    vi.mocked(useCorpus).mockReturnValue({ ...state, corpus });
     vi.mocked(isOfflineTextStale).mockReturnValue(true);
     vi.mocked(cachedCorpusVersions).mockReturnValue({ data: 'data-v1', dictionary: 'dict-v2' });
     renderSettings();
     await userEvent.click(screen.getByText('Download updated content'));
-    expect(vi.mocked(prefetchAllSuttas).mock.calls[0][1]).toMatchObject({ force: true });
+    expect(prefetchAllSuttas).toHaveBeenCalledWith(['dn1'], expect.objectContaining({ force: true }));
+    expect(estimateOfflineStatus).toHaveBeenLastCalledWith(['dn1'], corpus.suttas);
     // Dictionary version unchanged — a reworded sutta must not cost a ~2.6MB re-fetch.
     expect(vi.mocked(prefetchDictionary).mock.calls[0][1]).toBe(false);
   });

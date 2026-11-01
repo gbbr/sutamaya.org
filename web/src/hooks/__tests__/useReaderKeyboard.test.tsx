@@ -10,6 +10,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
   const setPanel = vi.fn();
   const backOrClose = vi.fn();
   const step = vi.fn();
+  const switchTranslation = vi.fn();
   const goToAdjacentWord = vi.fn();
   const setTab = vi.fn();
   const setNoteFocusSignal = vi.fn();
@@ -31,6 +32,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
     setPanel,
     backOrClose,
     step,
+    switchTranslation,
     goToAdjacentWord,
     setTab,
     setNoteFocusSignal,
@@ -52,6 +54,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
     setPanel,
     backOrClose,
     step,
+    switchTranslation,
     goToAdjacentWord,
     setTab,
     setNoteFocusSignal,
@@ -257,6 +260,24 @@ describe('useReaderKeyboard', () => {
       press('ArrowLeft');
       expect(goToAdjacentWord).not.toHaveBeenCalled();
       expect(step).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('readerTranslation (Shift+1–3)', () => {
+    it('chooses each translation by the digit key’s position, whatever symbol the layout types', () => {
+      const { switchTranslation } = setup();
+      press('!', { code: 'Digit1', shiftKey: true });
+      press('"', { code: 'Digit2', shiftKey: true });
+      press('§', { code: 'Digit3', shiftKey: true });
+      expect(switchTranslation.mock.calls).toEqual([['sujato'], ['bodhi'], ['thanissaro']]);
+    });
+
+    it('plain digits, and digits typed into a field, do nothing', () => {
+      const { switchTranslation } = setup();
+      press('2', { code: 'Digit2' });
+      const input = document.body.appendChild(document.createElement('input'));
+      press('@', { code: 'Digit2', shiftKey: true }, input);
+      expect(switchTranslation).not.toHaveBeenCalled();
     });
   });
 
