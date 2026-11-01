@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { Plus } from 'lucide-react';
+import { PencilLine, Plus } from 'lucide-react';
 import type { SuttaRowChip } from '../lib/lists/lists';
 import type { ThemeColors } from '../lib/types';
 import { HighlightCountBadge } from './HighlightCountBadge';
@@ -7,6 +7,8 @@ import { MatchedText } from './MatchedText';
 
 interface SuttaRowChipsProps {
   chips: SuttaRowChip[];
+  // Adds the note mark, for a sutta whose note the row doesn't show.
+  noted?: boolean;
   hlCount: number;
   // The distinct colours those highlights use — the badge's swatches (see highlightColors).
   hlColors: string[];
@@ -28,21 +30,27 @@ interface SuttaRowChipsProps {
   query?: string;
 }
 
-// One sutta's list-membership chips and highlight badge, shared by the Library's rows, both search
-// surfaces and the reader's sutta header, so all four stay identical.
-export function SuttaRowChips({ chips, hlCount, hlColors, theme, fs, onChipClick, onHighlightClick, onAddToList, query = '' }: SuttaRowChipsProps) {
-  if (chips.length === 0 && hlCount === 0 && !onAddToList) return null;
+// One sutta's list-membership chips, note mark and highlight badge, shared by the Library's rows,
+// both search surfaces and the reader's sutta header, so all four stay identical.
+export function SuttaRowChips({ chips, noted, hlCount, hlColors, theme, fs, onChipClick, onHighlightClick, onAddToList, query = '' }: SuttaRowChipsProps) {
+  if (chips.length === 0 && !noted && hlCount === 0 && !onAddToList) return null;
   const ChipTag = onChipClick ? 'button' : 'span';
   const fontSize = fs ? fs - 7 : 14;
   const height = fontSize + 11;
+  // The note mark's line weight, in pixels.
+  const noteStroke = 1.5;
+  // The note mark's drawn height, the chips' type size.
+  const noteHeight = fontSize;
+  // The note mark's icon size, at which its outline — 17 of the icon's 24 units, plus the stroke — is noteHeight.
+  const noteSize = Math.round(((noteHeight - noteStroke) * 24) / 17);
   // The add control runs a point above the chips, having no fill or outline to be found by.
   const addFontSize = fontSize + 1;
   // The gap before the highlight badge, which as a count rather than a list separates itself from
   // whatever precedes it — by more after the outline-less add control than after a chip's own
-  // edge, and by nothing at all when it is alone on the line.
+  // edge or the note mark, and by nothing at all when it is alone on the line.
   function badgeGapFor(): number | undefined {
     if (onAddToList) return 12;
-    if (chips.length > 0) return 8;
+    if (chips.length > 0 || noted) return 8;
     return undefined;
   }
   const badgeGap = badgeGapFor();
@@ -113,6 +121,18 @@ export function SuttaRowChips({ chips, hlCount, hlColors, theme, fs, onChipClick
           </span>
         </ChipTag>
       ))}
+      {/* The note mark: the Notes list's own icon, in the highlight count's colour, set off from
+          the chips by the badge's gap. */}
+      {noted && (
+        <span
+          role="img"
+          aria-label="Has a note"
+          className={`inline-flex ${theme ? '' : 'text-ink-3'}`}
+          style={{ color: theme?.dim, marginLeft: chips.length > 0 ? 8 : undefined }}
+        >
+          <PencilLine size={noteSize} strokeWidth={noteStroke} absoluteStrokeWidth />
+        </span>
+      )}
       {/* No fill of any kind — unlike the highlight badge beside it and unlike the chips' own
           parent segments. This is the only thing on the line that *acts*, and a third filled pill
           beside them made the row read as a strip of buttons. It carries its weight by being

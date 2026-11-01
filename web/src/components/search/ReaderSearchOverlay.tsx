@@ -15,6 +15,7 @@ import { flattenListTree, suttaRowMeta } from '../../lib/lists/lists';
 import { MatchedText } from '../MatchedText';
 import { RecentSearches } from './RecentSearches';
 import { SuttaRowChips } from '../SuttaRowChips';
+import { NoteIcon } from '../NoteIcon';
 import { TextSearchProgress } from './TextSearchProgress';
 import { SearchUpdating, SPINNER_DELAY } from './SearchUpdating';
 import { getUiScale } from '../../lib/ui/uiPrefs';
@@ -491,7 +492,7 @@ export function ReaderSearchOverlay({
             const note = notes[h.id];
             // The line that carried the query leads the quote from the sutta — see ListPane.
             const explains = h.explains;
-            const showNote = !!note && (explains?.line === 'note' || (!h.snippet && explains?.line !== 'blurb'));
+            const showNote = !!note && explains?.line === 'note';
             const showBlurb = !showNote && !!h.sutta.blurb && (explains?.line === 'blurb' || !h.snippet);
             const lineQuery = (line: 'note' | 'blurb') => (explains?.line === line ? explains.query : query);
             // The description, opened at the words that found it where it is the line that matched.
@@ -536,11 +537,9 @@ export function ReaderSearchOverlay({
                   <MatchedText text={h.sutta.pali} query={query} theme={theme} />
                 </span>
                 {showNote && (
-                  // An em dash rather than a quote rule marks this as the reader's own note.
+                  // The note icon rather than a quote rule marks this as the reader's own note.
                   <span className="flex gap-[7px] text-ui-base leading-[1.45] mt-[3px]" style={{ color: PROSE_COLOR(theme) }}>
-                    <span aria-hidden className="flex-none" style={{ color: theme.dim }}>
-                      —
-                    </span>
+                    <NoteIcon style={{ color: theme.dim }} />
                     <span className="line-clamp-3 whitespace-pre-wrap">
                       <MatchedText text={noteText} query={lineQuery('note')} theme={theme} notation />
                     </span>
@@ -552,7 +551,7 @@ export function ReaderSearchOverlay({
                   </span>
                 )}
                 {h.snippet && <SnippetQuote snippet={h.snippet} theme={theme} />}
-                <SuttaRowChips chips={chips} hlCount={hlCount} hlColors={hlColors} theme={theme} query={query} />
+                <SuttaRowChips chips={chips} noted={!!note && !showNote} hlCount={hlCount} hlColors={hlColors} theme={theme} query={query} />
               </button>
             );
           })}
