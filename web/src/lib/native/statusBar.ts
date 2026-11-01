@@ -12,6 +12,13 @@ import { isNativeApp } from '../platform';
 
 let current: boolean | null = null;
 
+// onStatusBarTap calls `handler` on each tap on the status bar and returns a function that stops it.
+// Only the iOS app reports the tap.
+export function onStatusBarTap(handler: () => void): () => void {
+  window.addEventListener('statusTap', handler);
+  return () => window.removeEventListener('statusTap', handler);
+}
+
 export function setNativeStatusBarDark(dark: boolean): void {
   if (!isNativeApp() || dark === current) return;
   current = dark;

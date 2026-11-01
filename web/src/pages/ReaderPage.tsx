@@ -39,6 +39,7 @@ import { keepStepPlace, stepPlace } from '../lib/reader/stepPlaces';
 import { translationPlace, restoreTranslationPlace, type TranslationPlace } from '../lib/reader/translationPlace';
 import { platformName } from '../lib/platform';
 import { canShareLink, shareLink, shareUrl } from '../lib/native/share';
+import { onStatusBarTap } from '../lib/native/statusBar';
 import type { SearchHit } from '../lib/search/metadata';
 import { marksOf, pageIndex } from '../lib/search/text';
 import { SegmentedText, type SegmentNumberPlacement, type SegmentMarks } from '../components/reader/SegmentedText';
@@ -351,6 +352,13 @@ export function ReaderPage() {
   useEffect(() => {
     scrollRef.current?.focus({ preventScroll: true });
   }, [suttaId, scrollRef]);
+
+  // A tap on the iOS status bar scrolls the reading to the top, except under the menu panel, search
+  // or the shortcuts.
+  useEffect(() => {
+    if (panel || searchOpen || shortcutsOpen) return;
+    return onStatusBarTap(() => scrollRef.current && animateScrollTop(scrollRef.current, 0));
+  }, [panel, searchOpen, shortcutsOpen, scrollRef]);
 
   const { dict, activeWord, closeDict, onWordClick, goToAdjacentWord, retryLookup } = useDictionaryLookup({
     suttaId: readingKey,
