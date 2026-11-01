@@ -138,6 +138,10 @@ icon shrink the leaf to 90% and stretch the master's background back out to the 
   user defaults, file dates, free space, time since boot — or App Store Connect refuses the upload.
   The plugins ship no declaration of their own, so a new plugin, or a new version of one, is checked
   against it.
+- **Android release builds are shrunk and obfuscated by R8**, which Google Play expects. Capacitor
+  keeps every plugin class whole, but rules a plugin writes only for its own build never reach the
+  app: Capgo's updater is one, so its rules are repeated in `web/android/app/proguard-rules.pro`. A
+  new plugin, or a new version of one, is checked for the same.
 - **The WebView's origins** (`capacitor://localhost` on iOS, `https://localhost` on Android) must be
   allowed by the Worker's CORS, or every signed-in request fails.
 - **`/.well-known/*` stays in `assets.run_worker_first`**, or the verification files come back as
