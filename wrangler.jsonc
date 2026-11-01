@@ -200,8 +200,8 @@
         "WEB_ORIGIN": "https://app.staging.sutamaya.org",
         "GOOGLE_CLIENT_ID": "45956701911-0a93js1du42ia6vtno0n4bh36crkn5f6.apps.googleusercontent.com",
         "MAIL_FROM": "no-reply@sutamaya.org",
-        "OTA_VERSION": "0.1.0-07883323",
-        "OTA_CHECKSUM": "e60a1b9ca0c8045a548ed108d89b7a02029dd485519ce78bd61e65659bb8238b",
+        "OTA_VERSION": "0.1.0-3c6b6806",
+        "OTA_CHECKSUM": "530c3e39b308f051fcea8b490e5b54e1e2efe0691b8a446803883cfc1b56005a",
         "OTA_MIN_NATIVE_IOS": "1",
         "OTA_MIN_NATIVE_ANDROID": "1",
         // Its apple-app-site-association is inert: the iOS app claims only production's links.
