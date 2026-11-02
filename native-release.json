@@ -5,8 +5,8 @@
     "minNative": 1
   },
   "android": {
-    "build": 2,
-    "commit": "f3089dcd57c0c28147b43fcac387fc0c65ee9440",
+    "build": 3,
+    "commit": "5db953981ed6496c58960dbee834a859f3302ded",
     "minNative": 1
   }
 }
