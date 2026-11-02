@@ -1,7 +1,7 @@
 {
   "ios": {
-    "build": 5,
-    "commit": "3f29e204672f1b865870513e8da7c14028f159d5",
+    "build": 6,
+    "commit": "5db953981ed6496c58960dbee834a859f3302ded",
     "minNative": 1
   },
   "android": {
