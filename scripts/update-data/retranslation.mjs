@@ -3,13 +3,15 @@
 // later one. A term rule's segment list, if any, lives in its own sidecar at
 // scripts/update-data/rules/<id>.json, machine-written by `update-data triage`.
 //
-// `forms` pairs match on English word boundaries, case-preserved. Every inflection is listed
+// Typo forms are exact-case literals, applied before renderings, including in notes.
+// Term `forms` pairs match on English word boundaries, case-preserved. Every inflection is listed
 // explicitly rather than swapped by stem, since the corpus has unrelated words on the same stem —
 // MN 40's "water immerser" (someone who dunks in water). A listed inflection can itself be
 // ordinary English elsewhere, which is what a rule's deny list is for.
 //
 // Groups below, in array order; order inside and between them settles same-word collisions:
 //
+//   typo corrections   typo-doubled-the, typo-spelling; no segment lists or live-match anchors
 //   standalone terms   mendicant-bhikkhu, immersion-concentration, jhana-pali,
 //                      patisambhida-analytical-knowledge, dhamma-the-dhamma
 //   awareness          satipatthana-establishment-of-awareness, sampajanna-pali, sati-aware,
@@ -28,6 +30,72 @@
 //                      description's opening sentence
 
 export const RULES = [
+  // ── Typo corrections ────────────────────────────────────────────────────────
+  {
+    id: 'typo-doubled-the',
+    kind: 'typo',
+    why: 'A repeated article is a slip everywhere. Other repeated words, including prepositions, ' +
+      'can be grammatical and are left alone.',
+    forms: [
+      ['the the', 'the'],
+      ['The the', 'The'],
+    ],
+  },
+  {
+    id: 'typo-spelling',
+    kind: 'typo',
+    why: 'Literal misspellings and missing spaces, checked across all of data/sujato/. Exact case ' +
+      'keeps buffon distinct from the surname Buffon and preserves the capital in aRealized. ' +
+      'Accepted spelling variants and words that are valid in another context are left alone.',
+    forms: [
+      ['abandoing', 'abandoning'],
+      ['absortions', 'absorptions'],
+      ['aRealized', 'a Realized'],
+      ['auspicies', 'auspices'],
+      ['Banfgladesh', 'Bangladesh'],
+      ['buffon', 'buffoon'],
+      ['cenceit', 'conceit'],
+      ['committment', 'commitment'],
+      ['conterattack', 'counterattack'],
+      ['contoversialist', 'controversialist'],
+      ['correespond', 'correspond'],
+      ['deliberateation', 'deliberation'],
+      ['disourse', 'discourse'],
+      ['editionsa', 'editions'],
+      ['excalamtory', 'exclamatory'],
+      ['exlcuded', 'excluded'],
+      ['experince', 'experience'],
+      ['explaination', 'explanation'],
+      ['feifdom', 'fiefdom'],
+      ['forsee', 'foresee'],
+      ['geneology', 'genealogy'],
+      ['Hindusim', 'Hinduism'],
+      ['lumious', 'luminous'],
+      ['manusripts', 'manuscripts'],
+      ['momunent', 'monument'],
+      ['mosisture', 'moisture'],
+      ['multifacted', 'multifaceted'],
+      ['Neverthless', 'Nevertheless'],
+      ['nothingsness', 'nothingness'],
+      ['offsping', 'offspring'],
+      ['Phillipine', 'Philippine'],
+      ['practicesin', 'practices in'],
+      ['Prerequiste', 'Prerequisite'],
+      ['rcloud', 'cloud'],
+      ['rebith', 'rebirth'],
+      ['rememberance', 'remembrance'],
+      ['Reverand', 'Reverend'],
+      ['Riiver', 'River'],
+      ['Sanskit', 'Sanskrit'],
+      ['significence', 'significance'],
+      ['sorceror', 'sorcerer'],
+      ['Survivior', 'Survivor'],
+      ['tutellary', 'tutelary'],
+      ['undestanding', 'understanding'],
+      ['unfaling', 'unfailing'],
+      ['wheras', 'whereas'],
+    ],
+  },
   // ── Standalone terms ────────────────────────────────────────────────────────
   {
     id: 'mendicant-bhikkhu',

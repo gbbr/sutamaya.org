@@ -1,9 +1,10 @@
 # Retranslation rules
 
 The app ships Bhikkhu Sujato's English with an editorial layer on top: some terms rendered
-differently, some lines reworded, some group descriptions trimmed. Every edit is a **declared rule**
-in `scripts/update-data/retranslation.mjs`, re-applied on each refresh, so an editorial decision
-survives the next upstream sync instead of being overwritten by it.
+differently, some lines reworded, some group descriptions trimmed, and obvious typos corrected.
+Every edit is a **declared rule** in `scripts/update-data/retranslation.mjs`, re-applied on
+each refresh, so an editorial decision survives the next upstream sync instead of being
+overwritten by it.
 
 [translation-changes.md](translation-changes.md) summarizes the changes for readers;
 [data/README.md](../data/README.md) covers the refresh around them; the
@@ -30,7 +31,24 @@ defines one, the definition governs: SN 22.56 defines the *saṅkhāra* aggregat
 intention. The Abhidhamma and the commentaries neither justify a rendering nor rule one out. The DPD
 and other translators inform a choice without settling it.
 
-## Three kinds of rule
+## Kinds of rule
+
+### Typo corrections
+
+A typo rule (`kind: 'typo'`) corrects a slip that is wrong wherever it occurs, across suttas,
+notes, titles and descriptions. Its `forms` are exact-case literal pairs, bounded by Unicode
+words; spelling variants and meaningful repetitions stay as written. Only declared doubled-word
+forms collapse runs, including runs separated by tabs or newlines. Markup, link targets and
+segment ids stay untouched; matches never span markup, punctuation or segments.
+
+There are no Pali predicates, scopes or segment lists: a correction needing an exception does not
+qualify. Case is explicit so a lowercase misspelling cannot rewrite a valid proper name. A form
+that disappears upstream is a successful upstream fix, so zero matches are allowed in both `plan`
+and `post`. Counts and per-rule diffs still record the footprint.
+
+Typo corrections run before rendering rules. Their corrected words are available to term rules,
+so fixing a misspelled term does not exempt it from the app's rendering. Term triage and refresh
+checks see the same corrected English. Segment and blurb anchors quote the resulting renderings.
 
 ### Term rules
 
@@ -56,12 +74,14 @@ rather than the whole paragraph.
 
 ### What every rule has
 
-An `id`, which names its segment list and its diff, and a `why`: which Pali term, and working notes
-on where the rule applies and what it leaves alone — never an argument for the rendering.
+An `id`, which names its diff and any segment list, and a `why`: working notes on where the rule
+applies and what it leaves alone. Rendering rules name the Pali term, without arguing for the
+rendering; typo rules explain why their forms need no contextual judgement.
 
-**Translator's notes are never rewritten.** A note is Sujato writing *about* his renderings, and a
-rule right for the text would be wrong in the note that quotes it. So a note can read in his terms
-while the line beside it reads in this app's.
+**Rendering rules never rewrite translator's notes.** A note is Sujato writing *about* his
+renderings, and a rule right for the text would be wrong in the note that quotes it. Only typo
+corrections reach notes, so a note can read in his terms while the line beside it reads in this
+app's.
 
 ## Allow and deny lists
 
@@ -91,7 +111,7 @@ predicate proposes, review decides, the list executes.
 
 ## One pass, order-safe
 
-Rules run in array order over each line, and **text a rule has written is locked** — invisible to
+Term rules run in array order over each line, and **text a rule has written is locked** — invisible to
 every later rule. That makes chains safe. Over "keen, aware, and mindful", with one rule turning
 *aware* into *understanding* and another *mindful* into *aware*, the result is "keen,
 understanding, and aware" whichever runs first. Order matters only when two rules match the same
@@ -114,6 +134,7 @@ the only signal is the one built here:
 | its segment lists still fit the text | term rule | **review**, through `update-data triage` |
 | the lines it rewrites still have its term | term rule | **review**, in `plan` — upstream reworded a line whose Pali still has the term |
 | its match count | open rule with no denials | recorded in `retranslation.counts.json`; a sharp drop shows in its diff |
+| none | typo rule | zero matches are allowed; upstream may fix the slip |
 
 `update-data plan` reports the hard fails before anything is copied. A broken override prints its
 derivation: upstream's line, what the term rules made of it, then the expected line against the one
@@ -135,6 +156,11 @@ edit its sidecar        →  npm run update-data post               apply; write
 A new closed rule with an empty list is entirely untriaged, so the first `triage` run *is* the
 enumeration — and shows which mode the rule wants. Commit the rule, its sidecar, `data/diff/` and the
 counts together.
+
+Typo authoring skips triage and sidecars. Enumerate every occurrence of each proposed literal
+across all four `data/sujato/` trees before declaring it, then review its entire per-rule diff
+after `post` and record its counts. A contextual error stays upstream's text for SuttaCentral to
+review; a current lack of counterexamples is insufficient if the form can be valid English.
 
 ## Reconciling an upstream change
 
@@ -191,3 +217,15 @@ wrong: a swap that is right term for term can still leave English no one would w
 - **A reader with a sutta cached sees a change one visit late**
   ([web-app.md](web-app.md#offline-reading)), so your own browser isn't a first-visit test of
   whether a rule shipped.
+
+## Where to look
+
+| Where | What |
+|---|---|
+| `scripts/update-data/retranslation.mjs` | declared renderings and typo corrections |
+| `scripts/update-data/rules/` | term rules' allow and deny lists |
+| `scripts/lib/retranslation.js` | matching, case and note boundaries |
+| `scripts/update-data-post.mjs`, `scripts/update-data-check.mjs` | application, diffs and refresh anchors |
+| `data/diff/`, `scripts/update-data/retranslation.counts.json` | complete editorial footprint |
+| `.claude/skills/retranslate/SKILL.md` | authoring and review procedure |
+| `scripts/__tests__/update-data.test.js` | rule and pipeline checks |

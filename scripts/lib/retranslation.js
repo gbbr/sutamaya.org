@@ -15,9 +15,7 @@ export const COUNTS_PATH = path.join(ROOT, 'scripts', 'update-data', 'retranslat
 // The four sujato trees post copies.
 export const SUJATO_TREES = ['sujato/sutta', 'sujato/notes', 'sujato/name', 'sujato/blurb'];
 
-// The three a rule may rewrite, and the default scope. sujato/notes is never retranslated — a note
-// is Bhikkhu Sujato writing *about* the text, quoting his own renderings — and naming it in a
-// `scope` is rejected rather than ignored.
+// RETRANSLATABLE_TREES excludes notes from rendering changes; typo corrections reach all four trees.
 export const RETRANSLATABLE_TREES = ['sujato/sutta', 'sujato/name', 'sujato/blurb'];
 
 // Loads and validates the rules array from retranslation.mjs, throwing on a malformed rule — a bad
@@ -67,6 +65,15 @@ export async function loadRules(retranslationPath = RETRANSLATION_PATH) {
         }
         seenBlurbs.add(opener.blurb);
       }
+    } else if (isTypoRule(rule)) {
+      if (!Array.isArray(rule.forms) || rule.forms.length === 0 || rule.forms.some((form) =>
+        !Array.isArray(form) || form.length !== 2 || typeof form[0] !== 'string' || !form[0] ||
+        typeof form[1] !== 'string' || form[0] === form[1])) {
+        throw new Error(`Typo rule "${rule.id}" needs non-empty literal from/to forms, each changing its source.`);
+      }
+      if (['mode', 'scope', 'predicate', 'segment', 'segments', 'openers'].some((key) => key in rule)) {
+        throw new Error(`Typo rule "${rule.id}" is global and cannot have a scope, predicate or segment list.`);
+      }
     } else {
       if (!Array.isArray(rule.forms) || rule.forms.length === 0) {
         throw new Error(`Term rule "${rule.id}" needs a non-empty forms array.`);
@@ -84,7 +91,8 @@ export async function loadRules(retranslationPath = RETRANSLATION_PATH) {
   return rules;
 }
 
-export const isTermRule = (rule) => rule.kind !== 'segment' && rule.kind !== 'blurb';
+export const isTypoRule = (rule) => rule.kind === 'typo';
+export const isTermRule = (rule) => rule.kind !== 'segment' && rule.kind !== 'blurb' && !isTypoRule(rule);
 export const isSegmentRule = (rule) => rule.kind === 'segment';
 export const isBlurbRule = (rule) => rule.kind === 'blurb';
 
@@ -172,8 +180,17 @@ function caseAs(matched, replacement) {
 // each position, so that ordering is what makes the longer phrase win.
 function combinedFormsRegex(rule) {
   const forms = sortedForms(rule);
-  const pattern = forms.map(([from]) => escapeRe(from)).join('|');
-  return { re: new RegExp(`\\b(?:${pattern})\\b`, 'gi'), forms };
+  const patternFor = (from) => {
+    const doubled = isTypoRule(rule) && /^(\w+) (\w+)$/.exec(from);
+    return doubled && doubled[1].toLowerCase() === doubled[2].toLowerCase()
+      ? `${escapeRe(doubled[1])}(?:\\s+${escapeRe(doubled[2])})+`
+      : escapeRe(from);
+  };
+  const pattern = forms.map(([from]) => patternFor(from)).join('|');
+  const re = isTypoRule(rule)
+    ? new RegExp(`(?<![\\p{L}\\p{M}\\p{N}_])(?:${pattern})(?![\\p{L}\\p{M}\\p{N}_])`, 'gu')
+    : new RegExp(`\\b(?:${pattern})\\b`, 'gi');
+  return { re, forms, patternFor };
 }
 
 // Whether any of a rule's forms occur in `text`, ignoring allow/deny permission. The same
@@ -184,13 +201,17 @@ export function formsMatch(rule, text) {
   return re.test(text);
 }
 
-// Runs one term rule over a segment's chunk list and returns the new list and its match count. A
-// chunk is `{ text, locked }`, and a locked chunk is invisible to every later rule, so one rule's
-// replacement can be another's source word; same-word collisions resolve by array order.
+// applyRuleToChunks returns a form rule's replacements as locked chunks and their match count.
+// Chunk locking follows docs/retranslation.md's "One pass, order-safe".
 export function applyRuleToChunks(chunks, rule) {
   let count = 0;
-  const { re, forms } = combinedFormsRegex(rule);
-  const replacementFor = (matchedText) => forms.find(([from]) => from.toLowerCase() === matchedText.toLowerCase())[1];
+  const { re, forms, patternFor } = combinedFormsRegex(rule);
+  const replacementFor = (matchedText) => {
+    if (!isTypoRule(rule)) return forms.find(([from]) => from.toLowerCase() === matchedText.toLowerCase())[1];
+    const form = forms.find(([from]) => from === matchedText)
+      ?? forms.find(([from]) => new RegExp(`^(?:${patternFor(from)})$`, 'u').test(matchedText));
+    return form[1];
+  };
   const out = [];
   for (const chunk of chunks) {
     if (chunk.locked) {
@@ -203,7 +224,7 @@ export function applyRuleToChunks(chunks, rule) {
     let m;
     while ((m = re.exec(text))) {
       if (m.index > cursor) out.push({ text: text.slice(cursor, m.index), locked: false });
-      const replacement = caseAs(m[0], replacementFor(m[0]));
+      const replacement = isTypoRule(rule) ? replacementFor(m[0]) : caseAs(m[0], replacementFor(m[0]));
       out.push({ text: replacement, locked: true, ruleId: rule.id, original: m[0] });
       count += 1;
       cursor = m.index + m[0].length;
@@ -216,6 +237,20 @@ export function applyRuleToChunks(chunks, rule) {
 
 export function chunksToString(chunks) {
   return chunks.map((c) => c.text).join('');
+}
+
+// applyTypoRules corrects literal English slips while preserving markup and link targets.
+export function applyTypoRules(value, rules) {
+  let chunks = value.split(/(<(?:"[^"]*"|'[^']*'|[^'">])*>|https?:\/\/[^\s<>]+)/giu)
+    .map((text, i) => ({ text, locked: i % 2 === 1 }));
+  const counts = new Map();
+  for (const rule of rules) {
+    if (!isTypoRule(rule)) continue;
+    const applied = applyRuleToChunks(chunks, rule);
+    chunks = applied.chunks;
+    if (applied.count > 0) counts.set(rule.id, applied.count);
+  }
+  return { result: chunksToString(chunks), counts, chunks };
 }
 
 // Applies every term rule, in array order, to one segment's value, respecting each rule's scope,

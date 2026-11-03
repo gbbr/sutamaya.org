@@ -14,11 +14,13 @@ import {
   RULES_DIR,
   RETRANSLATION_PATH,
   loadRules,
+  isTypoRule,
   isTermRule,
   isSegmentRule,
   isBlurbRule,
   segmentsOf,
   loadSidecar,
+  applyTypoRules,
   applyTermRules,
   applySegmentOverride,
   applyBlurbOpener,
@@ -43,6 +45,7 @@ export async function runPost({
   diffDir = DIFF_DIR,
 } = {}) {
   const rules = await loadRules(retranslationPath);
+  const typoRules = rules.filter(isTypoRule);
   const termRules = rules.filter(isTermRule);
   const segmentRules = rules.filter(isSegmentRule);
   const blurbRules = rules.filter(isBlurbRule);
@@ -72,22 +75,24 @@ export async function runPost({
     const treeName = relPath.split('/').slice(0, 2).join('/'); // e.g. 'sujato/sutta'
     for (const [segmentId, value] of Object.entries(obj)) {
       if (typeof value !== 'string') continue;
-      const { result, counts, chunks } = applyTermRules(value, { treeName, segmentId, rules: termRules, sidecars });
-      if (result === value) continue;
+      const corrected = applyTypoRules(value, typoRules);
+      const translated = applyTermRules(corrected.result, { treeName, segmentId, rules: termRules, sidecars });
+      if (corrected.result === value && translated.result === value) continue;
       if (diff) recordOriginal(relPath, segmentId, value);
-      obj[segmentId] = result;
+      obj[segmentId] = translated.result;
       changedFiles.add(relPath);
-      for (const [ruleId, count] of counts) {
-        ruleCounts.set(ruleId, (ruleCounts.get(ruleId) ?? 0) + count);
-        replacements += count;
-        if (diff) diffEntries.push({ ruleId, relPath, segmentId, chunks });
+      for (const { counts, chunks } of [corrected, translated]) {
+        for (const [ruleId, count] of counts) {
+          ruleCounts.set(ruleId, (ruleCounts.get(ruleId) ?? 0) + count);
+          replacements += count;
+          if (diff) diffEntries.push({ ruleId, relPath, segmentId, chunks });
+        }
       }
     }
   }
 
-  // Every term rule gets an entry, including one that matched nowhere — that zero is the anchor
-  // the next line reads, and the summary's way of naming a rule that stopped working.
-  for (const rule of termRules) if (!ruleCounts.has(rule.id)) ruleCounts.set(rule.id, 0);
+  // ruleCounts retains zero footprints for the audit without making typos refresh anchors.
+  for (const rule of [...typoRules, ...termRules]) if (!ruleCounts.has(rule.id)) ruleCounts.set(rule.id, 0);
 
   const deadRules = termRules.filter((r) => ruleCounts.get(r.id) === 0).map((r) => r.id);
 
@@ -163,7 +168,7 @@ export async function runPost({
     writeDiffFiles({
       diffDir,
       diffEntries,
-      rules: [...termRules, ...segmentRules, ...blurbRules],
+      rules: [...typoRules, ...termRules, ...segmentRules, ...blurbRules],
       ruleCounts,
       deadRules,
       originals,

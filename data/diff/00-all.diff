@@ -1,4 +1,4 @@
-All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(s)
+All rules — data/sujato/ → data/sujato.post/ — 17441 change(s), 3188 file(s)
 
 --- sujato/blurb/an-blurbs_root-en.json
 +++ sujato/blurb/an-blurbs_root-en.json
@@ -356,6 +356,9 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
 @@ -1 +1 @@ an-blurbs:an5.265-271
 -Give up stinginess to enter the absorptions and higher attainments.
 +Give up stinginess to enter the jhānas and higher attainments.
+@@ -1 +1 @@ an-blurbs:an5.308-1152
+-Develop complete undestanding, etc., of greed.
++Develop complete understanding, etc., of greed.
 @@ -1 +1 @@ an-blurbs:an6.1
 -A mendicant is worthy of gifts because of equanimity for the six senses.
 +A bhikkhu is worthy of gifts because of equanimity for the six senses.
@@ -428,6 +431,9 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
 @@ -1 +1 @@ an-blurbs:an6.68
 -A mendicant who loves to socialize can’t find peace in meditation, but one who loves solitude can.
 +A bhikkhu who loves to socialize can’t find peace in meditation, but one who loves solitude can.
+@@ -1 +1 @@ an-blurbs:an6.69
+-A god speaks on the factors of non-decline. When the Buddha repeats what he says, Sāriputta gives an explaination.
++A god speaks on the factors of non-decline. When the Buddha repeats what he says, Sāriputta gives an explanation.
 @@ -1 +1 @@ an-blurbs:an6.70
 -Without samādhi or immersion it is impossible to realize the higher truths of the path.
 +Without samādhi or composure it is impossible to realize the higher truths of the path.
@@ -499,7 +505,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
 +Seven qualities leading to the decline of a bhikkhu who is a trainee.
 @@ -1 +1 @@ an-blurbs:an7.32
 -A god speaks of the the seven principles of non-decline to the Buddha, who repeats it to the mendicants.
-+A god speaks of the the seven principles of non-decline to the Buddha, who repeats it to the bhikkhus.
++A god speaks of the seven principles of non-decline to the Buddha, who repeats it to the bhikkhus.
 @@ -1 +1 @@ an-blurbs:an7.37
 -When a mendicant has seven factors, one should stay close to them even if they send you away.
 +When a bhikkhu has seven factors, one should stay close to them even if they send you away.
@@ -733,6 +739,9 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
 +Sāriputta teaches the bhikkhus about a deep state of meditation where all normal perception has ceased, but there is still perception.
 --- sujato/blurb/dn-blurbs_root-en.json
 +++ sujato/blurb/dn-blurbs_root-en.json
+@@ -1 +1 @@ dn-blurbs:dn20
+-When deities from all realms gather in homage to the Buddha, he gives a series of verses describing them. These verses, which are commonly chanted in Theravadin countries, give one of the most detailed descriptions of the deities worshiped at the the time of the Buddha.
++When deities from all realms gather in homage to the Buddha, he gives a series of verses describing them. These verses, which are commonly chanted in Theravadin countries, give one of the most detailed descriptions of the deities worshiped at the time of the Buddha.
 @@ -1 +1 @@ dn-blurbs:dn22
 -The Buddha details the seventh factor of the noble eightfold path, mindfulness meditation. This discourse is essentially identical to MN 10, with the addition of an extended section on the four noble truths derived from MN 141.
 +The Buddha details the seventh factor of the noble eightfold path, the establishment of awareness. This discourse is essentially identical to MN 10, with the addition of an extended section on the four noble truths derived from MN 141.
@@ -910,6 +919,9 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
 @@ -1 +1 @@ sn-blurbs:sn4.21
 -Māra approaches some young mendicants as an old brahmin, and tries to tempt them with talk of the pleasures of youth.
 +Māra approaches some young bhikkhus as an old brahmin, and tries to tempt them with talk of the pleasures of youth.
+@@ -1 +1 @@ sn-blurbs:sn5.6
+-Māra asks the nun Cālā why she disapproves of rebith. She replies that it necessarily entails suffering.
++Māra asks the nun Cālā why she disapproves of rebirth. She replies that it necessarily entails suffering.
 @@ -1 +1 @@ sn-blurbs:sn7.20
 -The Buddha explains that a true mendicant is one who has gone beyond evil.
 +The Buddha explains that a true bhikkhu is one who has gone beyond evil.
@@ -951,7 +963,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
 +When Sakka, the Lord of Gods, tries to organize a counterattack against the demons, he is frustrated by his lazy general Suvīra. Sakka asks Suvīra how one might get what one wants without effort; but Suvīra apparently believes Sakka can grant any wish he wants. The Buddha emphasizes that if effort is valuable among the gods, how much more so for bhikkhus.
 @@ -1 +1 @@ sn-blurbs:sn11.2
 -When Sakka, the Lord of Gods, tries to organize a conterattack against the demons, he is frustrated by his lazy general Susīma. Sakka asks Susīma how one might get what one wants without effort; but Susīma apparently believes Sakka can grant any wish he wants. The Buddha emphasizes that if effort is valuable among the gods, how much more so for mendicants.
-+When Sakka, the Lord of Gods, tries to organize a conterattack against the demons, he is frustrated by his lazy general Susīma. Sakka asks Susīma how one might get what one wants without effort; but Susīma apparently believes Sakka can grant any wish he wants. The Buddha emphasizes that if effort is valuable among the gods, how much more so for bhikkhus.
++When Sakka, the Lord of Gods, tries to organize a counterattack against the demons, he is frustrated by his lazy general Susīma. Sakka asks Susīma how one might get what one wants without effort; but Susīma apparently believes Sakka can grant any wish he wants. The Buddha emphasizes that if effort is valuable among the gods, how much more so for bhikkhus.
 @@ -1 +1 @@ sn-blurbs:sn11.3
 -Sakka rallies his troops with the sight of his banner. But the Buddha points out that the deities, powerful as they are, are not free of fear, but he is. He encourages the mendicants to recollect the Triple Gem to abandon fear.
 +Sakka rallies his troops with the sight of his banner. But the Buddha points out that the deities, powerful as they are, are not free of fear, but he is. He encourages the bhikkhus to recollect the Triple Gem to abandon fear.
@@ -1128,7 +1140,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
 +Only a noble disciple truly understand the five aggregates’ arising, ending, gratification, drawback, and escape.
 @@ -1 +1 @@ sn-blurbs:sn22.80
 -While staying at Kapilavatthu the Buddha dismissed the the Sangha for misbehaving. Later he decided to support them for the sake of the young mendicants. He reminds them that their livelihood is considered a lowly one, and that one should let go of bad thoughts and wrong views, and see the aggregates as impermanent. 
-+While staying at Kapilavatthu the Buddha dismissed the the Sangha for misbehaving. Later he decided to support them for the sake of the young bhikkhus. He reminds them that their livelihood is considered a lowly one, and that one should let go of bad thoughts and wrong views, and see the aggregates as impermanent. 
++While staying at Kapilavatthu the Buddha dismissed the Sangha for misbehaving. Later he decided to support them for the sake of the young bhikkhus. He reminds them that their livelihood is considered a lowly one, and that one should let go of bad thoughts and wrong views, and see the aggregates as impermanent. 
 @@ -1 +1 @@ sn-blurbs:sn22.81
 -Leaving behind the quarreling monks at Kosambī, the Buddha went to stay in the empty forest at Pārileyyaka. Ānanda brings some mendicants to receive a teaching, and one of them wonders how to see so as to end defilements in this very life. The Buddha teaches the 37 practices that lead to awakening, and then goes on to show that various ways of regarding the aggregates are conditioned phenomena.
 +Leaving behind the quarreling monks at Kosambī, the Buddha went to stay in the empty forest at Pārileyyaka. Ānanda brings some bhikkhus to receive a teaching, and one of them wonders how to see so as to end defilements in this very life. The Buddha teaches the 37 practices that lead to awakening, and then goes on to show that various ways of regarding the aggregates are conditioned phenomena.
@@ -1357,6 +1369,9 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
 @@ -1 +1 @@ sn-blurbs:sn41.9
 -Citta meets with the naked ascetic Kassapa, an old friend of his, and asks what gains he has realized from the spiritual life. Kassapa admits he has realized no higher attainments, whereupon Citta reveals he has realized many such attainments. Kassapa decides to ordain as a Buddhist mendicant.
 +Citta meets with the naked ascetic Kassapa, an old friend of his, and asks what gains he has realized from the spiritual life. Kassapa admits he has realized no higher attainments, whereupon Citta reveals he has realized many such attainments. Kassapa decides to ordain as a Buddhist bhikkhu.
+@@ -1 +1 @@ sn-blurbs:sn42.8
+-The Buddha asks the chief Asibandhakaputta, a Jain, how Mahāvīra the Jain leader teaches his followers. He replies that you go to a rebirth depending on what you usually do. But the Buddha points out that even a killer only spends a small amount of time actually killing. The Buddha’s approach is to point out that deeds have results, and to encourage the abandoing of bad deeds and the adoption of good deeds.
++The Buddha asks the chief Asibandhakaputta, a Jain, how Mahāvīra the Jain leader teaches his followers. He replies that you go to a rebirth depending on what you usually do. But the Buddha points out that even a killer only spends a small amount of time actually killing. The Buddha’s approach is to point out that deeds have results, and to encourage the abandoning of bad deeds and the adoption of good deeds.
 @@ -1 +1 @@ sn-blurbs:sn42.10
 -In Rājagaha, some in the royal court say Buddhist mendicants may accept offerings of money. Chief Maṇicūḷaka rebuts them, then visits the Buddha for confirmation. The Buddha categorically denies the accusation.
 +In Rājagaha, some in the royal court say Buddhist bhikkhus may accept offerings of money. Chief Maṇicūḷaka rebuts them, then visits the Buddha for confirmation. The Buddha categorically denies the accusation.
@@ -1570,6 +1585,9 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
 @@ -1 +1 @@ sn-blurbs:sn51.7
 -Whatever mendicants realize perfection do so by developing the four bases of psychic power.
 +Whatever bhikkhus realize perfection do so by developing the four bases of psychic power.
+@@ -1 +1 @@ sn-blurbs:sn51.15
+-Ānanda explains to the brahmin Uṇṇābha that the spiritual path is lived to give up desire through the the four bases of psychic power. But Uṇṇābha says this is a contradiction, as desire is itself one of the four bases. Ānanda resolves the contradiction with the simile of a man walking to a park. 
++Ānanda explains to the brahmin Uṇṇābha that the spiritual path is lived to give up desire through the four bases of psychic power. But Uṇṇābha says this is a contradiction, as desire is itself one of the four bases. Ānanda resolves the contradiction with the simile of a man walking to a park. 
 @@ -1 +1 @@ sn-blurbs:sn51.18
 -It is because of developing the four bases of psychic power that a mendicant ends the defilements.
 +It is because of developing the four bases of psychic power that a bhikkhu ends the defilements.
@@ -1881,6 +1899,177 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
 @@ -1 +1 @@ sn-name:2055.sn56-abhisamayavagga
 -The Chapter on Comprehension 
 +The Chapter on the Breakthrough 
+--- sujato/notes/dn/dn16_comment-en-sujato.json
++++ sujato/notes/dn/dn16_comment-en-sujato.json
+@@ -1 +1 @@ dn16:5.11.6
+-This is a rare mention of the <i lang='pi' translate='no'>thūpa</i> (“sepulchral momunent”) that became a major feature of the Buddhist landscape. Buddhist monuments were round in shape, which was apparently a characteristic of the lands around Magadha. Śatapathabrāhmaṇa 13.8.1.5 says that the correct form of such a monument was square, and that round monuments were built by godless “easterners”. 
++This is a rare mention of the <i lang='pi' translate='no'>thūpa</i> (“sepulchral monument”) that became a major feature of the Buddhist landscape. Buddhist monuments were round in shape, which was apparently a characteristic of the lands around Magadha. Śatapathabrāhmaṇa 13.8.1.5 says that the correct form of such a monument was square, and that round monuments were built by godless “easterners”. 
+--- sujato/notes/dn/dn1_comment-en-sujato.json
++++ sujato/notes/dn/dn1_comment-en-sujato.json
+@@ -1 +1 @@ dn1:2.2.3
+-“Mind-made” (<i lang='pi' translate='no'>manomaya</i>) beings are spontaneously born due to past kamma, not by sex. | “Rapture” (<i lang='pi' translate='no'>pīti</i>) is a joyous emotional response to pleasure, usually a spiritual sense of elevation or uplift in meditation. | “Self-lumious” (<i lang='pi' translate='no'>sayaṁpabhā</i>) as an external representation of the light of absorption through which they attained their exalted status. In the Rig Veda it is used of the divine light of the sun (1.52.9 <i lang='pi' translate='no'>svaścandram</i>; 6.64.4 <i lang='pi' translate='no'>svabhāna</i>) or the lightning (5.87.5 <i lang='pi' translate='no'>svarociṣa</i>; 1.82.2 <i lang='pi' translate='no'>svabhāna</i>). 
++“Mind-made” (<i lang='pi' translate='no'>manomaya</i>) beings are spontaneously born due to past kamma, not by sex. | “Rapture” (<i lang='pi' translate='no'>pīti</i>) is a joyous emotional response to pleasure, usually a spiritual sense of elevation or uplift in meditation. | “Self-luminous” (<i lang='pi' translate='no'>sayaṁpabhā</i>) as an external representation of the light of absorption through which they attained their exalted status. In the Rig Veda it is used of the divine light of the sun (1.52.9 <i lang='pi' translate='no'>svaścandram</i>; 6.64.4 <i lang='pi' translate='no'>svabhāna</i>) or the lightning (5.87.5 <i lang='pi' translate='no'>svarociṣa</i>; 1.82.2 <i lang='pi' translate='no'>svabhāna</i>). 
+@@ -1 +1 @@ dn1:2.13.4
+-The terms “mind” (<i lang='pi' translate='no'>citta</i>), “sentience” (<i lang='pi' translate='no'>mano</i>), and “consciousness” (<i lang='pi' translate='no'>viññāṇa</i>) are broadly synonymous and in many cases may be substituted for one another. Nonetheless, they each have a particular context in which they predominate. <i lang='pi' translate='no'>Citta</i> is to be developed, in which respect it pertains to the fourth noble truth, the path. <i lang='pi' translate='no'>Mano</i>, which I translate here as “sentience” for the sake of disambiguation, is often used in the active sense of the deeds done by the mind, pertaining to the second noble truth, the origin of suffering. <i lang='pi' translate='no'>Viññāṇa</i> is the key factor in the experince of suffering, pertaining to the first noble truth. 
++The terms “mind” (<i lang='pi' translate='no'>citta</i>), “sentience” (<i lang='pi' translate='no'>mano</i>), and “consciousness” (<i lang='pi' translate='no'>viññāṇa</i>) are broadly synonymous and in many cases may be substituted for one another. Nonetheless, they each have a particular context in which they predominate. <i lang='pi' translate='no'>Citta</i> is to be developed, in which respect it pertains to the fourth noble truth, the path. <i lang='pi' translate='no'>Mano</i>, which I translate here as “sentience” for the sake of disambiguation, is often used in the active sense of the deeds done by the mind, pertaining to the second noble truth, the origin of suffering. <i lang='pi' translate='no'>Viññāṇa</i> is the key factor in the experience of suffering, pertaining to the first noble truth. 
+--- sujato/notes/kn/snp/vagga5/snp5.1_comment-en-sujato.json
++++ sujato/notes/kn/snp/vagga5/snp5.1_comment-en-sujato.json
+@@ -1 +1 @@ snp5.1:1.3
+-<i lang='pi' translate='no'>Ākiñcaññaṁ</i> (“nothingness”) refers to “the dimension of nothingness”, which is an important topic in the chapters to come. It seems he was an acolyte of the Kosalan brahmins such as Āḷāra Kālāma who taught the state of nothingsness as the highest realization, and wanted to find a secluded place to pursue his meditations (<a href='https://suttacentral.net/mn26/en/sujato#15.1'>MN 26:15.1</a>). The sense of “owning nothing” is also relevant. 
++<i lang='pi' translate='no'>Ākiñcaññaṁ</i> (“nothingness”) refers to “the dimension of nothingness”, which is an important topic in the chapters to come. It seems he was an acolyte of the Kosalan brahmins such as Āḷāra Kālāma who taught the state of nothingness as the highest realization, and wanted to find a secluded place to pursue his meditations (<a href='https://suttacentral.net/mn26/en/sujato#15.1'>MN 26:15.1</a>). The sense of “owning nothing” is also relevant. 
+--- sujato/notes/kn/ud/vagga5/ud5.3_comment-en-sujato.json
++++ sujato/notes/kn/ud/vagga5/ud5.3_comment-en-sujato.json
+@@ -1 +1 @@ ud5.3:4.3
+-It’s interesting to note that, despite the perhaps derogatory sense of <i lang='pi' translate='no'>kuṭṭhi</i> (“leper”), there is no question that Suppabuddha sits in the assembly and is not physically exlcuded. 
++It’s interesting to note that, despite the perhaps derogatory sense of <i lang='pi' translate='no'>kuṭṭhi</i> (“leper”), there is no question that Suppabuddha sits in the assembly and is not physically excluded. 
+--- sujato/notes/mn/mn117_comment-en-sujato.json
++++ sujato/notes/mn/mn117_comment-en-sujato.json
+@@ -1 +1 @@ mn117:2.1
+-The first portion of this sutta is also at <a href='https://suttacentral.net/sn45.28/en/sujato#1.2'>SN 45.28:1.2</a>, to which the current sutta can be seen as a commentary. | “Vital condition” is <i lang='pi' translate='no'>upanisa</i>; this is a condition for something that is both necessary and strongly conducive. | “Prerequiste” is <i lang='pi' translate='no'>parikkhāra</i>, the “equipment” or “requirement”. 
++The first portion of this sutta is also at <a href='https://suttacentral.net/sn45.28/en/sujato#1.2'>SN 45.28:1.2</a>, to which the current sutta can be seen as a commentary. | “Vital condition” is <i lang='pi' translate='no'>upanisa</i>; this is a condition for something that is both necessary and strongly conducive. | “Prerequisite” is <i lang='pi' translate='no'>parikkhāra</i>, the “equipment” or “requirement”. 
+--- sujato/notes/mn/mn12_comment-en-sujato.json
++++ sujato/notes/mn/mn12_comment-en-sujato.json
+@@ -1 +1 @@ mn12:32.3
+-Compare the three “seeds” of Chāndogya Upaniṣad 6.3.1: beings are born from an egg (<i lang='pi' translate='no'>āṇḍaja</i>), from a living individual (<i lang='pi' translate='no'>jīvaja</i>, i.e. “viviparous”), from a sprout (<i lang='pi' translate='no'>udbhijja</i>, i.e. plants). Expanded to four at Aitareya Upaniṣad 3.3: from an egg, from a membrane (<i lang='pi' translate='no'>jāruja</i> = <i lang='pi' translate='no'>jarāyuja</i>, cf. Pali <i lang='pi' translate='no'>jalābuja</i>), from moisture/sweat (<i lang='pi' translate='no'>svedaja</i>, cf. Pali <i lang='pi' translate='no'>saṁsedaja</i>), from a sprout. These are defined at Manusmṛti 1.43–6. The Jain Tattvārtha Sūtra 2.31–5 presents three kinds of birth: congealing (<i lang='pi' translate='no'>sammūrcchana</i>), uterine (<i lang='pi' translate='no'>garbha</i>; includes egg and womb), and spontaneous (<i lang='pi' translate='no'>upapāda</i>, cf. Pali <i lang='pi' translate='no'>opapātika</i> in the same sense). “Congealing” birth refers to all those not otherwise covered, and thus includes both “mosisture-born” and plants (cf. <a href='https://suttacentral.net/dn15/en/sujato#21.2'>DN 15:21.2</a>). | The Buddhist list is the only one that does not include plants, as Buddhists believe that consciousness does not take rebirth in plants. The Vedic position is that the soul (<i lang='pi' translate='no'>ātman</i>) can be reborn in plants (Chāndogya Upaniṣad 6.3.2), while the Jains believed that all things living and not living possess souls (<i lang='pi' translate='no'>jīva</i>). 
++Compare the three “seeds” of Chāndogya Upaniṣad 6.3.1: beings are born from an egg (<i lang='pi' translate='no'>āṇḍaja</i>), from a living individual (<i lang='pi' translate='no'>jīvaja</i>, i.e. “viviparous”), from a sprout (<i lang='pi' translate='no'>udbhijja</i>, i.e. plants). Expanded to four at Aitareya Upaniṣad 3.3: from an egg, from a membrane (<i lang='pi' translate='no'>jāruja</i> = <i lang='pi' translate='no'>jarāyuja</i>, cf. Pali <i lang='pi' translate='no'>jalābuja</i>), from moisture/sweat (<i lang='pi' translate='no'>svedaja</i>, cf. Pali <i lang='pi' translate='no'>saṁsedaja</i>), from a sprout. These are defined at Manusmṛti 1.43–6. The Jain Tattvārtha Sūtra 2.31–5 presents three kinds of birth: congealing (<i lang='pi' translate='no'>sammūrcchana</i>), uterine (<i lang='pi' translate='no'>garbha</i>; includes egg and womb), and spontaneous (<i lang='pi' translate='no'>upapāda</i>, cf. Pali <i lang='pi' translate='no'>opapātika</i> in the same sense). “Congealing” birth refers to all those not otherwise covered, and thus includes both “moisture-born” and plants (cf. <a href='https://suttacentral.net/dn15/en/sujato#21.2'>DN 15:21.2</a>). | The Buddhist list is the only one that does not include plants, as Buddhists believe that consciousness does not take rebirth in plants. The Vedic position is that the soul (<i lang='pi' translate='no'>ātman</i>) can be reborn in plants (Chāndogya Upaniṣad 6.3.2), while the Jains believed that all things living and not living possess souls (<i lang='pi' translate='no'>jīva</i>). 
+@@ -1 +1 @@ mn12:62.6
+-Memory (<i lang='pi' translate='no'>sati</i>), rememberance (<i lang='pi' translate='no'>gati</i>), retention (<i lang='pi' translate='no'>dhiti</i>), and perfect lucidity of wisdom (<i lang='pi' translate='no'>paññāveyyattiya</i>). The first three of these are exemplified by Ānanda (<a href='https://suttacentral.net/an1.220/en/sujato'>AN 1.220</a>). 
++Memory (<i lang='pi' translate='no'>sati</i>), remembrance (<i lang='pi' translate='no'>gati</i>), retention (<i lang='pi' translate='no'>dhiti</i>), and perfect lucidity of wisdom (<i lang='pi' translate='no'>paññāveyyattiya</i>). The first three of these are exemplified by Ānanda (<a href='https://suttacentral.net/an1.220/en/sujato'>AN 1.220</a>). 
+--- sujato/notes/mn/mn36_comment-en-sujato.json
++++ sujato/notes/mn/mn36_comment-en-sujato.json
+@@ -1 +1 @@ mn36:3.4
+-<i lang='pi' translate='no'>Bhassappavādaka</i> (“contoversialist”) is unique. | For “pretends to be astute” (<i lang='pi' translate='no'>paṇḍitavāda</i>) see Monier-Williams under <i lang='pi' translate='no'>paṇḍitavādin</i>. 
++<i lang='pi' translate='no'>Bhassappavādaka</i> (“controversialist”) is unique. | For “pretends to be astute” (<i lang='pi' translate='no'>paṇḍitavāda</i>) see Monier-Williams under <i lang='pi' translate='no'>paṇḍitavādin</i>. 
+--- sujato/notes/mn/mn39_comment-en-sujato.json
++++ sujato/notes/mn/mn39_comment-en-sujato.json
+@@ -1 +1 @@ mn39:28.1
+-Both <i lang='pi' translate='no'>ariya</i> and <i lang='pi' translate='no'>arahant</i> are explained with the same word <i lang='pi' translate='no'>āraka</i>, meaning “far from (defilements)”. The commentary gives <i lang='pi' translate='no'>āraka</i> in both cases, but explains <i lang='pi' translate='no'>ariya</i> as “slayer” and <i lang='pi' translate='no'>arahant</i> as “far from”. At <a href='https://suttacentral.net/an7.91/en/sujato'>AN 7.91</a>, PTS has <i lang='pi' translate='no'>arīhatattā</i>, “foe-slayer” for <i lang='pi' translate='no'>ariya</i> (BJT omits, while at least one more variant is attested). This is a slightly better pun for <i lang='pi' translate='no'>ariya</i> than <i lang='pi' translate='no'>āraka</i>, although at <a href='https://suttacentral.net/snp3.6/en/sujato#38.1'>Snp 3.6:38.1</a> <i lang='pi' translate='no'>ariya</i> is punned with <i lang='pi' translate='no'>ālaya</i> (“clinging”), which is better than both. Where both MA 182 and the parallel to <a href='https://suttacentral.net/mn40/en/sujato'>MN 40</a> at MA 183 at T i 726c13 mention the <i lang='pi' translate='no'>ariya</i>, the Indic pun underlying EA 49.8 seems to be that a <i lang='pi' translate='no'>kṣatriya</i> is so called because they “end” (Sanskit <i lang='pi' translate='no'>kṣaya</i>) the defilements. Neither of the Chinese parallels (MA 182 at T i 725c4, EA 49.8 at T ii 802b4) mentions the <i lang='pi' translate='no'>arahant</i>, suggesting it was added later, which would explain the duplication of <i lang='pi' translate='no'>āraka</i>. However, given that “far from” is consistently attested for the <i lang='pi' translate='no'>arahant</i> in all editions and commentary; that “foe-slayer” is attested for <i lang='pi' translate='no'>ariya</i> in some texts and commentaries; and that <i lang='pi' translate='no'>kṣatriya</i> in the sense of “warrior” is loosely in the same semantic realm as “foe-slayer”, I translate accordingly. 
++Both <i lang='pi' translate='no'>ariya</i> and <i lang='pi' translate='no'>arahant</i> are explained with the same word <i lang='pi' translate='no'>āraka</i>, meaning “far from (defilements)”. The commentary gives <i lang='pi' translate='no'>āraka</i> in both cases, but explains <i lang='pi' translate='no'>ariya</i> as “slayer” and <i lang='pi' translate='no'>arahant</i> as “far from”. At <a href='https://suttacentral.net/an7.91/en/sujato'>AN 7.91</a>, PTS has <i lang='pi' translate='no'>arīhatattā</i>, “foe-slayer” for <i lang='pi' translate='no'>ariya</i> (BJT omits, while at least one more variant is attested). This is a slightly better pun for <i lang='pi' translate='no'>ariya</i> than <i lang='pi' translate='no'>āraka</i>, although at <a href='https://suttacentral.net/snp3.6/en/sujato#38.1'>Snp 3.6:38.1</a> <i lang='pi' translate='no'>ariya</i> is punned with <i lang='pi' translate='no'>ālaya</i> (“clinging”), which is better than both. Where both MA 182 and the parallel to <a href='https://suttacentral.net/mn40/en/sujato'>MN 40</a> at MA 183 at T i 726c13 mention the <i lang='pi' translate='no'>ariya</i>, the Indic pun underlying EA 49.8 seems to be that a <i lang='pi' translate='no'>kṣatriya</i> is so called because they “end” (Sanskrit <i lang='pi' translate='no'>kṣaya</i>) the defilements. Neither of the Chinese parallels (MA 182 at T i 725c4, EA 49.8 at T ii 802b4) mentions the <i lang='pi' translate='no'>arahant</i>, suggesting it was added later, which would explain the duplication of <i lang='pi' translate='no'>āraka</i>. However, given that “far from” is consistently attested for the <i lang='pi' translate='no'>arahant</i> in all editions and commentary; that “foe-slayer” is attested for <i lang='pi' translate='no'>ariya</i> in some texts and commentaries; and that <i lang='pi' translate='no'>kṣatriya</i> in the sense of “warrior” is loosely in the same semantic realm as “foe-slayer”, I translate accordingly. 
+--- sujato/notes/mn/mn41_comment-en-sujato.json
++++ sujato/notes/mn/mn41_comment-en-sujato.json
+@@ -1 +1 @@ mn41:18-42.34
+-These four correespond to the formless attainments. 
++These four correspond to the formless attainments. 
+--- sujato/notes/mn/mn55_comment-en-sujato.json
++++ sujato/notes/mn/mn55_comment-en-sujato.json
+@@ -1 +1 @@ mn55:1.2
+-Jīvaka was the Buddha’s doctor. His story is told in <a href='https://suttacentral.net/pli-tv-kd8/en/sujato'>Kd 8</a>, where we learn that he was abandoned on a trash heap by his mother Sālavatī, only to be discovered and raised by Prince Abhaya of Magadha, a Jain (<a href='https://suttacentral.net/mn58/en/sujato'>MN 58</a>). He was called “Survivior” (<i lang='pi' translate='no'>jīvaka</i>) and “Raised by a Prince” (<i lang='pi' translate='no'>komārabhacca</i>). In later Ayurveda, <i lang='pi' translate='no'>kaumārabhṛtya</i> means “paediatrics”, and a lost treatise on that subject is attributed to Jīvaka (Jīvakatantra). 
++Jīvaka was the Buddha’s doctor. His story is told in <a href='https://suttacentral.net/pli-tv-kd8/en/sujato'>Kd 8</a>, where we learn that he was abandoned on a trash heap by his mother Sālavatī, only to be discovered and raised by Prince Abhaya of Magadha, a Jain (<a href='https://suttacentral.net/mn58/en/sujato'>MN 58</a>). He was called “Survivor” (<i lang='pi' translate='no'>jīvaka</i>) and “Raised by a Prince” (<i lang='pi' translate='no'>komārabhacca</i>). In later Ayurveda, <i lang='pi' translate='no'>kaumārabhṛtya</i> means “paediatrics”, and a lost treatise on that subject is attributed to Jīvaka (Jīvakatantra). 
+--- sujato/notes/mn/mn58_comment-en-sujato.json
++++ sujato/notes/mn/mn58_comment-en-sujato.json
+@@ -1 +1 @@ mn58:3.6
+-The Jain doctrine <i lang='pi' translate='no'>anekantavāda</i> (“doctrine of many-sidedness”, “non-categorical doctrine”) posits that in metaphysical propositions, one must conditionally affirm multiple possibilities so as to illuminate the complex, multifacted nature of reality. An aspect of <i lang='pi' translate='no'>anekantavāda</i> is the <i lang='pi' translate='no'>syadvada</i>, which frames all statements with <i lang='pi' translate='no'>syā</i>, “it may be”. This uses the optative tense to conditionally affirm or deny without making absolute statements. The same tense is employed here by Mahāvīra in order to trap the Buddha on the horns of a dilemma (<i lang='pi' translate='no'>ubhatokoṭika</i>). Needless to say, this is not how he is presented in Jain texts. 
++The Jain doctrine <i lang='pi' translate='no'>anekantavāda</i> (“doctrine of many-sidedness”, “non-categorical doctrine”) posits that in metaphysical propositions, one must conditionally affirm multiple possibilities so as to illuminate the complex, multifaceted nature of reality. An aspect of <i lang='pi' translate='no'>anekantavāda</i> is the <i lang='pi' translate='no'>syadvada</i>, which frames all statements with <i lang='pi' translate='no'>syā</i>, “it may be”. This uses the optative tense to conditionally affirm or deny without making absolute statements. The same tense is employed here by Mahāvīra in order to trap the Buddha on the horns of a dilemma (<i lang='pi' translate='no'>ubhatokoṭika</i>). Needless to say, this is not how he is presented in Jain texts. 
+--- sujato/notes/mn/mn7_comment-en-sujato.json
++++ sujato/notes/mn/mn7_comment-en-sujato.json
+@@ -1 +1 @@ mn7:3.1
+-Here the text shifts from <i lang='pi' translate='no'>saṅkiliṭṭha</i> (“corrupt”) to <i lang='pi' translate='no'>upakkilesa</i> (“corruption”). These are general terms for unskillful qualities of mind and the change in prefix has no particular significence. 
++Here the text shifts from <i lang='pi' translate='no'>saṅkiliṭṭha</i> (“corrupt”) to <i lang='pi' translate='no'>upakkilesa</i> (“corruption”). These are general terms for unskillful qualities of mind and the change in prefix has no particular significance. 
+--- sujato/notes/mn/mn87_comment-en-sujato.json
++++ sujato/notes/mn/mn87_comment-en-sujato.json
+@@ -1 +1 @@ mn87:1.1
+-King Pasenadi had what seems to be his first conversation and conversion with the Buddha in <a href='https://suttacentral.net/sn3.1/en/sujato'>SN 3.1</a>. However, it would seem his faith was still weak, as he is frustrated by the devotion of his chief queen, Mallikā (“Jasmine”). Ultimately, her wise counsel persuades him. Similar conversations with Mallikā on attachment to loved ones are found at <a href='https://suttacentral.net/sn3.8/en/sujato'>SN 3.8</a> and <a href='https://suttacentral.net/ud5.1/en/sujato'>Ud 5.1</a>. King Pasenadi’s committment to non-attachment was sorely tested with the birth of a daughter (<a href='https://suttacentral.net/sn3.16/en/sujato'>SN 3.16</a>), and when Mallikā passed away (<a href='https://suttacentral.net/an5.49/en/sujato'>AN 5.49</a>). 
++King Pasenadi had what seems to be his first conversation and conversion with the Buddha in <a href='https://suttacentral.net/sn3.1/en/sujato'>SN 3.1</a>. However, it would seem his faith was still weak, as he is frustrated by the devotion of his chief queen, Mallikā (“Jasmine”). Ultimately, her wise counsel persuades him. Similar conversations with Mallikā on attachment to loved ones are found at <a href='https://suttacentral.net/sn3.8/en/sujato'>SN 3.8</a> and <a href='https://suttacentral.net/ud5.1/en/sujato'>Ud 5.1</a>. King Pasenadi’s commitment to non-attachment was sorely tested with the birth of a daughter (<a href='https://suttacentral.net/sn3.16/en/sujato'>SN 3.16</a>), and when Mallikā passed away (<a href='https://suttacentral.net/an5.49/en/sujato'>AN 5.49</a>). 
+--- sujato/notes/mn/mn93_comment-en-sujato.json
++++ sujato/notes/mn/mn93_comment-en-sujato.json
+@@ -1 +1 @@ mn93:18.2
+-The “seven brahmin seers”  (Sanskrit <i lang='pi' translate='no'>saptarṣi</i>, (eg. Śatapatha Brāhmaṇa 13.8.1.9, Atharva Veda 4.11.9c, Vājasaneyi Saṁhitā 13.26b) were renowned sages to whom the Vedic lineages (<i lang='pi' translate='no'>gottā</i>) were attributed  As the sutta’s conclusion will show, they are introduced here to demonstrate that the fallacy of geneology has been there since the beginning. | A similar practice of living in wilderness is described at <a href='https://suttacentral.net/mn25/en/sujato#9.5'>MN 25:9.5</a>, <a href='https://suttacentral.net/sn11.9/en/sujato'>SN 11.9</a>, <a href='https://suttacentral.net/dn23/en/sujato#21.3'>DN 23:21.3</a>, <a href='https://suttacentral.net/dn3/en/sujato#2.3.3'>DN 3:2.3.3</a>, and <a href='https://suttacentral.net/dn27/en/sujato#22.9'>DN 27:22.9</a>. Chāndogya Upaniṣad 5.10.1–5 compares the forest contemplatives destined for the Brahmā realm with the ritualists who are reborn on the moon before returning to earth. 
++The “seven brahmin seers”  (Sanskrit <i lang='pi' translate='no'>saptarṣi</i>, (eg. Śatapatha Brāhmaṇa 13.8.1.9, Atharva Veda 4.11.9c, Vājasaneyi Saṁhitā 13.26b) were renowned sages to whom the Vedic lineages (<i lang='pi' translate='no'>gottā</i>) were attributed  As the sutta’s conclusion will show, they are introduced here to demonstrate that the fallacy of genealogy has been there since the beginning. | A similar practice of living in wilderness is described at <a href='https://suttacentral.net/mn25/en/sujato#9.5'>MN 25:9.5</a>, <a href='https://suttacentral.net/sn11.9/en/sujato'>SN 11.9</a>, <a href='https://suttacentral.net/dn23/en/sujato#21.3'>DN 23:21.3</a>, <a href='https://suttacentral.net/dn3/en/sujato#2.3.3'>DN 3:2.3.3</a>, and <a href='https://suttacentral.net/dn27/en/sujato#22.9'>DN 27:22.9</a>. Chāndogya Upaniṣad 5.10.1–5 compares the forest contemplatives destined for the Brahmā realm with the ritualists who are reborn on the moon before returning to earth. 
+--- sujato/notes/sn/sn10/sn10.4_comment-en-sujato.json
++++ sujato/notes/sn/sn10/sn10.4_comment-en-sujato.json
+@@ -1 +1 @@ sn10.4:1.2
+-Maṇibhadda means “auspicious jewel”. <i lang='pi' translate='no'>Yakkhas</i> of this name are found in both Brahmanism and Jainism as bestowers of wealth. Hindu texts identify him as brother of Kuvera, king of <i lang='pi' translate='no'>yakkhas</i>, and tutellary deity of merchants and travellers. Mahāvīra was once said to have stayed at a Maṇibhadra shrine, but that was in Mithila, north of the Ganges. 
++Maṇibhadda means “auspicious jewel”. <i lang='pi' translate='no'>Yakkhas</i> of this name are found in both Brahmanism and Jainism as bestowers of wealth. Hindu texts identify him as brother of Kuvera, king of <i lang='pi' translate='no'>yakkhas</i>, and tutelary deity of merchants and travellers. Mahāvīra was once said to have stayed at a Maṇibhadra shrine, but that was in Mithila, north of the Ganges. 
+--- sujato/notes/sn/sn12/sn12.61_comment-en-sujato.json
++++ sujato/notes/sn/sn12/sn12.61_comment-en-sujato.json
+@@ -1 +1 @@ sn12.61:2.1
+-The terms “mind” (<i lang='pi' translate='no'>citta</i>), “sentience” (<i lang='pi' translate='no'>mano</i>), and “consciousness” (<i lang='pi' translate='no'>viññāṇa</i>) are broadly synonymous and in many cases may be substituted for one another. Nonetheless, they each have a particular context in which they predominate. <i lang='pi' translate='no'>Citta</i> is to be developed, in which respect it pertains to the fourth noble truth, the path. <i lang='pi' translate='no'>Mano</i>, which I translate here as “sentience” for the sake of disambiguation, is often used in the active sense of the deeds done by the mind, pertaining to the second noble truth, the origin of suffering. <i lang='pi' translate='no'>Viññāṇa</i> is the key factor in the experince of suffering, pertaining to the first noble truth. 
++The terms “mind” (<i lang='pi' translate='no'>citta</i>), “sentience” (<i lang='pi' translate='no'>mano</i>), and “consciousness” (<i lang='pi' translate='no'>viññāṇa</i>) are broadly synonymous and in many cases may be substituted for one another. Nonetheless, they each have a particular context in which they predominate. <i lang='pi' translate='no'>Citta</i> is to be developed, in which respect it pertains to the fourth noble truth, the path. <i lang='pi' translate='no'>Mano</i>, which I translate here as “sentience” for the sake of disambiguation, is often used in the active sense of the deeds done by the mind, pertaining to the second noble truth, the origin of suffering. <i lang='pi' translate='no'>Viññāṇa</i> is the key factor in the experience of suffering, pertaining to the first noble truth. 
+--- sujato/notes/sn/sn13/sn13.3_comment-en-sujato.json
++++ sujato/notes/sn/sn13/sn13.3_comment-en-sujato.json
+@@ -1 +1 @@ sn13.3:1.2
+-The Ganges (Pali <i lang='pi' translate='no'>gaṅgā</i>) is the greatest river of India. Arising far to the west in Uttarakhand, it flows 2,525 km, emptying into the Bay of Bengal in Banfgladesh. The other rivers mentioned here are all its tributaries. | Yamunā is a major southern tributary of the Ganges, joining it at Payāga. | Aciravatī is today the West Rapti, on whose banks Sāvatthī was located. Winding down from Nepal, it joins the Sarabhū to the north west of the confluence with the Ganges, in or near the land of the Kālāmas. | Sarabhū (Sanskrit <i lang='pi' translate='no'>sarayū</i>) is the modern Gaghara, one of the largest northern tributaries of the Ganges, joining it west of Pāṭaliputta, modern Patna. | Mahī is the modern Kosi, which flows from Tibet through Nepal to join the Ganges in Aṅga, east of Pāṭaliputta around modern Kursela. | Also at <a href='https://suttacentral.net/sn56.53/en/sujato'>SN 56.53</a>. 
++The Ganges (Pali <i lang='pi' translate='no'>gaṅgā</i>) is the greatest river of India. Arising far to the west in Uttarakhand, it flows 2,525 km, emptying into the Bay of Bengal in Bangladesh. The other rivers mentioned here are all its tributaries. | Yamunā is a major southern tributary of the Ganges, joining it at Payāga. | Aciravatī is today the West Rapti, on whose banks Sāvatthī was located. Winding down from Nepal, it joins the Sarabhū to the north west of the confluence with the Ganges, in or near the land of the Kālāmas. | Sarabhū (Sanskrit <i lang='pi' translate='no'>sarayū</i>) is the modern Gaghara, one of the largest northern tributaries of the Ganges, joining it west of Pāṭaliputta, modern Patna. | Mahī is the modern Kosi, which flows from Tibet through Nepal to join the Ganges in Aṅga, east of Pāṭaliputta around modern Kursela. | Also at <a href='https://suttacentral.net/sn56.53/en/sujato'>SN 56.53</a>. 
+--- sujato/notes/sn/sn15/sn15.1_comment-en-sujato.json
++++ sujato/notes/sn/sn15/sn15.1_comment-en-sujato.json
+@@ -1 +1 @@ sn15.1:1.7
+-Resolve <i lang='pi' translate='no'>anamatagga</i> as <i lang='pi' translate='no'>ana’mat’agga</i>, where <i lang='pi' translate='no'>ana</i> is a doubled negative: “no known beginning”. | The idea stems from the the Nāsadīya Sūkta, which twice mentions “in the beginning” (<i lang='pi' translate='no'>agre</i>, Rig Veda 10.129.3, 4; see too 10.90.7, 10.121.1). There, from thought (<i lang='pi' translate='no'>manaso</i>) evolved desire. It concludes, “This creation—from where it came to be, if it was produced or if not—he who is the overseer of this (world) in the furthest heaven, he surely knows. Or if he does not know …?” (Rig Veda 10.129.7, Jamison/Brereton). Perhaps the Buddha picked up the phrase from his former teacher Uddaka Rāmaputta, who at Isibhāsiyāiṁ 23 describes transmigration as <i lang='pi' translate='no'>aṇādīyaṁ aṇavadaggaṁ</i> (“beginningless, without first point”). 
++Resolve <i lang='pi' translate='no'>anamatagga</i> as <i lang='pi' translate='no'>ana’mat’agga</i>, where <i lang='pi' translate='no'>ana</i> is a doubled negative: “no known beginning”. | The idea stems from the Nāsadīya Sūkta, which twice mentions “in the beginning” (<i lang='pi' translate='no'>agre</i>, Rig Veda 10.129.3, 4; see too 10.90.7, 10.121.1). There, from thought (<i lang='pi' translate='no'>manaso</i>) evolved desire. It concludes, “This creation—from where it came to be, if it was produced or if not—he who is the overseer of this (world) in the furthest heaven, he surely knows. Or if he does not know …?” (Rig Veda 10.129.7, Jamison/Brereton). Perhaps the Buddha picked up the phrase from his former teacher Uddaka Rāmaputta, who at Isibhāsiyāiṁ 23 describes transmigration as <i lang='pi' translate='no'>aṇādīyaṁ aṇavadaggaṁ</i> (“beginningless, without first point”). 
+--- sujato/notes/sn/sn19/sn19.14_comment-en-sujato.json
++++ sujato/notes/sn/sn19/sn19.14_comment-en-sujato.json
+@@ -1 +1 @@ sn19.14:1.1
+-<i lang='pi' translate='no'>Maṅguli</i> is probably related to <i lang='pi' translate='no'>maṅgura</i> (cf. Sanskrit <i lang='pi' translate='no'>maṅgura</i>, <i lang='pi' translate='no'>madgura</i>), a skin color, neither black nor brown, said by the commentary to be that of the common catfish <em>clarias magur</em> (<a href='https://suttacentral.net/mn36/en/sujato#29.3'>MN 36:29.3</a>). It has a dingy mud-green color for hiding in the mud on the riverbed. It is a pun: she is a seer of <i lang='pi' translate='no'>maṅgalā</i> (“auspicies”), hence she is reborn ugly as a <i lang='pi' translate='no'>maṅguli</i> (“catfish”). Like the catfish, she has to disguise her true nature. The idea approaches the modern sense of “catfishing”, both usages stemming from the idea of camouflage. 
++<i lang='pi' translate='no'>Maṅguli</i> is probably related to <i lang='pi' translate='no'>maṅgura</i> (cf. Sanskrit <i lang='pi' translate='no'>maṅgura</i>, <i lang='pi' translate='no'>madgura</i>), a skin color, neither black nor brown, said by the commentary to be that of the common catfish <em>clarias magur</em> (<a href='https://suttacentral.net/mn36/en/sujato#29.3'>MN 36:29.3</a>). It has a dingy mud-green color for hiding in the mud on the riverbed. It is a pun: she is a seer of <i lang='pi' translate='no'>maṅgalā</i> (“auspices”), hence she is reborn ugly as a <i lang='pi' translate='no'>maṅguli</i> (“catfish”). Like the catfish, she has to disguise her true nature. The idea approaches the modern sense of “catfishing”, both usages stemming from the idea of camouflage. 
+--- sujato/notes/sn/sn22/sn22.105_comment-en-sujato.json
++++ sujato/notes/sn/sn22/sn22.105_comment-en-sujato.json
+@@ -1 +1 @@ sn22.105:1.5
+-Buddhism and Jainism, but not Hindusim, share three technical terms, all having the sense “mass”. For the Jains, “substantial reality” (<i lang='pi' translate='no'>astikāya</i>) includes  “mass” or “matter” (<i lang='pi' translate='no'>pudgala</i>), a molecule of which is an aggregate (<i lang='pi' translate='no'>skandha</i>). For Buddhists, “substantial reality” (<i lang='pi' translate='no'>sakkāya</i>) is comprised of the “aggregates” (<i lang='pi' translate='no'>khandha</i>), which make up the “individual” (<i lang='pi' translate='no'>puggala</i>, see <a href='https://suttacentral.net/sn22.22/en/sujato'>SN 22.22</a>). 
++Buddhism and Jainism, but not Hinduism, share three technical terms, all having the sense “mass”. For the Jains, “substantial reality” (<i lang='pi' translate='no'>astikāya</i>) includes  “mass” or “matter” (<i lang='pi' translate='no'>pudgala</i>), a molecule of which is an aggregate (<i lang='pi' translate='no'>skandha</i>). For Buddhists, “substantial reality” (<i lang='pi' translate='no'>sakkāya</i>) is comprised of the “aggregates” (<i lang='pi' translate='no'>khandha</i>), which make up the “individual” (<i lang='pi' translate='no'>puggala</i>, see <a href='https://suttacentral.net/sn22.22/en/sujato'>SN 22.22</a>). 
+--- sujato/notes/sn/sn22/sn22.62_comment-en-sujato.json
++++ sujato/notes/sn/sn22/sn22.62_comment-en-sujato.json
+@@ -1 +1 @@ sn22.62:13.2
+-The phrase <i lang='pi' translate='no'>ukkalā vassabhaññā</i> occurs regarding different teachings at <a href='https://suttacentral.net/mn117/en/sujato#38.1'>MN 117:38.1</a> and <a href='https://suttacentral.net/sn22.62/en/sujato#13.2'>SN 22.62:13.2</a>. The commentary says it refers to two individuals named Vassa and Bhañña from a distant land on the Bay of Bengal, Ukkalā (Sanskrit <i lang='pi' translate='no'>oḍra</i>, modern Odisha). But this seems quite unlikely. Ukkalā was distant and largely unknown, mentioned only once elsewhere in the Pali canon (<a href='https://suttacentral.net/pli-tv-kd1/en/sujato#4.2.1'>Kd 1:4.2.1</a>). These teachers with their odd names (“Rain” and “Speak”) appear nowhere else, yet the the phrase <i lang='pi' translate='no'>yepi te ahesuṁ</i> suggests they were well known; it is elsewhere used only of “those who were” Buddhas of the past. There seems no reason the Buddha should abruptly allude to such obscure figures as if they were an authority. Read <i lang='pi' translate='no'>ukkalā</i> from root <i lang='pi' translate='no'>kal</i> (“to sound”) with prefix <i lang='pi' translate='no'>ud</i> (“up”), “with raised voice” (cf. Sanskrit <i lang='pi' translate='no'>kalabhāṣin</i>, “with pleasing voice”). Then <i lang='pi' translate='no'>vassa</i> from <i lang='pi' translate='no'>vṛṣa</i> (“bull, chief”), for which compare the expression, <i lang='pi' translate='no'>uḷārā āsabhī vācā bhāsitā</i>, “spoke a lofty bull’s word”, i.e. made a proud and bold statement. <i lang='pi' translate='no'>Bhañña</i> is used elsewhere of speaking “out of faith” (<i lang='pi' translate='no'>pasādabhañña</i>, <a href='https://suttacentral.net/pli-tv-bu-vb-pj4/en/sujato#8.11.8'>Bu Pj 4:8.11.8</a>) or of the intoned recitation used for Buddhist texts (<i lang='pi' translate='no'>sarabhañña</i>, <a href='https://suttacentral.net/ud5.6/en/sujato#18.2'>Ud 5.6:18.2</a> = <a href='https://suttacentral.net/pli-tv-kd15/en/sujato#3.2.1'>Kd 15:3.2.1</a>, <a href='https://suttacentral.net/pli-tv-kd15/en/sujato#3.2.1'>Kd 15:3.2.1</a>, <a href='https://suttacentral.net/pli-tv-kd22/en/sujato#1.10.5'>Kd 22:1.10.5</a>). Thus the sense would be, “those who loudly and boldly assert”. 
++The phrase <i lang='pi' translate='no'>ukkalā vassabhaññā</i> occurs regarding different teachings at <a href='https://suttacentral.net/mn117/en/sujato#38.1'>MN 117:38.1</a> and <a href='https://suttacentral.net/sn22.62/en/sujato#13.2'>SN 22.62:13.2</a>. The commentary says it refers to two individuals named Vassa and Bhañña from a distant land on the Bay of Bengal, Ukkalā (Sanskrit <i lang='pi' translate='no'>oḍra</i>, modern Odisha). But this seems quite unlikely. Ukkalā was distant and largely unknown, mentioned only once elsewhere in the Pali canon (<a href='https://suttacentral.net/pli-tv-kd1/en/sujato#4.2.1'>Kd 1:4.2.1</a>). These teachers with their odd names (“Rain” and “Speak”) appear nowhere else, yet the phrase <i lang='pi' translate='no'>yepi te ahesuṁ</i> suggests they were well known; it is elsewhere used only of “those who were” Buddhas of the past. There seems no reason the Buddha should abruptly allude to such obscure figures as if they were an authority. Read <i lang='pi' translate='no'>ukkalā</i> from root <i lang='pi' translate='no'>kal</i> (“to sound”) with prefix <i lang='pi' translate='no'>ud</i> (“up”), “with raised voice” (cf. Sanskrit <i lang='pi' translate='no'>kalabhāṣin</i>, “with pleasing voice”). Then <i lang='pi' translate='no'>vassa</i> from <i lang='pi' translate='no'>vṛṣa</i> (“bull, chief”), for which compare the expression, <i lang='pi' translate='no'>uḷārā āsabhī vācā bhāsitā</i>, “spoke a lofty bull’s word”, i.e. made a proud and bold statement. <i lang='pi' translate='no'>Bhañña</i> is used elsewhere of speaking “out of faith” (<i lang='pi' translate='no'>pasādabhañña</i>, <a href='https://suttacentral.net/pli-tv-bu-vb-pj4/en/sujato#8.11.8'>Bu Pj 4:8.11.8</a>) or of the intoned recitation used for Buddhist texts (<i lang='pi' translate='no'>sarabhañña</i>, <a href='https://suttacentral.net/ud5.6/en/sujato#18.2'>Ud 5.6:18.2</a> = <a href='https://suttacentral.net/pli-tv-kd15/en/sujato#3.2.1'>Kd 15:3.2.1</a>, <a href='https://suttacentral.net/pli-tv-kd15/en/sujato#3.2.1'>Kd 15:3.2.1</a>, <a href='https://suttacentral.net/pli-tv-kd22/en/sujato#1.10.5'>Kd 22:1.10.5</a>). Thus the sense would be, “those who loudly and boldly assert”. 
+--- sujato/notes/sn/sn35/sn35.103_comment-en-sujato.json
++++ sujato/notes/sn/sn35/sn35.103_comment-en-sujato.json
+@@ -1 +1 @@ sn35.103:1.2
+-I have not been able to trace this quote. It is verse, albeit unmetrical. | The initial <i lang='pi' translate='no'>idaṁ</i> (neuter) is an excalamtory particle disconnected from the nouns (masculine). It is an idiom of the Śatapatha Brāhmaṇa (eg. 3.6.1.5, 3.7.1.2, 3.8.2.15), where it serves to highlight a dramatic statement or gesture; the text’s opening uses this idiom to announce a transformed or realized self-identity (1.1.1.4: “Hereupon, I enter from untruth to truth!”; 1.1.1.6: “Hereupon, I become he who I am”). Compare the use of <i lang='pi' translate='no'>ayaṁ</i> (“here”) at <a href='https://suttacentral.net/mn77/en/sujato#4.8'>MN 77:4.8</a> or <i lang='pi' translate='no'>idaṁ</i> at <a href='https://suttacentral.net/sn16.8/en/sujato#3.2'>SN 16.8:3.2</a>, <a href='https://suttacentral.net/dn9/en/sujato#5.6'>DN 9:5.6</a>.  Repeated initial pronouns are employed as a rhetorical device in some Vedic verses (eg. Rig Veda 6.65.4–5). | A similar phrasing is employed by Brahmā Sahampati at <a href='https://suttacentral.net/sn6.13/en/sujato#5.1'>SN 6.13:5.1</a>, where it emphasizes direct experience. | In early Sanskrit and Pali, <i lang='pi' translate='no'>jātu</i> usually has the sense “ever” (or perhaps “absolutely” per the commentary’s <i lang='pi' translate='no'>ekaṁsena</i>; see too Śatapatha Brāhmaṇa 2.2.2.20, 14.6.8.1). | <i lang='pi' translate='no'>Vedagū</i> is not attested in Brahmanical texts, but it is perhaps a contraction of Sanskrit <i lang='pi' translate='no'>vedapāraga</i> in the sense “one versed in the Vedas” (such as Yājñavalkya, Mahābhārata 1.113.40). Given that Buddhist literature assumes it was a term of the brahmins, the Buddha may have learned it from this very passage. 
++I have not been able to trace this quote. It is verse, albeit unmetrical. | The initial <i lang='pi' translate='no'>idaṁ</i> (neuter) is an exclamatory particle disconnected from the nouns (masculine). It is an idiom of the Śatapatha Brāhmaṇa (eg. 3.6.1.5, 3.7.1.2, 3.8.2.15), where it serves to highlight a dramatic statement or gesture; the text’s opening uses this idiom to announce a transformed or realized self-identity (1.1.1.4: “Hereupon, I enter from untruth to truth!”; 1.1.1.6: “Hereupon, I become he who I am”). Compare the use of <i lang='pi' translate='no'>ayaṁ</i> (“here”) at <a href='https://suttacentral.net/mn77/en/sujato#4.8'>MN 77:4.8</a> or <i lang='pi' translate='no'>idaṁ</i> at <a href='https://suttacentral.net/sn16.8/en/sujato#3.2'>SN 16.8:3.2</a>, <a href='https://suttacentral.net/dn9/en/sujato#5.6'>DN 9:5.6</a>.  Repeated initial pronouns are employed as a rhetorical device in some Vedic verses (eg. Rig Veda 6.65.4–5). | A similar phrasing is employed by Brahmā Sahampati at <a href='https://suttacentral.net/sn6.13/en/sujato#5.1'>SN 6.13:5.1</a>, where it emphasizes direct experience. | In early Sanskrit and Pali, <i lang='pi' translate='no'>jātu</i> usually has the sense “ever” (or perhaps “absolutely” per the commentary’s <i lang='pi' translate='no'>ekaṁsena</i>; see too Śatapatha Brāhmaṇa 2.2.2.20, 14.6.8.1). | <i lang='pi' translate='no'>Vedagū</i> is not attested in Brahmanical texts, but it is perhaps a contraction of Sanskrit <i lang='pi' translate='no'>vedapāraga</i> in the sense “one versed in the Vedas” (such as Yājñavalkya, Mahābhārata 1.113.40). Given that Buddhist literature assumes it was a term of the brahmins, the Buddha may have learned it from this very passage. 
+--- sujato/notes/sn/sn35/sn35.109_comment-en-sujato.json
++++ sujato/notes/sn/sn35/sn35.109_comment-en-sujato.json
+@@ -1 +1 @@ sn35.109:1.1
+-This disourse and the next parallel <a href='https://suttacentral.net/sn22.120/en/sujato'>SN 22.120</a>–21. 
++This discourse and the next parallel <a href='https://suttacentral.net/sn22.120/en/sujato'>SN 22.120</a>–21. 
+--- sujato/notes/sn/sn35/sn35.132_comment-en-sujato.json
++++ sujato/notes/sn/sn35/sn35.132_comment-en-sujato.json
+@@ -1 +1 @@ sn35.132:1.2
+-A certain brahmin Lohicca also appears in <a href='https://suttacentral.net/dn12/en/sujato'>DN 12</a>. But since this discourse is set far away in Avantī after the Buddha’s passing, and since in both cases he is said to have taken refuge, it seems likely these are different people. | The term <i lang='pi' translate='no'>seleyyaka</i> (variant <i lang='pi' translate='no'>selissaka</i>) is unique and its meaning unclear. The commentary explains it as a kind of game like leapfrog, but contextually the sense “jeer” is more cohesive. Perhaps it is related to Sanskrit <i lang='pi' translate='no'>śālaka</i>, “jester, buffon”. 
++A certain brahmin Lohicca also appears in <a href='https://suttacentral.net/dn12/en/sujato'>DN 12</a>. But since this discourse is set far away in Avantī after the Buddha’s passing, and since in both cases he is said to have taken refuge, it seems likely these are different people. | The term <i lang='pi' translate='no'>seleyyaka</i> (variant <i lang='pi' translate='no'>selissaka</i>) is unique and its meaning unclear. The commentary explains it as a kind of game like leapfrog, but contextually the sense “jeer” is more cohesive. Perhaps it is related to Sanskrit <i lang='pi' translate='no'>śālaka</i>, “jester, buffoon”. 
+--- sujato/notes/sn/sn44/sn44.1_comment-en-sujato.json
++++ sujato/notes/sn/sn44/sn44.1_comment-en-sujato.json
+@@ -1 +1 @@ sn44.1:13.2
+-Text has <i lang='pi' translate='no'>virodhayissati</i> (“contradict”), wheras <a href='https://suttacentral.net/an11.7/en/sujato#10.2'>AN 11.7:10.2</a> has variant <i lang='pi' translate='no'>viggayhissati</i> (“conflict”). 
++Text has <i lang='pi' translate='no'>virodhayissati</i> (“contradict”), whereas <a href='https://suttacentral.net/an11.7/en/sujato#10.2'>AN 11.7:10.2</a> has variant <i lang='pi' translate='no'>viggayhissati</i> (“conflict”). 
+--- sujato/notes/sn/sn45/sn45.170_comment-en-sujato.json
++++ sujato/notes/sn/sn45/sn45.170_comment-en-sujato.json
+@@ -1 +1 @@ sn45.170:2.0
+-This text merely repeats the previous, substituting a different form of the same word (<i lang='pi' translate='no'>tasina</i> for <i lang='pi' translate='no'>taṇhā</i>). It is not found in Sinhalese manuscripts. In Burmese editionsa, including the Mahāsaṅgīti, it is included as a separate sutta. Bhikkhu Bodhi and the PTS include it but do not assign it a separate number. We follow this approach. 
++This text merely repeats the previous, substituting a different form of the same word (<i lang='pi' translate='no'>tasina</i> for <i lang='pi' translate='no'>taṇhā</i>). It is not found in Sinhalese manuscripts. In Burmese editions, including the Mahāsaṅgīti, it is included as a separate sutta. Bhikkhu Bodhi and the PTS include it but do not assign it a separate number. We follow this approach. 
+--- sujato/notes/sn/sn46/sn46.52_comment-en-sujato.json
++++ sujato/notes/sn/sn46/sn46.52_comment-en-sujato.json
+@@ -1 +1 @@ sn46.52:15.1
+-This refers to the first absorption and all higher absortions respectively. 
++This refers to the first absorption and all higher absorptions respectively. 
+--- sujato/notes/sn/sn47/sn47.7_comment-en-sujato.json
++++ sujato/notes/sn/sn47/sn47.7_comment-en-sujato.json
+@@ -1 +1 @@ sn47.7:1.1
+-This parable tells of a foolish monkey who gets stuck in a tar trap, reminiscent of “The Tarbaby and the Rabbit” story type. This has many instances worldwide. “Br’er Rabbit and the Tarbaby” was collected from stories told among black slaves in the US, and originates from Africa. Ja 55 tells of a warrior whose five weapons serve only to stick him to the coat of a <i lang='pi' translate='no'>yakkha</i>. The Phillipine folk-tale Masoy and the Ape tells of an ape getting stuck in tar in the shape of a man. The current case is a little different, as there is no doll or mannikin. 
++This parable tells of a foolish monkey who gets stuck in a tar trap, reminiscent of “The Tarbaby and the Rabbit” story type. This has many instances worldwide. “Br’er Rabbit and the Tarbaby” was collected from stories told among black slaves in the US, and originates from Africa. Ja 55 tells of a warrior whose five weapons serve only to stick him to the coat of a <i lang='pi' translate='no'>yakkha</i>. The Philippine folk-tale Masoy and the Ape tells of an ape getting stuck in tar in the shape of a man. The current case is a little different, as there is no doll or mannikin. 
+--- sujato/notes/sn/sn52/sn52.15_comment-en-sujato.json
++++ sujato/notes/sn/sn52/sn52.15_comment-en-sujato.json
+@@ -1 +1 @@ sn52.15:1.1
+-The ten kinds of knowledge to follow are called the ten powers of aRealized One (<i lang='pi' translate='no'>dasatathāgatabala</i>, <a href='https://suttacentral.net/an10.21/en/sujato'>AN 10.21</a>, <a href='https://suttacentral.net/mn12/en/sujato#9.1'>MN 12:9.1</a>). 
++The ten kinds of knowledge to follow are called the ten powers of a Realized One (<i lang='pi' translate='no'>dasatathāgatabala</i>, <a href='https://suttacentral.net/an10.21/en/sujato'>AN 10.21</a>, <a href='https://suttacentral.net/mn12/en/sujato#9.1'>MN 12:9.1</a>). 
+--- sujato/notes/sn/sn54/sn54.12_comment-en-sujato.json
++++ sujato/notes/sn/sn54/sn54.12_comment-en-sujato.json
+@@ -1 +1 @@ sn54.12:1.1
+-Malalasekera in his <em>Dictionary of Pali Proper Names</em> says that this monk, whose name is spelled <i lang='pi' translate='no'>lomasavangīsa</i> in Sinhalese manusripts, is probably the same person as the <i lang='pi' translate='no'>lomasakaṅgiya</i> of <a href='https://suttacentral.net/mn133/en/sujato'>MN 133</a> and <a href='https://suttacentral.net/thag1.37/en/sujato'>Thag 1.37</a>. This suggestion is supported by the fact that that the name is spelled <i lang='pi' translate='no'>lomasakaṁbhiya</i> in Burmese editions. I take the plunge and read <i lang='pi' translate='no'>lomasakaṅgiya</i> here. The name means “hairy-limbs”. 
++Malalasekera in his <em>Dictionary of Pali Proper Names</em> says that this monk, whose name is spelled <i lang='pi' translate='no'>lomasavangīsa</i> in Sinhalese manuscripts, is probably the same person as the <i lang='pi' translate='no'>lomasakaṅgiya</i> of <a href='https://suttacentral.net/mn133/en/sujato'>MN 133</a> and <a href='https://suttacentral.net/thag1.37/en/sujato'>Thag 1.37</a>. This suggestion is supported by the fact that that the name is spelled <i lang='pi' translate='no'>lomasakaṁbhiya</i> in Burmese editions. I take the plunge and read <i lang='pi' translate='no'>lomasakaṅgiya</i> here. The name means “hairy-limbs”. 
+--- sujato/notes/sn/sn55/sn55.6_comment-en-sujato.json
++++ sujato/notes/sn/sn55/sn55.6_comment-en-sujato.json
+@@ -1 +1 @@ sn55.6:1.4
+-Rod Bucknell, my friend and co-founder of SuttaCentral, sent me this note (edited for clarity): The commentary says they “were staying in their own tributary village named Sādhuka”. On the Chinese side, taken as a translation, <span lang='lzh'>鹿徑澤</span> would be “Deer path swamp”, which could well be the name of a village. Taken as a transcription, <em>lu-jing-ze</em>, it certainly doesn’t ring any bell. As to why the two chamberlains were there, SA 860 says: <span lang='lzh'>修治田業</span>, “to manage/oversee the farming”. It also mentions that they are brothers. The rest is as in the Pali, including details of how they attend on the king’s two wives when they go out (riding on an elephant), and the Buddha’s message about the benefits of renunciation versus the dustiness of the household life. Putting all this together, I think one can infer this: The brothers Isidatta and Purāṇa serve as chamberlains in Pasenadi’s court. They have been given the farming village Sādhuka as a feifdom, and they occasionally visit it to check out the farming activity here, which provides them with a second source of income. This is why they happen to be in such an insignificant little place at the time represented in the sutta. (Sādhuka is apparently only two or three days’ walk from Sāvatthī, in contrast to Sāketa, which is seven chariot-rides away, according to MN 24). 
++Rod Bucknell, my friend and co-founder of SuttaCentral, sent me this note (edited for clarity): The commentary says they “were staying in their own tributary village named Sādhuka”. On the Chinese side, taken as a translation, <span lang='lzh'>鹿徑澤</span> would be “Deer path swamp”, which could well be the name of a village. Taken as a transcription, <em>lu-jing-ze</em>, it certainly doesn’t ring any bell. As to why the two chamberlains were there, SA 860 says: <span lang='lzh'>修治田業</span>, “to manage/oversee the farming”. It also mentions that they are brothers. The rest is as in the Pali, including details of how they attend on the king’s two wives when they go out (riding on an elephant), and the Buddha’s message about the benefits of renunciation versus the dustiness of the household life. Putting all this together, I think one can infer this: The brothers Isidatta and Purāṇa serve as chamberlains in Pasenadi’s court. They have been given the farming village Sādhuka as a fiefdom, and they occasionally visit it to check out the farming activity here, which provides them with a second source of income. This is why they happen to be in such an insignificant little place at the time represented in the sutta. (Sādhuka is apparently only two or three days’ walk from Sāvatthī, in contrast to Sāketa, which is seven chariot-rides away, according to MN 24). 
+--- sujato/notes/sn/sn56/sn56.11_comment-en-sujato.json
++++ sujato/notes/sn/sn56/sn56.11_comment-en-sujato.json
+@@ -1 +1 @@ sn56.11:12.1
+-The wheel, like that of the wheel-turning monarch, echoes both the unstoppable conquests of the the ancient Indo-Europeans in their wheeled chariots, and the unstoppable progress of the sun in the sky. 
++The wheel, like that of the wheel-turning monarch, echoes both the unstoppable conquests of the ancient Indo-Europeans in their wheeled chariots, and the unstoppable progress of the sun in the sky. 
+--- sujato/notes/sn/sn7/sn7.9_comment-en-sujato.json
++++ sujato/notes/sn/sn7/sn7.9_comment-en-sujato.json
+@@ -1 +1 @@ sn7.9:14.1
+-Such passages of equivalences or connections are characteristic of post-Vedic literature. For example, Śatapatha Brāhmaṇa 11.5.6 says the <i lang='pi' translate='no'>juhū</i> spoon is speech, the <i lang='pi' translate='no'>upabhṛt</i> cup  the mind, the <i lang='pi' translate='no'>dhruvā</i> vessel the eye, the <i lang='pi' translate='no'>sruvā</i> ladle the mental power, the bath the truth, the conclusion heaven. | A “pack” (<i lang='pi' translate='no'>khāri</i>) was originally “donkey-load”, but here it must be a heavy weight for a single person. The Buddha is saying that carrying around the cenceit of “self” is a heavy burden. 
++Such passages of equivalences or connections are characteristic of post-Vedic literature. For example, Śatapatha Brāhmaṇa 11.5.6 says the <i lang='pi' translate='no'>juhū</i> spoon is speech, the <i lang='pi' translate='no'>upabhṛt</i> cup  the mind, the <i lang='pi' translate='no'>dhruvā</i> vessel the eye, the <i lang='pi' translate='no'>sruvā</i> ladle the mental power, the bath the truth, the conclusion heaven. | A “pack” (<i lang='pi' translate='no'>khāri</i>) was originally “donkey-load”, but here it must be a heavy weight for a single person. The Buddha is saying that carrying around the conceit of “self” is a heavy burden. 
 --- sujato/sutta/an/an1/an1.1-10_translation-en-sujato.json
 +++ sujato/sutta/an/an1/an1.1-10_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an1.1:1.3
@@ -2153,6 +2342,12 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
  PLI: “Nāhaṁ, bhikkhave, aññaṁ ekadhammampi samanupassāmi yaṁ evaṁ bhāvitaṁ bahulīkataṁ sukhādhivahaṁ hoti yathayidaṁ, bhikkhave, cittaṁ. 
 -“Mendicants, I do not see a single thing that brings such happiness as this mind that is developed and cultivated. 
 +“Bhikkhus, I do not see a single thing that brings such happiness as this mind that is developed and cultivated. 
+--- sujato/sutta/an/an1/an1.219-234_translation-en-sujato.json
++++ sujato/sutta/an/an1/an1.219-234_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an1.221:1.1
+ PLI: … Gatimantānaṁ yadidaṁ ānando. 
+-“… in rememberance is Ānanda.” 
++“… in remembrance is Ānanda.” 
 --- sujato/sutta/an/an1/an1.235-247_translation-en-sujato.json
 +++ sujato/sutta/an/an1/an1.235-247_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an1.240:1.1
@@ -4601,6 +4796,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
  PLI: Pharusavāco hoti, yā sā vācā aṇḍakā kakkasā parakaṭukā parābhisajjanī kodhasāmantā. Asamādhisaṁvattanikā, tathārūpiṁ vācaṁ bhāsitā hoti. 
 -They speak harshly. They use the kinds of words that are cruel, nasty, hurtful, offensive, bordering on anger, not leading to immersion. 
 +They speak harshly. They use the kinds of words that are cruel, nasty, hurtful, offensive, bordering on anger, not leading to composure. 
+@@ -1,2 +1,2 @@ an10.217:34.1
+ PLI: Seyyathāpi, bhikkhave, apaṇṇako maṇi uddhaṅkhitto yena yeneva patiṭṭhāti suppatiṭṭhitaṁyeva patiṭṭhāti; 
+-It’s like throwing unfaling dice: they always fall the right side up. 
++It’s like throwing unfailing dice: they always fall the right side up. 
 --- sujato/sutta/an/an10/an10.218_translation-en-sujato.json
 +++ sujato/sutta/an/an10/an10.218_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an10.218:1.1
@@ -22813,6 +23012,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
  PLI: Idha, bhikkhave, bhikkhuno dvayena puggalā viditā honti. 
 -It’s when a mendicant understands individuals in terms of pairs. 
 +It’s when a bhikkhu understands individuals in terms of pairs. 
+@@ -1,2 +1,2 @@ an7.68:13.2
+ PLI: eko atthamaññāya dhammamaññāya dhammānudhammappaṭipanno, eko atthamaññāya dhammamaññāya na dhammānudhammappaṭipanno. 
+-one understands the meaning and the teaching and practicesin line with the teaching, one understands the meaning and the teaching but does not practice in line with the teaching. 
++one understands the meaning and the teaching and practices in line with the teaching, one understands the meaning and the teaching but does not practice in line with the teaching. 
 @@ -1,2 +1,2 @@ an7.68:15.1
  PLI: Evaṁ kho, bhikkhave, bhikkhuno dvayena puggalā viditā honti. 
 -That’s how a mendicant understands individuals in terms of pairs. 
@@ -29045,6 +29248,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
  PLI: “Sace, bhante, aññatitthiyapubbā imasmiṁ dhammavinaye ākaṅkhantā pabbajjaṁ ākaṅkhantā upasampadaṁ cattāro māse parivasanti, catunnaṁ māsānaṁ accayena āraddhacittā bhikkhū pabbājenti upasampādenti bhikkhubhāvāya. Ahaṁ cattāri vassāni parivasissāmi, catunnaṁ vassānaṁ accayena āraddhacittā bhikkhū pabbājentu upasampādentu bhikkhubhāvāyā”ti. 
 -“Sir, if four months probation are required in such a case, I’ll spend four years on probation. When four years have passed, if the mendicants are satisfied, let them give me the going forth, the ordination into monkhood.” 
 +“Sir, if four months probation are required in such a case, I’ll spend four years on probation. When four years have passed, if the bhikkhus are satisfied, let them give me the going forth, the ordination into monkhood.” 
+@@ -1,2 +1,2 @@ dn16:5.30.2
+ PLI: “lābhā vo, āvuso ānanda; suladdhaṁ vo, āvuso ānanda, 
+-“You’re so fortunate, Reverand Ānanda, so very fortunate, 
++“You’re so fortunate, Reverend Ānanda, so very fortunate, 
 @@ -1,2 +1,2 @@ dn16:5.30.5
  PLI: Acirūpasampanno kho panāyasmā subhaddo eko vūpakaṭṭho appamatto ātāpī pahitatto viharanto nacirasseva—yassatthāya kulaputtā sammadeva agārasmā anagāriyaṁ pabbajanti—tadanuttaraṁ brahmacariyapariyosānaṁ diṭṭheva dhamme sayaṁ abhiññā sacchikatvā upasampajja vihāsi. 
 -Not long after his ordination, Venerable Subhadda, living alone, withdrawn, diligent, keen, and resolute, soon realized the supreme culmination of the spiritual path in this very life. He lived having achieved with his own insight the goal for which gentlemen rightly go forth from the lay life to homelessness. 
@@ -29579,6 +29786,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
  PLI: bhikkhūnaṁ samitiṁ vanaṁ’. 
 -for the meeting of mendicants in the wood.’ 
 +for the meeting of bhikkhus in the wood.’ 
+@@ -1,2 +1,2 @@ dn20:13.3
+ PLI: Varuṇā vāraṇā devā, 
+-The gods of Varuṇa and Varuṇa’s offsping, 
++The gods of Varuṇa and Varuṇa’s offspring, 
 @@ -1,2 +1,2 @@ dn20:13.12
  PLI: bhikkhūnaṁ samitiṁ vanaṁ. 
 -to the meeting of mendicants in the wood. 
@@ -30474,7 +30685,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
 @@ -1,2 +1,2 @@ dn28:12.2
  PLI: Idha, bhante, ekacco sacco cassa saddho ca, na ca kuhako, na ca lapako, na ca nemittiko, na ca nippesiko, na ca lābhena lābhaṁ nijigīsanako, indriyesu guttadvāro, bhojane mattaññū, samakārī, jāgariyānuyogamanuyutto, atandito, āraddhavīriyo, jhāyī, satimā, kalyāṇapaṭibhāno, gatimā, dhitimā, matimā, na ca kāmesu giddho, sato ca nipako ca. 
 -It’s when someone is honest and faithful. They don’t use deceit, flattery, hinting, or belittling, and they don’t use material things to chase after other material things. They guard the sense doors and eat in moderation. They’re fair, dedicated to wakefulness, tireless, energetic, and meditative. They have good memory, eloquence, rememberance, retention, and thoughtfulness. They’re not greedy for sensual pleasures. They are mindful and alert. 
-+It’s when someone is honest and faithful. They don’t use deceit, flattery, hinting, or belittling, and they don’t use material things to chase after other material things. They guard the sense doors and eat in moderation. They’re fair, dedicated to wakefulness, tireless, energetic, and meditative. They have good memory, eloquence, rememberance, retention, and thoughtfulness. They’re not greedy for sensual pleasures. They are aware and alert. 
++It’s when someone is honest and faithful. They don’t use deceit, flattery, hinting, or belittling, and they don’t use material things to chase after other material things. They guard the sense doors and eat in moderation. They’re fair, dedicated to wakefulness, tireless, energetic, and meditative. They have good memory, eloquence, remembrance, retention, and thoughtfulness. They’re not greedy for sensual pleasures. They are aware and alert. 
 @@ -1,2 +1,2 @@ dn28:15.3
  PLI: Idha, bhante, ekacco samaṇo vā brāhmaṇo vā ātappamanvāya …pe… tathārūpaṁ cetosamādhiṁ phusati, yathāsamāhite citte anekavihitaṁ pubbenivāsaṁ anussarati. 
 -Firstly, some ascetic or brahmin—by dint of keen, resolute, committed, and diligent effort, and right application of mind—experiences an immersion of the heart of such a kind that they recollect many hundreds of thousands of past lives, 
@@ -34767,6 +34978,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
 +The bhikkhu Kokālika has been reborn in the Pink Lotus hell because of his resentment for Sāriputta and Moggallāna.” 
 --- sujato/sutta/kn/snp/vagga3/snp3.11_translation-en-sujato.json
 +++ sujato/sutta/kn/snp/vagga3/snp3.11_translation-en-sujato.json
+@@ -1,2 +1,2 @@ snp3.11:14.2
+ PLI: “Nāhaṁ kumāre ahitamanussarāmi; 
+-“I do not forsee harm befall the boy, 
++“I do not foresee harm befall the boy, 
 @@ -1,2 +1,2 @@ snp3.11:31.1
  PLI: Sa jhānapasuto dhīro, 
 -That attentive one intent on absorption, 
@@ -36199,6 +36414,12 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
  PLI: Nāgo saṅgāmasīseva, 
 -one should mindfully endure, 
 +one should endure with awareness, 
+--- sujato/sutta/kn/thag/thag4.11_translation-en-sujato.json
++++ sujato/sutta/kn/thag/thag4.11_translation-en-sujato.json
+@@ -1,2 +1,2 @@ thag4.11:2.2
+ PLI: Kāḷassa meghassa bhayena tajjitā; 
+-startled by fear of the dark rcloud, 
++startled by fear of the dark cloud, 
 --- sujato/sutta/kn/thag/thag5.1_translation-en-sujato.json
 +++ sujato/sutta/kn/thag/thag5.1_translation-en-sujato.json
 @@ -1,2 +1,2 @@ thag5.1:3.3
@@ -40665,6 +40886,14 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
  PLI: so kho ahaṁ, sāriputta, satova abhikkamāmi, satova paṭikkamāmi, yāva udakabindumhipi me dayā paccupaṭṭhitā hoti: 
 -I’d step forward or back ever so mindfully, so I was full of pity regarding even a drop of water, thinking: 
 +I’d step forward or back with such care and awareness, so I was full of pity regarding even a drop of water, thinking: 
+@@ -1,2 +1,2 @@ mn12:62.6
+ PLI: Idha me assu, sāriputta, cattāro sāvakā vassasatāyukā vassasatajīvino, paramāya satiyā ca gatiyā ca dhitiyā ca samannāgatā paramena ca paññāveyyattiyena. 
+-Suppose I had four disciples with a lifespan of a hundred years. And they each were perfect in memory, rememberance, retention, and perfect lucidity of wisdom. 
++Suppose I had four disciples with a lifespan of a hundred years. And they each were perfect in memory, remembrance, retention, and perfect lucidity of wisdom. 
+@@ -1,2 +1,2 @@ mn12:62.8
+ PLI: evaṁ adhimattasatimanto evaṁ adhimattagatimanto evaṁ adhimattadhitimanto evaṁ paramena paññāveyyattiyena samannāgatā. 
+-That’s how extraordinary they were in memory, rememberance, retention, and perfect lucidity of wisdom. 
++That’s how extraordinary they were in memory, remembrance, retention, and perfect lucidity of wisdom. 
 @@ -1,2 +1,2 @@ mn12:62.9
  PLI: Te maṁ catunnaṁ satipaṭṭhānānaṁ upādāyupādāya pañhaṁ puccheyyuṁ, puṭṭho puṭṭho cāhaṁ tesaṁ byākareyyaṁ, byākatañca me byākatato dhāreyyuṁ, na ca maṁ dutiyakaṁ uttari paṭipuccheyyuṁ. 
 -They’d bring up questions about the four kinds of mindfulness meditation again and again, and I would answer each question. They’d remember the answers and not ask the same question twice. 
@@ -48019,6 +48248,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
 +right view, right purpose, right speech, right action, right livelihood, right effort, right awareness, and right composure. 
 --- sujato/sutta/mn/mn84_translation-en-sujato.json
 +++ sujato/sutta/mn/mn84_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn84:4.5
+ PLI: brāhmaṇāva brahmuno puttā orasā mukhato jātā brahmajā brahmanimmitā brahmadāyādā’ti. 
+-Only brahmins are the the Divinity’s bosom sons, born from his mouth, born of the Divinity, created by the Divinity, heirs of the Divinity.’ 
++Only brahmins are the Divinity’s bosom sons, born from his mouth, born of the Divinity, created by the Divinity, heirs of the Divinity.’ 
 @@ -1,2 +1,2 @@ mn84:10.4
  PLI: Esāhaṁ bhavantaṁ kaccānaṁ saraṇaṁ gacchāmi dhammañca bhikkhusaṅghañca. 
 -I go for refuge to the worthy Kaccāna, to the teaching, and to the mendicant Saṅgha. 
@@ -49275,6 +49508,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
  PLI: “bhūtapubbaṁ, bhikkhave, vepacitti asurindo ābādhiko ahosi dukkhito bāḷhagilāno. 
 -“Once upon a time, mendicants, Vepacitti, lord of titans, was sick, suffering, gravely ill. 
 +“Once upon a time, bhikkhus, Vepacitti, lord of titans, was sick, suffering, gravely ill. 
+@@ -1,2 +1,2 @@ sn11.23:2.3
+ PLI: Upeti nirayaṁ ghoraṁ, 
+-a sorceror like Sambara falls 
++a sorcerer like Sambara falls 
 --- sujato/sutta/sn/sn11/sn11.24_translation-en-sujato.json
 +++ sujato/sutta/sn/sn11/sn11.24_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn11.24:1.2
@@ -51363,6 +51600,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
 +If they’re freed by not grasping by disillusionment, dispassion, and cessation regarding ignorance, they’re qualified to be called ‘a bhikkhu who has attained extinguishment in this very life’.” 
 --- sujato/sutta/sn/sn12/sn12.68_translation-en-sujato.json
 +++ sujato/sutta/sn/sn12/sn12.68_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn12.68:2.1
+ PLI: “Aññatreva, āvuso musila, saddhāya aññatra ruciyā aññatra anussavā aññatra ākāraparivitakkā aññatra diṭṭhinijjhānakkhantiyā atthāyasmato musilassa paccattameva ñāṇaṁ: 
+-“Reverend Musīla, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberateation, do you personally know that 
++“Reverend Musīla, apart from faith, endorsement, oral transmission, reasoned train of thought, or acceptance of a view after deliberation, do you personally know that 
 @@ -1,2 +1,2 @@ sn12.68:2.10
  PLI: saṅkhārapaccayā viññāṇanti … 
 -choices are a requirement for consciousness … 
@@ -61249,6 +61490,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
  PLI: So vata, bhikkhave, bhikkhu evaṁ caranto evaṁ viharanto sikkhaṁ paccakkhāya hīnāyāvattissatīti netaṁ ṭhānaṁ vijjati. 
 -But it is quite impossible for a mendicant who conducts themselves in this way and lives in this way to resign the training and return to a lesser life. 
 +But it is quite impossible for a bhikkhu who conducts themselves in this way and lives in this way to resign the training and return to a lesser life. 
+@@ -1,2 +1,2 @@ sn35.244:9.1
+ PLI: Seyyathāpi, bhikkhave, gaṅgā nadī pācīnaninnā pācīnapoṇā pācīnapabbhārā. Atha mahājanakāyo āgaccheyya kuddālapiṭakaṁ ādāya: ‘mayaṁ imaṁ gaṅgaṁ nadiṁ pacchāninnaṁ karissāma pacchāpoṇaṁ pacchāpabbhāran’ti. 
+-Suppose that, although the Ganges River slants, slopes, and inclines to the east, a large crowd were to come along with a spade and basket, saying: ‘We’ll make this Ganges Riiver slant, slope, and incline to the west!’ 
++Suppose that, although the Ganges River slants, slopes, and inclines to the east, a large crowd were to come along with a spade and basket, saying: ‘We’ll make this Ganges River slant, slope, and incline to the west!’ 
 @@ -1,2 +1,2 @@ sn35.244:9.2
  PLI: Taṁ kiṁ maññatha, bhikkhave, 
 -What do you think, mendicants? 
@@ -71955,6 +72200,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
  PLI: Yasmiṁ samaye, ānanda, bhikkhu ‘pītippaṭisaṁvedī assasissāmī’ti sikkhati, ‘pītippaṭisaṁvedī passasissāmī’ti sikkhati; 
 -There’s a time when a mendicant practices like this: ‘I’ll breathe in experiencing rapture.’ They practice like this: ‘I’ll breathe out experiencing rapture.’ 
 +There’s a time when a bhikkhu practices like this: ‘I’ll breathe in experiencing rapture.’ They practice like this: ‘I’ll breathe out experiencing rapture.’ 
+@@ -1,2 +1,2 @@ sn54.10:6.3
+ PLI: ‘cittasaṅkhārappaṭisaṁvedī assasissāmī’ti sikkhati, ‘cittasaṅkhārappaṭisaṁvedī passasissāmī’ti sikkhati; 
+-They practice like this: ‘I’ll breathe in experiencing the the mental process.’ They practice like this: ‘I’ll breathe out experiencing the the mental process.’ 
++They practice like this: ‘I’ll breathe in experiencing the mental process.’ They practice like this: ‘I’ll breathe out experiencing the mental process.’ 
 @@ -1,2 +1,2 @@ sn54.10:6.5
  PLI: vedanāsu vedanānupassī, ānanda, bhikkhu tasmiṁ samaye viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -At such a time a mendicant is meditating by observing an aspect of feelings—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
@@ -73149,6 +73398,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(
 +“Bhikkhus, the lay follower Dīghāvu was astute. He practiced in line with the teaching, and did not trouble me about the teachings. 
 --- sujato/sutta/sn/sn55/sn55.40_translation-en-sujato.json
 +++ sujato/sutta/sn/sn55/sn55.40_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn55.40:2.2
+ PLI: Api ca, nandiya, yathā ariyasāvako pamādavihārī ceva hoti, appamādavihārī ca 
+-Neverthless, Nandiya, as to how a noble disciple lives negligently and how they live diligently, 
++Nevertheless, Nandiya, as to how a noble disciple lives negligently and how they live diligently, 
 @@ -1,2 +1,2 @@ sn55.40:3.9
  PLI: Dukkhino cittaṁ na samādhiyati. 
 -When one is suffering, the mind does not become immersed in samādhi. 

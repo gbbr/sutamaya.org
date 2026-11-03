@@ -122,6 +122,22 @@ upstream) and writes `data/sujato.post/` (generated).
     sides ("clear comprehension" alongside "situational awareness"), and nothing for a word this
     corpus already uses: it would cost a scan and return the same suttas. Same commit as the rule.
 
+## Typo corrections
+
+1. **Enumerate every occurrence across all of `data/sujato/`**: suttas, notes, titles and
+   descriptions. Read every match, including quotations and foreign words. A valid use anywhere,
+   now or in future English, disqualifies a blanket correction. Even doubled prepositions can be
+   grammatical; `that that`, `had had`, `is is`, counting and Pali repetition stay untouched.
+2. **Declare exact-case `forms` in a `kind: 'typo'` rule**, under the typo banner. Check capitalized
+   forms separately, since a misspelling can also be a surname. Use no `mode`, `scope`, `predicate`
+   or sidecar. If a fix needs context or a segment id, leave the text and report its id upstream.
+3. **Run `npm run update-data post` and read every hunk of the typo rule's diff**, together with
+   `00-all.diff` where it meets rendering rules. Notes receive only typo corrections; corrected
+   sutta words still receive their term renderings. A typo disappearing upstream needs no repair.
+4. **Run `npm run update-data counts`, `npm test` and `npm run typecheck`.** Keep the rules,
+   diffs, counts and relevant mechanism checks together. Typo fixes add no Pali table rows or
+   search expansions to the rendering inventory.
+
 ## Changing a term's rendering
 
 Changing what an existing rule renders a term as is **not** substituting the new English into its
@@ -190,7 +206,7 @@ rules did to it (`↪`), then `expected` (the rule's `from`) against `found` (wh
 produces) with the diverging words coloured, and `Would write:` for the rule's `to`. **When `found`
 already reads correctly the override is obsolete — delete it.**
 
-A **global** rule matching zero times is dead, not drifted: the term is gone from upstream entirely.
+A **global term** rule matching zero times is dead, not drifted: the term is gone from upstream entirely.
 Find what replaced it before rewriting the rule.
 
 `post` reads pristine input, so re-running after each edit is always safe; iterate freely. Mid-refresh

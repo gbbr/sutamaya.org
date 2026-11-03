@@ -2,11 +2,11 @@
 
 The English here is Bhikkhu Sujato's translation, published by SuttaCentral under CC0. It is not
 reproduced verbatim: a small number of recurring terms are rendered differently, and several dozen
-individual lines are reworded. Everything else is his, word for word — and the Pali sits beside
-every line, so you can always check.
+individual lines are reworded. Obvious typos are corrected too. Everything else is his, word for
+word — and the Pali sits beside every line, so you can always check.
 
 The changes are declared rather than typed in by hand, so they survive each refresh from upstream.
-Nothing else is touched: **Bhikkhu Sujato's own footnotes are never altered**, which is why a note may
+**Bhikkhu Sujato's footnotes keep his own renderings**, with only obvious typos corrected. A note may
 gloss a term in his wording while the line above it uses ours.
 
 ## Terms
@@ -45,8 +45,8 @@ left alone.
 The paragraph introducing a collection is his too. Sixty-one of them open by naming the collection
 and counting its discourses — "The “Linked Discourses on the Truths” contains 131 discourses on the
 four noble truths…" — which is what the heading directly above it already says. That opening frame
-is trimmed, and the sentence starts from what it goes on to say. Nothing after the frame is
-changed.
+is trimmed, and the sentence starts from what it goes on to say. The rest receives the same term
+and typo corrections as the texts.
 
 ## Seeing the changes
 

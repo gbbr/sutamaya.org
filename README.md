@@ -106,8 +106,8 @@ More: [data/README.md](data/README.md).
 
 The app ships an edited version of Bhikkhu Sujato's translation: some recurring terms rendered
 differently (*mendicant* → *bhikkhu*, *immersion* → *composure*), several dozen lines reworded,
-and some group descriptions trimmed. Every edit is a declared rule, re-applied on each refresh, and
-`data/diff/` shows what the rules do to the shipped text.
+some group descriptions trimmed, and obvious typos corrected. Every edit is a declared rule,
+re-applied on each refresh, and `data/diff/` shows what the rules do to the shipped text.
 
 More: [docs/retranslation.md](docs/retranslation.md) for how it works,
 [docs/translation-changes.md](docs/translation-changes.md) for what changed (written for readers),
