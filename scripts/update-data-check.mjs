@@ -32,7 +32,7 @@ import {
   bold,
   dim,
 } from './lib/dataSync.js';
-import { RULES_DIR, RETRANSLATION_PATH, loadRules, loadSidecar, isTermRule, isSegmentRule, isBlurbRule, isPermitted, segmentsOf, scopeOf, formsMatch, paliTextFor, applyTermRules, buildSegmentIndex, buildBlurbIndex } from './lib/retranslation.js';
+import { RULES_DIR, RETRANSLATION_PATH, loadRules, loadSidecar, isTermRule, isSegmentRule, isBlurbRule, isPermitted, segmentsOf, scopeOf, formsMatch, paliTextFor, applyTypoRules, applyTermRules, buildSegmentIndex, buildBlurbIndex } from './lib/retranslation.js';
 
 function diffKeys(oldKeys, newKeys) {
   const oldSet = new Set(oldKeys);
@@ -151,7 +151,10 @@ function checkRewordedAway(rules, sujatoUpstreamByRelPath, dataDirs, rulesDir) {
     if (!fs.existsSync(localPath)) continue;
     for (const [segmentId, was] of Object.entries(JSON.parse(fs.readFileSync(localPath, 'utf8')))) {
       const now = upstream[segmentId];
-      if (typeof was === 'string' && typeof now === 'string' && was !== now) changed.push({ segmentId, relPath, was, now });
+      if (typeof was !== 'string' || typeof now !== 'string' || was === now) continue;
+      const before = applyTypoRules(was, rules).result;
+      const after = applyTypoRules(now, rules).result;
+      if (before !== after) changed.push({ segmentId, relPath, was: before, now: after });
     }
   }
 
@@ -188,6 +191,11 @@ function checkRewordedAway(rules, sujatoUpstreamByRelPath, dataDirs, rulesDir) {
 function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, localBlurbIndex, rulesDir) {
   const issues = [];
   const sidecars = new Map(rules.filter(isTermRule).map((rule) => [rule.id, loadSidecar(rule.id, rulesDir)]));
+  const rewrite = (value, treeName, segmentId) => {
+    const corrected = applyTypoRules(value, rules);
+    const translated = applyTermRules(corrected.result, { treeName, segmentId, rules, sidecars });
+    return { result: translated.result, chunks: [...corrected.chunks, ...translated.chunks] };
+  };
 
   for (const rule of rules.filter(isTermRule)) {
     const scope = new Set(scopeOf(rule));
@@ -195,7 +203,7 @@ function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, loc
     for (const [relPath, obj] of sujatoUpstreamByRelPath) {
       if (!scope.has(relPath.split('/').slice(0, 2).join('/'))) continue;
       for (const value of Object.values(obj)) {
-        if (typeof value === 'string' && formsMatch(rule, value)) {
+        if (typeof value === 'string' && formsMatch(rule, applyTypoRules(value, rules).result)) {
           matched = true;
           break;
         }
@@ -220,7 +228,7 @@ function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, loc
       const treeName = relPath.split('/').slice(0, 2).join('/');
       const rewritten =
         typeof upstreamNow === 'string'
-          ? applyTermRules(upstreamNow, { treeName, segmentId: segment, rules, sidecars })
+          ? rewrite(upstreamNow, treeName, segment)
           : null;
       const anchorNow = rewritten ? rewritten.result : upstreamNow;
       if (anchorNow !== rule.from) {
@@ -243,7 +251,7 @@ function checkRuleAnchors(rules, sujatoUpstreamByRelPath, localSegmentIndex, loc
       const upstreamNow = upstreamObj[opener.blurb];
       const anchorNow =
         typeof upstreamNow === 'string'
-          ? applyTermRules(upstreamNow, { treeName: 'sujato/blurb', segmentId: opener.blurb, rules, sidecars }).result
+          ? rewrite(upstreamNow, 'sujato/blurb', opener.blurb).result
           : null;
       if (typeof anchorNow !== 'string') {
         issues.push([`${bold(rule.id)} · ${opener.blurb}`, `      expected  ${dim(opener.from)}`, `      found     ${red('(blurb removed upstream)')}`].join('\n'));

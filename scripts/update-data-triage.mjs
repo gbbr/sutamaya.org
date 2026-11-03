@@ -10,11 +10,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { walkJsonFiles, red, green, yellow, bold, blue, dim } from './lib/dataSync.js';
 import { PAD, n, wrap } from './lib/ui.js';
-import { SUJATO_DIR, RULES_DIR, RETRANSLATION_PATH, loadRules, isTermRule, scopeOf, loadSidecar, saveSidecar, formsMatch, paliTextFor, roleOf } from './lib/retranslation.js';
+import { SUJATO_DIR, RULES_DIR, RETRANSLATION_PATH, loadRules, isTermRule, scopeOf, loadSidecar, saveSidecar, formsMatch, applyTypoRules, paliTextFor, roleOf } from './lib/retranslation.js';
 
-// Returns every segment in `treeName` with its English text, read from sujatoDir — the source
-// wording a rule's forms see, before any rule has run.
-export function segmentsInTree(sujatoDir, treeName) {
+// segmentsInTree returns each segment with the typo-corrected English its term rules see.
+export function segmentsInTree(sujatoDir, treeName, rules = []) {
   const subdir = treeName.slice('sujato/'.length); // 'sutta' | 'notes' | 'name' | 'blurb'
   const dir = path.join(sujatoDir, subdir);
   if (!fs.existsSync(dir)) return [];
@@ -23,7 +22,7 @@ export function segmentsInTree(sujatoDir, treeName) {
     const relPath = 'sujato/' + path.relative(sujatoDir, fullPath).split(path.sep).join('/');
     const obj = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
     for (const [segmentId, value] of Object.entries(obj)) {
-      if (typeof value === 'string') out.push({ segmentId, value, relPath });
+      if (typeof value === 'string') out.push({ segmentId, value: applyTypoRules(value, rules).result, relPath });
     }
   }
   return out;
@@ -105,7 +104,8 @@ function printSegmentList(entries, { limit } = {}) {
 
 // Prints the triage report and returns the exit code; update-data.mjs owns the banner around it.
 export async function runTriage({ ruleId, prune } = {}) {
-  const rules = (await loadRules(RETRANSLATION_PATH)).filter(isTermRule);
+  const rules = await loadRules(RETRANSLATION_PATH);
+  const termRules = rules.filter(isTermRule);
 
   if (prune && !ruleId) {
     console.error(red('prune needs a rule id: update-data triage <rule-id> prune'));
@@ -115,7 +115,7 @@ export async function runTriage({ ruleId, prune } = {}) {
   // Memoized so the corpus walk happens once per tree, not once per rule per tree.
   const cache = new Map();
   const segmentsFor = (treeName) => {
-    if (!cache.has(treeName)) cache.set(treeName, segmentsInTree(SUJATO_DIR, treeName));
+    if (!cache.has(treeName)) cache.set(treeName, segmentsInTree(SUJATO_DIR, treeName, rules));
     return cache.get(treeName);
   };
 
@@ -124,7 +124,7 @@ export async function runTriage({ ruleId, prune } = {}) {
     const rows = [];
     let anyQueue = false;
     let anyStale = false;
-    for (const rule of rules) {
+    for (const rule of termRules) {
       const sidecar = loadSidecar(rule.id, RULES_DIR);
       const t = triageRule(rule, sidecar, segmentsFor);
       if (t.mode === 'allow') {
@@ -163,7 +163,7 @@ export async function runTriage({ ruleId, prune } = {}) {
     return 1;
   }
 
-  const rule = rules.find((r) => r.id === ruleId);
+  const rule = termRules.find((r) => r.id === ruleId);
   if (!rule) {
     console.error(`${PAD}${red(`No such term rule: ${ruleId}`)}\n`);
     return 1;
@@ -229,4 +229,3 @@ export async function runTriage({ ruleId, prune } = {}) {
 
   return t.mode === 'allow' ? (t.stale.length || t.untriaged.length ? 1 : 0) : t.staleDenials.length ? 1 : 0;
 }
-

@@ -7,8 +7,9 @@ import { requireSourceRoot, sourceGitInfo, checkSnapshotInSync, checkCrossCatego
 import { runCheck } from '../update-data-check.mjs';
 import { runCopy } from '../update-data-copy.mjs';
 import { runPost } from '../update-data-post.mjs';
+import { segmentsInTree, triageRule } from '../update-data-triage.mjs';
 import { runAccept } from '../update-data-accept.mjs';
-import { applyRuleToChunks, applyTermRules, applySegmentOverride, applyBlurbOpener, isPermitted, chunksToString, loadRules, loadSidecar, isTermRule, isSegmentRule, isBlurbRule, segmentsOf, scopeOf, RETRANSLATION_PATH } from '../lib/retranslation.js';
+import { applyRuleToChunks, applyTypoRules, applyTermRules, applySegmentOverride, applyBlurbOpener, isPermitted, chunksToString, loadRules, loadSidecar, isTypoRule, isTermRule, isSegmentRule, isBlurbRule, segmentsOf, scopeOf, RETRANSLATION_PATH } from '../lib/retranslation.js';
 
 // Everything here runs against throwaway temp-dir fixtures, never the real data/{sujato,pali,html}
 // or an SC_DATA_PATH checkout — which is what every runXxx export's path parameters are for.
@@ -201,7 +202,7 @@ describe('applyRuleToChunks / applyTermRules — the retranslation engine', () =
     expect(applyTermRules('aware', { treeName: 'sujato/sutta', segmentId: 's:2', rules: [rule], sidecars }).result).toBe('aware');
   });
 
-  it('never touches sujato/notes, whatever a rule asks for', () => {
+  it('never applies term renderings to sujato/notes', () => {
     const rule = { id: 'test-notes', mode: 'deny', forms: [['mindful', 'aware']] };
     const sidecars = new Map();
     const run = (treeName) => applyTermRules('be mindful', { treeName, segmentId: 's:1', rules: [rule], sidecars }).result;
@@ -217,6 +218,63 @@ describe('applyRuleToChunks / applyTermRules — the retranslation engine', () =
     const sidecars = new Map();
     expect(applyTermRules('aware', { treeName: 'sujato/blurb', segmentId: 's:1', rules: [rule], sidecars }).result).toBe('aware');
     expect(applyTermRules('aware', { treeName: 'sujato/sutta', segmentId: 's:1', rules: [rule], sidecars }).result).toBe('understanding');
+  });
+});
+
+describe('typo corrections', () => {
+  it('corrects declared article runs across whitespace without crossing punctuation or markup', async () => {
+    const rules = await loadRules();
+    expect(applyTypoRules('The\tthe\nthe lake, the the sky; the the wind.', rules).result)
+      .toBe('The lake, the sky; the wind.');
+    const distinct = 'the, the; the. the; the <em>the</em>';
+    expect(applyTypoRules(distinct, rules).result).toBe(distinct);
+  });
+
+  it('preserves grammatical repetition, spelling variants and context-dependent slips', async () => {
+    const rules = await loadRules();
+    const unchanged = [
+      'I know that that is true. They had had a meal. What this is is clear.',
+      'The people we are are shaped by our actions. One one, two twos.',
+      'There are two two-year-old children. Ill will will be given up.',
+      'He passed by by chance. The friend I spoke to to confirm it.',
+      'Someone I have not heard of of late. Keep the friend I came with with me.',
+      'as as; one one who; two two kinds; It it possible; had had temporarily',
+      'A wise and learned person does not not feel. There there, do not worry.',
+      'sati sati; tattha tattha; bhikkhu bhikkhu',
+      'knowledgable; brimfull; wollen; Northen; interlocuter; Buffon; Forsee',
+    ];
+    for (const value of unchanged) expect(applyTypoRules(value, rules).result).toBe(value);
+  });
+
+  it('preserves Unicode word boundaries, markup, URLs and the declared case', async () => {
+    const rules = await loadRules();
+    const embedded = 'xrememberance rememberancex rememberanceā ārememberance rememberance\u0301 _rememberance rememberance2';
+    expect(applyTypoRules(embedded, rules).result).toBe(embedded);
+    const input = '<a href="https://example.org/rememberance" title="rememberance > rememberance">rememberance</a> HTTPS://example.org/rememberance';
+    expect(applyTypoRules(input, rules).result)
+      .toBe('<a href="https://example.org/rememberance" title="rememberance > rememberance">remembrance</a> HTTPS://example.org/rememberance');
+    expect(applyTypoRules('Buffon buffon aRealized One, Neverthless.', rules).result)
+      .toBe('Buffon buffoon a Realized One, Nevertheless.');
+  });
+
+  it('rejects typo rules with malformed forms or contextual gates', async () => {
+    const root = fs.mkdtempSync(path.join(os.tmpdir(), 'update-data-typos-'));
+    try {
+      const rule = { id: 'typo', kind: 'typo', why: 'fixture', forms: [['teh', 'the']] };
+      const valid = await loadRules(writeRulesFixture(root, JSON.stringify([rule])));
+      expect(isTypoRule(valid[0])).toBe(true);
+      expect(isTermRule(valid[0])).toBe(false);
+      for (const forms of [[], [['']], [['', 'the']], [['the', 'the']], [['teh', null]]]) {
+        await expect(loadRules(writeRulesFixture(root, JSON.stringify([{ ...rule, forms }]))))
+          .rejects.toThrow(/Typo rule.*literal from\/to/);
+      }
+      for (const key of ['mode', 'scope', 'predicate', 'segment', 'segments', 'openers']) {
+        await expect(loadRules(writeRulesFixture(root, JSON.stringify([{ ...rule, [key]: [] }]))))
+          .rejects.toThrow(/Typo rule.*is global/);
+      }
+    } finally {
+      fs.rmSync(root, { recursive: true, force: true });
+    }
   });
 });
 
@@ -269,7 +327,7 @@ describe('the shipped rules, one example each', () => {
     ['patisambhida-analytical-knowledge', 'an7.38:1.1', 'sujato/sutta', 'will soon realize the four kinds of textual analysis', 'will soon realize the four kinds of analytical knowledge'],
     // The heading slot: four of the term's occurrences are Title Case sutta names.
     ['patisambhida-analytical-knowledge', 'an4.172:0.3', 'sujato/sutta', 'Sāriputta’s Attainment of Textual Analysis', 'Sāriputta’s Attainment of Analytical Knowledge'],
-    // Untouched, like every note: Bhikkhu Sujato's own gloss keeps his own wording.
+    // Term renderings leave Bhikkhu Sujato's own gloss in his wording.
     ['patisambhida-analytical-knowledge', 'mn43:1.3', 'sujato/notes', 'foremost in the methods of textual analysis', 'foremost in the methods of textual analysis'],
     // The four-paṭisambhidā list is rebuilt whole, since "the Dhamma" can't stand as a bare item
     // beside "meaning"; the attha–dhamma pair is a plain swap of the noun in two word orders.
@@ -306,7 +364,7 @@ describe('the shipped rules, one example each', () => {
     ['satipatthana-establishment-of-awareness', 'sn52.1:1.4', 'sujato/sutta', 'missed out on these four kinds of mindfulness meditation', 'missed out on these four establishments of awareness'],
     // The preposition form, so the title's article stays lowercase.
     ['satipatthana-establishment-of-awareness', 'dn22:0.2', 'sujato/sutta', 'The Longer Discourse on Mindfulness Meditation', 'The Longer Discourse on the Establishment of Awareness'],
-    // No rule reaches a note, so MN 10's — which argues for the very rendering this one reverses —
+    // Rendering rules exclude MN 10's note, which argues for the rendering this one reverses; it
     // stays word for word as Bhikkhu Sujato wrote it.
     ['satipatthana-establishment-of-awareness', 'mn10:1.1', 'sujato/notes', 'i.e. “mindfulness meditation” or simply “meditation”', 'i.e. “mindfulness meditation” or simply “meditation”'],
     // The adjective sati.
@@ -1061,7 +1119,7 @@ describe('update-data pipeline (fixture)', () => {
     const { ok, filesChanged, replacements } = await runPost({ retranslationPath: fx.retranslationPath, sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, rulesDir: fx.rulesDir });
 
     expect(ok).toBe(true);
-    // blurb, name and sutta — not the notes file, which no rule may touch.
+    // Term renderings reach blurb, name and sutta, leaving notes alone.
     expect(filesChanged).toBe(3);
     expect(replacements).toBeGreaterThan(0);
     expect(readJson(path.join(fx.postDir, 'sutta/dn/dn1_translation-en-sujato.json'))).toEqual({
@@ -1069,7 +1127,7 @@ describe('update-data pipeline (fixture)', () => {
       'dn1:1.2': 'A water immerser is different.',
     });
     expect(readJson(path.join(fx.postDir, 'name/dn-name_translation-en-sujato.json'))['dn-name:1.dn1']).toBe('The Bhikkhus Sutta');
-    // The note is copied through verbatim, terms and all — see "Notes are never retranslated".
+    // Rendering rules keep the note's own terms.
     expect(readJson(path.join(fx.postDir, 'notes/dn/dn1_comment-en-sujato.json'))).toEqual(
       FIXTURE_FILES['sujato/notes/dn/dn1_comment-en-sujato.json'].content,
     );
@@ -1089,6 +1147,104 @@ describe('update-data pipeline (fixture)', () => {
 
     expect(second.ok).toBe(true);
     expect(readJson(path.join(fx.postDir, 'sutta/dn/dn1_translation-en-sujato.json'))).toEqual(after);
+  });
+
+  it('corrects all English trees before rendering, recording both passes and preserving upstream', async () => {
+    const originals = new Map();
+    for (const [relPath, { content }] of Object.entries(FIXTURE_FILES)) {
+      if (!relPath.startsWith('sujato/')) continue;
+      const file = localPathFor(relPath, fx.dataDirs);
+      const misspelled = Object.fromEntries(Object.entries(content).map(([id, value]) =>
+        [id, value.replaceAll('mendicant', 'mendciant').replaceAll('Mendicants', 'Mendciants')]));
+      writeJson(file, misspelled);
+      originals.set(file, fs.readFileSync(file, 'utf8'));
+    }
+    const retranslationPath = writeRulesFixture(fx.root, `[
+      { id: 'term', why: 'fixture', mode: 'deny', forms: [['mendicant', 'bhikkhu'], ['mendicants', 'bhikkhus']] },
+      { id: 'typo', kind: 'typo', why: 'fixture', forms: [['mendciant', 'mendicant'], ['Mendciants', 'Mendicants']] },
+    ]`);
+    const diffDir = path.join(fx.root, 'diff');
+    const options = { sujatoDir: fx.dataDirs.sujato, postDir: fx.postDir, retranslationPath, diff: true, diffDir };
+    const result = await runPost(options);
+    expect(result).toMatchObject({ ok: true, filesChanged: 4, ruleCounts: { typo: 4, term: 3 } });
+    expect(readJson(path.join(fx.postDir, 'notes/dn/dn1_comment-en-sujato.json'))['dn1:1.1'])
+      .toBe('Note about Immersion and Mendicants.');
+    expect(readJson(path.join(fx.postDir, 'sutta/dn/dn1_translation-en-sujato.json'))['dn1:1.1'])
+      .toBe('The bhikkhu practiced immersion.');
+    expect(readJson(path.join(fx.postDir, 'name/dn-name_translation-en-sujato.json'))['dn-name:1.dn1'])
+      .toBe('The Bhikkhus Sutta');
+    expect(readJson(path.join(fx.postDir, 'blurb/dn-blurbs_root-en.json'))['dn-blurbs:dn1'])
+      .toBe('A bhikkhu teaches immersion.');
+    const typoDiff = fs.readFileSync(path.join(diffDir, 'typo.diff'), 'utf8');
+    const combined = fs.readFileSync(path.join(diffDir, '00-all.diff'), 'utf8');
+    expect(typoDiff).toContain('4 change(s), 4 file(s)');
+    expect(typoDiff).toContain('-The mendciant practiced immersion.\n+The mendicant practiced immersion.');
+    expect(combined).toContain('-The mendciant practiced immersion.\n+The bhikkhu practiced immersion.');
+    expect(fs.readFileSync(path.join(diffDir, 'term.diff'), 'utf8'))
+      .toContain('-The mendicant practiced immersion.\n+The bhikkhu practiced immersion.');
+    for (const [file, before] of originals) expect(fs.readFileSync(file, 'utf8')).toBe(before);
+    expect((await runPost(options)).ruleCounts).toEqual(result.ruleCounts);
+    expect(fs.readFileSync(path.join(diffDir, '00-all.diff'), 'utf8')).toBe(combined);
+  });
+
+  it('allows an upstream typo fix to remove the last match in plan and post', async () => {
+    const relPath = 'sujato/sutta/dn/dn1_translation-en-sujato.json';
+    const local = localPathFor(relPath, fx.dataDirs);
+    const upstream = path.join(fx.bilaraRoot, FIXTURE_FILES[relPath].sourceRel);
+    const content = { ...FIXTURE_FILES[relPath].content, 'dn1:1.1': 'The mendciant practiced immersion.' };
+    writeJson(local, content);
+    writeJson(upstream, content);
+    const retranslationPath = writeRulesFixture(fx.root, `[
+      { id: 'typo', kind: 'typo', why: 'fixture', forms: [['mendciant', 'mendicant']] },
+    ]`);
+    await runAccept({ ...fx, sujatoDir: fx.dataDirs.sujato, retranslationPath });
+    expect(readJson(fx.countsPath).rules.typo).toBe(1);
+    writeJson(upstream, FIXTURE_FILES[relPath].content);
+    const check = await runCheck({ ...fx, retranslationPath });
+    expect(check.ok).toBe(true);
+    expect(check.ruleIssues).toEqual([]);
+    expect(check.rewordedAway).toEqual([]);
+    writeJson(local, FIXTURE_FILES[relPath].content);
+    const diffDir = path.join(fx.root, 'diff');
+    const post = await runPost({ ...fx, sujatoDir: fx.dataDirs.sujato, retranslationPath, diff: true, diffDir });
+    expect(post).toMatchObject({ ok: true, deadRules: [], replacements: 0, ruleCounts: { typo: 0 } });
+    expect(fs.readFileSync(path.join(diffDir, '00-summary.txt'), 'utf8')).not.toContain('ZERO MATCHES');
+    expect(readJson(path.join(fx.postDir, 'sutta/dn/dn1_translation-en-sujato.json')))
+      .toEqual(FIXTURE_FILES[relPath].content);
+  });
+
+  it('checks term, segment and blurb anchors against typo-corrected English', async () => {
+    for (const [relPath, line, value] of [
+      ['sujato/sutta/dn/dn1_translation-en-sujato.json', 'dn1:1.1', 'The absortions.'],
+      ['sujato/blurb/dn-blurbs_root-en.json', 'dn-blurbs:dn1', 'The absortions teach.'],
+    ]) {
+      const content = { ...FIXTURE_FILES[relPath].content, [line]: value };
+      writeJson(localPathFor(relPath, fx.dataDirs), content);
+      writeJson(path.join(fx.bilaraRoot, FIXTURE_FILES[relPath].sourceRel), content);
+    }
+    const retranslationPath = writeRulesFixture(fx.root, `[
+      { id: 'blurb', kind: 'blurb', why: 'fixture', openers: [{ blurb: 'dn-blurbs:dn1', from: 'The jhānas ', to: 'Jhānas ' }] },
+      { id: 'segment', kind: 'segment', why: 'fixture', segment: 'dn1:1.1', from: 'The jhānas.', to: 'Four jhānas.' },
+      { id: 'term', why: 'fixture', mode: 'deny', forms: [['absorptions', 'jhānas']] },
+      { id: 'typo', kind: 'typo', why: 'fixture', forms: [['absortions', 'absorptions']] },
+    ]`);
+    await runAccept({ ...fx, sujatoDir: fx.dataDirs.sujato, retranslationPath });
+    const check = await runCheck({ ...fx, retranslationPath });
+    expect(check.ok).toBe(true);
+    expect(check.ruleIssues).toEqual([]);
+    const post = await runPost({ ...fx, sujatoDir: fx.dataDirs.sujato, retranslationPath });
+    expect(post).toMatchObject({ ok: true, ruleCounts: { typo: 2, term: 2, segment: 1, blurb: 1 } });
+    expect(readJson(path.join(fx.postDir, 'sutta/dn/dn1_translation-en-sujato.json'))['dn1:1.1']).toBe('Four jhānas.');
+    expect(readJson(path.join(fx.postDir, 'blurb/dn-blurbs_root-en.json'))['dn-blurbs:dn1']).toBe('Jhānas teach.');
+    const rules = await loadRules(retranslationPath);
+    const term = { ...rules.find((rule) => rule.id === 'term'), mode: 'allow' };
+    const triage = triageRule(term, { allow: ['dn1:1.1'], deny: {} },
+      (tree) => segmentsInTree(fx.dataDirs.sujato, tree, rules));
+    expect(triage.matchedCount).toBe(2);
+    expect(triage.stale).toEqual([]);
+    const local = localPathFor('sujato/sutta/dn/dn1_translation-en-sujato.json', fx.dataDirs);
+    writeJson(local, { ...readJson(local), 'dn1:1.1': 'The absorptions.' });
+    expect((await runCheck({ ...fx, retranslationPath })).rewordedAway).toEqual([]);
   });
 
   it('post hard-fails (and does not write postDir) when a term rule matches nowhere', async () => {
@@ -1153,7 +1309,7 @@ describe('update-data pipeline (fixture)', () => {
     const counts = readJson(countsPath);
     // FIXTURE_FILES contains "mendicant"(s) 4 times (blurb, name, sutta, notes) and "immersion" 3
     // times (blurb, sutta, notes) — see FIXTURE_FILES above. The notes occurrence of each doesn't
-    // count: no rule reaches sujato/notes.
+    // count: rendering rules never reach notes.
     expect(counts.rules['mendicant-bhikkhu']).toBe(3);
     expect(counts.rules['immersion-concentration']).toBe(2);
   });
