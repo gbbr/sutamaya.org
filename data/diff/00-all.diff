@@ -1,4 +1,4 @@
-All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(s)
+All rules — data/sujato/ → data/sujato.post/ — 17385 change(s), 3153 file(s)
 
 --- sujato/blurb/an-blurbs_root-en.json
 +++ sujato/blurb/an-blurbs_root-en.json
@@ -849,7 +849,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 +Discourses on the seven awakening factors. These are qualities such as awareness and investigation which lead the meditator to awakening. The focus here is specifically on meditation, rather than the more holistic approach included in the previous chapter on the Path. Some distinctive features of this collection include the use recitation of the awakening factors in order to inspire those who are sick, and the frequent contrast between the seven awakening factors and the five hindrances.
 @@ -1 +1 @@ sn-blurbs:sn47
 -The “Linked Discourses on Mindfulness Meditation” contains 104 discourses on the four kinds of mindfulness meditation (<i lang='pi' translate='no'>satipaṭṭhāna</i>, otherwise known as the “foundations of mindfulness” or “establishments of mindfulness”). These are the body, feelings, mind, and principles. The last of these is translated in various ways, but a close reading of the texts in this chapter shows that it originally referred to the “principles” of causality underlying the process of meditation itself. These discourses on this fundamental topic are much less known than the longer “Discourse on Mindfulness Meditation” found in versions in MN 10 and DN 22; however, they are historically earlier than that late compilation. Where MN 10 emphasizes insight meditation, in this collection we frequently find mindfulness closely connected to absorption, as it is the factor of the path that leads directly to “right immersion”. Insight is mentioned only rarely. The root meaning of the term mindfulness (<i lang='pi' translate='no'>sati</i>) is “memory”, and when used in meditation it refers to not “forgetting” one’s meditation, but keeping focus on the breath or other theme of meditation. This collection presents a range of perspectives on mindfulness meditation; one of its most memorable features is a series of similes or parables illustrating the practice. The partner of mindfulness (<i lang='pi' translate='no'>sati</i>) is “situational awareness” (<i lang='pi' translate='no'>sampajañña</i>, sometimes rendered as “clear comprehension”), which refers to keeping a broad awareness and understanding especially in daily activities.
-+Discourses on the four establishments of awareness (<i lang='pi' translate='no'>satipaṭṭhāna</i>, otherwise known as the “foundations of mindfulness” or “establishments of mindfulness”). These are the body, feelings, mind, and principles. The last of these is translated in various ways, but a close reading of the texts in this chapter shows that it originally referred to the “principles” of causality underlying the process of meditation itself. These discourses on this fundamental topic are much less known than the longer “Discourse on the Establishment of Awareness” found in versions in MN 10 and DN 22; however, they are historically earlier than that late compilation. Where MN 10 emphasizes insight meditation, in this collection we frequently find awareness closely connected to jhāna, as it is the factor of the path that leads directly to “right composure”. Insight is mentioned only rarely. The root meaning of the term awareness (<i lang='pi' translate='no'>sati</i>) is “memory”, and when used in meditation it refers to not “forgetting” one’s meditation, but keeping focus on the breath or other theme of meditation. This collection presents a range of perspectives on the establishment of awareness; one of its most memorable features is a series of similes or parables illustrating the practice. The partner of awareness (<i lang='pi' translate='no'>sati</i>) is <i lang='pi' translate='no'>sampajañña</i> (sometimes rendered as “clear comprehension”), which refers to keeping a broad awareness and understanding especially in daily activities.
++Discourses on the four establishments of awareness (<i lang='pi' translate='no'>satipaṭṭhāna</i>, otherwise known as the “foundations of mindfulness” or “establishments of mindfulness”). These are the body, feelings, mind, and mental contents. These discourses on this fundamental topic are much less known than the longer “Discourse on the Establishment of Awareness” found in versions in MN 10 and DN 22; however, they are historically earlier than that late compilation. Where MN 10 emphasizes insight meditation, in this collection we frequently find awareness closely connected to jhāna, as it is the factor of the path that leads directly to “right composure”. Insight is mentioned only rarely. The root meaning of the term awareness (<i lang='pi' translate='no'>sati</i>) is “memory”, and when used in meditation it refers to not “forgetting” one’s meditation, but keeping focus on the breath or other theme of meditation. This collection presents a range of perspectives on the establishment of awareness; one of its most memorable features is a series of similes or parables illustrating the practice. The partner of awareness (<i lang='pi' translate='no'>sati</i>) is <i lang='pi' translate='no'>sampajañña</i> (sometimes rendered as “clear comprehension”), which refers to keeping a broad awareness and understanding especially in daily activities.
 @@ -1 +1 @@ sn-blurbs:sn48
 -The “Linked Discourses on the Faculties” contains 178 discourses on various sets of “faculties” (<i lang='pi' translate='no'>indriya</i>). The “five faculties” of faith, energy, mindfulness, immersion, and wisdom are the most natural fit in this context. However the chapter also finds room for discourses on a wider range of 22 faculties, including the six sense faculties, five affective faculties (kinds of feeling), three faculties relating the process of enlightenment, and three concerning biology and gender. This flexible category thus serves as a link between the teachings on wisdom and those on the path.
 +Discourses on various sets of “faculties” (<i lang='pi' translate='no'>indriya</i>). The “five faculties” of faith, energy, awareness, composure, and wisdom are the most natural fit in this context. However the chapter also finds room for discourses on a wider range of 22 faculties, including the six sense faculties, five affective faculties (kinds of feeling), three faculties relating the process of enlightenment, and three concerning biology and gender. This flexible category thus serves as a link between the teachings on wisdom and those on the path.
@@ -2476,7 +2476,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ an1.405:1.1
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world, even for the time of a finger-snap …” 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world, even for the time of a finger-snap …” 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world, even for the time of a finger-snap …” 
 @@ -1,2 +1,2 @@ an1.410:1.1
  PLI: Chandasamādhipadhānasaṅkhārasamannāgataṁ iddhipādaṁ bhāveti … 
 -“If they develop the basis of psychic power that has immersion due to enthusiasm, and active effort … 
@@ -9430,7 +9430,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ an3.156:5.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
 -They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ an3.157:1.1
  PLI: Tisso imā, bhikkhave, paṭipadā. 
 -Mendicants, there are three practices. 
@@ -13778,7 +13778,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ an4.274:1.4
  PLI: vedanāsu …pe… citte …pe… dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
 -They meditate observing an aspect of feelings … mind … principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of feelings … mind … principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of feelings … mind … mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 --- sujato/sutta/an/an4/an4.275_translation-en-sujato.json
 +++ sujato/sutta/an/an4/an4.275_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an4.275:1.3
@@ -19219,10 +19219,30 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 +“Bhikkhus, without giving up these six qualities you can’t meditate observing an aspect of the body. 
 --- sujato/sutta/an/an6/an6.118_translation-en-sujato.json
 +++ sujato/sutta/an/an6/an6.118_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an6.118:0.3
+ PLI: Dhammānupassīsutta 
+-Observing Principles, Etc. 
++Observing Mental Contents, Etc. 
 @@ -1,2 +1,2 @@ an6.118:1.1
  PLI: “Cha, bhikkhave, dhamme appahāya abhabbo ajjhattaṁ kāye …pe… 
 -“Mendicants, without giving up six things you can’t meditate observing an aspect of the body internally … 
 +“Bhikkhus, without giving up six things you can’t meditate observing an aspect of the body internally … 
+@@ -1,2 +1,2 @@ an6.118:1.10
+ PLI: ajjhattaṁ dhammesu …pe… 
+-principles internally … 
++mental contents internally … 
+@@ -1,2 +1,2 @@ an6.118:1.11
+ PLI: bahiddhā dhammesu …pe… 
+-principles externally … 
++mental contents externally … 
+@@ -1,2 +1,2 @@ an6.118:1.12
+ PLI: ajjhattabahiddhā dhammesu dhammānupassī viharituṁ. 
+-principles internally and externally. 
++mental contents internally and externally. 
+@@ -1,2 +1,2 @@ an6.118:1.15
+ PLI: Ime kho, bhikkhave, cha dhamme pahāya bhabbo ajjhattabahiddhā dhammesu dhammānupassī viharitun”ti. 
+-After giving up these six qualities you can meditate observing an aspect of principles internally and externally.” 
++After giving up these six qualities you can meditate observing an aspect of mental contents internally and externally.” 
 --- sujato/sutta/an/an6/an6.119_translation-en-sujato.json
 +++ sujato/sutta/an/an6/an6.119_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an6.119:1.1
@@ -24584,7 +24604,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ an8.63:8.4
  PLI: dhammesu dhammānupassī viharissāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassan’ti. 
 -‘I’ll meditate on an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world.’ 
-+‘I’ll meditate on an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world.’ 
++‘I’ll meditate on an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world.’ 
 @@ -1,2 +1,2 @@ an8.63:9.1
  PLI: Yato kho te, bhikkhu, ayaṁ samādhi evaṁ bhāvito hoti bahulīkato, tato tvaṁ, bhikkhu, imaṁ samādhiṁ savitakkasavicārampi bhāveyyāsi, avitakkavicāramattampi bhāveyyāsi, avitakkaavicārampi bhāveyyāsi, sappītikampi bhāveyyāsi, nippītikampi bhāveyyāsi, sātasahagatampi bhāveyyāsi, upekkhāsahagatampi bhāveyyāsi. 
 -When this immersion is developed and cultivated in this way, you should develop it while placing the mind and keeping it connected. You should develop it without placing the mind, merely keeping it connected. You should develop it without placing the mind or keeping it connected. You should develop it with rapture. You should develop it without rapture. You should develop it with pleasure. You should develop it with equanimity. 
@@ -27036,7 +27056,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ an9.63:2.6
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
 -They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ an9.63:2.7
  PLI: Imesaṁ kho, bhikkhave, pañcannaṁ sikkhādubbalyānaṁ pahānāya ime cattāro satipaṭṭhānā bhāvetabbā”ti. 
 -To give up those five weaknesses in your training you should develop these four kinds of mindfulness meditation.” 
@@ -27062,7 +27082,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ an9.64:2.6
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
 -They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ an9.64:2.7
  PLI: Imesaṁ kho, bhikkhave, pañcannaṁ nīvaraṇānaṁ pahānāya ime cattāro satipaṭṭhānā bhāvetabbā”ti. 
 -To give up those five hindrances you should develop these four kinds of mindfulness meditation.” 
@@ -27232,7 +27252,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ an9.72:3.6
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
 -They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ an9.72:3.7
  PLI: Imesaṁ kho, bhikkhave, pañcannaṁ cetasovinibandhānaṁ pahānāya ime cattāro satipaṭṭhānā bhāvetabbā”ti. 
 -To give up these five shackles of the heart you should develop these four kinds of mindfulness meditation.” 
@@ -28576,7 +28596,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ dn16:2.12.8
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ dn16:2.12.9
  PLI: Evaṁ kho, bhikkhave, bhikkhu sato hoti. 
 -That’s how a mendicant is mindful. 
@@ -28696,7 +28716,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ dn16:2.26.6
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ dn16:2.26.7
  PLI: Evaṁ kho, ānanda, bhikkhu attadīpo viharati attasaraṇo anaññasaraṇo, dhammadīpo dhammasaraṇo anaññasaraṇo. 
 -That’s how a mendicant lives with themselves as island and refuge, without other refuge; with the teachings as island and refuge, without other refuge. 
@@ -29236,11 +29256,15 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ dn18:26.13
  PLI: Ajjhattaṁ dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
 -They meditate observing an aspect of principles internally—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of principles internally—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents internally—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ dn18:26.14
  PLI: Ajjhattaṁ dhammesu dhammānupassī viharanto tattha sammā samādhiyati, sammā vippasīdati. 
 -As they meditate in this way, they become rightly immersed in that, and rightly serene. 
 +As they meditate in this way, they become rightly composed in that, and rightly serene. 
+@@ -1,2 +1,2 @@ dn18:26.15
+ PLI: So tattha sammā samāhito sammā vippasanno bahiddhā paradhammesu ñāṇadassanaṁ abhinibbatteti. 
+-Then they give rise to knowledge and vision of other people’s principles externally. 
++Then they give rise to knowledge and vision of other people’s mental contents externally. 
 @@ -1,2 +1,2 @@ dn18:26.16
  PLI: Ime kho, bho, tena bhagavatā jānatā passatā arahatā sammāsambuddhena cattāro satipaṭṭhānā paññattā kusalassādhigamāyā”ti. 
 -These are the four kinds of mindfulness meditation taught by the Buddha for achieving what is skillful.” 
@@ -29694,7 +29718,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ dn22:1.12
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
 -They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ dn22:2.0.2
  PLI: 1.1. Kāyānupassanāānāpānapabba 
 -1.1. Mindfulness of Breathing 
@@ -29839,42 +29863,50 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
  PLI: Evampi kho, bhikkhave, bhikkhu citte cittānupassī viharati. 
 -That’s how a mendicant meditates by observing an aspect of the mind. 
 +That’s how a bhikkhu meditates by observing an aspect of the mind. 
+@@ -1,2 +1,2 @@ dn22:13.0.1
+ PLI: 4. Dhammānupassanā 
+-4. Observing Principles 
++4. Observing Mental Contents 
 @@ -1,2 +1,2 @@ dn22:13.1
  PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati? 
 -And how does a mendicant meditate observing an aspect of principles? 
-+And how does a bhikkhu meditate observing an aspect of principles? 
++And how does a bhikkhu meditate observing an aspect of mental contents? 
 @@ -1,2 +1,2 @@ dn22:13.2
  PLI: Idha, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu nīvaraṇesu. 
 -It’s when a mendicant meditates by observing an aspect of principles with respect to the five hindrances. 
-+It’s when a bhikkhu meditates by observing an aspect of principles with respect to the five hindrances. 
++It’s when a bhikkhu meditates by observing an aspect of mental contents with respect to the five hindrances. 
 @@ -1,2 +1,2 @@ dn22:13.3
  PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu nīvaraṇesu? 
 -And how does a mendicant meditate observing an aspect of principles with respect to the five hindrances? 
-+And how does a bhikkhu meditate observing an aspect of principles with respect to the five hindrances? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the five hindrances? 
 @@ -1,2 +1,2 @@ dn22:13.4
  PLI: Idha, bhikkhave, bhikkhu santaṁ vā ajjhattaṁ kāmacchandaṁ ‘atthi me ajjhattaṁ kāmacchando’ti pajānāti, asantaṁ vā ajjhattaṁ kāmacchandaṁ ‘natthi me ajjhattaṁ kāmacchando’ti pajānāti, yathā ca anuppannassa kāmacchandassa uppādo hoti tañca pajānāti, yathā ca uppannassa kāmacchandassa pahānaṁ hoti tañca pajānāti, yathā ca pahīnassa kāmacchandassa āyatiṁ anuppādo hoti tañca pajānāti. 
 -It’s when a mendicant who has sensual desire in them understands: ‘I have sensual desire in me.’ When they don’t have sensual desire in them, they understand: ‘I don’t have sensual desire in me.’ They understand how sensual desire arises; how, when it’s already arisen, it’s given up; and how, once it’s given up, it doesn’t arise again in the future. 
 +It’s when a bhikkhu who has sensual desire in them understands: ‘I have sensual desire in me.’ When they don’t have sensual desire in them, they understand: ‘I don’t have sensual desire in me.’ They understand how sensual desire arises; how, when it’s already arisen, it’s given up; and how, once it’s given up, it doesn’t arise again in the future. 
+@@ -1,2 +1,2 @@ dn22:13.9
+ PLI: Iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati. 
+-And so they meditate observing an aspect of principles internally, externally, and both internally and externally. 
++And so they meditate observing an aspect of mental contents internally, externally, and both internally and externally. 
 @@ -1,2 +1,2 @@ dn22:13.10
  PLI: Samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
 -They meditate observing the principles as liable to originate, as liable to fall, and as liable to both originate and vanish. 
-+They meditate observing the principles as liable to arise, as liable to fall, and as liable to both arise and pass away. 
++They meditate observing mental contents as liable to arise, as liable to fall, and as liable to both arise and pass away. 
 @@ -1,2 +1,2 @@ dn22:13.11
  PLI: ‘Atthi dhammā’ti vā panassa sati paccupaṭṭhitā hoti yāvadeva ñāṇamattāya paṭissatimattāya, anissito ca viharati, na ca kiñci loke upādiyati. 
 -Or mindfulness is established that principles exist, to the extent necessary for knowledge and mindfulness. They meditate independent, not grasping at anything in the world. 
-+Or awareness is established that principles exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
++Or awareness is established that mental contents exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
 @@ -1,2 +1,2 @@ dn22:13.12
  PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu nīvaraṇesu. 
 -That’s how a mendicant meditates by observing an aspect of principles with respect to the five hindrances. 
-+That’s how a bhikkhu meditates by observing an aspect of principles with respect to the five hindrances. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the five hindrances. 
 @@ -1,2 +1,2 @@ dn22:14.1
  PLI: Puna caparaṁ, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu upādānakkhandhesu. 
 -Furthermore, a mendicant meditates by observing an aspect of principles with respect to the five grasping aggregates. 
-+Furthermore, a bhikkhu meditates by observing an aspect of principles with respect to the five grasping aggregates. 
++Furthermore, a bhikkhu meditates by observing an aspect of mental contents with respect to the five grasping aggregates. 
 @@ -1,2 +1,2 @@ dn22:14.2
  PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu upādānakkhandhesu? 
 -And how does a mendicant meditate observing an aspect of principles with respect to the five grasping aggregates? 
-+And how does a bhikkhu meditate observing an aspect of principles with respect to the five grasping aggregates? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the five grasping aggregates? 
 @@ -1,2 +1,2 @@ dn22:14.3
  PLI: Idha, bhikkhave, bhikkhu: 
 -It’s when a mendicant contemplates: 
@@ -29899,34 +29931,42 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
  PLI: iti viññāṇaṁ, iti viññāṇassa samudayo, iti viññāṇassa atthaṅgamo’ti, 
 -Such is consciousness, such is the origin of consciousness, such is the disappearance of consciousness.’ 
 +Such is consciousness, such is the arising of consciousness, such is the disappearing of consciousness.’ 
+@@ -1,2 +1,2 @@ dn22:14.9
+ PLI: iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati. 
+-And so they meditate observing an aspect of principles internally … 
++And so they meditate observing an aspect of mental contents internally … 
 @@ -1,2 +1,2 @@ dn22:14.12
  PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu upādānakkhandhesu. 
 -That’s how a mendicant meditates by observing an aspect of principles with respect to the five grasping aggregates. 
-+That’s how a bhikkhu meditates by observing an aspect of principles with respect to the five grasping aggregates. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the five grasping aggregates. 
 @@ -1,2 +1,2 @@ dn22:15.1
  PLI: Puna caparaṁ, bhikkhave, bhikkhu dhammesu dhammānupassī viharati chasu ajjhattikabāhiresu āyatanesu. 
 -Furthermore, a mendicant meditates by observing an aspect of principles with respect to the six interior and exterior sense fields. 
-+Furthermore, a bhikkhu meditates by observing an aspect of principles with respect to the six interior and exterior sense fields. 
++Furthermore, a bhikkhu meditates by observing an aspect of mental contents with respect to the six interior and exterior sense fields. 
 @@ -1,2 +1,2 @@ dn22:15.2
  PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati chasu ajjhattikabāhiresu āyatanesu? 
 -And how does a mendicant meditate observing an aspect of principles with respect to the six interior and exterior sense fields? 
-+And how does a bhikkhu meditate observing an aspect of principles with respect to the six interior and exterior sense fields? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the six interior and exterior sense fields? 
 @@ -1,2 +1,2 @@ dn22:15.3
  PLI: Idha, bhikkhave, bhikkhu cakkhuñca pajānāti, rūpe ca pajānāti, yañca tadubhayaṁ paṭicca uppajjati saṁyojanaṁ tañca pajānāti, yathā ca anuppannassa saṁyojanassa uppādo hoti tañca pajānāti, yathā ca uppannassa saṁyojanassa pahānaṁ hoti tañca pajānāti, yathā ca pahīnassa saṁyojanassa āyatiṁ anuppādo hoti tañca pajānāti. 
 -It’s when a mendicant understands the eye, sights, and the fetter that arises dependent on both of these. They understand how the fetter that has not arisen comes to arise; how the arisen fetter comes to be abandoned; and how the abandoned fetter comes to not rise again in the future. 
 +It’s when a bhikkhu understands the eye, sights, and the fetter that arises dependent on both of these. They understand how the fetter that has not arisen comes to arise; how the arisen fetter comes to be abandoned; and how the abandoned fetter comes to not rise again in the future. 
+@@ -1,2 +1,2 @@ dn22:15.9
+ PLI: Iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati. 
+-And so they meditate observing an aspect of principles internally … 
++And so they meditate observing an aspect of mental contents internally … 
 @@ -1,2 +1,2 @@ dn22:15.12
  PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati chasu ajjhattikabāhiresu āyatanesu. 
 -That’s how a mendicant meditates by observing an aspect of principles with respect to the six interior and exterior sense fields. 
-+That’s how a bhikkhu meditates by observing an aspect of principles with respect to the six interior and exterior sense fields. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the six interior and exterior sense fields. 
 @@ -1,2 +1,2 @@ dn22:16.1
  PLI: Puna caparaṁ, bhikkhave, bhikkhu dhammesu dhammānupassī viharati sattasu bojjhaṅgesu. 
 -Furthermore, a mendicant meditates by observing an aspect of principles with respect to the seven awakening factors. 
-+Furthermore, a bhikkhu meditates by observing an aspect of principles with respect to the seven awakening factors. 
++Furthermore, a bhikkhu meditates by observing an aspect of mental contents with respect to the seven awakening factors. 
 @@ -1,2 +1,2 @@ dn22:16.2
  PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati sattasu bojjhaṅgesu? 
 -And how does a mendicant meditate observing an aspect of principles with respect to the seven awakening factors? 
-+And how does a bhikkhu meditate observing an aspect of principles with respect to the seven awakening factors? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the seven awakening factors? 
 @@ -1,2 +1,2 @@ dn22:16.3
  PLI: Idha, bhikkhave, bhikkhu santaṁ vā ajjhattaṁ satisambojjhaṅgaṁ ‘atthi me ajjhattaṁ satisambojjhaṅgo’ti pajānāti, asantaṁ vā ajjhattaṁ satisambojjhaṅgaṁ ‘natthi me ajjhattaṁ satisambojjhaṅgo’ti pajānāti, yathā ca anuppannassa satisambojjhaṅgassa uppādo hoti tañca pajānāti, yathā ca uppannassa satisambojjhaṅgassa bhāvanāya pāripūrī hoti tañca pajānāti. 
 -It’s when a mendicant who has the awakening factor of mindfulness in them understands: ‘I have the awakening factor of mindfulness in me.’ When they don’t have the awakening factor of mindfulness in them, they understand: ‘I don’t have the awakening factor of mindfulness in me.’ They understand how the awakening factor of mindfulness that has not arisen comes to arise; and how the awakening factor of mindfulness that has arisen becomes fully developed. 
@@ -29935,26 +29975,30 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
  PLI: Santaṁ vā ajjhattaṁ samādhisambojjhaṅgaṁ ‘atthi me ajjhattaṁ samādhisambojjhaṅgo’ti pajānāti, asantaṁ vā ajjhattaṁ samādhisambojjhaṅgaṁ ‘natthi me ajjhattaṁ samādhisambojjhaṅgo’ti pajānāti, yathā ca anuppannassa samādhisambojjhaṅgassa uppādo hoti tañca pajānāti, yathā ca uppannassa samādhisambojjhaṅgassa bhāvanāya pāripūrī hoti tañca pajānāti. 
 -immersion … 
 +composure … 
+@@ -1,2 +1,2 @@ dn22:16.10
+ PLI: Iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati. 
+-And so they meditate observing an aspect of principles internally, externally, and both internally and externally. 
++And so they meditate observing an aspect of mental contents internally, externally, and both internally and externally. 
 @@ -1,2 +1,2 @@ dn22:16.11
  PLI: Samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
 -They meditate observing, with respect to the principles, the liability to originate, to vanish, and to originate and vanish. 
-+They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
++They meditate observing, with respect to mental contents, the liability to arise, to pass away, and to arise and pass away. 
 @@ -1,2 +1,2 @@ dn22:16.12
  PLI: ‘Atthi dhammā’ti vā panassa sati paccupaṭṭhitā hoti yāvadeva ñāṇamattāya paṭissatimattāya, anissito ca viharati, na ca kiñci loke upādiyati. 
 -Or mindfulness is established that principles exist, to the extent necessary for knowledge and mindfulness. They meditate independent, not grasping at anything in the world. 
-+Or awareness is established that principles exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
++Or awareness is established that mental contents exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
 @@ -1,2 +1,2 @@ dn22:16.13
  PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati sattasu bojjhaṅgesu. 
 -That’s how a mendicant meditates by observing an aspect of principles with respect to the seven awakening factors. 
-+That’s how a bhikkhu meditates by observing an aspect of principles with respect to the seven awakening factors. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the seven awakening factors. 
 @@ -1,2 +1,2 @@ dn22:17.1
  PLI: Puna caparaṁ, bhikkhave, bhikkhu dhammesu dhammānupassī viharati catūsu ariyasaccesu. 
 -Furthermore, a mendicant meditates by observing an aspect of principles with respect to the four noble truths. 
-+Furthermore, a bhikkhu meditates by observing an aspect of principles with respect to the four noble truths. 
++Furthermore, a bhikkhu meditates by observing an aspect of mental contents with respect to the four noble truths. 
 @@ -1,2 +1,2 @@ dn22:17.2
  PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati catūsu ariyasaccesu? 
 -And how does a mendicant meditate observing an aspect of principles with respect to the four noble truths? 
-+And how does a bhikkhu meditate observing an aspect of principles with respect to the four noble truths? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the four noble truths? 
 @@ -1,2 +1,2 @@ dn22:17.3
  PLI: Idha, bhikkhave, bhikkhu ‘idaṁ dukkhan’ti yathābhūtaṁ pajānāti, ‘ayaṁ dukkhasamudayo’ti yathābhūtaṁ pajānāti, ‘ayaṁ dukkhanirodho’ti yathābhūtaṁ pajānāti, ‘ayaṁ dukkhanirodhagāminī paṭipadā’ti yathābhūtaṁ pajānāti. 
 -It’s when a mendicant truly understands: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering.’ 
@@ -30006,7 +30050,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ dn22:21.29
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
 -They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ dn22:21.30
  PLI: Ayaṁ vuccati, bhikkhave, sammāsati. 
 -This is called right mindfulness. 
@@ -30035,18 +30079,22 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
  PLI: Ayaṁ vuccati, bhikkhave, sammāsamādhi. 
 -This is called right immersion. 
 +This is called right composure. 
+@@ -1,2 +1,2 @@ dn22:21.38
+ PLI: Iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati. 
+-And so they meditate observing an aspect of principles internally, externally, and both internally and externally. 
++And so they meditate observing an aspect of mental contents internally, externally, and both internally and externally. 
 @@ -1,2 +1,2 @@ dn22:21.39
  PLI: Samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
 -They meditate observing, with respect to the principles, the liability to originate, to vanish, and to originate and vanish. 
-+They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
++They meditate observing, with respect to mental contents, the liability to arise, to pass away, and to arise and pass away. 
 @@ -1,2 +1,2 @@ dn22:21.40
  PLI: ‘Atthi dhammā’ti vā panassa sati paccupaṭṭhitā hoti yāvadeva ñāṇamattāya paṭissatimattāya anissito ca viharati, na ca kiñci loke upādiyati. 
 -Or mindfulness is established that principles exist, to the extent necessary for knowledge and mindfulness. They meditate independent, not grasping at anything in the world. 
-+Or awareness is established that principles exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
++Or awareness is established that mental contents exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
 @@ -1,2 +1,2 @@ dn22:21.41
  PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati catūsu ariyasaccesu. 
 -That’s how a mendicant meditates by observing an aspect of principles with respect to the four noble truths. 
-+That’s how a bhikkhu meditates by observing an aspect of principles with respect to the four noble truths. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the four noble truths. 
 @@ -1,2 +1,2 @@ dn22:22.1
  PLI: Yo hi koci, bhikkhave, ime cattāro satipaṭṭhāne evaṁ bhāveyya sattavassāni, tassa dvinnaṁ phalānaṁ aññataraṁ phalaṁ pāṭikaṅkhaṁ 
 -Anyone who develops these four kinds of mindfulness meditation in this way for seven years can expect one of two results: 
@@ -30198,7 +30246,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ dn26:1.12
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ dn26:1.13
  PLI: Evaṁ kho, bhikkhave, bhikkhu attadīpo viharati attasaraṇo anaññasaraṇo, dhammadīpo dhammasaraṇo anaññasaraṇo. 
 -That’s how a mendicant lives with themselves as island and refuge, without other refuge; with the teachings as island and refuge, without other refuge. 
@@ -30254,7 +30302,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ dn26:27.6
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ dn26:27.7
  PLI: Evaṁ kho, bhikkhave, bhikkhu attadīpo viharati attasaraṇo anaññasaraṇo dhammadīpo dhammasaraṇo anaññasaraṇo. 
 -That’s how a mendicant lives with themselves as island and refuge, without other refuge; with the teachings as island and refuge, without other refuge. 
@@ -30540,7 +30588,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ dn29:40.6
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ dn29:40.7
  PLI: Imesañca, cunda, pubbantasahagatānaṁ diṭṭhinissayānaṁ imesañca aparantasahagatānaṁ diṭṭhinissayānaṁ pahānāya samatikkamāya. Evaṁ mayā ime cattāro satipaṭṭhānā desitā paññattā”ti. 
 -These are the four kinds of mindfulness meditation that I have taught for giving up and going beyond all these views of the first beginning and the final end.” 
@@ -30998,7 +31046,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ dn33:1.11.8
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ dn33:1.11.10
  PLI: Idhāvuso, bhikkhu anuppannānaṁ pāpakānaṁ akusalānaṁ dhammānaṁ anuppādāya chandaṁ janeti vāyamati vīriyaṁ ārabhati cittaṁ paggaṇhāti padahati. 
 -A mendicant generates enthusiasm, tries, makes an effort, exerts the mind, and strives so that bad, unskillful qualities don’t arise. 
@@ -31808,7 +31856,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ dn34:1.5.11
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ dn34:1.5.30
  PLI: Cattāro samādhī—
 -Four kinds of immersion: 
@@ -38324,7 +38372,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ mn10:3.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ mn10:4.0.2
  PLI: 1.1. Kāyānupassanāānāpānapabba 
 -1.1. Mindfulness of Breathing 
@@ -38469,42 +38517,50 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
  PLI: Evampi kho, bhikkhave, bhikkhu citte cittānupassī viharati. 
 -That’s how a mendicant meditates by observing an aspect of the mind. 
 +That’s how a bhikkhu meditates by observing an aspect of the mind. 
+@@ -1,2 +1,2 @@ mn10:36.0.1
+ PLI: 4. Dhammānupassanā 
+-4. Observing Principles 
++4. Observing Mental Contents 
 @@ -1,2 +1,2 @@ mn10:36.1
  PLI: Kathañca, bhikkhave, bhikkhu dhammesu dhammānupassī viharati? 
 -And how does a mendicant meditate observing an aspect of principles? 
-+And how does a bhikkhu meditate observing an aspect of principles? 
++And how does a bhikkhu meditate observing an aspect of mental contents? 
 @@ -1,2 +1,2 @@ mn10:36.2
  PLI: Idha, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu nīvaraṇesu. 
 -It’s when a mendicant meditates by observing an aspect of principles with respect to the five hindrances. 
-+It’s when a bhikkhu meditates by observing an aspect of principles with respect to the five hindrances. 
++It’s when a bhikkhu meditates by observing an aspect of mental contents with respect to the five hindrances. 
 @@ -1,2 +1,2 @@ mn10:36.3
  PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu nīvaraṇesu? 
 -And how does a mendicant meditate observing an aspect of principles with respect to the five hindrances? 
-+And how does a bhikkhu meditate observing an aspect of principles with respect to the five hindrances? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the five hindrances? 
 @@ -1,2 +1,2 @@ mn10:36.4
  PLI: Idha, bhikkhave, bhikkhu santaṁ vā ajjhattaṁ kāmacchandaṁ ‘atthi me ajjhattaṁ kāmacchando’ti pajānāti, asantaṁ vā ajjhattaṁ kāmacchandaṁ ‘natthi me ajjhattaṁ kāmacchando’ti pajānāti; yathā ca anuppannassa kāmacchandassa uppādo hoti tañca pajānāti, yathā ca uppannassa kāmacchandassa pahānaṁ hoti tañca pajānāti, yathā ca pahīnassa kāmacchandassa āyatiṁ anuppādo hoti tañca pajānāti. 
 -It’s when a mendicant who has sensual desire in them understands: ‘I have sensual desire in me.’ When they don’t have sensual desire in them, they understand: ‘I don’t have sensual desire in me.’ They understand how sensual desire arises; how, when it’s already arisen, it’s given up; and how, once it’s given up, it doesn’t arise again in the future. 
 +It’s when a bhikkhu who has sensual desire in them understands: ‘I have sensual desire in me.’ When they don’t have sensual desire in them, they understand: ‘I don’t have sensual desire in me.’ They understand how sensual desire arises; how, when it’s already arisen, it’s given up; and how, once it’s given up, it doesn’t arise again in the future. 
+@@ -1,2 +1,2 @@ mn10:37.1
+ PLI: Iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati; 
+-And so they meditate observing an aspect of principles internally, externally, and both internally and externally. 
++And so they meditate observing an aspect of mental contents internally, externally, and both internally and externally. 
 @@ -1,2 +1,2 @@ mn10:37.2
  PLI: samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
 -They meditate observing, with respect to the principles, the liability to originate, to vanish, and to originate and vanish. 
-+They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
++They meditate observing, with respect to mental contents, the liability to arise, to pass away, and to arise and pass away. 
 @@ -1,2 +1,2 @@ mn10:37.3
  PLI: ‘Atthi dhammā’ti vā panassa sati paccupaṭṭhitā hoti. Yāvadeva ñāṇamattāya paṭissatimattāya anissito ca viharati, na ca kiñci loke upādiyati. 
 -Or mindfulness is established that principles exist, to the extent necessary for knowledge and mindfulness. They meditate independent, not grasping at anything in the world. 
-+Or awareness is established that principles exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
++Or awareness is established that mental contents exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
 @@ -1,2 +1,2 @@ mn10:37.4
  PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu nīvaraṇesu. 
 -That’s how a mendicant meditates by observing an aspect of principles with respect to the five hindrances. 
-+That’s how a bhikkhu meditates by observing an aspect of principles with respect to the five hindrances. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the five hindrances. 
 @@ -1,2 +1,2 @@ mn10:38.1
  PLI: Puna caparaṁ, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu upādānakkhandhesu. 
 -Furthermore, a mendicant meditates by observing an aspect of principles with respect to the five grasping aggregates. 
-+Furthermore, a bhikkhu meditates by observing an aspect of principles with respect to the five grasping aggregates. 
++Furthermore, a bhikkhu meditates by observing an aspect of mental contents with respect to the five grasping aggregates. 
 @@ -1,2 +1,2 @@ mn10:38.2
  PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu upādānakkhandhesu? 
 -And how does a mendicant meditate observing an aspect of principles with respect to the five grasping aggregates? 
-+And how does a bhikkhu meditate observing an aspect of principles with respect to the five grasping aggregates? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the five grasping aggregates? 
 @@ -1,2 +1,2 @@ mn10:38.3
  PLI: Idha, bhikkhave, bhikkhu: 
 -It’s when a mendicant contemplates: 
@@ -38529,34 +38585,42 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
  PLI: iti viññāṇaṁ, iti viññāṇassa samudayo, iti viññāṇassa atthaṅgamo’ti; 
 -Such is consciousness, such is the origin of consciousness, such is the disappearance of consciousness.’ 
 +Such is consciousness, such is the arising of consciousness, such is the disappearing of consciousness.’ 
+@@ -1,2 +1,2 @@ mn10:39.1
+ PLI: iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati; 
+-And so they meditate observing an aspect of principles internally … 
++And so they meditate observing an aspect of mental contents internally … 
 @@ -1,2 +1,2 @@ mn10:39.4
  PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu upādānakkhandhesu. 
 -That’s how a mendicant meditates by observing an aspect of principles with respect to the five grasping aggregates. 
-+That’s how a bhikkhu meditates by observing an aspect of principles with respect to the five grasping aggregates. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the five grasping aggregates. 
 @@ -1,2 +1,2 @@ mn10:40.1
  PLI: Puna caparaṁ, bhikkhave, bhikkhu dhammesu dhammānupassī viharati chasu ajjhattikabāhiresu āyatanesu. 
 -Furthermore, a mendicant meditates by observing an aspect of principles with respect to the six interior and exterior sense fields. 
-+Furthermore, a bhikkhu meditates by observing an aspect of principles with respect to the six interior and exterior sense fields. 
++Furthermore, a bhikkhu meditates by observing an aspect of mental contents with respect to the six interior and exterior sense fields. 
 @@ -1,2 +1,2 @@ mn10:40.2
  PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati chasu ajjhattikabāhiresu āyatanesu? 
 -And how does a mendicant meditate observing an aspect of principles with respect to the six interior and exterior sense fields? 
-+And how does a bhikkhu meditate observing an aspect of principles with respect to the six interior and exterior sense fields? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the six interior and exterior sense fields? 
 @@ -1,2 +1,2 @@ mn10:40.3
  PLI: Idha, bhikkhave, bhikkhu cakkhuñca pajānāti, rūpe ca pajānāti, yañca tadubhayaṁ paṭicca uppajjati saṁyojanaṁ tañca pajānāti, yathā ca anuppannassa saṁyojanassa uppādo hoti tañca pajānāti, yathā ca uppannassa saṁyojanassa pahānaṁ hoti tañca pajānāti, yathā ca pahīnassa saṁyojanassa āyatiṁ anuppādo hoti tañca pajānāti. 
 -It’s when a mendicant understands the eye, sights, and the fetter that arises dependent on both of these. They understand how the fetter that has not arisen comes to arise; how the arisen fetter comes to be abandoned; and how the abandoned fetter comes to not rise again in the future. 
 +It’s when a bhikkhu understands the eye, sights, and the fetter that arises dependent on both of these. They understand how the fetter that has not arisen comes to arise; how the arisen fetter comes to be abandoned; and how the abandoned fetter comes to not rise again in the future. 
+@@ -1,2 +1,2 @@ mn10:41.1
+ PLI: Iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati; 
+-And so they meditate observing an aspect of principles internally … 
++And so they meditate observing an aspect of mental contents internally … 
 @@ -1,2 +1,2 @@ mn10:41.4
  PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati chasu ajjhattikabāhiresu āyatanesu. 
 -That’s how a mendicant meditates by observing an aspect of principles with respect to the six interior and exterior sense fields. 
-+That’s how a bhikkhu meditates by observing an aspect of principles with respect to the six interior and exterior sense fields. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the six interior and exterior sense fields. 
 @@ -1,2 +1,2 @@ mn10:42.1
  PLI: Puna caparaṁ, bhikkhave, bhikkhu dhammesu dhammānupassī viharati sattasu bojjhaṅgesu. 
 -Furthermore, a mendicant meditates by observing an aspect of principles with respect to the seven awakening factors. 
-+Furthermore, a bhikkhu meditates by observing an aspect of principles with respect to the seven awakening factors. 
++Furthermore, a bhikkhu meditates by observing an aspect of mental contents with respect to the seven awakening factors. 
 @@ -1,2 +1,2 @@ mn10:42.2
  PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati sattasu bojjhaṅgesu? 
 -And how does a mendicant meditate observing an aspect of principles with respect to the seven awakening factors? 
-+And how does a bhikkhu meditate observing an aspect of principles with respect to the seven awakening factors? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the seven awakening factors? 
 @@ -1,2 +1,2 @@ mn10:42.3
  PLI: Idha, bhikkhave, bhikkhu santaṁ vā ajjhattaṁ satisambojjhaṅgaṁ ‘atthi me ajjhattaṁ satisambojjhaṅgo’ti pajānāti, asantaṁ vā ajjhattaṁ satisambojjhaṅgaṁ ‘natthi me ajjhattaṁ satisambojjhaṅgo’ti pajānāti, yathā ca anuppannassa satisambojjhaṅgassa uppādo hoti tañca pajānāti, yathā ca uppannassa satisambojjhaṅgassa bhāvanāya pāripūrī hoti tañca pajānāti. 
 -It’s when a mendicant who has the awakening factor of mindfulness in them understands: ‘I have the awakening factor of mindfulness in me.’ When they don’t have the awakening factor of mindfulness in them, they understand: ‘I don’t have the awakening factor of mindfulness in me.’ They understand how the awakening factor of mindfulness that has not arisen comes to arise; and how the awakening factor of mindfulness that has arisen becomes fully developed. 
@@ -38565,42 +38629,50 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
  PLI: Santaṁ vā ajjhattaṁ samādhisambojjhaṅgaṁ ‘atthi me ajjhattaṁ samādhisambojjhaṅgo’ti pajānāti, asantaṁ vā ajjhattaṁ samādhisambojjhaṅgaṁ ‘natthi me ajjhattaṁ samādhisambojjhaṅgo’ti pajānāti, yathā ca anuppannassa samādhisambojjhaṅgassa uppādo hoti tañca pajānāti, yathā ca uppannassa samādhisambojjhaṅgassa bhāvanāya pāripūrī hoti tañca pajānāti. 
 -immersion … 
 +composure … 
+@@ -1,2 +1,2 @@ mn10:43.1
+ PLI: Iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati; 
+-And so they meditate observing an aspect of principles internally, externally, and both internally and externally. 
++And so they meditate observing an aspect of mental contents internally, externally, and both internally and externally. 
 @@ -1,2 +1,2 @@ mn10:43.2
  PLI: samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
 -They meditate observing, with respect to the principles, the liability to originate, to vanish, and to originate and vanish. 
-+They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
++They meditate observing, with respect to mental contents, the liability to arise, to pass away, and to arise and pass away. 
 @@ -1,2 +1,2 @@ mn10:43.3
  PLI: ‘Atthi dhammā’ti vā panassa sati paccupaṭṭhitā hoti. Yāvadeva ñāṇamattāya paṭissatimattāya anissito ca viharati, na ca kiñci loke upādiyati. 
 -Or mindfulness is established that principles exist, to the extent necessary for knowledge and mindfulness. They meditate independent, not grasping at anything in the world. 
-+Or awareness is established that principles exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
++Or awareness is established that mental contents exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
 @@ -1,2 +1,2 @@ mn10:43.4
  PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati sattasu bojjhaṅgesu. 
 -That’s how a mendicant meditates by observing an aspect of principles with respect to the seven awakening factors. 
-+That’s how a bhikkhu meditates by observing an aspect of principles with respect to the seven awakening factors. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the seven awakening factors. 
 @@ -1,2 +1,2 @@ mn10:44.1
  PLI: Puna caparaṁ, bhikkhave, bhikkhu dhammesu dhammānupassī viharati catūsu ariyasaccesu. 
 -Furthermore, a mendicant meditates by observing an aspect of principles with respect to the four noble truths. 
-+Furthermore, a bhikkhu meditates by observing an aspect of principles with respect to the four noble truths. 
++Furthermore, a bhikkhu meditates by observing an aspect of mental contents with respect to the four noble truths. 
 @@ -1,2 +1,2 @@ mn10:44.2
  PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati catūsu ariyasaccesu? 
 -And how does a mendicant meditate observing an aspect of principles with respect to the four noble truths? 
-+And how does a bhikkhu meditate observing an aspect of principles with respect to the four noble truths? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the four noble truths? 
 @@ -1,2 +1,2 @@ mn10:44.3
  PLI: Idha, bhikkhave, bhikkhu ‘idaṁ dukkhan’ti yathābhūtaṁ pajānāti, ‘ayaṁ dukkhasamudayo’ti yathābhūtaṁ pajānāti, ‘ayaṁ dukkhanirodho’ti yathābhūtaṁ pajānāti, ‘ayaṁ dukkhanirodhagāminī paṭipadā’ti yathābhūtaṁ pajānāti. 
 -It’s when a mendicant truly understands: ‘This is suffering’ … ‘This is the origin of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering.’ 
 +It’s when a bhikkhu truly understands: ‘This is suffering’ … ‘This is the arising of suffering’ … ‘This is the cessation of suffering’ … ‘This is the practice that leads to the cessation of suffering.’ 
+@@ -1,2 +1,2 @@ mn10:45.1
+ PLI: Iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati; 
+-And so they meditate observing an aspect of principles internally, externally, and both internally and externally. 
++And so they meditate observing an aspect of mental contents internally, externally, and both internally and externally. 
 @@ -1,2 +1,2 @@ mn10:45.2
  PLI: samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
 -They meditate observing, with respect to the principles, the liability to originate, to vanish, and to originate and vanish. 
-+They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
++They meditate observing, with respect to mental contents, the liability to arise, to pass away, and to arise and pass away. 
 @@ -1,2 +1,2 @@ mn10:45.3
  PLI: ‘Atthi dhammā’ti vā panassa sati paccupaṭṭhitā hoti. Yāvadeva ñāṇamattāya paṭissatimattāya anissito ca viharati, na ca kiñci loke upādiyati. 
 -Or mindfulness is established that principles exist, to the extent necessary for knowledge and mindfulness. They meditate independent, not grasping at anything in the world. 
-+Or awareness is established that principles exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
++Or awareness is established that mental contents exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
 @@ -1,2 +1,2 @@ mn10:45.4
  PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati catūsu ariyasaccesu. 
 -That’s how a mendicant meditates by observing an aspect of principles with respect to the four noble truths. 
-+That’s how a bhikkhu meditates by observing an aspect of principles with respect to the four noble truths. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the four noble truths. 
 @@ -1,2 +1,2 @@ mn10:46.1
  PLI: Yo hi koci, bhikkhave, ime cattāro satipaṭṭhāne evaṁ bhāveyya satta vassāni, tassa dvinnaṁ phalānaṁ aññataraṁ phalaṁ pāṭikaṅkhaṁ 
 -Anyone who develops these four kinds of mindfulness meditation in this way for seven years can expect one of two results: 
@@ -39318,11 +39390,11 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ mn118:27.5
  PLI: dhammesu dhammānupassī, bhikkhave, tasmiṁ samaye bhikkhu viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
 -at that time they meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+at that time they meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++at that time they meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ mn118:27.7
  PLI: Tasmātiha, bhikkhave, dhammesu dhammānupassī tasmiṁ samaye bhikkhu viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
 -That’s why at that time a mendicant is meditating by observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+That’s why at that time a bhikkhu is meditating by observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++That’s why at that time a bhikkhu is meditating by observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ mn118:28.1
  PLI: Evaṁ bhāvitā kho, bhikkhave, ānāpānassati evaṁ bahulīkatā cattāro satipaṭṭhāne paripūreti. 
 -That’s how mindfulness of breathing, when developed and cultivated, fulfills the four kinds of mindfulness meditation. 
@@ -39382,7 +39454,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ mn118:38.2
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ, upaṭṭhitāssa tasmiṁ samaye sati hoti asammuṭṭhā. 
 -principles, at that time their mindfulness is established and lucid. 
-+principles, at that time their awareness is established and lucid. 
++mental contents, at that time their awareness is established and lucid. 
 @@ -1,2 +1,2 @@ mn118:38.3
  PLI: Yasmiṁ samaye, bhikkhave, bhikkhuno upaṭṭhitā sati hoti asammuṭṭhā, satisambojjhaṅgo tasmiṁ samaye bhikkhuno āraddho hoti, satisambojjhaṅgaṁ tasmiṁ samaye bhikkhu bhāveti, satisambojjhaṅgo tasmiṁ samaye bhikkhuno bhāvanāpāripūriṁ gacchati. 
 -At such a time, a mendicant has initiated the awakening factor of mindfulness … 
@@ -40154,7 +40226,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ mn125:23.3
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ mn125:23.5
  PLI: evameva kho, aggivessana, ariyasāvakassa ime cattāro satipaṭṭhānā cetaso upanibandhanā honti gehasitānañceva sīlānaṁ abhinimmadanāya gehasitānañceva sarasaṅkappānaṁ abhinimmadanāya gehasitānañceva darathakilamathapariḷāhānaṁ abhinimmadanāya ñāyassa adhigamāya nibbānassa sacchikiriyāya. 
 -In the same way, a noble disciple has these four kinds of mindfulness meditation as tethers for the mind so as to subdue behaviors tied to domestic life, memories and thoughts tied to domestic life, stress, weariness, and fever tied to domestic life, to discover the system, and to realize extinguishment. 
@@ -40163,6 +40235,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
  PLI: ‘ehi tvaṁ, bhikkhu, kāye kāyānupassī viharāhi, mā ca kāmūpasaṁhitaṁ vitakkaṁ vitakkesi. 
 -‘Come, mendicant, meditate observing an aspect of the body, but don’t think thoughts connected with sensual pleasures. 
 +‘Come, bhikkhu, meditate observing an aspect of the body, but don’t think thoughts connected with sensual pleasures. 
+@@ -1,2 +1,2 @@ mn125:24.5
+ PLI: dhammesu dhammānupassī viharāhi, mā ca kāmūpasaṁhitaṁ vitakkaṁ vitakkesī’ti. 
+-principles, but don’t think thoughts connected with sensual pleasures.’ 
++mental contents, but don’t think thoughts connected with sensual pleasures.’ 
 @@ -1,2 +1,2 @@ mn125:25.1
  PLI: So vitakkavicārānaṁ vūpasamā ajjhattaṁ sampasādanaṁ cetaso ekodibhāvaṁ avitakkaṁ avicāraṁ samādhijaṁ pītisukhaṁ dutiyaṁ jhānaṁ … 
 -As the placing of the mind and keeping it connected are stilled, they enter and remain in the second absorption … 
@@ -41290,7 +41366,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ mn141:30.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ, 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ mn141:30.6
  PLI: ayaṁ vuccatāvuso: ‘sammāsati’. 
 -This is called right mindfulness. 
@@ -45800,7 +45876,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ mn51:3.13
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassan”ti. 
 -They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world.” 
-+They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world.” 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world.” 
 @@ -1,2 +1,2 @@ mn51:4.3
  PLI: Yāva supaññattā cime, bhante, bhagavatā cattāro satipaṭṭhānā sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya. 
 -How well described by the Buddha are the four kinds of mindfulness meditation! They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment. 
@@ -45812,7 +45888,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ mn51:4.8
  PLI: dhammesu dhammānupassino viharāma ātāpino sampajānā satimanto, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ mn51:7.1
  PLI: Atha kho bhagavā acirapakkante pesse hatthārohaputte bhikkhū āmantesi: 
 -Then, not long after he had left, the Buddha addressed the mendicants: 
@@ -47582,7 +47658,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ mn77:15.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ mn77:16.2
  PLI: Idhudāyi, bhikkhu anuppannānaṁ pāpakānaṁ akusalānaṁ dhammānaṁ anuppādāya chandaṁ janeti, vāyamati, vīriyaṁ ārabhati, cittaṁ paggaṇhāti, padahati; 
 -It’s when a mendicant generates enthusiasm, tries, makes an effort, exerts the mind, and strives so that bad, unskillful qualities don’t arise. 
@@ -62944,7 +63020,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn36.7:3.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn36.7:3.6
  PLI: Evaṁ kho, bhikkhave, bhikkhu sato hoti. 
 -That’s how a mendicant is mindful. 
@@ -63014,7 +63090,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn36.8:3.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn36.8:3.6
  PLI: Evaṁ kho, bhikkhave, bhikkhu sato hoti. 
 -That’s how a mendicant is mindful. 
@@ -64248,7 +64324,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn43.12:5.11
  PLI: Idha, bhikkhave, bhikkhu dhammesu dhammānupassī viharati …pe… ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe…. 
 -A mendicant meditates by observing an aspect of principles … 
-+A bhikkhu meditates by observing an aspect of principles … 
++A bhikkhu meditates by observing an aspect of mental contents … 
 @@ -1,2 +1,2 @@ sn43.12:6.2
  PLI: Idha, bhikkhave, bhikkhu anuppannānaṁ pāpakānaṁ akusalānaṁ dhammānaṁ anuppādāya chandaṁ janeti vāyamati vīriyaṁ ārabhati cittaṁ paggaṇhāti padahati. 
 -A mendicant generates enthusiasm, tries, makes an effort, exerts the mind, and strives so that bad, unskillful qualities don’t arise. … 
@@ -66160,7 +66236,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn45.8:9.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
 -They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn45.8:9.6
  PLI: ayaṁ vuccati, bhikkhave, sammāsati. 
 -This is called right mindfulness. 
@@ -67480,7 +67556,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn46.6:7.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn46.6:7.6
  PLI: Evaṁ bhāvitā kho, kuṇḍaliya, cattāro satipaṭṭhānā evaṁ bahulīkatā satta bojjhaṅge paripūrenti. 
 -That’s how the four kinds of mindfulness meditation are developed and cultivated so as to fulfill the seven awakening factors. 
@@ -67668,7 +67744,11 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.10:7.3
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn47.10:7.4
+ PLI: Tassa dhammesu dhammānupassino viharato dhammārammaṇo vā uppajjati kāyasmiṁ pariḷāho, cetaso vā līnattaṁ, bahiddhā vā cittaṁ vikkhipati. 
+-As they meditate observing an aspect of principles, based on principles there arises sweltering in the body, or mental sluggishness, or the mind is externally scattered. 
++As they meditate observing an aspect of mental contents, based on mental contents there arises sweltering in the body, or mental sluggishness, or the mind is externally scattered. 
 @@ -1,2 +1,2 @@ sn47.10:7.5
  PLI: Tenānanda, bhikkhunā kismiñcideva pasādanīye nimitte cittaṁ paṇidahitabbaṁ. 
 -That mendicant should direct their mind toward an inspiring subject as a basis for meditation. 
@@ -67716,7 +67796,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.10:8.13
  PLI: Atha ca pana ‘dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā sukhamasmī’ti pajānāti. 
 -And they also understand: ‘I meditate observing an aspect of principles—keen, aware, mindful; I am happy.’ 
-+And they also understand: ‘I meditate observing an aspect of principles—ardent and aware, with sampajañña; I am happy.’ 
++And they also understand: ‘I meditate observing an aspect of mental contents—ardent and aware, with sampajañña; I am happy.’ 
 @@ -1,2 +1,2 @@ sn47.10:9.3
  PLI: Etāni, ānanda, rukkhamūlāni, etāni suññāgārāni. Jhāyathānanda, mā pamādattha; mā pacchā vippaṭisārino ahuvattha. Ayaṁ vo amhākaṁ anusāsanī”ti. 
 -Here are these roots of trees, and here are these empty huts. Practice absorption, Ānanda! Don’t be negligent! Don’t regret it later! This is my instruction to you.” 
@@ -67730,7 +67810,11 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.11:2.6
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn47.11:2.7
+ PLI: Tassa dhammesu dhammānupassino viharato cittaṁ virajjati, vimuccati anupādāya āsavehi. 
+-As they meditate observing an aspect of principles, their mind becomes dispassionate, and is freed from the defilements by not grasping. 
++As they meditate observing an aspect of mental contents, their mind becomes dispassionate, and is freed from the defilements by not grasping. 
 --- sujato/sutta/sn/sn47/sn47.12_translation-en-sujato.json
 +++ sujato/sutta/sn/sn47/sn47.12_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.12:6.9
@@ -67754,7 +67838,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.13:7.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.13:7.6
  PLI: Evaṁ kho, ānanda, bhikkhu attadīpo viharati attasaraṇo anaññasaraṇo, dhammadīpo dhammasaraṇo anaññasaraṇo. 
 -That’s how a mendicant lives with themselves as island and refuge, without other refuge; with the teachings as island and refuge, without other refuge. 
@@ -67796,7 +67880,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.14:3.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.14:3.6
  PLI: Evaṁ kho, bhikkhave, bhikkhu attadīpo viharati attasaraṇo anaññasaraṇo, dhammadīpo dhammasaraṇo anaññasaraṇo. 
 -That’s how a mendicant lives with themselves as island and refuge, without other refuge; with the teachings as island and refuge, without other refuge. 
@@ -67822,7 +67906,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.15:2.5
  PLI: dhammesu dhammānupassī viharāhi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.15:2.6
  PLI: Yato kho tvaṁ, bāhiya, sīlaṁ nissāya sīle patiṭṭhāya ime cattāro satipaṭṭhāne evaṁ bhāvessasi, tato tuyhaṁ, bāhiya, yā ratti vā divaso vā āgamissati, vuddhiyeva pāṭikaṅkhā kusalesu dhammesu, no parihānī”ti. 
 -When you develop these four kinds of mindfulness meditation, depending on and grounded on ethics, you can expect growth, not decline, in skillful qualities, whether by day or by night.” 
@@ -67848,7 +67932,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.16:2.5
  PLI: dhammesu dhammānupassī viharāhi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.16:2.6
  PLI: Yato kho tvaṁ, uttiya, sīlaṁ nissāya sīle patiṭṭhāya ime cattāro satipaṭṭhāne evaṁ bhāvessasi, tato tvaṁ, uttiya, gamissasi maccudheyyassa pāran”ti. 
 -When you develop these four kinds of mindfulness meditation, depending on and grounded on ethics, you’ll cross beyond Death’s dominion.” 
@@ -67870,7 +67954,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.17:1.6
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.17:1.7
  PLI: Ime kho, bhikkhave, cattāro satipaṭṭhānā bhāvitā bahulīkatā ariyā niyyānikā niyyanti takkarassa sammā dukkhakkhayāyā”ti. 
 -When these four kinds of mindfulness meditation are developed and cultivated they are noble and emancipating, and bring one who practices them to the complete ending of suffering.” 
@@ -67888,7 +67972,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.18:2.5
  PLI: dhammesu vā bhikkhu dhammānupassī vihareyya ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -or principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+or principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++or mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.18:2.6
  PLI: Ekāyanvāyaṁ maggo sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya, yadidaṁ—cattāro satipaṭṭhānā”ti. 
 -The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.” 
@@ -67904,7 +67988,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.18:4.5
  PLI: dhammesu vā, bhante, bhikkhu dhammānupassī vihareyya ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -or principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+or principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++or mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.18:4.6
  PLI: Ekāyanvāyaṁ, bhante, maggo sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya, yadidaṁ—cattāro satipaṭṭhānā”ti. 
 -The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.” 
@@ -67964,7 +68048,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.1:2.6
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.1:2.7
  PLI: Ekāyanvāyaṁ, bhikkhave, maggo sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya, yadidaṁ—cattāro satipaṭṭhānā”ti. 
 -The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.” 
@@ -68012,7 +68096,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.21:3.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.21:3.6
  PLI: Yānimāni, āvuso bhadda, kusalāni sīlāni vuttāni bhagavatā, imāni kusalāni sīlāni yāvadeva imesaṁ catunnaṁ satipaṭṭhānānaṁ bhāvanāya vuttāni bhagavatā”ti. 
 -The Buddha has spoken of skillful ethics to the extent necessary for developing the four kinds of mindfulness meditation.” 
@@ -68034,7 +68118,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.22:3.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.22:3.6
  PLI: Imesaṁ kho, āvuso, catunnaṁ satipaṭṭhānānaṁ abhāvitattā abahulīkatattā tathāgate parinibbute saddhammo na ciraṭṭhitiko hoti. 
 -It’s because of not developing and cultivating these four kinds of mindfulness meditation that the true teaching doesn’t last long after the final quenching of the Realized One. 
@@ -68060,7 +68144,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.23:3.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.23:3.6
  PLI: Imesaṁ kho, āvuso, catunnaṁ satipaṭṭhānānaṁ abhāvitattā abahulīkatattā saddhammaparihānaṁ hoti. 
 -It’s because of not developing and cultivating these four kinds of mindfulness meditation that the true teaching declines. 
@@ -68082,7 +68166,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.24:1.7
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.24:1.8
  PLI: Ime kho, bhikkhave, cattāro satipaṭṭhānā”ti. 
 -These are the four kinds of mindfulness meditation.” 
@@ -68104,7 +68188,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.25:3.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.25:3.6
  PLI: Imesaṁ kho, brāhmaṇa, catunnaṁ satipaṭṭhānānaṁ abhāvitattā abahulīkatattā tathāgate parinibbute saddhammo na ciraṭṭhitiko hoti. 
 -It’s because of not developing and cultivating these four kinds of mindfulness meditation that the true teaching doesn’t last long after the final quenching of the Realized One. 
@@ -68126,7 +68210,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.26:2.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.26:2.6
  PLI: Imesaṁ kho, āvuso, catunnaṁ satipaṭṭhānānaṁ padesaṁ bhāvitattā sekho hotī”ti. 
 -A trainee is someone who has partly developed the four kinds of mindfulness meditation.” 
@@ -68144,7 +68228,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.27:2.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.27:2.6
  PLI: Imesaṁ kho, āvuso, catunnaṁ satipaṭṭhānānaṁ samattaṁ bhāvitattā asekho hotī”ti. 
 -An adept is someone who has completely developed the four kinds of mindfulness meditation.” 
@@ -68162,7 +68246,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.28:2.5
  PLI: dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.28:2.6
  PLI: Imesaṁ khvāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā mahābhiññataṁ patto. 
 -I attained great direct knowledge by developing and cultivating these four kinds of mindfulness meditation. 
@@ -68180,7 +68264,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.29:3.5
  PLI: dhammesu dhammānupassī viharissāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassan’ti. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world.’ 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world.’ 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world.’ 
 @@ -1,2 +1,2 @@ sn47.29:4.1
  PLI: “Yeme, bhante, bhagavatā cattāro satipaṭṭhānā desitā saṁvijjanti, te dhammā mayi, ahañca tesu dhammesu sandissāmi. 
 -“These four kinds of mindfulness meditation that were taught by the Buddha are found in me, and I exhibit them. 
@@ -68192,7 +68276,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.29:4.5
  PLI: dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 --- sujato/sutta/sn/sn47/sn47.2_translation-en-sujato.json
 +++ sujato/sutta/sn/sn47/sn47.2_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.2:0.3
@@ -68222,7 +68306,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.2:2.7
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.2:2.8
  PLI: Evaṁ kho, bhikkhave, bhikkhu sato hoti. 
 -That’s how a mendicant is mindful. 
@@ -68252,13 +68336,25 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.30:1.9
  PLI: dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 --- sujato/sutta/sn/sn47/sn47.31_translation-en-sujato.json
 +++ sujato/sutta/sn/sn47/sn47.31_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.31:1.2
  PLI: “‘Ayaṁ kāye kāyānupassanā’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi. 
 -“‘This is the observation of an aspect of the body.’ Such, mendicants, was the vision, knowledge, wisdom, realization, and light that arose in me regarding teachings not learned before from another. 
 +“‘This is the observation of an aspect of the body.’ Such, bhikkhus, was the vision, knowledge, wisdom, realization, and light that arose in me regarding teachings not learned before from another. 
+@@ -1,2 +1,2 @@ sn47.31:4.1
+ PLI: ‘Ayaṁ dhammesu dhammānupassanā’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi. 
+-‘This is the observation of an aspect of principles.’ … 
++‘This is the observation of an aspect of mental contents.’ … 
+@@ -1,2 +1,2 @@ sn47.31:4.2
+ PLI: ‘Sā kho panāyaṁ dhammesu dhammānupassanā bhāvetabbā’ti me, bhikkhave …pe… 
+-‘This observation of an aspect of principles should be developed.’ … 
++‘This observation of an aspect of mental contents should be developed.’ … 
+@@ -1,2 +1,2 @@ sn47.31:4.3
+ PLI: bhāvitā’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādī”ti. 
+-‘This observation of an aspect of principles has been developed.’ Such was the vision, knowledge, wisdom, realization, and light that arose in me regarding teachings not learned before from another.” 
++‘This observation of an aspect of mental contents has been developed.’ Such was the vision, knowledge, wisdom, realization, and light that arose in me regarding teachings not learned before from another.” 
 --- sujato/sutta/sn/sn47/sn47.32_translation-en-sujato.json
 +++ sujato/sutta/sn/sn47/sn47.32_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.32:1.1
@@ -68272,7 +68368,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.32:2.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.32:2.6
  PLI: Ime kho, bhikkhave, cattāro satipaṭṭhānā bhāvitā bahulīkatā ekantanibbidāya virāgāya nirodhāya upasamāya abhiññāya sambodhāya nibbānāya saṁvattantī”ti. 
 -These four kinds of mindfulness meditation, when developed and cultivated, lead solely to disillusionment, dispassion, cessation, peace, insight, awakening, and extinguishment.” 
@@ -68294,7 +68390,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.33:2.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.33:2.6
  PLI: Yesaṁ kesañci, bhikkhave, ime cattāro satipaṭṭhānā viraddhā, viraddho tesaṁ ariyo maggo sammā dukkhakkhayagāmī. 
 -Whoever has missed out on these four kinds of mindfulness meditation has missed out on the noble path to the complete ending of suffering. 
@@ -68316,7 +68412,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.34:2.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.34:2.6
  PLI: Ime kho, bhikkhave, cattāro satipaṭṭhānā bhāvitā bahulīkatā apārā pāraṁ gamanāya saṁvattantī”ti. 
 -When these four kinds of mindfulness meditation are developed and cultivated they lead to going from the near shore to the far shore.” 
@@ -68342,7 +68438,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.35:2.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.35:2.6
  PLI: Evaṁ kho, bhikkhave, bhikkhu sato hoti. 
 -That’s how a mendicant is mindful. 
@@ -68376,7 +68472,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.36:1.6
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.36:1.7
  PLI: Ime kho, bhikkhave, cattāro satipaṭṭhānā. 
 -These are the four kinds of mindfulness meditation. 
@@ -68406,7 +68502,11 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.37:4.1
  PLI: Dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn47.37:4.2
+ PLI: Tassa dhammesu dhammānupassino viharato yo dhammesu chando so pahīyati. 
+-As they do so they give up desire for principles. 
++As they do so they give up desire for mental contents. 
 --- sujato/sutta/sn/sn47/sn47.38_translation-en-sujato.json
 +++ sujato/sutta/sn/sn47/sn47.38_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.38:1.1
@@ -68428,7 +68528,15 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.38:4.1
  PLI: Dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn47.38:4.2
+ PLI: Tassa dhammesu dhammānupassino viharato dhammā pariññātā honti. 
+-As they do so they completely understand principles. 
++As they do so they completely understand mental contents. 
+@@ -1,2 +1,2 @@ sn47.38:4.3
+ PLI: Dhammānaṁ pariññātattā amataṁ sacchikataṁ hotī”ti. 
+-When principles are completely understood they realize freedom from death.” 
++When mental contents are completely understood they realize freedom from death.” 
 --- sujato/sutta/sn/sn47/sn47.39_translation-en-sujato.json
 +++ sujato/sutta/sn/sn47/sn47.39_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.39:1.1
@@ -68446,7 +68554,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.39:1.7
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.39:1.8
  PLI: Ayaṁ kho, bhikkhave, catunnaṁ satipaṭṭhānānaṁ bhāvanā”ti. 
 -This is the development of the four kinds of mindfulness meditation.” 
@@ -68489,6 +68597,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
  PLI: ajjhattabahiddhā vā citte cittānupassī viharāhi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -internally and externally—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
 +internally and externally—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn47.3:2.11
+ PLI: Ajjhattaṁ vā dhammesu … 
+-Or meditate observing an aspect of principles internally … 
++Or meditate observing an aspect of mental contents internally … 
 @@ -1,2 +1,2 @@ sn47.3:2.13
  PLI: ajjhattabahiddhā vā dhammesu dhammānupassī viharāhi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -internally and externally—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
@@ -68526,7 +68638,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.40:1.7
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.40:1.8
  PLI: Idaṁ vuccati, bhikkhave, satipaṭṭhānaṁ. 
 -This is called mindfulness meditation. 
@@ -68542,7 +68654,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.40:2.5
  PLI: samudayadhammānupassī dhammesu viharati, vayadhammānupassī dhammesu viharati, samudayavayadhammānupassī dhammesu viharati, ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles, they meditate observing the liability to originate, to vanish, and to originate and vanish—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles, they meditate observing the liability to arise, to pass away, and to arise and pass away—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents, they meditate observing the liability to arise, to pass away, and to arise and pass away—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.40:2.6
  PLI: Ayaṁ vuccati, bhikkhave, satipaṭṭhānabhāvanā. 
 -This is called the development of mindfulness meditation. 
@@ -68572,7 +68684,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.41:1.8
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.41:1.9
  PLI: Imesu, bhikkhave, catūsu satipaṭṭhānesu suppatiṭṭhitacittā viharatha. 
 -You should meditate with your mind firmly established in the four kinds of mindfulness meditation. 
@@ -68606,7 +68718,11 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.42:1.10
  PLI: Manasikārasamudayā dhammānaṁ samudayo; 
 -Principles originate from application of mind. 
-+Principles arise from application of mind. 
++Mental contents arise from application of mind. 
+@@ -1,2 +1,2 @@ sn47.42:1.11
+ PLI: manasikāranirodhā dhammānaṁ atthaṅgamo”ti. 
+-When application of mind disappears, principles disappear.” 
++When application of mind disappears, mental contents disappear.” 
 --- sujato/sutta/sn/sn47/sn47.43_translation-en-sujato.json
 +++ sujato/sutta/sn/sn47/sn47.43_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.43:1.2
@@ -68628,7 +68744,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.43:2.5
  PLI: dhammesu vā bhikkhu dhammānupassī vihareyya ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -or principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+or principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++or mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.43:2.6
  PLI: Ekāyanvāyaṁ maggo sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya, yadidaṁ—cattāro satipaṭṭhānā’ti. 
 -The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.’ 
@@ -68644,7 +68760,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.43:4.5
  PLI: dhammesu vā, bhante, bhikkhu dhammānupassī vihareyya ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -or principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+or principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++or mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.43:4.6
  PLI: Ekāyanvāyaṁ, bhante, maggo sattānaṁ visuddhiyā sokaparidevānaṁ samatikkamāya dukkhadomanassānaṁ atthaṅgamāya ñāyassa adhigamāya nibbānassa sacchikiriyāya, yadidaṁ—cattāro satipaṭṭhānā’ti. 
 -The four kinds of mindfulness meditation are the path to convergence. They are in order to purify sentient beings, to get past sorrow and crying, to make an end of pain and sadness, to discover the system, and to realize extinguishment.’ 
@@ -68670,7 +68786,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.44:1.7
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.44:1.8
  PLI: Evaṁ kho, bhikkhave, bhikkhu sato hoti. 
 -That’s how a mendicant is mindful. 
@@ -68696,7 +68812,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.45:2.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.45:2.6
  PLI: ‘Kusalarāsī’ti, bhikkhave, vadamāno ime cattāro satipaṭṭhāne sammā vadamāno vadeyya. 
 -Rightly speaking, you’d call these four kinds of mindfulness meditation a ‘heap of the skillful’. 
@@ -68730,7 +68846,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.46:3.5
  PLI: dhammesu dhammānupassī viharāhi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.46:3.6
  PLI: Yato kho tvaṁ, bhikkhu, sīlaṁ nissāya sīle patiṭṭhāya ime cattāro satipaṭṭhāne evaṁ bhāvessasi, tato tuyhaṁ, bhikkhu, yā ratti vā divaso vā āgamissati vuddhiyeva pāṭikaṅkhā kusalesu dhammesu, no parihānī”ti. 
 -When you develop the four kinds of mindfulness meditation in this way, depending on and grounded on ethics, you can expect growth, not decline, in skillful qualities, whether by day or by night.” 
@@ -68772,7 +68888,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.47:2.5
  PLI: dhammesu dhammānupassī viharāhi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.47:2.6
  PLI: Yato kho tvaṁ, bhikkhu, sīlaṁ nissāya sīle patiṭṭhāya ime cattāro satipaṭṭhāne evaṁ bhāvessasi, tato tuyhaṁ, bhikkhu, yā ratti vā divaso vā āgamissati vuddhiyeva pāṭikaṅkhā kusalesu dhammesu, no parihānī”ti …pe… 
 -When you develop the four kinds of mindfulness meditation in this way, depending on and grounded on ethics, you can expect growth, not decline, in skillful qualities, whether by day or by night.” … 
@@ -68794,7 +68910,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.48:2.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.48:2.6
  PLI: Ye, bhikkhave, anukampeyyātha, ye ca sotabbaṁ maññeyyuṁ mittā vā amaccā vā ñātī vā sālohitā vā, te vo, bhikkhave, imesaṁ catunnaṁ satipaṭṭhānānaṁ bhāvanāya samādapetabbā nivesetabbā patiṭṭhāpetabbā”ti. 
 -Those for whom you have sympathy, and those worth listening to—friends and colleagues, relatives and family—should be encouraged, supported, and established by you in the development of the four kinds of mindfulness meditation.” 
@@ -68816,7 +68932,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.49:2.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.49:2.6
  PLI: Imāsaṁ kho, bhikkhave, tissannaṁ vedanānaṁ pariññāya ime cattāro satipaṭṭhānā bhāvetabbā”ti. 
 -These four kinds of mindfulness meditation should be developed to completely understand these three feelings.” 
@@ -68846,7 +68962,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.4:2.6
  PLI: dhammesu dhammānupassino viharatha ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, dhammānaṁ yathābhūtaṁ ñāṇāya. 
 -Meditate observing an aspect of principles—keen, aware, at one, with minds that are clear, immersed and unified in samādhi, so as to truly know principles. 
-+Meditate observing an aspect of principles—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, so as to truly know principles. 
++Meditate observing an aspect of mental contents—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, so as to truly know mental contents. 
 @@ -1,2 +1,2 @@ sn47.4:3.1
  PLI: Yepi te, bhikkhave, bhikkhū sekhā appattamānasā anuttaraṁ yogakkhemaṁ patthayamānā viharanti, tepi kāye kāyānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, kāyassa pariññāya; 
 -Those mendicants who are trainees—who haven’t achieved their heart’s desire, but live aspiring to the supreme sanctuary from the yoke—also meditate observing an aspect of the body—keen, aware, at one, with minds that are clear, immersed and unified in samādhi, so as to fully understand the body. 
@@ -68862,7 +68978,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.4:3.4
  PLI: dhammesu dhammānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, dhammānaṁ pariññāya. 
 -They meditate observing an aspect of principles—keen, aware, at one, with minds that are clear, immersed and unified in samādhi, so as to fully understand principles. 
-+They meditate observing an aspect of principles—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, so as to fully understand principles. 
++They meditate observing an aspect of mental contents—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, so as to fully understand mental contents. 
 @@ -1,2 +1,2 @@ sn47.4:4.1
  PLI: Yepi te, bhikkhave, bhikkhū arahanto khīṇāsavā vusitavanto katakaraṇīyā ohitabhārā anuppattasadatthā parikkhīṇabhavasaṁyojanā sammadaññāvimuttā, tepi kāye kāyānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, kāyena visaṁyuttā; 
 -Those mendicants who are perfected—who have ended the defilements, completed the spiritual journey, done what had to be done, laid down the burden, achieved their own goal, utterly ended the fetter of continued existence, and are rightly freed through enlightenment—also meditate observing an aspect of the body—keen, aware, at one, with minds that are clear, immersed and unified in samādhi, detached from the body. 
@@ -68878,7 +68994,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.4:4.4
  PLI: dhammesu dhammānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, dhammehi visaṁyuttā. 
 -They meditate observing an aspect of principles—keen, aware, at one, with minds that are clear, immersed and unified in samādhi, detached from principles. 
-+They meditate observing an aspect of principles—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, detached from principles. 
++They meditate observing an aspect of mental contents—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, detached from mental contents. 
 @@ -1,2 +1,2 @@ sn47.4:5.1
  PLI: Yepi te, bhikkhave, bhikkhū navā acirapabbajitā adhunāgatā imaṁ dhammavinayaṁ, te vo, bhikkhave, bhikkhū imesaṁ catunnaṁ satipaṭṭhānānaṁ bhāvanāya samādapetabbā nivesetabbā patiṭṭhāpetabbā”ti. 
 -Those mendicants who are junior—recently gone forth, newly come to this teaching and training—should be encouraged, supported, and established by you in these four kinds of mindfulness meditation.” 
@@ -68900,7 +69016,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.50:2.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.50:2.6
  PLI: Imesaṁ kho, bhikkhave, tiṇṇannaṁ āsavānaṁ pahānāya ime cattāro satipaṭṭhānā bhāvetabbā”ti. 
 -These four kinds of mindfulness meditation should be developed to give up these three defilements.” 
@@ -68926,7 +69042,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.51-62:2.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.51-62:2.6
  PLI: Evaṁ kho, bhikkhave, bhikkhu cattāro satipaṭṭhāne bhāvento cattāro satipaṭṭhāne bahulīkaronto nibbānaninno hoti nibbānapoṇo nibbānapabbhāro”ti vitthāretabbaṁ. 
 -That’s how a mendicant who develops and cultivates the four kinds of mindfulness meditation slants, slopes, and inclines to extinguishment.” 
@@ -68952,7 +69068,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.5:2.7
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -They meditate observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.5:2.8
  PLI: ‘Kusalarāsī’ti, bhikkhave, vadamāno ime cattāro satipaṭṭhāne sammā vadamāno vadeyya. 
 -Rightly speaking, you’d call these four kinds of mindfulness meditation a ‘heap of the skillful’. 
@@ -69000,7 +69116,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.6:4.10
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.6:4.11
  PLI: ayaṁ, bhikkhave, bhikkhuno gocaro sako pettiko visayo”ti. 
 -This is a mendicant’s own territory, the domain of the fathers.” 
@@ -69044,7 +69160,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.7:4.10
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.7:4.11
  PLI: Ayaṁ, bhikkhave, bhikkhuno gocaro sako pettiko visayo”ti. 
 -This is a mendicant’s own territory, the domain of the fathers.” 
@@ -69072,11 +69188,11 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.8:3.9
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.8:3.10
  PLI: Tassa dhammesu dhammānupassino viharato cittaṁ na samādhiyati, upakkilesā na pahīyanti. 
 -As they meditate observing an aspect of principles, the mind doesn’t enter immersion, and the corruptions aren’t given up. 
-+As they meditate observing an aspect of principles, the mind doesn’t enter composure, and the corruptions aren’t given up. 
++As they meditate observing an aspect of mental contents, the mind doesn’t enter composure, and the corruptions aren’t given up. 
 @@ -1,2 +1,2 @@ sn47.8:4.1
  PLI: Sa kho so, bhikkhave, bālo abyatto akusalo bhikkhu na ceva lābhī hoti diṭṭheva dhamme sukhavihārānaṁ, na lābhī satisampajaññassa. 
 -That foolish, incompetent, unskillful mendicant doesn’t get blissful meditations in this very life, nor do they get mindfulness and situational awareness. 
@@ -69092,11 +69208,11 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.8:7.9
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.8:7.10
  PLI: Tassa dhammesu dhammānupassino viharato cittaṁ samādhiyati, upakkilesā pahīyanti. 
 -As they meditate observing an aspect of principles, their mind enters immersion, and their corruptions are given up. 
-+As they meditate observing an aspect of principles, their mind enters composure, and their corruptions are given up. 
++As they meditate observing an aspect of mental contents, their mind enters composure, and their corruptions are given up. 
 @@ -1,2 +1,2 @@ sn47.8:8.1
  PLI: Sa kho so, bhikkhave, paṇḍito byatto kusalo bhikkhu lābhī ceva hoti diṭṭheva dhamme sukhavihārānaṁ, lābhī hoti satisampajaññassa. 
 -That astute, competent, skillful mendicant gets blissful meditations in this very life, and they get mindfulness and situational awareness. 
@@ -69118,7 +69234,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.95-104:2.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.95-104:2.6
  PLI: Imesaṁ kho, bhikkhave, pañcannaṁ uddhambhāgiyānaṁ saṁyojanānaṁ abhiññāya pariññāya parikkhayāya pahānāya ime cattāro satipaṭṭhānā bhāvetabbā”ti. 
 -These four kinds of mindfulness meditation should be developed for the direct knowledge, complete understanding, finishing, and giving up of these five higher fetters.” 
@@ -69180,7 +69296,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn47.9:6.5
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.9:6.6
  PLI: Evaṁ kho, ānanda, bhikkhu attadīpo viharati attasaraṇo anaññasaraṇo, dhammadīpo dhammasaraṇo anaññasaraṇo. 
 -That’s how a mendicant lives with themselves as island and refuge, without other refuge; with the teachings as island and refuge, without other refuge. 
@@ -69214,7 +69330,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn48.10:3.6
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn48.10:3.7
  PLI: idaṁ vuccati, bhikkhave, satindriyaṁ. 
 -This is called the faculty of mindfulness. 
@@ -71334,7 +71450,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn52.10:2.7
  PLI: dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn52.10:2.8
  PLI: imesu kho me, āvuso, catūsu satipaṭṭhānesu suppatiṭṭhitacittassa viharato uppannā sārīrikā dukkhā vedanā cittaṁ na pariyādāya tiṭṭhantī”ti. 
 -I meditate with my mind firmly established in these four kinds of mindfulness meditation so that physical pain doesn’t occupy my mind.” 
@@ -71352,7 +71468,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn52.11:2.7
  PLI: dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn52.11:2.8
  PLI: imesaṁ khvāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā mahābhiññataṁ patto. 
 -I attained great direct knowledge by developing and cultivating these four kinds of mindfulness meditation. 
@@ -71447,6 +71563,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
  PLI: ajjhattabahiddhā citte samudayadhammānupassī viharati … ajjhattabahiddhā citte vayadhammānupassī viharati … ajjhattabahiddhā citte samudayavayadhammānupassī viharati ātāpī …pe… abhijjhādomanassaṁ. 
 -internally and externally, they meditate observing the liability to originate, to vanish, and to originate and vanish … 
 +internally and externally, they meditate observing the liability to arise, to pass away, and to arise and pass away … 
+@@ -1,2 +1,2 @@ sn52.1:9.1
+ PLI: Ajjhattaṁ dhammesu …pe… 
+-With respect to principles internally … 
++With respect to mental contents internally … 
 @@ -1,2 +1,2 @@ sn52.1:9.3
  PLI: ajjhattabahiddhā dhammesu samudayadhammānupassī viharati … ajjhattabahiddhā dhammesu vayadhammānupassī viharati … ajjhattabahiddhā dhammesu samudayavayadhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -internally and externally, they meditate observing the liability to originate, to vanish, and to originate and vanish … 
@@ -71515,6 +71635,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
  PLI: ajjhattabahiddhā kāye kāyānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -internally and externally—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
 +internally and externally—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn52.2:7.1
+ PLI: Ajjhattaṁ dhammesu …pe… 
+-They meditate observing an aspect of principles internally … 
++They meditate observing an aspect of mental contents internally … 
 @@ -1,2 +1,2 @@ sn52.2:7.3
  PLI: ajjhattabahiddhā dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -internally and externally—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
@@ -71540,7 +71664,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn52.3:2.6
  PLI: dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn52.3:2.7
  PLI: imesaṁ khvāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā mahābhiññataṁ patto. 
 -I attained great direct knowledge by developing and cultivating these four kinds of mindfulness meditation. 
@@ -71566,7 +71690,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn52.4:2.6
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn52.4:2.7
  PLI: sekhenāvuso sāriputta, bhikkhunā ime cattāro satipaṭṭhānā upasampajja vihātabbā”ti. 
 -A trainee mendicant should enter and remain in these four kinds of mindfulness meditation.” 
@@ -71588,7 +71712,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn52.5:1.9
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn52.5:1.10
  PLI: asekhenāvuso sāriputta, bhikkhunā ime cattāro satipaṭṭhānā upasampajja vihātabbā”ti. 
 -A mendicant who is an adept should enter and remain in these four kinds of mindfulness meditation.” 
@@ -71606,7 +71730,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn52.6:1.9
  PLI: dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn52.6:1.10
  PLI: imesaṁ khvāhaṁ, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā mahābhiññataṁ patto. 
 -I attained great direct knowledge by developing and cultivating these four kinds of mindfulness meditation. 
@@ -71636,7 +71760,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn52.7:2.6
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn52.7:2.7
  PLI: ime kho, āvuso, cattāro satipaṭṭhānā bhāvitā bahulīkatā taṇhākkhayāya saṁvattantī”ti. 
 -When these four kinds of mindfulness meditation are developed and cultivated they lead to the ending of craving.” 
@@ -71670,7 +71794,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn52.8:3.8
  PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn52.8:3.9
  PLI: Evaṁ kho, āvuso, bhikkhu cattāro satipaṭṭhāne bhāveti, cattāro satipaṭṭhāne bahulīkarotī”ti. 
 -That’s how a mendicant develops and cultivates the four kinds of mindfulness meditation.” 
@@ -71684,7 +71808,7 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn52.9:2.8
  PLI: dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
 -principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn52.9:2.9
  PLI: imesu khvāhaṁ, āvuso, catūsu satipaṭṭhānesu suppatiṭṭhitacitto etarahi bahulaṁ viharāmi. 
 -These days I usually meditate with my mind firmly established in these four kinds of mindfulness meditation. 
@@ -71866,15 +71990,19 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn54.10:8.5
  PLI: dhammesu dhammānupassī, ānanda, bhikkhu tasmiṁ samaye viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -At such a time a mendicant is meditating by observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+At such a time a bhikkhu is meditating by observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++At such a time a bhikkhu is meditating by observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn54.10:8.7
  PLI: Tasmātihānanda, dhammesu dhammānupassī bhikkhu tasmiṁ samaye viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -Therefore, at such a time a mendicant is meditating by observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+Therefore, at such a time a bhikkhu is meditating by observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++Therefore, at such a time a bhikkhu is meditating by observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn54.10:9.6
  PLI: Evameva kho, ānanda, bhikkhu kāye kāyānupassī viharantopi upahanateva pāpake akusale dhamme; 
 -In the same way, when a mendicant is meditating by observing an aspect of the body, 
 +In the same way, when a bhikkhu is meditating by observing an aspect of the body, 
+@@ -1,2 +1,2 @@ sn54.10:9.9
+ PLI: dhammesu dhammānupassī viharantopi upahanateva pāpake akusale dhamme”ti. 
+-or principles, they destroy bad, unskillful qualities.” 
++or mental contents, they destroy bad, unskillful qualities.” 
 --- sujato/sutta/sn/sn54/sn54.11_translation-en-sujato.json
 +++ sujato/sutta/sn/sn54/sn54.11_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn54.11:1.2
@@ -72052,11 +72180,11 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
 @@ -1,2 +1,2 @@ sn54.13:8.5
  PLI: dhammesu dhammānupassī, ānanda, bhikkhu tasmiṁ samaye viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -At such a time a mendicant is meditating by observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+At such a time a bhikkhu is meditating by observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++At such a time a bhikkhu is meditating by observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn54.13:8.7
  PLI: Tasmātihānanda, dhammesu dhammānupassī bhikkhu tasmiṁ samaye viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
 -Therefore, at such a time a mendicant is meditating by observing an aspect of principles—keen, aware, and mindful, rid of covetousness and displeasure for the world. 
-+Therefore, at such a time a bhikkhu is meditating by observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++Therefore, at such a time a bhikkhu is meditating by observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn54.13:9.1
  PLI: Evaṁ bhāvito kho, ānanda, ānāpānassatisamādhi evaṁ bahulīkato cattāro satipaṭṭhāne paripūreti. 
 -That’s how immersion due to mindfulness of breathing is developed and cultivated so as to fulfill the four kinds of mindfulness meditation. 
@@ -72117,6 +72245,10 @@ All rules — data/sujato/ → data/sujato.post/ — 17352 change(s), 3153 file(
  PLI: Yasmiṁ samaye, ānanda, bhikkhu vedanāsu …pe… 
 -Whenever a mendicant meditates by observing an aspect of feelings … 
 +Whenever a bhikkhu meditates by observing an aspect of feelings … 
+@@ -1,2 +1,2 @@ sn54.13:17.3
+ PLI: dhammesu dhammānupassī viharati—
+-principles, 
++mental contents, 
 @@ -1,2 +1,2 @@ sn54.13:17.4
  PLI: upaṭṭhitāssa tasmiṁ samaye bhikkhuno sati hoti asammuṭṭhā. 
 -their mindfulness is established and lucid. 

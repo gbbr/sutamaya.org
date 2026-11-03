@@ -13,7 +13,7 @@
 //   standalone terms   mendicant-bhikkhu, immersion-concentration, jhana-pali,
 //                      patisambhida-analytical-knowledge, dhamma-the-dhamma
 //   awareness          satipatthana-establishment-of-awareness, sampajanna-pali, sati-aware,
-//                      atapi-ardent
+//                      atapi-ardent, dhammanupassana-mental-contents
 //   breakthrough       abhisamaya-breakthrough
 //   arising / passing  samudaya-arising, vaya-passing-away, atthangama-disappearing,
 //                      udayabbaya-arising-passing-away
@@ -232,6 +232,23 @@ export const RULES = [
       ['keenness', 'ardor'],
       ['keenly', 'ardently'],
       ['keen', 'ardent'],
+    ],
+  },
+  {
+    id: 'dhammanupassana-mental-contents',
+    why: 'Bhikkhu Sujato renders the dhammā of the fourth satipaṭṭhāna (dhammesu dhammānupassī) as ' +
+      '"principles"; this app uses "mental contents". Covers the formula and its abbreviated lists ' +
+      '("feelings … mind … principles"), the section headings, "atthi dhammā", and SN 47.42’s ' +
+      'arising and disappearing of dhammā. Closed: "principles" renders dhamma in many other ' +
+      'senses — qualities, things, the teaching, a just king’s rule — which keep his word. The ' +
+      'two-word forms keep a heading in Title Case ("Observing Mental Contents") and drop the ' +
+      'article of "with respect to the principles", as "with respect to feelings" has none.',
+    mode: 'allow',
+    predicate: /dhammānupass|dhammesu|atthi dhammā|dhammānaṁ (samuday|atthaṅgam|pariññāt)/i,
+    forms: [
+      ['observing principles', 'observing mental contents'],
+      ['the principles', 'mental contents'],
+      ['principles', 'mental contents'],
     ],
   },
   // ── Breakthrough ────────────────────────────────────────────────────────────
@@ -1106,8 +1123,9 @@ export const RULES = [
 
   // ·· a blurb that names the renderings ··
   // SN 47's collection blurb is Bhikkhu Sujato writing about his terms rather than in them: it names
-  // the other renderings of satipaṭṭhāna and sampajañña, and glosses sampajañña in plain English.
-  // The awareness rules rewrite those words as if they were the terms.
+  // the other renderings of satipaṭṭhāna and sampajañña, glosses sampajañña in plain English, and
+  // explains his "principles" for the fourth satipaṭṭhāna. The awareness rules rewrite those words
+  // as if they were the terms.
   {
     id: 'sn47-blurb-alternative-names',
     kind: 'segment',
@@ -1115,10 +1133,11 @@ export const RULES = [
       'mindfulness”" names the renderings readers know from elsewhere, which sati-aware would turn ' +
       'into this app’s own. Its “situational awareness” (sampajañña, …) would read “sampajañña” ' +
       '(sampajañña, …), so the Pali stands once; and its plain-English gloss "a broad awareness and ' +
-      'understanding" keeps its "awareness".',
+      'understanding" keeps its "awareness". Its fourth satipaṭṭhāna reads "mental contents", as ' +
+      'dhammanupassana-mental-contents renders it, and the sentence explaining "principles" goes.',
     segment: 'sn-blurbs:sn47',
     from: 'The “Linked Discourses on the Establishment of Awareness” contains 104 discourses on the four establishments of awareness (<i lang=\'pi\' translate=\'no\'>satipaṭṭhāna</i>, otherwise known as the “foundations of awareness” or “establishments of awareness”). These are the body, feelings, mind, and principles. The last of these is translated in various ways, but a close reading of the texts in this chapter shows that it originally referred to the “principles” of causality underlying the process of meditation itself. These discourses on this fundamental topic are much less known than the longer “Discourse on the Establishment of Awareness” found in versions in MN 10 and DN 22; however, they are historically earlier than that late compilation. Where MN 10 emphasizes insight meditation, in this collection we frequently find awareness closely connected to jhāna, as it is the factor of the path that leads directly to “right composure”. Insight is mentioned only rarely. The root meaning of the term awareness (<i lang=\'pi\' translate=\'no\'>sati</i>) is “memory”, and when used in meditation it refers to not “forgetting” one’s meditation, but keeping focus on the breath or other theme of meditation. This collection presents a range of perspectives on the establishment of awareness; one of its most memorable features is a series of similes or parables illustrating the practice. The partner of awareness (<i lang=\'pi\' translate=\'no\'>sati</i>) is “sampajañña” (<i lang=\'pi\' translate=\'no\'>sampajañña</i>, sometimes rendered as “clear comprehension”), which refers to keeping a broad sampajañña and understanding especially in daily activities.',
-    to: 'The “Linked Discourses on the Establishment of Awareness” contains 104 discourses on the four establishments of awareness (<i lang=\'pi\' translate=\'no\'>satipaṭṭhāna</i>, otherwise known as the “foundations of mindfulness” or “establishments of mindfulness”). These are the body, feelings, mind, and principles. The last of these is translated in various ways, but a close reading of the texts in this chapter shows that it originally referred to the “principles” of causality underlying the process of meditation itself. These discourses on this fundamental topic are much less known than the longer “Discourse on the Establishment of Awareness” found in versions in MN 10 and DN 22; however, they are historically earlier than that late compilation. Where MN 10 emphasizes insight meditation, in this collection we frequently find awareness closely connected to jhāna, as it is the factor of the path that leads directly to “right composure”. Insight is mentioned only rarely. The root meaning of the term awareness (<i lang=\'pi\' translate=\'no\'>sati</i>) is “memory”, and when used in meditation it refers to not “forgetting” one’s meditation, but keeping focus on the breath or other theme of meditation. This collection presents a range of perspectives on the establishment of awareness; one of its most memorable features is a series of similes or parables illustrating the practice. The partner of awareness (<i lang=\'pi\' translate=\'no\'>sati</i>) is <i lang=\'pi\' translate=\'no\'>sampajañña</i> (sometimes rendered as “clear comprehension”), which refers to keeping a broad awareness and understanding especially in daily activities.',
+    to: 'The “Linked Discourses on the Establishment of Awareness” contains 104 discourses on the four establishments of awareness (<i lang=\'pi\' translate=\'no\'>satipaṭṭhāna</i>, otherwise known as the “foundations of mindfulness” or “establishments of mindfulness”). These are the body, feelings, mind, and mental contents. These discourses on this fundamental topic are much less known than the longer “Discourse on the Establishment of Awareness” found in versions in MN 10 and DN 22; however, they are historically earlier than that late compilation. Where MN 10 emphasizes insight meditation, in this collection we frequently find awareness closely connected to jhāna, as it is the factor of the path that leads directly to “right composure”. Insight is mentioned only rarely. The root meaning of the term awareness (<i lang=\'pi\' translate=\'no\'>sati</i>) is “memory”, and when used in meditation it refers to not “forgetting” one’s meditation, but keeping focus on the breath or other theme of meditation. This collection presents a range of perspectives on the establishment of awareness; one of its most memorable features is a series of similes or parables illustrating the practice. The partner of awareness (<i lang=\'pi\' translate=\'no\'>sati</i>) is <i lang=\'pi\' translate=\'no\'>sampajañña</i> (sometimes rendered as “clear comprehension”), which refers to keeping a broad awareness and understanding especially in daily activities.',
   },
 
   // ── Blurb openers ───────────────────────────────────────────────────────────

@@ -181,16 +181,16 @@ Rule: vaya-passing-away — 132 change(s), 44 file(s)
 +With respect to the mind, they meditate observing the liability to arise, to pass away, and to arise and pass away. 
 @@ -1,2 +1,2 @@ dn22:13.10
  PLI: Samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
--They meditate observing the principles as liable to arise, as liable to fall, and as liable to both arise and vanish. 
-+They meditate observing the principles as liable to arise, as liable to fall, and as liable to both arise and pass away. 
+-They meditate observing mental contents as liable to arise, as liable to fall, and as liable to both arise and vanish. 
++They meditate observing mental contents as liable to arise, as liable to fall, and as liable to both arise and pass away. 
 @@ -1,2 +1,2 @@ dn22:16.11
  PLI: Samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
--They meditate observing, with respect to the principles, the liability to arise, to vanish, and to arise and vanish. 
-+They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
+-They meditate observing, with respect to mental contents, the liability to arise, to vanish, and to arise and vanish. 
++They meditate observing, with respect to mental contents, the liability to arise, to pass away, and to arise and pass away. 
 @@ -1,2 +1,2 @@ dn22:21.39
  PLI: Samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
--They meditate observing, with respect to the principles, the liability to arise, to vanish, and to arise and vanish. 
-+They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
+-They meditate observing, with respect to mental contents, the liability to arise, to vanish, and to arise and vanish. 
++They meditate observing, with respect to mental contents, the liability to arise, to pass away, and to arise and pass away. 
 --- sujato/sutta/kn/snp/vagga3/snp3.12_translation-en-sujato.json
 +++ sujato/sutta/kn/snp/vagga3/snp3.12_translation-en-sujato.json
 @@ -1,2 +1,2 @@ snp3.12:26.3
@@ -221,16 +221,16 @@ Rule: vaya-passing-away — 132 change(s), 44 file(s)
 +With respect to the mind, they meditate observing the liability to arise, to pass away, and to arise and pass away. 
 @@ -1,2 +1,2 @@ mn10:37.2
  PLI: samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
--They meditate observing, with respect to the principles, the liability to arise, to vanish, and to arise and vanish. 
-+They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
+-They meditate observing, with respect to mental contents, the liability to arise, to vanish, and to arise and vanish. 
++They meditate observing, with respect to mental contents, the liability to arise, to pass away, and to arise and pass away. 
 @@ -1,2 +1,2 @@ mn10:43.2
  PLI: samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
--They meditate observing, with respect to the principles, the liability to arise, to vanish, and to arise and vanish. 
-+They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
+-They meditate observing, with respect to mental contents, the liability to arise, to vanish, and to arise and vanish. 
++They meditate observing, with respect to mental contents, the liability to arise, to pass away, and to arise and pass away. 
 @@ -1,2 +1,2 @@ mn10:45.2
  PLI: samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
--They meditate observing, with respect to the principles, the liability to arise, to vanish, and to arise and vanish. 
-+They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
+-They meditate observing, with respect to mental contents, the liability to arise, to vanish, and to arise and vanish. 
++They meditate observing, with respect to mental contents, the liability to arise, to pass away, and to arise and pass away. 
 --- sujato/sutta/mn/mn148_translation-en-sujato.json
 +++ sujato/sutta/mn/mn148_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn148:10.2
@@ -587,8 +587,8 @@ Rule: vaya-passing-away — 132 change(s), 44 file(s)
 +It’s when a bhikkhu, with respect to the body, meditates observing the liability to arise, to pass away, and to arise and pass away—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 @@ -1,2 +1,2 @@ sn47.40:2.5
  PLI: samudayadhammānupassī dhammesu viharati, vayadhammānupassī dhammesu viharati, samudayavayadhammānupassī dhammesu viharati, ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
--principles, they meditate observing the liability to arise, to vanish, and to arise and vanish—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
-+principles, they meditate observing the liability to arise, to pass away, and to arise and pass away—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+-mental contents, they meditate observing the liability to arise, to vanish, and to arise and vanish—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents, they meditate observing the liability to arise, to pass away, and to arise and pass away—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
 --- sujato/sutta/sn/sn52/sn52.1_translation-en-sujato.json
 +++ sujato/sutta/sn/sn52/sn52.1_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn52.1:3.1
