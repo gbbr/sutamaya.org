@@ -335,6 +335,16 @@ describe('the shipped rules, one example each', () => {
     ['sampajanna-pali', 'sn47.2:3.2', 'sujato/sutta', 'a mendicant acts with situational awareness when going out', 'a bhikkhu cultivates sampajañña when going out'],
     // Denied: iti before a quoted perception, the formless attainments' "aware that …".
     ['sampajanna-pali', 'an1.450:1.1', 'sujato/sutta', 'aware that ‘space is infinite’', 'aware that ‘space is infinite’'],
+    // The fourth satipaṭṭhāna's dhammā, in the formula.
+    ['dhammanupassana-mental-contents', 'an3.156:5.5', 'sujato/sutta', 'They meditate observing an aspect of principles', 'They meditate observing an aspect of mental contents'],
+    // A section heading, kept in Title Case by the two-word form.
+    ['dhammanupassana-mental-contents', 'mn10:36.0.1', 'sujato/sutta', '4. Observing Principles', '4. Observing Mental Contents'],
+    // The article dropped, as in "with respect to feelings".
+    ['dhammanupassana-mental-contents', 'mn10:37.2', 'sujato/sutta', 'They meditate observing, with respect to the principles,', 'They meditate observing, with respect to mental contents,'],
+    // Opening a sentence.
+    ['dhammanupassana-mental-contents', 'sn47.42:1.10', 'sujato/sutta', 'Principles originate from application of mind.', 'Mental contents arise from application of mind.'],
+    // Denied: dhammavicaya, the awakening factor.
+    ['dhammanupassana-mental-contents', 'an1.425:1.1', 'sujato/sutta', 'the awakening factor of investigation of principles', 'the awakening factor of investigation of principles'],
     ['samudaya-arising', 'sn56.11:4.3', 'sujato/sutta', 'the noble truth of the origin of suffering', 'the noble truth of the arising of suffering'],
     // Denied: aggañña, how the world began.
     ['samudaya-arising', 'dn24:2.14.1', 'sujato/sutta', 'I understand the origin of the world.', 'I understand the origin of the world.'],

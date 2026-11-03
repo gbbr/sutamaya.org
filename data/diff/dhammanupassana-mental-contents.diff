@@ -1,0 +1,896 @@
+Rule: dhammanupassana-mental-contents — 179 change(s), 89 file(s)
+
+--- sujato/sutta/an/an1/an1.394-574_translation-en-sujato.json
++++ sujato/sutta/an/an1/an1.394-574_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an1.405:1.1
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world, even for the time of a finger-snap …” 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world, even for the time of a finger-snap …” 
+--- sujato/sutta/an/an3/an3.156-162_translation-en-sujato.json
++++ sujato/sutta/an/an3/an3.156-162_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an3.156:5.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
+-They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/an/an4/an4.274_translation-en-sujato.json
++++ sujato/sutta/an/an4/an4.274_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an4.274:1.4
+ PLI: vedanāsu …pe… citte …pe… dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
+-They meditate observing an aspect of feelings … mind … principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of feelings … mind … mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/an/an6/an6.118_translation-en-sujato.json
++++ sujato/sutta/an/an6/an6.118_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an6.118:0.3
+ PLI: Dhammānupassīsutta 
+-Observing Principles, Etc. 
++Observing Mental Contents, Etc. 
+@@ -1,2 +1,2 @@ an6.118:1.10
+ PLI: ajjhattaṁ dhammesu …pe… 
+-principles internally … 
++mental contents internally … 
+@@ -1,2 +1,2 @@ an6.118:1.11
+ PLI: bahiddhā dhammesu …pe… 
+-principles externally … 
++mental contents externally … 
+@@ -1,2 +1,2 @@ an6.118:1.12
+ PLI: ajjhattabahiddhā dhammesu dhammānupassī viharituṁ. 
+-principles internally and externally. 
++mental contents internally and externally. 
+@@ -1,2 +1,2 @@ an6.118:1.15
+ PLI: Ime kho, bhikkhave, cha dhamme pahāya bhabbo ajjhattabahiddhā dhammesu dhammānupassī viharitun”ti. 
+-After giving up these six qualities you can meditate observing an aspect of principles internally and externally.” 
++After giving up these six qualities you can meditate observing an aspect of mental contents internally and externally.” 
+--- sujato/sutta/an/an8/an8.63_translation-en-sujato.json
++++ sujato/sutta/an/an8/an8.63_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an8.63:8.4
+ PLI: dhammesu dhammānupassī viharissāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassan’ti. 
+-‘I’ll meditate on an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world.’ 
++‘I’ll meditate on an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world.’ 
+--- sujato/sutta/an/an9/an9.63_translation-en-sujato.json
++++ sujato/sutta/an/an9/an9.63_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an9.63:2.6
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
+-They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/an/an9/an9.64_translation-en-sujato.json
++++ sujato/sutta/an/an9/an9.64_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an9.64:2.6
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
+-They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/an/an9/an9.72_translation-en-sujato.json
++++ sujato/sutta/an/an9/an9.72_translation-en-sujato.json
+@@ -1,2 +1,2 @@ an9.72:3.6
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
+-They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/dn/dn16_translation-en-sujato.json
++++ sujato/sutta/dn/dn16_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn16:2.12.8
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ dn16:2.26.6
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/dn/dn18_translation-en-sujato.json
++++ sujato/sutta/dn/dn18_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn18:26.13
+ PLI: Ajjhattaṁ dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
+-They meditate observing an aspect of principles internally—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents internally—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ dn18:26.15
+ PLI: So tattha sammā samāhito sammā vippasanno bahiddhā paradhammesu ñāṇadassanaṁ abhinibbatteti. 
+-Then they give rise to knowledge and vision of other people’s principles externally. 
++Then they give rise to knowledge and vision of other people’s mental contents externally. 
+--- sujato/sutta/dn/dn22_translation-en-sujato.json
++++ sujato/sutta/dn/dn22_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn22:1.12
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
+-They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ dn22:13.0.1
+ PLI: 4. Dhammānupassanā 
+-4. Observing Principles 
++4. Observing Mental Contents 
+@@ -1,2 +1,2 @@ dn22:13.1
+ PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati? 
+-And how does a bhikkhu meditate observing an aspect of principles? 
++And how does a bhikkhu meditate observing an aspect of mental contents? 
+@@ -1,2 +1,2 @@ dn22:13.2
+ PLI: Idha, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu nīvaraṇesu. 
+-It’s when a bhikkhu meditates by observing an aspect of principles with respect to the five hindrances. 
++It’s when a bhikkhu meditates by observing an aspect of mental contents with respect to the five hindrances. 
+@@ -1,2 +1,2 @@ dn22:13.3
+ PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu nīvaraṇesu? 
+-And how does a bhikkhu meditate observing an aspect of principles with respect to the five hindrances? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the five hindrances? 
+@@ -1,2 +1,2 @@ dn22:13.9
+ PLI: Iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati. 
+-And so they meditate observing an aspect of principles internally, externally, and both internally and externally. 
++And so they meditate observing an aspect of mental contents internally, externally, and both internally and externally. 
+@@ -1,2 +1,2 @@ dn22:13.10
+ PLI: Samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
+-They meditate observing the principles as liable to arise, as liable to fall, and as liable to both arise and pass away. 
++They meditate observing mental contents as liable to arise, as liable to fall, and as liable to both arise and pass away. 
+@@ -1,2 +1,2 @@ dn22:13.11
+ PLI: ‘Atthi dhammā’ti vā panassa sati paccupaṭṭhitā hoti yāvadeva ñāṇamattāya paṭissatimattāya, anissito ca viharati, na ca kiñci loke upādiyati. 
+-Or awareness is established that principles exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
++Or awareness is established that mental contents exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
+@@ -1,2 +1,2 @@ dn22:13.12
+ PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu nīvaraṇesu. 
+-That’s how a bhikkhu meditates by observing an aspect of principles with respect to the five hindrances. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the five hindrances. 
+@@ -1,2 +1,2 @@ dn22:14.1
+ PLI: Puna caparaṁ, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu upādānakkhandhesu. 
+-Furthermore, a bhikkhu meditates by observing an aspect of principles with respect to the five grasping aggregates. 
++Furthermore, a bhikkhu meditates by observing an aspect of mental contents with respect to the five grasping aggregates. 
+@@ -1,2 +1,2 @@ dn22:14.2
+ PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu upādānakkhandhesu? 
+-And how does a bhikkhu meditate observing an aspect of principles with respect to the five grasping aggregates? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the five grasping aggregates? 
+@@ -1,2 +1,2 @@ dn22:14.9
+ PLI: iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati. 
+-And so they meditate observing an aspect of principles internally … 
++And so they meditate observing an aspect of mental contents internally … 
+@@ -1,2 +1,2 @@ dn22:14.12
+ PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu upādānakkhandhesu. 
+-That’s how a bhikkhu meditates by observing an aspect of principles with respect to the five grasping aggregates. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the five grasping aggregates. 
+@@ -1,2 +1,2 @@ dn22:15.1
+ PLI: Puna caparaṁ, bhikkhave, bhikkhu dhammesu dhammānupassī viharati chasu ajjhattikabāhiresu āyatanesu. 
+-Furthermore, a bhikkhu meditates by observing an aspect of principles with respect to the six interior and exterior sense fields. 
++Furthermore, a bhikkhu meditates by observing an aspect of mental contents with respect to the six interior and exterior sense fields. 
+@@ -1,2 +1,2 @@ dn22:15.2
+ PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati chasu ajjhattikabāhiresu āyatanesu? 
+-And how does a bhikkhu meditate observing an aspect of principles with respect to the six interior and exterior sense fields? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the six interior and exterior sense fields? 
+@@ -1,2 +1,2 @@ dn22:15.9
+ PLI: Iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati. 
+-And so they meditate observing an aspect of principles internally … 
++And so they meditate observing an aspect of mental contents internally … 
+@@ -1,2 +1,2 @@ dn22:15.12
+ PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati chasu ajjhattikabāhiresu āyatanesu. 
+-That’s how a bhikkhu meditates by observing an aspect of principles with respect to the six interior and exterior sense fields. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the six interior and exterior sense fields. 
+@@ -1,2 +1,2 @@ dn22:16.1
+ PLI: Puna caparaṁ, bhikkhave, bhikkhu dhammesu dhammānupassī viharati sattasu bojjhaṅgesu. 
+-Furthermore, a bhikkhu meditates by observing an aspect of principles with respect to the seven awakening factors. 
++Furthermore, a bhikkhu meditates by observing an aspect of mental contents with respect to the seven awakening factors. 
+@@ -1,2 +1,2 @@ dn22:16.2
+ PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati sattasu bojjhaṅgesu? 
+-And how does a bhikkhu meditate observing an aspect of principles with respect to the seven awakening factors? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the seven awakening factors? 
+@@ -1,2 +1,2 @@ dn22:16.10
+ PLI: Iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati. 
+-And so they meditate observing an aspect of principles internally, externally, and both internally and externally. 
++And so they meditate observing an aspect of mental contents internally, externally, and both internally and externally. 
+@@ -1,2 +1,2 @@ dn22:16.11
+ PLI: Samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
+-They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
++They meditate observing, with respect to mental contents, the liability to arise, to pass away, and to arise and pass away. 
+@@ -1,2 +1,2 @@ dn22:16.12
+ PLI: ‘Atthi dhammā’ti vā panassa sati paccupaṭṭhitā hoti yāvadeva ñāṇamattāya paṭissatimattāya, anissito ca viharati, na ca kiñci loke upādiyati. 
+-Or awareness is established that principles exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
++Or awareness is established that mental contents exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
+@@ -1,2 +1,2 @@ dn22:16.13
+ PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati sattasu bojjhaṅgesu. 
+-That’s how a bhikkhu meditates by observing an aspect of principles with respect to the seven awakening factors. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the seven awakening factors. 
+@@ -1,2 +1,2 @@ dn22:17.1
+ PLI: Puna caparaṁ, bhikkhave, bhikkhu dhammesu dhammānupassī viharati catūsu ariyasaccesu. 
+-Furthermore, a bhikkhu meditates by observing an aspect of principles with respect to the four noble truths. 
++Furthermore, a bhikkhu meditates by observing an aspect of mental contents with respect to the four noble truths. 
+@@ -1,2 +1,2 @@ dn22:17.2
+ PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati catūsu ariyasaccesu? 
+-And how does a bhikkhu meditate observing an aspect of principles with respect to the four noble truths? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the four noble truths? 
+@@ -1,2 +1,2 @@ dn22:21.29
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
+-They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ dn22:21.38
+ PLI: Iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati. 
+-And so they meditate observing an aspect of principles internally, externally, and both internally and externally. 
++And so they meditate observing an aspect of mental contents internally, externally, and both internally and externally. 
+@@ -1,2 +1,2 @@ dn22:21.39
+ PLI: Samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
+-They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
++They meditate observing, with respect to mental contents, the liability to arise, to pass away, and to arise and pass away. 
+@@ -1,2 +1,2 @@ dn22:21.40
+ PLI: ‘Atthi dhammā’ti vā panassa sati paccupaṭṭhitā hoti yāvadeva ñāṇamattāya paṭissatimattāya anissito ca viharati, na ca kiñci loke upādiyati. 
+-Or awareness is established that principles exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
++Or awareness is established that mental contents exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
+@@ -1,2 +1,2 @@ dn22:21.41
+ PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati catūsu ariyasaccesu. 
+-That’s how a bhikkhu meditates by observing an aspect of principles with respect to the four noble truths. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the four noble truths. 
+--- sujato/sutta/dn/dn26_translation-en-sujato.json
++++ sujato/sutta/dn/dn26_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn26:1.12
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ dn26:27.6
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/dn/dn29_translation-en-sujato.json
++++ sujato/sutta/dn/dn29_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn29:40.6
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/dn/dn33_translation-en-sujato.json
++++ sujato/sutta/dn/dn33_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn33:1.11.8
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/dn/dn34_translation-en-sujato.json
++++ sujato/sutta/dn/dn34_translation-en-sujato.json
+@@ -1,2 +1,2 @@ dn34:1.5.11
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/mn/mn10_translation-en-sujato.json
++++ sujato/sutta/mn/mn10_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn10:3.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ mn10:36.0.1
+ PLI: 4. Dhammānupassanā 
+-4. Observing Principles 
++4. Observing Mental Contents 
+@@ -1,2 +1,2 @@ mn10:36.1
+ PLI: Kathañca, bhikkhave, bhikkhu dhammesu dhammānupassī viharati? 
+-And how does a bhikkhu meditate observing an aspect of principles? 
++And how does a bhikkhu meditate observing an aspect of mental contents? 
+@@ -1,2 +1,2 @@ mn10:36.2
+ PLI: Idha, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu nīvaraṇesu. 
+-It’s when a bhikkhu meditates by observing an aspect of principles with respect to the five hindrances. 
++It’s when a bhikkhu meditates by observing an aspect of mental contents with respect to the five hindrances. 
+@@ -1,2 +1,2 @@ mn10:36.3
+ PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu nīvaraṇesu? 
+-And how does a bhikkhu meditate observing an aspect of principles with respect to the five hindrances? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the five hindrances? 
+@@ -1,2 +1,2 @@ mn10:37.1
+ PLI: Iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati; 
+-And so they meditate observing an aspect of principles internally, externally, and both internally and externally. 
++And so they meditate observing an aspect of mental contents internally, externally, and both internally and externally. 
+@@ -1,2 +1,2 @@ mn10:37.2
+ PLI: samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
+-They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
++They meditate observing, with respect to mental contents, the liability to arise, to pass away, and to arise and pass away. 
+@@ -1,2 +1,2 @@ mn10:37.3
+ PLI: ‘Atthi dhammā’ti vā panassa sati paccupaṭṭhitā hoti. Yāvadeva ñāṇamattāya paṭissatimattāya anissito ca viharati, na ca kiñci loke upādiyati. 
+-Or awareness is established that principles exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
++Or awareness is established that mental contents exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
+@@ -1,2 +1,2 @@ mn10:37.4
+ PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu nīvaraṇesu. 
+-That’s how a bhikkhu meditates by observing an aspect of principles with respect to the five hindrances. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the five hindrances. 
+@@ -1,2 +1,2 @@ mn10:38.1
+ PLI: Puna caparaṁ, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu upādānakkhandhesu. 
+-Furthermore, a bhikkhu meditates by observing an aspect of principles with respect to the five grasping aggregates. 
++Furthermore, a bhikkhu meditates by observing an aspect of mental contents with respect to the five grasping aggregates. 
+@@ -1,2 +1,2 @@ mn10:38.2
+ PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu upādānakkhandhesu? 
+-And how does a bhikkhu meditate observing an aspect of principles with respect to the five grasping aggregates? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the five grasping aggregates? 
+@@ -1,2 +1,2 @@ mn10:39.1
+ PLI: iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati; 
+-And so they meditate observing an aspect of principles internally … 
++And so they meditate observing an aspect of mental contents internally … 
+@@ -1,2 +1,2 @@ mn10:39.4
+ PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati pañcasu upādānakkhandhesu. 
+-That’s how a bhikkhu meditates by observing an aspect of principles with respect to the five grasping aggregates. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the five grasping aggregates. 
+@@ -1,2 +1,2 @@ mn10:40.1
+ PLI: Puna caparaṁ, bhikkhave, bhikkhu dhammesu dhammānupassī viharati chasu ajjhattikabāhiresu āyatanesu. 
+-Furthermore, a bhikkhu meditates by observing an aspect of principles with respect to the six interior and exterior sense fields. 
++Furthermore, a bhikkhu meditates by observing an aspect of mental contents with respect to the six interior and exterior sense fields. 
+@@ -1,2 +1,2 @@ mn10:40.2
+ PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati chasu ajjhattikabāhiresu āyatanesu? 
+-And how does a bhikkhu meditate observing an aspect of principles with respect to the six interior and exterior sense fields? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the six interior and exterior sense fields? 
+@@ -1,2 +1,2 @@ mn10:41.1
+ PLI: Iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati; 
+-And so they meditate observing an aspect of principles internally … 
++And so they meditate observing an aspect of mental contents internally … 
+@@ -1,2 +1,2 @@ mn10:41.4
+ PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati chasu ajjhattikabāhiresu āyatanesu. 
+-That’s how a bhikkhu meditates by observing an aspect of principles with respect to the six interior and exterior sense fields. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the six interior and exterior sense fields. 
+@@ -1,2 +1,2 @@ mn10:42.1
+ PLI: Puna caparaṁ, bhikkhave, bhikkhu dhammesu dhammānupassī viharati sattasu bojjhaṅgesu. 
+-Furthermore, a bhikkhu meditates by observing an aspect of principles with respect to the seven awakening factors. 
++Furthermore, a bhikkhu meditates by observing an aspect of mental contents with respect to the seven awakening factors. 
+@@ -1,2 +1,2 @@ mn10:42.2
+ PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati sattasu bojjhaṅgesu? 
+-And how does a bhikkhu meditate observing an aspect of principles with respect to the seven awakening factors? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the seven awakening factors? 
+@@ -1,2 +1,2 @@ mn10:43.1
+ PLI: Iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati; 
+-And so they meditate observing an aspect of principles internally, externally, and both internally and externally. 
++And so they meditate observing an aspect of mental contents internally, externally, and both internally and externally. 
+@@ -1,2 +1,2 @@ mn10:43.2
+ PLI: samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
+-They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
++They meditate observing, with respect to mental contents, the liability to arise, to pass away, and to arise and pass away. 
+@@ -1,2 +1,2 @@ mn10:43.3
+ PLI: ‘Atthi dhammā’ti vā panassa sati paccupaṭṭhitā hoti. Yāvadeva ñāṇamattāya paṭissatimattāya anissito ca viharati, na ca kiñci loke upādiyati. 
+-Or awareness is established that principles exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
++Or awareness is established that mental contents exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
+@@ -1,2 +1,2 @@ mn10:43.4
+ PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati sattasu bojjhaṅgesu. 
+-That’s how a bhikkhu meditates by observing an aspect of principles with respect to the seven awakening factors. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the seven awakening factors. 
+@@ -1,2 +1,2 @@ mn10:44.1
+ PLI: Puna caparaṁ, bhikkhave, bhikkhu dhammesu dhammānupassī viharati catūsu ariyasaccesu. 
+-Furthermore, a bhikkhu meditates by observing an aspect of principles with respect to the four noble truths. 
++Furthermore, a bhikkhu meditates by observing an aspect of mental contents with respect to the four noble truths. 
+@@ -1,2 +1,2 @@ mn10:44.2
+ PLI: Kathañca pana, bhikkhave, bhikkhu dhammesu dhammānupassī viharati catūsu ariyasaccesu? 
+-And how does a bhikkhu meditate observing an aspect of principles with respect to the four noble truths? 
++And how does a bhikkhu meditate observing an aspect of mental contents with respect to the four noble truths? 
+@@ -1,2 +1,2 @@ mn10:45.1
+ PLI: Iti ajjhattaṁ vā dhammesu dhammānupassī viharati, bahiddhā vā dhammesu dhammānupassī viharati, ajjhattabahiddhā vā dhammesu dhammānupassī viharati; 
+-And so they meditate observing an aspect of principles internally, externally, and both internally and externally. 
++And so they meditate observing an aspect of mental contents internally, externally, and both internally and externally. 
+@@ -1,2 +1,2 @@ mn10:45.2
+ PLI: samudayadhammānupassī vā dhammesu viharati, vayadhammānupassī vā dhammesu viharati, samudayavayadhammānupassī vā dhammesu viharati. 
+-They meditate observing, with respect to the principles, the liability to arise, to pass away, and to arise and pass away. 
++They meditate observing, with respect to mental contents, the liability to arise, to pass away, and to arise and pass away. 
+@@ -1,2 +1,2 @@ mn10:45.3
+ PLI: ‘Atthi dhammā’ti vā panassa sati paccupaṭṭhitā hoti. Yāvadeva ñāṇamattāya paṭissatimattāya anissito ca viharati, na ca kiñci loke upādiyati. 
+-Or awareness is established that principles exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
++Or awareness is established that mental contents exist, to the extent necessary for knowledge and awareness. They meditate independent, not grasping at anything in the world. 
+@@ -1,2 +1,2 @@ mn10:45.4
+ PLI: Evampi kho, bhikkhave, bhikkhu dhammesu dhammānupassī viharati catūsu ariyasaccesu. 
+-That’s how a bhikkhu meditates by observing an aspect of principles with respect to the four noble truths. 
++That’s how a bhikkhu meditates by observing an aspect of mental contents with respect to the four noble truths. 
+--- sujato/sutta/mn/mn118_translation-en-sujato.json
++++ sujato/sutta/mn/mn118_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn118:27.5
+ PLI: dhammesu dhammānupassī, bhikkhave, tasmiṁ samaye bhikkhu viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
+-at that time they meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++at that time they meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ mn118:27.7
+ PLI: Tasmātiha, bhikkhave, dhammesu dhammānupassī tasmiṁ samaye bhikkhu viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
+-That’s why at that time a bhikkhu is meditating by observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++That’s why at that time a bhikkhu is meditating by observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ mn118:38.2
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ, upaṭṭhitāssa tasmiṁ samaye sati hoti asammuṭṭhā. 
+-principles, at that time their awareness is established and lucid. 
++mental contents, at that time their awareness is established and lucid. 
+--- sujato/sutta/mn/mn125_translation-en-sujato.json
++++ sujato/sutta/mn/mn125_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn125:23.3
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ mn125:24.5
+ PLI: dhammesu dhammānupassī viharāhi, mā ca kāmūpasaṁhitaṁ vitakkaṁ vitakkesī’ti. 
+-principles, but don’t think thoughts connected with sensual pleasures.’ 
++mental contents, but don’t think thoughts connected with sensual pleasures.’ 
+--- sujato/sutta/mn/mn141_translation-en-sujato.json
++++ sujato/sutta/mn/mn141_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn141:30.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ, 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/mn/mn51_translation-en-sujato.json
++++ sujato/sutta/mn/mn51_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn51:3.13
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassan”ti. 
+-They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world.” 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world.” 
+@@ -1,2 +1,2 @@ mn51:4.8
+ PLI: dhammesu dhammānupassino viharāma ātāpino sampajānā satimanto, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/mn/mn77_translation-en-sujato.json
++++ sujato/sutta/mn/mn77_translation-en-sujato.json
+@@ -1,2 +1,2 @@ mn77:15.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn36/sn36.7_translation-en-sujato.json
++++ sujato/sutta/sn/sn36/sn36.7_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn36.7:3.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn36/sn36.8_translation-en-sujato.json
++++ sujato/sutta/sn/sn36/sn36.8_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn36.8:3.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn43/sn43.12_translation-en-sujato.json
++++ sujato/sutta/sn/sn43/sn43.12_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn43.12:5.11
+ PLI: Idha, bhikkhave, bhikkhu dhammesu dhammānupassī viharati …pe… ayaṁ vuccati, bhikkhave, asaṅkhatagāmimaggo …pe…. 
+-A bhikkhu meditates by observing an aspect of principles … 
++A bhikkhu meditates by observing an aspect of mental contents … 
+--- sujato/sutta/sn/sn45/sn45.8_translation-en-sujato.json
++++ sujato/sutta/sn/sn45/sn45.8_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn45.8:9.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
+-They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn46/sn46.6_translation-en-sujato.json
++++ sujato/sutta/sn/sn46/sn46.6_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn46.6:7.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.10_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.10_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.10:7.3
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn47.10:7.4
+ PLI: Tassa dhammesu dhammānupassino viharato dhammārammaṇo vā uppajjati kāyasmiṁ pariḷāho, cetaso vā līnattaṁ, bahiddhā vā cittaṁ vikkhipati. 
+-As they meditate observing an aspect of principles, based on principles there arises sweltering in the body, or mental sluggishness, or the mind is externally scattered. 
++As they meditate observing an aspect of mental contents, based on mental contents there arises sweltering in the body, or mental sluggishness, or the mind is externally scattered. 
+@@ -1,2 +1,2 @@ sn47.10:8.13
+ PLI: Atha ca pana ‘dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā sukhamasmī’ti pajānāti. 
+-And they also understand: ‘I meditate observing an aspect of principles—ardent and aware, with sampajañña; I am happy.’ 
++And they also understand: ‘I meditate observing an aspect of mental contents—ardent and aware, with sampajañña; I am happy.’ 
+--- sujato/sutta/sn/sn47/sn47.11_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.11_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.11:2.6
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn47.11:2.7
+ PLI: Tassa dhammesu dhammānupassino viharato cittaṁ virajjati, vimuccati anupādāya āsavehi. 
+-As they meditate observing an aspect of principles, their mind becomes dispassionate, and is freed from the defilements by not grasping. 
++As they meditate observing an aspect of mental contents, their mind becomes dispassionate, and is freed from the defilements by not grasping. 
+--- sujato/sutta/sn/sn47/sn47.13_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.13_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.13:7.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.14_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.14_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.14:3.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.15_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.15_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.15:2.5
+ PLI: dhammesu dhammānupassī viharāhi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.16_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.16_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.16:2.5
+ PLI: dhammesu dhammānupassī viharāhi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.17_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.17_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.17:1.6
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.18_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.18_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.18:2.5
+ PLI: dhammesu vā bhikkhu dhammānupassī vihareyya ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-or principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++or mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn47.18:4.5
+ PLI: dhammesu vā, bhante, bhikkhu dhammānupassī vihareyya ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-or principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++or mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.1_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.1_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.1:2.6
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.21_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.21_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.21:3.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.22_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.22_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.22:3.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.23_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.23_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.23:3.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.24_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.24_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.24:1.7
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.25_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.25_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.25:3.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.26_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.26_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.26:2.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.27_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.27_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.27:2.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.28_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.28_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.28:2.5
+ PLI: dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.29_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.29_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.29:3.5
+ PLI: dhammesu dhammānupassī viharissāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassan’ti. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world.’ 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world.’ 
+@@ -1,2 +1,2 @@ sn47.29:4.5
+ PLI: dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.2_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.2_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.2:2.7
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.30_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.30_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.30:1.9
+ PLI: dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.31_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.31_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.31:4.1
+ PLI: ‘Ayaṁ dhammesu dhammānupassanā’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādi. 
+-‘This is the observation of an aspect of principles.’ … 
++‘This is the observation of an aspect of mental contents.’ … 
+@@ -1,2 +1,2 @@ sn47.31:4.2
+ PLI: ‘Sā kho panāyaṁ dhammesu dhammānupassanā bhāvetabbā’ti me, bhikkhave …pe… 
+-‘This observation of an aspect of principles should be developed.’ … 
++‘This observation of an aspect of mental contents should be developed.’ … 
+@@ -1,2 +1,2 @@ sn47.31:4.3
+ PLI: bhāvitā’ti me, bhikkhave, pubbe ananussutesu dhammesu cakkhuṁ udapādi, ñāṇaṁ udapādi, paññā udapādi, vijjā udapādi, āloko udapādī”ti. 
+-‘This observation of an aspect of principles has been developed.’ Such was the vision, knowledge, wisdom, realization, and light that arose in me regarding teachings not learned before from another.” 
++‘This observation of an aspect of mental contents has been developed.’ Such was the vision, knowledge, wisdom, realization, and light that arose in me regarding teachings not learned before from another.” 
+--- sujato/sutta/sn/sn47/sn47.32_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.32_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.32:2.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.33_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.33_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.33:2.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.34_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.34_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.34:2.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.35_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.35_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.35:2.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.36_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.36_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.36:1.6
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.37_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.37_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.37:4.1
+ PLI: Dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn47.37:4.2
+ PLI: Tassa dhammesu dhammānupassino viharato yo dhammesu chando so pahīyati. 
+-As they do so they give up desire for principles. 
++As they do so they give up desire for mental contents. 
+--- sujato/sutta/sn/sn47/sn47.38_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.38_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.38:4.1
+ PLI: Dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn47.38:4.2
+ PLI: Tassa dhammesu dhammānupassino viharato dhammā pariññātā honti. 
+-As they do so they completely understand principles. 
++As they do so they completely understand mental contents. 
+@@ -1,2 +1,2 @@ sn47.38:4.3
+ PLI: Dhammānaṁ pariññātattā amataṁ sacchikataṁ hotī”ti. 
+-When principles are completely understood they realize freedom from death.” 
++When mental contents are completely understood they realize freedom from death.” 
+--- sujato/sutta/sn/sn47/sn47.39_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.39_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.39:1.7
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.3_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.3_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.3:2.11
+ PLI: Ajjhattaṁ vā dhammesu … 
+-Or meditate observing an aspect of principles internally … 
++Or meditate observing an aspect of mental contents internally … 
+--- sujato/sutta/sn/sn47/sn47.40_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.40_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.40:1.7
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn47.40:2.5
+ PLI: samudayadhammānupassī dhammesu viharati, vayadhammānupassī dhammesu viharati, samudayavayadhammānupassī dhammesu viharati, ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles, they meditate observing the liability to arise, to pass away, and to arise and pass away—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents, they meditate observing the liability to arise, to pass away, and to arise and pass away—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.41_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.41_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.41:1.8
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.42_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.42_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.42:1.10
+ PLI: Manasikārasamudayā dhammānaṁ samudayo; 
+-Principles arise from application of mind. 
++Mental contents arise from application of mind. 
+@@ -1,2 +1,2 @@ sn47.42:1.11
+ PLI: manasikāranirodhā dhammānaṁ atthaṅgamo”ti. 
+-When application of mind disappears, principles disappear.” 
++When application of mind disappears, mental contents disappear.” 
+--- sujato/sutta/sn/sn47/sn47.43_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.43_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.43:2.5
+ PLI: dhammesu vā bhikkhu dhammānupassī vihareyya ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-or principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++or mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn47.43:4.5
+ PLI: dhammesu vā, bhante, bhikkhu dhammānupassī vihareyya ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-or principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++or mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.44_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.44_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.44:1.7
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.45_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.45_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.45:2.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.46_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.46_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.46:3.5
+ PLI: dhammesu dhammānupassī viharāhi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.47_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.47_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.47:2.5
+ PLI: dhammesu dhammānupassī viharāhi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.48_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.48_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.48:2.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.49_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.49_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.49:2.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.4_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.4_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.4:2.6
+ PLI: dhammesu dhammānupassino viharatha ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, dhammānaṁ yathābhūtaṁ ñāṇāya. 
+-Meditate observing an aspect of principles—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, so as to truly know principles. 
++Meditate observing an aspect of mental contents—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, so as to truly know mental contents. 
+@@ -1,2 +1,2 @@ sn47.4:3.4
+ PLI: dhammesu dhammānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, dhammānaṁ pariññāya. 
+-They meditate observing an aspect of principles—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, so as to fully understand principles. 
++They meditate observing an aspect of mental contents—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, so as to fully understand mental contents. 
+@@ -1,2 +1,2 @@ sn47.4:4.4
+ PLI: dhammesu dhammānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, dhammehi visaṁyuttā. 
+-They meditate observing an aspect of principles—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, detached from principles. 
++They meditate observing an aspect of mental contents—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, detached from mental contents. 
+--- sujato/sutta/sn/sn47/sn47.50_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.50_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.50:2.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.51-62_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.51-62_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.51-62:2.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.5_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.5_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.5:2.7
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-They meditate observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++They meditate observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.6_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.6_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.6:4.10
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.7_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.7_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.7:4.10
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.8_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.8_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.8:3.9
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn47.8:3.10
+ PLI: Tassa dhammesu dhammānupassino viharato cittaṁ na samādhiyati, upakkilesā na pahīyanti. 
+-As they meditate observing an aspect of principles, the mind doesn’t enter composure, and the corruptions aren’t given up. 
++As they meditate observing an aspect of mental contents, the mind doesn’t enter composure, and the corruptions aren’t given up. 
+@@ -1,2 +1,2 @@ sn47.8:7.9
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn47.8:7.10
+ PLI: Tassa dhammesu dhammānupassino viharato cittaṁ samādhiyati, upakkilesā pahīyanti. 
+-As they meditate observing an aspect of principles, their mind enters composure, and their corruptions are given up. 
++As they meditate observing an aspect of mental contents, their mind enters composure, and their corruptions are given up. 
+--- sujato/sutta/sn/sn47/sn47.95-104_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.95-104_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.95-104:2.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn47/sn47.9_translation-en-sujato.json
++++ sujato/sutta/sn/sn47/sn47.9_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn47.9:6.5
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn48/sn48.10_translation-en-sujato.json
++++ sujato/sutta/sn/sn48/sn48.10_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn48.10:3.6
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn52/sn52.10_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.10_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.10:2.7
+ PLI: dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn52/sn52.11_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.11_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.11:2.7
+ PLI: dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn52/sn52.1_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.1_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.1:9.1
+ PLI: Ajjhattaṁ dhammesu …pe… 
+-With respect to principles internally … 
++With respect to mental contents internally … 
+--- sujato/sutta/sn/sn52/sn52.2_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.2_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.2:7.1
+ PLI: Ajjhattaṁ dhammesu …pe… 
+-They meditate observing an aspect of principles internally … 
++They meditate observing an aspect of mental contents internally … 
+--- sujato/sutta/sn/sn52/sn52.3_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.3_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.3:2.6
+ PLI: dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn52/sn52.4_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.4_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.4:2.6
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn52/sn52.5_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.5_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.5:1.9
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn52/sn52.6_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.6_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.6:1.9
+ PLI: dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn52/sn52.7_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.7_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.7:2.6
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn52/sn52.8_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.8_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.8:3.8
+ PLI: dhammesu dhammānupassī viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn52/sn52.9_translation-en-sujato.json
++++ sujato/sutta/sn/sn52/sn52.9_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn52.9:2.8
+ PLI: dhammesu dhammānupassī viharāmi ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ—
+-principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+--- sujato/sutta/sn/sn54/sn54.10_translation-en-sujato.json
++++ sujato/sutta/sn/sn54/sn54.10_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn54.10:8.5
+ PLI: dhammesu dhammānupassī, ānanda, bhikkhu tasmiṁ samaye viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-At such a time a bhikkhu is meditating by observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++At such a time a bhikkhu is meditating by observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn54.10:8.7
+ PLI: Tasmātihānanda, dhammesu dhammānupassī bhikkhu tasmiṁ samaye viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-Therefore, at such a time a bhikkhu is meditating by observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++Therefore, at such a time a bhikkhu is meditating by observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn54.10:9.9
+ PLI: dhammesu dhammānupassī viharantopi upahanateva pāpake akusale dhamme”ti. 
+-or principles, they destroy bad, unskillful qualities.” 
++or mental contents, they destroy bad, unskillful qualities.” 
+--- sujato/sutta/sn/sn54/sn54.13_translation-en-sujato.json
++++ sujato/sutta/sn/sn54/sn54.13_translation-en-sujato.json
+@@ -1,2 +1,2 @@ sn54.13:8.5
+ PLI: dhammesu dhammānupassī, ānanda, bhikkhu tasmiṁ samaye viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-At such a time a bhikkhu is meditating by observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++At such a time a bhikkhu is meditating by observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn54.13:8.7
+ PLI: Tasmātihānanda, dhammesu dhammānupassī bhikkhu tasmiṁ samaye viharati ātāpī sampajāno satimā, vineyya loke abhijjhādomanassaṁ. 
+-Therefore, at such a time a bhikkhu is meditating by observing an aspect of principles—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
++Therefore, at such a time a bhikkhu is meditating by observing an aspect of mental contents—ardent and aware, with sampajañña, rid of covetousness and displeasure for the world. 
+@@ -1,2 +1,2 @@ sn54.13:17.3
+ PLI: dhammesu dhammānupassī viharati—
+-principles, 
++mental contents, 

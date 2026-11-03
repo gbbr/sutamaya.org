@@ -17,6 +17,7 @@ gloss a term in his wording while the line above it uses ours.
 | sati | mindfulness, mindful | **awareness, aware** |
 | satipaṭṭhāna | mindfulness meditation | **the establishment of awareness** |
 | sampajañña | situational awareness, aware | **sampajañña** (and "with sampajañña" for sampajāna, "cultivate sampajañña" for sampajānakārī) |
+| dhamma (the fourth satipaṭṭhāna) | principles | **mental contents** |
 | samādhi | immersion, immersed | **composure, composed** (and "collect" as a verb) |
 | jhāna | absorption | **jhāna** (and "practice jhāna" for jhāyati) |
 | ātāpī | keen | **ardent** |

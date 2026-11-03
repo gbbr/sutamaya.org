@@ -8011,8 +8011,8 @@ Rule: immersion-concentration — 2006 change(s), 823 file(s)
 +Meditate observing an aspect of the mind—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, so as to truly know the mind. 
 @@ -1,2 +1,2 @@ sn47.4:2.6
  PLI: dhammesu dhammānupassino viharatha ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, dhammānaṁ yathābhūtaṁ ñāṇāya. 
--Meditate observing an aspect of principles—ardent, with sampajañña, at one, with minds that are clear, immersed and unified in samādhi, so as to truly know principles. 
-+Meditate observing an aspect of principles—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, so as to truly know principles. 
+-Meditate observing an aspect of mental contents—ardent, with sampajañña, at one, with minds that are clear, immersed and unified in samādhi, so as to truly know mental contents. 
++Meditate observing an aspect of mental contents—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, so as to truly know mental contents. 
 @@ -1,2 +1,2 @@ sn47.4:3.1
  PLI: Yepi te, bhikkhave, bhikkhū sekhā appattamānasā anuttaraṁ yogakkhemaṁ patthayamānā viharanti, tepi kāye kāyānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, kāyassa pariññāya; 
 -Those bhikkhus who are trainees—who haven’t achieved their heart’s desire, but live aspiring to the supreme sanctuary from the yoke—also meditate observing an aspect of the body—ardent, with sampajañña, at one, with minds that are clear, immersed and unified in samādhi, so as to fully understand the body. 
@@ -8027,8 +8027,8 @@ Rule: immersion-concentration — 2006 change(s), 823 file(s)
 +They meditate observing an aspect of the mind—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, so as to fully understand the mind. 
 @@ -1,2 +1,2 @@ sn47.4:3.4
  PLI: dhammesu dhammānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, dhammānaṁ pariññāya. 
--They meditate observing an aspect of principles—ardent, with sampajañña, at one, with minds that are clear, immersed and unified in samādhi, so as to fully understand principles. 
-+They meditate observing an aspect of principles—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, so as to fully understand principles. 
+-They meditate observing an aspect of mental contents—ardent, with sampajañña, at one, with minds that are clear, immersed and unified in samādhi, so as to fully understand mental contents. 
++They meditate observing an aspect of mental contents—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, so as to fully understand mental contents. 
 @@ -1,2 +1,2 @@ sn47.4:4.1
  PLI: Yepi te, bhikkhave, bhikkhū arahanto khīṇāsavā vusitavanto katakaraṇīyā ohitabhārā anuppattasadatthā parikkhīṇabhavasaṁyojanā sammadaññāvimuttā, tepi kāye kāyānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, kāyena visaṁyuttā; 
 -Those bhikkhus who are perfected—who have ended the defilements, completed the spiritual journey, done what had to be done, laid down the burden, achieved their own goal, utterly ended the fetter of continued existence, and are rightly freed through enlightenment—also meditate observing an aspect of the body—ardent, with sampajañña, at one, with minds that are clear, immersed and unified in samādhi, detached from the body. 
@@ -8043,8 +8043,8 @@ Rule: immersion-concentration — 2006 change(s), 823 file(s)
 +They meditate observing an aspect of the mind—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, detached from the mind. 
 @@ -1,2 +1,2 @@ sn47.4:4.4
  PLI: dhammesu dhammānupassino viharanti ātāpino sampajānā ekodibhūtā vippasannacittā samāhitā ekaggacittā, dhammehi visaṁyuttā. 
--They meditate observing an aspect of principles—ardent, with sampajañña, at one, with minds that are clear, immersed and unified in samādhi, detached from principles. 
-+They meditate observing an aspect of principles—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, detached from principles. 
+-They meditate observing an aspect of mental contents—ardent, with sampajañña, at one, with minds that are clear, immersed and unified in samādhi, detached from mental contents. 
++They meditate observing an aspect of mental contents—ardent, with sampajañña, at one, with minds that are clear, composed and unified in samādhi, detached from mental contents. 
 --- sujato/sutta/sn/sn47/sn47.8_translation-en-sujato.json
 +++ sujato/sutta/sn/sn47/sn47.8_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.8:3.5
@@ -8053,16 +8053,16 @@ Rule: immersion-concentration — 2006 change(s), 823 file(s)
 +As they meditate observing an aspect of the body, their mind doesn’t enter composure, and their corruptions aren’t given up. 
 @@ -1,2 +1,2 @@ sn47.8:3.10
  PLI: Tassa dhammesu dhammānupassino viharato cittaṁ na samādhiyati, upakkilesā na pahīyanti. 
--As they meditate observing an aspect of principles, the mind doesn’t enter immersion, and the corruptions aren’t given up. 
-+As they meditate observing an aspect of principles, the mind doesn’t enter composure, and the corruptions aren’t given up. 
+-As they meditate observing an aspect of mental contents, the mind doesn’t enter immersion, and the corruptions aren’t given up. 
++As they meditate observing an aspect of mental contents, the mind doesn’t enter composure, and the corruptions aren’t given up. 
 @@ -1,2 +1,2 @@ sn47.8:7.5
  PLI: Tassa kāye kāyānupassino viharato cittaṁ samādhiyati, upakkilesā pahīyanti. 
 -As they meditate observing an aspect of the body, their mind enters immersion, and their corruptions are given up. 
 +As they meditate observing an aspect of the body, their mind enters composure, and their corruptions are given up. 
 @@ -1,2 +1,2 @@ sn47.8:7.10
  PLI: Tassa dhammesu dhammānupassino viharato cittaṁ samādhiyati, upakkilesā pahīyanti. 
--As they meditate observing an aspect of principles, their mind enters immersion, and their corruptions are given up. 
-+As they meditate observing an aspect of principles, their mind enters composure, and their corruptions are given up. 
+-As they meditate observing an aspect of mental contents, their mind enters immersion, and their corruptions are given up. 
++As they meditate observing an aspect of mental contents, their mind enters composure, and their corruptions are given up. 
 --- sujato/sutta/sn/sn47/sn47.9_translation-en-sujato.json
 +++ sujato/sutta/sn/sn47/sn47.9_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.9:5.1
