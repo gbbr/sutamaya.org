@@ -23,6 +23,7 @@ the app reads offline from its first launch, with no service worker.
 | Updates | the service worker | over-the-air bundles (below) |
 | Android back button | — | closes what's open or returns from a search jump, then leaves Settings and Help, then backgrounds the app |
 | iOS swipe in from the left edge | Safari's own Back and Forward | the Android back button's steps, short of backgrounding the app |
+| iOS status bar tap | — | scrolls the sutta, or the Library's pane on screen, to the top; with both panes on screen, the sutta list first, then the tree |
 
 The app runs edge to edge on both platforms, keeping its bars inside the safe-area insets, and sets
 the status bar's text colour from its own theme. On Android the highlight popup opens from the
