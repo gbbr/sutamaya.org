@@ -151,7 +151,7 @@ export function LibraryPage() {
   const navigationType = useNavigationType();
   // Opens the pane a link from outside the app lands on, reveals its node in the tree — flashed where
   // it opens there — and opens the search in its address, when the link arrives on this page already
-  // open. Back and Forward change none of them.
+  // open. Back and Forward open no pane and reveal nothing.
   useEffect(() => {
     if (navigationType === NavigationType.Pop) return;
     const intent = consumeIntent(location?.state as ({ link?: boolean } & RouteIntent) | null | undefined, ROUTE_INTENT_KEY);
@@ -162,6 +162,11 @@ export function LibraryPage() {
     setPickCount((n) => n + 1);
     setFlashNodeId(pane === 'tree' ? routeNodeId : undefined);
   }, [location?.state, location?.search, navigationType, setView, corpus, lists, routeNodeId]);
+  // Takes the search from the address on Back and Forward.
+  useEffect(() => {
+    if (navigationType !== NavigationType.Pop) return;
+    setQuery(new URLSearchParams(location?.search ?? '').get('q') ?? '');
+  }, [location?.key, location?.search, navigationType]);
   // The hit the search cursor starts on: the one the reader opened, on the way back from it. Read
   // from the arriving URL, so typing a query while a sutta is selected still starts at the top hit.
   const [restoreHitId] = useState(() => (arrivedQuery.trim() && rawSuttaId ? rawSuttaId : undefined));
