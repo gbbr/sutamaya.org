@@ -53,6 +53,7 @@ design/          the app icons at full resolution, and the Play feature graphic
 e2e/             end-to-end tests
 docs/            how each part works
 wrangler.jsonc   the Worker's config, production and staging
+CHANGELOG.md     what each production release changed, written for readers
 CLAUDE.md        working rules for Claude Code
 ```
 

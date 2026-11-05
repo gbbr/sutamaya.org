@@ -82,6 +82,16 @@ commit, and `minNative` too when it adds a native piece. A piece the web code ch
 using needs no minimum: the Apple sign-in button shows only where its plugin is present, so Android
 and older iOS builds keep taking updates without it.
 
+### Release notes
+
+Each production release is written up for readers in `CHANGELOG.md` and as a GitHub Release, both
+named for the day it went out, with ".2" for a second release that day. `release:ota` drafts the
+notes before asking to deploy: a line calling it an over-the-air update, by the commit id Settings
+shows, and naming any store build recorded since the previous release; then the commit subjects
+since that release, to be trimmed to what readers notice. Once the deploy succeeds, the trimmed
+notes become the GitHub Release, on a tag of the bundle's commit. A store build's "What's New" is
+the notes since the previous store build.
+
 ## Links into the app
 
 - `sutamaya://auth` carries a Google sign-in back to the app.

@@ -1,7 +1,8 @@
 // Publishes an over-the-air bundle: builds the native web + corpus bundle, uploads the zip to the
 // environment's R2 bucket, points the OTA vars in wrangler.jsonc at it, and deploys the Worker.
 // The zip lands in R2 before the version pointer moves, so no device is ever told about a bundle
-// that is not there yet.
+// that is not there yet. A production release also writes its notes into CHANGELOG.md, tags its
+// commit and creates its GitHub Release (docs/native-apps.md's "Release notes").
 //
 // Usage: node scripts/release-ota.mjs --env production|staging [--force] [--skip-tests]
 //                                     [--allow-native-drift]
@@ -57,6 +58,21 @@ const NATIVE_CONTRACT = {
   android: ['web/capacitor.config.ts', 'web/android/app/src/main/AndroidManifest.xml', 'web/android/app/build.gradle'],
 };
 
+// The record of each production release, for readers, newest first.
+const CHANGELOG = 'CHANGELOG.md';
+
+// The tags naming production releases: the day each went out, with ".2", ".3"… for a second that day.
+const RELEASE_TAG = '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]*';
+
+// Commit subjects left out of a release's notes: the records of releases and store builds.
+const BOOKKEEPING = /^(release:ota|ota:release) |^Mark build \d+ as /;
+
+// Where each platform's store version is set, and the pattern reading it.
+const STORE_VERSION = {
+  ios: ['web/ios/App/App.xcodeproj/project.pbxproj', /MARKETING_VERSION = ([^;]+);/],
+  android: ['web/android/app/build.gradle', /versionName "([^"]+)"/],
+};
+
 function sh(cmd, cmdArgs, opts = {}) {
   const r = spawnSync(cmd, cmdArgs, { stdio: 'inherit', ...opts });
   if (r.status !== 0) process.exit(r.status ?? 1);
@@ -68,9 +84,13 @@ function gitOut(...a) {
   return r.status === 0 ? r.stdout.trim() : '';
 }
 
+// confirm asks a yes-or-no question and resolves to the answer; Ctrl-C answers no.
 function confirm(question) {
   const rl = createInterface({ input: process.stdin, output: process.stdout });
-  return new Promise((resolve) => rl.question(question, (a) => (rl.close(), resolve(/^y(es)?$/i.test(a.trim())))));
+  return new Promise((resolve) => {
+    rl.on('SIGINT', () => (rl.close(), console.log(), resolve(false)));
+    rl.question(question, (a) => (rl.close(), resolve(/^y(es)?$/i.test(a.trim()))));
+  });
 }
 
 // Rewrites the named vars for one environment, leaving comments and the other environment's block
@@ -116,6 +136,48 @@ async function pruneBundles(live) {
   }
 }
 
+// releaseName returns today's date, with ".2", ".3"… appended when an earlier release today holds it.
+function releaseName() {
+  const d = new Date();
+  const day = [d.getFullYear(), d.getMonth() + 1, d.getDate()].map((n) => String(n).padStart(2, '0')).join('-');
+  let name = day;
+  for (let n = 2; gitOut('tag', '--list', name); n++) name = `${day}.${n}`;
+  return name;
+}
+
+// releaseSummary returns the line opening a release's notes: the update's id as Settings shows it,
+// and the store version of each platform whose build was recorded since the previous release.
+function releaseSummary(bundleId) {
+  const before = JSON.parse(gitOut('show', `${previousRelease}:${NATIVE_RELEASE}`) || '{}');
+  const sent = Object.entries(PLATFORMS)
+    .filter(([platform]) => before[platform]?.build !== store[platform].build)
+    .map(([platform, name]) => {
+      const [path, re] = STORE_VERSION[platform];
+      const version = gitOut('show', `${store[platform].commit}:${path}`).match(re)?.[1];
+      return `${name} ${version ?? `build ${store[platform].build}`}`;
+    });
+  return (
+    `Over-the-air update ${bundleId} for the iOS and Android apps, also live on the web.` +
+    (sent.length ? ` New app versions sent to the stores since the last update: ${sent.join(', ')}.` : '')
+  );
+}
+
+// publishRelease tags the bundle's commit with the release's name and creates its GitHub Release
+// from its CHANGELOG.md section. A failure only warns: the release is already live.
+function publishRelease(name) {
+  const section = readFileSync(CHANGELOG, 'utf8').split(/^(?=## )/m).find((s) => s.startsWith(`## ${name}\n`)) ?? '';
+  const notes = section.slice(section.indexOf('\n') + 1).trim();
+  const run = (cmd, cmdArgs, input) =>
+    spawnSync(cmd, cmdArgs, { stdio: [input === undefined ? 'inherit' : 'pipe', 'inherit', 'inherit'], input })
+      .status === 0;
+  const ok =
+    run('git', ['tag', '-a', name, '-m', notes.split('\n')[0] || name, head]) &&
+    run('git', ['push', 'origin', `refs/tags/${name}`]) &&
+    run('gh', ['release', 'create', name, '--verify-tag', '--title', name, '--notes-file', '-'], notes);
+  if (ok) console.log(`Tagged ${name} and created its GitHub Release.`);
+  else console.warn(`warning: ${name} is live, but tagging it or creating its GitHub Release failed (see above).`);
+}
+
 // --- guards -------------------------------------------------------------------
 
 if (!force && gitOut('status', '--porcelain')) {
@@ -127,6 +189,14 @@ if (!force && gitOut('status', '--porcelain')) {
 const whoami = spawnSync('npx', ['wrangler', 'whoami'], { encoding: 'utf8' });
 if (`${whoami.stdout ?? ''}${whoami.stderr ?? ''}`.includes('You are not authenticated')) {
   console.error('error: not logged in to Cloudflare. Run: npx wrangler login');
+  process.exit(1);
+}
+
+// The newest release tag behind HEAD, where a production release's notes begin.
+const previousRelease =
+  env === 'production' ? gitOut('describe', '--tags', '--abbrev=0', '--match', RELEASE_TAG, 'HEAD') : '';
+if (env === 'production' && !previousRelease) {
+  console.error('error: no release tag behind HEAD to start the notes from. Run: git fetch --tags');
   process.exit(1);
 }
 
@@ -185,6 +255,9 @@ if (drifted.length && !allowNativeDrift) {
 
 // The bundle talks to its own environment's API — a staging one showing the tree-pane build stamp.
 const apiBase = API_ORIGINS[env];
+// The commit the bundle is built from, and its id as Settings shows it.
+const head = gitOut('rev-parse', 'HEAD');
+const bundleId = gitOut('log', '-1', '--pretty=%h') + (gitOut('status', '--porcelain') ? '*' : '');
 sh('node', ['scripts/build-native.mjs', '--ota', '--env', env]);
 const manifest = JSON.parse(readFileSync('web/ota/manifest.json', 'utf8'));
 const { version, checksum, zip } = manifest;
@@ -200,7 +273,28 @@ console.log(
     (drifted.length ? '  (native drift allowed)' : ''),
 );
 console.log(`  deploy   npm run ${deployScript}\n`);
+
+// A production release's notes, drafted at the top of CHANGELOG.md for trimming before the deploy.
+let release;
+if (env === 'production') {
+  const name = releaseName();
+  const subjects = gitOut('log', '--no-merges', '--format=%s', `${previousRelease}..${head}`)
+    .split('\n')
+    .filter((s) => s && !BOOKKEEPING.test(s));
+  const section =
+    [`## ${name}`, releaseSummary(bundleId), subjects.map((s) => `- ${s}`).join('\n')].filter(Boolean).join('\n\n') + '\n';
+  const text = readFileSync(CHANGELOG, 'utf8');
+  const at = text.search(/^## /m);
+  writeFileSync(CHANGELOG, at === -1 ? `${text.trimEnd()}\n\n${section}` : `${text.slice(0, at)}${section}\n${text.slice(at)}`);
+  release = { name, changelog: text };
+  console.log(
+    `Release ${name}, drafted at the top of ${CHANGELOG}:\n\n${section}\n` +
+      `Edit ${CHANGELOG} now if needed and save; the GitHub Release is made from it after the deploy.\n`,
+  );
+}
+
 if (!(await confirm('Upload, point wrangler.jsonc at it, and deploy? [y/N] '))) {
+  if (release) writeFileSync(CHANGELOG, release.changelog);
   console.log('Aborted. Nothing was uploaded.');
   process.exit(0);
 }
@@ -237,5 +331,7 @@ sh('npm', skipTests ? ['run', deployScript, '--', '--skip-tests'] : ['run', depl
 // After the deploy, which exits on failure, so nothing is pruned while the Worker may still serve an
 // older bundle.
 await pruneBundles(zip);
+if (release) publishRelease(release.name);
 
-console.log(`\nPublished ${version} to ${env}. Commit the ${WRANGLER_CONFIG} change to record what is live.`);
+const toCommit = release ? `${CHANGELOG} and the ${WRANGLER_CONFIG} change` : `the ${WRANGLER_CONFIG} change`;
+console.log(`\nPublished ${version} to ${env}. Commit ${toCommit} to record what is live.`);
