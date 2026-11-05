@@ -1,4 +1,4 @@
-# Sutamaya
+# sutamaya
 
 An offline-first reader for the Early Buddhist Texts: the Pali discourses in Pali and Bhikkhu
 Sujato's English, with a dictionary a tap away, highlights, notes and lists. It runs in the
