@@ -118,10 +118,10 @@ const router = createBrowserRouter([
           { path: '/', element: <RestoreLastLocation /> },
           // One route element, so selecting and deselecting a sutta keeps the same LibraryPage
           // instance and every pane's scroll position. The splat is the sutta, '' when absent.
-          { path: '/browse/:nodeId/*', element: <LibraryPage key="node" /> },
-          // The library with nothing selected. Keyed apart from the route above, so picking the
-          // first node remounts the page — before there is any pane scroll to lose.
-          { path: '/browse', element: <LibraryPage key="none" /> },
+          { path: '/browse/:nodeId/*', element: <LibraryPage key="library" /> },
+          // The library with nothing selected. Keyed as the route above, so picking the first node,
+          // and going back to none, keep the same LibraryPage instance too.
+          { path: '/browse', element: <LibraryPage key="library" /> },
           { path: '/read/:suttaId', element: <ReaderPage /> },
           { path: '/settings', element: <SettingsPage /> },
           { path: '/help', element: <HelpPage /> },
