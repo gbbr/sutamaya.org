@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { NavigationType, useLocation, useNavigate, useNavigationType, useParams } from 'react-router';
 import { flushSync } from 'react-dom';
 import { useLayout } from '../context/LayoutContext';
@@ -19,6 +19,8 @@ import { consumeIntent, tagIntent, type RouteIntent } from '../lib/navigation/ro
 import { takeAddressArrival } from '../lib/navigation/entryKind';
 import { readLink } from '../lib/navigation/passageLink';
 import { transitionPage } from '../lib/ui/motion';
+import { animateScrollTop } from '../lib/reader/segmentScroll';
+import { onStatusBarTap } from '../lib/native/statusBar';
 import { TreePane, type ActiveSearchRow } from '../components/library/TreePane';
 import { ListPane } from '../components/lists/ListPane';
 import { ShortcutsModal } from '../components/ShortcutsModal';
@@ -342,6 +344,20 @@ export function LibraryPage() {
   useBackHandler(mobile && view === 'list', backToTree);
   useBackHandler(shortcutsOpen, () => setShortcutsOpen(false));
 
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  // A tap on the iOS status bar scrolls the sutta list to the top, or the tree when the list is
+  // already there or off screen, except under the shortcuts.
+  useEffect(() => {
+    if (shortcutsOpen) return;
+    return onStatusBarTap(() => {
+      const list = rootRef.current?.querySelector<HTMLElement>('[data-scroller="list"]');
+      const tree = rootRef.current?.querySelector<HTMLElement>('[data-scroller="tree"]');
+      const target = !showTreePane || (showListPane && list && list.scrollTop > 0) ? list : tree;
+      if (target) animateScrollTop(target, 0);
+    });
+  }, [shortcutsOpen, showListPane, showTreePane]);
+
   // Page-level shortcuts: the help modal and the theme toggle. Arrow-key nav over search hits
   // belongs to TreePane.
   useEffect(() => {
@@ -372,7 +388,7 @@ export function LibraryPage() {
   }, [shortcutsOpen]);
 
   return (
-    <div data-component="LibraryPage" className="relative flex overflow-hidden bg-paper h-full select-none">
+    <div ref={rootRef} data-component="LibraryPage" className="relative flex overflow-hidden bg-paper h-full select-none">
       {/* Both panes stay mounted on mobile and hide, keeping each one's scroll offset and
           expansion state across a tree/list toggle. `display:contents` leaves this wrapper
           transparent to the flex layout, and `visible` tells the pane when it has a scroll extent

@@ -419,6 +419,7 @@ export function ListPane({
       </header>
       <div
         ref={scrollRef}
+        data-scroller="list"
         className="sc under-nav-bar flex-1"
         aria-busy={updating}
         style={{
