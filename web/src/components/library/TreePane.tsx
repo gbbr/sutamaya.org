@@ -188,6 +188,10 @@ export function TreePane({
   // Whether the search input is showing. Seeded from whether a query is already present, so a
   // pre-populated one can't leave results on screen with no way to see what is being searched.
   const [searchOpen, setSearchOpen] = useState(() => query.trim().length > 0);
+  // Opens the input for a query that arrives from outside it, by Back, Forward or a link.
+  useEffect(() => {
+    if (query.trim()) setSearchOpen(true);
+  }, [query]);
   const searches = useRecentSearches();
   // Whether recent searches fill the column: with the box empty, and beside the results on desktop.
   const showRecent = searchOpen && searches.length > 0 && (!mobile || !searching);

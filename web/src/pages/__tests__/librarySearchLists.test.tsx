@@ -1,5 +1,5 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest';
-import { screen, fireEvent, within } from '@testing-library/react';
+import { act, screen, fireEvent, waitFor, within } from '@testing-library/react';
 import { renderRoutes } from '../../testRouter';
 
 // Covers the one thing this feature changes about search results that already worked: when a
@@ -155,6 +155,31 @@ describe('a library search that matches the user\'s lists', () => {
 
     expect((tree.getByPlaceholderText(SEARCH_PLACEHOLDER) as HTMLInputElement).value).toBe('divine');
     expect(tree.getByText('Brahmajala')).toBeTruthy();
+  });
+
+  it("on a wider layout, the browser's Back returns to the results a list was opened from", async () => {
+    vi.mocked(useLayout).mockReturnValue({
+      mobile: false,
+      w: 1200,
+      treeW: 264,
+      paneW: { tree: 264, treeMax: 400 },
+      resetTree: vi.fn(),
+      dragTree: vi.fn(),
+    });
+    vi.mocked(useUserData).mockReturnValue({ ...userDataDefaults, lists: [list({ id: 'l1', label: 'Divine', items: ['mn1'] })] });
+    const { router, container } = renderRoutes([{ path: '/browse/:nodeId/*', element: <LibraryPage /> }], '/browse/dn');
+    const tree = within(container.querySelector('[data-component="TreePane"]')!);
+    const results = within(container.querySelector('[data-component="ListPane"]')!);
+    fireEvent.click(tree.getByRole('button', { name: 'Search' }));
+    fireEvent.change(tree.getByPlaceholderText(SEARCH_PLACEHOLDER), { target: { value: 'divine' } });
+    await waitFor(() => expect(router.state.location.search).toBe('?q=divine'));
+
+    fireEvent.click(await results.findByRole('button', { name: /Divine/ }));
+    await waitFor(() => expect(router.state.location.pathname).toBe('/browse/l1'));
+    await act(() => router.navigate(-1));
+
+    expect((tree.getByPlaceholderText(SEARCH_PLACEHOLDER) as HTMLInputElement).value).toBe('divine');
+    expect(await results.findByRole('button', { name: /Divine/ })).toBeTruthy();
   });
 
   it('drops the members of every matched list, not just of a single one', async () => {
