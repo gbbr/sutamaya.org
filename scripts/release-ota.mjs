@@ -64,6 +64,9 @@ const CHANGELOG = 'CHANGELOG.md';
 // The tags naming production releases: the day each went out, with ".2", ".3"… for a second that day.
 const RELEASE_TAG = '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]*';
 
+// The address a release's notes link each commit to, before its id.
+const COMMIT_URL = 'https://github.com/gbbr/sutamaya.org/commit/';
+
 // Commit subjects left out of a release's notes: the records of releases and store builds.
 const BOOKKEEPING = /^(release:ota|ota:release) |^Mark build \d+ as /;
 
@@ -278,11 +281,18 @@ console.log(`  deploy   npm run ${deployScript}\n`);
 let release;
 if (env === 'production') {
   const name = releaseName();
-  const subjects = gitOut('log', '--no-merges', '--format=%s', `${previousRelease}..${head}`)
+  const changes = gitOut('log', '--no-merges', '--format=%h %s', `${previousRelease}..${head}`)
     .split('\n')
-    .filter((s) => s && !BOOKKEEPING.test(s));
+    .map((line) => ({ id: line.slice(0, line.indexOf(' ')), subject: line.slice(line.indexOf(' ') + 1) }))
+    .filter(({ subject }) => subject && !BOOKKEEPING.test(subject));
   const section =
-    [`## ${name}`, releaseSummary(bundleId), subjects.map((s) => `- ${s}`).join('\n')].filter(Boolean).join('\n\n') + '\n';
+    [
+      `## ${name}`,
+      releaseSummary(bundleId),
+      changes.map(({ id, subject }) => `- ${subject} ([${id}](${COMMIT_URL}${id}))`).join('\n'),
+    ]
+      .filter(Boolean)
+      .join('\n\n') + '\n';
   const text = readFileSync(CHANGELOG, 'utf8');
   const at = text.search(/^## /m);
   writeFileSync(CHANGELOG, at === -1 ? `${text.trimEnd()}\n\n${section}` : `${text.slice(0, at)}${section}\n${text.slice(at)}`);
