@@ -516,7 +516,7 @@ function BackToTop({ onClick }: { onClick: () => void }) {
 export function HelpPage() {
   const navigate = useNavigate();
   const { mobile } = useLayout();
-  // Its own description rather than the app-wide default: this is the one app page in the sitemap.
+  // Its own description rather than the app-wide default, for its search result.
   useDocumentMeta(
     'How to use sutamaya',
     'How to use sutamaya: browsing the canon, reading with the Pali and dictionary, highlighting and taking notes, keeping your own lists, and reading offline.'

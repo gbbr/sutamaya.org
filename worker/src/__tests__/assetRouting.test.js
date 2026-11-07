@@ -128,4 +128,13 @@ describe('asset vs API routing', () => {
     expect(res.status).toBe(200);
     expect(res.headers.get('content-type')).toMatch(/text\/html/);
   });
+
+  // The sitemap is built by the Worker, so this holds only while `run_worker_first` lists it.
+  it('serves the sitemap built from the corpus, listing the app’s pages on the app’s hostname', async () => {
+    const res = await SELF.fetch('https://sutamaya.org/sitemap.xml');
+    expect(res.headers.get('content-type')).toMatch(/application\/xml/);
+    const xml = await res.text();
+    expect(xml).toContain('<loc>https://sutamaya.org/</loc>');
+    expect(xml).toContain('<loc>https://app.sutamaya.org/read/dn16</loc>');
+  });
 });

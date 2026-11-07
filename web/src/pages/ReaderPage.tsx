@@ -316,8 +316,12 @@ export function ReaderPage() {
     return () => setReaderThemeColor(null);
   }, [theme.bg, resolvedTheme]);
 
-  // The document title and meta description, tracking whichever sutta is open.
-  useDocumentMeta(sutta ? `${sutta.ref} · ${sutta.en}` : '', sutta?.blurb);
+  // The document title and meta description, tracking whichever sutta is open, the title naming the
+  // translator of a text other than Sujato's.
+  useDocumentMeta(
+    sutta ? `${sutta.ref} · ${sutta.en}${by === 'sujato' ? '' : ` · ${TRANSLATOR_NAMES[by]}`}` : '',
+    sutta?.blurb
+  );
 
   // Records that a sutta has been opened, which is what TreePane's offline-download nudge waits on.
   useEffect(() => {

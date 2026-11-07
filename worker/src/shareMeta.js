@@ -1,15 +1,16 @@
 // The title and description a link preview shows when someone shares a sutta, lines of one, or a
 // browse group, written into the served HTML — a crawler never runs the app, so the tags
-// web/src/hooks/useDocumentMeta.ts writes at mount arrive too late.
+// web/src/hooks/useDocumentMeta.ts writes at mount arrive too late. A sutta's page also gets its
+// canonical address, which search engines read from the HTML as served.
 //
 // Only /read/* and /browse/* are rewritten; /index.html is left as the build produced it, since the
 // service worker precaches that path and serves it for every in-app navigation.
 //
-// The lookups port web/src/lib/corpus/corpus.ts (findNode, resolveCanonicalSuttaId), the trim in
-// web/src/lib/navigation/documentMeta.ts and the reading of `at` in
+// The lookups port web/src/lib/corpus/corpus.ts (findNode, resolveCanonicalSuttaId,
+// TRANSLATOR_NAMES), the trim in web/src/lib/navigation/documentMeta.ts and the reading of `at` in
 // web/src/lib/navigation/passageLink.ts and of `by` in ReaderPage, and the titles match what
-// ReaderPage and LibraryPage pass to useDocumentMeta. No module is shared between the two workspaces — change one, change the
-// other.
+// ReaderPage and LibraryPage pass to useDocumentMeta. No module is shared between the two
+// workspaces — change one, change the other.
 
 // The paths that carry a subject of their own. A user list also lives under /browse, but its
 // opaque id names nothing in the corpus, so findNode drops it and the shell is left alone.
@@ -28,6 +29,12 @@ const KEY_LINE = /^\d+(?:\.\d+)*$/;
 
 // The shell's own description tag, rewritten or removed per page.
 const DESCRIPTION_META = 'meta[name="description"]';
+
+// The name each translator other than Sujato is credited by, in the title of a page in his text.
+const TRANSLATOR_NAMES = {
+  bodhi: 'Bhikkhu Bodhi',
+  thanissaro: 'Ṭhānissaro Bhikkhu',
+};
 
 // The preview thumbnail: the flat leaf mark, at the size a card wants.
 const SHARE_IMAGE = '/share-card.png';
@@ -62,7 +69,7 @@ export function loadCorpus(env, url) {
 export async function withShareMeta(shell, url, env) {
   if (!SHAREABLE.test(url.pathname)) return shell;
   const corpus = await loadCorpus(env, url);
-  const meta = shareMetaFor(corpus, url.pathname);
+  const meta = shareMetaFor(corpus, url.pathname, url.searchParams.get('by'));
   if (!meta) return shell;
   return applyShareMeta(shell, (await linesMetaFor(corpus, url, env)) ?? meta, url);
 }
@@ -70,7 +77,7 @@ export async function withShareMeta(shell, url, env) {
 // Returns the title and description of the lines a /read link's `at` names — "15.4", or a run,
 // "15.4-15.6" — read from its sutta's text in the translation `by` names, where the text has it,
 // else Sujato's; or null when it names none the text holds. `by` and `at` are kept for the card's
-// own link.
+// own link; the canonical address is the sutta's, in that translation.
 async function linesMetaFor(corpus, url, env) {
   const at = url.searchParams.get('at')?.split('-');
   const match = /^\/read\/([^/]+)/.exec(url.pathname);
@@ -84,8 +91,7 @@ async function linesMetaFor(corpus, url, env) {
   const docId = resolveSuttaId(corpus, uid);
   const sutta = corpus.suttas[docId];
   if (!sutta) return null;
-  const requested = url.searchParams.get('by');
-  const by = sutta.by && Object.hasOwn(sutta.by, requested) ? requested : null;
+  const by = offeredBy(sutta, url.searchParams.get('by'));
   const segments = await loadText(env, url, docId, by);
   if (!segments) return null;
   const first = segments.findIndex((s) => s.key === `${uid}:${at[0]}`);
@@ -93,7 +99,13 @@ async function linesMetaFor(corpus, url, env) {
   if (first === -1 || last < first) return null;
   const description = summarize(segments.slice(first, last + 1).map((s) => s.en).join(' '));
   if (!description) return null;
-  return { title: `${citedRef(sutta, docId, uid)}:${at.join('–')} · ${sutta.en}`, description, by, at: at.join('-') };
+  return {
+    title: titled(`${citedRef(sutta, docId, uid)}:${at.join('–')} · ${sutta.en}`, by),
+    description,
+    by,
+    at: at.join('-'),
+    canonical: readPath(docId, by),
+  };
 }
 
 // Returns a document's segments in the translation `by` names, Sujato's when null, from the assets
@@ -114,7 +126,8 @@ function citedRef(sutta, docId, uid) {
   return num ? sutta.ref.replace(/\d+–\d+$/, num) : sutta.ref;
 }
 
-// Writes one page's title and description into the shell as it streams past.
+// Writes one page's title, description and, for a sutta, canonical address into the shell as it
+// streams past.
 export function applyShareMeta(shell, meta, url) {
   // The translation and lines the card previews, kept in its own link.
   const query = [meta.by && `by=${meta.by}`, meta.at && `at=${meta.at}`].filter(Boolean).join('&');
@@ -131,6 +144,9 @@ export function applyShareMeta(shell, meta, url) {
   ]
     .map(([property, content]) => `<meta property="${property}" content="${escapeAttr(content)}" />`)
     .join('');
+  const canonical = meta.canonical
+    ? `<link rel="canonical" href="${escapeAttr(`${url.origin}${meta.canonical}`)}" />`
+    : '';
 
   return new HTMLRewriter()
     .on('title', {
@@ -149,14 +165,20 @@ export function applyShareMeta(shell, meta, url) {
     .on('head', {
       element(el) {
         // A summary card, the layout every platform reads the same way.
-        el.append(`${tags}<meta name="twitter:card" content="summary" />`, { html: true });
+        el.append(`${tags}<meta name="twitter:card" content="summary" />${canonical}`, { html: true });
       },
     })
     .transform(shell);
 }
 
-// Returns `{title, description}` for a path, or null when nothing in the corpus answers to it.
-export function shareMetaFor(corpus, pathname) {
+// Returns `{title, description}` for a path, or null when nothing in the corpus answers to it. A
+// sutta's also carries the translation shown and its canonical address.
+export function shareMetaFor(
+  corpus,
+  pathname,
+  // The translator the address's `by` names, if any.
+  requestedBy = null
+) {
   const match = corpus && SHAREABLE.exec(pathname);
   if (!match) return null;
   const [, section, rawId] = match;
@@ -166,20 +188,41 @@ export function shareMetaFor(corpus, pathname) {
   } catch {
     return null;
   }
-  return section === 'read' ? suttaMeta(corpus, id) : nodeMeta(corpus, id);
+  return section === 'read' ? suttaMeta(corpus, id, requestedBy) : nodeMeta(corpus, id);
 }
 
-// Returns one sutta's title and description. Corpus ids are lowercase and shared links carry the
-// capitalized reference ("/read/SN35.33-42"), so the id is folded before the lookup.
-function suttaMeta(corpus, id) {
-  const sutta = corpus.suttas[resolveSuttaId(corpus, id.toLowerCase())];
+// Returns one sutta's title, description, translation and canonical address. Corpus ids are
+// lowercase and shared links carry the capitalized reference ("/read/SN35.33-42"), so the id is
+// folded before the lookup.
+function suttaMeta(corpus, id, requestedBy) {
+  const docId = resolveSuttaId(corpus, id.toLowerCase());
+  const sutta = corpus.suttas[docId];
   if (!sutta) return null;
+  const by = offeredBy(sutta, requestedBy);
   const found = sutta.node ? findNode(corpus, sutta.node) : null;
   return {
-    title: `${sutta.ref} · ${sutta.en}`,
+    title: titled(`${sutta.ref} · ${sutta.en}`, by),
     // Its own blurb, else where it sits, the chain running down to the leaf group holding it.
     description: summarize(sutta.blurb) ?? placeOf(found && [...found.ancestors, found.node], sutta.en),
+    by,
+    canonical: readPath(docId, by),
   };
+}
+
+// Returns the translator `requestedBy` names where the sutta offers his text, else null for Sujato's.
+export function offeredBy(sutta, requestedBy) {
+  return Object.hasOwn(TRANSLATOR_NAMES, requestedBy) && sutta.by?.[requestedBy] ? requestedBy : null;
+}
+
+// Returns the address a sutta's page is indexed under: its document, in the translation `by` names,
+// Sujato's when null.
+export function readPath(docId, by) {
+  return `/read/${encodeURIComponent(docId)}${by ? `?by=${by}` : ''}`;
+}
+
+// Returns a page's title, naming the translator of a text other than Sujato's.
+function titled(title, by) {
+  return by ? `${title} · ${TRANSLATOR_NAMES[by]}` : title;
 }
 
 // Returns a browse group's title and description.

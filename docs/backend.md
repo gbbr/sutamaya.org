@@ -131,6 +131,17 @@ A link naming lines (`?at=15.4`, or a run) previews the lines themselves, read f
 text and cited in the title — `SN 46.53:15.4 · The Fire`. Lines the text doesn't hold preview the
 sutta instead.
 
+## Search engines
+
+Google runs the app before indexing a page, so a result shows the title and description the app
+sets. A sutta in another translator's text is a page of its own, titled with his name:
+`SN1.1 · Crossing the Flood · Bhikkhu Bodhi`.
+
+The Worker builds the sitemap from the corpus: the landing page, Help, and every sutta in each
+translation it offers. Each sutta's page names its canonical address in the HTML as served: the
+document's id, with `?by=` for another translator's text and never `?at=`, so a link to lines
+counts as the sutta's page. Every address the sitemap lists is one a page names as canonical.
+
 ## Staging
 
 Staging runs the production build. The Worker rewrites what differs on the way out, decided by
@@ -151,7 +162,7 @@ applied, as part of `npm test`.
 | `worker/src/lib/writes.js` | every write a push can make |
 | `worker/src/lib/userData.js`, `listTree.js` | shaping the snapshot; repairing the list tree |
 | `worker/src/auth.js`, `session.js`, `oauth.js`, `apple.js`, `emailAuth.js` | accounts, sessions, the sign-in flows |
-| `worker/src/shareMeta.js` | link previews |
+| `worker/src/shareMeta.js`, `sitemap.js` | link previews and canonical addresses; the sitemap |
 | `worker/src/stagingBrand.js`, `wellKnown.js` | staging's branding; native link verification |
 | `worker/migrations/` | the schema |
 | `wrangler.jsonc` | hostnames, bindings and variables, for production and staging |

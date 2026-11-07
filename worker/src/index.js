@@ -6,7 +6,8 @@ import { authRouter } from './routes/auth.js';
 import { dataRouter } from './routes/data.js';
 import { updatesRouter } from './routes/updates.js';
 import { wellKnownRouter } from './wellKnown.js';
-import { withShareMeta } from './shareMeta.js';
+import { loadCorpus, withShareMeta } from './shareMeta.js';
+import { sitemapXml } from './sitemap.js';
 import {
   brandHtml,
   brandHtmlResponse,
@@ -113,6 +114,22 @@ app.get('/', async (c) => {
     headers: {
       'Content-Type': 'text/html; charset=utf-8',
       // An hour, not the year hashed assets get: neither file's URL changes between deploys.
+      'Cache-Control': 'public, max-age=3600',
+    },
+  });
+});
+
+// The sitemap, built from the corpus, listing the app's pages on the hostname's own app and, on a
+// marketing hostname, the landing page — see docs/backend.md's "Search engines". Listed in
+// `assets.run_worker_first` (wrangler.jsonc), which is what makes the Worker see it.
+app.get('/sitemap.xml', async (c) => {
+  const url = new URL(c.req.url);
+  const appOrigin = MARKETING_HOSTS.get(url.hostname);
+  const corpus = await loadCorpus(c.env, url);
+  if (!corpus) return c.json({ error: 'corpus_unavailable' }, 503);
+  return new Response(sitemapXml(corpus, appOrigin ?? url.origin, appOrigin ? url.origin : null), {
+    headers: {
+      'Content-Type': 'application/xml; charset=utf-8',
       'Cache-Control': 'public, max-age=3600',
     },
   });

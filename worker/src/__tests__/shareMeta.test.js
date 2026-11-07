@@ -71,7 +71,31 @@ describe('shareMetaFor', () => {
     expect(shareMetaFor(corpus, '/read/dn16')).toEqual({
       title: 'DN 16 · The Great Discourse on the Buddha’s Extinguishment',
       description: 'The Buddha’s last days.',
+      by: null,
+      canonical: '/read/dn16',
     });
+  });
+
+  it('names the translator of another translation the sutta offers, and gives it its own address', () => {
+    expect(shareMetaFor(corpus, '/read/dn16', 'bodhi')).toMatchObject({
+      title: 'DN 16 · The Great Discourse on the Buddha’s Extinguishment · Bhikkhu Bodhi',
+      by: 'bodhi',
+      canonical: '/read/dn16?by=bodhi',
+    });
+  });
+
+  it('describes Sujato’s text for a translation the sutta lacks', () => {
+    expect(shareMetaFor(corpus, '/read/dn16', 'thanissaro')).toMatchObject({
+      title: 'DN 16 · The Great Discourse on the Buddha’s Extinguishment',
+      by: null,
+      canonical: '/read/dn16',
+    });
+  });
+
+  // The address a search engine is told to index is the one the sitemap lists: the document's own.
+  it('gives a sutta reached by another address the canonical address of its document', () => {
+    expect(shareMetaFor(corpus, '/read/DN16')?.canonical).toBe('/read/dn16');
+    expect(shareMetaFor(corpus, '/read/dhp321')?.canonical).toBe('/read/dhp320-333');
   });
 
   // Every reference the app displays is capitalized, so a link copied from what someone is reading
@@ -114,7 +138,7 @@ describe('shareMetaFor', () => {
   // 37 of AN's documents are named after the very vagga holding them, which would otherwise put
   // the same words on both lines of the card.
   it('skips a level whose name the title already carries', () => {
-    expect(shareMetaFor(corpus, '/read/an1.1-10')).toEqual({
+    expect(shareMetaFor(corpus, '/read/an1.1-10')).toMatchObject({
       title: 'AN1.1–10 · What Occupies the Mind',
       description: 'Aṅguttara Nikāya · Book of Ones',
     });
@@ -234,6 +258,16 @@ describe('applyShareMeta', () => {
     const html = await rendered({ title: 'Mendicants & "Friends"', description: null });
     expect(html).toContain('<meta property="og:title" content="Mendicants &amp; &quot;Friends&quot;" />');
   });
+
+  it('names a sutta page’s canonical address on the page’s own origin', async () => {
+    const html = await rendered({ title: 'DN 16 · The Great Discourse', description: null, canonical: '/read/dn16?by=bodhi' });
+    expect(html).toContain('<link rel="canonical" href="https://app.sutamaya.org/read/dn16?by=bodhi" />');
+  });
+
+  it('names no canonical address for a page without one', async () => {
+    const html = await rendered({ title: 'AN3.1–10 · Fools', description: null });
+    expect(html).not.toContain('rel="canonical"');
+  });
 });
 
 describe('withShareMeta, for a link naming lines', () => {
@@ -270,6 +304,19 @@ describe('withShareMeta, for a link naming lines', () => {
     const html = await preview('https://app.sutamaya.org/read/dn16?by=bodhi&at=5.1');
     expect(html).toContain('<meta property="og:description" content="Then the Blessed One addressed the Venerable Ānanda." />');
     expect(html).toContain('<meta property="og:url" content="https://app.sutamaya.org/read/dn16?by=bodhi&amp;at=5.1" />');
+  });
+
+  it('names the translator, and the sutta’s page in his text as canonical, without the lines', async () => {
+    const html = await preview('https://app.sutamaya.org/read/dn16?by=bodhi&at=5.1');
+    expect(html).toContain('<title>DN 16:5.1 · The Great Discourse on the Buddha’s Extinguishment · Bhikkhu Bodhi</title>');
+    expect(html).toContain('<link rel="canonical" href="https://app.sutamaya.org/read/dn16?by=bodhi" />');
+  });
+
+  it('links the card for a whole sutta to the translation the link names', async () => {
+    const html = await preview('https://app.sutamaya.org/read/dn16?by=bodhi');
+    expect(html).toContain('<title>DN 16 · The Great Discourse on the Buddha’s Extinguishment · Bhikkhu Bodhi</title>');
+    expect(html).toContain('<meta property="og:url" content="https://app.sutamaya.org/read/dn16?by=bodhi" />');
+    expect(html).toContain('<link rel="canonical" href="https://app.sutamaya.org/read/dn16?by=bodhi" />');
   });
 
   it('previews Sujato’s line for a translation the text lacks', async () => {

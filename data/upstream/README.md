@@ -366,6 +366,9 @@ offline copy is new:
 - **The address** names an alternative as a query, `/read/mn10?by=bodhi&at=2.7`, the way `?at=`
   names a line: it is the same sutta, so the routes stay as they are. No parameter means Sujato,
   so every existing link keeps its meaning.
+- **The page's title** names the translator after the sutta's own title,
+  `SN1.1 · Crossing the Flood · Bhikkhu Bodhi`, and search engines get each translation as a page
+  of its own ([docs/backend.md](../../docs/backend.md)'s "Search engines").
 - **The switcher** is a pill at the right of the header, beside search and the menu, with the
   current translator's name without his title ("Sujato", "Bodhi", "Ṭhānissaro") and a chevron;
   an icon couldn't say whose text is showing. Its menu gives each name in full. A sutta only
