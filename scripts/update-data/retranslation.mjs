@@ -13,7 +13,7 @@
 //
 //   typo corrections   typo-doubled-the, typo-spelling; no segment lists or live-match anchors
 //   standalone terms   mendicant-bhikkhu, immersion-concentration, jhana-pali,
-//                      patisambhida-analytical-knowledge, dhamma-the-dhamma
+//                      patisambhida-analytical-knowledge, dhamma-the-dhamma, tathagata-pali
 //   awareness          satipatthana-establishment-of-awareness, sampajanna-pali, sati-aware,
 //                      atapi-ardent, dhammanupassana-mental-contents
 //   breakthrough       abhisamaya-breakthrough
@@ -198,6 +198,22 @@ export const RULES = [
     forms: [
       ['of meaning, text, definition, and eloquence', 'of meaning, of the Dhamma, of definition, and of eloquence'],
       ['the text', 'the Dhamma'],
+    ],
+  },
+  {
+    id: 'tathagata-pali',
+    why: 'Bhikkhu Sujato renders tathāgata as "Realized One"; this app keeps the Pali, as it does for ' +
+      'bhikkhu, jhāna and saṅkhāra. Open with an empty deny list: every "Realized One" in the corpus ' +
+      'translates tathāgata or one of its compounds (tathāgatappavedita, tathāgatabala, ' +
+      'tathāgatasāvaka), and the lines whose Pali lacks the word are his expansions of an ' +
+      'abbreviation or verse set out of line with the Pali. The replacement is written capitalized, ' +
+      'so it also overrides his lowercase "a realized one" in the undetermined questions (SN 44, ' +
+      'MN 63, MN 72, DN 9). The plural is anglicised (Tathāgatas), as jhānas is.',
+    mode: 'deny',
+    predicate: /tathāgat/i,
+    forms: [
+      ['realized one', 'Tathāgata'],
+      ['realized ones', 'Tathāgatas'],
     ],
   },
   // ── Awareness ───────────────────────────────────────────────────────────────

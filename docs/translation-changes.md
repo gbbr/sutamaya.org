@@ -14,6 +14,7 @@ gloss a term in his wording while the line above it uses ours.
 | Pali | Bhikkhu Sujato | Here |
 |---|---|---|
 | bhikkhu | mendicant | **bhikkhu** |
+| tathāgata | Realized One | **Tathāgata** |
 | sati | mindfulness, mindful | **awareness, aware** |
 | satipaṭṭhāna | mindfulness meditation | **the establishment of awareness** |
 | sampajañña | situational awareness, aware | **sampajañña** (and "with sampajañña" for sampajāna, "cultivate sampajañña" for sampajānakārī) |

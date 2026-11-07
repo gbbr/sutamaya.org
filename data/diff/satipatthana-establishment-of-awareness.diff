@@ -292,8 +292,8 @@ Rule: satipatthana-establishment-of-awareness — 354 change(s), 135 file(s)
 +++ sujato/sutta/an/an10/an10.95_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an10.95:11.2
  PLI: Atha kho evamettha tathāgatassa hoti: ‘ye kho keci lokamhā nīyiṁsu vā nīyanti vā nīyissanti vā, sabbe te pañca nīvaraṇe pahāya cetaso upakkilese paññāya dubbalīkaraṇe, catūsu satipaṭṭhānesu suppatiṭṭhitacittā, satta bojjhaṅge yathābhūtaṁ bhāvetvā. 
--But the Realized One knows that whoever is saved from the world—whether in the past, the future, or the present—all have given up the five hindrances, corruptions of the heart that weaken wisdom. They have firmly established their mind in the four kinds of mindfulness meditation. And they have truly developed the seven awakening factors. 
-+But the Realized One knows that whoever is saved from the world—whether in the past, the future, or the present—all have given up the five hindrances, corruptions of the heart that weaken wisdom. They have firmly established their mind in the four establishments of awareness. And they have truly developed the seven awakening factors. 
+-But the Tathāgata knows that whoever is saved from the world—whether in the past, the future, or the present—all have given up the five hindrances, corruptions of the heart that weaken wisdom. They have firmly established their mind in the four kinds of mindfulness meditation. And they have truly developed the seven awakening factors. 
++But the Tathāgata knows that whoever is saved from the world—whether in the past, the future, or the present—all have given up the five hindrances, corruptions of the heart that weaken wisdom. They have firmly established their mind in the four establishments of awareness. And they have truly developed the seven awakening factors. 
 --- sujato/sutta/an/an11/an11.17_translation-en-sujato.json
 +++ sujato/sutta/an/an11/an11.17_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an11.17:11.2
@@ -926,20 +926,20 @@ Rule: satipatthana-establishment-of-awareness — 354 change(s), 135 file(s)
 +++ sujato/sutta/sn/sn47/sn47.22_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.22:2.7
  PLI: “Catunnaṁ kho, āvuso, satipaṭṭhānānaṁ abhāvitattā abahulīkatattā tathāgate parinibbute saddhammo na ciraṭṭhitiko hoti. 
--“It’s because of not developing and cultivating the four kinds of mindfulness meditation that the true teaching doesn’t last long after the final quenching of the Realized One. 
-+“It’s because of not developing and cultivating the four establishments of awareness that the true teaching doesn’t last long after the final quenching of the Realized One. 
+-“It’s because of not developing and cultivating the four kinds of mindfulness meditation that the true teaching doesn’t last long after the final quenching of the Tathāgata. 
++“It’s because of not developing and cultivating the four establishments of awareness that the true teaching doesn’t last long after the final quenching of the Tathāgata. 
 @@ -1,2 +1,2 @@ sn47.22:2.8
  PLI: Catunnañca kho, āvuso, satipaṭṭhānānaṁ bhāvitattā bahulīkatattā tathāgate parinibbute saddhammo ciraṭṭhitiko hoti. 
--It’s because of developing and cultivating the four kinds of mindfulness meditation that the true teaching does last long after the final quenching of the Realized One. 
-+It’s because of developing and cultivating the four establishments of awareness that the true teaching does last long after the final quenching of the Realized One. 
+-It’s because of developing and cultivating the four kinds of mindfulness meditation that the true teaching does last long after the final quenching of the Tathāgata. 
++It’s because of developing and cultivating the four establishments of awareness that the true teaching does last long after the final quenching of the Tathāgata. 
 @@ -1,2 +1,2 @@ sn47.22:3.6
  PLI: Imesaṁ kho, āvuso, catunnaṁ satipaṭṭhānānaṁ abhāvitattā abahulīkatattā tathāgate parinibbute saddhammo na ciraṭṭhitiko hoti. 
--It’s because of not developing and cultivating these four kinds of mindfulness meditation that the true teaching doesn’t last long after the final quenching of the Realized One. 
-+It’s because of not developing and cultivating these four establishments of awareness that the true teaching doesn’t last long after the final quenching of the Realized One. 
+-It’s because of not developing and cultivating these four kinds of mindfulness meditation that the true teaching doesn’t last long after the final quenching of the Tathāgata. 
++It’s because of not developing and cultivating these four establishments of awareness that the true teaching doesn’t last long after the final quenching of the Tathāgata. 
 @@ -1,2 +1,2 @@ sn47.22:3.7
  PLI: Imesañca kho, āvuso, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā tathāgate parinibbute saddhammo ciraṭṭhitiko hotī”ti. 
--It’s because of developing and cultivating these four kinds of mindfulness meditation that the true teaching does last long after the final quenching of the Realized One.” 
-+It’s because of developing and cultivating these four establishments of awareness that the true teaching does last long after the final quenching of the Realized One.” 
+-It’s because of developing and cultivating these four kinds of mindfulness meditation that the true teaching does last long after the final quenching of the Tathāgata.” 
++It’s because of developing and cultivating these four establishments of awareness that the true teaching does last long after the final quenching of the Tathāgata.” 
 --- sujato/sutta/sn/sn47/sn47.23_translation-en-sujato.json
 +++ sujato/sutta/sn/sn47/sn47.23_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.23:2.7
@@ -972,20 +972,20 @@ Rule: satipatthana-establishment-of-awareness — 354 change(s), 135 file(s)
 +++ sujato/sutta/sn/sn47/sn47.25_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.25:2.1
  PLI: “Catunnaṁ kho, brāhmaṇa, satipaṭṭhānānaṁ abhāvitattā abahulīkatattā tathāgate parinibbute saddhammo na ciraṭṭhitiko hoti. 
--“Brahmin, it’s because of not developing and cultivating the four kinds of mindfulness meditation that the true teaching doesn’t last long after the final quenching of the Realized One. 
-+“Brahmin, it’s because of not developing and cultivating the four establishments of awareness that the true teaching doesn’t last long after the final quenching of the Realized One. 
+-“Brahmin, it’s because of not developing and cultivating the four kinds of mindfulness meditation that the true teaching doesn’t last long after the final quenching of the Tathāgata. 
++“Brahmin, it’s because of not developing and cultivating the four establishments of awareness that the true teaching doesn’t last long after the final quenching of the Tathāgata. 
 @@ -1,2 +1,2 @@ sn47.25:2.2
  PLI: Catunnañca kho, brāhmaṇa, satipaṭṭhānānaṁ bhāvitattā bahulīkatattā tathāgate parinibbute saddhammo ciraṭṭhitiko hoti. 
--It’s because of developing and cultivating the four kinds of mindfulness meditation that the true teaching does last long after the final quenching of the Realized One. 
-+It’s because of developing and cultivating the four establishments of awareness that the true teaching does last long after the final quenching of the Realized One. 
+-It’s because of developing and cultivating the four kinds of mindfulness meditation that the true teaching does last long after the final quenching of the Tathāgata. 
++It’s because of developing and cultivating the four establishments of awareness that the true teaching does last long after the final quenching of the Tathāgata. 
 @@ -1,2 +1,2 @@ sn47.25:3.6
  PLI: Imesaṁ kho, brāhmaṇa, catunnaṁ satipaṭṭhānānaṁ abhāvitattā abahulīkatattā tathāgate parinibbute saddhammo na ciraṭṭhitiko hoti. 
--It’s because of not developing and cultivating these four kinds of mindfulness meditation that the true teaching doesn’t last long after the final quenching of the Realized One. 
-+It’s because of not developing and cultivating these four establishments of awareness that the true teaching doesn’t last long after the final quenching of the Realized One. 
+-It’s because of not developing and cultivating these four kinds of mindfulness meditation that the true teaching doesn’t last long after the final quenching of the Tathāgata. 
++It’s because of not developing and cultivating these four establishments of awareness that the true teaching doesn’t last long after the final quenching of the Tathāgata. 
 @@ -1,2 +1,2 @@ sn47.25:3.7
  PLI: Imesañca kho, brāhmaṇa, catunnaṁ satipaṭṭhānānaṁ bhāvitattā bahulīkatattā tathāgate parinibbute saddhammo ciraṭṭhitiko hotī”ti. 
--It’s because of developing and cultivating these four kinds of mindfulness meditation that the true teaching does last long after the final quenching of the Realized One.” 
-+It’s because of developing and cultivating these four establishments of awareness that the true teaching does last long after the final quenching of the Realized One.” 
+-It’s because of developing and cultivating these four kinds of mindfulness meditation that the true teaching does last long after the final quenching of the Tathāgata.” 
++It’s because of developing and cultivating these four establishments of awareness that the true teaching does last long after the final quenching of the Tathāgata.” 
 --- sujato/sutta/sn/sn47/sn47.26_translation-en-sujato.json
 +++ sujato/sutta/sn/sn47/sn47.26_translation-en-sujato.json
 @@ -1,2 +1,2 @@ sn47.26:1.6

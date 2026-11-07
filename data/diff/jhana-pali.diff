@@ -187,14 +187,14 @@ Rule: jhana-pali — 965 change(s), 310 file(s)
 +++ sujato/sutta/an/an10/an10.21_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an10.21:9.1
  PLI: Puna caparaṁ, bhikkhave, tathāgato jhānavimokkhasamādhisamāpattīnaṁ saṅkilesaṁ vodānaṁ vuṭṭhānaṁ yathābhūtaṁ pajānāti. 
--Furthermore, the Realized One truly understands corruption, cleansing, and emergence regarding the absorptions, liberations, composures, and attainments. 
-+Furthermore, the Realized One truly understands corruption, cleansing, and emergence regarding the jhānas, liberations, composures, and attainments. 
+-Furthermore, the Tathāgata truly understands corruption, cleansing, and emergence regarding the absorptions, liberations, composures, and attainments. 
++Furthermore, the Tathāgata truly understands corruption, cleansing, and emergence regarding the jhānas, liberations, composures, and attainments. 
 --- sujato/sutta/an/an10/an10.22_translation-en-sujato.json
 +++ sujato/sutta/an/an10/an10.22_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an10.22:9.1
  PLI: Puna caparaṁ, ānanda, tathāgato jhānavimokkhasamādhisamāpattīnaṁ saṅkilesaṁ vodānaṁ vuṭṭhānaṁ yathābhūtaṁ pajānāti. 
--Furthermore, the Realized One truly understands corruption, cleansing, and emergence regarding the absorptions, liberations, composures, and attainments. 
-+Furthermore, the Realized One truly understands corruption, cleansing, and emergence regarding the jhānas, liberations, composures, and attainments. 
+-Furthermore, the Tathāgata truly understands corruption, cleansing, and emergence regarding the absorptions, liberations, composures, and attainments. 
++Furthermore, the Tathāgata truly understands corruption, cleansing, and emergence regarding the jhānas, liberations, composures, and attainments. 
 --- sujato/sutta/an/an10/an10.26_translation-en-sujato.json
 +++ sujato/sutta/an/an10/an10.26_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an10.26:2.3
@@ -251,8 +251,8 @@ Rule: jhana-pali — 965 change(s), 310 file(s)
 +‘I enter and emerge from the first jhāna, the second jhāna, the third jhāna, and the fourth jhāna. And I enter and emerge from the dimensions of infinite space, infinite consciousness, nothingness, and neither perception nor non-perception. And I enter and emerge from the cessation of perception and feeling.’ 
 @@ -1,2 +1,2 @@ an10.85:3.1
  PLI: Tamenaṁ tathāgato vā tathāgatasāvako vā jhāyī samāpattikusalo paracittakusalo paracittapariyāyakusalo samanuyuñjati samanuggāhati samanubhāsati. 
--They’re pursued, pressed, and grilled by the Realized One, or by one of his disciples who has the absorptions, and is skilled in attainments, in the minds of others, and in encompassing another’s mind. 
-+They’re pursued, pressed, and grilled by the Realized One, or by one of his disciples who has the jhānas, and is skilled in attainments, in the minds of others, and in encompassing another’s mind. 
+-They’re pursued, pressed, and grilled by the Tathāgata, or by one of his disciples who has the absorptions, and is skilled in attainments, in the minds of others, and in encompassing another’s mind. 
++They’re pursued, pressed, and grilled by the Tathāgata, or by one of his disciples who has the jhānas, and is skilled in attainments, in the minds of others, and in encompassing another’s mind. 
 @@ -1,2 +1,2 @@ an10.85:4.3
  PLI: ahaṁ paṭhamaṁ jhānaṁ samāpajjāmipi vuṭṭhahāmipi …pe… 
 -“I enter and emerge from the first absorption … 
@@ -269,8 +269,8 @@ Rule: jhana-pali — 965 change(s), 310 file(s)
 +++ sujato/sutta/an/an10/an10.86_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an10.86:2.3
  PLI: Tamenaṁ tathāgato vā tathāgatasāvako vā jhāyī samāpattikusalo paracittakusalo paracittapariyāyakusalo samanuyuñjati samanuggāhati samanubhāsati. 
--They’re pursued, pressed, and grilled by the Realized One, or by one of his disciples who has the absorptions, and is skilled in attainments, in the minds of others, and in encompassing another’s mind. 
-+They’re pursued, pressed, and grilled by the Realized One, or by one of his disciples who has the jhānas, and is skilled in attainments, in the minds of others, and in encompassing another’s mind. 
+-They’re pursued, pressed, and grilled by the Tathāgata, or by one of his disciples who has the absorptions, and is skilled in attainments, in the minds of others, and in encompassing another’s mind. 
++They’re pursued, pressed, and grilled by the Tathāgata, or by one of his disciples who has the jhānas, and is skilled in attainments, in the minds of others, and in encompassing another’s mind. 
 --- sujato/sutta/an/an10/an10.8_translation-en-sujato.json
 +++ sujato/sutta/an/an10/an10.8_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an10.8:0.3
@@ -575,8 +575,8 @@ Rule: jhana-pali — 965 change(s), 310 file(s)
 +++ sujato/sutta/an/an4/an4.246_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an4.246:4.2
  PLI: Idha, bhikkhave, tathāgato vivicceva kāmehi …pe… catutthaṁ jhānaṁ upasampajja viharati. 
--It’s when a Realized One, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption … second absorption … third absorption … fourth absorption. 
-+It’s when a Realized One, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first jhāna … second jhāna … third jhāna … fourth jhāna. 
+-It’s when a Tathāgata, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first absorption … second absorption … third absorption … fourth absorption. 
++It’s when a Tathāgata, quite secluded from sensual pleasures, secluded from unskillful qualities, enters and remains in the first jhāna … second jhāna … third jhāna … fourth jhāna. 
 --- sujato/sutta/an/an4/an4.35_translation-en-sujato.json
 +++ sujato/sutta/an/an4/an4.35_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an4.35:3.9
@@ -985,12 +985,12 @@ Rule: jhana-pali — 965 change(s), 310 file(s)
 +++ sujato/sutta/an/an6/an6.64_translation-en-sujato.json
 @@ -1,2 +1,2 @@ an6.64:3.1
  PLI: Puna caparaṁ, bhikkhave, tathāgato jhānavimokkhasamādhisamāpattīnaṁ saṅkilesaṁ vodānaṁ vuṭṭhānaṁ yathābhūtaṁ pajānāti. 
--Furthermore, the Realized One truly understands corruption, cleansing, and emergence regarding the absorptions, liberations, composures, and attainments. 
-+Furthermore, the Realized One truly understands corruption, cleansing, and emergence regarding the jhānas, liberations, composures, and attainments. 
+-Furthermore, the Tathāgata truly understands corruption, cleansing, and emergence regarding the absorptions, liberations, composures, and attainments. 
++Furthermore, the Tathāgata truly understands corruption, cleansing, and emergence regarding the jhānas, liberations, composures, and attainments. 
 @@ -1,2 +1,2 @@ an6.64:9.1
  PLI: Tatra ce, bhikkhave, pare tathāgataṁ jhānavimokkhasamādhisamāpattīnaṁ saṅkilesaṁ vodānaṁ vuṭṭhānaṁ yathābhūtaṁ ñāṇena upasaṅkamitvā pañhaṁ pucchanti. 
--If others come to the Realized One and ask questions about his true knowledge of corruption, cleansing, and emergence regarding the absorptions, liberations, composures, and attainments, 
-+If others come to the Realized One and ask questions about his true knowledge of corruption, cleansing, and emergence regarding the jhānas, liberations, composures, and attainments, 
+-If others come to the Tathāgata and ask questions about his true knowledge of corruption, cleansing, and emergence regarding the absorptions, liberations, composures, and attainments, 
++If others come to the Tathāgata and ask questions about his true knowledge of corruption, cleansing, and emergence regarding the jhānas, liberations, composures, and attainments, 
 @@ -1,2 +1,2 @@ an6.64:13.3
  PLI: Yampidaṁ jhānavimokkhasamādhisamāpattīnaṁ saṅkilesaṁ vodānaṁ vuṭṭhānaṁ yathābhūtaṁ ñāṇaṁ tampi samāhitassa vadāmi no asamāhitassa. 
 -And true knowledge of corruption, cleansing, and emergence regarding the absorptions, liberations, composures, and attainments is for those with composure, not for those without composure. 
@@ -1713,8 +1713,8 @@ Rule: jhana-pali — 965 change(s), 310 file(s)
 +++ sujato/sutta/dn/dn21_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn21:1.4.2
  PLI: “durupasaṅkamā kho, tāta pañcasikha, tathāgatā mādisena, jhāyī jhānaratā, tadantaraṁ paṭisallīnā. 
--“My dear Pañcasikha, it is hard for one like me to get near the Realized Ones while they are on retreat practicing absorption, enjoying absorption. 
-+“My dear Pañcasikha, it is hard for one like me to get near the Realized Ones while they are on retreat practicing jhāna, enjoying jhāna. 
+-“My dear Pañcasikha, it is hard for one like me to get near the Tathāgatas while they are on retreat practicing absorption, enjoying absorption. 
++“My dear Pañcasikha, it is hard for one like me to get near the Tathāgatas while they are on retreat practicing jhāna, enjoying jhāna. 
 --- sujato/sutta/dn/dn22_translation-en-sujato.json
 +++ sujato/sutta/dn/dn22_translation-en-sujato.json
 @@ -1,2 +1,2 @@ dn22:21.32
@@ -2729,8 +2729,8 @@ Rule: jhana-pali — 965 change(s), 310 file(s)
 +++ sujato/sutta/mn/mn12_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn12:16.1
  PLI: Puna caparaṁ, sāriputta, tathāgato jhānavimokkhasamādhisamāpattīnaṁ saṅkilesaṁ vodānaṁ vuṭṭhānaṁ yathābhūtaṁ pajānāti. 
--Furthermore, the Realized One truly understands corruption, cleansing, and emergence regarding the absorptions, liberations, composures, and attainments. 
-+Furthermore, the Realized One truly understands corruption, cleansing, and emergence regarding the jhānas, liberations, composures, and attainments. 
+-Furthermore, the Tathāgata truly understands corruption, cleansing, and emergence regarding the absorptions, liberations, composures, and attainments. 
++Furthermore, the Tathāgata truly understands corruption, cleansing, and emergence regarding the jhānas, liberations, composures, and attainments. 
 --- sujato/sutta/mn/mn138_translation-en-sujato.json
 +++ sujato/sutta/mn/mn138_translation-en-sujato.json
 @@ -1,2 +1,2 @@ mn138:12.2

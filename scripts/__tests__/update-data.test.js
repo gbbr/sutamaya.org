@@ -336,6 +336,11 @@ describe('the shipped rules, one example each', () => {
     ['dhamma-the-dhamma', 'dhp363:3', 'sujato/sutta', 'explains the text and its meaning,', 'explains the Dhamma and its meaning,'],
     // Not listed: peyyāla chapter headings are "text" as ordinary English, not dhamma.
     ['dhamma-the-dhamma', 'sn12.82:1.8', 'sujato/sutta', '(All the abbreviated texts should be told in full.)', '(All the abbreviated texts should be told in full.)'],
+    // The singular, its lowercase use in the undetermined questions (which takes the capital), and
+    // the plural in a Title Case heading.
+    ['tathagata-pali', 'an4.23:2.2', 'sujato/sutta', 'That’s why he’s called the ‘Realized One’. ', 'That’s why he’s called the ‘Tathāgata’. '],
+    ['tathagata-pali', 'mn63:3.39', 'sujato/sutta', 'that after death, a realized one still exists, ', 'that after death, a Tathāgata still exists, '],
+    ['tathagata-pali', 'sn56.12:0.3', 'sujato/sutta', 'The Realized Ones ', 'The Tathāgatas '],
     // One example per grammatical slot ātāpī occupies. The adjective is the stock "diligent, keen,
     // and resolute" (the satipaṭṭhāna formula's is sampajanna-pali's); the abstract noun ātappa is
     // Bhikkhu Sujato's "keenness"; the adverb is his "keenly"; and the article travels with the
@@ -351,7 +356,7 @@ describe('the shipped rules, one example each', () => {
     ['abhisamaya-breakthrough', 'sn56.35:2.6', 'sujato/sutta', 'But the comprehension of the four noble truths doesn’t come with pain', 'But the breakthrough to the four noble truths doesn’t come with pain'],
     ['abhisamaya-breakthrough', 'sn-name:400.sn13', 'sujato/name', 'Linked Discourses on Comprehension', 'Linked Discourses on the Breakthrough'],
     ['abhisamaya-breakthrough', 'sn13.2:3.1', 'sujato/sutta', 'for an individual with comprehension, a noble disciple accomplished in view', 'for an individual who has made the breakthrough, a noble disciple accomplished in view'],
-    ['abhisamaya-breakthrough', 'sn12.20:2.4', 'sujato/sutta', 'A Realized One awakens to this and comprehends it,', 'A Realized One awakens to this and breaks through to it,'],
+    ['abhisamaya-breakthrough', 'sn12.20:2.4', 'sujato/sutta', 'A Realized One awakens to this and comprehends it,', 'A Tathāgata awakens to this and breaks through to it,'],
     ['abhisamaya-breakthrough', 'sn56.4:1.3', 'sujato/sutta', 'truly comprehend after rightly going forth from the lay life to homelessness, all of them truly comprehend the four noble truths.', 'truly break through after rightly going forth from the lay life to homelessness, all of them truly break through to the four noble truths.'],
     ['abhisamaya-breakthrough', 'sn56.32:1.2', 'sujato/sutta', '‘Without truly comprehending the noble truths of suffering', '‘Without truly breaking through to the noble truths of suffering'],
     ['abhisamaya-breakthrough', 'sn33.11:0.3', 'sujato/sutta', 'Five Discourses on Not Comprehending Form, Etc.', 'Five Discourses on Not Breaking Through to Form, Etc.'],
