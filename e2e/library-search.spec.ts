@@ -45,7 +45,7 @@ test('a text hit opens the reader on its passage, the words it was found by mark
 
   await page.getByRole('button', { name: 'Search', exact: true }).click();
   // Only in the text of DN 16, far down it, so the reader has to land there to show it.
-  await page.getByPlaceholder('Search suttas, text and lists').fill('the Realized One became fully extinguished');
+  await page.getByPlaceholder('Search suttas, text and lists').fill('the Tathāgata became fully extinguished');
 
   const hits = searchResults(page);
   await expect(hits.getByText('Searching sutta text…')).toBeHidden({ timeout: 15000 });
@@ -53,7 +53,7 @@ test('a text hit opens the reader on its passage, the words it was found by mark
   await expect(page).toHaveURL(/\/read\/dn16/);
 
   // The marked words in view, inside the wash.
-  const mark = page.locator('[data-wash-block] mark', { hasText: /the Realized One became fully extinguished/i }).first();
+  const mark = page.locator('[data-wash-block] mark', { hasText: /the Tathāgata became fully extinguished/i }).first();
   await expect(mark).toBeInViewport();
 });
 
@@ -61,7 +61,7 @@ test('a text hit opened in a new tab lands on its passage the same way', async (
   await page.goto('/browse');
 
   await page.getByRole('button', { name: 'Search', exact: true }).click();
-  await page.getByPlaceholder('Search suttas, text and lists').fill('the Realized One became fully extinguished');
+  await page.getByPlaceholder('Search suttas, text and lists').fill('the Tathāgata became fully extinguished');
 
   const hits = searchResults(page);
   await expect(hits.getByText('Searching sutta text…')).toBeHidden({ timeout: 15000 });
@@ -70,7 +70,7 @@ test('a text hit opened in a new tab lands on its passage the same way', async (
 
   const tab = await context.newPage();
   await tab.goto(href!);
-  const mark = tab.locator('[data-wash-block] mark', { hasText: /the Realized One became fully extinguished/i }).first();
+  const mark = tab.locator('[data-wash-block] mark', { hasText: /the Tathāgata became fully extinguished/i }).first();
   await expect(mark).toBeInViewport();
 });
 
