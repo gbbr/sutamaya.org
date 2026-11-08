@@ -93,6 +93,27 @@ test('a refresh resumes the reading, even as notes and highlights land after the
   await expect(marker).toBeInViewport();
 });
 
+// A relaunch opens "/", which restores the last location, the translation chosen there included.
+test('a relaunch reopens the translation chosen, where it was left', async ({ page }) => {
+  // Where MN 1 was left in Bodhi's translation, as the Reader records it.
+  const place = () =>
+    page.evaluate(() => JSON.parse(localStorage.getItem('sutamaya.scrollPositions') ?? '{}')['reader:mn1:bodhi']);
+  const bodhi = page.getByRole('button', { name: 'Translation: Bhikkhu Bodhi' });
+
+  await page.goto('/read/mn1');
+  await page.getByRole('button', { name: 'Translation: Bhikkhu Sujato' }).click();
+  await page.getByRole('menuitemradio', { name: 'Bhikkhu Bodhi' }).click();
+  await expect(bodhi).toBeVisible();
+  const marker = page.locator('[data-seg="117"]');
+  await marker.evaluate((el) => el.scrollIntoView({ block: 'center' }));
+  await expect.poll(place).toBeGreaterThan(0);
+
+  await page.goto('/');
+  await expect(page).toHaveURL(/\/read\/mn1\?by=bodhi$/);
+  await expect(bodhi).toBeVisible();
+  await expect(marker).toBeInViewport();
+});
+
 // Opening a sutta's address again — a link, a bookmark, the short form — is a fresh start, unlike a
 // refresh, however far down it was read before.
 test('a sutta opened by its address starts at the top, even where it was read before', async ({ page }) => {

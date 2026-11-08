@@ -8,7 +8,7 @@ import { useNativeBack } from './hooks/useNativeBack';
 import { useNativeLinks } from './hooks/useNativeLinks';
 import { useCorpus } from './context/CorpusContext';
 import { getLastLocation, rememberLocation } from './lib/navigation/lastLocation';
-import { normalizeRouteId, resolveCanonicalSuttaId } from './lib/corpus/corpus';
+import { normalizeRouteId, resolveCanonicalSuttaId, translatorOf } from './lib/corpus/corpus';
 import { RETURN_STATE, takeAddressArrival } from './lib/navigation/entryKind';
 import { HelpPage } from './pages/HelpPage';
 import { LibraryPage } from './pages/LibraryPage';
@@ -46,7 +46,7 @@ function RestoreLastLocation() {
     // may have renamed or dropped it. Checked here rather than at the write, since
     // lib/navigation/lastLocation.ts knows nothing about the corpus.
     const stored = getLastLocation();
-    const uid = stored?.match(/^\/read\/([^/]+)$/)?.[1];
+    const uid = stored?.match(/^\/read\/([^/?]+)/)?.[1];
     // Through resolveCanonicalSuttaId, so a uid naming one sutta of a batched document is judged
     // as the reader judges it.
     const restorable = uid && corpus ? !!corpus.suttas[resolveCanonicalSuttaId(corpus, decodeURIComponent(uid))] : !!stored;
@@ -92,8 +92,9 @@ function Pages() {
 function AppShell() {
   useNativeBack();
   useNativeLinks();
-  const { pathname } = useLocation();
-  useEffect(() => rememberLocation(pathname), [pathname]);
+  const { pathname, search } = useLocation();
+  const by = translatorOf(new URLSearchParams(search).get('by'));
+  useEffect(() => rememberLocation(pathname, by), [pathname, by]);
   return (
     <AppProviders>
       <Pages />

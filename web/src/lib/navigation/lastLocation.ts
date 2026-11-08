@@ -1,20 +1,26 @@
 import { LAST_LOCATION_KEY } from '../storageKeys';
+import type { Translator } from '../types';
 
 // The last screen the reader was on, which "/" restores — a fresh tab, or a relaunch from the
 // home-screen icon. The app shell hands it every location the app shows (App.tsx), so no page
 // wires this up itself.
 
-const VALID_PATH = /^\/browse\/[^/]+(\/[^/]*)?$|^\/read\/[^/]+$/;
+const VALID_PATH = /^\/browse\/[^/]+(\/[^/]*)?$|^\/read\/[^/?]+(\?by=[a-z]+)?$/;
 
 /** Stores `pathname` as the location "/" restores, where it is one that can be restored. */
-export function rememberLocation(pathname: string) {
+export function rememberLocation(
+  pathname: string,
+  // The translation the address names, kept with a Reader location unless it is Sujato's.
+  by: Translator = 'sujato',
+) {
+  const location = by !== 'sujato' && pathname.startsWith('/read/') ? `${pathname}?by=${by}` : pathname;
   // Only store a location `getLastLocation()` would accept, so a bogus URL can't clobber a valid
   // one with something the read side then rejects. Settings is excluded so reopening the app
   // doesn't land back in it; bare '/browse' fails VALID_PATH, which is right — it's the first-visit
   // screen with nothing selected, so there's no location there to come back to.
-  if (!VALID_PATH.test(pathname) || pathname.startsWith('/settings')) return;
+  if (!VALID_PATH.test(location) || pathname.startsWith('/settings')) return;
   try {
-    localStorage.setItem(LAST_LOCATION_KEY, pathname);
+    localStorage.setItem(LAST_LOCATION_KEY, location);
   } catch {
     // storage unavailable/quota exceeded — nothing to fall back to, just skip this write
   }
