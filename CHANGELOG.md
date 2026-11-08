@@ -4,6 +4,12 @@ What each update to sutamaya changed, newest first, named for the day it went ou
 reaches the web at once and the iOS and Android apps over the air; an app shows the update it runs
 in brackets after its version, at the foot of Settings.
 
+## 2026-11-08
+
+Over-the-air update e6954718 for the iOS and Android apps, also live on the web.
+
+- Reopen the app after closing it in the translation you were reading ([e6954718](https://github.com/gbbr/sutamaya.org/commit/e6954718))
+
 ## 2026-11-07
 
 Over-the-air update 8d2081e3 for the iOS and Android apps, also live on the web.
