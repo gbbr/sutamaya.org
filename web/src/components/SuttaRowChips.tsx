@@ -93,7 +93,10 @@ export function SuttaRowChips({ chips, noted, hlCount, hlColors, theme, fs, onCh
               }`}
               style={theme ? { background: theme.tint } : undefined}
             >
-              <MatchedText text={c.parent} query={query} theme={theme} />
+              {/* The name in one inline box, so a marked word keeps the spaces beside it. */}
+              <span>
+                <MatchedText text={c.parent} query={query} theme={theme} />
+              </span>
             </span>
           )}
           {/* The parent segment's own cap is the only fill on the seam — the label segment has
@@ -117,7 +120,10 @@ export function SuttaRowChips({ chips, noted, hlCount, hlColors, theme, fs, onCh
               !c.parent && theme ? { background: `color-mix(in srgb, ${theme.tint} 50%, transparent)` } : undefined
             }
           >
-            <MatchedText text={c.label} query={query} theme={theme} />
+            {/* The name in one inline box, so a marked word keeps the spaces beside it. */}
+            <span>
+              <MatchedText text={c.label} query={query} theme={theme} />
+            </span>
           </span>
         </ChipTag>
       ))}

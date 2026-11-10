@@ -14,9 +14,11 @@ const chips: SuttaRowChip[] = [
 // from "one per palette colour".
 const hlColors = [HIGHLIGHT_COLORS[0], HIGHLIGHT_COLORS[2]];
 
-// A chip renders as a pill wrapping one or two segments, so the element carrying the chip's own
-// classes/title/style is the parent of the element the label text is found in.
-const pillOf = (label: string) => screen.getByText(label).parentElement as HTMLElement;
+// A chip renders as a pill wrapping one or two segments, each holding its name in a span of its
+// own: the segment is the parent of the element the label text is found in, and the element
+// carrying the chip's own classes/title/style is the segment's parent.
+const segmentOf = (label: string) => screen.getByText(label).parentElement as HTMLElement;
+const pillOf = (label: string) => segmentOf(label).parentElement as HTMLElement;
 
 describe('SuttaRowChips', () => {
   it('renders nothing when there are no chips and no highlights', () => {
@@ -81,6 +83,15 @@ describe('SuttaRowChips', () => {
       expect(pillOf('ites').textContent).toBe('Favorites');
     });
 
+    it('keeps the spaces beside a marked word, holding the name in one box inside its flex segment', () => {
+      render(
+        <SuttaRowChips chips={[{ id: 'l3', label: 'Practice Jhana', breadcrumb: 'Practice Jhana' }]} hlCount={0} hlColors={[]} query="jhana" />
+      );
+      const segment = screen.getByTitle('Practice Jhana').lastElementChild!;
+      expect(segment.textContent).toBe('Practice Jhana');
+      expect(segment.childNodes).toHaveLength(1);
+    });
+
     it('marks it inside the parent segment too, either half being what search matched', () => {
       const { container } = render(<SuttaRowChips chips={chips} hlCount={0} hlColors={[]} query="study" />);
       expect(marks(container)).toEqual(['Study']);
@@ -111,7 +122,7 @@ describe('SuttaRowChips', () => {
 
     it('falls back to the app-shell ink fill on a parent segment', () => {
       render(<SuttaRowChips chips={chips} hlCount={0} hlColors={[]} />);
-      expect(screen.getByText('Study').className).toContain('bg-ink/10');
+      expect(segmentOf('Study').className).toContain('bg-ink/10');
     });
   });
 
@@ -134,7 +145,7 @@ describe('SuttaRowChips', () => {
 
     it('fills a parent segment from the theme\'s tint rather than the ink class', () => {
       render(<SuttaRowChips chips={chips} hlCount={0} hlColors={[]} theme={theme} />);
-      const seg = screen.getByText('Study');
+      const seg = segmentOf('Study');
       expect(seg.className).not.toContain('bg-ink/10');
       const probe = document.createElement('div');
       probe.style.background = theme.tint;
