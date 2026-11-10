@@ -1,12 +1,12 @@
 {
   "ios": {
     "build": 6,
-    "commit": "5db953981ed6496c58960dbee834a859f3302ded",
+    "commit": "16de9b9b27be9304a23c340c16bb89a91322ffae",
     "minNative": 1
   },
   "android": {
     "build": 3,
-    "commit": "5db953981ed6496c58960dbee834a859f3302ded",
+    "commit": "16de9b9b27be9304a23c340c16bb89a91322ffae",
     "minNative": 1
   }
 }
