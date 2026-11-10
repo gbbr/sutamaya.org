@@ -70,10 +70,21 @@ jobs:
       - run: npx playwright install --with-deps chromium webkit
 
       - run: npm run test:e2e
+        # Time limit on the suite, so a crashed server fails the run instead of stalling it.
+        timeout-minutes: 40
 
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: playwright-report
           path: playwright-report/
+          retention-days: 7
+
+      # The local Worker's own logs, where the cause of a crash is written.
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: wrangler-logs
+          path: ~/.config/.wrangler/logs/
+          include-hidden-files: true
           retention-days: 7

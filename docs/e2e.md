@@ -87,7 +87,8 @@ with a video and a screenshot.
 `.github/workflows/ci.yml` runs the suite as its own job on pull requests and pushes to `main`. A
 clean checkout needs three things a dev machine already has: a `.dev.vars` with a throwaway
 `SESSION_SECRET`, a built `web/dist` (which `wrangler dev` requires), and a migrated local database.
-A failed run uploads the report.
+The suite gets 40 minutes, so a run whose servers have died fails instead of stalling. A failed
+run uploads the report and the local Worker's logs.
 
 ## Against a deployment
 
