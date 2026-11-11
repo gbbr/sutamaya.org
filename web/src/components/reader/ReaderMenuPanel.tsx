@@ -667,8 +667,11 @@ export function ReaderMenuPanel({
             </div>
 
             <div className={settingRow} style={hairline}>
-              <span className={rowLabel} style={{ color: theme.dim }}>
-                Pali
+              <span className="flex items-center gap-1.5">
+                <span className={rowLabel} style={{ color: theme.dim }}>
+                  Pali
+                </span>
+                {rowKey(SHORTCUTS.readerPaliToggle.keys[0])}
               </span>
               <Segmented
                 value={allPali ? 'always' : 'tap'}

@@ -138,6 +138,7 @@ export function ReaderPage() {
     lh,
     face,
     allPali,
+    toggleAllPali,
     paliAbove,
     showNotes,
     toggleShowNotes,
@@ -843,6 +844,7 @@ export function ReaderPage() {
     toggleShowNotes,
     toggleShowHighlights,
     toggleShowSegmentNumbers,
+    toggleAllPali,
     cycleTheme,
   });
 

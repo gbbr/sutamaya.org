@@ -17,6 +17,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
   const toggleShowNotes = vi.fn();
   const toggleShowHighlights = vi.fn();
   const toggleShowSegmentNumbers = vi.fn();
+  const toggleAllPali = vi.fn();
   const cycleTheme = vi.fn();
 
   const opts: Parameters<typeof useReaderKeyboard>[0] = {
@@ -39,6 +40,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
     toggleShowNotes,
     toggleShowHighlights,
     toggleShowSegmentNumbers,
+    toggleAllPali,
     cycleTheme,
     ...overrides,
   };
@@ -61,6 +63,7 @@ function setup(overrides: Partial<Parameters<typeof useReaderKeyboard>[0]> = {})
     toggleShowNotes,
     toggleShowHighlights,
     toggleShowSegmentNumbers,
+    toggleAllPali,
     cycleTheme,
   };
 }
@@ -221,6 +224,14 @@ describe('useReaderKeyboard', () => {
       expect(toggleShowSegmentNumbers).not.toHaveBeenCalled();
       press('S', { shiftKey: true });
       expect(toggleShowSegmentNumbers).toHaveBeenCalled();
+    });
+
+    it('Shift+P toggles Pali on tap / always, and a plain "p" does not', () => {
+      const { toggleAllPali } = setup();
+      press('p');
+      expect(toggleAllPali).not.toHaveBeenCalled();
+      press('P', { shiftKey: true });
+      expect(toggleAllPali).toHaveBeenCalled();
     });
 
     it('ignores a shortcut chorded with Ctrl/Cmd/Alt (e.g. leaves Cmd+/ to the browser)', () => {

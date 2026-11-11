@@ -27,6 +27,7 @@ interface UseReaderKeyboardOptions {
   toggleShowNotes: () => void;
   toggleShowHighlights: () => void;
   toggleShowSegmentNumbers: () => void;
+  toggleAllPali: () => void;
   cycleTheme: () => void;
 }
 
@@ -55,6 +56,7 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
     toggleShowNotes,
     toggleShowHighlights,
     toggleShowSegmentNumbers,
+    toggleAllPali,
     cycleTheme,
   } = opts;
   // Read through latest refs, since each is rebuilt on every ReaderPage render while this listener
@@ -128,6 +130,9 @@ export function useReaderKeyboard(opts: UseReaderKeyboardOptions) {
       } else if (isShortcut(e, SHORTCUTS.readerSegmentNumbersToggle)) {
         e.preventDefault();
         toggleShowSegmentNumbers();
+      } else if (isShortcut(e, SHORTCUTS.readerPaliToggle)) {
+        e.preventDefault();
+        toggleAllPali();
       } else if (isShortcut(e, SHORTCUTS.readerTheme)) {
         e.preventDefault();
         setTab('text');
