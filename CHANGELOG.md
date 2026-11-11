@@ -4,6 +4,12 @@ What each update to sutamaya changed, newest first, named for the day it went ou
 reaches the web at once and the iOS and Android apps over the air; an app shows the update it runs
 in brackets after its version, at the foot of Settings.
 
+## 2026-11-11.2
+
+Over-the-air update 5bf9c6ccf for the iOS and Android apps, also live on the web.
+
+- Remove rearranging the suttas in a list ([5bf9c6ccf](https://github.com/gbbr/sutamaya.org/commit/5bf9c6ccf))
+
 ## 2026-11-11
 
 Over-the-air update ce2651797 for the iOS and Android apps, also live on the web.
