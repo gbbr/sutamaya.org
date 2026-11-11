@@ -1,18 +1,16 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router';
-import { ArrowUpDown, ChevronDown, Eye, GripVertical, List, ListPlus, MoveLeft } from 'lucide-react';
+import { ChevronDown, Eye, List, ListPlus, MoveLeft } from 'lucide-react';
 import { useCorpus } from '../../context/CorpusContext';
 import { useUserData } from '../../context/UserDataContext';
 import { useLayout } from '../../context/LayoutContext';
 import { forgetScrollPosition, useScrollMemory } from '../../hooks/useScrollMemory';
-import { usePointerDragSession } from '../../hooks/usePointerDragSession';
 import { findNode, isExpandable, listItemsFor, nodeBlurb, nodeLabel } from '../../lib/corpus/corpus';
 import { prefetchSuttaText } from '../../lib/corpus/suttaPrefetch';
 import { SEARCH_CAP_NOTE, SEARCH_RESULTS_CAP, suttaHitsHeading, type ListBlockHit, type SearchHit } from '../../lib/search/metadata';
 import { searchScopeNote, windowOnMatch, type TextSearchStatus } from '../../lib/search/text';
 import { flattenListTree, suttaRowMeta } from '../../lib/lists/lists';
 import { NOTES_AUTO_LIST_ID } from '../../lib/lists/autoLists';
-import { resolveDragReorder, type ItemMidpoint } from '../../lib/lists/listPaneDrag';
 import { BackButton } from '../BackButton';
 import { MatchedText } from '../MatchedText';
 import { SearchListHits } from '../search/SearchListHits';
@@ -94,7 +92,7 @@ export function ListPane({
   visible = true,
 }: ListPaneProps) {
   const { corpus } = useCorpus();
-  const { ready, lists, membership, notes, highlights, visited, reorderListItems } = useUserData();
+  const { ready, lists, membership, notes, highlights, visited } = useUserData();
   const { mobile, paneW } = useLayout();
   // The pane's scroll, held until the mirror lands and the results are complete: a row's note text
   // and highlight count arrive after the row, and the sutta text's hits after the metadata ones,
@@ -137,9 +135,6 @@ export function ListPane({
     return listItemsFor(corpus, nodeId, lists);
   }, [corpus, nodeId, lists, searching, hits, visible]);
 
-  // Whether these rows can be reordered: only a user list's, an auto-list's membership being
-  // derived, and only once two of them have somewhere to move.
-  const canReorder = !!currentList && !currentList.auto && items.length >= 2;
   // Whether the rows and the count line mark visited suttas: everywhere but an auto-list.
   const showVisited = !currentList?.auto;
 
@@ -159,19 +154,12 @@ export function ListPane({
     return map;
   }, [hits]);
 
-  // Each row's chips and highlight count, keyed off `items` rather than the drag's own order, so
-  // the map survives a whole gesture rather than being rebuilt on every frame.
+  // Each row's chips and highlight count.
   const rowMeta = useMemo(
     () => suttaRowMeta(items.map(([id]) => id), membership, highlights, flatLists, currentList?.id),
     [items, membership, flatLists, highlights, currentList?.id]
   );
 
-  // The live order while a row is being dragged, rendered in place of `items` and reshuffled as
-  // the pointer crosses row midpoints.
-  const [dragOrder, setDragOrder] = useState<string[] | null>(null);
-  // Whether the drag handles are showing, which takes space from every row, so they wait for the
-  // header's toggle — itself shown only when `canReorder`.
-  const [reorderMode, setReorderMode] = useState(false);
   // The row whose membership popover is open, and the rect of the control that opened it. Held
   // here so it outlives the row: unchecking the list being viewed drops that sutta out of `items`.
   const [picker, setPicker] = useState<{ suttaId: string; anchor: DOMRect } | null>(null);
@@ -180,82 +168,12 @@ export function ListPane({
   const [blurbOpen, setBlurbOpen] = useState(false);
   const [blurbOverflows, setBlurbOverflows] = useState(false);
   const blurbRef = useRef<HTMLDivElement | null>(null);
-  const dragIdRef = useRef<string | null>(null);
-  // Mirrors `dragOrder` for endDrag, whose window listener is registered once at drag-start and
-  // would otherwise read the order as it was then — null.
-  const dragOrderRef = useRef<string[] | null>(null);
-
-  const displayItems: Array<[string, Sutta]> =
-    dragOrder && corpus
-      ? dragOrder.flatMap((id) => (corpus.suttas[id] ? [[id, corpus.suttas[id]] as [string, Sutta]] : []))
-      : items;
-
-  function updateDragTarget(y: number) {
-    const id = dragIdRef.current;
-    if (!id) return;
-    setDragOrder((order) => {
-      if (!order) return order;
-      const mids = order
-        .map((itemId) => {
-          const el = itemRowRefs.current.get(itemId);
-          if (!el) return null;
-          const rect = el.getBoundingClientRect();
-          return { itemId, mid: rect.top + rect.height / 2 };
-        })
-        .filter((x): x is ItemMidpoint => !!x);
-      const next = resolveDragReorder(order, id, mids, y);
-      if (next === order) return order;
-      dragOrderRef.current = next;
-      return next;
-    });
-  }
-
-  const dragSession = usePointerDragSession({ scrollRef, onFrame: updateDragTarget });
-
-  function endDrag() {
-    // Idempotent: a no-op once the session tore itself down on pointerup, and the only teardown
-    // path when this is called from a bail-out.
-    dragSession.cancel();
-    dragIdRef.current = null;
-    // Read through the ref rather than committed inside setDragOrder's updater, which has to be
-    // pure — reorderListItems sets state, which React flags as a render-phase update.
-    const order = dragOrderRef.current;
-    dragOrderRef.current = null;
-    setDragOrder(null);
-    if (order && currentList) reorderListItems(currentList.id, order);
-  }
-
-  function onHandlePointerDown(e: React.PointerEvent, id: string) {
-    if (!currentList) return;
-    e.preventDefault();
-    e.stopPropagation();
-    dragIdRef.current = id;
-    const initialOrder = currentList.items.slice();
-    dragOrderRef.current = initialOrder;
-    setDragOrder(initialOrder);
-    dragSession.start(e, { onEngage: () => {}, onEnd: endDrag });
-  }
-
-  // Ends an in-flight drag when the list changes under it, rather than leaving stale refs and a
-  // running rAF loop.
-  useEffect(() => {
-    if (dragIdRef.current) endDrag();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [nodeId]);
-
-  // The same on unmount, which the effect above, keyed on `nodeId`, doesn't cover.
-  useEffect(() => {
-    return () => {
-      if (dragIdRef.current) endDrag();
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   // Dismisses the membership popover, which is anchored to a rect captured at open, whenever
-  // anything moves the rows under it: the pane's contents, reorder mode, or the pane being hidden.
+  // anything moves the rows under it: the pane's contents, or the pane being hidden.
   useEffect(() => {
     setPicker(null);
-  }, [nodeId, searching, reorderMode, visible]);
+  }, [nodeId, searching, visible]);
 
   // Collapses the blurb on a new node. A layout effect, so a node is never drawn with its blurb
   // still expanded from the one before.
@@ -274,11 +192,6 @@ export function ListPane({
     }
     setBlurbOverflows(blurbOpen || el.scrollHeight > el.clientHeight + 1);
   }, [nodeId, blurbOpen, paneW, visible, mobile]);
-
-  // Leaves reorder mode when the toggle that turns it off stops being shown.
-  useEffect(() => {
-    if (!canReorder) setReorderMode(false);
-  }, [canReorder]);
 
   // Reveals the sutta the reader came from, a list-membership chip in the Reader opening this pane
   // with `selectedId` set. `block: 'nearest'` keeps it a no-op when the row is already in view.
@@ -345,17 +258,6 @@ export function ListPane({
   }
   const meta = metaLine();
 
-  // reorderToggleClass returns the reorder toggle's colour treatment; size and margins are on the
-  // button itself.
-  //   reorder mode on – filled accent
-  //   at rest, mobile – bordered chip, matching the back button beside it
-  //   at rest, desktop – a bare round icon button, matching TreePane's header controls
-  function reorderToggleClass(): string {
-    if (reorderMode) return 'bg-accent2 text-[#FBFAF7]';
-    if (mobile) return 'border border-ink/[.12] bg-chip/40 text-ink-3 hover:text-ink active:bg-ink/[.08]';
-    return 'text-ink-3 hover:bg-ink/[.06]';
-  }
-
   // emptyMessage returns the empty state under the rows.
   //   searching       – a query that matched nothing, quoted back
   //   expandable node – a corpus row whose suttas are a level down, reached by URL or from search
@@ -403,19 +305,6 @@ export function ListPane({
             {updating && <SearchUpdating />}
           </div>
         </div>
-        {canReorder && (
-          <button
-            // The negative right margin lands its centre on the axis the row controls sit on.
-            className={`flex-none rounded-full flex items-center justify-center ${mobile ? 'w-[34px] h-[34px] -mr-[7px]' : 'w-[38px] h-[38px] -mr-[9px]'} ${reorderToggleClass()}`}
-            aria-label={reorderMode ? 'Hide reorder handles' : 'Show reorder handles'}
-            title={reorderMode ? 'Hide reorder handles' : 'Show reorder handles'}
-            onClick={() => setReorderMode((m) => !m)}
-          >
-            {/* 16 on both platforms, where the other header glyphs step up to 18–20 on desktop:
-                two stacked arrows fill their box where a chevron leaves air. */}
-            <ArrowUpDown size={16} strokeWidth={2} />
-          </button>
-        )}
       </header>
       <div
         ref={scrollRef}
@@ -428,9 +317,6 @@ export function ListPane({
           paddingBottom: 'var(--safe-bottom)',
           // Keeps a row scrolled into view clear of the bottom safe-area inset.
           scrollPaddingBottom: 'var(--safe-bottom)',
-          ...(dragOrder
-            ? { userSelect: 'none', WebkitUserSelect: 'none', WebkitTouchCallout: 'none' }
-            : null),
         }}
       >
         {/* Matching lists, above the results. This pane draws the block on desktop; TreePane
@@ -504,7 +390,7 @@ export function ListPane({
           </div>
         )}
 
-        {displayItems.map(([id, s]) => {
+        {items.map(([id, s]) => {
           // Highlighted — a tint plus a left accent stripe — only while searching, for the hit
           // TreePane's arrow-key nav has active. Nothing marks the URL's `selectedId`.
           const on = searching && id === activeId;
@@ -525,8 +411,6 @@ export function ListPane({
           // The note, likewise.
           const noteText = note && explains?.line === 'note' ? windowOnMatch(note, explains.query, true) : note;
           const { chips, hlCount, hlColors } = rowMeta.get(id) ?? { chips: [], hlCount: 0, hlColors: [] };
-          const dragging = dragIdRef.current === id;
-          const reordering = canReorder && reorderMode;
           const target = openTargets.get(id) ?? id;
           return (
             <div
@@ -536,20 +420,16 @@ export function ListPane({
                 else itemRowRefs.current.delete(id);
               }}
               className="group relative border-b border-ink/[.08]"
-              style={dragging ? { opacity: 0.5 } : undefined}
             >
-              {/* The right gutter is kept clear only where a control sits: at rest the add-to-list
-                  button holds the top of the row, so the title and Pali line give up the width
-                  while the blurb and chips run its full measure; while reordering the grip is
-                  centred and the whole row clears it. The rows carry no hover state.
+              {/* The right gutter is kept clear only where a control sits: the add-to-list button
+                  holds the top of the row, so the title and Pali line give up the width while the
+                  blurb and chips run its full measure. The rows carry no hover state.
 
                   A link, so the browser can open the sutta in a new tab, on the passage a text hit
                   was found in. */}
               <Link
                 to={readLink(target, snippet)}
-                className={`sutta-row block w-full text-left px-6 py-[16px] ${reordering ? 'pr-14' : ''} ${
-                  on ? 'bg-ink/[.05]' : ''
-                }`}
+                className={`sutta-row block w-full text-left px-6 py-[16px] ${on ? 'bg-ink/[.05]' : ''}`}
                 style={on ? { boxShadow: 'inset 2px 0 0 rgb(var(--accent2))' } : undefined}
                 onClick={(e) => {
                   if (!opensHere(e)) return;
@@ -559,7 +439,7 @@ export function ListPane({
                 // The press starts the text load, so the reader mounts with it already in hand.
                 onPointerDown={() => prefetchSuttaText(corpus, target)}
               >
-                <span className={`block ${reordering ? '' : 'pr-14'}`}>
+                <span className="block pr-14">
                   <span className="font-sans text-ui-md font-bold tracking-[.02em] mr-2.5 text-ink-3">
                     <MatchedText text={s.ref} query={rowQuery} />
                   </span>
@@ -572,9 +452,7 @@ export function ListPane({
                     </span>
                   )}
                 </span>
-                <span
-                  className={`block font-serif text-ui-base italic mt-[3px] text-accent-text ${reordering ? '' : 'pr-14'}`}
-                >
+                <span className="block font-serif text-ui-base italic mt-[3px] text-accent-text pr-14">
                   <MatchedText text={s.pali} query={rowQuery} />
                 </span>
                 {showNote && (
@@ -610,43 +488,21 @@ export function ListPane({
                 )}
                 <SuttaRowChips chips={chips} noted={!!note && !showNote} hlCount={hlCount} hlColors={hlColors} query={rowQuery} />
               </Link>
-              {/* Opens the list-membership picker for this sutta. Hidden while reordering, so the
-                  grip has the gutter to itself, and held at the top corner of the row, its `top`
-                  inset matching its `right` one.
+              {/* Opens the list-membership picker for this sutta, held at the top corner of the
+                  row, its `top` inset matching its `right` one.
 
                   Dimmed at rest and brought to full strength on row hover or keyboard focus. The
                   dim sits inside `@media (hover: hover)`, so a touch device that gets the desktop
                   layout shows it at full strength rather than needing a pointer to reveal it.
 
-                  Its centre is on the same axis as the header's reorder toggle and the grip, which
-                  is the width the rows reserve with `pr-14`. */}
-              {!reordering && (
-                <button
-                  className={`absolute ${mobile ? 'right-3 top-3 w-11 h-11' : 'right-[15px] top-[15px] w-[38px] h-[38px]'} flex items-center justify-center rounded-full text-ink-3 hover:bg-ink/[.06] active:bg-ink/[.10] transition-opacity [@media(hover:hover)]:opacity-45 group-hover:opacity-100 focus-visible:opacity-100`}
-                  aria-label={`Add ${s.ref} to a list`}
-                  onClick={(e) => setPicker({ suttaId: id, anchor: e.currentTarget.getBoundingClientRect() })}
-                >
-                  <ListPlus size={mobile ? 20 : 18} strokeWidth={2} />
-                </button>
-              )}
-              {reordering && (
-                <span
-                  // `right-3` puts the drag target's centre on the same axis as the add-to-list
-                  // button it replaces, so nothing shifts sideways when reorder mode comes on, and
-                  // `inset-y-1` makes the whole right gutter of the row grabbable.
-                  className="absolute right-3 inset-y-1 w-11 flex items-center justify-center rounded text-ink-3"
-                  style={{
-                    touchAction: 'none',
-                    cursor: 'grab',
-                    userSelect: 'none',
-                    WebkitUserSelect: 'none',
-                    WebkitTouchCallout: 'none',
-                  }}
-                  onPointerDown={(e) => onHandlePointerDown(e, id)}
-                >
-                  <GripVertical size={19} strokeWidth={2} />
-                </span>
-              )}
+                  The rows keep clear of it with `pr-14`. */}
+              <button
+                className={`absolute ${mobile ? 'right-3 top-3 w-11 h-11' : 'right-[15px] top-[15px] w-[38px] h-[38px]'} flex items-center justify-center rounded-full text-ink-3 hover:bg-ink/[.06] active:bg-ink/[.10] transition-opacity [@media(hover:hover)]:opacity-45 group-hover:opacity-100 focus-visible:opacity-100`}
+                aria-label={`Add ${s.ref} to a list`}
+                onClick={(e) => setPicker({ suttaId: id, anchor: e.currentTarget.getBoundingClientRect() })}
+              >
+                <ListPlus size={mobile ? 20 : 18} strokeWidth={2} />
+              </button>
             </div>
           );
         })}

@@ -13,7 +13,6 @@ import dictionaryShot from '../assets/help/dictionary-mobile.webp';
 import libraryShot from '../assets/help/library-mobile.webp';
 import libraryItemsShot from '../assets/help/library-items-mobile.webp';
 import listsShot from '../assets/help/lists-mobile.webp';
-import listsItemsShot from '../assets/help/lists-items-mobile.webp';
 import listsTabShot from '../assets/help/lists-tab-mobile.webp';
 import readerChipsShot from '../assets/help/reader-chips-mobile.webp';
 import markupShot from '../assets/help/markup-mobile.webp';
@@ -214,19 +213,6 @@ const SECTIONS: HelpSection[] = [
           'Create a new list or group. Displays the text input below it.',
           'Choose between creating a list or a group.',
           'Show controls for renaming, deleting or moving that line.',
-        ],
-      },
-      {
-        src: listsItemsShot,
-        name: 'lists-items-mobile.webp',
-        title: 'Inside a list',
-        marks: [
-          [82.6, 4.7],
-          [91.5, 29.6],
-        ],
-        steps: [
-          'Toggle the re-ordering of suttas within a list. Sort them by your own criteria.',
-          'Drag the handle to move a sutta to a different position.',
         ],
       },
     ],

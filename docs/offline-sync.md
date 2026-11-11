@@ -51,10 +51,13 @@ time would push its copy back and resurrect it. So every read has to skip tombst
 Most changes travel as **records**: the state something should be in — a list's name and parent, a
 note, a highlight, a visit. A record means the same thing however late it arrives.
 
-Three changes travel as **operations** instead, because they combine rather than overwrite: adding
-or removing a sutta, reordering a list, and reordering the lists in a group. Two devices filing
-different suttas into one list both stick. A posted order is reconciled against what exists: ids
-that are gone are dropped, and members it didn't mention stay, at the end.
+Two changes travel as **operations** instead, because they combine rather than overwrite: adding
+or removing a sutta, and reordering the lists in a group. Two devices filing different suttas into
+one list both stick. A posted order is reconciled against what exists: ids that are gone are
+dropped, and members it didn't mention stay, at the end.
+
+Older versions of the app also send a list's own sutta order, reconciled the same way. The mirror
+and the Worker keep handling it, so an order one of them queued still lands.
 
 ## Highlights
 
@@ -201,8 +204,8 @@ the reader to decide.
 - **A conflicting edit loses silently.** The later timestamp wins, with no merge and no conflict
   screen. The realistic case is one person editing the same note on two devices, where the losing
   side is almost always the stale one.
-- **Order is last-edit-wins per list or group.** Two devices reordering the same thing offline
-  means one order wins, and the reader drags again.
+- **Order is last-edit-wins per group.** Two devices reordering the same group offline means one
+  order wins, and the reader drags again.
 - **Adding and removing the same sutta resolves by arrival order**, not by timestamp.
 - **A write to a row deleted elsewhere is dropped.**
 - **The automatic lists show the newest 100 visits and 300 notes or highlights**, and say so at the

@@ -87,8 +87,8 @@ export interface ListDef {
   label: string;
   parentId: string | null;
   kind: ListKind;
-  // The list's suttas in the reader's order, oldest first as stored and newest first as
-  // UserDataContext hands them to the UI. Always empty for a group.
+  // The list's suttas, oldest first as stored and newest first as UserDataContext hands them to
+  // the UI. Always empty for a group.
   items: string[];
   // True for an auto-managed list, which can't be renamed, deleted, reparented or reordered. See
   // lib/lists/autoLists.ts.

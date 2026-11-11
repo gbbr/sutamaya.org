@@ -488,7 +488,7 @@ describe('UserDataProvider', () => {
     expect(result.current.membership.dn1).toEqual(['l1', 'l2']);
   });
 
-  it('shows a list newest first, and pushes a reorder back oldest first', async () => {
+  it('shows a list newest first', async () => {
     dataApiAll.mockResolvedValue({
       ...structuredClone(baseData),
       lists: [{ id: 'l1', label: 'Favorites', parentId: null, kind: 'list', items: ['dn1', 'dn2'] }],
@@ -501,13 +501,6 @@ describe('UserDataProvider', () => {
       await result.current.toggleMembership('dn3', 'l1');
     });
     expect(result.current.lists[0].items).toEqual(['dn3', 'dn2', 'dn1']);
-
-    await act(async () => {
-      await result.current.reorderListItems('l1', ['dn1', 'dn3', 'dn2']);
-    });
-    expect(result.current.lists[0].items).toEqual(['dn1', 'dn3', 'dn2']);
-    await reconnect();
-    expect(pushed('item.order')).toContainEqual(expect.objectContaining({ listId: 'l1', order: ['dn2', 'dn3', 'dn1'] }));
   });
 
   it('switches to the local mirror on sign-out', async () => {

@@ -56,7 +56,6 @@ function mockUserData() {
     lastSyncedAt: null,
     needsReauth: false,
     listMembers: () => [],
-    reorderListItems: async () => {},
     markVisited: () => {},
   } as unknown as ReturnType<typeof useUserData>;
 }

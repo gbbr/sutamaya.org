@@ -10,7 +10,6 @@ import {
   hasContent,
   markDispatched,
   markVisitedRecord,
-  queueItemOrder,
   queueMembership,
   removeListRecord,
   renameListRecord,
@@ -400,7 +399,12 @@ describe('local collapses', () => {
 
   it('keeps a queued item order ahead of a later edit to the same list', () => {
     let state = pulled(emptyMirror('u1'), 'l1', ['a', 'b']);
-    state = queueItemOrder(state, 'l1', ['b', 'a']);
+    // An order queued by an older version of the app.
+    state = {
+      ...state,
+      ops: [{ id: 'o1', seq: state.nextSeq, type: 'order', listId: 'l1', order: ['b', 'a'], mtime: '2026-01-01T00:00:00.000Z|d1' }],
+      nextSeq: state.nextSeq + 1,
+    };
     const queued = state.ops[0] as { mtime: string };
     state = renameListRecord(state, 'l1', 'renamed');
 

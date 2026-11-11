@@ -4,7 +4,7 @@ import { autoScrollEdge } from '../lib/dragAutoScroll';
 interface UsePointerDragSessionParams {
   scrollRef: RefObject<HTMLElement | null>;
   // Called once per animation frame while a drag is engaged, with the latest pointer Y, for the
-  // caller to recompute its own drop target or live order.
+  // caller to recompute its drop target.
   onFrame: (pointerY: number) => void;
 }
 
@@ -18,7 +18,7 @@ interface StartDragOptions {
   onEnd: () => void;
 }
 
-// The Pointer Events plumbing shared by TreePane's list-tree drag and ListPane's sutta reorder:
+// usePointerDragSession is the Pointer Events plumbing behind TreePane's list-tree drag:
 // window-level pointermove/pointerup/pointercancel listeners rather than the row's own or HTML5
 // drag-and-drop, neither of which touch browsers fire reliably; a rAF loop that auto-scrolls
 // `scrollRef`'s container and calls `onFrame`; and unmount-safe cleanup of both.

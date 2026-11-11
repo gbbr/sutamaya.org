@@ -85,6 +85,8 @@ export interface Stored<T> {
 export type QueuedOp =
   | { id: string; seq: number; type: 'add'; listId: string; suttaId: string; sent?: boolean }
   | { id: string; seq: number; type: 'remove'; listId: string; suttaId: string; sent?: boolean }
+  // A list's own sutta order, which only an older version of the app queues. See
+  // docs/offline-sync.md's "Records and operations".
   | { id: string; seq: number; type: 'order'; listId: string; order: string[]; mtime: string }
   | { id: string; seq: number; type: 'siblingOrder'; parentId: string | null; order: string[]; mtime: string };
 
@@ -373,7 +375,6 @@ export function writeHighlightRecord(
 type NewOp =
   | { type: 'add'; listId: string; suttaId: string }
   | { type: 'remove'; listId: string; suttaId: string }
-  | { type: 'order'; listId: string; order: string[]; mtime: string }
   | { type: 'siblingOrder'; parentId: string | null; order: string[]; mtime: string };
 
 function nextOp(state: MirrorState, op: NewOp): MirrorState {
@@ -390,7 +391,7 @@ function nextMembership(items: string[], suttaId: string, add: boolean): string[
   if (!add) return items.filter((s) => s !== suttaId);
   // Already a member: the same array back, so a caller comparing by reference sees no change.
   if (items.includes(suttaId)) return items;
-  // A new sutta goes last, where it belongs in user order.
+  // A new sutta goes last, the mirror keeping a list oldest first.
   return [...items, suttaId];
 }
 
@@ -412,18 +413,6 @@ export function queueMembership(state: MirrorState, listId: string, suttaId: str
   // An add still on the device, undone by this removal.
   if (!add && last?.type === 'add' && !last.sent) return { ...withItems, ops: withItems.ops.filter((op) => op !== last) };
   return nextOp(withItems, { type: add ? 'add' : 'remove', listId, suttaId });
-}
-
-// A list's own item order. Queued rather than folded into the record because it edits the same
-// `items` column the add/remove ops do — and the server reconciles a posted order against whatever
-// is actually stored, so an id another device added since is appended rather than dropped.
-export function queueItemOrder(state: MirrorState, listId: string, order: string[]): MirrorState {
-  const current = state.lists[listId];
-  if (!current) return state;
-  const withItems = withList(state, listId, { ...current, data: { ...current.data, items: order } });
-  // Only the latest order for this list matters.
-  const superseded = { ...withItems, ops: withItems.ops.filter((op) => !(op.type === 'order' && op.listId === listId)) };
-  return nextOp(superseded, { type: 'order', listId, order, mtime: nextMtime() });
 }
 
 function reconcileItems(current: string[], order: string[]): string[] {

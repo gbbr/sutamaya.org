@@ -96,7 +96,6 @@ function mockUserData(lists: ListDef[] = []): ReturnType<typeof useUserData> {
     renameList: async () => {},
     removeList: async () => {},
     reorderLists: async () => {},
-    reorderListItems: async () => {},
     toggleMembership: async () => {},
     addToList: async () => {},
     submitNote: async () => {},

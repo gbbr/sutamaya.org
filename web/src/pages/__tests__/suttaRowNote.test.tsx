@@ -70,7 +70,6 @@ describe('a sutta row with a note', () => {
       lastSyncedAt: null,
       needsReauth: false,
       listMembers: () => [],
-      reorderListItems: async () => {},
       markVisited: () => {},
     } as unknown as ReturnType<typeof useUserData>);
     vi.mocked(useAuth).mockReturnValue({

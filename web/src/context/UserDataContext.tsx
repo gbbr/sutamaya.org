@@ -17,7 +17,6 @@ import {
   emptyMirror,
   markDispatched,
   markVisitedRecord,
-  queueItemOrder,
   queueMembership,
   removeListRecord,
   renameListRecord,
@@ -77,8 +76,6 @@ interface UserDataState {
   renameList: (id: string, label: string) => Promise<void>;
   removeList: (id: string) => Promise<void>;
   reorderLists: (parentId: string | null, order: string[]) => Promise<void>;
-  // Saves a list's suttas in a new order, given as shown, newest first.
-  reorderListItems: (id: string, order: string[]) => Promise<void>;
   toggleMembership: (suttaId: string, listId: string) => Promise<void>;
   addToList: (suttaId: string, list: ListDef) => Promise<void>;
   submitNote: (suttaId: string, text: string) => Promise<void>;
@@ -114,7 +111,6 @@ const EMPTY: UserDataState = {
   renameList: async () => {},
   removeList: async () => {},
   reorderLists: async () => {},
-  reorderListItems: async () => {},
   toggleMembership: async () => {},
   addToList: async () => {},
   submitNote: async () => {},
@@ -363,14 +359,6 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     [mutate]
   );
 
-  const reorderListItems = useCallback(
-    async (id: string, order: string[]) => {
-      // Back to the mirror's order, oldest first.
-      mutate((s) => queueItemOrder(s, id, order.slice().reverse()));
-    },
-    [mutate]
-  );
-
   const toggleMembership = useCallback(
     async (suttaId: string, listId: string) => {
       const list = lists.find((l) => l.id === listId);
@@ -439,7 +427,6 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       renameList,
       removeList,
       reorderLists,
-      reorderListItems,
       toggleMembership,
       addToList,
       submitNote,
@@ -463,7 +450,6 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       renameList,
       removeList,
       reorderLists,
-      reorderListItems,
       toggleMembership,
       addToList,
       submitNote,
