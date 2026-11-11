@@ -12,6 +12,10 @@ and no install at all on a computer.
 suttas in whatever is selected. Search results take the list's place, and recent searches the
 tree's. Narrower than 860px, it shows one pane at a time.
 
+A list shows its suttas newest first, and the reader can drag them into any order, with a sutta
+added later still going on top. The mirror and the server keep a list oldest first; the app
+reverses it on screen.
+
 **The Reader** shows one sutta: the English, with each line's Pali a tap away (or every line's, as
 a setting), and a dictionary on every Pali word. Once the reader scrolls into a sutta's text, and
 until they first look a word up or close it, a checklist sits in the dictionary's place — tap a line

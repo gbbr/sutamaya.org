@@ -59,6 +59,7 @@ export type SyncStatus = 'synced' | 'pending' | 'offline';
 
 interface UserDataState {
   ready: boolean;
+  // The lists as the UI shows them, each one's suttas newest first.
   lists: ListDef[];
   membership: Membership;
   notes: NotesMap;
@@ -76,6 +77,7 @@ interface UserDataState {
   renameList: (id: string, label: string) => Promise<void>;
   removeList: (id: string) => Promise<void>;
   reorderLists: (parentId: string | null, order: string[]) => Promise<void>;
+  // Saves a list's suttas in a new order, given as shown, newest first.
   reorderListItems: (id: string, order: string[]) => Promise<void>;
   toggleMembership: (suttaId: string, listId: string) => Promise<void>;
   addToList: (suttaId: string, list: ListDef) => Promise<void>;
@@ -86,6 +88,13 @@ interface UserDataState {
 }
 
 const UserDataContext = createContext<UserDataState | null>(null);
+
+// newestFirst returns a list with its suttas in the order the UI shows them, newest first. The
+// mirror and the server keep the reader's own lists oldest first; an auto list is newest first
+// already.
+function newestFirst(list: ListDef): ListDef {
+  return list.auto ? list : { ...list, items: list.items.slice().reverse() };
+}
 
 const EMPTY: UserDataState = {
   ready: false,
@@ -275,7 +284,10 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
     };
   }, [ready, isSignedIn, userId, paused, flush]);
 
-  const { lists, membership, notes, highlights, visited } = useMemo(() => deriveUserData(state), [state]);
+  const { lists, membership, notes, highlights, visited } = useMemo(() => {
+    const view = deriveUserData(state);
+    return { ...view, lists: view.lists.map(newestFirst) };
+  }, [state]);
 
   const { pending: pendingCount } = useMemo(() => syncCounts(state), [state]);
   // Returns what the sync indicator says. Each case explains away the ones below it, so the first
@@ -353,7 +365,8 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
 
   const reorderListItems = useCallback(
     async (id: string, order: string[]) => {
-      mutate((s) => queueItemOrder(s, id, order));
+      // Back to the mirror's order, oldest first.
+      mutate((s) => queueItemOrder(s, id, order.slice().reverse()));
     },
     [mutate]
   );

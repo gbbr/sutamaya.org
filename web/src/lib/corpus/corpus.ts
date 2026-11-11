@@ -333,7 +333,7 @@ export function listItemsFor(corpus: Corpus, nodeId: string | undefined, lists: 
   if (!nodeId) return [];
   const list = lists.find((l) => String(l.id) === nodeId);
   if (list) {
-    // A list keeps its stored order, the one place the reader's own sequencing wins over id order.
+    // A list keeps its order as shown, the one place the reader's own sequencing wins over id order.
     return list.items
       .map((id) => (corpus.suttas[id] ? ([id, corpus.suttas[id]] as [string, Sutta]) : null))
       .filter((x): x is [string, Sutta] => x !== null);
