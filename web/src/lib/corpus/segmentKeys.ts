@@ -70,3 +70,14 @@ export function segmentAt(segments: SegmentFile[], key: string): number {
   const sutta = `${keySutta(key)}:`;
   return segments.findIndex((s) => s.key.startsWith(sutta) && compareSegmentKeys(s.key, key) >= 0);
 }
+
+// Returns the keys of the first and last segment from `segments[from]` to `segments[to]`, in
+// document order, stopping at the edge of the sutta `segments[from]` belongs to.
+export function rangeWithinSutta(segments: SegmentFile[], from: number, to: number): [string, string] {
+  const sutta = keySutta(segments[from].key);
+  const step = to < from ? -1 : 1;
+  let end = from;
+  while (end !== to && keySutta(segments[end + step].key) === sutta) end += step;
+  const [first, last] = step > 0 ? [from, end] : [end, from];
+  return [segments[first].key, segments[last].key];
+}

@@ -494,8 +494,18 @@ describe('SegmentedText — segment numbers', () => {
       <SegmentedText {...baseProps(segments, { openSegs: {}, segmentNumbers: 'inline', onSegmentNumber, onToggleSeg })} />
     );
     fireEvent.click(segmentNumber(container, 1)!);
-    expect(onSegmentNumber).toHaveBeenCalledWith(1);
+    expect(onSegmentNumber).toHaveBeenCalledWith(1, false);
     expect(onToggleSeg).not.toHaveBeenCalled();
+  });
+
+  it('hands a Shift-clicked number to the reader to extend to, leaving the text selection alone', () => {
+    const onSegmentNumber = vi.fn();
+    const { container } = render(<SegmentedText {...baseProps(segments, { openSegs: {}, segmentNumbers: 'inline', onSegmentNumber })} />);
+    // fireEvent returns false when the event's default was prevented.
+    expect(fireEvent.mouseDown(segmentNumber(container, 1)!, { shiftKey: true })).toBe(false);
+    expect(fireEvent.mouseDown(segmentNumber(container, 1)!)).toBe(true);
+    fireEvent.click(segmentNumber(container, 1)!, { shiftKey: true });
+    expect(onSegmentNumber).toHaveBeenCalledWith(1, true);
   });
 
   it('hangs a verse’s number in the margin past its rule, and a prose line’s beside the text', () => {

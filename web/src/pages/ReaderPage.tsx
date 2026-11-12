@@ -19,7 +19,7 @@ import {
   flatSuttaOrder, breadcrumbFor, normalizeRouteId, resolveCanonicalSuttaId, loadSuttaText, uidHolds, translatorOf, TRANSLATOR_NAMES,
   type SegmentFile,
 } from '../lib/corpus/corpus';
-import { segmentAt } from '../lib/corpus/segmentKeys';
+import { rangeWithinSutta, segmentAt } from '../lib/corpus/segmentKeys';
 import { prefetchSuttaText } from '../lib/corpus/suttaPrefetch';
 import { flattenListTree, resolveListById, suttaRowMeta } from '../lib/lists/lists';
 import { READER_FACES, READER_THEMES } from '../lib/ui/theme';
@@ -748,23 +748,29 @@ export function ReaderPage() {
     [corpus]
   );
   // Names the segment whose number was tapped in the address, replacing the history entry, and washes
-  // it where it stands, as a link to it washes it on arrival.
-  const segmentNumberRef = useLatest((i: number) => {
-    const key = segments?.[i]?.key;
-    if (!key || !suttaId) return;
-    navigate(readLink(suttaId, { segments: [key, key] }, by), {
+  // it where it stands, as a link to it washes it on arrival. A Shift-click names the lines from the
+  // first one the address names to it instead, within that line's inner sutta.
+  const segmentNumberRef = useLatest((i: number, extend: boolean) => {
+    if (!segments?.[i] || !suttaId) return;
+    const named = extend && requestedId ? passageFromSearch(location.search, requestedId) : undefined;
+    const from = named ? segmentAt(segments, named.segments[0]) : -1;
+    const range = rangeWithinSutta(segments, from === -1 ? i : from, i);
+    navigate(readLink(suttaId, { segments: range }, by), {
       replace: true,
       // Keeps where the reader was opened from, and drops whatever an earlier arrival carried.
       state: tagIntent({
         ...(location.state as object | null),
-        segments: [key, key],
+        segments: range,
         paliSegments: undefined,
         markedBy: undefined,
         inPlace: true,
       }),
     });
   });
-  const onSegmentNumber = useCallback((i: number) => segmentNumberRef.current(i), [segmentNumberRef]);
+  const onSegmentNumber = useCallback(
+    (i: number, extend: boolean) => segmentNumberRef.current(i, extend),
+    [segmentNumberRef]
+  );
 
   // Scrolls a just-opened Pali line or footnote into view, by the least it takes and only when it
   // is clipped. `scrollIntoView({ block: 'nearest' })` by hand, since that isn't aware of the CSS

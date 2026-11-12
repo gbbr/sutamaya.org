@@ -30,7 +30,7 @@ once the sutta's own title is in view. Tapping it returns to the top.
 off by default, for citing a line. They hang in the left margin where the reading pane, measured
 inside a landscape phone's safe area, leaves room for the widest, and otherwise lead their line, so
 they never narrow the text. They are never selectable, so copied text leaves them out. Tapping one
-names its line in the address.
+names its line in the address, and Shift-clicking another names the lines from it to that one.
 
 **Other translations** — Bhikkhu Bodhi's and Ṭhānissaro Bhikkhu's, where either translates the
 whole text — are chosen from a pill at the right of the header, beside search and the menu,
@@ -99,8 +99,10 @@ behaviour components share, and `components/` the pieces the pages are built fro
   addressed alternative has no Sujato entry behind it, so the picker replaces that entry. The choice
   never becomes a default for another sutta.
 - **A tapped segment number replaces the address** with its line's, adding no step to the history.
-  The line is washed where it stands, as an arrival washes it, but not scrolled to. The installed
-  apps have no address bar, so their Share button shares the line the address names.
+  The line is washed where it stands, as an arrival washes it, but not scrolled to. A Shift-click
+  names the lines from the first one the address names to the one clicked, stopping at the edge of
+  that first line's inner sutta, since an address names lines under one inner sutta alone. The
+  installed apps have no address bar, so their Share button shares the lines the address names.
 - The Reader restores its scroll position on a return (Back, a refresh, a relaunch) and opens at the
   top when the reader chooses somewhere new.
 - **A sutta opened from the Reader's own search, or from a link in a translator's note, is a step

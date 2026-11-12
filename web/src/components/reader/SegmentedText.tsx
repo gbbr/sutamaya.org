@@ -233,7 +233,7 @@ interface SegmentRowProps {
   // Where the segment's number shows: hanging in the left margin, at the start of the line, or not
   // at all.
   segmentNumber?: SegmentNumberPlacement;
-  onSegmentNumber: (i: number) => void;
+  onSegmentNumber: (i: number, extend: boolean) => void;
 }
 
 /** One sutta segment — a paragraph, verse line, heading — as its English and Pali lines. */
@@ -489,9 +489,13 @@ const SegmentRow = memo(function SegmentRow({
               }
             : { display: 'inline-block', lineHeight: 1, padding: '8px 4px', margin: '-8px 0.55em -8px -4px' }),
         }}
+        // Keeps a Shift-click from stretching the text selection to the number.
+        onMouseDown={(e) => {
+          if (e.shiftKey) e.preventDefault();
+        }}
         onClick={(e) => {
           e.stopPropagation();
-          onSegmentNumber(i);
+          onSegmentNumber(i, e.shiftKey);
         }}
       >
         {seg.key.slice(seg.key.indexOf(':') + 1)}
@@ -665,8 +669,8 @@ interface SegmentedTextProps {
   marks?: Map<number, SegmentMarks>;
   // Where each segment's number shows, when segment numbers are on.
   segmentNumbers?: SegmentNumberPlacement;
-  // Called with the segment whose number was tapped.
-  onSegmentNumber: (i: number) => void;
+  // Called with the segment whose number was tapped, and whether Shift was held.
+  onSegmentNumber: (i: number, extend: boolean) => void;
 }
 
 const EMPTY_RANGES: SegmentRange[] = [];

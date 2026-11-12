@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { compareSegmentKeys, segmentIndex } from '../segmentKeys';
+import { compareSegmentKeys, rangeWithinSutta, segmentIndex } from '../segmentKeys';
 // @ts-expect-error -- plain-JS build module, no .d.ts across the workspace boundary
 import { compareSegmentKeys as buildCompare } from '../../../../../scripts/lib/segmentKeys.js';
 import type { SegmentFile } from '../corpus';
@@ -81,5 +81,22 @@ describe('segmentIndex', () => {
       ['mn1:1.3', 2],
     ]);
     expect(segmentIndex([]).size).toBe(0);
+  });
+});
+
+describe('rangeWithinSutta', () => {
+  // Two inner suttas of a batched document.
+  const segments: SegmentFile[] = ['dhp277:1', 'dhp277:2', 'dhp278:1', 'dhp278:2'].map((key) => ({ key, pali: '', en: '' }));
+
+  it('runs between the two segments, in document order either way round', () => {
+    expect(rangeWithinSutta(segments, 0, 1)).toEqual(['dhp277:1', 'dhp277:2']);
+    expect(rangeWithinSutta(segments, 1, 0)).toEqual(['dhp277:1', 'dhp277:2']);
+    expect(rangeWithinSutta(segments, 1, 1)).toEqual(['dhp277:2', 'dhp277:2']);
+  });
+
+  it('stops at the edge of the first segment’s sutta', () => {
+    expect(rangeWithinSutta(segments, 0, 3)).toEqual(['dhp277:1', 'dhp277:2']);
+    expect(rangeWithinSutta(segments, 3, 0)).toEqual(['dhp278:1', 'dhp278:2']);
+    expect(rangeWithinSutta(segments, 2, 0)).toEqual(['dhp278:1', 'dhp278:1']);
   });
 });
