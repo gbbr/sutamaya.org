@@ -15,7 +15,7 @@ import {
 } from './lib/collections.js';
 import { splitPaliWords, stripPunct, lookupWord, shardFor } from './lib/paliWords.js';
 import { compareSegmentKeys } from './lib/segmentKeys.js';
-import { addDefinitions } from './lib/dictionaryAdditions.js';
+import { addDefinitions, expandAbbreviations } from './lib/dictionaryAdditions.js';
 import { TRANSLATORS, loadTranslation } from './lib/translations.js';
 import { red, green, bold, dim } from './lib/dataSync.js';
 
@@ -540,6 +540,12 @@ if (unusedAdditions.length) {
   throw new Error(
     `data/pli2en_additions.json: no dictionary entry defines ${unusedAdditions.map((a) => a.headword).join(', ')}`
   );
+}
+
+// Define each abbreviation in the Pali by the headword it stands for.
+const unexpanded = expandAbbreviations(dpdMap);
+if (unexpanded.length) {
+  throw new Error(`dictionaryAdditions.js: no dictionary entry defines what ${unexpanded.join(', ')} stands for`);
 }
 
 // The keep-set: for each tappable token, the pair lookupWord consults — the token and its

@@ -1,4 +1,5 @@
-// Definitions added to DPD's, from data/pli2en_additions.json — see docs/corpus.md's "The dictionary".
+// Definitions added to DPD's, from data/pli2en_additions.json, and the Pali's abbreviations — see
+// docs/corpus.md's "The dictionary".
 
 // A definition line's compound part and headword, minus the homonym number: "sampajāno → sampajāna 1: …".
 const LINE_HEAD = /^(?:([^:]+?) → )?([^:]+?)(?: [\d.]+)?: /;
@@ -29,4 +30,27 @@ export function addDefinitions(dict, additions) {
     });
   }
   return [...unused];
+}
+
+// Abbreviations in the Pali, each with the headword it stands for.
+export const ABBREVIATIONS = { pe: 'peyyāla' };
+
+/**
+ * expandAbbreviations replaces, in place, each abbreviation's entry in dict with the lines defining
+ * the headword it stands for, and returns the abbreviations whose headword nothing defines.
+ */
+export function expandAbbreviations(dict, abbreviations = ABBREVIATIONS) {
+  const missing = [];
+  for (const [abbreviation, headword] of Object.entries(abbreviations)) {
+    const lines = new Set();
+    for (const entry of Object.values(dict)) {
+      for (const line of entry) {
+        const h = lineHead(line);
+        if (h && !h.part && h.word === headword) lines.add(line);
+      }
+    }
+    if (lines.size) dict[abbreviation] = [...lines];
+    else missing.push(abbreviation);
+  }
+  return missing;
 }

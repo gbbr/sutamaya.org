@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { addDefinitions } from '../dictionaryAdditions.js';
+import { addDefinitions, expandAbbreviations } from '../dictionaryAdditions.js';
 
 const GOENKA = { headword: 'sampajāna', source: 'Goenka', meaning: 'with constant thorough understanding' };
 
@@ -37,5 +37,24 @@ describe('addDefinitions', () => {
     const dict = { asampajāno: ['asampajāna: adj. <b>unaware</b>'] };
     expect(addDefinitions(dict, [GOENKA])).toEqual([GOENKA]);
     expect(dict.asampajāno).toEqual(['asampajāna: adj. <b>unaware</b>']);
+  });
+});
+
+describe('expandAbbreviations', () => {
+  it('replaces the abbreviation’s entry with the entry for what it stands for', () => {
+    const dict = {
+      pe: ['pa 1.1: adj. <b>drinking</b>'],
+      Peyyāla: ['peyyāla 1: nt. <b>an elided repetition</b>', 'peyyāla 2: masc. <b>an elided repetition</b>'],
+      peyyālo: ['peyyāla 2: masc. <b>an elided repetition</b>'],
+      peyyālaṁva: ['peyyālaṁ → peyyāla 1: nt. <b>an elided repetition</b>'],
+    };
+    expect(expandAbbreviations(dict, { pe: 'peyyāla' })).toEqual([]);
+    expect(dict.pe).toEqual(dict.Peyyāla);
+  });
+
+  it('returns an abbreviation whose headword nothing defines', () => {
+    const dict = { pe: ['pa 1.1: adj. <b>drinking</b>'] };
+    expect(expandAbbreviations(dict, { pe: 'peyyāla' })).toEqual(['pe']);
+    expect(dict.pe).toEqual(['pa 1.1: adj. <b>drinking</b>']);
   });
 });

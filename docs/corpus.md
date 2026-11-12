@@ -174,6 +174,9 @@ its source, which the dictionary shows with it — `sampajañña: (Goenka) …` 
 for its headword in every entry that has them, never replacing one. The build adds them, so a DPD
 refresh keeps them; one whose headword no entry defines any more fails the build.
 
+An abbreviation in the Pali — *pe*, for *peyyāla*, marking an elided repetition — looks up as the
+word it stands for, in place of whatever DPD reads it as.
+
 ## Where to look
 
 | Where | What |
