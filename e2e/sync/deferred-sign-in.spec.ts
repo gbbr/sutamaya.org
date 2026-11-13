@@ -44,7 +44,7 @@ test('work done signed out is adopted onto the account at sign-in', async ({ pag
 
   // Nothing was lost in the handover: the same device still shows both.
   await page.goto('/read/dn1');
-  await expect(page.getByRole('button', { name: 'Edit note' })).toContainText('written before signing in');
+  await expect(page.getByRole('button', { name: 'Edit keywords' })).toContainText('written before signing in');
   await expect(page.locator('[data-seg="1"] [data-hl-id]')).toHaveText(phrase);
 
   // A second device on the same account, with a mirror of its own — so anything it shows had to
@@ -54,7 +54,7 @@ test('work done signed out is adopted onto the account at sign-in', async ({ pag
   await signIn(other, account);
   await other.goto('/read/dn1');
 
-  await expect(other.getByRole('button', { name: 'Edit note' })).toContainText('written before signing in', {
+  await expect(other.getByRole('button', { name: 'Edit keywords' })).toContainText('written before signing in', {
     timeout: 30_000,
   });
   await expect(other.locator('[data-seg="1"] [data-hl-id]')).toHaveText(phrase, { timeout: 30_000 });
@@ -77,19 +77,19 @@ test('signing in on a fresh device does not erase what the account already holds
   // just an empty one where the account's data is concerned.
   await other.goto('/read/dn1');
   await expect(other.locator('[data-seg="1"]')).toBeVisible();
-  await expect(other.getByRole('button', { name: 'Edit note' })).toHaveCount(0);
+  await expect(other.getByRole('button', { name: 'Edit keywords' })).toHaveCount(0);
 
   await signIn(other, account);
   await other.reload();
 
-  await expect(other.getByRole('button', { name: 'Edit note' })).toContainText('made on the first device', {
+  await expect(other.getByRole('button', { name: 'Edit keywords' })).toContainText('made on the first device', {
     timeout: 30_000,
   });
 
   // And the account still has it after the adoption has flushed back — an empty local mirror must
   // not have written tombstones over it.
   await other.reload();
-  await expect(other.getByRole('button', { name: 'Edit note' })).toContainText('made on the first device');
+  await expect(other.getByRole('button', { name: 'Edit keywords' })).toContainText('made on the first device');
 
   await second.close();
 });

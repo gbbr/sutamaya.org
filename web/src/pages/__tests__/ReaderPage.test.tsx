@@ -195,7 +195,7 @@ describe('ReaderPage sutta header chips', () => {
     // "Sutta note" only renders under the Highlights tab for a signed-in user (ReaderMenuPanel);
     // the one seeded highlight has no text to preview, this reader's fetch never resolving, so it
     // renders as the no-text fallback.
-    expect(await screen.findByText('Sutta note')).toBeTruthy();
+    expect(await screen.findByText('Keywords')).toBeTruthy();
     expect(screen.getByText('Highlighted text')).toBeTruthy();
   });
 

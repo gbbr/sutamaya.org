@@ -1,4 +1,4 @@
-// The three auto-managed lists — "Visited", "Highlights", "Notes" — synthesized from the records
+// The three auto-managed lists — "Visited", "Highlights", "Keywords" — synthesized from the records
 // they describe rather than stored as rows, so a ListDef for one always carries `auto: true` and a
 // fixed id. They render in TreePane's "Activity" section rather than the editable "My lists" tree.
 //

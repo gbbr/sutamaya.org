@@ -1118,7 +1118,7 @@ export function ReaderPage() {
             <button
               type="button"
               className="flex w-full gap-[7px] text-left hover:opacity-100"
-              aria-label="Edit note"
+              aria-label="Edit keywords"
               style={{ fontSize: fs - 4, lineHeight: 1.6, marginTop: 9, color: theme.fg, opacity: 0.72 }}
               onClick={() => {
                 setTab('highlights');

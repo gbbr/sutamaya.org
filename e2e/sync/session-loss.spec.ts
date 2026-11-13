@@ -31,14 +31,14 @@ test('an edit made after the session has quietly ended is not lost', async ({ pa
 
   // The reader keeps working — the edit is on screen and in the local mirror, whatever the server
   // has to say about it.
-  await expect(page.getByRole('button', { name: 'Edit note' })).toContainText('written after the session ended');
+  await expect(page.getByRole('button', { name: 'Edit keywords' })).toContainText('written after the session ended');
   await page.reload();
   await expect(page.locator('[data-seg="1"]')).toBeVisible();
 
   // Signing back in: the queued edit should now reach the account, and from there another device.
   await signIn(page, account);
   await page.reload();
-  await expect(page.getByRole('button', { name: 'Edit note' })).toContainText('written after the session ended', {
+  await expect(page.getByRole('button', { name: 'Edit keywords' })).toContainText('written after the session ended', {
     timeout: 30_000,
   });
 
@@ -46,7 +46,7 @@ test('an edit made after the session has quietly ended is not lost', async ({ pa
   const other = await second.newPage();
   await signIn(other, account);
   await other.goto('/read/dn1');
-  await expect(other.getByRole('button', { name: 'Edit note' })).toContainText('written after the session ended', {
+  await expect(other.getByRole('button', { name: 'Edit keywords' })).toContainText('written after the session ended', {
     timeout: 30_000,
   });
 

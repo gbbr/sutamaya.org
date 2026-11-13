@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { PencilLine, Plus } from 'lucide-react';
+import { KeyRound, Plus } from 'lucide-react';
 import type { SuttaRowChip } from '../lib/lists/lists';
 import type { ThemeColors } from '../lib/types';
 import { HighlightCountBadge } from './HighlightCountBadge';
@@ -41,8 +41,8 @@ export function SuttaRowChips({ chips, noted, hlCount, hlColors, theme, fs, onCh
   const noteStroke = 1.5;
   // The note mark's drawn height, the chips' type size.
   const noteHeight = fontSize;
-  // The note mark's icon size, at which its outline — 17 of the icon's 24 units, plus the stroke — is noteHeight.
-  const noteSize = Math.round(((noteHeight - noteStroke) * 24) / 17);
+  // The note mark's icon size, at which its outline — 20 of the icon's 24 units, plus the stroke — is noteHeight.
+  const noteSize = Math.round(((noteHeight - noteStroke) * 24) / 20);
   // The add control runs a point above the chips, having no fill or outline to be found by.
   const addFontSize = fontSize + 1;
   // The gap before the highlight badge, which as a count rather than a list separates itself from
@@ -127,16 +127,16 @@ export function SuttaRowChips({ chips, noted, hlCount, hlColors, theme, fs, onCh
           </span>
         </ChipTag>
       ))}
-      {/* The note mark: the Notes list's own icon, in the highlight count's colour, set off from
+      {/* The note mark: the Keywords list's own icon, in the highlight count's colour, set off from
           the chips by the badge's gap. */}
       {noted && (
         <span
           role="img"
-          aria-label="Has a note"
+          aria-label="Has keywords"
           className={`inline-flex ${theme ? '' : 'text-ink-3'}`}
           style={{ color: theme?.dim, marginLeft: chips.length > 0 ? 8 : undefined }}
         >
-          <PencilLine size={noteSize} strokeWidth={noteStroke} absoluteStrokeWidth />
+          <KeyRound size={noteSize} strokeWidth={noteStroke} absoluteStrokeWidth />
         </span>
       )}
       {/* No fill of any kind — unlike the highlight badge beside it and unlike the chips' own

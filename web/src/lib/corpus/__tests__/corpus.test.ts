@@ -527,8 +527,8 @@ describe('searchCorpus', () => {
     });
 
     it('leaves the auto-lists out — they are always on screen in the Lists tab', () => {
-      const lists = [list({ id: 'auto-notes', label: 'Notes', auto: true })];
-      expect(searchLists(lists, 'notes')).toEqual([]);
+      const lists = [list({ id: 'auto-notes', label: 'Keywords', auto: true })];
+      expect(searchLists(lists, 'keywords')).toEqual([]);
     });
 
     it('is case- and diacritic-insensitive, same as the sutta scan', () => {

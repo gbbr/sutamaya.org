@@ -103,7 +103,7 @@ Every step is deterministic, so devices converge without talking to each other.
 ## On the device
 
 - **The mirror** is one IndexedDB record per user id. Everything the UI shows is derived from it,
-  the three automatic lists (Visited, Highlights, Notes) included, so those work offline too.
+  the three automatic lists (Visited, Highlights, Keywords) included, so those work offline too.
 - **Signed out**, a reader gets a local id and a mirror of their own, and nothing syncs. Signing in
   moves the whole local mirror onto the account, each record keeping its timestamp. Where this
   device also holds the account's note on the same sutta, the two are joined rather than one

@@ -19,9 +19,10 @@ reverses it on screen.
 a setting), and a dictionary on every Pali word. Once the reader scrolls into a sutta's text, and
 until they first look a word up or close it, a checklist sits in the dictionary's place — tap a line
 for its Pali, then one of its words — and ticks off the first step once done. Each device keeps
-track of it separately. The reader can highlight text in three colours, write a note, and file the
-sutta into lists. A side panel holds the sutta's highlights, its lists, and the display settings:
-theme, typeface, size and spacing. `?` lists the keyboard shortcuts.
+track of it separately. The reader can highlight text in three colours, give the sutta keywords to
+find it by (its note, in the code), and file the sutta into lists. A side panel holds the sutta's
+highlights, its lists, and the display settings: theme, typeface, size and spacing. `?` lists the
+keyboard shortcuts.
 On a phone the header leaves the sutta's name to a slim bar beneath it, which slides out when the
 reader scrolls back up and tucks away when they scroll on, when the Reader scrolls by itself, or
 once the sutta's own title is in view. Tapping it returns to the top.

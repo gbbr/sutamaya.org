@@ -119,7 +119,7 @@ export function deriveUserData(state: MirrorState): DerivedUserData {
     highlightedIds.forEach((id) => (membership[id] = [...(membership[id] || []), HIGHLIGHTS_AUTO_LIST_ID]));
   }
   if (notedIds.length) {
-    lists.push({ id: NOTES_AUTO_LIST_ID, label: 'Notes', parentId: null, kind: 'list', items: notedIds, auto: true, total: totalOf(noteEntries) });
+    lists.push({ id: NOTES_AUTO_LIST_ID, label: 'Keywords', parentId: null, kind: 'list', items: notedIds, auto: true, total: totalOf(noteEntries) });
     notedIds.forEach((id) => (membership[id] = [...(membership[id] || []), NOTES_AUTO_LIST_ID]));
   }
 

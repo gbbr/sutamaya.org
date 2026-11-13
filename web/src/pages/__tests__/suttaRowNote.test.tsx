@@ -31,7 +31,7 @@ const corpus: Corpus = {
 };
 
 const favourites: ListDef = { id: 'fav', label: 'Favourites', parentId: null, kind: 'list', items: ['dn1'] };
-const notesList: ListDef = { id: NOTES_AUTO_LIST_ID, label: 'Notes', parentId: null, kind: 'list', items: ['dn1'], auto: true };
+const notesList: ListDef = { id: NOTES_AUTO_LIST_ID, label: 'Keywords', parentId: null, kind: 'list', items: ['dn1'], auto: true };
 
 // rowIn renders the list `listId` and returns dn1's row in it.
 async function rowIn(listId: string) {
@@ -92,13 +92,13 @@ describe('a sutta row with a note', () => {
     const row = await rowIn('fav');
     expect(row.getByText('The Divine Net')).toBeTruthy();
     expect(row.queryByText('Read this slowly')).toBeNull();
-    expect(row.getByRole('img', { name: 'Has a note' })).toBeTruthy();
+    expect(row.getByRole('img', { name: 'Has keywords' })).toBeTruthy();
   });
 
   it('shows the note in the Notes list, in place of the description and the mark', async () => {
     const row = await rowIn(NOTES_AUTO_LIST_ID);
     expect(row.getByText('Read this slowly')).toBeTruthy();
     expect(row.queryByText('The Divine Net')).toBeNull();
-    expect(row.queryByRole('img', { name: 'Has a note' })).toBeNull();
+    expect(row.queryByRole('img', { name: 'Has keywords' })).toBeNull();
   });
 });

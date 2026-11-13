@@ -594,7 +594,7 @@ export function SettingsPage() {
             ) : (
               <div className="py-4">
                 <div className="font-sans text-ui-base text-ink-2 mb-3">
-                  Your lists, notes and highlights are saved on this device. Sign in to keep them and sync across
+                  Your lists, keywords and highlights are saved on this device. Sign in to keep them and sync across
                   devices.
                 </div>
                 {/* The browser warning, except on an iOS browser tab, which gets the one below
@@ -833,7 +833,7 @@ export function SettingsPage() {
                   <div className="flex items-start gap-1.5 font-sans text-ui-base text-danger-text mb-3">
                     <AlertTriangle size={16} strokeWidth={1.75} className="flex-none mt-[3px]" />
                     <span>
-                      This deletes your lists, notes, highlights and reading history, on every device. It happens
+                      This deletes your lists, keywords, highlights and reading history, on every device. It happens
                       immediately and can’t be undone.
                     </span>
                   </div>

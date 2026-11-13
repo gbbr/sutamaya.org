@@ -37,10 +37,10 @@ test('a note written on one device reaches another', async ({ page, browser }) =
   await expect(page.locator('[data-seg="1"]')).toBeVisible();
 
   await page.keyboard.press('n');
-  const note = page.getByPlaceholder('Something to remember this by');
+  const note = page.getByPlaceholder('Words to find this sutta by');
   await note.fill('written on the first device');
   await note.press('ControlOrMeta+Enter');
-  await expect(page.getByRole('button', { name: 'Edit note' })).toContainText('written on the first device');
+  await expect(page.getByRole('button', { name: 'Edit keywords' })).toContainText('written on the first device');
 
   // A second, independent device on the same account: its own mirror, so anything it shows had to
   // come back from the Worker.
@@ -49,7 +49,7 @@ test('a note written on one device reaches another', async ({ page, browser }) =
   await signIn(other, account);
   await other.goto('/read/dn1');
 
-  await expect(other.getByRole('button', { name: 'Edit note' })).toContainText('written on the first device', {
+  await expect(other.getByRole('button', { name: 'Edit keywords' })).toContainText('written on the first device', {
     timeout: 20_000,
   });
 
@@ -76,7 +76,7 @@ test('a device with nothing to send is answered "not modified" until another dev
     (res) => new URL(res.url()).pathname === '/api/data/push' && !!res.request().postData()?.includes('written on the first device')
   );
   await page.keyboard.press('n');
-  const note = page.getByPlaceholder('Something to remember this by');
+  const note = page.getByPlaceholder('Words to find this sutta by');
   await note.fill('written on the first device');
   await note.press('ControlOrMeta+Enter');
   expect((await landed).ok()).toBe(true);
@@ -84,7 +84,7 @@ test('a device with nothing to send is answered "not modified" until another dev
   expect(await syncNow(other)).toBe(200);
   // Shown from that pull alone: nothing the second device does from here syncs.
   await openListsTab(other);
-  await other.getByRole('button', { name: /Notes/ }).click();
+  await other.getByRole('button', { name: /Keywords/ }).click();
   await expect(other.locator('[data-component="ListPane"]')).toContainText('The Divine Net');
 
   await second.close();

@@ -12,7 +12,7 @@ test('two tabs show and keep each other’s edits', async ({ page, context }) =>
   await writeNote(second, 'written in the second tab');
 
   // The first tab shows it without a reload, as the note mark on the sutta's row.
-  await expect(listPane.getByRole('img', { name: 'Has a note' })).toBeVisible();
+  await expect(listPane.getByRole('img', { name: 'Has keywords' })).toBeVisible();
 
   // A save in the first tab keeps it.
   await listPane.getByRole('link', { name: /The Divine Net/ }).click();
@@ -21,7 +21,7 @@ test('two tabs show and keep each other’s edits', async ({ page, context }) =>
   await second.close();
 
   await page.reload();
-  await expect(page.getByRole('button', { name: 'Edit note' })).toContainText('written in the first tab');
+  await expect(page.getByRole('button', { name: 'Edit keywords' })).toContainText('written in the first tab');
   await page.goto('/read/dn2');
-  await expect(page.getByRole('button', { name: 'Edit note' })).toContainText('written in the second tab');
+  await expect(page.getByRole('button', { name: 'Edit keywords' })).toContainText('written in the second tab');
 });

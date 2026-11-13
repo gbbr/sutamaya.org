@@ -31,12 +31,12 @@ describe('SuttaRowChips', () => {
     const order = [...(container.firstChild as HTMLElement).children].map(
       (el) => el.getAttribute('aria-label') ?? el.getAttribute('data-component') ?? el.textContent
     );
-    expect(order).toEqual(['Favorites', 'StudyChapter 1', 'Has a note', 'HighlightCountBadge']);
+    expect(order).toEqual(['Favorites', 'StudyChapter 1', 'Has keywords', 'HighlightCountBadge']);
   });
 
   it('renders the note mark on its own when there are no chips and no highlights', () => {
     render(<SuttaRowChips chips={[]} noted hlCount={0} hlColors={[]} />);
-    expect(screen.getByRole('img', { name: 'Has a note' })).toBeTruthy();
+    expect(screen.getByRole('img', { name: 'Has keywords' })).toBeTruthy();
   });
 
   it('renders a chip per list and the highlight badge when either is present', () => {

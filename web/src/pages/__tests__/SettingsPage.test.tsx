@@ -404,7 +404,7 @@ describe('deleting the account', () => {
     // Step one only arms the confirmation; nothing has been asked of the server.
     await userEvent.click(screen.getByText('Delete my account'));
     expect(deleteAccount).not.toHaveBeenCalled();
-    expect(screen.getByText(/lists, notes, highlights and reading history, on every device/)).toBeInTheDocument();
+    expect(screen.getByText(/lists, keywords, highlights and reading history, on every device/)).toBeInTheDocument();
 
     const button = screen.getByRole('button', { name: /Delete my account/ });
     expect(button).toBeDisabled();

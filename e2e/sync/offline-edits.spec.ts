@@ -23,7 +23,7 @@ test('an edit made offline reaches the account once the network is back', async 
   const other = await second.newPage();
   await signIn(other, account);
   await other.goto('/read/dn1');
-  await expect(other.getByRole('button', { name: 'Edit note' })).toContainText('written with no network', {
+  await expect(other.getByRole('button', { name: 'Edit keywords' })).toContainText('written with no network', {
     timeout: 30_000,
   });
 
@@ -57,7 +57,7 @@ test('two devices editing the same note offline converge on the later edit', asy
 
   for (const page of [first, second]) {
     await page.reload();
-    await expect(page.getByRole('button', { name: 'Edit note' })).toContainText('edited on the second device', {
+    await expect(page.getByRole('button', { name: 'Edit keywords' })).toContainText('edited on the second device', {
       timeout: 30_000,
     });
   }

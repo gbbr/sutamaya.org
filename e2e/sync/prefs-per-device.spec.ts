@@ -35,7 +35,7 @@ test('display preferences stay on the device while user data syncs', async ({ pa
   await other.goto('/read/dn1');
 
   // The control: the account's data did travel.
-  await expect(other.getByRole('button', { name: 'Edit note' })).toContainText('user data, unlike the theme', {
+  await expect(other.getByRole('button', { name: 'Edit keywords' })).toContainText('user data, unlike the theme', {
     timeout: 30_000,
   });
 

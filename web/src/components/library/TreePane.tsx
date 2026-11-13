@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
-import { Eye, Highlighter, PencilLine, Library, List, Search, X } from 'lucide-react';
+import { Eye, Highlighter, KeyRound, Library, List, Search, X } from 'lucide-react';
 import { useCorpus } from '../../context/CorpusContext';
 import { useUserData } from '../../context/UserDataContext';
 import { useAuth } from '../../context/AuthContext';
@@ -396,7 +396,7 @@ export function TreePane({
         // window rather than the whole of what the reader has done.
         { list: lists.find((l) => l.id === RECENT_AUTO_LIST_ID), sub: 'Recently opened suttas', Icon: Eye },
         { list: lists.find((l) => l.id === HIGHLIGHTS_AUTO_LIST_ID), sub: "Suttas you've highlighted", Icon: Highlighter },
-        { list: lists.find((l) => l.id === NOTES_AUTO_LIST_ID), sub: "Suttas you've written notes in", Icon: PencilLine },
+        { list: lists.find((l) => l.id === NOTES_AUTO_LIST_ID), sub: "Suttas you've added keywords to", Icon: KeyRound },
       ].filter((x): x is { list: ListDef; sub: string; Icon: typeof Highlighter } => !!x.list),
     [lists]
   );

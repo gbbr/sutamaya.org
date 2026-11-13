@@ -103,7 +103,7 @@ export function assembleUserData({ listDocs, noteDocs, highlightDocs, visitedDoc
     highlightedIds.forEach((id) => (membership[id] = [...(membership[id] || []), HIGHLIGHTS_AUTO_LIST_ID]));
   }
   if (notedIds.length) {
-    lists.push({ id: NOTES_AUTO_LIST_ID, label: 'Notes', parentId: null, kind: 'list', items: notedIds, auto: true, total: noteDocs.length });
+    lists.push({ id: NOTES_AUTO_LIST_ID, label: 'Keywords', parentId: null, kind: 'list', items: notedIds, auto: true, total: noteDocs.length });
     notedIds.forEach((id) => (membership[id] = [...(membership[id] || []), NOTES_AUTO_LIST_ID]));
   }
 

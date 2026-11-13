@@ -318,7 +318,7 @@ export function UserDataProvider({ children }: { children: ReactNode }) {
       // Trimmed and capped as a `list.create` does, so a later pull doesn't correct the label.
       const capped = label.trim().slice(0, LIST_NAME_MAX_LENGTH);
       // An existing list of the same name is returned instead. Auto-lists are excluded, so a list
-      // genuinely called "Notes" isn't answered with the synthesized one.
+      // genuinely called "Keywords" isn't answered with the synthesized one.
       const existing = lists.find((l) => !l.auto && l.label === capped && l.parentId === parentId && l.kind === kind);
       if (existing) return existing;
       // The client mints the id, so the list can be renamed, moved and filed into before the

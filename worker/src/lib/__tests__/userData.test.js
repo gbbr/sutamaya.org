@@ -124,7 +124,7 @@ describe('assembleUserData', () => {
       noteDocs: [{ id: 'dn3', data: { text: 'note', updatedAt: '2026-08-01' } }],
     });
     expect(result.lists.find((l) => l.id === HIGHLIGHTS_AUTO_LIST_ID)).toMatchObject({ label: 'Highlights', items: ['dn1'] });
-    expect(result.lists.find((l) => l.id === NOTES_AUTO_LIST_ID)).toMatchObject({ label: 'Notes', items: ['dn3'] });
+    expect(result.lists.find((l) => l.id === NOTES_AUTO_LIST_ID)).toMatchObject({ label: 'Keywords', items: ['dn3'] });
   });
 
   it('omits an auto-list entirely when its source collection is empty', () => {

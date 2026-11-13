@@ -389,14 +389,14 @@ export function ReaderMenuPanel({
             {/* The note box, recessed against the panel so it reads as somewhere to write. */}
             <div className="rounded-field mb-5 px-3.5 py-3" style={{ border: `1px solid ${theme.rule}`, background: theme.bg }}>
               <div className={`${rowLabel} flex items-center gap-1.5 mb-1`} style={{ color: theme.dim }}>
-                Sutta note
+                Keywords
                 {rowKey(SHORTCUTS.readerNote.keys[0])}
               </div>
               <NoteEditor
                 value={notes[suttaId] || ''}
                 onSubmit={(text) => submitNote(suttaId, text)}
                 focusSignal={noteFocusSignal}
-                placeholder="Something to remember this by"
+                placeholder="Words to find this sutta by"
                 rows={3}
                 textareaClassName="w-full bg-transparent text-ui-base resize-none outline-none font-serif"
                 textareaStyle={{ border: 0, color: theme.fg }}

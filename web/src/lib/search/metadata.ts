@@ -65,7 +65,7 @@ export const SEARCH_RESULTS_CAP = 80;
 export const SEARCH_PLACEHOLDER = 'Search suttas, text and lists';
 export const READER_SEARCH_PLACEHOLDER = 'Search suttas and text';
 export const SEARCH_SCOPE_NOTE =
-  'Search covers sutta numbers, titles, summaries and your own notes — not the text of the suttas.';
+  'Search covers sutta numbers, titles, summaries and your own keywords — not the text of the suttas.';
 export const SEARCH_NO_MATCHES = `No matches. ${SEARCH_SCOPE_NOTE}`;
 
 // Said at the foot of the results when the query matched more than the cap draws.

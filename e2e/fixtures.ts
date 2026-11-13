@@ -215,10 +215,10 @@ export const readerBackground = (page: Page) =>
  */
 export async function writeNote(page: Page, text: string) {
   await page.keyboard.press('n');
-  const note = page.getByPlaceholder('Something to remember this by');
+  const note = page.getByPlaceholder('Words to find this sutta by');
   await note.fill(text);
   await note.press('ControlOrMeta+Enter');
-  await expect(page.getByRole('button', { name: 'Edit note' })).toContainText(text);
+  await expect(page.getByRole('button', { name: 'Edit keywords' })).toContainText(text);
   await page.keyboard.press('Escape');
   await waitForLocalWrites(page);
 }

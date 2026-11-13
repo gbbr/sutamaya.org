@@ -50,7 +50,7 @@ test('deleting the account empties this device and resets the other one', async 
   });
 
   await other.goto('/read/dn1');
-  await expect(other.getByRole('button', { name: 'Edit note' })).toContainText('written before the account went', {
+  await expect(other.getByRole('button', { name: 'Edit keywords' })).toContainText('written before the account went', {
     timeout: 20_000,
   });
 
@@ -60,7 +60,7 @@ test('deleting the account empties this device and resets the other one', async 
 
   // The confirmation names what goes and where it goes from, rather than asking a bare "are you
   // sure" about a word the reader would have to already know the meaning of.
-  await expect(page.getByText(/lists, notes, highlights and reading history, on every device/)).toBeVisible();
+  await expect(page.getByText(/lists, keywords, highlights and reading history, on every device/)).toBeVisible();
 
   // Typing DELETE is the whole of the intent check — these accounts have no password to re-enter —
   // so the button staying dead until then is the guard, not decoration.
@@ -75,7 +75,7 @@ test('deleting the account empties this device and resets the other one', async 
   await expect(page.locator('[data-seg="1"]')).toBeVisible();
 
   // Signed out, on a fresh local account: the note was the account's, not this device's.
-  await expect(page.getByRole('button', { name: 'Edit note' })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Edit keywords' })).toHaveCount(0);
   await page.goto('/browse');
   await expect(page.locator('[data-component="SignedInBadge"]')).toBeVisible();
   await expect(page.getByRole('button', { name: /Signed in as/ })).toHaveCount(0);
@@ -89,13 +89,13 @@ test('deleting the account empties this device and resets the other one', async 
   await expect(page.locator('[data-seg="1"]')).toBeVisible();
   await writeNote(page, 'written by nobody in particular');
   await page.reload();
-  await expect(page.getByRole('button', { name: 'Edit note' })).toContainText('written by nobody in particular');
+  await expect(page.getByRole('button', { name: 'Edit keywords' })).toContainText('written by nobody in particular');
 
   // The second device has heard nothing: it was never reloaded, so its session check has not re-run
   // and it still holds the account in memory. Writing is what sends it to the server — and the push
   // is refused rather than recreating anything, which is the point of the whole exercise.
   await other.keyboard.press('n');
-  const note = other.getByPlaceholder('Something to remember this by');
+  const note = other.getByPlaceholder('Words to find this sutta by');
   await note.fill('written on a device that had not heard yet');
   await note.press('ControlOrMeta+Enter');
   await other.keyboard.press('Escape');
@@ -104,7 +104,7 @@ test('deleting the account empties this device and resets the other one', async 
 
   // Having been refused, it resets itself rather than retrying or asking for a sign-in: both notes
   // go, the account's and the one just written onto it.
-  await expect(other.getByRole('button', { name: 'Edit note' })).toHaveCount(0, { timeout: 30_000 });
+  await expect(other.getByRole('button', { name: 'Edit keywords' })).toHaveCount(0, { timeout: 30_000 });
   await expect(other.locator('[data-seg="1"]')).toBeVisible();
   await expect.poll(() => mirroredAccounts(other), { timeout: 15_000 }).not.toContain(account);
 

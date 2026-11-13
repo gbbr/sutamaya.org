@@ -34,8 +34,8 @@ export function SignedInBadge({ user, size, atRisk = false }: { user: User | nul
       data-component="SignedInBadge"
       className="relative flex-none rounded-full border border-ink/25 flex items-center justify-center text-ink-4 hover:bg-ink/[.06] hover:text-ink-2"
       style={dim}
-      aria-label={showAtRisk ? 'Settings — your notes are saved only on this device' : 'Settings'}
-      title={showAtRisk ? 'Settings — your notes are saved only on this device' : 'Settings'}
+      aria-label={showAtRisk ? 'Settings — your lists, keywords and highlights are saved only on this device' : 'Settings'}
+      title={showAtRisk ? 'Settings — your lists, keywords and highlights are saved only on this device' : 'Settings'}
       onClick={openSettings}
     >
       <UserRound size={Math.round(size * 0.55)} strokeWidth={1.75} />

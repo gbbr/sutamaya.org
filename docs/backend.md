@@ -64,7 +64,7 @@ its version. How the data endpoints are used is [offline-sync.md](offline-sync.m
 Every query on the reader's data is scoped with `AND user_id = ?`. The tables are flat, and that
 clause is the only thing keeping one account's rows from another's.
 
-List membership and the automatic lists (Visited, Highlights, Notes) are derived when the data is
+List membership and the automatic lists (Visited, Highlights, Keywords) are derived when the data is
 read, never stored. The app keeps its own copy of that logic, so it can derive the same view
 offline.
 

@@ -63,7 +63,7 @@ describe('routes/data.js (D1)', () => {
   // The Highlights/Notes auto-lists come from the same synthesis, and depend on buildUserData
   // adapting the highlight rows' createdAt / note rows' updatedAt back out of snake_case columns —
   // which is exactly what latestIds() sorts by.
-  it('synthesizes "Highlights" and "Notes" auto-lists, most-recent first', async () => {
+  it('synthesizes "Highlights" and "Keywords" auto-lists, most-recent first', async () => {
     const { cookie } = await signIn();
     await push(cookie, [
       { type: 'highlight', suttaId: 'sn1.1', color: 'yellow', g: 'group-a', erase: [], span: { k0: 'sn1.1:1.1', o0: 0, k1: 'sn1.1:1.1', o1: 5 } },

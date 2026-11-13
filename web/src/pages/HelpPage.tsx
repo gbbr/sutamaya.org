@@ -84,7 +84,7 @@ const SECTIONS: HelpSection[] = [
         steps: [
           'Tap any node to see its contents.',
           'Switch between the Canon and your own Lists.',
-          'Search by number, title, summary, your own notes, or the name of a list or collection.',
+          'Search by number, title, summary, your own keywords, or the name of a list or collection.',
           'Your account, and every setting.',
         ],
       },
@@ -143,7 +143,7 @@ const SECTIONS: HelpSection[] = [
         steps: [
           'Close the Reader.',
           'Open the panel.',
-          'Your Highlights & Notes.',
+          'Your Highlights & Keywords.',
           'List management.',
           'Theme, type size and typeface.',
         ],
@@ -155,9 +155,9 @@ const SECTIONS: HelpSection[] = [
     ],
   },
   {
-    title: 'Highlights & Notes',
-    lead: 'Select any passage to colour it. Each sutta also holds one note of your own. The note ' +
-      'is displayed in the Library view and is searchable.',
+    title: 'Highlights & Keywords',
+    lead: 'Select any passage to colour it. Each sutta can also hold keywords of your own, so a ' +
+      'search for them finds it again.',
     shots: [
       {
         src: markupShot,
@@ -170,7 +170,7 @@ const SECTIONS: HelpSection[] = [
           [90.2, 39.5],
         ],
         steps: [
-          'Your note shows up after the sutta summary. Click it to edit it.',
+          'Your keywords show up after the sutta summary. Click them to edit them.',
           'Highlight count. Clicking it takes you to the Highlights tab in the menu panel.',
           'Select text and choose a colour to highlight it.',
           'Highlights show up on the right edge. Clicking the small mark takes you there.',
@@ -186,7 +186,7 @@ const SECTIONS: HelpSection[] = [
           [86.0, 25.0],
         ],
         steps: [
-          'Add or change your note.',
+          'Add or change your keywords.',
           'Tap a highlight to scroll to it in the Reader. Tap the bin on the right to remove it.',
           'Delete the highlight.',
         ],
@@ -265,7 +265,7 @@ const SECTIONS: HelpSection[] = [
     title: 'Settings & Offline',
     lead: isNativeApp()
       ? 'All suttas, the dictionary and search are built into the app, so it works with no connection. ' +
-        `Sign in with ${hasNativeAppleSignIn() ? 'Apple, Google' : 'Google'} or an emailed code to keep your lists, notes and highlights and sync them across devices.`
+        `Sign in with ${hasNativeAppleSignIn() ? 'Apple, Google' : 'Google'} or an emailed code to keep your lists, keywords and highlights and sync them across devices.`
       : 'Everything you read is kept on this device first, so the app works with no connection. ' +
         'For total offline access beyond what you\'ve already visited, download all the suttas.',
     // Web only, since both shots show the download card the native app doesn't have.
@@ -373,7 +373,7 @@ const INSTALL_STORES = [
 ];
 
 const INSTALL_TIPS = [
-  'Your lists, notes and highlights stay in this browser until you sign in. Sign in here and in the ' +
+  'Your lists, keywords and highlights stay in this browser until you sign in. Sign in here and in the ' +
     'app with the same account to bring them across.',
 ];
 
@@ -505,7 +505,7 @@ export function HelpPage() {
   // Its own description rather than the app-wide default, for its search result.
   useDocumentMeta(
     'How to use sutamaya',
-    'How to use sutamaya: browsing the canon, reading with the Pali and dictionary, highlighting and taking notes, keeping your own lists, and reading offline.'
+    'How to use sutamaya: browsing the canon, reading with the Pali and dictionary, highlighting and adding keywords, keeping your own lists, and reading offline.'
   );
 
   // The page's scroll container, which "Back to top" returns to; the document itself never scrolls.
