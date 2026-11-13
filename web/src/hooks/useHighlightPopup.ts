@@ -251,6 +251,16 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
     [pop, suttaId, setHighlightSpan, by]
   );
 
+  // Paints the popup's span in `color` and leaves the popup open, for a note being written on it.
+  const paint = useCallback(
+    (color: string) => {
+      if (!pop || !suttaId) return;
+      void setHighlightSpan(suttaId, pop.span, color, by);
+      setPop({ ...pop, on: color });
+    },
+    [pop, suttaId, setHighlightSpan, by]
+  );
+
   const close = useCallback(() => {
     setPop(null);
     const sel = window.getSelection();
@@ -258,5 +268,5 @@ export function useHighlightPopup(suttaId: string | undefined, highlights: Highl
   }, []);
   const popStop = useCallback((e: { stopPropagation: () => void }) => e.stopPropagation(), []);
 
-  return { pop, openPop, onTextUp, pick, close, popStop };
+  return { pop, openPop, onTextUp, pick, paint, close, popStop };
 }

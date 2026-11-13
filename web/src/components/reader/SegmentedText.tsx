@@ -1,4 +1,5 @@
 import { Fragment, memo, useMemo, useState, type CSSProperties, type ReactNode } from 'react';
+import { StickyNote } from 'lucide-react';
 import type { SegmentFile, SegmentRole } from '../../lib/corpus/corpus';
 import type { Highlight, ThemeColors } from '../../lib/types';
 import { highlightPaint } from '../../lib/ui/theme';
@@ -13,6 +14,8 @@ interface Part {
   start: number;
   c?: string;
   id?: string;
+  // Whether the part is where its highlight ends.
+  end?: boolean;
 }
 
 // The stretches of a segment's lines an arriving search hit marks, as offsets into its English and
@@ -78,12 +81,12 @@ function stripTags(html: string): string {
 }
 
 /** Slices a segment's text into alternating plain and highlighted runs, each naming its highlight. */
-function buildParts(text: string, rangesForSeg: SegmentRange[]): Part[] {
+function buildParts(text: string, rangesForSeg: SegmentRange[], key: string): Part[] {
   const parts: Part[] = [];
   let cur = 0;
   for (const { s, e, src } of paintSegmentRanges(rangesForSeg)) {
     if (s > cur) parts.push({ text: text.slice(cur, s), start: cur });
-    parts.push({ text: text.slice(s, e), start: s, c: src.c, id: src.id });
+    parts.push({ text: text.slice(s, e), start: s, c: src.c, id: src.id, end: src.k1 === key && e === Math.min(src.o1, text.length) });
     cur = e;
   }
   if (cur < text.length) parts.push({ text: text.slice(cur), start: cur });
@@ -139,6 +142,27 @@ const UNSELECTABLE: CSSProperties = {
   WebkitUserSelect: 'none',
   WebkitTouchCallout: 'none',
 };
+
+/**
+ * NoteBadge marks a highlight carrying a note with a square badge on its top-right corner, out of
+ * the text's flow. It renders inside the highlight's last span, whose click it shares.
+ */
+function NoteBadge({ paint, ring }: { paint: string; ring: string }) {
+  return (
+    // A zero-width anchor after the highlight's last character, marked as rendered text outside
+    // `seg.en`, as the note number is.
+    <span data-seg-ignore style={{ ...UNSELECTABLE, position: 'relative' }}>
+      <span
+        aria-hidden
+        className="absolute flex items-center justify-center rounded-[3px] size-[0.9em]"
+        // Centred on the corner the highlight's 2px spread draws.
+        style={{ left: 2, top: -2, transform: 'translate(-50%,-50%)', background: paint, boxShadow: `0 0 0 1.5px ${ring}` }}
+      >
+        <StickyNote className="size-[0.6em]" strokeWidth={2.5} />
+      </span>
+    </span>
+  );
+}
 
 // Type for a translator note's number, beside its line and at the head of the note; `top` raises
 // it in place of the browser's `sup` raise, which would open up the line.
@@ -221,6 +245,8 @@ interface SegmentRowProps {
   // Called with the tapped word and its position among this segment's Pali words.
   onWordClick: (word: string, segIndex: number, wordIndex: number) => void;
   onSpanClick: (highlightId: string, rect: DOMRect, color: string) => void;
+  // The highlights carrying a note, each marked where it ends.
+  notedIds: ReadonlySet<string>;
   showNotes: boolean;
   noteOpen: boolean;
   // The place of the segment's note among the sutta's notes, from 1.
@@ -259,6 +285,7 @@ const SegmentRow = memo(function SegmentRow({
   onToggleSeg,
   onWordClick,
   onSpanClick,
+  notedIds,
   showNotes,
   noteOpen,
   noteNumber,
@@ -269,7 +296,7 @@ const SegmentRow = memo(function SegmentRow({
   segmentNumber,
   onSegmentNumber,
 }: SegmentRowProps) {
-  const parts = buildParts(seg.en, rangesForSeg);
+  const parts = buildParts(seg.en, rangesForSeg, seg.key);
   const enMarks = marks ? mergedMarks(seg.en, marks.en) : NO_MARKS;
   const paMarks = marks ? mergedMarks(seg.pali, marks.pa) : NO_MARKS;
   /** linkedText renders a slice of the English with the translator's links and the search marks. */
@@ -332,6 +359,7 @@ const SegmentRow = memo(function SegmentRow({
           }}
         >
           {linkedText(a, b, markOnHighlight(paint, theme))}
+          {p.end && b === p.start + p.text.length && notedIds.has(p.id!) && <NoteBadge paint={paint} ring={theme.bg} />}
         </span>
       );
     });
@@ -647,6 +675,8 @@ interface SegmentedTextProps {
   // (lib/corpus/dictionary.ts's splitPaliWords).
   onWordClick: (word: string, segIndex: number, wordIndex: number) => void;
   onSpanClick: (highlightId: string, rect: DOMRect, color: string) => void;
+  // The highlights carrying a note.
+  notedIds?: ReadonlySet<string>;
   // Whether the translator-note numbers show at all.
   showNotes: boolean;
   // Which notes are expanded inline, by segment index.
@@ -674,6 +704,7 @@ interface SegmentedTextProps {
 }
 
 const EMPTY_RANGES: SegmentRange[] = [];
+const NO_NOTED: ReadonlySet<string> = new Set();
 
 // Renders a sutta's segments. Memoized, as is each SegmentRow, which requires every callback
 // ReaderPage passes in to be stable across unrelated renders.
@@ -690,6 +721,7 @@ function SegmentedTextInner({
   onToggleSeg,
   onWordClick,
   onSpanClick,
+  notedIds = NO_NOTED,
   showNotes,
   openNotes,
   onToggleNote,
@@ -762,6 +794,7 @@ function SegmentedTextInner({
         onToggleSeg={onToggleSeg}
         onWordClick={onWordClick}
         onSpanClick={onSpanClick}
+        notedIds={notedIds}
         showNotes={showNotes}
         noteOpen={!!openNotes[i]}
         noteNumber={seg.note ? runningNoteNumber : undefined}

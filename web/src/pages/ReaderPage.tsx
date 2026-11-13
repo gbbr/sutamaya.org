@@ -44,6 +44,8 @@ import type { SearchHit } from '../lib/search/metadata';
 import { marksOf, pageIndex } from '../lib/search/text';
 import { SegmentedText, type SegmentNumberPlacement, type SegmentMarks } from '../components/reader/SegmentedText';
 import { HighlightPopup } from '../components/reader/HighlightPopup';
+import { highlightNoteKey, useNotedHighlightIds } from '../lib/highlightNotesPrototype';
+import { highlightText } from '../lib/highlights';
 import { HighlightGutter } from '../components/reader/HighlightGutter';
 import { DictionaryDock } from '../components/reader/DictionaryDock';
 import { ReaderTip } from '../components/reader/ReaderTip';
@@ -269,10 +271,19 @@ export function ReaderPage() {
     pop,
     onTextUp,
     pick,
+    paint,
     close: closePop,
     popStop,
     openPop,
   } = useSuttaReading(suttaId, 'reader', { ...restoreRef.current, by });
+  const notedIds = useNotedHighlightIds(suttaId, by, hlForSutta);
+  const popNoteKey = pop && suttaId ? highlightNoteKey(suttaId, by, pop.span) : null;
+  // The highlight the popup is open on exactly, if any, and its text.
+  const popHighlight = useMemo(
+    () => (popNoteKey && suttaId ? hlForSutta.find((h) => highlightNoteKey(suttaId, by, h) === popNoteKey) : undefined),
+    [popNoteKey, suttaId, by, hlForSutta]
+  );
+  const popQuote = useMemo(() => (popHighlight && segments ? highlightText(popHighlight, segments) : ''), [popHighlight, segments]);
 
   // Preloads the sutta's other translations, each on its own, so a switch is instant and offline.
   useEffect(() => {
@@ -1212,6 +1223,7 @@ export function ReaderPage() {
               onToggleSeg={onToggleSeg}
               onWordClick={onWordClick}
               onSpanClick={openPop}
+              notedIds={notedIds}
               showNotes={showNotes}
               openNotes={openNotes}
               onToggleNote={onToggleNote}
@@ -1365,15 +1377,22 @@ export function ReaderPage() {
         />
       )}
 
-      {pop && (
+      {pop && suttaId && popNoteKey && (
         <HighlightPopup
           pop={pop}
+          noteKey={popNoteKey}
+          painted={!!popHighlight}
+          quote={popQuote}
           theme={theme}
           mobile={mobile}
           // Making a highlight while they are hidden turns them back on; erasing one doesn't.
           onPick={(color) => {
             revealHighlights();
             pick(color);
+          }}
+          onPaint={(color) => {
+            revealHighlights();
+            paint(color);
           }}
           onRemove={() => pick(null)}
           onClose={closePop}

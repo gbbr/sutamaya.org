@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
-import { ChevronRight, Minus, Plus, Trash2, X } from 'lucide-react';
+import { ChevronRight, Minus, Plus, StickyNote, Trash2, X } from 'lucide-react';
 import { useUserData } from '../../context/UserDataContext';
 import { FS_MAX, FS_MIN, FS_STEP, LH_MAX, LH_MIN, LH_STEP, useReaderPrefs } from '../../context/ReaderPrefsContext';
 import { NoteEditor } from './NoteEditor';
@@ -8,6 +8,7 @@ import { TRANSLATOR_SHORT_NAMES } from '../../lib/corpus/corpus';
 import { useSuttaText } from '../../hooks/useSuttaText';
 import { HighlightCountBadge } from '../HighlightCountBadge';
 import { highlightColors, highlightStart, highlightText } from '../../lib/highlights';
+import { highlightNoteKey, useHighlightNotes } from '../../lib/highlightNotesPrototype';
 import { segmentIndex } from '../../lib/corpus/segmentKeys';
 import { KeyCap } from '../ShortcutsModal';
 import { SHORTCUTS, SHOWS_KEY_HINTS } from '../../lib/shortcuts';
@@ -187,11 +188,13 @@ function HighlightList({ suttaId, by, highlights, theme, onJumpToHighlight }: Pi
   // One map for the whole list, each row otherwise rebuilding it for its preview and again for its
   // jump target.
   const segIndex = useMemo(() => (segments ? segmentIndex(segments) : null), [segments]);
+  const notes = useHighlightNotes();
 
   return highlights.map((h, gi) => {
     const text = highlightText(h, segments, segIndex ?? undefined);
     const preview = text.length > 120 ? `${text.slice(0, 120)}…` : text;
     const start = segments && segIndex ? highlightStart(h, segments, segIndex) : null;
+    const note = notes.get(highlightNoteKey(suttaId, by, h));
     return (
       // The last row draws no rule, what follows the list closing it with its own.
       <div
@@ -204,7 +207,15 @@ function HighlightList({ suttaId, by, highlights, theme, onJumpToHighlight }: Pi
           onClick={() => start !== null && onJumpToHighlight(start, h.id, by)}
         >
           <span className="w-[5px] self-stretch rounded-[3px] flex-none" style={{ background: highlightPaint(h.c, theme) }} />
-          <span className="flex-1 text-ui-sm leading-[1.45]">{preview || 'Highlighted text'}</span>
+          <span className="flex-1 min-w-0 text-ui-sm leading-[1.45]">
+            {preview || 'Highlighted text'}
+            {note && (
+              <span className="flex gap-1.5 mt-1.5" style={{ color: theme.dim }}>
+                <StickyNote className="flex-none size-[1em] mt-[0.22em]" strokeWidth={2} />
+                <span className="min-w-0 line-clamp-3 whitespace-pre-wrap">{note}</span>
+              </span>
+            )}
+          </span>
         </button>
         {/* Erases the highlight, the same path HighlightPopup's "Remove" takes, with no
             confirmation. Always visible, this panel being used on touch, and faded so it reads as

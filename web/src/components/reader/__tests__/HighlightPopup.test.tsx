@@ -16,9 +16,13 @@ function renderPopup(mobile: boolean, pop: Partial<PopState> = {}) {
   render(
     <HighlightPopup
       pop={{ span: { k0: 'dn1:1.1', o0: 0, k1: 'dn1:1.1', o1: 4 }, x: 120, top: 200, bottom: 220, on: null, ...pop }}
+      noteKey="dn1|sujato|dn1:1.1|0|dn1:1.1|4"
+      painted={!!pop.on}
+      quote=""
       theme={theme}
       mobile={mobile}
       onPick={onPick}
+      onPaint={() => {}}
       onRemove={onRemove}
       onClose={onClose}
       onStop={() => {}}
@@ -80,12 +84,12 @@ describe('HighlightPopup', () => {
 
   it('offers Remove on the mobile bar only for an existing highlight', () => {
     const { el, onRemove } = renderPopup(true, { on: HIGHLIGHT_COLORS[0] });
-    fireEvent.click(screen.getByText('Remove'));
+    fireEvent.click(screen.getByLabelText('Remove'));
     expect(onRemove).toHaveBeenCalled();
 
     const fresh = renderPopup(true).el;
-    expect(el.textContent).toContain('Remove');
-    expect(fresh.textContent).not.toContain('Remove');
+    expect(el.querySelector('[aria-label="Remove"]')).not.toBeNull();
+    expect(fresh.querySelector('[aria-label="Remove"]')).toBeNull();
   });
 
   it('closes from the mobile bar', () => {
