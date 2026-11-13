@@ -4,6 +4,12 @@ What each update to sutamaya changed, newest first, named for the day it went ou
 reaches the web at once and the iOS and Android apps over the air; an app shows the update it runs
 in brackets after its version, at the foot of Settings.
 
+## 2026-11-13
+
+Over-the-air update 518be2eaf for the iOS and Android apps, also live on the web.
+
+- Send feedback by email from Settings, rather than on GitHub ([518be2eaf](https://github.com/gbbr/sutamaya.org/commit/518be2eaf))
+
 ## 2026-11-12
 
 Over-the-air update d7ac47c7b for the iOS and Android apps, also live on the web.
