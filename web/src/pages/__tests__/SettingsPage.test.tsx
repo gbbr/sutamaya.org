@@ -378,7 +378,7 @@ describe('deleting the account', () => {
     const text = container.textContent!;
     expect(text.indexOf('Display')).toBeLessThan(text.indexOf('Danger zone'));
     // Below Display, above the footer links, and nowhere near Sign out.
-    expect(text.indexOf('Danger zone')).toBeLessThan(text.indexOf('Report an issue'));
+    expect(text.indexOf('Danger zone')).toBeLessThan(text.indexOf('Send feedback'));
   });
 
   it('is absent while the session check is still loading', () => {

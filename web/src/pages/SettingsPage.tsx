@@ -20,6 +20,7 @@ import { MOBILE_TOP_INSET } from '../lib/ui/layout';
 import { statusOf } from '../lib/retry';
 import { isIosBrowserTab } from '../lib/sync/localAccount';
 import { isNativeApp } from '../lib/platform';
+import { feedbackMailto } from '../lib/contact';
 import { hasLocalWorkWorthKeeping } from '../lib/keepSafe';
 import { transitionPage } from '../lib/ui/motion';
 import {
@@ -879,7 +880,7 @@ export function SettingsPage() {
           </div>
         )}
 
-        {/* The footer's two occasional links, Help and Report an issue. */}
+        {/* The footer's two occasional links, Help and Send feedback. */}
         <div className="flex items-center justify-center gap-2.5 font-sans text-ui-sm text-ink-4 mt-6">
           <button
             className="underline decoration-ink/25 underline-offset-2"
@@ -890,13 +891,8 @@ export function SettingsPage() {
           <span aria-hidden className="text-ink-5">
             ·
           </span>
-          <a
-            href="https://github.com/gbbr/sutamaya.org/issues/new"
-            target="_blank"
-            rel="noreferrer"
-            className="underline decoration-ink/25 underline-offset-2"
-          >
-            Report an issue
+          <a href={feedbackMailto()} className="underline decoration-ink/25 underline-offset-2">
+            Send feedback
           </a>
         </div>
 

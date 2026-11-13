@@ -8,6 +8,7 @@ import { isTypingTarget } from '../lib/shortcuts';
 import { MOBILE_TOP_INSET } from '../lib/ui/layout';
 import { transitionPage } from '../lib/ui/motion';
 import { isNativeApp } from '../lib/platform';
+import { CONTACT_EMAIL } from '../lib/contact';
 import { hasNativeAppleSignIn } from '../lib/native/appleSignIn';
 import dictionaryShot from '../assets/help/dictionary-mobile.webp';
 import libraryShot from '../assets/help/library-mobile.webp';
@@ -383,8 +384,6 @@ const CONTACT_LEAD =
   'Bugs, questions and suggestions are welcome at metta@sutamaya.org. They can also go to the ' +
   'project’s issue tracker, where anything filed is public and posting needs a free GitHub ' +
   'account.';
-
-const CONTACT_EMAIL = 'metta@sutamaya.org';
 
 const CONTACT_URL = 'https://github.com/gbbr/sutamaya.org/issues/new';
 
