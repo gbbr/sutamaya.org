@@ -4,6 +4,14 @@ What each update to sutamaya changed, newest first, named for the day it went ou
 reaches the web at once and the iOS and Android apps over the air; an app shows the update it runs
 in brackets after its version, at the foot of Settings.
 
+## 2026-11-12
+
+Over-the-air update d7ac47c7b for the iOS and Android apps, also live on the web.
+
+- Look up "pe" in the Pali as peyyāla, the repetition it marks ([d7ac47c7b](https://github.com/gbbr/sutamaya.org/commit/d7ac47c7b))
+- Select a run of lines by Shift-clicking a second segment number ([d3c9676cd](https://github.com/gbbr/sutamaya.org/commit/d3c9676cd))
+- Switch the Pali between on tap and always with Shift+P ([f8cdfb4b9](https://github.com/gbbr/sutamaya.org/commit/f8cdfb4b9))
+
 ## 2026-11-11.2
 
 Over-the-air update 5bf9c6ccf for the iOS and Android apps, also live on the web.
