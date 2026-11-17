@@ -139,20 +139,24 @@ export function ListPane({
   const showVisited = !currentList?.auto;
 
   // Where a row opens to, when that isn't the row's own id — a hit inside a batched document is
-  // keyed by the batch and opens on the inner sutta it matched.
+  // keyed by the batch and opens on the inner sutta it matched. Results only: on a phone, a group or
+  // list opened from the search browses here while the search's hits stay live beneath it.
   const openTargets = useMemo(() => {
     const map = new Map<string, string>();
+    if (!searching) return map;
     for (const h of hits) if (h.matchedId) map.set(h.id, h.matchedId);
     return map;
-  }, [hits]);
+  }, [hits, searching]);
 
   // What each hit found, and where: the paragraph of the sutta's own text the query was answered in,
   // and which of the row's own lines — the reader's note, the group description — carried it too.
+  // Results only, as with openTargets.
   const found = useMemo(() => {
     const map = new Map<string, Pick<SearchHit, 'snippet' | 'explains'>>();
+    if (!searching) return map;
     for (const h of hits) if (h.snippet || h.explains) map.set(h.id, { snippet: h.snippet, explains: h.explains });
     return map;
-  }, [hits]);
+  }, [hits, searching]);
 
   // Each row's chips and highlight count.
   const rowMeta = useMemo(

@@ -13,13 +13,31 @@ vi.mock('../../context/AuthContext', () => ({ useAuth: vi.fn() }));
 vi.mock('../../context/LayoutContext', () => ({ useLayout: vi.fn() }));
 vi.mock('../../context/ReaderPrefsContext', () => ({ useReaderPrefs: vi.fn() }));
 vi.mock('../../context/UiPrefsContext', () => ({ useUiPrefs: () => ({ toggleTheme: vi.fn() }) }));
-// A loaded text search that answers with the metadata hits it was given, as searchScrollReturn.test.tsx's.
+// The suttas whose text alone the search finds the query in, each quoted at its first line. Empty by
+// default, so the results are the metadata hits alone.
+const textFound = new Set<string>();
+
+// A loaded text search that answers with the metadata hits it was given, as searchScrollReturn.test.tsx's,
+// then textFound's.
 vi.mock('../../lib/search/textClient', () => ({
   beginTextSearchLoad: vi.fn(),
   subscribeTextSearch: () => () => {},
   textSearchStatus: () => 'ready',
-  searchText: (_query: string, meta: Array<{ id: string; rank: number; saved: boolean }>) =>
-    Promise.resolve(meta.map(({ id, rank }) => ({ id, rank }))),
+  searchText: (query: string, meta: Array<{ id: string; rank: number; saved: boolean }>) =>
+    Promise.resolve([
+      ...meta.map(({ id, rank }) => ({ id, rank })),
+      ...[...textFound].map((id) => ({
+        id,
+        rank: RANK_TEXT_PHRASE,
+        saved: false,
+        snippet: {
+          text: 'the four satipaṭṭhānas',
+          marks: [[9, 21]],
+          segments: [`${id}:1.1`, `${id}:1.1`],
+          markedBy: { queries: [query], anywhere: false },
+        },
+      })),
+    ]),
 }));
 
 import { useCorpus } from '../../context/CorpusContext';
@@ -30,6 +48,7 @@ import { useReaderPrefs } from '../../context/ReaderPrefsContext';
 import { LibraryPage } from '../LibraryPage';
 import { ReaderPage } from '../ReaderPage';
 import { SEARCH_PLACEHOLDER } from '../../lib/search/metadata';
+import { RANK_TEXT_PHRASE } from '../../lib/search/text';
 import { getRecentSearches } from '../../lib/search/recentSearches';
 import { tagIntent } from '../../lib/navigation/routeIntent';
 import type { Corpus, ListDef } from '../../lib/types';
@@ -166,6 +185,7 @@ describe('a collection found by search', () => {
     });
     vi.stubGlobal('fetch', vi.fn(() => new Promise(() => {})));
     Element.prototype.scrollIntoView = () => {};
+    textFound.clear();
 
     vi.mocked(useCorpus).mockReturnValue({ corpus: buildCorpus(), loading: false, error: false, retry: vi.fn() });
     vi.mocked(useUserData).mockReturnValue(mockUserData());
@@ -386,6 +406,18 @@ describe('a collection found by search', () => {
       await waitFor(() => expect(showing('ListPane')).toBe(true));
       expect(showing('TreePane')).toBe(false);
       expect(inPane('ListPane').getByText('Weakness in Training')).toBeTruthy();
+    });
+
+    it("shows that collection's suttas without what the search found in them, opening each at the top", async () => {
+      textFound.add('an9.63');
+      const { inPane } = searchFrom('/browse/dn', 'satipatthana');
+
+      fireEvent.click(await inPane('TreePane').findByRole('button', { name: /AN9\.63\s*Establishment/ }));
+
+      const row = await inPane('ListPane').findByRole('link', { name: /AN 9\.63\s*Weakness in Training/ });
+      expect(row.querySelector('mark')).toBeNull();
+      expect(row.textContent).not.toContain('the four');
+      expect(row.getAttribute('href')).toBe('/read/an9.63');
     });
 
     it('opens a collection that only expands open in the tree, in place of the results', async () => {
