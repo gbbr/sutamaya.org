@@ -710,27 +710,57 @@ export function ReaderPage() {
   // Opens sutta `id` at `passage` from within the Reader, a step with the way back to where the
   // reader is: another sutta arrives from the right as Next does; a line of the one open is glided
   // to, the place it leaves kept for the way back (lib/reader/stepPlaces.ts).
-  function openFromReader(id: string, passage?: Passage, targetBy: Translator = 'sujato') {
+  function openFromReader(
+    id: string,
+    passage?: Passage,
+    targetBy: Translator = 'sujato',
+    // A search result, which in the reading on screen adds no step (docs/web-app.md's "Routing").
+    fromSearch = false
+  ) {
     const target = corpus ? resolveCanonicalSuttaId(corpus, id) : id;
     if (target !== suttaId) {
       enterOnArrival.current = { id: target, dir: 1 };
     } else {
       // Nowhere to go: the sutta on screen, named without a line of it.
       if (!passage && id === target && targetBy === by) return;
+      if (fromSearch && targetBy === by) {
+        replaceArrival(id, passage);
+        return;
+      }
       if (scrollRef.current) keepStepPlace(location.key, scrollRef.current.scrollTop);
     }
     jumpTo(id, passage, suttaId, targetBy, by);
   }
 
+  // replaceArrival names `passage`, or the inner sutta `id`, of the reading on screen in the address
+  // in place of the history entry, keeping where the reader was opened from and the way back.
+  function replaceArrival(
+    id: string,
+    passage: Passage | undefined,
+    // Washes the passage where it stands rather than scrolling to it.
+    inPlace?: boolean
+  ) {
+    navigate(readLink(id, passage, by), {
+      replace: true,
+      state: tagIntent({
+        ...(location.state as object | null),
+        segments: passage?.segments,
+        paliSegments: passage?.paliSegments,
+        markedBy: passage?.markedBy,
+        inPlace,
+      }),
+    });
+  }
+
   function onSearchOpenSutta(id: string, snippet?: SearchHit['snippet']) {
     setSearchOpen(false);
-    openFromReader(id, snippet);
+    openFromReader(id, snippet, 'sujato', true);
   }
 
   // onSearchOpenPassage opens a line the search found in the sutta on screen, in the translation showing.
   function onSearchOpenPassage(passage: Passage) {
     setSearchOpen(false);
-    if (suttaId) openFromReader(suttaId, passage, by);
+    if (suttaId) openFromReader(suttaId, passage, by, true);
   }
 
   // Follows a link in a translator's note. Stable across renders.
@@ -754,18 +784,7 @@ export function ReaderPage() {
     if (!segments?.[i] || !suttaId) return;
     const named = extend && requestedId ? passageFromSearch(location.search, requestedId) : undefined;
     const from = named ? segmentAt(segments, named.segments[0]) : -1;
-    const range = rangeWithinSutta(segments, from === -1 ? i : from, i);
-    navigate(readLink(suttaId, { segments: range }, by), {
-      replace: true,
-      // Keeps where the reader was opened from, and drops whatever an earlier arrival carried.
-      state: tagIntent({
-        ...(location.state as object | null),
-        segments: range,
-        paliSegments: undefined,
-        markedBy: undefined,
-        inPlace: true,
-      }),
-    });
+    replaceArrival(suttaId, { segments: rangeWithinSutta(segments, from === -1 ? i : from, i) }, true);
   });
   const onSegmentNumber = useCallback(
     (i: number, extend: boolean) => segmentNumberRef.current(i, extend),

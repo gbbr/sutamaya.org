@@ -49,7 +49,7 @@ import { useLayout } from '../../context/LayoutContext';
 import { useReaderPrefs } from '../../context/ReaderPrefsContext';
 import { ReaderPage } from '../ReaderPage';
 import { LibraryPage } from '../LibraryPage';
-import { SEARCH_PLACEHOLDER } from '../../lib/search/metadata';
+import { READER_SEARCH_PLACEHOLDER, SEARCH_PLACEHOLDER } from '../../lib/search/metadata';
 import { tagIntent } from '../../lib/navigation/routeIntent';
 import { shareLink } from '../../lib/native/share';
 import { OPEN_LINES_KEY } from '../../lib/storageKeys';
@@ -117,6 +117,13 @@ function washed(container: HTMLElement): number[] {
 // The words marked on the page, in reading order.
 function markTexts(container: HTMLElement): Array<string | null> {
   return [...container.querySelectorAll('mark')].map((el) => el.textContent);
+}
+
+// openReaderSearchHit opens the Reader's search and the hit the mocked text search finds in dn1.
+async function openReaderSearchHit() {
+  fireEvent.click(screen.getByRole('button', { name: 'Search' }));
+  fireEvent.change(screen.getByPlaceholderText(READER_SEARCH_PLACEHOLDER), { target: { value: 'pana' } });
+  fireEvent.click(await screen.findByRole('button', { name: /The sutta you're reading/ }));
 }
 
 // A segment's Pali line, present only while it is open.
@@ -566,6 +573,29 @@ describe('the passage a search hit was drawn from', () => {
     await waitFor(() => expect(router.state.location.search).toBe(''));
     expect(router.state.location.pathname).toBe('/read/dn4');
     expect(washed(container)).toEqual([]);
+  });
+
+  it('is opened in place of the history entry, with no way back, when the Reader’s search finds it in the sutta on screen', async () => {
+    const { container, router } = renderRoutes(routes, '/read/dn1');
+    await screen.findByText('They spoke in dispraise of the Buddha');
+    await openReaderSearchHit();
+
+    await waitFor(() => expect(washed(container)).toEqual([1, 2]));
+    expect(router.state.historyAction).toBe('REPLACE');
+    expect(router.state.location.search).toBe('?at=1.2-1.3&pali=1.3&q=pana');
+    expect(screen.queryByTitle('Back to DN 1')).toBeNull();
+  });
+
+  it('keeps the arrow back to the sutta the reader came from when the Reader’s search finds a line in the sutta on screen', async () => {
+    const { router } = renderRoutes(routes, '/read/dn2');
+    await screen.findByText('Then the king spoke');
+    await act(() => router.navigate('/read/dn1', { state: { backTo: 'dn2' } }));
+    await screen.findByText('They spoke in dispraise of the Buddha');
+    await openReaderSearchHit();
+    await waitFor(() => expect(router.state.location.search).toBe('?at=1.2-1.3&pali=1.3&q=pana'));
+
+    fireEvent.click(screen.getByTitle('Back to DN 2'));
+    await waitFor(() => expect(router.state.location.pathname).toBe('/read/dn2'));
   });
 
   it('lands on a link’s passage once, not again on a reload', async () => {
