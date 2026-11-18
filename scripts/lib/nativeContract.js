@@ -6,6 +6,11 @@ const VERSION_FIELDS = [
   [/\b(versionName|MARKETING_VERSION)\b\s*=?\s*("[^"]*"|[\d.]+)/g, '$1'],
 ];
 
+// The settings that only change how the app draws, dropped before comparing.
+const DISPLAY_SETTINGS = [
+  [/^[ \t]*<key>CADisableMinimumFrameDurationOnPhone<\/key>\s*<(?:true|false)\/>[ \t]*$/gm, ''], // 120Hz on iPhone
+];
+
 // The comments, dropped before comparing so that rewording one never fires the drift guard.
 const COMMENTS = [
   [/<!--[\s\S]*?-->/g, ''], // XML comments
@@ -13,8 +18,8 @@ const COMMENTS = [
   [/^[ \t]*\n/gm, ''], // blank lines, the ones those leave included
 ];
 
-// comparableContract returns a native contract file's text without its version fields and
-// comments, which never change what a bundle may call.
+// comparableContract returns a native contract file's text without its version fields, display
+// settings and comments, none of which change what a bundle may call.
 export function comparableContract(text) {
-  return [...VERSION_FIELDS, ...COMMENTS].reduce((t, [re, to]) => t.replace(re, to), text);
+  return [...VERSION_FIELDS, ...DISPLAY_SETTINGS, ...COMMENTS].reduce((t, [re, to]) => t.replace(re, to), text);
 }

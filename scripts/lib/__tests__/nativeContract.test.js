@@ -38,6 +38,18 @@ const manifest = `<?xml version="1.0" encoding="utf-8"?>
 </manifest>
 `;
 
+const plist = `<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+<dict>
+\t<key>UIViewControllerBasedStatusBarAppearance</key>
+\t<true/>
+</dict>
+</plist>
+`;
+
+// The frame-rate setting and its comment, as Info.plist holds them.
+const frameRate = '\t<!-- Up to 120Hz. -->\n\t<key>CADisableMinimumFrameDurationOnPhone</key>\n\t<true/>\n';
+
 describe('comparableContract', () => {
   it('ignores a reworded comment', () => {
     expect(same(config, config.replace('lib/statusBar.ts', 'lib/native/statusBar.ts'))).toBe(true);
@@ -58,6 +70,15 @@ describe('comparableContract', () => {
   it('ignores the version fields', () => {
     expect(same('versionCode 2\nversionName "1.0.0"\n', 'versionCode 3\nversionName "1.0.1"\n')).toBe(true);
     expect(same('CURRENT_PROJECT_VERSION = 4;\nMARKETING_VERSION = 1.0;\n', 'CURRENT_PROJECT_VERSION = 5;\nMARKETING_VERSION = 1.0.1;\n')).toBe(true);
+  });
+
+  it('ignores the frame-rate setting', () => {
+    expect(same(plist, plist.replace('</dict>', `${frameRate}</dict>`))).toBe(true);
+  });
+
+  it('sees a key added beside the frame-rate setting', () => {
+    const camera = '\t<key>NSCameraUsageDescription</key>\n\t<string>Scan a page.</string>\n';
+    expect(same(plist, plist.replace('</dict>', `${frameRate}${camera}</dict>`))).toBe(false);
   });
 
   it('sees a changed setting', () => {
