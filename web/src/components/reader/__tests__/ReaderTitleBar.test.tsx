@@ -46,7 +46,8 @@ function readerJump(pane: HTMLElement, offset: number) {
   });
 }
 
-const bar = () => screen.getByRole('button', { hidden: true });
+// reachableBar is the bar while it is out, or null while it is tucked away.
+const reachableBar = () => screen.queryByRole('button', { name: 'Scroll to top' });
 
 describe('ReaderTitleBar', () => {
   beforeEach(() => vi.stubGlobal('IntersectionObserver', HeadingOutOfView));
@@ -55,26 +56,26 @@ describe('ReaderTitleBar', () => {
   it('slides out on a scroll back up with no touch reported, as when a finger stops a coasting page', () => {
     const pane = renderBar();
     scrollTo(pane, 1990);
-    expect(bar()).toBeVisible();
+    expect(reachableBar()).not.toBeNull();
   });
 
   it('tucks away on a scroll down', () => {
     const pane = renderBar();
     scrollTo(pane, 1990);
     scrollTo(pane, 2000);
-    expect(bar()).not.toBeVisible();
+    expect(reachableBar()).toBeNull();
   });
 
   it('stays hidden when the Reader scrolls back up by itself', () => {
     const pane = renderBar();
     readerJump(pane, -500);
-    expect(bar()).not.toBeVisible();
+    expect(reachableBar()).toBeNull();
   });
 
   it('follows the reader again once they scroll after the Reader has', () => {
     const pane = renderBar();
     readerJump(pane, -500);
     scrollTo(pane, 1490);
-    expect(bar()).toBeVisible();
+    expect(reachableBar()).not.toBeNull();
   });
 });

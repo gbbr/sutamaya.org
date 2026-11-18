@@ -77,7 +77,7 @@ export function ReaderTitleBar({ scrollRef, headingRef, title, top, theme }: Rea
     <div className="absolute overflow-hidden pointer-events-none pb-6" style={{ top, left: 'var(--safe-left)', right: 'var(--safe-right)' }}>
       <button
         data-component="ReaderTitleBar"
-        className="pointer-events-auto flex w-full h-9 items-center gap-4 px-5 backdrop-blur-xl backdrop-saturate-150 transition-[transform,visibility] duration-300 ease-out motion-reduce:transition-none"
+        className={`pointer-events-auto flex w-full h-9 items-center gap-4 px-5 backdrop-blur-xl backdrop-saturate-150 transition-transform duration-200 motion-reduce:transition-none ${shown ? 'ease-out' : 'ease-in'}`}
         style={{
           // The theme's tint over the page colour, translucent over a blur of the text beneath, as an
           // iOS bar is.
@@ -85,9 +85,11 @@ export function ReaderTitleBar({ scrollRef, headingRef, title, top, theme }: Rea
           // The header's rule along its foot, setting it off from the text in every theme.
           borderBottom: `1px solid ${theme.rule}`,
           boxShadow: '0 6px 16px rgba(0,0,0,.1)',
-          transform: shown ? undefined : 'translateY(-100%)',
-          visibility: shown ? undefined : 'hidden',
+          // Tucked away: above the clip by its own height and the room below it for its shadow.
+          transform: shown ? undefined : 'translateY(calc(-100% - 1.5rem))',
         }}
+        aria-hidden={shown ? undefined : true}
+        tabIndex={shown ? undefined : -1}
         aria-label="Scroll to top"
         onClick={() => scrollRef.current && animateScrollTop(scrollRef.current, 0)}
       >
