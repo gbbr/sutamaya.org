@@ -4,6 +4,14 @@ What each update to sutamaya changed, newest first, named for the day it went ou
 reaches the web at once and the iOS and Android apps over the air; an app shows the update it runs
 in brackets after its version, at the foot of Settings.
 
+## 2026-11-18
+
+Over-the-air update 0e72c4954 for the iOS and Android apps, also live on the web.
+
+- In-page search results don't stack back buttons ([0e72c4954](https://github.com/gbbr/sutamaya.org/commit/0e72c4954))
+- Improve the Reader's slide-in bar animation on mobile ([a6722ff14](https://github.com/gbbr/sutamaya.org/commit/a6722ff14))
+- Fix a bug where a collection opened from Search would highlight the query ([5f240b7d1](https://github.com/gbbr/sutamaya.org/commit/5f240b7d1))
+
 ## 2026-11-13
 
 Over-the-air update 518be2eaf for the iOS and Android apps, also live on the web.
