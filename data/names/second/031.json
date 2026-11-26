@@ -1,0 +1,289 @@
+{
+  "names": {
+    "vaḍḍhamāna": {
+      "senses": {
+        "vaḍḍhamāna 2": [
+          "Vaḍḍhamāna 01"
+        ]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "Thag 1.40 names the elder in its attribution. Thag 20.1:24 repeats his verse in Mahāmoggallāna’s poem, but leaves its addressee unnamed."
+    },
+    "vaṅkaka": {
+      "senses": {
+        "vaṅkaka 2": [
+          "Vaṅkaka"
+        ]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "SN 15.20:3.4 also calls the mountain vaṅkakaṁ in the account of the Rohitassas. The English uses its present name, Mount Vepulla, and the packet misses this occurrence."
+    },
+    "vebhāra": {
+      "senses": {
+        "vebhāra": [
+          "Vebhāra 01"
+        ]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "The DN 16 example places Sattapaṇṇi Cave on the slope of Vebhāra (3.42.3). The compound vebhārapasse has its own dictionary line."
+    },
+    "vedehikā": {
+      "senses": {
+        "vedehikā": [
+          "Vedehikā"
+        ]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "veghanasā": {
+      "senses": {
+        "veghanasā": [
+          "Veghanasā"
+        ]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "vehapphala": {
+      "senses": {
+        "vehapphala 1": [
+          "Vehapphala"
+        ]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "MN 49:10.8 names the realm and AN 4.123:4.3–4 describes rebirth among its gods after the fourth absorption and their lifespan of five hundred eons. The English renders Vehapphala as “abundant fruit”, so the packet misses these forms and those in MN 1, MN 41, MN 42, MN 120 and AN 4.125. The intervening AN 4.124 gives rebirth in the Pure Abodes."
+    },
+    "vejayanta": {
+      "senses": {
+        "vejayanta 2": [
+          "Vejayanta 03"
+        ]
+      },
+      "others": [
+        "Vejayanta 01",
+        "Vejayanta 02"
+      ],
+      "suttas": {},
+      "notes": "DPD also has vejayanta 1 for Sakka’s palace, omitted from the packet’s senses. MN 37:8.8 and MN 50:27.1 name the palace (“Victory”), and SN 22.96:4.7 names the king’s chariot (“Triumph”). These standalone forms have no eligible sutta IDs here. DN 17 also names the royal chariot in compounds. SN 11.6:3.1 identifies Sakka’s chariot by Mātali and its team of a thousand, without giving its name. SN 11.5 is the verse contest. The palace description in MN 37:8.9–12 gives seven hundred chambers in each tower, where the entry gives seven storeys."
+    },
+    "veludvāra": {
+      "senses": {
+        "veḷudvāra": [
+          "Veḷudvāra"
+        ]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "SN 55.7 locates Bamboo Gate in Kosala. SN 55.6 shares the chapter heading but its narrative never names the village."
+    },
+    "veluvana": {
+      "senses": {
+        "veḷuvana": [
+          "Veḷuvana 01"
+        ]
+      },
+      "others": [
+        "Veḷuvana 02",
+        "Veḷuvana 03"
+      ],
+      "suttas": {
+        "Veḷuvana 01": [
+          "an4.35",
+          "an4.183",
+          "an4.187",
+          "an5.32",
+          "an9.26",
+          "an9.34",
+          "an10.86",
+          "dn16",
+          "dn31",
+          "mn24",
+          "mn44",
+          "mn58",
+          "mn61",
+          "mn69",
+          "mn73",
+          "mn77",
+          "mn79",
+          "mn97",
+          "mn108",
+          "mn124",
+          "mn125",
+          "mn126",
+          "mn136",
+          "mn144",
+          "mn151",
+          "sn2.13",
+          "sn2.30",
+          "sn4.6",
+          "sn4.7",
+          "sn4.9",
+          "sn4.10",
+          "sn4.23",
+          "sn7.1",
+          "sn7.2",
+          "sn7.3",
+          "sn7.4",
+          "sn7.8",
+          "sn8.9",
+          "sn10.9",
+          "sn10.10",
+          "sn10.11",
+          "sn11.14",
+          "sn12.17",
+          "sn12.24",
+          "sn12.70",
+          "sn15.8",
+          "sn15.13",
+          "sn16.5",
+          "sn16.6",
+          "sn16.7",
+          "sn16.11",
+          "sn17.36",
+          "sn19.1",
+          "sn19.11",
+          "sn21.3",
+          "sn21.10",
+          "sn22.49",
+          "sn22.50",
+          "sn22.87",
+          "sn22.88",
+          "sn28.10",
+          "sn35.29",
+          "sn35.65",
+          "sn35.87",
+          "sn35.128",
+          "sn36.21",
+          "sn42.2",
+          "sn42.10",
+          "sn46.14",
+          "sn46.15",
+          "sn46.16",
+          "sn47.29",
+          "sn55.3",
+          "sn56.41",
+          "snp3.6",
+          "ud1.6",
+          "ud3.6",
+          "ud3.7",
+          "ud4.4",
+          "ud4.9",
+          "ud5.3",
+          "ud5.8",
+          "ud6.8",
+          "ud8.9"
+        ],
+        "Veḷuvana 02": [
+          "an10.28"
+        ],
+        "Veḷuvana 03": [
+          "an5.201",
+          "sn54.10"
+        ]
+      },
+      "notes": "AN 10.28 names Kajaṅgalā. AN 5.201 and SN 54.10 both read kimilāyaṁ … veḷuvane, rendered “Freshwater Mangrove Wood” in English. The other listed passages identify the Rājagaha grove. The citation matches AN 10.85, SN 4.5, SN 11.13, SN 15.12 and SN 47.35–37 give no Rājagaha grove. AN 10.27 is at Sāvatthī, and AN 5.200 and AN 5.202 give no Kimbilā setting. Check the Rājagaha entry’s account of Mahācunda’s illness against SN 46.16:1.1–1.4, where Mahācunda visits the sick Buddha."
+    },
+    "velāma": {
+      "senses": {
+        "velāma": [
+          "Velāma"
+        ]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "venāgapura": {
+      "senses": {
+        "venāgapura": [
+          "Venāgapura"
+        ]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "AN 3.63:1.1 names the Kosalan brahmin village. AN 3.62 shares the cited page. DPD’s AN 3.64 is the discourse with Sarabha in the app’s numbering."
+    },
+    "vepacitti": {
+      "senses": {
+        "vepacitti": [
+          "Vepacitti"
+        ]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "Thag 16.3:3.4 has vepacityasuro. Sujato names the bound titan as Vepaciti in the preceding English line, so the packet misses him. SN 2.8, SN 11.6, SN 11.8 and SN 11.22 are adjacent citation matches. The titan with Sakka in SN 11.8 is Verocana. In SN 11.10 Vepacitti’s name is in the closing chapter summary. The seers in the story address Sambara."
+    },
+    "vepulla": {
+      "senses": {
+        "vepulla 2": [
+          "Vepulla"
+        ]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "SN 2.30:16.1–2 uses the variant Vipulo, with its own DPD sense, and calls the mountain the foremost of Rājagaha’s hills. SN 3.1, SN 15.18 and SN 15.19 are adjacent citation matches. DN 20:8.7–10 gives Kumbhīra more than a hundred thousand followers."
+    },
+    "verahaccāni": {
+      "senses": {
+        "verahaccāni 1": [
+          "Verahaccāni"
+        ]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "SN 35.133:1.2 identifies the clan in verahaccānigottāya. The standalone name is in the closing summary. SN 35.132 concerns Lohicca. Check three details in the entry. The pupil calls the woman his teacher’s wife (2.3), Udāyī defers teaching at the first meal and teaches at the second (2.9, 5.3–6.1), and she tells Udāyī that she takes refuge in the Buddha, Dhamma and Saṅgha (7.4–5)."
+    },
+    "verañjā": {
+      "senses": {
+        "verañjā": [
+          "Verañjā"
+        ]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "AN 4.53 names the road to Verañjā, and AN 8.11 and AN 8.19 place the Buddha there. AN 4.52 and AN 8.10 are adjacent citation matches. The version of the interview in AN 8.11 ends with the brahmin taking refuge (20.5–6). The rains invitation belongs to the Vinaya account cited in the entry."
+    },
+    "vessabhū": {
+      "senses": {
+        "vessabhū 1": [
+          "Vessabhū 01"
+        ],
+        "vessabhū 2": [
+          "Vessabhū 02"
+        ]
+      },
+      "others": [],
+      "suttas": {
+        "Vessabhū 01": [
+          "dn14",
+          "dn32",
+          "sn12.6",
+          "sn12.10",
+          "thag7.5"
+        ],
+        "Vessabhū 02": [
+          "dn19"
+        ]
+      },
+      "notes": "DN 19:36.13–16 lists the king among the seven Bhāratas. SN 12.10:8.2 names the Buddha in the chapter summary alongside Vipassī and Sikhī. DN 14:1.12.8 calls Vessabhū Buddha’s mother Vassavatī. The entry calls her Yasavatī."
+    },
+    "vessavaṇa": {
+      "senses": {
+        "vessavaṇa": [
+          "Vessavaṇa"
+        ]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "DN 32:7.40–43 identifies Vessavaṇa with Kuvera and calls Visāṇā his capital. The entry calls Visāṇā his kingdom. DN 21:1.10.1 calls Bhūjati his paricārikā (attendant), while the entry describes Bhuñjatī as his wife."
+    }
+  },
+  "done": true
+}

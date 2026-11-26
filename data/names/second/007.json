@@ -1,0 +1,13 @@
+{
+  "names": {
+    "dhamma": {
+      "senses": {
+        "dhamma 1.11": ["Dhamma 02"]
+      },
+      "others": ["Dhamma 03"],
+      "suttas": {},
+      "notes": "DN 17 names Mahāsudassana’s palace at 1.25.2 and the lotus pond in front of it at 1.30.2. Both entries occur in that sutta, even in the same Pali segment, so a single choice for DN 17 would be misleading. SN 22.96:4.2 explicitly names the palace (dhammo pāsādo) and would identify Dhamma 02. The packet omits both suttas from its eligible list because Sujato translates the name as ‘Principle’. Its English name filter instead picks up ‘Dhamma’ for the teaching, as in AN 3.43:1.1, and the nun Dhammā in Thig 1.17:2.1. None of the listed suttas identifies either place."
+    }
+  },
+  "done": true
+}

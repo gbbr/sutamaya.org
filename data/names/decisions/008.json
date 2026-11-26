@@ -1,0 +1,204 @@
+{
+  "names": {
+    "dhammadinna": {
+      "senses": {"dhammadinna": ["Dhammadinna 02"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 55.53:1.2 calls Dhammadinna a lay follower and has him bring five hundred lay followers to Isipatana. SN 55.52 concerns an unnamed monk. The packet also picks up the nun Dhammadinnā in AN 1.239, MN 44 and Thig 1.12 under the masculine lemma. The chapter index at SN 55.61:2.2 refers back to the layman's discourse."
+    },
+    "dhammadinnā": {
+      "senses": {"dhammadinnā": ["Dhammadinnā 03"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 1.239 singles her out among the nuns who teach Dhamma, MN 44 identifies Visākha's interlocutor as a nun, and Thig 1.12 attributes its verse to her. The AN citation also reaches the neighboring groups AN 1.219–234 and 1.248–257. SN 55.53 concerns the male lay follower. The Pali story heading at Dhp 421:0 also names the therī."
+    },
+    "dhammapāla": {
+      "senses": {"dhammapāla": ["Dhammapāla 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "Thag 2.42:2.5 attributes the verses to Dhammapāla Thera. Thag 2.49:3.2 repeats his name in the chapter index."
+    },
+    "dhammika": {
+      "senses": {"dhammika 4": ["Dhammika 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 6.54 identifies the resident monk expelled from seven lodgings, and Thag 4.10 attributes the verses to Dhammika Thera. Thag 4.12:6.3 lists him in the chapter index. Snp 2.14:1.3 explicitly calls its speaker a lay follower and gives him five hundred lay followers. The packet lacks an entry for that Dhammika."
+    },
+    "dhanavatī": {
+      "senses": {"dhanavatī": ["Dhanavatī"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "dhaniya": {
+      "senses": {"dhaniya 1": ["Dhaniya 02"], "dhaniya 2": ["Dhaniya 02"]},
+      "others": ["Dhaniya 01"],
+      "suttas": {
+        "Dhaniya 01": ["snp1.2", "snp1.12", "snp5.19"],
+        "Dhaniya 02": ["thag3.4", "thag3.16"]
+      },
+      "notes": "Dhaniya 02 recounts the timber episode behind the second pārājika and attributes the verses of Thag 3.4 to the same monk. Snp 1.2:1.2 calls the other Dhaniya a cowherd on the Mahī. The indexes at Snp 1.12:16.1 and 5.19:20.1 list his discourse second, after Uraga. Thag 3.16:4.3 lists the elder of Thag 3.4 fourth in the Book of the Threes. Check the potter biography against MN 140:1.3, which calls the potter Bhaggava, and 36.5, which says Pukkusāti died a non-returner. The entry says he died an arahant."
+    },
+    "dhataraṭṭha": {
+      "senses": {"dhataraṭṭha 1": ["Dhataraṭṭha 01"], "dhataraṭṭha 2": ["Dhataraṭṭha 03"]},
+      "others": ["Dhataraṭṭha 07"],
+      "suttas": {
+        "Dhataraṭṭha 01": ["dn18", "dn32"],
+        "Dhataraṭṭha 03": [],
+        "Dhataraṭṭha 07": []
+      },
+      "notes": "DN 18:12.3 and DN 32:4.16 identify the Great King of the east. DN 19:2.3 names him, then 36.15 names the two human Bhārata kings. DN 20:9.2 names the eastern ruler, then 11.5–6 names the Dhataraṭṭha nāgas in the plural. Those nāgas have no DPD sense. A single choice for either DN 19 or DN 20 would give the wrong entry at one of its passages."
+    },
+    "dhotaka": {
+      "senses": {"dhotaka": ["Dhotaka"]},
+      "others": [],
+      "suttas": {},
+      "notes": "Snp 5.1 names Bāvarī's student. His questions and the Buddha's replies are in Snp 5.6. The entry prints the reference for that dialogue as ‘SN, p.204f.’"
+    },
+    "disampati": {
+      "senses": {"disampati 1": ["Disampati"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "doṇa": {
+      "senses": {"doṇa 2": ["Doṇa 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 16:6.25.3–13 has Doṇa mediate and divide the relics. The footprints episode is AN 4.36. AN 4.35 concerns Vassakāra. AN 5.192 also names a brahmin Doṇa, who asks about brahmins. The exchange gives no detail connecting him to either episode in the entry. AN 4.40:8.3 and AN 5.200:7.1 are chapter indexes."
+    },
+    "dummukha": {
+      "senses": {"dummukha 1": ["Dummukha 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "dāmali": {
+      "senses": {"dāmali": ["Dāmali"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 2.5 gives the exchange at Jeta's Grove. Dāmali urges unrelenting effort at 2.1–4, and the Buddha replies that one who has completed the task has nothing left to do. SN 2.3 and 2.4 concern Māgha and Māgadha respectively. SN 2.10:9.2 lists Dāmali in the chapter index."
+    },
+    "dānaveghasā": {
+      "senses": {"dānaveghasā": ["Dānaveghasā"]},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 20:12.6 reads asurā dānaveghasā. DPD and DPPN take this as one group. Sujato translates it as two groups, Dānava and Ghasa, and attributes the single group of archers to the commentary."
+    },
+    "dīgha": {
+      "senses": {"dīgha 2": ["Dīgha 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 32 lists the yakkha chief. The meeting with Dīgha Parajana is in MN 31:21.1. The page citation lands in MN 30. The entry reverses the sequence of events, since the Buddha has already left Anuruddha, Nandiya and Kimbila at MN 31:19.1. MN 89:2.2 names a different person, Pasenadi's attendant Dīgha Kārāyana."
+    },
+    "dīghalaṭṭhi": {
+      "senses": {"dīghalaṭṭhi": ["Dīghalaṭṭhi"]},
+      "others": [],
+      "suttas": {},
+      "notes": "The godling visits the Bamboo Grove in SN 2.13. The same page also reaches SN 2.11, 2.12 and 2.14, whose visitors are Candimasa, Veṇḍu and Nandana. SN 2.20:14.2 lists Dīghalaṭṭhi in the chapter index."
+    },
+    "dīghanakha": {
+      "senses": {"dīghanakha 1": ["Dīghanakha"]},
+      "others": [],
+      "suttas": {},
+      "notes": "The wanderer addressed as Aggivessana visits the Buddha in MN 74. MN 73 concerns Vacchagotta. MN 80:18.2 includes Dīghanakha in the chapter index. The verse citation lands in Tālapuṭa's Thag 19.1. Moggallāna's exhortation to a brahmin to honor Kassapa occurs at Thag 20.1:30.4, where the brahmin is unnamed. DPPN's identification there is conjectural."
+    },
+    "dīghatapassī": {
+      "senses": {"dīghatapassī": ["Dīghatapassī"]},
+      "others": [],
+      "suttas": {},
+      "notes": "MN 56:2.2 identifies the Jain ascetic at Nāḷandā. The page citation also reaches MN 55, the discourse with Jīvaka."
+    },
+    "dīghāvu": {
+      "senses": {"dīghāvu 1": ["Dīghāvu 02"], "dīghāvu 2": []},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 55.3:1.2–3 identifies the sick lay disciple and names his father Jotika. The page reaches SN 55.2 as well. The packet misses the index at SN 55.10:7.1, where ogadhadīghāvu includes the title of SN 55.3. There is no candidate for Dīghīti's son."
+    },
+    "dūsī": {
+      "senses": {"dūsī 2": ["Dūsī"]},
+      "others": [],
+      "suttas": {},
+      "notes": "The entry assigns Kāḷī the wrong son. At MN 50:8.1–3 Moggallāna says that he himself was Dūsī, Kāḷī was his sister, and the Māra he is addressing was her son. Thag 20.1:48.2 and 49.4 recall Dūsī's punishment and spell his name dussī. The dictionary gives that form only a verb reading, so the packet misses both mentions."
+    },
+    "ekanālā": {
+      "senses": {"ekanāḷā": ["Ekanāḷā"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 7.11 and Snp 1.4 both locate the encounter with Bhāradvāja the Farmer in this village. Both spell his name Kasibhāradvāja. The entry prints Kāsī Bhāradvāja."
+    },
+    "ekapuṇḍarīka": {
+      "senses": {"ekapuṇḍarīka 1": [], "ekapuṇḍarīka 2": ["Ekapuṇḍarīka 01"], "ekapuṇḍarīka 3": ["Ekapuṇḍarīka 02"]},
+      "others": [],
+      "suttas": {"Ekapuṇḍarīka 01": ["mn71"], "Ekapuṇḍarīka 02": ["mn88"]},
+      "notes": "MN 37:7.1 names Sakka's park in Tāvatiṁsa, for which there is no candidate. MN 71:2.1 names Vacchagotta's monastery and MN 88:3.1 names Pasenadi's elephant. Their page citations also reach MN 70 and MN 87 respectively. In MN 88:6.3–7.3 the king follows Ānanda to the bank of the Aciravatī. The elephant entry places their conversation at the monastery."
+    },
+    "ekasālā": {
+      "senses": {"ekasālā": ["Ekasālā"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 4.14:1.1 locates the encounter with Māra in this Kosalan village. The page citation also reaches SN 4.13, 4.15 and 4.16."
+    },
+    "eleyya": {
+      "senses": {"eḷeyya": ["Eḷeyya"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "erāpatha": {
+      "senses": {"erāpatha": ["Erāpatha"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 4.67:3.2 names the four royal snake families. The page also reaches AN 4.66, a discourse on greed."
+    },
+    "erāvaṇa": {
+      "senses": {"erāvaṇa": ["Erāvaṇa 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "The entry includes both early passages about Erāvaṇa and itself questions the identification in DN 20. DN 20:11.7 calls him a mahānāga among the nāgas, and Snp 2.14:5.1–2 calls him a nāga king. Sujato's notes distinguish this dragon from his later portrayal as Sakka's elephant. Neither sutta describes Sakka riding him."
+    },
+    "esukārī": {
+      "senses": {"esukārī 1": ["Esukārī 01"], "esukārī 2": []},
+      "others": [],
+      "suttas": {},
+      "notes": "MN 96:2.1 identifies the brahmin who asks about caste and service. MN 95 concerns Caṅkī. There is no candidate for the king."
+    },
+    "gagga": {
+      "senses": {"gagga": []},
+      "others": ["Gagga 02"],
+      "suttas": {},
+      "notes": "DPD's sense is Aṅgulimāla's paternal clan. At MN 86:12.11–14 Pasenadi asks about the parents' clans, hears that the father was a Gagga, then addresses Aṅgulimāla himself as Gagga Mantāṇiputta. DPPN's biographical subject is the father. He is mentioned in the sutta, so his entry belongs in others. The passage supplies his clan name only."
+    },
+    "gaggarā": {
+      "senses": {"gaggarā 1": ["Gaggarā 01"], "gaggarā 2": []},
+      "others": [],
+      "suttas": {},
+      "notes": "The settings identify the lotus pond at Campā. The shared pages also reach AN 7.51, 8.9, 10.80, 10.93 and SN 8.10. Thag 21.1:44 has Vaṅgīsa's praise verse, whose setting is supplied at SN 8.11:1.1. The packet misses the title Gaggarā in the chapter index at SN 8.12:7.6. There is no candidate for the lightning."
+    },
+    "gandhabba": {
+      "senses": {"gandhabba 3": ["Gandhabba"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "gandhāra": {
+      "senses": {"gandhāra 1": ["Gandhāra 02"], "gandhāra 2": ["Gandhāra 01"]},
+      "others": [],
+      "suttas": {"Gandhāra 01": ["mn116"], "Gandhāra 02": []},
+      "notes": "MN 116:4.7 explicitly calls Gandhāra a paccekasambuddha. The packet misses the country in AN 3.70:28.3, AN 8.42:3.3, AN 8.43:3.3 and AN 8.45:4.3. In each list of sixteen countries, Sujato puts ‘Gandhāra’ one segment before gandhārānaṁ. DN 16:6.28.6 has gandhārapure, a compound with its own dictionary line for the city. DPD's geographical gloss ‘modern Kandahar’ also differs from DPPN's placement around Peshawar and Rawalpindi."
+    },
+    "gavampati": {
+      "senses": {"gavampati 2": ["Gavampati 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 23:33 places the elder in the Serīsaka palace with Pāyāsi. Thag 1.38 names him in the verse about stopping the river. The packet misses his name in the chapter index at Thag 1.40:2.5."
+    },
+    "gavesī": {
+      "senses": {"gavesī 3": ["Gavesī"]},
+      "others": [],
+      "suttas": {},
+      "notes": "Kassapa's lay follower at AN 5.180:3.3 is ordained and becomes an arahant at 7.4–6. The page also reaches AN 5.179, where Anāthapiṇḍika brings five hundred lay followers to the Buddha."
+    }
+  },
+  "done": true
+}

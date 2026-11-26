@@ -18,6 +18,8 @@ data/
   thanissaro/            Ṭhānissaro's, the same
   pli2en_dpd.json        the dictionary, generated from DPD and trimmed to this corpus
   pli2en_additions.json  definitions this app adds to DPD's, each naming its source
+  pli2en_dppn.json       proper-name entries for the names a tap can reach, from the DPPN
+  names/                 the review deciding which of those entries the app shows; see its README
   manifest.json          which sc-data commit the texts were last copied from
 ```
 
@@ -96,6 +98,14 @@ This app's changes to the translation are released under the repository's
 Bodhirasa, licensed [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/):
 attribution, non-commercial use, and share-alike on anything derived from it. The file records the
 DPD release it came from, and the build passes that on to the app.
+
+`pli2en_dppn.json` is drawn from G. P. Malalasekera's *Dictionary of Pāli Proper Names*, as revised
+by Ānandajoti Bhikkhu and published on
+[Ancient Buddhist Texts](https://www.ancient-buddhist-texts.net/Textual-Studies/DPPN/index.htm)
+under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
+([the site's notice](https://www.ancient-buddhist-texts.net/Miscellaneous/Copyright-Notice.htm)):
+attribution, and share-alike on anything derived from it. This trimmed copy and the review's
+decisions in `names/` are under the same licence.
 
 Bhikkhu Bodhi's and Ṭhānissaro Bhikkhu's translations, in `upstream/`, `bodhi/` and `thanissaro/`,
 keep their publishers' terms, listed in [upstream/README.md](upstream/README.md#licences).

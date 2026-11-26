@@ -1,0 +1,168 @@
+{
+  "names": {
+    "upariṭṭha": {
+      "senses": {
+        "upariṭṭha 2.1": ["Upariṭṭha"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "upasanta": {
+      "senses": {
+        "upasanta 2": ["Upasanta 03"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "upasena": {
+      "senses": {
+        "upasena": ["Upasena 02"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "AN 1.213 names Vaṅgantaputta. The page also lands in the groups AN 1.198–208 and 1.219–234. The viper episode is SN 35.69. SN 35.68 addresses Samiddhi."
+    },
+    "upatissa": {
+      "senses": {
+        "upatissa": []
+      },
+      "others": ["Upatissa 11"],
+      "suttas": {},
+      "notes": "Sāriputta gives Upatissa as his own name at MN 24:17.3–4. His biography is filed under Sāriputta 01. Upatissa 11 is a different person, the independent Buddha paired with Tissa at MN 116:6.27. The Pali compound Tissūpatissā has its own dictionary line, so the only candidate belongs in others even though the standalone taps point to Sāriputta."
+    },
+    "upavāṇa": {
+      "senses": {
+        "upavāṇa": ["Upavāṇa 01"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "SN 46.8 names the same elder in his conversation with Sāriputta at Kosambī. Its spelling Upavāna has a separate DPD lemma. AN 4.174, SN 7.12, SN 12.25, SN 35.69 and SN 46.7 share cited pages with the relevant discourses."
+    },
+    "uposatha": {
+      "senses": {
+        "uposatha 3": ["Uposatha 02"],
+        "uposatha 5": [],
+        "uposatha 4": ["Uposatha 02"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "The entry describes both the named royal elephant and the elephant lineage, for which it cites commentaries. Sujato translates the elephant’s name as Sabbath at DN 17:1.12.2, MN 129:36.2 and SN 22.96:4.5. The packet misses all three. Its sole hit, MN 116:6.32, names an independent Buddha who has no candidate."
+    },
+    "uppala": {
+      "senses": {
+        "uppala 4": ["Uppala 01"]
+      },
+      "others": ["Uppala 04"],
+      "suttas": {
+        "Uppala 01": ["mn116"]
+      },
+      "notes": "SN 6.10:6.9–10 names the Blue Water Lily hell, first as uppalanirayo and then as uppalā nirayā. AN 10.89:15.11–12 and Snp 3.10:8.9–10 use the variant Uppalaka. The packet lists only the independent Buddha in MN 116."
+    },
+    "uppalavaṇṇā": {
+      "senses": {
+        "uppalavaṇṇā": ["Uppalavaṇṇā 01"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "Thig 11.1 contains verses 224–235. The entry gives only 234–235 while describing the longer poem. AN 1.237, AN 2.131, SN 5.5 and SN 17.24 contain the cited identifications. The adjacent AN groups and SN 5.4, 17.23 and 17.25 do not name her."
+    },
+    "upāli": {
+      "senses": {
+        "upāli 1": ["Upāli 04"],
+        "upāli 2": ["Upāli 01"],
+        "upāli 3": ["Upāli 01"]
+      },
+      "others": [],
+      "suttas": {
+        "Upāli 01": ["an1.219-234", "an7.83", "an10.31", "an10.32", "an10.33", "an10.34", "an10.35", "an10.36", "an10.37", "an10.38", "an10.41", "an10.42", "an10.43", "an10.99", "sn14.15"],
+        "Upāli 04": ["mn56", "sn35.126"]
+      },
+      "notes": "Both monk senses cite Thag 3.11, verses 249–251. Upāli 01 attributes those verses to the Vinaya expert. The attribution Upālitthero has its own lemma. AN 1.228 names the expert, and SN 14.15 identifies his companions as experts in monastic law. AN 10.40 and 10.100 mention Upāli only in chapter material. For the layman, MN 56 and SN 35.126 both specify the householder at Pāvārika’s mango grove in Nāḷandā. MN 55 concerns Jīvaka. The monk’s page references also reach AN 1.198–218, 7.81–82, 7.84 and 10.97–98."
+    },
+    "upāsabha": {
+      "senses": {
+        "upāsabha": ["Upāsabha"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "uruvelakappa": {
+      "senses": {
+        "uruvelakappa": ["Uruvelakappa"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "SN 48.52 explicitly locates the teaching on noble knowledge at Uruvelakappa. The entry’s SN iv.228 citation lands in SN 36.19–20, which discuss feelings. The Tapassu and Bhadragaka episodes are AN 9.41 and SN 42.11. SN 42.12 names Rāsiya but gives no location. AN 9.40 and SN 42.10 also lack the town."
+    },
+    "uruvelā": {
+      "senses": {
+        "uruvelā": ["Uruvelā 01"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "MN 26:17.1 distinguishes Senā, the settlement, from Uruvelā, the surrounding locality. SN 4.25 continues the episode set in Uruvelā in SN 4.24. SN 47.17 and SN 48.56 share pages with SN 47.18 and SN 48.57, which explicitly give the location."
+    },
+    "usabha": {
+      "senses": {
+        "usabha 4": ["Usabha 03"],
+        "usabha 5": ["Usabha 01"],
+        "usabha 6": ["Usabha 02"]
+      },
+      "others": [],
+      "suttas": {
+        "Usabha 01": ["thag1.110"],
+        "Usabha 02": ["thag2.39"],
+        "Usabha 03": ["mn116"]
+      },
+      "notes": "The rain on the mountain trees identifies the first elder, and the elephant ride identifies the second. Thag 1.110:1.4 also names the first elder in the verse itself (usabhassa). The translation places his name one line earlier, so the packet picks up only the attribution and chapter summary."
+    },
+    "uttara": {
+      "senses": {
+        "uttara 2.04": [],
+        "uttara 2.06": ["Uttara 03"],
+        "uttara 2.07": [],
+        "uttara 2.10": ["Uttara 01"],
+        "uttara 2.11": ["Uttara 02"],
+        "uttara 2.12": ["Uttara 09"]
+      },
+      "others": ["Uttara 12", "Uttara 23", "Uttara 06"],
+      "suttas": {
+        "Uttara 01": ["thag2.1"],
+        "Uttara 02": ["thag2.21"],
+        "Uttara 03": ["sn2.19"],
+        "Uttara 06": ["mn152"],
+        "Uttara 09": ["mn91"],
+        "Uttara 23": ["sn42.13"]
+      },
+      "notes": "Uttara 06 recounts Pāyāsi’s gift organizer in DN 23, the example for 2.04. Only MN 152 identifies Pārāsariya as the youth’s teacher. DPPN proposes their identity tentatively, so DN 23 has no priority pick. The link from AN 8.8 to the poet of Thag 2.21 is also conjectural. SN 2.19 places the godling at Rājagaha. The Sāketa grove in Uttara 03 belongs to Kakudha in SN 2.18. DN 14:1.9.3 names Vessabhū’s disciple (Uttara 12) in soṇuttaraṁ. DN 14:1.9.5 names Koṇāgamana’s disciple in bhiyyosuttaraṁ, and the standalone Uttarā at 1.12.15 is Koṇāgamana’s mother. AN 8.91–117, SN 10.7, Thig 1.15 and Thig 7.1 also concern feminine Uttarā. MN 116:6.25 names an independent Buddha with no candidate. Uttara 10 gives the commentarial name for the attendant called Sudassana in SN 3.13. SN 42.13:1.1 names the Koliyan town. Uttarañcepi at 30.7 refers to the northern riverbank. Claude: DPPN only conjectures that Pārāsariya's pupil is DN 23's organizer, so Uttara 06 ships among others and sense 2.04 has no entry."
+    },
+    "uttarakuru": {
+      "senses": {
+        "uttarakuru": ["Uttarakuru 01"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "The four-continent list is at AN 3.80 in the app. DN 32:7.1 describes the land under the form uttarakuruvho. AN 9.21 names its inhabitants as uttarakurukā and counts three distinctions, where the entry counts four. The neighboring AN 9.20 and 9.22 do not name them. AN 3.112 does not mention the wish-fulfilling tree, and DN 17 describes the monarch’s four directions without naming Uttarakuru."
+    },
+    "uttarakā": {
+      "senses": {
+        "uttarakā": ["Uttarakā"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "Sunakkhatta and Korakkhattiya identify the DN 24 town. Its people are called Bumus in DPPN, Thūlas in the local Pali (thūlūnaṁ), and Kurus in Sujato’s translation. Sujato also uses Uttarakā for the Koliyan town at SN 42.13, which has its own entry, Uttara 23."
+    },
+    "uttarapāla": {
+      "senses": {
+        "uttarapāla": ["Uttarapāla"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "Thag 3.12 attributes the verses to Uttarapāla. The occurrence in Thag 3.16:5.3 is in the chapter’s list of poets."
+    }
+  },
+  "done": true
+}

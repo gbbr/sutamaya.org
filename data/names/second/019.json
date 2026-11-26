@@ -1,0 +1,195 @@
+{
+  "names": {
+    "nandaka": {
+      "senses": {
+        "nandaka 1": ["Nandaka 01"],
+        "nandaka 2": ["Nandaka 02"],
+        "nandaka 3": ["Nandaka 01"],
+        "nandaka 4": []
+      },
+      "others": ["Nandaka 03"],
+      "suttas": {
+        "Nandaka 01": ["an1.219-234", "an3.66", "an9.4", "mn146", "thag4.4"],
+        "Nandaka 02": ["thag2.27", "thag2.28"]
+      },
+      "notes": "Nandaka 01 explicitly attributes Thag 279–282 (Thag 4.4) to the adviser of the nuns. Thag 2.27 has the draft animal simile, and in Thag 2.28 Bharata addresses Nandaka as a fellow disciple of their preceptor. The packet misses the closing summaries at Thag 2.30.3.4 (the elder of Thag 2.27), Thag 4.12.5.2 (the elder of Thag 4.4) and AN 9.10.2.2 (the teacher of AN 9.4). The Licchavi minister in SN 55.30 lacks an entry. Ud 4.4 recounts the blow to Sāriputta and distinguishes the assailant from his companion, but leaves both yakkhas unnamed. In this corpus the foremost declaration is AN 1.229 and Sāḷha's visit is AN 3.66. AN 3.65, AN 9.3 and the two later AN 1 groups are adjacent citations. MN 146.27.5 establishes stream-entry for even the least advanced nun. DPPN's claim that all five hundred became arahants goes beyond that passage."
+    },
+    "nandana": {
+      "senses": {
+        "nandana 1": ["Nandana"],
+        "nandana 2": []
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "The godling asks about virtue and wisdom in SN 2.14. The mapped citations lead to Rohitassa in SN 2.26 and Nanda in SN 2.27. The heavenly wood has no candidate, though SN 1.11, MN 75 and SN 55.1 all name it (nandane vane, translated as the Garden of Delight)."
+    },
+    "nandivisāla": {
+      "senses": {"nandivisāla": ["Nandivisāla 02"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 2.28 gives the godling's riddle. The adjacent citations lead to Nanda in SN 2.27 and Susīma in SN 2.29."
+    },
+    "nandiya": {
+      "senses": {"nandiya": ["Nandiya 01"]},
+      "others": ["Nandiya 02", "Nandiya 04"],
+      "suttas": {
+        "Nandiya 01": ["mn31", "mn128", "thag1.25"],
+        "Nandiya 02": ["an11.13", "an11.21", "sn55.40", "sn55.47"],
+        "Nandiya 04": ["sn45.10"]
+      },
+      "notes": "AN 11.21.7 is the chapter's closing verse. It lists Nandiya after the two Mahānāma discourses and before Subhūti, identifying the Sakyan of AN 11.13. SN 55.47 also calls him Nandiya the Sakyan at Kapilavatthu. The packet misses the elder of Thag 1.25 in the closing verse at Thag 1.30.2.3. MN 30, AN 11.12, SN 55.39 and SN 45.9 are adjacent citations for the episodes in MN 31, AN 11.13, SN 55.40 and SN 45.10 respectively."
+    },
+    "nandā": {
+      "senses": {
+        "nandā 2": ["Nandā 06"],
+        "nandā 1": ["Nandā 06"]
+      },
+      "others": ["Nandā 07"],
+      "suttas": {
+        "Nandā 06": ["an1.235-247"],
+        "Nandā 07": ["dn16", "sn55.8"]
+      },
+      "notes": "The two sense matches have different grounds. AN 1.240 names the nun foremost in jhāna. Thig 5.4, the example for nandā 2, attributes its verses to Sundarīnandā, whom DPPN identifies with that nun while acknowledging conflicting traditions. The Thig 2.1 hint under nandā 1 is problematic because its attribution names Abhirūpanandā, whom the entry distinguishes from Sundarīnandā. Both poems use the vocative nande and place the English name on the preceding segment. The five other packet hits (AN 8.9, MN 76, SN 21.8, SN 35.241 and Ud 3.2) concern men named Nanda. SN 55.7 and the AN 1 groups on either side of AN 1.240 are citation spillover."
+    },
+    "navakammikabhāradvāja": {
+      "senses": {"navakammikabhāradvāja": ["Navakammika Bhāradvāja"]},
+      "others": [],
+      "suttas": {},
+      "notes": "The builder meets the Buddha under a sal tree in SN 7.17. SN 7.16 concerns a different brahmin."
+    },
+    "nemi": {
+      "senses": {"nemi 3": ["Nemi 02"]},
+      "others": ["Nemi 03"],
+      "suttas": {"Nemi 02": ["dn32"]},
+      "notes": "MN 116.6.7 includes the independently awakened Buddha. Sujato has Nemi, while the Pali has nemiso and its dictionary line is nemisa. This accounts for the separate entry and its absence from the allowed suttas."
+    },
+    "nerañjarā": {
+      "senses": {"nerañjarā": ["Nerañjarā 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "nigrodha": {
+      "senses": {
+        "nigrodha 2": ["Nigrodha 01"],
+        "nigrodha 3": ["Nigrodha 03"]
+      },
+      "others": [],
+      "suttas": {
+        "Nigrodha 01": ["dn8", "dn25"],
+        "Nigrodha 03": ["thag1.21"]
+      },
+      "notes": "DN 8 recalls the ascetic's question, which DN 25 recounts in full. DN 26 is citation spillover. The elder's verse is Thag 1.21. The TH30 hint also has a basis in the text. Thag 1.30.2.1 names Nigrodha in the closing list of elders, which the packet missed."
+    },
+    "nigrodhārāma": {
+      "senses": {"nigrodhārāma": ["Nigrodhārāma 01"]},
+      "others": ["Nigrodhārāma 02"],
+      "suttas": {
+        "Nigrodhārāma 01": [
+          "an3.73", "an4.195", "an6.10", "an8.25", "an8.51", "an10.46",
+          "an11.11", "an11.12", "an11.13", "mn14", "mn18", "mn53", "mn122",
+          "mn134", "mn142", "sn22.80", "sn35.243", "sn54.12", "sn55.21",
+          "sn55.22", "sn55.37", "sn55.39", "sn55.40", "sn55.54"
+        ]
+      },
+      "notes": "All 24 eligible texts explicitly place the monastery at Kapilavatthu. The Rājagaha location in DPPN's account of the missed invitation appears at DN 16.3.42.1 as gotamanigrodhe, the Gotama banyan tree. The episode supports retaining the site, though the wording gives no independent support for calling it a grove named Nigrodhārāma. AN 3.72, AN 4.194, MN 52, MN 121, SN 22.79 and SN 35.242 are neighboring page hits."
+    },
+    "nikaṭa": {
+      "senses": {"nikaṭa 3": ["Nikaṭa 01"]},
+      "others": ["Nikaṭa 02"],
+      "suttas": {},
+      "notes": "The empty mention list hides both people. DN 16.2.6.8 calls Nikaṭa an upāsaka, spelled Nikata in English. SN 55.10.1.5 has nikato for the same layman. AN 10.72.1.2 and 3.2 give nikaṭena and nikaṭo for the elder who withdrew to the Gosiṅga Sal Wood, called Kaṭa in English. SN 55.9 and AN 10.71 are adjacent page hits."
+    },
+    "nāgadatta": {
+      "senses": {"nāgadatta": ["Nāgadatta 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "The forest deity admonishes Nāgadatta in SN 9.7. SN 9.5 and SN 9.6 concern Ānanda and Anuruddha respectively."
+    },
+    "nālandā": {
+      "senses": {
+        "nālandā": ["Nālandā 01"],
+        "nāḷandā": ["Nālandā 01"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "SN 47.12.1.1 has nālandāyaṁ and MN 56.1.2 has nāḷandāyaṁ. Both specify Pāvārika's mango grove. The mapped SN 12.66 is set at Kammāsadamma. The discussion with Upāli and Dīghatapassī is in MN 56."
+    },
+    "nālijaṅgha": {
+      "senses": {"nāḷijaṅgha": ["Nālijaṅgha"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "nārada": {
+      "senses": {
+        "nārada 1": ["Nārada 13"],
+        "nārada 2": []
+      },
+      "others": ["Nārada 16"],
+      "suttas": {"Nārada 13": ["an5.50", "sn12.68"]},
+      "notes": "Snp 3.6.47.4 pairs the divine Nārada and Pabbata in the compound nāradapabbatā, which has its own dictionary line. DPPN interprets the names as classes of gods. The previous Buddha has no candidate. AN 5.49 and SN 12.67 are adjacent citations to the monk's two discourses."
+    },
+    "nāvindakī": {
+      "senses": {"nāvindakī": ["Nāvindakī"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 4.187 identifies Nāvindakī among King Eḷeyya's men devoted to Rāmaputta. DPD calls him a minister and DPPN a guard. The sutta gives the broader designation."
+    },
+    "odātagayhā": {
+      "senses": {"odātagayhā": ["Odātagayhā"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "okkāka": {
+      "senses": {"okkāka": ["Okkāka 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "opamañña": {
+      "senses": {"opamañña 2": ["Opamañña 02"]},
+      "others": ["Opamañña 01"],
+      "suttas": {"Opamañña 02": ["dn20", "dn32"]},
+      "notes": "MN 99.10.3 calls the brahmin Pokkharasāti opamañño. Sujato renders the clan name Upamañña. The tap includes the clan adjective opamañña 1, which falls outside the packet's proper-name senses. The packet lists only the divine namesake's two suttas."
+    },
+    "oṭṭhaddha": {
+      "senses": {"oṭṭhaddha": ["Oṭṭhaddha"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "pabbata": {
+      "senses": {"pabbata 4": ["Pabbata 01"]},
+      "others": ["Pabbata 06"],
+      "suttas": {"Pabbata 01": ["mn116"]},
+      "notes": "Snp 3.6.47.4 names Pabbata alongside Nārada among the gods. Their compound nāradapabbatā has its own dictionary line. The interpretation as a class of gods comes from DPPN."
+    },
+    "pabhāvatī": {
+      "senses": {"pabhāvatī": ["Pabhāvatī 02"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "paduma": {
+      "senses": {
+        "paduma 5": ["Paduma 06"],
+        "paduma 7": []
+      },
+      "others": ["Paduma 10"],
+      "suttas": {"Paduma 06": ["mn116"]},
+      "notes": "Snp 3.10.4.5, AN 10.89.11.2 and SN 6.10.2.5 place Kokālika in padumaṁ nirayaṁ, the Pink Lotus hell. The tap has a separate paduma 2 line for the hell, outside the packet's senses. AN 8.91–117 names the laywoman Padumā. Neither she nor the previous Buddha has a candidate."
+    },
+    "padumuttara": {
+      "senses": {
+        "padumuttara 1": [],
+        "padumuttara 2": ["Padumuttara 02"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    }
+  },
+  "done": true
+}

@@ -1,0 +1,98 @@
+{
+  "names": {
+    "vāseṭṭha": {
+      "senses": {
+        "vāseṭṭha 1": ["Vāseṭṭha 02"],
+        "vāseṭṭha 2": ["Vāseṭṭha 05"],
+        "vāseṭṭha 3": [],
+        "vāseṭṭha 4": ["Vāseṭṭha 03"]
+      },
+      "others": [],
+      "suttas": {
+        "Vāseṭṭha 02": ["an5.192", "an7.52", "dn3", "mn95", "mn99"],
+        "Vāseṭṭha 05": ["an6.120-139", "an8.44"],
+        "Vāseṭṭha 03": ["dn16", "dn33"]
+      },
+      "notes": "DN 13:13.1 addresses the student Vāseṭṭha and names the ancient seer Vāseṭṭha in the same sentence. A single choice for DN 13 would misidentify one of them. No candidate covers the student who appears with Bhāradvāja in DN 13, DN 27, MN 98 and Snp 3.9. The plural address in DN 16 is to the Mallas of Kusinārā and in DN 33 to the Mallas of Pāvā. AN 6.120–139:1.18 explicitly lists the lay follower, and AN 8.44:1.1–1.2 places him at the peaked-roof hall in Vesālī. The adjacent page matches concern Tapussa (AN 6.119), greed (AN 6.140) and Visākhā (AN 8.43)."
+    },
+    "vīra": {
+      "senses": {"vīra 3": ["Vīra 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "Thag 1.8:1.5 attributes the verse to the elder Vīra. The two hits in Thig 1.7 belong to the nun Vīrā, explicitly called a bhikkhunī in the verse and a therī in its attribution."
+    },
+    "yamaka": {
+      "senses": {"yamaka 2": [], "yamaka 4": ["Yamaka 03"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 4.187:4.2–4.4 names Yamaka among King Eḷeyya’s men who honor Rāmaputta. SN 22.85:1.2 introduces the monk Yamaka by name. His sense lacks a candidate."
+    },
+    "yamataggi": {
+      "senses": {"yamataggi": ["Yamataggi"]},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 13:13.1 and MN 95:13.9 list Yamataggi among the ancient composers of hymns. AN 5.192:3.1 has yamadaggi and AN 7.52:9.3 has yamadaggino in the same list. Both forms lead to the separate DPD lemma yamadaggi, which explains the gap in this packet."
+    },
+    "yamunā": {
+      "senses": {"yamunā": ["Yamunā 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 7.66:5.3 explicitly names the river among the five great rivers. The packet misses SN 13.3, SN 13.4, SN 55.42, SN 56.53, SN 56.54 and Thag 19.1:14.1, where the English names the river one segment away from the Pali. SN 13.5 is a page overlap about balls of clay. DN 20:11.5 calls the dragons from the river Yāmunā, a separate DPD lemma."
+    },
+    "yasa": {
+      "senses": {"yasa": []},
+      "others": ["Yasa 03"],
+      "suttas": {},
+      "notes": "DN 20:13.4 names the deity alongside Soma (somo ca yasasā saha). Sujato translates the name as Yasa. The packet misses the deity because the tap on yasasā gives only the common noun for fame. Thag 1.117:1.5 attributes the verse to the elder Yasa, whose sense lacks a candidate."
+    },
+    "yasavatī": {
+      "senses": {"yasavatī": ["Yasavatī 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 14:1.12.7–1.12.8 identifies Vessabhū’s parents as King Suppatita and Queen Vassavatī. The app text and its DPD line use the variant Vassavatī for the same mother, accounting for the empty mention list. The word yasavatī in Thig 15.1:47.2 describes another woman as well-known."
+    },
+    "yaññadatta": {
+      "senses": {"yaññadatta": ["Yaññadatta 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 14:1.12.14 names the brahmin Yaññadatta as Koṇāgamana’s father."
+    },
+    "yugandhara": {
+      "senses": {"yugandhara 1": [], "yugandhara 2": ["Yugandhara 02"]},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 32:9.9–10.13 includes Yugandhara among the spirits and their chiefs to whom a follower may appeal. The mountain sense has no candidate."
+    },
+    "yāmā": {
+      "senses": {"yāmā": ["Yāmā 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 3.70:31.1–31.4 gives the day length and lifespan of the Yāmā deities. MN 97:30.17–30.20 and Thig 8.1:2.1–2.2 place them between the Thirty-Three and the Tusita gods. Sujato spells the name Yama, which the packet’s English name filter misses. AN 3.80:4.2 also lists them. The adjacent AN 3.81 concerns the training of an ascetic."
+    },
+    "ñātika": {
+      "senses": {"ñātika": ["Ñātika"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 12.45:1.2 places the Buddha at the brick house in Ñātika. The same setting under nātike maps to the separate DPD lemma nātika in DN 16, DN 18, MN 31, AN 6.19, AN 6.20, AN 6.59, AN 8.73, AN 8.74, AN 11.9 and SN 35.113. AN 6.18, AN 8.72, AN 11.8, MN 30, SN 14.12, SN 35.112, SN 44.10 and SN 55.7 are adjacent page matches for other discourses. Check the entry’s account of Ambapālī’s gift. In DN 16:2.11 the Buddha leaves Ñātika for her grove at Vesālī before she offers it at 2.19.7. DN 16:2.6.5 also gives the deceased laywoman’s name as Sujātā where the entry has Sugatā."
+    },
+    "ākoṭaka": {
+      "senses": {"ākoṭaka": ["Ākoṭaka"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 2.30:7.1–9.1 names Ākoṭaka as the godling who praises the teachers and receives Veṭambarī’s reply. The preceding SN 2.29 concerns Susīma."
+    },
+    "ālakamandā": {
+      "senses": {"āḷakamandā": ["Āḷakamandā"]},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 16:5.18.5 and DN 17:1.3.8 compare Kusāvatī to the royal capital of the gods. DN 32:7.39 names the capital. At DN 32:8.5 the Pali has āḷakamandāya and the English spells the name Ālakamandā, causing the filter to miss that occurrence."
+    },
+    "āmalakīvana": {
+      "senses": {"āmalakīvana": ["Āmalakīvana"]},
+      "others": [],
+      "suttas": {},
+      "notes": "MN 67:1.2 places the Buddha in the myrobalan grove at Cātumā. The adjacent MN 66:1.2 places him at Āpaṇa."
+    }
+  },
+  "done": true
+}

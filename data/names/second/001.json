@@ -1,0 +1,167 @@
+{
+  "names": {
+    "abhaya": {
+      "senses": {
+        "abhaya 3": ["Abhaya 03"],
+        "abhaya 4": ["Abhaya 02"],
+        "abhaya 5": ["Abhaya 02"],
+        "abhaya 6": ["Abhaya 01"]
+      },
+      "others": [],
+      "suttas": {
+        "Abhaya 01": ["thag1.98"],
+        "Abhaya 02": ["mn58", "sn46.56", "thag1.26"],
+        "Abhaya 03": ["an3.74", "an4.196"]
+      },
+      "notes": "Abhaya 02 covers the prince and the elder to whom it attributes Thag 1.26. Abhaya 01 attributes the verse on losing mindfulness at a pleasing sight to the other elder. The chapter recaps also name them at Thag 1.30:2.3 and 1.100:2.4. Thig 2.9 names the nun Abhayā. MN 129 and SN 56.47 supply the turtle simile cited in the prince’s biography. MN 57, SN 46.55, SN 56.46, AN 3.73 and AN 4.197 do not name these men."
+    },
+    "abhibhūta": {
+      "senses": {"abhibhūta 3": ["Abhibhūta"]},
+      "others": [],
+      "suttas": {},
+      "notes": "Thag 3.13 attributes the three verses to Abhibhūta. The references to SN 6.14 and DN 16 trace parallel verses spoken by Abhibhū and the Buddha respectively."
+    },
+    "accuta": {
+      "senses": {"accuta 3": ["Accuta 02"]},
+      "others": [],
+      "suttas": {},
+      "notes": "MN 116:6.18 names the paccekabuddha in athaccuto (atha + Accuto). The packet misses that form. Its sole hit, accutā in DN 20:15.6, names a group of deities."
+    },
+    "accutagāmabyāmaka": {
+      "senses": {"accutagāmabyāmaka": []},
+      "others": [],
+      "suttas": {},
+      "notes": "MN 116:6.18 is the right verse, but DPD and Sujato read accutagāmabyāmako as two names, Accutagāma and Byāmaka. The candidate treats the whole form as one paccekabuddha. It would give readers a different count and identity."
+    },
+    "acelakassapa": {
+      "senses": {"acelakassapa": ["Acela Kassapa 01"]},
+      "others": ["Acela Kassapa 02", "Acela Kassapa 03"],
+      "suttas": {"Acela Kassapa 01": ["mn124"]},
+      "notes": "MN 124 calls Kassapa Bakkula’s old lay friend. DPPN includes his ordination and the one in DN 8 under 01. SN 41.9 gives 02’s episode with Citta, and SN 12.17 gives 03’s questions on suffering. These three other texts use the separate words acelo kassapo. DPPN itself treats the identity of 03 with 01 as conjectural. DN 9, MN 123, SN 41.8 and SN 12.16 are adjacent citation hits."
+    },
+    "aciravata": {
+      "senses": {"aciravata 1": ["Aciravata"]},
+      "others": [],
+      "suttas": {},
+      "notes": "Prince Jayasena meets the novice in MN 125. The citation also lands in MN 124, the discourse with Bakkula."
+    },
+    "aciravatī": {
+      "senses": {"aciravatī": ["Aciravatī (2)"]},
+      "others": [],
+      "suttas": {},
+      "notes": "Ānanda bathes in the river in AN 6.62. AN 6.61 is an adjacent citation hit. SN 45.97 names the Ganges alone. MN 122 does not name the river. A passage about the Aciravatī overflowing both banks is MN 88:19.1–2."
+    },
+    "aggidatta": {
+      "senses": {"aggidatta": ["Aggidatta 03"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "aggikabhāradvāja": {
+      "senses": {"aggikabhāradvāja": ["Aggika Bhāradvāja 02"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 7.8 locates the threefold-knowledge exchange in Rājagaha and records the brahmin’s ordination. Snp 1.7 names a fire-worshiper in Sāvatthī who asks about outcasts and takes lay refuge. The candidate distinguishes its subject from this namesake, whose entry is missing here. SN 7.7 concerns Suddhika Bhāradvāja."
+    },
+    "aggivessa": {
+      "senses": {"aggivessa": ["Aggivessa"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 4.187 lists Aggivessa among King Eḷeyya’s men. AN 4.188 concerns Upaka."
+    },
+    "aggivessana": {
+      "senses": {"aggivessana": ["Aggivessana"]},
+      "others": [],
+      "suttas": {},
+      "notes": "The clan name is used for Saccaka in MN 35 and MN 36, Dīghanakha in MN 74, and Aciravata in MN 125. DN 2:28.1–4 also uses it for Nigaṇṭha Nāṭaputta. The citation placements in MN 73 and MN 124 miss the relevant exchanges."
+    },
+    "ahiṁsakabhāradvāja": {
+      "senses": {"ahiṁsakabhāradvāja": ["Ahiṁsaka Bhāradvāja"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 7.5 identifies Ahiṁsaka by his declaration of harmlessness. The other citation hits concern Asurindaka in SN 7.3 and Bilaṅgika in SN 7.4."
+    },
+    "ajakalāpaka": {
+      "senses": {"ajakalāpaka 1": [], "ajakalāpaka 2": ["Ajakalāpaka"]},
+      "others": [],
+      "suttas": {},
+      "notes": "Ud 1.7:1.2 names both the shrine and the yakkha who lives there. The entry describes the yakkha. His attempt to frighten the Buddha occurs in Ud 1.7. His subsequent discipleship comes from the commentary. Ud 1.5 and 1.6 are adjacent citation hits."
+    },
+    "ajakaraṇī": {
+      "senses": {"ajakaraṇī": ["Ajakaraṇī"]},
+      "others": [],
+      "suttas": {},
+      "notes": "Sappaka names the river in Thag 4.11. Bhūta mentions a riverbank in Thag 9.1:6.1, leaving its name unstated."
+    },
+    "ajita": {
+      "senses": {
+        "ajita 1": [],
+        "ajita 2": ["Ajita 04"],
+        "ajita 4": [],
+        "ajita 5": [],
+        "ajita 6": ["Ajita 02"],
+        "ajita 7": [],
+        "ajita 8": [],
+        "ajita 9": []
+      },
+      "others": [],
+      "suttas": {"Ajita 02": ["an10.116"], "Ajita 04": ["dn24"]},
+      "notes": "Ajita 05 appears misheaded. The cited verses 129–130 end with Ajino thero (Thag 2.5:2.5) and describe being despised for obscurity. Ajita’s own verse is Thag 1.20. The packet also has no candidate for Kesakambala or Bāvari’s pupil in Snp 5.1, 5.2 and 5.18. SN 12.31 refers to the pupil’s question in the compound ajitapañhe. AN 10.115 lacks the wanderer who visits in AN 10.116."
+    },
+    "ajjuna": {
+      "senses": {"ajjuna 2": [], "ajjuna 3": ["Ajjuna 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "Thag 1.88 attributes the verse to the elder. The chapter recap also names him at Thag 1.90:2.4."
+    },
+    "ajātasattu": {
+      "senses": {"ajātasattu": ["Ajātasattu"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 17.36 uses the compound ajātasattukumāro for the prince bringing food to Devadatta. SN 3.14 and 3.15 recount his battles with Pasenadi. AN 4.189, MN 107, SN 3.13, SN 17.37 and SN 20.9 are adjacent citation hits."
+    },
+    "akkosakabhāradvāja": {
+      "senses": {"akkosakabhāradvāja": ["Akkosaka Bhāradvāja"]},
+      "others": [],
+      "suttas": {},
+      "notes": "The abuse and Akkosaka’s own ordination occur in SN 7.2. SN 7.1 recounts the earlier ordination of the Bhāradvāja brahmin whose wife is Dhanañjānī."
+    },
+    "allakappa": {
+      "senses": {"allakappa": ["Allakappa 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 16:6.27.4 locates the Bulis’ relic stūpa at Allakappa. This identifies the place despite the difference between DPD’s town and DPPN’s country."
+    },
+    "ambagāma": {
+      "senses": {"ambagāma": ["Ambagāma (2)"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "ambalaṭṭhikā": {
+      "senses": {"ambalaṭṭhikā": []},
+      "others": ["Ambalaṭṭhikā 01", "Ambalaṭṭhikā 02"],
+      "suttas": {"Ambalaṭṭhikā 01": ["dn1", "dn16"], "Ambalaṭṭhikā 02": ["dn5"]},
+      "notes": "DN 1 and DN 16 specify the royal rest-house. DN 5 specifies Khāṇumata. DPD points to Rāhula’s lodging in MN 61, which gives neither landmark. Entry 01 questions its own identification with the royal park. Entry 02 includes a separate numbered item 4 on Rāhula’s meditation hall after the account of the Khāṇumata park. Item 4 needs its own entry before it can be linked to DPD’s monastery sense."
+    },
+    "ambapālī": {
+      "senses": {"ambapālī": ["Ambapālī"]},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 16 names the courtesan who offers her grove. Thig 13.1 attributes verses 252–270 to her, as the entry states, though only DN 16 appears in its citation list. The hits in SN 47.10 and SN 52.10 are chapter recaps referring to the grove."
+    },
+    "ambasaṇḍā": {
+      "senses": {"ambasaṇḍā": ["Ambasaṇḍā"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "ambaṭṭha": {
+      "senses": {"ambaṭṭha": ["Ambaṭṭha 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    }
+  },
+  "done": true
+}

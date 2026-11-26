@@ -1,0 +1,16 @@
+{
+  "names": {
+    "dhamma": {
+      "senses": {
+        "dhamma 1.11": ["Dhamma 02"]
+      },
+      "others": ["Dhamma 03"],
+      "suttas": {
+        "Dhamma 02": [],
+        "Dhamma 03": []
+      },
+      "notes": "DN 17:1.25.2 names the palace Vissakamma is to build for Mahāsudassana. DN 17:1.30.2 names the lotus pond the king wants built in front of that palace. Both places occur even in that one sentence, so a single choice for DN 17 would misidentify one of them. SN 22.96:4.2 explicitly identifies the palace (dhammo pāsādo). The packet misses both texts because Sujato renders the name as ‘Principle’. Its English name filter instead picks up ‘Dhamma’ for the teaching (e.g. DN 16:2.25.2) and the nun Dhammā (Thig 1.17:2.1). None of the listed suttas identifies either place."
+    }
+  },
+  "done": true
+}

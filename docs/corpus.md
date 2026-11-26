@@ -177,6 +177,11 @@ refresh keeps them; one whose headword no entry defines any more fails the build
 An abbreviation in the Pali — *pe*, for *peyyāla*, marking an elided repetition — looks up as the
 word it stands for, in place of whatever DPD reads it as.
 
+With `DPPN_PATH` set as well, the same command writes `data/pli2en_dppn.json`: for each name DPD
+glosses "name of …", the *Dictionary of Pāli Proper Names*' entries whose citations reach the app's
+books. A review decides which of them the dictionary will show, and in which suttas it is certain
+who is meant ([data/names/README.md](../data/names/README.md)).
+
 ## Where to look
 
 | Where | What |
@@ -188,4 +193,5 @@ word it stands for, in place of whatever DPD reads it as.
 | `scripts/lib/paliWords.js` | the build's copy of the app's word splitting and shard lookup |
 | `scripts/update-data-dictionary.mjs` | the DPD import |
 | `data/pli2en_additions.json`, `scripts/lib/dictionaryAdditions.js` | the app's own definitions, and where the build adds them |
+| `scripts/update-data-names.mjs`, `scripts/names-review.mjs`, `data/names/` | the proper-names import and its review |
 | `web/src/lib/corpus/corpus.ts`, `dictionaryShards.ts` | the app's side: loading text, finding groups, looking words up |

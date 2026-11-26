@@ -1,0 +1,95 @@
+{
+  "names": {
+    "gayā": {
+      "senses": {
+        "gayā 1": ["Gayā 02"],
+        "gayā 2": ["Gayā 02"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "The entry describes both the settlement and its sacred bathing place. Ud 1.9 uses gayāyaṁ for both in consecutive segments (1.2–1.3), and MN 7 includes Gayā among the bathing places. The entry records differing explanations of the river and pond. AN 8.63 and SN 35.27 are page overlaps with AN 8.64 and SN 35.28 respectively. AN 8.70:22.2 is a chapter summary referring back to AN 8.64."
+    },
+    "gayākassapa": {
+      "senses": {"gayākassapa": ["Gayā Kassapa"]},
+      "others": [],
+      "suttas": {},
+      "notes": "Thag 5.7 recounts the three daily immersions at Gayā and names the elder in its attribution. The chapter summary at Thag 5.12:6.4 also names him in gayākassapavakkalī. A tap exposes his sense there, but the packet misses the untranslated line."
+    },
+    "gayāsīsa": {
+      "senses": {"gayāsīsa": ["Gayāsīsa"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 35.28 places the fire sermon and its thousand mendicants on the hill. SN 35.27 is a page overlap. Ud 1.9 confirms the hill as a setting for a different episode about ascetics bathing in the river."
+    },
+    "gaṅgā": {
+      "senses": {"gaṅgā 1": ["Gaṅgā 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "The packet misses the Ganges throughout. Both gaṅgā and gaṅgāya expose the proper name and the common noun, and the English name filter misses Sujato’s ‘Ganges’. MN 34:1.2 places the Buddha on its bank and Ud 5.5:13.1 lists all five rivers. The salt simile is AN 3.100 in this corpus. SN 13.5, SN 22.94, SN 35.240 and SN 35.245 are page overlaps. The entry’s ‘bracken’ in the salt simile appears to be a typo for ‘brackish’."
+    },
+    "gaṇakamoggallāna": {
+      "senses": {"gaṇakamoggallāna": ["Gaṇaka Moggallāna"]},
+      "others": [],
+      "suttas": {},
+      "notes": "MN 107 names the accountant and has him describe teaching his apprentices to count. DPD’s MN 108 hint points to Gopaka Moggallāna, the brahmin who meets Ānanda at Rājagaha."
+    },
+    "ghaṭīkāra": {
+      "senses": {"ghaṭīkāra": ["Ghaṭīkāra"]},
+      "others": [],
+      "suttas": {},
+      "notes": "In SN 2.24:9 the deity identifies himself as Kassapa’s potter. MN 81:6.1 uses ghaṭikāro, which taps to DPD’s separate potter lemma ghaṭikāra. The parallel at SN 1.50:8.2 has ghaṭīkaro, glossed simply as ‘potter’. SN 1.49 is a page overlap. Two details of the entry need checking against MN 81. Kassapa says the potter had already ended the five lower fetters (18.16), and the monks took the thatch from his workshop (21.6–7)."
+    },
+    "ghositārāma": {
+      "senses": {"ghositārāma": ["Ghositārāma"]},
+      "others": [],
+      "suttas": {},
+      "notes": "MN 48 opens with the dispute at Ghosita’s monastery in Kosambī. MN 47 opens at Jetavana. Other clear page overlaps include AN 3.71, AN 8.45, SN 12.67 and SN 22.88, all set elsewhere. The entry’s episode in which Udāyī asks Ānanda about consciousness is SN 35.234. The citation resolves to SN 35.235. The visit to the nun is AN 4.159, while AN 7.43 describes Ānanda visiting wanderers."
+    },
+    "ghoṭamukha": {
+      "senses": {"ghoṭamukha 1": ["Ghoṭamukha"]},
+      "others": [],
+      "suttas": {},
+      "notes": "MN 94 names the brahmin who speaks to Udena and builds the assembly hall at Pāṭaliputta. MN 93 is the adjacent Assalāyana discourse. The untranslated chapter summary at MN 100:44.2 uses ghoṭamukho as a reference back to MN 94."
+    },
+    "gijjhakūṭa": {
+      "senses": {"gijjhakūṭa": ["Gijjhakūṭa 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 35.87 and MN 144 place the sick Channa on Vulture’s Peak at Rājagaha. Page overlaps include MN 73 (Bamboo Grove), MN 143 (Jetavana) and SN 10.3 (Gayā). Check the entry’s ‘Yakkha Inda’ against SN 10.1–2. Indaka meets the Buddha on Indakūṭa in SN 10.1. The spirit on Gijjhakūṭa in SN 10.2 is called sakkanāmako yakkho."
+    },
+    "gopaka": {
+      "senses": {"gopaka 4": ["Gopaka 03"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "gopakamoggallāna": {
+      "senses": {"gopakamoggallāna": ["Gopaka Moggallāna"]},
+      "others": [],
+      "suttas": {},
+      "notes": "MN 108 has Ānanda visit Gopaka at work while Rājagaha is being fortified. MN 107 concerns the accountant. Check the entry’s attribution of the 84,000 teachings to Moggallāna Thera. The verse belongs to Ānanda’s poem at Thag 17.3:11 and the verse itself leaves the questioner unnamed."
+    },
+    "gopāla": {
+      "senses": {"gopāla 2": ["Gopāla 02"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "gosiṅgasālavanadāya": {
+      "senses": {"gosiṅgasālavanadāya": ["Gosiṅgasālavanadāya 01"]},
+      "others": ["Gosiṅgasālavanadāya 02"],
+      "suttas": {
+        "Gosiṅgasālavanadāya 01": ["mn31", "mn32"],
+        "Gosiṅgasālavanadāya 02": ["an10.72"]
+      },
+      "notes": "DPD cites MN 31, where the Buddha leaves Ñātika to visit Anuruddha, Nandiya and Kimbila. MN 32 recounts the senior disciples’ discussion described in entry 01. In AN 10.72 Cāla and the other elders leave the noisy Licchavis at Vesālī for the wood, the episode in entry 02. These episodes identify the entries. The texts leave open whether the two woods were geographically distinct. MN 30 and AN 10.71 are page overlaps and both open at Jetavana."
+    },
+    "gosālathera": {
+      "senses": {"gosālathera": ["Gosāla Thera"]},
+      "others": [],
+      "suttas": {},
+      "notes": "Thag 1.23 describes the honeyed milk-rice and the return to the hill, and ends with Gosālo thero as two words. Tapping Gosālo gives the separate DPD sense gosāla 2 for this elder. The compound gosālathero occurs in the chapter summary at Thag 1.30:2.2. Uttiya speaks the verse in Thag 1.30."
+    }
+  },
+  "done": true
+}

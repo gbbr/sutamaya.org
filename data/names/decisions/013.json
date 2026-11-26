@@ -1,0 +1,163 @@
+{
+  "names": {
+    "kassapa": {
+      "senses": {
+        "kassapa 1": ["Kassapa 01"],
+        "kassapa 2": ["Kassapa 03"],
+        "kassapa 4": ["Kassapa 04"],
+        "kassapa 5": ["Kassapa 02"]
+      },
+      "others": [],
+      "suttas": {
+        "Kassapa 01": ["an5.180", "dn32", "mn81", "sn1.50", "sn2.24", "sn12.9", "sn15.20", "sn19.12", "sn19.17", "sn19.21", "sn48.57", "snp2.2"],
+        "Kassapa 02": ["thag1.82"],
+        "Kassapa 03": ["sn2.1", "sn2.2"],
+        "Kassapa 04": ["an5.192", "an7.52", "dn3", "dn13", "mn95", "mn99"]
+      },
+      "notes": "DN 14:1.4.6 names the Buddha Kassapa, but at 1.6.4–6 kassapo gottena gives the clan of three Buddhas. A single entry for every Kassapa tap would misidentify the clan. Kassapa 11 runs the monastery builder together with a separate cross-reference. DN 6:4.1–2 addresses Nāgita as Kassapa. SN 22.88:1.2 names the monastery Kassapakārāma, and the commentary supplies the account of its wealthy builder. Other bare uses include Mahākassapa (SN 16, Thag 18.1), Pūraṇa (DN 2), Kumārakassapa (DN 23), the naked ascetic who knew Bakkula (MN 124), and the monks called Kassapagotta (AN 3.91, SN 9.3). None warrants the Thag 1.82 elder's entry. The packet misses Kassapa Buddha at Thag 7.5:4.3 and Bhaddā Kāpilānī's Kassapa at Thig 4.1:1.2 (the THI37 hint) because the English names them on an adjacent line. The Gavesī episode is in AN 5.180 and the potter's verses in SN 1.50 and SN 2.24. AN 5.179 and SN 1.48–49 do not contain those episodes. SN 2.3 names the godling Māgha."
+    },
+    "kassapagotta": {
+      "senses": {
+        "kassapagotta": ["Kassapagotta 03"]
+      },
+      "others": ["Kassapagotta 04"],
+      "suttas": {
+        "Kassapagotta 03": ["an3.91"],
+        "Kassapagotta 04": ["sn9.3", "sn9.14"]
+      },
+      "notes": "DPD's Paṅkadhā discourse is AN 3.91 in this corpus. SN 9.3 describes the monk advising a hunter. DPPN suggests the two monks might be the same, but neither discourse establishes that. SN 9.14:10.2 lists the earlier Kassapagotta discourse in the chapter summary. The monk smelling a lotus in SN 9.14 is unnamed. AN 3.90 and SN 9.2 are neighboring page matches. Claude: The chapter summary at SN 9.14:10.2 recaps SN 9.3, so it names Kassapagotta 04."
+    },
+    "kaṇha": {
+      "senses": {
+        "kaṇha 4": ["Kaṇha 05"]
+      },
+      "others": ["Kaṇha 01", "Kaṇha 04"],
+      "suttas": {
+        "Kaṇha 05": ["mn116"]
+      },
+      "notes": "The packet misses Disā's son, the seer Kaṇha, whom Sujato calls ‘Black’ in DN 3:1.16.2. It also misses Māra as the ‘Dark Lord’ in DN 20:21.4–10 and the ‘Dark One’ in MN 50 and Thag 20.1. Snp 4.16:13.4 renders Kaṇhassa as ‘Māra’s’. The full tap dictionary already identifies this epithet under kaṇha 3, a sense absent from the packet. The mapped DN 21 and MN 56 do not supply the epithet. MN 116 contains the list of privately awakened Buddhas, while MN 117 is the neighboring discourse."
+    },
+    "kaṇṇakatthala": {
+      "senses": {
+        "kaṇṇakatthala": ["Kaṇṇakatthala"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "DN 8 and MN 90 both open in this deer park. The MN 89 page match is incidental. That sutta places the Buddha at Medaḷumpa."
+    },
+    "kaṭissaha": {
+      "senses": {
+        "kaṭissaha": []
+      },
+      "others": ["Kaṭissaha 01"],
+      "suttas": {},
+      "notes": "DN 16:2.6.9 and SN 55.10:1.6 call the deceased disciple an upāsaka. The candidate describes the elder in AN 10.72:1.2 who leaves Vesālī for the Gosiṅga Sal Wood. Sujato spells the elder's name Kaṭissaṅga. The layman's sense has no candidate, and the citation also picks up the preceding AN 10.71."
+    },
+    "kesi": {
+      "senses": {
+        "kesi": ["Kesi 01"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "AN 4.111 identifies the horse trainer. AN 4.120:2.1 lists his discourse in the chapter summary. The Kesī of MN 116:6.26 is a privately awakened Buddha with no candidate here."
+    },
+    "ketumatī": {
+      "senses": {
+        "ketumatī": ["Ketumatī 01"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "kevaṭṭa": {
+      "senses": {
+        "kevaṭṭa 2": ["Kevaṭṭa 01"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "The packet reports zero mentions. DN 11:1.3 names the householder's son at Nālandā as kevaṭṭo gahapatiputto. Sujato spells his name Kevaḍḍha throughout the exchange."
+    },
+    "khara": {
+      "senses": {
+        "khara 3": ["Khara"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "The packet misses both versions of the encounter. SN 10.3:1.2 and Snp 2.5:1.3 explicitly name Khara and Sūciloma as the two yakkhas at Gayā. Sujato calls them Shaggy and Spiky."
+    },
+    "khaṇḍa": {
+      "senses": {
+        "khaṇḍa 5": ["Khaṇḍa"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "The entry appears to lack a sentence break before Ekasaññaka. DN 14:1.9.1 names Khaṇḍa and Tissa as Vipassī's chief disciples. Ekasaññaka is the subject of the following account of a gift to Khaṇḍa."
+    },
+    "khaṇḍadeva": {
+      "senses": {
+        "khaṇḍadeva": ["Khaṇḍadeva"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "SN 1.50:3.3 and SN 2.24:4.3 read khaṇḍadevo among the seven freed in Aviha. Both English passages give Bhaddadeva. SN 1.49 is an adjacent page match."
+    },
+    "khema": {
+      "senses": {
+        "khema 3": ["Khema 10"],
+        "khema 4": [],
+        "khema 5": ["Khema 04"]
+      },
+      "others": ["Khema 11"],
+      "suttas": {
+        "Khema 10": ["sn2.22"],
+        "Khema 11": ["an6.49"]
+      },
+      "notes": "DN 14:1.12.12–13 names Khema as the king of Khemavatī in Kakusandha's time. The Bodhisatta identification in Khema 04 comes from the wider tradition. DN 14:3.9.1 also names Vipassī's deer park, kheme migadāye, translated ‘the deer park named Sanctuary’. The park has no candidate and a single DN 14 choice would put the king on park taps. The feminine forms elsewhere in the packet refer to the nun Khemā or, in AN 8.91–117, a laywoman. SN 2.21 and SN 2.23 name other godlings. The monk who visits with Sumana appears in AN 6.49, one discourse after the other page match."
+    },
+    "khemaka": {
+      "senses": {
+        "khemaka 1": ["Khemaka 02"],
+        "khemaka 3": []
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "SN 22.89 names the sick monk whom Dāsaka visits at Badarikārāma. The sick monk in the neighboring SN 22.88 is Assaji. SN 22.92:3.3 also lists Khemaka in the chapter summary. The Sakyan king has no candidate."
+    },
+    "khemavatī": {
+      "senses": {
+        "khemavatī": ["Khemavatī 01"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "DN 14:1.12.12–13 calls the king Khema and his capital Khemavatī. The entry uses the king's alternate name Khemaṅkara."
+    },
+    "khemaṅkara": {
+      "senses": {
+        "khemaṅkara 2": ["Khemaṅkara 01"]
+      },
+      "others": ["Khemaṅkara 02"],
+      "suttas": {
+        "Khemaṅkara 01": ["dn14"]
+      },
+      "notes": "DN 14:1.11.2 calls Sikhī's attendant khemaṅkaro. The king in the second entry also appears in DN 14:1.12.10–13, identified by Kakusandha, his father Aggidatta and the capital Khemavatī. The sutta calls the king Khema, so its only Khemaṅkara tap belongs to the attendant."
+    },
+    "khemiyambavana": {
+      "senses": {
+        "khemiyambavana": ["Khemiyambavana"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "MN 94:1.2 places Udena in the mango grove near Varanasi. The citation also picks up MN 93, which opens at Jeta's Grove near Sāvatthī."
+    },
+    "khemiyā": {
+      "senses": {
+        "khemiyā 1": ["Khemiyā"],
+        "khemiyā 2": []
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "DN 20:18.1 lists the Khemiyā gods. MN 94 names the mango grove Khemiyambavana as a compound and gives no separate mention of the queen."
+    }
+  },
+  "done": true
+}

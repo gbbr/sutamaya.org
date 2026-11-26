@@ -1,0 +1,159 @@
+{
+  "names": {
+    "candana": {
+      "senses": {
+        "candana 2": ["Candana 01"],
+        "candana 4": ["Candana 02"]
+      },
+      "others": [],
+      "suttas": {
+        "Candana 01": ["dn20", "dn32", "mn134", "sn2.15", "sn40.11"],
+        "Candana 02": ["thag4.9"]
+      },
+      "notes": "MN 133 leaves the deity unnamed. MN 134 names Candana as the deity who visits Lomasakaṅgiya. SN 2.14, 2.16, 2.17 and 40.10 name other deities."
+    },
+    "candanaṅgalika": {
+      "senses": {"candanaṅgalika": ["Candanaṅgalika"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 3.12 names the lay follower who praises the Buddha and receives five robes. The matching verse in AN 5.195 is spoken by Piṅgiyānī. AN 5.194 and SN 3.13 are adjacent discourses."
+    },
+    "caṅkī": {
+      "senses": {"caṅkī 1": ["Caṅkī"]},
+      "others": [],
+      "suttas": {},
+      "notes": "The gathering at Icchānaṅgala cited as Snp p. 115 appears in Snp 3.9 and MN 98. MN 100:44.3 also lists Caṅkī in the chapter’s closing verse as the title of MN 95."
+    },
+    "caṇḍa": {
+      "senses": {"caṇḍa 2": ["Caṇḍa 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "The packet misses caṇḍo gāmaṇi at SN 42.1:1.2 and 3.1. Sujato translates his name as “Fury the chief”. The same word serves as an adjective in the chief’s question."
+    },
+    "chaddanta": {
+      "senses": {"chaddanta 3": ["Chaddanta 02"], "chaddanta 2": []},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 7.66:6.2–3 lists the lake. Thag 17.1:20.1 also has Chaddanto, rendered “the six-tusked elephant”. Tapping that form offers the lake and adjective senses but omits the elephant sense."
+    },
+    "channa": {
+      "senses": {
+        "channa 2.2": ["Channa 02"],
+        "channa 2.3": ["Channa 01"]
+      },
+      "others": ["Channa 03"],
+      "suttas": {
+        "Channa 01": ["an3.71"],
+        "Channa 02": ["mn144", "sn35.87"],
+        "Channa 03": ["dn16"]
+      },
+      "notes": "The wanderer questions Ānanda in AN 3.71. DPD points to AN 3.72 and the entry’s page reference lands in AN 5.180. MN 143 and SN 35.86 are adjacent to the sick monk’s discourses. DN 16 identifies the charioteer’s entry through the brahmadaṇḍa. In SN 22.90 the monk seeks Ānanda’s advice at Kosambī. Sujato connects him with the disciplined monk, but the dialogue leaves that identification implicit. SN 35.93:4.2 lists the title of SN 35.87 in the chapter recap. Thag 1.69 signs the verse simply Channo thero. DPD attributes it to the sick monk and DPPN to the former charioteer."
+    },
+    "ciravāsī": {
+      "senses": {"ciravāsī": ["Ciravāsī"]},
+      "others": [],
+      "suttas": {},
+      "notes": "The citation was unplaced. At SN 42.11:2.18–22 Bhadraka names the boy and sends someone to check on him. The sutta says that he lives away from home. The detail about school comes from the dictionary account."
+    },
+    "citta": {
+      "senses": {
+        "citta 2.4": ["Citta 01"],
+        "citta 2.5": ["Citta 04"],
+        "citta 2.6": []
+      },
+      "others": [],
+      "suttas": {
+        "Citta 01": ["an1.248-257", "an2.130-140", "an4.176", "an6.120-139", "sn17.23", "sn41.1", "sn41.2", "sn41.3", "sn41.4", "sn41.5", "sn41.6", "sn41.7", "sn41.8", "sn41.9", "sn41.10"],
+        "Citta 04": ["an6.60", "dn9"]
+      },
+      "notes": "Thig 2.5:3.1 attributes the poem to Cittā therī. The tap includes a separate feminine lemma, cittā, for this nun. The AN passages for the householder include 1.250 and 2.132. The page matches at AN 1.258–267, 1.268–277 and 2.118–129 miss him. AN 6.59 concerns Dārukammika."
+    },
+    "cittasena": {
+      "senses": {"cittasena": ["Cittasena"]},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 20:10.9 and DN 32:10.8 both call Cittasena a gandhabba. DN 32:12.257 repeats the list. DPD attributes the count of two demigods to the commentary."
+    },
+    "cunda": {
+      "senses": {
+        "cunda 1": ["Cunda 02"],
+        "cunda 2": ["Cunda 01"],
+        "cunda 3": ["Cunda 02"]
+      },
+      "others": ["Cunda 04"],
+      "suttas": {
+        "Cunda 01": ["an10.176", "dn33", "snp1.5"],
+        "Cunda 02": ["dn29", "mn8", "mn104", "mn144", "sn35.87", "sn46.16", "sn47.13"],
+        "Cunda 04": ["an5.32"]
+      },
+      "notes": "Cunda 02 discusses Mahācunda (MN 8:2.1) and Cunda the novice (MN 104:3.1) and leaves their identity open. DN 16 and Ud 8.5 each use Cunda for two people. The smith provides the meal. The attendant called Cundaka in prose is also called Cundo in verse at DN 16:4.41.11 and Ud 8.5:18.1. A single choice for either discourse would misidentify some taps. Cunda 02 places the visit to Channa at Kalandakanivāpa. MN 144:2.1 and SN 35.87:1.2 place Channa and his visitors on Gijjhakūṭa. The mapped SN 35.79–81 miss the visit. SN 47.13:2.2–4 mentions Sāriputta’s bowl and robe. The entry adds relics wrapped in a water strainer."
+    },
+    "cundī": {
+      "senses": {"cundī": ["Cundī"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 5.32 explicitly calls Cundī a princess. AN 5.40:6.1 repeats her name in the chapter recap. The list of laywomen is in AN 8.91–117. AN 8.89 and 8.90 concern monastic discipline."
+    },
+    "cālikā": {
+      "senses": {"cālikā": ["Cālikā"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 9.3 and Ud 4.1 place the Buddha at Cālikā in the Meghiya episode. The page reference also picks up AN 9.2."
+    },
+    "cālā": {
+      "senses": {"cālā": ["Cālā 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 5.6 names the nun visited by Māra. SN 5.5 concerns Uppalavaṇṇā. The entry’s Thīg.182–8 citation also identifies Thig 7.2, which signs the verses Cālā therī and is missing from the citation list."
+    },
+    "cātumā": {
+      "senses": {"cātumā": ["Cātumā"]},
+      "others": [],
+      "suttas": {},
+      "notes": "MN 67 places the Buddha in the myrobalan grove at Cātumā. MN 66 opens at Āpaṇa."
+    },
+    "cīrā": {
+      "senses": {"cīrā": []},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 10.11 names the nun Cīrā who received a robe. DPPN’s biography is of a seven-year-old novice from the Dhammapada commentary and calls her identification with this nun only probable. The robe episode gives no age or miracle to establish the link. SN 10.10 concerns Sukkā and SN 10.12 concerns Āḷavaka."
+    },
+    "cūlakokanadā": {
+      "senses": {"cūḷakokanadā": ["Cūḷa Kokanadā"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 1.40 explicitly names Pajjunna’s daughter Cūḷakokanadā and has her recite verses. DPPN describes her as asking questions. SN 1.39 names her sister Kokanadā."
+    },
+    "dabbila": {
+      "senses": {"dabbila": ["Dabbila"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "dadhimukha": {
+      "senses": {"dadhimukha": ["Dadhimukha"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "dalhanemi": {
+      "senses": {"daḷhanemi": ["Daḷhanemi"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "dantapura": {
+      "senses": {"dantapura": ["Dantapura"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "dasama": {
+      "senses": {"dasama 2": ["Dasama"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 11.16 and MN 52 both name Dasama as the householder from Aṭṭhakanagara visiting Ānanda. The page references also pick up AN 11.15 and MN 51."
+    }
+  },
+  "done": true
+}

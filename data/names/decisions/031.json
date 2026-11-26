@@ -1,0 +1,126 @@
+{
+  "names": {
+    "vaḍḍhamāna": {
+      "senses": {"vaḍḍhamāna 2": ["Vaḍḍhamāna 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "Thag 1.40:1.5 names the elder. Thag 20.1:24 repeats his verse on abandoning craving for existence, but the verses there leave the addressee unnamed."
+    },
+    "vaṅkaka": {
+      "senses": {"vaṅkaka 2": ["Vaṅkaka"]},
+      "others": [],
+      "suttas": {},
+      "notes": "The packet misses vaṅkakaṁ pabbataṁ at SN 15.20:3.4. Sujato uses the mountain’s present name, Mount Vepulla, in that line."
+    },
+    "vebhāra": {
+      "senses": {"vebhāra": ["Vebhāra 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "MN 116:2.1 names the mountain directly. The DN 16 example refers to the cave on its slope at 3.43.2 through the separately glossed compound vebhārapasse."
+    },
+    "vedehikā": {
+      "senses": {"vedehikā": ["Vedehikā"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "veghanasā": {
+      "senses": {"veghanasā": ["Veghanasā"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "vehapphala": {
+      "senses": {"vehapphala 1": ["Vehapphala"]},
+      "others": [],
+      "suttas": {},
+      "notes": "The packet has no mentions because the forms also have an adjectival sense and Sujato translates the name. MN 49:10.8 names the realm, MN 1:13.1 names its beings, and AN 4.123:4.3–4 gives their rebirth and lifespan. MN 41, MN 42, MN 120 and AN 4.125 also name them. The citation also reaches AN 4.124, which describes rebirth in the pure abodes."
+    },
+    "vejayanta": {
+      "senses": {"vejayanta 2": ["Vejayanta 03"]},
+      "others": ["Vejayanta 01", "Vejayanta 02"],
+      "suttas": {},
+      "notes": "SN 22.96:4.7 calls the king’s chariot vejayanto ratho, translated as Triumph. DN 17:2.15.7 names Mahāsudassana’s chariot in a compound. MN 37:8.8 and MN 50:27.1 name Sakka’s Palace of Victory. The English name filter misses the standalone forms for both the palace and the royal chariot. DPD already has a palace sense, vejayanta 1, which the packet omits. SN 11.6:1.5–3.3 identifies Sakka’s own chariot by Mātali and the thousand thoroughbreds, though it leaves the chariot unnamed. SN 11.5 is the contest in verse. Also check the palace description against MN 37:8.10, which gives seven hundred chambers in each tower."
+    },
+    "veludvāra": {
+      "senses": {"veḷudvāra": ["Veḷudvāra"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 55.7:1.2 names the Kosalan brahmin village. The page also reaches SN 55.6, which opens at Sāvatthī and shares the chapter heading."
+    },
+    "veluvana": {
+      "senses": {"veḷuvana": ["Veḷuvana 01"]},
+      "others": ["Veḷuvana 02", "Veḷuvana 03"],
+      "suttas": {
+        "Veḷuvana 01": [
+          "an4.35", "an4.183", "an4.187", "an5.32", "an9.26", "an9.34", "an10.86",
+          "dn16", "dn31", "mn24", "mn44", "mn58", "mn61", "mn69", "mn73", "mn77",
+          "mn79", "mn97", "mn108", "mn124", "mn125", "mn126", "mn136", "mn144", "mn151",
+          "sn2.13", "sn2.30", "sn4.6", "sn4.7", "sn4.9", "sn4.10", "sn4.23",
+          "sn7.1", "sn7.2", "sn7.3", "sn7.4", "sn7.8", "sn8.9", "sn10.9", "sn10.10",
+          "sn10.11", "sn11.14", "sn12.17", "sn12.24", "sn12.70", "sn15.8", "sn15.13",
+          "sn16.5", "sn16.6", "sn16.7", "sn16.11", "sn17.36", "sn19.1", "sn19.11",
+          "sn21.3", "sn21.10", "sn22.49", "sn22.50", "sn22.87", "sn22.88", "sn28.10",
+          "sn35.29", "sn35.65", "sn35.87", "sn35.128", "sn36.21", "sn42.2", "sn42.10",
+          "sn46.14", "sn46.15", "sn46.16", "sn47.29", "sn55.3", "sn56.41", "snp3.6",
+          "ud1.6", "ud3.6", "ud3.7", "ud4.4", "ud4.9", "ud5.3", "ud5.8", "ud6.8", "ud8.9"
+        ],
+        "Veḷuvana 02": ["an10.28"],
+        "Veḷuvana 03": ["an5.201", "sn54.10"]
+      },
+      "notes": "Each assigned text names the town alongside the grove in Pali. At Kimbilā, AN 5.201 and SN 54.10 read veḷuvane where Sujato has Freshwater Mangrove Wood. The parallel settings in AN 6.40 and AN 7.59 read niculavane. At Kajaṅgalā, MN 152:1.2 uses the separately glossed suveḷuvane. Page overlaps for the Rājagaha entry include AN 10.85, SN 4.5, SN 11.13, SN 15.12 and SN 47.35–37. AN 10.27 opens at Sāvatthī, and AN 5.200 and AN 5.202 give no Kimbilā setting."
+    },
+    "velāma": {
+      "senses": {"velāma": ["Velāma"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "venāgapura": {
+      "senses": {"venāgapura": ["Venāgapura"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 3.63:1.1 names the village in this corpus. The page also reaches AN 3.62 on perils. DPD’s AN 3.64 is the discourse with Sarabha at Rājagaha in this numbering."
+    },
+    "vepacitti": {
+      "senses": {"vepacitti": ["Vepacitti"]},
+      "others": [],
+      "suttas": {},
+      "notes": "Thag 16.3:3.4 has vepacityasuro. Sujato spells the name Vepaciti in the preceding segment, so the packet misses the comparison with the bound titan. The page matches also reach SN 2.8, SN 11.6, SN 11.8 and SN 11.22. SN 11.8 names Verocana. In SN 11.10 Vepacitti occurs in the chapter summary, while the seers address Sambara in the story. In SN 11.9:1.5 Sujato has Sakka enter through the same gate as Vepacitti, where the entry says he used a side gate."
+    },
+    "vepulla": {
+      "senses": {"vepulla 2": ["Vepulla"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 2.30:16.1 names the mountain as Vipulo, which has its own DPD sense vipula 2. The page matches also reach SN 3.1 and SN 15.18–19. SN 15.20 gives the former names of the mountain."
+    },
+    "verahaccāni": {
+      "senses": {"verahaccāni 1": ["Verahaccāni"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 35.133:1.2 names the woman’s clan in the compound verahaccānigottāya. The packet quotes the chapter summary. At 2.3 the student calls her his teacher’s wife, and at 7.4 she takes refuge in the Buddha, teaching and Saṅgha. The entry describes her as the teacher and a follower of Udāyī. The neighboring SN 35.132 concerns Lohicca."
+    },
+    "verañjā": {
+      "senses": {"verañjā": ["Verañjā"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 4.53 names the road to Verañjā, and AN 8.11 and AN 8.19 place the Buddha there. AN 4.52 and AN 8.10 are page overlaps. MN 42 describes people from Verañjā visiting Sāvatthī, using the separately glossed verañjakā."
+    },
+    "vessabhū": {
+      "senses": {"vessabhū 1": ["Vessabhū 01"], "vessabhū 2": ["Vessabhū 02"]},
+      "others": [],
+      "suttas": {
+        "Vessabhū 01": ["dn14", "dn32", "sn12.6", "sn12.10", "thag7.5"],
+        "Vessabhū 02": ["dn19"]
+      },
+      "notes": "DN 19:36.13–16 lists the king among the seven Bhāratas. SN 12.10:8.2 names the Buddha in the chapter summary alongside Sikhī and Vipassī. DN 14:1.12.8 names the Buddha’s mother Vassavatī, while the entry gives Yasavatī."
+    },
+    "vessavaṇa": {
+      "senses": {"vessavaṇa": ["Vessavaṇa"]},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 32:7.40–43 explicitly connects King Kuvera, his capital Visāṇā and the name Vessavaṇa. DN 21:1.10.1 calls Bhūjati his paricārikā. The entry gives her name as Bhuñjatī and describes her as his wife."
+    }
+  },
+  "done": true
+}

@@ -1,0 +1,79 @@
+{
+  "names": {
+    "kosala": {
+      "senses": {"kosala 1": ["Kosala"]},
+      "others": ["Kosala (2)"],
+      "suttas": {
+        "Kosala": [
+          "an3.63", "an3.65", "an3.91", "an3.126", "an5.30", "an5.49", "an5.180",
+          "an6.18", "an6.42", "an6.62", "an7.72", "an8.86", "an10.29", "an10.30", "an10.67",
+          "dn3", "dn4", "dn5", "dn12", "dn13", "dn23", "dn27",
+          "mn24", "mn35", "mn41", "mn60", "mn68", "mn81", "mn86", "mn88", "mn89", "mn90",
+          "mn95", "mn99", "mn100", "mn150",
+          "sn2.25", "sn3.1", "sn3.2", "sn3.8", "sn3.9", "sn3.10", "sn3.11", "sn3.13",
+          "sn3.14", "sn3.15", "sn3.16", "sn3.19", "sn3.20", "sn3.21", "sn3.22", "sn3.25",
+          "sn4.14", "sn4.20", "sn7.9", "sn7.10", "sn7.17", "sn7.18",
+          "sn9.1", "sn9.2", "sn9.3", "sn9.4", "sn9.5", "sn9.6", "sn9.7", "sn9.8",
+          "sn9.10", "sn9.11", "sn9.12", "sn9.13", "sn9.14",
+          "sn42.9", "sn44.1", "sn47.4", "sn48.51", "sn55.6", "sn55.7",
+          "snp3.1", "snp3.4", "snp5.1", "thig5.9",
+          "ud2.2", "ud2.6", "ud4.3", "ud4.8", "ud5.1", "ud5.9", "ud6.2", "ud8.7"
+        ],
+        "Kosala (2)": []
+      },
+      "notes": "MN 116:6.6 names the independent Buddha in the Isigili list. Sujato has Kosala, but kosallo opens DPD’s separate sense kosalla 3. The entry belongs with that sense when the spellings are reconciled. All 89 eligible suttas identify the kingdom through its territory, people, or King Pasenadi. The packet misses the lists of sixteen countries in AN 3.70, 8.42, 8.43 and 8.45 because the English list is one segment earlier. It also misses Pasenadi’s Kosalan title in AN 6.43, MN 87, SN 3.3–7, 3.12, 3.17–18, 3.23–24 and Ud 2.9, where the English shortens his title. It occurs in the story headings of Dhp 204 and 325 and the recap at AN 5.50:20.4. Thag 1.60:2.6 recalls the elder Kosalavihārī of Thag 1.59. Several page matches point to neighboring discourses, including AN 3.62, 3.64, 3.90, 3.124–125, 5.29, 6.61, 10.28 and 10.66, MN 67 and 149, and SN 4.13, 4.15–16, 7.8, 42.8 and 48.50. The Sundarikā river setting is explicit in Snp 3.4, while the cited Snp 3.6 opens at Rājagaha. The entry also equates Sundarikā with Bāhukā on the strength of MN 7, although MN 7:20.2–3 lists them separately."
+    },
+    "kosambī": {
+      "senses": {"kosambī": ["Kosambī"]},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 16:5.17.3–5 lists Kosambī among the great cities. The departure from Ghosita’s monastery is in SN 22.81, the log on the Ganges in SN 35.241, and the rosewood grove in SN 56.31. The same pages also pick up SN 22.80, 35.240 and 56.30. Ud 4.5 explicitly gives crowding as the reason for leaving. SN 22.81 reports the departure and Ānanda’s inference that the Buddha wants solitude. The recaps at MN 50:32.3 and SN 12.70:30.5 refer back to the Kosambī discourses MN 48 and SN 12.68."
+    },
+    "kosiya": {
+      "senses": {"kosiya 2": ["Kosiya 01"], "kosiya 3": ["Kosiya 03"]},
+      "others": [],
+      "suttas": {
+        "Kosiya 01": ["dn21", "mn37", "ud3.7"],
+        "Kosiya 03": ["thag5.12"]
+      },
+      "notes": "The clan entry explains Sakka’s epithet. DN 21:1.9.2–3, MN 37:7.9–8.1 and Ud 3.7:3.10–12 each identify Sakka immediately before he is addressed as Kosiya. Thag 5.12:5.5 attributes the verses to Kosiya Thera. The Thag 6.7 citation concerns Kātiyāna, addressed as indasagotta (of Indra’s clan). The Dhp 49 story heading names the merchant Macchariya Kosiya, another bearer of the clan name mentioned in the entry."
+    },
+    "koṇḍañña": {
+      "senses": {"koṇḍañña 1": [], "koṇḍañña 2": ["Koṇḍañña 02"], "koṇḍañña 3": []},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 14:1.6.1–3 explicitly gives Koṇḍañña as the clan of Vipassī, Sikhī and Vessabhū. The candidate describes the clan and mentions several of its members. The first disciple needs a separate biographical entry under his alias Aññāsikoṇḍañña, which SN 56.11:14.3 explains and Thag 15.1 names in its attribution. The packet also lacks a candidate biography for the earlier Buddha. The Dhp 111 story heading names a different elder, Khāṇukoṇḍañña."
+    },
+    "koṭigāma": {
+      "senses": {"koṭigāma": ["Koṭigāma"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 56.21:1.1 locates the village among the Vajjis and gives the same four-truths teaching as DN 16:2.2. The entry places Ambapālī’s visit and meal at Koṭigāma. In DN 16 the Buddha leaves Koṭigāma for Nātikā at 2.5, reaches Vesālī at 2.11, and receives her invitation there at 2.14."
+    },
+    "kukkula": {
+      "senses": {"kukkuḷa 2": ["Kukkuḷa"]},
+      "others": [],
+      "suttas": {},
+      "notes": "MN 130:21.1–22.1 places the Hell of Burning Chaff between the Dung Hell and the silk-cotton forest, just as the entry describes. Both Pali forms open the compound kukkulaniraya. SN 10.5:10.1–4 uses the standalone kukkuḷā and kukkuḷaṁ in a mother’s image of falling back into hot coals. Those taps offer the hell sense. Sujato renders the image as hot coals, so the English name filter misses it. The verse leaves open whether a particular hell is intended."
+    },
+    "kukkuṭārāma": {
+      "senses": {"kukkuṭārāma": ["Kukkuṭārāma 02"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 5.50:1.1 locates Nārada’s monastery at Pāṭaliputta. In MN 52 and AN 11.16 Dasama goes there to ask where Ānanda is staying. SN 45.18 places Ānanda and Bhadda there together. The page matches also pick up AN 5.49, AN 11.15, MN 51 and SN 45.15–17. The founder’s name comes from the commentary, and the entry itself flags possible confusion with the monastery at Kosambī."
+    },
+    "kumbhīra": {
+      "senses": {"kumbhīra": ["Kumbhīra"]},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 20:8.7–12 identifies Kumbhīra of Rājagaha by his home on Mount Vepulla and his following of over a hundred thousand yakkhas."
+    },
+    "kumārakassapa": {
+      "senses": {"kumārakassapa": ["Kumāra Kassapa 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 1.217 names Kassapa the Prince foremost in brilliant speech, MN 23 gives the termite mound riddle, and DN 23 names him as Pāyāsi’s interlocutor. The AN citation spills into the adjacent groups 1.198–208 and 1.219–234. Thag 2.41:2.7 attributes the verses to him. Thag 2.49:3.1 repeats his name in the chapter recap after Sandhita’s verses. The Dhp 160 story heading names his mother."
+    }
+  },
+  "done": true
+}

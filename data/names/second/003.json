@@ -1,0 +1,175 @@
+{
+  "names": {
+    "aṅga": {
+      "senses": {
+        "aṅga 5": [],
+        "aṅga 4": ["Aṅga 01"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "MN 116:6.10 names the paccekabuddha Aṅga alongside Paṅga. The sole candidate describes the country. In DN 19 the quoted imināpaṅgena means ‘with this quality’. The geographical mention is aṅgesu at 36.8, where Campā is founded. The packet misses aṅgānaṁ in the country lists at AN 3.70:28.3, AN 8.42:3.3, AN 8.43:3.3 and AN 8.45:4.3. The Assapura and royal allowance citations belong to MN 39 and MN 94 respectively. MN 38 and MN 95 are adjacent page matches."
+    },
+    "aṅgaka": {
+      "senses": {"aṅgaka": ["Aṅgaka"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "aṅgulimāla": {
+      "senses": {"aṅgulimāla 1": ["Aṅgulimāla"]},
+      "others": [],
+      "suttas": {},
+      "notes": "MN 86 and Thag 16.8 both identify the bandit who ordained. Check the entry’s quotation of his act of truth against MN 86:15.8, where he addresses the woman as bhagini and says ariyāya jātiyā jāto."
+    },
+    "aṅguttarāpa": {
+      "senses": {"aṅguttarāpa": ["Aṅguttarāpa"]},
+      "others": [],
+      "suttas": {},
+      "notes": "MN 54 and MN 66 open at Āpaṇa in Aṅguttarāpa. MN 53 opens at Kapilavatthu and MN 65 at Sāvatthī. MN 92 and Snp 3.7 give the Sela and Keṇiya episode at Āpaṇa."
+    },
+    "aṅgīrasa": {
+      "senses": {"aṅgīrasa 2": ["Aṅgīrasa 03"]},
+      "others": ["Aṅgīrasa 01"],
+      "suttas": {
+        "Aṅgīrasa 01": ["an5.195", "dn32", "sn3.12", "sn8.11", "thag21.1"],
+        "Aṅgīrasa 03": ["an5.192", "an7.52", "dn3", "dn13", "mn95", "mn99"]
+      },
+      "notes": "DPD already has an aṅgīrasa 1 line for the Buddha’s epithet. The packet offers only the seer sense, so the Buddha entry goes in others. Thag 10.1:10.1–2 also identifies the Buddha under the joined form Aṅgīrasassappaṭimassa, outside the allowed list. The verses cited for the epithet are in AN 5.195 and SN 8.11. AN 5.194, SN 8.12 and SN 9.1 lack the epithet."
+    },
+    "aṭṭhaka": {
+      "senses": {
+        "aṭṭhaka 1.4": [],
+        "aṭṭhaka 1.5": ["Aṭṭhaka 01"],
+        "aṭṭhaka 1.6": ["Aṭṭhaka 05"]
+      },
+      "others": [],
+      "suttas": {
+        "Aṭṭhaka 01": ["an5.192", "an7.52", "dn3", "dn13", "mn95", "mn99"],
+        "Aṭṭhaka 05": ["mn116"]
+      },
+      "notes": "MN 52 calls Dasama aṭṭhakanāgaro. Neither candidate describes the town. MN 116:6.5 names the paccekabuddha among the sages of Isigili."
+    },
+    "aṭṭhama": {
+      "senses": {"aṭṭhama 2": ["Aṭṭhama"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "badarikārāma": {
+      "senses": {"badarikārāma": ["Badarikārāma"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 22.89:1.2 places the sick Khemaka at Badarikārāma. SN 22.88 describes Assaji’s illness in a different monastery."
+    },
+    "baka": {
+      "senses": {"baka 1": ["Baka 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "MN 49 gives the contest over vanishing. SN 6.4 names Baka and recounts his earlier deeds. The page also catches SN 6.3, where the divinity is Sahampati."
+    },
+    "bandhumatī": {
+      "senses": {
+        "bandhumatī 1": ["Bandhumatī 02"],
+        "bandhumatī 2": ["Bandhumatī 01"],
+        "bandhumatī 3": []
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "DN 14:1.12.2 names Vipassī’s mother and the very next segment names the royal capital. A sutta-wide choice would misidentify one of them. Both entries cite DN i.7 and land in DN 1. The passage is in DN 14."
+    },
+    "bhadda": {
+      "senses": {
+        "bhadda 4": ["Bhadda 01"],
+        "bhadda 5": ["Bhadda 03"]
+      },
+      "others": [],
+      "suttas": {
+        "Bhadda 01": ["dn16", "sn55.10"],
+        "Bhadda 03": ["sn45.18", "sn45.19", "sn45.20", "sn47.21", "sn47.22", "sn47.23"]
+      },
+      "notes": "DPD cites SN 45.18 for the monk, which fixes the sense. Thag 7.3 tells of Bhadda’s ordination at seven. DPPN treats his identity with Ānanda’s interlocutor at Kukkuṭārāma as tentative, and the poem does not settle it. SN 45.15–17 and SN 47.20 are adjacent page matches. The AN, DN 21 and Therīgāthā hits in this packet section concern women named Bhaddā."
+    },
+    "bhaddiya": {
+      "senses": {
+        "bhaddiya 1": ["Bhaddiya 01"],
+        "bhaddiya 2": ["Bhaddiya 07"],
+        "bhaddiya 3": ["Bhaddiya 03"],
+        "bhaddiya 4": [],
+        "bhaddiya 5": []
+      },
+      "others": [],
+      "suttas": {
+        "Bhaddiya 01": ["sn1.50", "sn2.24"],
+        "Bhaddiya 03": ["an5.33"],
+        "Bhaddiya 07": ["an4.193"]
+      },
+      "notes": "Both SN verses list Bhaddiya among the seven freed in Aviha. AN 1.193–194 distinguishes Kāḷīgodhā’s son and Lakuṇḍaka Bhaddiya, each without a candidate here. SN 55.48 calls its listener a Sakyan. AN 4.200:19.2 merely indexes AN 4.193 in the chapter summary. SN 55.50, Thag 16.10 and Ud 7.10 also have summary verses. SN 1.49, AN 5.32 and AN 4.192 are adjacent page matches. Check DPD’s designation of Bhaddiya as Aṅga’s capital against the Aṅga entry, which gives Campā."
+    },
+    "bhaddā": {
+      "senses": {
+        "bhaddā 2": [],
+        "bhaddā 3": [],
+        "bhaddā 4": []
+      },
+      "others": ["Bhaddā 03"],
+      "suttas": {},
+      "notes": "AN 5.50:1.2 names Queen Bhaddā and her husband Muṇḍa. AN 5.49 concerns Mallikā and Pasenadi. The three DPD senses refer to Timbaru’s daughter in DN 21 and the two nuns distinguished in AN 1.243–244. The SN 45 and SN 47 conversations with Ānanda and the ordination in Thag 7.3 concern the male Bhadda."
+    },
+    "bhadrāvudha": {
+      "senses": {"bhadrāvudha": ["Bhadrāvudha"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "bhaggavagotta": {
+      "senses": {"bhaggavagotta": ["Bhaggavagotta"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "bhagu": {
+      "senses": {
+        "bhagu 1": [],
+        "bhagu 2": ["Bhagu"],
+        "bhagu 3": []
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "The entry describes the ancient hymn composer named in MN 95:13.9. MN 68 and MN 128 name a contemporary monk. Thag 4.2 attributes the verses to Bhagutthero in a joined form."
+    },
+    "bhallika": {
+      "senses": {"bhallika": ["Bhallika 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 1.248 names the merchants who first took refuge in the compound tapussabhallikā, which has its own DPD line. The page also lands in AN 1.258–267 and AN 1.268–277. Thag 1.7 spells the elder’s name Bhalliya, an alias in this entry."
+    },
+    "bharata": {
+      "senses": {
+        "bharata 1": ["Bharata 05"],
+        "bharata 2": []
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "DN 19:36.14 lists Bharata among the seven kings. The local text spells the Sovīra capital Roruka at 36.6, where the entry has Roruva. Thag 2.28 names the elder in its attribution."
+    },
+    "bhaṇḍagāma": {
+      "senses": {"bhaṇḍagāma": ["Bhaṇḍagāma"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 4.1 places the village among the Vajjis. Its second noble quality at 2.4 is samādhi, rendered ‘earnest thought’ in the entry."
+    },
+    "bhesakalāvana": {
+      "senses": {"bhesakaḷāvana": ["Bhesakalāvana"]},
+      "others": [],
+      "suttas": {},
+      "notes": "The local spelling is Bhesakaḷāvana. AN 4.55 places Nakulapitā and Nakulamātā at the grove, and AN 8.30 gives the Anuruddha episode. AN 4.54 and AN 8.29 are adjacent page matches."
+    },
+    "bhuñjatī": {
+      "senses": {"bhuñjatī": ["Bhuñjatī"]},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 21:1.10.1–5 spells her name Bhūjati. Vessavaṇa’s attendant stands with palms joined before the meditating Buddha, and Sakka asks her to convey his greeting. The forms bhūjati and bhūjatiṁ lead to DPD’s separate bhūjati line, which explains the empty mention list. The sutta calls her paricārikā. DPPN calls her Vessavaṇa’s wife."
+    }
+  },
+  "done": true
+}

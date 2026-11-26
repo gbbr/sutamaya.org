@@ -1,0 +1,240 @@
+{
+  "names": {
+    "sāriputta": {
+      "senses": {
+        "sāriputta": ["Sāriputta 01"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "AN 1.189 names the disciple foremost in wisdom. Several page references include neighboring discourses. For example, MN 23 concerns Kumārakassapa, while MN 24 names Sāriputta and gives his personal name Upatissa. SN 2.27–28 concern Nanda and Nandivisāla, while SN 2.29 praises Sāriputta."
+    },
+    "sātāgira": {
+      "senses": {
+        "sātāgira 1": [],
+        "sātāgira 2": ["Sātāgira"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "Snp 1.9 repeatedly calls the speaker sātāgiro yakkho. The candidate describes this speaker. Snp 1.12 includes his name in the chapter’s closing list."
+    },
+    "sāvatthī": {
+      "senses": {
+        "sāvatthī": ["Sāvatthī"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "sāvitti": {
+      "senses": {
+        "sāvitti": ["Sāvitti"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "This proper name denotes a hymn and its metre, outside the README’s description of people and places. Snp 3.4 identifies it by its three lines and twenty-four syllables."
+    },
+    "sīha": {
+      "senses": {
+        "sīha 2": ["Sīha 01"],
+        "sīha 3": [],
+        "sīha 4": ["Sīha 03"]
+      },
+      "others": [],
+      "suttas": {
+        "Sīha 01": ["an5.34", "an7.57", "an8.12"],
+        "Sīha 03": ["dn6"]
+      },
+      "notes": "The three AN discourses call Sīha senāpati. DN 6 calls Nāgita’s messenger a novice. Thag 1.83 attributes its verse to the elder Sīha, who lacks a candidate. Thig 5.3 names the nun Sīhā. The references also land in AN 5.33, about Uggaha, and AN 8.11, about the brahmin of Verañjā."
+    },
+    "sītavana": {
+      "senses": {
+        "sītavana": ["Sītavana"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "SN 10.8 places Anāthapiṇḍika’s visit in the Cool Grove and SN 35.69 places Upasena there. The page citations also reach the preceding discourses, SN 10.7 and SN 35.68. Thag 10.2 calls its forest sītavana and mentions Giribbaja, though the verse leaves the precise site open."
+    },
+    "sīvaka": {
+      "senses": {
+        "sīvaka 1": [],
+        "sīvaka 2": [],
+        "sīvaka 3": ["Sīvaka 01"]
+      },
+      "others": ["Sīvaka 04"],
+      "suttas": {
+        "Sīvaka 04": ["thag1.14", "thag1.20"]
+      },
+      "notes": "AN 6.47 and SN 36.21 name the wanderer Moḷiyasīvaka. Thag 2.32, the verse for sīvaka 2, is attributed to Sivaka Thera. Sīvaka 04 describes Vanavaccha’s novice in Thag 1.14, also listed beside Vanavaccha in the verse index at Thag 1.20:2.2. SN 10.8:1.12 explicitly names the helpful yakkha, and DN 32:10.12 lists him. Both spell the name Sivako with a short i, so neither is eligible for a sutta assignment here."
+    },
+    "sūra": {
+      "senses": {
+        "sūra 4": ["Sūra"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "DN 32 lists Sūra in Kuvera’s retinue. In Snp 4.8:8.3 the speaker plays on the word for a warrior while addressing the debater Pasūra, named at 10.3."
+    },
+    "tacchakā": {
+      "senses": {
+        "tacchakā": ["Tacchakā"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "DN 20:11.2 lists these nāgas in the compound sahatacchakā. The compound has its own dictionary line, and Sujato renders the group as “those from Takkasilā”. This accounts for the empty mention list."
+    },
+    "tagarasikhī": {
+      "senses": {
+        "tagarasikhī": ["Tagarasikhī"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "The almsgiving episode in the entry occurs at SN 3.20:3.2. The Pāli there uses taggarasikhiṁ with a double g, which leads to the separate DPD lemma taggarasikhī."
+    },
+    "tatha": {
+      "senses": {
+        "tatha 3": ["Tatha"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "tavakaṇṇika": {
+      "senses": {
+        "tavakaṇṇika": ["Tavakaṇṇika"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "AN 6.120–139:1.11 names the householder. AN 6.119 names Tapussa and AN 6.140 begins the discourses on greed. The text supplies no link to the brahmin Tikaṇṇa suggested in the entry."
+    },
+    "taṇhā": {
+      "senses": {
+        "taṇhā 3": ["Taṇhā"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "SN 4.25:1.2 names Māra’s three daughters and 12.2 identifies Taṇhā as the speaker. Snp 4.9:1.1 lists the same three. Sujato translates her name as “Craving”, which explains the missed mentions. SN 4.24 and Snp 4.8 are neighboring discourses."
+    },
+    "tejasi": {
+      "senses": {
+        "tejasi": ["Tejasi"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "thullanandā": {
+      "senses": {
+        "thullanandā": ["Thullanandā"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "thullatissā": {
+      "senses": {
+        "thullatissā": ["Thullatissā"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "tikaṇṇa": {
+      "senses": {
+        "tikaṇṇa": ["Tikaṇṇa"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "The dialogue with Tikaṇṇa is AN 3.58 in this corpus. AN 3.59, the DPD hint, names Jāṇussoṇi. AN 3.60 includes Tikaṇṇa in the closing index. DPPN cites DN 2 for comparison with the teaching on the three knowledges."
+    },
+    "timbaruka": {
+      "senses": {
+        "timbaruka": ["Timbaruka"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "The conversation on pleasure and pain is SN 12.18. The page citation lands in SN 12.17, where the questioner is the naked ascetic Kassapa. SN 12.20 mentions Timbaruka in the chapter index."
+    },
+    "tissa": {
+      "senses": {
+        "tissa 2.2": ["Tissa 03"],
+        "tissa 2.3": ["Tissa 06"],
+        "tissa 2.8": [],
+        "tissa 2.4": ["Tissa 14"],
+        "tissa 2.5": ["Tissa 13"],
+        "tissa 2.6": ["Tissa 12"],
+        "tissa 2.7": []
+      },
+      "others": ["Tissa 05"],
+      "suttas": {
+        "Tissa 03": ["dn14"],
+        "Tissa 06": ["an6.34", "an7.56"],
+        "Tissa 14": ["sn21.9", "sn22.84", "thag1.39"],
+        "Tissa 13": ["thag1.97"],
+        "Tissa 12": ["thag2.17"]
+      },
+      "notes": "The standalone Tissa in DN 14 is the high priest’s son taught by Vipassī. Kassapa’s disciple (Tissa 05) appears in the compound tissabhāradvājaṁ at DN 14:1.9.6 and SN 15.20:4.6. DN 20:20.3 names a celestial Tissa without identifying his former life, so the link to the reborn monk is conjectural. Thag 10.2 credits Ekavihāriya. The identification with Asoka’s brother Tissakumāra (Tissa 22) comes from later biography and is left out. AN 8.91–117 and Thig 1.4–5 refer to women, and Snp 4.7 names Tissa Metteyya. The page references for Tissa 06 also reach AN 6.32–33, and those for Tissa 14 reach SN 21.10 and SN 22.83. The cousin’s verse is Thag 1.39. Thag 1.40 is Vaḍḍhamāna’s. Claude: Tissa 22 doesn't ship: only the commentaries make Asoka's brother the poet of Thag 10.2."
+    },
+    "tissā": {
+      "senses": {
+        "tissā 1": [],
+        "tissā 2": []
+      },
+      "others": ["Tissā 04"],
+      "suttas": {},
+      "notes": "AN 8.91–117 names the laywoman Tissā beside Tissamātā. The page also reaches AN 8.118–119, on greed. Thig 1.4 and 1.5 each name a nun, the latter explicitly called another Tissā. Neither has a candidate here. The packet also counts forms of the masculine Tissa."
+    },
+    "tivarā": {
+      "senses": {
+        "tivarā": ["Tivarā"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "SN 15.20 names the people and their mountain Pācīnavaṁsa. SN 15.18–19 concern past lives as one’s son or daughter."
+    },
+    "todeyya": {
+      "senses": {
+        "todeyya": ["Todeyya 01"]
+      },
+      "others": ["Todeyya 02"],
+      "suttas": {
+        "Todeyya 01": ["an4.187", "dn13", "mn98", "mn99", "snp3.9"],
+        "Todeyya 02": ["snp5.1", "snp5.10", "snp5.18"]
+      },
+      "notes": "MN 99:13.5 explicitly calls the wealthy brahmin Subha’s father. MN 100:4.2 has the plural todeyyānaṁ brāhmaṇānaṁ, the Todeyya brahmins who own the grove. This does not identify an individual despite the DPD hint. SN 35.133 uses the singular for the owner of the Kāmaṇḍā grove described in Todeyya 01. The page also reaches SN 35.132, about Lohicca. Claude: The entry mentions the Kāmaṇḍā grove's owner only as \"a Todeyya brahmin\", so SN 35.133 has no pick."
+    },
+    "toraṇavatthu": {
+      "senses": {
+        "toraṇavatthu": ["Toraṇavatthu"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "tuṭṭha": {
+      "senses": {
+        "tuṭṭha 2": ["Tuṭṭha"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "DN 16 and SN 55.10 both name Tuṭṭha among the deceased Ñātika lay followers. The page citation also reaches the different list in SN 55.9."
+    },
+    "tālapuṭa": {
+      "senses": {
+        "tālapuṭa 1": ["Tālapuṭa"],
+        "tālapuṭa 2": ["Tālapuṭa"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "Both DPD lines cite the same actor. SN 42.2:3.11–13 explicitly follows Tālapuṭa the dancing chief through ordination to arahantship, and Thag 19.1 attributes the verses to the elder. SN 42.1 is about the chief Caṇḍa."
+    },
+    "tārukkha": {
+      "senses": {
+        "tārukkha": ["Tārukkha"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    }
+  },
+  "done": true
+}

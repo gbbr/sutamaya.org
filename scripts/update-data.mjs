@@ -28,6 +28,7 @@ import { runAccept } from './update-data-accept.mjs';
 import { runCounts, reportCounts } from './update-data-counts.mjs';
 import { runTriage } from './update-data-triage.mjs';
 import { runDictionary, DICT_PATH } from './update-data-dictionary.mjs';
+import { runNames, NAMES_PATH } from './update-data-names.mjs';
 
 const COMMANDS = ['plan', 'apply', 'accept', 'triage', 'post', 'counts', 'dictionary', 'help'];
 
@@ -150,6 +151,17 @@ function reportDictionary(result) {
   );
 }
 
+// Reports the names import, which is optional the same way, naming DPPN_PATH.
+function reportNames(result) {
+  if (result.skipped) {
+    row('note', 'Names', `DPPN_PATH not set — keeping ${path.relative(process.cwd(), NAMES_PATH)} as checked in`);
+    return;
+  }
+  row('ok', 'Names', `${n(result.names)} of ${n(result.tappable)} tappable names have entries — ${n(result.entries)} entries, ${(result.bytes / 1e6).toFixed(1)} MB`);
+  row('note', 'Names', `from DPPN_PATH=${result.dppnPath}`);
+  if (result.unplaced) row('note', 'Names', `${n(result.unplaced)} entries cite the app's books in a form the references don't place`);
+}
+
 async function apply() {
   const { bilaraRoot, gitInfo } = source();
   banner('apply', sourceMeta(gitInfo));
@@ -172,6 +184,7 @@ async function apply() {
   row('note', 'Diffs', 'data/diff/00-all.diff is upstream → shipped; the per-rule files attribute it');
 
   reportDictionary(runDictionary());
+  reportNames(runNames());
 
   console.log();
   console.log(`${PAD}${bold('Review before accepting')}`);
@@ -222,17 +235,23 @@ async function post(args = []) {
   return 0;
 }
 
-// Rebuilds data/pli2en_dpd.json from a DPD release, on its own schedule rather than a refresh's.
-// `force` is a positional word for the same reason `prune` is — npm swallows a leading `--`.
+// Rebuilds data/pli2en_dpd.json from a DPD release, then the names that follow its headwords, on
+// their own schedule rather than a refresh's. Each runs when its file is named. `force` is a
+// positional word for the same reason `prune` is — npm swallows a leading `--`.
 async function dictionary(args = []) {
   banner('dictionary');
   const result = runDictionary({ force: args.includes('force') });
   reportDictionary(result);
-  if (result.skipped) {
-    next('DPD_DB_PATH=/path/to/dpd.db npm run update-data dictionary', 'get dpd.db.tar.xz from the dpd-db releases page');
+  const names = runNames();
+  reportNames(names);
+  if (result.skipped && names.skipped) {
+    next(
+      'DPD_DB_PATH=/path/to/dpd.db DPPN_PATH=/path/to/DPPN.json npm run update-data dictionary',
+      "dpd.db.tar.xz is on the dpd-db releases page; DPPN.json is in DPD's other-dictionaries repository"
+    );
     return 0;
   }
-  next('npm run build:corpus', 'reshard the dictionary from the new file, then commit');
+  next('npm run build:corpus', 'reshard the dictionary from the new files, then commit');
   return 0;
 }
 
@@ -279,8 +298,9 @@ function help() {
   line('npm run update-data post', 're-run the rules over the current data/sujato');
   line('npm run update-data counts', 're-record footprints without touching the baseline');
   console.log(`\n${PAD}${bold('The dictionary')}`);
-  line('npm run update-data dictionary', 'rebuild data/pli2en_dpd.json from a DPD release');
+  line('npm run update-data dictionary', 'rebuild data/pli2en_dpd.json from a DPD release, then the names');
   line('  DPD_DB_PATH=…', 'full path to dpd.db — without it the step is skipped everywhere');
+  line('  DPPN_PATH=…', "full path to DPPN.json, for data/pli2en_dppn.json — skipped without it");
   line('  … force', 'write even when the new file is much smaller than the old');
   console.log();
   return 0;

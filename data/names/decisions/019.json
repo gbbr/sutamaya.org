@@ -1,0 +1,230 @@
+{
+  "names": {
+    "nandaka": {
+      "senses": {
+        "nandaka 1": ["Nandaka 01"],
+        "nandaka 2": ["Nandaka 02"],
+        "nandaka 3": ["Nandaka 01"],
+        "nandaka 4": []
+      },
+      "others": ["Nandaka 03"],
+      "suttas": {
+        "Nandaka 01": ["an1.219-234", "an3.66", "an9.4", "mn146", "thag4.4"],
+        "Nandaka 02": ["thag2.27", "thag2.28"]
+      },
+      "notes": "Nandaka 01 covers both the adviser of nuns at AN 1.229 and MN 146 and the poet of Thag 279–282 (Thag 4.4). Its other two episodes are Sāḷha’s visit in AN 3.66 and the Buddha waiting outside the hall in AN 9.4. DPD’s AN 3.67 and the adjacent page matches do not identify him. Check the entry’s claim that all five hundred nuns became arahants. MN 146:27.5 says the least advanced was a stream-enterer. Thag 2.27 gives the draft-animal simile, and in Thag 2.28 Bharata addresses Nandaka as his companion in going forth. SN 55.30 explicitly names the Licchavi chief minister, who has no candidate. Ud 4.4 unmistakably describes the yakkha in Nandaka 03 by his blow to Sāriputta, but leaves him unnamed. AN 9.10:2.2 also refers back to Nandaka in the chapter index."
+    },
+    "nandana": {
+      "senses": {
+        "nandana 1": ["Nandana"],
+        "nandana 2": []
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "The deity asks about virtue and wisdom in SN 2.14. The citation lands on Rohitassa in SN 2.26 and Nanda in SN 2.27. The heavenly wood has no candidate. Nandane vane in SN 1.11 and MN 75 is the Garden of Delight in Sujato’s translation. The garden also occurs in AN 5.34, SN 9.6 and SN 55.1."
+    },
+    "nandivisāla": {
+      "senses": {
+        "nandivisāla": ["Nandivisāla 02"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "SN 2.28 names the godling who asks the riddle of the four wheels and nine doors. SN 2.27 and SN 2.29 concern Nanda and Susīma respectively. SN 2.30 lists Nandivisāla in the chapter index."
+    },
+    "nandiya": {
+      "senses": {
+        "nandiya": ["Nandiya 01"]
+      },
+      "others": ["Nandiya 02", "Nandiya 04"],
+      "suttas": {
+        "Nandiya 01": ["mn31", "mn128", "thag1.25"],
+        "Nandiya 02": ["an11.13", "sn55.40", "sn55.47", "an11.21"],
+        "Nandiya 04": ["sn45.10"]
+      },
+      "notes": "Anuruddha and Kimbila are the monk’s companions in MN 31 and MN 128. Thag 1.25 attributes the verse addressed to Māra to Nandiya Thera. The three lay-disciple passages call him Nandiya the Sakyan, and SN 45.10 explicitly calls its visitor a wanderer. AN 11.21:7.2 is the chapter index referring back to AN 11.13. SN 55.50:2.3 likewise indexes the earlier Nandiya discourse. MN 30, AN 11.12, SN 55.39 and SN 45.9 are adjacent page matches. Claude: The chapter summary at AN 11.21:7.2 recaps AN 11.13, so it names Nandiya 02."
+    },
+    "nandā": {
+      "senses": {
+        "nandā 2": ["Nandā 06"],
+        "nandā 1": ["Nandā 06"]
+      },
+      "others": ["Nandā 07"],
+      "suttas": {
+        "Nandā 06": ["an1.235-247"],
+        "Nandā 07": ["dn16", "sn55.8"]
+      },
+      "notes": "AN 1.240 names the foremost nun in absorption. DPPN identifies her with Sundarīnandā, whose attribution closes Thig 5.4, the poem specified for nandā 2. Check the other hint for nandā 1: Thig 2.1 explicitly attributes its verses to Abhirūpanandā, whom the entry distinguishes from Sundarīnandā. Both poems address Nandā in the vocative nande at 1.2, while the English prints her name at 1.1, so neither poem is in the packet’s list. DN 16 and SN 55.8 describe the nun who died at Ñātika as a non-returner. SN 55.7 is a neighboring page match. AN 8.9, MN 76, SN 21.8, SN 35.241 and Ud 3.2 contain masculine Nanda forms."
+    },
+    "navakammikabhāradvāja": {
+      "senses": {
+        "navakammikabhāradvāja": ["Navakammika Bhāradvāja"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "SN 7.17 names the brahmin overseeing work in the forest. SN 7.16 concerns a different brahmin."
+    },
+    "nemi": {
+      "senses": {
+        "nemi 3": ["Nemi 02"]
+      },
+      "others": ["Nemi 03"],
+      "suttas": {
+        "Nemi 02": ["dn32"]
+      },
+      "notes": "DN 32 lists Nemi among Kuvera’s servants. MN 116:6.7 names the paccekabuddha next to Upanemi. The Pāli has nemiso, which opens the separate DPD lemma nemisa, and Sujato renders it Nemi. This accounts for Nemi 03 even though MN 116 is absent from the packet’s list."
+    },
+    "nerañjarā": {
+      "senses": {
+        "nerañjarā": ["Nerañjarā 01"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "nigrodha": {
+      "senses": {
+        "nigrodha 2": ["Nigrodha 01"],
+        "nigrodha 3": ["Nigrodha 03"]
+      },
+      "others": [],
+      "suttas": {
+        "Nigrodha 01": ["dn8", "dn25"],
+        "Nigrodha 03": ["thag1.21"]
+      },
+      "notes": "DN 8:23 recalls Nigrodha’s question about austerities, and DN 25 names the wanderer at Udumbarikā’s park who discusses them with the Buddha. DN 26 is an adjacent page match. The attribution in Thag 1.21 names the elder."
+    },
+    "nigrodhārāma": {
+      "senses": {
+        "nigrodhārāma": ["Nigrodhārāma 01"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "All 24 listed suttas locate the park at Kapilavatthu. Check Nigrodhārāma 02: DN 16:3.42.1 calls the Rājagaha site gotamanigrodhe, the Gotama banyan tree. The Buddha recalls giving Ānanda the same opportunity at several sites in that passage. It does not establish a park called Nigrodhārāma at Rājagaha. For 01, AN 3.72, AN 4.194, MN 52, MN 121, SN 22.79 and SN 35.242 are neighboring page matches. Moggallāna continues the assembly-hall discourse in SN 35.243, while Ānanda does so in MN 53. Claude: Nigrodhārāma 02 doesn't ship: the suttas call the Rājagaha site gotamanigrodha, never Nigrodhārāma."
+    },
+    "nikaṭa": {
+      "senses": {
+        "nikaṭa 3": ["Nikaṭa 01"]
+      },
+      "others": ["Nikaṭa 02"],
+      "suttas": {},
+      "notes": "The empty mention list misses both people. DN 16:2.6.8 explicitly calls Nikaṭa an upāsaka. SN 55.10:1.5 records the same layman at Ñātika as nikato. Sujato spells his name Nikata in both. AN 10.72:1.2 has āyasmatā ca nikaṭena among the elders who retire from Vesālī to Gosiṅga, and 3.2 repeats nikaṭo. Sujato calls this monk Kaṭa. SN 55.9 and AN 10.71 are neighboring page matches."
+    },
+    "nāgadatta": {
+      "senses": {
+        "nāgadatta": ["Nāgadatta 01"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "The forest deity admonishes Nāgadatta in SN 9.7. SN 9.5 concerns Ānanda and SN 9.6 concerns Anuruddha. SN 9.14:10.4 is the chapter index."
+    },
+    "nālandā": {
+      "senses": {
+        "nālandā": ["Nālandā 01"],
+        "nāḷandā": ["Nālandā 01"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "Both spellings refer to the town where the Buddha stays in Pāvārika’s mango grove. Compare nālandāyaṁ in SN 47.12:1.1 with nāḷandāyaṁ in MN 56:1.2. The mapped SN 12.66 is set at Kammāsadamma in Kuru."
+    },
+    "nālijaṅgha": {
+      "senses": {
+        "nāḷijaṅgha": ["Nālijaṅgha"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "nārada": {
+      "senses": {
+        "nārada 1": ["Nārada 13"],
+        "nārada 2": []
+      },
+      "others": ["Nārada 16"],
+      "suttas": {
+        "Nārada 13": ["an5.50", "sn12.68"]
+      },
+      "notes": "The monk counsels King Muṇḍa in AN 5.50 and speaks with Saviṭṭha at Kosambī in SN 12.68. AN 5.49 and SN 12.67 are neighboring page matches. Check the burial detail: in AN 5.50:19.2 the king orders Bhaddā’s cremation. Snp 3.6:47.4 names Nārada and Pabbata among the gods in the single word nāradapabbatā, which has its own DPD line. The verse presents them as a pair. DPPN describes classes of devas. No candidate describes the former Buddha."
+    },
+    "nāvindakī": {
+      "senses": {
+        "nāvindakī": ["Nāvindakī"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "AN 4.187:4.3–4 lists Nāvindakī among King Eḷeyya’s attendants (parihārakā) who honor Rāmaputta. This identifies the person despite the differing glosses of his office."
+    },
+    "odātagayhā": {
+      "senses": {
+        "odātagayhā": ["Odātagayhā"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "okkāka": {
+      "senses": {
+        "okkāka": ["Okkāka 01"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "The entry’s second episode, the brahmins persuading Okkāka to sacrifice, is also in the corpus at Snp 2.7."
+    },
+    "opamañña": {
+      "senses": {
+        "opamañña 2": ["Opamañña 02"]
+      },
+      "others": ["Opamañña 01"],
+      "suttas": {
+        "Opamañña 02": ["dn20", "dn32"]
+      },
+      "notes": "DN 20 and DN 32 list the deity with Panāda and Mātali. MN 99:10.3 calls the brahmin pokkharasāti opamañño subhagavaniko. Sujato renders the clan name Upamañña, so MN 99 is absent from the packet’s list. DPD has a separate clan adjective, opamañña 1, outside the reviewed sense."
+    },
+    "oṭṭhaddha": {
+      "senses": {
+        "oṭṭhaddha": ["Oṭṭhaddha"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "pabbata": {
+      "senses": {
+        "pabbata 4": ["Pabbata 01"]
+      },
+      "others": ["Pabbata 06"],
+      "suttas": {
+        "Pabbata 01": ["mn116"]
+      },
+      "notes": "MN 116 lists Pabbata with Rakkhita and Padumuttara among the paccekabuddhas. Snp 3.6:47.4 names the divine pair Nārada and Pabbata. Their compound nāradapabbatā has its own dictionary line. The description of Pabbata as a class of gods goes beyond that verse."
+    },
+    "pabhāvatī": {
+      "senses": {
+        "pabhāvatī": ["Pabhāvatī 02"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "paduma": {
+      "senses": {
+        "paduma 5": ["Paduma 06"],
+        "paduma 7": []
+      },
+      "others": ["Paduma 10"],
+      "suttas": {
+        "Paduma 06": ["mn116"]
+      },
+      "notes": "MN 116 lists the paccekabuddha Paduma. AN 8.91–117 lists a laywoman named Padumā. Neither candidate describes her or the former sammāsambuddha. Snp 3.10, SN 6.10 and AN 10.89 explicitly place Kokālika in the Paduma hell. Sujato’s Pink Lotus translation accounts for the missed mentions. DPD has a hell sense, paduma 2, outside the packet. Snp 3.10:7–8 compares lifespans in the hells. The entry’s claim that Paduma is solely a period of suffering goes beyond that comparison."
+    },
+    "padumuttara": {
+      "senses": {
+        "padumuttara 1": [],
+        "padumuttara 2": ["Padumuttara 02"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "The name occurs in MN 116:6.34 in the list of paccekabuddhas. The former sammāsambuddha has no candidate."
+    }
+  },
+  "done": true
+}

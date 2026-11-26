@@ -1,0 +1,110 @@
+{
+  "names": {
+    "upariṭṭha": {
+      "senses": {"upariṭṭha 2.1": ["Upariṭṭha"]},
+      "others": [],
+      "suttas": {},
+      "notes": "MN 116 explicitly calls Upariṭṭha a paccekasambuddha. In Thag 16.9:19 Annabhāra is the speaker and samaṇaṁ … upariṭṭhaṁ is accusative. Sujato’s wording makes it sound as though Annabhāra himself was Upariṭṭha. DPPN distinguishes the donor and the ascetic."
+    },
+    "upasanta": {
+      "senses": {"upasanta 2": ["Upasanta 03"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "upasena": {
+      "senses": {"upasena": ["Upasena 02"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 1.213 names Vaṅgantaputta, and SN 35.69 gives the viper episode. The adjacent AN groups and SN 35.68 are page spillover. Ud 4.9 and Thag 10.6 also name Vaṅgantaputta. The occurrences in Ud 4.10, Thag 10.7 and SN 35.73 are in chapter summaries."
+    },
+    "upatissa": {
+      "senses": {"upatissa": []},
+      "others": ["Upatissa 11"],
+      "suttas": {},
+      "notes": "In MN 24:17.3–4 Sāriputta gives Upatissa as his own name. His biography is available under the separate headword Sāriputta. Upatissa 11 is the paccekabuddha paired with Tissa in MN 116:6.27. The joined form Tissūpatissā is absent from the packet’s mentions."
+    },
+    "upavāṇa": {
+      "senses": {"upavāṇa": ["Upavāṇa 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 16 has the attendant fanning the Buddha. SN 46.8 has the conversation with Sāriputta at Kosambī under the spelling Upavāna, a separate DPD lemma. The relevant texts in the other adjacent citation pairs are AN 4.175, SN 7.13, SN 12.26 and SN 35.70."
+    },
+    "uposatha": {
+      "senses": {"uposatha 3": ["Uposatha 02"], "uposatha 5": [], "uposatha 4": ["Uposatha 02"]},
+      "others": [],
+      "suttas": {},
+      "notes": "The entry describes both Mahāsudassana’s individual elephant and the elephant tribe. Its sources for the tribe are later texts. DN 17:1.12.2, MN 129:36.2 and SN 22.96:4.5 all name the royal elephant in Pali. Sujato calls him Sabbath, so the packet misses him. Its sole hit, MN 116:6.32, is the paccekabuddha, for whom there is no candidate."
+    },
+    "uppala": {
+      "senses": {"uppala 4": ["Uppala 01"]},
+      "others": ["Uppala 04"],
+      "suttas": {"Uppala 01": ["mn116"]},
+      "notes": "SN 6.10:6.9–10 names the hell as uppalanirayo and then uppalā nirayā. AN 10.89:15.11 and Snp 3.10:8.9 use uppalako nirayo. Sujato calls it the Blue Water Lily hell. These passages establish the second entry, but the packet lists only the paccekabuddha’s sutta."
+    },
+    "uppalavaṇṇā": {
+      "senses": {"uppalavaṇṇā": ["Uppalavaṇṇā 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 1.237 names the nun foremost in psychic power. The other AN citation is AN 2.131. Her encounter with Māra is SN 5.5, and she is an exemplar in SN 17.24. The neighboring citation hits concern other people. DPPN describes the twelve verses in Thig 11.1 (224–235), though it prints only 234–235."
+    },
+    "upāli": {
+      "senses": {"upāli 1": ["Upāli 04"], "upāli 2": ["Upāli 01"], "upāli 3": ["Upāli 01"]},
+      "others": [],
+      "suttas": {
+        "Upāli 04": ["mn56", "sn35.126"],
+        "Upāli 01": ["an1.219-234", "an7.83", "an10.31", "an10.32", "an10.33", "an10.34", "an10.35", "an10.36", "an10.37", "an10.38", "an10.41", "an10.42", "an10.43", "an10.99", "sn14.15"]
+      },
+      "notes": "Both monk senses cite Thag 3.11, whose second verse urges a monk to learn the Vinaya. DPPN assigns those verses to the Vinaya expert. The joined attribution Upālitthero is missing from the packet. Both MN 56 and SN 35.126 name the householder in Pāvārika’s mango grove at Nāḷandā. MN 55 concerns Jīvaka. AN 10.40 addresses Ānanda and AN 10.100 addresses the monks collectively. Their hits are chapter summaries pointing back to AN 10.31 and AN 10.99. The relevant citations for the elder are AN 1.228, AN 7.83 and AN 10.99."
+    },
+    "upāsabha": {
+      "senses": {"upāsabha": ["Upāsabha"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "uruvelakappa": {
+      "senses": {"uruvelakappa": ["Uruvelakappa"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 9.41, SN 42.11 and SN 48.52 explicitly name the Mallan town. DPPN’s discourse on noble knowledge is SN 48.52. Its SN iv.228f reference lands in SN 36.19–20, which discuss feelings. SN 42.12 names Rāsiya but leaves the setting unstated. AN 9.40 and SN 42.10 are neighboring citations."
+    },
+    "uruvelā": {
+      "senses": {"uruvelā": ["Uruvelā 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "MN 26:17.1 places Senānigama in Uruvelā, and AN 4.21 places the goatherd’s banyan there on the Nerañjarā. SN 47.18 and SN 48.57 name Uruvelā in their openings. The preceding sutta in each citation pair does not. SN 4.25 continues the scene from SN 4.24 and calls Māra’s second daughter Arati, where the entry gives Ratī."
+    },
+    "usabha": {
+      "senses": {"usabha 4": ["Usabha 03"], "usabha 5": ["Usabha 01"], "usabha 6": ["Usabha 02"]},
+      "others": [],
+      "suttas": {"Usabha 01": ["thag1.110"], "Usabha 02": ["thag2.39"], "Usabha 03": ["mn116"]},
+      "notes": "The first elder’s verse describes rain on the mountains. It names Usabha at Thag 1.110:1.4, one segment after the English names him. The second elder’s verses recount the elephant ride and his shame on dismounting."
+    },
+    "uttara": {
+      "senses": {"uttara 2.04": [], "uttara 2.06": ["Uttara 03"], "uttara 2.07": [], "uttara 2.10": ["Uttara 01"], "uttara 2.11": ["Uttara 02"], "uttara 2.12": ["Uttara 09"]},
+      "others": ["Uttara 06", "Uttara 12", "Uttara 23"],
+      "suttas": {"Uttara 01": ["thag2.1"], "Uttara 02": ["thag2.21"], "Uttara 03": ["sn2.19"], "Uttara 06": ["mn152"], "Uttara 09": ["mn91"], "Uttara 23": ["sn42.13"]},
+      "notes": "MN 152 identifies Pārāsariya’s pupil (Uttara 06). DPD’s uttara 2.04 points to Pāyāsi’s gift organizer in DN 23. DPPN recounts that episode but calls the identification conjectural, and neither sutta connects the two youths. The paccekabuddha at MN 116:6.25 lacks a candidate. AN 8.8 gives no link to either Theragāthā poet. DN 14:1.9.3 names Vessabhū’s disciple (Uttara 12) in soṇuttaraṁ, while 1.9.5 names Koṇāgamana’s disciple in bhiyyosuttaraṁ. The packet’s sole DN 14 hit is Koṇāgamana’s mother Uttarā at 1.12.15. AN 8.91–117, SN 10.7 and the Therīgāthā hits also name females. SN 2.19 sets the godling’s visit at Rājagaha. The Sāketa setting in Uttara 03 belongs to Kakudha in SN 2.18. SN 3.13 calls the king’s attendant Sudassana. The name in Uttara 10 comes from the commentary. SN 42.13:1.1 names the Koliyan town, while uttaraṁ later in the discourse describes the northern bank of the Ganges."
+    },
+    "uttarakuru": {
+      "senses": {"uttarakuru": ["Uttarakuru 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 3.80 and AN 10.29 list the continent. DN 32 uses uttarakuruvho and AN 9.21 uses the adjective uttarakurukā for its people. Both have separate DPD lines. AN 9.21 counts three distinctions where DPPN counts four. AN 3.112, AN 9.20 and AN 9.22 do not name the continent."
+    },
+    "uttarakā": {
+      "senses": {"uttarakā": ["Uttarakā"]},
+      "others": [],
+      "suttas": {},
+      "notes": "Sunakkhatta and the dog-ascetic identify the DN 24 episode. At DN 24:1.7.1 the local Pali reads thūlūnaṁ, Sujato gives the Kurus, and DPPN gives the Bumus. SN 42.13 has a separate Koliyan town, also called Uttarakā in English."
+    },
+    "uttarapāla": {
+      "senses": {"uttarapāla": ["Uttarapāla"]},
+      "others": [],
+      "suttas": {},
+      "notes": "Thag 3.12 attributes the verses on overcoming sensual desire to Uttarapāla. Thag 3.16:5.3 lists him in the chapter summary."
+    }
+  },
+  "done": true
+}

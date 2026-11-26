@@ -1,0 +1,199 @@
+{
+  "names": {
+    "vessāmitta": {
+      "senses": {
+        "vessāmitta 1": ["Vessāmitta 01"],
+        "vessāmitta 2": ["Vessāmitta 03"]
+      },
+      "others": [],
+      "suttas": {
+        "Vessāmitta 01": ["an5.192", "an7.52", "dn3", "dn13", "mn95", "mn99"],
+        "Vessāmitta 03": ["dn32", "dn20"]
+      },
+      "notes": "DN 32 names Vessāmitta among the yakkha chiefs to invoke. DN 20:8.1–2 uses the plural Vessāmittā for five hundred yakkhas. DPPN places the chief at that gathering, but the verse itself does not single him out. Claude: Vessāmitta 03 tells this very gathering of DN 20; the other entry is a sage of old."
+    },
+    "vesālā": {
+      "senses": {
+        "vesālā": ["Vesālā"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "vesālī": {
+      "senses": {
+        "vesālī": ["Vesālī"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "AN 3.73, AN 8.43 and SN 1.38 are set at Kapilavatthu, Sāvatthī and Rājagaha respectively. Their cited pages also cover AN 3.74, AN 8.44 and SN 1.39, which are set at Vesālī. DN 20:11.2 refers to the city through its nāgas, Vesālā."
+    },
+    "vetaraṇī": {
+      "senses": {
+        "vetaraṇī": ["Vetaraṇī 01"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "SN 1.33 and Snp 3.10 name the river. MN 130:24.1 describes the caustic river beside the Sword-Leaf Forest. DPPN attributes its identification as Vetaraṇī to Buddhaghosa."
+    },
+    "veṇḍu": {
+      "senses": {
+        "veṇḍu": ["Veṇḍu"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "In SN 2.12 Veṇḍu speaks a verse praising those who train, which DPPN describes as a question. The neighboring citations concern Candimasa (SN 2.11), Dīghalaṭṭhi (SN 2.13) and Nandana (SN 2.14). SN 2.20:14.1 names Veṇḍu in the chapter recap."
+    },
+    "videha": {
+      "senses": {
+        "videha": ["Videha 02"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "DN 19:36.7 pairs Mithilā with the Videhas. The river crossing cited at MN 34:2.1 uses the form suvidehānaṁ for the people on the far bank."
+    },
+    "vijaya": {
+      "senses": {
+        "vijaya 2": ["Vijaya 06"]
+      },
+      "others": ["Vijaya 05"],
+      "suttas": {
+        "Vijaya 05": [],
+        "Vijaya 06": ["thag1.92"]
+      },
+      "notes": "AN 6.120–139:1.15 lists the householder between Sandhāna and Vijayamāhika. The Pāli reads vicayo gahapati and Sujato gives Vijaya. This accounts for the lay entry despite the missing packet mention. AN 6.119 concerns Tapussa and AN 6.140 concerns greed. SN 5.4 and Thig 6.8 name the nun Vijayā."
+    },
+    "vijita": {
+      "senses": {
+        "vijita 3": ["Vijita 01"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "vimala": {
+      "senses": {
+        "vimala 3": ["Vimala 04"],
+        "vimala 4": ["Vimala 02"],
+        "vimala 5": ["Vimala 03"]
+      },
+      "others": [],
+      "suttas": {
+        "Vimala 02": ["thag1.50"],
+        "Vimala 03": ["thag3.16"],
+        "Vimala 04": []
+      },
+      "notes": "The verse attributions distinguish the two elders. DPD and DPPN read a paccekabuddha named Vimala in MN 116:6.16, while Sujato takes vimalo as an epithet of Ketumā ('the immaculate'). The packet omits MN 116. Thig 5.2 names the nun Vimalā, the former courtesan."
+    },
+    "vipula": {
+      "senses": {
+        "vipula 2": ["Vipula 02"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "The packet lists no mentions. SN 2.30:16.1–2 calls Vipula the foremost mountain of Rājagaha, and Thig 16.1:50.3–4 compares a heap of bones to it (vipulena). Sujato calls the mountain Vepulla in both places. The citation to SN 3.1 shares the page with SN 2.30."
+    },
+    "virūlha": {
+      "senses": {
+        "virūḷha 2": ["Virūḷha"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "The packet misses virūḷho at DN 20:9.12, where he rules the south and the Kumbhaṇḍas. The same discourse uses virūḷhako at 9.42. DN 18:12.4 and DN 19:2.4 also use the longer form for the southern king."
+    },
+    "virūpakkha": {
+      "senses": {
+        "virūpakkha 1": ["Virūpakkha 02"],
+        "virūpakkha 2": ["Virūpakkha 01"]
+      },
+      "others": [],
+      "suttas": {
+        "Virūpakkha 01": ["dn18", "dn19", "dn20", "dn32"],
+        "Virūpakkha 02": ["an4.67"]
+      },
+      "notes": "AN 4.67 explicitly calls Virūpakkha one of four royal snake families. AN 4.66 shares the cited page. The four DN passages identify the king by his western quarter."
+    },
+    "vissakamma": {
+      "senses": {
+        "vissakamma": ["Vissakamma"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "visākha": {
+      "senses": {
+        "visākha 2": ["Visākha 01"]
+      },
+      "others": ["Visākha 02"],
+      "suttas": {
+        "Visākha 01": ["mn44"],
+        "Visākha 02": ["an4.48", "sn21.7", "thag2.45"]
+      },
+      "notes": "MN 44 calls Dhammadinnā’s questioner a layman. The other three texts name the elder Pañcālaputta. The page matches AN 4.47, AN 4.49 and SN 21.8 do not name him. The remaining packet mentions belong to women named Visākhā."
+    },
+    "visākhā": {
+      "senses": {
+        "visākhā 1": ["Visākhā 05"],
+        "visākhā 2": [],
+        "visākhā 3": ["Visākhā 02"],
+        "visākhā 4": []
+      },
+      "others": [],
+      "suttas": {
+        "Visākhā 02": ["dn14"],
+        "Visākhā 05": ["an1.258-267", "an3.70", "an8.43", "an8.47", "an8.49", "an8.91-117", "ud2.9", "ud8.8"]
+      },
+      "notes": "AN 1.259 and the other seven laywoman passages call her Migāra’s mother. DN 14:1.12.10–11 identifies Kakusandha’s mother. Thig 1.13 names the nun, for whom the packet has no entry. AN 4.48, SN 21.7 and MN 44 address men. The citations to AN 1.248–257, AN 1.268–277, AN 3.69, AN 7.62, AN 8.48 and AN 8.118–119 do not name the donor. AN 7.63 concerns Sujātā, whom DPPN calls her sister. The chapter recaps at AN 8.50, Ud 2.10 and Ud 8.10 also mention Visākhā outside the packet."
+    },
+    "visāṇā": {
+      "senses": {
+        "visāṇā": ["Visāṇā"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "DN 32:7.40–41 calls Visāṇā Kuvera’s rājadhānī, his capital. DPPN glosses it as his kingdom."
+    },
+    "viṭeṇḍu": {
+      "senses": {
+        "viṭeṇḍu": ["Viṭeṇḍu"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": "DPPN’s ‘vessels’ appears to be a typo for ‘vassals’. DN 20:10.1–3 counts Viṭeṇḍu among the Four Kings’ servants (dāsā)."
+    },
+    "vāmadeva": {
+      "senses": {
+        "vāmadeva": ["Vāmadeva"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "vāmaka": {
+      "senses": {
+        "vāmaka 1": ["Vāmaka"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "vāraṇa": {
+      "senses": {
+        "vāraṇa 3": ["Vāraṇa"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "vāsavanesī": {
+      "senses": {
+        "vāsavanesī": ["Vāsavanesī"]
+      },
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    }
+  },
+  "done": true
+}

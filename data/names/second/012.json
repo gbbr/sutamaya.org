@@ -1,0 +1,107 @@
+{
+  "names": {
+    "jetavana": {
+      "senses": {"jetavana": ["Jetavana 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 6.43 opens in Jeta’s Grove at Anāthapiṇḍika’s monastery. The SN reference concerns the Eastern Gate at Sāvatthī (SN 48.44). The adjacent SN 48.43 opens in the Añjana Wood at Sāketa."
+    },
+    "jita": {
+      "senses": {"jita 3": ["Jita"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    },
+    "jotika": {
+      "senses": {"jotika 2": ["Jotika 02"]},
+      "others": [],
+      "suttas": {},
+      "notes": "SN 55.3 names the sick Dīghāvu’s father as the householder Jotika. SN 55.2 shares the cited page. The Jotikattheravatthu heading at Dhp 416 refers to an elder."
+    },
+    "jotipāla": {
+      "senses": {"jotipāla 1": ["Jotipāla 03"], "jotipāla 2": ["Jotipāla 02"]},
+      "others": [],
+      "suttas": {"Jotipāla 02": ["mn81"], "Jotipāla 03": ["an6.54", "an7.73", "dn19"]},
+      "notes": "MN 81 names Ghaṭīkāra’s friend who ordained under Kassapa. In DN 19 the Steward’s son succeeds his father as royal adviser. AN 6.54 explicitly calls the teacher Jotipāla Govinda, and AN 7.73 repeats the list of teachers who taught the way to Brahmā. The mapped SN 1.48–49 do not name Jotipāla. Ghaṭīkāra recalls his old friendship with the Buddha in SN 1.50."
+    },
+    "jāliya": {
+      "senses": {"jāliya": ["Jāliya"]},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 6, DN 7 and DN 24 all identify Jāliya as the wood-bowl ascetic’s pupil. DN 6 and DN 7 call his companion Muṇḍiya, where the entry reads Maṇḍissa."
+    },
+    "jāṇussoṇī": {
+      "senses": {"jāṇussoṇī": ["Jāṇussoṇī"]},
+      "others": [],
+      "suttas": {},
+      "notes": "The zero mention count misses the brahmin. MN 98:2.2 lists him among the eminent brahmins, MN 4:2.1 has him approach the Buddha, and MN 27 has the conversation with Pilotika. The Pali jāṇussoṇi has the requested DPD line, but Sujato spells the name Jānussoṇi, with dental n. DN 13:2.2 also has the Pali variant jāṇusoṇi. Several citation landings concern other speakers, including Tikaṇṇa in AN 3.58 and Saṅgārava in AN 10.117. The reference to DN 19 illustrates the priestly title."
+    },
+    "jīvaka": {
+      "senses": {"jīvaka": ["Jīvaka 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 1.256 names Jīvaka Komārabhacca. Check the entry’s rendering of puggalappasannānaṁ as ‘loved by the people’. Both DPD and Sujato describe Jīvaka’s confidence in a person. The other positive AN citations are the lay followers’ list in AN 6.120–139 and Jīvaka’s questions in AN 8.26. AN 8.25 gives the parallel conversation with Mahānāma."
+    },
+    "jīvakambavana": {
+      "senses": {"jīvakambavana": ["Jīvakambavana"]},
+      "others": [],
+      "suttas": {},
+      "notes": "DN 2:1.2 and MN 55:1.2 give the same Rājagaha setting in separate words, jīvakassa komārabhaccassa ambavane. This accounts for their absence from the compound’s mention list."
+    },
+    "kajaṅgalā": {
+      "senses": {"kajaṅgalā": []},
+      "others": ["Kajaṅgalā"],
+      "suttas": {},
+      "notes": "AN 10.28:1.1 places the Buddha at the town (kajaṅgalāyaṁ). At 1.2 the townspeople visit the nun (kajaṅgalikā bhikkhunī), the speaker described by the sole candidate. A tap on the town would therefore have only the nun’s biography to display. MN 152:1.2 uses the place-name variant gajaṅgalāyaṁ. The nun’s exposition is in AN 10.28, beyond the preceding AN 10.27."
+    },
+    "kakkarapatta": {
+      "senses": {"kakkarapatta": ["Kakkarapatta"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 8.54 opens in the Koliyan town and names Dīghajāṇu as the visitor. The adjacent AN 8.53 is set at Vesālī."
+    },
+    "kakkaṭa": {
+      "senses": {"kakkaṭa 2": ["Kakkaṭa 02"]},
+      "others": ["Kakkaṭa 01"],
+      "suttas": {"Kakkaṭa 02": ["sn55.10"]},
+      "notes": "SN 55.10 calls the deceased man at Ñātika an upāsaka. The mapped SN 46.131–174 ranges miss that passage. DN 16:2.6.6 has the parallel report under Kukkuṭo, rendered Kakkaṭa. AN 10.72:1.2 and 3.2 identify the senior monk at Vesālī by the forms kukkuṭena and kukkuṭo, also rendered Kakkaṭa. This explains why the monk qualifies for others despite having no selectable mention. The episode falls in AN 10.72."
+    },
+    "kakudha": {
+      "senses": {"kakudha 1": ["Kakudha 02"], "kakudha 5": ["Kakudha 01"]},
+      "others": [],
+      "suttas": {"Kakudha 02": ["sn2.18"]},
+      "notes": "DN 16:2.6.6 and 2.7.5 describe the entry’s lay disciple under the variant Kukkuṭo (Sujato’s Kakkaṭa). The indexed Kakudhā forms in DN 16 name the river, so a sutta-wide personal pick would mislabel those taps. SN 2.18 identifies the god who visits the Buddha at Sāketa. AN 5.100 describes the reborn Koliyan who visits Mahāmoggallāna about Devadatta. Only the commentary quoted in Kakudha 02 equates him with the Sāketa visitor. The surrounding SN 2.17 and 2.19 concern Subrahmā and Uttara. The closing verse index at SN 2.20:14.4 recalls Kakudha."
+    },
+    "kakusandha": {
+      "senses": {"kakusandha": ["Kakusandha 01"]},
+      "others": [],
+      "suttas": {},
+      "notes": "The Vepulla passage is SN 15.20. SN 15.18–19 concern past family relationships. Thag 7.5:4.3 names this Buddha and Koṇāgamana together in the compound Kakusandhakoṇāgamano."
+    },
+    "kamboja": {
+      "senses": {"kamboja": ["Kamboja"]},
+      "others": [],
+      "suttas": {},
+      "notes": "Sujato renders Kamboja as Persia in AN 4.80. Kambojānaṁ also has the DPD country sense in the lists of sixteen countries at AN 3.70:28.3, AN 8.42:3.3, AN 8.43:3.3 and AN 8.45:4.3, all missed here. MN 93 uses the compound yonakambojesu. The mapped AN 4.79 does not name the country."
+    },
+    "kapilavatthu": {
+      "senses": {"kapilavatthu": ["Kapilavatthu"]},
+      "others": [],
+      "suttas": {},
+      "notes": "AN 3.73:1.2 explicitly places Kapilavatthu in Sakyan territory. SN 55.23–25 and 55.47–49 use the compact setting formula Kapilavatthunidānaṁ, absent from the mention list. Several page matches reach adjacent discourses. For example, Kapilavatthu is the setting of MN 18, MN 53 and MN 122, while MN 17, MN 52 and MN 121 do not name the city."
+    },
+    "kappa": {
+      "senses": {"kappa 1.7": ["Kappa 02", "Kappa 03"]},
+      "others": ["Kappa 04"],
+      "suttas": {"Kappa 02": ["thag10.5"], "Kappa 03": ["sn22.124", "sn22.125"], "Kappa 04": ["sn6.4"]},
+      "notes": "DPD cites both the verses attributed to Kappa Thera and the aggregate questions of the monk in SN 22.124–125. DPPN calls their identity probable, so each passage points to the entry that describes it. In SN 6.4 the Buddha recalls serving Baka as Kappa. Snp 5.1, 5.11 and 5.18 concern Bāvari’s pupil. Snp 2.12 and Thag 21.1 concern Vaṅgīsa’s mentor Nigrodhakappa. Neither has a matching candidate. SN 18.22 is Rāhula’s parallel question, SN 22.122–123 concern Sāriputta and Mahākoṭṭhika, and SN 6.5 lacks the Kappa episode."
+    },
+    "karatiya": {
+      "senses": {"karatiya 1": ["Karatiya"]},
+      "others": [],
+      "suttas": {},
+      "notes": ""
+    }
+  },
+  "done": true
+}

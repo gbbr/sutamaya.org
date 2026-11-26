@@ -182,7 +182,8 @@ More: [docs/e2e.md](docs/e2e.md).
 ## License
 
 Code: CC BY-NC-SA 4.0, see [LICENSE](LICENSE). Texts: SuttaCentral, public domain (CC0). Dictionary: derived
-from DPD, CC BY-NC-SA 4.0. Details in [data/README.md](data/README.md).
+from DPD, CC BY-NC-SA 4.0. Proper names: from Ānandajoti Bhikkhu's revision of the *Dictionary of
+Pāli Proper Names*, CC BY-SA 3.0. Details in [data/README.md](data/README.md).
 
 Bhikkhu Bodhi's and Ṭhānissaro Bhikkhu's translations, in `data/upstream/`, `data/bodhi/` and
 `data/thanissaro/`, are not public domain: each keeps its publisher's terms, listed in

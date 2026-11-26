@@ -1,0 +1,50 @@
+{
+  "names": {
+    "gotama": {
+      "senses": {
+        "gotama 1": ["Gotama 11", "Gotama 05"],
+        "gotama 2": ["Gotama 01"],
+        "gotama 3": ["Gotama 02"],
+        "gotama 4": ["Gotama 03"]
+      },
+      "others": [],
+      "suttas": {
+        "Gotama 01": ["thag2.9", "thag2.10"],
+        "Gotama 02": ["thag3.14", "thag3.16"],
+        "Gotama 03": ["thag10.7"],
+        "Gotama 05": ["dn14", "sn35.243"],
+        "Gotama 11": [
+          "an2.11-20", "an2.32-41", "an3.18", "an3.51", "an3.52", "an3.53", "an3.54", "an3.55",
+          "an3.56", "an3.57", "an3.58", "an3.59", "an3.60", "an3.63", "an3.64", "an3.65", "an3.126",
+          "an4.1", "an4.22", "an4.35", "an4.39", "an4.40", "an4.100", "an4.183", "an4.184", "an4.185",
+          "an4.187", "an4.193", "an4.234", "an5.30", "an5.192", "an5.193", "an5.194", "an6.38",
+          "an6.42", "an6.48", "an6.52", "an6.53", "an7.22", "an7.47", "an7.50", "an7.66", "an8.11",
+          "an8.12", "an8.55", "an8.86", "an9.38", "an10.27", "an10.29", "an10.93", "an10.94", "an10.95",
+          "an10.116", "an10.117", "an10.119", "an10.167", "an10.169", "an10.177", "an10.220", "dn1",
+          "dn3", "dn4", "dn5", "dn6", "dn7", "dn8", "dn9", "dn10", "dn12", "dn13", "dn16", "dn23",
+          "dn24", "dn25", "dn27", "dn29", "dn32", "mn4", "mn7", "mn12", "mn13", "mn14", "mn22", "mn26",
+          "mn27", "mn30", "mn35", "mn36", "mn41", "mn42", "mn49", "mn51", "mn54", "mn55", "mn56",
+          "mn58", "mn59", "mn60", "mn65", "mn71", "mn72", "mn73", "mn74", "mn75", "mn76", "mn77",
+          "mn78", "mn79", "mn80", "mn82", "mn85", "mn87", "mn89", "mn90", "mn91", "mn92", "mn93",
+          "mn94", "mn95", "mn96", "mn98", "mn99", "mn100", "mn101", "mn103", "mn107", "mn108", "mn135",
+          "mn136", "mn140", "mn150", "mn152", "sn1.23", "sn1.38", "sn1.49", "sn1.71", "sn2.3", "sn2.14",
+          "sn3.1", "sn4.12", "sn4.14", "sn4.16", "sn4.17", "sn4.18", "sn4.19", "sn4.24", "sn4.25",
+          "sn6.4", "sn7.1", "sn7.2", "sn7.3", "sn7.4", "sn7.5", "sn7.6", "sn7.7", "sn7.8", "sn7.9",
+          "sn7.10", "sn7.11", "sn7.12", "sn7.13", "sn7.14", "sn7.15", "sn7.16", "sn7.17", "sn7.18",
+          "sn7.19", "sn7.20", "sn7.21", "sn7.22", "sn8.10", "sn11.21", "sn12.10", "sn12.17", "sn12.18",
+          "sn12.24", "sn12.46", "sn12.47", "sn12.48", "sn12.70", "sn15.8", "sn33.1", "sn33.2", "sn33.3",
+          "sn33.4", "sn33.5", "sn33.6-10", "sn33.16-20", "sn33.21-25", "sn33.51-54", "sn35.81",
+          "sn35.152", "sn36.19", "sn36.20", "sn36.21", "sn38.4", "sn41.8", "sn42.9", "sn42.12",
+          "sn42.13", "sn44.7", "sn44.8", "sn44.9", "sn44.10", "sn44.11", "sn45.5", "sn45.10", "sn45.41",
+          "sn45.42-47", "sn45.48", "sn46.6", "sn46.52", "sn46.54", "sn46.55", "sn47.25", "sn48.42",
+          "sn51.15", "sn54.11", "sn54.12", "sn55.7", "sn56.16", "snp1.4", "snp1.6", "snp1.7", "snp1.9",
+          "snp2.7", "snp2.14", "snp3.2", "snp3.4", "snp3.5", "snp3.6", "snp3.7", "snp3.9", "snp3.11",
+          "snp4.10", "snp4.14", "snp5.16", "thag1.91", "thag5.11", "thag6.1", "thag7.5", "thag16.6",
+          "thag18.1", "thig6.2", "thig6.5", "thig6.6", "ud1.4", "ud5.3", "ud7.9", "ud8.6"
+        ]
+      },
+      "notes": "Gotama 11 describes the Buddha. Gotama 05 explains his family name, the explicit subject of gotamo gottena in DN 14 and the plural address to the Sakyans in SN 35.243. The chapter recaps at Thag 2.10:3.4 and 3.16:5.4 list the elders of Thag 2.9 and 3.14 respectively. SN 8.3 has Vaṅgīsa admonishing himself. Gotama 05 discusses this use of the name for a disciple. In SN 8.4, SN 9.5, and Thag 17.3 the individual called Gotama is Ānanda. Thag 1.119 repeats the admonition in SN 9.5 but leaves the addressee unnamed apart from Gotama. At Thag 10.1:10.4 Kāḷudāyī calls Suddhodana his grandfather in the Dhamma. The citation in Gotama 11 concerns the Buddha’s family visit. None of the three elders’ entries describes these other individuals. Thag 21.1 uses Gotama for Vaṅgīsa at 11.1, Ānanda at 15.4, and the Buddha at 43.4. In Snp 5.19 Piṅgiya praises the Buddha, but āḷavigotamo at 16.2 names Gotama of Āḷavī alongside Bhadrāvudha. Both suttas need more than one identification. The question and answer in SN 1.23 recur in SN 7.6, where the brahmin addresses the Buddha. SN 1.75 calls Gotama wise but gives no further identification. The packet misses the tappable Gotamabharaṇḍuhatthako in the untranslated chapter recap at AN 3.132:4.2. Its first element recalls the Gotamaka shrine title of AN 3.125."
+    }
+  },
+  "done": true
+}
