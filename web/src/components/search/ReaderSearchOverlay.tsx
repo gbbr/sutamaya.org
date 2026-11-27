@@ -327,7 +327,9 @@ export function ReaderSearchOverlay({
     <div
       className={
         mobile
-          ? 'fixed inset-0 z-50 flex flex-col animate-fadeIn'
+          ? // No fade on touch: a field focused mid-fade leaves iOS scrolling the whole page, not
+            // the results, for as long as the keyboard is up.
+            'fixed inset-0 z-50 flex flex-col'
           : 'fixed inset-0 z-50 flex justify-center animate-fadeIn'
       }
       style={mobile ? { background: theme.overlay ?? theme.panel } : { background: 'rgba(0,0,0,.35)', paddingTop: '12dvh' }}
