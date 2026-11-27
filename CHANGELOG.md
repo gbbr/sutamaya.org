@@ -4,6 +4,12 @@ What each update to sutamaya changed, newest first, named for the day it went ou
 reaches the web at once and the iOS and Android apps over the air; an app shows the update it runs
 in brackets after its version, at the foot of Settings.
 
+## 2026-11-27
+
+Over-the-air update 3efe4fc16 for the iOS and Android apps, also live on the web.
+
+- Fix a bug where the Reader's search scroll would reveal a gap ([3efe4fc16](https://github.com/gbbr/sutamaya.org/commit/3efe4fc16))
+
 ## 2026-11-18
 
 Over-the-air update 0e72c4954 for the iOS and Android apps, also live on the web.
